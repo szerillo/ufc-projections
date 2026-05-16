@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>UFC — Prop Projections</title>
+<style>
+:root {
+  color-scheme: light only;
+  --bg: #ffffff;
+  --bg-muted: #f4f1ec;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --border: #e5e1d8;
+  --header-bg: #0e1116;
+  --header-bg-2: #1a1f28;
+  --action-green: #11c75c;
+  --action-green-dark: #0a8842;
+  --pos: #11c75c;
+  --pos-soft: #d4f5e2;
+  --pos-strong: #0a6b35;
+  --neg: #d63636;
+  --neg-soft: #fbdada;
+  --neg-strong: #8a1818;
+}
+html, body {
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.uf-widget {
+  color: var(--text);
+  background: var(--bg);
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.35;
+  font-size: 13px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.uf-widget *, .uf-widget *::before, .uf-widget *::after { box-sizing: border-box; }
+
+.uf-header {
+  position: relative;
+  background: linear-gradient(135deg, var(--header-bg) 0%, var(--header-bg-2) 100%);
+  color: #fff;
+  padding: 14px 16px 12px;
+  text-align: center;
+  border-bottom: 3px solid var(--action-green);
+}
+.uf-title { font-size: 16px; font-weight: 800; margin: 0 0 1px; letter-spacing: -0.2px; }
+.uf-subtitle { font-size: 11px; opacity: 0.75; margin: 0; font-weight: 500; }
+.uf-byline-header { font-size: 10px; margin-top: 3px; opacity: 0.85; }
+.uf-byline-header a { color: #fff; text-decoration: none; font-weight: 700; }
+.uf-brand { position: absolute; top: 12px; right: 14px; display: inline-flex; align-items: center; gap: 4px; }
+.uf-brand-text { font-weight: 900; font-size: 11px; letter-spacing: -0.2px; color: #fff; }
+.uf-brand-check { width: 13px; height: 13px; border-radius: 50%; background: var(--action-green); display: inline-flex; align-items: center; justify-content: center; }
+.uf-brand-check svg { width: 8px; height: 8px; }
+
+/* Top tabs: Main Card / Prelims */
+.uf-tabs {
+  display: flex;
+  background: var(--bg-muted);
+  border-bottom: 1px solid var(--border);
+}
+.uf-tab {
+  flex: 1;
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  cursor: pointer;
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: inherit;
+}
+.uf-tab.active {
+  background: var(--bg);
+  color: var(--text);
+  border-bottom-color: var(--action-green);
+}
+
+/* Section headers within a card */
+.section-bar {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  display: flex;
+  align-items: center;
+}
+.section-bar .bullet {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--action-green);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.uf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.uf-table thead th {
+  background: var(--bg-muted);
+  border-bottom: 2px solid var(--border);
+  padding: 6px 2px;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.uf-table thead th.tleft { text-align: left; padding-left: 8px; }
+.uf-table thead tr.grp-row th {
+  font-size: 8.5px;
+  letter-spacing: 0.6px;
+  padding: 5px 2px;
+}
+.uf-table thead tr.grp-row th.imp-grp {
+  color: var(--action-green-dark);
+  border-bottom: 2px solid var(--action-green);
+}
+.uf-table thead tr.grp-row th.list-grp {
+  color: var(--text);
+  border-bottom: 2px solid var(--text-muted);
+}
+
+.uf-table tbody td {
+  padding: 7px 2px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+}
+.uf-table tbody td.tleft { text-align: left; padding-left: 8px; }
+
+th.grp-divider-left { border-left: 1px solid var(--border); }
+td.grp-divider-left { border-left: 1px solid var(--border); }
+
+.fight-num { font-weight: 700; color: var(--text-muted); font-size: 10px; }
+.fighter-name { font-weight: 700; font-size: 11.5px; display: block; line-height: 1.2; }
+.fighter-vs { font-size: 9.5px; color: var(--text-muted); font-weight: 500; display: block; margin-top: 1px; }
+
+.cell-pct-pos { color: var(--pos-strong); font-weight: 800; font-size: 12.5px; }
+.cell-odds {
+  font-weight: 700;
+  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+  font-size: 11.5px;
+}
+.yes-line { color: var(--pos-strong); }
+.no-line { color: var(--neg-strong); }
+
+/* Method table - no F/D tags */
+.method-table .fighter-row-name {
+  text-align: left;
+  padding-left: 8px;
+  line-height: 1.2;
+}
+.method-table .fighter-row-name .name {
+  font-weight: 700;
+  font-size: 11.5px;
+  display: block;
+}
+.method-table .fighter-row-name .opp {
+  font-weight: 500;
+  font-size: 9.5px;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 1px;
+}
+.method-table tr.fav-row td:first-child { border-left: 3px solid var(--action-green); }
+.method-table tr.dog-row td:first-child { border-left: 3px solid var(--text-muted); }
+.method-table tbody td.method-odds {
+  font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+  font-weight: 600;
+  font-size: 11px;
+  padding: 6px 2px;
+}
+.method-table tbody tr.fight-end td { border-bottom: 2px solid var(--border); }
+
+.uf-pane { display: none; }
+.uf-pane.active { display: block; }
+
+.uf-footer {
+  padding: 9px 14px;
+  font-size: 9.5px;
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  border-top: 1px solid var(--border);
+  line-height: 1.45;
+}
+.uf-footer strong { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="uf-widget">
+
+  <div class="uf-header">
+    <div class="uf-brand">
+      <span class="uf-brand-text">ACTION</span>
+      <span class="uf-brand-check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 13 10 18 19 7"></polyline></svg>
+      </span>
+    </div>
+    <h1 class="uf-title">UFC Vegas 117 — Props</h1>
+    <p class="uf-subtitle">Saturday, May 16, 2026</p>
+    <div class="uf-byline-header">By <a href="https://twitter.com/SeanZerillo">@SeanZerillo</a></div>
+  </div>
+
+  <div class="uf-tabs">
+    <button class="uf-tab active" data-card="MAIN">Main Card</button>
+    <button class="uf-tab" data-card="PRELIM">Prelims</button>
+  </div>
+
+  <!-- Main Card pane -->
+  <div class="uf-pane active" id="pane-MAIN">
+    <div class="section-bar"><span class="bullet"></span>Fight Length — GTD &amp; ITD</div>
+    <table class="uf-table">
+      <colgroup>
+        <col style="width: 20px;">
+        <col>
+        <col style="width: 42px;">
+        <col style="width: 60px;">
+        <col style="width: 60px;">
+      </colgroup>
+      <thead>
+        <tr class="grp-row">
+          <th></th>
+          <th></th>
+          <th></th>
+          <th class="imp-grp grp-divider-left">Implied</th>
+          <th class="list-grp grp-divider-left">Listed</th>
+        </tr>
+        <tr>
+          <th>#</th>
+          <th class="tleft">Fight</th>
+          <th>GTD%</th>
+          <th class="grp-divider-left">Yes / No</th>
+          <th class="grp-divider-left">Yes / No</th>
+        </tr>
+      </thead>
+      <tbody id="length-MAIN-body"></tbody>
+    </table>
+    <div class="section-bar"><span class="bullet"></span>Method of Victory</div>
+    <table class="uf-table method-table">
+      <colgroup>
+        <col>
+        <col style="width: 56px;">
+        <col style="width: 56px;">
+        <col style="width: 60px;">
+        <col style="width: 56px;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="tleft">Fighter</th>
+          <th>DEC</th>
+          <th>KO</th>
+          <th>SUB</th>
+          <th>ITD</th>
+        </tr>
+      </thead>
+      <tbody id="method-MAIN-body"></tbody>
+    </table>
+  </div>
+
+  <!-- Prelims pane -->
+  <div class="uf-pane" id="pane-PRELIM">
+    <div class="section-bar"><span class="bullet"></span>Fight Length — GTD &amp; ITD</div>
+    <table class="uf-table">
+      <colgroup>
+        <col style="width: 20px;">
+        <col>
+        <col style="width: 42px;">
+        <col style="width: 60px;">
+        <col style="width: 60px;">
+      </colgroup>
+      <thead>
+        <tr class="grp-row">
+          <th></th>
+          <th></th>
+          <th></th>
+          <th class="imp-grp grp-divider-left">Implied</th>
+          <th class="list-grp grp-divider-left">Listed</th>
+        </tr>
+        <tr>
+          <th>#</th>
+          <th class="tleft">Fight</th>
+          <th>GTD%</th>
+          <th class="grp-divider-left">Yes / No</th>
+          <th class="grp-divider-left">Yes / No</th>
+        </tr>
+      </thead>
+      <tbody id="length-PRELIM-body"></tbody>
+    </table>
+    <div class="section-bar"><span class="bullet"></span>Method of Victory</div>
+    <table class="uf-table method-table">
+      <colgroup>
+        <col>
+        <col style="width: 56px;">
+        <col style="width: 56px;">
+        <col style="width: 60px;">
+        <col style="width: 56px;">
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="tleft">Fighter</th>
+          <th>DEC</th>
+          <th>KO</th>
+          <th>SUB</th>
+          <th>ITD</th>
+        </tr>
+      </thead>
+      <tbody id="method-PRELIM-body"></tbody>
+    </table>
+  </div>
+
+  <div class="uf-footer">
+    <strong>GTD:</strong> Goes the Distance &nbsp; <strong>ITD:</strong> Inside the Distance.
+    Listed odds via DraftKings.
+    <div style="margin-top: 4px;"><span style="display:inline-block;width:8px;height:8px;background:var(--action-green);margin-right:4px;vertical-align:1px;"></span>Favorite &nbsp; <span style="display:inline-block;width:8px;height:8px;background:var(--text-muted);margin-right:4px;vertical-align:1px;"></span>Underdog</div>
+  </div>
+
+</div>
+
+<script>
+const fights = [
+  // PRELIMS (#1-#8)
+  {n: 1, card: "PRELIM", lastU: "Bannon", lastF: "Caliari",
+   gtd: 70, gtdYes: "-340", gtdNo: "+240",
+   methodFav: {dec: "-103", ko: "+1172", sub: "+527", itd: "+320"},
+   methodDog: {dec: "+430", ko: "+4666", sub: "+2161", itd: "+1434"}},
+  {n: 2, card: "PRELIM", lastU: "Barez", lastF: "Gurule",
+   gtd: 60, gtdYes: "-135", gtdNo: "+105",
+   methodFav: {dec: "+180", ko: "+766", sub: "+879", itd: "+360"},
+   methodDog: {dec: "+306", ko: "+739", sub: "+1580", itd: "+460"}},
+  {n: 3, card: "PRELIM", lastU: "Viana", lastF: "Ardelean",
+   gtd: 66, gtdYes: "-200", gtdNo: "+150",
+   methodFav: {dec: "+145", ko: "+1868", sub: "+1249", itd: "+700"},
+   methodDog: {dec: "+291", ko: "+1467", sub: "+580", itd: "+374"}},
+  {n: 4, card: "PRELIM", lastU: "Brundage", lastF: "Petroski",
+   gtd: 43, gtdYes: "+120", gtdNo: "-160",
+   methodFav: {dec: "+267", ko: "+892", sub: "+560", itd: "+296"},
+   methodDog: {dec: "+520", ko: "+321", sub: "+1214", itd: "+219"}},
+  {n: 5, card: "PRELIM", lastU: "Vieira", lastF: "Cavalcanti",
+   gtd: 76, gtdYes: "-400", gtdNo: "+280",
+   methodFav: {dec: "+140", ko: "+1776", sub: "+1690", itd: "+816"},
+   methodDog: {dec: "+194", ko: "+1425", sub: "+1359", itd: "+645"}},
+  {n: 6, card: "PRELIM", lastU: "Minev", lastF: "Gantt",
+   gtd: 40, gtdYes: "+150", gtdNo: "-200",
+   methodFav: {dec: "+242", ko: "+372", sub: "+338", itd: "+127"},
+   methodDog: {dec: "+862", ko: "+595", sub: "+5116", itd: "+514"}},
+  {n: 7, card: "PRELIM", lastU: "Tokkos", lastF: "Erslan",
+   gtd: 39, gtdYes: "+180", gtdNo: "-245",
+   methodFav: {dec: "+316", ko: "+170", sub: "+3017", itd: "+149"},
+   methodDog: {dec: "+567", ko: "+1010", sub: "+749", itd: "+381"}},
+  {n: 8, card: "PRELIM", lastU: "Veretennikov", lastF: "Williams",
+   gtd: 43, gtdYes: "+110", gtdNo: "-145",
+   methodFav: {dec: "+369", ko: "+270", sub: "+3339", itd: "+234"},
+   methodDog: {dec: "+355", ko: "+362", sub: "+1866", itd: "+274"}},
+  // MAIN CARD (#9-#13)
+  {n: 9, card: "MAIN", lastU: "Cuamba", lastF: "Sopaj",
+   gtd: 63, gtdYes: "-200", gtdNo: "+150",
+   methodFav: {dec: "+239", ko: "+564", sub: "+1830", itd: "+394"},
+   methodDog: {dec: "+201", ko: "+610", sub: "+3302", itd: "+487"}},
+  {n: 10, card: "MAIN", lastU: "Edwards", lastF: "Bukauskas",
+   gtd: 34, gtdYes: "+120", gtdNo: "-160",
+   methodFav: {dec: "+313", ko: "+174", sub: "+786", itd: "+109"},
+   methodDog: {dec: "+978", ko: "+521", sub: "+3733", itd: "+435"}},
+  {n: 11, card: "MAIN", lastU: "Diaz", lastF: "Wellmaker",
+   gtd: 45, gtdYes: "+150", gtdNo: "-200",
+   methodFav: {dec: "+242", ko: "+174", sub: "+2083", itd: "+143"},
+   methodDog: {dec: "+524", ko: "+783", sub: "+4311", itd: "+636"}},
+  {n: 12, card: "MAIN", lastU: "Choi", lastF: "Santos",
+   gtd: 42, gtdYes: "+140", gtdNo: "-185",
+   methodFav: {dec: "+311", ko: "+291", sub: "+1200", itd: "+201"},
+   methodDog: {dec: "+465", ko: "+353", sub: "+3639", itd: "+304"}},
+  {n: 13, card: "MAIN", lastU: "Costa", lastF: "Allen",
+   gtd: 49, gtdYes: "-130", gtdNo: "+100",
+   methodFav: {dec: "+261", ko: "+392", sub: "+1111", itd: "+250"},
+   methodDog: {dec: "+360", ko: "+671", sub: "+1013", itd: "+355"}},
+];
+
+function pctToAmericanOdds(pct) {
+  const p = pct / 100;
+  if (p <= 0 || p >= 1) return "—";
+  if (p >= 0.5) {
+    const odds = -100 * (p / (1 - p));
+    return Math.round(odds).toString();
+  } else {
+    const odds = 100 * ((1 - p) / p);
+    return "+" + Math.round(odds);
+  }
+}
+
+function getCardFights(cardKey) {
+  return fights.filter(f => f.card === cardKey).sort((a, b) => b.n - a.n);
+}
+
+function renderLength(cardKey) {
+  const tbody = document.getElementById("length-" + cardKey + "-body");
+  const filtered = getCardFights(cardKey);
+  let html = "";
+  filtered.forEach(f => {
+    const yesImp = pctToAmericanOdds(f.gtd);
+    const noImp = pctToAmericanOdds(100 - f.gtd);
+    html += `
+      <tr>
+        <td class="fight-num">${f.n}</td>
+        <td class="tleft">
+          <span class="fighter-name">${f.lastF}</span>
+          <span class="fighter-vs">vs ${f.lastU}</span>
+        </td>
+        <td><span class="cell-pct-pos">${f.gtd}%</span></td>
+        <td class="grp-divider-left">
+          <div><span class="cell-odds yes-line">${yesImp}</span></div>
+          <div><span class="cell-odds no-line" style="font-size:10px;">${noImp}</span></div>
+        </td>
+        <td class="grp-divider-left">
+          <div><span class="cell-odds yes-line">${f.gtdYes}</span></div>
+          <div><span class="cell-odds no-line" style="font-size:10px;">${f.gtdNo}</span></div>
+        </td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+function renderMethod(cardKey) {
+  const tbody = document.getElementById("method-" + cardKey + "-body");
+  const filtered = getCardFights(cardKey);
+  let html = "";
+  filtered.forEach(f => {
+    html += `
+      <tr class="fav-row">
+        <td class="fighter-row-name">
+          <span class="name">${f.lastF}</span>
+          <span class="opp">vs ${f.lastU}</span>
+        </td>
+        <td class="method-odds">${f.methodFav.dec}</td>
+        <td class="method-odds">${f.methodFav.ko}</td>
+        <td class="method-odds">${f.methodFav.sub}</td>
+        <td class="method-odds"><strong>${f.methodFav.itd}</strong></td>
+      </tr>
+      <tr class="fight-end dog-row">
+        <td class="fighter-row-name">
+          <span class="name">${f.lastU}</span>
+        </td>
+        <td class="method-odds">${f.methodDog.dec}</td>
+        <td class="method-odds">${f.methodDog.ko}</td>
+        <td class="method-odds">${f.methodDog.sub}</td>
+        <td class="method-odds"><strong>${f.methodDog.itd}</strong></td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+function showCard(cardKey) {
+  document.querySelectorAll(".uf-pane").forEach(p => p.classList.remove("active"));
+  document.getElementById("pane-" + cardKey).classList.add("active");
+  document.querySelectorAll(".uf-tab").forEach(b => b.classList.toggle("active", b.dataset.card === cardKey));
+}
+
+// Pre-render both panes once (data is static)
+renderLength("MAIN");
+renderMethod("MAIN");
+renderLength("PRELIM");
+renderMethod("PRELIM");
+
+document.querySelectorAll(".uf-tab").forEach(btn => {
+  btn.addEventListener("click", () => showCard(btn.dataset.card));
+});
+
+window.__renderDone = true;
+window.__setView = (cardKey) => showCard(cardKey);
+
+function postHeight() {
+  const h = document.querySelector(".uf-widget").scrollHeight;
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage({ type: "ufc-iframe-height", height: h }, "*");
+  }
+}
+const ro = new ResizeObserver(postHeight);
+ro.observe(document.querySelector(".uf-widget"));
+window.addEventListener("load", postHeight);
+setTimeout(postHeight, 200);
+</script>
+</body>
+</html>
