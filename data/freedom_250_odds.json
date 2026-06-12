@@ -1,0 +1,2978 @@
+{
+  "card": "UFC Freedom 250",
+  "venue": "South Lawn of the White House",
+  "updated_at": "2026-06-12T07:41:01Z",
+  "source": "bettingpros",
+  "books_included": [
+    "consensus",
+    "fanduel",
+    "draftkings",
+    "betmgm",
+    "caesars"
+  ],
+  "fights": [
+    {
+      "n": 1,
+      "event_id": 5483,
+      "scheduled_utc": "2026-06-15 00:00:00",
+      "weight_class": "featherweight(136-145)",
+      "fighter_a": {
+        "name": "Diego Lopes",
+        "short": "D. Lopes",
+        "bp_id": "61230"
+      },
+      "fighter_b": {
+        "name": "Steve Garcia",
+        "short": "S. Garcia",
+        "bp_id": "60726"
+      },
+      "status": "not_started",
+      "markets": {
+        "moneyline": [
+          {
+            "label": "Diego Lopes",
+            "short_label": "D. Lopes",
+            "selection": "",
+            "opening_cost": -210,
+            "books": {
+              "consensus": {
+                "cost": -154,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 58.59
+              },
+              "fanduel": {
+                "cost": -154,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 58.59
+              },
+              "draftkings": {
+                "cost": -148,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 58.59
+              }
+            }
+          },
+          {
+            "label": "Steve Garcia",
+            "short_label": "S. Garcia",
+            "selection": "",
+            "opening_cost": 162,
+            "books": {
+              "consensus": {
+                "cost": 124,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 42.49
+              },
+              "fanduel": {
+                "cost": 120,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 42.49
+              },
+              "draftkings": {
+                "cost": 124,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 42.49
+              }
+            }
+          }
+        ],
+        "fight_ending": [
+          {
+            "label": "Points",
+            "short_label": "Points",
+            "selection": "points",
+            "opening_cost": 175,
+            "books": {
+              "consensus": {
+                "cost": 185,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 185,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 6000,
+            "books": {
+              "consensus": {
+                "cost": 6000,
+                "line": 1,
+                "updated": "2026-06-12 07:35:08",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Submission",
+            "short_label": "Submission",
+            "selection": "submission",
+            "opening_cost": 380,
+            "books": {
+              "consensus": {
+                "cost": 300,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 400,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "KO/TKO/DQ",
+            "short_label": "KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": -115,
+            "books": {
+              "consensus": {
+                "cost": -125,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -125,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "method_of_victory": [
+          {
+            "label": "Steve Garcia Submission",
+            "short_label": "S. Garcia Submission",
+            "selection": "submission",
+            "opening_cost": 3000,
+            "books": {
+              "consensus": {
+                "cost": 2700,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 2700,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Diego Lopes Points",
+            "short_label": "D. Lopes Points",
+            "selection": "points",
+            "opening_cost": 350,
+            "books": {
+              "consensus": {
+                "cost": 440,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 440,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Steve Garcia",
+            "short_label": "S. Garcia",
+            "selection": "",
+            "opening_cost": 525,
+            "books": {
+              "consensus": {
+                "cost": 525,
+                "line": 1,
+                "updated": "2026-06-12 07:35:08",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Steve Garcia Points",
+            "short_label": "S. Garcia Points",
+            "selection": "points",
+            "opening_cost": 550,
+            "books": {
+              "consensus": {
+                "cost": 490,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 490,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 5000,
+            "books": {
+              "consensus": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Diego Lopes Submission",
+            "short_label": "D. Lopes Submission",
+            "selection": "submission",
+            "opening_cost": 420,
+            "books": {
+              "consensus": {
+                "cost": 325,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 440,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Diego Lopes",
+            "short_label": "D. Lopes",
+            "selection": "",
+            "opening_cost": 325,
+            "books": {
+              "consensus": {
+                "cost": 325,
+                "line": 1,
+                "updated": "2026-06-12 07:35:08",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Diego Lopes KO/TKO/DQ",
+            "short_label": "D. Lopes KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 260,
+            "books": {
+              "consensus": {
+                "cost": 260,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 260,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Steve Garcia KO/TKO/DQ",
+            "short_label": "S. Garcia KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 280,
+            "books": {
+              "consensus": {
+                "cost": 240,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 240,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "fight_distance": [
+          {
+            "label": "Yes",
+            "short_label": "Yes",
+            "selection": "yes",
+            "opening_cost": 182,
+            "books": {
+              "consensus": {
+                "cost": 190,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 34.84
+              },
+              "fanduel": {
+                "cost": 194,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 34.84
+              },
+              "draftkings": {
+                "cost": 180,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 34.84
+              }
+            }
+          },
+          {
+            "label": "No",
+            "short_label": "No",
+            "selection": "no",
+            "opening_cost": -240,
+            "books": {
+              "consensus": {
+                "cost": -250,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 72.38
+              },
+              "fanduel": {
+                "cost": -260,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 72.38
+              },
+              "draftkings": {
+                "cost": -245,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 72.38
+              }
+            }
+          }
+        ],
+        "total_rounds": [
+          {
+            "label": "Over",
+            "short_label": "Over",
+            "selection": "over",
+            "opening_cost": -128,
+            "books": {
+              "consensus": {
+                "cost": -140,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 59.02
+              },
+              "fanduel": {
+                "cost": -132,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 59.02
+              },
+              "draftkings": {
+                "cost": -140,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 59.02
+              }
+            }
+          },
+          {
+            "label": "Under",
+            "short_label": "Under",
+            "selection": "under",
+            "opening_cost": 100,
+            "books": {
+              "consensus": {
+                "cost": 110,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 44.84
+              },
+              "fanduel": {
+                "cost": 104,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 44.84
+              },
+              "draftkings": {
+                "cost": 110,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 44.84
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "n": 2,
+      "event_id": 5484,
+      "scheduled_utc": "2026-06-15 00:20:00",
+      "weight_class": "middleweight(171-185)",
+      "fighter_a": {
+        "name": "BO Nickal",
+        "short": "BO Nickal",
+        "bp_id": "61351"
+      },
+      "fighter_b": {
+        "name": "Kyle Daukaus",
+        "short": "K. Daukaus",
+        "bp_id": "60660"
+      },
+      "status": "not_started",
+      "markets": {
+        "moneyline": [
+          {
+            "label": "BO Nickal",
+            "short_label": "BO Nickal",
+            "selection": "",
+            "opening_cost": -280,
+            "books": {
+              "consensus": {
+                "cost": -340,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 74.91
+              },
+              "fanduel": {
+                "cost": -340,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 74.91
+              },
+              "draftkings": {
+                "cost": -310,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 74.91
+              }
+            }
+          },
+          {
+            "label": "Kyle Daukaus",
+            "short_label": "K. Daukaus",
+            "selection": "",
+            "opening_cost": 210,
+            "books": {
+              "consensus": {
+                "cost": 250,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 27.17
+              },
+              "fanduel": {
+                "cost": 250,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 27.17
+              },
+              "draftkings": {
+                "cost": 250,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 27.17
+              }
+            }
+          }
+        ],
+        "fight_ending": [
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 6000,
+            "books": {
+              "consensus": {
+                "cost": 6000,
+                "line": 1,
+                "updated": "2026-06-12 07:35:07",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Points",
+            "short_label": "Points",
+            "selection": "points",
+            "opening_cost": 185,
+            "books": {
+              "consensus": {
+                "cost": 165,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 165,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Submission",
+            "short_label": "Submission",
+            "selection": "submission",
+            "opening_cost": 190,
+            "books": {
+              "consensus": {
+                "cost": 170,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 195,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "KO/TKO/DQ",
+            "short_label": "KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 145,
+            "books": {
+              "consensus": {
+                "cost": 140,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 155,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "method_of_victory": [
+          {
+            "label": "Kyle Daukaus KO/TKO/DQ",
+            "short_label": "K. Daukaus KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 1100,
+            "books": {
+              "consensus": {
+                "cost": 1100,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 1100,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Kyle Daukaus",
+            "short_label": "K. Daukaus",
+            "selection": "",
+            "opening_cost": 900,
+            "books": {
+              "consensus": {
+                "cost": 900,
+                "line": 1,
+                "updated": "2026-06-12 07:35:07",
+                "no_vig_pct": 9.5
+              }
+            }
+          },
+          {
+            "label": "Kyle Daukaus Points",
+            "short_label": "K. Daukaus Points",
+            "selection": "points",
+            "opening_cost": 900,
+            "books": {
+              "consensus": {
+                "cost": 950,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 950,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Kyle Daukaus Submission",
+            "short_label": "K. Daukaus Submission",
+            "selection": "submission",
+            "opening_cost": 500,
+            "books": {
+              "consensus": {
+                "cost": 550,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 550,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 5000,
+            "books": {
+              "consensus": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "BO Nickal Points",
+            "short_label": "BO Nickal Points",
+            "selection": "points",
+            "opening_cost": 200,
+            "books": {
+              "consensus": {
+                "cost": 210,
+                "line": 1,
+                "updated": "2026-06-12 07:39:09",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "BO Nickal Submission",
+            "short_label": "BO Nickal Submission",
+            "selection": "submission",
+            "opening_cost": 350,
+            "books": {
+              "consensus": {
+                "cost": 350,
+                "line": 1,
+                "updated": "2026-06-12 07:39:09",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "BO Nickal",
+            "short_label": "BO Nickal",
+            "selection": "",
+            "opening_cost": 220,
+            "books": {
+              "consensus": {
+                "cost": 220,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 390,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "fight_distance": [
+          {
+            "label": "Yes",
+            "short_label": "Yes",
+            "selection": "yes",
+            "opening_cost": 192,
+            "books": {
+              "consensus": {
+                "cost": 170,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 37.31
+              },
+              "fanduel": {
+                "cost": 172,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 37.31
+              },
+              "draftkings": {
+                "cost": 165,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 37.31
+              }
+            }
+          },
+          {
+            "label": "No",
+            "short_label": "No",
+            "selection": "no",
+            "opening_cost": -260,
+            "books": {
+              "consensus": {
+                "cost": -220,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 70.41
+              },
+              "fanduel": {
+                "cost": -225,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 70.41
+              },
+              "draftkings": {
+                "cost": -220,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 70.41
+              }
+            }
+          }
+        ],
+        "total_rounds": [
+          {
+            "label": "Over",
+            "short_label": "Over",
+            "selection": "over",
+            "opening_cost": -124,
+            "books": {
+              "consensus": {
+                "cost": -154,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 61.98
+              },
+              "fanduel": {
+                "cost": 124,
+                "line": 2.5,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 61.98
+              },
+              "draftkings": {
+                "cost": -154,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 61.98
+              }
+            }
+          },
+          {
+            "label": "Under",
+            "short_label": "Under",
+            "selection": "under",
+            "opening_cost": -102,
+            "books": {
+              "consensus": {
+                "cost": 120,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 44.44
+              },
+              "fanduel": {
+                "cost": -158,
+                "line": 2.5,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 44.44
+              },
+              "draftkings": {
+                "cost": 120,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 44.44
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "event_id": 5485,
+      "scheduled_utc": "2026-06-15 00:40:00",
+      "weight_class": "lightweight(146-155)",
+      "fighter_a": {
+        "name": "Mauricio Ruffy",
+        "short": "M. Ruffy",
+        "bp_id": "61601"
+      },
+      "fighter_b": {
+        "name": "Michael Chandler",
+        "short": "M. Chandler",
+        "bp_id": "61012"
+      },
+      "status": "not_started",
+      "markets": {
+        "moneyline": [
+          {
+            "label": "Michael Chandler",
+            "short_label": "M. Chandler",
+            "selection": "",
+            "opening_cost": 330,
+            "books": {
+              "consensus": {
+                "cost": 455,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 16.75
+              },
+              "fanduel": {
+                "cost": 450,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 16.75
+              },
+              "draftkings": {
+                "cost": 455,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 16.75
+              }
+            }
+          },
+          {
+            "label": "Mauricio Ruffy",
+            "short_label": "M. Ruffy",
+            "selection": "",
+            "opening_cost": -480,
+            "books": {
+              "consensus": {
+                "cost": -700,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 84.98
+              },
+              "fanduel": {
+                "cost": -720,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": 84.98
+              },
+              "draftkings": {
+                "cost": -625,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 84.98
+              }
+            }
+          }
+        ],
+        "fight_ending": [
+          {
+            "label": "KO/TKO/DQ",
+            "short_label": "KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": -270,
+            "books": {
+              "consensus": {
+                "cost": -420,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -290,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 6000,
+            "books": {
+              "consensus": {
+                "cost": 6000,
+                "line": 1,
+                "updated": "2026-06-12 07:35:06",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Submission",
+            "short_label": "Submission",
+            "selection": "submission",
+            "opening_cost": 750,
+            "books": {
+              "consensus": {
+                "cost": 650,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 800,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Points",
+            "short_label": "Points",
+            "selection": "points",
+            "opening_cost": 320,
+            "books": {
+              "consensus": {
+                "cost": 330,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 330,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "method_of_victory": [
+          {
+            "label": "Michael Chandler KO/TKO/DQ",
+            "short_label": "M. Chandler KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 850,
+            "books": {
+              "consensus": {
+                "cost": 800,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 800,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 5000,
+            "books": {
+              "consensus": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Mauricio Ruffy Submission",
+            "short_label": "M. Ruffy Submission",
+            "selection": "submission",
+            "opening_cost": 1100,
+            "books": {
+              "consensus": {
+                "cost": 800,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 1100,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Michael Chandler",
+            "short_label": "M. Chandler",
+            "selection": "",
+            "opening_cost": 750,
+            "books": {
+              "consensus": {
+                "cost": 750,
+                "line": 1,
+                "updated": "2026-06-12 07:35:06",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Michael Chandler Points",
+            "short_label": "M. Chandler Points",
+            "selection": "points",
+            "opening_cost": 1600,
+            "books": {
+              "consensus": {
+                "cost": 1600,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 1600,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Mauricio Ruffy",
+            "short_label": "M. Ruffy",
+            "selection": "",
+            "opening_cost": 450,
+            "books": {
+              "consensus": {
+                "cost": 450,
+                "line": 1,
+                "updated": "2026-06-12 07:35:06",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Michael Chandler Submission",
+            "short_label": "M. Chandler Submission",
+            "selection": "submission",
+            "opening_cost": 1500,
+            "books": {
+              "consensus": {
+                "cost": 1500,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 2000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Mauricio Ruffy Points",
+            "short_label": "M. Ruffy Points",
+            "selection": "points",
+            "opening_cost": 450,
+            "books": {
+              "consensus": {
+                "cost": 470,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 470,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Mauricio Ruffy KO/TKO/DQ",
+            "short_label": "M. Ruffy KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": -185,
+            "books": {
+              "consensus": {
+                "cost": -195,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -195,
+                "line": 1,
+                "updated": "2026-06-12 07:38:56",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "fight_distance": [
+          {
+            "label": "Yes",
+            "short_label": "Yes",
+            "selection": "yes",
+            "opening_cost": 330,
+            "books": {
+              "consensus": {
+                "cost": 350,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 21.41
+              },
+              "fanduel": {
+                "cost": 340,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 21.41
+              },
+              "draftkings": {
+                "cost": 350,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 21.41
+              }
+            }
+          },
+          {
+            "label": "No",
+            "short_label": "No",
+            "selection": "no",
+            "opening_cost": -490,
+            "books": {
+              "consensus": {
+                "cost": -550,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 85.69
+              },
+              "fanduel": {
+                "cost": -550,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 85.69
+              },
+              "draftkings": {
+                "cost": -550,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 85.69
+              }
+            }
+          }
+        ],
+        "total_rounds": [
+          {
+            "label": "Over",
+            "short_label": "Over",
+            "selection": "over",
+            "opening_cost": 104,
+            "books": {
+              "consensus": {
+                "cost": 100,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 49.02
+              },
+              "fanduel": {
+                "cost": 100,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 49.02
+              },
+              "draftkings": {
+                "cost": 100,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 49.02
+              }
+            }
+          },
+          {
+            "label": "Under",
+            "short_label": "Under",
+            "selection": "under",
+            "opening_cost": -132,
+            "books": {
+              "consensus": {
+                "cost": -128,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 53.49
+              },
+              "fanduel": {
+                "cost": -128,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 53.49
+              },
+              "draftkings": {
+                "cost": -130,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 53.49
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "event_id": 5564,
+      "scheduled_utc": "2026-06-15 01:00:00",
+      "weight_class": "heavyweight(206-265)",
+      "fighter_a": {
+        "name": "Josh Hokit",
+        "short": "J. Hokit",
+        "bp_id": "61820"
+      },
+      "fighter_b": {
+        "name": "Derrick Lewis",
+        "short": "D. Lewis",
+        "bp_id": "60055"
+      },
+      "status": "not_started",
+      "markets": {
+        "moneyline": [
+          {
+            "label": "Josh Hokit",
+            "short_label": "J. Hokit",
+            "selection": "",
+            "opening_cost": -275,
+            "books": {
+              "consensus": {
+                "cost": -410,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 79.98
+              },
+              "draftkings": {
+                "cost": -410,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 79.98
+              },
+              "fanduel": {
+                "cost": -440,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 79.98
+              }
+            }
+          },
+          {
+            "label": "Derrick Lewis",
+            "short_label": "D. Lewis",
+            "selection": "",
+            "opening_cost": 200,
+            "books": {
+              "consensus": {
+                "cost": 310,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 21.47
+              },
+              "draftkings": {
+                "cost": 320,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 21.47
+              },
+              "fanduel": {
+                "cost": 310,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 21.47
+              }
+            }
+          }
+        ],
+        "fight_ending": [
+          {
+            "label": "Submission",
+            "short_label": "Submission",
+            "selection": "submission",
+            "opening_cost": 220,
+            "books": {
+              "consensus": {
+                "cost": 275,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 340,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Points",
+            "short_label": "Points",
+            "selection": "points",
+            "opening_cost": 380,
+            "books": {
+              "consensus": {
+                "cost": 450,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 550,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "KO/TKO/DQ",
+            "short_label": "KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": -140,
+            "books": {
+              "consensus": {
+                "cost": -250,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -240,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 6000,
+            "books": {
+              "consensus": {
+                "cost": 6000,
+                "line": 1,
+                "updated": "2026-06-12 07:35:05",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "method_of_victory": [
+          {
+            "label": "Josh Hokit",
+            "short_label": "J. Hokit",
+            "selection": "",
+            "opening_cost": -140,
+            "books": {
+              "consensus": {
+                "cost": -140,
+                "line": 1,
+                "updated": "2026-06-12 07:35:05",
+                "no_vig_pct": 14.99
+              }
+            }
+          },
+          {
+            "label": "Derrick Lewis KO/TKO/DQ",
+            "short_label": "D. Lewis KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 370,
+            "books": {
+              "consensus": {
+                "cost": 400,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 400,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Derrick Lewis Submission",
+            "short_label": "D. Lewis Submission",
+            "selection": "submission",
+            "opening_cost": 3300,
+            "books": {
+              "consensus": {
+                "cost": 3500,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 3500,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 5000,
+            "books": {
+              "consensus": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Josh Hokit Points",
+            "short_label": "J. Hokit Points",
+            "selection": "points",
+            "opening_cost": 500,
+            "books": {
+              "consensus": {
+                "cost": 750,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 750,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Derrick Lewis Points",
+            "short_label": "D. Lewis Points",
+            "selection": "points",
+            "opening_cost": 1500,
+            "books": {
+              "consensus": {
+                "cost": 2000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 2000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Josh Hokit KO/TKO/DQ",
+            "short_label": "J. Hokit KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 165,
+            "books": {
+              "consensus": {
+                "cost": -115,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -115,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Josh Hokit Submission",
+            "short_label": "J. Hokit Submission",
+            "selection": "submission",
+            "opening_cost": 240,
+            "books": {
+              "consensus": {
+                "cost": 300,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 370,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Derrick Lewis",
+            "short_label": "D. Lewis",
+            "selection": "",
+            "opening_cost": 380,
+            "books": {
+              "consensus": {
+                "cost": 380,
+                "line": 1,
+                "updated": "2026-06-12 07:35:05",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "fight_distance": [
+          {
+            "label": "Yes",
+            "short_label": "Yes",
+            "selection": "yes",
+            "opening_cost": 380,
+            "books": {
+              "consensus": {
+                "cost": 450,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 32.84
+              },
+              "fanduel": {
+                "cost": 540,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 32.84
+              },
+              "draftkings": {
+                "cost": 450,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 32.84
+              }
+            }
+          },
+          {
+            "label": "No",
+            "short_label": "No",
+            "selection": "no",
+            "opening_cost": -600,
+            "books": {
+              "consensus": {
+                "cost": -750,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 90.9
+              },
+              "fanduel": {
+                "cost": -950,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 90.9
+              },
+              "draftkings": {
+                "cost": -750,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 90.9
+              }
+            }
+          }
+        ],
+        "total_rounds": [
+          {
+            "label": "Over",
+            "short_label": "Over",
+            "selection": "over",
+            "opening_cost": 114,
+            "books": {
+              "consensus": {
+                "cost": 160,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 35.71
+              },
+              "fanduel": {
+                "cost": 160,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 35.71
+              },
+              "draftkings": {
+                "cost": 160,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 35.71
+              }
+            }
+          },
+          {
+            "label": "Under",
+            "short_label": "Under",
+            "selection": "under",
+            "opening_cost": -146,
+            "books": {
+              "consensus": {
+                "cost": -210,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 65.4
+              },
+              "fanduel": {
+                "cost": -210,
+                "line": 1.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 65.4
+              },
+              "draftkings": {
+                "cost": -210,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 65.4
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "event_id": 5486,
+      "scheduled_utc": "2026-06-15 01:20:00",
+      "weight_class": "bantamweight(126-135)",
+      "fighter_a": {
+        "name": "Sean O'Malley",
+        "short": "S. O'Malley",
+        "bp_id": "60198"
+      },
+      "fighter_b": {
+        "name": "Aiemann Zahabi",
+        "short": "A. Zahabi",
+        "bp_id": "60540"
+      },
+      "status": "not_started",
+      "markets": {
+        "moneyline": [
+          {
+            "label": "Sean O'Malley",
+            "short_label": "S. O'Malley",
+            "selection": "",
+            "opening_cost": -390,
+            "books": {
+              "consensus": {
+                "cost": -450,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 81.11
+              },
+              "fanduel": {
+                "cost": -460,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 81.11
+              },
+              "draftkings": {
+                "cost": -425,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 81.11
+              }
+            }
+          },
+          {
+            "label": "Aiemann Zahabi",
+            "short_label": "A. Zahabi",
+            "selection": "",
+            "opening_cost": 280,
+            "books": {
+              "consensus": {
+                "cost": 330,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 20.71
+              },
+              "fanduel": {
+                "cost": 320,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 20.71
+              },
+              "draftkings": {
+                "cost": 330,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 20.71
+              }
+            }
+          }
+        ],
+        "fight_ending": [
+          {
+            "label": "Submission",
+            "short_label": "Submission",
+            "selection": "submission",
+            "opening_cost": 1100,
+            "books": {
+              "consensus": {
+                "cost": 1000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 1400,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Points",
+            "short_label": "Points",
+            "selection": "points",
+            "opening_cost": -185,
+            "books": {
+              "consensus": {
+                "cost": -170,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -170,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 6000,
+            "books": {
+              "consensus": {
+                "cost": 6000,
+                "line": 1,
+                "updated": "2026-06-12 07:35:05",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "KO/TKO/DQ",
+            "short_label": "KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 175,
+            "books": {
+              "consensus": {
+                "cost": 140,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 150,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "method_of_victory": [
+          {
+            "label": "Aiemann Zahabi Points",
+            "short_label": "A. Zahabi Points",
+            "selection": "points",
+            "opening_cost": 490,
+            "books": {
+              "consensus": {
+                "cost": 500,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 500,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 5000,
+            "books": {
+              "consensus": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Sean O'Malley KO/TKO/DQ",
+            "short_label": "S. O'Malley KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 230,
+            "books": {
+              "consensus": {
+                "cost": 185,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 185,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Aiemann Zahabi Submission",
+            "short_label": "A. Zahabi Submission",
+            "selection": "submission",
+            "opening_cost": 2200,
+            "books": {
+              "consensus": {
+                "cost": 2000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 2500,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Sean O'Malley Points",
+            "short_label": "S. O'Malley Points",
+            "selection": "points",
+            "opening_cost": 105,
+            "books": {
+              "consensus": {
+                "cost": 110,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 110,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Aiemann Zahabi",
+            "short_label": "A. Zahabi",
+            "selection": "",
+            "opening_cost": 500,
+            "books": {
+              "consensus": {
+                "cost": 500,
+                "line": 1,
+                "updated": "2026-06-12 07:35:05",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Aiemann Zahabi KO/TKO/DQ",
+            "short_label": "A. Zahabi KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 1200,
+            "books": {
+              "consensus": {
+                "cost": 1400,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 1400,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Sean O'Malley Submission",
+            "short_label": "S. O'Malley Submission",
+            "selection": "submission",
+            "opening_cost": 1600,
+            "books": {
+              "consensus": {
+                "cost": 1300,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 2200,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Sean O'Malley",
+            "short_label": "S. O'Malley",
+            "selection": "",
+            "opening_cost": -110,
+            "books": {
+              "consensus": {
+                "cost": -110,
+                "line": 1,
+                "updated": "2026-06-12 07:35:04",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "fight_distance": [
+          {
+            "label": "Yes",
+            "short_label": "Yes",
+            "selection": "yes",
+            "opening_cost": -174,
+            "books": {
+              "consensus": {
+                "cost": -160,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 62.89
+              },
+              "fanduel": {
+                "cost": -160,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 62.89
+              },
+              "draftkings": {
+                "cost": -160,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 62.89
+              }
+            }
+          },
+          {
+            "label": "No",
+            "short_label": "No",
+            "selection": "no",
+            "opening_cost": 136,
+            "books": {
+              "consensus": {
+                "cost": 126,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 41.84
+              },
+              "fanduel": {
+                "cost": 126,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 41.84
+              },
+              "draftkings": {
+                "cost": 120,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 41.84
+              }
+            }
+          }
+        ],
+        "total_rounds": [
+          {
+            "label": "Over",
+            "short_label": "Over",
+            "selection": "over",
+            "opening_cost": -215,
+            "books": {
+              "consensus": {
+                "cost": -196,
+                "line": 2.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 65.99
+              },
+              "fanduel": {
+                "cost": -196,
+                "line": 2.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 65.99
+              },
+              "draftkings": {
+                "cost": -195,
+                "line": 2.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 65.99
+              }
+            }
+          },
+          {
+            "label": "Under",
+            "short_label": "Under",
+            "selection": "under",
+            "opening_cost": 164,
+            "books": {
+              "consensus": {
+                "cost": 150,
+                "line": 2.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 40
+              },
+              "fanduel": {
+                "cost": 150,
+                "line": 2.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 40
+              },
+              "draftkings": {
+                "cost": 150,
+                "line": 2.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 40
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "event_id": 5487,
+      "scheduled_utc": "2026-06-15 01:40:00",
+      "weight_class": "heavyweight(206-265)",
+      "fighter_a": {
+        "name": "Alex Pereira",
+        "short": "A. Pereira",
+        "bp_id": "61252"
+      },
+      "fighter_b": {
+        "name": "Ciryl Gane",
+        "short": "C. Gane",
+        "bp_id": "60445"
+      },
+      "status": "not_started",
+      "markets": {
+        "moneyline": [
+          {
+            "label": "Ciryl Gane",
+            "short_label": "C. Gane",
+            "selection": "",
+            "opening_cost": -106,
+            "books": {
+              "consensus": {
+                "cost": -112,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 51.45
+              },
+              "fanduel": {
+                "cost": -113,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 51.45
+              },
+              "draftkings": {
+                "cost": -112,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 51.45
+              }
+            }
+          },
+          {
+            "label": "Alex Pereira",
+            "short_label": "A. Pereira",
+            "selection": "",
+            "opening_cost": -120,
+            "books": {
+              "consensus": {
+                "cost": -110,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 50.98
+              },
+              "fanduel": {
+                "cost": -113,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 50.98
+              },
+              "draftkings": {
+                "cost": -108,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 50.98
+              }
+            }
+          }
+        ],
+        "fight_ending": [
+          {
+            "label": "Points",
+            "short_label": "Points",
+            "selection": "points",
+            "opening_cost": 175,
+            "books": {
+              "consensus": {
+                "cost": 160,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 165,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Submission",
+            "short_label": "Submission",
+            "selection": "submission",
+            "opening_cost": 750,
+            "books": {
+              "consensus": {
+                "cost": 650,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 800,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 6000,
+            "books": {
+              "consensus": {
+                "cost": 6000,
+                "line": 1,
+                "updated": "2026-06-12 07:35:03",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "KO/TKO/DQ",
+            "short_label": "KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": -165,
+            "books": {
+              "consensus": {
+                "cost": -175,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -160,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "method_of_victory": [
+          {
+            "label": "Ciryl Gane Points",
+            "short_label": "C. Gane Points",
+            "selection": "points",
+            "opening_cost": 310,
+            "books": {
+              "consensus": {
+                "cost": 300,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 300,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Alex Pereira KO/TKO/DQ",
+            "short_label": "A. Pereira KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 160,
+            "books": {
+              "consensus": {
+                "cost": 150,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 150,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 5000,
+            "books": {
+              "consensus": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Alex Pereira",
+            "short_label": "A. Pereira",
+            "selection": "",
+            "opening_cost": 130,
+            "books": {
+              "consensus": {
+                "cost": 130,
+                "line": 1,
+                "updated": "2026-06-12 07:35:04",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Ciryl Gane Submission",
+            "short_label": "C. Gane Submission",
+            "selection": "submission",
+            "opening_cost": 1000,
+            "books": {
+              "consensus": {
+                "cost": 900,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 1000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Alex Pereira Submission",
+            "short_label": "A. Pereira Submission",
+            "selection": "submission",
+            "opening_cost": 2000,
+            "books": {
+              "consensus": {
+                "cost": 2200,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 2200,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Ciryl Gane KO/TKO/DQ",
+            "short_label": "C. Gane KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 300,
+            "books": {
+              "consensus": {
+                "cost": 330,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 330,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Ciryl Gane",
+            "short_label": "C. Gane",
+            "selection": "",
+            "opening_cost": 255,
+            "books": {
+              "consensus": {
+                "cost": 255,
+                "line": 1,
+                "updated": "2026-06-12 07:35:04",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Alex Pereira Points",
+            "short_label": "A. Pereira Points",
+            "selection": "points",
+            "opening_cost": 700,
+            "books": {
+              "consensus": {
+                "cost": 650,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 650,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "fight_distance": [
+          {
+            "label": "Yes",
+            "short_label": "Yes",
+            "selection": "yes",
+            "opening_cost": 184,
+            "books": {
+              "consensus": {
+                "cost": 165,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 36.9
+              },
+              "fanduel": {
+                "cost": 172,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 36.9
+              },
+              "draftkings": {
+                "cost": 165,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 36.9
+              }
+            }
+          },
+          {
+            "label": "No",
+            "short_label": "No",
+            "selection": "no",
+            "opening_cost": -240,
+            "books": {
+              "consensus": {
+                "cost": -220,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 70.93
+              },
+              "fanduel": {
+                "cost": -225,
+                "line": 1,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 70.93
+              },
+              "draftkings": {
+                "cost": -220,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 70.93
+              }
+            }
+          }
+        ],
+        "total_rounds": [
+          {
+            "label": "Over",
+            "short_label": "Over",
+            "selection": "over",
+            "opening_cost": -130,
+            "books": {
+              "consensus": {
+                "cost": -160,
+                "line": 2.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 65.03
+              },
+              "fanduel": {
+                "cost": 106,
+                "line": 3.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 65.03
+              },
+              "draftkings": {
+                "cost": -166,
+                "line": 2.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 65.03
+              }
+            }
+          },
+          {
+            "label": "Under",
+            "short_label": "Under",
+            "selection": "under",
+            "opening_cost": 102,
+            "books": {
+              "consensus": {
+                "cost": 125,
+                "line": 2.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 40.65
+              },
+              "fanduel": {
+                "cost": -134,
+                "line": 3.5,
+                "updated": "2026-06-12 07:38:57",
+                "no_vig_pct": 40.65
+              },
+              "draftkings": {
+                "cost": 130,
+                "line": 2.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 40.65
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "event_id": 5488,
+      "scheduled_utc": "2026-06-15 02:10:00",
+      "weight_class": "lightweight(146-155)",
+      "fighter_a": {
+        "name": "Ilia Topuria",
+        "short": "I. Topuria",
+        "bp_id": "60960"
+      },
+      "fighter_b": {
+        "name": "Justin Gaethje",
+        "short": "J. Gaethje",
+        "bp_id": "60502"
+      },
+      "status": "not_started",
+      "markets": {
+        "moneyline": [
+          {
+            "label": "Ilia Topuria",
+            "short_label": "I. Topuria",
+            "selection": "",
+            "opening_cost": -520,
+            "books": {
+              "consensus": {
+                "cost": -560,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": 83.43
+              },
+              "fanduel": {
+                "cost": -560,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": 83.43
+              },
+              "draftkings": {
+                "cost": -520,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 83.43
+              }
+            }
+          },
+          {
+            "label": "Justin Gaethje",
+            "short_label": "J. Gaethje",
+            "selection": "",
+            "opening_cost": 350,
+            "books": {
+              "consensus": {
+                "cost": 390,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": 18.12
+              },
+              "fanduel": {
+                "cost": 370,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": 18.12
+              },
+              "draftkings": {
+                "cost": 390,
+                "line": 1,
+                "updated": "2026-06-12 07:37:15",
+                "no_vig_pct": 18.12
+              }
+            }
+          }
+        ],
+        "fight_ending": [
+          {
+            "label": "Points",
+            "short_label": "Points",
+            "selection": "points",
+            "opening_cost": 280,
+            "books": {
+              "consensus": {
+                "cost": 600,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 650,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "KO/TKO/DQ",
+            "short_label": "KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": -155,
+            "books": {
+              "consensus": {
+                "cost": -440,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -380,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 6000,
+            "books": {
+              "consensus": {
+                "cost": 6000,
+                "line": 1,
+                "updated": "2026-06-12 07:35:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Submission",
+            "short_label": "Submission",
+            "selection": "submission",
+            "opening_cost": 330,
+            "books": {
+              "consensus": {
+                "cost": 370,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 550,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "method_of_victory": [
+          {
+            "label": "Ilia Topuria",
+            "short_label": "I. Topuria",
+            "selection": "",
+            "opening_cost": 1000,
+            "books": {
+              "consensus": {
+                "cost": 1000,
+                "line": 1,
+                "updated": "2026-06-12 07:35:02",
+                "no_vig_pct": 14.9
+              }
+            }
+          },
+          {
+            "label": "Justin Gaethje KO/TKO/DQ",
+            "short_label": "J. Gaethje KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 850,
+            "books": {
+              "consensus": {
+                "cost": 550,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 550,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Justin Gaethje Submission",
+            "short_label": "J. Gaethje Submission",
+            "selection": "submission",
+            "opening_cost": 4000,
+            "books": {
+              "consensus": {
+                "cost": 3000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 3500,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Ilia Topuria Points",
+            "short_label": "I. Topuria Points",
+            "selection": "points",
+            "opening_cost": 420,
+            "books": {
+              "consensus": {
+                "cost": 1200,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 1200,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Justin Gaethje",
+            "short_label": "J. Gaethje",
+            "selection": "",
+            "opening_cost": 1500,
+            "books": {
+              "consensus": {
+                "cost": 1500,
+                "line": 1,
+                "updated": "2026-06-12 07:35:02",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Ilia Topuria Submission",
+            "short_label": "I. Topuria Submission",
+            "selection": "submission",
+            "opening_cost": 360,
+            "books": {
+              "consensus": {
+                "cost": 375,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 600,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Ilia Topuria KO/TKO/DQ",
+            "short_label": "I. Topuria KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": -110,
+            "books": {
+              "consensus": {
+                "cost": -210,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -210,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Justin Gaethje Points",
+            "short_label": "J. Gaethje Points",
+            "selection": "points",
+            "opening_cost": 1200,
+            "books": {
+              "consensus": {
+                "cost": 1400,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 1400,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 5000,
+            "books": {
+              "consensus": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "fight_distance": [
+          {
+            "label": "Yes",
+            "short_label": "Yes",
+            "selection": "yes",
+            "opening_cost": 290,
+            "books": {
+              "consensus": {
+                "cost": 600,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": 16
+              },
+              "fanduel": {
+                "cost": 660,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": 16
+              },
+              "draftkings": {
+                "cost": 600,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 16
+              }
+            }
+          },
+          {
+            "label": "No",
+            "short_label": "No",
+            "selection": "no",
+            "opening_cost": -410,
+            "books": {
+              "consensus": {
+                "cost": -1200,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": 93.5
+              },
+              "fanduel": {
+                "cost": -1200,
+                "line": 1,
+                "updated": "2026-06-12 07:38:58",
+                "no_vig_pct": 93.5
+              },
+              "draftkings": {
+                "cost": -1200,
+                "line": 1,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 93.5
+              }
+            }
+          }
+        ],
+        "total_rounds": [
+          {
+            "label": "Over",
+            "short_label": "Over",
+            "selection": "over",
+            "opening_cost": -108,
+            "books": {
+              "consensus": {
+                "cost": -120,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 50.98
+              },
+              "fanduel": {
+                "cost": -118,
+                "line": 1.5,
+                "updated": "2026-06-11 18:02:47",
+                "no_vig_pct": 50.98
+              },
+              "draftkings": {
+                "cost": -115,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 50.98
+              }
+            }
+          },
+          {
+            "label": "Under",
+            "short_label": "Under",
+            "selection": "under",
+            "opening_cost": -118,
+            "books": {
+              "consensus": {
+                "cost": -110,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 50.5
+              },
+              "fanduel": {
+                "cost": -108,
+                "line": 1.5,
+                "updated": "2026-06-11 18:02:47",
+                "no_vig_pct": 50.5
+              },
+              "draftkings": {
+                "cost": -115,
+                "line": 1.5,
+                "updated": "2026-06-12 07:37:16",
+                "no_vig_pct": 50.5
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

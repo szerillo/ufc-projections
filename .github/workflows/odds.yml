@@ -1,0 +1,64 @@
+name: Pull UFC odds
+
+on:
+  schedule:
+    # Tick every 30 min. The Python controller decides whether to actually
+    # hit the API based on the tiered cadence + per-card kill switch.
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: odds-pull
+  cancel-in-progress: false
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install pyyaml
+
+      - name: Run odds tick
+        id: tick
+        env:
+          # Optional override — uses the public bundle key by default
+          BETTINGPROS_API_KEY: ${{ secrets.BETTINGPROS_API_KEY }}
+        run: |
+          set +e
+          python scripts/odds_tick.py
+          echo "rc=$?" >> $GITHUB_OUTPUT
+
+      - name: Commit odds.json if changed
+        if: steps.tick.outputs.rc == '0'
+        run: |
+          set -e
+          git config user.name  'bp-odds-bot'
+          git config user.email 'bp-odds-bot@users.noreply.github.com'
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "odds: refresh at $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi
+
+      - name: Exit clean when controller skipped (rc=1)
+        if: steps.tick.outputs.rc == '1'
+        run: echo "Controller decided to skip this tick — no fetch performed."
+
+      - name: Fail on controller error (rc>=2)
+        if: steps.tick.outputs.rc != '0' && steps.tick.outputs.rc != '1'
+        run: exit 1

@@ -1,0 +1,2993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light only" />
+<title>UFC Freedom 250 · Fight Form</title>
+<script>
+// Embed-mode detection: sets data-embed on <body> early so CSS can hide chrome
+(function() {
+  const p = new URLSearchParams(location.search);
+  const mode = p.get("embed");
+  if (!mode) return;
+  document.documentElement.setAttribute("data-embed", mode);
+  const fightN = p.get("n") || p.get("fight");
+  if (fightN) document.documentElement.setAttribute("data-embed-fight", fightN);
+  // EMBED MODE: apply post-render adjustments based on URL params
+  const embedMode = document.documentElement.getAttribute("data-embed");
+  if (embedMode === "fight") {
+    const fightN = parseInt(document.documentElement.getAttribute("data-embed-fight") || "1", 10);
+    const tabs = document.querySelectorAll(".ff-tab");
+    const tab = tabs[fightN - 1] || tabs[0];
+    if (tab) tab.click();
+  }
+
+  // iframe-height postMessage so parents that opt-in to data-autoresize="true" can size automatically.
+  function postHeight() {
+    const h = document.body.scrollHeight;
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: "ufc-iframe-height", height: h }, "*");
+    }
+  }
+  const ro = new ResizeObserver(postHeight);
+  ro.observe(document.body);
+  window.addEventListener("load", postHeight);
+  setTimeout(postHeight, 250);
+})();
+</script>
+<style>
+:root {
+  color-scheme: light only;
+  --bg: #ffffff;
+  --bg-muted: #f4f1ec;
+  --bg-card: #fafaf7;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --border: #e5e1d8;
+  --border-strong: #c8c2b3;
+  --header-bg: #0e1116;
+  --header-bg-2: #1a1f28;
+  --action-green: #11c75c;
+  --action-green-dark: #0a8842;
+  --pos: #11c75c;
+  --pos-soft: #d4f5e2;
+  --pos-strong: #0a6b35;
+  --neg: #d63636;
+  --neg-soft: #fbdada;
+  --neg-strong: #8a1818;
+  --neutral: #6b6b6b;
+  --fav-a: #d63636;
+  --fav-b: #1b4fb0;
+  --fav-b-soft: #e7eef9;
+  --fav-a-soft: #fbdada;
+}
+html, body {
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  color: var(--text);
+  line-height: 1.4;
+  font-size: 13px;
+}
+.ff-widget {
+  max-width: 1180px;
+  margin: 0 auto;
+  background: var(--bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* ---- Header ---- */
+.ff-header {
+  position: relative;
+  background: linear-gradient(135deg, var(--header-bg) 0%, var(--header-bg-2) 100%);
+  color: #fff;
+  padding: 18px 20px 14px;
+  text-align: center;
+  border-bottom: 3px solid var(--action-green);
+}
+.ff-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 3px;
+  letter-spacing: -0.3px;
+}
+.ff-subtitle {
+  font-size: 12px;
+  opacity: 0.78;
+  margin: 0;
+  font-weight: 500;
+}
+.ff-byline-header {
+  font-size: 11px;
+  margin-top: 4px;
+  opacity: 0.88;
+}
+.ff-byline-header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.ff-odds-status {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+  font-family: "SF Mono", Menlo, monospace;
+}
+.ff-odds-status.fresh { background: rgba(17,199,92,0.25); color: #d4f5e2; }
+.ff-odds-status.stale { background: rgba(214,54,54,0.25); color: #fbdada; }
+.ff-odds-status .dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--action-green);
+  margin-right: 5px;
+  vertical-align: 1px;
+  animation: pulse 2s ease-in-out infinite;
+}
+.ff-odds-status.stale .dot { background: var(--neg); animation: none; }
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.ff-brand {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.ff-brand-text {
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  color: #fff;
+}
+.ff-brand-check {
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: var(--action-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ff-brand-check svg { width: 10px; height: 10px; }
+@media (max-width: 600px) {
+  .ff-brand { position: static; justify-content: center; margin-bottom: 8px; }
+  .ff-header { padding: 14px 12px; }
+  .ff-title { font-size: 17px; }
+}
+
+/* ---- Embed modes ---- */
+/* When embedded as iframe, hide outer chrome by mode. The widget body stays. */
+html[data-embed] .ff-widget { box-shadow: none; border-radius: 0; }
+html[data-embed] .ff-header { padding: 10px 14px 8px; border-radius: 0; }
+html[data-embed] .ff-byline-header { display: none; }
+html[data-embed] .ff-footer { display: none; }
+/* embed=moneylines or embed=props: hide everything else */
+html[data-embed="moneylines"] .ff-header,
+html[data-embed="moneylines"] .view-tabs,
+html[data-embed="moneylines"] #view-form,
+html[data-embed="moneylines"] #view-props,
+html[data-embed="props"] .ff-header,
+html[data-embed="props"] .view-tabs,
+html[data-embed="props"] #view-form,
+html[data-embed="props"] #view-ml { display: none !important; }
+html[data-embed="moneylines"] #view-ml,
+html[data-embed="props"] #view-props { display: block !important; }
+/* embed=fight: single fight panel, no view tabs, no fight scroller */
+html[data-embed="fight"] .view-tabs,
+html[data-embed="fight"] .ff-tabs-wrap,
+html[data-embed="fight"] #view-ml,
+html[data-embed="fight"] #view-props { display: none !important; }
+html[data-embed="fight"] .ff-header { display: none; }
+html[data-embed="fight"] #view-form { display: block !important; }
+/* embed=full: keep view tabs and fight scroller, hide header brand */
+html[data-embed="full"] .ff-brand { display: none !important; }
+html[data-embed="full"] .ff-byline-header { display: none; }
+
+/* ---- View tabs (top-level: Form / Moneylines / Props) ---- */
+.view-tabs {
+  display: flex;
+  background: var(--bg-muted);
+  border-bottom: 1px solid var(--border);
+}
+.view-tab {
+  flex: 1;
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+.view-tab:hover { color: var(--text); }
+.view-tab.active {
+  background: var(--bg);
+  color: var(--text);
+  border-bottom-color: var(--action-green);
+}
+.view-pane { display: none; }
+.view-pane.active { display: block; }
+
+/* ---- Fight tabs ---- */
+.ff-tabs-wrap {
+  background: var(--bg-muted);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+}
+.ff-tabs {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.ff-tabs::-webkit-scrollbar { height: 5px; }
+.ff-tabs::-webkit-scrollbar-thumb { background: #cfcabd; border-radius: 3px; }
+.ff-tab {
+  flex: 0 0 auto;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  background: var(--bg-muted);
+  border-left: 0; border-right: 0; border-top: 0;
+  font-family: inherit;
+}
+.ff-tab:hover { color: var(--text); }
+.ff-tab.active {
+  color: var(--text);
+  background: var(--bg);
+  border-bottom-color: var(--action-green);
+}
+.ff-tab .ft-num {
+  display: inline-block;
+  background: var(--text);
+  color: #fff;
+  border-radius: 3px;
+  font-size: 9.5px;
+  padding: 1px 5px;
+  margin-right: 5px;
+  font-weight: 800;
+}
+.ff-tab.active .ft-num { background: var(--action-green-dark); }
+.ff-tab .ft-title {
+  display: inline-block;
+  background: #c8a951;
+  color: #1a1a1a;
+  border-radius: 3px;
+  font-size: 8.5px;
+  padding: 1px 4px;
+  margin-left: 4px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  vertical-align: 1px;
+}
+.fp-title-belt {
+  background: #c8a951;
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 10.5px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.7px;
+}
+
+/* ---- Fight panel ---- */
+.fight-panel { display: none; padding: 16px 18px; }
+.fight-panel.active { display: block; }
+
+.fp-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.fp-fight-num {
+  background: var(--action-green);
+  color: #fff;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+.fp-card-tag {
+  background: var(--text);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.8px;
+}
+.fp-weight {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-left: auto;
+}
+.fp-headline {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 8px 0 4px;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+.fp-headline .vs {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0 6px;
+  font-size: 18px;
+}
+.fp-odds {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.fp-odds .num {
+  color: var(--text);
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 700;
+}
+
+/* ---- Tale of the Tape: horizontal grid with per-fighter expand ---- */
+.tape-grid-cols {
+  display: grid;
+  grid-template-columns: 24px 1.8fr 56px 60px 60px 80px 100px 80px 50px 90px 78px;
+  align-items: center;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.tape-h-header {
+  background: var(--header-bg);
+  color: #fff;
+  font-weight: 800;
+  font-size: 9.5px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.tape-h-header > div {
+  padding: 7px 8px;
+  text-align: center;
+  white-space: nowrap;
+}
+.tape-h-header > div.tleft { text-align: left; }
+details.tape-fighter-row {
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+details.tape-fighter-row:last-of-type { border-bottom: none; }
+details.tape-fighter-row > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+details.tape-fighter-row > summary::-webkit-details-marker { display: none; }
+.tape-fighter-row > summary > .tape-grid-cols > div {
+  padding: 9px 8px;
+  text-align: center;
+  white-space: nowrap;
+}
+.tape-fighter-row > summary > .tape-grid-cols > div.chev {
+  font-size: 9px;
+  color: var(--action-green-dark);
+  font-weight: 800;
+  text-align: center;
+  transition: transform 0.15s ease;
+}
+.tape-fighter-row[open] > summary > .tape-grid-cols > div.chev { transform: rotate(90deg); }
+.tape-fighter-row > summary > .tape-grid-cols > div.tleft {
+  text-align: left;
+  font-weight: 800;
+  font-size: 13px;
+}
+.tape-fighter-row > summary > .tape-grid-cols > div.tleft .nickname {
+  display: block;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.tape-fighter-row > summary:hover { background: var(--bg-muted); }
+.tape-fighter-row > summary > .tape-grid-cols > div.edge-cell-side {
+  background: var(--pos-soft);
+  color: var(--pos-strong);
+  font-weight: 800;
+}
+.tape-fighter-row > summary > .tape-grid-cols > div .arr {
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 800;
+  letter-spacing: -1px;
+  font-size: 12px;
+  margin-left: 3px;
+  color: var(--action-green-dark);
+}
+.tape-fighter-row > summary > .tape-grid-cols > div .arr.even {
+  color: var(--text-muted);
+  font-size: 10px;
+  letter-spacing: 0;
+}
+.tape-fighter-row > .body {
+  padding: 12px 14px;
+  background: var(--bg-muted);
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 720px) {
+  .tape-grid-cols {
+    grid-template-columns: 20px 1.5fr 38px 50px 70px 70px 78px;
+  }
+  /* hide less critical cols on mobile: Reach, Stance, UFC, Min */
+  .tape-grid-cols > .hide-mobile { display: none; }
+}
+
+/* ---- BET REC key in notes ---- */
+.notes-block .key.bet-rec-key {
+  background: var(--action-green);
+  color: #fff;
+}
+
+/* ---- Tale of the Tape: arrow edge rows (legacy, may still be referenced) ---- */
+.tape-cell.edge-row {
+  background: var(--bg-muted);
+  font-weight: 800;
+  font-size: 13px;
+}
+.tape-cell.edge-row.edge-side {
+  color: var(--action-green-dark);
+  background: var(--pos-soft);
+}
+.tape-cell.label.with-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 4px;
+}
+.tape-cell.label.with-arrow .lbl {
+  font-size: 9.5px;
+  font-weight: 800;
+}
+.tape-cell.label.with-arrow .arr {
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: -1px;
+  font-weight: 800;
+  color: var(--text-muted);
+  line-height: 1;
+}
+.tape-cell.label.with-arrow .arr.dom-left,
+.tape-cell.label.with-arrow .arr.solid-left,
+.tape-cell.label.with-arrow .arr.dom-right,
+.tape-cell.label.with-arrow .arr.solid-right { color: var(--action-green-dark); font-size: 13px; }
+.tape-cell.label.with-arrow .arr.slight-left,
+.tape-cell.label.with-arrow .arr.slight-right { color: var(--action-green-dark); }
+.tape-cell.label.with-arrow .arr.even { color: var(--text-muted); font-size: 11px; letter-spacing: 0; }
+
+/* ---- Matchup edges (arrow system) — kept for any future use ---- */
+.matchup-edges {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 16px;
+}
+.matchup-edges .me-header {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex; align-items: center; gap: 6px;
+  border-radius: 5px 5px 0 0;
+}
+.matchup-edges .me-header .bullet { width:6px; height:6px; background: var(--action-green); border-radius: 50%; }
+.me-cols {
+  display: grid;
+  grid-template-columns: 110px 1fr 110px 70px 60px 110px 1fr;
+  font-size: 11.5px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-muted);
+  font-weight: 800; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.4px;
+  font-size: 9.5px;
+}
+.me-cols > div { padding: 5px 8px; text-align: center; }
+.me-cols > div.tleft { text-align: left; }
+.me-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 110px 70px 60px 110px 1fr;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.me-row:last-child { border-bottom: none; }
+.me-row > div { padding: 7px 8px; }
+.me-cat {
+  font-weight: 800;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+.me-fighter-a, .me-fighter-b {
+  font-weight: 700;
+  font-size: 11px;
+  text-align: center;
+  white-space: nowrap;
+}
+.me-fighter-a.edge, .me-fighter-b.edge {
+  font-weight: 800;
+  color: var(--action-green-dark);
+  background: var(--pos-soft);
+  border-radius: 3px;
+  padding: 4px 6px;
+  display: inline-block;
+}
+.me-arrow {
+  text-align: center;
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: -1px;
+  color: var(--text-muted);
+}
+.me-arrow.dom { color: var(--action-green-dark); font-size: 15px; }
+.me-arrow.solid { color: var(--action-green-dark); }
+.me-arrow.even { color: var(--text-muted); font-size: 11px; letter-spacing: 0; }
+.me-val-a, .me-val-b {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  font-family: "SF Mono", Menlo, monospace;
+}
+.me-val-a { text-align: right; }
+.me-val-b { text-align: left; }
+@media (max-width: 720px) {
+  .me-cols, .me-row {
+    grid-template-columns: 86px 1fr 60px 1fr;
+  }
+  .me-val-a, .me-val-b { display: none; }
+  .me-row > div { padding: 6px 4px; font-size: 11px; }
+}
+
+/* ---- In-ToT fighter name pop-outs ---- */
+.tape-cell.fighter-name.clickable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: background 0.12s ease;
+}
+.tape-cell.fighter-name.clickable:hover { background: #2a2f3a; }
+.tape-cell.fighter-name.clickable .chev {
+  display: inline-block;
+  font-size: 9px;
+  color: var(--action-green);
+  margin-left: 5px;
+  transition: transform 0.15s ease;
+  vertical-align: 2px;
+}
+.tape-cell.fighter-name.clickable.active { background: var(--action-green-dark); }
+.tape-cell.fighter-name.clickable.active .chev { transform: rotate(90deg); color: #fff; }
+.ftr-popout {
+  background: var(--bg-muted);
+  border-top: 2px solid var(--action-green);
+  padding: 10px 10px;
+  display: none;
+  font-size: 11px;
+}
+.ftr-popout.active { display: block; }
+.ftr-popout .pop-head {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin: 0 0 5px;
+}
+.ftr-popout .pop-section { margin-bottom: 10px; }
+.ftr-popout .pop-section:last-child { margin-bottom: 0; }
+.ftr-popout .pop-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.ftr-popout .pop-recent .recent-row {
+  font-size: 10.5px;
+  padding: 5px 7px;
+  grid-template-columns: 22px 1fr auto;
+}
+.ftr-popout .pop-recent .recent-row .res {
+  font-size: 9px;
+  padding: 1px 3px;
+}
+.ftr-popout .pop-recent .recent-row .opp { font-size: 10.5px; }
+.ftr-popout .pop-recent .recent-row .opp .meta { font-size: 9px; }
+.ftr-popout .pop-recent .recent-row .odds { font-size: 10px; }
+@media (max-width: 540px) {
+  .ftr-popout .pop-grid-2 { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* ---- Sub-fighter rows inside Career Stats collapsible ---- */
+details.sub-fighter {
+  border-bottom: 1px solid var(--border);
+}
+details.sub-fighter:last-of-type { border-bottom: none; }
+details.sub-fighter > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  background: var(--bg-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  user-select: none;
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+details.sub-fighter > summary::-webkit-details-marker { display: none; }
+details.sub-fighter > summary .chev {
+  font-size: 9px;
+  color: var(--action-green-dark);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+details.sub-fighter[open] > summary .chev { transform: rotate(90deg); }
+details.sub-fighter > summary .fighter-name-mini {
+  font-weight: 800;
+  font-size: 13px;
+}
+details.sub-fighter > summary .record-mini {
+  margin-left: auto;
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+details.sub-fighter > .body {
+  padding: 12px 14px;
+  background: #fff;
+}
+
+/* ---- Mobile-friendly table wrappers ---- */
+@media (max-width: 600px) {
+  .fp-proj { overflow-x: auto; }
+  .fp-proj-table { min-width: 480px; }
+  .proj-table { min-width: 460px; }
+  details.sub-fighter > summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  details.sub-fighter > summary .record-mini { margin-left: 0; }
+}
+
+/* ---- Collapsable sections ---- */
+details.collapsible {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+details.collapsible > summary {
+  background: var(--bg-muted);
+  padding: 9px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+details.collapsible > summary::-webkit-details-marker { display: none; }
+details.collapsible > summary::before {
+  content: "▶";
+  font-size: 9px;
+  color: var(--action-green-dark);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+details.collapsible[open] > summary::before { transform: rotate(90deg); }
+details.collapsible > summary .bullet {
+  width: 6px; height: 6px; background: var(--action-green); border-radius: 50%; display: inline-block;
+}
+details.collapsible > summary .meta {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: none;
+  letter-spacing: 0;
+}
+details.collapsible > .body {
+  padding: 12px 14px;
+}
+
+/* Fighter dropdown summary styling */
+details.fighter-drop > summary {
+  background: var(--header-bg);
+  color: #fff;
+}
+details.fighter-drop > summary::before {
+  color: var(--action-green);
+}
+details.fighter-drop > summary .nickname {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.3px;
+  text-transform: none;
+  margin-left: 6px;
+}
+details.fighter-drop > summary .record {
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  margin-left: auto;
+  letter-spacing: 0.4px;
+  text-transform: none;
+}
+
+/* ---- Bet rec banner ---- */
+.bet-rec-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, var(--action-green) 0%, var(--action-green-dark) 100%);
+  color: #fff;
+  border-radius: 6px;
+  padding: 9px 14px;
+  margin-bottom: 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+.bet-rec-banner .star {
+  font-size: 14px;
+  color: #fff;
+}
+.bet-rec-banner .label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  opacity: 0.95;
+}
+.bet-rec-banner .fighter {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+.bet-rec-banner .stake {
+  margin-left: auto;
+  background: rgba(255,255,255,0.18);
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  font-weight: 800;
+}
+.bet-rec-banner.no-bet {
+  background: linear-gradient(90deg, #6b6b6b 0%, #4a4a4a 100%);
+}
+.bet-rec-banner.no-bet .stake { background: rgba(255,255,255,0.12); }
+
+/* ---- Sim banner ---- */
+.sim-banner {
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+.sim-pair { display: flex; flex-direction: column; }
+.sim-label {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--text-muted);
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+.sim-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  font-family: "SF Mono", Menlo, monospace;
+}
+.edge-pill {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-family: "SF Mono", Menlo, monospace;
+}
+.edge-pill.strong-pos { background: var(--pos-soft); color: var(--pos-strong); }
+.edge-pill.pos { color: var(--action-green-dark); }
+.edge-pill.neutral { background: #efebe2; color: var(--text-muted); }
+.edge-pill.neg { color: var(--neg); }
+.edge-pill.strong-neg { background: var(--neg-soft); color: var(--neg-strong); }
+
+/* ---- Tale of the tape ---- */
+.tape-grid {
+  display: grid;
+  grid-template-columns: 1fr 90px 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.tape-cell {
+  padding: 8px 10px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+.tape-cell.left { text-align: right; }
+.tape-cell.right { text-align: left; }
+.tape-cell.label {
+  text-align: center;
+  background: var(--bg-muted);
+  color: var(--text-muted);
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.tape-cell.fighter-name {
+  font-size: 16px; font-weight: 800;
+  background: var(--header-bg); color: #fff;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--header-bg);
+  letter-spacing: -0.2px;
+}
+.tape-cell.fighter-name .small {
+  display: block;
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+.tape-vs-header {
+  background: var(--action-green);
+  color: #fff;
+  text-align: center;
+  font-weight: 800;
+  font-size: 13px;
+  border-bottom: 1px solid var(--action-green-dark);
+  padding: 11px 14px;
+  letter-spacing: 1px;
+}
+.tape-grid > .tape-cell:nth-last-child(-n+3) { border-bottom: none; }
+
+/* ---- Stats grids ---- */
+.stats-section { margin-bottom: 18px; }
+.stats-section h3 {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--text);
+  display: flex;
+  align-items: center;
+}
+.stats-section h3 .bullet {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--action-green);
+  border-radius: 50%;
+  margin-right: 7px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+.stat-cell {
+  padding: 7px 10px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid var(--border);
+}
+.stat-cell.left { text-align: right; }
+.stat-cell.right { text-align: left; }
+.stat-cell.center {
+  text-align: center;
+  background: var(--bg-muted);
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  padding: 7px 14px;
+}
+.stats-grid > div:nth-last-child(-n+3) { border-bottom: none; }
+
+/* ---- Bar comparison ---- */
+.bar-stat {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+.bar-stat .lbl {
+  flex: 0 0 110px;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.bar-stat .lvalue, .bar-stat .rvalue {
+  flex: 0 0 50px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 11.5px;
+}
+.bar-stat .lvalue { text-align: right; }
+.bar-stat .bar {
+  flex: 1;
+  display: flex;
+  height: 14px;
+  background: var(--bg-muted);
+  border-radius: 7px;
+  overflow: hidden;
+  position: relative;
+}
+.bar-stat .bar .lbar {
+  background: var(--fav-a);
+  height: 100%;
+  margin-left: auto;
+}
+.bar-stat .bar .rbar {
+  background: var(--fav-b);
+  height: 100%;
+}
+.bar-stat .bar .divider {
+  position: absolute; top: 0; bottom: 0; left: 50%;
+  width: 1px;
+  background: rgba(255,255,255,0.7);
+}
+
+/* Diverging bar: each fighter's value grows OUT from center */
+.bar-stat .bar.diverge {
+  position: relative;
+  background: var(--bg-muted);
+}
+.bar-stat .bar.diverge .bar-half {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 50%;
+  display: flex;
+}
+.bar-stat .bar.diverge .bar-half.left { left: 0; justify-content: flex-end; }
+.bar-stat .bar.diverge .bar-half.right { right: 0; justify-content: flex-start; }
+.bar-stat .bar.diverge .lbar,
+.bar-stat .bar.diverge .rbar { height: 100%; }
+.bar-stat .bar.diverge .center-line {
+  position: absolute; top: -2px; bottom: -2px; left: 50%;
+  width: 1px;
+  background: var(--text);
+  z-index: 2;
+}
+
+/* Emphasized key bars (Diff = striking; Ctrl = grappling) */
+.bar-stat.key {
+  background: linear-gradient(90deg, transparent 0%, var(--bg-muted) 8%, var(--bg-muted) 92%, transparent 100%);
+  border-radius: 6px;
+  padding: 7px 8px;
+  margin: 4px -4px;
+}
+.bar-stat.key .bar { height: 18px; border-radius: 9px; }
+.bar-stat.key .lbl {
+  color: var(--text);
+  font-weight: 800;
+  position: relative;
+  padding-left: 12px;
+}
+.bar-stat.key .lbl::before {
+  content: "★";
+  color: var(--action-green-dark);
+  position: absolute;
+  left: 0; top: 0;
+  font-size: 11px;
+}
+.bar-stat.key .lvalue, .bar-stat.key .rvalue {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+/* ---- Per-fight projection mini-tables ---- */
+.fp-proj {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 16px;
+}
+.fp-proj-header {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 7px 12px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.fp-proj-header .bullet {
+  width: 6px; height: 6px;
+  background: var(--action-green);
+  border-radius: 50%;
+  display: inline-block;
+}
+.fp-proj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  table-layout: fixed;
+}
+.fp-proj-table th {
+  background: var(--bg-muted);
+  padding: 6px 6px;
+  text-align: center;
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+.fp-proj-table th.tleft { text-align: left; padding-left: 12px; }
+.fp-proj-table td {
+  padding: 7px 6px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+}
+.fp-proj-table td.tleft {
+  text-align: left;
+  padding-left: 12px;
+  font-weight: 800;
+}
+.fp-proj-table tr:last-child td { border-bottom: none; }
+.fp-proj-table .odds {
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 800;
+  font-size: 12px;
+}
+.fp-proj-table .pct {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 11.5px;
+}
+.fp-proj-table tr.fav td:first-child { border-left: 3px solid var(--action-green); }
+.fp-proj-table tr.dog td:first-child { border-left: 3px solid var(--text-muted); }
+.fp-proj-table td.itd-col {
+  background: #fafaf7;
+  font-weight: 800;
+}
+.fp-proj-section + .fp-proj-section { border-top: 2px solid var(--border); }
+.fp-proj-edge {
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* ---- Outcomes (legacy, still used in some panels) ---- */
+.outcomes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.outcomes-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+.outcomes-card h4 {
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  background: var(--header-bg);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.outcomes-card.a h4 { border-left: 4px solid var(--fav-a); }
+.outcomes-card.b h4 { border-left: 4px solid var(--fav-b); }
+.outcome-row {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  font-variant-numeric: tabular-nums;
+}
+.outcome-row:last-child { border-bottom: none; }
+.outcome-row .lbl {
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+}
+.outcome-row .val {
+  font-weight: 800;
+  font-family: "SF Mono", Menlo, monospace;
+}
+.outcome-row.top { background: var(--pos-soft); }
+.outcome-row.top .val { color: var(--pos-strong); }
+
+/* ---- Recent fights ---- */
+.recent-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.recent-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.recent-card h4 {
+  margin: 0;
+  padding: 8px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  background: var(--header-bg);
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.recent-card.a h4 { border-left: 4px solid var(--fav-a); }
+.recent-card.b h4 { border-left: 4px solid var(--fav-b); }
+.recent-row {
+  padding: 7px 10px;
+  font-size: 12px;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+.recent-row:last-child { border-bottom: none; }
+.recent-row .res {
+  text-align: center;
+  font-size: 10px; font-weight: 800;
+  border-radius: 3px;
+  padding: 2px 4px;
+  letter-spacing: 0.3px;
+  font-family: "SF Mono", Menlo, monospace;
+}
+.recent-row .res.W { background: var(--pos-soft); color: var(--pos-strong); }
+.recent-row .res.L { background: var(--neg-soft); color: var(--neg-strong); }
+.recent-row .res.D, .recent-row .res.NC { background: #efebe2; color: var(--text-muted); }
+.recent-row .opp {
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.recent-row .opp .meta {
+  display: block;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 1px;
+}
+.recent-row .odds {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 700;
+  white-space: nowrap;
+  font-family: "SF Mono", Menlo, monospace;
+}
+/* Past-performance card: method + round-by-round + narrative */
+.recent-notes {
+  padding: 4px 10px 9px 46px;
+  border-bottom: 1px solid var(--border);
+  background: #fafaf7;
+}
+.recent-row + .recent-notes { border-top: 1px dashed var(--border); margin-top: -1px; }
+.recent-notes:last-child { border-bottom: none; }
+.rn-method {
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--action-green-dark);
+  padding: 4px 7px;
+  background: var(--pos-soft);
+  border-radius: 3px;
+  display: inline-block;
+  font-family: "SF Mono", Menlo, monospace;
+  margin-bottom: 5px;
+}
+.rn-method.loss { color: var(--neg-strong); background: var(--neg-soft); }
+.rn-method.draw, .rn-method.nc { color: var(--text-muted); background: #efebe2; }
+.rn-rounds {
+  display: block;
+}
+.rn-round {
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 10.5px;
+  color: var(--text);
+  line-height: 1.5;
+  letter-spacing: -0.1px;
+}
+.rn-round .lbl {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--action-green-dark);
+  min-width: 28px;
+  margin-right: 3px;
+}
+.rn-round .stat { color: var(--text-muted); }
+.rn-cards {
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 10.5px;
+  color: var(--text);
+  font-weight: 700;
+  margin-top: 2px;
+}
+.rn-cards::before { content: "Cards · "; color: var(--text-muted); font-weight: 600; }
+.rn-narrative {
+  margin-top: 5px;
+  font-size: 11.5px;
+  color: var(--text);
+  line-height: 1.45;
+  font-style: italic;
+  padding-left: 8px;
+  border-left: 2px solid var(--action-green);
+}
+@media (max-width: 720px) {
+  .recent-notes { padding-left: 12px; }
+}
+
+/* ---- Notes ---- */
+.notes-block {
+  background: var(--bg-muted);
+  border-left: 4px solid var(--action-green);
+  padding: 12px 14px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 16px;
+}
+.notes-block h3 {
+  margin: 0 0 6px;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--action-green-dark);
+  display: flex;
+  align-items: center;
+}
+.notes-block p {
+  margin: 0 0 6px;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.notes-block p:last-child { margin-bottom: 0; }
+.notes-block .key {
+  display: inline-block;
+  background: var(--text);
+  color: #fff;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-right: 7px;
+  letter-spacing: 0.5px;
+  vertical-align: 1px;
+}
+
+/* ---- Confidence badge ---- */
+.conf-badge {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.conf-badge.HIGH { background: var(--pos-soft); color: var(--pos-strong); }
+.conf-badge.MED { background: #fff5d6; color: #8a6b1c; }
+.conf-badge.LOW { background: var(--neg-soft); color: var(--neg-strong); }
+.conf-badge.NONE { background: #efebe2; color: var(--text-muted); }
+
+/* ---- Projection tables (Moneylines + Props) ---- */
+.proj-section {
+  padding: 16px 18px;
+}
+.section-bar {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+  margin-top: 16px;
+}
+.section-bar:first-child { margin-top: 0; }
+.section-bar .bullet {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--action-green);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Sub-tabs inside Moneylines view (Favorites / Underdogs) */
+.proj-subtabs {
+  display: flex;
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.proj-subtab {
+  flex: 1;
+  padding: 9px 8px;
+  text-align: center;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  cursor: pointer;
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: inherit;
+}
+.proj-subtab.active {
+  background: var(--bg);
+  color: var(--text);
+  border-bottom-color: var(--action-green);
+}
+
+.proj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: none;
+  table-layout: fixed;
+}
+.proj-table thead th {
+  background: var(--bg-muted);
+  border-bottom: 2px solid var(--border);
+  padding: 7px 4px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.proj-table thead th.tleft { text-align: left; padding-left: 10px; }
+.proj-table thead tr.grp-row th {
+  font-size: 9.5px;
+  letter-spacing: 0.7px;
+  padding: 6px 3px;
+  background: var(--bg-muted);
+  border-bottom: 1px solid var(--border);
+}
+.proj-table thead tr.grp-row th.proj-grp {
+  color: var(--action-green-dark);
+  border-bottom: 2px solid var(--action-green);
+}
+.proj-table thead tr.grp-row th.list-grp {
+  color: var(--text);
+  border-bottom: 2px solid var(--text-muted);
+}
+.proj-table tbody td {
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+}
+.proj-table tbody td.tleft { text-align: left; padding-left: 10px; }
+.proj-table tbody tr:hover { background: #fafaf7; }
+th.grp-divider-left { border-left: 1px solid var(--border); }
+td.grp-divider-left { border-left: 1px solid var(--border); }
+.proj-fight-num { font-weight: 700; color: var(--text-muted); font-size: 11px; }
+.proj-fighter-name {
+  font-weight: 800;
+  font-size: 13px;
+  display: block;
+  line-height: 1.2;
+}
+.proj-fighter-vs {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+  display: block;
+  margin-top: 2px;
+}
+.proj-cell-odds {
+  font-weight: 800;
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 12.5px;
+}
+.proj-cell-pct {
+  font-weight: 600;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+.cell-edge-pill {
+  font-weight: 800;
+  white-space: nowrap;
+  border-radius: 4px;
+  padding: 3px 5px;
+  display: inline-block;
+  min-width: 50px;
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 11px;
+}
+.card-divider td {
+  background: var(--header-bg);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 10px !important;
+  text-align: left !important;
+}
+.card-divider .card-bullet {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--action-green);
+  border-radius: 50%;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+
+/* Method-of-victory specific rows */
+.method-table tr.fav-row td:first-child { border-left: 3px solid var(--action-green); }
+.method-table tr.dog-row td:first-child { border-left: 3px solid var(--text-muted); }
+.method-table .fighter-row-name {
+  text-align: left;
+  padding-left: 10px;
+  line-height: 1.2;
+}
+.method-table .fighter-row-name .name {
+  font-weight: 800;
+  font-size: 12.5px;
+  display: block;
+}
+.method-table .fighter-row-name .opp {
+  font-weight: 500;
+  font-size: 10px;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+.method-table tbody td.method-odds {
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 700;
+  font-size: 12px;
+}
+.method-table tbody td.method-odds.itd {
+  background: #fafaf7;
+  font-weight: 800;
+}
+.method-table tbody tr.fight-end td { border-bottom: 2px solid var(--text-muted); }
+.cell-pct-pos { color: var(--pos-strong); font-weight: 800; font-size: 13px; }
+.yes-line { color: var(--pos-strong); }
+.no-line { color: var(--neg-strong); }
+.method-row-line { display: block; line-height: 1.2; }
+.method-row-line.alt { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+.method-row-line.live-line {
+  font-size: 9.5px;
+  color: var(--action-green-dark);
+  font-weight: 800;
+  margin-top: 2px;
+  font-family: "SF Mono", Menlo, monospace;
+}
+@media (max-width: 440px) { .method-row-line.live-line { font-size: 8.5px; } }
+
+@media (max-width: 720px) {
+  .proj-section { padding: 10px 6px; }
+  .proj-table tbody td, .proj-table thead th { font-size: 11px; padding: 6px 2px; }
+  .proj-table thead tr.grp-row th { font-size: 8.5px; padding: 4px 2px; }
+  .proj-fighter-name { font-size: 11.5px; }
+  .proj-fighter-vs { font-size: 9.5px; }
+  .proj-cell-odds { font-size: 11px; }
+  .cell-edge-pill { font-size: 10px; min-width: 42px; padding: 2px 3px; }
+  .proj-table tbody td.tleft, .proj-table thead th.tleft { padding-left: 6px; }
+  .section-bar { font-size: 9.5px; padding: 6px 10px; letter-spacing: 0.9px; }
+  .card-divider td { font-size: 9px !important; padding: 4px 8px !important; }
+  .proj-subtab { font-size: 9.5px; padding: 7px 4px; letter-spacing: 0.6px; }
+  .method-table .fighter-row-name .name { font-size: 11px; }
+  .method-table .fighter-row-name .opp { font-size: 9px; }
+  .method-table tbody td.method-odds { font-size: 10.5px; padding: 5px 1px; }
+}
+.proj-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.proj-scroll::-webkit-scrollbar { height: 4px; }
+.proj-scroll::-webkit-scrollbar-thumb { background: #d4d0c4; border-radius: 2px; }
+@media (max-width: 440px) {
+  .proj-section { padding: 8px 4px; }
+  .proj-table { font-size: 10.5px; }
+  /* override desktop colgroup widths so all columns fit at 375-390px */
+  .proj-table col[style*="width"] { width: auto !important; }
+  .method-table col[style*="width"] { width: 22% !important; }
+  .method-table col:first-child { width: 34% !important; }
+  .method-table tbody td.method-odds { padding: 4px 0; }
+  /* Hide rightmost column (LIVE GTD in length table, ITD in method table) on mobile.
+     Both are derivable from the visible per-fight panel and just steal width here. */
+  #length-body tr > td:last-child,
+  #view-props > .proj-section > .proj-scroll:first-of-type table thead th:last-child {
+    display: none;
+  }
+  .method-table thead th:last-child,
+  .method-table tbody td:last-child { display: none; }
+  .proj-table thead th { font-size: 7.5px; padding: 4px 1px; letter-spacing: 0.3px; }
+  .proj-table thead tr.grp-row th { font-size: 7.5px; padding: 3px 1px; letter-spacing: 0.5px; }
+  .proj-table tbody td { padding: 5px 1px; font-size: 10px; }
+  .proj-table tbody td.tleft { padding-left: 6px; }
+  .proj-fighter-name { font-size: 10.5px; line-height: 1.15; }
+  .proj-fighter-vs { font-size: 8.5px; margin-top: 1px; }
+  .proj-cell-odds { font-size: 9.5px; }
+  .proj-cell-pct { font-size: 9px; }
+  .cell-edge-pill { font-size: 8.5px; min-width: 34px; padding: 2px 2px; border-radius: 3px; }
+  .section-bar { font-size: 8.5px; padding: 5px 8px; letter-spacing: 0.6px; }
+  .card-divider td { font-size: 8.5px !important; padding: 4px 8px !important; letter-spacing: 0.5px; }
+  .proj-subtab { font-size: 8.5px; padding: 6px 2px; letter-spacing: 0.4px; }
+  .method-table .fighter-row-name .name { font-size: 10px; }
+  .method-table .fighter-row-name .opp { font-size: 8.5px; margin-top: 1px; }
+  .method-table tbody td.method-odds { font-size: 9.5px; padding: 4px 1px; line-height: 1.25; }
+  .method-table tbody td.method-odds.itd { padding: 4px 2px; }
+  .method-row-line.alt { font-size: 8.5px; }
+  .cell-pct-pos { font-size: 11px; }
+  .yes-line, .no-line { font-size: 9.5px; }
+}
+
+/* ---- Footer ---- */
+.ff-footer {
+  padding: 13px 22px;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  background: var(--bg-muted);
+  line-height: 1.5;
+}
+.ff-footer strong { color: var(--text); }
+
+/* ---- Responsive ---- */
+@media (max-width: 720px) {
+  .recent-cols { grid-template-columns: 1fr; }
+  .outcomes { grid-template-columns: 1fr; }
+  .tape-grid { grid-template-columns: 1fr 60px 1fr; }
+  .tape-cell.fighter-name { font-size: 13px; padding: 8px 8px; }
+  .tape-cell, .stat-cell { font-size: 11.5px; padding: 5px 7px; }
+  .bar-stat .lbl { flex: 0 0 90px; font-size: 9.5px; }
+  .fp-headline { font-size: 16px; }
+  .fp-headline .vs { font-size: 13px; }
+  .fight-panel { padding: 10px 8px; }
+  .fp-odds { font-size: 10.5px; }
+  .ff-title { font-size: 15px; }
+  .ff-subtitle { font-size: 10.5px; }
+  .view-tab { font-size: 10px; padding: 8px 4px; letter-spacing: 0.6px; }
+  .ff-tab { padding: 7px 9px; font-size: 10px; }
+  .ff-tab .ft-title { font-size: 7.5px; padding: 1px 3px; }
+  .fp-title-belt { font-size: 9px; padding: 2px 5px; }
+  details.collapsible > summary { padding: 7px 10px; font-size: 10px; }
+  .fp-proj-header { font-size: 9px; padding: 5px 10px; }
+  .fp-proj-table th, .fp-proj-table td { padding: 5px 4px; font-size: 11px; }
+}
+@media (max-width: 440px) {
+  body { font-size: 12px; }
+  .tape-grid { grid-template-columns: 1fr 48px 1fr; }
+  .tape-cell.fighter-name { font-size: 12px; padding: 7px 6px; }
+  .tape-cell.fighter-name .small { font-size: 9px; }
+  .tape-cell.fighter-name .chev { font-size: 8px; margin-left: 3px; }
+  .tape-cell, .stat-cell { font-size: 10.5px; padding: 4px 5px; }
+  .tape-cell.label { font-size: 8.5px; padding: 4px 2px; }
+  .tape-cell.label.with-arrow .lbl { font-size: 8.5px; }
+  .tape-cell.label.with-arrow .arr { font-size: 10px; }
+  .ff-header { padding: 9px 8px 7px; }
+  .ff-title { font-size: 13px; }
+  .ff-subtitle { font-size: 9.5px; line-height: 1.25; }
+  .ff-byline-header { font-size: 9px; margin-top: 2px; }
+  .ff-odds-status { font-size: 8.5px; padding: 2px 6px; }
+  .ff-brand { display: none; }
+  .fp-headline { font-size: 14px; line-height: 1.15; margin: 6px 0 3px; }
+  .fp-headline .vs { font-size: 11px; margin: 0 3px; }
+  .fp-odds { font-size: 10px; margin-bottom: 10px; }
+  details.collapsible > summary { padding: 6px 9px; font-size: 9.5px; letter-spacing: 0.4px; }
+  details.collapsible > summary .meta { display: none; }
+  details.collapsible { margin-bottom: 8px; }
+  .notes-block { padding: 8px 10px; }
+  .notes-block p { font-size: 10.5px; margin-bottom: 4px; }
+  .key { font-size: 8.5px !important; padding: 1px 4px !important; margin-right: 5px !important; }
+  .fp-title-row { gap: 4px; flex-wrap: wrap; }
+  .fp-fight-num, .fp-card-tag, .fp-title-belt { font-size: 8.5px; padding: 2px 4px; letter-spacing: 0.3px; }
+  .fp-weight { font-size: 9px; margin-left: 0; }
+  .view-tab { font-size: 9px; padding: 7px 2px; letter-spacing: 0.4px; }
+  .ff-tab { padding: 6px 7px; font-size: 9.5px; }
+  .ff-tab .ft-num { font-size: 8.5px; padding: 1px 4px; }
+  .ff-tab .ft-title { font-size: 7px; padding: 1px 2px; margin-left: 2px; }
+  .fp-proj-header { font-size: 8.5px; padding: 4px 8px; letter-spacing: 0.5px; }
+  .fp-proj-table th { font-size: 8px; padding: 4px 2px; letter-spacing: 0.3px; }
+  .fp-proj-table td { padding: 5px 3px; font-size: 10px; }
+  .fp-proj-table .odds { font-size: 10px; }
+  .fp-proj-table .pct { font-size: 9.5px; }
+  .ftr-popout { padding: 8px 8px; }
+  .ftr-popout .pop-head { font-size: 8.5px; }
+  .ff-footer { padding: 9px 10px; font-size: 9.5px; }
+  .ff-tabs::-webkit-scrollbar { height: 3px; }
+}
+</style>
+</head>
+<body>
+<div class="ff-widget" id="ff-widget">
+  <div class="ff-header">
+    <div class="ff-brand">
+      <span class="ff-brand-text">ACTION</span>
+      <span class="ff-brand-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 13 10 18 19 7"></polyline></svg></span>
+    </div>
+    <div class="ff-title">UFC Freedom 250 · Fight Form</div>
+    <div class="ff-subtitle">Topuria vs Gaethje · June 15, 2026 · Washington, DC</div>
+    <div class="ff-byline-header">By <a href="https://twitter.com/SeanZerillo" target="_blank" rel="noopener">@SeanZerillo</a></div>
+    <div class="ff-odds-status" id="ff-odds-status">Live odds: loading…</div>
+  </div>
+
+  <!-- Top-level view tabs -->
+  <div class="view-tabs">
+    <button class="view-tab active" data-view="form">Fight Form</button>
+    <button class="view-tab" data-view="ml">Moneylines</button>
+    <button class="view-tab" data-view="props">Props</button>
+  </div>
+
+  <!-- View pane: Fight Form -->
+  <div class="view-pane active" id="view-form">
+    <div class="ff-tabs-wrap">
+      <div class="ff-tabs" id="ff-tabs"></div>
+    </div>
+    <div id="ff-panels"></div>
+  </div>
+
+  <!-- View pane: Moneylines -->
+  <div class="view-pane" id="view-ml">
+    <div class="proj-section">
+      <div class="proj-subtabs">
+        <button class="proj-subtab active" data-mlside="favorite">Favorites</button>
+        <button class="proj-subtab" data-mlside="underdog">Underdogs</button>
+      </div>
+      <div class="proj-scroll"><table class="proj-table">
+        <colgroup>
+          <col style="width: 32px;"><col>
+          <col style="width: 70px;"><col style="width: 56px;">
+          <col style="width: 70px;"><col style="width: 56px;">
+          <col style="width: 64px;">
+        </colgroup>
+        <thead>
+          <tr class="grp-row">
+            <th></th><th></th>
+            <th colspan="2" class="proj-grp grp-divider-left">Projected</th>
+            <th colspan="2" class="list-grp grp-divider-left">Listed (Live)</th>
+            <th class="grp-divider-left"></th>
+          </tr>
+          <tr>
+            <th>#</th><th class="tleft">Fighter</th>
+            <th class="grp-divider-left">Odds</th><th>Win%</th>
+            <th class="grp-divider-left">Odds</th><th>Win%</th>
+            <th class="grp-divider-left">Edge</th>
+          </tr>
+        </thead>
+        <tbody id="ml-body"></tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <!-- View pane: Props -->
+  <div class="view-pane" id="view-props">
+    <div class="proj-section">
+      <div class="section-bar"><span class="bullet"></span>Fight Length · GTD &amp; ITD</div>
+      <div class="proj-scroll"><table class="proj-table">
+        <colgroup>
+          <col style="width: 32px;"><col>
+          <col style="width: 60px;"><col style="width: 70px;"><col style="width: 70px;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>#</th><th class="tleft">Fight</th>
+            <th>GTD%</th><th>Proj GTD</th><th>Live GTD</th>
+          </tr>
+        </thead>
+        <tbody id="length-body"></tbody>
+      </table></div>
+
+      <div class="section-bar"><span class="bullet"></span>Method of Victory (Projected)</div>
+      <div class="proj-scroll"><table class="proj-table method-table">
+        <colgroup>
+          <col><col style="width: 70px;"><col style="width: 70px;"><col style="width: 70px;"><col style="width: 70px;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="tleft">Fighter</th>
+            <th>DEC</th><th>KO</th><th>SUB</th><th>ITD</th>
+          </tr>
+        </thead>
+        <tbody id="method-body"></tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="ff-footer">
+    <details>
+      <summary style="cursor: pointer; font-weight: 700; color: var(--text); list-style: none;">▶ Methodology</summary>
+      <div style="margin-top: 8px;">
+        <strong>Proj%</strong>: my model's win probability for the fighter.
+        <strong>Listed Win%</strong>: raw implied probability of the American moneyline. Fighter A + Fighter B will sum to slightly over 100%, the overage is the book's hold.
+        <strong>Edge</strong>: Projected Win% minus Listed Win%.
+        <strong>STR DIFF</strong>: sig strikes landed per minute minus absorbed per minute, career UFC.
+        <strong>CONTROL %</strong>: share of fight time in top position or clinch dominance, career UFC.
+      </div>
+    </details>
+  </div>
+  <style>
+    .ff-footer details > summary::-webkit-details-marker { display: none; }
+    .ff-footer details[open] > summary::before { content: "▼ "; }
+    .ff-footer details > summary { display: block; }
+    .ff-footer details > summary { color: var(--text); }
+  </style>
+  </div>
+</div>
+
+<script>
+// ============== DATA ==============
+const FIGHTS = [
+  {
+    n: 1, card: "MAIN EVENT", weight: "Lightweight", rounds: "5R", conf: "HIGH", title: "LW TITLE",
+    a: {
+      name: "Ilia Topuria", nick: "El Matador", record: "17-0-0",
+      ml: -625, win: 82.5, mktImp: 82.5,
+      ko: 6, sub: 1, dec: 2, kol: 0, subl: 0, decl: 0,
+      ufc: "9-0-0", min: 84, age: 29.4, ht: "5'7\"", reach: 69, stance: "Orthodox",
+      slpm: 5.3, sapm: 5.1, sdiff: 0.1,
+      tdacc: "61%", tdR5: 1.5, tdd: "94%", ctrl: 79,
+      sub_succ: "17%", sub_def: "100%", dist: 72, gnd: 28,
+      log: [
+        ["W","Charles Oliveira","-400","UFC · Jun 2025"],
+        ["W","Max Holloway","-265","UFC · Oct 2024"],
+        ["W","Josh Emmett","-300","UFC FN 228 · Jun 2023"],
+        ["W","Jai Herbert","-560","UFC FN 205 · Mar 2022"],
+        ["W","Movsar Evloev","-135","UFC 270 · Jan 2022"]
+      ]
+    },
+    b: {
+      name: "Justin Gaethje", nick: "The Highlight", record: "27-5-0",
+      ml: 445, win: 17.5, mktImp: 17.5,
+      ko: 6, sub: 0, dec: 4, kol: 3, subl: 0, decl: 2,
+      ufc: "10-5-0", min: 182, age: 37.6, ht: "5'11\"", reach: 70, stance: "Orthodox",
+      slpm: 6.0, sapm: 7.0, sdiff: -1.0,
+      tdacc: "40%", tdR5: 0.3, tdd: "74%", ctrl: 74,
+      sub_succ: "—", sub_def: "33%", dist: 91, gnd: 9,
+      log: [
+        ["W","Paddy Pimblett","+205","UFC · Jan 2026"],
+        ["L","Rafael Fiziev","+136","UFC · Mar 2025"],
+        ["W","Daniel Hooker","-160","UFC 313 · Mar 2025"],
+        ["L","Max Holloway","-150","UFC 300 · Apr 2024"],
+        ["L","Dustin Poirier","+135","UFC · Jul 2023"]
+      ]
+    },
+    sim: { itd: 84.6, aKO: 59.4, aSub: 8.6, aDec: 14.6, bKO: 16.0, bSub: 0.1, bDec: 0.8 },
+    notes: [
+      ["PHYSICAL",`Gaethje 4" taller (5'11" vs 5'7"), 1" reach advantage (70 vs 69). Topuria 8.2 years younger (29.4 vs 37.6) in a 5R bout.`],
+      ["STR DIFF","Topuria +0.1, Gaethje -1.0. 1.1 point swing toward Topuria. Gaethje 7.0 SApM is the highest absorbed rate on the card."],
+      ["WRESTLING","Topuria 94% TDD with 1.5 TD/5min at 61% TDAcc. Gaethje 74% TDD with 0.3 TD/5min at 40% TDAcc. Net flow goes Topuria's direction."],
+      ["CONTROL/GRAPPLING","Topuria 79% control rate, Gaethje 74%. Push at the top of the range."],
+      ["PATHS","Topuria KO 59.4% leads. ITD 84.6%. Gaethje DEC share 0.8%."],
+      ["MODEL","Topuria 91.5% vs raw implied 86.2% = +5.3 edge. Gaethje 8.5% vs raw implied 18.3% = -9.8."],
+      ["BET REC","Topuria parlay: build between -1000 and -1050 (cutoff 91.0% ≈ -1011). Wins ITD -345. SGP w/ Under 1.5 +110. R1 or R2 -145."]
+    ]
+  },
+  {
+    n: 2, card: "CO-MAIN", weight: "Heavyweight", rounds: "5R", conf: "HIGH", title: "INTERIM HW TITLE",
+    a: {
+      name: "Alex Pereira", nick: "Poatan", record: "13-3-0",
+      ml: -113, win: 36.4, mktImp: 50.3,
+      ko: 8, sub: 0, dec: 2, kol: 1, subl: 0, decl: 0,
+      ufc: "10-2-0", min: 133, age: 38.9, ht: "6'4\"", reach: 79, stance: "Orthodox",
+      slpm: 5.6, sapm: 4.1, sdiff: 1.5,
+      tdacc: "50%", tdR5: 0.1, tdd: "79%", ctrl: 8,
+      sub_succ: "0%", sub_def: "100%", dist: 75, gnd: 25,
+      log: [
+        ["L","Magomed Ankalaev","+210","UFC 320 · Oct 2025"],
+        ["W","Magomed Ankalaev","-115","UFC · Mar 2025"],
+        ["W","Khalil Rountree Jr","-425","UFC · Oct 2024"],
+        ["W","Jiri Prochazka","-145","UFC 303 · Jun 2024"],
+        ["W","Jamahal Hill","-130","UFC 300 · Apr 2024"]
+      ]
+    },
+    b: {
+      name: "Ciryl Gane", nick: "Bon Gamin", record: "13-2-0",
+      ml: -110, win: 63.6, mktImp: 49.7,
+      ko: 4, sub: 2, dec: 4, kol: 0, subl: 1, decl: 0,
+      ufc: "10-2-0", min: 175, age: 36.2, ht: "6'4\"", reach: 81, stance: "Orthodox",
+      slpm: 5.8, sapm: 2.7, sdiff: 3.1,
+      tdacc: "25%", tdR5: 1.1, tdd: "47%", ctrl: 53,
+      sub_succ: "29%", sub_def: "50%", dist: 83, gnd: 17,
+      log: [
+        ["L","Tom Aspinall","+320","UFC 321 · Oct 2025"],
+        ["W","Alexander Volkov","-325","UFC · Dec 2024"],
+        ["W","Sergey Spivak","-170","UFC on ESPN · Sep 2023"],
+        ["L","Jon Jones","+155","UFC 285 · Mar 2023"],
+        ["W","Tai Tuivasa","-475","UFC FN · Sep 2022"]
+      ]
+    },
+    sim: { itd: 93.8, aKO: 32.9, aSub: 3.5, aDec: 0.0, bKO: 55.6, bSub: 1.9, bDec: 6.1 },
+    notes: [
+      ["PHYSICAL",`Both 6'4". Gane 2" reach advantage (81 vs 79). Pereira 2.7 years older (38.9 vs 36.2) in a 5R bout.`],
+      ["STR DIFF","Gane +3.1, Pereira +1.5. 1.6 point swing toward Gane. Gane absorbs 2.7 SApM vs Pereira 4.1 SApM."],
+      ["WRESTLING","Gane 1.1 TD/5min at 25% TDAcc. Pereira 0.1 TD/5min at 50% TDAcc on tiny sample (1/2). Pereira 79% TDD on 43 attempts. Gane 47% TDD."],
+      ["CONTROL/GRAPPLING","Gane 53% control rate, Pereira 8%. 45 point swing. Gane 29% sub success rate (2/7)."],
+      ["PATHS","Gane KO 30.4% leads. Pereira KO 30.9% close behind. ITD 93.8% (highest on card). Pereira DEC share 0%."],
+      ["MODEL","Gane 57.6% vs raw implied 52.4% = +5.2 edge. Pereira 42.4% vs raw implied 53.1% = -10.7."],
+      ["BET REC","Gane -110 ML. Gane by KO +300."]
+    ]
+  },
+  {
+    n: 3, card: "MAIN CARD", weight: "Bantamweight", rounds: "3R", conf: "HIGH",
+    a: {
+      name: "Sean O'Malley", nick: "Suga", record: "19-3-0",
+      ml: -435, win: 85.9, mktImp: 77.8,
+      ko: 6, sub: 0, dec: 5, kol: 1, subl: 0, decl: 1,
+      ufc: "11-3-0", min: 180, age: 31.6, ht: "5'11\"", reach: 72, stance: "Switch",
+      slpm: 7.1, sapm: 3.3, sdiff: 3.8,
+      tdacc: "43%", tdR5: 0.2, tdd: "60%", ctrl: 6,
+      sub_succ: "0%", sub_def: "0%", dist: 81, gnd: 19,
+      log: [
+        ["W","Song Yadong","-200","UFC · Jan 2026"],
+        ["W","Aljamain Sterling","+235","UFC · Aug 2023"],
+        ["W","Petr Yan","+325","UFC 281 · Oct 2022"],
+        ["W","Kris Moutinho","-900","UFC 264 · Jul 2021"]
+      ]
+    },
+    b: {
+      name: "Aiemann Zahabi", nick: "—", record: "14-2-0",
+      ml: 330, win: 14.1, mktImp: 22.2,
+      ko: 2, sub: 0, dec: 6, kol: 1, subl: 0, decl: 0,
+      ufc: "8-2-0", min: 121, age: 38.6, ht: "5'8\"", reach: 68, stance: "Orthodox",
+      slpm: 4.4, sapm: 4.3, sdiff: 0.2,
+      tdacc: "14%", tdR5: 0.3, tdd: "84%", ctrl: 64,
+      sub_succ: "—", sub_def: "—", dist: 93, gnd: 7,
+      log: [
+        ["W","Marlon Vera","-132","UFC FN · Oct 2025"],
+        ["W","Jose Aldo","+160","UFC · May 2025"],
+        ["W","Pedro Munhoz","-188","UFC FN · Nov 2024"],
+        ["L","Javid Basharat","+700","UFC · Mar 2024"],
+        ["L","Aori Qileng","+125","UFC 289 · Jun 2023"]
+      ]
+    },
+    sim: { itd: 57.5, aKO: 38.5, aSub: 6.2, aDec: 41.2, bKO: 12.1, bSub: 0.7, bDec: 1.3 },
+    notes: [
+      ["PHYSICAL",`O'Malley 3" taller (5'11" vs 5'8"), 4" reach advantage (72 vs 68). O'Malley 7 years younger (31.6 vs 38.6). Stance mismatch (O'Malley switch, Zahabi orthodox).`],
+      ["STR DIFF","O'Malley +3.8, Zahabi +0.2. 3.6 point swing toward O'Malley. SLpM 7.1 vs 4.4."],
+      ["WRESTLING","Zahabi 14% TDAcc (1/7), 0.3 TD/5min. Path to ground essentially closed. O'Malley 60% TDD on 62 attempts."],
+      ["CONTROL/GRAPPLING","Zahabi 64% control rate on small sample, O'Malley 6%. Theoretical edge to Zahabi but he can't get there."],
+      ["PATHS","O'Malley DEC 41.2% and KO 38.5% near-tied. ITD 57.5% (lowest among heavy favorites). Zahabi DEC share 1.3%."],
+      ["MODEL","O'Malley 86.9% vs raw implied 81.1% = +5.8 edge. Zahabi 13.1% vs raw implied 22.8% = -9.7."],
+      ["BET REC","O'Malley parlay: build between -625 and -650 (cutoff 86.4% ≈ -637)."]
+    ]
+  },
+  {
+    n: 4, card: "MAIN CARD", weight: "Heavyweight", rounds: "3R", conf: "MED",
+    a: {
+      name: "Josh Hokit", nick: "—", record: "9-0-0",
+      ml: -375, win: 79.3, mktImp: 75.2,
+      ko: 2, sub: 0, dec: 1, kol: 0, subl: 0, decl: 0,
+      ufc: "3-0-0", min: 21, age: 28.6, ht: "6'1\"", reach: 73, stance: "Orthodox",
+      slpm: 11.8, sapm: 8.0, sdiff: 3.8,
+      tdacc: "33%", tdR5: 1.0, tdd: "75%", ctrl: 68,
+      sub_succ: "—", sub_def: "—", dist: 69, gnd: 31,
+      log: [
+        ["W","Curtis Blaydes","+100","UFC 327 · Apr 2026"],
+        ["W","Denzel Freeman","-225","UFC 324 · Jan 2026"],
+        ["W","Max Gimenis","-425","UFC Vegas 111 · Nov 2025"],
+        ["W","Guilherme Uriel","-350","DWCS · Aug 2025"],
+        ["W","Eric Lundsford","-1205","LFA · May 2025"]
+      ]
+    },
+    b: {
+      name: "Derrick Lewis", nick: "The Black Beast", record: "29-13-0",
+      ml: 285, win: 20.7, mktImp: 24.8,
+      ko: 16, sub: 0, dec: 4, kol: 8, subl: 2, decl: 3,
+      ufc: "20-11-0", min: 274, age: 41.3, ht: "6'3\"", reach: 79, stance: "Orthodox",
+      slpm: 1.8, sapm: 2.8, sdiff: -1.0,
+      tdacc: "26%", tdR5: 1.3, tdd: "52%", ctrl: 24,
+      sub_succ: "—", sub_def: "83%", dist: 53, gnd: 47,
+      log: [
+        ["L","Waldo Cortes-Acosta","+270","UFC · Jan 2026"],
+        ["L","Tallison Teixeira","+210","UFC FN · Jul 2025"],
+        ["W","Rodrigo Nascimento","-162","UFC · May 2024"],
+        ["L","Jailton Almeida","+400","UFC · Nov 2023"],
+        ["W","Marcos Rogerio","+185","UFC · Jul 2023"]
+      ]
+    },
+    sim: { itd: 79.3, aKO: 57.8, aSub: 1.9, aDec: 19.6, bKO: 15.9, bSub: 3.6, bDec: 1.1 },
+    notes: [
+      ["PHYSICAL",`Lewis 2" taller (6'3" vs 6'1"), 6" reach advantage (79 vs 73). Hokit 12.7 years younger (28.6 vs 41.3).`],
+      ["STR DIFF","Hokit +3.8 (11.8 SLpM on 21 min sample), Lewis -1.0 (1.8 SLpM on 274 min). Caveat: Hokit's volume profile is small-sample inflated."],
+      ["WRESTLING","Lewis 52% TDD (54/103 over career), 1.3 TDs faced per 5 historically. Hokit 1.0 TD/5min on small sample."],
+      ["CONTROL/GRAPPLING","Hokit 68% control rate, Lewis 24%. 44 point swing."],
+      ["PATHS","Hokit KO 57.8% leads. ITD 79.3%. Lewis DEC share 1.1%."],
+      ["MODEL","Hokit 87.8% vs raw implied 80.6% = +7.2 edge. Lewis 12.2% vs raw implied 23.4% = -11.2."],
+      ["BET REC","Hokit parlay: build between -650 and -700 (cutoff 87.3% ≈ -687). Hokit ITD -250. Hokit KO -110."]
+    ]
+  },
+  {
+    n: 5, card: "MAIN CARD", weight: "Lightweight", rounds: "3R", conf: "LOW",
+    a: {
+      name: "Mauricio Ruffy", nick: "—", record: "13-2-0",
+      ml: -638, win: 68.6, mktImp: 82.6,
+      ko: 3, sub: 0, dec: 1, kol: 0, subl: 1, decl: 0,
+      ufc: "4-1-0", min: 39, age: 30.0, ht: "5'11\"", reach: 75, stance: "Orthodox",
+      slpm: 4.1, sapm: 4.3, sdiff: -0.2,
+      tdacc: "0%", tdR5: 0.2, tdd: "82%", ctrl: 22,
+      sub_succ: "—", sub_def: "0%", dist: 81, gnd: 19,
+      log: [
+        ["W","Rafael Fiziev","+110","UFC · Feb 2026"],
+        ["W","Benoit Saint-Denis","-163","UFC FN · Sep 2025"],
+        ["W","King Green","-510","UFC · Mar 2025"],
+        ["W","James Llontop","-910","UFC · Nov 2024"],
+        ["W","Jamie Mullarkey","-225","UFC · May 2024"]
+      ]
+    },
+    b: {
+      name: "Michael Chandler", nick: "Iron", record: "23-10-0",
+      ml: 450, win: 31.4, mktImp: 17.4,
+      ko: 2, sub: 0, dec: 0, kol: 2, subl: 1, decl: 0,
+      ufc: "2-5-0", min: 78, age: 40.1, ht: "5'8\"", reach: 71, stance: "Orthodox",
+      slpm: 5.9, sapm: 7.2, sdiff: -1.3,
+      tdacc: "41%", tdR5: 2.8, tdd: "56%", ctrl: 40,
+      sub_succ: "0%", sub_def: "75%", dist: 50, gnd: 50,
+      log: [
+        ["L","Chad Mendes","+245","RAF 3 · Nov 2025"],
+        ["L","Paddy Pimblett","+142","UFC · Apr 2025"],
+        ["L","Charles Oliveira","+215","UFC · Nov 2024"],
+        ["W","Conor McGregor","-120","UFC · Jun 2024"],
+        ["—","Conor McGregor","+110","UFC · Dec 2023 (canc)"]
+      ]
+    },
+    sim: { itd: 80.4, aKO: 63.7, aSub: 3.4, aDec: 1.5, bKO: 10.3, bSub: 3.0, bDec: 18.1 },
+    notes: [
+      ["PHYSICAL",`Ruffy 3" taller (5'11" vs 5'8"), 4" reach advantage (75 vs 71). Ruffy 10 years younger (30.0 vs 40.1).`],
+      ["STR DIFF","Ruffy -0.2 (39 min sample), Chandler -1.3. Both negative but Ruffy 1.1 ahead. Chandler 7.2 SApM is the second highest absorbed rate among the favored side this card."],
+      ["WRESTLING","Chandler 41% TDAcc on 22 attempts, 2.8 TD/5min. Genuine takedown lever. Ruffy 82% TDD on 17 attempts faced."],
+      ["CONTROL/GRAPPLING","Chandler 40% control rate, Ruffy 22%. Edge to Chandler if he can get there."],
+      ["PATHS","Ruffy KO 63.7% leads. ITD 80.4%. Chandler DEC 18.1% is 57% of his win share."],
+      ["MODEL","Ruffy 83.7% vs raw implied 88.2% = -4.5 edge. Chandler 16.3% vs raw implied 15.8% = +0.5 (essentially fair)."],
+      ["BET REC","SGP: Ruffy ML + Over 0.5 Rounds (-235). Letting Chandler survive R1 for the parlay price."]
+    ]
+  },
+  {
+    n: 6, card: "MAIN CARD", weight: "Middleweight", rounds: "3R", conf: "LOW",
+    a: {
+      name: "Bo Nickal", nick: "—", record: "8-1-0",
+      ml: -335, win: 59.4, mktImp: 72.9,
+      ko: 2, sub: 2, dec: 1, kol: 1, subl: 0, decl: 0,
+      ufc: "5-1-0", min: 46, age: 30.4, ht: "6'1\"", reach: 76, stance: "Southpaw",
+      slpm: 4.4, sapm: 2.8, sdiff: 1.7,
+      tdacc: "47%", tdR5: 2.5, tdd: "100%", ctrl: 81,
+      sub_succ: "40%", sub_def: "—", dist: 63, gnd: 37,
+      log: [
+        ["W","Yoel Romero","-380","RAF 5 · Jan 2026"],
+        ["W","Rodolfo Vieira","-225","UFC 322 · Nov 2025"],
+        ["W","Reinier de Ridder","-333","UFC · May 2025"],
+        ["W","Paul Craig","-1100","UFC · Nov 2024"],
+        ["W","Cody Brundage","-1430","UFC 300 · Apr 2024"]
+      ]
+    },
+    b: {
+      name: "Kyle Daukaus", nick: "—", record: "17-4-0",
+      ml: 250, win: 40.6, mktImp: 27.1,
+      ko: 1, sub: 2, dec: 1, kol: 2, subl: 0, decl: 0,
+      ufc: "4-4-0", min: 64, age: 33.3, ht: "6'2\"", reach: 76, stance: "Southpaw",
+      slpm: 7.2, sapm: 5.0, sdiff: 2.3,
+      tdacc: "24%", tdR5: 10.2, tdd: "77%", ctrl: 62,
+      sub_succ: "29%", sub_def: "100%", dist: 29, gnd: 71,
+      log: [
+        ["W","Gerald Meerschaert","-435","UFC 322 · Nov 2025"],
+        ["L","Michel Pereira","+215","UFC · Aug 2025"],
+        ["W","Keanan Patershuk","-333","CFFC · Jun 2024"],
+        ["W","Sean Connor Fallon","-450","CFFC · Feb 2024"],
+        ["W","Gregg Ellis","-599","CFFC · Sep 2023"]
+      ]
+    },
+    sim: { itd: 72.9, aKO: 38.6, aSub: 9.6, aDec: 11.2, bKO: 16.1, bSub: 8.5, bDec: 16.0 },
+    notes: [
+      ["PHYSICAL",`Daukaus 1" taller (6'2" vs 6'1"), same reach (76 vs 76). Daukaus 2.9 years older (33.3 vs 30.4). Both southpaw.`],
+      ["STR DIFF","Daukaus +2.3, Nickal +1.7. Slight edge Daukaus. Daukaus higher volume (7.2 vs 4.4 SLpM)."],
+      ["WRESTLING","Daukaus 10.2 TD att/5min at 24% TDAcc. Nickal 100% TDD on 9 attempts faced in MMA, 47% TDAcc at 2.5 TD/5min."],
+      ["CONTROL/GRAPPLING","Nickal 81% control rate, Daukaus 62%. 19 point swing toward Nickal. Daukaus 29% sub success (2/7), Nickal 40% sub success (2/5)."],
+      ["PATHS","Nickal KO 38.6% leads. Daukaus DEC 16.0%, Nickal DEC 11.2%. ITD 72.9%."],
+      ["MODEL","Nickal 65.8% vs raw implied 77.5% = -11.7 edge. Daukaus 34.2% vs raw implied 26.5% = +7.8."],
+      ["BET REC","Daukaus +290 ML. Over 1.5 Rounds -145. GTD +170. Daukaus DEC +900."]
+    ]
+  },
+  {
+    n: 7, card: "MAIN CARD", weight: "Featherweight", rounds: "3R", conf: "MED",
+    a: {
+      name: "Diego Lopes", nick: "—", record: "27-8-0",
+      ml: -165, win: 46.1, mktImp: 59.3,
+      ko: 3, sub: 1, dec: 2, kol: 0, subl: 0, decl: 8,
+      ufc: "6-3-0", min: 109, age: 31.5, ht: "5'11\"", reach: 72, stance: "Orthodox",
+      slpm: 3.7, sapm: 5.0, sdiff: -1.3,
+      tdacc: "50%", tdR5: 0.9, tdd: "74%", ctrl: 46,
+      sub_succ: "12%", sub_def: "100%", dist: 75, gnd: 25,
+      log: [
+        ["L","Alexander Volkanovski","+136","UFC · Feb 2026"],
+        ["W","Jean Silva","+200","UFC FN · Sep 2025"],
+        ["L","Alexander Volkanovski","+136","UFC · Apr 2025"],
+        ["W","Brian Ortega","-188","UFC · Sep 2024"],
+        ["W","Dan Ige","-275","UFC 303 · Jun 2024"]
+      ]
+    },
+    b: {
+      name: "Steve Garcia", nick: "Mean Machine", record: "19-5-0",
+      ml: 134, win: 53.9, mktImp: 40.7,
+      ko: 7, sub: 0, dec: 1, kol: 1, subl: 0, decl: 0,
+      ufc: "8-2-0", min: 60, age: 34.1, ht: "6'0\"", reach: 75, stance: "Southpaw",
+      slpm: 7.5, sapm: 3.0, sdiff: 4.5,
+      tdacc: "57%", tdR5: 1.4, tdd: "79%", ctrl: 29,
+      sub_succ: "0%", sub_def: "100%", dist: 41, gnd: 59,
+      log: [
+        ["W","David Onama","-130","UFC Vegas 110 · Nov 2025"],
+        ["W","Calvin Kattar","-135","UFC FN · Jul 2025"],
+        ["W","Kyle Nelson","-200","UFC · Sep 2024"],
+        ["W","Seungwoo Choi","-163","UFC FN · Jul 2024"],
+        ["L","Melquizael Costa","+500","UFC · Dec 2023"]
+      ]
+    },
+    sim: { itd: 64.7, aKO: 34.3, aSub: 8.7, aDec: 3.0, bKO: 19.9, bSub: 1.7, bDec: 32.3 },
+    notes: [
+      ["PHYSICAL",`Garcia 1" taller (6'0" vs 5'11"), 3" reach advantage (75 vs 72). Garcia 2.6 years older (34.1 vs 31.5). Stance mismatch (Lopes orthodox, Garcia southpaw).`],
+      ["STR DIFF","Garcia +4.5, Lopes -1.3. 5.8 point swing toward Garcia, biggest STR DIFF gap on the card. Garcia 7.5 SLpM and 3.0 SApM vs Lopes 3.7 SLpM and 5.0 SApM."],
+      ["WRESTLING","Lopes 50% TDAcc on 14 attempts, 74% TDD. Garcia 57% TDAcc on 7 attempts, 79% TDD."],
+      ["CONTROL/GRAPPLING","Lopes 46% control rate, Garcia 29%. 17 point swing to Lopes. Garcia spends 59% clinch/ground."],
+      ["PATHS","Lopes KO 34.3% leads, Garcia DEC 32.3% close behind. ITD 64.7%. Lopes DEC share just 3.0%."],
+      ["MODEL","Garcia 51.3% vs raw implied 41.0% = +10.3 edge. Lopes 48.7% vs raw implied 62.3% = -13.6."],
+      ["BET REC","Garcia +135 ML. Garcia DEC +550."]
+    ]
+  }
+];
+
+// ============== RENDER ==============
+const tabsEl = document.getElementById("ff-tabs");
+const panelsEl = document.getElementById("ff-panels");
+
+function fmtML(ml) { return (ml > 0 ? "+" : "") + ml; }
+function fmtPct(v, dp=1) { return (v == null) ? "—" : v.toFixed(dp) + "%"; }
+function fmtSdiff(v) { return (v > 0 ? "+" : "") + v.toFixed(1); }
+function bar(left, right) {
+  const total = left + right;
+  if (total === 0) return `<div class="bar"><div class="lbar" style="width:50%"></div><div class="rbar" style="width:50%"></div><div class="divider"></div></div>`;
+  const lpct = (left/total)*100;
+  const rpct = (right/total)*100;
+  return `<div class="bar"><div class="lbar" style="width:${lpct}%"></div><div class="rbar" style="width:${rpct}%"></div><div class="divider"></div></div>`;
+}
+// Diverging bar: each side fills its half FROM center outward, scaled by its own percentage 0-100
+function barDiverge(leftPct, rightPct) {
+  const lp = Math.max(0, Math.min(100, leftPct));
+  const rp = Math.max(0, Math.min(100, rightPct));
+  return `<div class="bar diverge">
+    <div class="bar-half left"><div class="lbar" style="width:${lp}%"></div></div>
+    <div class="bar-half right"><div class="rbar" style="width:${rp}%"></div></div>
+    <div class="center-line"></div>
+  </div>`;
+}
+function edgeClass(e) {
+  if (e >= 5) return "strong-pos";
+  if (e >= 1.5) return "pos";
+  if (e <= -5) return "strong-neg";
+  if (e <= -1.5) return "neg";
+  return "neutral";
+}
+function pctToAmericanOddsLocal(pct) {
+  const p = pct / 100;
+  if (p <= 0 || p >= 1) return "—";
+  if (p >= 0.5) {
+    return Math.round(-100 * (p / (1 - p))).toString();
+  } else {
+    return "+" + Math.round(100 * ((1 - p) / p));
+  }
+}
+
+// ============== MATCHUP EDGES (arrow advantage system) ==============
+// Each axis returns: { aVal, bVal, fmtA, fmtB, level (-3..+3), edgeSide ("a"|"b"|null) }
+// level -3 = b dominates, +3 = a dominates, 0 = push
+function parsePct(s) {
+  if (s == null || s === "—" || s === "") return null;
+  const m = String(s).match(/-?\d+(\.\d+)?/);
+  return m ? parseFloat(m[0]) : null;
+}
+function classifyEdge(delta, thresholds) {
+  // thresholds = [push, slight, solid] (absolute values for delta)
+  const abs = Math.abs(delta);
+  let mag = 0;
+  if (abs >= thresholds[2]) mag = 3;
+  else if (abs >= thresholds[1]) mag = 2;
+  else if (abs >= thresholds[0]) mag = 1;
+  return delta >= 0 ? mag : -mag;
+}
+function arrowFor(level) {
+  switch (level) {
+    case  3: return { txt: ">>>", cls: "dom" };
+    case  2: return { txt: ">>",  cls: "solid" };
+    case  1: return { txt: ">",   cls: "" };
+    case  0: return { txt: "≈",   cls: "even" };
+    case -1: return { txt: "<",   cls: "" };
+    case -2: return { txt: "<<",  cls: "solid" };
+    case -3: return { txt: "<<<", cls: "dom" };
+    default: return { txt: "≈",   cls: "even" };
+  }
+}
+function computeEdges(f) {
+  const a = f.a, b = f.b;
+  // Just two axes — Striking Differential and Control %
+  return {
+    diff: {
+      aVal: (a.sdiff > 0 ? "+" : "") + a.sdiff.toFixed(1),
+      bVal: (b.sdiff > 0 ? "+" : "") + b.sdiff.toFixed(1),
+      level: classifyEdge(a.sdiff - b.sdiff, [0.5, 1.5, 3.0]),
+    },
+    ctrl: {
+      aVal: a.ctrl + "%",
+      bVal: b.ctrl + "%",
+      level: classifyEdge(a.ctrl - b.ctrl, [10, 25, 45]),
+    },
+  };
+}
+// Direction arrows for tale-of-the-tape integration
+function dirArrow(level) {
+  // level > 0 = a (left) has edge → arrow points LEFT (←)
+  // level < 0 = b (right) has edge → arrow points RIGHT (→)
+  // 0 = push (≈)
+  if (level >= 3) return { txt: "◀◀◀", cls: "dom-left" };
+  if (level === 2) return { txt: "◀◀", cls: "solid-left" };
+  if (level === 1) return { txt: "◀", cls: "slight-left" };
+  if (level === 0) return { txt: "≈", cls: "even" };
+  if (level === -1) return { txt: "▶", cls: "slight-right" };
+  if (level === -2) return { txt: "▶▶", cls: "solid-right" };
+  return { txt: "▶▶▶", cls: "dom-right" };
+}
+
+function renderTabs() {
+  FIGHTS.forEach((f, idx) => {
+    const aLast = f.a.name.split(" ").slice(-1)[0];
+    const bLast = f.b.name.split(" ").slice(-1)[0];
+    const btn = document.createElement("button");
+    btn.className = "ff-tab" + (idx === 0 ? " active" : "");
+    btn.dataset.target = "fp-" + f.n;
+    btn.innerHTML = `<span class="ft-num">${f.n}</span>${aLast} vs ${bLast}${f.title ? `<span class="ft-title">${f.title}</span>` : ""}`;
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".ff-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".fight-panel").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById("fp-" + f.n).classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    tabsEl.appendChild(btn);
+  });
+}
+
+function renderPanel(f, isFirst) {
+  const edgeA = f.a.win - f.a.mktImp;
+  const edgeB = f.b.win - f.b.mktImp;
+  const eClassA = edgeClass(edgeA);
+  const eClassB = edgeClass(edgeB);
+
+  // Tale of the tape rows
+  const tapeRows = [
+    ["AGE", f.a.age.toFixed(1), f.b.age.toFixed(1)],
+    ["HT", f.a.ht, f.b.ht],
+    ["REACH", f.a.reach + "\"", f.b.reach + "\""],
+    ["STANCE", f.a.stance, f.b.stance],
+    ["RECORD", f.a.record, f.b.record],
+    ["UFC REC", f.a.ufc, f.b.ufc],
+    ["UFC MIN", f.a.min, f.b.min]
+  ];
+  const tapeHTML = tapeRows.map(r => `
+    <div class="tape-cell left">${r[1]}</div>
+    <div class="tape-cell label">${r[0]}</div>
+    <div class="tape-cell right">${r[2]}</div>
+  `).join("");
+
+  // Striking comparison — DIFF is the KEY stat; Distance% is diverging
+  const strikingHTML = `
+    <div class="bar-stat"><span class="lbl">SLpM</span><span class="lvalue">${f.a.slpm}</span>${bar(f.a.slpm, f.b.slpm)}<span class="rvalue">${f.b.slpm}</span></div>
+    <div class="bar-stat"><span class="lbl">SApM</span><span class="lvalue">${f.a.sapm}</span>${bar(f.a.sapm, f.b.sapm)}<span class="rvalue">${f.b.sapm}</span></div>
+    <div class="bar-stat key"><span class="lbl">DIFF</span><span class="lvalue">${fmtSdiff(f.a.sdiff)}</span>${bar(Math.max(0, f.a.sdiff+5), Math.max(0, f.b.sdiff+5))}<span class="rvalue">${fmtSdiff(f.b.sdiff)}</span></div>
+    <div class="bar-stat"><span class="lbl">DISTANCE %</span><span class="lvalue">${f.a.dist}%</span>${barDiverge(f.a.dist, f.b.dist)}<span class="rvalue">${f.b.dist}%</span></div>
+  `;
+
+  // Grappling — CTRL% is the KEY stat; Ground% is diverging
+  const grapplingHTML = `
+    <div class="bar-stat"><span class="lbl">TD ACC</span><span class="lvalue">${f.a.tdacc}</span>${bar(parseInt(f.a.tdacc) || 0, parseInt(f.b.tdacc) || 0)}<span class="rvalue">${f.b.tdacc}</span></div>
+    <div class="bar-stat"><span class="lbl">TD/5MIN</span><span class="lvalue">${f.a.tdR5}</span>${bar(f.a.tdR5, f.b.tdR5)}<span class="rvalue">${f.b.tdR5}</span></div>
+    <div class="bar-stat"><span class="lbl">TD DEF</span><span class="lvalue">${f.a.tdd}</span>${bar(parseInt(f.a.tdd) || 0, parseInt(f.b.tdd) || 0)}<span class="rvalue">${f.b.tdd}</span></div>
+    <div class="bar-stat key"><span class="lbl">CTRL %</span><span class="lvalue">${f.a.ctrl}%</span>${bar(f.a.ctrl, f.b.ctrl)}<span class="rvalue">${f.b.ctrl}%</span></div>
+    <div class="bar-stat"><span class="lbl">SUB SUCC</span><span class="lvalue">${f.a.sub_succ}</span>${bar(parseInt(f.a.sub_succ) || 0, parseInt(f.b.sub_succ) || 0)}<span class="rvalue">${f.b.sub_succ}</span></div>
+    <div class="bar-stat"><span class="lbl">GROUND %</span><span class="lvalue">${f.a.gnd}%</span>${barDiverge(f.a.gnd, f.b.gnd)}<span class="rvalue">${f.b.gnd}%</span></div>
+  `;
+
+  // Career record
+  const recordHTML = `
+    <div class="stats-grid">
+      <div class="stat-cell left">${f.a.ko}</div><div class="stat-cell center">KO Wins</div><div class="stat-cell right">${f.b.ko}</div>
+      <div class="stat-cell left">${f.a.sub}</div><div class="stat-cell center">SUB Wins</div><div class="stat-cell right">${f.b.sub}</div>
+      <div class="stat-cell left">${f.a.dec}</div><div class="stat-cell center">DEC Wins</div><div class="stat-cell right">${f.b.dec}</div>
+      <div class="stat-cell left">${f.a.kol}</div><div class="stat-cell center">KO Losses</div><div class="stat-cell right">${f.b.kol}</div>
+      <div class="stat-cell left">${f.a.subl}</div><div class="stat-cell center">SUB Losses</div><div class="stat-cell right">${f.b.subl}</div>
+      <div class="stat-cell left">${f.a.decl}</div><div class="stat-cell center">DEC Losses</div><div class="stat-cell right">${f.b.decl}</div>
+    </div>
+  `;
+
+  // Recent fight log — Racing Form past-performance style
+  const renderLog = (log) => log.map((entry) => {
+    const [res, opp, odds, evt, notes] = entry;
+    const resClass = res === "—" ? "NC" : res;
+    const methodClass = res === "W" ? "" : (res === "L" ? "loss" : "draw");
+    let notesBlock = "";
+    if (notes) {
+      const roundsHTML = (notes.r || []).map(([lbl, line]) => `<div class="rn-round"><span class="lbl">${lbl}</span><span class="stat">${line}</span></div>`).join("");
+      notesBlock = `<div class="recent-notes">
+        ${notes.m ? `<div class="rn-method ${methodClass}">${notes.m}</div>` : ""}
+        ${roundsHTML ? `<div class="rn-rounds">${roundsHTML}</div>` : ""}
+        ${notes.n ? `<div class="rn-narrative">${notes.n}</div>` : ""}
+      </div>`;
+    }
+    return `<div class="recent-row">
+      <div class="res ${resClass}">${res}</div>
+      <div class="opp">${opp}<span class="meta">${evt}</span></div>
+      <div class="odds">${odds}</div>
+    </div>${notesBlock}`;
+  }).join("");
+
+  // Per-fight projections table — ML + GTD/ITD + Method of Victory for this fight only
+  // Splice in LIVE odds if available; otherwise fall back to baked-in values
+  const liveA = f.a._liveML;
+  const liveB = f.b._liveML;
+  const liveDist = f._liveDistance;
+  const liveTotal = f._liveTotal;
+  const liveMethod = f._liveMethod;
+
+  const listedA = liveA ? liveA.headline_cost : f.a.ml;
+  const listedB = liveB ? liveB.headline_cost : f.b.ml;
+  // RAW implied %, NOT de-vigged. Edges will not sum to zero — gap = book's hold.
+  const listedPctA = (liveA && liveA.raw_implied_pct != null) ? liveA.raw_implied_pct : f.a.mktImp;
+  const listedPctB = (liveB && liveB.raw_implied_pct != null) ? liveB.raw_implied_pct : f.b.mktImp;
+  const liveBookA = liveA ? liveA.headline_book : null;
+  const liveBookB = liveB ? liveB.headline_book : null;
+
+  const itdPct = f.sim.itd;
+  const gtdPct = 100 - itdPct;
+  const itdOdds = pctToAmericanOddsLocal(itdPct);
+  const gtdOdds = pctToAmericanOddsLocal(gtdPct);
+  const projOddsA = pctToAmericanOddsLocal(f.a.win);
+  const projOddsB = pctToAmericanOddsLocal(f.b.win);
+  const fmtMLOdds = (n) => n == null ? "—" : (n > 0 ? "+" + n : n.toString());
+  const projEdgeA = f.a.win - listedPctA;
+  const projEdgeB = f.b.win - listedPctB;
+  const eClassProjA = edgeClass(projEdgeA);
+  const eClassProjB = edgeClass(projEdgeB);
+  const projectionsHTML = `
+    <div class="fp-proj">
+      <div class="fp-proj-header"><span class="bullet"></span>Moneyline · Projected vs Market</div>
+      <table class="fp-proj-table">
+        <thead>
+          <tr>
+            <th class="tleft">Fighter</th>
+            <th>Proj Odds</th>
+            <th>Proj %</th>
+            <th>Listed</th>
+            <th>Listed %</th>
+            <th>Edge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="tleft">${f.a.name}</td>
+              <td class="odds">${projOddsA}</td>
+              <td class="pct">${f.a.win.toFixed(1)}%</td>
+              <td class="odds">${fmtMLOdds(listedA)}${liveBookA ? `<div class="pct" style="font-size:9px;">${liveBookA.toUpperCase()}</div>` : ""}</td>
+              <td class="pct">${listedPctA.toFixed(1)}%</td>
+              <td><span class="edge-pill ${eClassProjA}">${projEdgeA > 0 ? "+" : ""}${projEdgeA.toFixed(1)}</span></td></tr>
+          <tr><td class="tleft">${f.b.name}</td>
+              <td class="odds">${projOddsB}</td>
+              <td class="pct">${f.b.win.toFixed(1)}%</td>
+              <td class="odds">${fmtMLOdds(listedB)}${liveBookB ? `<div class="pct" style="font-size:9px;">${liveBookB.toUpperCase()}</div>` : ""}</td>
+              <td class="pct">${listedPctB.toFixed(1)}%</td>
+              <td><span class="edge-pill ${eClassProjB}">${projEdgeB > 0 ? "+" : ""}${projEdgeB.toFixed(1)}</span></td></tr>
+        </tbody>
+      </table>
+      <div class="fp-proj-header"><span class="bullet"></span>Fight Length · GTD &amp; ITD</div>
+      <table class="fp-proj-table">
+        <thead>
+          <tr>
+            <th class="tleft">Outcome</th>
+            <th>Proj Odds</th>
+            <th>Proj %</th>
+            <th>Live Line</th>
+            <th>Live %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="tleft">Goes the Distance (YES)</td>
+              <td class="odds">${gtdOdds}</td>
+              <td class="pct">${gtdPct.toFixed(1)}%</td>
+              <td class="odds">${liveDist && liveDist.yes ? fmtMLOdds(liveDist.yes.cost) : "—"}</td>
+              <td class="pct">${liveDist && liveDist.yes && liveDist.yes.no_vig_pct != null ? liveDist.yes.no_vig_pct.toFixed(1) + "%" : "—"}</td></tr>
+          <tr><td class="tleft">Inside the Distance (NO)</td>
+              <td class="odds">${itdOdds}</td>
+              <td class="pct">${itdPct.toFixed(1)}%</td>
+              <td class="odds">${liveDist && liveDist.no ? fmtMLOdds(liveDist.no.cost) : "—"}</td>
+              <td class="pct">${liveDist && liveDist.no && liveDist.no.no_vig_pct != null ? liveDist.no.no_vig_pct.toFixed(1) + "%" : "—"}</td></tr>
+          ${liveTotal && liveTotal.line ? `
+          <tr><td class="tleft">Total Rounds Over ${liveTotal.line}</td>
+              <td class="odds">—</td><td class="pct">—</td>
+              <td class="odds">${fmtMLOdds(liveTotal.over)}</td>
+              <td class="pct">—</td></tr>
+          <tr><td class="tleft">Total Rounds Under ${liveTotal.line}</td>
+              <td class="odds">—</td><td class="pct">—</td>
+              <td class="odds">${fmtMLOdds(liveTotal.under)}</td>
+              <td class="pct">—</td></tr>
+          ` : ""}
+        </tbody>
+      </table>
+      <div class="fp-proj-header"><span class="bullet"></span>Method of Victory · Projected vs Live</div>
+      <table class="fp-proj-table">
+        <thead>
+          <tr>
+            <th class="tleft">Fighter</th>
+            <th>DEC</th>
+            <th>KO</th>
+            <th>SUB</th>
+            <th>ITD</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${[["a", f.a, f.sim.aDec, f.sim.aKO, f.sim.aSub], ["b", f.b, f.sim.bDec, f.sim.bKO, f.sim.bSub]].map(([key, ftr, dec, ko, sub]) => {
+            const liveCell = (slug) => {
+              const lm = liveMethod && liveMethod[key] && liveMethod[key][slug];
+              return lm ? `<div class="pct" style="color:var(--action-green-dark);font-weight:700;">${fmtMLOdds(lm.cost)} live</div>` : "";
+            };
+            return `<tr class="${key === 'a' ? 'fav' : 'dog'}">
+              <td class="tleft">${ftr.name}</td>
+              <td><span class="odds">${pctToAmericanOddsLocal(dec)}</span><div class="pct">${dec.toFixed(1)}%</div>${liveCell("points")}</td>
+              <td><span class="odds">${pctToAmericanOddsLocal(ko)}</span><div class="pct">${ko.toFixed(1)}%</div>${liveCell("ko-tko-dq")}</td>
+              <td><span class="odds">${pctToAmericanOddsLocal(sub)}</span><div class="pct">${sub.toFixed(1)}%</div>${liveCell("submission")}</td>
+              <td class="itd-col"><span class="odds">${pctToAmericanOddsLocal(ko + sub)}</span><div class="pct">${(ko + sub).toFixed(1)}%</div></td>
+            </tr>`;
+          }).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  // Notes (Key Read) — BET REC entries get green highlight
+  const notesHTML = f.notes.map(([k, v]) => {
+    const isBet = k === "BET REC";
+    return `<p><span class="key${isBet ? ' bet-rec-key' : ''}">${k}</span>${v}</p>`;
+  }).join("");
+
+  const panel = document.createElement("div");
+  panel.className = "fight-panel" + (isFirst ? " active" : "");
+  panel.id = "fp-" + f.n;
+  // ----- Compact pop-out (used inside Tale of the Tape) -----
+  function fighterPopoutHTML(slot, f) {
+    const fighter = (slot === "a") ? f.a : f.b;
+    const rec = `${fighter.ko}/${fighter.sub}/${fighter.dec} W · ${fighter.kol}/${fighter.subl}/${fighter.decl} L`;
+    return `
+      <div class="pop-grid-2 pop-section">
+        <div>
+          <div class="pop-head">Career W/L · KO / SUB / DEC</div>
+          <div style="font-family:'SF Mono',Menlo,monospace;font-weight:700;font-size:11.5px;">${rec}</div>
+        </div>
+        <div>
+          <div class="pop-head">Performance</div>
+          <div style="font-family:'SF Mono',Menlo,monospace;font-size:10.5px;line-height:1.5;">
+            ${fighter.slpm}/${fighter.sapm} SL/SApM (${fighter.sdiff > 0 ? '+' : ''}${fighter.sdiff})<br>
+            TD ${fighter.tdacc} @ ${fighter.tdR5}/5m · TDD ${fighter.tdd}<br>
+            Ctrl ${fighter.ctrl}% · Sub ${fighter.sub_succ}<br>
+            Dist ${fighter.dist}% / Gnd ${fighter.gnd}%
+          </div>
+        </div>
+      </div>
+      <div class="pop-section pop-recent">
+        <div class="pop-head">Recent Form · Last 5 · Closing ML</div>
+        ${renderLog(fighter.log)}
+      </div>
+    `;
+  }
+
+  // ----- Per-fighter detail builder (used inside dropdown) -----
+  function fighterDetailsHTML(slot, f) {
+    const fighter = (slot === "a") ? f.a : f.b;
+    const lastN = fighter.name.split(" ").slice(-1)[0];
+    return `
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div>
+          <h4 style="margin:0 0 6px;font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);font-weight:800;">Career W/L by Method</h4>
+          <div style="display:grid;grid-template-columns:auto 1fr auto;gap:0;border:1px solid var(--border);border-radius:5px;overflow:hidden;font-size:12px;">
+            <div style="padding:5px 8px;text-align:right;border-bottom:1px solid var(--border);font-weight:700;">${fighter.ko}</div>
+            <div style="padding:5px 8px;text-align:center;background:var(--bg-muted);border-bottom:1px solid var(--border);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--text-muted);">KO wins</div>
+            <div style="padding:5px 8px;text-align:left;border-bottom:1px solid var(--border);font-weight:700;">${fighter.kol}</div>
+            <div style="padding:5px 8px;text-align:right;border-bottom:1px solid var(--border);font-weight:700;">${fighter.sub}</div>
+            <div style="padding:5px 8px;text-align:center;background:var(--bg-muted);border-bottom:1px solid var(--border);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--text-muted);">SUB</div>
+            <div style="padding:5px 8px;text-align:left;border-bottom:1px solid var(--border);font-weight:700;">${fighter.subl}</div>
+            <div style="padding:5px 8px;text-align:right;font-weight:700;">${fighter.dec}</div>
+            <div style="padding:5px 8px;text-align:center;background:var(--bg-muted);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.3px;color:var(--text-muted);">DEC</div>
+            <div style="padding:5px 8px;text-align:left;font-weight:700;">${fighter.decl}</div>
+          </div>
+          <div style="margin-top:4px;font-size:9.5px;color:var(--text-muted);text-align:center;letter-spacing:0.3px;text-transform:uppercase;">← Wins · Losses →</div>
+        </div>
+        <div>
+          <h4 style="margin:0 0 6px;font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);font-weight:800;">Performance Profile</h4>
+          <div style="font-size:11.5px;font-family:'SF Mono',Menlo,monospace;line-height:1.7;">
+            <div><span style="color:var(--text-muted);">SLpM / SApM</span> &nbsp;<strong>${fighter.slpm} / ${fighter.sapm}</strong> &nbsp;(${fighter.sdiff > 0 ? "+" : ""}${fighter.sdiff})</div>
+            <div><span style="color:var(--text-muted);">TD Acc / Rate</span> &nbsp;<strong>${fighter.tdacc}</strong> &nbsp;@ ${fighter.tdR5}/5min</div>
+            <div><span style="color:var(--text-muted);">TD Defense</span> &nbsp;<strong>${fighter.tdd}</strong></div>
+            <div><span style="color:var(--text-muted);">Control %</span> &nbsp;<strong>${fighter.ctrl}%</strong></div>
+            <div><span style="color:var(--text-muted);">Sub Succ / Def</span> &nbsp;<strong>${fighter.sub_succ}</strong> / ${fighter.sub_def}</div>
+            <div><span style="color:var(--text-muted);">Distance / Ground</span> &nbsp;<strong>${fighter.dist}%</strong> / ${fighter.gnd}%</div>
+          </div>
+        </div>
+      </div>
+      <h4 style="margin:14px 0 6px;font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);font-weight:800;">Recent Form · Last 5 · Closing ML</h4>
+      <div class="recent-card" style="border:1px solid var(--border);border-radius:5px;">
+        ${renderLog(fighter.log)}
+      </div>
+    `;
+  }
+
+  // ----- Tale-of-the-Tape edge rows (Diff + Control with arrows) -----
+  const edges = computeEdges(f);
+  const arrDiff = dirArrow(edges.diff.level);
+  const arrCtrl = dirArrow(edges.ctrl.level);
+  const tapeEdgeRowsHTML = `
+    <div class="tape-cell left edge-row${edges.diff.level > 0 ? " edge-side" : ""}">${edges.diff.aVal}</div>
+    <div class="tape-cell label with-arrow"><span class="lbl">STR DIFF</span><span class="arr ${arrDiff.cls}">${arrDiff.txt}</span></div>
+    <div class="tape-cell right edge-row${edges.diff.level < 0 ? " edge-side" : ""}">${edges.diff.bVal}</div>
+
+    <div class="tape-cell left edge-row${edges.ctrl.level > 0 ? " edge-side" : ""}">${edges.ctrl.aVal}</div>
+    <div class="tape-cell label with-arrow"><span class="lbl">CONTROL</span><span class="arr ${arrCtrl.cls}">${arrCtrl.txt}</span></div>
+    <div class="tape-cell right edge-row${edges.ctrl.level < 0 ? " edge-side" : ""}">${edges.ctrl.bVal}</div>
+  `;
+
+  panel.innerHTML = `
+    <div class="fp-title-row">
+      <span class="fp-fight-num">FIGHT ${f.n}</span>
+      <span class="fp-card-tag">${f.card}</span>
+      ${f.title ? `<span class="fp-title-belt">★ ${f.title}</span>` : ""}
+      <span class="fp-weight">${f.weight} · ${f.rounds}</span>
+    </div>
+    <div class="fp-headline">${f.a.name} <span class="vs">vs</span> ${f.b.name}</div>
+    <div class="fp-odds">ML: <span class="num">${fmtML(f.a.ml)}</span> / <span class="num">${fmtML(f.b.ml)}</span> &nbsp;·&nbsp; Implied: ${fmtPct(listedPctA)} / ${fmtPct(listedPctB)} &nbsp;·&nbsp; Hold: ${(listedPctA + listedPctB - 100).toFixed(1)}%</div>
+
+    <!-- Tale of the Tape: 3-col grid, vertical layout -->
+    <details class="collapsible" open>
+      <summary><span class="bullet"></span>Tale of the Tape<span class="meta">click to collapse</span></summary>
+      <div class="body" style="padding: 0;">
+        <div class="tape-grid" style="border: none; border-radius: 0;">
+          <div class="tape-cell fighter-name left">${f.a.name}<span class="small">${f.a.nick !== "—" ? '"' + f.a.nick + '"' : ""}</span></div>
+          <div class="tape-vs-header">VS</div>
+          <div class="tape-cell fighter-name right">${f.b.name}<span class="small">${f.b.nick !== "—" ? '"' + f.b.nick + '"' : ""}</span></div>
+          ${tapeHTML}
+          ${tapeEdgeRowsHTML}
+        </div>
+      </div>
+    </details>
+
+    <!-- Projections (collapsable, open by default) -->
+    <details class="collapsible" open>
+      <summary><span class="bullet"></span>Projections · Moneyline · Method · Fight Length<span class="meta">click to collapse</span></summary>
+      <div class="body">
+        ${projectionsHTML}
+      </div>
+    </details>
+
+    <!-- Analysis (collapsable, open by default) -->
+    <details class="collapsible" open>
+      <summary><span class="bullet"></span>Analysis<span class="meta">click to collapse</span></summary>
+      <div class="body">
+        <div class="notes-block" style="margin-bottom: 0;">
+          ${notesHTML}
+        </div>
+      </div>
+    </details>
+  `;
+  panelsEl.appendChild(panel);
+}
+
+// ============== USER PROJECTIONS (overrides) ==============
+// Latest model output supersedes any baked-in defaults from notes.
+// Updated: 2026-06-11 from spreadsheet. Method odds → probabilities via American-odds conversion.
+//
+// Keyed by fight number. a = favorite in the user's projection (matches FIGHTS[].a ordering).
+//   a.win / b.win   — fighter's win probability from user's model
+//   a.{ko,sub,dec}  — method probabilities (sum to win%)
+//   gtd_pct         — chance fight goes the distance (user's value)
+//   bet_rec         — fighter recommended (or null for no bet)
+//   hold_pct        — Kelly stake when bet_rec is set
+const USER_PROJECTIONS_BY_FIGHT = {
+  1: { bet_rec: "Ilia Topuria",   hold_pct: 4.0, gtd_pct: 11,
+       a: { win: 91.5, ko: 68.25, sub: 14.03, dec: 9.15 },
+       b: { win: 8.5,  ko: 6.40,  sub: 0.71,  dec: 1.44 } },
+  2: { bet_rec: "Ciryl Gane",     hold_pct: 4.7, gtd_pct: 32,
+       a: { win: 42.4, ko: 30.86, sub: 1.93,  dec: 9.65 },
+       b: { win: 57.6, ko: 30.40, sub: 5.15,  dec: 22.03 } },
+  3: { bet_rec: "Sean O'Malley",  hold_pct: 4.0, gtd_pct: 57,
+       a: { win: 86.9, ko: 31.95, sub: 5.09,  dec: 49.75 },
+       b: { win: 13.1, ko: 3.97,  sub: 2.22,  dec: 6.94 } },
+  4: { bet_rec: "Josh Hokit",     hold_pct: 4.0, gtd_pct: 12,
+       a: { win: 87.8, ko: 57.81, sub: 18.52, dec: 11.40 },
+       b: { win: 12.2, ko: 10.73, sub: 0.51,  dec: 0.98 } },
+  5: { bet_rec: null,             hold_pct: 0,   gtd_pct: 18,
+       a: { win: 83.7, ko: 66.22, sub: 5.71,  dec: 11.72 },
+       b: { win: 16.3, ko: 7.08,  sub: 2.66,  dec: 6.55 } },
+  6: { bet_rec: "Kyle Daukaus",   hold_pct: 4.0, gtd_pct: 40,
+       a: { win: 65.8, ko: 17.06, sub: 21.28, dec: 27.40 },
+       b: { win: 34.2, ko: 6.88,  sub: 14.79, dec: 12.58 } },
+  7: { bet_rec: "Steve Garcia",   hold_pct: 3.2, gtd_pct: 36,
+       a: { win: 48.7, ko: 19.88, sub: 13.61, dec: 15.20 },
+       b: { win: 51.3, ko: 24.63, sub: 5.65,  dec: 21.05 } },
+};
+
+// Raw implied probability from an American moneyline (NOT de-vigged).
+// Two of these for a fight will sum to > 100% by the book's hold/vig.
+function rawImpliedPct(ml) {
+  if (ml == null) return null;
+  const m = Number(ml);
+  if (m > 0) return 100 / (m + 100) * 100;
+  return Math.abs(m) / (Math.abs(m) + 100) * 100;
+}
+
+function applyUserProjections() {
+  FIGHTS.forEach(f => {
+    const up = USER_PROJECTIONS_BY_FIGHT[f.n];
+    if (!up) return;
+    if (up.a) {
+      f.a.win = up.a.win;
+      f.sim.aKO = up.a.ko; f.sim.aSub = up.a.sub; f.sim.aDec = up.a.dec;
+    }
+    if (up.b) {
+      f.b.win = up.b.win;
+      f.sim.bKO = up.b.ko; f.sim.bSub = up.b.sub; f.sim.bDec = up.b.dec;
+    }
+    if (up.gtd_pct != null) f.sim.itd = 100 - up.gtd_pct;
+    f.betRec = up.bet_rec;
+    f.holdPct = up.hold_pct;
+    // Override mktImp with RAW implied (not de-vigged) so edges reflect the
+    // actual vigged line. a-edge + b-edge will sum to roughly -hold%, not 0.
+    f.a.mktImp = rawImpliedPct(f.a.ml);
+    f.b.mktImp = rawImpliedPct(f.b.ml);
+  });
+}
+
+// ============== LIVE ODDS FETCH + MERGE ==============
+const ODDS_URL = "data/freedom_250_odds.json";
+const PREFERRED_BOOK_ORDER = ["draftkings", "fanduel", "betmgm", "caesars", "consensus"];
+
+function pickBook(books) {
+  if (!books) return null;
+  for (const k of PREFERRED_BOOK_ORDER) {
+    if (books[k] && books[k].cost != null) return { name: k, ...books[k] };
+  }
+  return null;
+}
+function consensusBook(books) {
+  return (books && books.consensus) ? { name: "consensus", ...books.consensus } : null;
+}
+function findLiveFight(live, a, b) {
+  const norm = s => (s || "").toLowerCase().replace(/[^a-z]/g, "");
+  const aKey = norm(a.name.split(" ").slice(-1)[0]);
+  const bKey = norm(b.name.split(" ").slice(-1)[0]);
+  return (live.fights || []).find(f => {
+    const fA = norm((f.fighter_a?.name || "").split(" ").slice(-1)[0]);
+    const fB = norm((f.fighter_b?.name || "").split(" ").slice(-1)[0]);
+    return (fA === aKey && fB === bKey) || (fA === bKey && fB === aKey);
+  });
+}
+function fmtAgo(updatedIso) {
+  if (!updatedIso) return "—";
+  const then = new Date(updatedIso);
+  const min = Math.floor((Date.now() - then.getTime()) / 60000);
+  if (min < 1) return "just now";
+  if (min < 60) return min + " min ago";
+  const h = Math.floor(min / 60);
+  if (h < 24) return h + "h " + (min % 60) + "m ago";
+  return Math.floor(h / 24) + "d ago";
+}
+
+function mergeLiveOdds(live) {
+  // For each FIGHTS entry, splice in current ML + props from live data
+  FIGHTS.forEach(f => {
+    const lf = findLiveFight(live, f.a, f.b);
+    if (!lf) return;
+    f._live = { event_id: lf.event_id, scheduled: lf.scheduled_utc, status: lf.status };
+
+    const m = lf.markets || {};
+
+    // Moneyline — map by last-name match
+    const ml = m.moneyline || [];
+    const norm = s => (s || "").toLowerCase().replace(/[^a-z]/g, "");
+    const aKey = norm(f.a.name.split(" ").slice(-1)[0]);
+    ml.forEach(sel => {
+      const lastName = norm((sel.label || "").split(" ").slice(-1)[0]);
+      const target = (lastName === aKey) ? f.a : f.b;
+      const headline = pickBook(sel.books);
+      const cons = consensusBook(sel.books);
+      if (headline) {
+        target._liveML = {
+          headline_cost: headline.cost,
+          headline_book: headline.name,
+          consensus_cost: cons ? cons.cost : null,
+          // RAW implied % from the headline book's cost (not de-vigged)
+          raw_implied_pct: rawImpliedPct(headline.cost),
+          all_books: sel.books,
+        };
+      }
+    });
+
+    // Fight distance (GTD/ITD)
+    const dist = m.fight_distance || [];
+    f._liveDistance = { yes: null, no: null };
+    dist.forEach(sel => {
+      const slot = (sel.selection === "yes") ? "yes" : "no";
+      const headline = pickBook(sel.books);
+      const cons = consensusBook(sel.books);
+      if (headline) {
+        f._liveDistance[slot] = {
+          cost: headline.cost,
+          book: headline.name,
+          no_vig_pct: cons ? cons.no_vig_pct : null,
+        };
+      }
+    });
+
+    // Total rounds (over/under 2.5)
+    const tot = m.total_rounds || [];
+    f._liveTotal = { line: null, over: null, under: null };
+    tot.forEach(sel => {
+      const headline = pickBook(sel.books);
+      if (!headline) return;
+      f._liveTotal.line = headline.line;
+      if (sel.selection === "over") f._liveTotal.over = headline.cost;
+      else if (sel.selection === "under") f._liveTotal.under = headline.cost;
+    });
+
+    // Method of victory per fighter
+    const mov = m.method_of_victory || [];
+    f._liveMethod = { a: {}, b: {} };
+    mov.forEach(sel => {
+      const label = sel.label || "";
+      const lastName = norm(label.split(" ").slice(-1)[0]);
+      const isFighterRow = lastName === aKey || lastName === norm(f.b.name.split(" ").slice(-1)[0]);
+      if (!isFighterRow && !sel.selection) return;
+      const which = (lastName === aKey || label.toLowerCase().includes(f.a.name.toLowerCase())) ? "a"
+                  : (label.toLowerCase().includes(f.b.name.toLowerCase())) ? "b" : null;
+      const slug = sel.selection || "";
+      if (!which || !slug) return;
+      const headline = pickBook(sel.books);
+      if (headline) f._liveMethod[which][slug] = { cost: headline.cost, book: headline.name };
+    });
+  });
+}
+
+function updateOddsStatus(live, err) {
+  const el = document.getElementById("ff-odds-status");
+  if (!el) return;
+  if (err) {
+    el.className = "ff-odds-status stale";
+    el.innerHTML = `<span class="dot"></span>Live odds unavailable. Using projected values.`;
+    return;
+  }
+  const ago = fmtAgo(live.updated_at);
+  const ageMin = (Date.now() - new Date(live.updated_at).getTime()) / 60000;
+  const fresh = ageMin < 90;
+  el.className = "ff-odds-status " + (fresh ? "fresh" : "stale");
+  el.innerHTML = `<span class="dot"></span>Live odds · BettingPros · updated ${ago}`;
+}
+
+(async function bootstrap() {
+  // 1. Apply user's model projections first
+  applyUserProjections();
+  // 2. Fetch + merge live market lines
+  let live = null;
+  try {
+    const resp = await fetch(ODDS_URL, { cache: "no-store" });
+    if (resp.ok) {
+      live = await resp.json();
+      mergeLiveOdds(live);
+      updateOddsStatus(live, null);
+    } else {
+      updateOddsStatus(null, "http " + resp.status);
+    }
+  } catch (e) {
+    updateOddsStatus(null, e.message || "fetch failed");
+  }
+  // 3. Render
+  renderTabs();
+  FIGHTS.forEach((f, idx) => renderPanel(f, idx === 0));
+  renderMLTable("favorite");
+  renderLengthTable();
+  renderMethodTable();
+
+})();
+
+// ============== (unused, kept for any future tabular views) ==============
+function projEdgeClass(e) {
+  if (e >= 5) return "edge-pill strong-pos";
+  if (e >= 1.5) return "edge-pill pos";
+  if (e <= -5) return "edge-pill strong-neg";
+  if (e <= -1.5) return "edge-pill neg";
+  return "edge-pill neutral";
+}
+function fmtSignedPct(n) { return (n > 0 ? "+" : "") + n.toFixed(1) + "%"; }
+
+function pctToAmericanOdds(pct) {
+  const p = pct / 100;
+  if (p <= 0 || p >= 1) return "—";
+  if (p >= 0.5) return Math.round(-100 * (p/(1-p))).toString();
+  return "+" + Math.round(100 * ((1-p)/p));
+}
+function renderMLTable(side) {
+  const tbody = document.getElementById("ml-body");
+  const sorted = [...FIGHTS].sort((a, b) => b.n - a.n);
+  let html = "";
+  let lastCard = null;
+  sorted.forEach(f => {
+    let group = (f.card === "PRELIMS") ? "PRELIMS" : "MAIN CARD";
+    if (group !== lastCard) {
+      html += `<tr class="card-divider"><td colspan="7"><span class="card-bullet"></span>${group}</td></tr>`;
+      lastCard = group;
+    }
+    const aIsFav = f.a.ml < f.b.ml;
+    const fav = aIsFav ? f.a : f.b;
+    const dog = aIsFav ? f.b : f.a;
+    const isFav = side === "favorite";
+    const fighter = isFav ? fav : dog;
+    const opp = isFav ? dog : fav;
+
+    // Live values when available
+    const liveML = fighter._liveML;
+    const listedCost = liveML ? liveML.headline_cost : fighter.ml;
+    const listedPct = (liveML && liveML.raw_implied_pct != null) ? liveML.raw_implied_pct : fighter.mktImp;
+    const listedBook = liveML ? liveML.headline_book : null;
+
+    const projOdds = pctToAmericanOdds(fighter.win);
+    const projPct = fighter.win;
+    const listedOddsTxt = (listedCost > 0 ? "+" : "") + listedCost;
+    const edge = projPct - listedPct;
+
+    html += `
+      <tr>
+        <td class="proj-fight-num">${f.n}</td>
+        <td class="tleft">
+          <span class="proj-fighter-name">${fighter.name}</span>
+          <span class="proj-fighter-vs">vs ${opp.name}</span>
+        </td>
+        <td class="proj-cell-odds grp-divider-left">${projOdds}</td>
+        <td class="proj-cell-pct">${projPct.toFixed(1)}%</td>
+        <td class="proj-cell-odds grp-divider-left">${listedOddsTxt}${listedBook ? `<div class="proj-cell-pct" style="font-size:9px;">${listedBook.toUpperCase()}</div>` : ""}</td>
+        <td class="proj-cell-pct">${listedPct.toFixed(1)}%</td>
+        <td class="grp-divider-left"><span class="${projEdgeClass(edge)}">${fmtSignedPct(edge)}</span></td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+function renderLengthTable() {
+  const tbody = document.getElementById("length-body");
+  const sorted = [...FIGHTS].sort((a, b) => a.n - b.n);
+  let html = "";
+  sorted.forEach(f => {
+    const gtdPct = 100 - f.sim.itd;
+    const projOdds = pctToAmericanOdds(gtdPct);
+    const liveYes = f._liveDistance && f._liveDistance.yes;
+    const aLast = f.a.name.split(" ").slice(-1)[0];
+    const bLast = f.b.name.split(" ").slice(-1)[0];
+    html += `
+      <tr>
+        <td class="proj-fight-num">${f.n}</td>
+        <td class="tleft">
+          <span class="proj-fighter-name">${aLast} vs ${bLast}</span>
+          <span class="proj-fighter-vs">${f.weight} · ${f.rounds}</span>
+        </td>
+        <td><span class="cell-pct-pos">${gtdPct.toFixed(1)}%</span></td>
+        <td><span class="proj-cell-odds">${projOdds}</span></td>
+        <td><span class="proj-cell-odds yes-line">${liveYes ? (liveYes.cost > 0 ? "+" + liveYes.cost : liveYes.cost) : "—"}</span></td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+function renderMethodTable() {
+  const tbody = document.getElementById("method-body");
+  const sorted = [...FIGHTS].sort((a, b) => a.n - b.n);
+  let html = "";
+  sorted.forEach(f => {
+    const aIsFav = f.a.ml < f.b.ml;
+    const fav = aIsFav ? f.a : f.b;
+    const dog = aIsFav ? f.b : f.a;
+    const favKey = aIsFav ? "a" : "b";
+    const dogKey = aIsFav ? "b" : "a";
+    const favSim = aIsFav
+      ? { dec: f.sim.aDec, ko: f.sim.aKO, sub: f.sim.aSub }
+      : { dec: f.sim.bDec, ko: f.sim.bKO, sub: f.sim.bSub };
+    const dogSim = aIsFav
+      ? { dec: f.sim.bDec, ko: f.sim.bKO, sub: f.sim.bSub }
+      : { dec: f.sim.aDec, ko: f.sim.aKO, sub: f.sim.aSub };
+    const liveMethod = f._liveMethod;
+    // BettingPros uses slugs: "points" (DEC), "ko-tko-dq" (KO), "submission" (SUB)
+    const liveLine = (sideKey, slug) => {
+      const lm = liveMethod && liveMethod[sideKey] && liveMethod[sideKey][slug];
+      if (!lm) return "";
+      const sign = lm.cost > 0 ? "+" : "";
+      return `<span class="method-row-line live-line">${sign}${lm.cost} live</span>`;
+    };
+    const cell = (p, sideKey, slug) =>
+      `<span class="method-row-line">${pctToAmericanOdds(p)}</span>` +
+      `<span class="method-row-line alt">${p.toFixed(1)}%</span>` +
+      liveLine(sideKey, slug);
+    html += `
+      <tr class="fav-row">
+        <td class="fighter-row-name">
+          <span class="name">${fav.name}</span>
+          <span class="opp">vs ${dog.name}</span>
+        </td>
+        <td class="method-odds">${cell(favSim.dec, favKey, "points")}</td>
+        <td class="method-odds">${cell(favSim.ko,  favKey, "ko-tko-dq")}</td>
+        <td class="method-odds">${cell(favSim.sub, favKey, "submission")}</td>
+        <td class="method-odds"><strong>${cell(favSim.ko + favSim.sub, null, null)}</strong></td>
+      </tr>
+      <tr class="fight-end dog-row">
+        <td class="fighter-row-name">
+          <span class="name">${dog.name}</span>
+        </td>
+        <td class="method-odds">${cell(dogSim.dec, dogKey, "points")}</td>
+        <td class="method-odds">${cell(dogSim.ko,  dogKey, "ko-tko-dq")}</td>
+        <td class="method-odds">${cell(dogSim.sub, dogKey, "submission")}</td>
+        <td class="method-odds"><strong>${cell(dogSim.ko + dogSim.sub, null, null)}</strong></td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+// ============== PROPS TABLES ==============
+function renderLengthTable() {
+  const tbody = document.getElementById("length-body");
+  const sorted = [...FIGHTS].sort((a, b) => a.n - b.n);
+  let html = "";
+  sorted.forEach(f => {
+    const itd = f.sim.itd;
+    const gtd = 100 - itd;
+    const gtdOdds = pctToAmericanOdds(gtd);
+    const noOdds = pctToAmericanOdds(itd); // NO = doesn't go distance = ITD
+    const aLast = f.a.name.split(" ").slice(-1)[0];
+    const bLast = f.b.name.split(" ").slice(-1)[0];
+    html += `
+      <tr>
+        <td class="proj-fight-num">${f.n}</td>
+        <td class="tleft">
+          <span class="proj-fighter-name">${aLast} vs ${bLast}</span>
+          <span class="proj-fighter-vs">${f.weight} · ${f.rounds}</span>
+        </td>
+        <td><span class="cell-pct-pos">${gtd.toFixed(1)}%</span></td>
+        <td><span class="proj-cell-pct">${itd.toFixed(1)}%</span></td>
+        <td>
+          <span class="method-row-line"><span class="proj-cell-odds yes-line">YES ${gtdOdds}</span></span>
+          <span class="method-row-line alt"><span class="no-line">NO ${noOdds}</span></span>
+        </td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+// View-tab switching (Fight Form / Moneylines / Props)
+document.querySelectorAll(".view-tab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".view-tab").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".view-pane").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById("view-" + btn.dataset.view).classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+// Favorites/Underdogs subtab switching inside Moneylines view
+document.querySelectorAll(".proj-subtab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".proj-subtab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderMLTable(btn.dataset.mlside);
+  });
+});
+</script>
+</body>
+</html>

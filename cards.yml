@@ -1,0 +1,15 @@
+# Active UFC cards the odds-tick should ingest.
+# Add a new entry per upcoming card; remove or comment out when the card is done.
+#
+# Times are UTC. Use the FIRST FIGHT's scheduled start (not weigh-ins).
+# main_event_utc is the main event's scheduled bell. Polling halts 30 min after.
+
+- name: "UFC Freedom 250"
+  slug: "freedom_250"
+  first_fight_utc: "2026-06-15T00:00:00"
+  main_event_utc:  "2026-06-15T02:10:00"
+
+# - name: "UFC Fight Night: ..."
+#   slug: "fn_..."
+#   first_fight_utc: "2026-MM-DDTHH:MM:00"
+#   main_event_utc:  "2026-MM-DDTHH:MM:00"

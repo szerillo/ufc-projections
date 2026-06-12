@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light only" />
+<title>UFC Fight Form · Embed Builder</title>
+<style>
+:root {
+  --bg: #ffffff;
+  --bg-muted: #f4f1ec;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --border: #e5e1d8;
+  --header-bg: #0e1116;
+  --header-bg-2: #1a1f28;
+  --action-green: #11c75c;
+  --action-green-dark: #0a8842;
+  --code-bg: #0e1116;
+  --code-text: #d4f5e2;
+}
+* { box-sizing: border-box; }
+html, body { background: #fafaf7; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+.eb-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+.eb-header {
+  position: relative;
+  background: linear-gradient(135deg, var(--header-bg) 0%, var(--header-bg-2) 100%);
+  color: #fff;
+  padding: 20px 22px;
+  text-align: center;
+  border-bottom: 3px solid var(--action-green);
+}
+.eb-title { font-size: 22px; font-weight: 800; margin: 0 0 3px; letter-spacing: -0.3px; }
+.eb-subtitle { font-size: 12px; opacity: 0.78; }
+.eb-brand {
+  position: absolute; top: 18px; right: 22px;
+  display: inline-flex; align-items: center; gap: 5px;
+}
+.eb-brand-text { font-weight: 900; font-size: 12px; color: #fff; }
+.eb-brand-check {
+  width: 15px; height: 15px; border-radius: 50%;
+  background: var(--action-green);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.eb-brand-check svg { width: 10px; height: 10px; }
+
+.eb-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  min-height: calc(100vh - 64px);
+}
+@media (max-width: 760px) {
+  .eb-grid { grid-template-columns: 1fr; }
+}
+
+/* Form panel */
+.eb-form {
+  padding: 22px 20px;
+  border-right: 1px solid var(--border);
+  background: #fafaf7;
+}
+.eb-form h2 {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.eb-form h2:not(:first-child) { margin-top: 22px; }
+.eb-form .desc { margin: 0 0 10px; font-size: 12px; color: var(--text-muted); }
+
+.eb-field { margin-bottom: 12px; }
+.eb-field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+.eb-field select,
+.eb-field input[type="text"],
+.eb-field input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.eb-field select:focus,
+.eb-field input:focus { border-color: var(--action-green); }
+
+.eb-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  margin-top: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.eb-checkbox input { width: 16px; height: 16px; cursor: pointer; }
+
+/* Output + preview panel */
+.eb-out {
+  padding: 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eb-out h2 {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.eb-out h2 .bullet {
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--action-green);
+  border-radius: 50%;
+}
+
+.code-box {
+  position: relative;
+  background: var(--code-bg);
+  color: var(--code-text);
+  font-family: "SF Mono", Menlo, Monaco, monospace;
+  font-size: 11.5px;
+  padding: 14px 56px 14px 14px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.55;
+  max-height: 180px;
+  overflow-y: auto;
+}
+.copy-btn {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: var(--action-green);
+  color: #fff;
+  border: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.copy-btn:hover { background: var(--action-green-dark); }
+.copy-btn.copied { background: #fff; color: var(--action-green-dark); }
+
+.url-line {
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  padding: 9px 12px;
+  border-radius: 5px;
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 11.5px;
+  word-break: break-all;
+  color: var(--text);
+}
+
+.preview-box {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+  min-height: 400px;
+  flex: 1;
+}
+.preview-frame {
+  width: 100%;
+  border: 0;
+  display: block;
+  min-height: 600px;
+}
+
+.info-box {
+  background: var(--bg-muted);
+  border-left: 3px solid var(--action-green);
+  padding: 10px 12px;
+  border-radius: 0 5px 5px 0;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.info-box strong { color: var(--text); }
+
+.preset-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+.preset {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: left;
+  font-family: inherit;
+  color: var(--text);
+  transition: all 0.12s ease;
+}
+.preset:hover {
+  background: var(--bg-muted);
+  border-color: var(--action-green);
+}
+.preset .preset-title { font-weight: 800; font-size: 12.5px; display: block; }
+.preset .preset-sub { font-size: 10.5px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="eb-wrap">
+  <div class="eb-header">
+    <div class="eb-brand">
+      <span class="eb-brand-text">ACTION</span>
+      <span class="eb-brand-check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 13 10 18 19 7"></polyline></svg>
+      </span>
+    </div>
+    <div class="eb-title">UFC Fight Form · Embed Builder</div>
+    <div class="eb-subtitle">Generate iframe code to embed the fight form on any page</div>
+  </div>
+
+  <div class="eb-grid">
+    <div class="eb-form">
+      <h2>Quick presets</h2>
+      <div class="preset-row">
+        <button class="preset" data-preset="full">
+          <span class="preset-title">Full Widget</span>
+          <span class="preset-sub">All fights + Moneylines + Props</span>
+        </button>
+        <button class="preset" data-preset="main_event">
+          <span class="preset-title">Main Event Only</span>
+          <span class="preset-sub">Topuria vs Gaethje panel</span>
+        </button>
+        <button class="preset" data-preset="moneylines">
+          <span class="preset-title">Moneylines Table</span>
+          <span class="preset-sub">Favorites + Underdogs</span>
+        </button>
+        <button class="preset" data-preset="props">
+          <span class="preset-title">Props Tables</span>
+          <span class="preset-sub">GTD + Method of Victory</span>
+        </button>
+      </div>
+
+      <h2>Customize</h2>
+
+      <div class="eb-field">
+        <label for="card">Card</label>
+        <select id="card">
+          <option value="freedom_250">UFC Freedom 250 (Jun 15, 2026)</option>
+        </select>
+      </div>
+
+      <div class="eb-field">
+        <label for="mode">Embed mode</label>
+        <select id="mode">
+          <option value="full">Full Widget (Fight Form + Moneylines + Props)</option>
+          <option value="fight">Single Fight Panel</option>
+          <option value="moneylines">Moneylines Table Only</option>
+          <option value="props">Props Tables Only</option>
+        </select>
+      </div>
+
+      <div class="eb-field" id="fight-select-wrap" style="display:none;">
+        <label for="fight">Which fight</label>
+        <select id="fight">
+          <option value="1">1 — Topuria vs Gaethje · Main Event · LW Title</option>
+          <option value="2">2 — Pereira vs Gane · Co-Main · Interim HW Title</option>
+          <option value="3">3 — O'Malley vs Zahabi · BW</option>
+          <option value="4">4 — Hokit vs Lewis · HW</option>
+          <option value="5">5 — Ruffy vs Chandler · LW</option>
+          <option value="6">6 — Nickal vs Daukaus · MW</option>
+          <option value="7">7 — Lopes vs Garcia · FW</option>
+        </select>
+      </div>
+
+      <div class="eb-field">
+        <label for="width">Width</label>
+        <input type="text" id="width" value="100%" placeholder="100% or 800" />
+      </div>
+
+      <div class="eb-field">
+        <label for="height">Height (px)</label>
+        <input type="number" id="height" value="1400" min="400" max="5000" />
+      </div>
+
+      <label class="eb-checkbox">
+        <input type="checkbox" id="autoresize" checked />
+        Auto-resize height (recommended)
+      </label>
+
+      <div class="info-box" style="margin-top:18px;">
+        <strong>Auto-resize</strong> lets the iframe grow or shrink to fit the widget. Your parent page needs to listen for <code>postMessage</code> events of type <code>ufc-iframe-height</code> and set the iframe's height. Most CMS embed wrappers handle this automatically when <code>data-autoresize="true"</code> is present.
+      </div>
+    </div>
+
+    <div class="eb-out">
+      <div>
+        <h2><span class="bullet"></span>Iframe URL</h2>
+        <div class="url-line" id="urlLine"></div>
+      </div>
+
+      <div>
+        <h2><span class="bullet"></span>Embed code</h2>
+        <div class="code-box">
+          <button class="copy-btn" id="copyBtn">Copy</button>
+          <span id="codeBox"></span>
+        </div>
+      </div>
+
+      <div style="flex:1;display:flex;flex-direction:column;min-height:400px;">
+        <h2><span class="bullet"></span>Live preview</h2>
+        <div class="preview-box" style="flex:1;">
+          <iframe id="previewFrame" class="preview-frame" src=""></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// --- config: where the widget files live (relative to embed.html) ---
+const CARD_FILES = {
+  freedom_250: "ufc_freedom_250_fight_form.html",
+};
+const CARD_LABELS = {
+  freedom_250: "UFC Freedom 250 Fight Form",
+};
+
+// --- DOM refs ---
+const $card = document.getElementById("card");
+const $mode = document.getElementById("mode");
+const $fight = document.getElementById("fight");
+const $fightWrap = document.getElementById("fight-select-wrap");
+const $width = document.getElementById("width");
+const $height = document.getElementById("height");
+const $auto = document.getElementById("autoresize");
+const $url = document.getElementById("urlLine");
+const $code = document.getElementById("codeBox");
+const $preview = document.getElementById("previewFrame");
+const $copy = document.getElementById("copyBtn");
+
+function build() {
+  const card = $card.value;
+  const mode = $mode.value;
+  const fight = $fight.value;
+  const width = $width.value || "100%";
+  const height = parseInt($height.value || "1400", 10);
+  const auto = $auto.checked;
+
+  $fightWrap.style.display = (mode === "fight") ? "block" : "none";
+
+  // Build iframe src
+  const file = CARD_FILES[card];
+  const params = new URLSearchParams();
+  params.set("embed", mode);
+  if (mode === "fight") params.set("n", fight);
+
+  // Use absolute URL if served, relative for the preview
+  const src = `${file}?${params.toString()}`;
+  const title = `${CARD_LABELS[card]}`;
+
+  // Recommended min-height for embed iframe
+  const minHeight = (mode === "moneylines" || mode === "props") ? 400 : 600;
+
+  const iframeHTML =
+    `<iframe ` +
+    `style="border:none;width:${width};min-height:${minHeight}px;" ` +
+    `src="${src}" ` +
+    `width="${width}" ` +
+    `height="${height}" ` +
+    `frameborder="0" ` +
+    `scrolling="auto" ` +
+    (auto ? `data-autoresize="true" ` : "") +
+    `title="${title}"></iframe>`;
+
+  $url.textContent = src;
+  $code.textContent = iframeHTML;
+  $preview.src = src;
+  $preview.style.height = height + "px";
+}
+
+// Presets — click to apply
+document.querySelectorAll(".preset").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const p = btn.dataset.preset;
+    if (p === "full") { $mode.value = "full"; $height.value = 1800; }
+    else if (p === "main_event") { $mode.value = "fight"; $fight.value = "1"; $height.value = 1500; }
+    else if (p === "moneylines") { $mode.value = "moneylines"; $height.value = 700; }
+    else if (p === "props") { $mode.value = "props"; $height.value = 1100; }
+    build();
+  });
+});
+
+// Wire all controls
+[$card, $mode, $fight, $width, $height, $auto].forEach(el => {
+  el.addEventListener("change", build);
+  el.addEventListener("input", build);
+});
+
+// Copy button
+$copy.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText($code.textContent);
+    $copy.textContent = "Copied!";
+    $copy.classList.add("copied");
+    setTimeout(() => { $copy.textContent = "Copy"; $copy.classList.remove("copied"); }, 1500);
+  } catch (e) {
+    // Fallback: select text
+    const r = document.createRange();
+    r.selectNode($code);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+  }
+});
+
+// Listen for auto-resize messages from preview iframe
+window.addEventListener("message", (e) => {
+  if (!e.data || e.data.type !== "ufc-iframe-height") return;
+  if ($auto.checked && parseInt(e.data.height, 10) > 0) {
+    $preview.style.height = (e.data.height + 20) + "px";
+  }
+});
+
+// Initial render
+build();
+</script>
+</body>
+</html>
