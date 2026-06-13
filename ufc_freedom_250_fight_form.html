@@ -1593,14 +1593,17 @@ td.grp-divider-left { border-left: 1px solid var(--border); }
   .method-table col[style*="width"] { width: 22% !important; }
   .method-table col:first-child { width: 34% !important; }
   .method-table tbody td.method-odds { padding: 4px 0; }
-  /* Hide rightmost column (LIVE GTD in length table, ITD in method table) on mobile.
-     Both are derivable from the visible per-fight panel and just steal width here. */
-  #length-body tr > td:last-child,
-  #view-props > .proj-section > .proj-scroll:first-of-type table thead th:last-child {
-    display: none;
-  }
-  .method-table thead th:last-child,
-  .method-table tbody td:last-child { display: none; }
+  /* Keep all columns visible on mobile for the consolidated layout. Tables scroll horizontally if needed. */
+  .fight-length-table { min-width: 360px; }
+  .method-table { min-width: 380px; }
+  .total-rounds-table { min-width: 320px; }
+  /* Compress the stacked YES/NO cells a touch on mobile */
+  .fight-length-table tbody td:nth-child(4),
+  .fight-length-table tbody td:nth-child(5) { padding: 5px 2px; }
+  .fight-length-table tbody td:nth-child(4) .proj-cell-odds,
+  .fight-length-table tbody td:nth-child(5) .proj-cell-odds { font-size: 10.5px; }
+  .fight-length-table tbody td:nth-child(4) .no-line,
+  .fight-length-table tbody td:nth-child(5) .no-line { font-size: 9.5px !important; }
   .proj-table thead th { font-size: 7.5px; padding: 4px 1px; letter-spacing: 0.3px; }
   .proj-table thead tr.grp-row th { font-size: 7.5px; padding: 3px 1px; letter-spacing: 0.5px; }
   .proj-table tbody td { padding: 5px 1px; font-size: 10px; }
@@ -1760,28 +1763,36 @@ td.grp-divider-left { border-left: 1px solid var(--border); }
     </div>
   </div>
 
-  <!-- View pane: Props -->
+  <!-- View pane: Props (consolidated layout, Vegas 118 style) -->
   <div class="view-pane" id="view-props">
     <div class="proj-section">
-      <div class="section-bar"><span class="bullet"></span>Fight Length · GTD &amp; ITD</div>
-      <div class="proj-scroll"><table class="proj-table">
+      <div class="section-bar"><span class="bullet"></span>Fight Length &middot; GTD &amp; ITD</div>
+      <div class="proj-scroll"><table class="proj-table fight-length-table">
         <colgroup>
-          <col style="width: 32px;"><col>
-          <col style="width: 60px;"><col style="width: 70px;"><col style="width: 70px;">
+          <col style="width: 28px;"><col>
+          <col style="width: 56px;">
+          <col style="width: 78px;"><col style="width: 78px;">
         </colgroup>
         <thead>
+          <tr class="grp-row">
+            <th></th><th></th><th></th>
+            <th class="proj-grp grp-divider-left">Implied</th>
+            <th class="list-grp grp-divider-left">Listed</th>
+          </tr>
           <tr>
             <th>#</th><th class="tleft">Fight</th>
-            <th>GTD%</th><th>Proj GTD</th><th>Live GTD</th>
+            <th>GTD%</th>
+            <th class="grp-divider-left">Yes / No</th>
+            <th class="grp-divider-left">Yes / No</th>
           </tr>
         </thead>
         <tbody id="length-body"></tbody>
       </table></div>
 
-      <div class="section-bar"><span class="bullet"></span>Method of Victory (Projected)</div>
+      <div class="section-bar"><span class="bullet"></span>Method of Victory</div>
       <div class="proj-scroll"><table class="proj-table method-table">
         <colgroup>
-          <col><col style="width: 70px;"><col style="width: 70px;"><col style="width: 70px;"><col style="width: 70px;">
+          <col><col style="width: 64px;"><col style="width: 64px;"><col style="width: 64px;"><col style="width: 64px;">
         </colgroup>
         <thead>
           <tr>
@@ -1790,6 +1801,23 @@ td.grp-divider-left { border-left: 1px solid var(--border); }
           </tr>
         </thead>
         <tbody id="method-body"></tbody>
+      </table></div>
+
+      <div class="section-bar"><span class="bullet"></span>Total Rounds &middot; Listed Only</div>
+      <div class="proj-scroll"><table class="proj-table total-rounds-table">
+        <colgroup>
+          <col style="width: 28px;"><col>
+          <col style="width: 60px;">
+          <col style="width: 70px;"><col style="width: 70px;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>#</th><th class="tleft">Fight</th>
+            <th>Line</th>
+            <th>Over</th><th>Under</th>
+          </tr>
+        </thead>
+        <tbody id="totals-body"></tbody>
       </table></div>
     </div>
   </div>
@@ -1898,15 +1926,7 @@ const FIGHTS = [
       ]
     },
     sim: { itd: 93.8, aKO: 32.9, aSub: 3.5, aDec: 0.0, bKO: 55.6, bSub: 1.9, bDec: 6.1 },
-    notes: [
-      ["PHYSICAL",`Both 6'4". Gane 2" reach advantage (81 vs 79). Pereira 2.7 years older (38.9 vs 36.2) in a 5R bout.`],
-      ["STR DIFF","Gane +3.1, Pereira +1.5. 1.6 point swing toward Gane. Gane absorbs 2.7 SApM vs Pereira 4.1 SApM."],
-      ["WRESTLING","Gane 1.1 TD/5min at 25% TDAcc. Pereira 0.1 TD/5min at 50% TDAcc on tiny sample (1/2). Pereira 79% TDD on 43 attempts. Gane 47% TDD."],
-      ["CONTROL/GRAPPLING","Gane 53% control rate, Pereira 8%. 45 point swing. Gane 29% sub success rate (2/7)."],
-      ["PATHS","Gane KO 30.4% leads. Pereira KO 30.9% close behind. ITD 93.8% (highest on card). Pereira DEC share 0%."],
-      ["MODEL","Gane 57.6% vs raw implied 52.4% = +5.2 edge. Pereira 42.4% vs raw implied 53.1% = -10.7."],
-      ["BET REC","Gane -110 ML. Gane by KO +300."]
-    ]
+    notes: []
   },
   {
     n: 3, card: "MAIN CARD", weight: "Bantamweight", rounds: "3R", conf: "HIGH",
@@ -1942,15 +1962,7 @@ const FIGHTS = [
       ]
     },
     sim: { itd: 57.5, aKO: 38.5, aSub: 6.2, aDec: 41.2, bKO: 12.1, bSub: 0.7, bDec: 1.3 },
-    notes: [
-      ["PHYSICAL",`O'Malley 3" taller (5'11" vs 5'8"), 4" reach advantage (72 vs 68). O'Malley 7 years younger (31.6 vs 38.6). Stance mismatch (O'Malley switch, Zahabi orthodox).`],
-      ["STR DIFF","O'Malley +3.8, Zahabi +0.2. 3.6 point swing toward O'Malley. SLpM 7.1 vs 4.4."],
-      ["WRESTLING","Zahabi 14% TDAcc (1/7), 0.3 TD/5min. Path to ground essentially closed. O'Malley 60% TDD on 62 attempts."],
-      ["CONTROL/GRAPPLING","Zahabi 64% control rate on small sample, O'Malley 6%. Theoretical edge to Zahabi but he can't get there."],
-      ["PATHS","O'Malley DEC 41.2% and KO 38.5% near-tied. ITD 57.5% (lowest among heavy favorites). Zahabi DEC share 1.3%."],
-      ["MODEL","O'Malley 86.9% vs raw implied 81.1% = +5.8 edge. Zahabi 13.1% vs raw implied 22.8% = -9.7."],
-      ["BET REC","O'Malley parlay: build between -625 and -650 (cutoff 86.4% ≈ -637)."]
-    ]
+    notes: []
   },
   {
     n: 4, card: "MAIN CARD", weight: "Heavyweight", rounds: "3R", conf: "MED",
@@ -1987,15 +1999,7 @@ const FIGHTS = [
       ]
     },
     sim: { itd: 79.3, aKO: 57.8, aSub: 1.9, aDec: 19.6, bKO: 15.9, bSub: 3.6, bDec: 1.1 },
-    notes: [
-      ["PHYSICAL",`Lewis 2" taller (6'3" vs 6'1"), 6" reach advantage (79 vs 73). Hokit 12.7 years younger (28.6 vs 41.3).`],
-      ["STR DIFF","Hokit +3.8 (11.8 SLpM on 21 min sample), Lewis -1.0 (1.8 SLpM on 274 min). Caveat: Hokit's volume profile is small-sample inflated."],
-      ["WRESTLING","Lewis 52% TDD (54/103 over career), 1.3 TDs faced per 5 historically. Hokit 1.0 TD/5min on small sample."],
-      ["CONTROL/GRAPPLING","Hokit 68% control rate, Lewis 24%. 44 point swing."],
-      ["PATHS","Hokit KO 57.8% leads. ITD 79.3%. Lewis DEC share 1.1%."],
-      ["MODEL","Hokit 87.8% vs raw implied 80.6% = +7.2 edge. Lewis 12.2% vs raw implied 23.4% = -11.2."],
-      ["BET REC","Hokit parlay: build between -650 and -700 (cutoff 87.3% ≈ -687). Hokit ITD -250. Hokit KO -110."]
-    ]
+    notes: []
   },
   {
     n: 5, card: "MAIN CARD", weight: "Lightweight", rounds: "3R", conf: "LOW",
@@ -2032,15 +2036,7 @@ const FIGHTS = [
       ]
     },
     sim: { itd: 80.4, aKO: 63.7, aSub: 3.4, aDec: 1.5, bKO: 10.3, bSub: 3.0, bDec: 18.1 },
-    notes: [
-      ["PHYSICAL",`Ruffy 3" taller (5'11" vs 5'8"), 4" reach advantage (75 vs 71). Ruffy 10 years younger (30.0 vs 40.1).`],
-      ["STR DIFF","Ruffy -0.2 (39 min sample), Chandler -1.3. Both negative but Ruffy 1.1 ahead. Chandler 7.2 SApM is the second highest absorbed rate among the favored side this card."],
-      ["WRESTLING","Chandler 41% TDAcc on 22 attempts, 2.8 TD/5min. Genuine takedown lever. Ruffy 82% TDD on 17 attempts faced."],
-      ["CONTROL/GRAPPLING","Chandler 40% control rate, Ruffy 22%. Edge to Chandler if he can get there."],
-      ["PATHS","Ruffy KO 63.7% leads. ITD 80.4%. Chandler DEC 18.1% is 57% of his win share."],
-      ["MODEL","Ruffy 83.7% vs raw implied 88.2% = -4.5 edge. Chandler 16.3% vs raw implied 15.8% = +0.5 (essentially fair)."],
-      ["BET REC","SGP: Ruffy ML + Over 0.5 Rounds (-235). Letting Chandler survive R1 for the parlay price."]
-    ]
+    notes: []
   },
   {
     n: 6, card: "MAIN CARD", weight: "Middleweight", rounds: "3R", conf: "LOW",
@@ -2077,15 +2073,7 @@ const FIGHTS = [
       ]
     },
     sim: { itd: 72.9, aKO: 38.6, aSub: 9.6, aDec: 11.2, bKO: 16.1, bSub: 8.5, bDec: 16.0 },
-    notes: [
-      ["PHYSICAL",`Daukaus 1" taller (6'2" vs 6'1"), same reach (76 vs 76). Daukaus 2.9 years older (33.3 vs 30.4). Both southpaw.`],
-      ["STR DIFF","Daukaus +2.3, Nickal +1.7. Slight edge Daukaus. Daukaus higher volume (7.2 vs 4.4 SLpM)."],
-      ["WRESTLING","Daukaus 10.2 TD att/5min at 24% TDAcc. Nickal 100% TDD on 9 attempts faced in MMA, 47% TDAcc at 2.5 TD/5min."],
-      ["CONTROL/GRAPPLING","Nickal 81% control rate, Daukaus 62%. 19 point swing toward Nickal. Daukaus 29% sub success (2/7), Nickal 40% sub success (2/5)."],
-      ["PATHS","Nickal KO 38.6% leads. Daukaus DEC 16.0%, Nickal DEC 11.2%. ITD 72.9%."],
-      ["MODEL","Nickal 65.8% vs raw implied 77.5% = -11.7 edge. Daukaus 34.2% vs raw implied 26.5% = +7.8."],
-      ["BET REC","Daukaus +290 ML. Over 1.5 Rounds -145. GTD +170. Daukaus DEC +900."]
-    ]
+    notes: []
   },
   {
     n: 7, card: "MAIN CARD", weight: "Featherweight", rounds: "3R", conf: "MED",
@@ -2122,15 +2110,7 @@ const FIGHTS = [
       ]
     },
     sim: { itd: 64.7, aKO: 34.3, aSub: 8.7, aDec: 3.0, bKO: 19.9, bSub: 1.7, bDec: 32.3 },
-    notes: [
-      ["PHYSICAL",`Garcia 1" taller (6'0" vs 5'11"), 3" reach advantage (75 vs 72). Garcia 2.6 years older (34.1 vs 31.5). Stance mismatch (Lopes orthodox, Garcia southpaw).`],
-      ["STR DIFF","Garcia +4.5, Lopes -1.3. 5.8 point swing toward Garcia, biggest STR DIFF gap on the card. Garcia 7.5 SLpM and 3.0 SApM vs Lopes 3.7 SLpM and 5.0 SApM."],
-      ["WRESTLING","Lopes 50% TDAcc on 14 attempts, 74% TDD. Garcia 57% TDAcc on 7 attempts, 79% TDD."],
-      ["CONTROL/GRAPPLING","Lopes 46% control rate, Garcia 29%. 17 point swing to Lopes. Garcia spends 59% clinch/ground."],
-      ["PATHS","Lopes KO 34.3% leads, Garcia DEC 32.3% close behind. ITD 64.7%. Lopes DEC share just 3.0%."],
-      ["MODEL","Garcia 51.3% vs raw implied 41.0% = +10.3 edge. Lopes 48.7% vs raw implied 62.3% = -13.6."],
-      ["BET REC","Garcia +135 ML. Garcia DEC +550."]
-    ]
+    notes: []
   }
 ];
 
@@ -2568,7 +2548,8 @@ function renderPanel(f, isFirst) {
       </div>
     </details>
 
-    <!-- Analysis (collapsable, open by default) -->
+    <!-- Analysis (collapsable, open by default). Hidden entirely when notes is empty. -->
+    ${(!f.notes || f.notes.length === 0) ? "" : `
     <details class="collapsible" open>
       <summary><span class="bullet"></span>Analysis<span class="meta">click to collapse</span></summary>
       <div class="body">
@@ -2576,7 +2557,7 @@ function renderPanel(f, isFirst) {
           ${notesHTML}
         </div>
       </div>
-    </details>
+    </details>`}
   `;
   panelsEl.appendChild(panel);
 }
@@ -2794,6 +2775,7 @@ function updateOddsStatus(live, err) {
   renderMLTable("favorite");
   renderLengthTable();
   renderMethodTable();
+  renderTotalsTable();
 
 })();
 
@@ -2815,7 +2797,8 @@ function pctToAmericanOdds(pct) {
 }
 function renderMLTable(side) {
   const tbody = document.getElementById("ml-body");
-  const sorted = [...FIGHTS].sort((a, b) => b.n - a.n);
+  // Main event at top: ascending by fight number (fight 1 = main event in our card schema)
+  const sorted = [...FIGHTS].sort((a, b) => a.n - b.n);
   let html = "";
   let lastCard = null;
   sorted.forEach(f => {
@@ -2862,12 +2845,20 @@ function renderMLTable(side) {
 
 function renderLengthTable() {
   const tbody = document.getElementById("length-body");
+  // Main event at top: sort ascending by fight number (fight 1 = main event in our schema)
   const sorted = [...FIGHTS].sort((a, b) => a.n - b.n);
+  const fmtSigned = (n) => n == null ? "—" : (n > 0 ? "+" + n : n.toString());
   let html = "";
   sorted.forEach(f => {
     const gtdPct = 100 - f.sim.itd;
-    const projOdds = pctToAmericanOdds(gtdPct);
-    const liveYes = f._liveDistance && f._liveDistance.yes;
+    const itdPct = f.sim.itd;
+    // Projected YES = goes the distance, NO = inside the distance
+    const projYesOdds = pctToAmericanOdds(gtdPct);
+    const projNoOdds = pctToAmericanOdds(itdPct);
+    // Live YES/NO from BettingPros
+    const liveDist = f._liveDistance || {};
+    const liveYes = liveDist.yes ? liveDist.yes.cost : null;
+    const liveNo = liveDist.no ? liveDist.no.cost : null;
     const aLast = f.a.name.split(" ").slice(-1)[0];
     const bLast = f.b.name.split(" ").slice(-1)[0];
     html += `
@@ -2875,11 +2866,46 @@ function renderLengthTable() {
         <td class="proj-fight-num">${f.n}</td>
         <td class="tleft">
           <span class="proj-fighter-name">${aLast} vs ${bLast}</span>
-          <span class="proj-fighter-vs">${f.weight} · ${f.rounds}</span>
+          <span class="proj-fighter-vs">${f.weight}</span>
         </td>
-        <td><span class="cell-pct-pos">${gtdPct.toFixed(1)}%</span></td>
-        <td><span class="proj-cell-odds">${projOdds}</span></td>
-        <td><span class="proj-cell-odds yes-line">${liveYes ? (liveYes.cost > 0 ? "+" + liveYes.cost : liveYes.cost) : "—"}</span></td>
+        <td><span class="cell-pct-pos">${gtdPct.toFixed(0)}%</span></td>
+        <td class="grp-divider-left">
+          <div><span class="proj-cell-odds yes-line">${projYesOdds}</span></div>
+          <div><span class="proj-cell-odds no-line" style="font-size:10px;">${projNoOdds}</span></div>
+        </td>
+        <td class="grp-divider-left">
+          <div><span class="proj-cell-odds yes-line">${liveYes != null ? fmtSigned(liveYes) : "—"}</span></div>
+          <div><span class="proj-cell-odds no-line" style="font-size:10px;">${liveNo != null ? fmtSigned(liveNo) : "—"}</span></div>
+        </td>
+      </tr>
+    `;
+  });
+  tbody.innerHTML = html;
+}
+
+function renderTotalsTable() {
+  const tbody = document.getElementById("totals-body");
+  if (!tbody) return;
+  const sorted = [...FIGHTS].sort((a, b) => a.n - b.n);
+  const fmtSigned = (n) => n == null ? "—" : (n > 0 ? "+" + n : n.toString());
+  let html = "";
+  sorted.forEach(f => {
+    const t = f._liveTotal || {};
+    const line = t.line != null ? t.line : null;
+    const over = t.over;
+    const under = t.under;
+    const aLast = f.a.name.split(" ").slice(-1)[0];
+    const bLast = f.b.name.split(" ").slice(-1)[0];
+    html += `
+      <tr>
+        <td class="proj-fight-num">${f.n}</td>
+        <td class="tleft">
+          <span class="proj-fighter-name">${aLast} vs ${bLast}</span>
+          <span class="proj-fighter-vs">${f.weight}</span>
+        </td>
+        <td><span class="proj-cell-odds">${line != null ? line.toFixed(1) : "—"}</span></td>
+        <td><span class="proj-cell-odds yes-line">${over != null ? fmtSigned(over) : "—"}</span></td>
+        <td><span class="proj-cell-odds no-line">${under != null ? fmtSigned(under) : "—"}</span></td>
       </tr>
     `;
   });
@@ -2888,87 +2914,48 @@ function renderLengthTable() {
 
 function renderMethodTable() {
   const tbody = document.getElementById("method-body");
+  // Main event at top
   const sorted = [...FIGHTS].sort((a, b) => a.n - b.n);
   let html = "";
   sorted.forEach(f => {
     const aIsFav = f.a.ml < f.b.ml;
     const fav = aIsFav ? f.a : f.b;
     const dog = aIsFav ? f.b : f.a;
-    const favKey = aIsFav ? "a" : "b";
-    const dogKey = aIsFav ? "b" : "a";
     const favSim = aIsFav
       ? { dec: f.sim.aDec, ko: f.sim.aKO, sub: f.sim.aSub }
       : { dec: f.sim.bDec, ko: f.sim.bKO, sub: f.sim.bSub };
     const dogSim = aIsFav
       ? { dec: f.sim.bDec, ko: f.sim.bKO, sub: f.sim.bSub }
       : { dec: f.sim.aDec, ko: f.sim.aKO, sub: f.sim.aSub };
-    const liveMethod = f._liveMethod;
-    // BettingPros uses slugs: "points" (DEC), "ko-tko-dq" (KO), "submission" (SUB)
-    const liveLine = (sideKey, slug) => {
-      const lm = liveMethod && liveMethod[sideKey] && liveMethod[sideKey][slug];
-      if (!lm) return "";
-      const sign = lm.cost > 0 ? "+" : "";
-      return `<span class="method-row-line live-line">${sign}${lm.cost} live</span>`;
-    };
-    const cell = (p, sideKey, slug) =>
-      `<span class="method-row-line">${pctToAmericanOdds(p)}</span>` +
-      `<span class="method-row-line alt">${p.toFixed(1)}%</span>` +
-      liveLine(sideKey, slug);
+    // Clean single-odds cell (matches the consolidated Vegas 118 style)
+    const cell = (p) => `<span class="method-row-line"><strong>${pctToAmericanOdds(p)}</strong></span>`;
+    const itdCell = (p) => `<span class="method-row-line"><strong>${pctToAmericanOdds(p)}</strong></span>`;
     html += `
       <tr class="fav-row">
         <td class="fighter-row-name">
           <span class="name">${fav.name}</span>
           <span class="opp">vs ${dog.name}</span>
         </td>
-        <td class="method-odds">${cell(favSim.dec, favKey, "points")}</td>
-        <td class="method-odds">${cell(favSim.ko,  favKey, "ko-tko-dq")}</td>
-        <td class="method-odds">${cell(favSim.sub, favKey, "submission")}</td>
-        <td class="method-odds"><strong>${cell(favSim.ko + favSim.sub, null, null)}</strong></td>
+        <td class="method-odds">${cell(favSim.dec)}</td>
+        <td class="method-odds">${cell(favSim.ko)}</td>
+        <td class="method-odds">${cell(favSim.sub)}</td>
+        <td class="method-odds itd">${itdCell(favSim.ko + favSim.sub)}</td>
       </tr>
       <tr class="fight-end dog-row">
         <td class="fighter-row-name">
           <span class="name">${dog.name}</span>
         </td>
-        <td class="method-odds">${cell(dogSim.dec, dogKey, "points")}</td>
-        <td class="method-odds">${cell(dogSim.ko,  dogKey, "ko-tko-dq")}</td>
-        <td class="method-odds">${cell(dogSim.sub, dogKey, "submission")}</td>
-        <td class="method-odds"><strong>${cell(dogSim.ko + dogSim.sub, null, null)}</strong></td>
+        <td class="method-odds">${cell(dogSim.dec)}</td>
+        <td class="method-odds">${cell(dogSim.ko)}</td>
+        <td class="method-odds">${cell(dogSim.sub)}</td>
+        <td class="method-odds itd">${itdCell(dogSim.ko + dogSim.sub)}</td>
       </tr>
     `;
   });
   tbody.innerHTML = html;
 }
 
-// ============== PROPS TABLES ==============
-function renderLengthTable() {
-  const tbody = document.getElementById("length-body");
-  const sorted = [...FIGHTS].sort((a, b) => a.n - b.n);
-  let html = "";
-  sorted.forEach(f => {
-    const itd = f.sim.itd;
-    const gtd = 100 - itd;
-    const gtdOdds = pctToAmericanOdds(gtd);
-    const noOdds = pctToAmericanOdds(itd); // NO = doesn't go distance = ITD
-    const aLast = f.a.name.split(" ").slice(-1)[0];
-    const bLast = f.b.name.split(" ").slice(-1)[0];
-    html += `
-      <tr>
-        <td class="proj-fight-num">${f.n}</td>
-        <td class="tleft">
-          <span class="proj-fighter-name">${aLast} vs ${bLast}</span>
-          <span class="proj-fighter-vs">${f.weight} · ${f.rounds}</span>
-        </td>
-        <td><span class="cell-pct-pos">${gtd.toFixed(1)}%</span></td>
-        <td><span class="proj-cell-pct">${itd.toFixed(1)}%</span></td>
-        <td>
-          <span class="method-row-line"><span class="proj-cell-odds yes-line">YES ${gtdOdds}</span></span>
-          <span class="method-row-line alt"><span class="no-line">NO ${noOdds}</span></span>
-        </td>
-      </tr>
-    `;
-  });
-  tbody.innerHTML = html;
-}
+// (Legacy renderLengthTable removed — superseded by the consolidated version above.)
 
 // View-tab switching (Fight Form / Moneylines / Props)
 document.querySelectorAll(".view-tab").forEach(btn => {
