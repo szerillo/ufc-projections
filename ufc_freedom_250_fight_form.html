@@ -6,7 +6,9 @@
 <meta name="color-scheme" content="light only" />
 <title>UFC Freedom 250 · Fight Form</title>
 <script>
-// Embed-mode detection: sets data-embed on <body> early so CSS can hide chrome
+// Embed-mode detection: sets data-embed on <html> early so CSS can hide chrome
+// before first paint. The actual fight tab switching (when embed=fight&n=N)
+// happens later in the bootstrap function once tabs are rendered.
 (function() {
   const p = new URLSearchParams(location.search);
   const mode = p.get("embed");
@@ -14,26 +16,6 @@
   document.documentElement.setAttribute("data-embed", mode);
   const fightN = p.get("n") || p.get("fight");
   if (fightN) document.documentElement.setAttribute("data-embed-fight", fightN);
-  // EMBED MODE: apply post-render adjustments based on URL params
-  const embedMode = document.documentElement.getAttribute("data-embed");
-  if (embedMode === "fight") {
-    const fightN = parseInt(document.documentElement.getAttribute("data-embed-fight") || "1", 10);
-    const tabs = document.querySelectorAll(".ff-tab");
-    const tab = tabs[fightN - 1] || tabs[0];
-    if (tab) tab.click();
-  }
-
-  // iframe-height postMessage so parents that opt-in to data-autoresize="true" can size automatically.
-  function postHeight() {
-    const h = document.body.scrollHeight;
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({ type: "ufc-iframe-height", height: h }, "*");
-    }
-  }
-  const ro = new ResizeObserver(postHeight);
-  ro.observe(document.body);
-  window.addEventListener("load", postHeight);
-  setTimeout(postHeight, 250);
 })();
 </script>
 <style>
@@ -1803,22 +1785,6 @@ td.grp-divider-left { border-left: 1px solid var(--border); }
         <tbody id="method-body"></tbody>
       </table></div>
 
-      <div class="section-bar"><span class="bullet"></span>Total Rounds &middot; Listed Only</div>
-      <div class="proj-scroll"><table class="proj-table total-rounds-table">
-        <colgroup>
-          <col style="width: 28px;"><col>
-          <col style="width: 60px;">
-          <col style="width: 70px;"><col style="width: 70px;">
-        </colgroup>
-        <thead>
-          <tr>
-            <th>#</th><th class="tleft">Fight</th>
-            <th>Line</th>
-            <th>Over</th><th>Under</th>
-          </tr>
-        </thead>
-        <tbody id="totals-body"></tbody>
-      </table></div>
     </div>
   </div>
 
@@ -2384,16 +2350,6 @@ function renderPanel(f, isFirst) {
               <td class="pct">${itdPct.toFixed(1)}%</td>
               <td class="odds">${liveDist && liveDist.no ? fmtMLOdds(liveDist.no.cost) : "—"}</td>
               <td class="pct">${liveDist && liveDist.no && liveDist.no.no_vig_pct != null ? liveDist.no.no_vig_pct.toFixed(1) + "%" : "—"}</td></tr>
-          ${liveTotal && liveTotal.line ? `
-          <tr><td class="tleft">Total Rounds Over ${liveTotal.line}</td>
-              <td class="odds">—</td><td class="pct">—</td>
-              <td class="odds">${fmtMLOdds(liveTotal.over)}</td>
-              <td class="pct">—</td></tr>
-          <tr><td class="tleft">Total Rounds Under ${liveTotal.line}</td>
-              <td class="odds">—</td><td class="pct">—</td>
-              <td class="odds">${fmtMLOdds(liveTotal.under)}</td>
-              <td class="pct">—</td></tr>
-          ` : ""}
         </tbody>
       </table>
       <div class="fp-proj-header"><span class="bullet"></span>Method of Victory · Projected vs Live</div>
@@ -2547,17 +2503,6 @@ function renderPanel(f, isFirst) {
         ${projectionsHTML}
       </div>
     </details>
-
-    <!-- Analysis (collapsable, open by default). Hidden entirely when notes is empty. -->
-    ${(!f.notes || f.notes.length === 0) ? "" : `
-    <details class="collapsible" open>
-      <summary><span class="bullet"></span>Analysis<span class="meta">click to collapse</span></summary>
-      <div class="body">
-        <div class="notes-block" style="margin-bottom: 0;">
-          ${notesHTML}
-        </div>
-      </div>
-    </details>`}
   `;
   panelsEl.appendChild(panel);
 }
@@ -2775,8 +2720,35 @@ function updateOddsStatus(live, err) {
   renderMLTable("favorite");
   renderLengthTable();
   renderMethodTable();
-  renderTotalsTable();
 
+  // 4. Embed-mode tab selection (must run AFTER tabs and panels exist)
+  const embedMode = document.documentElement.getAttribute("data-embed");
+  if (embedMode === "fight") {
+    const fightN = parseInt(document.documentElement.getAttribute("data-embed-fight") || "1", 10);
+    // Hard-switch the active panel + tab rather than synthesizing a click, so
+    // we avoid any side effects (scrollTo, etc.) from the tab handler.
+    document.querySelectorAll(".fight-panel").forEach(p => p.classList.remove("active"));
+    document.querySelectorAll(".ff-tab").forEach(t => t.classList.remove("active"));
+    const panel = document.getElementById("fp-" + fightN);
+    if (panel) panel.classList.add("active");
+    const tabs = document.querySelectorAll(".ff-tab");
+    const tab = tabs[fightN - 1];
+    if (tab) tab.classList.add("active");
+  }
+
+  // 5. iframe height postMessage (so parent pages with data-autoresize="true" can size correctly)
+  function postHeight() {
+    const h = document.body.scrollHeight;
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: "ufc-iframe-height", height: h }, "*");
+    }
+  }
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(postHeight);
+    ro.observe(document.body);
+  }
+  window.addEventListener("load", postHeight);
+  setTimeout(postHeight, 250);
 })();
 
 // ============== (unused, kept for any future tabular views) ==============
@@ -2877,35 +2849,6 @@ function renderLengthTable() {
           <div><span class="proj-cell-odds yes-line">${liveYes != null ? fmtSigned(liveYes) : "—"}</span></div>
           <div><span class="proj-cell-odds no-line" style="font-size:10px;">${liveNo != null ? fmtSigned(liveNo) : "—"}</span></div>
         </td>
-      </tr>
-    `;
-  });
-  tbody.innerHTML = html;
-}
-
-function renderTotalsTable() {
-  const tbody = document.getElementById("totals-body");
-  if (!tbody) return;
-  const sorted = [...FIGHTS].sort((a, b) => a.n - b.n);
-  const fmtSigned = (n) => n == null ? "—" : (n > 0 ? "+" + n : n.toString());
-  let html = "";
-  sorted.forEach(f => {
-    const t = f._liveTotal || {};
-    const line = t.line != null ? t.line : null;
-    const over = t.over;
-    const under = t.under;
-    const aLast = f.a.name.split(" ").slice(-1)[0];
-    const bLast = f.b.name.split(" ").slice(-1)[0];
-    html += `
-      <tr>
-        <td class="proj-fight-num">${f.n}</td>
-        <td class="tleft">
-          <span class="proj-fighter-name">${aLast} vs ${bLast}</span>
-          <span class="proj-fighter-vs">${f.weight}</span>
-        </td>
-        <td><span class="proj-cell-odds">${line != null ? line.toFixed(1) : "—"}</span></td>
-        <td><span class="proj-cell-odds yes-line">${over != null ? fmtSigned(over) : "—"}</span></td>
-        <td><span class="proj-cell-odds no-line">${under != null ? fmtSigned(under) : "—"}</span></td>
       </tr>
     `;
   });
