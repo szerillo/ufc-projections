@@ -502,13 +502,13 @@ body {
       <div class="eb-field" id="fight-select-wrap" style="display:none;">
         <label for="fight">Which fight</label>
         <select id="fight">
-          <option value="1">1 — Topuria vs Gaethje · Main Event · LW Title</option>
-          <option value="2">2 — Pereira vs Gane · Co-Main · Interim HW Title</option>
-          <option value="3">3 — O'Malley vs Zahabi · BW</option>
-          <option value="4">4 — Hokit vs Lewis · HW</option>
-          <option value="5">5 — Ruffy vs Chandler · LW</option>
-          <option value="6">6 — Nickal vs Daukaus · MW</option>
-          <option value="7">7 — Lopes vs Garcia · FW</option>
+          <option value="7">7 · Topuria vs Gaethje · Main Event · LW Title</option>
+          <option value="6">6 · Pereira vs Gane · Co-Main · Interim HW Title</option>
+          <option value="5">5 · O'Malley vs Zahabi · BW</option>
+          <option value="4">4 · Hokit vs Lewis · HW</option>
+          <option value="3">3 · Ruffy vs Chandler · LW</option>
+          <option value="2">2 · Nickal vs Daukaus · MW</option>
+          <option value="1">1 · Lopes vs Garcia · FW</option>
         </select>
       </div>
 
@@ -657,7 +657,7 @@ document.querySelectorAll(".preset").forEach(btn => {
   btn.addEventListener("click", () => {
     const p = btn.dataset.preset;
     if (p === "full") { $mode.value = "full"; $height.value = 1800; }
-    else if (p === "main_event") { $mode.value = "fight"; $fight.value = "1"; $height.value = 1500; }
+    else if (p === "main_event") { $mode.value = "fight"; $fight.value = "7"; $height.value = 1500; }
     else if (p === "moneylines") { $mode.value = "moneylines"; $height.value = 700; }
     else if (p === "props") { $mode.value = "props"; $height.value = 1100; }
     build();
@@ -698,14 +698,16 @@ window.addEventListener("message", (e) => {
 build();
 
 // ===== Per-fight tab =====
+// Listed main event first (highest n) so the rendered grid mirrors the broadcast
+// card top-to-bottom. n now follows the real schema: 7 = main event, 1 = opener.
 const FIGHTS_META = [
-  { n: 1, matchup: "Topuria vs Gaethje",  meta: "Main Event · LW · 5R", belt: "LW TITLE" },
-  { n: 2, matchup: "Pereira vs Gane",     meta: "Co-Main · HW · 5R",    belt: "INTERIM HW TITLE" },
-  { n: 3, matchup: "O'Malley vs Zahabi",  meta: "Bantamweight · 3R" },
+  { n: 7, matchup: "Topuria vs Gaethje",  meta: "Main Event · LW · 5R", belt: "LW TITLE" },
+  { n: 6, matchup: "Pereira vs Gane",     meta: "Co-Main · HW · 5R",    belt: "INTERIM HW TITLE" },
+  { n: 5, matchup: "O'Malley vs Zahabi",  meta: "Bantamweight · 3R" },
   { n: 4, matchup: "Hokit vs Lewis",      meta: "Heavyweight · 3R" },
-  { n: 5, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
-  { n: 6, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
-  { n: 7, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
+  { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
+  { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
 ];
 
 const $pfHeight = document.getElementById("pfHeight");
