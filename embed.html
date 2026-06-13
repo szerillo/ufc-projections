@@ -58,15 +58,209 @@ body {
 }
 .eb-brand-check svg { width: 10px; height: 10px; }
 
+.eb-tabs {
+  display: flex;
+  background: var(--bg-muted);
+  border-bottom: 1px solid var(--border);
+}
+.eb-tab {
+  flex: 1;
+  padding: 12px 14px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+.eb-tab:hover { color: var(--text); }
+.eb-tab.active {
+  color: var(--text);
+  background: #fff;
+  border-bottom-color: var(--action-green);
+}
+.eb-pane { display: none; }
+.eb-pane.active { display: block; }
+
 .eb-grid {
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 0;
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 110px);
 }
 @media (max-width: 760px) {
   .eb-grid { grid-template-columns: 1fr; }
 }
+
+/* Per-fight tab */
+.eb-fights {
+  padding: 22px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.eb-fights .lead {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+  line-height: 1.55;
+}
+.eb-fights .lead strong { color: var(--text); }
+.fight-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.fight-card-header {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.fight-card-header .num {
+  background: var(--action-green);
+  color: #fff;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.4px;
+}
+.fight-card-header .matchup { font-weight: 800; font-size: 14px; }
+.fight-card-header .meta {
+  margin-left: auto;
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.fight-card-header .title-belt {
+  background: #c8a951;
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 9.5px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.4px;
+}
+.fight-card-body {
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 760px) {
+  .fight-card-body { grid-template-columns: 1fr; }
+}
+.fight-card-body .code-section .label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.fight-card-body .code-block {
+  position: relative;
+  background: var(--code-bg);
+  color: var(--code-text);
+  font-family: "SF Mono", Menlo, monospace;
+  font-size: 10.5px;
+  padding: 10px 50px 10px 10px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  line-height: 1.45;
+  max-height: 130px;
+  overflow-y: auto;
+}
+.fight-card-body .code-block .copy-mini {
+  position: absolute;
+  top: 6px; right: 6px;
+  background: var(--action-green);
+  color: #fff;
+  border: none;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.fight-card-body .code-block .copy-mini:hover { background: var(--action-green-dark); }
+.fight-card-body .code-block .copy-mini.copied { background: #fff; color: var(--action-green-dark); }
+.fight-card-body .preview-iframe {
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  width: 100%;
+  height: 220px;
+  background: #f7f7f5;
+}
+.bulk-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.bulk-actions .pill {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--text);
+}
+.bulk-actions .pill:hover { background: var(--bg-muted); border-color: var(--action-green); }
+.bulk-actions .pill.primary {
+  background: var(--action-green);
+  color: #fff;
+  border-color: var(--action-green);
+}
+.bulk-actions .pill.primary:hover { background: var(--action-green-dark); }
+.bulk-actions .pill.primary.copied { background: #fff; color: var(--action-green-dark); }
+.bulk-toolbar {
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.bulk-toolbar label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.bulk-toolbar input[type="number"] {
+  width: 80px;
+  padding: 5px 7px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+.bulk-toolbar input[type="checkbox"] { width: 16px; height: 16px; }
 
 /* Form panel */
 .eb-form {
@@ -258,6 +452,12 @@ body {
     <div class="eb-subtitle">Generate iframe code to embed the fight form on any page</div>
   </div>
 
+  <div class="eb-tabs">
+    <button class="eb-tab active" data-pane="builder">Single Embed Builder</button>
+    <button class="eb-tab" data-pane="perfight">Per-Fight Embeds (Quick Grab)</button>
+  </div>
+
+  <div class="eb-pane active" id="pane-builder">
   <div class="eb-grid">
     <div class="eb-form">
       <h2>Quick presets</h2>
@@ -352,6 +552,32 @@ body {
           <iframe id="previewFrame" class="preview-frame" src=""></iframe>
         </div>
       </div>
+    </div>
+  </div>
+  </div><!-- /pane-builder -->
+
+  <div class="eb-pane" id="pane-perfight">
+    <div class="eb-fights">
+      <p class="lead">
+        <strong>Per-Fight Embed Codes.</strong>
+        Each card below is a ready-to-paste iframe for a single fight panel. Drop them in different sections of your article — Topuria/Gaethje breakdown over here, Pereira/Gane analysis over there. Click <em>Copy</em> on whichever fight you need.
+      </p>
+
+      <div class="bulk-toolbar">
+        <label>Height (px)
+          <input type="number" id="pfHeight" value="1500" min="400" max="5000" />
+        </label>
+        <label>
+          <input type="checkbox" id="pfAuto" checked />
+          Auto-resize
+        </label>
+        <label>Width
+          <input type="number" id="pfWidth" value="100" min="20" max="100" /> %
+        </label>
+        <button class="pill primary" id="copyAllBtn">Copy all 7 iframes</button>
+      </div>
+
+      <div id="fightCardsList"></div>
     </div>
   </div>
 </div>
@@ -462,6 +688,120 @@ window.addEventListener("message", (e) => {
 
 // Initial render
 build();
+
+// ===== Per-fight tab =====
+const FIGHTS_META = [
+  { n: 1, matchup: "Topuria vs Gaethje",  meta: "Main Event · LW · 5R", belt: "LW TITLE" },
+  { n: 2, matchup: "Pereira vs Gane",     meta: "Co-Main · HW · 5R",    belt: "INTERIM HW TITLE" },
+  { n: 3, matchup: "O'Malley vs Zahabi",  meta: "Bantamweight · 3R" },
+  { n: 4, matchup: "Hokit vs Lewis",      meta: "Heavyweight · 3R" },
+  { n: 5, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
+  { n: 6, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
+  { n: 7, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+];
+
+const $pfHeight = document.getElementById("pfHeight");
+const $pfAuto = document.getElementById("pfAuto");
+const $pfWidth = document.getElementById("pfWidth");
+const $copyAll = document.getElementById("copyAllBtn");
+const $fightList = document.getElementById("fightCardsList");
+
+function iframeForFight(n) {
+  const file = CARD_FILES[$card.value];
+  const height = parseInt($pfHeight.value || "1500", 10);
+  const widthPct = parseInt($pfWidth.value || "100", 10);
+  const auto = $pfAuto.checked;
+  const src = `${file}?embed=fight&n=${n}`;
+  const widthStr = widthPct === 100 ? "100%" : widthPct + "%";
+  return `<iframe style="border:none;width:${widthStr};min-height:600px;" ` +
+    `src="${src}" ` +
+    `width="${widthStr}" height="${height}" ` +
+    `frameborder="0" scrolling="auto" ` +
+    (auto ? `data-autoresize="true" ` : "") +
+    `title="${CARD_LABELS[$card.value]} — Fight ${n}"></iframe>`;
+}
+
+function buildPerFight() {
+  $fightList.innerHTML = "";
+  FIGHTS_META.forEach(f => {
+    const code = iframeForFight(f.n);
+    const src = code.match(/src="([^"]+)"/)[1];
+    const card = document.createElement("div");
+    card.className = "fight-card";
+    card.innerHTML = `
+      <div class="fight-card-header">
+        <span class="num">FIGHT ${f.n}</span>
+        ${f.belt ? `<span class="title-belt">★ ${f.belt}</span>` : ""}
+        <span class="matchup">${f.matchup}</span>
+        <span class="meta">${f.meta}</span>
+      </div>
+      <div class="fight-card-body">
+        <div class="code-section">
+          <div class="label">Embed code</div>
+          <div class="code-block">
+            <button class="copy-mini" data-code="${encodeURIComponent(code)}">Copy</button>
+            <span class="code-content">${code.replace(/</g, "&lt;")}</span>
+          </div>
+          <div class="label" style="margin-top:8px;">Preview URL</div>
+          <div class="url-line" style="font-size:11px; padding:6px 8px; word-break:break-all;">${src}</div>
+        </div>
+        <div>
+          <div class="label" style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:4px;">Live preview</div>
+          <iframe class="preview-iframe" src="${src}" loading="lazy"></iframe>
+        </div>
+      </div>
+    `;
+    $fightList.appendChild(card);
+  });
+
+  // Wire mini copy buttons
+  $fightList.querySelectorAll(".copy-mini").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const code = decodeURIComponent(btn.dataset.code);
+      try {
+        await navigator.clipboard.writeText(code);
+        btn.textContent = "Copied!";
+        btn.classList.add("copied");
+        setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("copied"); }, 1500);
+      } catch (e) {
+        console.warn("Copy failed", e);
+      }
+    });
+  });
+}
+
+// Bulk "Copy all 7" button
+$copyAll.addEventListener("click", async () => {
+  const allCodes = FIGHTS_META.map(f => `<!-- Fight ${f.n}: ${f.matchup} -->\n${iframeForFight(f.n)}`).join("\n\n");
+  try {
+    await navigator.clipboard.writeText(allCodes);
+    $copyAll.textContent = "Copied all 7!";
+    $copyAll.classList.add("copied");
+    setTimeout(() => { $copyAll.textContent = "Copy all 7 iframes"; $copyAll.classList.remove("copied"); }, 1800);
+  } catch (e) {
+    console.warn("Copy all failed", e);
+  }
+});
+
+// Rerender on toolbar changes
+[$pfHeight, $pfAuto, $pfWidth].forEach(el => {
+  el.addEventListener("input", buildPerFight);
+  el.addEventListener("change", buildPerFight);
+});
+
+// Tab switching
+document.querySelectorAll(".eb-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".eb-tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".eb-pane").forEach(p => p.classList.remove("active"));
+    tab.classList.add("active");
+    const pane = document.getElementById("pane-" + tab.dataset.pane);
+    pane.classList.add("active");
+    if (tab.dataset.pane === "perfight" && !$fightList.children.length) {
+      buildPerFight();
+    }
+  });
+});
 </script>
 </body>
 </html>
