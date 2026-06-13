@@ -583,9 +583,17 @@ body {
 </div>
 
 <script>
-// --- config: where the widget files live (relative to embed.html) ---
+// --- config: where the widget files live ---
+// We derive the absolute base URL from the embed.html location so that
+// generated iframe codes work when pasted into ANY external site.
+// Without this, relative URLs would resolve against the embedding page
+// (e.g. wp-pressidium.actionnetwork.com) and 404.
+const BASE_URL = (function() {
+  const u = window.location.href.replace(/[^/]*$/, ''); // strip filename
+  return u; // ends with trailing slash
+})();
 const CARD_FILES = {
-  freedom_250: "ufc_freedom_250_fight_form.html",
+  freedom_250: BASE_URL + "ufc_freedom_250_fight_form.html",
 };
 const CARD_LABELS = {
   freedom_250: "UFC Freedom 250 Fight Form",
