@@ -2479,8 +2479,17 @@ function updateOddsStatus(live, err) {
   }
 
   // 5. iframe height postMessage (so parent pages with data-autoresize="true" can size correctly)
+  // Use the max of all four common measurements to get the true content height
+  // across browsers — bare body.scrollHeight can under-report when collapsibles
+  // or popouts haven't fully laid out yet.
   function postHeight() {
-    const h = document.body.scrollHeight;
+    const h = Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight,
+      document.documentElement.clientHeight
+    );
     if (window.parent && window.parent !== window) {
       window.parent.postMessage({ type: "ufc-iframe-height", height: h }, "*");
     }
@@ -2488,9 +2497,12 @@ function updateOddsStatus(live, err) {
   if (window.ResizeObserver) {
     const ro = new ResizeObserver(postHeight);
     ro.observe(document.body);
+    ro.observe(document.documentElement);
   }
   window.addEventListener("load", postHeight);
-  setTimeout(postHeight, 250);
+  // Multiple retries to catch late layout: webfonts loading, live-odds
+  // fetch completing, image decode, etc. Each call is cheap.
+  [100, 350, 800, 1500, 3000].forEach(ms => setTimeout(postHeight, ms));
 })();
 
 // ============== (unused, kept for any future tabular views) ==============
