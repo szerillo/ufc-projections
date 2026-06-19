@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="vegas_119">UFC Vegas 119 · Kape vs Horiguchi (Jun 20, 2026)</option>
           <option value="freedom_250">UFC Freedom 250 (Jun 15, 2026)</option>
         </select>
       </div>
@@ -501,15 +502,7 @@ body {
 
       <div class="eb-field" id="fight-select-wrap" style="display:none;">
         <label for="fight">Which fight</label>
-        <select id="fight">
-          <option value="7">7 · Topuria vs Gaethje · Main Event · LW Title</option>
-          <option value="6">6 · Pereira vs Gane · Co-Main · Interim HW Title</option>
-          <option value="5">5 · O'Malley vs Zahabi · BW</option>
-          <option value="4">4 · Hokit vs Lewis · HW</option>
-          <option value="3">3 · Ruffy vs Chandler · LW</option>
-          <option value="2">2 · Nickal vs Daukaus · MW</option>
-          <option value="1">1 · Lopes vs Garcia · FW</option>
-        </select>
+        <select id="fight"><!-- populated by JS based on selected card --></select>
       </div>
 
       <div class="eb-field">
@@ -594,9 +587,38 @@ const BASE_URL = (function() {
 })();
 const CARD_FILES = {
   freedom_250: BASE_URL + "ufc_freedom_250_fight_form.html",
+  vegas_119:   BASE_URL + "ufc_vegas_119_fight_form.html",
 };
 const CARD_LABELS = {
   freedom_250: "UFC Freedom 250 Fight Form",
+  vegas_119:   "UFC Vegas 119 · Kape vs Horiguchi",
+};
+// Per-card fight rosters used by both the Single Embed Builder and the
+// Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
+const FIGHTS_BY_CARD = {
+  freedom_250: [
+    { n: 7, matchup: "Topuria vs Gaethje",  meta: "Main Event · LW · 5R", belt: "LW TITLE" },
+    { n: 6, matchup: "Pereira vs Gane",     meta: "Co-Main · HW · 5R",    belt: "INTERIM HW TITLE" },
+    { n: 5, matchup: "O'Malley vs Zahabi",  meta: "Bantamweight · 3R" },
+    { n: 4, matchup: "Hokit vs Lewis",      meta: "Heavyweight · 3R" },
+    { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
+    { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
+    { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  vegas_119: [
+    { n: 12, matchup: "Kape vs Horiguchi",         meta: "Main Event · FLW · 5R" },
+    { n: 11, matchup: "Stirling vs Cutelaba",      meta: "Co-Main · LHW · 3R" },
+    { n: 10, matchup: "Rodriguez vs Amil",         meta: "Featherweight · 3R" },
+    { n: 9,  matchup: "Lima vs Borjas",            meta: "Flyweight · 3R" },
+    { n: 8,  matchup: "Magomedov vs Baghdasaryan", meta: "Featherweight · 3R" },
+    { n: 7,  matchup: "Mesquita vs Mullins",       meta: "Women's Bantamweight · 3R" },
+    { n: 6,  matchup: "Nascimento vs Raposo",      meta: "Flyweight · 3R" },
+    { n: 5,  matchup: "Aswell vs Bolanos",         meta: "Featherweight · 3R" },
+    { n: 4,  matchup: "Chokheli vs Shahbazyan",    meta: "Welterweight · 3R" },
+    { n: 3,  matchup: "Rosa vs Santos",            meta: "Women's Bantamweight · 3R" },
+    { n: 2,  matchup: "Collins vs Tanzilovi",      meta: "Featherweight · 3R" },
+    { n: 1,  matchup: "Oliveira vs Fili",          meta: "Featherweight · 3R" },
+  ],
 };
 
 // --- DOM refs ---
@@ -664,11 +686,30 @@ document.querySelectorAll(".preset").forEach(btn => {
   });
 });
 
+// Populate fight dropdown based on selected card. Main event first.
+function rebuildFightOptions() {
+  const fights = FIGHTS_BY_CARD[$card.value] || [];
+  const prevN = $fight.value;
+  $fight.innerHTML = "";
+  fights.forEach(f => {
+    const opt = document.createElement("option");
+    opt.value = f.n;
+    opt.textContent = `${f.n} · ${f.matchup} · ${f.meta}`;
+    $fight.appendChild(opt);
+  });
+  // Try to preserve previous selection; otherwise default to first (main event)
+  if (Array.from($fight.options).some(o => o.value === prevN)) {
+    $fight.value = prevN;
+  }
+}
+rebuildFightOptions();
+
 // Wire all controls
 [$card, $mode, $fight, $width, $height, $auto].forEach(el => {
   el.addEventListener("change", build);
   el.addEventListener("input", build);
 });
+$card.addEventListener("change", () => { rebuildFightOptions(); buildPerFight(); build(); });
 
 // Copy button
 $copy.addEventListener("click", async () => {
@@ -698,17 +739,7 @@ window.addEventListener("message", (e) => {
 build();
 
 // ===== Per-fight tab =====
-// Listed main event first (highest n) so the rendered grid mirrors the broadcast
-// card top-to-bottom. n now follows the real schema: 7 = main event, 1 = opener.
-const FIGHTS_META = [
-  { n: 7, matchup: "Topuria vs Gaethje",  meta: "Main Event · LW · 5R", belt: "LW TITLE" },
-  { n: 6, matchup: "Pereira vs Gane",     meta: "Co-Main · HW · 5R",    belt: "INTERIM HW TITLE" },
-  { n: 5, matchup: "O'Malley vs Zahabi",  meta: "Bantamweight · 3R" },
-  { n: 4, matchup: "Hokit vs Lewis",      meta: "Heavyweight · 3R" },
-  { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
-  { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
-  { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
-];
+// Roster pulled from FIGHTS_BY_CARD[currentCard]; updated when card changes.
 
 const $pfHeight = document.getElementById("pfHeight");
 const $pfAuto = document.getElementById("pfAuto");
@@ -733,7 +764,8 @@ function iframeForFight(n) {
 
 function buildPerFight() {
   $fightList.innerHTML = "";
-  FIGHTS_META.forEach(f => {
+  const fights = FIGHTS_BY_CARD[$card.value] || [];
+  fights.forEach(f => {
     const code = iframeForFight(f.n);
     const src = code.match(/src="([^"]+)"/)[1];
     const card = document.createElement("div");
@@ -782,7 +814,7 @@ function buildPerFight() {
 
 // Bulk "Copy all 7" button
 $copyAll.addEventListener("click", async () => {
-  const allCodes = FIGHTS_META.map(f => `<!-- Fight ${f.n}: ${f.matchup} -->\n${iframeForFight(f.n)}`).join("\n\n");
+  const allCodes = (FIGHTS_BY_CARD[$card.value] || []).map(f => `<!-- Fight ${f.n}: ${f.matchup} -->\n${iframeForFight(f.n)}`).join("\n\n");
   try {
     await navigator.clipboard.writeText(allCodes);
     $copyAll.textContent = "Copied all 7!";
