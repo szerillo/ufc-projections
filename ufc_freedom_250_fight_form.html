@@ -1605,9 +1605,24 @@ td.grp-divider-left { border-left: 1px solid var(--border); }
 .proj-scroll::-webkit-scrollbar-thumb { background: #d4d0c4; border-radius: 2px; }
 @media (max-width: 440px) {
   .proj-section { padding: 8px 4px; }
-  .proj-table { font-size: 10.5px; }
+  .proj-table { font-size: 10.5px; table-layout: fixed; width: 100%; }
   /* override desktop colgroup widths so all columns fit at 375-390px */
   .proj-table col[style*="width"] { width: auto !important; }
+  /* Moneyline table (7 cols): give name + odds enough room, edge stays tight */
+  #view-ml .proj-table col:nth-child(1) { width: 7% !important; }
+  #view-ml .proj-table col:nth-child(2) { width: 26% !important; }
+  #view-ml .proj-table col:nth-child(3) { width: 13% !important; }
+  #view-ml .proj-table col:nth-child(4) { width: 11% !important; }
+  #view-ml .proj-table col:nth-child(5) { width: 15% !important; }
+  #view-ml .proj-table col:nth-child(6) { width: 11% !important; }
+  #view-ml .proj-table col:nth-child(7) { width: 17% !important; }
+  #view-ml .proj-table tbody td.tleft .proj-fighter-name,
+  #view-ml .proj-table tbody td.tleft .proj-fighter-vs {
+    overflow-wrap: anywhere;
+    word-break: normal;
+    display: block;
+    line-height: 1.15;
+  }
   .method-table col[style*="width"] { width: 22% !important; }
   .method-table col:first-child { width: 34% !important; }
   .method-table tbody td.method-odds { padding: 4px 0; }
@@ -2941,7 +2956,6 @@ function renderMethodTable() {
       <tr class="fav-row">
         <td class="fighter-row-name">
           <span class="name">${fav.name}</span>
-          <span class="opp">vs ${dog.name}</span>
         </td>
         <td class="method-odds">${cell(favSim.dec)}</td>
         <td class="method-odds">${cell(favSim.ko)}</td>
