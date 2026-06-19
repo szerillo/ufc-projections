@@ -160,17 +160,21 @@ html[data-embed] .ff-widget { box-shadow: none; border-radius: 0; }
 html[data-embed] .ff-header { padding: 10px 14px 8px; border-radius: 0; }
 html[data-embed] .ff-byline-header { display: none; }
 html[data-embed] .ff-footer { display: none; }
-/* embed=moneylines or embed=props: hide everything else */
-html[data-embed="moneylines"] .ff-header,
+/* embed=moneylines or embed=props: keep the header (with view-specific title +
+   subtitle + byline + ACTION badge), but hide all other view chrome. */
 html[data-embed="moneylines"] .view-tabs,
 html[data-embed="moneylines"] #view-form,
 html[data-embed="moneylines"] #view-props,
-html[data-embed="props"] .ff-header,
 html[data-embed="props"] .view-tabs,
 html[data-embed="props"] #view-form,
 html[data-embed="props"] #view-ml { display: none !important; }
 html[data-embed="moneylines"] #view-ml,
 html[data-embed="props"] #view-props { display: block !important; }
+html[data-embed="moneylines"] .ff-byline-header,
+html[data-embed="props"] .ff-byline-header { display: block !important; }
+/* live odds badge would be redundant chrome in a compact embed header */
+html[data-embed="moneylines"] .ff-odds-status,
+html[data-embed="props"] .ff-odds-status { display: none !important; }
 /* embed=fight: single fight panel, no view tabs, no fight scroller */
 html[data-embed="fight"] .view-tabs,
 html[data-embed="fight"] .ff-tabs-wrap,
@@ -2944,8 +2948,17 @@ function updateOddsStatus(live, err) {
   renderLengthTable();
   renderMethodTable();
 
-  // 4. Embed-mode tab selection (must run AFTER tabs and panels exist)
+  // 4. Embed-mode header title rewrite (Moneylines / Props embeds get a
+  //    view-specific title like "UFC Vegas 119 — Moneylines").
   const embedMode = document.documentElement.getAttribute("data-embed");
+  if (embedMode === "moneylines" || embedMode === "props") {
+    const titleEl = document.querySelector(".ff-title");
+    if (titleEl) {
+      // Strip the trailing " · Fight Form" so we can append a clean " — Moneylines"/"— Props"
+      const base = titleEl.textContent.replace(/\s*[··]\s*Fight Form\s*$/i, "").trim();
+      titleEl.textContent = base + (embedMode === "moneylines" ? " — Moneylines" : " — Props");
+    }
+  }
   if (embedMode === "fight") {
     const fightN = parseInt(document.documentElement.getAttribute("data-embed-fight") || "1", 10);
     // Hard-switch the active panel + tab rather than synthesizing a click, so
