@@ -1405,6 +1405,39 @@ details.fighter-drop > summary .record {
   border-bottom-color: var(--action-green);
 }
 
+/* Card segment toggle (Main Card / Prelims / All) - shared across ML + Props */
+.seg-toggle-bar {
+  display: flex;
+  gap: 0;
+  padding: 6px 0 0;
+  margin-bottom: 6px;
+}
+.seg-toggle {
+  flex: 1;
+  padding: 7px 4px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  color: var(--text-muted);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-right-width: 0;
+  font-family: inherit;
+}
+.seg-toggle:last-child { border-right-width: 1px; border-radius: 0 4px 4px 0; }
+.seg-toggle:first-child { border-radius: 4px 0 0 4px; }
+.seg-toggle.active {
+  background: var(--action-green);
+  color: #fff;
+  border-color: var(--action-green);
+}
+@media (max-width: 480px) {
+  .seg-toggle { font-size: 9px; padding: 6px 2px; letter-spacing: 0.4px; }
+}
+
 .proj-table {
   width: 100%;
   border-collapse: collapse;
@@ -1718,6 +1751,11 @@ td.grp-divider-left { border-left: 1px solid var(--border); }
   <!-- View pane: Moneylines -->
   <div class="view-pane" id="view-ml">
     <div class="proj-section">
+      <div class="seg-toggle-bar" data-seg-toggle>
+        <button class="seg-toggle active" data-segment="main">Main Card</button>
+        <button class="seg-toggle" data-segment="prelims">Prelims</button>
+        <button class="seg-toggle" data-segment="all">All</button>
+      </div>
       <div class="proj-subtabs">
         <button class="proj-subtab active" data-mlside="favorite">Favorites</button>
         <button class="proj-subtab" data-mlside="underdog">Underdogs</button>
@@ -1751,6 +1789,11 @@ td.grp-divider-left { border-left: 1px solid var(--border); }
   <!-- View pane: Props (consolidated layout, Vegas 118 style) -->
   <div class="view-pane" id="view-props">
     <div class="proj-section">
+      <div class="seg-toggle-bar" data-seg-toggle>
+        <button class="seg-toggle active" data-segment="main">Main Card</button>
+        <button class="seg-toggle" data-segment="prelims">Prelims</button>
+        <button class="seg-toggle" data-segment="all">All</button>
+      </div>
       <div class="section-bar"><span class="bullet"></span>Fight Length &middot; GTD &amp; ITD</div>
       <div class="proj-scroll"><table class="proj-table fight-length-table">
         <colgroup>
@@ -2768,10 +2811,22 @@ function pctToAmericanOdds(pct) {
   if (p >= 0.5) return Math.round(-100 * (p/(1-p))).toString();
   return "+" + Math.round(100 * ((1-p)/p));
 }
+// Filter FIGHTS by the current card-segment toggle ("main" | "prelims" | "all")
+let cardSegmentFilter = "main";
+function applySegmentFilter(fights) {
+  if (cardSegmentFilter === "all") return fights;
+  if (cardSegmentFilter === "prelims") return fights.filter(f => f.card === "PRELIMS");
+  return fights.filter(f => f.card !== "PRELIMS");
+}
+
 function renderMLTable(side) {
   const tbody = document.getElementById("ml-body");
   // Main event at top: sort descending by fight number (main event = highest n in our card schema)
-  const sorted = [...FIGHTS].sort((a, b) => b.n - a.n);
+  const sorted = applySegmentFilter([...FIGHTS]).sort((a, b) => b.n - a.n);
+  if (sorted.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7" style="padding:18px;text-align:center;color:var(--text-muted);font-size:11px;">No fights in this segment.</td></tr>`;
+    return;
+  }
   let html = "";
   let lastCard = null;
   sorted.forEach(f => {
@@ -2819,8 +2874,12 @@ function renderMLTable(side) {
 function renderLengthTable() {
   const tbody = document.getElementById("length-body");
   // Main event at top: sort descending by fight number (main event = highest n in our schema)
-  const sorted = [...FIGHTS].sort((a, b) => b.n - a.n);
+  const sorted = applySegmentFilter([...FIGHTS]).sort((a, b) => b.n - a.n);
   const fmtSigned = (n) => n == null ? "—" : (n > 0 ? "+" + n : n.toString());
+  if (sorted.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="5" style="padding:18px;text-align:center;color:var(--text-muted);font-size:11px;">No fights in this segment.</td></tr>`;
+    return;
+  }
   let html = "";
   sorted.forEach(f => {
     const gtdPct = 100 - f.sim.itd;
@@ -2859,7 +2918,11 @@ function renderLengthTable() {
 function renderMethodTable() {
   const tbody = document.getElementById("method-body");
   // Main event at top
-  const sorted = [...FIGHTS].sort((a, b) => b.n - a.n);
+  const sorted = applySegmentFilter([...FIGHTS]).sort((a, b) => b.n - a.n);
+  if (sorted.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="5" style="padding:18px;text-align:center;color:var(--text-muted);font-size:11px;">No fights in this segment.</td></tr>`;
+    return;
+  }
   let html = "";
   sorted.forEach(f => {
     const aIsFav = f.a.ml < f.b.ml;
@@ -2919,6 +2982,29 @@ document.querySelectorAll(".proj-subtab").forEach(btn => {
     renderMLTable(btn.dataset.mlside);
   });
 });
+
+// Card-segment toggle (Main Card / Prelims / All). Filter all three tables.
+function setCardSegment(seg) {
+  cardSegmentFilter = seg;
+  document.querySelectorAll(".seg-toggle").forEach(b =>
+    b.classList.toggle("active", b.dataset.segment === seg));
+  const activeMlSide = document.querySelector(".proj-subtab.active")?.dataset.mlside || "favorite";
+  renderMLTable(activeMlSide);
+  renderLengthTable();
+  renderMethodTable();
+}
+document.querySelectorAll(".seg-toggle").forEach(btn => {
+  btn.addEventListener("click", () => setCardSegment(btn.dataset.segment));
+});
+// Auto-hide toggle (and revert to "all") when the card has no PRELIMS fights —
+// keeps single-section cards (like Freedom 250) clean.
+(function tuneSegmentToggleForCard() {
+  const hasPrelims = FIGHTS.some(f => f.card === "PRELIMS");
+  if (!hasPrelims) {
+    document.querySelectorAll("[data-seg-toggle]").forEach(el => el.style.display = "none");
+    setCardSegment("all");
+  }
+})();
 </script>
 </body>
 </html>
