@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="fn_fiziev_torres">UFC FN Fiziev vs Torres (Jun 27, 2026)</option>
           <option value="vegas_119">UFC Vegas 119 · Kape vs Horiguchi (Jun 20, 2026)</option>
           <option value="freedom_250">UFC Freedom 250 (Jun 15, 2026)</option>
         </select>
@@ -586,12 +587,14 @@ const BASE_URL = (function() {
   return u; // ends with trailing slash
 })();
 const CARD_FILES = {
-  freedom_250: BASE_URL + "ufc_freedom_250_fight_form.html",
-  vegas_119:   BASE_URL + "ufc_vegas_119_fight_form.html",
+  freedom_250:      BASE_URL + "ufc_freedom_250_fight_form.html",
+  vegas_119:        BASE_URL + "ufc_vegas_119_fight_form.html",
+  fn_fiziev_torres: BASE_URL + "ufc_fn_fiziev_torres_fight_form.html",
 };
 const CARD_LABELS = {
-  freedom_250: "UFC Freedom 250 Fight Form",
-  vegas_119:   "UFC Vegas 119 · Kape vs Horiguchi",
+  freedom_250:      "UFC Freedom 250 Fight Form",
+  vegas_119:        "UFC Vegas 119 · Kape vs Horiguchi",
+  fn_fiziev_torres: "UFC FN Fiziev vs Torres",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -604,6 +607,9 @@ const FIGHTS_BY_CARD = {
     { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  fn_fiziev_torres: [
+    { n: 13, matchup: "Fiziev vs Torres",          meta: "Main Event · LW · 5R" },
   ],
   vegas_119: [
     { n: 12, matchup: "Kape vs Horiguchi",         meta: "Main Event · FLW · 5R" },
