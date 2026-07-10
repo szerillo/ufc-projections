@@ -179,19 +179,54 @@ def assemble_fight(event: dict) -> dict:
     return fight
 
 
+def _fight_key(fight: dict) -> tuple:
+    """Order-agnostic key for deduplicating fights (works on assembled fight dicts)."""
+    a = (fight.get("fighter_a", {}).get("name") or "").strip().lower()
+    b = (fight.get("fighter_b", {}).get("name") or "").strip().lower()
+    return tuple(sorted([a, b]))
+
+
+def _market_populated_count(fight: dict) -> int:
+    """Number of populated selections across all markets on an assembled fight."""
+    total = 0
+    for market_slug, sels in (fight.get("markets") or {}).items():
+        for sel in sels or []:
+            books = sel.get("books") or {}
+            if any(bk.get("cost") is not None for bk in books.values()):
+                total += 1
+    return total
+
+
 def build_card(card_name: str, location: str = "NY") -> dict:
     events = find_card_events(card_name, location)
     if not events:
         raise SystemExit(f"No events matched card name {card_name!r}")
-    print(f"Matched {len(events)} fights for {card_name}", file=sys.stderr)
+    print(f"Matched {len(events)} events for {card_name}", file=sys.stderr)
 
-    fights = []
-    for ev in events:
-        fight_num = len(fights) + 1
+    # Assemble all events first so we can dedupe based on which one BP actually
+    # populated. BP sometimes returns two events for the same fight (e.g.
+    # "A vs B" and "B vs A") with only one carrying markets.
+    all_fights = []
+    for idx, ev in enumerate(events, start=1):
         a_name = (ev.get("participants") or [{}])[0].get("name", "?")
         b_name = (ev.get("participants") or [{}, {}])[1].get("name", "?") if len(ev.get("participants") or []) > 1 else "?"
-        print(f"  [{fight_num}/{len(events)}] event {ev['id']} {a_name} vs {b_name}", file=sys.stderr)
-        fights.append({"n": fight_num, **assemble_fight(ev)})
+        print(f"  [{idx}/{len(events)}] event {ev['id']} {a_name} vs {b_name}", file=sys.stderr)
+        all_fights.append(assemble_fight(ev))
+
+    # Deduplicate — keep the fight with more populated markets when there's a dupe.
+    by_key: dict = {}
+    for f in all_fights:
+        k = _fight_key(f)
+        prev = by_key.get(k)
+        if prev is None or _market_populated_count(f) > _market_populated_count(prev):
+            if prev is not None:
+                print(f"  ~ dedupe: kept event {f['event_id']} ({_market_populated_count(f)} sels) over {prev['event_id']} ({_market_populated_count(prev)} sels)", file=sys.stderr)
+            by_key[k] = f
+
+    fights = []
+    for i, f in enumerate(by_key.values(), start=1):
+        fights.append({"n": i, **f})
+    print(f"Kept {len(fights)} unique fights after dedupe", file=sys.stderr)
 
     return {
         "card": card_name,
