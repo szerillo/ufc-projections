@@ -2452,11 +2452,11 @@ function renderPanel(f, isFirst) {
           <tr><td class="tleft">${f.a.name}</td>
               <td><span class="odds">${projOddsA}</span><div class="pct">${f.a.win.toFixed(1)}%</div></td>
               <td><span class="odds">${fmtMLOdds(listedA)}</span><div class="pct">${listedPctA.toFixed(1)}%</div>${liveBookA ? `<div class="pct" style="font-size:9px;">${liveBookA.toUpperCase()}</div>` : ""}</td>
-              <td><span class="edge-pill ${eClassProjA}">${projEdgeA > 0 ? "+" : ""}${projEdgeA.toFixed(1)}</span></td></tr>
+              <td><span class="edge-pill ${eClassProjA}">${projEdgeA > 0 ? "+" : ""}${projEdgeA.toFixed(1)}%</span></td></tr>
           <tr><td class="tleft">${f.b.name}</td>
               <td><span class="odds">${projOddsB}</span><div class="pct">${f.b.win.toFixed(1)}%</div></td>
               <td><span class="odds">${fmtMLOdds(listedB)}</span><div class="pct">${listedPctB.toFixed(1)}%</div>${liveBookB ? `<div class="pct" style="font-size:9px;">${liveBookB.toUpperCase()}</div>` : ""}</td>
-              <td><span class="edge-pill ${eClassProjB}">${projEdgeB > 0 ? "+" : ""}${projEdgeB.toFixed(1)}</span></td></tr>
+              <td><span class="edge-pill ${eClassProjB}">${projEdgeB > 0 ? "+" : ""}${projEdgeB.toFixed(1)}%</span></td></tr>
         </tbody>
       </table>
       <div class="fp-proj-header"><span class="bullet"></span>Fight Length · GTD &amp; ITD</div>
@@ -2479,7 +2479,7 @@ function renderPanel(f, isFirst) {
             const noEdge  = noLivePct  != null ? itdPct - noLivePct  : null;
             const edgePill = (e) => e == null
               ? `<span class="edge-pill neutral">—</span>`
-              : `<span class="edge-pill ${projEdgeClass(e)}">${e > 0 ? "+" : ""}${e.toFixed(1)}</span>`;
+              : `<span class="edge-pill ${projEdgeClass(e)}">${e > 0 ? "+" : ""}${e.toFixed(1)}%</span>`;
             return `
               <tr><td class="tleft">Goes the Distance (YES)</td>
                   <td><span class="odds">${gtdOdds}</span><div class="pct">${gtdPct.toFixed(1)}%</div></td>
@@ -2514,7 +2514,7 @@ function renderPanel(f, isFirst) {
               const edge = projPct - livePct;
               return `<span class="odds">${pctToAmericanOddsLocal(projPct)}</span><div class="pct">${projPct.toFixed(1)}%</div>` +
                      `<div class="pct" style="color:var(--action-green-dark);font-weight:700;">${fmtMLOdds(lm.cost)} live</div>` +
-                     `<div style="margin-top:2px;"><span class="edge-pill ${projEdgeClass(edge)}" style="font-size:9px;padding:1px 4px;">${edge > 0 ? "+" : ""}${edge.toFixed(1)}</span></div>`;
+                     `<div style="margin-top:2px;"><span class="edge-pill ${projEdgeClass(edge)}" style="font-size:9px;padding:1px 4px;">${edge > 0 ? "+" : ""}${edge.toFixed(1)}%</span></div>`;
             };
             return `<tr class="${key === 'a' ? 'fav' : 'dog'}">
               <td class="tleft">${ftr.name}</td>
@@ -2963,7 +2963,12 @@ function applySegmentFilter(fights) {
 function renderMLTable(side) {
   const tbody = document.getElementById("ml-body");
   // Main event at top: sort descending by fight number (main event = highest n in our card schema)
-  const sorted = applySegmentFilter([...FIGHTS]).sort((a, b) => b.n - a.n);
+  const sorted = applySegmentFilter([...FIGHTS]).sort((a, b) => {
+    const aHas = !!(a.a._liveML || a.b._liveML);
+    const bHas = !!(b.a._liveML || b.b._liveML);
+    if (aHas !== bHas) return aHas ? -1 : 1;  // populated fights first
+    return b.n - a.n;  // then main event to opener
+  });
   if (sorted.length === 0) {
     tbody.innerHTML = `<tr><td colspan="7" style="padding:18px;text-align:center;color:var(--text-muted);font-size:11px;">No fights in this segment.</td></tr>`;
     return;
@@ -3015,7 +3020,12 @@ function renderMLTable(side) {
 function renderLengthTable() {
   const tbody = document.getElementById("length-body");
   // Main event at top: sort descending by fight number (main event = highest n in our schema)
-  const sorted = applySegmentFilter([...FIGHTS]).sort((a, b) => b.n - a.n);
+  const sorted = applySegmentFilter([...FIGHTS]).sort((a, b) => {
+    const aHas = !!(a.a._liveML || a.b._liveML);
+    const bHas = !!(b.a._liveML || b.b._liveML);
+    if (aHas !== bHas) return aHas ? -1 : 1;  // populated fights first
+    return b.n - a.n;  // then main event to opener
+  });
   const fmtSigned = (n) => n == null ? "—" : (n > 0 ? "+" + n : n.toString());
   if (sorted.length === 0) {
     tbody.innerHTML = `<tr><td colspan="5" style="padding:18px;text-align:center;color:var(--text-muted);font-size:11px;">No fights in this segment.</td></tr>`;
@@ -3059,7 +3069,12 @@ function renderLengthTable() {
 function renderMethodTable() {
   const tbody = document.getElementById("method-body");
   // Main event at top
-  const sorted = applySegmentFilter([...FIGHTS]).sort((a, b) => b.n - a.n);
+  const sorted = applySegmentFilter([...FIGHTS]).sort((a, b) => {
+    const aHas = !!(a.a._liveML || a.b._liveML);
+    const bHas = !!(b.a._liveML || b.b._liveML);
+    if (aHas !== bHas) return aHas ? -1 : 1;  // populated fights first
+    return b.n - a.n;  // then main event to opener
+  });
   if (sorted.length === 0) {
     tbody.innerHTML = `<tr><td colspan="5" style="padding:18px;text-align:center;color:var(--text-muted);font-size:11px;">No fights in this segment.</td></tr>`;
     return;
