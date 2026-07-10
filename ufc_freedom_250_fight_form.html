@@ -2658,15 +2658,51 @@ function pickBook(books) {
 function consensusBook(books) {
   return (books && books.consensus) ? { name: "consensus", ...books.consensus } : null;
 }
+// Tokenize a fighter name into a Set of significant tokens. Handles:
+//   • accents (Benoît → benoit) via NFD + combining-mark strip
+//   • hyphens (Saint-Denis → ["saint", "denis"])
+//   • surname-first ordering (Wang Cong same tokens as Cong Wang)
+//   • suffixes (Kai Kamaka III → drops "iii")
+//   • short particles (de, da, van, van der, etc. — anything <3 chars)
+const NAME_SUFFIXES = new Set(["jr", "sr", "ii", "iii", "iv"]);
+function nameTokens(name) {
+  const raw = (name || "")
+    .toLowerCase()
+    .normalize("NFD").replace(/[̀-ͯ]/g, "")
+    .split(/[\s\-.]+/)
+    .map(t => t.replace(/[^a-z0-9]/g, ""))
+    .filter(t => t.length >= 3 && !NAME_SUFFIXES.has(t));
+  return new Set(raw);
+}
+function tokenOverlap(setA, setB) {
+  for (const t of setA) if (setB.has(t)) return true;
+  return false;
+}
+
 function findLiveFight(live, a, b) {
-  const norm = s => (s || "").toLowerCase().replace(/[^a-z]/g, "");
-  const aKey = norm(a.name.split(" ").slice(-1)[0]);
-  const bKey = norm(b.name.split(" ").slice(-1)[0]);
+  const aTokens = nameTokens(a.name);
+  const bTokens = nameTokens(b.name);
   return (live.fights || []).find(f => {
-    const fA = norm((f.fighter_a?.name || "").split(" ").slice(-1)[0]);
-    const fB = norm((f.fighter_b?.name || "").split(" ").slice(-1)[0]);
-    return (fA === aKey && fB === bKey) || (fA === bKey && fB === aKey);
+    const fA = nameTokens(f.fighter_a?.name);
+    const fB = nameTokens(f.fighter_b?.name);
+    return (tokenOverlap(aTokens, fA) && tokenOverlap(bTokens, fB)) ||
+           (tokenOverlap(aTokens, fB) && tokenOverlap(bTokens, fA));
   });
+}
+
+// Given a market selection label (e.g., "Manel Kape KO/TKO/DQ"), return "a"
+// or "b" — whichever fighter has more overlapping name tokens with the label.
+function whichFighter(label, f) {
+  const labelTokens = nameTokens(label);
+  const aTokens = nameTokens(f.a.name);
+  const bTokens = nameTokens(f.b.name);
+  let aScore = 0, bScore = 0;
+  for (const t of labelTokens) {
+    if (aTokens.has(t)) aScore++;
+    if (bTokens.has(t)) bScore++;
+  }
+  if (aScore === 0 && bScore === 0) return null;
+  return aScore >= bScore ? "a" : "b";
 }
 function fmtAgo(updatedIso) {
   if (!updatedIso) return "—";
@@ -2688,13 +2724,12 @@ function mergeLiveOdds(live) {
 
     const m = lf.markets || {};
 
-    // Moneyline — map by last-name match
+    // Moneyline — assign each selection to the fighter with best token overlap
     const ml = m.moneyline || [];
-    const norm = s => (s || "").toLowerCase().replace(/[^a-z]/g, "");
-    const aKey = norm(f.a.name.split(" ").slice(-1)[0]);
     ml.forEach(sel => {
-      const lastName = norm((sel.label || "").split(" ").slice(-1)[0]);
-      const target = (lastName === aKey) ? f.a : f.b;
+      const which = whichFighter(sel.label || "", f);
+      if (!which) return;
+      const target = which === "a" ? f.a : f.b;
       const headline = pickBook(sel.books);
       const cons = consensusBook(sel.books);
       if (headline) {
@@ -2736,16 +2771,12 @@ function mergeLiveOdds(live) {
       else if (sel.selection === "under") f._liveTotal.under = headline.cost;
     });
 
-    // Method of victory per fighter
+    // Method of victory per fighter — token-overlap match on the label
     const mov = m.method_of_victory || [];
     f._liveMethod = { a: {}, b: {} };
     mov.forEach(sel => {
       const label = sel.label || "";
-      const lastName = norm(label.split(" ").slice(-1)[0]);
-      const isFighterRow = lastName === aKey || lastName === norm(f.b.name.split(" ").slice(-1)[0]);
-      if (!isFighterRow && !sel.selection) return;
-      const which = (lastName === aKey || label.toLowerCase().includes(f.a.name.toLowerCase())) ? "a"
-                  : (label.toLowerCase().includes(f.b.name.toLowerCase())) ? "b" : null;
+      const which = whichFighter(label, f);
       const slug = sel.selection || "";
       if (!which || !slug) return;
       const headline = pickBook(sel.books);
