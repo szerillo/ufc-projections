@@ -2393,15 +2393,31 @@ function renderPanel(f, isFirst) {
             <th class="tleft">Outcome</th>
             <th>Projected</th>
             <th>Live</th>
+            <th>Edge</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="tleft">Goes the Distance (YES)</td>
-              <td><span class="odds">${gtdOdds}</span><div class="pct">${gtdPct.toFixed(1)}%</div></td>
-              <td><span class="odds">${liveDist && liveDist.yes ? fmtMLOdds(liveDist.yes.cost) : "—"}</span><div class="pct">${liveDist && liveDist.yes && liveDist.yes.no_vig_pct != null ? liveDist.yes.no_vig_pct.toFixed(1) + "%" : "—"}</div></td></tr>
-          <tr><td class="tleft">Inside the Distance (NO)</td>
-              <td><span class="odds">${itdOdds}</span><div class="pct">${itdPct.toFixed(1)}%</div></td>
-              <td><span class="odds">${liveDist && liveDist.no ? fmtMLOdds(liveDist.no.cost) : "—"}</span><div class="pct">${liveDist && liveDist.no && liveDist.no.no_vig_pct != null ? liveDist.no.no_vig_pct.toFixed(1) + "%" : "—"}</div></td></tr>
+          ${(() => {
+            const yesLiveCost = liveDist && liveDist.yes ? liveDist.yes.cost : null;
+            const noLiveCost  = liveDist && liveDist.no  ? liveDist.no.cost  : null;
+            const yesLivePct = yesLiveCost != null ? rawImpliedPct(yesLiveCost) : null;
+            const noLivePct  = noLiveCost  != null ? rawImpliedPct(noLiveCost)  : null;
+            const yesEdge = yesLivePct != null ? gtdPct - yesLivePct : null;
+            const noEdge  = noLivePct  != null ? itdPct - noLivePct  : null;
+            const edgePill = (e) => e == null
+              ? `<span class="edge-pill neutral">—</span>`
+              : `<span class="edge-pill ${projEdgeClass(e)}">${e > 0 ? "+" : ""}${e.toFixed(1)}</span>`;
+            return `
+              <tr><td class="tleft">Goes the Distance (YES)</td>
+                  <td><span class="odds">${gtdOdds}</span><div class="pct">${gtdPct.toFixed(1)}%</div></td>
+                  <td><span class="odds">${yesLiveCost != null ? fmtMLOdds(yesLiveCost) : "—"}</span><div class="pct">${yesLivePct != null ? yesLivePct.toFixed(1) + "%" : "—"}</div></td>
+                  <td>${edgePill(yesEdge)}</td></tr>
+              <tr><td class="tleft">Inside the Distance (NO)</td>
+                  <td><span class="odds">${itdOdds}</span><div class="pct">${itdPct.toFixed(1)}%</div></td>
+                  <td><span class="odds">${noLiveCost != null ? fmtMLOdds(noLiveCost) : "—"}</span><div class="pct">${noLivePct != null ? noLivePct.toFixed(1) + "%" : "—"}</div></td>
+                  <td>${edgePill(noEdge)}</td></tr>
+            `;
+          })()}
         </tbody>
       </table>
       <div class="fp-proj-header"><span class="bullet"></span>Method of Victory · Projected vs Live</div>
@@ -2416,15 +2432,22 @@ function renderPanel(f, isFirst) {
         </thead>
         <tbody>
           ${[["a", f.a, f.sim.aDec, f.sim.aKO, f.sim.aSub], ["b", f.b, f.sim.bDec, f.sim.bKO, f.sim.bSub]].map(([key, ftr, dec, ko, sub]) => {
-            const liveCell = (slug) => {
+            const methodCell = (projPct, slug) => {
               const lm = liveMethod && liveMethod[key] && liveMethod[key][slug];
-              return lm ? `<div class="pct" style="color:var(--action-green-dark);font-weight:700;">${fmtMLOdds(lm.cost)} live</div>` : "";
+              if (!lm) {
+                return `<span class="odds">${pctToAmericanOddsLocal(projPct)}</span><div class="pct">${projPct.toFixed(1)}%</div>`;
+              }
+              const livePct = rawImpliedPct(lm.cost);
+              const edge = projPct - livePct;
+              return `<span class="odds">${pctToAmericanOddsLocal(projPct)}</span><div class="pct">${projPct.toFixed(1)}%</div>` +
+                     `<div class="pct" style="color:var(--action-green-dark);font-weight:700;">${fmtMLOdds(lm.cost)} live</div>` +
+                     `<div style="margin-top:2px;"><span class="edge-pill ${projEdgeClass(edge)}" style="font-size:9px;padding:1px 4px;">${edge > 0 ? "+" : ""}${edge.toFixed(1)}</span></div>`;
             };
             return `<tr class="${key === 'a' ? 'fav' : 'dog'}">
               <td class="tleft">${ftr.name}</td>
-              <td><span class="odds">${pctToAmericanOddsLocal(dec)}</span><div class="pct">${dec.toFixed(1)}%</div>${liveCell("points")}</td>
-              <td><span class="odds">${pctToAmericanOddsLocal(ko)}</span><div class="pct">${ko.toFixed(1)}%</div>${liveCell("ko-tko-dq")}</td>
-              <td><span class="odds">${pctToAmericanOddsLocal(sub)}</span><div class="pct">${sub.toFixed(1)}%</div>${liveCell("submission")}</td>
+              <td>${methodCell(dec, "points")}</td>
+              <td>${methodCell(ko, "ko-tko-dq")}</td>
+              <td>${methodCell(sub, "submission")}</td>
             </tr>`;
           }).join("")}
         </tbody>
