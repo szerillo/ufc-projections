@@ -2530,7 +2530,6 @@ function renderPanel(f, isFirst) {
       <span class="fp-weight">${f.weight} · ${f.rounds}</span>
     </div>
     <div class="fp-headline">${f.a.name} <span class="vs">vs</span> ${f.b.name}</div>
-    <div class="fp-odds">ML: <span class="num">${fmtML(f.a.ml)}</span> / <span class="num">${fmtML(f.b.ml)}</span> &nbsp;·&nbsp; Implied: ${fmtPct(listedPctA)} / ${fmtPct(listedPctB)} &nbsp;·&nbsp; Hold: ${(listedPctA + listedPctB - 100).toFixed(1)}%</div>
 
     <!-- Tale of the Tape: 3-col grid, vertical layout -->
     <details class="collapsible" open>
