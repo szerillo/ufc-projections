@@ -2356,13 +2356,19 @@ function parsePct(s) {
   return m ? parseFloat(m[0]) : null;
 }
 function classifyEdge(delta, thresholds) {
-  // thresholds = [push, slight, solid] (absolute values for delta)
+  // 5-level system. thresholds = [t_single, t_double, t_triple] absolute breakpoints.
+  //   delta === 0                    → 0 (blank — truly equal, rare)
+  //   0 < |delta| < t_single         → 1 (~ minor gap, side inferred from sign)
+  //   t_single  ≤ |delta| < t_double → 2 (single arrow)
+  //   t_double  ≤ |delta| < t_triple → 3 (double arrow)
+  //   |delta|   ≥ t_triple           → 4 (triple arrow — dominant)
+  if (delta === 0) return 0;
+  const sign = delta > 0 ? 1 : -1;
   const abs = Math.abs(delta);
-  let mag = 0;
-  if (abs >= thresholds[2]) mag = 3;
-  else if (abs >= thresholds[1]) mag = 2;
-  else if (abs >= thresholds[0]) mag = 1;
-  return delta >= 0 ? mag : -mag;
+  if (abs >= thresholds[2]) return 4 * sign;
+  if (abs >= thresholds[1]) return 3 * sign;
+  if (abs >= thresholds[0]) return 2 * sign;
+  return 1 * sign;
 }
 function arrowFor(level) {
   switch (level) {
@@ -2388,11 +2394,15 @@ function computeEdges(f) {
   const aHtIn = parseHtInches(a.ht);
   const bHtIn = parseHtInches(b.ht);
   return {
-    // Arrow points to the YOUNGER fighter; 7-year gap minimum.
+    // Arrow points to the YOUNGER fighter.
+    //   <4y gap = ~  (minor)
+    //   4–7y    = ◀  (single arrow)
+    //   7–10y   = ◀◀ (double)
+    //   ≥10y    = ◀◀◀ (triple)
     age: {
       aVal: a.age.toFixed(1),
       bVal: b.age.toFixed(1),
-      level: classifyEdge(b.age - a.age, [7, 10, 14]),
+      level: classifyEdge(b.age - a.age, [4, 7, 10]),
     },
     ht: {
       aVal: a.ht,
@@ -2419,15 +2429,21 @@ function computeEdges(f) {
 }
 // Direction arrows for tale-of-the-tape integration
 function dirArrow(level) {
-  // level > 0 = a (left) has edge → arrow points LEFT (←)
-  // level < 0 = b (right) has edge → arrow points RIGHT (→)
-  // 0 = push (≈)
-  if (level >= 3) return { txt: "◀◀◀", cls: "dom-left" };
-  if (level === 2) return { txt: "◀◀", cls: "solid-left" };
-  if (level === 1) return { txt: "◀", cls: "slight-left" };
-  if (level === 0) return { txt: "≈", cls: "even" };
-  if (level === -1) return { txt: "▶", cls: "slight-right" };
-  if (level === -2) return { txt: "▶▶", cls: "solid-right" };
+  // 5-level system:
+  //   level ±4 = triple arrow (dominant gap)
+  //   level ±3 = double arrow (solid gap)
+  //   level ±2 = single arrow (slight gap)
+  //   level ±1 = "~" (minor gap — noticeable but not meaningful)
+  //   level  0 = blank (truly equal, rare)
+  // Positive = a (left) has edge, negative = b (right) has edge.
+  if (level >=  4) return { txt: "◀◀◀", cls: "dom-left" };
+  if (level ===  3) return { txt: "◀◀",  cls: "solid-left" };
+  if (level ===  2) return { txt: "◀",   cls: "slight-left" };
+  if (level ===  1) return { txt: "~",   cls: "minor-left" };
+  if (level ===  0) return { txt: "",    cls: "even" };
+  if (level === -1) return { txt: "~",   cls: "minor-right" };
+  if (level === -2) return { txt: "▶",   cls: "slight-right" };
+  if (level === -3) return { txt: "▶▶",  cls: "solid-right" };
   return { txt: "▶▶▶", cls: "dom-right" };
 }
 
@@ -2724,25 +2740,25 @@ function renderPanel(f, isFirst) {
   const arrDiff = dirArrow(edges.diff.level);
   const arrCtrl = dirArrow(edges.ctrl.level);
   const tapeEdgeRowsHTML = `
-    <div class="tape-cell left edge-row${edges.age.level > 0 ? " edge-side" : ""}">${edges.age.aVal}</div>
+    <div class="tape-cell left edge-row${edges.age.level >= 2 ? " edge-side" : ""}">${edges.age.aVal}</div>
     <div class="tape-cell label with-arrow"><span class="lbl">AGE</span><span class="arr ${arrAge.cls}">${arrAge.txt}</span></div>
-    <div class="tape-cell right edge-row${edges.age.level < 0 ? " edge-side" : ""}">${edges.age.bVal}</div>
+    <div class="tape-cell right edge-row${edges.age.level <= -2 ? " edge-side" : ""}">${edges.age.bVal}</div>
 
-    <div class="tape-cell left edge-row${edges.ht.level > 0 ? " edge-side" : ""}">${edges.ht.aVal}</div>
+    <div class="tape-cell left edge-row${edges.ht.level >= 2 ? " edge-side" : ""}">${edges.ht.aVal}</div>
     <div class="tape-cell label with-arrow"><span class="lbl">HT</span><span class="arr ${arrHt.cls}">${arrHt.txt}</span></div>
-    <div class="tape-cell right edge-row${edges.ht.level < 0 ? " edge-side" : ""}">${edges.ht.bVal}</div>
+    <div class="tape-cell right edge-row${edges.ht.level <= -2 ? " edge-side" : ""}">${edges.ht.bVal}</div>
 
-    <div class="tape-cell left edge-row${edges.reach.level > 0 ? " edge-side" : ""}">${edges.reach.aVal}</div>
+    <div class="tape-cell left edge-row${edges.reach.level >= 2 ? " edge-side" : ""}">${edges.reach.aVal}</div>
     <div class="tape-cell label with-arrow"><span class="lbl">REACH</span><span class="arr ${arrRch.cls}">${arrRch.txt}</span></div>
-    <div class="tape-cell right edge-row${edges.reach.level < 0 ? " edge-side" : ""}">${edges.reach.bVal}</div>
+    <div class="tape-cell right edge-row${edges.reach.level <= -2 ? " edge-side" : ""}">${edges.reach.bVal}</div>
 
-    <div class="tape-cell left edge-row${edges.diff.level > 0 ? " edge-side" : ""}">${edges.diff.aVal}</div>
+    <div class="tape-cell left edge-row${edges.diff.level >= 2 ? " edge-side" : ""}">${edges.diff.aVal}</div>
     <div class="tape-cell label with-arrow"><span class="lbl">STR DIFF</span><span class="arr ${arrDiff.cls}">${arrDiff.txt}</span></div>
-    <div class="tape-cell right edge-row${edges.diff.level < 0 ? " edge-side" : ""}">${edges.diff.bVal}</div>
+    <div class="tape-cell right edge-row${edges.diff.level <= -2 ? " edge-side" : ""}">${edges.diff.bVal}</div>
 
-    <div class="tape-cell left edge-row${edges.ctrl.level > 0 ? " edge-side" : ""}">${edges.ctrl.aVal}</div>
+    <div class="tape-cell left edge-row${edges.ctrl.level >= 2 ? " edge-side" : ""}">${edges.ctrl.aVal}</div>
     <div class="tape-cell label with-arrow"><span class="lbl">CONTROL</span><span class="arr ${arrCtrl.cls}">${arrCtrl.txt}</span></div>
-    <div class="tape-cell right edge-row${edges.ctrl.level < 0 ? " edge-side" : ""}">${edges.ctrl.bVal}</div>
+    <div class="tape-cell right edge-row${edges.ctrl.level <= -2 ? " edge-side" : ""}">${edges.ctrl.bVal}</div>
   `;
 
   panel.innerHTML = `
