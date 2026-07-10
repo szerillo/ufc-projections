@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="ufc_329">UFC 329 · McGregor vs Holloway 2 (Jul 11, 2026)</option>
           <option value="fn_fiziev_torres">UFC FN Fiziev vs Torres (Jun 27, 2026)</option>
           <option value="vegas_119">UFC Vegas 119 · Kape vs Horiguchi (Jun 20, 2026)</option>
           <option value="freedom_250">UFC Freedom 250 (Jun 15, 2026)</option>
@@ -590,11 +591,13 @@ const CARD_FILES = {
   freedom_250:      BASE_URL + "ufc_freedom_250_fight_form.html",
   vegas_119:        BASE_URL + "ufc_vegas_119_fight_form.html",
   fn_fiziev_torres: BASE_URL + "ufc_fn_fiziev_torres_fight_form.html",
+  ufc_329:          BASE_URL + "ufc_329_fight_form.html",
 };
 const CARD_LABELS = {
   freedom_250:      "UFC Freedom 250 Fight Form",
   vegas_119:        "UFC Vegas 119 · Kape vs Horiguchi",
   fn_fiziev_torres: "UFC FN Fiziev vs Torres",
+  ufc_329:          "UFC 329 · McGregor vs Holloway 2",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -607,6 +610,22 @@ const FIGHTS_BY_CARD = {
     { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  ufc_329: [
+    { n: 14, matchup: "McGregor vs Holloway",     meta: "Main Event · WW · 5R" },
+    { n: 13, matchup: "BSD vs Pimblett",           meta: "Co-Main · LW · 3R" },
+    { n: 12, matchup: "Sandhagen vs Bautista",     meta: "Bantamweight · 3R" },
+    { n: 11, matchup: "Kavanagh vs Royval",        meta: "Flyweight · 3R" },
+    { n: 10, matchup: "McKinney vs Green",         meta: "Lightweight · 3R" },
+    { n: 9,  matchup: "Whittaker vs Krylov",       meta: "Light Heavyweight · 3R" },
+    { n: 8,  matchup: "Steveson vs Ellison",       meta: "Heavyweight · 3R" },
+    { n: 7,  matchup: "Yanez vs Garbrandt",        meta: "Bantamweight · 3R" },
+    { n: 6,  matchup: "Riley vs Kamaka",           meta: "Featherweight · 3R" },
+    { n: 5,  matchup: "Wang Cong vs Cortez",       meta: "Women's Flyweight · 3R" },
+    { n: 4,  matchup: "Pinas vs Almeida",          meta: "Middleweight · 3R" },
+    { n: 3,  matchup: "Basharat vs Garza",         meta: "Bantamweight · 3R" },
+    { n: 2,  matchup: "Gandra vs Reese",           meta: "Middleweight · 3R" },
+    { n: 1,  matchup: "Costa vs Durden",           meta: "Flyweight · 3R" },
   ],
   fn_fiziev_torres: [
     { n: 13, matchup: "Fiziev vs Torres",          meta: "Main Event · LW · 5R" },
