@@ -2300,10 +2300,35 @@ function arrowFor(level) {
     default: return { txt: "≈",   cls: "even" };
   }
 }
+// Parse a height string like "5'8\"" or "5'8" into total inches.
+function parseHtInches(ht) {
+  if (typeof ht === "number") return ht;
+  const m = String(ht).match(/(\d+)['′]\s*(\d+)/);
+  return m ? parseInt(m[1], 10) * 12 + parseInt(m[2], 10) : NaN;
+}
+
 function computeEdges(f) {
   const a = f.a, b = f.b;
-  // Just two axes — Striking Differential and Control %
+  const aHtIn = parseHtInches(a.ht);
+  const bHtIn = parseHtInches(b.ht);
   return {
+    // Arrow points to the YOUNGER fighter; 7-year gap minimum.
+    age: {
+      aVal: a.age.toFixed(1),
+      bVal: b.age.toFixed(1),
+      level: classifyEdge(b.age - a.age, [7, 10, 14]),
+    },
+    ht: {
+      aVal: a.ht,
+      bVal: b.ht,
+      // Threshold set at 2" minimum for an arrow (<2 = ≈ push).
+      level: classifyEdge(aHtIn - bHtIn, [2, 4, 6]),
+    },
+    reach: {
+      aVal: a.reach + "\"",
+      bVal: b.reach + "\"",
+      level: classifyEdge(a.reach - b.reach, [2, 4, 6]),
+    },
     diff: {
       aVal: (a.sdiff > 0 ? "+" : "") + a.sdiff.toFixed(1),
       bVal: (b.sdiff > 0 ? "+" : "") + b.sdiff.toFixed(1),
@@ -2355,11 +2380,9 @@ function renderPanel(f, isFirst) {
   const eClassA = edgeClass(edgeA);
   const eClassB = edgeClass(edgeB);
 
-  // Tale of the tape rows
+  // Tale of the tape rows — HT and REACH moved to the edge-row block below so
+  // they get advantage arrows when the gap is ≥2".
   const tapeRows = [
-    ["AGE", f.a.age.toFixed(1), f.b.age.toFixed(1)],
-    ["HT", f.a.ht, f.b.ht],
-    ["REACH", f.a.reach + "\"", f.b.reach + "\""],
     ["STANCE", f.a.stance, f.b.stance],
     ["RECORD", f.a.record, f.b.record],
     ["UFC REC", f.a.ufc, f.b.ufc],
@@ -2464,11 +2487,11 @@ function renderPanel(f, isFirst) {
         <tbody>
           <tr><td class="tleft">${f.a.name}</td>
               <td><span class="odds">${projOddsA}</span><div class="pct">${f.a.win.toFixed(1)}%</div></td>
-              <td><span class="odds">${fmtMLOdds(listedA)}</span><div class="pct">${listedPctA.toFixed(1)}%</div>${liveBookA ? `<div class="pct" style="font-size:9px;">${liveBookA.toUpperCase()}</div>` : ""}</td>
+              <td><span class="odds">${fmtMLOdds(listedA)}</span><div class="pct">${listedPctA.toFixed(1)}%</div></td>
               <td><span class="edge-pill ${eClassProjA}">${projEdgeA > 0 ? "+" : ""}${projEdgeA.toFixed(1)}%</span></td></tr>
           <tr><td class="tleft">${f.b.name}</td>
               <td><span class="odds">${projOddsB}</span><div class="pct">${f.b.win.toFixed(1)}%</div></td>
-              <td><span class="odds">${fmtMLOdds(listedB)}</span><div class="pct">${listedPctB.toFixed(1)}%</div>${liveBookB ? `<div class="pct" style="font-size:9px;">${liveBookB.toUpperCase()}</div>` : ""}</td>
+              <td><span class="odds">${fmtMLOdds(listedB)}</span><div class="pct">${listedPctB.toFixed(1)}%</div></td>
               <td><span class="edge-pill ${eClassProjB}">${projEdgeB > 0 ? "+" : ""}${projEdgeB.toFixed(1)}%</span></td></tr>
         </tbody>
       </table>
@@ -2621,9 +2644,24 @@ function renderPanel(f, isFirst) {
 
   // ----- Tale-of-the-Tape edge rows (Diff + Control with arrows) -----
   const edges = computeEdges(f);
+  const arrAge  = dirArrow(edges.age.level);
+  const arrHt   = dirArrow(edges.ht.level);
+  const arrRch  = dirArrow(edges.reach.level);
   const arrDiff = dirArrow(edges.diff.level);
   const arrCtrl = dirArrow(edges.ctrl.level);
   const tapeEdgeRowsHTML = `
+    <div class="tape-cell left edge-row${edges.age.level > 0 ? " edge-side" : ""}">${edges.age.aVal}</div>
+    <div class="tape-cell label with-arrow"><span class="lbl">AGE</span><span class="arr ${arrAge.cls}">${arrAge.txt}</span></div>
+    <div class="tape-cell right edge-row${edges.age.level < 0 ? " edge-side" : ""}">${edges.age.bVal}</div>
+
+    <div class="tape-cell left edge-row${edges.ht.level > 0 ? " edge-side" : ""}">${edges.ht.aVal}</div>
+    <div class="tape-cell label with-arrow"><span class="lbl">HT</span><span class="arr ${arrHt.cls}">${arrHt.txt}</span></div>
+    <div class="tape-cell right edge-row${edges.ht.level < 0 ? " edge-side" : ""}">${edges.ht.bVal}</div>
+
+    <div class="tape-cell left edge-row${edges.reach.level > 0 ? " edge-side" : ""}">${edges.reach.aVal}</div>
+    <div class="tape-cell label with-arrow"><span class="lbl">REACH</span><span class="arr ${arrRch.cls}">${arrRch.txt}</span></div>
+    <div class="tape-cell right edge-row${edges.reach.level < 0 ? " edge-side" : ""}">${edges.reach.bVal}</div>
+
     <div class="tape-cell left edge-row${edges.diff.level > 0 ? " edge-side" : ""}">${edges.diff.aVal}</div>
     <div class="tape-cell label with-arrow"><span class="lbl">STR DIFF</span><span class="arr ${arrDiff.cls}">${arrDiff.txt}</span></div>
     <div class="tape-cell right edge-row${edges.diff.level < 0 ? " edge-side" : ""}">${edges.diff.bVal}</div>
@@ -3060,7 +3098,7 @@ function renderMLTable(side) {
         </td>
         <td class="proj-cell-odds grp-divider-left">${projOdds}</td>
         <td class="proj-cell-pct">${projPct.toFixed(1)}%</td>
-        <td class="proj-cell-odds grp-divider-left">${listedOddsTxt}${listedBook ? `<div class="proj-cell-pct" style="font-size:9px;">${listedBook.toUpperCase()}</div>` : ""}</td>
+        <td class="proj-cell-odds grp-divider-left">${listedOddsTxt}</td>
         <td class="proj-cell-pct">${listedPct.toFixed(1)}%</td>
         <td class="grp-divider-left"><span class="${projEdgeClass(edge)}">${fmtSignedPct(edge)}</span></td>
       </tr>
