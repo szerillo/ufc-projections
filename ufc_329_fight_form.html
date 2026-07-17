@@ -2554,6 +2554,7 @@ function renderPanel(f, isFirst) {
             <th>DEC</th>
             <th>KO</th>
             <th>SUB</th>
+            <th>ITD</th>
           </tr>
         </thead>
         <tbody>
@@ -2570,11 +2571,13 @@ function renderPanel(f, isFirst) {
                      `<div class="pct" style="color:var(--action-green-dark);font-weight:700;">${fmtMLOdds(lm.cost)} live</div>` +
                      `<div style="margin-top:2px;"><span class="edge-pill ${projEdgeClass(edge)}" style="font-size:9px;padding:1px 4px;">${edge > 0 ? "+" : ""}${edge.toFixed(1)}%</span></div>`;
             };
+            const itdPct = ko + sub;
             return `<tr class="${key === 'a' ? 'fav' : 'dog'}">
               <td class="tleft">${ftr.name}</td>
               <td>${methodCell(dec, "points")}</td>
               <td>${methodCell(ko, "ko-tko-dq")}</td>
               <td>${methodCell(sub, "submission")}</td>
+              <td>${methodCell(itdPct, "ko-tko-dq-submission")}</td>
             </tr>`;
           }).join("")}
         </tbody>
