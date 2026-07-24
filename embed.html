@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="fn_ankalaev_guskov">UFC FN · Ankalaev vs Guskov (Jul 25, 2026)</option>
           <option value="fn_ddp_usman">UFC FN · Du Plessis vs Usman (Jul 18, 2026)</option>
           <option value="ufc_329">UFC 329 · McGregor vs Holloway 2 (Jul 11, 2026)</option>
           <option value="fn_fiziev_torres">UFC FN Fiziev vs Torres (Jun 27, 2026)</option>
@@ -589,18 +590,20 @@ const BASE_URL = (function() {
   return u; // ends with trailing slash
 })();
 const CARD_FILES = {
-  freedom_250:      BASE_URL + "ufc_freedom_250_fight_form.html",
-  vegas_119:        BASE_URL + "ufc_vegas_119_fight_form.html",
-  fn_fiziev_torres: BASE_URL + "ufc_fn_fiziev_torres_fight_form.html",
-  ufc_329:          BASE_URL + "ufc_329_fight_form.html",
-  fn_ddp_usman:     BASE_URL + "ufc_fn_ddp_usman_fight_form.html",
+  freedom_250:        BASE_URL + "ufc_freedom_250_fight_form.html",
+  vegas_119:          BASE_URL + "ufc_vegas_119_fight_form.html",
+  fn_fiziev_torres:   BASE_URL + "ufc_fn_fiziev_torres_fight_form.html",
+  ufc_329:            BASE_URL + "ufc_329_fight_form.html",
+  fn_ddp_usman:       BASE_URL + "ufc_fn_ddp_usman_fight_form.html",
+  fn_ankalaev_guskov: BASE_URL + "ufc_fn_ankalaev_guskov_fight_form.html",
 };
 const CARD_LABELS = {
-  freedom_250:      "UFC Freedom 250 Fight Form",
-  vegas_119:        "UFC Vegas 119 · Kape vs Horiguchi",
-  fn_fiziev_torres: "UFC FN Fiziev vs Torres",
-  ufc_329:          "UFC 329 · McGregor vs Holloway 2",
-  fn_ddp_usman:     "UFC FN · Du Plessis vs Usman",
+  freedom_250:        "UFC Freedom 250 Fight Form",
+  vegas_119:          "UFC Vegas 119 · Kape vs Horiguchi",
+  fn_fiziev_torres:   "UFC FN Fiziev vs Torres",
+  ufc_329:            "UFC 329 · McGregor vs Holloway 2",
+  fn_ddp_usman:       "UFC FN · Du Plessis vs Usman",
+  fn_ankalaev_guskov: "UFC FN · Ankalaev vs Guskov",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -613,6 +616,9 @@ const FIGHTS_BY_CARD = {
     { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  fn_ankalaev_guskov: [
+    { n: 13, matchup: "Ankalaev vs Guskov",        meta: "Main Event · LHW · 5R" },
   ],
   fn_ddp_usman: [
     { n: 12, matchup: "Du Plessis vs Usman",       meta: "Main Event · MW · 5R" },
