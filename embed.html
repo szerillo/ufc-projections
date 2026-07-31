@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="fn_medic_rodriguez">UFC FN Belgrade · Medic vs Rodriguez (Aug 1, 2026)</option>
           <option value="fn_ankalaev_guskov">UFC FN · Ankalaev vs Guskov (Jul 25, 2026)</option>
           <option value="fn_ddp_usman">UFC FN · Du Plessis vs Usman (Jul 18, 2026)</option>
           <option value="ufc_329">UFC 329 · McGregor vs Holloway 2 (Jul 11, 2026)</option>
@@ -596,6 +597,7 @@ const CARD_FILES = {
   ufc_329:            BASE_URL + "ufc_329_fight_form.html",
   fn_ddp_usman:       BASE_URL + "ufc_fn_ddp_usman_fight_form.html",
   fn_ankalaev_guskov: BASE_URL + "ufc_fn_ankalaev_guskov_fight_form.html",
+  fn_medic_rodriguez: BASE_URL + "ufc_fn_medic_rodriguez_fight_form.html",
 };
 const CARD_LABELS = {
   freedom_250:        "UFC Freedom 250 Fight Form",
@@ -604,6 +606,7 @@ const CARD_LABELS = {
   ufc_329:            "UFC 329 · McGregor vs Holloway 2",
   fn_ddp_usman:       "UFC FN · Du Plessis vs Usman",
   fn_ankalaev_guskov: "UFC FN · Ankalaev vs Guskov",
+  fn_medic_rodriguez: "UFC FN Belgrade · Medic vs Rodriguez",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -616,6 +619,9 @@ const FIGHTS_BY_CARD = {
     { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  fn_medic_rodriguez: [
+    { n: 13, matchup: "Medic vs Rodriguez",        meta: "Main Event · WW · 5R" },
   ],
   fn_ankalaev_guskov: [
     { n: 13, matchup: "Ankalaev vs Guskov",        meta: "Main Event · LHW · 5R" },
