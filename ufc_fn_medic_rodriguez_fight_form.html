@@ -1879,10 +1879,10 @@ td.grp-divider-left { border-left: 1px solid var(--border); }
 // ============== DATA ==============
 const FIGHTS = [
   {
-    n: 13, card: "MAIN EVENT", weight: "Welterweight", rounds: "5R", conf: "HIGH",
+    n: 14, card: "MAIN EVENT", weight: "Welterweight", rounds: "5R", conf: "HIGH",
     a: {
       name: "Uros Medic", nick: "—", record: "13-3-0",
-      ml: -420, win: 77.6, mktImp: 80.8,
+      ml: -420, win: 77.4, mktImp: 80.8,
       ko: 7, sub: 0, dec: 0, kol: 0, subl: 0, decl: 3,
       ufc: "7-3-0", min: 42, age: 33.3, ht: "6'1\"", reach: 71, stance: "Southpaw",
       slpm: 5.0, sapm: 4.1, sdiff: 0.9,
@@ -1892,7 +1892,7 @@ const FIGHTS = [
     },
     b: {
       name: "Daniel Rodriguez", nick: "D-Rod", record: "20-5-0",
-      ml: 334, win: 22.4, mktImp: 23.0,
+      ml: 334, win: 22.6, mktImp: 23.0,
       ko: 3, sub: 1, dec: 6, kol: 0, subl: 0, decl: 4,
       ufc: "10-4-0", min: 162, age: 39.6, ht: "6'1\"", reach: 74, stance: "Southpaw",
       slpm: 8.2, sapm: 5.9, sdiff: 2.4,
@@ -1900,7 +1900,98 @@ const FIGHTS = [
       sub_succ: "—", sub_def: "—", dist: 83, gnd: 17,
       log: []
     },
-    sim: { itd: 89.0, aKO: 68.8, aSub: 4.2, aDec: 4.6, bKO: 13.2, bSub: 2.5, bDec: 6.7 },
+    sim: { itd: 89.0, aKO: 68.6, aSub: 4.2, aDec: 4.6, bKO: 13.3, bSub: 2.5, bDec: 6.8 },
+    notes: []
+  },
+  {
+    n: 13, card: "MAIN CARD", weight: "Light Heavyweight", rounds: "3R", conf: "MED",
+    a: { name: "Navajo Stirling", nick: "—", record: "—", ml: -323, win: 74.4, mktImp: 76.4, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Jan Blachowicz", nick: "—", record: "—", ml: 267, win: 25.6, mktImp: 27.2, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 45, aKO: 28.3, aSub: 3.7, aDec: 42.4, bKO: 10.6, bSub: 2.3, bDec: 12.7 },
+    notes: []
+  },
+  {
+    n: 12, card: "MAIN CARD", weight: "Heavyweight", rounds: "3R", conf: "MED",
+    a: { name: "Aleksandar Rakic", nick: "—", record: "—", ml: -370, win: 76.3, mktImp: 78.7, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Marcin Tybura", nick: "—", record: "—", ml: 296, win: 23.7, mktImp: 25.3, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 59, aKO: 41.0, aSub: 3.0, aDec: 32.3, bKO: 10.4, bSub: 4.2, bDec: 9.1 },
+    notes: []
+  },
+  {
+    n: 11, card: "MAIN CARD", weight: "Middleweight", rounds: "3R", conf: "MED",
+    a: { name: "Robert Valentin", nick: "—", record: "—", ml: -156, win: 60.4, mktImp: 60.9, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Dusko Todorovic", nick: "—", record: "—", ml: 138, win: 39.6, mktImp: 42.0, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 69, aKO: 17.3, aSub: 25.9, aDec: 17.2, bKO: 16.0, bSub: 9.3, bDec: 14.3 },
+    notes: []
+  },
+  {
+    n: 10, card: "MAIN CARD", weight: "Middleweight", rounds: "3R", conf: "MED",
+    a: { name: "Vlasto Cepo", nick: "—", record: "—", ml: -335, win: 77.1, mktImp: 77.0, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Gilbert Urbina", nick: "—", record: "—", ml: 271, win: 22.9, mktImp: 27.0, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 89, aKO: 65.8, aSub: 5.2, aDec: 6.2, bKO: 9.8, bSub: 7.4, bDec: 5.7 },
+    notes: []
+  },
+  {
+    n: 9, card: "MAIN CARD", weight: "Lightweight", rounds: "3R", conf: "MED",
+    a: { name: "Noah Gugnon", nick: "—", record: "—", ml: -120, win: 57.6, mktImp: 54.5, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Milos Janicic", nick: "—", record: "—", ml: 100, win: 42.4, mktImp: 50.0, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 68, aKO: 25.4, aSub: 15.5, aDec: 16.7, bKO: 23.7, bSub: 2.7, bDec: 16.0 },
+    notes: []
+  },
+  {
+    n: 8, card: "PRELIMS", weight: "Lightweight", rounds: "3R", conf: "MED",
+    a: { name: "Ludovit Klein", nick: "—", record: "—", ml: -260, win: 48.3, mktImp: 72.2, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Tofiq Musayev", nick: "—", record: "—", ml: 215, win: 51.7, mktImp: 31.7, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 40, aKO: 14.5, aSub: 3.9, aDec: 29.9, bKO: 19.8, bSub: 4.9, bDec: 26.9 },
+    notes: []
+  },
+  {
+    n: 7, card: "PRELIMS", weight: "Welterweight", rounds: "3R", conf: "MED",
+    a: { name: "Michael Oliveira", nick: "—", record: "—", ml: -360, win: 77.8, mktImp: 78.3, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Oban Elliott", nick: "—", record: "—", ml: 289, win: 22.2, mktImp: 25.7, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 70, aKO: 54.5, aSub: 4.6, aDec: 18.7, bKO: 7.3, bSub: 3.9, bDec: 11.0 },
+    notes: []
+  },
+  {
+    n: 6, card: "PRELIMS", weight: "Bantamweight", rounds: "3R", conf: "MED",
+    a: { name: "Borislav Nikolic", nick: "—", record: "—", ml: -180, win: 66.7, mktImp: 64.3, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Mark Vologdin", nick: "—", record: "—", ml: 155, win: 33.3, mktImp: 39.2, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 46, aKO: 19.7, aSub: 10.4, aDec: 36.8, bKO: 12.3, bSub: 3.7, bDec: 17.3 },
+    notes: []
+  },
+  {
+    n: 5, card: "PRELIMS", weight: "Featherweight", rounds: "3R", conf: "MED",
+    a: { name: "Bogdan Grad", nick: "—", record: "—", ml: -205, win: 68.5, mktImp: 67.2, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Dennis Buzukja", nick: "—", record: "—", ml: 172, win: 31.5, mktImp: 36.8, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 59, aKO: 30.1, aSub: 10.3, aDec: 28.1, bKO: 15.7, bSub: 2.5, bDec: 13.2 },
+    notes: []
+  },
+  {
+    n: 4, card: "PRELIMS", weight: "Lightweight", rounds: "3R", conf: "MED",
+    a: { name: "Mateusz Rebecki", nick: "—", record: "—", ml: -700, win: 85.5, mktImp: 87.5, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Kyle Prepolec", nick: "—", record: "—", ml: 506, win: 14.5, mktImp: 16.5, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 64, aKO: 31.3, aSub: 23.5, aDec: 30.8, bKO: 7.3, bSub: 1.7, bDec: 5.5 },
+    notes: []
+  },
+  {
+    n: 3, card: "PRELIMS", weight: "Women's Bantamweight", rounds: "3R", conf: "MED",
+    a: { name: "Nina Milosevic", nick: "—", record: "—", ml: -500, win: 82.6, mktImp: 83.3, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Hailey Cowan", nick: "—", record: "—", ml: 384, win: 17.4, mktImp: 20.7, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 44, aKO: 22.0, aSub: 16.0, aDec: 44.6, bKO: 3.6, bSub: 3.4, bDec: 10.4 },
+    notes: []
+  },
+  {
+    n: 2, card: "PRELIMS", weight: "Heavyweight", rounds: "3R", conf: "MED",
+    a: { name: "Jovan Leka", nick: "—", record: "—", ml: -270, win: 72.5, mktImp: 73.0, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Alexander Poppeck", nick: "—", record: "—", ml: 222, win: 27.5, mktImp: 31.1, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 63, aKO: 34.4, aSub: 12.1, aDec: 26.2, bKO: 15.6, bSub: 1.3, bDec: 10.5 },
+    notes: []
+  },
+  {
+    n: 1, card: "PRELIMS", weight: "Women's Strawweight", rounds: "3R", conf: "MED",
+    a: { name: "Stephanie Luciano", nick: "—", record: "—", ml: -330, win: 72.0, mktImp: 76.7, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Marina Spasic", nick: "—", record: "—", ml: 267, win: 28.0, mktImp: 27.2, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 31, aKO: 5.6, aSub: 16.7, aDec: 49.8, bKO: 6.6, bSub: 2.0, bDec: 19.5 },
     notes: []
   }
 ];
@@ -2412,9 +2503,48 @@ function renderPanel(f, isFirst) {
 //   bet_rec         — fighter recommended (or null for no bet)
 //   hold_pct        — Kelly stake when bet_rec is set
 const USER_PROJECTIONS_BY_FIGHT = {
-  13: { bet_rec: null, hold_pct: 3.8, gtd_pct: 11,
-        a: { win: 77.6, ko: 68.8, sub: 4.2, dec: 4.6 },
-        b: { win: 22.4, ko: 13.2, sub: 2.5, dec: 6.7 } }
+  14: { bet_rec: null, hold_pct: 3.8, gtd_pct: 11,
+        a: { win: 77.4, ko: 68.6, sub: 4.2, dec: 4.6 },
+        b: { win: 22.6, ko: 13.3, sub: 2.5, dec: 6.8 } },
+  13: { bet_rec: null, hold_pct: 3.6, gtd_pct: 55,
+        a: { win: 74.4, ko: 28.3, sub: 3.7, dec: 42.4 },
+        b: { win: 25.6, ko: 10.6, sub: 2.3, dec: 12.7 } },
+  12: { bet_rec: null, hold_pct: 4.0, gtd_pct: 41,
+        a: { win: 76.3, ko: 41.0, sub: 3.0, dec: 32.3 },
+        b: { win: 23.7, ko: 10.4, sub: 4.2, dec: 9.1 } },
+  11: { bet_rec: null, hold_pct: 3.0, gtd_pct: 31,
+        a: { win: 60.4, ko: 17.3, sub: 25.9, dec: 17.2 },
+        b: { win: 39.6, ko: 16.0, sub: 9.3, dec: 14.3 } },
+  10: { bet_rec: null, hold_pct: 4.0, gtd_pct: 11,
+        a: { win: 77.1, ko: 65.8, sub: 5.2, dec: 6.2 },
+        b: { win: 22.9, ko: 9.8, sub: 7.4, dec: 5.7 } },
+  9: { bet_rec: "Noah Gugnon", hold_pct: 4.5, gtd_pct: 32,
+        a: { win: 57.6, ko: 25.4, sub: 15.5, dec: 16.7 },
+        b: { win: 42.4, ko: 23.7, sub: 2.7, dec: 16.0 } },
+  8: { bet_rec: "Tofiq Musayev", hold_pct: 4.0, gtd_pct: 60,
+        a: { win: 48.3, ko: 14.5, sub: 3.9, dec: 29.9 },
+        b: { win: 51.7, ko: 19.8, sub: 4.9, dec: 26.9 } },
+  7: { bet_rec: null, hold_pct: 4.0, gtd_pct: 30,
+        a: { win: 77.8, ko: 54.5, sub: 4.6, dec: 18.7 },
+        b: { win: 22.2, ko: 7.3, sub: 3.9, dec: 11.0 } },
+  6: { bet_rec: "Borislav Nikolic", hold_pct: 3.5, gtd_pct: 54,
+        a: { win: 66.7, ko: 19.7, sub: 10.4, dec: 36.8 },
+        b: { win: 33.3, ko: 12.3, sub: 3.7, dec: 17.3 } },
+  5: { bet_rec: "Bogdan Grad", hold_pct: 4.0, gtd_pct: 41,
+        a: { win: 68.5, ko: 30.1, sub: 10.3, dec: 28.1 },
+        b: { win: 31.5, ko: 15.7, sub: 2.5, dec: 13.2 } },
+  4: { bet_rec: null, hold_pct: 4.0, gtd_pct: 36,
+        a: { win: 85.5, ko: 31.3, sub: 23.5, dec: 30.8 },
+        b: { win: 14.5, ko: 7.3, sub: 1.7, dec: 5.5 } },
+  3: { bet_rec: null, hold_pct: 4.0, gtd_pct: 56,
+        a: { win: 82.6, ko: 22.0, sub: 16.0, dec: 44.6 },
+        b: { win: 17.4, ko: 3.6, sub: 3.4, dec: 10.4 } },
+  2: { bet_rec: null, hold_pct: 4.0, gtd_pct: 37,
+        a: { win: 72.5, ko: 34.4, sub: 12.1, dec: 26.2 },
+        b: { win: 27.5, ko: 15.6, sub: 1.3, dec: 10.5 } },
+  1: { bet_rec: null, hold_pct: 4.0, gtd_pct: 69,
+        a: { win: 72.0, ko: 5.6, sub: 16.7, dec: 49.8 },
+        b: { win: 28.0, ko: 6.6, sub: 2.0, dec: 19.5 } }
 };
 
 // Raw implied probability from an American moneyline (NOT de-vigged).
