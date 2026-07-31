@@ -1882,7 +1882,7 @@ const FIGHTS = [
     n: 14, card: "MAIN EVENT", weight: "Welterweight", rounds: "5R", conf: "HIGH",
     a: {
       name: "Uros Medic", nick: "—", record: "13-3-0",
-      ml: -420, win: 77.4, mktImp: 80.8,
+      ml: -420, win: 77.6, mktImp: 80.8,
       ko: 7, sub: 0, dec: 0, kol: 0, subl: 0, decl: 3,
       ufc: "7-3-0", min: 42, age: 33.3, ht: "6'1\"", reach: 71, stance: "Southpaw",
       slpm: 5.0, sapm: 4.1, sdiff: 0.9,
@@ -1892,7 +1892,7 @@ const FIGHTS = [
     },
     b: {
       name: "Daniel Rodriguez", nick: "D-Rod", record: "20-5-0",
-      ml: 334, win: 22.6, mktImp: 23.0,
+      ml: 334, win: 22.4, mktImp: 23.0,
       ko: 3, sub: 1, dec: 6, kol: 0, subl: 0, decl: 4,
       ufc: "10-4-0", min: 162, age: 39.6, ht: "6'1\"", reach: 74, stance: "Southpaw",
       slpm: 8.2, sapm: 5.9, sdiff: 2.4,
@@ -1900,7 +1900,7 @@ const FIGHTS = [
       sub_succ: "—", sub_def: "—", dist: 83, gnd: 17,
       log: []
     },
-    sim: { itd: 89.0, aKO: 68.6, aSub: 4.2, aDec: 4.6, bKO: 13.3, bSub: 2.5, bDec: 6.8 },
+    sim: { itd: 88.7, aKO: 68.8, aSub: 4.2, aDec: 4.7, bKO: 13.2, bSub: 2.5, bDec: 6.7 },
     notes: []
   },
   {
@@ -1940,9 +1940,9 @@ const FIGHTS = [
   },
   {
     n: 8, card: "PRELIMS", weight: "Lightweight", rounds: "3R", conf: "MED",
-    a: { name: "Ludovit Klein", nick: "—", record: "—", ml: -260, win: 48.3, mktImp: 72.2, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
-    b: { name: "Tofiq Musayev", nick: "—", record: "—", ml: 215, win: 51.7, mktImp: 31.7, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
-    sim: { itd: 40, aKO: 14.5, aSub: 3.9, aDec: 29.9, bKO: 19.8, bSub: 4.9, bDec: 26.9 },
+    a: { name: "Ludovit Klein", nick: "—", record: "—", ml: -260, win: 58.9, mktImp: 72.2, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Tofiq Musayev", nick: "—", record: "—", ml: 215, win: 41.1, mktImp: 31.7, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 0, ht: "—", reach: 0, stance: "—", slpm: 0, sapm: 0, sdiff: 0, tdacc: "—", tdR5: 0, tdd: "—", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    sim: { itd: 40, aKO: 17.7, aSub: 4.7, aDec: 36.5, bKO: 15.7, bSub: 3.9, bDec: 21.5 },
     notes: []
   },
   {
@@ -2504,8 +2504,8 @@ function renderPanel(f, isFirst) {
 //   hold_pct        — Kelly stake when bet_rec is set
 const USER_PROJECTIONS_BY_FIGHT = {
   14: { bet_rec: null, hold_pct: 3.8, gtd_pct: 11,
-        a: { win: 77.4, ko: 68.6, sub: 4.2, dec: 4.6 },
-        b: { win: 22.6, ko: 13.3, sub: 2.5, dec: 6.8 } },
+        a: { win: 77.6, ko: 68.8, sub: 4.2, dec: 4.7 },
+        b: { win: 22.4, ko: 13.2, sub: 2.5, dec: 6.7 } },
   13: { bet_rec: null, hold_pct: 3.6, gtd_pct: 55,
         a: { win: 74.4, ko: 28.3, sub: 3.7, dec: 42.4 },
         b: { win: 25.6, ko: 10.6, sub: 2.3, dec: 12.7 } },
@@ -2522,8 +2522,8 @@ const USER_PROJECTIONS_BY_FIGHT = {
         a: { win: 57.6, ko: 25.4, sub: 15.5, dec: 16.7 },
         b: { win: 42.4, ko: 23.7, sub: 2.7, dec: 16.0 } },
   8: { bet_rec: "Tofiq Musayev", hold_pct: 4.0, gtd_pct: 60,
-        a: { win: 48.3, ko: 14.5, sub: 3.9, dec: 29.9 },
-        b: { win: 51.7, ko: 19.8, sub: 4.9, dec: 26.9 } },
+        a: { win: 58.9, ko: 17.7, sub: 4.7, dec: 36.5 },
+        b: { win: 41.1, ko: 15.7, sub: 3.9, dec: 21.5 } },
   7: { bet_rec: null, hold_pct: 4.0, gtd_pct: 30,
         a: { win: 77.8, ko: 54.5, sub: 4.6, dec: 18.7 },
         b: { win: 22.2, ko: 7.3, sub: 3.9, dec: 11.0 } },
