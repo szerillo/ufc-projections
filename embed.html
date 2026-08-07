@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="vegas_120">UFC Vegas 120 · Gamrot vs Salkilld (Aug 8, 2026)</option>
           <option value="fn_medic_rodriguez">UFC FN Belgrade · Medic vs Rodriguez (Aug 1, 2026)</option>
           <option value="fn_ankalaev_guskov">UFC FN · Ankalaev vs Guskov (Jul 25, 2026)</option>
           <option value="fn_ddp_usman">UFC FN · Du Plessis vs Usman (Jul 18, 2026)</option>
@@ -598,6 +599,7 @@ const CARD_FILES = {
   fn_ddp_usman:       BASE_URL + "ufc_fn_ddp_usman_fight_form.html",
   fn_ankalaev_guskov: BASE_URL + "ufc_fn_ankalaev_guskov_fight_form.html",
   fn_medic_rodriguez: BASE_URL + "ufc_fn_medic_rodriguez_fight_form.html",
+  vegas_120:          BASE_URL + "ufc_vegas_120_fight_form.html",
 };
 const CARD_LABELS = {
   freedom_250:        "UFC Freedom 250 Fight Form",
@@ -607,6 +609,7 @@ const CARD_LABELS = {
   fn_ddp_usman:       "UFC FN · Du Plessis vs Usman",
   fn_ankalaev_guskov: "UFC FN · Ankalaev vs Guskov",
   fn_medic_rodriguez: "UFC FN Belgrade · Medic vs Rodriguez",
+  vegas_120:          "UFC Vegas 120 · Gamrot vs Salkilld",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -619,6 +622,20 @@ const FIGHTS_BY_CARD = {
     { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  vegas_120: [
+    { n: 12, matchup: "Salkilld vs Gamrot",        meta: "Main Event · LW · 5R" },
+    { n: 11, matchup: "Ferreira vs Quarantillo",   meta: "Lightweight · 3R" },
+    { n: 10, matchup: "Delvalle vs Elkins",        meta: "Featherweight · 3R" },
+    { n: 9,  matchup: "Thainara vs Lemos",         meta: "Women's Strawweight · 3R" },
+    { n: 8,  matchup: "Miller vs Goff",            meta: "Welterweight · 3R" },
+    { n: 7,  matchup: "Asplund vs Pat",            meta: "Heavyweight · 3R" },
+    { n: 6,  matchup: "Nurgozhay vs Lopes",        meta: "Light Heavyweight · 3R" },
+    { n: 5,  matchup: "Sutherland vs Da Silva",    meta: "Heavyweight · 3R" },
+    { n: 4,  matchup: "Sousa vs Miranda",          meta: "Bantamweight · 3R" },
+    { n: 3,  matchup: "Johns vs Vazquez",          meta: "Featherweight · 3R" },
+    { n: 2,  matchup: "Miller vs Morais",          meta: "Women's Flyweight · 3R" },
+    { n: 1,  matchup: "Antunes vs Canuto",         meta: "Women's Strawweight · 3R" },
   ],
   fn_medic_rodriguez: [
     { n: 14, matchup: "Medic vs Rodriguez",        meta: "Main Event · WW · 5R" },
