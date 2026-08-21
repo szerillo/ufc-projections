@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="sacramento">UFC Sacramento · Hernandez vs Rodrigues (Aug 22, 2026)</option>
           <option value="ufc_330">UFC 330 · Makhachev vs Machado Garry (Aug 15, 2026)</option>
           <option value="vegas_120">UFC Vegas 120 · Gamrot vs Salkilld (Aug 8, 2026)</option>
           <option value="fn_medic_rodriguez">UFC FN Belgrade · Medic vs Rodriguez (Aug 1, 2026)</option>
@@ -602,6 +603,7 @@ const CARD_FILES = {
   fn_medic_rodriguez: BASE_URL + "ufc_fn_medic_rodriguez_fight_form.html",
   vegas_120:          BASE_URL + "ufc_vegas_120_fight_form.html",
   ufc_330:            BASE_URL + "ufc_330_fight_form.html",
+  sacramento:         BASE_URL + "ufc_sacramento_fight_form.html",
 };
 const CARD_LABELS = {
   freedom_250:        "UFC Freedom 250 Fight Form",
@@ -613,6 +615,7 @@ const CARD_LABELS = {
   fn_medic_rodriguez: "UFC FN Belgrade · Medic vs Rodriguez",
   vegas_120:          "UFC Vegas 120 · Gamrot vs Salkilld",
   ufc_330:            "UFC 330 · Makhachev vs Machado Garry",
+  sacramento:         "UFC Sacramento · Hernandez vs Rodrigues",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -625,6 +628,9 @@ const FIGHTS_BY_CARD = {
     { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  sacramento: [
+    { n: 13, matchup: "Hernandez vs Rodrigues",     meta: "Main Event · MW · 5R" },
   ],
   ufc_330: [
     { n: 12, matchup: "Makhachev vs Machado Garry", meta: "Main Event · WW · 5R" },
