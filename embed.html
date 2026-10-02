@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="ufc_332">UFC 332 · Silva vs Wang (Oct 3, 2026)</option>
           <option value="sacramento">UFC Sacramento · Hernandez vs Rodrigues (Aug 22, 2026)</option>
           <option value="ufc_330">UFC 330 · Makhachev vs Machado Garry (Aug 15, 2026)</option>
           <option value="vegas_120">UFC Vegas 120 · Gamrot vs Salkilld (Aug 8, 2026)</option>
@@ -604,6 +605,7 @@ const CARD_FILES = {
   vegas_120:          BASE_URL + "ufc_vegas_120_fight_form.html",
   ufc_330:            BASE_URL + "ufc_330_fight_form.html",
   sacramento:         BASE_URL + "ufc_sacramento_fight_form.html",
+  ufc_332:            BASE_URL + "ufc_332_fight_form.html",
 };
 const CARD_LABELS = {
   freedom_250:        "UFC Freedom 250 Fight Form",
@@ -616,6 +618,7 @@ const CARD_LABELS = {
   vegas_120:          "UFC Vegas 120 · Gamrot vs Salkilld",
   ufc_330:            "UFC 330 · Makhachev vs Machado Garry",
   sacramento:         "UFC Sacramento · Hernandez vs Rodrigues",
+  ufc_332:            "UFC 332 · Silva vs Wang",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -628,6 +631,22 @@ const FIGHTS_BY_CARD = {
     { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  ufc_332: [
+    { n: 14, matchup: "Silva vs Wang", meta: "Main Event · WFLW · 5R" },
+    { n: 13, matchup: "Talbott vs Figueiredo", meta: "Main Card · BW · 3R" },
+    { n: 12, matchup: "Ribovics vs Green", meta: "Main Card · LW · 3R" },
+    { n: 11, matchup: "Soldic vs Williams", meta: "Main Card · WW · 3R" },
+    { n: 10, matchup: "Gautier vs Kopylov", meta: "Main Card · MW · 3R" },
+    { n: 9, matchup: "Rodriguez Pillado vs Coria", meta: "Prelims · FLW · 3R" },
+    { n: 8, matchup: "Pinas vs Pulyaev", meta: "Prelims · MW · 3R" },
+    { n: 7, matchup: "McGhee vs Romero", meta: "Prelims · BW · 3R" },
+    { n: 6, matchup: "Wint vs Armand", meta: "Prelims · HW · 3R" },
+    { n: 5, matchup: "Walker vs Parkin", meta: "Prelims · HW · 3R" },
+    { n: 4, matchup: "Hernandez vs Dos Anjos", meta: "Prelims · LW · 3R" },
+    { n: 3, matchup: "Naurdiev vs Vettori", meta: "Prelims · MW · 3R" },
+    { n: 2, matchup: "Smith vs Whitehead", meta: "Prelims · WW · 3R" },
+    { n: 1, matchup: "Nolan vs McGee", meta: "Prelims · WW · 3R" },
   ],
   sacramento: [
     { n: 13, matchup: "Hernandez vs Rodrigues",     meta: "Main Event · MW · 5R" },
