@@ -157,10 +157,14 @@ def process_card(card: dict, now: dt.datetime) -> bool:
     rc = run_ingest(name, out_path)
     if rc != 0:
         print(f"[{name}] ingest failed rc={rc}", file=sys.stderr)
+        FAILURES.append(name)
         return False
 
     freeze_in_progress_fights(out_path, now)
     return True
+
+
+FAILURES: list = []
 
 
 def main() -> None:
@@ -177,10 +181,14 @@ def main() -> None:
                 ran_anything = True
         except Exception as exc:
             print(f"[{card.get('name', '?')}] error: {exc}", file=sys.stderr)
+            FAILURES.append(card.get('name', '?'))
             # Don't fail the whole workflow for one card — keep going
             continue
 
-    sys.exit(0 if ran_anything else 1)
+    if ran_anything:
+        sys.exit(0)
+    # Surface fetch failures as a red run instead of a silent "skip"
+    sys.exit(2 if FAILURES else 1)
 
 
 if __name__ == "__main__":

@@ -41,7 +41,9 @@ import urllib.parse
 import urllib.error
 
 API_BASE = "https://api.bettingpros.com/v3"
-API_KEY = os.environ.get("BETTINGPROS_API_KEY", "CHi8Hy5CEE4khd46XNYL23dCFX96oUdw6qOt1Dnh")
+# NOTE: GitHub Actions sets the env var to "" when the secret is unset, so
+# fall back on empty as well as missing (this was causing silent 403s).
+API_KEY = os.environ.get("BETTINGPROS_API_KEY") or "CHi8Hy5CEE4khd46XNYL23dCFX96oUdw6qOt1Dnh"
 
 MARKETS = {
     237: "moneyline",
