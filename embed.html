@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="vegas_122">UFC Vegas 122 · Allen vs Duncan (Oct 10, 2026)</option>
           <option value="ufc_332">UFC 332 · Silva vs Wang (Oct 3, 2026)</option>
           <option value="sacramento">UFC Sacramento · Hernandez vs Rodrigues (Aug 22, 2026)</option>
           <option value="ufc_330">UFC 330 · Makhachev vs Machado Garry (Aug 15, 2026)</option>
@@ -606,6 +607,7 @@ const CARD_FILES = {
   ufc_330:            BASE_URL + "ufc_330_fight_form.html",
   sacramento:         BASE_URL + "ufc_sacramento_fight_form.html",
   ufc_332:            BASE_URL + "ufc_332_fight_form.html",
+  vegas_122:          BASE_URL + "ufc_vegas_122_fight_form.html",
 };
 const CARD_LABELS = {
   freedom_250:        "UFC Freedom 250 Fight Form",
@@ -619,6 +621,7 @@ const CARD_LABELS = {
   ufc_330:            "UFC 330 · Makhachev vs Machado Garry",
   sacramento:         "UFC Sacramento · Hernandez vs Rodrigues",
   ufc_332:            "UFC 332 · Silva vs Wang",
+  vegas_122:          "UFC Vegas 122 · Allen vs Duncan",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -631,6 +634,9 @@ const FIGHTS_BY_CARD = {
     { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  vegas_122: [
+    { n: 12, matchup: "Allen vs Duncan", meta: "Main Event · MW · 5R" },
   ],
   ufc_332: [
     { n: 14, matchup: "Silva vs Wang", meta: "Main Event · WFLW · 5R" },
