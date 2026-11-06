@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="fn_cortes_acosta_walker">UFC Vegas · Cortes-Acosta vs Walker (Nov 7, 2026)</option>
           <option value="fn_moicano_nolan">UFC Vegas · Moicano vs Nolan (Oct 31, 2026)</option>
           <option value="ufc_333">UFC 333 · Volkanovski vs Evloev (Oct 24, 2026)</option>
           <option value="fn_buckley_malott">UFC Edmonton · Buckley vs Malott (Oct 17, 2026)</option>
@@ -614,6 +615,7 @@ const CARD_FILES = {
   fn_buckley_malott:  BASE_URL + "ufc_fn_buckley_malott_fight_form.html",
   ufc_333:            BASE_URL + "ufc_333_fight_form.html",
   fn_moicano_nolan:   BASE_URL + "ufc_fn_moicano_nolan_fight_form.html",
+  fn_cortes_acosta_walker: BASE_URL + "ufc_fn_cortes_acosta_walker_fight_form.html",
 };
 const CARD_LABELS = {
   freedom_250:        "UFC Freedom 250 Fight Form",
@@ -631,6 +633,7 @@ const CARD_LABELS = {
   fn_buckley_malott:  "UFC Edmonton · Buckley vs Malott",
   ufc_333:            "UFC 333 · Volkanovski vs Evloev",
   fn_moicano_nolan:   "UFC Vegas · Moicano vs Nolan",
+  fn_cortes_acosta_walker: "UFC Vegas · Cortes-Acosta vs Walker",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -643,6 +646,22 @@ const FIGHTS_BY_CARD = {
     { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  fn_cortes_acosta_walker: [
+    { n: 14, matchup: "Cortes-Acosta vs Walker", meta: "Main Event · HW · 5R" },
+    { n: 13, matchup: "Suarez vs Jandiroba", meta: "Main Card · WSW · 3R" },
+    { n: 12, matchup: "Smith vs Grant", meta: "Main Card · BW · 3R" },
+    { n: 11, matchup: "Fernando vs Elekana", meta: "Main Card · LHW · 3R" },
+    { n: 10, matchup: "Milosevic vs Cachoeira", meta: "Main Card · WBW · 3R" },
+    { n: 9, matchup: "Degli vs Raposo", meta: "Main Card · FLW · 3R" },
+    { n: 8, matchup: "Nakamura vs Schmid", meta: "Prelims · FW · 3R" },
+    { n: 7, matchup: "Petersen vs Lourenco", meta: "Prelims · HW · 3R" },
+    { n: 6, matchup: "Silva vs Fernandes", meta: "Prelims · WFLW · 3R" },
+    { n: 5, matchup: "Delano vs Magomedov", meta: "Prelims · FW · 3R" },
+    { n: 4, matchup: "Bashi vs Calderon", meta: "Prelims · FW · 3R" },
+    { n: 3, matchup: "Kondratavicius vs Petroski", meta: "Prelims · MW · 3R" },
+    { n: 2, matchup: "Ko vs Turman", meta: "Prelims · WW · 3R" },
+    { n: 1, matchup: "Souza vs Parsons", meta: "Prelims · WW · 3R" },
   ],
   fn_moicano_nolan: [
     { n: 12, matchup: "Moicano vs Nolan", meta: "Main Event · LW · 5R" },
