@@ -1984,7 +1984,10 @@ const panelsEl = document.getElementById("ff-panels");
 
 function fmtML(ml) { return (ml > 0 ? "+" : "") + ml; }
 function fmtPct(v, dp=1) { return (v == null) ? "—" : v.toFixed(dp) + "%"; }
-function hasPanel(f) { return f.a.slpm > 0 || f.b.slpm > 0; }
+// Every fight gets a panel (projections always show); the Tale of the Tape
+// block only renders when at least one side has stats or physicals.
+function hasTape(f) { return [f.a, f.b].some(x => x.slpm > 0 || x.reach > 0 || (x.record && x.record !== "—")); }
+function hasPanel(f) { return true; }
 // Fighters with no UFC striking/grappling data display "—" instead of 0
 function dv(fr, v) { return fr.nostats ? "—" : v; }
 function fmtSdiff(v) { return (v > 0 ? "+" : "") + v.toFixed(1); }
@@ -2460,7 +2463,7 @@ ${(f.a.ctrl || f.b.ctrl) ? `
     <div class="fp-headline">${f.a.name} <span class="vs">vs</span> ${f.b.name}</div>
 
     <!-- Tale of the Tape: 3-col grid, vertical layout -->
-    <details class="collapsible" open>
+    ${hasTape(f) ? `<details class="collapsible" open>
       <summary><span class="bullet"></span>Tale of the Tape<span class="meta">click to collapse</span></summary>
       <div class="body" style="padding: 0;">
         <div class="tape-grid" style="border: none; border-radius: 0;">
@@ -2471,7 +2474,7 @@ ${(f.a.ctrl || f.b.ctrl) ? `
           ${tapeEdgeRowsHTML}
         </div>
       </div>
-    </details>
+    </details>` : ""}
 
     <!-- Projections (collapsable, open by default) -->
     <details class="collapsible" open>
