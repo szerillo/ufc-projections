@@ -44,3 +44,9 @@ To put a new card on the front page: add it to `cards.yml` (as before), run `scr
 - Method model (`form_model.py`): P(KO / SUB / DEC | winner), walk-forward, shown as a method board of fair prices on card and fight pages. GTD on the site is the two decision chances added together.
 - Past performances carry judges' scorecards (from the fighter's side) or the finish detail, and a round split (R1 vs R3+ strike differential) feeds the tape.
 - Fighter pages have situational splits and a compare box; `#/compare/<slug>/<slug>` puts any two fighters side by side.
+
+## v4: model sheet + Markov
+
+- The build reads the UFC Model Google Sheet (link-readable) by tab gid: Snapshots (graded tracker), Calculator, Main Card, Prelims, PropSnap. Graded fights get every input, the flags and the closing prop market; `model.json` gets a tracker scoreboard.
+- The browser also reads Main Card / Prelims / Calculator live for the upcoming card, so sheet edits show up on the site without a rebuild.
+- Markov outputs: drop each `*_V41b_Output.md` into `markov/`; the build parses its ARCHIVE block (win % shrunk and raw, P(dec), expected minutes, round distribution).

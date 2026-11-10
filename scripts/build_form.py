@@ -478,6 +478,145 @@ def bp_ml(fight):
     return res
 
 
+# ----------------------------------------------------------------- 6. Model sheet (Google Sheet) + Markov outputs
+SHEET_ID = "1iMK8fC-Cok-azPatJQ1po9ymL91mfzf2ZsV1CPDTN5U"
+SHEET_TABS = {"Snapshots": 2055839074, "Calculator": 1491130651, "Main Card": 0, "Prelims": 69135179, "PropSnap": 564385760}
+
+
+def _pf(v):
+    """'34.5%' or '0.345' -> 0.345 ; '' -> None"""
+    v = (v or "").strip()
+    if not v or v in ("-", "—"):
+        return None
+    try:
+        if v.endswith("%"):
+            return float(v[:-1].replace(",", "")) / 100
+        x = float(v.replace(",", ""))
+        return x / 100 if x > 1.0001 else x
+    except ValueError:
+        return None
+
+
+def _pml(v):
+    v = (v or "").strip().replace("+", "")
+    try:
+        return int(float(v))
+    except ValueError:
+        return None
+
+
+def load_sheet(cache: Path, download=True):
+    out = {}
+    for tab, gid in SHEET_TABS.items():
+        dest = cache / f"sheet_{tab.replace(' ', '_')}.csv"
+        if download:
+            try:
+                fetch(f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid={gid}", dest, timeout=40)
+            except Exception as ex:
+                print("  sheet tab skipped", tab, ex, file=sys.stderr)
+        if dest.exists():
+            out[tab] = list(csv.reader(open(dest, encoding="utf-8")))
+    return out
+
+
+def sheet_current(sheet):
+    """Upcoming card rows from Main Card / Prelims joined to Calculator -> list of dicts keyed by dog/fav names."""
+    calc = {}
+    for r in (sheet.get("Calculator") or [])[1:40]:
+        if len(r) > 30 and r[0] and r[1] and r[0] != "Underdog":
+            calc[(norm(r[0]), norm(r[1]))] = r
+    rows = []
+    for tab in ("Main Card", "Prelims"):
+        for r in (sheet.get(tab) or [])[1:14]:
+            if len(r) < 28 or not r[1] or not r[2] or r[1] in ("Underdog", "Fighter") or _pf(r[5]) is None:
+                continue
+            c = calc.get((norm(r[1]), norm(r[2]))) or [""] * 40
+            rows.append({
+                "dog": r[1], "fav": r[2], "tab": tab, "tag": (r[0] or "").strip(), "dog_ml": _pml(r[3]), "fav_ml": _pml(r[8]), "dog_p": _pf(r[5]), "fav_p": _pf(r[10]),
+                "dog_edge": _pf(r[7]), "fav_edge": _pf(r[12]), "rec": (r[13] or "").strip(), "hold": _pf(r[14]), "play": (r[15] or "").strip(),
+                "gtd": _pf(r[16]), "gtd_listed": _pf(r[18]), "dog_m": [_pf(r[21]), _pf(r[22]), _pf(r[23])], "fav_m": [_pf(r[25]), _pf(r[26]), _pf(r[27])],
+                "tap": _pf(c[2]), "junk": _pf(c[3]), "tip": _pf(c[4]), "open": _pf(c[5]), "listed": _pf(c[6]), "markov": _pf(c[9]),
+                "ctx": (c[10] or "").strip(), "o25_listed": _pf(c[13]), "o25_model": _pf(c[14]), "ou_play": (c[21] or "").strip(),
+                "flag": (c[26] or "").strip(), "momentum": (c[27] or "").strip(), "dog_best": (c[28] or "").strip(), "fav_best": (c[29] or "").strip()})
+    return rows
+
+
+def sheet_snapshots(sheet):
+    rows = sheet.get("Snapshots") or []
+    if not rows:
+        return []
+    hdr = rows[0]
+    out = []
+    for r in rows[1:]:
+        d = dict(zip(hdr, r))
+        if not d.get("dog") or not d.get("fav"):
+            continue
+        try:
+            d["_date"] = dt.datetime.strptime(d["date"], "%m/%d/%Y").date()
+        except Exception:
+            continue
+        out.append(d)
+    return out
+
+
+def sheet_obj(a_name, row, snap=False):
+    """Orient a sheet row (dog/fav) onto the fight's a/b sides."""
+    if snap:
+        d = row
+        dog, fav = d["dog"], d["fav"]
+        a_is_dog = name_match(a_name, dog) >= name_match(a_name, fav)
+        g = lambda k: _pf(d.get(k))
+        side = lambda x: x if a_is_dog else (None if x is None else 1 - x)
+        dm = [g("model dog DEC (V)"), g("model dog KO (W)"), g("model dog SUB (X)")]; fm_ = [g("model fav DEC (Z)"), g("model fav KO (AA)"), g("model fav SUB (AB)")]
+        pm = {"dog": [g("P mkt dogDEC"), g("P mkt dogKO"), g("P mkt dogSUB")], "fav": [g("P mkt favDEC"), g("P mkt favKO"), g("P mkt favSUB")]}
+        o = {"dog": "a" if a_is_dog else "b", "tap": side(g("Tap C")), "junk": side(g("Junk D")), "tip": side(g("Tip E")), "open": side(g("dog open F")),
+             "listed": side(g("dog listed G (sheet)")), "close": side(g("dog CLOSE (consensus)")), "markov": side(g("Markov J")), "model": side(g("model Q")),
+             "exch": side(g("exch fair dog (AG)")), "flag": d.get("flag AA") or "", "momentum": d.get("momentum AB") or "", "rec": d.get("bet rec") or "",
+             "play": d.get("GTD/ITD play") or "", "ou_play": d.get("O/U play") or "", "gtd": g("Fight GTD model"), "gtd_listed": g("GTD listed"),
+             "gtd_close": g("GTD close"), "markov_dec": g("Markov P(dec)"), "o25_listed": g("O2.5 listed"), "o25_model": g("O2.5 model"),
+             "ml": {"a": _pml(d.get("dog price (D)")) if a_is_dog else _pml(d.get("fav price (I)")), "b": _pml(d.get("fav price (I)")) if a_is_dog else _pml(d.get("dog price (D)"))},
+             "meth": {"a": dm if a_is_dog else fm_, "b": fm_ if a_is_dog else dm},
+             "meth_mkt": {"a": pm["dog"] if a_is_dog else pm["fav"], "b": pm["fav"] if a_is_dog else pm["dog"]},
+             "k": d.get("K code") or "", "pl": g("rec ML P/L (u)") if d.get("rec ML P/L (u)") not in (None, "") else None}
+        try:
+            o["pl"] = float(d["rec ML P/L (u)"]) if d.get("rec ML P/L (u)") not in (None, "") else None
+        except ValueError:
+            o["pl"] = None
+        return o
+    r = row
+    a_is_dog = name_match(a_name, r["dog"]) >= name_match(a_name, r["fav"])
+    side = lambda x: x if a_is_dog else (None if x is None else 1 - x)
+    return {"dog": "a" if a_is_dog else "b", "tap": side(r["tap"]), "junk": side(r["junk"]), "tip": side(r["tip"]), "open": side(r["open"]),
+            "listed": side(r["listed"]), "markov": side(r["markov"]), "model": r["dog_p"] if a_is_dog else r["fav_p"],
+            "flag": r["flag"], "momentum": r["momentum"], "rec": r["rec"], "play": r["play"], "ou_play": r["ou_play"], "gtd": r["gtd"], "gtd_listed": r["gtd_listed"],
+            "o25_listed": r["o25_listed"], "o25_model": r["o25_model"], "hold": r["hold"], "ctx": r["ctx"], "tag": r.get("tag", ""),
+            "ml": {"a": r["dog_ml"] if a_is_dog else r["fav_ml"], "b": r["fav_ml"] if a_is_dog else r["dog_ml"]},
+            "edge": {"a": r["dog_edge"] if a_is_dog else r["fav_edge"], "b": r["fav_edge"] if a_is_dog else r["dog_edge"]},
+            "meth": {"a": r["dog_m"] if a_is_dog else r["fav_m"], "b": r["fav_m"] if a_is_dog else r["dog_m"]},
+            "best": {"a": r["dog_best"] if a_is_dog else r["fav_best"], "b": r["fav_best"] if a_is_dog else r["dog_best"]}}
+
+
+def load_markov():
+    """ARCHIVE blocks from markov/*.md -> list of {a,b,shrunk,raw,pdec,exp,r[5]} (probabilities for the first-named fighter)."""
+    out = []
+    for fp in sorted((REPO / "markov").glob("*.md")):
+        txt = fp.read_text(encoding="utf-8", errors="ignore")
+        m = re.search(r"## ARCHIVE.*?```\n(.*?)```", txt, re.S)
+        if not m:
+            continue
+        for line in m.group(1).strip().splitlines():
+            parts = line.split("\t")
+            if len(parts) < 10 or " vs " not in parts[0]:
+                continue
+            a, b = [x.strip() for x in parts[0].split(" vs ", 1)]
+            try:
+                nums = [float(x) for x in parts[1:10]]
+            except ValueError:
+                continue
+            out.append({"a": a, "b": b, "shrunk": nums[0], "raw": nums[1], "pdec": nums[2], "exp": nums[3], "r": nums[4:9], "file": fp.name})
+    return out
+
+
 # ----------------------------------------------------------------- build
 def main():
     ap = argparse.ArgumentParser()
@@ -532,6 +671,76 @@ def main():
     widgets = load_widgets()
     n_att = attach_models(events, widgets)
     print(f"  {len(widgets)} widgets, {n_att} fights with projections")
+
+    print("loading model sheet + Markov outputs…")
+    sheet = load_sheet(cache, download=not args.no_download)
+    snaps = sheet_snapshots(sheet)
+    cur_rows = sheet_current(sheet)
+    mk = load_markov()
+    by_date_ev = defaultdict(list)
+    for e in events.values():
+        by_date_ev[e["date"]].append(e)
+    n_sn = 0
+    for d in snaps:
+        for off in (0, 1, -1):
+            hit = False
+            for e in by_date_ev.get(d["_date"] + dt.timedelta(days=off), []):
+                for f in e["fights"]:
+                    if pair_match(d["dog"], d["fav"], f["a"], f["b"])[0] >= 1:
+                        f["sheet"] = sheet_obj(f["a"], d, snap=True); n_sn += 1; hit = True
+                        break
+                if hit:
+                    break
+            if hit:
+                break
+    ps_rows = sheet.get("PropSnap") or []
+    n_ps = 0
+    if ps_rows:
+        hdr = ps_rows[0]
+        grp = defaultdict(list)
+        for r in ps_rows[1:]:
+            d = dict(zip(hdr, r))
+            if d.get("dog") and d.get("fav") and d.get("market"):
+                grp[(d["date"], d["dog"], d["fav"])].append(d)
+        for (dd, dog, fav), lst in grp.items():
+            try:
+                pdate = dt.datetime.strptime(dd, "%m/%d/%Y").date()
+            except Exception:
+                continue
+            for off in (0, 1, -1):
+                done = False
+                for e in by_date_ev.get(pdate + dt.timedelta(days=off), []):
+                    for f in e["fights"]:
+                        if pair_match(dog.replace("\u2019", "'"), fav.replace("\u2019", "'"), f["a"], f["b"])[0] >= 1:
+                            a_is_dog = name_match(f["a"], dog) >= name_match(f["a"], fav)
+                            pr = {}
+                            for d in lst:
+                                mk_ = d["market"]
+                                for who in ("dog", "fav"):
+                                    if mk_.startswith(who + " ") or mk_ == "ML " + who:
+                                        mk_ = mk_.replace(who, "a" if (who == "dog") == a_is_dog else "b")
+                                        break
+                                pv = _pf(d.get("prob")); od_ = _pml(d.get("odds"))
+                                pr.setdefault(mk_, {})[d["source"]] = [pv, od_, (d.get("weight/vol") or "")[:14]]
+                            f["props"] = pr; n_ps += 1; done = True
+                            break
+                    if done:
+                        break
+                if done:
+                    break
+    n_mk = 0
+    for e in events.values():
+        if e["date"].year < 2026:
+            continue
+        for f in e["fights"]:
+            for m_ in mk:
+                sc, fl = pair_match(f["a"], f["b"], m_["a"], m_["b"])
+                if sc >= 2:
+                    f["markov"] = {"p": round((100 - m_["shrunk"]) / 100 if fl else m_["shrunk"] / 100, 4), "raw": round((100 - m_["raw"]) / 100 if fl else m_["raw"] / 100, 4),
+                                   "dec": round(m_["pdec"] / 100, 4), "exp": m_["exp"], "r": m_["r"]}
+                    n_mk += 1
+                    break
+    print(f"  sheet: {n_sn} graded snapshot fights, {len(cur_rows)} current rows, {n_ps} fights with prop prices; Markov: {n_mk} fights")
 
     # BettingPros: opening lines for 2026 cards + the upcoming card
     bp = load_bp()
@@ -665,7 +874,7 @@ def main():
              "result": {"winner": f["winner"], "kind": f["kind"], "method": f["method"], "round": f["round"], "time": f["time"],
                         "ref": f["ref"], "details": f["details"]},
              "stats": {"a": f["sa"], "b": f["sb"]}, "url": f["url"]}
-        for k in ("odds", "model", "bp"):
+        for k in ("odds", "model", "bp", "sheet", "markov", "props"):
             if f.get(k):
                 o[k] = f[k]
         o["form"] = {"p": r3(f.get("fl")), "g": r3(f.get("gl")), "base": r3(f.get("_base")),
@@ -765,6 +974,30 @@ def main():
                         fobj["model"] = {"a": ma, "b": mb, "gtd": p.get("gtd_pct"),
                                          "rec": None if not rec else ("a" if name_match(rec, an) >= name_match(rec, bn) else "b"), "widget_n": wf["n"]}
                         break
+            for r_ in cur_rows:
+                if pair_match(r_["dog"], r_["fav"], fa["name"], fb["name"])[0] >= 1 or pair_match(r_["dog"], r_["fav"], an, bn)[0] >= 1:
+                    so = sheet_obj(fa["name"], r_)
+                    fobj["sheet"] = so
+                    fobj["sched"] = 5 if so.get("tag", "").endswith("-5") else 3
+                    if "model" not in fobj and so.get("model") is not None:
+                        pa_ = so["model"]
+                        mm = lambda p_, sh: {"win": round(p_ * 100, 1), "dec": None if sh[0] is None else round(p_ * sh[0] * 100, 1),
+                                             "ko": None if sh[1] is None else round(p_ * sh[1] * 100, 1), "sub": None if sh[2] is None else round(p_ * sh[2] * 100, 1)}
+                        ma_ = mm(pa_, so["meth"]["a"]); mb_ = mm(1 - pa_, so["meth"]["b"])
+                        ma_["ml"], mb_["ml"] = so["ml"]["a"], so["ml"]["b"]
+                        rec_side = None
+                        if so["rec"] and so["rec"].upper().startswith("BET"):
+                            ra_, rb_ = name_match(so["rec"], fa["name"]), 0
+                            for tok in toks(fa["name"]):
+                                if tok in norm(so["rec"]):
+                                    ra_ = 3
+                            for tok in toks(fb["name"]):
+                                if tok in norm(so["rec"]):
+                                    rb_ = 3
+                            rec_side = "a" if ra_ > rb_ else "b" if rb_ > ra_ else None
+                        fobj["model"] = {"a": ma_, "b": mb_, "gtd": None if so["gtd"] is None else round(so["gtd"] * 100, 1), "rec": rec_side,
+                                         "rec_text": so["rec"], "src": "sheet"}
+                    break
             fo.append(fobj)
         name = d.get("card") or slug
         eslug = f"{edate.isoformat()}-{slugify(name)}"[:90]
@@ -772,7 +1005,7 @@ def main():
                "url": None, "widget": {"file": w["file"], "title": (w["title"] or "").replace(" · Fight Form", "")} if w else None,
                "odds_updated": d.get("updated_at"), "bp_file": f"data/{slug}_odds.json", "fights": fo}
         json.dump(doc, open(OUT / "events" / f"{eslug}.json", "w"), separators=(",", ":"))
-        up_index.append({"name": name, "slug": eslug, "date": edate.isoformat(), "loc": doc["location"], "nf": len(fo), "model": bool(w),
+        up_index.append({"name": name, "slug": eslug, "date": edate.isoformat(), "loc": doc["location"], "nf": len(fo), "model": bool(w) or any(x.get("model") for x in fo),
                          "main": f"{fo[0]['a']['name']} vs {fo[0]['b']['name']}" if fo else ""})
 
     # ------------------------------------------------ model report card
@@ -854,6 +1087,42 @@ def main():
     except Exception as ex:
         print("  method6 failed", ex, file=sys.stderr)
 
+    try:
+        fl_ = lambda v: float(v) if v not in (None, "") else None
+        G_ = [d for d in snaps if d.get("graded")]
+        def mean(key, rows):
+            xs = [fl_(d.get(key)) for d in rows]; xs = [x for x in xs if x is not None]
+            return (round(sum(xs) / len(xs), 4), len(xs)) if xs else (None, 0)
+        allb = [d for d in G_ if all(d.get(k) not in (None, "") for k in ("Brier close", "Brier model Q", "Brier Markov J"))]
+        sb = {"n": len(G_), "cards": len({d["event"] for d in G_}),
+              "ml": [{"k": "Closing line", "v": mean("Brier close", allb)}, {"k": "Sheet model", "v": mean("Brier model Q", allb)},
+                     {"k": "Markov", "v": mean("Brier Markov J", allb)}, {"k": "Exchange fair price", "v": mean("Brier exch fair", G_)}],
+              "gtd": [{"k": "Closing GTD price", "v": mean("Brier GTD close", G_)}, {"k": "Sheet GTD", "v": mean("Brier GTD model", G_)}, {"k": "Markov P(dec)", "v": mean("Brier GTD Markov", G_)}],
+              "method": [{"k": "Sheet method split", "v": mean("Brier method model", G_)}, {"k": "Market method prices", "v": mean("Brier method mkt", G_)}]}
+        flags = defaultdict(lambda: [0, 0, 0.0])
+        for d in G_:
+            dw, cp = fl_(d.get("dog won")), fl_(d.get("dog CLOSE (consensus)"))
+            if dw is None or cp is None:
+                continue
+            key = re.sub(r"\s*\(.*", "", d.get("flag AA") or "ok").strip() or "ok"
+            v = flags[key]; v[0] += 1; v[1] += dw; v[2] += cp
+        sb["flags"] = [{"flag": k_, "n": v[0], "dog_w": int(v[1]), "dog_exp": round(v[2] / v[0], 4)} for k_, v in sorted(flags.items(), key=lambda kv: -kv[1][0])]
+        pub = [0, 0, 0.0]
+        for d in G_:
+            t_, j_, dw, cp = fl_(d.get("Tap C")), fl_(d.get("Junk D")), fl_(d.get("dog won")), fl_(d.get("dog CLOSE (consensus)"))
+            if None in (t_, j_, dw, cp):
+                continue
+            if max(t_, j_) - cp >= 0.10:
+                pub[0] += 1; pub[1] += dw; pub[2] += cp
+        sb["public_dog"] = {"n": pub[0], "dog_w": int(pub[1]), "dog_exp": round(pub[2] / pub[0], 4) if pub[0] else None}
+        rp = [fl_(d.get("rec ML P/L (u)")) for d in G_]; rp = [x for x in rp if x is not None]
+        gp = [fl_(d.get("GTD/ITD play P/L (u)")) for d in G_]; gp = [x for x in gp if x is not None]
+        sb["rec"] = {"n": len(rp), "w": sum(1 for x in rp if x > 0), "pnl": round(sum(rp), 2)}
+        sb["plays"] = {"n": len(gp), "w": sum(1 for x in gp if x > 0), "pnl": round(sum(gp), 2)}
+        model["sheet"] = sb
+    except Exception as ex:
+        print("  sheet scoreboard failed", ex, file=sys.stderr)
+
     def split(rs):
         w_ = sum(1 for x in rs if x["won"]); pn = sum(x["pnl"] or 0 for x in rs); rk = sum(x["risk"] or 0 for x in rs)
         return {"n": len(rs), "w": w_, "pnl": round(pn, 2), "risk": round(rk, 2)}
@@ -862,7 +1131,7 @@ def main():
     json.dump(R, open(OUT / "research.json", "w"), separators=(",", ":"))
 
     json.dump({"built": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z", "upcoming": up_index, "events": index_events,
-               "books": BOOK_LABEL, "k": R["k"],
+               "books": BOOK_LABEL, "k": R["k"], "sheet": {"id": SHEET_ID, "gids": SHEET_TABS},
                "angles": {a["id"]: [a["name"], a["n"], a["act"], a["exp"], a["roi_c"], a["z"]] for a in R["angles"]}, "counts": {"events": len(events), "fights": sum(len(e["fights"]) for e in events.values()),
                                               "fighters": len(fighters), "odds_fights": matched}},
               open(OUT / "index.json", "w"), separators=(",", ":"))

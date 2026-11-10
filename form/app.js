@@ -175,7 +175,7 @@ function cardTable(ev) {
       model = `${m.a.win.toFixed(0)} / ${m.b.win.toFixed(0)}`;
       if (o.pa != null) { const e = m.a.win - o.pa * 100; const side = e >= 0 ? f.a.name : f.b.name; edge = `<span class="${Math.abs(e) >= 3 ? "pos b" : "dim"}" title="Model minus no-vig market">${esc(side.split(" ").slice(-1)[0])} ${signed(Math.abs(e))}</span>`; }
     }
-    const rec = m && m.rec ? `<span class="pill y" title="Model bet recommendation">BET ${esc((m.rec === "a" ? f.a.name : f.b.name).split(" ").slice(-1)[0])}</span>` : "";
+    const rec = m && m.rec ? `<span class="pill y" title="${esc(m.rec_text || "Model bet recommendation")}">BET ${esc((m.rec === "a" ? f.a.name : f.b.name).split(" ").slice(-1)[0])}</span>` : (m && m.rec_text && /^lean/i.test(m.rec_text) ? `<span class="pill" title="${esc(m.rec_text)}">${esc(m.rec_text.split("[")[0].trim())}</span>` : "");
     const wa = f.result && f.result.winner === "a", wb = f.result && f.result.winner === "b";
     html += `<tr class="click" data-href="#/fight/${ev.slug}/${f.n}">
       <td class="c dim">${f.n}</td>
@@ -202,6 +202,74 @@ async function overlayLive(ev) {
       const ma = pick(f.a.name), mb = pick(f.b.name); if (ma != null && mb != null && bf.status !== "live") f.live = { ma, mb }; }
     ev.__live = d.updated_at; ev.odds_updated = d.updated_at; } catch (e) { /* keep baked odds */ }
 }
+/* ---------- live model sheet overlay (upcoming card) ---------- */
+function parseCSV(text) { const rows = []; let row = [], cur = "", q = false;
+  for (let i = 0; i < text.length; i++) { const c = text[i];
+    if (q) { if (c === '"') { if (text[i + 1] === '"') { cur += '"'; i++; } else q = false; } else cur += c; }
+    else if (c === '"') q = true; else if (c === ",") { row.push(cur); cur = ""; } else if (c === "\n") { row.push(cur); rows.push(row); row = []; cur = ""; } else if (c !== "\r") cur += c; }
+  if (cur || row.length) { row.push(cur); rows.push(row); } return rows; }
+const pf = (v) => { v = (v || "").trim(); if (!v || v === "-") return null; const x = parseFloat(v.replace(/[%,+]/g, "")); if (!isFinite(x)) return null; return v.endsWith("%") ? x / 100 : (x > 1.0001 ? x / 100 : x); };
+const pmlv = (v) => { const x = parseInt((v || "").replace("+", ""), 10); return isFinite(x) ? x : null; };
+const nm = (x) => (x || "").toLowerCase().normalize("NFD").replace(/[^a-z ]/g, "").trim();
+const sameFighter = (a, b) => { const A = nm(a).split(" "), B = nm(b).split(" "); return A[A.length - 1] === B[B.length - 1] || nm(a) === nm(b); };
+async function overlaySheet(ev) {
+  const S = window.__sheet; if (ev.status !== "upcoming" || !S || ev.__sheet) return;
+  try {
+    const get = (tab) => fetch(`https://docs.google.com/spreadsheets/d/${S.id}/export?format=csv&gid=${S.gids[tab]}`).then(r => { if (!r.ok) throw new Error("sheet " + r.status); return r.text(); }).then(parseCSV);
+    const [mc, pr, calc] = await Promise.all([get("Main Card"), get("Prelims"), get("Calculator")]);
+    const C = {}; for (const r of calc.slice(1, 40)) if (r[0] && r[1]) C[nm(r[0]) + "|" + nm(r[1])] = r;
+    let n = 0;
+    for (const r of mc.slice(1, 14).concat(pr.slice(1, 14))) {
+      if (!r[1] || !r[2] || pf(r[5]) == null || r[1] === "Underdog") continue;
+      const f = ev.fights.find(x => (sameFighter(x.a.name, r[1]) && sameFighter(x.b.name, r[2])) || (sameFighter(x.a.name, r[2]) && sameFighter(x.b.name, r[1]))); if (!f) continue;
+      const aDog = sameFighter(f.a.name, r[1]), c = C[nm(r[1]) + "|" + nm(r[2])] || [];
+      const sd = (x) => x == null ? null : (aDog ? x : 1 - x);
+      const dm = [pf(r[21]), pf(r[22]), pf(r[23])], fm = [pf(r[25]), pf(r[26]), pf(r[27])];
+      const so = { dog: aDog ? "a" : "b", tap: sd(pf(c[2])), junk: sd(pf(c[3])), tip: sd(pf(c[4])), open: sd(pf(c[5])), listed: sd(pf(c[6])), markov: sd(pf(c[9])),
+        model: aDog ? pf(r[5]) : pf(r[10]), flag: (c[26] || "").trim(), momentum: (c[27] || "").trim(), rec: (r[13] || "").trim(), play: (r[15] || "").trim(), ou_play: (c[21] || "").trim(),
+        gtd: pf(r[16]), gtd_listed: pf(r[18]), o25_listed: pf(c[13]), o25_model: pf(c[14]), hold: pf(r[14]), tag: (r[0] || "").trim(),
+        ml: { a: aDog ? pmlv(r[3]) : pmlv(r[8]), b: aDog ? pmlv(r[8]) : pmlv(r[3]) }, edge: { a: aDog ? pf(r[7]) : pf(r[12]), b: aDog ? pf(r[12]) : pf(r[7]) },
+        meth: { a: aDog ? dm : fm, b: aDog ? fm : dm }, best: { a: (aDog ? c[28] : c[29]) || "", b: (aDog ? c[29] : c[28]) || "" }, live: true };
+      f.sheet = so;
+      if (!f.model || f.model.src === "sheet") { const pa = so.model, mk = (p, sh) => ({ win: +(p * 100).toFixed(1), dec: sh[0] == null ? null : +(p * sh[0] * 100).toFixed(1), ko: sh[1] == null ? null : +(p * sh[1] * 100).toFixed(1), sub: sh[2] == null ? null : +(p * sh[2] * 100).toFixed(1) });
+        const A = mk(pa, so.meth.a), B = mk(1 - pa, so.meth.b); A.ml = so.ml.a; B.ml = so.ml.b;
+        let rec = null; if (/^BET/i.test(so.rec)) rec = nm(so.rec).includes(last(nm(f.a.name))) ? "a" : nm(so.rec).includes(last(nm(f.b.name))) ? "b" : null;
+        f.model = { a: A, b: B, gtd: so.gtd == null ? null : +(so.gtd * 100).toFixed(1), rec, rec_text: so.rec, src: "sheet" }; }
+      if (so.tag) f.sched = /-5$/.test(so.tag) ? 5 : 3;
+      n++; }
+    ev.__sheet = n;
+  } catch (e) { console.warn("sheet overlay failed", e); }
+}
+function chip(t, k) { return t && t !== "-" ? `<span class="pill ${k || ""}" style="margin:0 4px 4px 0;white-space:normal;text-transform:none;letter-spacing:0;font-weight:600;font-size:11px">${esc(t)}</span>` : ""; }
+function sheetBox(f, final) {
+  const s = f.sheet; if (!s) return "";
+  const P = (x) => x == null ? "—" : (x * 100).toFixed(1) + "%", inv = (x) => x == null ? null : 1 - x;
+  const row = (lab, x, tip) => x == null ? "" : `<tr><td class="l b" title="${tip || ""}">${lab}</td><td>${P(x)}</td><td>${P(inv(x))}</td></tr>`;
+  let h = `<h3>Model sheet${s.live ? ' <span class="pill g">live from sheet</span>' : ""}</h3><div class="tw"><table><thead><tr><th class="l">Input</th><th>${esc(last(f.a.name))}</th><th>${esc(last(f.b.name))}</th></tr></thead><tbody>
+    ${row("Tapology picks", s.tap, "Share of Tapology users picking each fighter")}${row("MMA Junkie picks", s.junk)}${row("Tipsters", s.tip)}
+    ${row("Opening line (no-vig)", s.open)}${row("Listed line", s.listed)}${row("Closing line", s.close)}${row("Exchange fair price", s.exch)}
+    ${row("Markov sim", s.markov, "Markov fight simulator win %")}
+    ${s.model == null ? "" : `<tr style="background:var(--hl)"><td class="l b">Sheet model</td><td class="b">${P(s.model)} · ${ml(p2ml(s.model))}</td><td class="b">${P(1 - s.model)} · ${ml(p2ml(1 - s.model))}</td></tr>`}
+    ${s.edge ? `<tr><td class="l b">Edge vs listed</td><td class="${cls(s.edge.a)}">${s.edge.a == null ? "—" : signed(s.edge.a * 100) + "%"}</td><td class="${cls(s.edge.b)}">${s.edge.b == null ? "—" : signed(s.edge.b * 100) + "%"}</td></tr>` : ""}
+    ${s.meth && s.meth.a && s.meth.a[0] != null ? `<tr><td class="l b" title="Share of each fighter's wins">Wins by DEC / KO / SUB</td><td>${s.meth.a.map(x => x == null ? "—" : (x * 100).toFixed(0)).join(" / ")}</td><td>${s.meth.b.map(x => x == null ? "—" : (x * 100).toFixed(0)).join(" / ")}</td></tr>` : ""}
+    ${s.gtd != null ? `<tr><td class="l b">Fight GTD</td><td colspan="2" class="c">model ${P(s.gtd)}${s.gtd_listed != null ? " · listed " + P(s.gtd_listed) : ""}${s.gtd_close != null ? " · close " + P(s.gtd_close) : ""}${s.markov_dec != null ? " · Markov " + P(s.markov_dec) : ""}</td></tr>` : ""}
+    ${s.o25_model != null ? `<tr><td class="l b">Over 2.5</td><td colspan="2" class="c">model ${P(s.o25_model)}${s.o25_listed != null ? " · listed " + P(s.o25_listed) : ""}</td></tr>` : ""}
+  </tbody></table></div><div style="margin-top:6px">${chip(s.rec, /^BET/i.test(s.rec) ? "y" : "")}${chip(s.play)}${chip(s.ou_play)}${chip(s.flag && s.flag !== "ok" ? s.flag : "", "r")}${chip(s.momentum && s.momentum !== "flat" ? s.momentum : "")}${s.best && s.best.a ? chip(last(f.a.name) + ": " + s.best.a) + chip(last(f.b.name) + ": " + s.best.b) : ""}${s.pl != null ? chip("Rec result " + signed(s.pl, 2) + "u", s.pl > 0 ? "g" : "r") : ""}</div>`;
+  return h;
+}
+function markovBox(f) {
+  const m = f.markov; if (!m) return "";
+  const mx = Math.max(...m.r, m.dec * 100, 1), bar = (lab, v) => `<div style="display:grid;grid-template-columns:70px 1fr 46px;gap:6px;align-items:center;font:12px var(--mono);margin:2px 0"><span class="dim">${lab}</span><span style="background:var(--paper2);height:12px"><i style="display:block;height:12px;width:${(v / mx * 100).toFixed(1)}%;background:${lab === "Decision" ? "#1d3f77" : "#a81c1c"}"></i></span><span>${v.toFixed(1)}%</span></div>`;
+  return `<h3>Markov simulation</h3><div class="box"><div class="kv"><span>${esc(f.a.name)} win (shrunk / raw)</span><span>${(m.p * 100).toFixed(1)}% / ${(m.raw * 100).toFixed(1)}%</span></div><div class="kv"><span>${esc(f.b.name)} win (shrunk / raw)</span><span>${((1 - m.p) * 100).toFixed(1)}% / ${((1 - m.raw) * 100).toFixed(1)}%</span></div><div class="kv"><span>Expected fight time</span><span>${m.exp} min</span></div><div style="height:6px"></div>
+    ${m.r.map((v, i) => v > 0 || i < (f.sched || 3) ? bar("Ends R" + (i + 1), v) : "").join("")}${bar("Decision", m.dec * 100)}</div>`;
+}
+function propsBox(f) {
+  const p = f.props; if (!p) return "";
+  const order = [["ML a", last(f.a.name) + " ML"], ["ML b", last(f.b.name) + " ML"], ["a DEC", last(f.a.name) + " by DEC"], ["a KO", last(f.a.name) + " by KO"], ["a SUB", last(f.a.name) + " by SUB"], ["b DEC", last(f.b.name) + " by DEC"], ["b KO", last(f.b.name) + " by KO"], ["b SUB", last(f.b.name) + " by SUB"], ["GTD", "Goes the distance"], ["O1.5", "Over 1.5"], ["O2.5", "Over 2.5"], ["O3.5", "Over 3.5"], ["O4.5", "Over 4.5"]];
+  const cell = (x) => x && x[0] != null ? `${(x[0] * 100).toFixed(1)}% <span class="dim">${ml(x[1])}</span>` : "—";
+  const rows = order.filter(([k]) => p[k]).map(([k, lab]) => `<tr><td class="l b">${esc(lab)}</td><td>${cell(p[k].books)}</td><td>${p[k]["best-book"] ? ml(p[k]["best-book"][1]) + ' <span class="dim">' + esc(p[k]["best-book"][2]) + "</span>" : "—"}</td><td>${cell(p[k].exch)}</td></tr>`).join("");
+  return rows ? `<h3>Prop market at the close</h3><div class="tw"><table><thead><tr><th class="l">Market</th><th title="No-vig book consensus">Books</th><th>Best price</th><th title="Exchange price (Kalshi / Polymarket / Novig)">Exchange</th></tr></thead><tbody>${rows}</tbody></table></div>` : "";
+}
 function priceBoard(ev) {
   const rows = [];
   for (const f of ev.fights) { const od = f.odds; if (!od) continue; const pa = od.close.p;
@@ -221,7 +289,7 @@ async function vHome() {
   const idx = await getJSON("index.json");
   let html = "";
   for (const u of idx.upcoming) {
-    const ev = await getJSON(`events/${u.slug}.json`); await overlayLive(ev);
+    const ev = await getJSON(`events/${u.slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev)]);
     html += `<h2>Next up · ${esc(ev.name)}</h2><div class="sub">${fdate(ev.date)} · ${esc(ev.location)} · <a href="#/card/${ev.slug}" style="text-decoration:underline">full card page</a></div><div style="height:8px"></div>${cardTable(ev)}${priceBoard(ev)}${methodBoard(ev)}<p><a class="btn" href="#/sheet/${ev.slug}">Printable form sheet →</a></p>`;
   }
   if (!idx.upcoming.length) html += `<div class="banner">No upcoming card loaded yet.</div>`;
@@ -234,7 +302,7 @@ async function vHome() {
 }
 
 async function vCard(slug) {
-  const ev = await getJSON(`events/${slug}.json`); await overlayLive(ev);
+  const ev = await getJSON(`events/${slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev)]);
   const withOdds = ev.fights.filter(f => f.odds);
   const movers = withOdds.map(f => ({ f, mv: (f.odds.close.p - f.odds.open.p) * 100 })).sort((a, b) => Math.abs(b.mv) - Math.abs(a.mv)).slice(0, 5);
   let html = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/cards">Cards</a> › ${esc(ev.name)}</div>
@@ -257,7 +325,7 @@ function tapeRow(k, a, b, better, force) { // better: "hi" | "lo" | null; force:
 const inches = (ht) => { const m = /(\d+)'(\d+)/.exec(ht || ""); return m ? +m[1] * 12 + +m[2] : null; };
 
 async function vFight(slug, n) {
-  const ev = await getJSON(`events/${slug}.json`);
+  const ev = await getJSON(`events/${slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev)]);
   const f = ev.fights.find(x => String(x.n) === String(n));
   if (!f) { $app.innerHTML = `<div class="banner">Fight not found.</div>`; return; }
   const [A, B] = await Promise.all([f.a.slug ? getJSON(`fighters/${f.a.slug}.json`).catch(() => null) : null, f.b.slug ? getJSON(`fighters/${f.b.slug}.json`).catch(() => null) : null]);
@@ -325,9 +393,10 @@ async function vFight(slug, n) {
   if (m && m.a && m.a.win != null) {
     const mk = o ? o.close.p * 100 : null;
     const row = (lab, X, name, mkp) => `<tr><td class="l b">${esc(name)}</td><td>${X.win.toFixed(1)}%</td><td>${ml(p2ml(X.win / 100))}</td><td>${ml(X.ml)}</td><td class="${cls(X.ml != null ? X.win - ml2p(X.ml) * 100 : null)}">${X.ml != null ? signed(X.win - ml2p(X.ml) * 100) : "—"}</td><td class="${cls(mkp != null ? X.win - mkp : null)}">${mkp != null ? signed(X.win - mkp) : "—"}</td><td>${X.dec != null ? X.dec.toFixed(0) : "—"}</td><td>${X.ko != null ? X.ko.toFixed(0) : "—"}</td><td>${X.sub != null ? X.sub.toFixed(0) : "—"}</td></tr>`;
-    html += `<h3>Model projection ${m.rec ? `<span class="pill y">Bet ${esc(m.rec === "a" ? f.a.name : f.b.name)}</span>` : ""}</h3><div class="tw"><table><thead><tr><th class="l">Fighter</th><th>Win</th><th>Fair</th><th title="Listed price when published">Listed</th><th title="Model minus listed implied %">Edge</th><th title="Model minus no-vig ${final ? "close" : "current"}">vs ${final ? "close" : "now"}</th><th>DEC%</th><th>KO%</th><th>SUB%</th></tr></thead><tbody>${row("a", m.a, f.a.name, mk)}${row("b", m.b, f.b.name, mk == null ? null : 100 - mk)}</tbody></table></div>
+    html += `<h3>Model projection${m.src === "sheet" ? " · from the model sheet" : ""} ${m.rec ? `<span class="pill y">Bet ${esc(m.rec === "a" ? f.a.name : f.b.name)}</span>` : ""}</h3><div class="tw"><table><thead><tr><th class="l">Fighter</th><th>Win</th><th>Fair</th><th title="Listed price when published">Listed</th><th title="Model minus listed implied %">Edge</th><th title="Model minus no-vig ${final ? "close" : "current"}">vs ${final ? "close" : "now"}</th><th>DEC%</th><th>KO%</th><th>SUB%</th></tr></thead><tbody>${row("a", m.a, f.a.name, mk)}${row("b", m.b, f.b.name, mk == null ? null : 100 - mk)}</tbody></table></div>
     ${m.gtd != null ? `<div class="note">Model goes-the-distance: ${m.gtd}%${o && o.total ? ` · market over ${o.total.pt}: ${pct(o.total.p_over)}` : ""}</div>` : ""}`;
   }
+  html += sheetBox(f, final) + markovBox(f) + propsBox(f);
   // form numbers + angles
   const fm = f.form;
   if (fm) {
@@ -482,7 +551,17 @@ async function vModel() {
   const M = await getJSON("model.json");
   const R = M.recs, w = R.filter(x => x.won).length, pnl = R.reduce((s, x) => s + (x.pnl || 0), 0), risk = R.reduce((s, x) => s + (x.risk || 0), 0);
   const withClose = R.filter(x => x.close_p != null && x.ml != null), beat = withClose.filter(x => x.close_ml != null && ml2p(x.ml) < ml2p(x.close_ml)).length;
-  $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › Model</div><h2>Model report card</h2>
+  const SB = M.sheet, B = (v) => v && v[0] != null ? `${v[0]} <span class="dim">(${v[1]})</span>` : "—";
+  const sbHtml = SB && SB.n ? `<h2>Model sheet tracker · v4.x</h2><p class="sub">${SB.n} graded fights over ${SB.cards} cards, read from the sheet's Snapshots tab. Brier score: lower is better; fight counts in brackets.</p>
+    <div class="stats"><div><b>${SB.rec.w}-${SB.rec.n - SB.rec.w}</b><span>Moneyline recs</span></div><div><b class="${cls(SB.rec.pnl)}">${signed(SB.rec.pnl, 2)}u</b><span>Rec P/L</span></div><div><b>${SB.plays.w}-${SB.plays.n - SB.plays.w}</b><span>GTD / ITD plays</span></div><div><b class="${cls(SB.plays.pnl)}">${signed(SB.plays.pnl, 2)}u</b><span>Play P/L</span></div></div>
+    <div class="grid3" style="margin-top:12px">
+      <div><h3>Moneyline</h3><div class="tw"><table><thead><tr><th class="l">Source</th><th>Brier</th></tr></thead><tbody>${SB.ml.map(x => `<tr><td class="l b">${x.k}</td><td>${B(x.v)}</td></tr>`).join("")}</tbody></table></div></div>
+      <div><h3>Goes the distance</h3><div class="tw"><table><thead><tr><th class="l">Source</th><th>Brier</th></tr></thead><tbody>${SB.gtd.map(x => `<tr><td class="l b">${x.k}</td><td>${B(x.v)}</td></tr>`).join("")}</tbody></table></div></div>
+      <div><h3>Method (six outcomes)</h3><div class="tw"><table><thead><tr><th class="l">Source</th><th>Brier</th></tr></thead><tbody>${SB.method.map(x => `<tr><td class="l b">${x.k}</td><td>${B(x.v)}</td></tr>`).join("")}</tbody></table></div></div>
+    </div>
+    <h3>Flags · how the underdog did</h3><div class="tw"><table><thead><tr><th class="l">Flag</th><th>Fights</th><th>Dog won</th><th>Dog win %</th><th>Close implied</th></tr></thead><tbody>${SB.flags.map(x => `<tr><td class="l b">${esc(x.flag)}</td><td>${x.n}</td><td>${x.dog_w}</td><td class="b">${(x.dog_w / x.n * 100).toFixed(0)}%</td><td class="dim">${(x.dog_exp * 100).toFixed(0)}%</td></tr>`).join("")}${SB.public_dog.n ? `<tr><td class="l b">Public 10+ pts above the close on the dog</td><td>${SB.public_dog.n}</td><td>${SB.public_dog.dog_w}</td><td class="b">${(SB.public_dog.dog_w / SB.public_dog.n * 100).toFixed(0)}%</td><td class="dim">${(SB.public_dog.dog_exp * 100).toFixed(0)}%</td></tr>` : ""}</tbody></table></div>
+    <p class="note">Fight pages for these cards show every input (public picks, opener, Markov, sheet model), the flags and the closing prop market.</p>` : "";
+  $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › Model</div>${sbHtml}<h2>Published projections · June to November</h2>
     <p class="sub">Every moneyline bet the projection widgets flagged, graded automatically against UFCStats results. Stakes: risk 1u on plus money, to win 1u on minus money, at the price listed when the projection was published.</p>
     <div class="stats"><div><b>${w}-${R.length - w}</b><span>Flagged bets</span></div><div><b class="${cls(pnl)}">${signed(pnl, 2)}u</b><span>Profit / loss</span></div><div><b class="${cls(pnl)}">${risk ? signed(pnl / risk * 100) + "%" : "—"}</b><span>ROI on ${risk.toFixed(1)}u risked</span></div><div><b>${withClose.length ? beat + "/" + withClose.length : "—"}</b><span>Beat the closing line</span></div><div><b>${M.brier_model ?? "—"}</b><span>Brier · model (${M.n_both} fights)</span></div><div><b>${M.brier_close ?? "—"}</b><span>Brier · closing line</span></div></div>
     <p class="note">Brier score: lower is better. Compared on fights with both a model win % and a no-vig closing line.</p>
@@ -537,6 +616,7 @@ async function vResearch() {
     <p><b>5. Steam is already in the price.</b> Fighters the line moved 3+ points toward won ${P(A.steam3.act)} against an implied ${P(A.steam3.exp)} and returned ${sg(A.steam3.roi_c)} at the close. The value was in having the earlier number.</p>
     <p><b>6. Totals are priced tightly.</b> Blind overs and unders both lose at 1.5 and 2.5 rounds, and the Form distance model added nothing to the market's number. The one lean is the over 4.5 in five-round fights (${(R.totals.find(x => x.pt === 4.5) || {}).n || 0} fights, ${sg((R.totals.find(x => x.pt === 4.5) || {}).roi_over)}), which is a small sample.</p>
   </div>
+  <div class="note">Robustness: the favorite bias and the 70%+ result hold when the price is taken at least three hours before the fight (bias slope 1.19, 70%+ favorites +4.3% at the best price), and no book's closing price sat more than 6 points from the median in more than 0.1% of fights, so live in-fight prices are not driving it.</div>
   <h3>Scoreboard</h3>` + tbl(`<th class="l">Predictor</th><th>Fights</th><th>Log loss</th><th>Brier</th><th>Winner picked</th>`, R.scores.map(x => `<tr><td class="l b">${esc(x.k)}</td><td>${x.n}</td><td>${x.ll}</td><td>${x.brier}</td><td>${P(x.acc)}</td></tr>`).join("")) +
   (R.blend ? `<div class="note">Adding the Form Line to the close in a walk-forward blend moves log loss from ${R.blend.ll_close} to ${R.blend.ll_blend} (weights: close ${R.blend.w_close}, Form Line ${R.blend.w_form}).</div>` : "") +
   `<div class="grid2"><div><h3>Is the close calibrated? (favorite side)</h3>` + tbl(`<th class="l">No-vig favorite</th><th>Fights</th><th>Mkt</th><th>Won</th><th>Gap</th>`, R.calib_close.map(x => `<tr><td class="l">${x.band}</td><td>${x.n}</td><td>${P(x.exp)}</td><td class="b">${P(x.act)}</td><td>${sg(x.act - x.exp)}</td></tr>`).join("")) +
@@ -555,7 +635,7 @@ async function vResearch() {
 }
 
 async function vSheet(slug) {
-  const ev = await getJSON(`events/${slug}.json`); await overlayLive(ev);
+  const ev = await getJSON(`events/${slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev)]);
   let html = `<div class="crumbs noprint"><a href="#/">Home</a> › <a href="#/card/${ev.slug}">${esc(ev.name)}</a> › Form sheet · <a href="javascript:window.print()" style="text-decoration:underline">Print</a></div><h2>${esc(ev.name)} · Form sheet</h2><div class="sub">${fdate(ev.date)} · ${esc(ev.location)}</div>`;
   for (const f of ev.fights) {
     const [A, B] = await Promise.all([f.a.slug ? getJSON(`fighters/${f.a.slug}.json`).catch(() => null) : null, f.b.slug ? getJSON(`fighters/${f.b.slug}.json`).catch(() => null) : null]);
@@ -582,7 +662,7 @@ async function route() {
   $app.innerHTML = `<div class="banner">Page not found.</div>`;
 }
 window.addEventListener("hashchange", route);
-const boot = getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__angles = i.angles; }).catch(() => {});
+const boot = getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__angles = i.angles; window.__sheet = i.sheet; }).catch(() => {});
 const $q = document.getElementById("q"), $dd = document.getElementById("dd");
 if ($q) {
   let S = null;
