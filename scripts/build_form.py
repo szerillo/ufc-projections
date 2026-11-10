@@ -156,6 +156,12 @@ def load_ufcstats(cache: Path):
         for k, col in (("head", "HEAD"), ("body", "BODY"), ("leg", "LEG"), ("dist", "DISTANCE"), ("clinch", "CLINCH"), ("ground", "GROUND")):
             t[k] += of(r[col])[0]
         t["rounds"] += 1
+        rn = re.search(r"(\d+)", r["ROUND"] or "")
+        rn = int(rn.group(1)) if rn else 0
+        if rn == 1:
+            t["r1"] = t.get("r1", 0) + of(r["SIG.STR."])[0]
+        elif rn >= 3:
+            t["late"] = t.get("late", 0) + of(r["SIG.STR."])[0]
 
     seen = set()
     for r in res:
@@ -602,6 +608,10 @@ def main():
                 "o": opp, "os": slug_of.get(opp), "oe": f["elo_" + o], "el": f["elo_" + side], "r": res,
                 "m": f["method"], "rd": f["round"], "t": f["time"], "sc": f["sched"], "secs": f["secs"], "wc": f["wc"],
                 "ti": 1 if f["title"] else 0, "u": f["url"], "fg": f.get("fig_" + side)}
+        if s_me and s_op and f["secs"] and f["round"]:
+            r1s = 300 if f["round"] > 1 else f["secs"]
+            lates = max(0, f["secs"] - 600)
+            line["rs"] = [s_me.get("r1", 0), s_op.get("r1", 0), r1s, s_me.get("late", 0), s_op.get("late", 0), lates]
         if s_me and s_op:
             line["s"] = [s_me["sl"], s_me["sa"], s_op["sl"], s_op["sa"], s_me["kd"], s_op["kd"], s_me["tl"], s_me["ta"],
                          s_op["tl"], s_op["ta"], s_me["ctrl"], s_op["ctrl"], s_me["sub"], s_op["sub"]]
@@ -649,6 +659,8 @@ def main():
                 o[k] = f[k]
         o["form"] = {"p": r3(f.get("fl")), "g": r3(f.get("gl")), "base": r3(f.get("_base")),
                      "ra": round(f["_A"]["fig"], 1), "rb": round(f["_B"]["fig"], 1), "ang": f.get("_angles") or {}}
+        if f.get("ms"):
+            o["form"]["ms"] = {k_: [round(v, 3) for v in f["ms"][k_]] for k_ in "ab"}
         return o
 
     index_events = []
@@ -724,7 +736,8 @@ def main():
                 pw, pg, SA, SB, base = FM.predict(fa["name"], fb["name"], edate, wcl, sched_u, fa["elo"], fb["elo"])
                 tmp = {"odds": fobj.get("odds"), "wc": wcl, "sched": sched_u}
                 fobj["form"] = {"p": r3(pw), "g": r3(pg), "base": r3(base), "ra": round(SA["fig"], 1), "rb": round(SB["fig"], 1),
-                                "ang": form_model.angle_sides(tmp, SA, SB, pw) if (SA["n"] or SB["n"]) else {}}
+                                "ang": form_model.angle_sides(tmp, SA, SB, pw) if (SA["n"] or SB["n"]) else {},
+                                "ms": {k_: [round(v, 3) for v in FM.last_ms[k_]] for k_ in "ab"}}
             except Exception as ex:
                 print("  predict failed", an, bn, ex, file=sys.stderr)
             if w:
@@ -804,6 +817,31 @@ def main():
         model["edge_dog"] = {"n": len(dis), "w": sum(1 for c in dis if (c["won"] == 1) == (c["pc"] < 0.5))}
     except Exception as ex:
         print("  model blend failed", ex, file=sys.stderr)
+
+    try:
+        six_u, six_f, n6 = 0.0, 0.0, 0
+        lgk = lambda p_: 1 / (1 + math.exp(-R["k"] * math.log(min(max(p_, 1e-3), 1 - 1e-3) / (1 - min(max(p_, 1e-3), 1 - 1e-3)))))
+        for e in events.values():
+            for f in e["fights"]:
+                m_ = f.get("model"); mc = form_model.mclass(f)
+                if not m_ or mc is None or not f.get("ms") or not f.get("odds"):
+                    continue
+                side = f["winner"]
+                um = m_[side]
+                key = ["ko", "sub", "dec"][mc]
+                if um.get(key) is None or (m_["a"].get("ko") is None):
+                    continue
+                tot_u = sum((m_[s_].get(k_) or 0) for s_ in "ab" for k_ in ("ko", "sub", "dec"))
+                if tot_u <= 0:
+                    continue
+                pu = max(um[key] / tot_u, 1e-4)
+                pfair = lgk(f["odds"]["close"]["p"]); pw_ = pfair if side == "a" else 1 - pfair
+                pf = max(pw_ * f["ms"][side][mc], 1e-4)
+                six_u -= math.log(pu); six_f -= math.log(pf); n6 += 1
+        if n6:
+            model["method6"] = {"n": n6, "ll_model": round(six_u / n6, 4), "ll_form": round(six_f / n6, 4)}
+    except Exception as ex:
+        print("  method6 failed", ex, file=sys.stderr)
 
     def split(rs):
         w_ = sum(1 for x in rs if x["won"]); pn = sum(x["pnl"] or 0 for x in rs); rk = sum(x["risk"] or 0 for x in rs)

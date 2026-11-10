@@ -142,6 +142,9 @@ def summarize(h, date):
     d["finr"] = (sum(x["fin_w"] for x in h) + 0.5) / (wins + 1)
     d["decr"] = (sum(x["dec"] for x in h) + 0.5 * 2) / (len(h) + 2)
     d["finl"] = (sum(x["fin_l"] for x in h) + 0.5) / (losses + 1)
+    d["wins"], d["losses"] = wins, losses
+    d["ko_w"] = sum(x.get("ko_w", 0) for x in h); d["sub_w"] = sum(x.get("sub_w", 0) for x in h)
+    d["ko_l"] = sum(x["lost_ko"] for x in h); d["sub_l"] = sum(x.get("sub_l", 0) for x in h)
     return d
 
 
@@ -188,6 +191,50 @@ def wc_lbs(wc):
     return None
 
 
+def mclass(f):
+    """0 KO/TKO, 1 submission, 2 decision; None for anything else."""
+    if f["kind"] != "win":
+        return None
+    m = f["method"]
+    if "Decision" in m:
+        return 2
+    if "Sub" in m:
+        return 1
+    if "KO" in m:
+        return 0
+    return None
+
+
+def _mvec(W, L, base, five=0.0):
+    """Features for P(method | W beats L). base = division [ko, sub, dec] shares."""
+    PW = 3.0
+    kw = (W["ko_w"] + base[0] * PW) / (W["wins"] + PW); sw = (W["sub_w"] + base[1] * PW) / (W["wins"] + PW)
+    kl = (L["ko_l"] + base[0] * PW) / (L["losses"] + PW); sl = (L["sub_l"] + base[1] * PW) / (L["losses"] + PW)
+    return [base[0], base[1], kw, sw, kl, sl, W["kd15"], L["okd15"], W["sub15"], W["td15"], W["ctrl"], L["tdd"], W["slpm"] - W["sapm"],
+            L["def"], (W.get("age") or 30) - 30, (L.get("age") or 30) - 30, five, 1.0 if (W.get("lbs") or 0) >= 205 else 0.0]
+
+
+def fit_softmax(X, y, k=3, l2=1.0, iters=400, lr=0.5):
+    n, d = X.shape
+    B = np.zeros((d, k))
+    Y = np.eye(k)[y]
+    for _ in range(iters):
+        Z = X @ B
+        Z -= Z.max(1, keepdims=True)
+        P = np.exp(Z); P /= P.sum(1, keepdims=True)
+        G = X.T @ (P - Y) / n + l2 * B / n
+        G[0] = (X.T @ (P - Y) / n)[0]
+        B -= lr * G
+    return B
+
+
+def softmax_p(x, B):
+    z = x @ B
+    z = z - z.max()
+    e = np.exp(z)
+    return e / e.sum()
+
+
 def is_dec(f):
     return f["kind"] == "draw" or (f["kind"] == "win" and "Decision" in f["method"])
 
@@ -199,6 +246,7 @@ class FormModel:
         self.fights = sorted([f for e in events.values() for f in e["fights"]], key=lambda f: (f["date"], f["n"]))
         self.hist = defaultdict(list)
         self.wc_hist = defaultdict(list)  # weight class -> list of (date, decided)
+        self.m_hist = defaultdict(list)   # weight class -> list of (date, method class)
         self.dom_b, self.dom_sd = fit_dominance(self.fights)
         self._pass1()
         self._fit_walk_forward()
@@ -226,11 +274,23 @@ class FormModel:
         g = (sum(allr) + 5) / (len(allr) + 10)
         return (sum(rows) + g * 30) / (len(rows) + 30)
 
+    def m_base(self, wc, date):
+        def shares(rows, prior, pw):
+            c = [prior[i] * pw for i in range(3)]
+            for t, mc in rows:
+                if 0 < (date - t).days <= 365 * 5:
+                    c[mc] += 1
+            tot = sum(c)
+            return [x / tot for x in c]
+        g = shares(self.m_hist["*"], [0.32, 0.19, 0.49], 10)
+        return shares(self.m_hist[(wc or "").replace("Interim ", "")], g, 30)
+
     def _pass1(self):
         for f in self.fights:
             A = self.fighter_state(f["a"], f["date"], f.get("elo_a")); B = self.fighter_state(f["b"], f["date"], f.get("elo_b"))
             f["_A"], f["_B"] = A, B
             f["_base"] = self.wc_base(f["wc"], f["date"], f["sched"] or 3)
+            f["_mbase"] = self.m_base(f["wc"], f["date"])
             for side, me_s, op_s in (("a", A, B), ("b", B, A)):
                 o = "b" if side == "a" else "a"
                 rs = result_score(f, side)
@@ -243,6 +303,9 @@ class FormModel:
                 continue
             dec = 1 if is_dec(f) else 0
             self.wc_hist[f["wc"]].append((f["date"], dec, f["sched"] == 5)); self.wc_hist["*"].append((f["date"], dec, f["sched"] == 5))
+            mc = mclass(f)
+            if mc is not None:
+                self.m_hist[f["wc"].replace("Interim ", "")].append((f["date"], mc)); self.m_hist["*"].append((f["date"], mc))
             for side in "ab":
                 o = "b" if side == "a" else "a"
                 me, op = f["s" + side], f["s" + o]
@@ -254,7 +317,9 @@ class FormModel:
                     tl=g(me, "tl"), ta=g(me, "ta"), otl=g(op, "tl"), ota=g(op, "ta"), ctrl=g(me, "ctrl"), octrl=g(op, "ctrl"),
                     kd=g(me, "kd"), okd=g(op, "kd"), sub=g(me, "sub"), fig=f["fig_" + side],
                     lost_ko=1 if (won == 0 and "KO" in f["method"]) else 0, fin_w=1 if (won == 1 and fin) else 0,
-                    fin_l=1 if (won == 0 and fin) else 0, dec=dec, lbs=wc_lbs(f["wc"])))
+                    fin_l=1 if (won == 0 and fin) else 0, dec=dec, lbs=wc_lbs(f["wc"]),
+                    ko_w=1 if (won == 1 and "KO" in f["method"]) else 0, sub_w=1 if (won == 1 and "Sub" in f["method"]) else 0,
+                    sub_l=1 if (won == 0 and "Sub" in f["method"]) else 0))
 
     def _train(self, rows, l2=20.0):
         X = np.array([r[0] for r in rows]); y = np.array([r[1] for r in rows])
@@ -289,6 +354,37 @@ class FormModel:
                 bg, mu, sdg = self._train_g(trg)
                 for x, _, f in teg:
                     f["gl"] = float(sigmoid(np.concatenate([[1.0], (np.array(x) - mu) / sdg]) @ bg))
+        # method given winner
+        M = []
+        for f in self.fights:
+            mc = mclass(f)
+            if mc is None or f["date"].year < 2010:
+                continue
+            Wn, Ln = (f["_A"], f["_B"]) if f["winner"] == "a" else (f["_B"], f["_A"])
+            M.append((_mvec(Wn, Ln, f["_mbase"], 0.0), mc, f))
+
+        def train_m(rows):
+            X = np.array([r[0] for r in rows]); y = np.array([r[1] for r in rows])
+            mu, sd = X.mean(0), X.std(0) + 1e-9
+            Z = np.hstack([np.ones((len(X), 1)), (X - mu) / sd])
+            return fit_softmax(Z, y, l2=5.0), mu, sd
+
+        def apply_m(f, par):
+            Bm, mu, sd = par
+            out = {}
+            for side, (Wn, Ln) in (("a", (f["_A"], f["_B"])), ("b", (f["_B"], f["_A"]))):
+                x = np.concatenate([[1.0], (np.array(_mvec(Wn, Ln, f["_mbase"], 0.0)) - mu) / sd])
+                out[side] = [float(v) for v in softmax_p(x, Bm)]
+            return out
+
+        for Y in range(2015, last_year + 1):
+            tr = [r for r in M if r[2]["date"].year < Y]
+            te = [f for f in self.fights if f["date"].year == Y]
+            if tr and te:
+                par = train_m(tr)
+                for f in te:
+                    f["ms"] = apply_m(f, par)
+        self.mpar = train_m(M)
         self.b, self.sd = self._train(W)
         self.bg, self.mug, self.sdg = self._train_g(G)
         self.coefs = {k: round(float(v), 3) for k, v in zip(FEATS, self.b)}
@@ -299,6 +395,13 @@ class FormModel:
         p = float(sigmoid((np.array(_vec(A, B)) / self.sd) @ self.b))
         base = self.wc_base(wc, date, sched)
         g = float(sigmoid(np.concatenate([[1.0], (np.array(_gvec(A, B, base, sched, wc)) - self.mug) / self.sdg]) @ self.bg))
+        mb = self.m_base(wc, date)
+        Bm, mu, sd = self.mpar
+        ms = {}
+        for side, (Wn, Ln) in (("a", (A, B)), ("b", (B, A))):
+            x = np.concatenate([[1.0], (np.array(_mvec(Wn, Ln, mb, 0.0)) - mu) / sd])
+            ms[side] = [float(v) for v in softmax_p(x, Bm)]
+        self.last_ms = ms
         return p, g, A, B, base
 
     def rating(self, name, date=None):
@@ -407,6 +510,19 @@ def angle_sides(f, A, B, fl=None):
             out["moving_down"] = s
         if me.get("age") and me["age"] >= 37:
             out["age37"] = s
+        if me["n"] >= 3 and op["n"] >= 3:
+            if me["td15"] >= 2.5 and op["tdd"] < 0.55:
+                out["wrestler_weak_tdd"] = s
+            if me["td15"] >= 2.5 and op["tdd"] >= 0.75:
+                out["wrestler_strong_tdd"] = s
+            if (me["slpm"] - me["sapm"]) >= 1.5 and (op["slpm"] - op["sapm"]) <= 0:
+                out["striker_edge"] = s
+            if me["kd15"] >= 0.6 and op["kol"] >= 2:
+                out["power_vs_chin"] = s
+            if me["ctrl"] >= 0.30 and op["ctrl"] < 0.10:
+                out["grappler_vs_striker"] = s
+            if me["ctrl"] < 0.10 and op["ctrl"] >= 0.30:
+                out["striker_vs_grappler"] = s
     if fl is not None and pc is not None:
         d = fl - pc
         if abs(d) >= 0.05:
@@ -432,6 +548,9 @@ ANGLES = {
     "buyback": "Late move against the early steam (buyback side)",
     "off_big_fig": "Coming off a 90+ Form Figure", "off_bad_fig": "Coming off a Form Figure of 20 or lower",
     "moving_up": "Moving up a weight class", "moving_down": "Moving down a weight class", "age37": "Age 37 or older",
+    "wrestler_weak_tdd": "2.5+ TD/15 vs takedown defense under 55%", "wrestler_strong_tdd": "2.5+ TD/15 vs takedown defense 75%+",
+    "striker_edge": "Strike diff +1.5/min vs opponent at 0 or worse", "power_vs_chin": "0.6+ KD/15 vs opponent with 2+ KO losses",
+    "grappler_vs_striker": "Control 30%+ vs opponent under 10%", "striker_vs_grappler": "Control under 10% vs opponent 30%+",
     "fig_dog": "Underdog with Form Figure rating 8+ higher", "fig_fav": "Favorite with Form Figure rating 8+ higher",
     "fl5": "Form Line 5+ pts above the close", "fl10": "Form Line 10+ pts above the close", "fl10_dog": "Underdog the Form Line likes by 10+ pts",
 }
@@ -653,6 +772,21 @@ def research(model: FormModel):
         bins = [(0, .3), (.3, .4), (.4, .5), (.5, .6), (.6, .7), (.7, 1.01)]
         out["gtd_calib"] = [{"band": f"{int(lo*100)}-{int(min(hi,1)*100)}%", "n": len(xs), "exp": round(sum(x[0] for x in xs) / len(xs), 4), "act": round(sum(x[1] for x in xs) / len(xs), 4)}
                             for lo, hi in bins for xs in [[(f["gl"], 1 if is_dec(f) else 0) for f in GD if lo <= f["gl"] < hi]] if xs]
+
+    # method-of-victory model, given the actual winner
+    MM = [f for f in model.fights if f.get("ms") and mclass(f) is not None and f["date"].year >= 2022]
+    if MM:
+        def mll(get):
+            return round(float(-np.mean([math.log(max(get(f)[mclass(f)], 1e-6)) for f in MM])), 4)
+        out["method"] = {"n": len(MM), "ll_model": mll(lambda f: f["ms"][f["winner"]]), "ll_base": mll(lambda f: f["_mbase"]),
+                         "share": [round(sum(1 for f in MM if mclass(f) == k_) / len(MM), 4) for k_ in range(3)]}
+        cal = []
+        for k_, nm_ in enumerate(["KO/TKO", "Submission", "Decision"]):
+            for lo, hi in [(0, .15), (.15, .3), (.3, .45), (.45, .6), (.6, 1.01)]:
+                xs = [(f["ms"][f["winner"]][k_], 1 if mclass(f) == k_ else 0) for f in MM if lo <= f["ms"][f["winner"]][k_] < hi]
+                if len(xs) >= 30:
+                    cal.append({"m": nm_, "band": f"{int(lo*100)}-{int(min(hi,1)*100)}%", "n": len(xs), "exp": round(sum(x[0] for x in xs) / len(xs), 4), "act": round(sum(x[1] for x in xs) / len(xs), 4)})
+        out["method_calib"] = cal
 
     # form figure: does a higher rating win?
     fr = []
