@@ -229,6 +229,7 @@ async function overlaySheet(ev) {
       const so = { dog: aDog ? "a" : "b", tap: sd(pf(c[2])), junk: sd(pf(c[3])), tip: sd(pf(c[4])), open: sd(pf(c[5])), listed: sd(pf(c[6])), markov: sd(pf(c[9])),
         model: aDog ? pf(r[5]) : pf(r[10]), flag: (c[26] || "").trim(), momentum: (c[27] || "").trim(), rec: (r[13] || "").trim(), play: (r[15] || "").trim(), ou_play: (c[21] || "").trim(),
         gtd: pf(r[16]), gtd_listed: pf(r[18]), o25_listed: pf(c[13]), o25_model: pf(c[14]), hold: pf(r[14]), tag: (r[0] || "").trim(),
+        k: (c[10] || "").trim(), w: (c[8] || "").trim() === "1" ? 1 : 0, par: [0.15, parseFloat((calc[41] || [])[1]) || 0, isFinite(parseFloat((calc[42] || [])[1])) ? parseFloat(calc[42][1]) : 0.15, isFinite(parseFloat((calc[43] || [])[1])) ? parseFloat(calc[43][1]) : 0.075],
         ml: { a: aDog ? pmlv(r[3]) : pmlv(r[8]), b: aDog ? pmlv(r[8]) : pmlv(r[3]) }, edge: { a: aDog ? pf(r[7]) : pf(r[12]), b: aDog ? pf(r[12]) : pf(r[7]) },
         meth: { a: aDog ? dm : fm, b: aDog ? fm : dm }, best: { a: (aDog ? c[28] : c[29]) || "", b: (aDog ? c[29] : c[28]) || "" }, live: true };
       f.sheet = so;
@@ -258,6 +259,22 @@ function sheetBox(f, final) {
   </tbody></table></div><div style="margin-top:6px">${chip(s.rec, /^BET/i.test(s.rec) ? "y" : "")}${chip(s.play)}${chip(s.ou_play)}${chip(s.flag && s.flag !== "ok" ? s.flag : "", "r")}${chip(s.momentum && s.momentum !== "flat" ? s.momentum : "")}${s.best && s.best.a ? chip(last(f.a.name) + ": " + s.best.a) + chip(last(f.b.name) + ": " + s.best.b) : ""}${s.pl != null ? chip("Rec result " + signed(s.pl, 2) + "u", s.pl > 0 ? "g" : "r") : ""}</div>`;
   return h;
 }
+function buildUp(f) { // how the sheet's underdog number is built: listed + Markov pull - women - code - public overage
+  const s = f.sheet; if (!s || s.listed == null || !s.par) return "";
+  const dogSide = s.dog, dog = f[dogSide], inv = (x) => x == null ? null : (dogSide === "a" ? x : 1 - x);
+  const G = inv(s.listed), J = inv(s.markov), T = inv(s.tap), K = inv(s.junk), [beta, shift, p1, p2] = s.par;
+  const kc = (s.k || "").trim(), kAdj = kc === "G" || kc === "R" ? -0.04 : kc === "GF" ? 0.04 : (isFinite(parseFloat(kc)) ? parseFloat(kc) : 0);
+  const steps = [["Listed line (best bettable price, no vig)", null, G]];
+  let q = G;
+  const add = (lab, d) => { if (Math.abs(d) < 1e-9) return; q += d; steps.push([lab, d, q]); };
+  if (J != null) add(`Markov pull: ${beta} × (${((J - shift) * 100).toFixed(1)}% − listed)${shift ? ", Markov shifted " + signed(-shift * 100) + " pts to the market's level" : ""}`, beta * ((J - shift) - G));
+  if (s.w) add("Women's underdog", -0.04);
+  if (kAdj) add(`Context code ${esc(kc)}`, kAdj);
+  if (T != null && K != null) { add(`Public fade, primary: ${p1} × overage of ${(Math.max(0, Math.max(T, K) - G) * 100).toFixed(1)} pts`, -p1 * Math.max(0, Math.max(T, K) - G)); add(`Public fade, secondary: ${p2} × overage of ${(Math.max(0, Math.min(T, K) - G) * 100).toFixed(1)} pts`, -p2 * Math.max(0, Math.min(T, K) - G)); }
+  q = Math.min(0.98, Math.max(0.02, q));
+  if (steps.length < 2) return `<div class="note">Sheet number for ${esc(dog.name)} equals the listed line: no Markov, public or context inputs entered yet.${kc === "D" ? " Context code D: debut underdog, no dog bet." : ""}</div>`;
+  return `<div class="tw" style="margin-top:6px"><table><thead><tr><th class="l">How ${esc(last(dog.name))}'s number is built</th><th>Change</th><th>Running</th></tr></thead><tbody>${steps.map(([l, d, r]) => `<tr><td class="l">${l}</td><td class="${cls(d)}">${d == null ? "" : signed(d * 100, 2)}</td><td>${(r * 100).toFixed(1)}%</td></tr>`).join("")}<tr style="background:var(--hl)"><td class="l b">Sheet model, ${esc(dog.name)}</td><td></td><td class="b">${(q * 100).toFixed(1)}%</td></tr></tbody></table></div>${kc === "D" ? '<div class="note">Context code D: debut underdog. It blocks the dog bet and changes nothing else.</div>' : ""}`;
+}
 function markovBox(f) {
   const m = f.markov; if (!m) return "";
   const mx = Math.max(...m.r, m.dec * 100, 1), bar = (lab, v) => `<div style="display:grid;grid-template-columns:70px 1fr 46px;gap:6px;align-items:center;font:12px var(--mono);margin:2px 0"><span class="dim">${lab}</span><span style="background:var(--paper2);height:12px"><i style="display:block;height:12px;width:${(v / mx * 100).toFixed(1)}%;background:${lab === "Decision" ? "#1d3f77" : "#a81c1c"}"></i></span><span>${v.toFixed(1)}%</span></div>`;
@@ -281,7 +298,7 @@ function priceBoard(ev) {
   if (!top.length) return "";
   return `<h3>Price board · best available price vs the bias-adjusted fair line</h3><div class="tw"><table><thead><tr><th class="l">Fighter</th><th class="l">Opponent</th><th>Consensus</th><th>Best price</th><th class="l">Book</th><th>Fair %</th><th>Fair ML</th><th>Edge</th></tr></thead><tbody>` +
     top.map(r => `<tr class="click" data-href="#/fight/${ev.slug}/${r.f.n}"><td class="l b">${esc(r.f[r.s].name)}</td><td class="l dim">${esc(r.f[r.s === "a" ? "b" : "a"].name)}</td><td>${ml(r.f.odds.close[r.s === "a" ? "ma" : "mb"])}</td><td class="b">${ml(r.b.ml)}</td><td class="l">${esc(bookName(r.b.book))}</td><td>${(r.fp * 100).toFixed(1)}%</td><td>${ml(p2ml(r.fp))}</td><td class="${cls(r.e)} b">${signed(r.e * 100)}%</td></tr>`).join("") +
-    `</tbody></table></div><div class="note">Fair line = no-vig consensus pushed toward the favorite by the measured bias (see <a href="#/research" style="text-decoration:underline">Research</a>). Prices are from the last odds snapshot, so check the book before betting. In the backtest, 4%+ edges returned a small profit and 2% edges broke even.</div>`;
+    `</tbody></table></div><div class="note">Fair line = no-vig consensus pushed toward the favorite by the measured bias (see <a href="#/research" style="text-decoration:underline">Research</a>). Prices are from the last odds snapshot, so check the book before betting. Use it to find the best price on a bet the rules already call for. An off-market price is not a reason to bet on its own: 2% edges broke even in the backtest here, and the model's five-year study found the same bet lost on clean books.</div>`;
 }
 function wireRows() { $app.querySelectorAll("tr.click").forEach(tr => tr.addEventListener("click", e => { if (e.target.closest("a")) return; location.hash = tr.dataset.href; })); }
 
@@ -397,7 +414,7 @@ async function vFight(slug, n) {
     html += `<h3>Model projection${m.src === "sheet" ? " · from the model sheet" : ""} ${m.rec ? `<span class="pill y">Bet ${esc(m.rec === "a" ? f.a.name : f.b.name)}</span>` : ""}</h3><div class="tw"><table><thead><tr><th class="l">Fighter</th><th>Win</th><th>Fair</th><th title="Listed price when published">Listed</th><th title="Model minus listed implied %">Edge</th><th title="Model minus no-vig ${final ? "close" : "current"}">vs ${final ? "close" : "now"}</th><th>DEC%</th><th>KO%</th><th>SUB%</th></tr></thead><tbody>${row("a", m.a, f.a.name, mk)}${row("b", m.b, f.b.name, mk == null ? null : 100 - mk)}</tbody></table></div>
     ${m.gtd != null ? `<div class="note">Model goes-the-distance: ${m.gtd}%${o && o.total ? ` · market over ${o.total.pt}: ${pct(o.total.p_over)}` : ""}</div>` : ""}`;
   }
-  html += sheetBox(f, final) + markovBox(f) + propsBox(f);
+  html += sheetBox(f, final) + buildUp(f) + markovBox(f) + propsBox(f);
   // form numbers + angles
   const fm = f.form;
   if (fm) {
@@ -582,6 +599,10 @@ async function vAbout() {
   <p><b>Tale of the tape.</b> Rates are rebuilt as of fight night from fights before that date, so a historical page shows what was knowable then.</p>
   <p><b>Lines.</b> Consensus is the median no-vig price across the US books and Pinnacle in the odds archive. From 2022 through 2025 there are two snapshots a day; 2026 has fight-weekend snapshots plus the live feed, so "first seen" can be later than the true opener.</p>
   <p><b>Model.</b> Where a projection was published, the fight page shows win and method probabilities, the listed price at the time, and the edge against both that price and the close.</p>
+  <p><b>Model.</b> The projection is market-anchored, not a prediction from scratch. Five years of UFC fights say the closing line is well calibrated and that fighter stats, Elo, fan and tipster consensus, sharp money, offshore books and line drift add nothing to it. So the model starts from the listed line and makes a few small, evidence-backed moves: a 15% pull toward an independent Markov-chain simulation of the fight, a 4-point cut for women's underdogs, context codes for debutant, regional decision-grinder and retiring fighters, and a fade when the public is heavier on the underdog than the price is. Each fight page shows that build-up line by line.</p>
+  <p><b>Bet rules.</b> Underdogs need 8 points of edge and a clean flag (no debut code, no sharp or public pile-on, no 4-point drift). Favorites need 3 points. Favorites priced 80% or higher are a standing bet at the best price. Five-round fights with the distance priced at 40% or more are a standing GTD bet. Inside-the-distance, unders and method props are shown as information because they lose most years.</p>
+  <p><b>Distance and method.</b> Each fighter gets a finish rate for wins and for losses, regressed toward the division. Fight GTD blends those with the Markov decision share, the division rate and the listed GTD price. Decision shares are then set so the two fighters' decision chances add up exactly to the fight GTD, and the KO-versus-submission split is anchored halfway to the market's.</p>
+  <p><b>Grading.</b> Every card is snapshotted at the first walkout and graded on Sunday: Brier scores for the close, the model and Markov, and profit and loss on each recommendation. The <a href="#/model" style="text-decoration:underline">Model page</a> shows the running result.</p>
   <p><b>Sources.</b> Fight results and round-by-round stats: UFCStats, via the open <a href="https://github.com/Greco1899/scrape_ufc_stats" target="_blank" rel="noopener" style="text-decoration:underline">scrape_ufc_stats</a> dataset (GPL-3.0). Odds: The Odds API history and BettingPros. Film links are searches on YouTube and UFC Fight Pass; nothing is hosted here.</p>
   <p class="dim">Data built ${new Date(idx.built).toLocaleString()} · ${idx.counts.events} cards · ${idx.counts.fights.toLocaleString()} fights · ${idx.counts.fighters.toLocaleString()} fighters · ${idx.counts.odds_fights.toLocaleString()} fights with line history.</p></div>`;
 }

@@ -497,6 +497,13 @@ def _pf(v):
         return None
 
 
+def _raw(v):
+    try:
+        return float((v or "").strip())
+    except ValueError:
+        return None
+
+
 def _pml(v):
     v = (v or "").strip().replace("+", "")
     try:
@@ -525,6 +532,9 @@ def sheet_current(sheet):
     for r in (sheet.get("Calculator") or [])[1:40]:
         if len(r) > 30 and r[0] and r[1] and r[0] != "Underdog":
             calc[(norm(r[0]), norm(r[1]))] = r
+    cal = sheet.get("Calculator") or []
+    cell = lambda i: _raw(cal[i][1]) if len(cal) > i and len(cal[i]) > 1 else None
+    par = [0.15, cell(41) or 0.0, cell(42) if cell(42) is not None else 0.15, cell(43) if cell(43) is not None else 0.075]
     rows = []
     for tab in ("Main Card", "Prelims"):
         for r in (sheet.get(tab) or [])[1:14]:
@@ -532,11 +542,11 @@ def sheet_current(sheet):
                 continue
             c = calc.get((norm(r[1]), norm(r[2]))) or [""] * 40
             rows.append({
-                "dog": r[1], "fav": r[2], "tab": tab, "tag": (r[0] or "").strip(), "dog_ml": _pml(r[3]), "fav_ml": _pml(r[8]), "dog_p": _pf(r[5]), "fav_p": _pf(r[10]),
+                "dog": r[1], "fav": r[2], "tab": tab, "tag": (r[0] or "").strip(), "par": par, "dog_ml": _pml(r[3]), "fav_ml": _pml(r[8]), "dog_p": _pf(r[5]), "fav_p": _pf(r[10]),
                 "dog_edge": _pf(r[7]), "fav_edge": _pf(r[12]), "rec": (r[13] or "").strip(), "hold": _pf(r[14]), "play": (r[15] or "").strip(),
                 "gtd": _pf(r[16]), "gtd_listed": _pf(r[18]), "dog_m": [_pf(r[21]), _pf(r[22]), _pf(r[23])], "fav_m": [_pf(r[25]), _pf(r[26]), _pf(r[27])],
                 "tap": _pf(c[2]), "junk": _pf(c[3]), "tip": _pf(c[4]), "open": _pf(c[5]), "listed": _pf(c[6]), "markov": _pf(c[9]),
-                "ctx": (c[10] or "").strip(), "o25_listed": _pf(c[13]), "o25_model": _pf(c[14]), "ou_play": (c[21] or "").strip(),
+                "ctx": (c[10] or "").strip(), "women": 1 if (c[8] or "").strip() == "1" else 0, "o25_listed": _pf(c[13]), "o25_model": _pf(c[14]), "ou_play": (c[21] or "").strip(),
                 "flag": (c[26] or "").strip(), "momentum": (c[27] or "").strip(), "dog_best": (c[28] or "").strip(), "fav_best": (c[29] or "").strip()})
     return rows
 
@@ -577,7 +587,8 @@ def sheet_obj(a_name, row, snap=False):
              "ml": {"a": _pml(d.get("dog price (D)")) if a_is_dog else _pml(d.get("fav price (I)")), "b": _pml(d.get("fav price (I)")) if a_is_dog else _pml(d.get("dog price (D)"))},
              "meth": {"a": dm if a_is_dog else fm_, "b": fm_ if a_is_dog else dm},
              "meth_mkt": {"a": pm["dog"] if a_is_dog else pm["fav"], "b": pm["fav"] if a_is_dog else pm["dog"]},
-             "k": d.get("K code") or "", "pl": g("rec ML P/L (u)") if d.get("rec ML P/L (u)") not in (None, "") else None}
+             "k": (d.get("K code") or "").strip(), "w": 1 if (d.get("tag") or "").startswith("w") else 0,
+             "par": [0.15, 0.0, 0.10, 0.05], "pl": None}
         try:
             o["pl"] = float(d["rec ML P/L (u)"]) if d.get("rec ML P/L (u)") not in (None, "") else None
         except ValueError:
@@ -590,6 +601,7 @@ def sheet_obj(a_name, row, snap=False):
             "listed": side(r["listed"]), "markov": side(r["markov"]), "model": r["dog_p"] if a_is_dog else r["fav_p"],
             "flag": r["flag"], "momentum": r["momentum"], "rec": r["rec"], "play": r["play"], "ou_play": r["ou_play"], "gtd": r["gtd"], "gtd_listed": r["gtd_listed"],
             "o25_listed": r["o25_listed"], "o25_model": r["o25_model"], "hold": r["hold"], "ctx": r["ctx"], "tag": r.get("tag", ""),
+            "k": r["ctx"], "w": r.get("women", 0), "par": r.get("par"),
             "ml": {"a": r["dog_ml"] if a_is_dog else r["fav_ml"], "b": r["fav_ml"] if a_is_dog else r["dog_ml"]},
             "edge": {"a": r["dog_edge"] if a_is_dog else r["fav_edge"], "b": r["fav_edge"] if a_is_dog else r["dog_edge"]},
             "meth": {"a": r["dog_m"] if a_is_dog else r["fav_m"], "b": r["fav_m"] if a_is_dog else r["dog_m"]},
