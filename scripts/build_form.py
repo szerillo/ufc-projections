@@ -284,7 +284,7 @@ def load_odds(cache: Path):
     return by_id
 
 
-def summarize_odds(snaps, flipped, max_points=140):
+def summarize_odds(snaps, flipped, max_points=140, a_name=None):
     """Build open/close/series from snapshots. Probabilities are for fighter A (flipped => A is 'away')."""
     start = snaps[-1]["start"]
     pre = [s for s in snaps if s["t"] <= start] or snaps
@@ -296,7 +296,12 @@ def summarize_odds(snaps, flipped, max_points=140):
             if not h2h or b not in BOOK_ORDER:
                 continue
             h, a = h2h
-            da, db = (a, h) if flipped else (h, a)
+            fl = flipped
+            if a_name:  # home/away can swap between snapshots of the same event id
+                mh, mw = name_match(a_name, s["home"]), name_match(a_name, s["away"])
+                if mh != mw:
+                    fl = mw > mh
+            da, db = (a, h) if fl else (h, a)
             p = novig(da, db)
             if p is None:
                 continue
@@ -506,7 +511,7 @@ def main():
             total22 += 1
             eid, fl = find_odds(oidx, by_id, f["a"], f["b"], e["date"])
             if eid:
-                o = summarize_odds(by_id[eid], fl)
+                o = summarize_odds(by_id[eid], fl, a_name=f["a"])
                 if o:
                     f["odds"] = o
                     matched += 1
@@ -694,7 +699,7 @@ def main():
             if not eid:
                 eid, fl = find_odds(oidx, by_id, an, bn, edate)
             if eid:
-                o = summarize_odds(by_id[eid], fl)
+                o = summarize_odds(by_id[eid], fl, a_name=fa["name"])
                 if o:
                     fobj["odds"] = o
             if w:
