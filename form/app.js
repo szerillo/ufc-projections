@@ -173,7 +173,8 @@ function cardTable(ev) {
     let model = "—", edge = "—";
     if (m && m.a && m.a.win != null) {
       model = `${m.a.win.toFixed(0)} / ${m.b.win.toFixed(0)}`;
-      if (o.pa != null) { const e = m.a.win - o.pa * 100; const side = e >= 0 ? f.a.name : f.b.name; edge = `<span class="${Math.abs(e) >= 3 ? "pos b" : "dim"}" title="Model minus no-vig market">${esc(side.split(" ").slice(-1)[0])} ${signed(Math.abs(e))}</span>`; }
+      const mkp = f.sheet && f.sheet.listed != null && m.src === "sheet" ? f.sheet.listed : o.pa;
+      if (mkp != null) { const e = m.a.win - mkp * 100; const side = e >= 0 ? f.a.name : f.b.name; edge = `<span class="${Math.abs(e) >= 3 ? "pos b" : "dim"}" title="Model minus no-vig market">${esc(side.split(" ").slice(-1)[0])} ${signed(Math.abs(e))}</span>`; }
     }
     const rec = m && m.rec ? `<span class="pill y" title="${esc(m.rec_text || "Model bet recommendation")}">BET ${esc((m.rec === "a" ? f.a.name : f.b.name).split(" ").slice(-1)[0])}</span>` : (m && m.rec_text && /^lean/i.test(m.rec_text) ? `<span class="pill" title="${esc(m.rec_text)}">${esc(m.rec_text.split("[")[0].trim())}</span>` : "");
     const wa = f.result && f.result.winner === "a", wb = f.result && f.result.winner === "b";
