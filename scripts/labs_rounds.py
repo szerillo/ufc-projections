@@ -61,7 +61,12 @@ def build(F, cache, rnd, D=None):
         _, x, flip = m
         A, B = ("b", "a") if flip else ("a", "b")       # A = scorecard's first column
         ra, rb = x["rr"].get(x[A]["name"], {}), x["rr"].get(x[B]["name"], {})
-        cards = [(j[0], [tuple(int(v) for v in s.split("-")) for s in j[3].split()]) for j in d["j"]]
+        try:
+            cards = [(j[0], [tuple(int(v) for v in s.split("-")) for s in j[3].split()]) for j in d["j"]]
+        except ValueError:
+            unmatched += 1; used.discard(id(x)); continue
+        if not cards or min(len(c[1]) for c in cards) == 0:
+            unmatched += 1; used.discard(id(x)); continue
         nr = min(len(c[1]) for c in cards)
         tot = [(sum(s[0] for s in c[1]), sum(s[1] for s in c[1])) for c in cards]
         wa = sum(1 for t in tot if t[0] > t[1]); wb = sum(1 for t in tot if t[1] > t[0])
@@ -77,7 +82,13 @@ def build(F, cache, rnd, D=None):
                 if mb_:
                     born = (mb_.group(2), mb_.group(1)) if sw else (mb_.group(1), mb_.group(2))
                 break
-        fights.append({"x": x, "A": A, "B": B, "winner": winner, "ma": ma, "mb": mb, "mn": sum(med.values()), "born": born, "split": 0 < min(wa, wb), "tot": tot, "cards": cards, "id": d.get("id")})
+        camp = None
+        mc = re.search(r'REACH [\d.]+" (.*?) FIGHTING ?OUT OF', tp)
+        if mc:
+            for first, second, sw in ((ca, cb, False), (cb, ca, True)):
+                if tp.startswith(first + " " + second + " "):
+                    camp = (B if sw else A, mc.group(1).strip())
+        fights.append({"camp": camp, "x": x, "A": A, "B": B, "winner": winner, "ma": ma, "mb": mb, "mn": sum(med.values()), "born": born, "split": 0 < min(wa, wb), "tot": tot, "cards": cards, "id": d.get("id")})
         for r in range(1, nr + 1):
             if r not in ra or r not in rb:
                 continue
@@ -300,6 +311,42 @@ def build(F, cache, rnd, D=None):
                 "fwp": rnd(sum(1 for y, s in picks if y["m"] != "DEC" and y["w"] == s) / max(1, sum(1 for y, s in picks if y["m"] != "DEC")))}
     homeall = [cur(k, v) for k, v in hp.items() if len(v) >= 40]
     extra.update({"next": nextf, "home_all": homeall, "born_n": len(bornmap)})
+    # ---------- eras: before and after the 2017 scoring-criteria revision; trends by year
+    dates = np.array([r["x"]["date"] for r in rows])
+    eras = []
+    for lab, mk in (("2010–2016", dates < "2017-01-01"), ("2017–2026", dates >= "2017-01-01")):
+        if mk.sum() > 400:
+            be = fit(X[mk], y[mk]); pe = 1 / (1 + np.exp(-X[mk] @ be))
+            eras.append({"label": lab, "n": int(mk.sum()), "acc": rnd(float(((pe > .5) == (y[mk] == 1)).mean())), "coef": [{"label": l_, "head_eq": rnd(float(c / be[0]), 2)} for (_, l_), c in zip(FE, be)]})
+    yr = defaultdict(lambda: defaultdict(float))
+    for r in rows:
+        q = yr[r["x"]["yr"]]; f = r["f"]; clash = 0 if (f["sl"] > 0 and f["ctrl"] <= -60) else 1 if (f["sl"] < 0 and f["ctrl"] >= 60) else None
+        for nm_, s in r["sc"]:
+            q["n"] += 1; q["wide"] += abs(s[0] - s[1]) >= 2
+            sd = 1 if s[0] > s[1] else 0 if s[1] > s[0] else None
+            if sd is not None and clash is not None:
+                q["cl"] += 1; q["clc"] += sd == clash
+        q["rounds"] += 1; q["split"] += not r["unan"]
+    by_year = [{"yr": k, "n": int(v["rounds"]), "wide": rnd(v["wide"] / v["n"]), "ctrl": rnd(v["clc"] / v["cl"]) if v["cl"] else None, "split": rnd(v["split"] / v["rounds"])} for k, v in sorted(yr.items())]
+    # ---------- "fighting out of" city as a camp proxy
+    campmap = {}
+    for ft in sorted(fights, key=lambda f: f["x"]["date"]):
+        if ft["camp"]:
+            campmap[ft["x"][ft["camp"][0]]["slug"]] = ft["camp"][1]
+    cp = defaultdict(list); cf = defaultdict(set)
+    for x in F:
+        if x["kind"] != "win" or x["date"] < "2016-01-01":
+            continue
+        for s in "ab":
+            c = campmap.get(x[s]["slug"])
+            if c and campmap.get(x["b" if s == "a" else "a"]["slug"]) != c:
+                cp[c].append((x, s)); cf[c].add(x[s]["slug"])
+    camps = []
+    for c, v in cp.items():
+        if len(cf[c]) >= 6 and len(v) >= 60:
+            r_ = cur(c, v); r_["fighters"] = len(cf[c]); camps.append(r_)
+    camps.sort(key=lambda r: -r["n"])
+    extra.update({"eras": eras, "by_year": by_year, "camps": camps, "camp_n": len(campmap)})
     JR = [{"nm": n, "s": slug(n), "n": int(j["n"]), "dis": rnd(j["dis"] / j["n"]), "wide": rnd(j["wide"] / j["n"]), "cl": int(j["cl"]), "ctrl": rnd(j["clc"] / j["cl"]) if j["cl"] >= 12 else None}
           for n, j in J.items() if j["n"] >= 60]
     byr = defaultdict(lambda: [0, 0])

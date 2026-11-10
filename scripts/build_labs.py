@@ -285,17 +285,23 @@ def main():
     out["octagon"] = {"years": oct_, "all": allr}
 
     # ---- custom fighter metrics
-    T = defaultdict(lambda: defaultdict(float)); meta = {}
+    T = defaultdict(lambda: defaultdict(float)); meta = {}; reg = []
     for x in F:
         if not (x["ra"] and x["rb"] and x["secs"]):
             continue
         for s, o in (("a", "b"), ("b", "a")):
             me, op = x["r" + s], x["r" + o]; t = T[x[s]["slug"]]
             t["secs"] += x["secs"]; t["n"] += 1
+            oe_ = x[o].get("elo")
+            if oe_ and x["secs"] >= 180:
+                t["oe_w"] += oe_ * x["secs"]; t["oe_s"] += x["secs"]
+                reg.append(((me["sig_l"] - op["sig_l"]) / (x["secs"] / 60), oe_))
             for k in ("kd", "ctrl", "sig_l", "sig_a", "td_l", "td_a", "head_l", "head_a", "body_l", "body_a", "leg_l", "leg_a", "dist_l", "dist_a", "clinch_l", "ground_l"):
                 t[k] += me[k]; t["o_" + k] += op[k]
             meta[x[s]["slug"]] = {"name": x[s]["name"], "last": x["date"], "wc": x["wc"]}
     cut = (last - dt.timedelta(days=730)).isoformat()
+    ra_ = np.array(reg); beta = float(np.polyfit(ra_[:, 1], ra_[:, 0], 1)[0]); oe_mean = float(ra_[:, 1].mean())
+    out["sos"] = {"beta100": rnd(beta * 100, 3), "mean": rnd(oe_mean, 0), "n": len(reg)}
     div = lambda a, b: (a / b) if b else None
     mets = []
     lg = defaultdict(float)
@@ -313,6 +319,8 @@ def main():
                      "hdef": rnd(1 - t["o_head_l"] / t["o_head_a"]) if t["o_head_a"] else None,
                      "bdef": rnd(1 - t["o_body_l"] / t["o_body_a"]) if t["o_body_a"] >= 40 else None,
                      "ldef": rnd(1 - t["o_leg_l"] / t["o_leg_a"]) if t["o_leg_a"] >= 40 else None,
+                     "sd": rnd((t["sig_l"] - t["o_sig_l"]) / m, 2), "oe": rnd(t["oe_w"] / t["oe_s"], 0) if t["oe_s"] else None,
+                     "asd": rnd((t["sig_l"] - t["o_sig_l"]) / m - beta * ((t["oe_w"] / t["oe_s"]) - oe_mean), 2) if t["oe_s"] else None,
                      "dd": rnd((t["dist_l"] - t["o_dist_l"]) / m, 2), "hd": rnd((t["head_l"] - t["o_head_l"]) / m, 2),
                      "bd": rnd((t["body_l"] - t["o_body_l"]) / m, 2), "ld": rnd((t["leg_l"] - t["o_leg_l"]) / m, 2),
                      "mix": [rnd(div(t["head_l"], t["sig_l"]) or 0, 2), rnd(div(t["body_l"], t["sig_l"]) or 0, 2), rnd(div(t["leg_l"], t["sig_l"]) or 0, 2)],
