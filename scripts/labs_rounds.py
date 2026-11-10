@@ -26,19 +26,31 @@ def fit(X, y):
 def build(F, cache, rnd, D=None):
     raw = json.load(open(cache / "mmadecisions.json"))
     pool = [x for x in F if x["date"] >= "2015-12-01" and x["rr"]]
+    def nzd(s):
+        s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
+        return set(re.sub(r"[^a-z0-9 ]", " ", s.replace("-", " ")).split())
+    used = set()
     def find(d):
         if not d["j"]:
             return None
         a, b = nz(d["j"][0][1]), nz(d["j"][0][2])
-        evt = set(nz(d["ev"]))
-        best = None
+        evt = nzd(d["ev"]); best = None
         for x in pool:
+            if id(x) in used:
+                continue
+            if d.get("y"):
+                if x["yr"] != d["y"]:
+                    continue
+            elif x["date"] < "2023-12-15":
+                continue
             na, nb = nz(x["a"]["name"]), nz(x["b"]["name"])
             for flip, (p, q) in enumerate(((na, nb), (nb, na))):
                 if a and b and all(w in p for w in a) and all(w in q for w in b):
-                    sc = len(evt & set(nz(x["e"]["name"])))
+                    sc = len(evt & nzd(x["e"]["name"]))
                     if best is None or sc > best[0]:
                         best = (sc, x, bool(flip))
+        if best:
+            used.add(id(best[1]))
         return best
     rows = []; fights = []; unmatched = 0
     J = defaultdict(lambda: defaultdict(float)); P = defaultdict(float)
@@ -69,7 +81,8 @@ def build(F, cache, rnd, D=None):
             if va == vb:
                 continue
             maj = 1 if va > vb else 0
-            rows.append({"f": f, "y": maj, "unan": min(va, vb) == 0, "r": r, "nr": nr, "x": x})
+            rows.append({"f": f, "y": maj, "unan": min(va, vb) == 0, "r": r, "nr": nr, "x": x, "A": A, "B": B,
+                         "sc": [(c[0].title(), s) for c, s in zip(cards, sc)], "st": (ra[r], rb[r])})
             clash = None
             if f["sl"] > 0 and f["ctrl"] <= -60: clash = 0      # A out-landed, B controlled -> control side is B (y=0)
             if f["sl"] < 0 and f["ctrl"] >= 60: clash = 1
@@ -150,6 +163,71 @@ def build(F, cache, rnd, D=None):
                     k = "USA" if loc == "USA" else "Outside the USA"
                     for kk in (k, "All"):
                         h = home[kk]; h[0] += 1; h[1] += pa if side == ft["A"] else 1 - pa; h[2] += ft["winner"] == side
+    # ---------- outliers
+    def rrec(r, pp, extra=None):
+        x = r["x"]; a_, b_ = r["st"]; got = r["A"] if r["y"] == 1 else r["B"]; oth = r["B"] if r["y"] == 1 else r["A"]
+        g, o = (a_, b_) if r["y"] == 1 else (b_, a_)
+        mmss_ = lambda s: "%d:%02d" % (s // 60, s % 60)
+        d = {"d": x["date"], "es": x["e"]["slug"], "n": x["f"]["n"], "r": r["r"], "w": x[got]["name"], "l": x[oth]["name"], "p": rnd(pp if r["y"] == 1 else 1 - pp),
+             "st": "sig. strikes %d–%d · control %s–%s · takedowns %d–%d%s" % (g["sl"], o["sl"], mmss_(g["ctrl"]), mmss_(o["ctrl"]), g["tl"], o["tl"], (" · knockdowns %d–%d" % (g.get("kd", 0), o.get("kd", 0))) if (g.get("kd", 0) or o.get("kd", 0)) else "")}
+        if extra:
+            d.update(extra)
+        return d
+    out_rounds = sorted([rrec(r, pp) for r, pp in zip(rows, p) if r["unan"] and (pp if r["y"] == 1 else 1 - pp) < 0.2], key=lambda d: d["p"])[:30]
+    lone = []; lone8 = []; jout = defaultdict(lambda: [0, 0])
+    for r, pp in zip(rows, p):
+        sides = [(nm, 1 if s[0] > s[1] else 0 if s[1] > s[0] else None, abs(s[0] - s[1]) >= 2, s) for nm, s in r["sc"]]
+        for nm, sd, wide, s in sides:
+            if sd is None:
+                continue
+            others = [o for o in sides if o[0] != nm]
+            pj = pp if sd == 1 else 1 - pp
+            if sd != r["y"] and all(o[1] == r["y"] for o in others):
+                jout[nm][0] += 1
+                if pj < 0.25:
+                    jout[nm][1] += 1
+                    x = r["x"]; mine = r["A"] if sd == 1 else r["B"]
+                    lone.append(rrec(r, pp, {"j": nm, "js": slug(nm), "for": x[mine]["name"], "pj": rnd(pj)}))
+            if wide and not any(o[2] for o in others):
+                x = r["x"]; mine = r["A"] if sd == 1 else r["B"]
+                lone8.append(rrec(r, pp, {"j": nm, "js": slug(nm), "for": x[mine]["name"], "pj": rnd(pj), "sc": "%d-%d" % (max(s), min(s)), "agree": all(o[1] == sd for o in others)}))
+    lone.sort(key=lambda d: d["pj"]); lone8.sort(key=lambda d: d["d"], reverse=True)
+    disputes = []
+    for ft in fights:
+        x = ft["x"]; flip = ft["A"] == "b"
+        mar = [(t_[1] - t_[0]) if flip else (t_[0] - t_[1]) for t_ in ft["tot"]]
+        if max(mar) > 0 and min(mar) < 0:
+            disputes.append({"d": x["date"], "es": x["e"]["slug"], "n": x["f"]["n"], "a": x["a"]["name"], "b": x["b"]["name"], "w": x["w"], "spread": max(mar) - min(mar),
+                             "cards": [[c[0].title(), ("%d-%d" % ((t_[1], t_[0]) if flip else t_))] for c, t_ in zip(ft["cards"], ft["tot"])],
+                             "med": [ft["mb"], ft["ma"]] if flip else [ft["ma"], ft["mb"]]})
+    disputes.sort(key=lambda d: (-d["spread"], d["d"]), reverse=False)
+    # ---------- per-judge criteria: each judge's own weights, shrunk toward the pool
+    jrows = defaultdict(list)
+    for i, r in enumerate(rows):
+        for nm, s in r["sc"]:
+            if s[0] != s[1]:
+                jrows[nm].append((i, 1.0 if s[0] > s[1] else 0.0))
+    crit = []
+    for nm, lst in jrows.items():
+        if len(lst) < 450:
+            continue
+        Xi = X[[i for i, _ in lst]]; yi = np.array([v for _, v in lst])
+        X2 = np.vstack([Xi, -Xi]); y2 = np.concatenate([yi, 1 - yi]); bj = b.copy(); lam = 6.0 / (b ** 2)
+        for _ in range(40):
+            pq = 1 / (1 + np.exp(-np.clip(X2 @ bj, -30, 30))); W = pq * (1 - pq) + 1e-9
+            bj += np.linalg.solve(X2.T @ (X2 * W[:, None]) + np.diag(lam), X2.T @ (y2 - pq) - lam * (bj - b))
+        pj_ = 1 / (1 + np.exp(-Xi @ bj))
+        crit.append({"nm": nm, "s": slug(nm), "n": len(lst), "m": {k: rnd(float(bj[i] / b[i]), 2) for i, (k, _) in enumerate(FE)},
+                     "acc": rnd(float(((pj_ > .5) == (yi == 1)).mean())), "lone": jout[nm][0], "lone_bad": jout[nm][1]})
+    crit.sort(key=lambda c: -c["n"])
+    # ---------- calibration
+    conf = np.maximum(p, 1 - p); hit = (p > .5) == (y == 1); cal = []
+    for lo, hi in ((.5, .6), (.6, .7), (.7, .8), (.8, .9), (.9, .97), (.97, 1.01)):
+        mk = (conf >= lo) & (conf < hi)
+        if mk.sum():
+            cal.append({"lab": "%d–%d%%" % (lo * 100, min(100, hi * 100)), "n": int(mk.sum()), "pred": rnd(float(conf[mk].mean())), "act": rnd(float(hit[mk].mean())), "split": rnd(float((~un[mk]).mean()))})
+    extra = {"out_rounds": out_rounds, "lone": lone[:30], "lone8": lone8[:30], "lone8_n": len(lone8), "disputes": disputes[:30], "disputes_n": len(disputes), "crit": crit, "cal": cal,
+             "raw": [{"label": lab, "b": rnd(float(c), 4)} for (_, lab), c in zip(FE, b)]}
     JR = [{"nm": n, "s": slug(n), "n": int(j["n"]), "dis": rnd(j["dis"] / j["n"]), "wide": rnd(j["wide"] / j["n"]), "cl": int(j["cl"]), "ctrl": rnd(j["clc"] / j["cl"]) if j["cl"] >= 12 else None}
           for n, j in J.items() if j["n"] >= 60]
     byr = defaultdict(lambda: [0, 0])
@@ -162,4 +240,5 @@ def build(F, cache, rnd, D=None):
             "judges": sorted(JR, key=lambda r: -r["n"]), "by_round": [{"r": k, "n": v[0], "split": rnd(v[1] / v[0])} for k, v in sorted(byr.items())],
             "against": sorted(against, key=lambda r: r["p"])[:25], "media": sorted(media_rob, key=lambda r: r["med"][0] - r["med"][1])[:25],
             "media_n": sum(1 for f in fights if f["mn"] >= 5), "media_dis": len(media_rob),
+            **extra,
             "home": [{"label": k, "n": v[0], "exp": rnd(v[1] / v[0]), "act": rnd(v[2] / v[0])} for k, v in home.items() if v[0] >= 20]}
