@@ -1,0 +1,135 @@
+"""Round-level judging study. Needs a private pull of round-by-round scorecards saved at
+.form_cache/mmadecisions.json (not committed: the compilation belongs to MMADecisions.com).
+Only derived aggregates are written to the site."""
+import json, re, unicodedata
+from collections import defaultdict
+import numpy as np
+
+FE = [("head", "Head strike"), ("body", "Body strike"), ("leg", "Leg strike"), ("kd", "Knockdown"), ("tl", "Takedown"),
+      ("ctrlm", "Minute of control"), ("sub", "Submission attempt"), ("nonsig", "Non-significant strike")]
+COUNTRY = {"USA": "USA", "England": "United Kingdom", "Scotland": "United Kingdom", "Wales": "United Kingdom", "UAE": "United Arab Emirates"}
+
+
+def nz(s):
+    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z ]", " ", s.replace("-", " ")).split()
+
+
+def fit(X, y):
+    X2 = np.vstack([X, -X]); y2 = np.concatenate([y, 1 - y]); b = np.zeros(X.shape[1])
+    for _ in range(50):
+        p = 1 / (1 + np.exp(-np.clip(X2 @ b, -30, 30))); W = p * (1 - p) + 1e-9
+        b += np.linalg.solve(X2.T @ (X2 * W[:, None]) + 1e-4 * np.eye(len(b)), X2.T @ (y2 - p))
+    return b
+
+
+def build(F, cache, rnd):
+    raw = json.load(open(cache / "mmadecisions.json"))
+    pool = [x for x in F if x["date"] >= "2023-12-01" and x["rr"]]
+    def find(d):
+        if not d["j"]:
+            return None
+        a, b = nz(d["j"][0][1]), nz(d["j"][0][2])
+        evt = set(nz(d["ev"]))
+        best = None
+        for x in pool:
+            na, nb = nz(x["a"]["name"]), nz(x["b"]["name"])
+            for flip, (p, q) in enumerate(((na, nb), (nb, na))):
+                if a and b and all(w in p for w in a) and all(w in q for w in b):
+                    sc = len(evt & set(nz(x["e"]["name"])))
+                    if best is None or sc > best[0]:
+                        best = (sc, x, bool(flip))
+        return best
+    rows = []; fights = []; unmatched = 0
+    J = defaultdict(lambda: defaultdict(float)); P = defaultdict(float)
+    for d in raw:
+        m = find(d)
+        if not m:
+            unmatched += 1; continue
+        _, x, flip = m
+        A, B = ("b", "a") if flip else ("a", "b")       # A = scorecard's first column
+        ra, rb = x["rr"].get(x[A]["name"], {}), x["rr"].get(x[B]["name"], {})
+        cards = [(j[0], [tuple(int(v) for v in s.split("-")) for s in j[3].split()]) for j in d["j"]]
+        nr = min(len(c[1]) for c in cards)
+        tot = [(sum(s[0] for s in c[1]), sum(s[1] for s in c[1])) for c in cards]
+        wa = sum(1 for t in tot if t[0] > t[1]); wb = sum(1 for t in tot if t[1] > t[0])
+        winner = A if wa > wb else B if wb > wa else None
+        med = d.get("m") or {}
+        sa_, sb_ = nz(d["j"][0][1])[-1:], nz(d["j"][0][2])[-1:]
+        ma = sum(v for k, v in med.items() if nz(k.split(" ", 1)[1])[-1:] == sa_); mb = sum(v for k, v in med.items() if nz(k.split(" ", 1)[1])[-1:] == sb_)
+        born = re.search(r"TALE OF THE TAPE \S+ \S+ (.*?) BORN (.*?) \d+ AGE", d.get("tape") or "")
+        fights.append({"x": x, "A": A, "B": B, "winner": winner, "ma": ma, "mb": mb, "mn": sum(med.values()), "born": born.groups() if born else None, "split": 0 < min(wa, wb), "tot": tot})
+        for r in range(1, nr + 1):
+            if r not in ra or r not in rb:
+                continue
+            f = {k: ra[r].get(k, 0) - rb[r].get(k, 0) for k in ("head", "body", "leg", "kd", "tl", "sub", "sl", "tot", "ctrl")}
+            f["ctrlm"] = f["ctrl"] / 60; f["nonsig"] = f["tot"] - f["sl"]
+            sc = [c[1][r - 1] for c in cards]
+            va = sum(1 for s in sc if s[0] > s[1]); vb = sum(1 for s in sc if s[1] > s[0])
+            if va == vb:
+                continue
+            maj = 1 if va > vb else 0
+            rows.append({"f": f, "y": maj, "unan": min(va, vb) == 0, "r": r, "nr": nr, "x": x})
+            clash = None
+            if f["sl"] > 0 and f["ctrl"] <= -60: clash = 0      # A out-landed, B controlled -> control side is B (y=0)
+            if f["sl"] < 0 and f["ctrl"] >= 60: clash = 1
+            for (nm, _), s in zip(cards, sc):
+                j = J[nm.title()]; j["n"] += 1; P["n"] += 1
+                side = 1 if s[0] > s[1] else 0 if s[1] > s[0] else None
+                wide = abs(s[0] - s[1]) >= 2
+                j["wide"] += wide; P["wide"] += wide
+                if side is None:
+                    continue
+                j["dis"] += side != maj; P["dis"] += side != maj
+                if clash is not None:
+                    j["cl"] += 1; j["clc"] += side == clash; P["cl"] += 1; P["clc"] += side == clash
+    X = np.array([[r["f"][k] for k, _ in FE] for r in rows], float); y = np.array([r["y"] for r in rows], float)
+    b = fit(X, y); p = 1 / (1 + np.exp(-X @ b)); pw = np.where(y == 1, p, 1 - p)
+    un = np.array([r["unan"] for r in rows])
+    # round-by-round expected decisions: fight luck = actual - P(win) from simulating rounds independently
+    byf = defaultdict(list)
+    for r, pp in zip(rows, p):
+        byf[id(r["x"])].append(pp)
+    def pwin(ps):   # P(A wins more rounds than B), 10-9 rounds only
+        dist = {0: 1.0}
+        for q in ps:
+            nd = defaultdict(float)
+            for k, v in dist.items():
+                nd[k + 1] += v * q; nd[k - 1] += v * (1 - q)
+            dist = nd
+        return sum(v for k, v in dist.items() if k > 0) + 0.5 * dist.get(0, 0)
+    against = []; home = defaultdict(lambda: [0, 0.0, 0]); media_rob = []
+    for ft in fights:
+        x = ft["x"]; ps = byf.get(id(x))
+        if not ps or ft["winner"] is None:
+            continue
+        pa = pwin(ps); pw_ = pa if ft["winner"] == ft["A"] else 1 - pa
+        win, lose = x[ft["winner"]], x[ft["B"] if ft["winner"] == ft["A"] else ft["A"]]
+        rec = {"d": x["date"], "es": x["e"]["slug"], "n": x["f"]["n"], "w": win["name"], "l": lose["name"], "p": rnd(pw_), "split": ft["split"],
+               "med": [ft["ma"], ft["mb"]] if ft["winner"] == ft["A"] else [ft["mb"], ft["ma"]]}
+        against.append(rec)
+        if ft["mn"] >= 5 and rec["med"][1] > rec["med"][0]:
+            media_rob.append(rec)
+        if ft["born"]:
+            loc = (x["e"].get("location") or "").split(",")[-1].strip()
+            for side, bn in ((ft["A"], ft["born"][0]), (ft["B"], ft["born"][1])):
+                c = bn.split(",")[-1].strip(); c = COUNTRY.get(c, c)
+                oth = ft["born"][1] if side == ft["A"] else ft["born"][0]
+                oc = oth.split(",")[-1].strip(); oc = COUNTRY.get(oc, oc)
+                if c == loc and oc != loc:
+                    k = "USA" if loc == "USA" else "Outside the USA"
+                    for kk in (k, "All"):
+                        h = home[kk]; h[0] += 1; h[1] += pa if side == ft["A"] else 1 - pa; h[2] += ft["winner"] == side
+    JR = [{"nm": n, "n": int(j["n"]), "dis": rnd(j["dis"] / j["n"]), "wide": rnd(j["wide"] / j["n"]), "cl": int(j["cl"]), "ctrl": rnd(j["clc"] / j["cl"]) if j["cl"] >= 12 else None}
+          for n, j in J.items() if j["n"] >= 60]
+    byr = defaultdict(lambda: [0, 0])
+    for r in rows:
+        if r["nr"] == 3:
+            byr[r["r"]][0] += 1; byr[r["r"]][1] += not r["unan"]
+    return {"n_fights": len(fights), "n_rounds": len(rows), "unmatched": unmatched, "acc": rnd(float((pw > .5).mean())), "acc_unan": rnd(float((pw[un] > .5).mean())), "acc_split": rnd(float((pw[~un] > .5).mean())),
+            "split_share": rnd(float((~un).mean())), "coef": [{"label": lab, "head_eq": rnd(float(c / b[0]), 2)} for (_, lab), c in zip(FE, b)],
+            "pool": {"n": int(P["n"]), "dis": rnd(P["dis"] / P["n"]), "wide": rnd(P["wide"] / P["n"]), "ctrl": rnd(P["clc"] / P["cl"]) if P["cl"] else None, "cl": int(P["cl"])},
+            "judges": sorted(JR, key=lambda r: -r["n"]), "by_round": [{"r": k, "n": v[0], "split": rnd(v[1] / v[0])} for k, v in sorted(byr.items())],
+            "against": sorted(against, key=lambda r: r["p"])[:25], "media": sorted(media_rob, key=lambda r: r["med"][0] - r["med"][1])[:25],
+            "media_n": sum(1 for f in fights if f["mn"] >= 5), "media_dis": len(media_rob),
+            "home": [{"label": k, "n": v[0], "exp": rnd(v[1] / v[0]), "act": rnd(v[2] / v[0])} for k, v in home.items() if v[0] >= 20]}

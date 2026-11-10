@@ -6,6 +6,8 @@ import csv, json, re, glob, math, datetime as dt
 from collections import defaultdict
 from pathlib import Path
 import numpy as np
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 REPO = Path(__file__).resolve().parents[1]
 D = REPO / "form" / "data"
@@ -91,6 +93,13 @@ def main():
                 rr["kd"] = int(float(r["KD"] or 0))
             except ValueError:
                 rr["kd"] = 0
+            for k_, col in (("head", "HEAD"), ("body", "BODY"), ("leg", "LEG"), ("dist", "DISTANCE"), ("clinch", "CLINCH"), ("ground", "GROUND")):
+                rr[k_] = of(r[col])[0]
+            rr["tot"] = of(r["TOTAL STR."])[0]
+            try:
+                rr["sub"] = int(float(r["SUB.ATT"] or 0))
+            except ValueError:
+                rr["sub"] = 0
     rrkey = {(en, frozenset(x.strip() for x in bout.split(" vs. "))): v for (en, bout), v in rawr.items()}
     rawkey = {}
     for (en, bout), v in raw.items():
@@ -590,6 +599,12 @@ def main():
         else:
             H[x["a"]["slug"]].append("D"); H[x["b"]["slug"]].append("D")
     out["situational"] += [dict(study(v), label=k) for k, v in st2.items()]
+
+    try:
+        import labs_rounds
+        out["rounds"] = labs_rounds.build(F, CACHE, rnd)
+    except Exception as ex:
+        import traceback; traceback.print_exc(); print("round-level judging skipped:", ex)
 
     json.dump(out, open(D / "labs.json", "w"), separators=(",", ":"))
     print("altitude", out["altitude"]); print("octfav", [(r["label"], r["n"], r["fin"], r["exp"], r["fav"]["owp"], r["fav"]["imp"], r["fav"]["roi"], r["pace"]) for r in out["octagon"]["fav"]])
