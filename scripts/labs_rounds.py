@@ -25,7 +25,7 @@ def fit(X, y):
 
 def build(F, cache, rnd):
     raw = json.load(open(cache / "mmadecisions.json"))
-    pool = [x for x in F if x["date"] >= "2023-12-01" and x["rr"]]
+    pool = [x for x in F if x["date"] >= "2015-12-01" and x["rr"]]
     def find(d):
         if not d["j"]:
             return None
