@@ -42,16 +42,16 @@ Updated 2026-11-10. One row per test so nothing is run twice. Status: done, prox
 | Judging | Referees: KO/sub rates vs expected | done | Miragliotta and Herzog run high on KO/TKO. | Labs > Referees | No data on early/late stoppages |
 | Models | Form Line, method and distance models | done | Form Line 63.0% vs close 69.3%; GTD runs high in five-rounders. | Model |   |
 | Models | Sheet model reproduction and tracker | done | Formula reproduced on 103 fights; Brier 0.2214 vs close 0.2269 (86). | Fight pages; Model |   |
+| Props | Finish profiles per fighter and fight-length profile for the next card | done | 485 active fighters; next-card averages vs division baseline. | Labs > Props & pace | Simple averages, not matchup-adjusted |
+| Props | When fights end (round-by-round finish rate) | done | Three-rounders: 26% end in R1, then 22%, then 14% of those still going. | Labs > Props & pace |   |
+| Cardio | Pace by round (3- and 5-round fights going the distance) | done | Output rises every round; TD attempts rise; TD accuracy falls (37% R1 to 34% R3; 32% to 30% over five). | Labs > Props & pace |   |
+| Physical | Age curves by weight group | done | Lighter men peak under 28 and fall hardest after 34; heavyweights peak 28-30. | Labs > Props & pace |   |
 | Models | Markov duration model grading | done | 39 fights: market ahead on both channels so far. | Markov > Grading | Small sample |
 | Blocked | Regional Elo by promotion | blocked | No regional fight data. | - | NEEDS Tapology/Sherdog export or Fight Matrix licence |
 | Blocked | Live-odds backtests | blocked | No in-fight price archive. | - | NEEDS live odds source |
 | Blocked | Tipster consensus vs close | blocked | betmma.tips returned nothing to the fetcher. | - | Try through the browser |
 | Ideas | Judge weights before vs after the 2017 criteria change | idea |   |   | Ready once 2010-2016 scorecards are loaded |
 | Ideas | Fan scoring vs judges vs media | idea |   |   | Fan round percentages were collected for 2024-2026 only |
-| Ideas | Finish-round distributions per fighter for round props | idea |   |   | Data on hand |
 | Ideas | Opponent-quality-adjusted fighter metrics | idea |   |   | Use Elo of opponents; data on hand |
-| Ideas | Age curves by division | idea |   |   | Data on hand |
 | Ideas | Our Elo vs public Elo sites | idea |   |   | Three bookmarked sites; manual comparison |
-| Ideas | Pace decay in rounds 4-5 of five-rounders | idea |   |   | Data on hand; small sample |
-| Ideas | Takedown defense decay by round | idea |   |   | Data on hand |
 | Ideas | Camp / gym effects | idea |   |   | 'Fighting out of' was collected with the scorecards |

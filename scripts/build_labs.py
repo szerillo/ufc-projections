@@ -621,6 +621,69 @@ def main():
             out["chin"] = {"n": len(v_), "ko_loss": rnd(sum(1 for x, s_ in v_ if x["m"] == "KO" and x["w"] != s_) / len(v_)),
                            "base": rnd(sum(1 for x in dec if x["m"] == "KO" and x["date"] >= "2010-01-01") / 2 / sum(1 for x in dec if x["date"] >= "2010-01-01"))}
 
+    # ================= finish profiles (round props), pace by round, age by weight group
+    prof = defaultdict(lambda: defaultdict(float))
+    for x in F:
+        if x["kind"] != "win" or not x["rnd"]:
+            continue
+        for s_ in "ab":
+            q = prof[x[s_]["slug"]]; q["n"] += 1; won = x["w"] == s_
+            q["r1"] += x["m"] != "DEC" and x["rnd"] == 1; q["r2"] += x["m"] != "DEC" and x["rnd"] == 2; q["r3p"] += x["m"] != "DEC" and x["rnd"] >= 3; q["dec"] += x["m"] == "DEC"
+            q["w"] += won; q["wko"] += won and x["m"] == "KO"; q["wsub"] += won and x["m"] == "SUB"; q["wdec"] += won and x["m"] == "DEC"
+            q["lko"] += (not won) and x["m"] == "KO"; q["lsub"] += (not won) and x["m"] == "SUB"
+            q["secs"] += x["secs"] or 0; q["o15"] += (x["secs"] or 0) > 450   # over 1.5 rounds
+    def prow(slug_, name=None):
+        q = prof.get(slug_)
+        if not q or q["n"] < 3:
+            return {"s": slug_, "nm": name or (meta.get(slug_) or {}).get("name", slug_)}
+        n = q["n"]
+        return {"s": slug_, "nm": name or meta[slug_]["name"], "wc": (meta.get(slug_) or {}).get("wc"), "n": int(n), "r1": rnd(q["r1"] / n), "r2": rnd(q["r2"] / n), "r3p": rnd(q["r3p"] / n), "dec": rnd(q["dec"] / n),
+                "o15": rnd(q["o15"] / n), "min": rnd(q["secs"] / n / 60, 1), "wko": rnd(q["wko"] / n), "wsub": rnd(q["wsub"] / n), "wdec": rnd(q["wdec"] / n), "lko": rnd(q["lko"] / n), "lsub": rnd(q["lsub"] / n)}
+    recent = [x for x in dec if x["date"] > d36 and x["rnd"]]
+    def base_for(wc, sched):
+        rows = [x for x in recent if x["wc"] == wc and x["sched"] == sched]
+        if len(rows) < 40:
+            rows = [x for x in recent if x["sched"] == sched]
+        n = len(rows)
+        return {"n": n, "r1": rnd(sum(1 for x in rows if x["m"] != "DEC" and x["rnd"] == 1) / n), "dec": rnd(sum(1 for x in rows if x["m"] == "DEC") / n), "o15": rnd(sum(1 for x in rows if (x["secs"] or 0) > 450) / n)}
+    pup = []
+    try:
+        for u in idx.get("upcoming", [])[:1]:
+            for f in sorted(ue["fights"], key=lambda f: -f["n"]):
+                pup.append({"n": f["n"], "es": ue["slug"], "wc": f.get("wc"), "sched": f.get("sched"), "a": prow(f["a"]["slug"], f["a"]["name"]), "b": prow(f["b"]["slug"], f["b"]["name"]),
+                            "base": base_for(re.sub(r"^Interim ", "", f.get("wc") or ""), f.get("sched") or 3)})
+    except Exception as ex:
+        print("props upcoming skipped:", ex)
+    out["props"] = {"rows": [r for r in (prow(s_) for s_ in prof if prof[s_]["n"] >= 5 and s_ in meta and meta[s_]["last"] >= cut) if r.get("n")], "upcoming": pup}
+    # pace by round, three- and five-round fights that reached the final round
+    def pace_rounds(k):
+        rows = [x for x in dec if x["sched"] == k and x["rr"] and x["m"] == "DEC" and all(r_ in x["rr"].get(x[s_]["name"], {}) for s_ in "ab" for r_ in range(1, k + 1)) and x["date"] >= "2015-01-01"]
+        res = []
+        for r_ in range(1, k + 1):
+            sa_ = sum(x["rr"][x[s_]["name"]][r_]["sa"] for x in rows for s_ in "ab"); sl_ = sum(x["rr"][x[s_]["name"]][r_]["sl"] for x in rows for s_ in "ab")
+            ta_ = sum(x["rr"][x[s_]["name"]][r_]["ta"] for x in rows for s_ in "ab"); tl_ = sum(x["rr"][x[s_]["name"]][r_]["tl"] for x in rows for s_ in "ab")
+            ct_ = sum(x["rr"][x[s_]["name"]][r_]["ctrl"] for x in rows for s_ in "ab")
+            res.append({"r": r_, "att": rnd(sa_ / len(rows) / 2 / 5, 2), "acc": rnd(sl_ / sa_), "tda": rnd(ta_ / len(rows) / 2, 2), "tdacc": rnd(tl_ / ta_) if ta_ else None, "ctrl": rnd(ct_ / len(rows) / 2, 0)})
+        return {"n": len(rows), "rounds": res}
+    out["pace"] = {"three": pace_rounds(3), "five": pace_rounds(5)}
+    # finish timing by round across all fights since 2015 (share of fights still going that end in each round)
+    haz = []
+    for k in (3, 5):
+        rows = [x for x in dec if x["sched"] == k and x["rnd"] and x["date"] >= "2015-01-01"]
+        for r_ in range(1, k + 1):
+            alive = [x for x in rows if x["rnd"] >= r_]; end = [x for x in alive if x["rnd"] == r_ and x["m"] != "DEC"]
+            haz.append({"sched": k, "r": r_, "alive": len(alive), "end": rnd(len(end) / len(alive)), "ko": rnd(sum(1 for x in end if x["m"] == "KO") / len(alive)), "sub": rnd(sum(1 for x in end if x["m"] == "SUB") / len(alive))})
+    out["hazard"] = haz
+    GRP = [("Flyweight to lightweight (men)", ("Flyweight", "Bantamweight", "Featherweight", "Lightweight")), ("Welterweight to light heavyweight", ("Welterweight", "Middleweight", "Light Heavyweight")), ("Heavyweight", ("Heavyweight",)), ("Women", tuple(w for w in DIVS if "Women" in w))]
+    ag = []
+    for lab, wcs in GRP:
+        row = {"label": lab, "bands": []}
+        for bl, lo, hi in bands:
+            rows = [(x, s_) for x in dec if x["date"] >= "2010-01-01" and x["wc"] in wcs for s_ in "ab" if (age(x[s_]["slug"], x["date"]) or -1) >= lo and (age(x[s_]["slug"], x["date"]) or 99) < hi]
+            st_ = study(rows); row["bands"].append({"b": bl, "n": st_["n"], "wp": st_["wp"], "imp": st_["imp"], "roi": st_["roi"], "on": st_["on"]})
+        ag.append(row)
+    out["age_groups"] = ag
+
     try:
         import labs_rounds
         out["rounds"] = labs_rounds.build(F, CACHE, rnd, D)
