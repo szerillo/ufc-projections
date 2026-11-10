@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>MMA Fight Form</title>
+<meta name="description" content="Past performances, line history and projections for every UFC fight, on one page.">
+<link rel="stylesheet" href="form/style.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="kicker">Past performances · Line history · Projections</div>
+    <h1><a href="#/">MMA Fight Form</a></h1>
+    <div class="tag">Everything you need to handicap a fight, in the same place every time.</div>
+  </header>
+  <nav class="nav">
+    <a href="#/" data-tab="home">This week</a>
+    <a href="#/cards" data-tab="cards">Cards</a>
+    <a href="#/fighters" data-tab="fighters">Fighters</a>
+    <a href="#/model" data-tab="model">Model</a>
+    <a href="#/about" data-tab="about">About</a>
+  </nav>
+  <div class="search"><input id="q" type="search" placeholder="Search any UFC fighter…" autocomplete="off"><div class="dd" id="dd"></div></div>
+  <main id="app"><div class="loading">Loading…</div></main>
+  <footer>MMA Fight Form · prototype · stats via UFCStats (scrape_ufc_stats, GPL-3.0) · odds via The Odds API and BettingPros · for information only</footer>
+</div>
+<script src="form/app.js?v=1"></script>
+</body>
+</html>
