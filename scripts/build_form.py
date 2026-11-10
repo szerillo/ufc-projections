@@ -608,6 +608,17 @@ def main():
                 "o": opp, "os": slug_of.get(opp), "oe": f["elo_" + o], "el": f["elo_" + side], "r": res,
                 "m": f["method"], "rd": f["round"], "t": f["time"], "sc": f["sched"], "secs": f["secs"], "wc": f["wc"],
                 "ti": 1 if f["title"] else 0, "u": f["url"], "fg": f.get("fig_" + side)}
+        det = f.get("details") or ""
+        sc_ = re.findall(r"(\d{2})\s*-\s*(\d{2})", det)
+        if "Decision" in f["method"] and sc_:
+            cards = [(int(x), int(y)) for x, y in sc_[:3]]
+            # orient each card as me-opponent: the winner must have the majority of cards
+            mine = sum(1 for x, y in cards if x > y); theirs = sum(1 for x, y in cards if y > x)
+            if (res == "W" and theirs > mine) or (res == "L" and mine > theirs):
+                cards = [(y, x) for x, y in cards]
+            line["dt"] = " ".join(f"{x}-{y}" for x, y in cards)
+        elif det and "Decision" not in f["method"]:
+            line["dt"] = re.sub(r"\s+", " ", det)[:34]
         if s_me and s_op and f["secs"] and f["round"]:
             r1s = 300 if f["round"] > 1 else f["secs"]
             lates = max(0, f["secs"] - 600)

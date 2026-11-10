@@ -86,7 +86,7 @@ function ppTable(lines, opts = {}) {
       <td class="opp">${x.os ? `<a href="#/fighter/${x.os}">${esc(x.o)}</a>` : esc(x.o)} <small>${x.oe || ""}</small></td>
       <td class="c ${x.r}">${x.r}</td>
       <td class="b" title="Form Figure for this performance">${x.fg == null ? "—" : Math.round(x.fg)}</td>
-      <td class="mth">${esc(shortMethod(x.m))}${x.ti ? " 🏆" : ""}</td>
+      <td class="mth">${esc(shortMethod(x.m))}${x.ti ? " 🏆" : ""}${x.dt ? ` <small class="dim">${esc(x.dt)}</small>` : ""}</td>
       <td>${x.rd || "—"}${x.sc ? "/" + x.sc : ""} ${esc(x.t || "")}</td>
       <td class="l dim">${esc((x.wc || "").replace("Women's ", "W ").replace("weight", "").replace("Light Heavy", "LHW").replace("Catch ", "CW"))}</td>
       <td class="b">${ml(od.mc)}</td>
@@ -398,9 +398,63 @@ async function vFighter(slug) {
       <div class="box"><h3 style="margin-top:0">At the window</h3><div class="kv"><span>Flat 1u at the close</span><span class="${cls(pnl)}">${bets ? signed(pnl, 2) + "u / " + bets : "—"}</span></div><div class="kv"><span>As favorite</span><span>${favN ? favW + "-" + (favN - favW) : "—"}</span></div><div class="kv"><span>As underdog</span><span>${dogN ? dogW + "-" + (dogN - dogW) : "—"}</span></div><div class="kv"><span>Avg line move toward</span><span class="${cls(clvN ? clv / clvN : null)}">${clvN ? signed(clv / clvN) + " pts" : "—"}</span></div><div class="kv"><span>Wins KO-SUB-DEC</span><span>${g.ko}-${g.subw}-${g.dec}</span></div><div class="kv"><span>Losses KO-SUB-DEC</span><span>${g.kol}-${g.subl}-${g.decl}</span></div></div>
     </div>
     ${spark || figBars ? `<h3>Rating history</h3><div class="grid2"><div class="box">${figBars || ""}</div><div class="box">${spark || ""}</div></div>` : ""}
+    ${splitsTable(F)}
+    <div class="box noprint" style="margin-top:12px"><span class="sub">Compare with another fighter: </span><input id="cmpq" placeholder="type a name…" style="padding:5px 8px;border:1px solid var(--rule);background:#fffdf6;width:220px"> <span id="cmpdd"></span></div>
     <div class="pp-head"><div class="n">Past performances</div><div class="sub">${F.fights.length} UFC fights · closing lines from 2022 on</div></div>
     ${ppTable(F.fights, { name: F.name })}
     <div class="links" style="margin-top:10px"><a href="https://www.youtube.com/results?search_query=${encodeURIComponent(F.name + " UFC full fight")}" target="_blank" rel="noopener">▶ YouTube: full fights</a><a href="https://ufcfightpass.com/search?q=${encodeURIComponent(F.name)}" target="_blank" rel="noopener">UFC Fight Pass search</a>${b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">UFCStats profile</a>` : ""}</div>`;
+  const cq = document.getElementById("cmpq"), cd = document.getElementById("cmpdd");
+  if (cq) cq.addEventListener("input", async () => { const q = cq.value.trim().toLowerCase(); if (q.length < 2) { cd.innerHTML = ""; return; }
+    const S = await getJSON("search.json"); cd.innerHTML = S.filter(x => x[0].toLowerCase().includes(q) && x[1] !== F.slug).slice(0, 6).map(x => `<a class="btn" style="margin:2px" href="#/compare/${F.slug}/${x[1]}">${esc(x[0])}</a>`).join(""); });
+}
+
+function splitsTable(F) {
+  const L = F.fights, defs = [
+    ["As favorite", x => x.od && x.od.mc != null && x.od.mc < 0], ["As underdog", x => x.od && x.od.mc != null && x.od.mc > 0],
+    ["Five-round fights", x => x.sc === 5], ["Three-round fights", x => x.sc === 3], ["Title fights", x => x.ti],
+    ["Off a layoff of 300+ days", (x, i) => L[i + 1] && daysBetween(x.d, L[i + 1].d) >= 300], ["Within 120 days of last fight", (x, i) => L[i + 1] && daysBetween(x.d, L[i + 1].d) <= 120],
+    ["After a win", (x, i) => L[i + 1] && L[i + 1].r === "W"], ["After a loss", (x, i) => L[i + 1] && L[i + 1].r === "L"],
+    ["Vs opponents rated 1575+ Elo", x => x.oe >= 1575], ["Vs opponents under 1500 Elo", x => x.oe && x.oe < 1500], ["Last 5 fights", (x, i) => i < 5]];
+  const rows = [];
+  for (const [name, fn] of defs) { const S = L.filter((x, i) => fn(x, i)); if (S.length < 2) continue; const g = agg(S);
+    let pnl = 0, nb = 0; for (const x of S) { if (!x.od || x.od.mc == null || (x.r !== "W" && x.r !== "L")) continue; nb++; pnl += x.r === "W" ? (x.od.mc > 0 ? x.od.mc / 100 : 100 / -x.od.mc) : -1; }
+    const figs = S.map(x => x.fg).filter(v => v != null);
+    rows.push(`<tr><td class="l b">${name}</td><td>${g.rec}</td><td>${figs.length ? (figs.reduce((a, b) => a + b, 0) / figs.length).toFixed(0) : "—"}</td><td class="${cls(g.diff)}">${g.diff == null ? "—" : signed(g.diff, 2)}</td><td>${g.td15 == null ? "—" : g.td15.toFixed(2)}</td><td>${g.ctrlp == null ? "—" : (g.ctrlp * 100).toFixed(0) + "%"}</td><td>${g.ko}-${g.subw}-${g.dec}</td><td class="${cls(nb ? pnl : null)}">${nb ? signed(pnl, 2) + "u / " + nb : "—"}</td></tr>`); }
+  return rows.length ? `<h3>Splits</h3><div class="tw"><table><thead><tr><th class="l">Situation</th><th>Record</th><th title="Average Form Figure">Avg fig</th><th>Str ±/min</th><th>TD/15</th><th>Ctrl</th><th title="Wins by KO-SUB-DEC">Wins K-S-D</th><th title="Flat 1u at the closing line">At the close</th></tr></thead><tbody>${rows.join("")}</tbody></table></div>` : "";
+}
+
+async function vCompare(sa, sb) {
+  const [A, B] = await Promise.all([getJSON(`fighters/${sa}.json`), getJSON(`fighters/${sb}.json`)]);
+  const ga = agg(A.fights), gb = agg(B.fights), ba = A.bio || {}, bb = B.bio || {}, today = new Date().toISOString().slice(0, 10);
+  const v = (x, d = 2) => x == null ? "—" : x.toFixed(d), pc = (x) => x == null ? "—" : (x * 100).toFixed(0) + "%";
+  const aA = ageAt(ba.dob, today), aB = ageAt(bb.dob, today);
+  const ma = new Map(A.fights.map(x => [x.o, x])), common = B.fights.filter(x => ma.has(x.o));
+  const h2h = A.fights.filter(x => x.os === B.slug);
+  let html = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/fighters">Fighters</a> › Compare</div>
+  <div class="bout"><div class="f r"><a href="#/fighter/${A.slug}">${esc(A.name)}</a><small>UFC ${ga.rec} · Fig ${A.fig == null ? "—" : A.fig.toFixed(0)} · Elo ${A.elo || "—"} · ${streak(A.fights)}</small></div><div class="vs">vs</div><div class="f"><a href="#/fighter/${B.slug}">${esc(B.name)}</a><small>UFC ${gb.rec} · Fig ${B.fig == null ? "—" : B.fig.toFixed(0)} · Elo ${B.elo || "—"} · ${streak(B.fights)}</small></div></div>
+  <h3>Tale of the tape · today</h3><div class="tape">
+    ${tapeRow("Age", aA ? aA.toFixed(1) : "—", aB ? aB.toFixed(1) : "—", "lo")}
+    ${tapeRow("Height", esc(ba.ht || "—"), esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
+    ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "—", bb.reach ? bb.reach + '"' : "—", "hi")}
+    ${tapeRow("Stance", esc(ba.stance || "—"), esc(bb.stance || "—"), null)}
+    ${tapeRow("Form Figure rating", A.fig == null ? "—" : A.fig.toFixed(1), B.fig == null ? "—" : B.fig.toFixed(1), "hi")}
+    ${tapeRow("Last 3 figures", A.fights.slice(0, 3).map(x => x.fg == null ? "–" : Math.round(x.fg)).join(" · "), B.fights.slice(0, 3).map(x => x.fg == null ? "–" : Math.round(x.fg)).join(" · "), null)}
+    ${tapeRow("Elo", A.elo || "—", B.elo || "—", "hi")}
+    ${tapeRow("SLpM", v(ga.slpm), v(gb.slpm), "hi")}${tapeRow("SApM", v(ga.sapm), v(gb.sapm), "lo")}
+    ${tapeRow("Strike diff /min", ga.diff == null ? "—" : signed(ga.diff, 2), gb.diff == null ? "—" : signed(gb.diff, 2), "hi")}
+    ${tapeRow("R1 strike diff /min", ga.r1diff == null ? "—" : signed(ga.r1diff, 2), gb.r1diff == null ? "—" : signed(gb.r1diff, 2), "hi")}
+    ${tapeRow("R3+ strike diff /min", ga.latediff == null ? "—" : signed(ga.latediff, 2), gb.latediff == null ? "—" : signed(gb.latediff, 2), "hi")}
+    ${tapeRow("TD per 15", v(ga.td15), v(gb.td15), "hi")}${tapeRow("TD acc / def", pc(ga.tdacc) + " / " + pc(ga.tdd), pc(gb.tdacc) + " / " + pc(gb.tdd), null)}
+    ${tapeRow("Control %", ga.ctrlp == null ? "—" : (ga.ctrlp * 100).toFixed(0), gb.ctrlp == null ? "—" : (gb.ctrlp * 100).toFixed(0), "hi")}
+    ${tapeRow("KD per 15 (for-agst)", v(ga.kd15) + " - " + v(ga.okd15), v(gb.kd15) + " - " + v(gb.okd15), null)}
+    ${tapeRow("Wins KO-SUB-DEC", `${ga.ko}-${ga.subw}-${ga.dec}`, `${gb.ko}-${gb.subw}-${gb.dec}`, null)}
+    ${tapeRow("Losses KO-SUB-DEC", `${ga.kol}-${ga.subl}-${ga.decl}`, `${gb.kol}-${gb.subl}-${gb.decl}`, null)}
+  </div>`;
+  if (h2h.length) html += `<h3>Head to head</h3>${ppTable(h2h, { name: A.name })}<div class="note">From ${esc(A.name)}'s side.</div>`;
+  if (common.length) html += `<h3>Common opponents</h3><div class="tw"><table><thead><tr><th class="l">Opponent</th><th class="l">${esc(A.name)}</th><th class="l">${esc(B.name)}</th></tr></thead><tbody>` +
+    common.map(x => { const y = ma.get(x.o); const c = (z) => `<span class="${z.r}">${z.r}</span> ${esc(shortMethod(z.m))} R${z.rd} · ${sdate(z.d)} · fig ${z.fg == null ? "—" : Math.round(z.fg)} · close ${ml((z.od || {}).mc)}`; return `<tr><td class="l b">${x.os ? `<a href="#/fighter/${x.os}">${esc(x.o)}</a>` : esc(x.o)}</td><td class="l">${c(y)}</td><td class="l">${c(x)}</td></tr>`; }).join("") + `</tbody></table></div>`;
+  html += `<div class="pp-head"><div class="n">${esc(A.name)}</div></div>${ppTable(A.fights, { name: A.name, limit: 8 })}<div class="pp-head"><div class="n">${esc(B.name)}</div></div>${ppTable(B.fights, { name: B.name, limit: 8 })}`;
+  $app.innerHTML = html; wireRows();
 }
 
 async function vCards() {
@@ -517,7 +571,7 @@ async function vSheet(slug) {
 
 /* ---------- router + search ---------- */
 const routes = [[/^#\/?$/, vHome, "home"], [/^#\/cards$/, vCards, "cards"], [/^#\/card\/([^/]+)$/, vCard, "cards"], [/^#\/fight\/([^/]+)\/(\d+)$/, vFight, "cards"],
-  [/^#\/fighters$/, vFighters, "fighters"], [/^#\/fighter\/([^/]+)$/, vFighter, "fighters"], [/^#\/model$/, vModel, "model"], [/^#\/research$/, vResearch, "research"], [/^#\/rankings$/, vRankings, "fighters"], [/^#\/sheet\/([^/]+)$/, vSheet, "cards"], [/^#\/about$/, vAbout, "about"]];
+  [/^#\/fighters$/, vFighters, "fighters"], [/^#\/fighter\/([^/]+)$/, vFighter, "fighters"], [/^#\/model$/, vModel, "model"], [/^#\/research$/, vResearch, "research"], [/^#\/compare\/([^/]+)\/([^/]+)$/, vCompare, "fighters"], [/^#\/rankings$/, vRankings, "fighters"], [/^#\/sheet\/([^/]+)$/, vSheet, "cards"], [/^#\/about$/, vAbout, "about"]];
 async function route() {
   const h = location.hash || "#/";
   for (const [re, fn, tab] of routes) { const m = re.exec(h); if (!m) continue;
