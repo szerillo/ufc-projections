@@ -31,3 +31,10 @@ To put a new card on the front page: add it to `cards.yml` (as before), run `scr
 - UFC fights only; pre-UFC and regional fights are not in the past performances.
 - 2026 odds history is fight-weekend snapshots plus the live feed, so "first seen" can be later than the true opener.
 - Film links are searches (YouTube, UFC Fight Pass), not direct links.
+
+## v2 additions
+
+- `scripts/form_model.py` (numpy only): Form Figure per performance, Form Line win model and distance model (both walk-forward by year), and the backtests written to `form/data/research.json`.
+- New routes: `#/research`, `#/rankings`, `#/sheet/<slug>` (printable).
+- Fair line = `sigmoid(k * logit(no-vig consensus))`, with `k` (about 1.2) fit on all fights with a closing line and stored in `index.json`.
+- Upcoming cards overlay the current consensus from `data/<slug>_odds.json` in the browser, so the "Current" column follows the odds cron without a rebuild. Charts, fair-line inputs and the price board still need a rebuild.
