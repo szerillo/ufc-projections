@@ -13,6 +13,8 @@ CACHE = REPO / ".form_cache"
 DIVS = ["Strawweight", "Flyweight", "Bantamweight", "Featherweight", "Lightweight", "Welterweight", "Middleweight",
         "Light Heavyweight", "Heavyweight", "Women's Strawweight", "Women's Flyweight", "Women's Bantamweight"]
 APEX_PPV = {250, 252, 255, 256, 258, 259, 260}
+VEGAS_NOT_APEX = {"2023-03-11": "The Theater at Virgin Hotels", "2023-09-16": "T-Mobile Arena"}
+ALTITUDE = ("Mexico City", "Denver", "Salt Lake City")
 
 
 def of(s):
@@ -41,7 +43,12 @@ def payout(american):
 def is_apex(name, loc, date):
     if not loc.startswith("Las Vegas") or date < "2020-05-30":
         return False
-    return not re.match(r"UFC \d+", name)
+    # Venue log checked against Wikipedia "List of UFC events" (read 2026-11-10): every Las Vegas card since
+    # 2020-05-30 was at the APEX except numbered cards other than the seven pandemic-era ones, and two Fight Nights.
+    if date in VEGAS_NOT_APEX:
+        return False
+    m = re.match(r"UFC (\d+)", name)
+    return (int(m.group(1)) in APEX_PPV) if m else True
 
 
 def rnd(x, d=3):
@@ -80,6 +87,10 @@ def main():
         if rn:
             rr = rawr[(r["EVENT"].strip(), r["BOUT"].strip())][f][int(rn.group(1))]
             rr["sl"], rr["sa"] = of(r["SIG.STR."]); rr["tl"], rr["ta"] = of(r["TD"]); rr["ctrl"] = mmss(r["CTRL"])
+            try:
+                rr["kd"] = int(float(r["KD"] or 0))
+            except ValueError:
+                rr["kd"] = 0
     rrkey = {(en, frozenset(x.strip() for x in bout.split(" vs. "))): v for (en, bout), v in rawr.items()}
     rawkey = {}
     for (en, bout), v in raw.items():
@@ -491,7 +502,98 @@ def main():
         s["fin"] = rnd(sum(1 for x in rows if x["m"] != "DEC") / len(rows)) if rows else None; return s
     out["late"] = [favstudy(late, "Line first posted 6 days or fewer before the fight, 5+ days after the rest of the card"), favstudy(norm_, "All other fights")]
 
+    # ================= venue log (Las Vegas since the APEX opened) + altitude
+    with open(REPO / "data" / "venues_vegas.csv", "w", newline="") as fh:
+        w_ = csv.writer(fh); w_.writerow(["date", "event", "venue", "source"])
+        for e in events:
+            if (e.get("location") or "").startswith("Las Vegas") and e["date"] >= "2020-05-30":
+                m_ = re.match(r"UFC (\d+)", e["name"])
+                v = VEGAS_NOT_APEX.get(e["date"]) or ("UFC/Meta APEX" if is_apex(e["name"], e["location"], e["date"]) else ("Sphere" if m_ and m_.group(1) == "306" else "T-Mobile Arena"))
+                w_.writerow([e["date"], e["name"], v, "Wikipedia: List of UFC events (2026-11-10)"])
+    alt_rows = [x for x in dec if x["date"] >= "2015-01-01" and any(c in (x["e"].get("location") or "") for c in ALTITUDE)]
+    def pace(rows):
+        q = [x for x in rows if r3done(x)]
+        a1 = sum(x["rr"][x[s]["name"]][1]["sa"] for x in q for s in "ab"); a3 = sum(x["rr"][x[s]["name"]][3]["sa"] for x in q for s in "ab")
+        return {"n": len(q), "kept": rnd(a3 / a1) if a1 else None}
+    altset = {id(x) for x in alt_rows}
+    rest = [x for x in dec if x["date"] >= "2015-01-01" and id(x) not in altset]
+    def venue_row(rows, lab):
+        a = agg(rows); ex = [bw[x["wc"]]["fin"] for x in rows if bw.get(x["wc"])]
+        fav = study([(x, "a" if x["cl"]["p"] >= 0.5 else "b") for x in rows if x["cl"]])
+        return {"label": lab, "n": a["n"], "fin": a["fin"], "exp": rnd(sum(ex) / len(ex)), "ko": a["ko"], "sub": a["sub"], "pace": pace(rows), "ev": len({x["e"]["slug"] for x in rows}), "fav": fav}
+    out["altitude"] = [venue_row(alt_rows, "Altitude (Mexico City, Denver, Salt Lake City)"), venue_row(rest, "Everywhere else")]
+    since20 = [x for x in dec if x["date"] >= "2020-05-30"]
+    out["octagon"]["fav"] = [venue_row([x for x in since20 if x["apex"]], "APEX"), venue_row([x for x in since20 if not x["apex"]], "Full-size cage")]
+
+    # ================= live-betting baselines: what round 1 tells you
+    live = []
+    past1 = [x for x in dec if x["rr"] and x["rnd"] and (x["rnd"] >= 2) and all(1 in x["rr"].get(x[s]["name"], {}) for s in "ab") and x["date"] >= "2015-01-01"]
+    def lrow(lab, pick):
+        rows = [(x, s) for x in past1 for s in "ab" if pick(x, s, "b" if s == "a" else "a")]
+        if not rows:
+            return
+        w_ = sum(1 for x, s in rows if x["w"] == s)
+        o = [(x, s) for x, s in rows if x["cl"]]
+        pre = sum((x["cl"]["p"] if s == "a" else 1 - x["cl"]["p"]) for x, s in o) / len(o) if o else None
+        ow = sum(1 for x, s in o if x["w"] == s) / len(o) if o else None
+        dog = [(x, s) for x, s in o if (x["cl"]["p"] if s == "a" else 1 - x["cl"]["p"]) < 0.5]
+        live.append({"label": lab, "n": len(rows), "wp": rnd(w_ / len(rows)), "on": len(o), "pre": rnd(pre), "owp": rnd(ow),
+                     "dog_n": len(dog), "dog_wp": rnd(sum(1 for x, s in dog if x["w"] == s) / len(dog)) if dog else None,
+                     "dog_pre": rnd(sum((x["cl"]["p"] if s == "a" else 1 - x["cl"]["p"]) for x, s in dog) / len(dog)) if dog else None})
+    R1 = lambda x, s: x["rr"][x[s]["name"]][1]
+    lrow("Out-landed the opponent in round 1 (any margin)", lambda x, s, o: R1(x, s)["sl"] > R1(x, o)["sl"])
+    lrow("Out-landed by 10+ in round 1", lambda x, s, o: R1(x, s)["sl"] - R1(x, o)["sl"] >= 10)
+    lrow("Out-landed by 20+ in round 1", lambda x, s, o: R1(x, s)["sl"] - R1(x, o)["sl"] >= 20)
+    lrow("Scored a knockdown in round 1 (fight continued)", lambda x, s, o: R1(x, s).get("kd", 0) > 0 and R1(x, o).get("kd", 0) == 0)
+    lrow("Landed a takedown and 2+ min of control in round 1", lambda x, s, o: R1(x, s)["tl"] > 0 and R1(x, s)["ctrl"] >= 120)
+    lrow("3+ min of control in round 1", lambda x, s, o: R1(x, s)["ctrl"] >= 180)
+    lrow("Out-landed in round 1 but gave up 2+ min of control", lambda x, s, o: R1(x, s)["sl"] > R1(x, o)["sl"] and R1(x, o)["ctrl"] >= 120)
+    out["live"] = {"rows": live, "n": len(past1),
+                   "dist2": rnd(sum(1 for x in past1 if x["m"] == "DEC") / len(past1)),
+                   "dist3": rnd(sum(1 for x in past1 if x["m"] == "DEC" and x["rnd"] >= 3) / max(1, sum(1 for x in past1 if x["rnd"] >= 3))),
+                   "dist2_5": rnd(sum(1 for x in past1 if x["m"] == "DEC" and x["sched"] == 5) / max(1, sum(1 for x in past1 if x["sched"] == 5)))}
+    # two-round state in three-round fights
+    two = [x for x in dec if x["sched"] == 3 and r3done(x) and x["date"] >= "2015-01-01"]
+    def rw(x, s, o, k):
+        a_, b_ = x["rr"][x[s]["name"]][k], x["rr"][x[o]["name"]][k]
+        return a_["sl"] > b_["sl"]
+    up2 = [(x, s) for x in two for s, o in (("a", "b"), ("b", "a")) if rw(x, s, o, 1) and rw(x, s, o, 2)]
+    lost3 = [(x, s) for x, s in up2 if not rw(x, s, "b" if s == "a" else "a", 3)]
+    split = [(x, s) for x in two for s, o in (("a", "b"), ("b", "a")) if rw(x, s, o, 3) and (rw(x, s, o, 1) != rw(x, s, o, 2))]
+    out["live"]["states"] = [{"label": "Out-landed the opponent in rounds 1 and 2, fight went the distance", "n": len(up2), "wp": rnd(sum(1 for x, s in up2 if x["w"] == s) / len(up2))},
+                             {"label": "…and then was out-landed in round 3", "n": len(lost3), "wp": rnd(sum(1 for x, s in lost3 if x["w"] == s) / len(lost3))},
+                             {"label": "Rounds 1 and 2 split on strikes, out-landed the opponent in round 3", "n": len(split), "wp": rnd(sum(1 for x, s in split if x["w"] == s) / len(split))}]
+
+    # ================= more spots: streaks, experience, rematches
+    st2 = defaultdict(list); H = defaultdict(list); met = {}
+    for x in F:
+        info = {}
+        for s in "ab":
+            h = H[x[s]["slug"]]; ws = ls = 0
+            for r_ in reversed(h):
+                if r_ == "W" and ls == 0: ws += 1
+                elif r_ == "L" and ws == 0: ls += 1
+                else: break
+            info[s] = {"ws": ws, "ls": ls, "n": len(h)}
+        key = frozenset([x["a"]["slug"], x["b"]["slug"]])
+        if x["kind"] == "win" and x["date"] >= "2010-01-01":
+            for s, o in (("a", "b"), ("b", "a")):
+                i, j = info[s], info[o]
+                if i["ws"] >= 3 and j["ws"] < 3: st2["On a 3+ fight UFC win streak (opponent is not)"].append((x, s))
+                if i["ws"] >= 5: st2["On a 5+ fight UFC win streak"].append((x, s))
+                if i["ls"] >= 2 and j["ls"] < 2: st2["On a 2+ fight UFC losing streak (opponent is not)"].append((x, s))
+                if i["n"] >= 10 and 1 <= j["n"] <= 3: st2["10+ UFC fights vs. an opponent with 1–3"].append((x, s))
+                if key in met and met[key] == x[s]["slug"]: st2["Rematch: won the previous meeting"].append((x, s))
+        if x["kind"] == "win":
+            met[key] = x[x["w"]]["slug"]
+            H[x["a"]["slug"]].append("W" if x["w"] == "a" else "L"); H[x["b"]["slug"]].append("W" if x["w"] == "b" else "L")
+        else:
+            H[x["a"]["slug"]].append("D"); H[x["b"]["slug"]].append("D")
+    out["situational"] += [dict(study(v), label=k) for k, v in st2.items()]
+
     json.dump(out, open(D / "labs.json", "w"), separators=(",", ":"))
+    print("altitude", out["altitude"]); print("octfav", [(r["label"], r["n"], r["fin"], r["exp"], r["fav"]["owp"], r["fav"]["imp"], r["fav"]["roi"], r["pace"]) for r in out["octagon"]["fav"]])
+    print("live", out["live"]); print("spots2", [(s["label"], s["n"], s["wp"], s["on"], s["owp"], s["imp"], s["roi"]) for s in out["situational"][-5:]])
     print("cardio", len(out["cardio"]["rows"]), out["cardio"]["league"], "rel", out["cardio"]["rel_sw"], out["cardio"]["rel_out"], "wf", out["cardio"]["wf"], "base", out["cardio"]["base_lost1_won3"])
     print("refs", len(out["refs"]), out["refs"][:2]); print("judges", len(JR), out["judges"]["pool"], "orient", out["judges"]["orient"], out["judges"]["rows"][:2])
     print("late", out["late"]); print("moves", out["situational"][-2:])
