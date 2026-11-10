@@ -479,7 +479,9 @@ def bp_ml(fight):
 
 
 # ----------------------------------------------------------------- 6. Model sheet (Google Sheet) + Markov outputs
-SHEET_ID = "1iMK8fC-Cok-azPatJQ1po9ymL91mfzf2ZsV1CPDTN5U"
+# The sheet ID is deliberately NOT in this repo (the sheet may be editable by anyone holding its link).
+# Supply it at build time: env UFC_SHEET_ID, or a one-line file .form_cache/sheet_id.txt (gitignored).
+SHEET_ID = os.environ.get("UFC_SHEET_ID") or ((REPO / ".form_cache" / "sheet_id.txt").read_text().strip() if (REPO / ".form_cache" / "sheet_id.txt").exists() else "")
 SHEET_TABS = {"Snapshots": 2055839074, "Calculator": 1491130651, "Main Card": 0, "Prelims": 69135179, "PropSnap": 564385760}
 
 
@@ -516,7 +518,7 @@ def load_sheet(cache: Path, download=True):
     out = {}
     for tab, gid in SHEET_TABS.items():
         dest = cache / f"sheet_{tab.replace(' ', '_')}.csv"
-        if download:
+        if download and SHEET_ID:
             try:
                 fetch(f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid={gid}", dest, timeout=40)
             except Exception as ex:
@@ -1143,7 +1145,7 @@ def main():
     json.dump(R, open(OUT / "research.json", "w"), separators=(",", ":"))
 
     json.dump({"built": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z", "upcoming": up_index, "events": index_events,
-               "books": BOOK_LABEL, "k": R["k"], "sheet": {"id": SHEET_ID, "gids": SHEET_TABS},
+               "books": BOOK_LABEL, "k": R["k"],
                "angles": {a["id"]: [a["name"], a["n"], a["act"], a["exp"], a["roi_c"], a["z"]] for a in R["angles"]}, "counts": {"events": len(events), "fights": sum(len(e["fights"]) for e in events.values()),
                                               "fighters": len(fighters), "odds_fights": matched}},
               open(OUT / "index.json", "w"), separators=(",", ":"))

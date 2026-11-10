@@ -214,7 +214,7 @@ const pmlv = (v) => { const x = parseInt((v || "").replace("+", ""), 10); return
 const nm = (x) => (x || "").toLowerCase().normalize("NFD").replace(/[^a-z ]/g, "").trim();
 const sameFighter = (a, b) => { const A = nm(a).split(" "), B = nm(b).split(" "); return A[A.length - 1] === B[B.length - 1] || nm(a) === nm(b); };
 async function overlaySheet(ev) {
-  const S = window.__sheet; if (ev.status !== "upcoming" || !S || ev.__sheet) return;
+  const S = null; if (!S) return; // sheet is read at build time only; its ID is never shipped to the browser
   try {
     const get = (tab) => fetch(`https://docs.google.com/spreadsheets/d/${S.id}/export?format=csv&gid=${S.gids[tab]}`).then(r => { if (!r.ok) throw new Error("sheet " + r.status); return r.text(); }).then(parseCSV);
     const [mc, pr, calc] = await Promise.all([get("Main Card"), get("Prelims"), get("Calculator")]);
@@ -684,7 +684,7 @@ async function route() {
   $app.innerHTML = `<div class="banner">Page not found.</div>`;
 }
 window.addEventListener("hashchange", route);
-const boot = getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__angles = i.angles; window.__sheet = i.sheet; }).catch(() => {});
+const boot = getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__angles = i.angles; }).catch(() => {});
 const $q = document.getElementById("q"), $dd = document.getElementById("dd");
 if ($q) {
   let S = null;
