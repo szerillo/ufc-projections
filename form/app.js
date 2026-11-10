@@ -126,19 +126,19 @@ function lineChart(od, aName, bName) {
   const path = (i) => { let d = "", pen = false; for (const r of S) { if (r[i] == null) { continue; } d += (pen ? "L" : "M") + x(r[0]).toFixed(1) + " " + y(r[i]).toFixed(1); pen = true; } return d; };
   let grid = "";
   for (let k = 0; k <= 4; k++) { const p = lo + (hi - lo) * k / 4; const yy = y(p).toFixed(1);
-    grid += `<line x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}" stroke="#cfc6ae" stroke-width="1"/><text x="${L - 6}" y="${+yy + 4}" text-anchor="end" font-size="10" font-family="monospace" fill="#4a4438">${(p * 100).toFixed(0)}%</text><text x="${W - R + 6}" y="${+yy + 4}" font-size="10" font-family="monospace" fill="#4a4438">${ml(p2ml(p))}</text>`; }
-  const ticks = [0, 0.5, 1].map(f => { const t = new Date(t0 + (t1 - t0) * f); return `<text x="${(L + (W - L - R) * f).toFixed(1)}" y="${H - 8}" text-anchor="${f === 0 ? "start" : f === 1 ? "end" : "middle"}" font-size="10" font-family="monospace" fill="#4a4438">${t.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}</text>`; }).join("");
+    grid += `<line x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}" stroke="#e5e1d8" stroke-width="1"/><text x="${L - 6}" y="${+yy + 4}" text-anchor="end" font-size="10" font-family="monospace" fill="#6b6b6b">${(p * 100).toFixed(0)}%</text><text x="${W - R + 6}" y="${+yy + 4}" font-size="10" font-family="monospace" fill="#6b6b6b">${ml(p2ml(p))}</text>`; }
+  const ticks = [0, 0.5, 1].map(f => { const t = new Date(t0 + (t1 - t0) * f); return `<text x="${(L + (W - L - R) * f).toFixed(1)}" y="${H - 8}" text-anchor="${f === 0 ? "start" : f === 1 ? "end" : "middle"}" font-size="10" font-family="monospace" fill="#6b6b6b">${t.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}</text>`; }).join("");
   const last = S[S.length - 1];
   return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Line history">
     ${grid}${ticks}
-    <path d="${path(3)}" fill="none" stroke="#14663a" stroke-width="1" opacity=".75"/>
-    <path d="${path(4)}" fill="none" stroke="#1d3f77" stroke-width="1" opacity=".75"/>
-    <path d="${path(2)}" fill="none" stroke="#a81c1c" stroke-width="1.4" stroke-dasharray="4 3"/>
-    <path d="${path(1)}" fill="none" stroke="#17140f" stroke-width="2.2"/>
-    <circle cx="${x(S[0][0]).toFixed(1)}" cy="${y(S[0][1]).toFixed(1)}" r="3.5" fill="#17140f"/>
-    <circle cx="${x(last[0]).toFixed(1)}" cy="${y(last[1]).toFixed(1)}" r="3.5" fill="#17140f"/>
+    <path d="${path(3)}" fill="none" stroke="#0a8842" stroke-width="1" opacity=".75"/>
+    <path d="${path(4)}" fill="none" stroke="#1b4fb0" stroke-width="1" opacity=".75"/>
+    <path d="${path(2)}" fill="none" stroke="#d63636" stroke-width="1.4" stroke-dasharray="4 3"/>
+    <path d="${path(1)}" fill="none" stroke="#1a1a1a" stroke-width="2.2"/>
+    <circle cx="${x(S[0][0]).toFixed(1)}" cy="${y(S[0][1]).toFixed(1)}" r="3.5" fill="#1a1a1a"/>
+    <circle cx="${x(last[0]).toFixed(1)}" cy="${y(last[1]).toFixed(1)}" r="3.5" fill="#1a1a1a"/>
   </svg>
-  <div class="legend"><span><i style="border-color:#17140f"></i>Consensus (no-vig) — ${esc(aName)} win %</span><span><i style="border-color:#a81c1c;border-top-style:dashed"></i>Pinnacle</span><span><i style="border-color:#14663a"></i>DraftKings</span><span><i style="border-color:#1d3f77"></i>FanDuel</span><span>right axis = ${esc(aName)} fair moneyline</span></div>`;
+  <div class="legend"><span><i style="border-color:#1a1a1a"></i>Consensus (no-vig) — ${esc(aName)} win %</span><span><i style="border-color:#d63636;border-top-style:dashed"></i>Pinnacle</span><span><i style="border-color:#0a8842"></i>DraftKings</span><span><i style="border-color:#1b4fb0"></i>FanDuel</span><span>right axis = ${esc(aName)} fair moneyline</span></div>`;
 }
 
 /* ---------- shared bits ---------- */
@@ -277,7 +277,7 @@ function buildUp(f) { // how the sheet's underdog number is built: listed + Mark
 }
 function markovBox(f) {
   const m = f.markov; if (!m) return "";
-  const mx = Math.max(...m.r, m.dec * 100, 1), bar = (lab, v) => `<div style="display:grid;grid-template-columns:70px 1fr 46px;gap:6px;align-items:center;font:12px var(--mono);margin:2px 0"><span class="dim">${lab}</span><span style="background:var(--paper2);height:12px"><i style="display:block;height:12px;width:${(v / mx * 100).toFixed(1)}%;background:${lab === "Decision" ? "#1d3f77" : "#a81c1c"}"></i></span><span>${v.toFixed(1)}%</span></div>`;
+  const mx = Math.max(...m.r, m.dec * 100, 1), bar = (lab, v) => `<div style="display:grid;grid-template-columns:70px 1fr 46px;gap:6px;align-items:center;font:12px var(--mono);margin:2px 0"><span class="dim">${lab}</span><span style="background:var(--paper2);height:12px"><i style="display:block;height:12px;width:${(v / mx * 100).toFixed(1)}%;background:${lab === "Decision" ? "#1b4fb0" : "#d63636"}"></i></span><span>${v.toFixed(1)}%</span></div>`;
   return `<h3>Markov simulation</h3><div class="box"><div class="kv"><span>${esc(f.a.name)} win (shrunk / raw)</span><span>${(m.p * 100).toFixed(1)}% / ${(m.raw * 100).toFixed(1)}%</span></div><div class="kv"><span>${esc(f.b.name)} win (shrunk / raw)</span><span>${((1 - m.p) * 100).toFixed(1)}% / ${((1 - m.raw) * 100).toFixed(1)}%</span></div><div class="kv"><span>Expected fight time</span><span>${m.exp} min</span></div><div style="height:6px"></div>
     ${m.r.map((v, i) => v > 0 || i < (f.sched || 3) ? bar("Ends R" + (i + 1), v) : "").join("")}${bar("Decision", m.dec * 100)}</div>`;
 }
@@ -469,11 +469,11 @@ async function vFighter(slug) {
   // elo sparkline
   const FG = F.fights.slice().reverse().map(x => x.fg).filter(x => x != null);
   let figBars = "";
-  if (FG.length > 1) { const W = 300, H = 60, bw = W / FG.length; figBars = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%;height:60px"><line x1="0" x2="${W}" y1="${H / 2}" y2="${H / 2}" stroke="#cfc6ae"/>` + FG.map((v, i) => { const h = Math.max(1, Math.min(H, v / 120 * H)); return `<rect x="${(i * bw + 1).toFixed(1)}" y="${(H - h).toFixed(1)}" width="${Math.max(1, bw - 2).toFixed(1)}" height="${h.toFixed(1)}" fill="${v >= 50 ? "#14663a" : "#a81c1c"}" opacity=".8"/>`; }).join("") + `</svg><div class="legend"><span>Form Figure by fight, oldest to newest (line = 50)</span></div>`; }
+  if (FG.length > 1) { const W = 300, H = 60, bw = W / FG.length; figBars = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%;height:60px"><line x1="0" x2="${W}" y1="${H / 2}" y2="${H / 2}" stroke="#e5e1d8"/>` + FG.map((v, i) => { const h = Math.max(1, Math.min(H, v / 120 * H)); return `<rect x="${(i * bw + 1).toFixed(1)}" y="${(H - h).toFixed(1)}" width="${Math.max(1, bw - 2).toFixed(1)}" height="${h.toFixed(1)}" fill="${v >= 50 ? "#0a8842" : "#d63636"}" opacity=".8"/>`; }).join("") + `</svg><div class="legend"><span>Form Figure by fight, oldest to newest (line = 50)</span></div>`; }
   const E = F.fights.slice().reverse().map(x => x.el).concat([F.elo]).filter(x => x != null);
   let spark = "";
   if (E.length > 2) { const W = 300, H = 60, lo = Math.min(...E) - 10, hi = Math.max(...E) + 10; const d = E.map((e, i) => (i ? "L" : "M") + (i / (E.length - 1) * W).toFixed(1) + " " + (H - (e - lo) / (hi - lo) * H).toFixed(1)).join("");
-    spark = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%;height:60px"><path d="${d}" fill="none" stroke="#17140f" stroke-width="1.8"/></svg><div class="legend"><span>Elo by fight: ${E[0]} → ${E[E.length - 1]} (peak ${Math.max(...E)})</span></div>`; }
+    spark = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%;height:60px"><path d="${d}" fill="none" stroke="#1a1a1a" stroke-width="1.8"/></svg><div class="legend"><span>Elo by fight: ${E[0]} → ${E[E.length - 1]} (peak ${Math.max(...E)})</span></div>`; }
   const age = ageAt(b.dob, new Date().toISOString().slice(0, 10));
   $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/fighters">Fighters</a> › ${esc(F.name)}</div>
     <h2>${esc(F.name)}</h2>
@@ -486,7 +486,7 @@ async function vFighter(slug) {
     </div>
     ${spark || figBars ? `<h3>Rating history</h3><div class="grid2"><div class="box">${figBars || ""}</div><div class="box">${spark || ""}</div></div>` : ""}
     ${splitsTable(F)}
-    <div class="box noprint" style="margin-top:12px"><span class="sub">Compare with another fighter: </span><input id="cmpq" placeholder="type a name…" style="padding:5px 8px;border:1px solid var(--rule);background:#fffdf6;width:220px"> <span id="cmpdd"></span></div>
+    <div class="box noprint" style="margin-top:12px"><span class="sub">Compare with another fighter: </span><input id="cmpq" placeholder="type a name…" style="padding:5px 8px;border:1px solid var(--rule);background:#ffffff;width:220px"> <span id="cmpdd"></span></div>
     <div class="pp-head"><div class="n">Past performances</div><div class="sub">${F.fights.length} UFC fights · closing lines from 2022 on</div></div>
     ${ppTable(F.fights, { name: F.name })}
     <div class="links" style="margin-top:10px"><a href="https://www.youtube.com/results?search_query=${encodeURIComponent(F.name + " UFC full fight")}" target="_blank" rel="noopener">▶ YouTube: full fights</a><a href="https://ufcfightpass.com/search?q=${encodeURIComponent(F.name)}" target="_blank" rel="noopener">UFC Fight Pass search</a>${b.url ? `<a href="${esc(b.url)}" target="_blank" rel="noopener">UFCStats profile</a>` : ""}</div>`;
@@ -697,8 +697,8 @@ const tip = (label, key) => `<span title="${esc(GLOSS[key || label] || "")}" sty
 const badge = (b) => `<span class="pill ${b === "D-CODE" ? "r" : b === "§1d" ? "" : ""}" title="${esc(GLOSS[b === "D-CODE" ? "D-code" : b === "§1d" ? "§1d prior" : b] || "")}" style="${b === "SYN" ? "color:var(--ink2);border-color:var(--ink2)" : b === "§1d" ? "color:var(--blue);border-color:var(--blue)" : ""}">${esc(b)}</span>`;
 const implied = (o) => o == null ? null : (o < 0 ? -o / (-o + 100) : 100 / (o + 100));
 function roundBar(d, rounds) {
-  const cols = ["#7a1414", "#a81c1c", "#c9503e", "#dc8a6a", "#e9b79c"], segs = (d.round_dist || []).map((v, i) => `<i title="Ends R${i + 1}: ${v.toFixed(1)}%" style="display:inline-block;height:12px;width:${v}%;background:${cols[i]}"></i>`).join("");
-  return `<span style="display:inline-block;width:150px;height:12px;background:#1d3f77;vertical-align:middle;line-height:0;text-align:left" title="Decision: ${d.p_dec}%">${segs}</span>`;
+  const cols = ["#7a1414", "#d63636", "#c9503e", "#dc8a6a", "#e9b79c"], segs = (d.round_dist || []).map((v, i) => `<i title="Ends R${i + 1}: ${v.toFixed(1)}%" style="display:inline-block;height:12px;width:${v}%;background:${cols[i]}"></i>`).join("");
+  return `<span style="display:inline-block;width:150px;height:12px;background:#1b4fb0;vertical-align:middle;line-height:0;text-align:left" title="Decision: ${d.p_dec}%">${segs}</span>`;
 }
 async function dmFormEvent(card) { // matching Fight Form event (for results when the card JSON has none, and for links)
   try { const idx = await getJSON("index.json"); const t0 = Date.parse(card.date);
@@ -737,7 +737,7 @@ async function vDMCard(slug) {
   <h3>Duration</h3><div class="tw"><table><thead><tr><th class="c">#</th><th class="l">Fight</th><th>${tip("P(dec)")}</th><th>${tip("Market GTD", "Market GTD (de-vigged)")}</th><th>${tip("Gap")}</th><th class="l">${tip("Rounds → decision", "Round distribution")}</th><th>Exp. min</th><th class="l">Result</th></tr></thead><tbody>` +
   F.map(f => { const d = f.duration || {}, ff = dmMatch(ev, f), r = dmResult(f, ff), fl = (C.duration_flags || []).find(x => x.fight_order === f.order);
     return `<tr><td class="c dim">${f.order}</td><td class="l b">${ff && ev ? `<a href="#/fight/${ev.slug}/${ff.n}">${esc(f.bout)}</a>` : esc(f.bout)} <span class="dim">${f.rounds}R</span></td><td class="b">${p1(d.p_dec)}</td><td>${p1(d.market_gtd_devig)}</td><td class="${d.gap != null && Math.abs(d.gap) >= 8 ? "b " + cls(d.gap) : "dim"}">${d.gap == null ? "—" : signed(d.gap)}</td><td class="l">${roundBar(d, f.rounds)}</td><td>${d.exp_minutes ?? "—"}</td><td class="l dim">${r ? esc((r.winner || "—") + " · " + r.method + (r.round ? " R" + r.round : "")) : ""}</td></tr>` +
-      (fl ? `<tr><td></td><td colspan="7" class="l" style="white-space:normal;background:var(--paper2)"><span class="pill ${fl.confidence === "vetoed" ? "r" : "y"}">${esc(fl.confidence)}</span> <span style="${fl.confidence === "vetoed" ? "text-decoration:line-through" : ""}"><b>${esc(fl.title)}</b></span> — ${esc(fl.mechanism)}</td></tr>` : ""); }).join("") + `</tbody></table></div><div class="legend"><span><i style="border-color:#7a1414"></i>early rounds</span><span><i style="border-color:#e9b79c"></i>late rounds</span><span><i style="border-color:#1d3f77"></i>decision</span></div>`;
+      (fl ? `<tr><td></td><td colspan="7" class="l" style="white-space:normal;background:var(--paper2)"><span class="pill ${fl.confidence === "vetoed" ? "r" : "y"}">${esc(fl.confidence)}</span> <span style="${fl.confidence === "vetoed" ? "text-decoration:line-through" : ""}"><b>${esc(fl.title)}</b></span> — ${esc(fl.mechanism)}</td></tr>` : ""); }).join("") + `</tbody></table></div><div class="legend"><span><i style="border-color:#7a1414"></i>early rounds</span><span><i style="border-color:#e9b79c"></i>late rounds</span><span><i style="border-color:#1b4fb0"></i>decision</span></div>`;
   const item = (title, body, conf) => `<div class="box" style="margin:6px 0;font:13.5px/1.5 var(--serif)"><span class="pill ${conf === "vetoed" ? "r" : conf === "artifact" ? "" : conf === "real" ? "g" : "y"}">${esc(conf)}</span> <span style="${conf === "vetoed" ? "text-decoration:line-through" : ""}"><b>${title}</b></span><br>${body}</div>`;
   const reads = [];
   for (const x of C.duration_flags || []) reads.push(item(esc(x.title), `Market ${esc(x.market_price)} (${p1(x.market_value)}) · model ${p1(x.model_value)}<br>${esc(x.mechanism)}`, x.confidence));
@@ -764,7 +764,7 @@ async function vDMTape(slug) {
   const draw = () => { const R = rows.slice().sort((a, b) => { const va = cols[sort][1](a), vb = cols[sort][1](b); return (typeof va === "number" && typeof vb === "number" ? va - vb : String(va).localeCompare(String(vb))) * dir; });
     $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/duration">${DM_NAME}</a> › <a href="#/duration/${slug}">${esc(C.title)}</a> › Tape</div><h2>Tale of the tape</h2><div class="sub">${esc(C.title)} · tap a column to sort${rows.length < C.fights.length * 2 ? " · only fights with tape data in this file are listed" : ""}</div>
       <div class="links" style="margin-top:8px"><a href="data/cards/${slug}.csv" download>Download raw stats CSV</a></div>
-      ${rows.length ? `<div class="tw"><table><thead><tr>${cols.map((c, i) => `<th class="${i === 1 || i === 19 ? "l" : ""}" data-i="${i}" style="cursor:pointer${i === 1 ? ";position:sticky;left:0;background:var(--paper2)" : ""}">${c[0]}${i === sort ? (dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead><tbody>${R.map(r => `<tr>${cols.map((c, i) => { const v = c[1](r); return `<td class="${i === 1 || i === 19 ? "l" : ""}" style="${i === 1 ? "position:sticky;left:0;background:#fbf7ec;font-weight:700" : ""}${i === 19 ? "white-space:normal;min-width:180px" : ""}">${i === 18 ? ml(v) : esc(v == null ? "—" : v)}</td>`; }).join("")}</tr>`).join("")}</tbody></table></div>` : `<div class="banner">No tape data in this card file.</div>`}`;
+      ${rows.length ? `<div class="tw"><table><thead><tr>${cols.map((c, i) => `<th class="${i === 1 || i === 19 ? "l" : ""}" data-i="${i}" style="cursor:pointer${i === 1 ? ";position:sticky;left:0;background:var(--paper2)" : ""}">${c[0]}${i === sort ? (dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead><tbody>${R.map(r => `<tr>${cols.map((c, i) => { const v = c[1](r); return `<td class="${i === 1 || i === 19 ? "l" : ""}" style="${i === 1 ? "position:sticky;left:0;background:#ffffff;font-weight:700" : ""}${i === 19 ? "white-space:normal;min-width:180px" : ""}">${i === 18 ? ml(v) : esc(v == null ? "—" : v)}</td>`; }).join("")}</tr>`).join("")}</tbody></table></div>` : `<div class="banner">No tape data in this card file.</div>`}`;
     $app.querySelectorAll("th[data-i]").forEach(th => th.addEventListener("click", () => { const i = +th.dataset.i; if (i === sort) dir = -dir; else { sort = i; dir = 1; } draw(); })); };
   draw();
 }
