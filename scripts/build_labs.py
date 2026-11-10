@@ -602,7 +602,7 @@ def main():
 
     try:
         import labs_rounds
-        out["rounds"] = labs_rounds.build(F, CACHE, rnd)
+        out["rounds"] = labs_rounds.build(F, CACHE, rnd, D)
     except Exception as ex:
         import traceback; traceback.print_exc(); print("round-level judging skipped:", ex)
 

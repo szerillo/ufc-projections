@@ -23,7 +23,7 @@ def fit(X, y):
     return b
 
 
-def build(F, cache, rnd):
+def build(F, cache, rnd, D=None):
     raw = json.load(open(cache / "mmadecisions.json"))
     pool = [x for x in F if x["date"] >= "2015-12-01" and x["rr"]]
     def find(d):
@@ -58,7 +58,7 @@ def build(F, cache, rnd):
         sa_, sb_ = nz(d["j"][0][1])[-1:], nz(d["j"][0][2])[-1:]
         ma = sum(v for k, v in med.items() if nz(k.split(" ", 1)[1])[-1:] == sa_); mb = sum(v for k, v in med.items() if nz(k.split(" ", 1)[1])[-1:] == sb_)
         born = re.search(r"TALE OF THE TAPE \S+ \S+ (.*?) BORN (.*?) \d+ AGE", d.get("tape") or "")
-        fights.append({"x": x, "A": A, "B": B, "winner": winner, "ma": ma, "mb": mb, "mn": sum(med.values()), "born": born.groups() if born else None, "split": 0 < min(wa, wb), "tot": tot})
+        fights.append({"x": x, "A": A, "B": B, "winner": winner, "ma": ma, "mb": mb, "mn": sum(med.values()), "born": born.groups() if born else None, "split": 0 < min(wa, wb), "tot": tot, "cards": cards, "id": d.get("id")})
         for r in range(1, nr + 1):
             if r not in ra or r not in rb:
                 continue
@@ -98,6 +98,36 @@ def build(F, cache, rnd):
                 nd[k + 1] += v * q; nd[k - 1] += v * (1 - q)
             dist = nd
         return sum(v for k, v in dist.items() if k > 0) + 0.5 * dist.get(0, 0)
+    slug = lambda s: re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()).strip("-")
+    perfight = defaultdict(dict); jlog = defaultdict(list)
+    rp = defaultdict(dict)
+    for r, pp in zip(rows, p):
+        rp[id(r["x"])][r["r"]] = float(pp)
+    for ft in fights:
+        x = ft["x"]; flip = ft["A"] == "b"
+        cards = []
+        for nm, scs in ft["cards"]:
+            sc = [(s[1], s[0]) if flip else s for s in scs]   # orient to our fighter a - fighter b
+            ta, tb = sum(s[0] for s in sc), sum(s[1] for s in sc)
+            side = "a" if ta > tb else "b" if tb > ta else None
+            cards.append([nm.title(), " ".join("%d-%d" % s for s in sc), ta, tb])
+            jlog[nm.title()].append([x["date"], x["e"]["slug"], x["f"]["n"], x["a"]["name"], x["b"]["name"], "%d-%d" % (ta, tb),
+                                     x["w"], 1 if (side and x["w"] and side != x["w"]) else 0, x["wc"]])
+        pr = rp.get(id(x), {})
+        probs = [rnd((1 - pr[k]) if flip else pr[k], 2) if k in pr else None for k in range(1, len(ft["cards"][0][1]) + 1)]
+        born = None
+        if ft["born"]:
+            born = [ft["born"][1], ft["born"][0]] if flip else list(ft["born"])
+        perfight[x["e"]["slug"]][x["f"]["n"]] = {"j": cards, "med": [ft["mb"], ft["ma"]] if flip else [ft["ma"], ft["mb"]], "mn": ft["mn"], "p": probs, "born": born, "id": ft["id"]}
+    if D is not None:
+        for es, fs in perfight.items():
+            fp = D / "events" / (es + ".json")
+            ev = json.load(open(fp))
+            for f in ev["fights"]:
+                if f["n"] in fs:
+                    f["cards"] = fs[f["n"]]
+            json.dump(ev, open(fp, "w"), separators=(",", ":"))
+        json.dump({slug(k): {"nm": k, "rows": sorted(v, key=lambda r: r[0], reverse=True)} for k, v in jlog.items() if len(v) >= 5}, open(D / "judges.json", "w"), separators=(",", ":"))
     against = []; home = defaultdict(lambda: [0, 0.0, 0]); media_rob = []
     for ft in fights:
         x = ft["x"]; ps = byf.get(id(x))
@@ -120,7 +150,7 @@ def build(F, cache, rnd):
                     k = "USA" if loc == "USA" else "Outside the USA"
                     for kk in (k, "All"):
                         h = home[kk]; h[0] += 1; h[1] += pa if side == ft["A"] else 1 - pa; h[2] += ft["winner"] == side
-    JR = [{"nm": n, "n": int(j["n"]), "dis": rnd(j["dis"] / j["n"]), "wide": rnd(j["wide"] / j["n"]), "cl": int(j["cl"]), "ctrl": rnd(j["clc"] / j["cl"]) if j["cl"] >= 12 else None}
+    JR = [{"nm": n, "s": slug(n), "n": int(j["n"]), "dis": rnd(j["dis"] / j["n"]), "wide": rnd(j["wide"] / j["n"]), "cl": int(j["cl"]), "ctrl": rnd(j["clc"] / j["cl"]) if j["cl"] >= 12 else None}
           for n, j in J.items() if j["n"] >= 60]
     byr = defaultdict(lambda: [0, 0])
     for r in rows:
