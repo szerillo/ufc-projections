@@ -38,3 +38,9 @@ To put a new card on the front page: add it to `cards.yml` (as before), run `scr
 - New routes: `#/research`, `#/rankings`, `#/sheet/<slug>` (printable).
 - Fair line = `sigmoid(k * logit(no-vig consensus))`, with `k` (about 1.2) fit on all fights with a closing line and stored in `index.json`.
 - Upcoming cards overlay the current consensus from `data/<slug>_odds.json` in the browser, so the "Current" column follows the odds cron without a rebuild. Charts, fair-line inputs and the price board still need a rebuild.
+
+## v3 additions
+
+- Method model (`form_model.py`): P(KO / SUB / DEC | winner), walk-forward, shown as a method board of fair prices on card and fight pages. GTD on the site is the two decision chances added together.
+- Past performances carry judges' scorecards (from the fighter's side) or the finish detail, and a round split (R1 vs R3+ strike differential) feeds the tape.
+- Fighter pages have situational splits and a compare box; `#/compare/<slug>/<slug>` puts any two fighters side by side.
