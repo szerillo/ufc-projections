@@ -618,12 +618,15 @@ def research(model: FormModel):
         if not t or t.get("p_over") is None or not f["secs"] or f["kind"] == "nc":
             continue
         over = 1 if (is_dec(f) or f["secs"] > t["pt"] * 300) else 0
-        tot.append((t["pt"], t["p_over"], over))
+        d_o = (1 + t["over"] / 100 if t["over"] > 0 else 1 + 100 / -t["over"]) if t.get("over") else None
+        d_u = (1 + t["under"] / 100 if t["under"] > 0 else 1 + 100 / -t["under"]) if t.get("under") else None
+        tot.append((t["pt"], t["p_over"], over, ((d_o - 1) if over else -1) if d_o else 0, ((d_u - 1) if not over else -1) if d_u else 0))
     trows = []
     for pt in sorted({t[0] for t in tot}):
         xs = [t for t in tot if t[0] == pt]
         if len(xs) >= 25:
-            trows.append({"pt": pt, "n": len(xs), "exp": round(sum(x[1] for x in xs) / len(xs), 4), "act": round(sum(x[2] for x in xs) / len(xs), 4)})
+            trows.append({"pt": pt, "n": len(xs), "exp": round(sum(x[1] for x in xs) / len(xs), 4), "act": round(sum(x[2] for x in xs) / len(xs), 4),
+                          "roi_over": round(sum(x[3] for x in xs) / len(xs), 4), "roi_under": round(sum(x[4] for x in xs) / len(xs), 4)})
     out["totals"] = trows
 
     since = dt.date(max(f["date"].year for f in model.fights) - 4, 1, 1)
