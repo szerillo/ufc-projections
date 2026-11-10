@@ -1,0 +1,57 @@
+# Labs research log
+
+Updated 2026-11-10. One row per test so nothing is run twice. Status: done, proxy (approximate), blocked (needs data), idea (not started).
+
+| Area | Test | Status | Result | Where on site | Data / notes |
+|---|---|---|---|---|---|
+| Market | Closing-line calibration and favorite-longshot bias | done | Favorites won 69.1% vs 66.3% implied; slope about 1.2. 70%+ favorites +3.0% at best price; underdogs -14.1%. | Research | Odds archive 2022-2026 (2,388 fights) |
+| Market | Steam / line movement | done | Moves are priced in; no edge following or fading. | Research; Labs > Query | Open vs close |
+| Market | Totals and books | done | Totals tight; best-price shopping worth about 1.8 pts of ROI on favorites. | Research | Odds archive |
+| Market | Query tool (division, price, move, slot, rounds, venue, year) | done | Interactive; any filter combination. | Labs > Query | 2,388 fights with closes |
+| Market | Biggest upsets; underdog win rate by year | done | Top: Sharaf +850 over Steveson. | Labs > Upsets | Closing consensus |
+| Physical | Age gap | done | 10+ years younger wins 68.8%; market mostly prices it. | Labs > Age & size | UFCStats DOB, since 2010 |
+| Physical | Reach and height advantage | done | 6+ in reach wins 59.0%; height adds almost nothing. | Labs > Age & size | UFCStats |
+| Spots | Coming off a KO/TKO loss | done | 42.9% wins; -16.0% ROI (394 with lines). | Labs > Spots |   |
+| Spots | 400+ day layoff vs active opponent | done | 41.1% wins; -15.5% ROI. | Labs > Spots |   |
+| Spots | UFC debut vs veteran | done | 44.3% wins; -13.9% ROI. | Labs > Spots |   |
+| Spots | Southpaw vs orthodox | done | 52.7% wins; -4.2% ROI. Priced. | Labs > Spots |   |
+| Spots | Quick turnaround (60 days or fewer) | done | 48.0% wins; -20.0% ROI on only 83 fights. | Labs > Spots | Small sample |
+| Spots | Weight-class moves | done | Down: 47.7% wins, -17.7% ROI (143). Up: 54.1%, +4.0% (109). | Labs > Spots |   |
+| Spots | Win/lose streaks, experience gap, rematches | done | All near the market except 10+ UFC fights vs 1-3: 44.5% wins, -13.6% ROI. | Labs > Spots |   |
+| Spots | Chin: 2+ prior UFC KO losses | done | Knocked out again 26.1% vs 16.2% base; market prices it (-2.2% ROI). | Labs > Spots |   |
+| Spots | Cardio as a pre-fight bet (better R1-to-R3 swing) | done | 54.0% wins vs 51.2% implied; -2.4% ROI. Not a pre-fight edge. | Labs > Spots | Walk-forward |
+| Spots | Short-notice replacements | proxy | Late-posted lines: favorites 75.6% vs 70.0% implied, +3.6% (201). Cannot tell who stepped in. | Labs > Spots | NEEDS a replacement list (Wikipedia event pages or Tapology) |
+| Spots | Favorites by card slot / five-rounders / title fights | done | Main-event favorites -9.5%; title-fight favorites -11.3%. | Labs > Spots | Slot counted from top of card |
+| Venue | APEX vs full-size cage | done | Finish rate 51.3% both; favorites 69% both. No cage-size effect. | Labs > Octagon | Venue log from Wikipedia (data/venues_vegas.csv) |
+| Venue | Altitude (Mexico City, Denver, Salt Lake City) | done | Finish rate normal; R3 output does not drop; favorites 75% vs 68% on 92 fights. | Labs > Octagon | Small sample |
+| Venue | Home country, pre-fight | done | Outside USA: home fighter 59.4% wins, 62.6% vs 57.7% implied in line era, +9.2% ROI (139). In USA: -10.3%. | Labs > Round scoring | Birthplace from scorecard pages; 1,002 fighters |
+| Venue | Home cooking on the scorecards | done | Overall none (47.9% vs 48.1% expected). Outside USA 59.0% vs 53.5% (200 decisions). | Labs > Round scoring | CORRECTED: an earlier build mis-assigned birthplaces and overstated this |
+| Divisions | Yearly outcome rates and 12-month rolling baselines | done | Flags divisions 12%+ off their 3-year baseline. | Labs > Divisions | Cross-checks with Fight Matrix yearly tables |
+| Fighters | Custom metrics: control per takedown, KD rates, chin, head/body/leg defense, distance and target differentials | done | 487 active fighters, sortable. | Labs > Fighter metrics | Head-at-distance cannot be isolated (UFCStats does not cross target with position) |
+| Fighters | Form Figure and power rankings | done | Opponent-adjusted performance rating; rankings by division. | Rankings; fighter pages |   |
+| Cardio | R1 vs R3 swing, output, takedown attempts, control | done | Swing is a stable trait (split-half r 0.33); raw output is not (0.06). Better-history fighter out-lands in R3 59%. | Labs > Cardio |   |
+| Live | What round 1 tells you | done | Out-landed by 10+: 75% win. Out-landed but lost 2+ min control: 45%. Dog up 10+ after R1: 55%. | Labs > Live | No live odds archive, so baselines only |
+| Live | Comeback spot (behind after R1, better late history) | done | Wins R3 on strikes 44% vs 35% base (432). | Labs > Cardio |   |
+| Judging | Fight-level scoring model | done | Stat sheet picks the decision winner 84.6%. | Labs > Scoring | UFCStats totals since 2010 |
+| Judging | Round-level scoring model | done | Picks round winner 84%; KD = 11.4 head strikes, control minute 2.7, takedown 1.4, body 0.7, leg 0.6. | Labs > Round scoring | MMADecisions round scores, mid-2016 on (2010-2016 collected, pending load) |
+| Judging | Calibration of the round model | done | 55% predicted -> 58% actual; 99% -> 98%. | Labs > Round scoring | In-sample |
+| Judging | Per-judge weights, 10-8 rates, control-vs-strikes lean, lone rounds | done | McCarthy 1.9x pool on control; Chris Lee most head-strike driven. | Labs > Round scoring; judge pages | Shrunk toward pool |
+| Judging | Split disputes, outlier rounds, outlier cards, lone 10-8s | done | 413 disputed decisions; top Strickland-Costa. | Labs > Round scoring |   |
+| Judging | Media vs judges | done | Media disagreed with 218 of 2,230 decisions. | Labs > Round scoring |   |
+| Judging | Next fight after a disputed decision | done | 'Robbed' by the stats: -19.1% ROI next time (95). Won a lopsided decision: -11.0% (318). Market overrates both. | Labs > Round scoring |   |
+| Judging | Referees: KO/sub rates vs expected | done | Miragliotta and Herzog run high on KO/TKO. | Labs > Referees | No data on early/late stoppages |
+| Models | Form Line, method and distance models | done | Form Line 63.0% vs close 69.3%; GTD runs high in five-rounders. | Model |   |
+| Models | Sheet model reproduction and tracker | done | Formula reproduced on 103 fights; Brier 0.2214 vs close 0.2269 (86). | Fight pages; Model |   |
+| Models | Markov duration model grading | done | 39 fights: market ahead on both channels so far. | Markov > Grading | Small sample |
+| Blocked | Regional Elo by promotion | blocked | No regional fight data. | - | NEEDS Tapology/Sherdog export or Fight Matrix licence |
+| Blocked | Live-odds backtests | blocked | No in-fight price archive. | - | NEEDS live odds source |
+| Blocked | Tipster consensus vs close | blocked | betmma.tips returned nothing to the fetcher. | - | Try through the browser |
+| Ideas | Judge weights before vs after the 2017 criteria change | idea |   |   | Ready once 2010-2016 scorecards are loaded |
+| Ideas | Fan scoring vs judges vs media | idea |   |   | Fan round percentages were collected for 2024-2026 only |
+| Ideas | Finish-round distributions per fighter for round props | idea |   |   | Data on hand |
+| Ideas | Opponent-quality-adjusted fighter metrics | idea |   |   | Use Elo of opponents; data on hand |
+| Ideas | Age curves by division | idea |   |   | Data on hand |
+| Ideas | Our Elo vs public Elo sites | idea |   |   | Three bookmarked sites; manual comparison |
+| Ideas | Pace decay in rounds 4-5 of five-rounders | idea |   |   | Data on hand; small sample |
+| Ideas | Takedown defense decay by round | idea |   |   | Data on hand |
+| Ideas | Camp / gym effects | idea |   |   | 'Fighting out of' was collected with the scorecards |

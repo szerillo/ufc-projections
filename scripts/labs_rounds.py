@@ -25,7 +25,7 @@ def fit(X, y):
 
 def build(F, cache, rnd, D=None):
     raw = json.load(open(cache / "mmadecisions.json"))
-    pool = [x for x in F if x["date"] >= "2015-12-01" and x["rr"]]
+    pool = [x for x in F if x["date"] >= "2009-12-01" and x["rr"]]
     def nzd(s):
         s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
         return set(re.sub(r"[^a-z0-9 ]", " ", s.replace("-", " ")).split())
@@ -69,8 +69,15 @@ def build(F, cache, rnd, D=None):
         med = d.get("m") or {}
         sa_, sb_ = nz(d["j"][0][1])[-1:], nz(d["j"][0][2])[-1:]
         ma = sum(v for k, v in med.items() if nz(k.split(" ", 1)[1])[-1:] == sa_); mb = sum(v for k, v in med.items() if nz(k.split(" ", 1)[1])[-1:] == sb_)
-        born = re.search(r"TALE OF THE TAPE \S+ \S+ (.*?) BORN (.*?) \d+ AGE", d.get("tape") or "")
-        fights.append({"x": x, "A": A, "B": B, "winner": winner, "ma": ma, "mb": mb, "mn": sum(med.values()), "born": born.groups() if born else None, "split": 0 < min(wa, wb), "tot": tot, "cards": cards, "id": d.get("id")})
+        born = None; tp = (d.get("tape") or "").replace("TALE OF THE TAPE ", "", 1)
+        ca, cb = d["j"][0][1], d["j"][0][2]
+        for first, second, sw in ((ca, cb, False), (cb, ca, True)):
+            if tp.startswith(first + " " + second + " "):
+                mb_ = re.match(r"(.*?) BORN (.*?) \d+ AGE", tp[len(first) + len(second) + 2:])
+                if mb_:
+                    born = (mb_.group(2), mb_.group(1)) if sw else (mb_.group(1), mb_.group(2))
+                break
+        fights.append({"x": x, "A": A, "B": B, "winner": winner, "ma": ma, "mb": mb, "mn": sum(med.values()), "born": born, "split": 0 < min(wa, wb), "tot": tot, "cards": cards, "id": d.get("id")})
         for r in range(1, nr + 1):
             if r not in ra or r not in rb:
                 continue
@@ -228,6 +235,71 @@ def build(F, cache, rnd, D=None):
             cal.append({"lab": "%d–%d%%" % (lo * 100, min(100, hi * 100)), "n": int(mk.sum()), "pred": rnd(float(conf[mk].mean())), "act": rnd(float(hit[mk].mean())), "split": rnd(float((~un[mk]).mean()))})
     extra = {"out_rounds": out_rounds, "lone": lone[:30], "lone8": lone8[:30], "lone8_n": len(lone8), "disputes": disputes[:30], "disputes_n": len(disputes), "crit": crit, "cal": cal,
              "raw": [{"label": lab, "b": rnd(float(c), 4)} for (_, lab), c in zip(FE, b)]}
+    # ---------- betting follow-ups: what happens in the NEXT fight
+    def payout(am):
+        return am / 100 if am > 0 else 100 / -am
+    order = {id(x): i for i, x in enumerate(F)}
+    bys = defaultdict(list)
+    for x in F:
+        for s in "ab":
+            bys[x[s]["slug"]].append((x, s))
+    def nxt(x, s):
+        lst = bys[x[s]["slug"]]; i = next(k for k, (y, _) in enumerate(lst) if y is x)
+        for y, s2 in lst[i + 1:]:
+            if y["kind"] == "win":
+                return y, s2
+        return None
+    def follow(lab, picks):
+        rows_ = [n_ for n_ in (nxt(x, s) for x, s in picks) if n_]
+        o = [(y, s) for y, s in rows_ if y["cl"] and y["cl"].get("ma") is not None and y["cl"].get("mb") is not None]
+        w_ = sum(1 for y, s in rows_ if y["w"] == s)
+        return {"label": lab, "n": len(rows_), "wp": rnd(w_ / len(rows_)) if rows_ else None, "on": len(o),
+                "owp": rnd(sum(1 for y, s in o if y["w"] == s) / len(o)) if o else None,
+                "imp": rnd(sum((y["cl"]["p"] if s == "a" else 1 - y["cl"]["p"]) for y, s in o) / len(o)) if o else None,
+                "roi": rnd(sum(payout(y["cl"]["m" + s]) if y["w"] == s else -1 for y, s in o) / len(o)) if o else None}
+    G = defaultdict(list)
+    for ft in fights:
+        x = ft["x"]; ps = byf.get(id(x))
+        if not ps or ft["winner"] is None:
+            continue
+        pa = pwin(ps); W = ft["winner"]; Lo = ft["B"] if W == ft["A"] else ft["A"]
+        pw_ = pa if W == ft["A"] else 1 - pa
+        mw, ml_ = (ft["ma"], ft["mb"]) if W == ft["A"] else (ft["mb"], ft["ma"])
+        if pw_ <= 0.35: G["Lost a decision the stats say they won (stat chance 65%+)"].append((x, Lo)); G["Won a decision the stats say they lost"].append((x, W))
+        if ft["mn"] >= 5 and ml_ > mw: G["Lost a decision most media scored for them"].append((x, Lo)); G["Won a decision most media scored against them"].append((x, W))
+        if ft["split"]: G["Lost a split or majority decision"].append((x, Lo)); G["Won a split or majority decision"].append((x, W))
+        if pw_ >= 0.97 and not ft["split"]: G["Won a lopsided decision (stat chance 97%+)"].append((x, W)); G["Lost a lopsided decision"].append((x, Lo))
+    nextf = [follow(k, v) for k, v in G.items()]
+    # ---------- home country, all fights: birthplace map from every tape we have
+    bornmap = {}
+    for ft in fights:
+        if ft["born"]:
+            for side, bn in ((ft["A"], ft["born"][0]), (ft["B"], ft["born"][1])):
+                c = bn.split(",")[-1].strip(); bornmap[ft["x"][side]["slug"]] = COUNTRY.get(c, c)
+    hp = defaultdict(list)
+    for x in F:
+        if x["kind"] != "win" or x["date"] < "2010-01-01":
+            continue
+        loc = (x["e"].get("location") or "").split(",")[-1].strip()
+        ca, cb = bornmap.get(x["a"]["slug"]), bornmap.get(x["b"]["slug"])
+        if not ca or not cb:
+            continue
+        for s, mine, oth in (("a", ca, cb), ("b", cb, ca)):
+            if mine == loc and oth != loc:
+                hp["All"].append((x, s)); hp["USA" if loc == "USA" else "Outside the USA"].append((x, s))
+                if loc in ("Brazil", "United Kingdom", "Canada", "Australia", "Mexico"):
+                    hp[loc].append((x, s))
+    def cur(lab, picks):
+        o = [(y, s) for y, s in picks if y["cl"] and y["cl"].get("ma") is not None and y["cl"].get("mb") is not None]
+        return {"label": lab, "n": len(picks), "wp": rnd(sum(1 for y, s in picks if y["w"] == s) / len(picks)), "on": len(o),
+                "owp": rnd(sum(1 for y, s in o if y["w"] == s) / len(o)) if o else None,
+                "imp": rnd(sum((y["cl"]["p"] if s == "a" else 1 - y["cl"]["p"]) for y, s in o) / len(o)) if o else None,
+                "roi": rnd(sum(payout(y["cl"]["m" + s]) if y["w"] == s else -1 for y, s in o) / len(o)) if o else None,
+                "dec": rnd(sum(1 for y, s in picks if y["m"] == "DEC") / len(picks)),
+                "dwp": rnd(sum(1 for y, s in picks if y["m"] == "DEC" and y["w"] == s) / max(1, sum(1 for y, s in picks if y["m"] == "DEC"))),
+                "fwp": rnd(sum(1 for y, s in picks if y["m"] != "DEC" and y["w"] == s) / max(1, sum(1 for y, s in picks if y["m"] != "DEC")))}
+    homeall = [cur(k, v) for k, v in hp.items() if len(v) >= 40]
+    extra.update({"next": nextf, "home_all": homeall, "born_n": len(bornmap)})
     JR = [{"nm": n, "s": slug(n), "n": int(j["n"]), "dis": rnd(j["dis"] / j["n"]), "wide": rnd(j["wide"] / j["n"]), "cl": int(j["cl"]), "ctrl": rnd(j["clc"] / j["cl"]) if j["cl"] >= 12 else None}
           for n, j in J.items() if j["n"] >= 60]
     byr = defaultdict(lambda: [0, 0])

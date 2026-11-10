@@ -599,6 +599,27 @@ def main():
         else:
             H[x["a"]["slug"]].append("D"); H[x["b"]["slug"]].append("D")
     out["situational"] += [dict(study(v), label=k) for k, v in st2.items()]
+    # chin and cardio as pre-fight spots (walk-forward)
+    st3 = defaultdict(list); KO = defaultdict(int); SW = defaultdict(lambda: [0.0, 0])
+    for x in F:
+        if x["kind"] == "win" and x["date"] >= "2010-01-01":
+            for s_, o_ in (("a", "b"), ("b", "a")):
+                if KO[x[s_]["slug"]] >= 2 and KO[x[o_]["slug"]] == 0: st3["2+ prior UFC KO/TKO losses vs. an opponent with none"].append((x, s_))
+                if KO[x[s_]["slug"]] >= 3: st3["3+ prior UFC KO/TKO losses"].append((x, s_))
+                a_, b_ = SW[x[s_]["slug"]], SW[x[o_]["slug"]]
+                if a_[1] >= 3 and b_[1] >= 3 and a_[0] / a_[1] - b_[0] / b_[1] >= 5:
+                    st3["Better late-round history (R1→R3 swing 5+ ahead of opponent)"].append((x, s_))
+                    if x["sched"] == 5: st3["…same, in five-round fights"].append((x, s_))
+        if x["kind"] == "win" and x["m"] == "KO":
+            KO[x["b" if x["w"] == "a" else "a"]["slug"]] += 1
+        if r3done(x):
+            for s_, o_ in (("a", "b"), ("b", "a")):
+                v_ = cvec(x, s_, o_); SW[x[s_]["slug"]][0] += v_["d3"] - v_["d1"]; SW[x[s_]["slug"]][1] += 1
+    out["situational"] += [dict(study(v), label=k) for k, v in st3.items()]
+    for k_, v_ in st3.items():
+        if k_.startswith("2+ prior"):
+            out["chin"] = {"n": len(v_), "ko_loss": rnd(sum(1 for x, s_ in v_ if x["m"] == "KO" and x["w"] != s_) / len(v_)),
+                           "base": rnd(sum(1 for x in dec if x["m"] == "KO" and x["date"] >= "2010-01-01") / 2 / sum(1 for x in dec if x["date"] >= "2010-01-01"))}
 
     try:
         import labs_rounds
