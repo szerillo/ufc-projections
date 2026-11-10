@@ -52,7 +52,7 @@ td{padding:5px 6px;border-bottom:1px solid var(--hair);text-align:right;white-sp
 th.l,td.l{text-align:left} th.c,td.c{text-align:center}
 tr:last-child td{border-bottom:0}
 tbody tr:hover td{background:var(--hl)}
-td.name{font:600 13px var(--sans);white-space:normal}
+td.name{font:600 13px var(--sans);white-space:normal;text-align:left}
 td.name small{display:block;font:11px var(--mono);color:var(--ink2);font-weight:400}
 tr.grp td{background:var(--ink);color:var(--paper);font:700 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;text-align:left;padding:4px 8px}
 tr.grp:hover td{background:var(--ink)}

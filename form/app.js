@@ -308,7 +308,7 @@ async function vFighter(slug) {
   const E = F.fights.slice().reverse().map(x => x.el).concat([F.elo]).filter(x => x != null);
   let spark = "";
   if (E.length > 2) { const W = 300, H = 60, lo = Math.min(...E) - 10, hi = Math.max(...E) + 10; const d = E.map((e, i) => (i ? "L" : "M") + (i / (E.length - 1) * W).toFixed(1) + " " + (H - (e - lo) / (hi - lo) * H).toFixed(1)).join("");
-    spark = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:60px"><path d="${d}" fill="none" stroke="#17140f" stroke-width="1.8"/></svg><div class="legend"><span>Elo by fight: ${E[0]} → ${E[E.length - 1]} (peak ${Math.max(...E)})</span></div>`; }
+    spark = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%;height:60px"><path d="${d}" fill="none" stroke="#17140f" stroke-width="1.8"/></svg><div class="legend"><span>Elo by fight: ${E[0]} → ${E[E.length - 1]} (peak ${Math.max(...E)})</span></div>`; }
   const age = ageAt(b.dob, new Date().toISOString().slice(0, 10));
   $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/fighters">Fighters</a> › ${esc(F.name)}</div>
     <h2>${esc(F.name)}</h2>
