@@ -267,7 +267,8 @@ def build(F, cache, rnd, D=None):
         return {"label": lab, "n": len(rows_), "wp": rnd(w_ / len(rows_)) if rows_ else None, "on": len(o),
                 "owp": rnd(sum(1 for y, s in o if y["w"] == s) / len(o)) if o else None,
                 "imp": rnd(sum((y["cl"]["p"] if s == "a" else 1 - y["cl"]["p"]) for y, s in o) / len(o)) if o else None,
-                "roi": rnd(sum(payout(y["cl"]["m" + s]) if y["w"] == s else -1 for y, s in o) / len(o)) if o else None}
+                "roi": rnd(sum(payout(y["cl"]["m" + s]) if y["w"] == s else -1 for y, s in o) / len(o)) if o else None,
+                "fade": rnd(sum(payout(y["cl"]["m" + ("b" if s == "a" else "a")]) if y["w"] != s else -1 for y, s in o) / len(o)) if o else None}
     G = defaultdict(list)
     for ft in fights:
         x = ft["x"]; ps = byf.get(id(x))

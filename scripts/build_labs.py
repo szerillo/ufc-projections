@@ -629,6 +629,67 @@ def main():
             out["chin"] = {"n": len(v_), "ko_loss": rnd(sum(1 for x, s_ in v_ if x["m"] == "KO" and x["w"] != s_) / len(v_)),
                            "base": rnd(sum(1 for x in dec if x["m"] == "KO" and x["date"] >= "2010-01-01") / 2 / sum(1 for x in dec if x["date"] >= "2010-01-01"))}
 
+    # ================= style matchups (walk-forward) and totals
+    RUN = defaultdict(lambda: defaultdict(float)); st5 = defaultdict(list); tot_rows = defaultdict(list); lastd = {}
+    def rate(q, k, per=15):
+        return q[k] / (q["secs"] / 60) * per if q["secs"] else 0
+    for x in F:
+        qa, qb = RUN[x["a"]["slug"]], RUN[x["b"]["slug"]]
+        if x["kind"] == "win" and x["date"] >= "2012-01-01" and qa["n"] >= 4 and qb["n"] >= 4:
+            for s_, o_, q, r_ in (("a", "b", qa, qb), ("b", "a", qb, qa)):
+                tdd = 1 - r_["o_td_l"] / r_["o_td_a"] if r_["o_td_a"] >= 8 else None
+                if rate(q, "td_l") >= 2.5 and tdd is not None and tdd <= 0.55: st5["Wrestler (2.5+ TD/15) vs. weak takedown defense (55% or worse)"].append((x, s_))
+                if rate(q, "td_l") >= 2.5 and tdd is not None and tdd >= 0.75: st5["Wrestler (2.5+ TD/15) vs. strong takedown defense (75%+)"].append((x, s_))
+                if rate(q, "kd") >= 0.6 and rate(r_, "o_kd") >= 0.5: st5["Power (0.6+ KD/15) vs. a hittable chin (0.5+ KD absorbed/15)"].append((x, s_))
+                if rate(q, "sig_l", 1) - rate(r_, "sig_l", 1) >= 2.0: st5["Out-works the opponent by 2+ strikes landed per minute (career)"].append((x, s_))
+                d1 = rate(q, "sig_l", 1) - rate(q, "o_sig_l", 1); d2 = rate(r_, "sig_l", 1) - rate(r_, "o_sig_l", 1)
+                if d1 - d2 >= 2.0: st5["Career strike differential 2+ per minute better than the opponent's"].append((x, s_))
+                if rate(q, "ctrl", 1) / 60 >= 0.3 and rate(r_, "o_ctrl", 1) / 60 >= 0.25: st5["Control-heavy (30%+ of fight time) vs. an opponent who gets controlled (25%+)"].append((x, s_))
+            ag_ = {s_: age(x[s_]["slug"], x["date"]) for s_ in "ab"}
+            for s_ in "ab":
+                ld = lastd.get(x[s_]["slug"])
+                if ag_[s_] and ag_[s_] >= 35 and ld and (dt.date.fromisoformat(x["date"]) - dt.date.fromisoformat(ld)).days >= 365: st5["Aged 35+ and off a year or more"].append((x, s_))
+            tt = (x["f"].get("odds") or {}).get("total")
+            if tt and tt.get("pt") and tt.get("over") is not None and tt.get("under") is not None and x["secs"]:
+                dr = (qa["dec"] / qa["n"] + qb["dec"] / qb["n"]) / 2
+                over = x["m"] == "DEC" or x["secs"] > tt["pt"] * 300
+                key = "Both fighters go long (avg distance rate 65%+)" if dr >= 0.65 else "Both fighters end early (avg distance rate 35% or less)" if dr <= 0.35 else "In between"
+                tot_rows[key].append((tt, over)); tot_rows["All fights with a total"].append((tt, over))
+        if x["ra"] and x["rb"] and x["secs"]:
+            for s_, o_ in (("a", "b"), ("b", "a")):
+                q = RUN[x[s_]["slug"]]; me, op = x["r" + s_], x["r" + o_]
+                q["secs"] += x["secs"]; q["n"] += 1; q["dec"] += x["m"] == "DEC"
+                for k in ("td_l", "td_a", "kd", "sig_l", "ctrl"):
+                    q[k] += me[k]; q["o_" + k] += op[k]
+        for s_ in "ab":
+            lastd[x[s_]["slug"]] = x["date"]
+    out["styles"] = [dict(study(v), label=k) for k, v in st5.items()]
+    sdk = "Career strike differential 2+ per minute better than the opponent's"
+    byy = defaultdict(list)
+    for x, s_ in st5[sdk]:
+        byy[x["yr"]].append((x, s_))
+    sdu = []
+    try:
+        for f in sorted(ue["fights"], key=lambda f: -f["n"]):
+            qa, qb = RUN.get(f["a"]["slug"]), RUN.get(f["b"]["slug"])
+            row = {"n": f["n"], "es": ue["slug"], "a": f["a"]["name"], "b": f["b"]["name"], "na": int(qa["n"]) if qa else 0, "nb": int(qb["n"]) if qb else 0}
+            if qa and qb and qa["secs"] and qb["secs"]:
+                row["da"] = rnd(rate(qa, "sig_l", 1) - rate(qa, "o_sig_l", 1), 2); row["db"] = rnd(rate(qb, "sig_l", 1) - rate(qb, "o_sig_l", 1), 2)
+            sdu.append(row)
+    except Exception as ex:
+        print("sd upcoming skipped", ex)
+    out["sd_edge"] = {"years": [dict(study(v), yr=k) for k, v in sorted(byy.items()) if k >= 2022], "upcoming": sdu,
+                      "fav": study([(x, s_) for x, s_ in st5[sdk] if x["cl"] and (x["cl"]["p"] if s_ == "a" else 1 - x["cl"]["p"]) >= 0.5]),
+                      "dog": study([(x, s_) for x, s_ in st5[sdk] if x["cl"] and (x["cl"]["p"] if s_ == "a" else 1 - x["cl"]["p"]) < 0.5])}
+    def trow(lab, rows):
+        n = len(rows)
+        if not n:
+            return None
+        ov = sum(1 for _, o in rows if o)
+        return {"label": lab, "n": n, "over": rnd(ov / n), "imp": rnd(sum(t_["p_over"] for t_, _ in rows if t_.get("p_over")) / max(1, sum(1 for t_, _ in rows if t_.get("p_over")))),
+                "roi_over": rnd(sum(payout(t_["over"]) if o else -1 for t_, o in rows) / n), "roi_under": rnd(sum(payout(t_["under"]) if not o else -1 for t_, o in rows) / n)}
+    out["totals_style"] = [r for r in (trow(k, tot_rows[k]) for k in ("Both fighters go long (avg distance rate 65%+)", "In between", "Both fighters end early (avg distance rate 35% or less)", "All fights with a total")) if r]
+
     # ================= finish profiles (round props), pace by round, age by weight group
     prof = defaultdict(lambda: defaultdict(float))
     for x in F:
