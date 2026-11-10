@@ -103,3 +103,16 @@ tr.click{cursor:pointer}
 .stats div span{font:700 9.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
 footer{margin-top:40px;border-top:4px double var(--rule);padding-top:10px;font:11px var(--mono);color:var(--ink2);text-align:center}
 .loading{padding:40px;text-align:center;font:italic 14px var(--serif);color:var(--ink2)}
+
+caption{caption-side:top;text-align:left;font:700 11px var(--sans);letter-spacing:.08em;text-transform:uppercase;padding:4px 6px;background:var(--paper2);border-bottom:1px solid var(--rule)}
+.sheet{margin-top:16px;padding-top:6px;border-top:2px solid var(--rule);break-inside:avoid}
+@media print{
+  body{background:#fff;font-size:10px}
+  .nav,.search,.noprint,footer,.links,.btn{display:none !important}
+  .mast{padding:4px 0}.mast h1{font-size:22px}.mast .tag,.mast .kicker{display:none}
+  .wrap{max-width:none;padding:0}
+  table{font-size:8.5px} td,th{padding:2px 3px}
+  .tw{overflow:visible;border-color:#000}
+  .sheet{break-inside:avoid;page-break-inside:avoid}
+  a{text-decoration:none !important}
+}

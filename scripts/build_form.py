@@ -16,6 +16,8 @@ Usage:  python3 scripts/build_form.py [--cache DIR] [--no-download]
 Writes: form/data/index.json, events/*.json, fighters/*.json, search.json, model.json
 """
 from __future__ import annotations
+import form_model
+import math
 import argparse, csv, datetime as dt, glob, gzip, io, json, os, re, statistics, subprocess, sys, unicodedata, urllib.request
 from collections import defaultdict
 from pathlib import Path
@@ -312,6 +314,9 @@ def summarize_odds(snaps, flipped, max_points=140, a_name=None):
                     "per": per, "nb": len(ps), "tot": {b: m["tot"] for b, m in s["books"].items() if m.get("tot")}})
     if not pts:
         return None
+    # drop a lone-book opener that disagrees wildly with everything after it (bad feed rows)
+    while len(pts) > 2 and pts[0]["nb"] <= 1 and abs(pts[0]["p"] - pts[1]["p"]) > 0.12:
+        pts.pop(0)
 
     def pack(pt):
         return {"t": pt["t"], "p": r3(pt["p"]), "ma": dec_to_american(pt["da"]), "mb": dec_to_american(pt["db"]), "nb": pt["nb"]}
@@ -557,6 +562,15 @@ def main():
         elif edate >= today - dt.timedelta(days=1):
             upcoming.append((slug, d, edate))
 
+    # ------------------------------------------------ figures, Form Line, backtests
+    print("fitting figures / Form Line / backtests…")
+    FM = form_model.FormModel(events, bio)
+    R = form_model.research(FM)
+    for f in FM.fights:
+        if "_angles" not in f and f.get("odds"):
+            f["_angles"] = form_model.angle_sides(f, f["_A"], f["_B"], f.get("fl"))
+    print(f"  Form Line log loss {R['scores'][2]['ll']} vs close {R['scores'][0]['ll']} on {R['scores'][0]['n']} fights; bias slope k={R['k']}")
+
     # ------------------------------------------------ fighters
     fighters = defaultdict(list)
     for e in events.values():
@@ -587,7 +601,7 @@ def main():
         line = {"d": f["date"].isoformat(), "e": f["event"], "es": events[f["event"]]["slug"], "n": f["n"],
                 "o": opp, "os": slug_of.get(opp), "oe": f["elo_" + o], "el": f["elo_" + side], "r": res,
                 "m": f["method"], "rd": f["round"], "t": f["time"], "sc": f["sched"], "secs": f["secs"], "wc": f["wc"],
-                "ti": 1 if f["title"] else 0, "u": f["url"]}
+                "ti": 1 if f["title"] else 0, "u": f["url"], "fg": f.get("fig_" + side)}
         if s_me and s_op:
             line["s"] = [s_me["sl"], s_me["sa"], s_op["sl"], s_op["sa"], s_me["kd"], s_op["kd"], s_me["tl"], s_me["ta"],
                          s_op["tl"], s_op["ta"], s_me["ctrl"], s_op["ctrl"], s_me["sub"], s_op["sub"]]
@@ -616,9 +630,9 @@ def main():
             rec[ln["r"]] += 1
         b = dict(bio.get(norm(name)) or {})
         dup = b.pop("_dup", False)
-        out = {"name": name, "slug": slug_of[name], "bio": b, "dup_name": dup, "elo": elo_now.get(name), "ufc": rec, "fights": lines}
+        out = {"name": name, "slug": slug_of[name], "bio": b, "dup_name": dup, "elo": elo_now.get(name), "fig": FM.rating(name), "ufc": rec, "fights": lines}
         json.dump(out, open(OUT / "fighters" / f"{slug_of[name]}.json", "w"), separators=(",", ":"))
-        search.append([name, slug_of[name], lines[0]["d"], lines[0]["wc"], f"{rec['W']}-{rec['L']}-{rec['D']}", elo_now.get(name)])
+        search.append([name, slug_of[name], lines[0]["d"], lines[0]["wc"], f"{rec['W']}-{rec['L']}-{rec['D']}", elo_now.get(name), FM.rating(name), len(lines)])
     search.sort(key=lambda x: x[2], reverse=True)
     json.dump(search, open(OUT / "search.json", "w"), separators=(",", ":"))
 
@@ -633,6 +647,8 @@ def main():
         for k in ("odds", "model", "bp"):
             if f.get(k):
                 o[k] = f[k]
+        o["form"] = {"p": r3(f.get("fl")), "g": r3(f.get("gl")), "base": r3(f.get("_base")),
+                     "ra": round(f["_A"]["fig"], 1), "rb": round(f["_B"]["fig"], 1), "ang": f.get("_angles") or {}}
         return o
 
     index_events = []
@@ -702,6 +718,15 @@ def main():
                 o = summarize_odds(by_id[eid], fl, a_name=fa["name"])
                 if o:
                     fobj["odds"] = o
+            sched_u = 5 if bf["n"] == max(x["n"] for x in d["fights"]) else 3
+            fobj["sched"] = sched_u
+            try:
+                pw, pg, SA, SB, base = FM.predict(fa["name"], fb["name"], edate, wcl, sched_u, fa["elo"], fb["elo"])
+                tmp = {"odds": fobj.get("odds"), "wc": wcl, "sched": sched_u}
+                fobj["form"] = {"p": r3(pw), "g": r3(pg), "base": r3(base), "ra": round(SA["fig"], 1), "rb": round(SB["fig"], 1),
+                                "ang": form_model.angle_sides(tmp, SA, SB, pw) if (SA["n"] or SB["n"]) else {}}
+            except Exception as ex:
+                print("  predict failed", an, bn, ex, file=sys.stderr)
             if w:
                 for wf in w["fights"]:
                     sc, fl2 = pair_match(wf["a"]["name"], wf["b"]["name"], an, bn)
@@ -721,7 +746,7 @@ def main():
         eslug = f"{edate.isoformat()}-{slugify(name)}"[:90]
         doc = {"name": name, "slug": eslug, "date": edate.isoformat(), "location": d.get("venue") or "", "status": "upcoming",
                "url": None, "widget": {"file": w["file"], "title": (w["title"] or "").replace(" · Fight Form", "")} if w else None,
-               "odds_updated": d.get("updated_at"), "fights": fo}
+               "odds_updated": d.get("updated_at"), "bp_file": f"data/{slug}_odds.json", "fights": fo}
         json.dump(doc, open(OUT / "events" / f"{eslug}.json", "w"), separators=(",", ":"))
         up_index.append({"name": name, "slug": eslug, "date": edate.isoformat(), "loc": doc["location"], "nf": len(fo), "model": bool(w),
                          "main": f"{fo[0]['a']['name']} vs {fo[0]['b']['name']}" if fo else ""})
@@ -764,10 +789,32 @@ def main():
     model = {"recs": recs, "n_fights": len(cal),
              "brier_model": r3(sum((c["p"] - c["won"]) ** 2 for c in both) / len(both)) if both else None,
              "brier_close": r3(sum((c["pc"] - c["won"]) ** 2 for c in both) / len(both)) if both else None, "n_both": len(both)}
+    try:
+        import numpy as _np
+        lg_ = lambda p_: math.log(min(max(p_, 1e-3), 1 - 1e-3) / (1 - min(max(p_, 1e-3), 1 - 1e-3)))
+        Xb = _np.array([[lg_(c["pc"]), lg_(c["p"])] for c in both]); yb = _np.array([c["won"] for c in both])
+        wb_ = form_model.fit_logit(_np.vstack([Xb, -Xb]), _np.concatenate([yb, 1 - yb]), l2=0.5)
+        model["blend"] = {"w_close": round(float(wb_[0]), 3), "w_model": round(float(wb_[1]), 3), "n": len(both)}
+        ll_ = lambda ps: round(float(-_np.mean([math.log(max(p_, 1e-6)) if y_ else math.log(max(1 - p_, 1e-6)) for p_, y_ in zip(ps, yb)])), 4)
+        model["ll_model"] = ll_([c["p"] for c in both]); model["ll_close"] = ll_([c["pc"] for c in both])
+        # agreement: when the model's side matches the bias-adjusted favourite
+        agree = [c for c in both if (c["p"] - c["pc"]) * (c["pc"] - 0.5) > 0]
+        model["edge_fav"] = {"n": len(agree), "w": sum(1 for c in agree if (c["won"] == 1) == (c["pc"] > 0.5))}
+        dis = [c for c in both if (c["p"] - c["pc"]) * (c["pc"] - 0.5) < 0]
+        model["edge_dog"] = {"n": len(dis), "w": sum(1 for c in dis if (c["won"] == 1) == (c["pc"] < 0.5))}
+    except Exception as ex:
+        print("  model blend failed", ex, file=sys.stderr)
+
+    def split(rs):
+        w_ = sum(1 for x in rs if x["won"]); pn = sum(x["pnl"] or 0 for x in rs); rk = sum(x["risk"] or 0 for x in rs)
+        return {"n": len(rs), "w": w_, "pnl": round(pn, 2), "risk": round(rk, 2)}
+    model["splits"] = {"Favorites": split([x for x in recs if (x["ml"] or 0) < 0]), "Underdogs": split([x for x in recs if (x["ml"] or 0) > 0])}
     json.dump(model, open(OUT / "model.json", "w"), separators=(",", ":"))
+    json.dump(R, open(OUT / "research.json", "w"), separators=(",", ":"))
 
     json.dump({"built": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z", "upcoming": up_index, "events": index_events,
-               "books": BOOK_LABEL, "counts": {"events": len(events), "fights": sum(len(e["fights"]) for e in events.values()),
+               "books": BOOK_LABEL, "k": R["k"],
+               "angles": {a["id"]: [a["name"], a["n"], a["act"], a["exp"], a["roi_c"], a["z"]] for a in R["angles"]}, "counts": {"events": len(events), "fights": sum(len(e["fights"]) for e in events.values()),
                                               "fighters": len(fighters), "odds_fights": matched}},
               open(OUT / "index.json", "w"), separators=(",", ":"))
     size = sum(p.stat().st_size for p in OUT.rglob("*.json")) / 1e6
