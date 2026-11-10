@@ -1,0 +1,578 @@
+{
+ "slug": "ufc-fight-night-buckley-vs-malott",
+ "title": "UFC Fight Night: Buckley vs Malott",
+ "date": "2026-10-17",
+ "venue": "Edmonton",
+ "engine_version": "V4.1b",
+ "partial": true,
+ "notes": [
+  "7 real Oddsbreaker matchups + 6 synthetic (Nelson-Perez, Jourdain-Cuamba, Leblanc-Galanti, Mahjoub-Faglier, Cerminara-Stiller, Chovancek-You). \u00a71d active on 11 fighters. Layoff notes: Cerminara (Chookagian) 2.6y at 37.8, Koslow 3.9y, Anheliger 2y, Boser returning.",
+  "Built from the weekly output doc: per-fighter prop projections and flag write-ups are in the source doc, not on this page."
+ ],
+ "archive_tsv": "Joaquin Buckley vs Mike Malott\t26.4\t23.7\t22.0\t11.6\t31.8\t22.8\t12.6\t6.3\t4.5\nErin Blanchfield vs Jasmine Jasudavicius\t70.7\t73.0\t79.5\t13.2\t8.9\t7.2\t4.3\t0.0\t0.0\nKyle Nelson vs Cristian Perez\t40.7\t29.1\t39.0\t9.2\t32.3\t19.2\t9.5\t0.0\t0.0\nMarc-Andre Barriault vs Kyle Daukaus\t41.8\t39.9\t33.9\t8.6\t35.9\t20.8\t9.5\t0.0\t0.0\nLouis Jourdain vs Timmy Cuamba\t60.9\t86.4\t51.6\t10.6\t23.7\t16.1\t8.6\t0.0\t0.0\nMandel Nallo vs Nate Landwehr\t57.2\t70.6\t21.1\t7.0\t47.2\t22.7\t9.0\t0.0\t0.0\nTanner Boser vs Jhonata Diniz\t60.6\t68.1\t43.3\t9.7\t29.0\t18.4\t9.3\t0.0\t0.0\nJulien Leblanc vs Nick Galanti\t39.0\t13.3\t24.6\t7.4\t44.0\t22.2\t9.3\t0.0\t0.0\nJavad Mahjoub vs Joel Faglier\t48.0\t43.2\t30.6\t8.2\t38.6\t21.3\t9.5\t0.0\t0.0\nKatlyn Cerminara vs Mackenzie Stiller\t52.2\t54.1\t75.7\t12.9\t10.6\t8.7\t5.1\t0.0\t0.0\nChad Anheliger vs Steven Koslow\t49.7\t49.1\t51.7\t10.6\t23.8\t16.1\t8.4\t0.0\t0.0\nMelissa Croden vs Chelsea Chandler\t60.3\t80.9\t67.3\t12.1\t15.1\t11.3\t6.3\t0.0\t0.0\nCody Chovancek vs SuYoung You\t53.6\t61.9\t59.4\t11.3\t19.3\t13.7\t7.6\t0.0\t0.0",
+ "fights": [
+  {
+   "order": 1,
+   "bout": "Joaquin Buckley vs Mike Malott",
+   "weight_class": null,
+   "rounds": 5,
+   "is_main_event": true,
+   "fighters": [
+    {
+     "name": "Joaquin Buckley",
+     "side": "dog",
+     "market_odds": 108,
+     "model_win_shrunk": 26.4,
+     "model_win_raw": 23.7,
+     "dec_share_of_wins": 9.0,
+     "badges": []
+    },
+    {
+     "name": "Mike Malott",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 73.6,
+     "model_win_raw": 76.3,
+     "dec_share_of_wins": 26.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 22.0,
+    "market_gtd_devig": 37.3,
+    "gap": -15.3,
+    "round_dist": [
+     31.8,
+     22.8,
+     12.6,
+     6.3,
+     4.5
+    ],
+    "exp_minutes": 11.6
+   },
+   "result": null
+  },
+  {
+   "order": 2,
+   "bout": "Erin Blanchfield vs Jasmine Jasudavicius",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Erin Blanchfield",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 70.7,
+     "model_win_raw": 73.0,
+     "dec_share_of_wins": 85.0,
+     "badges": []
+    },
+    {
+     "name": "Jasmine Jasudavicius",
+     "side": "dog",
+     "market_odds": 253,
+     "model_win_shrunk": 29.3,
+     "model_win_raw": 27.0,
+     "dec_share_of_wins": 66.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 79.5,
+    "market_gtd_devig": 74.3,
+    "gap": 5.2,
+    "round_dist": [
+     8.9,
+     7.2,
+     4.3
+    ],
+    "exp_minutes": 13.2
+   },
+   "result": null
+  },
+  {
+   "order": 3,
+   "bout": "Kyle Nelson vs Cristian Perez",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Kyle Nelson",
+     "side": "dog",
+     "market_odds": 278,
+     "model_win_shrunk": 40.7,
+     "model_win_raw": 29.1,
+     "dec_share_of_wins": 46.0,
+     "badges": [
+      "SYN"
+     ]
+    },
+    {
+     "name": "Cristian Perez",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 59.3,
+     "model_win_raw": 70.9,
+     "dec_share_of_wins": 34.0,
+     "badges": [
+      "SYN"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 39.0,
+    "market_gtd_devig": 19.3,
+    "gap": 19.7,
+    "round_dist": [
+     32.3,
+     19.2,
+     9.5
+    ],
+    "exp_minutes": 9.2
+   },
+   "result": null
+  },
+  {
+   "order": 4,
+   "bout": "Marc-Andre Barriault vs Kyle Daukaus",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Marc-Andre Barriault",
+     "side": "dog",
+     "market_odds": 164,
+     "model_win_shrunk": 41.8,
+     "model_win_raw": 39.9,
+     "dec_share_of_wins": 12.0,
+     "badges": []
+    },
+    {
+     "name": "Kyle Daukaus",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 58.2,
+     "model_win_raw": 60.1,
+     "dec_share_of_wins": 49.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 33.9,
+    "market_gtd_devig": 34.0,
+    "gap": -0.1,
+    "round_dist": [
+     35.9,
+     20.8,
+     9.5
+    ],
+    "exp_minutes": 8.6
+   },
+   "result": null
+  },
+  {
+   "order": 5,
+   "bout": "Louis Jourdain vs Timmy Cuamba",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Louis Jourdain",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 60.9,
+     "model_win_raw": 86.4,
+     "dec_share_of_wins": 60.0,
+     "badges": [
+      "SYN"
+     ]
+    },
+    {
+     "name": "Timmy Cuamba",
+     "side": "dog",
+     "market_odds": 153,
+     "model_win_shrunk": 39.1,
+     "model_win_raw": 13.6,
+     "dec_share_of_wins": 38.0,
+     "badges": [
+      "SYN"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 51.6,
+    "market_gtd_devig": 50.0,
+    "gap": 1.6,
+    "round_dist": [
+     23.7,
+     16.1,
+     8.6
+    ],
+    "exp_minutes": 10.6
+   },
+   "result": null
+  },
+  {
+   "order": 6,
+   "bout": "Mandel Nallo vs Nate Landwehr",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Mandel Nallo",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 57.2,
+     "model_win_raw": 70.6,
+     "dec_share_of_wins": 31.0,
+     "badges": []
+    },
+    {
+     "name": "Nate Landwehr",
+     "side": "dog",
+     "market_odds": 225,
+     "model_win_shrunk": 42.8,
+     "model_win_raw": 29.4,
+     "dec_share_of_wins": 7.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 21.1,
+    "market_gtd_devig": 15.0,
+    "gap": 6.1,
+    "round_dist": [
+     47.2,
+     22.7,
+     9.0
+    ],
+    "exp_minutes": 7.0
+   },
+   "result": null
+  },
+  {
+   "order": 7,
+   "bout": "Tanner Boser vs Jhonata Diniz",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Tanner Boser",
+     "side": "dog",
+     "market_odds": 198,
+     "model_win_shrunk": 60.6,
+     "model_win_raw": 68.1,
+     "dec_share_of_wins": 66.0,
+     "badges": []
+    },
+    {
+     "name": "Jhonata Diniz",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 39.4,
+     "model_win_raw": 31.9,
+     "dec_share_of_wins": 8.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 43.3,
+    "market_gtd_devig": 38.2,
+    "gap": 5.1,
+    "round_dist": [
+     29.0,
+     18.4,
+     9.3
+    ],
+    "exp_minutes": 9.7
+   },
+   "result": null
+  },
+  {
+   "order": 8,
+   "bout": "Julien Leblanc vs Nick Galanti",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Julien Leblanc",
+     "side": "dog",
+     "market_odds": 435,
+     "model_win_shrunk": 39.0,
+     "model_win_raw": 13.3,
+     "dec_share_of_wins": 13.0,
+     "badges": [
+      "SYN",
+      "D-CODE"
+     ]
+    },
+    {
+     "name": "Nick Galanti",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 61.0,
+     "model_win_raw": 86.7,
+     "dec_share_of_wins": 32.0,
+     "badges": [
+      "SYN"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 24.6,
+    "market_gtd_devig": 19.6,
+    "gap": 5.0,
+    "round_dist": [
+     44.0,
+     22.2,
+     9.3
+    ],
+    "exp_minutes": 7.4
+   },
+   "result": null
+  },
+  {
+   "order": 9,
+   "bout": "Javad Mahjoub vs Joel Faglier",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Javad Mahjoub",
+     "side": "dog",
+     "market_odds": 100,
+     "model_win_shrunk": 48.0,
+     "model_win_raw": 43.2,
+     "dec_share_of_wins": 33.0,
+     "badges": [
+      "SYN",
+      "D-CODE"
+     ]
+    },
+    {
+     "name": "Joel Faglier",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 52.0,
+     "model_win_raw": 56.8,
+     "dec_share_of_wins": 29.0,
+     "badges": [
+      "SYN"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 30.6,
+    "market_gtd_devig": 27.3,
+    "gap": 3.3,
+    "round_dist": [
+     38.6,
+     21.3,
+     9.5
+    ],
+    "exp_minutes": 8.2
+   },
+   "result": null
+  },
+  {
+   "order": 10,
+   "bout": "Katlyn Cerminara vs Mackenzie Stiller",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Katlyn Cerminara",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 52.2,
+     "model_win_raw": 54.1,
+     "dec_share_of_wins": 85.0,
+     "badges": [
+      "SYN"
+     ]
+    },
+    {
+     "name": "Mackenzie Stiller",
+     "side": "dog",
+     "market_odds": 220,
+     "model_win_shrunk": 47.8,
+     "model_win_raw": 45.9,
+     "dec_share_of_wins": 66.0,
+     "badges": [
+      "SYN",
+      "D-CODE"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 75.7,
+    "market_gtd_devig": 70.0,
+    "gap": 5.7,
+    "round_dist": [
+     10.6,
+     8.7,
+     5.1
+    ],
+    "exp_minutes": 12.9
+   },
+   "result": null
+  },
+  {
+   "order": 11,
+   "bout": "Chad Anheliger vs Steven Koslow",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Chad Anheliger",
+     "side": "dog",
+     "market_odds": 129,
+     "model_win_shrunk": 49.7,
+     "model_win_raw": 49.1,
+     "dec_share_of_wins": 46.0,
+     "badges": []
+    },
+    {
+     "name": "Steven Koslow",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 50.3,
+     "model_win_raw": 50.9,
+     "dec_share_of_wins": 57.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 51.7,
+    "market_gtd_devig": 39.3,
+    "gap": 12.4,
+    "round_dist": [
+     23.8,
+     16.1,
+     8.4
+    ],
+    "exp_minutes": 10.6
+   },
+   "result": null
+  },
+  {
+   "order": 12,
+   "bout": "Melissa Croden vs Chelsea Chandler",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Melissa Croden",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 60.3,
+     "model_win_raw": 80.9,
+     "dec_share_of_wins": 74.0,
+     "badges": []
+    },
+    {
+     "name": "Chelsea Chandler",
+     "side": "dog",
+     "market_odds": 230,
+     "model_win_shrunk": 39.7,
+     "model_win_raw": 19.1,
+     "dec_share_of_wins": 56.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 67.3,
+    "market_gtd_devig": 52.7,
+    "gap": 14.6,
+    "round_dist": [
+     15.1,
+     11.3,
+     6.3
+    ],
+    "exp_minutes": 12.1
+   },
+   "result": null
+  },
+  {
+   "order": 13,
+   "bout": "Cody Chovancek vs SuYoung You",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Cody Chovancek",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 53.6,
+     "model_win_raw": 61.9,
+     "dec_share_of_wins": 52.0,
+     "badges": [
+      "SYN"
+     ]
+    },
+    {
+     "name": "SuYoung You",
+     "side": "dog",
+     "market_odds": 114,
+     "model_win_shrunk": 46.4,
+     "model_win_raw": 38.1,
+     "dec_share_of_wins": 68.0,
+     "badges": [
+      "SYN"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 59.4,
+    "market_gtd_devig": 53.8,
+    "gap": 5.6,
+    "round_dist": [
+     19.3,
+     13.7,
+     7.6
+    ],
+    "exp_minutes": 11.3
+   },
+   "result": null
+  }
+ ],
+ "duration_flags": [],
+ "ml_flags": [],
+ "prop_notes": [],
+ "vetoes": [
+  {
+   "fight_order": 8,
+   "side": "Julien Leblanc",
+   "market_odds": 435,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  },
+  {
+   "fight_order": 9,
+   "side": "Javad Mahjoub",
+   "market_odds": 100,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  },
+  {
+   "fight_order": 10,
+   "side": "Mackenzie Stiller",
+   "market_odds": 220,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  }
+ ],
+ "source_doc": "markov/UFC_FN_Buckley_vs_Malott_V41b_Output.md"
+}

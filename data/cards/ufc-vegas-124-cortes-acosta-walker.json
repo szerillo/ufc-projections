@@ -1,0 +1,1004 @@
+{
+ "slug": "ufc-vegas-124-cortes-acosta-walker",
+ "title": "UFC Fight Night: Cortes Acosta vs Walker",
+ "date": "2026-11-07",
+ "venue": "UFC APEX, Las Vegas",
+ "engine_version": "V4.1b",
+ "grading_window_index": 8,
+ "notes": [
+  "11 real positional matchups + 3 synthetic (Raposo-Degli, Lorenco-Petersen, Calderon side).",
+  "Form corrections vs rumor: Waldo LOST to Blaydes by decision Sep 12 (L2, zero UFC finishes); Walker KO'd Parkin R1 at HW Oct 3; Turman's rumored Dulatov KO loss does not exist \u2014 his reality is an L3 and ~35-month layoff.",
+  "Off KO loss: Schmid, G.Fernandes, Petroski.",
+  "Only GTD/ITD props posted at scrape time; O/U round totals pending.",
+  "Bashi TD projection is a flagged data artifact (stale positional string) \u2014 trust P(>=1) 85%, not the count."
+ ],
+ "archive_tsv": "Waldo Cortes Acosta vs Johnny Walker\t79.8\t83.1\t39.4\t15.2\t20.9\t17.4\t11.1\t6.1\t5.0\nTatiana Suarez vs Virna Jandiroba\t58.6\t59.6\t82.0\t13.4\t7.9\t6.3\t3.8\t0.0\t0.0\nDavey Grant vs Elijah Smith\t49.8\t49.6\t53.7\t10.8\t22.6\t15.5\t8.2\t0.0\t0.0\nBilly Elekana vs Lucas Fernando\t45.4\t34.7\t32.2\t8.4\t37.3\t21.0\t9.5\t0.0\t0.0\nPriscila Cachoeira vs Nina Milosevic\t35.6\t15.5\t57.0\t11.1\t20.6\t14.5\t7.9\t0.0\t0.0\nMitch Raposo vs Marcos Degli\t42.4\t24.7\t65.9\t12.0\t15.6\t11.8\t6.7\t0.0\t0.0\nKeiichiro Nakamura vs Ollie Schmid\t61.7\t88.9\t39.0\t9.2\t32.0\t19.4\t9.6\t0.0\t0.0\nGabriel Lorenco vs Thomas Petersen\t57.3\t74.2\t25.1\t7.5\t43.4\t22.1\t9.4\t0.0\t0.0\nKarine Silva vs Gabriella Fernandes\t50.0\t50.1\t67.5\t12.1\t14.8\t11.2\t6.4\t0.0\t0.0\nJose Delano vs Murtazali Magomedov\t45.1\t33.5\t48.2\t10.2\t26.1\t17.1\t8.6\t0.0\t0.0\nAustin Bashi vs Carlos Calderon\t53.3\t61.1\t56.4\t11.0\t20.9\t14.6\t8.0\t0.0\t0.0\nMantas Kondratavicius vs Andre Petroski\t60.0\t70.1\t34.6\t8.7\t35.6\t20.4\t9.4\t0.0\t0.0\nSeokhyeon Ko vs Wellington Turman\t60.8\t72.8\t71.3\t12.5\t13.0\t10.0\t5.6\t0.0\t0.0\nJonny Parsons vs Jose Souza\t56.7\t72.3\t39.3\t9.3\t31.6\t19.7\t9.4\t0.0\t0.0",
+ "fights": [
+  {
+   "order": 1,
+   "bout": "Waldo Cortes Acosta vs Johnny Walker",
+   "weight_class": "Heavyweight",
+   "rounds": 5,
+   "is_main_event": true,
+   "fighters": [
+    {
+     "name": "Waldo Cortes Acosta",
+     "side": "fav",
+     "market_odds": -235,
+     "model_win_shrunk": 79.8,
+     "model_win_raw": 83.1,
+     "dec_share_of_wins": 48,
+     "finish_pct": 41.4,
+     "finish_ko": 41.0,
+     "finish_sub": 0.4,
+     "ss_mean": 61.0,
+     "ss_median": 55.6,
+     "td_proj": 0.39,
+     "td_p1": 32,
+     "td_p2": 6,
+     "td_p3": 1,
+     "p_kd": 37,
+     "p_kd_clamped": false,
+     "tape": {
+      "age": 35.1,
+      "height": "6'4",
+      "reach": 78,
+      "stance": "Orthodox",
+      "record": "17-4-0",
+      "slpm": 5.03,
+      "sapm": 3.44,
+      "str_acc": 0.47,
+      "str_def": 0.55,
+      "td_avg": 0.36,
+      "td_acc": 0.5,
+      "td_def": 0.69,
+      "sub_avg": 0.1
+     },
+     "data_quality": "GOOD (L2; 8-wk turnaround; 0 UFC finishes)",
+     "badges": []
+    },
+    {
+     "name": "Johnny Walker",
+     "side": "dog",
+     "market_odds": 185,
+     "model_win_shrunk": 20.2,
+     "model_win_raw": 16.9,
+     "dec_share_of_wins": 5,
+     "finish_pct": 19.2,
+     "finish_ko": 13.0,
+     "finish_sub": 6.1,
+     "ss_mean": 56.5,
+     "ss_median": 51.1,
+     "td_proj": 0.28,
+     "td_p1": 24,
+     "td_p2": 3,
+     "td_p3": 0,
+     "p_kd": 7,
+     "p_kd_clamped": false,
+     "tape": {
+      "age": 34.6,
+      "height": "6'6",
+      "reach": 82,
+      "stance": "Orthodox",
+      "record": "23-10-0 (1NC)",
+      "slpm": 3.98,
+      "sapm": 2.99,
+      "str_acc": 0.55,
+      "str_def": 0.45,
+      "td_avg": 0.35,
+      "td_acc": 0.5,
+      "td_def": 0.57,
+      "sub_avg": 0.7
+     },
+     "data_quality": "GOOD (R1 KO W Parkin; 5-wk turnaround)",
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 39.4,
+    "market_gtd_devig": 24.5,
+    "gap": 14.9,
+    "round_dist": [
+     20.9,
+     17.4,
+     11.1,
+     6.1,
+     5.0
+    ],
+    "exp_minutes": 15.2
+   },
+   "spread": {
+    "fav_minus35": 52.8,
+    "fav_minus95": 41.4,
+    "convention": "per-card"
+   },
+   "result": null
+  },
+  {
+   "order": 2,
+   "bout": "Tatiana Suarez vs Virna Jandiroba",
+   "weight_class": "Women's Strawweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Tatiana Suarez",
+     "side": "fav",
+     "market_odds": -210,
+     "model_win_shrunk": 58.6,
+     "model_win_raw": 59.6,
+     "dec_share_of_wins": 89,
+     "finish_pct": 6.7,
+     "finish_ko": 4.2,
+     "finish_sub": 2.5,
+     "ss_mean": 38.4,
+     "ss_median": 33.0,
+     "td_proj": 2.84,
+     "td_p1": 85,
+     "td_p2": 57,
+     "td_p3": 30,
+     "p_kd": 6,
+     "p_kd_clamped": false,
+     "tape": {
+      "age": 35.9,
+      "height": "5'5",
+      "reach": 66,
+      "stance": "Southpaw",
+      "record": "13-1-0",
+      "slpm": 2.86,
+      "sapm": 1.63,
+      "str_acc": 0.6,
+      "str_def": 0.44,
+      "td_avg": 4.52,
+      "td_acc": 0.45,
+      "td_def": 0.57,
+      "sub_avg": 0.7
+     },
+     "data_quality": "GOOD",
+     "badges": []
+    },
+    {
+     "name": "Virna Jandiroba",
+     "side": "dog",
+     "market_odds": 165,
+     "model_win_shrunk": 41.4,
+     "model_win_raw": 40.4,
+     "dec_share_of_wins": 73,
+     "finish_pct": 11.3,
+     "finish_ko": 2.9,
+     "finish_sub": 8.4,
+     "ss_mean": 26.2,
+     "ss_median": 20.8,
+     "td_proj": 3.02,
+     "td_p1": 85,
+     "td_p2": 57,
+     "td_p3": 30,
+     "p_kd": 6,
+     "p_kd_clamped": false,
+     "tape": {
+      "age": 38.4,
+      "height": "5'3",
+      "reach": 64,
+      "stance": "Orthodox",
+      "record": "23-4-0",
+      "slpm": 2.27,
+      "sapm": 2.86,
+      "str_acc": 0.41,
+      "str_def": 0.55,
+      "td_avg": 3.13,
+      "td_acc": 0.39,
+      "td_def": 0.72,
+      "sub_avg": 1.4
+     },
+     "data_quality": "GOOD",
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 82.0,
+    "market_gtd_devig": 70.8,
+    "gap": 11.2,
+    "round_dist": [
+     7.9,
+     6.3,
+     3.8
+    ],
+    "exp_minutes": 13.4
+   },
+   "spread": {
+    "fav_minus35": 11.0,
+    "fav_minus95": 6.7,
+    "convention": "per-card"
+   },
+   "result": null
+  },
+  {
+   "order": 3,
+   "bout": "Davey Grant vs Elijah Smith",
+   "weight_class": "Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Davey Grant",
+     "side": "dog",
+     "market_odds": 243,
+     "model_win_shrunk": 49.8,
+     "model_win_raw": 49.6,
+     "dec_share_of_wins": 79,
+     "finish_pct": 10.7,
+     "finish_ko": 10.2,
+     "finish_sub": 0.5,
+     "ss_mean": 46.0,
+     "ss_median": 40.6,
+     "td_proj": 0.8,
+     "td_p1": 55,
+     "td_p2": 19,
+     "td_p3": 5,
+     "p_kd": 10,
+     "p_kd_clamped": false,
+     "tape": {
+      "age": 40.9,
+      "height": "5'8",
+      "reach": 69,
+      "stance": "Orthodox",
+      "record": "18-8-0",
+      "slpm": 5.58,
+      "sapm": 4.04,
+      "str_acc": 0.45,
+      "str_def": 0.54,
+      "td_avg": 0.95,
+      "td_acc": 0.38,
+      "td_def": 0.65,
+      "sub_avg": 0.2
+     },
+     "data_quality": "GOOD (40.9yo; 4 UFC sub losses)",
+     "badges": []
+    },
+    {
+     "name": "Elijah Smith",
+     "side": "fav",
+     "market_odds": -312,
+     "model_win_shrunk": 50.2,
+     "model_win_raw": 50.4,
+     "dec_share_of_wins": 29,
+     "finish_pct": 35.6,
+     "finish_ko": 26.8,
+     "finish_sub": 8.7,
+     "ss_mean": 44.3,
+     "ss_median": 38.9,
+     "td_proj": 1.87,
+     "td_p1": 85,
+     "td_p2": 56,
+     "td_p3": 29,
+     "p_kd": 21,
+     "p_kd_clamped": false,
+     "tape": {
+      "age": 24.2,
+      "height": "5'9",
+      "reach": 71,
+      "stance": "Orthodox",
+      "record": "10-1-0",
+      "slpm": 4.18,
+      "sapm": 2.96,
+      "str_acc": 0.48,
+      "str_def": 0.46,
+      "td_avg": 2.98,
+      "td_acc": 0.53,
+      "td_def": 0.53,
+      "sub_avg": 1.1
+     },
+     "data_quality": "GOOD (4-0 UFC prospect)",
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 53.7,
+    "market_gtd_devig": 44.0,
+    "gap": 9.7,
+    "round_dist": [
+     22.6,
+     15.5,
+     8.2
+    ],
+    "exp_minutes": 10.8
+   },
+   "spread": {
+    "fav_minus35": 38.3,
+    "fav_minus95": 35.6,
+    "convention": "per-card"
+   },
+   "result": null
+  },
+  {
+   "order": 4,
+   "bout": "Billy Elekana vs Lucas Fernando",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Billy Elekana",
+     "side": "dog",
+     "market_odds": 238,
+     "model_win_shrunk": 45.4,
+     "model_win_raw": 34.7,
+     "dec_share_of_wins": 24.0,
+     "badges": []
+    },
+    {
+     "name": "Lucas Fernando",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 54.6,
+     "model_win_raw": 65.3,
+     "dec_share_of_wins": 39.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 32.2,
+    "market_gtd_devig": 41.5,
+    "gap": -9.3,
+    "round_dist": [
+     37.3,
+     21.0,
+     9.5
+    ],
+    "exp_minutes": 8.4
+   },
+   "result": null,
+   "partial": true
+  },
+  {
+   "order": 5,
+   "bout": "Priscila Cachoeira vs Nina Milosevic",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Priscila Cachoeira",
+     "side": "dog",
+     "market_odds": 343,
+     "model_win_shrunk": 35.6,
+     "model_win_raw": 15.5,
+     "dec_share_of_wins": 27.0,
+     "badges": []
+    },
+    {
+     "name": "Nina Milosevic",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 64.4,
+     "model_win_raw": 84.5,
+     "dec_share_of_wins": 73.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 57.0,
+    "market_gtd_devig": 24.5,
+    "gap": 32.5,
+    "round_dist": [
+     20.6,
+     14.5,
+     7.9
+    ],
+    "exp_minutes": 11.1
+   },
+   "result": null,
+   "partial": true
+  },
+  {
+   "order": 6,
+   "bout": "Mitch Raposo vs Marcos Degli",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Mitch Raposo",
+     "side": "dog",
+     "market_odds": 190,
+     "model_win_shrunk": 42.4,
+     "model_win_raw": 24.7,
+     "dec_share_of_wins": 64.0,
+     "badges": [
+      "SYN"
+     ]
+    },
+    {
+     "name": "Marcos Degli",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 57.6,
+     "model_win_raw": 75.3,
+     "dec_share_of_wins": 67.0,
+     "badges": [
+      "SYN"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 65.9,
+    "market_gtd_devig": 46.2,
+    "gap": 19.7,
+    "round_dist": [
+     15.6,
+     11.8,
+     6.7
+    ],
+    "exp_minutes": 12.0
+   },
+   "result": null,
+   "partial": true
+  },
+  {
+   "order": 7,
+   "bout": "Keiichiro Nakamura vs Ollie Schmid",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Keiichiro Nakamura",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 61.7,
+     "model_win_raw": 88.9,
+     "dec_share_of_wins": 50.0,
+     "badges": []
+    },
+    {
+     "name": "Ollie Schmid",
+     "side": "dog",
+     "market_odds": 265,
+     "model_win_shrunk": 38.3,
+     "model_win_raw": 11.1,
+     "dec_share_of_wins": 21.0,
+     "badges": [
+      "D-CODE"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 39.0,
+    "market_gtd_devig": 27.5,
+    "gap": 11.5,
+    "round_dist": [
+     32.0,
+     19.4,
+     9.6
+    ],
+    "exp_minutes": 9.2
+   },
+   "result": null,
+   "partial": true
+  },
+  {
+   "order": 8,
+   "bout": "Gabriel Lorenco vs Thomas Petersen",
+   "weight_class": "Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Gabriel Lorenco",
+     "side": "dog",
+     "market_odds": 140,
+     "model_win_shrunk": 57.3,
+     "model_win_raw": 74.2,
+     "dec_share_of_wins": 31,
+     "finish_pct": 39.3,
+     "finish_ko": 37.6,
+     "finish_sub": 1.7,
+     "ss_mean": 46.8,
+     "ss_median": 41.4,
+     "td_proj": 0.05,
+     "td_p1": 5,
+     "td_p2": 0,
+     "td_p3": 0,
+     "p_kd": 40,
+     "p_kd_clamped": true,
+     "tape": {
+      "age": 27.1,
+      "height": "6'2",
+      "reach": 76,
+      "stance": "Orthodox",
+      "record": "8-1-0",
+      "slpm": 9.84,
+      "sapm": 3.93,
+      "str_acc": 0.46,
+      "str_def": 0.46,
+      "td_avg": 0.0,
+      "td_acc": 0.0,
+      "td_def": 1.0,
+      "sub_avg": 0.0
+     },
+     "data_quality": "SYN DEBUT (1 DWCS R1 KO)",
+     "badges": [
+      "D-CODE",
+      "SYN",
+      "\u00a71d"
+     ]
+    },
+    {
+     "name": "Thomas Petersen",
+     "side": "fav",
+     "market_odds": -177,
+     "model_win_shrunk": 42.7,
+     "model_win_raw": 25.8,
+     "dec_share_of_wins": 17,
+     "finish_pct": 35.6,
+     "finish_ko": 18.5,
+     "finish_sub": 17.1,
+     "ss_mean": 26.3,
+     "ss_median": 20.9,
+     "td_proj": 0.05,
+     "td_p1": 5,
+     "td_p2": 0,
+     "td_p3": 0,
+     "p_kd": 8,
+     "p_kd_clamped": false,
+     "tape": {
+      "age": 31.6,
+      "height": "6'1",
+      "reach": 74,
+      "stance": "Southpaw",
+      "record": "11-5-0",
+      "slpm": 3.04,
+      "sapm": 2.57,
+      "str_acc": 0.59,
+      "str_def": 0.54,
+      "td_avg": 2.95,
+      "td_acc": 0.42,
+      "td_def": 0.87,
+      "sub_avg": 0.4
+     },
+     "data_quality": "GOOD (off R1 sub loss)",
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 25.1,
+    "market_gtd_devig": 37.3,
+    "gap": -12.2,
+    "round_dist": [
+     43.4,
+     22.1,
+     9.4
+    ],
+    "exp_minutes": 7.5
+   },
+   "spread": {
+    "fav_minus35": 36.3,
+    "fav_minus95": 35.6,
+    "convention": "per-card"
+   },
+   "result": null
+  },
+  {
+   "order": 9,
+   "bout": "Karine Silva vs Gabriella Fernandes",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Karine Silva",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 50.0,
+     "model_win_raw": 50.1,
+     "dec_share_of_wins": 44.0,
+     "badges": []
+    },
+    {
+     "name": "Gabriella Fernandes",
+     "side": "dog",
+     "market_odds": 171,
+     "model_win_shrunk": 50.0,
+     "model_win_raw": 49.9,
+     "dec_share_of_wins": 91.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 67.5,
+    "market_gtd_devig": 56.9,
+    "gap": 10.6,
+    "round_dist": [
+     14.8,
+     11.2,
+     6.4
+    ],
+    "exp_minutes": 12.1
+   },
+   "result": null,
+   "partial": true
+  },
+  {
+   "order": 10,
+   "bout": "Jose Delano vs Murtazali Magomedov",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Jose Delano",
+     "side": "pickem",
+     "market_odds": null,
+     "model_win_shrunk": 45.1,
+     "model_win_raw": 33.5,
+     "dec_share_of_wins": 73.0,
+     "badges": []
+    },
+    {
+     "name": "Murtazali Magomedov",
+     "side": "pickem",
+     "market_odds": -109,
+     "model_win_shrunk": 54.9,
+     "model_win_raw": 66.5,
+     "dec_share_of_wins": 28.0,
+     "badges": [
+      "D-CODE"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 48.2,
+    "market_gtd_devig": 43.1,
+    "gap": 5.1,
+    "round_dist": [
+     26.1,
+     17.1,
+     8.6
+    ],
+    "exp_minutes": 10.2
+   },
+   "result": null,
+   "partial": true
+  },
+  {
+   "order": 11,
+   "bout": "Austin Bashi vs Carlos Calderon",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Austin Bashi",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 53.3,
+     "model_win_raw": 61.1,
+     "dec_share_of_wins": 57.0,
+     "badges": []
+    },
+    {
+     "name": "Carlos Calderon",
+     "side": "dog",
+     "market_odds": 335,
+     "model_win_shrunk": 46.7,
+     "model_win_raw": 38.9,
+     "dec_share_of_wins": 56.0,
+     "badges": [
+      "D-CODE"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 56.4,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     20.9,
+     14.6,
+     8.0
+    ],
+    "exp_minutes": 11.0
+   },
+   "result": null,
+   "partial": true
+  },
+  {
+   "order": 12,
+   "bout": "Mantas Kondratavicius vs Andre Petroski",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Mantas Kondratavicius",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 60.0,
+     "model_win_raw": 70.1,
+     "dec_share_of_wins": 36.0,
+     "badges": []
+    },
+    {
+     "name": "Andre Petroski",
+     "side": "dog",
+     "market_odds": 240,
+     "model_win_shrunk": 40.0,
+     "model_win_raw": 29.9,
+     "dec_share_of_wins": 32.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 34.6,
+    "market_gtd_devig": 24.5,
+    "gap": 10.1,
+    "round_dist": [
+     35.6,
+     20.4,
+     9.4
+    ],
+    "exp_minutes": 8.7
+   },
+   "result": null,
+   "partial": true
+  },
+  {
+   "order": 13,
+   "bout": "Seokhyeon Ko vs Wellington Turman",
+   "weight_class": "Welterweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Seokhyeon Ko",
+     "side": "fav",
+     "market_odds": -800,
+     "model_win_shrunk": 60.8,
+     "model_win_raw": 72.8,
+     "dec_share_of_wins": 83,
+     "finish_pct": 10.4,
+     "finish_ko": 7.6,
+     "finish_sub": 2.8,
+     "ss_mean": 45.6,
+     "ss_median": 40.2,
+     "td_proj": 3.62,
+     "td_p1": 85,
+     "td_p2": 57,
+     "td_p3": 30,
+     "p_kd": 7,
+     "p_kd_clamped": false,
+     "tape": {
+      "age": 33.1,
+      "height": "5'10",
+      "reach": 71,
+      "stance": "Southpaw",
+      "record": "13-3-0",
+      "slpm": 3.15,
+      "sapm": 1.93,
+      "str_acc": 0.5,
+      "str_def": 0.62,
+      "td_avg": 3.0,
+      "td_acc": 0.52,
+      "td_def": 0.5,
+      "sub_avg": 0.2
+     },
+     "data_quality": "GOOD (3-1 UFC)",
+     "badges": []
+    },
+    {
+     "name": "Wellington Turman",
+     "side": "dog",
+     "market_odds": 515,
+     "model_win_shrunk": 39.2,
+     "model_win_raw": 27.2,
+     "dec_share_of_wins": 53,
+     "finish_pct": 18.3,
+     "finish_ko": 9.7,
+     "finish_sub": 8.5,
+     "ss_mean": 32.2,
+     "ss_median": 26.8,
+     "td_proj": 1.61,
+     "td_p1": 80,
+     "td_p2": 48,
+     "td_p3": 22,
+     "p_kd": 6,
+     "p_kd_clamped": false,
+     "tape": {
+      "age": 30.3,
+      "height": "6'0",
+      "reach": 72,
+      "stance": "Orthodox",
+      "record": "18-8-0",
+      "slpm": 3.23,
+      "sapm": 4.17,
+      "str_acc": 0.51,
+      "str_def": 0.45,
+      "td_avg": 1.55,
+      "td_acc": 0.2,
+      "td_def": 0.42,
+      "sub_avg": 0.8
+     },
+     "data_quality": "GOOD data; 35-mo layoff, L3 (rumored Dulatov bout = phantom)",
+     "badges": [
+      "LAYOFF"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 71.3,
+    "market_gtd_devig": 49.0,
+    "gap": 22.3,
+    "round_dist": [
+     13.0,
+     10.0,
+     5.6
+    ],
+    "exp_minutes": 12.5
+   },
+   "spread": {
+    "fav_minus35": 14.9,
+    "fav_minus95": 10.4,
+    "convention": "per-card"
+   },
+   "result": null
+  },
+  {
+   "order": 14,
+   "bout": "Jonny Parsons vs Jose Souza",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Jonny Parsons",
+     "side": "dog",
+     "market_odds": 188,
+     "model_win_shrunk": 56.7,
+     "model_win_raw": 72.3,
+     "dec_share_of_wins": 58.0,
+     "badges": [
+      "D-CODE"
+     ]
+    },
+    {
+     "name": "Jose Souza",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 43.3,
+     "model_win_raw": 27.7,
+     "dec_share_of_wins": 15.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 39.3,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     31.6,
+     19.7,
+     9.4
+    ],
+    "exp_minutes": 9.3
+   },
+   "result": null,
+   "partial": true
+  }
+ ],
+ "duration_flags": [
+  {
+   "fight_order": 1,
+   "title": "Main event GTD +280",
+   "market_price": "+280",
+   "model_value": 39.4,
+   "market_value": 24.5,
+   "mechanism": "HW GTD regime lean fires (division decides 44-48%, priced 24.5%) and the model confirms at 39.4%: Waldo has never finished anyone in the UFC and his last five went the cards; 5R adds champ-round durability.",
+   "confidence": "real"
+  },
+  {
+   "fight_order": 13,
+   "title": "Ko-Turman GTD -110",
+   "market_price": "-110",
+   "model_value": 71.3,
+   "market_value": 49.0,
+   "mechanism": "Ko is a 3.6-TD control wrestler; Turman is a 35-month-layoff sub grappler who doesn't finish standing. Near-even money for a model-71% event.",
+   "confidence": "real"
+  },
+  {
+   "fight_order": 2,
+   "title": "Suarez-Jandiroba GTD -315",
+   "market_price": "-315",
+   "model_value": 82.0,
+   "market_value": 70.8,
+   "mechanism": "Grappler-vs-grappler, 6% KD each \u2014 control cancels into scorecards. Heavy price; 'Suarez by decision' (89% of her win condition) is the correlated expression.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 8,
+   "title": "HW rule VETOED on Lorenco-Petersen",
+   "market_price": "+150",
+   "model_value": 25.1,
+   "market_value": 37.3,
+   "mechanism": "Priced in HW-GTD-rule territory but the model says 25.1% \u2014 two live finishers, 43% of sims end in R1. Not a grinder; no play.",
+   "confidence": "vetoed"
+  }
+ ],
+ "ml_flags": [
+  {
+   "fight_order": 1,
+   "side": "Waldo Cortes Acosta",
+   "market_odds": -235,
+   "model_shrunk": 79.8,
+   "model_raw": 83.1,
+   "market_implied": 66.7,
+   "edge_pts": 13.2,
+   "mechanism": "Walker has absorbed 0.85 KD/15 with a 57% KO-loss rate, against a 37%-KD heavyweight; the Parkin win doesn't repair the chin data.",
+   "counter": "Waldo has zero UFC finishes and is on an L2.",
+   "confidence": "real"
+  },
+  {
+   "fight_order": 3,
+   "side": "Davey Grant",
+   "market_odds": 243,
+   "model_shrunk": 49.8,
+   "model_raw": 49.6,
+   "market_implied": 29.2,
+   "edge_pts": 20.6,
+   "mechanism": "Grant's volume and ten-year-vet durability vs Smith's thin sample; both model columns agree to the decimal.",
+   "counter": "Grant is 40.9 with four UFC sub losses, facing a grappler.",
+   "confidence": "real"
+  }
+ ],
+ "prop_notes": [
+  {
+   "fight_order": 13,
+   "text": "Ko 3.62 projected TDs (85%/57% for 1+/2+)."
+  },
+  {
+   "fight_order": 2,
+   "text": "Jandiroba 3.02 / Suarez 2.84 projected TDs \u2014 mutual-grappling decision fight."
+  },
+  {
+   "fight_order": 11,
+   "text": "Bashi TD count projection is a data artifact; P(>=1) 85% stands."
+  }
+ ],
+ "vetoes": [
+  {
+   "fight_order": 8,
+   "side": "Gabriel Lorenco",
+   "market_odds": 140,
+   "code": "D",
+   "reason": "D-code: dog + <=3 UFC fights + minor feeder (CFP). Both model columns far above market (57/74 vs 39.5) \u2014 veto holds regardless; shadow-tracked."
+  },
+  {
+   "fight_order": 7,
+   "side": "Ollie Schmid",
+   "market_odds": 265,
+   "code": "D",
+   "reason": "D-code: 1 UFC fight, SFS feeder, off R1 KO loss."
+  },
+  {
+   "fight_order": 11,
+   "side": "Carlos Calderon",
+   "market_odds": 335,
+   "code": "D",
+   "reason": "D-code: UFC debut, Fury FC feeder."
+  },
+  {
+   "fight_order": 14,
+   "side": "Jonny Parsons",
+   "market_odds": 188,
+   "code": "D",
+   "reason": "D-code: 2 UFC/DWCS bouts, iFF feeder; 40-month layoff compounds."
+  },
+  {
+   "fight_order": 10,
+   "side": "Murtazali Magomedov",
+   "market_odds": -109,
+   "code": "D",
+   "reason": "D-code marginal: pickem dog, 2.9 UFC minutes, Octagon Promotion feeder."
+  }
+ ],
+ "_merged_from_doc": "markov/UFC_FN_CortesAcosta_vs_Walker_V41b_Output.md"
+}

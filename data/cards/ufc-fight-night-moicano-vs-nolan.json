@@ -1,0 +1,534 @@
+{
+ "slug": "ufc-fight-night-moicano-vs-nolan",
+ "title": "UFC Fight Night: Moicano vs Nolan",
+ "date": "2026-10-31",
+ "venue": "APEX",
+ "engine_version": "V4.1b",
+ "partial": true,
+ "notes": [
+  "10 real Oddsbreaker matchups + 2 synthetic (Klein-Kropschot, Szabova-Lisboa \u2014 Szabova is a true UFC debut). \u00a71d active on 8. Only GTD/ITD props posted. Context: Smith on a 4-week turnaround off an R1 KO win; Gall ~2 years inactive; Lee ~1.5y layoff; Osbourne-Durden moved over from UFC 333.",
+  "Built from the weekly output doc: per-fighter prop projections and flag write-ups are in the source doc, not on this page."
+ ],
+ "archive_tsv": "Renato Moicano vs Tom Nolan\t41.2\t39.1\t22.7\t11.7\t31.5\t22.3\t12.7\t6.2\t4.6\nRandy Brown vs Jacobe Smith\t31.1\t15.6\t42.8\t9.6\t29.4\t18.6\t9.2\t0.0\t0.0\nOde Osbourne vs Cody Durden\t46.4\t46.0\t34.5\t8.7\t35.5\t20.6\t9.5\t0.0\t0.0\nYana Santos vs Luana Santos\t46.2\t45.0\t81.0\t13.4\t8.3\t6.7\t4.0\t0.0\t0.0\nJean-Paul Lebosnoyani vs Farman Hasanov\t50.4\t51.5\t54.7\t10.9\t22.0\t15.2\t8.1\t0.0\t0.0\nFrancis Marshall vs Dakota Hope\t44.7\t32.4\t66.2\t12.0\t15.6\t11.7\t6.5\t0.0\t0.0\nRodrigo Sezinando vs Theodor Berggren\t52.4\t58.0\t26.7\t7.7\t42.0\t21.9\t9.3\t0.0\t0.0\nJulian Erosa vs JeongYeong Lee\t48.6\t47.7\t31.9\t8.4\t37.6\t21.1\t9.4\t0.0\t0.0\nZach Reese vs Mickey Gall\t63.1\t73.9\t31.9\t8.4\t37.4\t21.2\t9.6\t0.0\t0.0\nNick Klein vs Joe Kropschot\t47.6\t42.1\t27.1\t7.8\t41.5\t22.1\t9.3\t0.0\t0.0\nTalita Alencar vs Piera Rodriguez\t35.8\t24.6\t76.9\t13.0\t10.2\t8.2\t4.7\t0.0\t0.0\nLucia Szabova vs Tainara Lisboa\t58.9\t79.5\t59.1\t11.3\t19.2\t14.0\t7.7\t0.0\t0.0",
+ "fights": [
+  {
+   "order": 1,
+   "bout": "Renato Moicano vs Tom Nolan",
+   "weight_class": null,
+   "rounds": 5,
+   "is_main_event": true,
+   "fighters": [
+    {
+     "name": "Renato Moicano",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 41.2,
+     "model_win_raw": 39.1,
+     "dec_share_of_wins": 40.0,
+     "badges": []
+    },
+    {
+     "name": "Tom Nolan",
+     "side": "dog",
+     "market_odds": 107,
+     "model_win_shrunk": 58.8,
+     "model_win_raw": 60.9,
+     "dec_share_of_wins": 11.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 22.7,
+    "market_gtd_devig": 29.2,
+    "gap": -6.5,
+    "round_dist": [
+     31.5,
+     22.3,
+     12.7,
+     6.2,
+     4.6
+    ],
+    "exp_minutes": 11.7
+   },
+   "result": null
+  },
+  {
+   "order": 2,
+   "bout": "Randy Brown vs Jacobe Smith",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Randy Brown",
+     "side": "dog",
+     "market_odds": 223,
+     "model_win_shrunk": 31.1,
+     "model_win_raw": 15.6,
+     "dec_share_of_wins": 23.0,
+     "badges": []
+    },
+    {
+     "name": "Jacobe Smith",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 68.9,
+     "model_win_raw": 84.4,
+     "dec_share_of_wins": 52.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 42.8,
+    "market_gtd_devig": 25.7,
+    "gap": 17.1,
+    "round_dist": [
+     29.4,
+     18.6,
+     9.2
+    ],
+    "exp_minutes": 9.6
+   },
+   "result": null
+  },
+  {
+   "order": 3,
+   "bout": "Ode Osbourne vs Cody Durden",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Ode Osbourne",
+     "side": "pickem",
+     "market_odds": -105,
+     "model_win_shrunk": 46.4,
+     "model_win_raw": 46.0,
+     "dec_share_of_wins": 7.0,
+     "badges": []
+    },
+    {
+     "name": "Cody Durden",
+     "side": "pickem",
+     "market_odds": null,
+     "model_win_shrunk": 53.6,
+     "model_win_raw": 54.0,
+     "dec_share_of_wins": 58.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 34.5,
+    "market_gtd_devig": 39.3,
+    "gap": -4.8,
+    "round_dist": [
+     35.5,
+     20.6,
+     9.5
+    ],
+    "exp_minutes": 8.7
+   },
+   "result": null
+  },
+  {
+   "order": 4,
+   "bout": "Yana Santos vs Luana Santos",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Yana Santos",
+     "side": "dog",
+     "market_odds": 220,
+     "model_win_shrunk": 46.2,
+     "model_win_raw": 45.0,
+     "dec_share_of_wins": 90.0,
+     "badges": []
+    },
+    {
+     "name": "Luana Santos",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 53.8,
+     "model_win_raw": 55.0,
+     "dec_share_of_wins": 73.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 81.0,
+    "market_gtd_devig": 72.7,
+    "gap": 8.3,
+    "round_dist": [
+     8.3,
+     6.7,
+     4.0
+    ],
+    "exp_minutes": 13.4
+   },
+   "result": null
+  },
+  {
+   "order": 5,
+   "bout": "Jean-Paul Lebosnoyani vs Farman Hasanov",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Jean-Paul Lebosnoyani",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 50.4,
+     "model_win_raw": 51.5,
+     "dec_share_of_wins": 50.0,
+     "badges": []
+    },
+    {
+     "name": "Farman Hasanov",
+     "side": "dog",
+     "market_odds": 235,
+     "model_win_shrunk": 49.6,
+     "model_win_raw": 48.5,
+     "dec_share_of_wins": 59.0,
+     "badges": [
+      "D-CODE"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 54.7,
+    "market_gtd_devig": 37.3,
+    "gap": 17.4,
+    "round_dist": [
+     22.0,
+     15.2,
+     8.1
+    ],
+    "exp_minutes": 10.9
+   },
+   "result": null
+  },
+  {
+   "order": 6,
+   "bout": "Francis Marshall vs Dakota Hope",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Francis Marshall",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 44.7,
+     "model_win_raw": 32.4,
+     "dec_share_of_wins": 42.0,
+     "badges": []
+    },
+    {
+     "name": "Dakota Hope",
+     "side": "dog",
+     "market_odds": 188,
+     "model_win_shrunk": 55.3,
+     "model_win_raw": 67.6,
+     "dec_share_of_wins": 85.0,
+     "badges": [
+      "D-CODE"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 66.2,
+    "market_gtd_devig": 53.8,
+    "gap": 12.4,
+    "round_dist": [
+     15.6,
+     11.7,
+     6.5
+    ],
+    "exp_minutes": 12.0
+   },
+   "result": null
+  },
+  {
+   "order": 7,
+   "bout": "Rodrigo Sezinando vs Theodor Berggren",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Rodrigo Sezinando",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 52.4,
+     "model_win_raw": 58.0,
+     "dec_share_of_wins": 22.0,
+     "badges": []
+    },
+    {
+     "name": "Theodor Berggren",
+     "side": "dog",
+     "market_odds": 143,
+     "model_win_shrunk": 47.6,
+     "model_win_raw": 42.0,
+     "dec_share_of_wins": 32.0,
+     "badges": [
+      "D-CODE"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 26.7,
+    "market_gtd_devig": 27.5,
+    "gap": -0.8,
+    "round_dist": [
+     42.0,
+     21.9,
+     9.3
+    ],
+    "exp_minutes": 7.7
+   },
+   "result": null
+  },
+  {
+   "order": 8,
+   "bout": "Julian Erosa vs JeongYeong Lee",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Julian Erosa",
+     "side": "dog",
+     "market_odds": 138,
+     "model_win_shrunk": 48.6,
+     "model_win_raw": 47.7,
+     "dec_share_of_wins": 58.0,
+     "badges": []
+    },
+    {
+     "name": "JeongYeong Lee",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 51.4,
+     "model_win_raw": 52.3,
+     "dec_share_of_wins": 7.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 31.9,
+    "market_gtd_devig": 23.4,
+    "gap": 8.5,
+    "round_dist": [
+     37.6,
+     21.1,
+     9.4
+    ],
+    "exp_minutes": 8.4
+   },
+   "result": null
+  },
+  {
+   "order": 9,
+   "bout": "Zach Reese vs Mickey Gall",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Zach Reese",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 63.1,
+     "model_win_raw": 73.9,
+     "dec_share_of_wins": 40.0,
+     "badges": []
+    },
+    {
+     "name": "Mickey Gall",
+     "side": "dog",
+     "market_odds": 265,
+     "model_win_shrunk": 36.9,
+     "model_win_raw": 26.1,
+     "dec_share_of_wins": 18.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 31.9,
+    "market_gtd_devig": 21.7,
+    "gap": 10.2,
+    "round_dist": [
+     37.4,
+     21.2,
+     9.6
+    ],
+    "exp_minutes": 8.4
+   },
+   "result": null
+  },
+  {
+   "order": 10,
+   "bout": "Nick Klein vs Joe Kropschot",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Nick Klein",
+     "side": "dog",
+     "market_odds": 253,
+     "model_win_shrunk": 47.6,
+     "model_win_raw": 42.1,
+     "dec_share_of_wins": 22.0,
+     "badges": [
+      "SYN",
+      "D-CODE"
+     ]
+    },
+    {
+     "name": "Joe Kropschot",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 52.4,
+     "model_win_raw": 57.9,
+     "dec_share_of_wins": 32.0,
+     "badges": [
+      "SYN"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 27.1,
+    "market_gtd_devig": 27.5,
+    "gap": -0.4,
+    "round_dist": [
+     41.5,
+     22.1,
+     9.3
+    ],
+    "exp_minutes": 7.8
+   },
+   "result": null
+  },
+  {
+   "order": 11,
+   "bout": "Talita Alencar vs Piera Rodriguez",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Talita Alencar",
+     "side": "dog",
+     "market_odds": 230,
+     "model_win_shrunk": 35.8,
+     "model_win_raw": 24.6,
+     "dec_share_of_wins": 61.0,
+     "badges": []
+    },
+    {
+     "name": "Piera Rodriguez",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 64.2,
+     "model_win_raw": 75.4,
+     "dec_share_of_wins": 86.0,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 76.9,
+    "market_gtd_devig": 67.8,
+    "gap": 9.1,
+    "round_dist": [
+     10.2,
+     8.2,
+     4.7
+    ],
+    "exp_minutes": 13.0
+   },
+   "result": null
+  },
+  {
+   "order": 12,
+   "bout": "Lucia Szabova vs Tainara Lisboa",
+   "weight_class": null,
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Lucia Szabova",
+     "side": "fav",
+     "market_odds": null,
+     "model_win_shrunk": 58.9,
+     "model_win_raw": 79.5,
+     "dec_share_of_wins": 67.0,
+     "badges": [
+      "SYN"
+     ]
+    },
+    {
+     "name": "Tainara Lisboa",
+     "side": "dog",
+     "market_odds": 505,
+     "model_win_shrunk": 41.1,
+     "model_win_raw": 20.5,
+     "dec_share_of_wins": 47.0,
+     "badges": [
+      "SYN"
+     ]
+    }
+   ],
+   "duration": {
+    "p_dec": 59.1,
+    "market_gtd_devig": 39.3,
+    "gap": 19.8,
+    "round_dist": [
+     19.2,
+     14.0,
+     7.7
+    ],
+    "exp_minutes": 11.3
+   },
+   "result": null
+  }
+ ],
+ "duration_flags": [],
+ "ml_flags": [],
+ "prop_notes": [],
+ "vetoes": [
+  {
+   "fight_order": 5,
+   "side": "Farman Hasanov",
+   "market_odds": 235,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  },
+  {
+   "fight_order": 6,
+   "side": "Dakota Hope",
+   "market_odds": 188,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  },
+  {
+   "fight_order": 7,
+   "side": "Theodor Berggren",
+   "market_odds": 143,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  },
+  {
+   "fight_order": 10,
+   "side": "Nick Klein",
+   "market_odds": 253,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  }
+ ],
+ "source_doc": "markov/UFC_FN_Moicano_vs_Nolan_V41b_Output.md"
+}

@@ -671,9 +671,153 @@ async function vSheet(slug) {
   $app.innerHTML = html; wireRows();
 }
 
+
+/* ================= Duration Model (Markov) section: renders data/cards/*.json as given ================= */
+const DM_NAME = "The Duration Model";
+const GLOSS = {
+  "Shrunk win %": "Model win probability after a confidence blend toward 50% on thin UFC samples. The default column.",
+  "Raw win %": "The unblended Markov simulation output. Archived alongside shrunk; both are being graded to decide which survives.",
+  "P(dec)": "Probability the fight reaches the judges' scorecards.",
+  "Market GTD (de-vigged)": "The sportsbook \"goes the distance\" price with the vig removed (multiplicative method on the GTD/ITD pair).",
+  "Gap": "Model P(dec) minus market GTD, in points. Flags require 8 or more with a stated mechanism.",
+  "DEC% of wins": "Of the sims this fighter wins, the share won by decision (their \"win condition shape\").",
+  "Round distribution": "Share of all sims ending in each round; the remainder is the decision.",
+  "TD P(≥1/≥2/≥3)": "Probability the fighter lands at least 1, 2 or 3 takedowns.",
+  "P(KD)": "Probability the fighter scores at least one knockdown. \"Clamped\" means it hit the model's 40% cap (treat as \"high\").",
+  "Spread (per-card)": "Fav −3.5 = wins by finish or a decision containing a 10-8 round; fav −9.5 in a three-round fight = wins by finish.",
+  "§1d prior": "Pre-UFC (regional) record data blended in for fighters with three or fewer UFC fights.",
+  "D-code": "Automatic no-bet veto: underdog with three or fewer UFC fights whose last pre-UFC bout was in LFA or a minor regional promotion (historically −36.6% ROI). DWCS, Bellator, PFL, ONE, KSW and Rizin graduates are exempt.",
+  "SYN": "The fight's positional data was synthesized (matchup missing from the positional data source); treat pace and takedown projections as low-confidence.",
+  "Mechanism": "The one-line fighter-specific reason a flag exists. No mechanism, no flag.",
+  "Confidence labels": "real (mechanism + data), lean (regime or rule-driven), sprinkle (thin data), artifact (statistical artifact of the shrinkage, not a read), vetoed (read exists but a standing rule blocks it).",
+};
+const dmJSON = (p) => cache["dm:" + p] || (cache["dm:" + p] = fetch("data/" + p).then(r => { if (!r.ok) throw new Error(p + " " + r.status); return r.json(); }));
+const p1 = (x) => x == null ? "not yet posted" : (+x).toFixed(1) + "%";
+const tip = (label, key) => `<span title="${esc(GLOSS[key || label] || "")}" style="border-bottom:1px dotted var(--ink2);cursor:help">${esc(label)}</span>`;
+const badge = (b) => `<span class="pill ${b === "D-CODE" ? "r" : b === "§1d" ? "" : ""}" title="${esc(GLOSS[b === "D-CODE" ? "D-code" : b === "§1d" ? "§1d prior" : b] || "")}" style="${b === "SYN" ? "color:var(--ink2);border-color:var(--ink2)" : b === "§1d" ? "color:var(--blue);border-color:var(--blue)" : ""}">${esc(b)}</span>`;
+const implied = (o) => o == null ? null : (o < 0 ? -o / (-o + 100) : 100 / (o + 100));
+function roundBar(d, rounds) {
+  const cols = ["#7a1414", "#a81c1c", "#c9503e", "#dc8a6a", "#e9b79c"], segs = (d.round_dist || []).map((v, i) => `<i title="Ends R${i + 1}: ${v.toFixed(1)}%" style="display:inline-block;height:12px;width:${v}%;background:${cols[i]}"></i>`).join("");
+  return `<span style="display:inline-block;width:150px;height:12px;background:#1d3f77;vertical-align:middle;line-height:0;text-align:left" title="Decision: ${d.p_dec}%">${segs}</span>`;
+}
+async function dmFormEvent(card) { // matching Fight Form event (for results when the card JSON has none, and for links)
+  try { const idx = await getJSON("index.json"); const t0 = Date.parse(card.date);
+    const hit = idx.events.concat(idx.upcoming).find(e => Math.abs(Date.parse(e.date) - t0) <= 864e5 * 1.5); return hit ? await getJSON(`events/${hit.slug}.json`) : null; } catch (e) { return null; }
+}
+function dmMatch(ev, f) { if (!ev) return null; const [a, b] = f.fighters.map(x => x.name);
+  return ev.fights.find(x => (sameFighter(x.a.name, a) && sameFighter(x.b.name, b)) || (sameFighter(x.a.name, b) && sameFighter(x.b.name, a))) || null; }
+function dmResult(f, ff) { // -> {winner, method, round, time, src}
+  if (f.result && f.result.winner) return Object.assign({ src: "card" }, f.result);
+  if (ff && ff.result && ff.result.kind) { const r = ff.result; const m = r.kind === "nc" ? "NC" : r.kind === "draw" ? "DRAW" : /Decision/.test(r.method) ? "DEC" : /Sub/.test(r.method) ? "SUB" : /KO/.test(r.method) ? "KO" : r.method;
+    return { winner: r.winner ? ff[r.winner].name : null, method: m, round: r.round, time: r.time, src: "UFCStats" }; }
+  return null;
+}
+async function vDM() {
+  const M = await dmJSON("manifest.json");
+  const chip = (s) => `<span class="pill ${s === "graded" ? "k" : s === "live" ? "r" : "y"}">${s}</span>`;
+  $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › ${DM_NAME}</div><h2>${DM_NAME}</h2>
+  <div class="box" style="font:14px/1.55 var(--serif)">A market-blind Markov-chain simulator runs every fight 100,000 times and publishes how it ends: the chance it reaches the scorecards, the round-by-round finish split and prop projections. Its win probabilities are shown shrunk and raw, and both are being graded in public against the closing line. Reads that a standing rule blocks are shown struck through with the reason. <a href="#/methodology" style="text-decoration:underline">How it works</a> · <a href="#/glossary" style="text-decoration:underline">Glossary</a> · <a href="#/duration-grading" style="text-decoration:underline">Grading</a></div>
+  <h3>Cards</h3><div class="tw"><table><thead><tr><th class="l">Date</th><th class="l">Card</th><th class="c">Status</th><th>Fights</th><th class="l">Summary</th></tr></thead><tbody>` +
+  M.cards.map(c => `<tr class="click" data-href="#/duration/${c.slug}"><td class="l">${sdate(c.date)}</td><td class="l b">${esc(c.title)}</td><td class="c">${chip(c.status)}</td><td>${c.fights}</td><td class="l dim">${c.partial ? "tables only (from the weekly doc)" : esc(c.summary || "")}</td></tr>`).join("") + `</tbody></table></div>`;
+  wireRows();
+}
+async function vDMCard(slug) {
+  const C = await dmJSON(`cards/${slug}.json`), ev = await dmFormEvent(C);
+  const F = C.fights.slice().sort((a, b) => a.order - b.order);
+  const vetoed = new Set((C.vetoes || []).map(v => v.fight_order + "|" + nm(v.side)));
+  const dogOf = (f) => f.fighters.find(x => x.side === "dog") || f.fighters.find(x => x.side === "pickem") || f.fighters.slice().sort((a, b) => a.model_win_shrunk - b.model_win_shrunk)[0];
+  const favOf = (f) => f.fighters.find(x => x !== dogOf(f));
+  let html = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/duration">${DM_NAME}</a> › ${esc(C.title)}</div><h2>${esc(C.title)}</h2>
+  <div class="sub">${C.date ? fdate(C.date) : ""} · ${esc(C.venue || "")} · engine ${esc(C.engine_version || "—")}${C.grading_window_index ? " · card " + C.grading_window_index + " of the 10-card grading window" : ""}</div>
+  <div class="links" style="margin-top:8px"><a href="#/duration/${slug}/tape">Tale of the tape</a>${ev ? `<a href="#/card/${ev.slug}">Fight Form card page</a>` : ""}<a href="#/duration-grading">Grading</a></div>
+  ${(C.notes || []).length ? `<div class="box" style="font:13px/1.5 var(--serif)"><b>Card notes.</b><ul style="margin:4px 0 0 18px;padding:0">${C.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul></div>` : ""}
+  <h3>Sheet input table</h3><div class="tw"><table><thead><tr><th class="c">#</th><th class="l">Underdog (odds)</th><th>${tip("Dog win % shrunk", "Shrunk win %")}</th><th>${tip("Dog win % raw", "Raw win %")}</th><th>${tip("Dog DEC% of wins", "DEC% of wins")}</th><th>${tip("Fav DEC% of wins", "DEC% of wins")}</th><th class="l">Flags</th></tr></thead><tbody>` +
+  F.map(f => { const d = dogOf(f), fv = favOf(f), div = Math.abs(d.model_win_shrunk - d.model_win_raw) >= 10, bs = [...new Set(f.fighters.flatMap(x => x.badges || []))];
+    return `<tr><td class="c dim">${f.order}</td><td class="l b">${esc(d.name)} <span class="dim">(${ml(d.market_odds)}${d.side === "pickem" ? ", pick'em" : ""})</span></td><td class="b" ${div ? 'style="background:var(--hl)"' : ""}>${p1(d.model_win_shrunk)}</td><td class="dim" ${div ? 'style="background:var(--hl)"' : ""}>${p1(d.model_win_raw)}</td><td>${d.dec_share_of_wins == null ? "—" : d.dec_share_of_wins + "%"}</td><td>${esc(last(fv.name))} ${fv.dec_share_of_wins == null ? "—" : fv.dec_share_of_wins + "%"}</td><td class="l">${bs.map(badge).join(" ")}</td></tr>`; }).join("") + `</tbody></table></div><div class="note">Highlighted pairs differ by 10+ points between shrunk and raw: the number is data-starved.</div>
+  <h3>Duration</h3><div class="tw"><table><thead><tr><th class="c">#</th><th class="l">Fight</th><th>${tip("P(dec)")}</th><th>${tip("Market GTD", "Market GTD (de-vigged)")}</th><th>${tip("Gap")}</th><th class="l">${tip("Rounds → decision", "Round distribution")}</th><th>Exp. min</th><th class="l">Result</th></tr></thead><tbody>` +
+  F.map(f => { const d = f.duration || {}, ff = dmMatch(ev, f), r = dmResult(f, ff), fl = (C.duration_flags || []).find(x => x.fight_order === f.order);
+    return `<tr><td class="c dim">${f.order}</td><td class="l b">${ff && ev ? `<a href="#/fight/${ev.slug}/${ff.n}">${esc(f.bout)}</a>` : esc(f.bout)} <span class="dim">${f.rounds}R</span></td><td class="b">${p1(d.p_dec)}</td><td>${p1(d.market_gtd_devig)}</td><td class="${d.gap != null && Math.abs(d.gap) >= 8 ? "b " + cls(d.gap) : "dim"}">${d.gap == null ? "—" : signed(d.gap)}</td><td class="l">${roundBar(d, f.rounds)}</td><td>${d.exp_minutes ?? "—"}</td><td class="l dim">${r ? esc((r.winner || "—") + " · " + r.method + (r.round ? " R" + r.round : "")) : ""}</td></tr>` +
+      (fl ? `<tr><td></td><td colspan="7" class="l" style="white-space:normal;background:var(--paper2)"><span class="pill ${fl.confidence === "vetoed" ? "r" : "y"}">${esc(fl.confidence)}</span> <span style="${fl.confidence === "vetoed" ? "text-decoration:line-through" : ""}"><b>${esc(fl.title)}</b></span> — ${esc(fl.mechanism)}</td></tr>` : ""); }).join("") + `</tbody></table></div><div class="legend"><span><i style="border-color:#7a1414"></i>early rounds</span><span><i style="border-color:#e9b79c"></i>late rounds</span><span><i style="border-color:#1d3f77"></i>decision</span></div>`;
+  const item = (title, body, conf) => `<div class="box" style="margin:6px 0;font:13.5px/1.5 var(--serif)"><span class="pill ${conf === "vetoed" ? "r" : conf === "artifact" ? "" : conf === "real" ? "g" : "y"}">${esc(conf)}</span> <span style="${conf === "vetoed" ? "text-decoration:line-through" : ""}"><b>${title}</b></span><br>${body}</div>`;
+  const reads = [];
+  for (const x of C.duration_flags || []) reads.push(item(esc(x.title), `Market ${esc(x.market_price)} (${p1(x.market_value)}) · model ${p1(x.model_value)}<br>${esc(x.mechanism)}`, x.confidence));
+  for (const x of C.ml_flags || []) reads.push(item(`${esc(x.side)} ${ml(x.market_odds)}`, `Model ${p1(x.model_shrunk)} shrunk / ${p1(x.model_raw)} raw · market ${p1(x.market_implied)} · edge ${signed(x.edge_pts)} pts<br><b>Mechanism:</b> ${esc(x.mechanism)}${x.counter ? `<br><b>Counter:</b> ${esc(x.counter)}` : ""}`, x.confidence));
+  for (const x of C.vetoes || []) reads.push(item(`${esc(x.side)} ${ml(x.market_odds)}`, `${esc(x.reason)}`, "vetoed"));
+  for (const x of C.prop_notes || []) reads.push(`<div class="box" style="margin:6px 0;font:13.5px/1.5 var(--serif)"><span class="pill">prop note</span> Fight ${x.fight_order}: ${esc(x.text)}</div>`);
+  html += `<h3>Flags and reads</h3>${reads.length ? reads.join("") : `<div class="note">${C.partial ? "This card was built from the weekly output doc; its flag write-ups are in the source doc." : "No flags on this card."}</div>`}<div class="note">Vetoed reads are shown, struck through, with the rule that blocks them. They are never picks.</div>
+  <h3>Per-fight detail</h3>`;
+  for (const f of F) { const full = f.fighters.every(x => x.finish_pct != null);
+    const fr = (x) => `<tr><td class="l b">${esc(x.name)} ${(x.badges || []).map(badge).join(" ")}</td><td>${ml(x.market_odds)}</td><td class="b">${p1(x.model_win_shrunk)}</td><td class="dim">${p1(x.model_win_raw)}</td>${full ? `<td>${p1(x.finish_ko)}</td><td>${p1(x.finish_sub)}</td><td>${x.ss_mean} / ${x.ss_median}</td><td>${x.td_proj}</td><td>${x.td_p1} / ${x.td_p2} / ${x.td_p3}%</td><td>${x.p_kd}%${x.p_kd_clamped ? " (clamped)" : ""}</td>` : `<td colspan="6" class="c dim">prop projections not in this file</td>`}</tr>`;
+    const tp = (x) => x.tape ? `<div class="kv"><span>${esc(x.name)}</span><span>${x.tape.age} · ${esc(x.tape.height)} / ${x.tape.reach}" · ${esc(x.tape.stance)} · ${esc(x.tape.record)} · SLpM ${x.tape.slpm} / SApM ${x.tape.sapm} · TD ${x.tape.td_avg} (${(x.tape.td_acc * 100).toFixed(0)}% / def ${(x.tape.td_def * 100).toFixed(0)}%) · <span class="dim">${esc(x.data_quality || "")}</span></span></div>` : "";
+    html += `<details class="box" style="margin:6px 0"><summary style="cursor:pointer;font:700 13px var(--sans)">${f.order}. ${esc(f.bout)} <span class="dim" style="font-weight:400">${esc(f.weight_class || "")} · ${f.rounds}R · P(dec) ${p1((f.duration || {}).p_dec)}</span></summary>
+      <div class="tw" style="margin-top:8px"><table><thead><tr><th class="l">Fighter</th><th>Odds</th><th>Shrunk</th><th>Raw</th><th>Finish KO</th><th>Finish sub</th><th title="Sig strikes mean / median">SS mean / med</th><th>TD proj</th><th>${tip("TD ≥1/2/3", "TD P(≥1/≥2/≥3)")}</th><th>${tip("P(KD)")}</th></tr></thead><tbody>${f.fighters.map(fr).join("")}</tbody></table></div>
+      ${f.spread ? `<div class="note">${tip("Spread", "Spread (per-card)")}: fav −3.5 covers ${p1(f.spread.fav_minus35)} · fav −9.5 covers ${p1(f.spread.fav_minus95)} (${esc(f.spread.convention)} convention)</div>` : ""}${f.fighters.map(tp).join("")}</details>`; }
+  html += `<details class="box" style="margin-top:12px"><summary style="cursor:pointer;font:700 13px var(--sans)">ARCHIVE block (paste into the sheet)</summary><p><a class="btn" id="cpy">Copy</a></p><pre id="arch" style="font:11.5px var(--mono);overflow:auto;white-space:pre">${esc(C.archive_tsv || "")}</pre></details>`;
+  $app.innerHTML = html;
+  const cp = document.getElementById("cpy"); if (cp) cp.addEventListener("click", () => { navigator.clipboard.writeText(C.archive_tsv || "").then(() => { cp.textContent = "Copied"; }); });
+}
+async function vDMTape(slug) {
+  const C = await dmJSON(`cards/${slug}.json`);
+  const rows = []; for (const f of C.fights.slice().sort((a, b) => a.order - b.order)) for (const x of f.fighters) if (x.tape) rows.push({ f, x });
+  const cols = [["Fight", r => r.f.order], ["Fighter", r => r.x.name], ["Side", r => r.x.side], ["Age", r => r.x.tape.age], ["Ht", r => r.x.tape.height], ["Reach", r => r.x.tape.reach], ["Stance", r => r.x.tape.stance], ["Record", r => r.x.tape.record], ["SLpM", r => r.x.tape.slpm], ["SApM", r => r.x.tape.sapm], ["Str acc", r => r.x.tape.str_acc], ["Str def", r => r.x.tape.str_def], ["TD avg", r => r.x.tape.td_avg], ["TD acc", r => r.x.tape.td_acc], ["TD def", r => r.x.tape.td_def], ["Sub avg", r => r.x.tape.sub_avg], ["Shrunk", r => r.x.model_win_shrunk], ["Raw", r => r.x.model_win_raw], ["Odds", r => r.x.market_odds], ["Data quality", r => r.x.data_quality]];
+  let sort = 0, dir = 1;
+  const draw = () => { const R = rows.slice().sort((a, b) => { const va = cols[sort][1](a), vb = cols[sort][1](b); return (typeof va === "number" && typeof vb === "number" ? va - vb : String(va).localeCompare(String(vb))) * dir; });
+    $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/duration">${DM_NAME}</a> › <a href="#/duration/${slug}">${esc(C.title)}</a> › Tape</div><h2>Tale of the tape</h2><div class="sub">${esc(C.title)} · tap a column to sort${rows.length < C.fights.length * 2 ? " · only fights with tape data in this file are listed" : ""}</div>
+      <div class="links" style="margin-top:8px"><a href="data/cards/${slug}.csv" download>Download raw stats CSV</a></div>
+      ${rows.length ? `<div class="tw"><table><thead><tr>${cols.map((c, i) => `<th class="${i === 1 || i === 19 ? "l" : ""}" data-i="${i}" style="cursor:pointer${i === 1 ? ";position:sticky;left:0;background:var(--paper2)" : ""}">${c[0]}${i === sort ? (dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead><tbody>${R.map(r => `<tr>${cols.map((c, i) => { const v = c[1](r); return `<td class="${i === 1 || i === 19 ? "l" : ""}" style="${i === 1 ? "position:sticky;left:0;background:#fbf7ec;font-weight:700" : ""}${i === 19 ? "white-space:normal;min-width:180px" : ""}">${i === 18 ? ml(v) : esc(v == null ? "—" : v)}</td>`; }).join("")}</tr>`).join("")}</tbody></table></div>` : `<div class="banner">No tape data in this card file.</div>`}`;
+    $app.querySelectorAll("th[data-i]").forEach(th => th.addEventListener("click", () => { const i = +th.dataset.i; if (i === sort) dir = -dir; else { sort = i; dir = 1; } draw(); })); };
+  draw();
+}
+async function vDMGrading() {
+  const M = await dmJSON("manifest.json"); const rows = []; const flags = []; const vets = []; let graded = 0;
+  for (const c of M.cards) { const C = await dmJSON(`cards/${c.slug}.json`), ev = await dmFormEvent(C); let any = false;
+    for (const f of C.fights) { const ff = dmMatch(ev, f), r = dmResult(f, ff); if (!r) continue; any = true;
+      const A = f.fighters[0], B = f.fighters[1], ia = implied(A.market_odds), ib = implied(B.market_odds);
+      let pm = ia != null && ib != null ? ia / (ia + ib) : null, pmSrc = "card odds";
+      if (pm == null && ff && ff.odds) { const pa = ff.odds.close.p; pm = sameFighter(ff.a.name, A.name) ? pa : 1 - pa; pmSrc = "Fight Form close"; }
+      const void_ = r.method === "NC" || r.method === "DRAW" || !r.winner, won = void_ ? null : (sameFighter(r.winner, A.name) ? 1 : 0), dist = void_ ? null : (r.method === "DEC" ? 1 : 0);
+      rows.push({ c: C, f, r, A, B, pm, pmSrc, won, dist, void_ }); }
+    if (any) graded++;
+    const res = (order) => { const f = C.fights.find(x => x.order === order); return f ? dmResult(f, dmMatch(ev, f)) : null; };
+    const settle = (odds, win) => win == null ? 0 : win ? (odds > 0 ? odds / 100 : 100 / -odds) : -1;
+    for (const x of C.ml_flags || []) { const r = res(x.fight_order); if (!r) continue; const v = r.method === "NC" || r.method === "DRAW"; flags.push({ c: C, kind: "ML", t: x.side, odds: x.market_odds, conf: x.confidence, pnl: settle(x.market_odds, v ? null : sameFighter(r.winner || "", x.side)), v }); }
+    for (const x of C.duration_flags || []) { const r = res(x.fight_order); const o = parseInt(String(x.market_price).replace("+", "").replace("−", "-"), 10); if (!r || !isFinite(o)) continue; const v = r.method === "NC" || r.method === "DRAW"; flags.push({ c: C, kind: "GTD", t: x.title, odds: o, conf: x.confidence, pnl: settle(o, v ? null : r.method === "DEC"), v }); }
+    for (const x of C.vetoes || []) { const r = res(x.fight_order); if (!r || x.market_odds == null) continue; const v = r.method === "NC" || r.method === "DRAW"; vets.push({ c: C, t: x.side, odds: x.market_odds, pnl: settle(x.market_odds, v ? null : sameFighter(r.winner || "", x.side)), won: !v && sameFighter(r.winner || "", x.side) }); }
+  }
+  const crumbs = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/duration">${DM_NAME}</a> › Grading</div><h2>Grading · model against the market</h2>`;
+  if (!rows.length) { $app.innerHTML = crumbs + `<div class="banner">No graded cards yet — grading begins when results are entered.</div>`; return; }
+  const ok = rows.filter(r => !r.void_), brier = (xs) => xs.length ? (xs.reduce((s, v) => s + v, 0) / xs.length).toFixed(4) : "—";
+  const mlAll = ok.filter(r => r.pm != null);
+  const bS = brier(mlAll.map(r => (r.A.model_win_shrunk / 100 - r.won) ** 2)), bR = brier(mlAll.map(r => (r.A.model_win_raw / 100 - r.won) ** 2)), bM = brier(mlAll.map(r => (r.pm - r.won) ** 2));
+  const du = ok.filter(r => r.f.duration && r.f.duration.p_dec != null && r.f.duration.market_gtd_devig != null);
+  const bD = brier(du.map(r => (r.f.duration.p_dec / 100 - r.dist) ** 2)), bDM = brier(du.map(r => (r.f.duration.market_gtd_devig / 100 - r.dist) ** 2));
+  const live = flags.filter(x => x.conf === "real" || x.conf === "lean"), fw = live.filter(x => x.pnl > 0).length, fl = live.filter(x => x.pnl < 0).length, fp = live.reduce((s, x) => s + x.pnl, 0);
+  const vw = vets.filter(x => x.won).length, vp = vets.reduce((s, x) => s + x.pnl, 0);
+  $app.innerHTML = crumbs + `<p class="sub">${ok.length} graded fights over ${graded} cards. Brier score: lower is better. This is a small sample. Results come from the card file when present, otherwise from UFCStats.</p>
+    <div class="stats"><div><b>${graded}</b><span>Cards graded on this page (window is 10)</span></div><div><b>${bS}</b><span>Win % Brier · shrunk</span></div><div><b>${bR}</b><span>Win % Brier · raw</span></div><div><b>${bM}</b><span>Win % Brier · market (${mlAll.length} fights)</span></div><div><b>${bD}</b><span>P(dec) Brier · model</span></div><div><b>${bDM}</b><span>GTD Brier · market (${du.length} fights)</span></div></div>
+    <div class="stats" style="margin-top:10px"><div><b>${fw}-${fl}</b><span>Flags, real + lean (${live.length})</span></div><div><b class="${cls(fp)}">${live.length ? signed(fp, 2) + "u" : "—"}</b><span>Flag result at listed odds, 1u each</span></div><div><b>${vw}-${vets.length - vw}</b><span>D-code vetoed dogs (${vets.length})</span></div><div><b class="${cls(vp)}">${vets.length ? signed(vp, 2) + "u" : "—"}</b><span>Shadow result: what the vetoes skipped</span></div></div>
+    <p class="note">A negative shadow result means the vetoes saved money; a positive one means they cost it. Flags are settled only where the card file carries the flag list.</p>
+    <h3>Every graded fight</h3><div class="tw"><table><thead><tr><th class="l">Card</th><th class="l">Fight</th><th>Shrunk</th><th>Raw</th><th>Market</th><th>P(dec)</th><th>Mkt GTD</th><th class="l">Result</th><th class="c" title="Did the shrunk number have the winner above 50%?">Win</th><th class="c" title="Was P(dec) on the right side of 50%?">Dist</th></tr></thead><tbody>` +
+    rows.map(r => { const d = r.f.duration || {}, hitW = r.void_ ? "" : ((r.A.model_win_shrunk > 50) === (r.won === 1) ? '<span class="W">✓</span>' : '<span class="L">✗</span>'), hitD = r.void_ || d.p_dec == null ? "" : ((d.p_dec > 50) === (r.dist === 1) ? '<span class="W">✓</span>' : '<span class="L">✗</span>');
+      return `<tr><td class="l dim">${sdate(r.c.date)}</td><td class="l b"><a href="#/duration/${r.c.slug}">${esc(r.f.bout)}</a></td><td>${p1(r.A.model_win_shrunk)}</td><td class="dim">${p1(r.A.model_win_raw)}</td><td title="${r.pmSrc}">${r.pm == null ? "—" : (r.pm * 100).toFixed(1) + "%"}</td><td>${p1(d.p_dec)}</td><td>${d.market_gtd_devig == null ? "—" : p1(d.market_gtd_devig)}</td><td class="l">${esc((r.r.winner || "—") + " · " + r.r.method + (r.r.round ? " R" + r.r.round : ""))}</td><td class="c">${hitW}</td><td class="c">${hitD}</td></tr>`; }).join("") + `</tbody></table></div><div class="note">Win % columns are for the first-named fighter. Market win % is de-vigged from the card's odds where both sides are in the file, otherwise the Fight Form closing consensus.</div>`;
+}
+async function vMethodology() {
+  $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/duration">${DM_NAME}</a> › Methodology</div><h2>How the Markov model works</h2><div class="box" style="font:14.5px/1.6 var(--serif)">
+  <p><b>The engine in one paragraph.</b> The model is a Markov-chain fight simulator (engine version V4.1b). Each fight is simulated 100,000 times in 30-second intervals across four positional states (distance, clinch, ground A-top, ground B-top), using each fighter's positional pace data, career striking and grappling rates, and a durability layer built on knockdowns landed and absorbed per 15 minutes ("power × chin"), adjusted for age, coming off a KO loss, gender, and division base rates. Fighters with three or fewer UFC fights get priors from their pre-UFC (regional) records. The model is <b>market-blind</b>: it never sees betting odds when producing its numbers; odds are only used afterward to measure disagreement.</p>
+  <p><b>Why duration, not winners.</b> Five years of backtesting (2,591 UFC fights against closing lines) showed that the closing moneyline is extremely well calibrated. No public input tested (fan picks, tipster consensus, "sharp money") adds anything to it, and no stats-built win model has come close. What the market systematically misprices is <b>how fights end</b>: five-round fights priced 40% or more to decide go the distance far more than priced (+23% ROI, positive six straight years, 141 fights), heavyweight fights now decide 44–48% while priced near 34%, and the finish side of every prop market carries structural tax. So the model's primary products are P(decision), the round-by-round finish distribution, and the prop projections built from expected fight minutes. The moneyline output is a low-weight input, flagged only on disagreements of 8+ points that come with a named fighter-specific mechanism.</p>
+  <p><b>Dual columns: shrunk and raw.</b> The model publishes two win probabilities per fighter. Raw is the pure simulation output. Shrunk applies a confidence blend toward 50% when fighters have thin UFC samples. Both are archived every card and graded against results; early evidence suggests raw tracks the market better on thin-sample fights (the shrink manufactures fake underdog edges), and the blend will be deleted if grading confirms it. Until then shrunk is the official number, raw is the second opinion, and a large gap between them is itself a signal that the number is data-starved.</p>
+  <p><b>The discipline layer.</b> Rules learned from the five-year data override model output. No underdog bets under 8 points of edge, and none at all when public or tipster money is heavy on the dog. The D-code veto: underdogs with three or fewer UFC fights whose last pre-UFC stop was LFA or a minor regional promotion are automatic no-bets through their third UFC fight (−36.6% ROI historically on 252 fights, negative every year); the veto applies even when the model loves the dog, and those cases are tracked to test the rule. No unders, no inside-the-distance props, no method props below 50% implied, no submission props. No flag ships without a one-line fighter-specific reason. A number without a mechanism is treated as noise.</p>
+  <p><b>Grading.</b> Every card, the model's P(win) (both variants), P(decision), expected minutes and round distribution are archived next to the closing line. After a ten-card window: Brier scores against the close on both channels, the result of the 8-point flags, and the shadow record of vetoed bets. The model's future weight, including whether its moneyline output is used at all, moves with that grade. The expected outcome, stated in advance: the duration channel beats the market and the moneyline channel doesn't.</p>
+  <p><b>What this is not.</b> This is a research tool and a public record of a model being graded in real time. It is not betting advice. The numbers are probabilistic model outputs with known blind spots, most importantly <b>opponent quality</b> (a record built against weak competition looks identical to one built against killers) and <b>anything that happened outside the cage</b> (camps, injuries, weight cuts, personal circumstances). Several of the site's own flags each week are labeled artifacts of those blind spots. If you bet, bet with money you can afford to lose and expect variance that dwarfs any edge shown here.</p>
+  <p class="dim">Credits: positional data derived from MMAOddsBreaker's public comparison tool; career stats from UFCStats; market prices from BestFightOdds medians.</p></div>`;
+}
+async function vGlossary() {
+  $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/duration">${DM_NAME}</a> › Glossary</div><h2>Glossary</h2><div class="tw"><table><tbody>${Object.entries(GLOSS).map(([k, v]) => `<tr><td class="l b" style="white-space:nowrap">${esc(k)}</td><td class="l" style="white-space:normal;font:13.5px/1.5 var(--serif)">${esc(v)}</td></tr>`).join("")}</tbody></table></div>`;
+}
+
 /* ---------- router + search ---------- */
 const routes = [[/^#\/?$/, vHome, "home"], [/^#\/cards$/, vCards, "cards"], [/^#\/card\/([^/]+)$/, vCard, "cards"], [/^#\/fight\/([^/]+)\/(\d+)$/, vFight, "cards"],
-  [/^#\/fighters$/, vFighters, "fighters"], [/^#\/fighter\/([^/]+)$/, vFighter, "fighters"], [/^#\/model$/, vModel, "model"], [/^#\/research$/, vResearch, "research"], [/^#\/compare\/([^/]+)\/([^/]+)$/, vCompare, "fighters"], [/^#\/rankings$/, vRankings, "fighters"], [/^#\/sheet\/([^/]+)$/, vSheet, "cards"], [/^#\/about$/, vAbout, "about"]];
+  [/^#\/fighters$/, vFighters, "fighters"], [/^#\/fighter\/([^/]+)$/, vFighter, "fighters"], [/^#\/model$/, vModel, "model"], [/^#\/duration$/, vDM, "duration"], [/^#\/duration-grading$/, vDMGrading, "duration"], [/^#\/duration\/([^/]+)\/tape$/, vDMTape, "duration"], [/^#\/duration\/([^/]+)$/, vDMCard, "duration"], [/^#\/methodology$/, vMethodology, "duration"], [/^#\/glossary$/, vGlossary, "duration"], [/^#\/research$/, vResearch, "research"], [/^#\/compare\/([^/]+)\/([^/]+)$/, vCompare, "fighters"], [/^#\/rankings$/, vRankings, "fighters"], [/^#\/sheet\/([^/]+)$/, vSheet, "cards"], [/^#\/about$/, vAbout, "about"]];
 async function route() {
   const h = location.hash || "#/";
   for (const [re, fn, tab] of routes) { const m = re.exec(h); if (!m) continue;
