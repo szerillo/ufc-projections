@@ -17,6 +17,7 @@ Writes: form/data/index.json, events/*.json, fighters/*.json, search.json, model
 """
 from __future__ import annotations
 import form_model
+import card_overrides
 import math
 import argparse, csv, datetime as dt, glob, gzip, io, json, os, re, statistics, subprocess, sys, unicodedata, urllib.request
 from collections import defaultdict
@@ -911,6 +912,9 @@ def main():
     # ------------------------------------------------ upcoming (from BettingPros card + Odds API live)
     up_index = []
     for slug, d, edate in sorted(upcoming, key=lambda x: x[2]):
+        # real-card corrections (cancelled bouts, replacements, title flags, order) live in
+        # data/card_overrides.json so a rebuild never brings stale feed bouts back
+        d = dict(d, fights=card_overrides.apply_feed(slug, d["fights"]))
         w = next((w for w in widgets if abs((w["date"] - edate).days) <= 1), None)
         fo = []
         for bf in sorted(d["fights"], key=lambda x: -x["n"]):
@@ -1018,6 +1022,10 @@ def main():
         doc = {"name": name, "slug": eslug, "date": edate.isoformat(), "location": d.get("venue") or "", "status": "upcoming",
                "url": None, "widget": {"file": w["file"], "title": (w["title"] or "").replace(" · Fight Form", "")} if w else None,
                "odds_updated": d.get("updated_at"), "bp_file": f"data/{slug}_odds.json", "fights": fo}
+        doc = card_overrides.apply_doc(slug, doc, OUT / "fighters")
+        fo = doc["fights"]
+        for err in card_overrides.check(slug, doc):
+            print("  card override check", slug, err, file=sys.stderr)
         json.dump(doc, open(OUT / "events" / f"{eslug}.json", "w"), separators=(",", ":"))
         up_index.append({"name": name, "slug": eslug, "date": edate.isoformat(), "loc": doc["location"], "nf": len(fo), "model": bool(w) or any(x.get("model") for x in fo),
                          "main": f"{fo[0]['a']['name']} vs {fo[0]['b']['name']}" if fo else ""})

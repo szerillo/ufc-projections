@@ -1,0 +1,32 @@
+{
+  "_doc": "Real-card corrections the BettingPros feed misses. Keyed by the cards.yml slug. Applied by scripts/card_overrides.py inside build_form.py, so rebuilds keep them. Source every entry. Order lists bouts main event first as 'A|B' (any corner order).",
+  "ufc_334": {
+    "source": "UFC.com event page ufc-334 and UFC.com news 'Updates To Polymarket UFC 334', checked 2026-11-11",
+    "cancel": [
+      ["Nazim Sadykhov", "Jefferson Nascimento"]
+    ],
+    "replace": [
+      {"out": "Adrian Yanez", "in": "Alatengheili", "opp": "Juan Diaz"}
+    ],
+    "title": [
+      ["Ciryl Gane", "Josh Hokit"],
+      ["Kayla Harrison", "Amanda Nunes"]
+    ],
+    "order": [
+      "Ciryl Gane|Josh Hokit",
+      "Kayla Harrison|Amanda Nunes",
+      "Caio Borralho|Yousri Belgaroui",
+      "Uros Medic|Kevin Holland",
+      "Bilal Hasan|Luis Gurule",
+      "Stephen Thompson|Charles Radtke",
+      "Drew Dober|Chris Duncan",
+      "Jim Miller|Terrance McKinney",
+      "Donte Johnson|Cesar Almeida",
+      "Jared Gordon|Melquizael Costa",
+      "Macy Chiasson|Bia Mesquita",
+      "Alatengheili|Juan Diaz",
+      "Evan Elder|Samuel Sanches"
+    ],
+    "segments": {"main": 5, "prelims": 4, "early": 4}
+  }
+}
