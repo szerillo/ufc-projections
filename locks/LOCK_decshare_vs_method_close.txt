@@ -1,0 +1,19 @@
+LOCK: does the engine's decision share beat the method-prop close? (written 2026-11-11, before any method close is pulled or scored)
+Status at lock time: no method-prop close for cards 2-8 has been pulled; GTD closes were pulled and scored in block 9 (not reused here as evidence).
+
+Hypothesis: the engine's P(decision | fighter wins) ("dec share", the AP/AQ numbers) carries information the closing method market does not.
+Cards: the 7 graded V4.1b cards, 2026-09-26 to 2026-11-07 (same as block 25). Bouts with a winner by KO/TKO, SUB or DEC; draws, NC, DQ out.
+Unit: one row per bout, conditioned on the actual winner W. y = 1 if W won by decision.
+  Model q = the card output's DEC% of wins for W (MD sheet-input table). Bouts without it are dropped and counted.
+  Market m = P(W by DEC) / P(W wins) from the six-way method close: BFO event page after the event, last listed price per book,
+  US regulated books only (FanDuel, DraftKings, BetMGM, Caesars, BetRivers; BetRivers and Unibet once if identical).
+  Per book: implied probabilities of the six outcomes normalized to 1 (multiplicative), only books pricing all six; median across books
+  of the conditional share. A bout needs 2+ such books. Power and Shin versions reported as a sensitivity, not deciding.
+  Both q and m are conditional on the same event (W wins), so conditioning on the realized winner is not look-ahead for either.
+Metric: log loss, probabilities clipped to [0.01, 0.99].
+Blend: M1 logit = logit(m) + k (logit(q) - logit(m)); k fit by minimum log loss.
+Pass bar (all three): (1) leave-one-card-out pooled log loss of M1 below the market's; (2) M1 better on at least 5 of 7 held-out cards;
+  (3) card-bootstrap 90% interval for k (2,000 resamples of cards, random.seed(0)) entirely above 0.
+Reported, not deciding: q alone vs m alone; the same on GTD-share bouts at 5 rounds; n per card.
+If n < 40 bouts the verdict is "too small to conclude" whatever the numbers say.
+Data pull: Chrome, BFO event pages for the 7 cards, polite rate, read only. Paper only; nothing to the sheet, site or main.
