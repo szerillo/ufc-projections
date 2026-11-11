@@ -1,0 +1,40 @@
+{
+ "_doc": "Flag, veto and prop-note lines transcribed from UFC_334_Gane_vs_Hokit_V41b_Output.md (Sean's hand run, card 9). fight_order follows the doc's fight numbers.",
+ "grading_window_index": 9,
+ "duration_flags": [
+  {"fight_order": 11, "title": "Mesquita-Chiasson GTD +180", "market_price": "+180", "model_value": 60.6, "market_value": 33.3,
+   "mechanism": "Mesquita is a BJJ world champion who controls rather than finishes on the feet; women's BW decides about 63% at base, so 33% is low for the division.",
+   "counter": "Mesquita has 13 UFC minutes and her TD outputs are capped.", "confidence": "lean"},
+  {"fight_order": 1, "title": "Gane-Hokit GTD +175", "market_price": "+175", "model_value": 47.2, "market_value": 34.0,
+   "mechanism": "Hokit's wrestling (5.5 projected TDs) makes control time, and the champ rounds thin out the late hazard.",
+   "counter": "Hokit's pace comes from a 36-minute sample and is inflated; 5R rule does not fire (listed under 40%) and the HW lean is paused.", "confidence": "lean"},
+  {"fight_order": 10, "title": "Costa-Gordon GTD +138", "market_price": "+138", "model_value": 48.7, "market_value": 39.3,
+   "mechanism": "Gordon is a decision fighter (70% of his sim wins go the distance); Costa is moving up from FW.", "confidence": "lean"},
+  {"fight_order": 4, "title": "Hasan-Gurule GTD", "model_value": 47.1, "market_value": 17.8, "mechanism": "Hasan has an 8-minute sample.", "confidence": "artifact"},
+  {"fight_order": 9, "title": "Johnson-Almeida GTD", "model_value": 43.7, "market_value": 31.0, "mechanism": "Johnson's confidence is at the 30% floor.", "confidence": "artifact"},
+  {"fight_order": 8, "title": "McKinney-Miller GTD", "model_value": 23.0, "market_value": 11.7, "mechanism": "Rides the P(KD) clamp.", "confidence": "artifact"}
+ ],
+ "ml_flags": [
+  {"fight_order": 6, "side": "Charles Radtke", "market_odds": 133, "model_shrunk": 50.8, "model_raw": 50.9, "market_implied": 40.7, "edge_pts": 10.1,
+   "mechanism": "Thompson is 43.8, on an L3, after a 16-month layoff; Radtke has a 93% control rate against a fighter who does not wrestle.",
+   "counter": "Thompson's distance craft and how hard he has been to finish.", "confidence": "lean"},
+  {"fight_order": 8, "side": "Jim Miller", "market_odds": 161, "model_shrunk": 47.2, "model_raw": 46.8, "market_implied": 36.3, "edge_pts": 10.9,
+   "mechanism": "McKinney has absorbed 2.18 KD per 15 min, has 5 KO losses, and is off an R1 KO loss.",
+   "counter": "Miller is 43.2 and his 40% P(KD) is clamped, so the edge size is overstated.", "confidence": "lean"},
+  {"fight_order": 2, "side": "Amanda Nunes", "market_odds": 154, "model_shrunk": 70.1, "model_raw": 75.5, "mechanism": "KD rate saturates the KO grid; the 41-month layoff costs only -0.02 in the engine.", "confidence": "artifact"},
+  {"fight_order": 1, "side": "Josh Hokit", "market_odds": 165, "model_shrunk": 66.2, "model_raw": 73.0, "mechanism": "Pace inflated by a thin sample.", "confidence": "artifact"},
+  {"fight_order": 10, "side": "Jared Gordon", "market_odds": 293, "model_shrunk": 57.2, "model_raw": 58.0, "mechanism": "No clean mechanism; Costa's weight change is not modeled.", "confidence": "artifact"},
+  {"fight_order": 5, "side": "Yousri Belgaroui", "market_odds": 131, "model_shrunk": 60.7, "model_raw": 69.5, "mechanism": "29-minute sample.", "confidence": "artifact"}
+ ],
+ "vetoes": [],
+ "prop_notes": [
+  {"fight_order": 1, "text": "Hokit 5.49 projected TDs (capped output, read as high)."},
+  {"fight_order": 12, "text": "Sanches and Elder both project 0.00 TDs because of Sanches's 2-minute DWCS sample: artifact."},
+  {"fight_order": 7, "text": "Duncan-Dober 45.6% ends in R1; McKinney-Miller 45.3%; Medic-Holland 44.7% (method props, not totals)."},
+  {"fight_order": 1, "text": "SS 5R: Hokit 96.6 and Gane 88.9 mean over 16.7 expected minutes; Hokit rides his inflated pace."}
+ ],
+ "notes_extra": [
+  "Sheet rule (v4.7): Hasan about 86% de-vigged triggers the 80%+ favorite rule.",
+  "Conditional D-code: Juan Diaz (last feeder LUX) is D-coded if he opens as the underdog; GF if he opens as the favorite."
+ ]
+}

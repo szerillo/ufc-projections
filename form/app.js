@@ -692,6 +692,7 @@ const GLOSS = {
   "P(KD)": "Probability the fighter scores at least one knockdown. \"Clamped\" means it hit the model's 40% cap (treat as \"high\").",
   "Spread (per-card)": "Fav −3.5 = wins by finish or a decision containing a 10-8 round; fav −9.5 in a three-round fight = wins by finish.",
   "§1d prior": "Pre-UFC (regional) record data blended in for fighters with three or fewer UFC fights.",
+  "THIN SAMPLE": "Three or fewer UFC fights (or a sample the run itself marked thin) and no pre-UFC Sherdog data entered yet. Read the model numbers with caution.",
   "D-code": "Automatic no-bet veto: underdog with three or fewer UFC fights whose last pre-UFC bout was in LFA or a minor regional promotion (historically −36.6% ROI). DWCS, Bellator, PFL, ONE, KSW and Rizin graduates are exempt.",
   "SYN": "The fight's positional data was synthesized (matchup missing from the positional data source); treat pace and takedown projections as low-confidence.",
   "Mechanism": "The one-line fighter-specific reason a flag exists. No mechanism, no flag.",

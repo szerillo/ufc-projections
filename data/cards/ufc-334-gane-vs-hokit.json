@@ -1,0 +1,1368 @@
+{
+ "slug": "ufc-334-gane-vs-hokit",
+ "title": "UFC 334: Gane vs Hokit",
+ "date": "2026-11-14",
+ "venue": "Madison Square Garden, NYC",
+ "engine_version": "V4.1b",
+ "partial": true,
+ "notes": [
+  "13 bouts, no scratches; 12 priced, plus Alatengheili vs Juan Diaz with no line yet. Five-round bouts: Gane-Hokit (HW title) and Harrison-Nunes (WBW title). Data: 11 real Oddsbreaker matchups, SYN on Sanches-Elder (both sides) and the Alatengheili side. §1d active on 5 fighters: Harrison, Hasan, Mesquita, Diaz, Sanches. Only GTD/ITD props posted so far, so O/U totals and the 5R O4.5 lines are pending a re-scrape.",
+  "Sheet rule (v4.7): Hasan about 86% de-vigged triggers the 80%+ favorite rule.",
+  "Conditional D-code: Juan Diaz (last feeder LUX) is D-coded if he opens as the underdog; GF if he opens as the favorite.",
+  "Per-fighter finish, SS median, TD ladder and P(KD) are in the source doc only; SS mean and TD projection come from the raw-stats CSV."
+ ],
+ "archive_tsv": "Ciryl Gane vs Josh Hokit\t33.8\t27.0\t47.2\t16.7\t17.3\t15.0\t10.0\t5.7\t4.7\nKayla Harrison vs Amanda Nunes\t29.9\t24.5\t45.4\t16.3\t18.3\t15.5\t10.2\t5.7\t4.8\nUros Medic vs Kevin Holland\t55.8\t56.5\t23.5\t7.3\t44.7\t22.5\t9.3\t0.0\t0.0\nBilal Hasan vs Luis Gurule\t59.8\t82.6\t47.1\t10.1\t26.6\t17.4\t8.8\t0.0\t0.0\nCaio Borralho vs Yousri Belgaroui\t39.3\t30.5\t66.4\t12.0\t15.5\t11.5\t6.6\t0.0\t0.0\nStephen Thompson vs Charles Radtke\t49.2\t49.1\t37.2\t9.0\t33.3\t20.1\t9.5\t0.0\t0.0\nChris Duncan vs Drew Dober\t63.2\t64.6\t22.9\t7.2\t45.6\t22.3\t9.2\t0.0\t0.0\nTerrance McKinney vs Jim Miller\t52.8\t53.2\t23.0\t7.3\t45.3\t22.4\t9.2\t0.0\t0.0\nDonte Johnson vs Cesar Almeida\t58.0\t76.8\t43.7\t9.7\t28.8\t18.2\t9.3\t0.0\t0.0\nMelquizael Costa vs Jared Gordon\t42.8\t42.0\t48.7\t10.3\t25.6\t17.0\t8.8\t0.0\t0.0\nBia Mesquita vs Macy Chiasson\t55.2\t59.5\t60.6\t11.5\t18.5\t13.4\t7.5\t0.0\t0.0\nSamuel Sanches vs Evan Elder\t59.3\t81.1\t39.0\t9.2\t31.9\t19.8\t9.4\t0.0\t0.0\nAlatengheili vs Juan Diaz\t37.7\t24.6\t75.5\t12.9\t11.0\t8.6\t5.0\t0.0\t0.0",
+ "fights": [
+  {
+   "order": 1,
+   "bout": "Ciryl Gane vs Josh Hokit",
+   "weight_class": "Heavyweight",
+   "rounds": 5,
+   "is_main_event": true,
+   "fighters": [
+    {
+     "name": "Ciryl Gane",
+     "side": "fav",
+     "market_odds": -210,
+     "model_win_shrunk": 33.8,
+     "model_win_raw": 27.0,
+     "dec_share_of_wins": 31.0,
+     "badges": [],
+     "ss_mean": 88.9,
+     "td_proj": 0.42,
+     "tape": {
+      "age": 36.6,
+      "height": "6'4",
+      "reach": 81.0,
+      "stance": "Orthodox",
+      "record": "14-2-0 (1NC)",
+      "slpm": 5.4,
+      "sapm": 2.31,
+      "str_acc": 0.61,
+      "str_def": 0.6,
+      "td_avg": 0.66,
+      "td_acc": 0.23,
+      "td_def": 0.47,
+      "sub_avg": 0.6
+     },
+     "data_quality": "OK (Aspinall bout = NC)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Josh Hokit",
+     "side": "dog",
+     "market_odds": 165,
+     "model_win_shrunk": 66.2,
+     "model_win_raw": 73.0,
+     "dec_share_of_wins": 55.0,
+     "badges": [
+      "THIN SAMPLE"
+     ],
+     "ss_mean": 96.6,
+     "td_proj": 5.49,
+     "tape": {
+      "age": 29.0,
+      "height": "6'1",
+      "reach": 73.0,
+      "stance": "Orthodox",
+      "record": "10-0-0",
+      "slpm": 9.29,
+      "sapm": 5.28,
+      "str_acc": 0.64,
+      "str_def": 0.48,
+      "td_avg": 3.73,
+      "td_acc": 0.47,
+      "td_def": 0.77,
+      "sub_avg": 0.4
+     },
+     "data_quality": "THIN (36 min; pace inflated; TD capped)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 47.2,
+    "market_gtd_devig": 34.0,
+    "gap": 13.2,
+    "round_dist": [
+     17.3,
+     15.0,
+     10.0,
+     5.7,
+     4.7
+    ],
+    "exp_minutes": 16.7
+   },
+   "result": null
+  },
+  {
+   "order": 2,
+   "bout": "Kayla Harrison vs Amanda Nunes",
+   "weight_class": "Women's Bantamweight",
+   "rounds": 5,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Kayla Harrison",
+     "side": "fav",
+     "market_odds": -195,
+     "model_win_shrunk": 29.9,
+     "model_win_raw": 24.5,
+     "dec_share_of_wins": 28.0,
+     "badges": [
+      "§1d"
+     ],
+     "ss_mean": 56.4,
+     "td_proj": 1.39,
+     "tape": {
+      "age": 36.4,
+      "height": "5'8",
+      "reach": 66.0,
+      "stance": "Southpaw",
+      "record": "19-1-0",
+      "slpm": 4.29,
+      "sapm": 1.1,
+      "str_acc": 0.62,
+      "str_def": 0.66,
+      "td_avg": 2.84,
+      "td_acc": 0.37,
+      "td_def": 1.0,
+      "sub_avg": 0.9
+     },
+     "data_quality": "OK (§1d PFL; ~17-mo layoff; no prior Nunes bout)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Amanda Nunes",
+     "side": "dog",
+     "market_odds": 154,
+     "model_win_shrunk": 70.1,
+     "model_win_raw": 75.5,
+     "dec_share_of_wins": 53.0,
+     "badges": [],
+     "ss_mean": 46.1,
+     "td_proj": 0.0,
+     "tape": {
+      "age": 38.5,
+      "height": "5'8",
+      "reach": 69.0,
+      "stance": "Orthodox",
+      "record": "23-5-0",
+      "slpm": 4.55,
+      "sapm": 2.62,
+      "str_acc": 0.51,
+      "str_def": 0.57,
+      "td_avg": 2.73,
+      "td_acc": 0.54,
+      "td_def": 0.82,
+      "sub_avg": 0.7
+     },
+     "data_quality": "OK data; ~41-mo layoff; P(KD) clamp",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 45.4,
+    "market_gtd_devig": 38.2,
+    "gap": 7.2,
+    "round_dist": [
+     18.3,
+     15.5,
+     10.2,
+     5.7,
+     4.8
+    ],
+    "exp_minutes": 16.3
+   },
+   "result": null
+  },
+  {
+   "order": 3,
+   "bout": "Uros Medic vs Kevin Holland",
+   "weight_class": "Welterweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Uros Medic",
+     "side": "fav",
+     "market_odds": -155,
+     "model_win_shrunk": 55.8,
+     "model_win_raw": 56.5,
+     "dec_share_of_wins": 35.0,
+     "badges": [],
+     "ss_mean": 32.9,
+     "td_proj": 0.18,
+     "tape": {
+      "age": 33.6,
+      "height": "6'1",
+      "reach": 71.0,
+      "stance": "Southpaw",
+      "record": "14-3-0",
+      "slpm": 5.77,
+      "sapm": 3.4,
+      "str_acc": 0.6,
+      "str_def": 0.56,
+      "td_avg": 0.34,
+      "td_acc": 0.5,
+      "td_def": 0.55,
+      "sub_avg": 0.0
+     },
+     "data_quality": "GOOD",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Kevin Holland",
+     "side": "dog",
+     "market_odds": 125,
+     "model_win_shrunk": 44.2,
+     "model_win_raw": 43.5,
+     "dec_share_of_wins": 9.0,
+     "badges": [],
+     "ss_mean": 28.0,
+     "td_proj": 0.43,
+     "tape": {
+      "age": 34.0,
+      "height": "6'3",
+      "reach": 81.0,
+      "stance": "Orthodox",
+      "record": "29-15-0 (1NC)",
+      "slpm": 4.24,
+      "sapm": 3.21,
+      "str_acc": 0.49,
+      "str_def": 0.5,
+      "td_avg": 0.79,
+      "td_acc": 0.36,
+      "td_def": 0.57,
+      "sub_avg": 0.6
+     },
+     "data_quality": "GOOD",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 23.5,
+    "market_gtd_devig": 20.0,
+    "gap": 3.5,
+    "round_dist": [
+     44.7,
+     22.5,
+     9.3
+    ],
+    "exp_minutes": 7.3
+   },
+   "result": null
+  },
+  {
+   "order": 4,
+   "bout": "Bilal Hasan vs Luis Gurule",
+   "weight_class": "Flyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Bilal Hasan",
+     "side": "fav",
+     "market_odds": -1000,
+     "model_win_shrunk": 59.8,
+     "model_win_raw": 82.6,
+     "dec_share_of_wins": 52.0,
+     "badges": [
+      "THIN SAMPLE",
+      "§1d"
+     ],
+     "ss_mean": 72.5,
+     "td_proj": 1.23,
+     "tape": {
+      "age": 25.3,
+      "height": "5'7",
+      "reach": 70.0,
+      "stance": "Switch",
+      "record": "10-0-0 (1NC)",
+      "slpm": 9.01,
+      "sapm": 4.38,
+      "str_acc": 0.47,
+      "str_def": 0.5,
+      "td_avg": 1.83,
+      "td_acc": 1.0,
+      "td_def": 0.0,
+      "sub_avg": 0.0
+     },
+     "data_quality": "THIN (8 min; §1d; P(KD) clamp; 80%+ rule)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Luis Gurule",
+     "side": "dog",
+     "market_odds": 600,
+     "model_win_shrunk": 40.2,
+     "model_win_raw": 17.4,
+     "dec_share_of_wins": 40.0,
+     "badges": [],
+     "ss_mean": 49.5,
+     "td_proj": 1.08,
+     "tape": {
+      "age": 33.0,
+      "height": "5'5",
+      "reach": 64.0,
+      "stance": "Orthodox",
+      "record": "11-4-0",
+      "slpm": 5.44,
+      "sapm": 5.35,
+      "str_acc": 0.43,
+      "str_def": 0.57,
+      "td_avg": 0.64,
+      "td_acc": 0.15,
+      "td_def": 0.6,
+      "sub_avg": 0.2
+     },
+     "data_quality": "GOOD",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 47.1,
+    "market_gtd_devig": 17.8,
+    "gap": 29.3,
+    "round_dist": [
+     26.6,
+     17.4,
+     8.8
+    ],
+    "exp_minutes": 10.1
+   },
+   "result": null
+  },
+  {
+   "order": 5,
+   "bout": "Caio Borralho vs Yousri Belgaroui",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Caio Borralho",
+     "side": "fav",
+     "market_odds": -163,
+     "model_win_shrunk": 39.3,
+     "model_win_raw": 30.5,
+     "dec_share_of_wins": 50.0,
+     "badges": [],
+     "ss_mean": 34.5,
+     "td_proj": 0.85,
+     "tape": {
+      "age": 33.8,
+      "height": "6'1",
+      "reach": 75.0,
+      "stance": "Southpaw",
+      "record": "18-2-0 (1NC)",
+      "slpm": 3.47,
+      "sapm": 2.61,
+      "str_acc": 0.56,
+      "str_def": 0.6,
+      "td_avg": 1.25,
+      "td_acc": 0.5,
+      "td_def": 0.76,
+      "sub_avg": 0.4
+     },
+     "data_quality": "GOOD",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Yousri Belgaroui",
+     "side": "dog",
+     "market_odds": 131,
+     "model_win_shrunk": 60.7,
+     "model_win_raw": 69.5,
+     "dec_share_of_wins": 77.0,
+     "badges": [
+      "THIN SAMPLE"
+     ],
+     "ss_mean": 54.4,
+     "td_proj": 0.13,
+     "tape": {
+      "age": 34.5,
+      "height": "6'6",
+      "reach": 79.0,
+      "stance": "Orthodox",
+      "record": "11-3-0",
+      "slpm": 6.44,
+      "sapm": 2.28,
+      "str_acc": 0.63,
+      "str_def": 0.63,
+      "td_avg": 0.27,
+      "td_acc": 1.0,
+      "td_def": 0.66,
+      "sub_avg": 0.0
+     },
+     "data_quality": "THIN (29 min)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 66.4,
+    "market_gtd_devig": 61.8,
+    "gap": 4.6,
+    "round_dist": [
+     15.5,
+     11.5,
+     6.6
+    ],
+    "exp_minutes": 12.0
+   },
+   "result": null
+  },
+  {
+   "order": 6,
+   "bout": "Stephen Thompson vs Charles Radtke",
+   "weight_class": "Welterweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Stephen Thompson",
+     "side": "fav",
+     "market_odds": -166,
+     "model_win_shrunk": 49.2,
+     "model_win_raw": 49.1,
+     "dec_share_of_wins": 40.0,
+     "badges": [],
+     "ss_mean": 29.3,
+     "td_proj": 0.0,
+     "tape": {
+      "age": 43.8,
+      "height": "6'0",
+      "reach": 75.0,
+      "stance": "Orthodox",
+      "record": "17-9-1",
+      "slpm": 4.05,
+      "sapm": 3.0,
+      "str_acc": 0.46,
+      "str_def": 0.54,
+      "td_avg": 0.23,
+      "td_acc": 0.35,
+      "td_def": 0.63,
+      "sub_avg": 0.0
+     },
+     "data_quality": "OK (~16-mo layoff; L3)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Charles Radtke",
+     "side": "dog",
+     "market_odds": 133,
+     "model_win_shrunk": 50.8,
+     "model_win_raw": 50.9,
+     "dec_share_of_wins": 34.0,
+     "badges": [],
+     "ss_mean": 24.8,
+     "td_proj": 1.11,
+     "tape": {
+      "age": 36.4,
+      "height": "5'9",
+      "reach": 72.0,
+      "stance": "Orthodox",
+      "record": "12-5-0",
+      "slpm": 2.5,
+      "sapm": 2.45,
+      "str_acc": 0.53,
+      "str_def": 0.54,
+      "td_avg": 1.99,
+      "td_acc": 0.44,
+      "td_def": 1.0,
+      "sub_avg": 0.5
+     },
+     "data_quality": "GOOD",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 37.2,
+    "market_gtd_devig": 56.9,
+    "gap": -19.7,
+    "round_dist": [
+     33.3,
+     20.1,
+     9.5
+    ],
+    "exp_minutes": 9.0
+   },
+   "result": null
+  },
+  {
+   "order": 7,
+   "bout": "Chris Duncan vs Drew Dober",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Chris Duncan",
+     "side": "fav",
+     "market_odds": -159,
+     "model_win_shrunk": 63.2,
+     "model_win_raw": 64.6,
+     "dec_share_of_wins": 30.0,
+     "badges": [],
+     "ss_mean": 33.1,
+     "td_proj": 1.48,
+     "tape": {
+      "age": 33.5,
+      "height": "5'10",
+      "reach": 71.0,
+      "stance": "Orthodox",
+      "record": "15-3-0",
+      "slpm": 4.83,
+      "sapm": 4.57,
+      "str_acc": 0.45,
+      "str_def": 0.5,
+      "td_avg": 2.92,
+      "td_acc": 0.4,
+      "td_def": 0.55,
+      "sub_avg": 0.6
+     },
+     "data_quality": "GOOD",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Drew Dober",
+     "side": "dog",
+     "market_odds": 128,
+     "model_win_shrunk": 36.8,
+     "model_win_raw": 35.4,
+     "dec_share_of_wins": 11.0,
+     "badges": [],
+     "ss_mean": 32.7,
+     "td_proj": 0.33,
+     "tape": {
+      "age": 38.1,
+      "height": "5'8",
+      "reach": 70.0,
+      "stance": "Southpaw",
+      "record": "29-15-0 (1NC)",
+      "slpm": 4.48,
+      "sapm": 4.33,
+      "str_acc": 0.41,
+      "str_def": 0.53,
+      "td_avg": 0.61,
+      "td_acc": 0.16,
+      "td_def": 0.58,
+      "sub_avg": 0.1
+     },
+     "data_quality": "GOOD",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 22.9,
+    "market_gtd_devig": 24.5,
+    "gap": -1.6,
+    "round_dist": [
+     45.6,
+     22.3,
+     9.2
+    ],
+    "exp_minutes": 7.2
+   },
+   "result": null
+  },
+  {
+   "order": 8,
+   "bout": "Terrance McKinney vs Jim Miller",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Terrance McKinney",
+     "side": "fav",
+     "market_odds": -205,
+     "model_win_shrunk": 52.8,
+     "model_win_raw": 53.2,
+     "dec_share_of_wins": 37.0,
+     "badges": [],
+     "ss_mean": 37.2,
+     "td_proj": 2.1,
+     "tape": {
+      "age": 32.2,
+      "height": "5'10",
+      "reach": 73.0,
+      "stance": "Switch",
+      "record": "18-9-0",
+      "slpm": 6.83,
+      "sapm": 4.07,
+      "str_acc": 0.55,
+      "str_def": 0.42,
+      "td_avg": 3.27,
+      "td_acc": 0.42,
+      "td_def": 0.72,
+      "sub_avg": 1.8
+     },
+     "data_quality": "OK (off R1 KO loss; 2.18 KD abs/15)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Jim Miller",
+     "side": "dog",
+     "market_odds": 161,
+     "model_win_shrunk": 47.2,
+     "model_win_raw": 46.8,
+     "dec_share_of_wins": 7.0,
+     "badges": [],
+     "ss_mean": 25.4,
+     "td_proj": 0.5,
+     "tape": {
+      "age": 43.2,
+      "height": "5'8",
+      "reach": 71.0,
+      "stance": "Southpaw",
+      "record": "39-19-0 (1NC)",
+      "slpm": 2.92,
+      "sapm": 3.43,
+      "str_acc": 0.42,
+      "str_def": 0.56,
+      "td_avg": 1.49,
+      "td_acc": 0.45,
+      "td_def": 0.47,
+      "sub_avg": 1.7
+     },
+     "data_quality": "OK (P(KD) clamp)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 23.0,
+    "market_gtd_devig": 11.7,
+    "gap": 11.3,
+    "round_dist": [
+     45.3,
+     22.4,
+     9.2
+    ],
+    "exp_minutes": 7.3
+   },
+   "result": null
+  },
+  {
+   "order": 9,
+   "bout": "Donte Johnson vs Cesar Almeida",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Donte Johnson",
+     "side": "fav",
+     "market_odds": -174,
+     "model_win_shrunk": 58.0,
+     "model_win_raw": 76.8,
+     "dec_share_of_wins": 26.0,
+     "badges": [
+      "THIN SAMPLE"
+     ],
+     "ss_mean": 27.2,
+     "td_proj": 1.43,
+     "tape": {
+      "age": 27.8,
+      "height": "5'8",
+      "reach": 74.0,
+      "stance": "Southpaw",
+      "record": "9-0-0",
+      "slpm": 3.36,
+      "sapm": 2.11,
+      "str_acc": 0.46,
+      "str_def": 0.61,
+      "td_avg": 1.87,
+      "td_acc": 1.0,
+      "td_def": 0.76,
+      "sub_avg": 0.6
+     },
+     "data_quality": "THIN (23 min; conf 30%)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Cesar Almeida",
+     "side": "dog",
+     "market_odds": 137,
+     "model_win_shrunk": 42.0,
+     "model_win_raw": 23.2,
+     "dec_share_of_wins": 68.0,
+     "badges": [],
+     "ss_mean": 28.4,
+     "td_proj": 0.08,
+     "tape": {
+      "age": 38.6,
+      "height": "6'1",
+      "reach": 74.0,
+      "stance": "Orthodox",
+      "record": "7-3-0",
+      "slpm": 3.73,
+      "sapm": 2.23,
+      "str_acc": 0.6,
+      "str_def": 0.44,
+      "td_avg": 0.2,
+      "td_acc": 0.33,
+      "td_def": 0.53,
+      "sub_avg": 0.2
+     },
+     "data_quality": "OK (off R1 KO loss)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 43.7,
+    "market_gtd_devig": 31.0,
+    "gap": 12.7,
+    "round_dist": [
+     28.8,
+     18.2,
+     9.3
+    ],
+    "exp_minutes": 9.7
+   },
+   "result": null
+  },
+  {
+   "order": 10,
+   "bout": "Melquizael Costa vs Jared Gordon",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Melquizael Costa",
+     "side": "fav",
+     "market_odds": -392,
+     "model_win_shrunk": 42.8,
+     "model_win_raw": 42.0,
+     "dec_share_of_wins": 20.0,
+     "badges": [],
+     "ss_mean": 43.1,
+     "td_proj": 1.05,
+     "tape": {
+      "age": 30.2,
+      "height": "5'10",
+      "reach": 71.0,
+      "stance": "Southpaw",
+      "record": "26-8-0",
+      "slpm": 4.29,
+      "sapm": 3.19,
+      "str_acc": 0.47,
+      "str_def": 0.5,
+      "td_avg": 1.53,
+      "td_acc": 0.35,
+      "td_def": 0.5,
+      "sub_avg": 0.8
+     },
+     "data_quality": "GOOD (up from FW)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Jared Gordon",
+     "side": "dog",
+     "market_odds": 293,
+     "model_win_shrunk": 57.2,
+     "model_win_raw": 58.0,
+     "dec_share_of_wins": 70.0,
+     "badges": [],
+     "ss_mean": 44.9,
+     "td_proj": 1.63,
+     "tape": {
+      "age": 38.2,
+      "height": "5'9",
+      "reach": 68.0,
+      "stance": "Orthodox",
+      "record": "21-9-0 (1NC)",
+      "slpm": 5.57,
+      "sapm": 4.11,
+      "str_acc": 0.53,
+      "str_def": 0.55,
+      "td_avg": 1.91,
+      "td_acc": 0.34,
+      "td_def": 0.6,
+      "sub_avg": 0.0
+     },
+     "data_quality": "GOOD (L2; off sub loss)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 48.7,
+    "market_gtd_devig": 39.3,
+    "gap": 9.4,
+    "round_dist": [
+     25.6,
+     17.0,
+     8.8
+    ],
+    "exp_minutes": 10.3
+   },
+   "result": null
+  },
+  {
+   "order": 11,
+   "bout": "Bia Mesquita vs Macy Chiasson",
+   "weight_class": "Women's Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Bia Mesquita",
+     "side": "fav",
+     "market_odds": -271,
+     "model_win_shrunk": 55.2,
+     "model_win_raw": 59.5,
+     "dec_share_of_wins": 65.0,
+     "badges": [
+      "THIN SAMPLE",
+      "§1d"
+     ],
+     "ss_mean": 41.7,
+     "td_proj": 2.59,
+     "tape": {
+      "age": 35.6,
+      "height": "5'4",
+      "reach": 67.0,
+      "stance": "Orthodox",
+      "record": "8-0-0",
+      "slpm": 4.52,
+      "sapm": 1.27,
+      "str_acc": 0.57,
+      "str_def": 0.71,
+      "td_avg": 3.57,
+      "td_acc": 0.75,
+      "td_def": 0.0,
+      "sub_avg": 3.6
+     },
+     "data_quality": "THIN (13 min; §1d LFA; TD capped)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Macy Chiasson",
+     "side": "dog",
+     "market_odds": 208,
+     "model_win_shrunk": 44.8,
+     "model_win_raw": 40.5,
+     "dec_share_of_wins": 56.0,
+     "badges": [],
+     "ss_mean": 25.7,
+     "td_proj": 3.57,
+     "tape": {
+      "age": 35.3,
+      "height": "5'11",
+      "reach": 72.0,
+      "stance": "Orthodox",
+      "record": "11-6-0",
+      "slpm": 3.21,
+      "sapm": 2.76,
+      "str_acc": 0.46,
+      "str_def": 0.44,
+      "td_avg": 1.87,
+      "td_acc": 0.35,
+      "td_def": 0.62,
+      "sub_avg": 0.4
+     },
+     "data_quality": "GOOD (L3)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 60.6,
+    "market_gtd_devig": 33.3,
+    "gap": 27.3,
+    "round_dist": [
+     18.5,
+     13.4,
+     7.5
+    ],
+    "exp_minutes": 11.5
+   },
+   "result": null
+  },
+  {
+   "order": 12,
+   "bout": "Samuel Sanches vs Evan Elder",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Samuel Sanches",
+     "side": "fav",
+     "market_odds": -122,
+     "model_win_shrunk": 59.3,
+     "model_win_raw": 81.1,
+     "dec_share_of_wins": 54.0,
+     "badges": [
+      "SYN",
+      "THIN SAMPLE",
+      "§1d"
+     ],
+     "ss_mean": 50.2,
+     "td_proj": 0.0,
+     "tape": {
+      "age": 23.8,
+      "height": "5'10",
+      "reach": 74.0,
+      "stance": "Orthodox",
+      "record": "11-1-0",
+      "slpm": 5.95,
+      "sapm": 0.0,
+      "str_acc": 0.75,
+      "str_def": 1.0,
+      "td_avg": 0.0,
+      "td_acc": 0.0,
+      "td_def": 1.0,
+      "sub_avg": 0.0
+     },
+     "data_quality": "SYN THIN (2-min DWCS; §1d; UFC debut; P(KD) clamp)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Evan Elder",
+     "side": "dog",
+     "market_odds": 101,
+     "model_win_shrunk": 40.7,
+     "model_win_raw": 18.9,
+     "dec_share_of_wins": 17.0,
+     "badges": [
+      "SYN"
+     ],
+     "ss_mean": 26.1,
+     "td_proj": 0.0,
+     "tape": {
+      "age": 29.6,
+      "height": "5'10",
+      "reach": 72.0,
+      "stance": "Switch",
+      "record": "10-2-0",
+      "slpm": 5.66,
+      "sapm": 4.94,
+      "str_acc": 0.5,
+      "str_def": 0.57,
+      "td_avg": 0.48,
+      "td_acc": 0.15,
+      "td_def": 0.4,
+      "sub_avg": 0.5
+     },
+     "data_quality": "SYN (~19-mo layoff)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 39.0,
+    "market_gtd_devig": 43.1,
+    "gap": -4.1,
+    "round_dist": [
+     31.9,
+     19.8,
+     9.4
+    ],
+    "exp_minutes": 9.2
+   },
+   "result": null
+  },
+  {
+   "order": 13,
+   "bout": "Alatengheili vs Juan Diaz",
+   "weight_class": "Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Alatengheili",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 37.7,
+     "model_win_raw": 24.6,
+     "dec_share_of_wins": 69.0,
+     "badges": [
+      "SYN"
+     ],
+     "ss_mean": 39.3,
+     "td_proj": 4.03,
+     "tape": {
+      "age": 34.9,
+      "height": "5'5",
+      "reach": 66.0,
+      "stance": "Orthodox",
+      "record": "18-10-2",
+      "slpm": 2.71,
+      "sapm": 4.96,
+      "str_acc": 0.31,
+      "str_def": 0.56,
+      "td_avg": 1.88,
+      "td_acc": 0.42,
+      "td_def": 0.75,
+      "sub_avg": 0.0
+     },
+     "data_quality": "SYN (no line; TD capped)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Juan Diaz",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 62.3,
+     "model_win_raw": 75.4,
+     "dec_share_of_wins": 79.0,
+     "badges": [
+      "THIN SAMPLE",
+      "§1d"
+     ],
+     "ss_mean": 55.8,
+     "td_proj": 2.95,
+     "tape": {
+      "age": 28.4,
+      "height": "5'8",
+      "reach": 69.0,
+      "stance": "Orthodox",
+      "record": "16-1-1",
+      "slpm": 3.72,
+      "sapm": 3.4,
+      "str_acc": 0.41,
+      "str_def": 0.59,
+      "td_avg": 5.5,
+      "td_acc": 0.5,
+      "td_def": 0.0,
+      "sub_avg": 0.8
+     },
+     "data_quality": "THIN (§1d; conditional D-code if dog; no line)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 75.5,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     11.0,
+     8.6,
+     5.0
+    ],
+    "exp_minutes": 12.9
+   },
+   "result": null
+  }
+ ],
+ "duration_flags": [
+  {
+   "fight_order": 11,
+   "title": "Mesquita-Chiasson GTD +180",
+   "market_price": "+180",
+   "model_value": 60.6,
+   "market_value": 33.3,
+   "mechanism": "Mesquita is a BJJ world champion who controls rather than finishes on the feet; women's BW decides about 63% at base, so 33% is low for the division.",
+   "counter": "Mesquita has 13 UFC minutes and her TD outputs are capped.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 1,
+   "title": "Gane-Hokit GTD +175",
+   "market_price": "+175",
+   "model_value": 47.2,
+   "market_value": 34.0,
+   "mechanism": "Hokit's wrestling (5.5 projected TDs) makes control time, and the champ rounds thin out the late hazard.",
+   "counter": "Hokit's pace comes from a 36-minute sample and is inflated; 5R rule does not fire (listed under 40%) and the HW lean is paused.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 10,
+   "title": "Costa-Gordon GTD +138",
+   "market_price": "+138",
+   "model_value": 48.7,
+   "market_value": 39.3,
+   "mechanism": "Gordon is a decision fighter (70% of his sim wins go the distance); Costa is moving up from FW.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 4,
+   "title": "Hasan-Gurule GTD",
+   "model_value": 47.1,
+   "market_value": 17.8,
+   "mechanism": "Hasan has an 8-minute sample.",
+   "confidence": "artifact"
+  },
+  {
+   "fight_order": 9,
+   "title": "Johnson-Almeida GTD",
+   "model_value": 43.7,
+   "market_value": 31.0,
+   "mechanism": "Johnson's confidence is at the 30% floor.",
+   "confidence": "artifact"
+  },
+  {
+   "fight_order": 8,
+   "title": "McKinney-Miller GTD",
+   "model_value": 23.0,
+   "market_value": 11.7,
+   "mechanism": "Rides the P(KD) clamp.",
+   "confidence": "artifact"
+  }
+ ],
+ "ml_flags": [
+  {
+   "fight_order": 6,
+   "side": "Charles Radtke",
+   "market_odds": 133,
+   "model_shrunk": 50.8,
+   "model_raw": 50.9,
+   "market_implied": 40.7,
+   "edge_pts": 10.1,
+   "mechanism": "Thompson is 43.8, on an L3, after a 16-month layoff; Radtke has a 93% control rate against a fighter who does not wrestle.",
+   "counter": "Thompson's distance craft and how hard he has been to finish.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 8,
+   "side": "Jim Miller",
+   "market_odds": 161,
+   "model_shrunk": 47.2,
+   "model_raw": 46.8,
+   "market_implied": 36.3,
+   "edge_pts": 10.9,
+   "mechanism": "McKinney has absorbed 2.18 KD per 15 min, has 5 KO losses, and is off an R1 KO loss.",
+   "counter": "Miller is 43.2 and his 40% P(KD) is clamped, so the edge size is overstated.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 2,
+   "side": "Amanda Nunes",
+   "market_odds": 154,
+   "model_shrunk": 70.1,
+   "model_raw": 75.5,
+   "mechanism": "KD rate saturates the KO grid; the 41-month layoff costs only -0.02 in the engine.",
+   "confidence": "artifact"
+  },
+  {
+   "fight_order": 1,
+   "side": "Josh Hokit",
+   "market_odds": 165,
+   "model_shrunk": 66.2,
+   "model_raw": 73.0,
+   "mechanism": "Pace inflated by a thin sample.",
+   "confidence": "artifact"
+  },
+  {
+   "fight_order": 10,
+   "side": "Jared Gordon",
+   "market_odds": 293,
+   "model_shrunk": 57.2,
+   "model_raw": 58.0,
+   "mechanism": "No clean mechanism; Costa's weight change is not modeled.",
+   "confidence": "artifact"
+  },
+  {
+   "fight_order": 5,
+   "side": "Yousri Belgaroui",
+   "market_odds": 131,
+   "model_shrunk": 60.7,
+   "model_raw": 69.5,
+   "mechanism": "29-minute sample.",
+   "confidence": "artifact"
+  }
+ ],
+ "prop_notes": [
+  {
+   "fight_order": 1,
+   "text": "Hokit 5.49 projected TDs (capped output, read as high)."
+  },
+  {
+   "fight_order": 12,
+   "text": "Sanches and Elder both project 0.00 TDs because of Sanches's 2-minute DWCS sample: artifact."
+  },
+  {
+   "fight_order": 7,
+   "text": "Duncan-Dober 45.6% ends in R1; McKinney-Miller 45.3%; Medic-Holland 44.7% (method props, not totals)."
+  },
+  {
+   "fight_order": 1,
+   "text": "SS 5R: Hokit 96.6 and Gane 88.9 mean over 16.7 expected minutes; Hokit rides his inflated pace."
+  }
+ ],
+ "vetoes": [],
+ "source_doc": "markov/UFC_334_Gane_vs_Hokit_V41b_Output.md",
+ "grading_window_index": 9,
+ "source_csv": "markov/UFC_334_Gane_vs_Hokit_Raw_Stats.csv"
+}

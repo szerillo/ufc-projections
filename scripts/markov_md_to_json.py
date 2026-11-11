@@ -112,6 +112,8 @@ def main():
         card = convert(fp)
         existing = [p for p in out.glob("*.json") if json.load(open(p)).get("date") == card["date"]]
         full = [p for p in existing if not json.load(open(p)).get("partial")]
+        if any(json.load(open(p)).get("source_csv") for p in existing):
+            continue  # built by markov_card_build.py from the full trio; never downgrade it
         if full:
             # merge: keep the full card, add any fights it is missing from the doc (marked partial)
             d = json.load(open(full[0]))
