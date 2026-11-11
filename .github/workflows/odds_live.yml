@@ -1,0 +1,80 @@
+name: Pull UFC odds (card-night loop)
+
+# GitHub fires the */30 schedule in odds.yml only about every 5 hours on this repo,
+# so card-night closes were hours stale. This job starts on any of several fight-weekend
+# ticks and, when a card is inside its live window (6h before first bell to main bell
+# + 35 min, per scripts/odds_live_window.py), stays alive up to ~5h40m calling
+# scripts/odds_tick.py every 10 minutes. odds_tick keeps its own cadence (hourly
+# pre-card, 30 min in-card, per-fight freeze). Queued runs pick up where one ends.
+on:
+  schedule:
+    - cron: '13 * * * 5,6,0'
+  workflow_dispatch:
+    inputs:
+      max_minutes:
+        description: 'Loop length cap (test with 3)'
+        default: '340'
+      interval_minutes:
+        description: 'Minutes between ticks (test with 1)'
+        default: '10'
+      force:
+        description: 'Run the loop even with no card in its window (test only)'
+        default: 'false'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: odds-live
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pyyaml
+      - name: Loop through the live window
+        env:
+          BETTINGPROS_API_KEY: ${{ secrets.BETTINGPROS_API_KEY }}
+          MAX_MIN: ${{ github.event.inputs.max_minutes || '340' }}
+          STEP_MIN: ${{ github.event.inputs.interval_minutes || '10' }}
+          FORCE: ${{ github.event.inputs.force || 'false' }}
+        run: |
+          set +e
+          git config user.name  'bp-odds-bot'
+          git config user.email 'bp-odds-bot@users.noreply.github.com'
+          start=$(date +%s)
+          left=$(python scripts/odds_live_window.py)
+          echo "live window minutes left: $left"
+          if [ "$left" = "0" ] && [ "$FORCE" != "true" ]; then echo "No card in its live window; exit."; exit 0; fi
+          ticks=0; pushes=0
+          while :; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python scripts/odds_tick.py; rc=$?
+            ticks=$((ticks+1)); echo "tick $ticks rc=$rc at $(date -u +%H:%MZ)"
+            if [ $rc -ge 2 ]; then echo "::warning::odds_tick error rc=$rc"; fi
+            if [ $rc -eq 0 ]; then
+              git add data/
+              if ! git diff --cached --quiet; then
+                git commit -q -m "odds: live refresh at $(date -u +%Y-%m-%dT%H:%MZ)"
+                for i in 1 2 3; do
+                  git push -q origin HEAD:main && { pushes=$((pushes+1)); break; }
+                  git fetch -q origin main && git rebase -q -X theirs origin/main
+                done
+              fi
+            fi
+            el=$(( ($(date +%s) - start) / 60 ))
+            left=$(python scripts/odds_live_window.py)
+            if [ "$FORCE" = "true" ]; then left=$MAX_MIN; fi
+            if [ "$left" = "0" ] || [ $((el + STEP_MIN)) -ge "$MAX_MIN" ]; then break; fi
+            sleep $((STEP_MIN * 60))
+          done
+          echo "done: $ticks ticks, $pushes pushes, $(( ($(date +%s) - start) / 60 )) min" | tee -a "$GITHUB_STEP_SUMMARY"
