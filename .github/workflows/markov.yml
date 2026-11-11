@@ -1,0 +1,66 @@
+name: Markov card run (shadow)
+
+# Builds the five V4.1b data blocks from markov/inputs/<card>/ plus the site's
+# stored fighter data, splices them into the engine, runs it with a pinned
+# PYTHONHASHSEED (the engine seeds each fight with hash(); unpinned runs drift
+# up to about 0.5 points), and commits the output to markov/runs/<card>/.
+#
+# SHADOW MODE: nothing is written to data/cards/ until Sean switches it over.
+# The engine is not in this public repo. The run step needs the Actions secret
+# ENGINE_B64 (base64 of ufc_v4_engine.py), added by Sean in repo settings;
+# without it the workflow builds and commits the data blocks only.
+
+on:
+  workflow_dispatch:
+    inputs:
+      card:  { description: "inputs folder under markov/inputs (e.g. ufc-335)", required: true }
+      event: { description: "event file under form/data/events (e.g. 2026-11-21-....json)", required: true }
+      bp:    { description: "cards.yml slug for the odds file (e.g. ufc_335)", required: false }
+      date:  { description: "event date YYYY-MM-DD", required: true }
+
+permissions:
+  contents: write
+
+concurrency:
+  group: markov-run
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+
+      - name: Engine from secret (never written to the repo)
+        env:
+          ENGINE_B64: ${{ secrets.ENGINE_B64 }}
+        run: |
+          if [ -n "$ENGINE_B64" ]; then
+            echo "$ENGINE_B64" | base64 -d > "$RUNNER_TEMP/ufc_v4_engine.py"
+            echo "ENGINE_PATH=$RUNNER_TEMP/ufc_v4_engine.py" >> "$GITHUB_ENV"
+          else
+            echo "No ENGINE_B64 secret: building data blocks only."
+          fi
+
+      - name: Build blocks (and run engine if available)
+        env:
+          PYTHONHASHSEED: "0"
+        run: |
+          ARGS="build --card ${{ inputs.card }} --event form/data/events/${{ inputs.event }} --date ${{ inputs.date }}"
+          if [ -n "${{ inputs.bp }}" ]; then ARGS="$ARGS --bp ${{ inputs.bp }}"; fi
+          if [ -n "$ENGINE_PATH" ]; then ARGS="$ARGS --run"; fi
+          python scripts/markov_blocks.py $ARGS
+          rm -f markov/runs/${{ inputs.card }}/sim_v41b.py   # spliced engine copy stays off the public repo
+
+      - name: Commit shadow output
+        run: |
+          git config user.name  'markov-bot'
+          git config user.email 'markov-bot@users.noreply.github.com'
+          git add markov/runs/
+          if git diff --cached --quiet; then echo "No changes."; else
+            git commit -m "markov shadow run: ${{ inputs.card }}"
+            git pull --rebase origin main && git push
+          fi
