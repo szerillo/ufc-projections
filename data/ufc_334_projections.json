@@ -1,0 +1,177 @@
+{
+ "schema": 1,
+ "slug": "ufc_334",
+ "event": "Polymarket UFC 334: Gane vs Hokit",
+ "published_at": "2026-11-11T22:26:47Z",
+ "source": "UFC Model sheet, rules v4.7, Publish to site",
+ "params": {
+  "shift": 0.14400286022355419,
+  "b43": 0.15,
+  "b44": 0.075,
+  "b45": 0.15
+ },
+ "fights": [
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 2,
+   "calc_row": 2,
+   "tag": "",
+   "dog": "Josh Hokit",
+   "fav": "Ciryl Gane",
+   "inputs": {
+    "dog_odds": 170,
+    "fav_odds": -200,
+    "open_dog": 0.4201680672,
+    "markov": 0.66,
+    "shift": 0.14400286022355419,
+    "tap": 0.33,
+    "junk": 0.41,
+    "tip": 0.39,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.3571428571,
+    "markov_shifted": 0.5159971398,
+    "q": 0.3730424281,
+    "true_dog": 0.3730424281,
+    "true_fav": 0.6269575719,
+    "dog_edge": 0.003,
+    "fav_edge": -0.0397090948,
+    "drift": -0.0630252101,
+    "flag": "no dog bet (drifting)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.2900864453,
+     "ko": 0.4970968104,
+     "sub": 0.2128167443
+    },
+    "fav": {
+     "dec": 0.3230335663,
+     "ko": 0.5943966365,
+     "sub": 0.0825697972
+    }
+   },
+   "gtd": 0.3107428923,
+   "gtd_listed": 0.3195972382,
+   "markov_dec": {
+    "dog": 0.55,
+    "fav": 0.31
+   }
+  },
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 6,
+   "calc_row": 6,
+   "tag": "125",
+   "dog": "Luis Gurule",
+   "fav": "Bilal Hasan",
+   "inputs": {
+    "dog_odds": 600,
+    "fav_odds": -900,
+    "open_dog": 0.1851851852,
+    "markov": 0.4,
+    "shift": 0.14400286022355419,
+    "tap": 0.03,
+    "junk": 0.09,
+    "tip": 0.05,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.1369863014,
+    "markov_shifted": 0.2559971398,
+    "q": 0.1548379271,
+    "true_dog": 0.1548379271,
+    "true_fav": 0.8451620729,
+    "dog_edge": 0.012,
+    "fav_edge": -0.0548379271,
+    "drift": -0.0481988838,
+    "flag": "no dog bet (drifting)",
+    "rec": "BET Bilal Hasan (80%+ rule, shop) [late: fav moved 5% from open]"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.3945642216,
+     "ko": 0.4319789064,
+     "sub": 0.1734568719
+    },
+    "fav": {
+     "dec": 0.2426246552,
+     "ko": 0.6433694822,
+     "sub": 0.1140058626
+    }
+   },
+   "gtd": 0.2661506627,
+   "gtd_listed": 0.1719082316,
+   "markov_dec": {
+    "dog": 0.4,
+    "fav": 0.52
+   }
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 9,
+   "calc_row": 15,
+   "tag": "155",
+   "dog": "Evan Elder",
+   "fav": "Samuel Sanches",
+   "inputs": {
+    "dog_odds": 102,
+    "fav_odds": -110,
+    "open_dog": 0.5439222685,
+    "markov": 0.41,
+    "shift": 0.14400286022355419,
+    "tap": 0.32,
+    "junk": 0.45,
+    "tip": 0.6,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.4858861638,
+    "markov_shifted": 0.2659971398,
+    "q": 0.4529028102,
+    "true_dog": 0.4529028102,
+    "true_fav": 0.5470971898,
+    "dog_edge": -0.042,
+    "fav_edge": 0.023287666,
+    "drift": -0.0580361047,
+    "flag": "SHARPS ON DOG - no dog bet (fav +5% 6/6y)",
+    "rec": "BET Samuel Sanches (fade sharp dog) [late: fav moved 6% from open]"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.3565485349,
+     "ko": 0.3790972409,
+     "sub": 0.2643542242
+    },
+    "fav": {
+     "dec": 0.5263858249,
+     "ko": 0.4086870105,
+     "sub": 0.0649271647
+    }
+   },
+   "gtd": 0.449466039,
+   "gtd_listed": 0.4312167075,
+   "markov_dec": {
+    "dog": 0.17,
+    "fav": 0.54
+   }
+  }
+ ],
+ "verified": {
+  "at": "2026-11-11T22:32:19Z",
+  "by": "scripts/verify_projections.py",
+  "tolerance_pts": 0.1,
+  "fights": 3
+ }
+}
