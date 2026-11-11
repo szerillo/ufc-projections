@@ -1,0 +1,12 @@
+BFO 217 market set 214
+matched 204 exact(<=0.0015) 200 BFO unmatched 13 market-set bouts not in BFO pull 10
+drop by date [('2026-07-18', 9), ('2026-09-12', 1)]
+BFO unmatched by date [('2026-07-11', 1), ('2026-07-25', 2), ('2026-08-01', 1), ('2026-08-22', 1), ('2026-08-29', 3), ('2026-09-05', 1), ('2026-09-12', 1), ('2026-09-19', 2), ('2026-09-26', 1)]
+all 214 (stored mult): +4.4 [-0.7, +9.5] n=214, mean close 41.3%, outcome 36.9%
+matched, stored mult  : +5.1 [-0.1, +10.3] n=204, mean close 41.4%, outcome 36.3%
+matched, fresh mult   : +5.1 [-0.1, +10.3] n=204, mean close 41.4%, outcome 36.3%
+matched, fresh power  : +4.1 [-1.1, +9.3] n=204, mean close 40.4%, outcome 36.3%
+dropped bouts          : -10.3 [-32.8, +12.2] n=10, mean close 39.7%, outcome 50.0%
+Jun-Aug only: +9.4 [+2.2, +16.6] n=102, mean close 39.8%, outcome 30.4%
+Sep-Nov only: -0.2 [-7.3, +6.9] n=112, mean close 42.7%, outcome 42.9%
+without Jun 27, Jul 18, Aug 1, Sep 5: +4.1 [-1.7, +9.9] n=166, mean close 41.5%, outcome 37.3%
