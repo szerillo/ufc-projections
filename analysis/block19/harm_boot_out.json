@@ -1,0 +1,36 @@
+{
+ "sims": 2000,
+ "boot_reps": 400,
+ "harm_stop_any_look": 0.1685,
+ "harm_stop_by_look": [
+  0.0985,
+  0.0315,
+  0.0235,
+  0.015
+ ],
+ "false_pass": 0.012,
+ "look_250": {
+  "mean_boot_se": 0.00662,
+  "true_sd_of_mean": 0.00695,
+  "ratio": 0.953,
+  "one_look_rate_z_below_neg1645": 0.0985
+ },
+ "look_500": {
+  "mean_boot_se": 0.00477,
+  "true_sd_of_mean": 0.00475,
+  "ratio": 1.004,
+  "one_look_rate_z_below_neg1645": 0.073
+ },
+ "look_750": {
+  "mean_boot_se": 0.00393,
+  "true_sd_of_mean": 0.00387,
+  "ratio": 1.016,
+  "one_look_rate_z_below_neg1645": 0.0685
+ },
+ "look_970": {
+  "mean_boot_se": 0.00347,
+  "true_sd_of_mean": 0.00337,
+  "ratio": 1.03,
+  "one_look_rate_z_below_neg1645": 0.065
+ }
+}
