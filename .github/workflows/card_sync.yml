@@ -1,0 +1,27 @@
+name: Card sync check
+
+# Report only: compares each upcoming site card with UFC.com and writes the diff to the run
+# summary. No write permission, no commits. A failed run (exit 1) means the card differs;
+# the fix goes into data/card_overrides.json after a person checks it.
+on:
+  schedule:
+    - cron: "17 14 * * *"   # daily; GitHub may delay scheduled runs
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compare site cards with UFC.com
+        run: python3 -I scripts/card_sync_check.py --out sync_report.md
+      - name: Publish report to the run summary
+        if: always()
+        run: test -f sync_report.md && cat sync_report.md >> "$GITHUB_STEP_SUMMARY" || echo "no report written" >> "$GITHUB_STEP_SUMMARY"
