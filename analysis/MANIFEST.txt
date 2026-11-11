@@ -89,3 +89,8 @@ a7837ee4cbb80788f1e63346ff735904b480b76b6902686af9fd647e46b2638d  private:block2
 a470fe831a6a7fb724197fc3d1c509eaa1177e3196ff86bb0db60400306aba95  input:gtd_market_post_june.json (private, not committed)
 ac2685ea32b6ff3d1c35c2b66ef71c6b9e1d2d4179b3873e13f9aab843a35ec2  input:snap.txt (private, not committed)
 f86e3a72f27a78d6c52c18f420fa49eb32a356231e1a8e5f9c451c3cf8e2fce0  input:sheet_E.json (private, not committed)
+# block 23 (2026-11-11): SHA map check and site card field map; outputs private, hashed only
+345a34b4ceb68d36cb3be114773584fba6e527c78862ae111458a8ce3cd1ac72  script:card_fieldmap.py (private, not committed)
+8d14823af3aee7230587f9a6f4b0104c166b841742824cbffcb6a91ae83acd8d  output:card_fieldmap_out.txt (private, not committed)
+5116341aaac815f736bdecba9c56da199010ec34bc6645ff60d1c73f112e63b3  input:live334.json, site card fetched 2026-11-11, etag 6af475a5-7ac6 (private, not committed)
+87175c89cb653fe7b465f0c10815829ef88dc293d5d05d6a81631b59b623348b  output:sha_map_verify.txt (private, not committed)
