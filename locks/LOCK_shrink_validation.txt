@@ -1,0 +1,19 @@
+LOCK: shrink-formula validation and large-disagreement record (written 2026-11-11 before any number is computed)
+
+Data: /home/claude/work/audit/rows4.json (private). V4.1b graded bouts, 7 cards 2026-09-26 to 2026-11-07, all post-June.
+The confidence formula (avg UFC min / 150, floor 0.30, cap 0.90, 0.55 / 0.45 thin caps) was written before these cards; nothing below refits it.
+Include: win in {0,1}, close (de-vigged closing prob, A side) present, raw and shrunk present. Draws / NC / no match excluded and counted.
+
+Conf: conf_hat = (shrunk - 0.5) / (raw - 0.5) when |raw - 0.5| >= 0.03; otherwise "unidentified" (shrink cannot move it more than ~2 pts).
+Buckets: FLOOR conf_hat <= 0.32 ; MID 0.32 < conf_hat <= 0.56 ; HIGH conf_hat > 0.56 ; UNID.
+Metric: log loss, A side, p clipped to [0.01, 0.99]. Report n, mean LL for raw, shrunk, market (close) per bucket and pooled.
+Paired differences shrunk - raw and shrunk - market, card-cluster bootstrap 90% CI (2000 resamples, random.seed(0)).
+Verdict wording, fixed now: "shrunk loses at the floor" iff mean LL(shrunk) > mean LL(market) in FLOOR; also state shrunk vs raw in FLOOR.
+With any bucket n < 10, say the bucket is too small to conclude.
+
+Large disagreements: d = p_model - close (A side), separately for shrunk and raw. Subset |d| >= 0.30.
+Report n; hit rate = share where the side the model leans toward (sign of d) won; mean LL model vs close on the subset; list each bout.
+Also |d| >= 0.20 as a sensitivity row. No other cutoffs.
+
+Market-match check (UFC 334): BettingPros consensus at 2026-11-11 11:59 UTC (data/ufc_334_odds.json, main b76ebba1) vs BFO opener.
+Both de-vigged multiplicatively, dog side. Pass iff |diff| <= 2.0 pts on every bout with both prices. Report per bout.
