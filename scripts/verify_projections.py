@@ -7,7 +7,7 @@ from the inputs carried in the file and compares it with the numbers the sheet e
 
     python3 -I scripts/verify_projections.py data/pending/ufc_334_projections.json [--promote] [--report out.md]
 
-PASS (exit 0): every number within 0.1 pts, flag and recommendation identical (when exported), method shares
+PASS (exit 0): every number within 0.1 pts, flag code and recommendation text identical incl. late tag (when exported), method shares
 and GTD sane. With --promote the file is copied to data/<slug>_projections.json with a
 "verified" block added. FAIL (exit 1): nothing is promoted, the live file is left as it was.
 Exit 2: the file can't be read or is malformed.
@@ -40,10 +40,10 @@ def flag_code(s: str | None) -> str:
     return "?" + s
 
 
-def rec_parts(s: str | None) -> tuple[str, bool]:
-    s = re.sub(r"\s+", " ", (s or "-").strip())
-    late = "[late:" in s
-    return re.sub(r"\s*\[late:.*?\]", "", s).strip(), late
+def rec_norm(s: str | None) -> str:
+    # Whitespace only. The late tag is compared word for word: an earlier version stripped it to
+    # present/absent, which let a wrong tag wording or percent pass (audit block 35 falsifier).
+    return re.sub(r"\s+", " ", (s or "-").strip())
 
 
 def check(doc: dict, path: Path) -> list[str]:
@@ -80,8 +80,7 @@ def check(doc: dict, path: Path) -> list[str]:
                 errs.append(f"{tag}: {ok} sheet {float(out[ok])*100:.2f} vs recomputed {r[rk]*100:.2f} ({d*100:.2f} pts)")
         if "flag" in out and flag_code(out.get("flag")) != flag_code(r["flag"]):
             errs.append(f"{tag}: flag sheet {out.get('flag')!r} vs recomputed {r['flag']!r}")
-        (rs, ls), (rr, lr) = rec_parts(out.get("rec")), rec_parts(r["rec"])
-        if "rec" in out and (rs != rr or ls != lr):
+        if "rec" in out and rec_norm(out.get("rec")) != rec_norm(r["rec"]):
             errs.append(f"{tag}: rec sheet {out.get('rec')!r} vs recomputed {r['rec']!r}")
         m = f.get("method") or {}
         for side in ("dog", "fav"):

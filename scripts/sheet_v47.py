@@ -89,7 +89,10 @@ def row(f):
         rec = "-"
     if drift <= -0.03 and rec.startswith("BET") and f["fav"] in rec:
         # Main Card!N2: the late tag only goes on favorite BET strings (80%+, fade, plain BET fav)
-        rec += f" [late: fav moved {abs(drift)*100:.0f}% from open]"
+        # Whole percent, half rounded up as Sheets does (Python's :.0f rounds half to even). Matches all 5 late
+        # tags in Snapshots history; none sat on a .5 tie, so tie handling is assumed, not observed.
+        pct = int(abs(drift) * 100 + 0.5 + 1e-9)
+        rec += f" [late: fav moved {pct}% from open]"
     return {"listed": listed, "H": H, "Q": Q, "true_dog": true_dog, "true_fav": true_fav, "hold": E + J - 1,
             "dog_edge": dog_edge, "fav_edge": fav_edge, "drift": drift, "flag": flag, "rec": rec}
 
