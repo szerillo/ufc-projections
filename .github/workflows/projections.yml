@@ -1,0 +1,71 @@
+name: Projections check
+
+# The sheet's "Publish to site" writes data/pending/<slug>_projections.json.
+# This job recomputes every published fight with scripts/sheet_v47.py and only copies a file
+# to data/<slug>_projections.json (what the card page reads) when every number is within 0.1 pts.
+# On a mismatch the run fails and the live file is left exactly as it was.
+on:
+  push:
+    paths:
+      - "data/pending/*_projections.json"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: projections-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify and promote pending files
+        id: verify
+        run: |
+          set +e
+          if [ "${{ github.event_name }}" = "push" ] && git rev-parse -q --verify HEAD~1 >/dev/null; then
+            files=$(git diff --name-only HEAD~1 HEAD -- 'data/pending/*_projections.json')
+          else
+            files=$(ls data/pending/*_projections.json 2>/dev/null)
+          fi
+          echo "files: $files"
+          rc=0
+          for f in $files; do
+            [ -f "$f" ] || continue
+            python3 -I scripts/verify_projections.py "$f" --promote --report report.md
+            r=$?
+            cat report.md >> "$GITHUB_STEP_SUMMARY"
+            [ $r -ne 0 ] && rc=1
+          done
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+
+      - name: Commit verified files
+        run: |
+          set -e
+          git config user.name  'projections-bot'
+          git config user.email 'projections-bot@users.noreply.github.com'
+          git add data/*_projections.json
+          if git diff --cached --quiet; then
+            echo "Nothing verified to commit."
+          else
+            git commit -m "projections: verified from sheet at $(date -u +%Y-%m-%dT%H:%MZ)"
+            for i in 1 2 3; do git pull --rebase --quiet && git push && break; sleep 5; done
+          fi
+
+      - name: Fail when any file did not match
+        if: steps.verify.outputs.rc != '0'
+        run: |
+          echo "At least one published file did not match sheet_v47 within 0.1 pts. The live file was not changed."
+          exit 1

@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="ufc_334">UFC 334 · Gane vs Hokit (Nov 14, 2026)</option>
           <option value="fn_cortes_acosta_walker">UFC Vegas · Cortes-Acosta vs Walker (Nov 7, 2026)</option>
           <option value="fn_moicano_nolan">UFC Vegas · Moicano vs Nolan (Oct 31, 2026)</option>
           <option value="ufc_333">UFC 333 · Volkanovski vs Evloev (Oct 24, 2026)</option>
@@ -616,6 +617,7 @@ const CARD_FILES = {
   ufc_333:            BASE_URL + "ufc_333_fight_form.html",
   fn_moicano_nolan:   BASE_URL + "ufc_fn_moicano_nolan_fight_form.html",
   fn_cortes_acosta_walker: BASE_URL + "ufc_fn_cortes_acosta_walker_fight_form.html",
+  ufc_334:            BASE_URL + "ufc_334_fight_form.html",
 };
 const CARD_LABELS = {
   freedom_250:        "UFC Freedom 250 Fight Form",
@@ -634,6 +636,7 @@ const CARD_LABELS = {
   ufc_333:            "UFC 333 · Volkanovski vs Evloev",
   fn_moicano_nolan:   "UFC Vegas · Moicano vs Nolan",
   fn_cortes_acosta_walker: "UFC Vegas · Cortes-Acosta vs Walker",
+  ufc_334:            "UFC 334 · Gane vs Hokit",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -646,6 +649,21 @@ const FIGHTS_BY_CARD = {
     { n: 3, matchup: "Ruffy vs Chandler",   meta: "Lightweight · 3R" },
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
+  ],
+  ufc_334: [
+    { n: 13, matchup: "Gane vs Hokit", meta: "Main Event · HW · 5R" },
+    { n: 12, matchup: "Harrison vs Nunes", meta: "Main Card · WBW · 5R" },
+    { n: 11, matchup: "Borralho vs Belgaroui", meta: "Main Card · MW · 3R" },
+    { n: 10, matchup: "Medic vs Holland", meta: "Main Card · WW · 3R" },
+    { n: 9, matchup: "Hasan vs Gurule", meta: "Main Card · FLW · 3R" },
+    { n: 8, matchup: "Thompson vs Radtke", meta: "Prelims · WW · 3R" },
+    { n: 7, matchup: "Duncan vs Dober", meta: "Prelims · LW · 3R" },
+    { n: 6, matchup: "McKinney vs Miller", meta: "Prelims · LW · 3R" },
+    { n: 5, matchup: "Johnson vs Almeida", meta: "Prelims · MW · 3R" },
+    { n: 4, matchup: "Costa vs Gordon", meta: "Early Prelims · LW · 3R" },
+    { n: 3, matchup: "Mesquita vs Chiasson", meta: "Early Prelims · WBW · 3R" },
+    { n: 2, matchup: "Diaz vs Alatengheili", meta: "Early Prelims · BW · 3R" },
+    { n: 1, matchup: "Sanches vs Elder", meta: "Early Prelims · LW · 3R" },
   ],
   fn_cortes_acosta_walker: [
     { n: 14, matchup: "Cortes-Acosta vs Walker", meta: "Main Event · HW · 5R" },
