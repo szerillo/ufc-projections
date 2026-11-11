@@ -54,6 +54,19 @@ jobs:
           if [ -n "$ENGINE_PATH" ]; then ARGS="$ARGS --run"; fi
           python scripts/markov_blocks.py $ARGS
           rm -f markov/runs/${{ inputs.card }}/sim_v41b.py   # spliced engine copy stays off the public repo
+          OUT=markov/runs/${{ inputs.card }}
+          if [ -f "$OUT/sim_v41b_output.txt" ]; then
+            python - "$OUT" <<'PY'
+          import json, sys, pathlib
+          sys.path.insert(0, "scripts")
+          import markov_blocks as mb
+          out = pathlib.Path(sys.argv[1])
+          json.dump(mb.load_saved(str(out / "data_blocks.py"))["market_odds"], open(out / "market.json", "w"))
+          PY
+            python scripts/engine_txt_to_card.py "$OUT/sim_v41b_output.txt" --slug "${{ inputs.card }}" \
+              --title "${{ inputs.card }}" --date "${{ inputs.date }}" --market "$OUT/market.json" \
+              --blocks "$OUT/data_blocks.py" --out "$OUT/card.json"
+          fi
 
       - name: Commit shadow output
         run: |
