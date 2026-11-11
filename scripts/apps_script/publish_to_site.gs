@@ -52,6 +52,9 @@ function publish_(upload) {
   props.setProperty('CARD_SLUG', slug);
 
   var doc = buildDoc_(slug);
+  var outside = OUTSIDE_.length ? '\n\nNOT exported, below the formula rows (the site shows "Projections coming" for these):\n' + OUTSIDE_.join('\n') +
+      '\nMove the bout into a formula row, or copy the row formulas down, then publish again.' : '';
+  if (outside && !doc.fights.length) { ui.alert('Nothing was exported.' + outside); return; }
   if (!doc.fights.length) { ui.alert('No fights have the Publish box (column ' + PUB.publishCol + ') ticked. Nothing was exported.'); return; }
   var bad = doc.fights.filter(function (f) { return !isFinite(f.inputs.dog_odds) || !isFinite(f.inputs.fav_odds); });
   if (bad.length) { ui.alert('These ticked fights have no odds in D / I, fix them first:\n' + bad.map(function (f) { return f.dog + ' vs ' + f.fav; }).join('\n')); return; }
@@ -60,7 +63,7 @@ function publish_(upload) {
     return f.fav + ' vs ' + f.dog + ': dog true ' + pct_(f.sheet.true_dog) + ', listed ' + pct_(f.sheet.listed) +
       (PUB.include.rec ? ', rec ' + f.sheet.rec : '');
   });
-  var msg = doc.fights.length + ' fight(s) to data/pending/' + slug + '_projections.json on ' + PUB.branch + ':\n\n' + lines.join('\n');
+  var msg = doc.fights.length + ' fight(s) to data/pending/' + slug + '_projections.json on ' + PUB.branch + ':\n\n' + lines.join('\n') + outside;
   if (!upload) { ui.alert('Preview (nothing uploaded)', msg, ui.ButtonSet.OK); return; }
   if (ui.alert('Publish to site?', msg + '\n\nThe site updates only after the check passes (about 2 minutes).', ui.ButtonSet.OK_CANCEL) !== ui.Button.OK) return;
 
@@ -72,7 +75,10 @@ function publish_(upload) {
                   : 'Upload failed: ' + res.msg + '\nNothing changed on the site.');
 }
 
+var OUTSIDE_ = [];   // filled by buildDoc_: bouts sitting below the formula rows (never exported)
+
 function buildDoc_(slug) {
+  OUTSIDE_ = [];
   var ss = SpreadsheetApp.getActive();
   var calc = ss.getSheetByName('Calculator');
   var C = calc.getRange('A1:AA20').getValues();             // C[row-1][col-1]
@@ -107,6 +113,12 @@ function buildDoc_(slug) {
       if (!PUB.include.rec) delete f.sheet.rec;     // left out of the file entirely; the check then skips it
       if (!PUB.include.flag) delete f.sheet.flag;
       fights.push(f);
+    }
+    // Rows below t.last have no bet-rec / GTD formulas (Main Card row 7, Prelims rows 10-11 as of 2026-11-11),
+    // so they are never exported. Note any bout or ticked box there so the menu can say so (audit block 35).
+    for (var r2 = t.last + 1; r2 <= 12; r2++) {
+      var d2 = String(M[r2 - 1][1] || '').trim(), f2 = String(M[r2 - 1][2] || '').trim();
+      if (d2 || f2 || P[r2 - 1][0] === true) OUTSIDE_.push(t.name + ' row ' + r2 + ': ' + (d2 || '?') + ' vs ' + (f2 || '?') + (P[r2 - 1][0] === true ? ' (ticked)' : ''));
     }
   });
   return {
