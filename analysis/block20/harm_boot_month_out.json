@@ -1,0 +1,20 @@
+{
+ "unit": "event month",
+ "sims": 2000,
+ "boot_reps": 400,
+ "harm_stop_any_look": 0.0635,
+ "harm_stop_by_look": [
+  0.0215,
+  0.0185,
+  0.0145,
+  0.009
+ ],
+ "false_pass": 0.0985,
+ "se_calibration": [
+  0.987,
+  1.02,
+  1.018,
+  1.021
+ ],
+ "card_level_block19": 0.1685
+}
