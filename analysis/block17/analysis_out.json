@@ -1,0 +1,532 @@
+{
+ "rev v1 pre-split rate in window | next 200": {
+  "n": 200,
+  "rate": 0.32,
+  "ref": 0.557,
+  "z": -6.75,
+  "ci90": [
+   0.268,
+   0.376
+  ],
+  "ci95": [
+   0.259,
+   0.388
+  ]
+ },
+ "rev v1 pre-split rate in window | all after flag": {
+  "n": 245,
+  "rate": 0.347,
+  "ref": 0.557,
+  "z": -6.62,
+  "ci90": [
+   0.299,
+   0.398
+  ],
+  "ci95": [
+   0.29,
+   0.408
+  ]
+ },
+ "rev v2 trailing-1000 mean | next 200": {
+  "n": 200,
+  "rate": 0.32,
+  "ref": 0.515,
+  "z": -5.52,
+  "ci90": [
+   0.268,
+   0.376
+  ],
+  "ci95": [
+   0.259,
+   0.388
+  ]
+ },
+ "rev v2 trailing-1000 mean | all after flag": {
+  "n": 245,
+  "rate": 0.347,
+  "ref": 0.515,
+  "z": -5.26,
+  "ci90": [
+   0.299,
+   0.398
+  ],
+  "ci95": [
+   0.29,
+   0.408
+  ]
+ },
+ "power in-sample 0.0082": [
+  0.688,
+  0.002
+ ],
+ "power half 0.0041": [
+  0.227,
+  0.017
+ ],
+ "power James-Stein shrunk 0.0000": [
+  0.024,
+  0.116
+ ],
+ "power LOCO out-of-sample -0.0062": [
+  0.0,
+  0.683
+ ],
+ "fixed n for 80% at 0.0082, one-sided 5%": 972,
+ "fixed n for 80% at 0.0041, one-sided 5%": 3887,
+ "fixed n for 80% at 0.0082, one-sided 2.5%": 1234,
+ "fixed n for 80% at 0.0041, one-sided 2.5%": 4934,
+ "stored bouts not matched": [
+  {
+   "i": 26,
+   "date": "2026-07-18",
+   "stored_p": 0.49,
+   "y": 1
+  },
+  {
+   "i": 27,
+   "date": "2026-07-18",
+   "stored_p": 0.519,
+   "y": 1
+  },
+  {
+   "i": 28,
+   "date": "2026-07-18",
+   "stored_p": 0.275,
+   "y": 0
+  },
+  {
+   "i": 29,
+   "date": "2026-07-18",
+   "stored_p": 0.697,
+   "y": 1
+  },
+  {
+   "i": 30,
+   "date": "2026-07-18",
+   "stored_p": 0.265,
+   "y": 0
+  },
+  {
+   "i": 31,
+   "date": "2026-07-18",
+   "stored_p": 0.457,
+   "y": 1
+  },
+  {
+   "i": 32,
+   "date": "2026-07-18",
+   "stored_p": 0.322,
+   "y": 1
+  },
+  {
+   "i": 33,
+   "date": "2026-07-18",
+   "stored_p": 0.34,
+   "y": 0
+  },
+  {
+   "i": 34,
+   "date": "2026-07-18",
+   "stored_p": 0.375,
+   "y": 0
+  },
+  {
+   "i": 115,
+   "date": "2026-09-12",
+   "stored_p": 0.229,
+   "y": 0
+  }
+ ],
+ "BFO bouts not matched to stored": [
+  [
+   "2026-07-11",
+   "iii-riley",
+   0.6
+  ],
+  [
+   "2026-07-25",
+   "jacob-said",
+   0.406
+  ],
+  [
+   "2026-07-25",
+   "ribei-tucha",
+   0.155
+  ],
+  [
+   "2026-08-01",
+   "buzuk-grad",
+   0.5
+  ],
+  [
+   "2026-08-22",
+   "chatm-wint",
+   0.133
+  ],
+  [
+   "2026-08-29",
+   "liu-rodri",
+   0.178
+  ],
+  [
+   "2026-08-29",
+   "lui-santi",
+   0.44
+  ],
+  [
+   "2026-08-29",
+   "polas-xiong",
+   0.733
+  ],
+  [
+   "2026-09-05",
+   "andru-wood",
+   0.545
+  ],
+  [
+   "2026-09-12",
+   "king-rosas",
+   0.424
+  ],
+  [
+   "2026-09-19",
+   "choi-freir",
+   0.481
+  ],
+  [
+   "2026-09-19",
+   "aswel-yoo",
+   0.589
+  ],
+  [
+   "2026-09-26",
+   "alate-casta",
+   0.694
+  ]
+ ],
+ "gap all 214": {
+  "n": 214,
+  "gap": 4.4,
+  "ci90": [
+   -0.7,
+   9.5
+  ]
+ },
+ "gap without the unmatched": {
+  "n": 204,
+  "gap": 5.1,
+  "ci90": [
+   -0.1,
+   10.3
+  ]
+ },
+ "gap the unmatched only": {
+  "n": 10,
+  "gap": -10.3,
+  "ci90": [
+   -32.8,
+   12.2
+  ]
+ },
+ "ITD Jun-Aug": {
+  "n": 93,
+  "cards": 8,
+  "units": 13.17,
+  "roi": 14.2,
+  "ci90": [
+   2.0,
+   27.9
+  ],
+  "finish_rate": 0.72,
+  "mean_be": 0.645
+ },
+ "ITD Sep-Nov": {
+  "n": 111,
+  "cards": 10,
+  "units": -10.84,
+  "roi": -9.8,
+  "ci90": [
+   -28.5,
+   10.0
+  ],
+  "finish_rate": 0.568,
+  "mean_be": 0.611
+ },
+ "ITD all": {
+  "n": 204,
+  "cards": 18,
+  "units": 2.33,
+  "roi": 1.1,
+  "ci90": [
+   -11.5,
+   13.9
+  ],
+  "finish_rate": 0.637,
+  "mean_be": 0.626
+ },
+ "BFO vs bot: matched bouts": 122,
+ "BFO vs bot: mean abs diff pts": 1.06,
+ "BFO vs bot: mean diff pts": 0.03,
+ "BFO vs bot: bouts with bot pull within 60 min": [
+  {
+   "bout": "Melissa Croden vs Chelsea Chandler",
+   "sched": "2026-10-17 21:20:00",
+   "bp": 0.5408,
+   "bfo": 0.527,
+   "diff": -1.4,
+   "bp_pull_mins_before": 8.0
+  },
+  {
+   "bout": "Mandel Nallo vs Nate Landwehr",
+   "sched": "2026-10-18 00:00:00",
+   "bp": 0.1429,
+   "bfo": 0.15,
+   "diff": 0.7,
+   "bp_pull_mins_before": 42.8
+  },
+  {
+   "bout": "Joaquin Buckley vs Mike Malott",
+   "sched": "2026-10-18 01:40:00",
+   "bp": 0.3887,
+   "bfo": 0.366,
+   "diff": -2.3,
+   "bp_pull_mins_before": 19.6
+  },
+  {
+   "bout": "Keiichiro Nakamura vs Ollie Schmid",
+   "sched": "2026-11-08 00:20:00",
+   "bp": 0.2869,
+   "bfo": 0.282,
+   "diff": -0.5,
+   "bp_pull_mins_before": 11.2
+  },
+  {
+   "bout": "Mitch Raposo vs Marcos Degli",
+   "sched": "2026-11-08 01:00:00",
+   "bp": 0.4653,
+   "bfo": 0.49,
+   "diff": 2.5,
+   "bp_pull_mins_before": 51.2
+  },
+  {
+   "bout": "Lucia Szabova vs Tainara Lisboa",
+   "sched": "2026-10-31 21:00:00",
+   "bp": 0.3885,
+   "bfo": 0.389,
+   "diff": 0.1,
+   "bp_pull_mins_before": 5.1
+  },
+  {
+   "bout": "Ana Talita de Oliviera Alencar vs Piera Rodriguez",
+   "sched": "2026-10-31 21:20:00",
+   "bp": 0.6759,
+   "bfo": 0.681,
+   "diff": 0.5,
+   "bp_pull_mins_before": 25.1
+  },
+  {
+   "bout": "Nick Klein vs Joe Kropschot",
+   "sched": "2026-10-31 21:40:00",
+   "bp": 0.2657,
+   "bfo": 0.273,
+   "diff": 0.7,
+   "bp_pull_mins_before": 45.1
+  },
+  {
+   "bout": "Jean-Paul Lebosnoyani vs Farman Hasanov",
+   "sched": "2026-11-01 00:00:00",
+   "bp": 0.3569,
+   "bfo": 0.373,
+   "diff": 1.6,
+   "bp_pull_mins_before": 4.5
+  },
+  {
+   "bout": "Ode Osbourne vs Cody Durden",
+   "sched": "2026-11-01 00:40:00",
+   "bp": 0.3713,
+   "bfo": 0.375,
+   "diff": 0.4,
+   "bp_pull_mins_before": 44.5
+  },
+  {
+   "bout": "Bobby Green vs Esteban Ribovics",
+   "sched": "2026-10-04 00:40:00",
+   "bp": 0.3811,
+   "bfo": 0.373,
+   "diff": -0.8,
+   "bp_pull_mins_before": 20.1
+  },
+  {
+   "bout": "Deiveson Figueiredo vs Payton Talbott",
+   "sched": "2026-10-04 01:00:00",
+   "bp": 0.4361,
+   "bfo": 0.44,
+   "diff": 0.4,
+   "bp_pull_mins_before": 40.1
+  },
+  {
+   "bout": "Colby Thicknesse vs Asaf Chopurov",
+   "sched": "2026-10-24 15:20:00",
+   "bp": 0.3673,
+   "bfo": 0.385,
+   "diff": 1.8,
+   "bp_pull_mins_before": 2.5
+  },
+  {
+   "bout": "Grant Dawson vs Nurullo Aliev",
+   "sched": "2026-10-24 16:00:00",
+   "bp": 0.5957,
+   "bfo": 0.608,
+   "diff": 1.2,
+   "bp_pull_mins_before": 42.5
+  },
+  {
+   "bout": "Loneer Kavanagh vs Ramazonbek Temirov",
+   "sched": "2026-10-24 18:40:00",
+   "bp": 0.4661,
+   "bfo": 0.463,
+   "diff": -0.3,
+   "bp_pull_mins_before": 23.2
+  },
+  {
+   "bout": "Petr Yan vs Merab Dvalishvili",
+   "sched": "2026-10-24 19:00:00",
+   "bp": 0.7038,
+   "bfo": 0.7,
+   "diff": -0.4,
+   "bp_pull_mins_before": 43.2
+  },
+  {
+   "bout": "Felipe Franco vs Brendson Ribeiro",
+   "sched": "2026-10-10 22:00:00",
+   "bp": 0.1875,
+   "bfo": 0.187,
+   "diff": -0.1,
+   "bp_pull_mins_before": 56.1
+  },
+  {
+   "bout": "Andre Fili vs Kai Kamaka III",
+   "sched": "2026-10-11 00:20:00",
+   "bp": 0.5575,
+   "bfo": 0.583,
+   "diff": 2.5,
+   "bp_pull_mins_before": 1.3
+  },
+  {
+   "bout": "Lupita Godinez vs Ketlen Souza",
+   "sched": "2026-10-11 00:40:00",
+   "bp": 0.6942,
+   "bfo": 0.7,
+   "diff": 0.6,
+   "bp_pull_mins_before": 21.3
+  },
+  {
+   "bout": "Matheus Camilo vs Jai Herbert",
+   "sched": "2026-10-11 01:00:00",
+   "bp": 0.3713,
+   "bfo": 0.357,
+   "diff": -1.4,
+   "bp_pull_mins_before": 41.3
+  }
+ ],
+ "BFO vs bot: first 10 by bot pull closeness": [
+  {
+   "bout": "Andre Fili vs Kai Kamaka III",
+   "sched": "2026-10-11 00:20:00",
+   "bp": 0.5575,
+   "bfo": 0.583,
+   "diff": 2.5,
+   "bp_pull_mins_before": 1.3
+  },
+  {
+   "bout": "Colby Thicknesse vs Asaf Chopurov",
+   "sched": "2026-10-24 15:20:00",
+   "bp": 0.3673,
+   "bfo": 0.385,
+   "diff": 1.8,
+   "bp_pull_mins_before": 2.5
+  },
+  {
+   "bout": "Jean-Paul Lebosnoyani vs Farman Hasanov",
+   "sched": "2026-11-01 00:00:00",
+   "bp": 0.3569,
+   "bfo": 0.373,
+   "diff": 1.6,
+   "bp_pull_mins_before": 4.5
+  },
+  {
+   "bout": "Lucia Szabova vs Tainara Lisboa",
+   "sched": "2026-10-31 21:00:00",
+   "bp": 0.3885,
+   "bfo": 0.389,
+   "diff": 0.1,
+   "bp_pull_mins_before": 5.1
+  },
+  {
+   "bout": "Melissa Croden vs Chelsea Chandler",
+   "sched": "2026-10-17 21:20:00",
+   "bp": 0.5408,
+   "bfo": 0.527,
+   "diff": -1.4,
+   "bp_pull_mins_before": 8.0
+  },
+  {
+   "bout": "Keiichiro Nakamura vs Ollie Schmid",
+   "sched": "2026-11-08 00:20:00",
+   "bp": 0.2869,
+   "bfo": 0.282,
+   "diff": -0.5,
+   "bp_pull_mins_before": 11.2
+  },
+  {
+   "bout": "Joaquin Buckley vs Mike Malott",
+   "sched": "2026-10-18 01:40:00",
+   "bp": 0.3887,
+   "bfo": 0.366,
+   "diff": -2.3,
+   "bp_pull_mins_before": 19.6
+  },
+  {
+   "bout": "Bobby Green vs Esteban Ribovics",
+   "sched": "2026-10-04 00:40:00",
+   "bp": 0.3811,
+   "bfo": 0.373,
+   "diff": -0.8,
+   "bp_pull_mins_before": 20.1
+  },
+  {
+   "bout": "Lupita Godinez vs Ketlen Souza",
+   "sched": "2026-10-11 00:40:00",
+   "bp": 0.6942,
+   "bfo": 0.7,
+   "diff": 0.6,
+   "bp_pull_mins_before": 21.3
+  },
+  {
+   "bout": "Loneer Kavanagh vs Ramazonbek Temirov",
+   "sched": "2026-10-24 18:40:00",
+   "bp": 0.4661,
+   "bfo": 0.463,
+   "diff": -0.3,
+   "bp_pull_mins_before": 23.2
+  }
+ ],
+ "BFO vs bot, pull within 30 min": {
+  "n": 11,
+  "mean_abs": 1.13,
+  "mean": 0.16,
+  "max_abs": 2.5
+ },
+ "BFO vs bot, pull within 60 min": {
+  "n": 20,
+  "mean_abs": 1.01,
+  "mean": 0.29,
+  "max_abs": 2.5
+ },
+ "BFO vs bot, pull within 1440 min": {
+  "n": 65,
+  "mean_abs": 1.06,
+  "mean": 0.08,
+  "max_abs": 3.8
+ }
+}
