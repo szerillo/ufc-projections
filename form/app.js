@@ -577,6 +577,7 @@ async function vModel() {
   const withClose = R.filter(x => x.close_p != null && x.ml != null), beat = withClose.filter(x => x.close_ml != null && ml2p(x.ml) < ml2p(x.close_ml)).length;
   const SB = M.sheet, B = (v) => v && v[0] != null ? `${v[0]} <span class="dim">(${v[1]})</span>` : "—";
   const sbHtml = SB && SB.n ? `<h2>Model sheet tracker · v4.x</h2><p class="sub">${SB.n} graded fights over ${SB.cards} cards, read from the sheet's Snapshots tab. Brier score: lower is better; fight counts in brackets.</p>
+    <p class="note">Correction, Nov 11: an Oct 31 result was graded wrong (Luana Santos beat Yana Santos). The moneyline Brier scores and the no-dog-bet record below are restated; the recommendation record is unchanged.</p>
     <div class="stats"><div><b>${SB.rec.w}-${SB.rec.n - SB.rec.w}</b><span>Moneyline recs</span></div><div><b class="${cls(SB.rec.pnl)}">${signed(SB.rec.pnl, 2)}u</b><span>Rec P/L</span></div><div><b>${SB.plays.w}-${SB.plays.n - SB.plays.w}</b><span>GTD / ITD plays</span></div><div><b class="${cls(SB.plays.pnl)}">${signed(SB.plays.pnl, 2)}u</b><span>Play P/L</span></div></div>
     <div class="grid3" style="margin-top:12px">
       <div><h3>Moneyline</h3><div class="tw"><table><thead><tr><th class="l">Source</th><th>Brier</th></tr></thead><tbody>${SB.ml.map(x => `<tr><td class="l b">${x.k}</td><td>${B(x.v)}</td></tr>`).join("")}</tbody></table></div></div>
