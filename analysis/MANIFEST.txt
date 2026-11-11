@@ -94,3 +94,18 @@ f86e3a72f27a78d6c52c18f420fa49eb32a356231e1a8e5f9c451c3cf8e2fce0  input:sheet_E.
 8d14823af3aee7230587f9a6f4b0104c166b841742824cbffcb6a91ae83acd8d  output:card_fieldmap_out.txt (private, not committed)
 5116341aaac815f736bdecba9c56da199010ec34bc6645ff60d1c73f112e63b3  input:live334.json, site card fetched 2026-11-11, etag 6af475a5-7ac6 (private, not committed)
 87175c89cb653fe7b465f0c10815829ef88dc293d5d05d6a81631b59b623348b  output:sha_map_verify.txt (private, not committed)
+# block 24 (2026-11-11): shrink check, same-run check, importer draft and dry run; all local, outputs private
+56aa000656554034e45a115687be612308b703a776dc6afb45bc839bccdd162a  script:shrink_check.py (private, not committed)
+ca9ad241fbb63d31d5bf1288e00c791698e7a2135d36bbaf2914c759c36db1bd  output:shrink_out.txt (private, not committed)
+51d2d49e3f551cf854872a5ccac94b95c3971db9c9fd7bad6c92de86fa487cef  input:ufc334_oddsbreaker.txt, fresh pull 2026-11-11 (private, not committed)
+3d506a5df1de49ff1d35cddb6cd99a58a7ebb7bc3c8ad2a59479dcd3896ad0cf  script:same_run_check.py (private, not committed)
+df87137c3a4569d657aa9225e066c4a89b846d29340488206c832742117cf8b7  output:same_run_out.txt (private, not committed)
+f0795250fcafd2b7aa05ebbf74785b2002dc4de4bfec2b419f658d2a6839878c  input:markov/UFC_334_Gane_vs_Hokit_V41b_Output.md at main 107f93ce
+47ecc7f4a60670def8fb8885c7a17c9a4f8d2fd6acc93b2b019b9dec9e4f7c15  input:markov/UFC_334_sheet_inputs.csv at main 58b2ea29
+825b3a8ab38dfd7067eefa426aecba234178de2835fa6bcad5702c6173fe5ac7  input:markov/UFC_334_Gane_vs_Hokit_Raw_Stats.csv at main 107f93ce
+28137ea0ace82a1227a42eac8a13fa43d574f83fb2677b2b552b9e67426ee656  script:markov_import.py (local draft, not committed)
+4228cfc04595069f191ebf6b14d31254acd2f964775071ee730183894617f45f  script:test_markov_import.py, 24 tests pass (local draft, not committed)
+191666f282244aed6d71aaf4d84263f86c6af7e594e88863ca82a68ac4f51e55  script:dryrun_live.py (local draft, not committed)
+1166a42bf8d319b77cfdda6933d0a529f10eadb1020211f1c9c549c7b35967bc  output:dryrun_out.txt, 13/13 matched (private, not committed)
+9ef5c1cedf9d8c8641f8683ef4c16d0a07b4fd67887b06985cfaa027fefd7c7c  script:run_meta.py (local draft, not committed)
+a208b49faca8f1c80bebb4e54ef44cf8ce56fb2ba45831f79696290a4ca02428  patch:converter_generated_at.diff (local draft, not applied)
