@@ -1,0 +1,12 @@
+950f668f -> 910a8a87  Block 21: surname-path hand check (15/15), seeds and base CI hashed (local)
+6bbc7467 -> 09a4f325  Lock: forward comparison of decision base rates (UFC 334 onward), hashed before block 21 numbers
+34263df1 -> 8a563254  Block 20: site-vs-close forward lock, hand-matched rerun, month-cluster null; engine-derived outputs kept local
+b33f2565 -> 338c406b  Move engine-derived outputs off the public branch (kept local, hashes only); add local pre-push guard
+0cb4095a -> 2a56bb9e  Remove shap334.py (it quotes engine source lines); keep its hash only
+904311f9 -> 0d6dbd61  Block 19: Shapley of UFC 334 site P(dec), site vs close (pre-registered), bootstrap harm-check null, amendment 4
+a84d9a83 -> 6ed3b9cb  Lock: site decision probability vs US close (pre-registered before running)
+9cab9365 -> 3f9dbc8c  Block 18: forward-record amendment 3 (descriptive + harm check), Jul 18 ITD bound, site P(dec) vs shrunk base, division n
+88d845fb -> 8db96e83  Block 17: reversion definition, market-lag hypothesis, forward-record amendment 2, bot vs BFO close, ITD post-hoc, power
+ca8e493d -> 2a8e40ee  Block 16: forward-record amendment 1, OBF null sim, summer BFO cards, reversion outputs
+423cebe0 -> d2d96419  Block 14 follow-up: forward pass-bar lock, analysis scripts and output hashes
+e2a30b79 -> 11bbff6d  Lock hashes: UFC 334 forward record (decision props) plus earlier audit locks
