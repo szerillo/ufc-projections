@@ -20,6 +20,9 @@ on:
       force:
         description: 'Run the loop even with no card in its window (test only)'
         default: 'false'
+      dry_run:
+        description: 'One real pull for the next card, committed to branch odds-dryrun (never main), then exit'
+        default: 'false'
 
 permissions:
   contents: write
@@ -41,7 +44,38 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install pyyaml
+      - name: Dry run (one stamped pull to branch odds-dryrun; main untouched)
+        if: ${{ github.event.inputs.dry_run == 'true' }}
+        env:
+          BETTINGPROS_API_KEY: ${{ secrets.BETTINGPROS_API_KEY }}
+        run: |
+          set -e
+          read NAME SLUG < <(python - <<'PY'
+          import datetime as dt, yaml
+          now = dt.datetime.now(dt.timezone.utc)
+          for c in yaml.safe_load(open("cards.yml")):
+              mb = dt.datetime.fromisoformat(c["main_event_utc"]).replace(tzinfo=dt.timezone.utc)
+              if mb > now:
+                  print(c["name"].replace(" ", "_"), c["slug"]); break
+          PY
+          )
+          NAME="${NAME//_/ }"
+          mkdir -p data/dryrun
+          python scripts/fetch_odds.py --card "$NAME" --out "data/dryrun/${SLUG}_odds.json"
+          python - "$SLUG" <<'PY'
+          import json, sys
+          d = json.load(open(f"data/dryrun/{sys.argv[1]}_odds.json"))
+          print(f"DRYRUN card={d.get('card') or sys.argv[1]} updated_at={d.get('updated_at')} fights={len(d.get('fights', []))}")
+          PY
+          git config user.name  'bp-odds-bot'
+          git config user.email 'bp-odds-bot@users.noreply.github.com'
+          git checkout -q -b odds-dryrun
+          git add data/dryrun/
+          git commit -q -m "odds dry run: ${SLUG} at $(date -u +%Y-%m-%dT%H:%MZ) (branch only)"
+          git push -q -f origin HEAD:refs/heads/odds-dryrun
+          echo "pushed to branch odds-dryrun: $(git rev-parse --short HEAD)" | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Loop through the live window
+        if: ${{ github.event.inputs.dry_run != 'true' }}
         env:
           BETTINGPROS_API_KEY: ${{ secrets.BETTINGPROS_API_KEY }}
           MAX_MIN: ${{ github.event.inputs.max_minutes || '340' }}
