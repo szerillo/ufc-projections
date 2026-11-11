@@ -1,0 +1,13 @@
+PASS 1 same surname: Luana (red) def. Yana (blue); sheet dog Yana
+     alert: UFC Fight Night: Moicano vs Nolan: 1 results found, 1 snapshot rows graded, 3 PropSnap rows graded, 0 Archive bets filled. | PropSnap name labels swapped vs Snapshots (graded on the Snapshots side, check them): Luana San
+PASS 2 same surname, corners swapped: Yana (red), Luana (blue) wins
+     alert: x: 1 results found, 1 snapshot rows graded, 3 PropSnap rows graded, 0 Archive bets filled. | PropSnap name labels swapped vs Snapshots (graded on the Snapshots side, check them): Luana Santos / Yana Santos
+PASS 3 same surname, ufc.com uses another name for the dog (Yana Kunitskaya)
+     alert: x: 1 results found, 1 snapshot rows graded, 3 PropSnap rows graded, 0 Archive bets filled. | PropSnap name labels swapped vs Snapshots (graded on the Snapshots side, check them): Luana Santos / Yana Santos
+PASS 4 regression: Pitbull (sheet) = Freire (ufc.com) KO win as the dog
+     alert: x: 1 results found, 1 snapshot rows graded, 0 PropSnap rows graded, 0 Archive bets filled.
+PASS 5 regression: different surnames, split decision for the dog
+     alert: x: 1 results found, 1 snapshot rows graded, 0 PropSnap rows graded, 0 Archive bets filled.
+PASS 6 card picker: Feed!B2 holds the next card (4433), grade the Oct 31 card (4427)
+     alert: x: 1 results found, 1 snapshot rows graded, 0 PropSnap rows graded, 0 Archive bets filled.
+all 6 cases passed

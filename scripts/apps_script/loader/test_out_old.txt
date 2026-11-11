@@ -1,0 +1,30 @@
+FAIL 1 same surname: Luana (red) def. Yana (blue); sheet dog Yana
+     Snapshots col 41: got 1, want 0
+     Snapshots col 46: got 0.532, want 0.0732
+     Snapshots col 47: got 0.5425, want 0.0694
+     Snapshots col 48: got 0.2916, want 0.2116
+     Snapshots col 57: got 0.5312, want 0.0735
+     PropSnap row 2 (ML dog books): got result 1 Brier 0.532, want 0 / 0.0732
+     PropSnap row 3 (dog DEC books): got result 1 Brier 0.2266, want 0 / 0.2746
+     PropSnap row 4 (fav DEC books): got result 0 Brier 0.2746, want 1 / 0.2266
+     alert: UFC Fight Night: Moicano vs Nolan: 1 results found, 1 snapshot rows graded, 3 PropSnap rows graded, 0 Archive bets filled.
+FAIL 2 same surname, corners swapped: Yana (red), Luana (blue) wins
+     Snapshots col 41: got 1, want 0
+     Snapshots col 46: got 0.532, want 0.0732
+     Snapshots col 47: got 0.5425, want 0.0694
+     Snapshots col 48: got 0.2916, want 0.2116
+     Snapshots col 57: got 0.5312, want 0.0735
+     PropSnap row 2 (ML dog books): got result 1 Brier 0.532, want 0 / 0.0732
+     PropSnap row 3 (dog DEC books): got result 1 Brier 0.2266, want 0 / 0.2746
+     PropSnap row 4 (fav DEC books): got result 0 Brier 0.2746, want 1 / 0.2266
+     alert: x: 1 results found, 1 snapshot rows graded, 3 PropSnap rows graded, 0 Archive bets filled.
+PASS 3 same surname, ufc.com uses another name for the dog (Yana Kunitskaya)
+     alert: x: 1 results found, 1 snapshot rows graded, 3 PropSnap rows graded, 0 Archive bets filled.
+PASS 4 regression: Pitbull (sheet) = Freire (ufc.com) KO win as the dog
+     alert: x: 1 results found, 1 snapshot rows graded, 0 PropSnap rows graded, 0 Archive bets filled.
+PASS 5 regression: different surnames, split decision for the dog
+     alert: x: 1 results found, 1 snapshot rows graded, 0 PropSnap rows graded, 0 Archive bets filled.
+FAIL 6 card picker: Feed!B2 holds the next card (4433), grade the Oct 31 card (4427)
+     Snapshots col 41: got "", want 1
+     alert: x: 1 results found, 0 snapshot rows graded, 0 PropSnap rows graded, 0 Archive bets filled. | (No snapshot for this pk — run "Snapshot card" before the next one.)
+3 of 6 cases failed
