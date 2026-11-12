@@ -1,7 +1,8 @@
 name: Roll back projections
 
 # One step to undo a bad Friday publish. Puts data/<slug>_projections.json (what the card page reads) back to the
-# version from the promotion before the latest one, or removes it when there is none (the page then shows
+# version from the promotion before the latest one (counting only promotions since the file was last deleted, so
+# the Nov 11 dry runs never come back), or removes it when there is none (the page then shows
 # "Projections coming"). It also removes data/pending/<slug>_projections.json so the bad file cannot be promoted again;
 # the next "Publish to site" from the sheet writes a fresh one. Running it twice gives the same result (it counts
 # promotions, not its own commits). To go back further, set steps.
@@ -62,7 +63,9 @@ jobs:
             fi
             if ! [[ "$slug" =~ ^[a-z0-9_]+$ ]] || ! [[ "$steps" =~ ^[1-9][0-9]?$ ]]; then echo "bad request: slug '$slug' steps '$steps'"; exit 1; fi
             f="data/${slug}_projections.json"
-            mapfile -t P < <(git log --format=%H --grep='^projections: verified' -- "$f")
+            # promotions since the file was last deleted (the pre-go-live cleanup deletes it, so dry runs never count)
+            del=$(git log -1 --diff-filter=D --format=%H -- "$f" || true)
+            mapfile -t P < <(git log --format=%H --grep='^projections: verified' ${del:+$del..HEAD} -- "$f")
             target="${P[$steps]:-}"
             before=$(sha256sum "$f" 2>/dev/null | cut -c1-12 || echo none)
             if [ -n "$target" ] && git cat-file -e "$target:$f" 2>/dev/null; then

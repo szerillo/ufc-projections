@@ -82,7 +82,7 @@ async def run(page_html: str, embed_html: str, check: bool) -> int:
     from playwright.async_api import async_playwright
     srv, port = serve()
     base = f"http://127.0.0.1:{port}"
-    proj0 = json.loads((REPO / "data" / f"{SLUG}_projections.json").read_text())
+    proj0 = json.loads((REPO / "scripts" / "fixtures" / f"{SLUG}_projections_dryrun.json").read_text())  # the Nov 11 dry run
     odds0 = json.loads((REPO / "data" / f"{SLUG}_odds.json").read_text())
     fails = 0
     async with async_playwright() as p:
