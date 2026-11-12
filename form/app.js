@@ -214,6 +214,27 @@ async function overlayLive(ev) {
     ev.__live_n = hit;
     ev.__live = d.updated_at; ev.odds_updated = d.updated_at; } catch (e) { /* keep baked odds */ }
 }
+/* ---------- option (b), Block 56: recs for the upcoming card come from the verified projections file ---------- */
+async function overlayProj(ev) {
+  if (ev.status !== "upcoming" || !ev.bp_file || ev.__proj !== undefined) return;
+  const url = ev.bp_file.replace(/_odds\.json$/, "_projections.json");
+  const nm2 = (x) => (x || "").toLowerCase().normalize("NFD").replace(/[^a-z ]/g, "").replace(/\s+/g, " ").trim();
+  let P = null, al = {};
+  try { [P, al] = await Promise.all([fetch(url + "?t=" + Math.floor(Date.now() / 6e4)).then(r => r.ok ? r.json() : null),
+    fetch("form/data/name_aliases.json?t=" + Math.floor(Date.now() / 6e5)).then(r => r.json()).catch(() => ({}))]); } catch (e) { P = null; }
+  ev.__proj = P ? P.published_at : null;
+  if (!P) { for (const f of ev.fights) { if (f.sheet) f.sheet.rec = "-"; if (f.model && f.model.src === "sheet") { f.model.rec = null; f.model.rec_text = "-"; } } return; }   // no verified file: show no rec rather than a baked one
+  const canon = (x) => nm2(al[nm2(x)] || x).replace(/ /g, ""), key = (x, y) => [canon(x), canon(y)].sort().join("|");
+  const pub = {}; for (const r of P.fights || []) if (r.publish) pub[key(r.dog, r.fav)] = ((r.sheet || {}).rec || "-");
+  for (const f of ev.fights) {
+    const rec = pub[key(f.a.name, f.b.name)] || "-";
+    f.sheet = f.sheet || {}; f.sheet.rec = rec;
+    if (!f.model || f.model.src === "sheet") { f.model = f.model || { src: "sheet" };
+      const body = nm2(rec.split("(")[0].split("[")[0]).split(" "), la = last(nm2(f.a.name)), lb = last(nm2(f.b.name));
+      f.model.rec = /^bet\b/i.test(rec) ? (body.includes(la) && !body.includes(lb) ? "a" : body.includes(lb) && !body.includes(la) ? "b" : null) : null;
+      f.model.rec_text = rec; }
+  }
+}
 /* ---------- live model sheet overlay (upcoming card) ---------- */
 function parseCSV(text) { const rows = []; let row = [], cur = "", q = false;
   for (let i = 0; i < text.length; i++) { const c = text[i];
@@ -318,7 +339,7 @@ async function vHome() {
   const idx = await getJSON("index.json");
   let html = "";
   for (const u of idx.upcoming) {
-    const ev = await getJSON(`events/${u.slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev)]);
+    const ev = await getJSON(`events/${u.slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev), overlayProj(ev)]);
     html += `<h2>Next up · ${esc(ev.name)}</h2><div class="sub">${fdate(ev.date)} · ${esc(ev.location)} · <a href="#/card/${ev.slug}" style="text-decoration:underline">full card page</a></div><div style="height:8px"></div>${cardTable(ev)}${priceBoard(ev)}${methodBoard(ev)}<p><a class="btn" href="#/sheet/${ev.slug}">Printable form sheet →</a></p>`;
   }
   if (!idx.upcoming.length) html += `<div class="banner">No upcoming card loaded yet.</div>`;
@@ -331,7 +352,7 @@ async function vHome() {
 }
 
 async function vCard(slug) {
-  const ev = await getJSON(`events/${slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev)]);
+  const ev = await getJSON(`events/${slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev), overlayProj(ev)]);
   const withOdds = ev.fights.filter(f => f.odds);
   const movers = withOdds.map(f => ({ f, mv: (f.odds.close.p - f.odds.open.p) * 100 })).sort((a, b) => Math.abs(b.mv) - Math.abs(a.mv)).slice(0, 5);
   let html = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/cards">Cards</a> › ${esc(ev.name)}</div>
@@ -354,7 +375,7 @@ function tapeRow(k, a, b, better, force) { // better: "hi" | "lo" | null; force:
 const inches = (ht) => { const m = /(\d+)'(\d+)/.exec(ht || ""); return m ? +m[1] * 12 + +m[2] : null; };
 
 async function vFight(slug, n) {
-  const ev = await getJSON(`events/${slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev)]);
+  const ev = await getJSON(`events/${slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev), overlayProj(ev)]);
   const f = ev.fights.find(x => String(x.n) === String(n));
   if (!f) { location.replace(`#/card/${ev.slug}`); return; }   // a removed or renumbered bout goes to its card, never to another bout (Block 55)
   const [A, B] = await Promise.all([f.a.slug ? getJSON(`fighters/${f.a.slug}.json`).catch(() => null) : null, f.b.slug ? getJSON(`fighters/${f.b.slug}.json`).catch(() => null) : null]);
@@ -675,7 +696,7 @@ async function vResearch() {
 }
 
 async function vSheet(slug) {
-  const ev = await getJSON(`events/${slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev)]);
+  const ev = await getJSON(`events/${slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev), overlayProj(ev)]);
   let html = `<div class="crumbs noprint"><a href="#/">Home</a> › <a href="#/card/${ev.slug}">${esc(ev.name)}</a> › Form sheet · <a href="javascript:window.print()" style="text-decoration:underline">Print</a></div><h2>${esc(ev.name)} · Form sheet</h2><div class="sub">${fdate(ev.date)} · ${esc(ev.location)}</div>`;
   for (const f of ev.fights) {
     const [A, B] = await Promise.all([f.a.slug ? getJSON(`fighters/${f.a.slug}.json`).catch(() => null) : null, f.b.slug ? getJSON(`fighters/${f.b.slug}.json`).catch(() => null) : null]);
