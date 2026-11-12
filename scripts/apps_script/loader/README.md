@@ -1,6 +1,7 @@
 # Loader (UFC Model sheet, Apps Script): source, grading fix, test
 
-Nothing here is installed in the sheet. Install date: **Sunday Nov 15** (after UFC 334), unless 334 needs it first.
+Nothing here is installed in the sheet. Install date moved to **Thursday Nov 12** (Kirk, with the publish script; Block 48),
+so the TRAP exclusion applies to UFC 334. Steps, readback and rollback: PUBLISH.md, "Thursday install".
 
 ## Files
 - `Code_v2.7_installed.gs`: the loader as installed, read from the script editor Nov 11 (installed file sha256
@@ -36,10 +37,10 @@ Read through `SP_(name, default)` (one added line). Never paste these values int
     node test_grading_names.js v2.7_name_helpers_L170-189.gs patched_grading.gs            # 7 of 7 pass
 The same holds on the full files (helpers = lines 171-190, grading = line 1093 to the end of each file).
 
-## Sunday install (about 10 minutes)
+## Install (Thursday Nov 12; about 10 minutes; steps 1-2 here, readback and rollback in PUBLISH.md)
 1. Script Properties: add `BETTABLE_BOOKS` with the list from line 65 of the installed Code.gs. Proof: listed.
 2. Replace Code.gs with `Code_v2.8_patched.gs`, Save. Proof: no red error; the UFC menu still loads after a reload.
-3. Live same-surname check: UFC > Grade last card, URL of the Oct 31 card, card id 4427 (Yana vs Luana Santos).
+3. (Sunday, after grading UFC 334, not Thursday) Live same-surname check: UFC > Grade last card, URL of the Oct 31 card, card id 4427 (Yana vs Luana Santos).
    Proof: the alert counts the card's rows, and a Snapshots/PropSnap export diffed against one taken just before shows
    no changed values except the "graded" timestamps (Snapshots AY, PropSnap Q): those rows were hand-corrected Nov 11
    to what the fix computes. Anything else changing: restore the previous Code.gs from version history.
