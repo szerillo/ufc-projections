@@ -50,3 +50,13 @@ To put a new card on the front page: add it to `cards.yml` (as before), run `scr
 - The build reads the UFC Model Google Sheet (link-readable) by tab gid: Snapshots (graded tracker), Calculator, Main Card, Prelims, PropSnap. Graded fights get every input, the flags and the closing prop market; `model.json` gets a tracker scoreboard.
 - The browser also reads Main Card / Prelims / Calculator live for the upcoming card, so sheet edits show up on the site without a rebuild.
 - Markov outputs: drop each `*_V41b_Output.md` into `markov/`; the build parses its ARCHIVE block (win % shrunk and raw, P(dec), expected minutes, round distribution).
+
+## v5: Publish to site export + v4 single-fight embeds
+
+- **Sean's projection = the sheet's "Publish to site" export.** `scripts/publish_source.py` attaches `data/<slug>_projections.json` (verified copy) or else `data/pending/<slug>_projections.json` to the upcoming event: win % (`sheet.true_dog/true_fav`), DEC / KO / SUB (`method`), GTD (`gtd`) and the sheet inputs. Only when there is no export for the card does the build keep its own sheet pull (or a widget's projections). Each fight carries `proj_src` (`publish` / `sheet` / `widget` / null) and the event carries `proj_source` (file, published_at, counts). `build_form.py` calls it; to refresh a committed event file without a full rebuild (no sheet ID needed):
+  `python3 scripts/card_overrides.py --slug ufc_334 --event form/data/events/<event>.json --index form/data/index.json --check && python3 scripts/publish_source.py --slug ufc_334 --event form/data/events/<event>.json`
+- **Fight numbers = bout order** (`card_overrides.apply_doc` rewrites `n` from `data/card_overrides.json` order: 1 = first early prelim, highest = main event; cancelled bouts dropped). `--check` fails if they differ.
+- **v4 embeds**: `python3 scripts/build_fight_embeds.py --slug ufc_334` writes `embeds/<slug>/fight_NN.html` (one per bout, + `.registry.json` with the rule and source of every number, + `card.json`) and the card's roster block in `embed.html`. Rebuild after an odds refresh or a new publish; the embeds are static.
+- **Checks** (all must pass before pushing):
+  `python3 scripts/verify_fight_embeds.py --slug ufc_334 --negative` re-derives every number in every embed from the sources, plus row order, numbering, cancelled bouts, badge, export-sourced Sean cells; the negative run plants errors and must catch all of them.
+  `python3 scripts/check_site_projections.py --slug ufc_334 --negative` renders the card, home, print and fight pages with `form/app.js` (`scripts/site_render.js`, needs node or bun) and asserts every displayed Sean number equals the export.

@@ -1,0 +1,1829 @@
+{
+ "fight": 10,
+ "of": 13,
+ "site_n": 10,
+ "pair": [
+  "Uros Medic",
+  "Kevin Holland"
+ ],
+ "file": "fight_10.html",
+ "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+ "proj_src": "publish",
+ "proj_file": "data/pending/ufc_334_projections.json",
+ "published_at": "2026-11-12T01:18:40.423Z",
+ "rows": [
+  {
+   "id": "v1",
+   "text": "8-3-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Uros Medic UFC record",
+   "raw": "8-3-0"
+  },
+  {
+   "id": "v2",
+   "text": "1596",
+   "fmt": "int",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "a.elo"
+   },
+   "desc": "Uros Medic Elo",
+   "raw": 1596
+  },
+  {
+   "id": "v3",
+   "text": "68.7",
+   "fmt": "n1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "form.ra"
+   },
+   "desc": "Uros Medic Form Figure",
+   "raw": 68.7
+  },
+  {
+   "id": "v4",
+   "text": "16-12-0 (1 NC)",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Kevin Holland UFC record",
+   "raw": "16-12-0 (1 NC)"
+  },
+  {
+   "id": "v5",
+   "text": "1574",
+   "fmt": "int",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "b.elo"
+   },
+   "desc": "Kevin Holland Elo",
+   "raw": 1574
+  },
+  {
+   "id": "v6",
+   "text": "59.3",
+   "fmt": "n1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "form.rb"
+   },
+   "desc": "Kevin Holland Form Figure",
+   "raw": 59.3
+  },
+  {
+   "id": "v7",
+   "text": "-152",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Sean ML Uros Medic",
+   "raw": 0.6029033335978485
+  },
+  {
+   "id": "v8",
+   "text": "60.3%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Sean win % Uros Medic",
+   "raw": 0.6029033335978485
+  },
+  {
+   "id": "v9",
+   "text": "-155",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Uros Medic",
+    "field": "cost"
+   },
+   "desc": "BP ML now Uros Medic",
+   "raw": -155
+  },
+  {
+   "id": "v10",
+   "text": "57.8%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "moneyline",
+    "label": "Uros Medic",
+    "other": "Kevin Holland"
+   },
+   "desc": "BP ML no-vig Uros Medic",
+   "raw": 0.5776397515527951
+  },
+  {
+   "id": "v11",
+   "text": "-162",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Uros Medic",
+    "field": "opening_cost"
+   },
+   "desc": "BP ML open Uros Medic",
+   "raw": -162
+  },
+  {
+   "id": "v12",
+   "text": "+152",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Sean ML Kevin Holland",
+   "raw": 0.39709666640215147
+  },
+  {
+   "id": "v13",
+   "text": "39.7%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Sean win % Kevin Holland",
+   "raw": 0.39709666640215147
+  },
+  {
+   "id": "v14",
+   "text": "+125",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Kevin Holland",
+    "field": "cost"
+   },
+   "desc": "BP ML now Kevin Holland",
+   "raw": 125
+  },
+  {
+   "id": "v15",
+   "text": "42.2%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "moneyline",
+    "label": "Kevin Holland",
+    "other": "Uros Medic"
+   },
+   "desc": "BP ML no-vig Kevin Holland",
+   "raw": 0.42236024844720504
+  },
+  {
+   "id": "v16",
+   "text": "+130",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Kevin Holland",
+    "field": "opening_cost"
+   },
+   "desc": "BP ML open Kevin Holland",
+   "raw": 130
+  },
+  {
+   "id": "v17",
+   "text": "+439",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Sean dec ML Uros Medic",
+   "raw": 0.1854302406503193
+  },
+  {
+   "id": "v18",
+   "text": "18.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Sean dec % Uros Medic",
+   "raw": 0.1854302406503193
+  },
+  {
+   "id": "v19",
+   "text": "+774",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Uros Medic Points",
+    "field": "cost"
+   },
+   "desc": "BP dec now Uros Medic",
+   "raw": 774
+  },
+  {
+   "id": "v20",
+   "text": "9.5%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Uros Medic",
+    "k": "dec"
+   },
+   "desc": "BP dec no-vig Uros Medic",
+   "raw": 0.09457461684680567
+  },
+  {
+   "id": "v21",
+   "text": "+750",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Uros Medic Points",
+    "field": "opening_cost"
+   },
+   "desc": "BP dec open Uros Medic",
+   "raw": 750
+  },
+  {
+   "id": "v22",
+   "text": "+1439",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Sean dec ML Kevin Holland",
+   "raw": 0.06498808033875739
+  },
+  {
+   "id": "v23",
+   "text": "6.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Sean dec % Kevin Holland",
+   "raw": 0.06498808033875739
+  },
+  {
+   "id": "v24",
+   "text": "+900",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Holland Points",
+    "field": "cost"
+   },
+   "desc": "BP dec now Kevin Holland",
+   "raw": 900
+  },
+  {
+   "id": "v25",
+   "text": "8.3%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Kevin Holland",
+    "k": "dec"
+   },
+   "desc": "BP dec no-vig Kevin Holland",
+   "raw": 0.08265821512410815
+  },
+  {
+   "id": "v26",
+   "text": "+850",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Holland Points",
+    "field": "opening_cost"
+   },
+   "desc": "BP dec open Kevin Holland",
+   "raw": 850
+  },
+  {
+   "id": "v27",
+   "text": "+169",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Sean ko ML Uros Medic",
+   "raw": 0.3711776551984567
+  },
+  {
+   "id": "v28",
+   "text": "37.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Sean ko % Uros Medic",
+   "raw": 0.3711776551984567
+  },
+  {
+   "id": "v29",
+   "text": "+107",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Uros Medic KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "BP ko now Uros Medic",
+   "raw": 107
+  },
+  {
+   "id": "v30",
+   "text": "39.9%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Uros Medic",
+    "k": "ko"
+   },
+   "desc": "BP ko no-vig Uros Medic",
+   "raw": 0.399315048908735
+  },
+  {
+   "id": "v31",
+   "text": "+115",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Uros Medic KO/TKO/DQ",
+    "field": "opening_cost"
+   },
+   "desc": "BP ko open Uros Medic",
+   "raw": 115
+  },
+  {
+   "id": "v32",
+   "text": "+443",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Sean ko ML Kevin Holland",
+   "raw": 0.18406928389688262
+  },
+  {
+   "id": "v33",
+   "text": "18.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Sean ko % Kevin Holland",
+   "raw": 0.18406928389688262
+  },
+  {
+   "id": "v34",
+   "text": "+314",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Holland KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "BP ko now Kevin Holland",
+   "raw": 314
+  },
+  {
+   "id": "v35",
+   "text": "20.0%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Kevin Holland",
+    "k": "ko"
+   },
+   "desc": "BP ko no-vig Kevin Holland",
+   "raw": 0.1996575244543675
+  },
+  {
+   "id": "v36",
+   "text": "+330",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Holland KO/TKO/DQ",
+    "field": "opening_cost"
+   },
+   "desc": "BP ko open Kevin Holland",
+   "raw": 330
+  },
+  {
+   "id": "v37",
+   "text": "+2060",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Sean sub ML Uros Medic",
+   "raw": 0.046295437749072535
+  },
+  {
+   "id": "v38",
+   "text": "4.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Sean sub % Uros Medic",
+   "raw": 0.046295437749072535
+  },
+  {
+   "id": "v39",
+   "text": "+1200",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Uros Medic Submission",
+    "field": "cost"
+   },
+   "desc": "BP sub now Uros Medic",
+   "raw": 1200
+  },
+  {
+   "id": "v40",
+   "text": "6.4%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Uros Medic",
+    "k": "sub"
+   },
+   "desc": "BP sub no-vig Uros Medic",
+   "raw": 0.06358324240316011
+  },
+  {
+   "id": "v41",
+   "text": "+1500",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Uros Medic Submission",
+    "field": "opening_cost"
+   },
+   "desc": "BP sub open Uros Medic",
+   "raw": 1500
+  },
+  {
+   "id": "v42",
+   "text": "+575",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Sean sub ML Kevin Holland",
+   "raw": 0.14803930216651146
+  },
+  {
+   "id": "v43",
+   "text": "14.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Sean sub % Kevin Holland",
+   "raw": 0.14803930216651146
+  },
+  {
+   "id": "v44",
+   "text": "+474",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Holland Submission",
+    "field": "cost"
+   },
+   "desc": "BP sub now Kevin Holland",
+   "raw": 474
+  },
+  {
+   "id": "v45",
+   "text": "14.4%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Kevin Holland",
+    "k": "sub"
+   },
+   "desc": "BP sub no-vig Kevin Holland",
+   "raw": 0.1440038591012337
+  },
+  {
+   "id": "v46",
+   "text": "+525",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Holland Submission",
+    "field": "opening_cost"
+   },
+   "desc": "BP sub open Kevin Holland",
+   "raw": 525
+  },
+  {
+   "id": "v47",
+   "text": "+140",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Sean itd ML Uros Medic",
+   "raw": 0.4174730929475292
+  },
+  {
+   "id": "v48",
+   "text": "41.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Sean itd % Uros Medic",
+   "raw": 0.4174730929475292
+  },
+  {
+   "id": "v49",
+   "text": "+116",
+   "fmt": "mlp",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Uros Medic"
+   },
+   "desc": "BP ITD fair ML Uros Medic",
+   "raw": 0.4628982913118951
+  },
+  {
+   "id": "v50",
+   "text": "46.3%",
+   "fmt": "pct1",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Uros Medic"
+   },
+   "desc": "BP ITD no-vig Uros Medic",
+   "raw": 0.4628982913118951
+  },
+  {
+   "id": "v51",
+   "text": "+201",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Sean itd ML Kevin Holland",
+   "raw": 0.3321085860633941
+  },
+  {
+   "id": "v52",
+   "text": "33.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Sean itd % Kevin Holland",
+   "raw": 0.3321085860633941
+  },
+  {
+   "id": "v53",
+   "text": "+191",
+   "fmt": "mlp",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Kevin Holland"
+   },
+   "desc": "BP ITD fair ML Kevin Holland",
+   "raw": 0.34366138355560116
+  },
+  {
+   "id": "v54",
+   "text": "34.4%",
+   "fmt": "pct1",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Kevin Holland"
+   },
+   "desc": "BP ITD no-vig Kevin Holland",
+   "raw": 0.34366138355560116
+  },
+  {
+   "id": "v55",
+   "text": "+299",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Sean GTD fair ML",
+   "raw": 0.2504183209890767
+  },
+  {
+   "id": "v56",
+   "text": "25.0%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Sean GTD %",
+   "raw": 0.2504183209890767
+  },
+  {
+   "id": "v57",
+   "text": "+395",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "BP GTD yes now",
+   "raw": 395
+  },
+  {
+   "id": "v58",
+   "text": "-619",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "BP GTD no now",
+   "raw": -619
+  },
+  {
+   "id": "v59",
+   "text": "19.0%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "other": "No"
+   },
+   "desc": "BP GTD no-vig",
+   "raw": 0.19005828630337954
+  },
+  {
+   "id": "v60",
+   "text": "+350",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "opening_cost"
+   },
+   "desc": "BP GTD yes open",
+   "raw": 350
+  },
+  {
+   "id": "v61",
+   "text": "-161",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "odds.open.ma"
+   },
+   "desc": "OA open ML a",
+   "raw": -161
+  },
+  {
+   "id": "v62",
+   "text": "+136",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "odds.open.mb"
+   },
+   "desc": "OA open ML b",
+   "raw": 136
+  },
+  {
+   "id": "v63",
+   "text": "59.3%",
+   "fmt": "pct1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "odds.open.p"
+   },
+   "desc": "OA open p",
+   "raw": 0.593
+  },
+  {
+   "id": "v64",
+   "text": "-149",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "odds.close.ma"
+   },
+   "desc": "OA close ML a",
+   "raw": -149
+  },
+  {
+   "id": "v65",
+   "text": "+127",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "odds.close.mb"
+   },
+   "desc": "OA close ML b",
+   "raw": 127
+  },
+  {
+   "id": "v66",
+   "text": "57.6%",
+   "fmt": "pct1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "odds.close.p"
+   },
+   "desc": "OA close p",
+   "raw": 0.5762
+  },
+  {
+   "id": "v67",
+   "text": "1.7",
+   "fmt": "pts",
+   "rule": "oa_drift",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10
+   },
+   "desc": "OA drift pts",
+   "raw": -0.016799999999999926
+  },
+  {
+   "id": "v68",
+   "text": "-147",
+   "fmt": "ml",
+   "rule": "oa_best",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "side": "a"
+   },
+   "desc": "OA best a",
+   "raw": -147
+  },
+  {
+   "id": "v69",
+   "text": "+135",
+   "fmt": "ml",
+   "rule": "oa_best",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "side": "b"
+   },
+   "desc": "OA best b",
+   "raw": 135
+  },
+  {
+   "id": "v70",
+   "text": "-162",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Uros Medic",
+    "field": "opening_cost"
+   },
+   "desc": "BP open a (move)",
+   "raw": -162
+  },
+  {
+   "id": "v71",
+   "text": "-155",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Uros Medic",
+    "field": "cost"
+   },
+   "desc": "BP now a (move)",
+   "raw": -155
+  },
+  {
+   "id": "v72",
+   "text": "+130",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Kevin Holland",
+    "field": "opening_cost"
+   },
+   "desc": "BP open b (move)",
+   "raw": 130
+  },
+  {
+   "id": "v73",
+   "text": "+125",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Kevin Holland",
+    "field": "cost"
+   },
+   "desc": "BP now b (move)",
+   "raw": 125
+  },
+  {
+   "id": "v74",
+   "text": "140",
+   "fmt": "int",
+   "rule": "oa_len",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10
+   },
+   "desc": "Chart points",
+   "raw": 140
+  },
+  {
+   "id": "v75",
+   "text": "450",
+   "fmt": "int",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 10,
+    "path": "odds.n"
+   },
+   "desc": "Snapshots",
+   "raw": 450
+  },
+  {
+   "id": "v76",
+   "text": "-278",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "KO/TKO/DQ",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_ending KO/TKO/DQ",
+   "raw": -278
+  },
+  {
+   "id": "v77",
+   "text": "-275",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "BP now fight_ending KO/TKO/DQ",
+   "raw": -275
+  },
+  {
+   "id": "v78",
+   "text": "73%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_ending",
+    "label": "KO/TKO/DQ"
+   },
+   "desc": "BP implied fight_ending KO/TKO/DQ",
+   "raw": 0.7333333333333333
+  },
+  {
+   "id": "v79",
+   "text": "+350",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Submission",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_ending Submission",
+   "raw": 350
+  },
+  {
+   "id": "v80",
+   "text": "+350",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Submission",
+    "field": "cost"
+   },
+   "desc": "BP now fight_ending Submission",
+   "raw": 350
+  },
+  {
+   "id": "v81",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Submission"
+   },
+   "desc": "BP implied fight_ending Submission",
+   "raw": 0.2222222222222222
+  },
+  {
+   "id": "v82",
+   "text": "+380",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Points",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_ending Points",
+   "raw": 380
+  },
+  {
+   "id": "v83",
+   "text": "+380",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Points",
+    "field": "cost"
+   },
+   "desc": "BP now fight_ending Points",
+   "raw": 380
+  },
+  {
+   "id": "v84",
+   "text": "21%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Points"
+   },
+   "desc": "BP implied fight_ending Points",
+   "raw": 0.20833333333333334
+  },
+  {
+   "id": "v85",
+   "text": "+350",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_distance Yes",
+   "raw": 350
+  },
+  {
+   "id": "v86",
+   "text": "+395",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "BP now fight_distance Yes",
+   "raw": 395
+  },
+  {
+   "id": "v87",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "BP implied fight_distance Yes",
+   "raw": 0.20202020202020202
+  },
+  {
+   "id": "v88",
+   "text": "-560",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_distance No",
+   "raw": -560
+  },
+  {
+   "id": "v89",
+   "text": "-619",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "BP now fight_distance No",
+   "raw": -619
+  },
+  {
+   "id": "v90",
+   "text": "86%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "BP implied fight_distance No",
+   "raw": 0.8609179415855355
+  },
+  {
+   "id": "v91",
+   "text": "1.5",
+   "fmt": "str",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over",
+    "field": "line"
+   },
+   "desc": "BP line total_rounds Over",
+   "raw": 1.5
+  },
+  {
+   "id": "v92",
+   "text": "+124",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over",
+    "field": "opening_cost"
+   },
+   "desc": "BP open total_rounds Over",
+   "raw": 124
+  },
+  {
+   "id": "v93",
+   "text": "+137",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over",
+    "field": "cost"
+   },
+   "desc": "BP now total_rounds Over",
+   "raw": 137
+  },
+  {
+   "id": "v94",
+   "text": "42%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over"
+   },
+   "desc": "BP implied total_rounds Over",
+   "raw": 0.4219409282700422
+  },
+  {
+   "id": "v95",
+   "text": "1.5",
+   "fmt": "str",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under",
+    "field": "line"
+   },
+   "desc": "BP line total_rounds Under",
+   "raw": 1.5
+  },
+  {
+   "id": "v96",
+   "text": "-160",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under",
+    "field": "opening_cost"
+   },
+   "desc": "BP open total_rounds Under",
+   "raw": -160
+  },
+  {
+   "id": "v97",
+   "text": "-171",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under",
+    "field": "cost"
+   },
+   "desc": "BP now total_rounds Under",
+   "raw": -171
+  },
+  {
+   "id": "v98",
+   "text": "63%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under"
+   },
+   "desc": "BP implied total_rounds Under",
+   "raw": 0.6309963099630996
+  },
+  {
+   "id": "v99",
+   "text": "33.6",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Age a",
+   "raw": 33.555099247091036
+  },
+  {
+   "id": "v100",
+   "text": "34.0",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Age b",
+   "raw": 34.02327173169062
+  },
+  {
+   "id": "v101",
+   "text": "71\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 71
+  },
+  {
+   "id": "v102",
+   "text": "81\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 81
+  },
+  {
+   "id": "v103",
+   "text": "6'1\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "6'1\""
+  },
+  {
+   "id": "v104",
+   "text": "6'3\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "6'3\""
+  },
+  {
+   "id": "v105",
+   "text": "Southpaw",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Southpaw"
+  },
+  {
+   "id": "v106",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v107",
+   "text": "11",
+   "fmt": "int",
+   "rule": "nfights",
+   "args": {
+    "side": "a"
+   },
+   "desc": "UFC fights a",
+   "raw": 11
+  },
+  {
+   "id": "v108",
+   "text": "29",
+   "fmt": "int",
+   "rule": "nfights",
+   "args": {
+    "side": "b"
+   },
+   "desc": "UFC fights b",
+   "raw": 29
+  },
+  {
+   "id": "v109",
+   "text": "5.31",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "slpm"
+   },
+   "desc": "SLpM a",
+   "raw": 5.31435349940688
+  },
+  {
+   "id": "v110",
+   "text": "4.18",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "slpm"
+   },
+   "desc": "SLpM b",
+   "raw": 4.176620007566341
+  },
+  {
+   "id": "v111",
+   "text": "3.53",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "sapm"
+   },
+   "desc": "SApM a",
+   "raw": 3.534994068801898
+  },
+  {
+   "id": "v112",
+   "text": "3.30",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "sapm"
+   },
+   "desc": "SApM b",
+   "raw": 3.2978435929308763
+  },
+  {
+   "id": "v113",
+   "text": "+1.78",
+   "fmt": "s2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "diff"
+   },
+   "desc": "Strike diff /min a",
+   "raw": 1.7793594306049823
+  },
+  {
+   "id": "v114",
+   "text": "+0.88",
+   "fmt": "s2",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "diff"
+   },
+   "desc": "Strike diff /min b",
+   "raw": 0.8787764146354645
+  },
+  {
+   "id": "v115",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "acc"
+   },
+   "desc": "Strike accuracy a",
+   "raw": 0.5818181818181818
+  },
+  {
+   "id": "v116",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "acc"
+   },
+   "desc": "Strike accuracy b",
+   "raw": 0.5025360905189231
+  },
+  {
+   "id": "v117",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "dfn"
+   },
+   "desc": "Strike defence a",
+   "raw": 0.5578635014836795
+  },
+  {
+   "id": "v118",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "dfn"
+   },
+   "desc": "Strike defence b",
+   "raw": 0.49950787401574803
+  },
+  {
+   "id": "v119",
+   "text": "0.36",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 0.35587188612099646
+  },
+  {
+   "id": "v120",
+   "text": "0.83",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 0.8268929362806031
+  },
+  {
+   "id": "v121",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.5555555555555556
+  },
+  {
+   "id": "v122",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.5775862068965517
+  },
+  {
+   "id": "v123",
+   "text": "4%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "ctrlp"
+   },
+   "desc": "Control time a",
+   "raw": 0.03795966785290629
+  },
+  {
+   "id": "v124",
+   "text": "13%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "ctrlp"
+   },
+   "desc": "Control time b",
+   "raw": 0.13219477922499054
+  },
+  {
+   "id": "v125",
+   "text": "108",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "fg"
+   },
+   "desc": "Fig Uros Medic Daniel Rodriguez",
+   "raw": 107.6
+  },
+  {
+   "id": "v126",
+   "text": "-328",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Uros Medic Daniel Rodriguez",
+   "raw": -328
+  },
+  {
+   "id": "v127",
+   "text": "103",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "fg"
+   },
+   "desc": "Fig Uros Medic Geoff Neal",
+   "raw": 103.0
+  },
+  {
+   "id": "v128",
+   "text": "+170",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Uros Medic Geoff Neal",
+   "raw": 170
+  },
+  {
+   "id": "v129",
+   "text": "104",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "fg"
+   },
+   "desc": "Fig Uros Medic Muslim Salikhov",
+   "raw": 104.2
+  },
+  {
+   "id": "v130",
+   "text": "-131",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Uros Medic Muslim Salikhov",
+   "raw": -131
+  },
+  {
+   "id": "v131",
+   "text": "76",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "fg"
+   },
+   "desc": "Fig Uros Medic Gilbert Urbina",
+   "raw": 75.8
+  },
+  {
+   "id": "v132",
+   "text": "-357",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Uros Medic Gilbert Urbina",
+   "raw": -357
+  },
+  {
+   "id": "v133",
+   "text": "0",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 4,
+    "key": "fg"
+   },
+   "desc": "Fig Uros Medic Punahele Soriano",
+   "raw": 0.2
+  },
+  {
+   "id": "v134",
+   "text": "-206",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 4,
+    "key": "od.mc"
+   },
+   "desc": "Close Uros Medic Punahele Soriano",
+   "raw": -206
+  },
+  {
+   "id": "v135",
+   "text": "88",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 0,
+    "key": "fg"
+   },
+   "desc": "Fig Kevin Holland Randy Brown",
+   "raw": 87.6
+  },
+  {
+   "id": "v136",
+   "text": "-123",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Kevin Holland Randy Brown",
+   "raw": -123
+  },
+  {
+   "id": "v137",
+   "text": "38",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "fg"
+   },
+   "desc": "Fig Kevin Holland Mike Malott",
+   "raw": 38.5
+  },
+  {
+   "id": "v138",
+   "text": "-109",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Kevin Holland Mike Malott",
+   "raw": -109
+  },
+  {
+   "id": "v139",
+   "text": "31",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 2,
+    "key": "fg"
+   },
+   "desc": "Fig Kevin Holland Daniel Rodriguez",
+   "raw": 31.0
+  },
+  {
+   "id": "v140",
+   "text": "-625",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Kevin Holland Daniel Rodriguez",
+   "raw": -625
+  },
+  {
+   "id": "v141",
+   "text": "100",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 3,
+    "key": "fg"
+   },
+   "desc": "Fig Kevin Holland Vicente Luque",
+   "raw": 99.8
+  },
+  {
+   "id": "v142",
+   "text": "-179",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Kevin Holland Vicente Luque",
+   "raw": -179
+  },
+  {
+   "id": "v143",
+   "text": "86",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 4,
+    "key": "fg"
+   },
+   "desc": "Fig Kevin Holland Gunnar Nelson",
+   "raw": 85.6
+  },
+  {
+   "id": "v144",
+   "text": "-102",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 4,
+    "key": "od.mc"
+   },
+   "desc": "Close Kevin Holland Gunnar Nelson",
+   "raw": -102
+  },
+  {
+   "id": "v145",
+   "text": "60.3%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Sheet % (note)",
+   "raw": 0.6029033335978485
+  },
+  {
+   "id": "v146",
+   "text": "2.5",
+   "fmt": "pts",
+   "rule": "gap_pub_bp",
+   "args": {
+    "side": "a",
+    "market": "moneyline",
+    "label": "Uros Medic",
+    "other": "Kevin Holland"
+   },
+   "desc": "Sheet vs BP gap",
+   "raw": 0.025263582045053412
+  }
+ ],
+ "gaps": [
+  "Fight 10: BettingPros method_of_victory has unlabeled selections ['Uros Medic', 'Kevin Holland']; not displayed."
+ ]
+}

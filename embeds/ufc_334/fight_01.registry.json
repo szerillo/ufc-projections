@@ -1,0 +1,1557 @@
+{
+ "fight": 1,
+ "of": 13,
+ "site_n": 1,
+ "pair": [
+  "Evan Elder",
+  "Samuel Sanches"
+ ],
+ "file": "fight_01.html",
+ "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+ "proj_src": "publish",
+ "proj_file": "data/pending/ufc_334_projections.json",
+ "published_at": "2026-11-12T01:18:40.423Z",
+ "rows": [
+  {
+   "id": "v1",
+   "text": "3-2-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Evan Elder UFC record",
+   "raw": "3-2-0"
+  },
+  {
+   "id": "v2",
+   "text": "1515",
+   "fmt": "int",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "a.elo"
+   },
+   "desc": "Evan Elder Elo",
+   "raw": 1515
+  },
+  {
+   "id": "v3",
+   "text": "55.9",
+   "fmt": "n1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "form.ra"
+   },
+   "desc": "Evan Elder Form Figure",
+   "raw": 55.9
+  },
+  {
+   "id": "v4",
+   "text": "0-0-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Samuel Sanches UFC record",
+   "raw": "0-0-0"
+  },
+  {
+   "id": "v5",
+   "text": "None",
+   "fmt": "int",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "b.elo"
+   },
+   "desc": "Samuel Sanches Elo",
+   "raw": null
+  },
+  {
+   "id": "v6",
+   "text": "50.0",
+   "fmt": "n1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "form.rb"
+   },
+   "desc": "Samuel Sanches Form Figure",
+   "raw": 50.0
+  },
+  {
+   "id": "v7",
+   "text": "+121",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Sean ML Evan Elder",
+   "raw": 0.452902810207559
+  },
+  {
+   "id": "v8",
+   "text": "45.3%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Sean win % Evan Elder",
+   "raw": 0.452902810207559
+  },
+  {
+   "id": "v9",
+   "text": "+102",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Evan Elder",
+    "field": "cost"
+   },
+   "desc": "BP ML now Evan Elder",
+   "raw": 102
+  },
+  {
+   "id": "v10",
+   "text": "47.1%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "moneyline",
+    "label": "Evan Elder",
+    "other": "Samuel Sanches"
+   },
+   "desc": "BP ML no-vig Evan Elder",
+   "raw": 0.4712041884816754
+  },
+  {
+   "id": "v11",
+   "text": "-120",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Evan Elder",
+    "field": "opening_cost"
+   },
+   "desc": "BP ML open Evan Elder",
+   "raw": -120
+  },
+  {
+   "id": "v12",
+   "text": "-121",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Sean ML Samuel Sanches",
+   "raw": 0.547097189792441
+  },
+  {
+   "id": "v13",
+   "text": "54.7%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Sean win % Samuel Sanches",
+   "raw": 0.547097189792441
+  },
+  {
+   "id": "v14",
+   "text": "-125",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Samuel Sanches",
+    "field": "cost"
+   },
+   "desc": "BP ML now Samuel Sanches",
+   "raw": -125
+  },
+  {
+   "id": "v15",
+   "text": "52.9%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "moneyline",
+    "label": "Samuel Sanches",
+    "other": "Evan Elder"
+   },
+   "desc": "BP ML no-vig Samuel Sanches",
+   "raw": 0.5287958115183247
+  },
+  {
+   "id": "v16",
+   "text": "-110",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Samuel Sanches",
+    "field": "opening_cost"
+   },
+   "desc": "BP ML open Samuel Sanches",
+   "raw": -110
+  },
+  {
+   "id": "v17",
+   "text": "+519",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Sean dec ML Evan Elder",
+   "raw": 0.1614818334401974
+  },
+  {
+   "id": "v18",
+   "text": "16.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Sean dec % Evan Elder",
+   "raw": 0.1614818334401974
+  },
+  {
+   "id": "v19",
+   "text": "+255",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Evan Elder Points",
+    "field": "cost"
+   },
+   "desc": "BP dec now Evan Elder",
+   "raw": 255
+  },
+  {
+   "id": "v20",
+   "text": "23.6%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Evan Elder",
+    "k": "dec"
+   },
+   "desc": "BP dec no-vig Evan Elder",
+   "raw": 0.2357349009395398
+  },
+  {
+   "id": "v21",
+   "text": "+255",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Evan Elder Points",
+    "field": "opening_cost"
+   },
+   "desc": "BP dec open Evan Elder",
+   "raw": 255
+  },
+  {
+   "id": "v22",
+   "text": "+247",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Sean dec ML Samuel Sanches",
+   "raw": 0.2879842055279209
+  },
+  {
+   "id": "v23",
+   "text": "28.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Sean dec % Samuel Sanches",
+   "raw": 0.2879842055279209
+  },
+  {
+   "id": "v24",
+   "text": "+400",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Samuel Sanches Points",
+    "field": "cost"
+   },
+   "desc": "BP dec now Samuel Sanches",
+   "raw": 400
+  },
+  {
+   "id": "v25",
+   "text": "16.7%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Samuel Sanches",
+    "k": "dec"
+   },
+   "desc": "BP dec no-vig Samuel Sanches",
+   "raw": 0.16737177966707326
+  },
+  {
+   "id": "v26",
+   "text": "+400",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Samuel Sanches Points",
+    "field": "opening_cost"
+   },
+   "desc": "BP dec open Samuel Sanches",
+   "raw": 400
+  },
+  {
+   "id": "v27",
+   "text": "+482",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Sean ko ML Evan Elder",
+   "raw": 0.17169420573418046
+  },
+  {
+   "id": "v28",
+   "text": "17.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Sean ko % Evan Elder",
+   "raw": 0.17169420573418046
+  },
+  {
+   "id": "v29",
+   "text": "+574",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Evan Elder KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "BP ko now Evan Elder",
+   "raw": 574
+  },
+  {
+   "id": "v30",
+   "text": "12.4%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Evan Elder",
+    "k": "ko"
+   },
+   "desc": "BP ko no-vig Evan Elder",
+   "raw": 0.1241630412960484
+  },
+  {
+   "id": "v31",
+   "text": "+600",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Evan Elder KO/TKO/DQ",
+    "field": "opening_cost"
+   },
+   "desc": "BP ko open Evan Elder",
+   "raw": 600
+  },
+  {
+   "id": "v32",
+   "text": "+347",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Sean ko ML Samuel Sanches",
+   "raw": 0.2235915149339652
+  },
+  {
+   "id": "v33",
+   "text": "22.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Sean ko % Samuel Sanches",
+   "raw": 0.2235915149339652
+  },
+  {
+   "id": "v34",
+   "text": "+172",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Samuel Sanches KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "BP ko now Samuel Sanches",
+   "raw": 172
+  },
+  {
+   "id": "v35",
+   "text": "30.8%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Samuel Sanches",
+    "k": "ko"
+   },
+   "desc": "BP ko no-vig Samuel Sanches",
+   "raw": 0.3076687126232964
+  },
+  {
+   "id": "v36",
+   "text": "+180",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Samuel Sanches KO/TKO/DQ",
+    "field": "opening_cost"
+   },
+   "desc": "BP ko open Samuel Sanches",
+   "raw": 180
+  },
+  {
+   "id": "v37",
+   "text": "+735",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Sean sub ML Evan Elder",
+   "raw": 0.11972677103318118
+  },
+  {
+   "id": "v38",
+   "text": "12.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Sean sub % Evan Elder",
+   "raw": 0.11972677103318118
+  },
+  {
+   "id": "v39",
+   "text": "+700",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Evan Elder Submission",
+    "field": "cost"
+   },
+   "desc": "BP sub now Evan Elder",
+   "raw": 700
+  },
+  {
+   "id": "v40",
+   "text": "10.5%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Evan Elder",
+    "k": "sub"
+   },
+   "desc": "BP sub no-vig Evan Elder",
+   "raw": 0.10460736229192079
+  },
+  {
+   "id": "v41",
+   "text": "+750",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Evan Elder Submission",
+    "field": "opening_cost"
+   },
+   "desc": "BP sub open Evan Elder",
+   "raw": 750
+  },
+  {
+   "id": "v42",
+   "text": "+2715",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Sean sub ML Samuel Sanches",
+   "raw": 0.0355214693305549
+  },
+  {
+   "id": "v43",
+   "text": "3.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Sean sub % Samuel Sanches",
+   "raw": 0.0355214693305549
+  },
+  {
+   "id": "v44",
+   "text": "+1800",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Samuel Sanches Submission",
+    "field": "cost"
+   },
+   "desc": "BP sub now Samuel Sanches",
+   "raw": 1800
+  },
+  {
+   "id": "v45",
+   "text": "4.4%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Samuel Sanches",
+    "k": "sub"
+   },
+   "desc": "BP sub no-vig Samuel Sanches",
+   "raw": 0.04404520517554559
+  },
+  {
+   "id": "v46",
+   "text": "+1800",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Samuel Sanches Submission",
+    "field": "opening_cost"
+   },
+   "desc": "BP sub open Samuel Sanches",
+   "raw": 1800
+  },
+  {
+   "id": "v47",
+   "text": "+243",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Sean itd ML Evan Elder",
+   "raw": 0.2914209767673616
+  },
+  {
+   "id": "v48",
+   "text": "29.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Sean itd % Evan Elder",
+   "raw": 0.2914209767673616
+  },
+  {
+   "id": "v49",
+   "text": "+337",
+   "fmt": "mlp",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Evan Elder"
+   },
+   "desc": "BP ITD fair ML Evan Elder",
+   "raw": 0.22877040358796918
+  },
+  {
+   "id": "v50",
+   "text": "22.9%",
+   "fmt": "pct1",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Evan Elder"
+   },
+   "desc": "BP ITD no-vig Evan Elder",
+   "raw": 0.22877040358796918
+  },
+  {
+   "id": "v51",
+   "text": "+286",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Sean itd ML Samuel Sanches",
+   "raw": 0.2591129842645201
+  },
+  {
+   "id": "v52",
+   "text": "25.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Sean itd % Samuel Sanches",
+   "raw": 0.2591129842645201
+  },
+  {
+   "id": "v53",
+   "text": "+184",
+   "fmt": "mlp",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Samuel Sanches"
+   },
+   "desc": "BP ITD fair ML Samuel Sanches",
+   "raw": 0.35171391779884204
+  },
+  {
+   "id": "v54",
+   "text": "35.2%",
+   "fmt": "pct1",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Samuel Sanches"
+   },
+   "desc": "BP ITD no-vig Samuel Sanches",
+   "raw": 0.35171391779884204
+  },
+  {
+   "id": "v55",
+   "text": "+122",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Sean GTD fair ML",
+   "raw": 0.4494660389681183
+  },
+  {
+   "id": "v56",
+   "text": "44.9%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Sean GTD %",
+   "raw": 0.4494660389681183
+  },
+  {
+   "id": "v57",
+   "text": "+118",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "BP GTD yes now",
+   "raw": 118
+  },
+  {
+   "id": "v58",
+   "text": "-152",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "BP GTD no now",
+   "raw": -152
+  },
+  {
+   "id": "v59",
+   "text": "43.2%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "other": "No"
+   },
+   "desc": "BP GTD no-vig",
+   "raw": 0.43198025233132203
+  },
+  {
+   "id": "v60",
+   "text": "+117",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "opening_cost"
+   },
+   "desc": "BP GTD yes open",
+   "raw": 117
+  },
+  {
+   "id": "v61",
+   "text": "-120",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "odds.open.ma"
+   },
+   "desc": "OA open ML a",
+   "raw": -120
+  },
+  {
+   "id": "v62",
+   "text": "+101",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "odds.open.mb"
+   },
+   "desc": "OA open ML b",
+   "raw": 101
+  },
+  {
+   "id": "v63",
+   "text": "52.4%",
+   "fmt": "pct1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "odds.open.p"
+   },
+   "desc": "OA open p",
+   "raw": 0.524
+  },
+  {
+   "id": "v64",
+   "text": "-101",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "odds.close.ma"
+   },
+   "desc": "OA close ML a",
+   "raw": -101
+  },
+  {
+   "id": "v65",
+   "text": "-120",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "odds.close.mb"
+   },
+   "desc": "OA close ML b",
+   "raw": -120
+  },
+  {
+   "id": "v66",
+   "text": "48.3%",
+   "fmt": "pct1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "odds.close.p"
+   },
+   "desc": "OA close p",
+   "raw": 0.483
+  },
+  {
+   "id": "v67",
+   "text": "4.1",
+   "fmt": "pts",
+   "rule": "oa_drift",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1
+   },
+   "desc": "OA drift pts",
+   "raw": -0.041000000000000036
+  },
+  {
+   "id": "v68",
+   "text": "+102",
+   "fmt": "ml",
+   "rule": "oa_best",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "side": "a"
+   },
+   "desc": "OA best a",
+   "raw": 102
+  },
+  {
+   "id": "v69",
+   "text": "-115",
+   "fmt": "ml",
+   "rule": "oa_best",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "side": "b"
+   },
+   "desc": "OA best b",
+   "raw": -115
+  },
+  {
+   "id": "v70",
+   "text": "-120",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Evan Elder",
+    "field": "opening_cost"
+   },
+   "desc": "BP open a (move)",
+   "raw": -120
+  },
+  {
+   "id": "v71",
+   "text": "+102",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Evan Elder",
+    "field": "cost"
+   },
+   "desc": "BP now a (move)",
+   "raw": 102
+  },
+  {
+   "id": "v72",
+   "text": "-110",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Samuel Sanches",
+    "field": "opening_cost"
+   },
+   "desc": "BP open b (move)",
+   "raw": -110
+  },
+  {
+   "id": "v73",
+   "text": "-125",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Samuel Sanches",
+    "field": "cost"
+   },
+   "desc": "BP now b (move)",
+   "raw": -125
+  },
+  {
+   "id": "v74",
+   "text": "140",
+   "fmt": "int",
+   "rule": "oa_len",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1
+   },
+   "desc": "Chart points",
+   "raw": 140
+  },
+  {
+   "id": "v75",
+   "text": "448",
+   "fmt": "int",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 1,
+    "path": "odds.n"
+   },
+   "desc": "Snapshots",
+   "raw": 448
+  },
+  {
+   "id": "v76",
+   "text": "-115",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "KO/TKO/DQ",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_ending KO/TKO/DQ",
+   "raw": -115
+  },
+  {
+   "id": "v77",
+   "text": "-105",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "BP now fight_ending KO/TKO/DQ",
+   "raw": -105
+  },
+  {
+   "id": "v78",
+   "text": "51%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_ending",
+    "label": "KO/TKO/DQ"
+   },
+   "desc": "BP implied fight_ending KO/TKO/DQ",
+   "raw": 0.5121951219512195
+  },
+  {
+   "id": "v79",
+   "text": "+500",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Submission",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_ending Submission",
+   "raw": 500
+  },
+  {
+   "id": "v80",
+   "text": "+524",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Submission",
+    "field": "cost"
+   },
+   "desc": "BP now fight_ending Submission",
+   "raw": 524
+  },
+  {
+   "id": "v81",
+   "text": "16%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Submission"
+   },
+   "desc": "BP implied fight_ending Submission",
+   "raw": 0.16025641025641027
+  },
+  {
+   "id": "v82",
+   "text": "+117",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Points",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_ending Points",
+   "raw": 117
+  },
+  {
+   "id": "v83",
+   "text": "+116",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Points",
+    "field": "cost"
+   },
+   "desc": "BP now fight_ending Points",
+   "raw": 116
+  },
+  {
+   "id": "v84",
+   "text": "46%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Points"
+   },
+   "desc": "BP implied fight_ending Points",
+   "raw": 0.46296296296296297
+  },
+  {
+   "id": "v85",
+   "text": "+117",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_distance Yes",
+   "raw": 117
+  },
+  {
+   "id": "v86",
+   "text": "+118",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "BP now fight_distance Yes",
+   "raw": 118
+  },
+  {
+   "id": "v87",
+   "text": "46%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "BP implied fight_distance Yes",
+   "raw": 0.45871559633027525
+  },
+  {
+   "id": "v88",
+   "text": "-155",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_distance No",
+   "raw": -155
+  },
+  {
+   "id": "v89",
+   "text": "-152",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "BP now fight_distance No",
+   "raw": -152
+  },
+  {
+   "id": "v90",
+   "text": "60%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "BP implied fight_distance No",
+   "raw": 0.6031746031746031
+  },
+  {
+   "id": "v91",
+   "text": "2.5",
+   "fmt": "str",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over",
+    "field": "line"
+   },
+   "desc": "BP line total_rounds Over",
+   "raw": 2.5
+  },
+  {
+   "id": "v92",
+   "text": "+100",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over",
+    "field": "opening_cost"
+   },
+   "desc": "BP open total_rounds Over",
+   "raw": 100
+  },
+  {
+   "id": "v93",
+   "text": "-112",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over",
+    "field": "cost"
+   },
+   "desc": "BP now total_rounds Over",
+   "raw": -112
+  },
+  {
+   "id": "v94",
+   "text": "53%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over"
+   },
+   "desc": "BP implied total_rounds Over",
+   "raw": 0.5283018867924528
+  },
+  {
+   "id": "v95",
+   "text": "2.5",
+   "fmt": "str",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under",
+    "field": "line"
+   },
+   "desc": "BP line total_rounds Under",
+   "raw": 2.5
+  },
+  {
+   "id": "v96",
+   "text": "-130",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under",
+    "field": "opening_cost"
+   },
+   "desc": "BP open total_rounds Under",
+   "raw": -130
+  },
+  {
+   "id": "v97",
+   "text": "-116",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under",
+    "field": "cost"
+   },
+   "desc": "BP now total_rounds Under",
+   "raw": -116
+  },
+  {
+   "id": "v98",
+   "text": "54%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under"
+   },
+   "desc": "BP implied total_rounds Under",
+   "raw": 0.5370370370370371
+  },
+  {
+   "id": "v99",
+   "text": "29.6",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Age a",
+   "raw": 29.593429158110883
+  },
+  {
+   "id": "v100",
+   "text": "72\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 72
+  },
+  {
+   "id": "v101",
+   "text": "5'10\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "5'10\""
+  },
+  {
+   "id": "v102",
+   "text": "Switch",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Switch"
+  },
+  {
+   "id": "v103",
+   "text": "5",
+   "fmt": "int",
+   "rule": "nfights",
+   "args": {
+    "side": "a"
+   },
+   "desc": "UFC fights a",
+   "raw": 5
+  },
+  {
+   "id": "v104",
+   "text": "0",
+   "fmt": "int",
+   "rule": "nfights",
+   "args": {
+    "side": "b"
+   },
+   "desc": "UFC fights b",
+   "raw": 0
+  },
+  {
+   "id": "v105",
+   "text": "5.66",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "slpm"
+   },
+   "desc": "SLpM a",
+   "raw": 5.657051282051282
+  },
+  {
+   "id": "v106",
+   "text": "4.94",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "sapm"
+   },
+   "desc": "SApM a",
+   "raw": 4.935897435897436
+  },
+  {
+   "id": "v107",
+   "text": "+0.72",
+   "fmt": "s2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "diff"
+   },
+   "desc": "Strike diff /min a",
+   "raw": 0.7211538461538461
+  },
+  {
+   "id": "v108",
+   "text": "51%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "acc"
+   },
+   "desc": "Strike accuracy a",
+   "raw": 0.5093795093795094
+  },
+  {
+   "id": "v109",
+   "text": "57%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "dfn"
+   },
+   "desc": "Strike defence a",
+   "raw": 0.573997233748271
+  },
+  {
+   "id": "v110",
+   "text": "0.48",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 0.48076923076923084
+  },
+  {
+   "id": "v111",
+   "text": "40%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.4
+  },
+  {
+   "id": "v112",
+   "text": "9%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "ctrlp"
+   },
+   "desc": "Control time a",
+   "raw": 0.09161324786324786
+  },
+  {
+   "id": "v113",
+   "text": "74",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "fg"
+   },
+   "desc": "Fig Evan Elder Gauge Young",
+   "raw": 73.8
+  },
+  {
+   "id": "v114",
+   "text": "-208",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Evan Elder Gauge Young",
+   "raw": -208
+  },
+  {
+   "id": "v115",
+   "text": "84",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "fg"
+   },
+   "desc": "Fig Evan Elder Darrius Flowers",
+   "raw": 83.8
+  },
+  {
+   "id": "v116",
+   "text": "-455",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Evan Elder Darrius Flowers",
+   "raw": -455
+  },
+  {
+   "id": "v117",
+   "text": "69",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "fg"
+   },
+   "desc": "Fig Evan Elder Genaro Valdez",
+   "raw": 69.1
+  },
+  {
+   "id": "v118",
+   "text": "-303",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Evan Elder Genaro Valdez",
+   "raw": -303
+  },
+  {
+   "id": "v119",
+   "text": "46",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "fg"
+   },
+   "desc": "Fig Evan Elder Nazim Sadykhov",
+   "raw": 46.2
+  },
+  {
+   "id": "v120",
+   "text": "+175",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Evan Elder Nazim Sadykhov",
+   "raw": 175
+  },
+  {
+   "id": "v121",
+   "text": "8",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 4,
+    "key": "fg"
+   },
+   "desc": "Fig Evan Elder Preston Parsons",
+   "raw": 8.2
+  },
+  {
+   "id": "v122",
+   "text": "+125",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 4,
+    "key": "od.mc"
+   },
+   "desc": "Close Evan Elder Preston Parsons",
+   "raw": 125
+  },
+  {
+   "id": "v123",
+   "text": "45.3%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Sheet % (note)",
+   "raw": 0.452902810207559
+  },
+  {
+   "id": "v124",
+   "text": "1.8",
+   "fmt": "pts",
+   "rule": "gap_pub_bp",
+   "args": {
+    "side": "a",
+    "market": "moneyline",
+    "label": "Evan Elder",
+    "other": "Samuel Sanches"
+   },
+   "desc": "Sheet vs BP gap",
+   "raw": -0.018301378274116376
+  }
+ ],
+ "gaps": [
+  "Fight 1: BettingPros method_of_victory has unlabeled selections ['Samuel Sanches', 'Evan Elder']; not displayed."
+ ]
+}

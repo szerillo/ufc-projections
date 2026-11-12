@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="ufc_334">UFC 334 · Gane vs Hokit (Nov 14, 2026)</option>
           <option value="fn_cortes_acosta_walker">UFC Vegas · Cortes-Acosta vs Walker (Nov 7, 2026)</option>
           <option value="fn_moicano_nolan">UFC Vegas · Moicano vs Nolan (Oct 31, 2026)</option>
           <option value="ufc_333">UFC 333 · Volkanovski vs Evloev (Oct 24, 2026)</option>
@@ -581,7 +582,7 @@ body {
         <label>Width
           <input type="number" id="pfWidth" value="100" min="20" max="100" /> %
         </label>
-        <button class="pill primary" id="copyAllBtn">Copy all 7 iframes</button>
+        <button class="pill primary" id="copyAllBtn">Copy all iframes</button>
       </div>
 
       <div id="fightCardsList"></div>
@@ -616,7 +617,14 @@ const CARD_FILES = {
   ufc_333:            BASE_URL + "ufc_333_fight_form.html",
   fn_moicano_nolan:   BASE_URL + "ufc_fn_moicano_nolan_fight_form.html",
   fn_cortes_acosta_walker: BASE_URL + "ufc_fn_cortes_acosta_walker_fight_form.html",
+  ufc_334:            BASE_URL + "index.html",   // no card widget: full/moneylines/props modes open the site's card page
 };
+// Cards with v4 single-fight embeds (scripts/build_fight_embeds.py): one HTML file per bout,
+// embeds/<card>/fight_NN.html, numbered by bout order (1 = first early prelim, highest = main event).
+const V4_EMBEDS = {
+  ufc_334: { dir: BASE_URL + "embeds/ufc_334/", card: "#/card/2026-11-14-ufc-334-gane-vs-hokit" },
+};
+function v4Src(card, n) { return V4_EMBEDS[card].dir + "fight_" + String(n).padStart(2, "0") + ".html"; }
 const CARD_LABELS = {
   freedom_250:        "UFC Freedom 250 Fight Form",
   vegas_119:          "UFC Vegas 119 · Kape vs Horiguchi",
@@ -634,6 +642,7 @@ const CARD_LABELS = {
   ufc_333:            "UFC 333 · Volkanovski vs Evloev",
   fn_moicano_nolan:   "UFC Vegas · Moicano vs Nolan",
   fn_cortes_acosta_walker: "UFC Vegas · Cortes-Acosta vs Walker",
+  ufc_334:            "UFC 334 · Gane vs Hokit",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -647,6 +656,23 @@ const FIGHTS_BY_CARD = {
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
   ],
+  // <v4-roster ufc_334> written by scripts/build_fight_embeds.py from embeds/ufc_334/card.json; do not edit by hand
+  ufc_334: [
+    { n: 13, matchup: "Gane vs Hokit", meta: "Main Event · Heavyweight · 5R", belt: "Title" },
+    { n: 12, matchup: "Harrison vs Nunes", meta: "Main Card · Women's Bantamweight · 5R", belt: "Title" },
+    { n: 11, matchup: "Borralho vs Belgaroui", meta: "Main Card · Middleweight · 3R" },
+    { n: 10, matchup: "Medic vs Holland", meta: "Main Card · Welterweight · 3R" },
+    { n: 9, matchup: "Hasan vs Gurule", meta: "Main Card · Flyweight · 3R" },
+    { n: 8, matchup: "Thompson vs Radtke", meta: "Prelims · Welterweight · 3R" },
+    { n: 7, matchup: "Dober vs Duncan", meta: "Prelims · Lightweight · 3R" },
+    { n: 6, matchup: "Miller vs McKinney", meta: "Prelims · Lightweight · 3R" },
+    { n: 5, matchup: "Johnson vs Almeida", meta: "Prelims · Middleweight · 3R" },
+    { n: 4, matchup: "Gordon vs Costa", meta: "Early Prelims · Lightweight · 3R" },
+    { n: 3, matchup: "Chiasson vs Mesquita", meta: "Early Prelims · Women's Bantamweight · 3R" },
+    { n: 2, matchup: "Alatengheili vs Diaz", meta: "Early Prelims · Bantamweight · 3R" },
+    { n: 1, matchup: "Elder vs Sanches", meta: "Early Prelims · Lightweight · 3R" },
+  ],
+  // </v4-roster>
   fn_cortes_acosta_walker: [
     { n: 14, matchup: "Cortes-Acosta vs Walker", meta: "Main Event · HW · 5R" },
     { n: 13, matchup: "Suarez vs Jandiroba", meta: "Main Card · WSW · 3R" },
@@ -903,7 +929,7 @@ function build() {
   if (mode === "fight") params.set("n", fight);
 
   // Use absolute URL if served, relative for the preview
-  const src = `${file}?${params.toString()}`;
+  const src = V4_EMBEDS[card] ? (mode === "fight" ? v4Src(card, fight) : `${file}?embed=${mode}${V4_EMBEDS[card].card}`) : `${file}?${params.toString()}`;
   const title = `${CARD_LABELS[card]}`;
 
   // Recommended min-height for embed iframe
@@ -1004,7 +1030,7 @@ function iframeForFight(n) {
   const height = parseInt($pfHeight.value || "1500", 10);
   const widthPct = parseInt($pfWidth.value || "100", 10);
   const auto = $pfAuto.checked;
-  const src = `${file}?embed=fight&n=${n}`;
+  const src = V4_EMBEDS[$card.value] ? v4Src($card.value, n) : `${file}?embed=fight&n=${n}`;
   const widthStr = widthPct === 100 ? "100%" : widthPct + "%";
   return `<iframe style="border:none;width:${widthStr};min-height:600px;" ` +
     `src="${src}" ` +
@@ -1066,12 +1092,12 @@ function buildPerFight() {
 
 // Bulk "Copy all 7" button
 $copyAll.addEventListener("click", async () => {
-  const allCodes = (FIGHTS_BY_CARD[$card.value] || []).map(f => `<!-- Fight ${f.n}: ${f.matchup} -->\n${iframeForFight(f.n)}`).join("\n\n");
+  const allCodes = (FIGHTS_BY_CARD[$card.value] || []).filter(f => f && f.n != null).map(f => `<!-- Fight ${f.n}: ${f.matchup} -->\n${iframeForFight(f.n)}`).join("\n\n");
   try {
     await navigator.clipboard.writeText(allCodes);
     $copyAll.textContent = "Copied all 7!";
     $copyAll.classList.add("copied");
-    setTimeout(() => { $copyAll.textContent = "Copy all 7 iframes"; $copyAll.classList.remove("copied"); }, 1800);
+    setTimeout(() => { $copyAll.textContent = "Copy all iframes"; $copyAll.classList.remove("copied"); }, 1800);
   } catch (e) {
     console.warn("Copy all failed", e);
   }

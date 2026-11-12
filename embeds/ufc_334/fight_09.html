@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light only">
+<title>Bilal Hasan vs Luis Gurule · UFC 334: Gane vs. Hokit · Fight Form</title>
+<style>
+/* copied verbatim from ufc_333_fight_form.html (szerillo/ufc-projections) */
+:root {
+  color-scheme: light only;
+  --bg: #ffffff;
+  --bg-muted: #f4f1ec;
+  --bg-card: #fafaf7;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --border: #e5e1d8;
+  --border-strong: #c8c2b3;
+  --header-bg: #0e1116;
+  --header-bg-2: #1a1f28;
+  --action-green: #11c75c;
+  --action-green-dark: #0a8842;
+  --pos: #11c75c;
+  --pos-soft: #d4f5e2;
+  --pos-strong: #0a6b35;
+  --neg: #d63636;
+  --neg-soft: #fbdada;
+  --neg-strong: #8a1818;
+  --neutral: #6b6b6b;
+  --fav-a: #d63636;
+  --fav-b: #1b4fb0;
+  --fav-b-soft: #e7eef9;
+  --fav-a-soft: #fbdada;
+}
+.ff-header {
+  position: relative;
+  background: linear-gradient(135deg, var(--header-bg) 0%, var(--header-bg-2) 100%);
+  color: #fff;
+  padding: 18px 20px 14px;
+  text-align: center;
+  border-bottom: 3px solid var(--action-green);
+}
+.ff-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 3px;
+  letter-spacing: -0.3px;
+}
+.ff-subtitle {
+  font-size: 12px;
+  opacity: 0.78;
+  margin: 0;
+  font-weight: 500;
+}
+.ff-byline-header {
+  font-size: 11px;
+  margin-top: 4px;
+  opacity: 0.88;
+}
+.ff-byline-header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.ff-odds-status {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+  font-family: "SF Mono", Menlo, monospace;
+}
+.ff-odds-status .dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--action-green);
+  margin-right: 5px;
+  vertical-align: 1px;
+  animation: pulse 2s ease-in-out infinite;
+}
+.ff-brand {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.ff-brand-text {
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  color: #fff;
+}
+.ff-brand-check {
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: var(--action-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ff-brand-check svg { width: 10px; height: 10px; }
+@media (max-width: 600px) {
+  .ff-brand { position: static; justify-content: center; margin-bottom: 8px; }
+  .ff-header { padding: 14px 12px; }
+  .ff-title { font-size: 17px; }
+}
+.fp-title-belt {
+  background: #c8a951;
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 10.5px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.7px;
+}
+.fp-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.fp-fight-num {
+  background: var(--action-green);
+  color: #fff;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+.fp-card-tag {
+  background: var(--text);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.8px;
+}
+.fp-weight {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-left: auto;
+}
+.fp-headline {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 8px 0 4px;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+.fp-headline .vs {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0 6px;
+  font-size: 18px;
+}
+.fp-odds {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.fp-odds .num {
+  color: var(--text);
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 700;
+}
+.fp-proj {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 16px;
+}
+.fp-proj-header {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 7px 12px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.fp-proj-header .bullet {
+  width: 6px; height: 6px;
+  background: var(--action-green);
+  border-radius: 50%;
+  display: inline-block;
+}
+.fp-proj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  table-layout: fixed;
+}
+.fp-proj-table th {
+  background: var(--bg-muted);
+  padding: 6px 6px;
+  text-align: center;
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+.fp-proj-table th.tleft { text-align: left; padding-left: 12px; }
+.fp-proj-table td {
+  padding: 7px 6px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+}
+.fp-proj-table td {
+  padding: 7px 6px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+}
+.fp-proj-table td.tleft {
+  text-align: left;
+  padding-left: 12px;
+  font-weight: 800;
+}
+.fp-proj-table tr:last-child td { border-bottom: none; }
+.fp-proj-table .odds {
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 800;
+  font-size: 12px;
+}
+.fp-proj-table .odds {
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 800;
+  font-size: 12px;
+}
+.fp-proj-table .pct {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 11.5px;
+}
+.fp-proj-table tr.fav td:first-child { border-left: 3px solid var(--action-green); }
+.fp-proj-table tr.dog td:first-child { border-left: 3px solid var(--text-muted); }
+.fp-proj-table td.itd-col {
+  background: #fafaf7;
+  font-weight: 800;
+}
+.fp-proj-table tr.dog td:first-child { border-left: 3px solid var(--text-muted); }
+.fp-proj-table td.itd-col {
+  background: #fafaf7;
+  font-weight: 800;
+}
+.fp-proj-table td.itd-col {
+  background: #fafaf7;
+  font-weight: 800;
+}
+details.collapsible {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+details.collapsible > summary {
+  background: var(--bg-muted);
+  padding: 9px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+details.collapsible > summary::-webkit-details-marker { display: none; }
+details.collapsible > summary::before {
+  content: "▶";
+  font-size: 9px;
+  color: var(--action-green-dark);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+details.collapsible > summary::before {
+  content: "▶";
+  font-size: 9px;
+  color: var(--action-green-dark);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+details.collapsible[open] > summary::before { transform: rotate(90deg); }
+details.collapsible > summary .bullet {
+  width: 6px; height: 6px; background: var(--action-green); border-radius: 50%; display: inline-block;
+}
+details.collapsible > summary .bullet {
+  width: 6px; height: 6px; background: var(--action-green); border-radius: 50%; display: inline-block;
+}
+details.collapsible > summary .meta {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: none;
+  letter-spacing: 0;
+}
+details.collapsible > .body {
+  padding: 12px 14px;
+}
+/* v4 embed layout */
+*{box-sizing:border-box}html,body{margin:0;background:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);font-size:13px;line-height:1.4}
+html{scroll-behavior:smooth;scroll-padding-top:44px}
+.ff{max-width:720px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:8px;overflow:clip}
+.panel{padding:12px 16px 2px}.fp-odds{margin-bottom:6px;line-height:1.6}
+.ffnav{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;padding:8px 16px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.ffnav::-webkit-scrollbar{display:none}
+.ffnav a{flex:0 0 auto;font:800 10.5px/1 inherit;font-family:inherit;text-transform:uppercase;letter-spacing:.6px;color:var(--text);text-decoration:none;background:var(--bg-muted);border:1px solid var(--border);border-radius:12px;padding:6px 10px}
+.ffnav a:first-child{background:var(--header-bg);color:#fff;border-color:var(--header-bg)}
+section.top{padding:12px 16px 2px}.secs{padding:2px 16px 12px}
+.fp-proj{margin-bottom:4px}
+.pvm{table-layout:fixed}.pvm col.c0{width:17%}
+.pvm thead tr.who th{font-size:12px;letter-spacing:.3px;text-transform:none;color:var(--text);border-bottom:1px solid var(--border)}
+.pvm thead tr.who th.fav{box-shadow:inset 0 -3px 0 var(--action-green)}
+.pvm thead tr.src th{font-size:9.5px}.pvm th.proj,.pvm td.proj{background:var(--fav-b-soft)}
+.pvm th.rl{text-align:left;font-size:12px;font-weight:800;color:var(--text);background:var(--bg-muted);padding-left:10px;text-transform:none;letter-spacing:0}
+.pvm th.rl small{display:block;font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}
+.pvm td{vertical-align:top}.pvm .op{font-size:10px;color:var(--text-muted);font-family:"SF Mono",Menlo,monospace;margin-top:1px}.pvm .drv{font-style:italic}
+.pvm tr[data-row="win"] td,.pvm tr[data-row="win"] th{border-bottom:2px solid var(--border)}.pvm tr.gtd td,.pvm tr.gtd th{border-top:2px solid var(--border)}
+.fp-proj-table .dim,.dim{color:var(--text-muted)}
+.cap{font-size:11px;color:var(--text-muted);padding:6px 12px;border-top:1px solid var(--border);background:var(--bg-card)}
+.asof{font-size:10.5px;color:var(--text-muted);margin:2px 0 6px}
+table.t{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+table.t th{background:var(--bg-muted);font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);padding:6px;text-align:right;border-bottom:2px solid var(--border)}
+table.t td{padding:6px;text-align:right;border-bottom:1px solid var(--border);vertical-align:top}
+.l{text-align:left!important}.b{font-weight:800}
+.spark{width:100%;height:auto;display:block}
+.kv{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;padding:5px 0;border-bottom:1px dotted var(--border)}.kv span:first-child{color:var(--text-muted)}.kv span:last-child{text-align:right}
+.note{font-size:11.5px;color:var(--text-muted);font-style:italic;margin:6px 0}
+.tape .row{display:grid;grid-template-columns:1fr 1.2fr 1fr;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}.tape .row>div{padding:5px 6px}
+.tape .a{text-align:right}.tape .k{text-align:center;color:var(--text-muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;align-self:center}
+.tape .hdr{font-weight:800}.tape .edge{color:var(--pos-strong);font-weight:800}
+.ftw{display:grid;gap:12px}.cn{font-weight:800;display:flex;justify-content:space-between;margin-bottom:3px}
+.chips i{display:inline-block;width:20px;height:18px;line-height:18px;text-align:center;font:800 10px/18px inherit;font-family:inherit;color:#fff;margin-left:2px;font-style:normal;border-radius:3px}
+.chips .w{background:var(--action-green-dark)}.chips .l{background:var(--neg)}.chips .d,.chips .nc{background:var(--neutral)}
+.r-w{color:var(--action-green-dark)}.r-l{color:var(--neg)}
+.ft td,.ft th{font-size:11.5px;padding:4px 5px}
+#notes p{font-size:12.5px;margin:4px 0 8px}#notes li{font-size:12px;margin:3px 0;color:var(--text-muted)}
+.foot{padding:10px 16px;background:var(--bg-muted);font-size:10.5px;color:var(--text-muted);border-top:1px solid var(--border)}
+/* Action Network badge stays visible at every width (the site widget hides it under 440 px; the embed keeps it) */
+@media (max-width:600px){.ff-brand{position:static;display:flex;justify-content:center;margin-bottom:6px}.ff-header{padding:12px 12px 10px}.ff-title{font-size:17px}}
+@media (max-width:440px){.ff-header{padding:9px 8px 8px}.ff-brand{display:flex!important;margin-bottom:5px}.ff-title{font-size:14px}.ff-subtitle{font-size:10px}
+.panel,section.top,.secs{padding-left:10px;padding-right:10px}.ffnav{padding:7px 10px}.fp-headline{font-size:17px}.fp-odds{font-size:10.5px}
+.fp-proj-table th,.fp-proj-table td{padding:5px 3px;font-size:11px}.fp-proj-table .odds{font-size:11.5px}.fp-proj-table .pct{font-size:10px}.pvm .op{font-size:9px}
+.pvm col.c0{width:16%}.pvm th.rl{padding-left:6px;font-size:11px}.pvm th.rl small{font-size:7.5px}.fp-proj-header{font-size:9px;padding:6px 9px}.cap{font-size:10px;padding:5px 8px}
+details.collapsible>summary{padding:8px 10px;font-size:10px}details.collapsible>summary .meta{display:none}details.collapsible>.body{padding:10px}
+table.t{font-size:11.5px}table.t td,table.t th{padding:5px 3px}.kv{font-size:11.5px;flex-wrap:wrap}.tape .row{font-size:12px}.tape .k{font-size:9.5px}}
+</style></head><body><div class="ff">
+<div class="ff-header"><div class="ff-brand" aria-label="Action Network"><span class="ff-brand-text">ACTION</span><span class="ff-brand-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 13 10 18 19 7"></polyline></svg></span></div>
+<div class="ff-title">UFC 334: Gane vs. Hokit · Fight Form</div><div class="ff-subtitle">Saturday, November 14, 2026 · Madison Square Garden</div>
+<div class="ff-byline-header">By <a href="https://twitter.com/SeanZerillo" target="_blank" rel="noopener">@SeanZerillo</a></div><div class="ff-odds-status"><span class="dot"></span>BettingPros snapshot 2026-11-12 00:57 UTC</div></div>
+<div class="panel"><div class="fp-title-row"><span class="fp-fight-num">FIGHT 9</span><span class="fp-card-tag">MAIN CARD</span><span class="fp-weight">Flyweight · 3 RDS</span></div>
+<div class="fp-headline">Bilal Hasan <span class="vs">vs</span> Luis Gurule</div>
+<div class="fp-odds">Hasan <span class="num"><span data-id="v1">1-0-0</span></span> · Elo <span class="num"><span data-id="v2">1524</span></span> · Fig <span class="num"><span data-id="v3">62.1</span></span><br>Gurule <span class="num"><span data-id="v4">1-4-0</span></span> · Elo <span class="num"><span data-id="v5">1447</span></span> · Fig <span class="num"><span data-id="v6">39.1</span></span></div></div><nav class="ffnav"><a href="#odds">Odds</a><a href="#move">Movement</a><a href="#props">Props</a><a href="#stats">Stats</a><a href="#form">Form</a><a href="#notes">Notes</a></nav><section id="odds" class="top"><div class="fp-proj"><div class="fp-proj-header"><span class="bullet"></span>Sean's projection vs market</div>
+<table class="fp-proj-table pvm" data-proj-src="publish"><colgroup><col class="c0"><col><col><col><col></colgroup><thead>
+<tr class="who"><th></th><th colspan="2" class="fav">Hasan</th><th colspan="2" class="dog">Gurule</th></tr>
+<tr class="src"><th></th><th class="proj">Sean</th><th>Market</th><th class="proj">Sean</th><th>Market</th></tr></thead><tbody><tr data-row="win"><th class="rl">Win<small>ML</small></th><td class="proj"><span class="odds"><span data-id="v7">-546</span></span><div class="pct"><span data-id="v8">84.5%</span></div></td><td><span class="odds"><span data-id="v9">-1000</span></span><div class="pct"><span data-id="v10">87.1%</span></div><div class="op">o <span data-id="v11">-910</span></div></td><td class="proj"><span class="odds"><span data-id="v12">+546</span></span><div class="pct"><span data-id="v13">15.5%</span></div></td><td><span class="odds"><span data-id="v14">+640</span></span><div class="pct"><span data-id="v15">12.9%</span></div><div class="op">o <span data-id="v16">+575</span></div></td></tr><tr data-row="dec"><th class="rl">DEC<small>decision</small></th><td class="proj"><span class="odds"><span data-id="v17">+388</span></span><div class="pct"><span data-id="v18">20.5%</span></div></td><td><span class="odds"><span data-id="v19">+600</span></span><div class="pct"><span data-id="v20">11.9%</span></div><div class="op">o <span data-id="v21">+600</span></div></td><td class="proj"><span class="odds"><span data-id="v22">+1537</span></span><div class="pct"><span data-id="v23">6.1%</span></div></td><td><span class="odds"><span data-id="v24">+2000</span></span><div class="pct"><span data-id="v25">4.0%</span></div><div class="op">o <span data-id="v26">+1500</span></div></td></tr><tr data-row="ko"><th class="rl">KO<small>KO/TKO</small></th><td class="proj"><span class="odds"><span data-id="v27">-119</span></span><div class="pct"><span data-id="v28">54.4%</span></div></td><td><span class="odds"><span data-id="v29">-351</span></span><div class="pct"><span data-id="v30">64.8%</span></div><div class="op">o <span data-id="v31">-310</span></div></td><td class="proj"><span class="odds"><span data-id="v32">+1395</span></span><div class="pct"><span data-id="v33">6.7%</span></div></td><td><span class="odds"><span data-id="v34">+1148</span></span><div class="pct"><span data-id="v35">6.7%</span></div><div class="op">o <span data-id="v36">+1100</span></div></td></tr><tr data-row="sub"><th class="rl">SUB<small>submission</small></th><td class="proj"><span class="odds"><span data-id="v37">+938</span></span><div class="pct"><span data-id="v38">9.6%</span></div></td><td><span class="odds"><span data-id="v39">+948</span></span><div class="pct"><span data-id="v40">7.9%</span></div><div class="op">o <span data-id="v41">+850</span></div></td><td class="proj"><span class="odds"><span data-id="v42">+3623</span></span><div class="pct"><span data-id="v43">2.7%</span></div></td><td><span class="odds"><span data-id="v44">+2542</span></span><div class="pct"><span data-id="v45">3.1%</span></div><div class="op">o <span data-id="v46">+2200</span></div></td></tr><tr data-row="itd"><th class="rl">ITD<small>KO + SUB</small></th><td class="proj"><span class="odds"><span data-id="v47">-178</span></span><div class="pct"><span data-id="v48">64.0%</span></div></td><td><span class="odds drv"><span data-id="v49">-266</span></span><div class="pct"><span data-id="v50">72.7%</span></div><div class="op">KO+SUB</div></td><td class="proj"><span class="odds"><span data-id="v51">+967</span></span><div class="pct"><span data-id="v52">9.4%</span></div></td><td><span class="odds drv"><span data-id="v53">+919</span></span><div class="pct"><span data-id="v54">9.8%</span></div><div class="op">KO+SUB</div></td></tr><tr data-row="gtd" class="gtd"><th class="rl">GTD<small>goes distance</small></th><td class="proj" colspan="2"><span class="odds"><span data-id="v55">+276</span></span><div class="pct"><span data-id="v56">26.6%</span></div></td><td colspan="2"><span class="odds">Y <span data-id="v57">+455</span> / N <span data-id="v58">-760</span></span><div class="pct"><span data-id="v59">16.9%</span></div><div class="op">o Y <span data-id="v60">+400</span></div></td></tr></tbody></table>
+<div class="cap"><b>Sean</b> = fair price and % from Sean's projection sheet (win % × the sheet's DEC / KO / SUB split; ITD = KO + SUB), from the sheet's Publish to site export. <b>Market</b> = BettingPros consensus price, de-vigged % below, o = open. Method % de-vigged across the full method market; ITD = no-vig KO + SUB.</div></div><div class="asof">Sheet: UFC Model sheet, rules v4.7, Publish to site, published 2026-11-12 01:18 UTC. Market: BettingPros consensus, 2026-11-12 00:57 UTC.</div></section><div class="secs"><details class="collapsible" id="move" open><summary><span class="bullet"></span>Line movement<span class="meta">open → now</span></summary><div class="body"><svg class="spark" viewBox="0 0 560 120" role="img" aria-label="No-vig consensus win % history"><line x1="34" x2="514" y1="100.0" y2="100.0" stroke="#e5e1d8"/><text x="29" y="103.5" text-anchor="end" font-size="10" fill="#6b6b6b">84%</text><line x1="34" x2="514" y1="55.0" y2="55.0" stroke="#e5e1d8"/><text x="29" y="58.5" text-anchor="end" font-size="10" fill="#6b6b6b">87%</text><line x1="34" x2="514" y1="10.0" y2="10.0" stroke="#e5e1d8"/><text x="29" y="13.5" text-anchor="end" font-size="10" fill="#6b6b6b">89%</text><text x="34.0" y="115" text-anchor="start" font-size="10" fill="#6b6b6b">Oct 31</text><text x="274.0" y="115" text-anchor="middle" font-size="10" fill="#6b6b6b">Nov 5</text><text x="514.0" y="115" text-anchor="end" font-size="10" fill="#6b6b6b">Nov 10</text><path d="M34.0 51.0L267.2 61.5L269.4 61.5L272.1 61.5L274.1 61.5L277.3 61.5L280.7 61.5L284.7 61.5L286.8 61.5L288.9 61.5L291.0 61.5L294.2 61.7L296.4 61.5L298.5 61.5L301.2 61.5L303.2 61.5L305.9 61.5L307.9 61.5L310.0 64.5L312.7 64.5L315.9 64.5L318.0 64.5L320.1 64.5L322.2 64.5L325.5 64.5L327.5 64.5L329.5 64.5L331.7 64.5L334.3 64.5L337.0 64.5L339.0 64.5L341.1 64.5L343.5 64.5L346.6 64.5L348.6 64.5L350.6 64.5L352.7 64.5L355.3 64.5L357.9 64.5L360.0 64.5L362.1 64.5L364.1 64.5L368.4 64.5L371.6 64.5L374.7 64.5L376.7 64.5L379.5 64.5L381.6 64.5L383.6 64.5L385.5 64.5L388.2 61.5L390.3 61.5L392.4 61.5L394.5 61.5L396.3 61.5L399.1 61.5L401.1 61.5L403.2 61.5L405.2 61.5L407.9 61.5L409.9 61.5L412.0 61.5L414.0 61.5L416.8 61.5L418.8 61.5L421.4 61.5L423.5 61.5L425.6 61.5L428.2 61.5L430.5 61.5L432.0 61.5L433.0 61.5L434.4 61.5L435.4 61.5L436.4 61.5L437.4 61.5L438.5 61.5L439.9 61.5L440.9 61.5L441.9 61.5L443.0 61.5L444.5 61.5L445.5 61.5L446.6 61.5L447.6 53.5L449.0 53.5L450.2 53.5L451.3 53.5L452.3 53.5L453.3 53.5L454.7 53.5L455.7 53.5L456.8 53.5L457.8 53.5L459.2 53.5L460.2 48.2L461.2 48.2L462.3 48.2L463.8 48.2L464.8 48.2L466.6 48.2L467.6 48.2L469.3 48.2L470.7 48.2L471.7 48.2L472.7 48.2L473.7 48.2L475.5 48.2L476.8 48.2L478.2 48.2L479.4 48.2L480.8 48.2L481.8 48.2L482.8 48.2L483.9 48.2L484.9 48.2L486.3 48.2L487.3 48.2L488.4 48.2L489.7 48.2L491.3 48.2L492.3 48.2L493.3 48.2L494.4 45.5L496.8 45.5L497.8 48.2L498.8 48.2L499.8 48.2L500.9 48.2L502.1 48.2L503.2 48.2L504.2 48.2L505.3 48.2L506.6 45.5L508.0 45.5L509.1 45.5L510.6 48.2L511.9 48.2L512.9 46.4L514.0 45.5" fill="none" stroke="#1a1a1a" stroke-width="2"/><circle cx="34.0" cy="51.0" r="3.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/><circle cx="514.0" cy="45.5" r="4" fill="#0a8842"/><text x="521.0" y="49.5" font-size="11" font-weight="700" fill="#0a8842">87.2%</text></svg><div class="kv"><span>Odds API open 2026-10-31</span><span>Hasan <span data-id="v61">-909</span> · Gurule <span data-id="v62">+636</span> · <span data-id="v63">86.9%</span></span></div>
+<div class="kv"><span>Odds API latest 2026-11-10</span><span>Hasan <span data-id="v64">-1111</span> · Gurule <span data-id="v65">+650</span> · <span data-id="v66">87.2%</span></span></div>
+<div class="kv"><span>Drift</span><span><span data-id="v67">0.3</span> pts toward Bilal Hasan</span></div>
+<div class="kv"><span>Best price (Odds API latest)</span><span>Hasan <span data-id="v68">-909</span> BetOnline · Gurule <span data-id="v69">+740</span> Pinnacle</span></div><div class="kv"><span>BettingPros open → now</span><span>Hasan <span data-id="v70">-910</span> → <span data-id="v71">-1000</span> · Gurule <span data-id="v72">+575</span> → <span data-id="v73">+640</span></span></div><div class="note">Chart: Odds API no-vig consensus for Bilal Hasan, <span data-id="v74">140</span> points from <span data-id="v75">450</span> snapshots, last 2026-11-10 18:05 UTC. BettingPros row is newer (2026-11-12 00:57 UTC).</div></div></details><details class="collapsible" id="props"><summary><span class="bullet"></span>Props detail<span class="meta">fight-level markets</span></summary><div class="body"><table class="t"><thead><tr><th class="l">BettingPros market</th><th>Open</th><th>Now</th><th>Implied</th></tr></thead><tbody><tr><td class="l">Fight ends by KO/TKO/DQ</td><td><span data-id="v76">-590</span></td><td class="b"><span data-id="v77">-550</span></td><td class="dim"><span data-id="v78">85%</span></td></tr><tr><td class="l">Fight ends by Submission</td><td><span data-id="v79">+750</span></td><td class="b"><span data-id="v80">+750</span></td><td class="dim"><span data-id="v81">12%</span></td></tr><tr><td class="l">Fight ends by Points</td><td><span data-id="v82">+460</span></td><td class="b"><span data-id="v83">+460</span></td><td class="dim"><span data-id="v84">18%</span></td></tr><tr><td class="l">Goes the distance: Yes</td><td><span data-id="v85">+400</span></td><td class="b"><span data-id="v86">+455</span></td><td class="dim"><span data-id="v87">18%</span></td></tr><tr><td class="l">Goes the distance: No</td><td><span data-id="v88">-670</span></td><td class="b"><span data-id="v89">-760</span></td><td class="dim"><span data-id="v90">88%</span></td></tr><tr><td class="l">Rounds Over <span data-id="v91">1.5</span></td><td><span data-id="v92">+124</span></td><td class="b"><span data-id="v93">+134</span></td><td class="dim"><span data-id="v94">43%</span></td></tr><tr><td class="l">Rounds Under <span data-id="v95">1.5</span></td><td><span data-id="v96">-160</span></td><td class="b"><span data-id="v97">-175</span></td><td class="dim"><span data-id="v98">64%</span></td></tr></tbody></table><div class="note">Consensus prices with vig; implied = raw 1/decimal. Not shown: method selections with a blank selection id (Luis Gurule, Bilal Hasan).</div></div></details><details class="collapsible" id="stats"><summary><span class="bullet"></span>Fighter stats<span class="meta">UFC only, before this fight</span></summary><div class="body"><div class="tape"><div class="row hdr"><div class="a">Hasan</div><div class="k"></div><div class="b">Gurule</div></div><div class="row"><div class="a edge"><span data-id="v99">25.3</span></div><div class="k">Age</div><div class="b"><span data-id="v100">33.0</span></div></div><div class="row"><div class="a">—</div><div class="k">Reach</div><div class="b"><span data-id="v101">64&quot;</span></div></div><div class="row"><div class="a">—</div><div class="k">Height</div><div class="b"><span data-id="v102">5&#x27;5&quot;</span></div></div><div class="row"><div class="a">—</div><div class="k">Stance</div><div class="b"><span data-id="v103">Orthodox</span></div></div><div class="row"><div class="a"><span data-id="v104">1</span></div><div class="k">UFC fights</div><div class="b"><span data-id="v105">5</span></div></div><div class="row"><div class="a edge"><span data-id="v106">7.10</span></div><div class="k">SLpM</div><div class="b"><span data-id="v107">5.02</span></div></div><div class="row"><div class="a edge"><span data-id="v108">4.42</span></div><div class="k">SApM</div><div class="b"><span data-id="v109">5.65</span></div></div><div class="row"><div class="a edge"><span data-id="v110">+2.68</span></div><div class="k">Strike diff /min</div><div class="b"><span data-id="v111">-0.63</span></div></div><div class="row"><div class="a"><span data-id="v112">41%</span></div><div class="k">Strike accuracy</div><div class="b edge"><span data-id="v113">41%</span></div></div><div class="row"><div class="a"><span data-id="v114">50%</span></div><div class="k">Strike defence</div><div class="b edge"><span data-id="v115">57%</span></div></div><div class="row"><div class="a edge"><span data-id="v116">2.01</span></div><div class="k">Takedowns /15</div><div class="b"><span data-id="v117">0.81</span></div></div><div class="row"><div class="a">—</div><div class="k">TD defence</div><div class="b"><span data-id="v118">73%</span></div></div><div class="row"><div class="a edge"><span data-id="v119">14%</span></div><div class="k">Control time</div><div class="b"><span data-id="v120">12%</span></div></div></div><div class="note">Green = better side. UFCStats rows before 2026-11-14. THIN SAMPLE: Bilal Hasan (3 or fewer UFC fights).</div></div></details><details class="collapsible" id="form"><summary><span class="bullet"></span>Recent form<span class="meta">last 5 UFC</span></summary><div class="body"><div class="ftw"><div class="col"><div class="cn">Bilal Hasan <span class="chips"><i class="r w">W</i></span></div><table class="t ft"><thead><tr><th class="l">When</th><th class="l">Result</th><th class="l">How</th><th>Fig</th><th>Close</th></tr></thead><tbody><tr><td class="l dim">Aug 26</td><td class="l"><b class="r-w">W</b> Nilson Rojas</td><td class="l">KO/TKO R2</td><td><span data-id="v121">95</span></td><td class="dim"><span data-id="v122">-526</span></td></tr></tbody></table></div><div class="col"><div class="cn">Luis Gurule <span class="chips"><i class="r l">L</i><i class="r w">W</i><i class="r l">L</i><i class="r l">L</i><i class="r l">L</i></span></div><table class="t ft"><thead><tr><th class="l">When</th><th class="l">Result</th><th class="l">How</th><th>Fig</th><th>Close</th></tr></thead><tbody><tr><td class="l dim">May 26</td><td class="l"><b class="r-l">L</b> Rei Tsuruya</td><td class="l">SUB R1</td><td><span data-id="v123">2</span></td><td class="dim"><span data-id="v124">+185</span></td></tr><tr><td class="l dim">May 26</td><td class="l"><b class="r-w">W</b> Daniel Barez</td><td class="l">UD</td><td><span data-id="v125">79</span></td><td class="dim"><span data-id="v126">-105</span></td></tr><tr><td class="l dim">Feb 26</td><td class="l"><b class="r-l">L</b> Alden Coria</td><td class="l">UD</td><td><span data-id="v127">31</span></td><td class="dim"><span data-id="v128">+308</span></td></tr><tr><td class="l dim">Sep 25</td><td class="l"><b class="r-l">L</b> Jesus Aguilar</td><td class="l">UD</td><td><span data-id="v129">33</span></td><td class="dim"><span data-id="v130">-206</span></td></tr><tr><td class="l dim">Apr 25</td><td class="l"><b class="r-l">L</b> Ode Osbourne</td><td class="l">KO/TKO R2</td><td><span data-id="v131">6</span></td><td class="dim"><span data-id="v132">-250</span></td></tr></tbody></table></div></div></div></details><details class="collapsible" id="notes"><summary><span class="bullet"></span>Notes &amp; data caveats<span class="meta">read before using</span></summary><div class="body"><p>Sean's sheet has Bilal Hasan at <span data-id="v133">84.5%</span>, <span data-id="v134">2.5</span> pts below the de-vigged market. Sheet flag: “no dog bet (drifting)”, rec “BET Bilal Hasan (80%+ rule, shop) [late: fav moved 5% from open]”.</p><ul><li>Timestamps differ by source: sheet export, BettingPros file and Odds API were pulled at different times (shown on each block).</li><li>Markov sim, Form Line and other model numbers are not shown in embeds (THIN SAMPLE runs, e.g. this card's Markov favourites, are artifacts).</li><li>BettingPros <code>no_vig_pct</code> fields do not sum to 100%, so the card de-vigs consensus prices itself.</li><li>THIN SAMPLE: Bilal Hasan (3 or fewer UFC fights before this card).</li></ul></div></details></div>
+<div class="foot"><b>Fight Form</b> · Fight 9 of 13: fights are numbered by bout order on the card (1 = first early prelim, 13 = main event), per the UFC.com order; cancelled Nazim Sadykhov–Jefferson Nascimento is not counted. Sources: UFC Model sheet (Publish to site export), BettingPros, The Odds API, UFCStats. Not betting advice.</div></div>
+<script>/* open a collapsed section when its nav chip is used */document.querySelectorAll('.ffnav a').forEach(function(a){a.addEventListener('click',function(){var d=document.querySelector(a.getAttribute('href'));if(d&&d.tagName==='DETAILS')d.open=true;});});</script>
+</body></html>
