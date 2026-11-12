@@ -42,6 +42,23 @@ Sheet: Site > Publish to site
    didn't match and the site kept the last good file. Fix the sheet and publish again.
 5. Re-publish any time (price moves, new Markov run). Unticking a fight and re-publishing removes it from the page.
 
+## Thursday install (Kirk, Nov 12): loader v2.8 + publish script, with readback and rollback
+
+Both files come from the repo; nothing is typed by hand. Do this before the Thursday no-go checklist.
+
+| # | Do | Readback (red = stop and roll back) |
+|---|---|---|
+| T1 | Project Settings > Script Properties: add `BETTABLE_BOOKS` with the list from line 65 of the installed Code.gs (loader README). | Property listed. |
+| T2 | Code.gs: replace its contents with `scripts/apps_script/loader/Code_v2.8_patched.gs` from branch `loader-patch` (sha256 starts `7200be8d`) > Save. | No red error; after a reload the UFC menu still lists Load / Refresh / Snapshot / Grade. |
+| T3 | `publish_to_site` file: replace its contents with `scripts/apps_script/publish_to_site.gs` from `publish-to-site` (sha256 starts `de4c2be3`) > Save. | No red error; the Site menu still loads. |
+| T4 | UFC > **Refresh prices**. | Feed!F1 shows now. Prelims, Jared Gordon row: D = **+300** (not +420); Feed best dog "+300 FanDuel"; Calculator AH on his row ends "TRAP, excluded from D/I". (If Caesars has since moved off +420, the TRAP may be gone; then D is simply the best price.) |
+| T5 | Site > **Preview publish** (no upload). | First line: `Script build b47-out · price row matches 13/13 · method inputs 13/13 · TRAP prices in D/I 0 · prices loaded ...`. Red: any other build name, a count below 13/13, or **TRAP prices in D/I 1 or more**. |
+
+**Rollback to v2.7 (one step):** Code.gs > replace its contents with `scripts/apps_script/loader/Code_v2.7_installed.gs`
+(sha256 starts `e5233b99`; the installed file with two settings read from Script Properties, which T1 set to the same values)
+> Save, then UFC > Refresh prices. Proof: Preview shows `TRAP prices in D/I 1` again while Caesars is still +420, and Gordon's
+D is +420. The publish script needs no rollback: it works with either loader (it only reports the TRAP count).
+
 ## Friday script (UFC 334 go-live, in this order)
 
 Already done (Nov 11): token, Script Property, `publishMenu` trigger and Publish checkboxes are set up (Kirk); the branch
