@@ -4,10 +4,15 @@ name: Projections check
 # This job recomputes every published fight with scripts/sheet_v47.py and only copies a file
 # to data/<slug>_projections.json (what the card page reads) when every number is within 0.1 pts.
 # On a mismatch the run fails and the live file is left exactly as it was.
+# It also runs when this workflow or the checker itself changes (the go-live merge brings all three to main, and a
+# merge does not touch a pending file that was published earlier); then it checks every pending file.
 on:
   push:
     paths:
       - "data/pending/*_projections.json"
+      - ".github/workflows/projections.yml"
+      - "scripts/verify_projections.py"
+      - "scripts/sheet_v47.py"
   workflow_dispatch: {}
 
 permissions:
@@ -24,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
           persist-credentials: true
 
       - uses: actions/setup-python@v5
@@ -39,8 +44,16 @@ jobs:
         id: verify
         run: |
           set +e
-          if [ "${{ github.event_name }}" = "push" ] && git rev-parse -q --verify HEAD~1 >/dev/null; then
-            files=$(git diff --name-only HEAD~1 HEAD -- 'data/pending/*_projections.json')
+          before="${{ github.event.before }}"
+          if [ "${{ github.event_name }}" = "push" ] && git cat-file -e "$before^{commit}" 2>/dev/null; then
+            changed=$(git diff --name-only "$before" HEAD)
+          elif [ "${{ github.event_name }}" = "push" ] && git rev-parse -q --verify HEAD~1 >/dev/null; then
+            changed=$(git diff --name-only HEAD~1 HEAD)
+          else
+            changed=""
+          fi
+          if [ "${{ github.event_name }}" = "push" ] && ! echo "$changed" | grep -qE '^(\.github/workflows/projections\.yml|scripts/verify_projections\.py|scripts/sheet_v47\.py)$'; then
+            files=$(echo "$changed" | grep -E '^data/pending/.*_projections\.json$')
           else
             files=$(ls data/pending/*_projections.json 2>/dev/null)
           fi
