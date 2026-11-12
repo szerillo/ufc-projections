@@ -11,13 +11,15 @@
  *   3. Shows a preview and asks for confirmation.
  *   4. Writes the file to szerillo/ufc-projections through the GitHub contents API.
  * A GitHub Action then recomputes every number with scripts/sheet_v47.py and only promotes the file
- * to data/<slug>_projections.json (what the site reads) if all of them match within 0.1 pts.
+ * to data/<slug>_projections.json (what the site reads) if all of them match within 0.0001 pts and every price
+ * ties to its own bout (Feed row and odds feed).
  *
  * The GitHub token lives in Script Properties under GITHUB_TOKEN. This script never logs or shows it.
  * Read-only on the sheet: it reads values and writes nothing back.
  */
 
 var PUB = {
+  build: 'b47-out',               // shown in the preview, so the step 0 paste can be confirmed in the sheet itself
   owner: 'szerillo',
   repo: 'ufc-projections',
   branch: 'main',                 // dry runs used branch 'publish-to-site'
@@ -64,7 +66,12 @@ function publish_(upload) {
     return f.fav + ' vs ' + f.dog + ': dog true ' + pct_(f.sheet.true_dog) + ', listed ' + pct_(f.sheet.listed) +
       (PUB.include.rec ? ', rec ' + f.sheet.rec : '');
   });
-  var msg = doc.fights.length + ' fight(s) to data/pending/' + slug + '_projections.json on ' + PUB.branch + ':\n\n' + lines.join('\n') + outside;
+  var nps = doc.fights.filter(function (f) { return f.price_source && f.price_source.dog === f.dog && f.price_source.fav === f.fav; }).length;
+  var nmi = doc.fights.filter(function (f) { return f.method_inputs; }).length;
+  var ntrap = doc.fights.filter(function (f) { return f.outliers.some(function (o) { return !o.excluded; }); }).length;
+  var stamp = 'Script build ' + PUB.build + ' · price row matches ' + nps + '/' + doc.fights.length + ' · method inputs ' + nmi + '/' +
+      doc.fights.length + ' · TRAP prices in D/I ' + ntrap + ' · prices loaded ' + (doc.prices_loaded || 'MISSING') + '\n\n';
+  var msg = stamp + doc.fights.length + ' fight(s) to data/pending/' + slug + '_projections.json on ' + PUB.branch + ':\n\n' + lines.join('\n') + outside;
   if (!upload) { ui.alert('Preview (nothing uploaded)', msg, ui.ButtonSet.OK); return; }
   if (ui.alert('Publish to site?', msg + '\n\nThe site updates only after the check passes (about 2 minutes).', ui.ButtonSet.OK_CANCEL) !== ui.Button.OK) return;
 
@@ -82,12 +89,20 @@ function buildDoc_(slug) {
   OUTSIDE_ = [];
   var ss = SpreadsheetApp.getActive();
   var calc = ss.getSheetByName('Calculator');
-  var C = calc.getRange('A1:AA20').getValues();             // C[row-1][col-1]
+  var C = calc.getRange('A1:AH20').getValues();             // C[row-1][col-1]; AH (index 33) = ML outliers vs exchange
   var shift = num_(calc.getRange('B42').getValue());
+  // Feed rows by bout order, so each fight can say which Feed row (bout and price) the loader filled it from (Block 46, OPP-1)
+  var FD = ss.getSheetByName('Feed').getRange('A1:M40').getValues(), FEED = {}, nMain = 0;
+  FD.forEach(function (x) {
+    if (typeof x[0] !== 'number' || !String(x[3] || '').trim()) return;
+    FEED[x[0]] = x;
+    if (x[1] === 'ME' || x[1] === 'MC') nMain++;
+  });
   var fights = [];
   PUB.tabs.forEach(function (t) {
     var sh = ss.getSheetByName(t.name);
     var M = sh.getRange('A1:AQ12').getValues();
+    var LT = sh.getRange('P14:Q35').getValues();             // market KO / SUB prices: dog row 14+2k, fav row 15+2k (W / AA formulas)
     var P = sh.getRange(PUB.publishCol + '1:' + PUB.publishCol + '12').getValues();
     for (var r = t.first; r <= t.last; r++) {
       if (P[r - 1][0] !== true) continue;                     // only ticked fights
@@ -111,6 +126,23 @@ function buildDoc_(slug) {
                                            fav: { dec: num_(m[25]), ko: num_(m[26]), sub: num_(m[27]) } };
       if (PUB.include.gtd) { f.gtd = num_(m[16]); f.gtd_listed = num_(m[18]); }
       if (PUB.include.markov) f.markov_dec = { dog: num_(m[41]), fav: num_(m[42]) };
+      if (PUB.include.method || PUB.include.gtd) {             // what the check needs to recompute V:AB and Q (Block 44)
+        var k = 2 * (r - 2);
+        f.method_inputs = { ap: num_(m[41]), aq: num_(m[42]), ad: num_(m[29]), ae: num_(m[30]), ah: num_(m[33]), ai: num_(m[34]),
+                            al: num_(m[37]), am: num_(m[38]), an: num_(m[39]), s: num_(m[18]), cx: num_(c[23]), cy: num_(c[24]),
+                            ko_dog: num_(LT[k][0]), sub_dog: num_(LT[k][1]), ko_fav: num_(LT[k + 1][0]), sub_fav: num_(LT[k + 1][1]) };
+      }
+      var ord = (t.name === 'Prelims' ? nMain : 0) + (r - 1), fx = FEED[ord];
+      f.price_source = fx ? { order: ord, dog: String(fx[3]).trim(), fav: String(fx[4]).trim(), cons_dog: String(fx[9]), cons_fav: String(fx[10]),
+                              best_dog: String(fx[11] || ''), best_fav: String(fx[12] || '') } : null;
+      // ML outliers the loader flagged as TRAP in Calculator AH ("DOG +420 Caesars (+4.4 TRAP, excluded from D/I)").
+      // excluded = the TRAP price is not the price in D / I (loader v2.8 skips it; v2.7 still used it) (Block 47, OUT-3)
+      f.outliers = [];
+      var re = /(DOG|FAV) ([+-]\d+) ([^(|]+?) \(\+[\d.]+ TRAP/g, mm;
+      while ((mm = re.exec(String(c[33] || ''))) !== null) {
+        var side = mm[1] === 'DOG' ? 'dog' : 'fav', o = Number(mm[2]);
+        f.outliers.push({ side: side, odds: o, book: mm[3].trim(), excluded: o !== f.inputs[side + '_odds'] });
+      }
       if (!PUB.include.rec) delete f.sheet.rec;     // left out of the file entirely; the check then skips it
       if (!PUB.include.flag) delete f.sheet.flag;
       fights.push(f);
@@ -122,11 +154,13 @@ function buildDoc_(slug) {
       if (d2 || f2 || P[r2 - 1][0] === true) OUTSIDE_.push(t.name + ' row ' + r2 + ': ' + (d2 || '?') + ' vs ' + (f2 || '?') + (P[r2 - 1][0] === true ? ' (ticked)' : ''));
     }
   });
+  var loaded = ss.getSheetByName('Feed').getRange('F1').getValue();   // "Loaded": set by Load next card and Refresh prices
   return {
     schema: 1, slug: slug, event: String(ss.getSheetByName('Feed').getRange('B1').getValue() || ''),
     published_at: new Date().toISOString(), source: 'UFC Model sheet, rules v4.7, Publish to site',
+    prices_loaded: loaded instanceof Date ? loaded.toISOString() : null,
     params: { shift: shift, b43: num_(calc.getRange('B43').getValue()), b44: num_(calc.getRange('B44').getValue()),
-              b45: num_(calc.getRange('B45').getValue()) },
+              b45: num_(calc.getRange('B45').getValue()), b41: num_(calc.getRange('B41').getValue()) },
     fights: fights
   };
 }

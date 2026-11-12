@@ -2,7 +2,7 @@ name: Projections check
 
 # The sheet's "Publish to site" writes data/pending/<slug>_projections.json.
 # This job recomputes every published fight with scripts/sheet_v47.py and only copies a file
-# to data/<slug>_projections.json (what the card page reads) when every number is within 0.1 pts.
+# to data/<slug>_projections.json (what the card page reads) when every number is within 0.0001 pts.
 # On a mismatch the run fails and the live file is left exactly as it was.
 # It also runs when this workflow or the checker itself changes (the go-live merge brings all three to main, and a
 # merge does not touch a pending file that was published earlier); then it checks every pending file.
@@ -13,6 +13,7 @@ on:
       - ".github/workflows/projections.yml"
       - "scripts/verify_projections.py"
       - "scripts/sheet_v47.py"
+      - "scripts/fighter_names.py"
   workflow_dispatch: {}
 
 permissions:
@@ -52,7 +53,7 @@ jobs:
           else
             changed=""
           fi
-          if [ "${{ github.event_name }}" = "push" ] && ! echo "$changed" | grep -qE '^(\.github/workflows/projections\.yml|scripts/verify_projections\.py|scripts/sheet_v47\.py)$'; then
+          if [ "${{ github.event_name }}" = "push" ] && ! echo "$changed" | grep -qE '^(\.github/workflows/projections\.yml|scripts/verify_projections\.py|scripts/sheet_v47\.py|scripts/fighter_names\.py)$'; then
             files=$(echo "$changed" | grep -E '^data/pending/.*_projections\.json$')
           else
             files=$(ls data/pending/*_projections.json 2>/dev/null)
@@ -86,5 +87,5 @@ jobs:
       - name: Fail when any file did not match
         if: steps.verify.outputs.rc != '0'
         run: |
-          echo "At least one published file did not match sheet_v47 within 0.1 pts. The live file was not changed."
+          echo "At least one published file did not match sheet_v47 within 0.0001 pts. The live file was not changed."
           exit 1
