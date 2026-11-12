@@ -2509,6 +2509,7 @@ ${(f.a.ctrl || f.b.ctrl) ? `
 // ============== FIGHTER NAME RULE (scripts/fighter_names.py; tested by scripts/test_fighter_names.py) ==============
 const NAME_NICKS = {"alex": "alexander", "andy": "andrew", "beth": "elizabeth", "bill": "william", "bob": "robert", "bobby": "robert", "charlie": "charles", "chuck": "charles", "dan": "daniel", "danny": "daniel", "dick": "richard", "drew": "andrew", "ed": "edward", "eddie": "edward", "jim": "james", "jimmy": "james", "joe": "joseph", "kate": "katherine", "liz": "elizabeth", "manny": "manuel", "mick": "michael", "mike": "michael", "pete": "peter", "rick": "richard", "rob": "robert", "sasha": "alexander", "steve": "stephen", "tim": "timothy", "timmy": "timothy", "tom": "thomas", "tommy": "thomas", "tony": "anthony", "will": "william", "zach": "zachary", "zack": "zachary"};
 const NAME_SUFFIX_SET = new Set(["jr", "sr", "ii", "iii", "iv"]);
+const NAME_DISTINCT = new Set(["alex crispin|alexander crispim", "anthony johnson|tony johnson", "bobby sanchez|robert sanchez", "carlo prater|carlos prates", "chris mickle|chris tickle", "daniel roberts|danny roberts", "greg scott|greg stott", "thomas petersen|tommy petersen"]);
 function nameRawTokens(s) {
   return String(s == null ? "" : s).normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, " ").split(/\s+/).filter(Boolean);
 }
@@ -2535,6 +2536,7 @@ function nameFirstOk(a, b) {
 function fighterStrictMatch(x, y) { return nameSameLetters(nameRawTokens(x), nameRawTokens(y)); }
 function fighterNameMatch(x, y) {  // loose: trust it only inside a bout the other fighter confirms
   if (fighterStrictMatch(x, y)) return true;
+  if (NAME_DISTINCT.has([nameRawTokens(x).join(" "), nameRawTokens(y).join(" ")].sort().join("|"))) return false;
   const a = nameTokensRule(x), b = nameTokensRule(y);
   if (nameSameLetters(a, b)) return true;
   if (a.length < 2 || a.length !== b.length || a.slice(1, -1).join(" ") !== b.slice(1, -1).join(" ")) return false;

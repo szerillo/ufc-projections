@@ -15,6 +15,7 @@ Sangwook / SangWon Kim, Shane / Shanna Young, ...):
           Mike / Michael). A shared-prefix rule (first 4 letters) was dropped: it merged Sangwook / SangWon Kim.
   bout    two bouts are the same when one fighter matches strictly and the other at least loosely, in either order.
           A loose match never stands on its own: a misspelling is trusted only when the opponent confirms the bout.
+  distinct  pairs of different UFCStats fighters that would still match loosely (KNOWN_DISTINCT) never match loosely.
 
 Looking one name up in a list (best_match): the strict match, else the only loose match; two loose candidates mean
 no match. Tests: scripts/test_fighter_names.py (the Python and the JS copy on the same fixture).
@@ -32,6 +33,13 @@ NICKNAMES = {  # nickname -> formal first name; both directions are checked
     "alex": "alexander", "sasha": "alexander", "zach": "zachary", "zack": "zachary", "timmy": "timothy", "tim": "timothy",
 }
 SUFFIXES = {"jr", "sr", "ii", "iii", "iv"}
+# Different UFCStats fighters whose names still match loosely (pairwise run over all 4,628 fighters, Block 41/42).
+# Loose matching never joins these, so one of them replacing the other against the same opponent, or a stats file that
+# only has the other one, gives no match instead of the wrong fighter. Strict matches are unaffected.
+# Regenerate after a UFCStats refresh: work/private/b41/false_merge.py, the "merges" list.
+KNOWN_DISTINCT = [("Alex Crispin", "Alexander Crispim"), ("Anthony Johnson", "Tony Johnson"), ("Bobby Sanchez", "Robert Sanchez"),
+                  ("Carlo Prater", "Carlos Prates"), ("Chris Mickle", "Chris Tickle"), ("Daniel Roberts", "Danny Roberts"),
+                  ("Greg Scott", "Greg Stott"), ("Thomas Petersen", "Tommy Petersen")]
 
 
 def raw_tokens(name: str) -> list[str]:
@@ -72,10 +80,15 @@ def strict_match(x: str, y: str) -> bool:
     return _same_letters(raw_tokens(x), raw_tokens(y))
 
 
+_DISTINCT = {tuple(sorted((" ".join(raw_tokens(a)), " ".join(raw_tokens(b))))) for a, b in KNOWN_DISTINCT}
+
+
 def name_match(x: str, y: str) -> bool:
     """Loose match. Trust it only inside a bout the other fighter confirms (bout_slots), or through best_match."""
     if strict_match(x, y):
         return True
+    if tuple(sorted((" ".join(raw_tokens(x)), " ".join(raw_tokens(y))))) in _DISTINCT:
+        return False
     a, b = tokens(x), tokens(y)
     if _same_letters(a, b):
         return True
@@ -109,6 +122,7 @@ NAME_MATCH_JS = r"""
 // ============== FIGHTER NAME RULE (scripts/fighter_names.py; tested by scripts/test_fighter_names.py) ==============
 const NAME_NICKS = %NICKS%;
 const NAME_SUFFIX_SET = new Set(["jr", "sr", "ii", "iii", "iv"]);
+const NAME_DISTINCT = new Set(%DISTINCT%);
 function nameRawTokens(s) {
   return String(s == null ? "" : s).normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, " ").split(/\s+/).filter(Boolean);
 }
@@ -135,6 +149,7 @@ function nameFirstOk(a, b) {
 function fighterStrictMatch(x, y) { return nameSameLetters(nameRawTokens(x), nameRawTokens(y)); }
 function fighterNameMatch(x, y) {  // loose: trust it only inside a bout the other fighter confirms
   if (fighterStrictMatch(x, y)) return true;
+  if (NAME_DISTINCT.has([nameRawTokens(x).join(" "), nameRawTokens(y).join(" ")].sort().join("|"))) return false;
   const a = nameTokensRule(x), b = nameTokensRule(y);
   if (nameSameLetters(a, b)) return true;
   if (a.length < 2 || a.length !== b.length || a.slice(1, -1).join(" ") !== b.slice(1, -1).join(" ")) return false;
@@ -148,4 +163,4 @@ function fighterBoutSlots(a1, b1, a2, b2) {
   if ((S(a1, b2) && L(b1, a2)) || (L(a1, b2) && S(b1, a2))) return "swap";
   return null;
 }
-""".replace("%NICKS%", "{" + ", ".join(f'"{k}": "{v}"' for k, v in sorted(NICKNAMES.items())) + "}")
+""".replace("%DISTINCT%", "[" + ", ".join(f'"{a}|{b}"' for a, b in sorted(_DISTINCT)) + "]").replace("%NICKS%", "{" + ", ".join(f'"{k}": "{v}"' for k, v in sorted(NICKNAMES.items())) + "}")

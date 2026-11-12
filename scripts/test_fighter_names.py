@@ -37,6 +37,10 @@ NO_MATCH = [
     ("Chris Duncan", "Christian Leroy Duncan"), ("Sangwook Kim", "SangWon Kim"), ("SeungWoo Choi", "SeungGuk Choi"),
     ("Shane Young", "Shanna Young"), ("Jorge de Oliveira", "Jorge Oliveira"), ("Min Soo Kim", "MinWoo Kim"),
     ("Jong Wang Kim", "Jong Won Kim"), ("Jong Wang Kim", "Jong Man Kim"), ("Jong Won Kim", "Jong Man Kim"),
+    # different fighters the tightened rule still matched loosely (KNOWN_DISTINCT, Block 42)
+    ("Alex Crispin", "Alexander Crispim"), ("Anthony Johnson", "Tony Johnson"), ("Bobby Sanchez", "Robert Sanchez"),
+    ("Carlo Prater", "Carlos Prates"), ("Chris Mickle", "Chris Tickle"), ("Daniel Roberts", "Danny Roberts"),
+    ("Greg Scott", "Greg Stott"), ("Thomas Petersen", "Tommy Petersen"),
 ]
 # strict tier: (a, b, strict?) -- a loose-only match must never stand alone
 STRICT = [("Alatengheili", "Alateng Heili", True), ("Wang Cong", "Cong Wang", True), ("Uros Medic", "Uroš Medić", True),
@@ -48,7 +52,9 @@ BOUTS = [("Charles Radtke", "Stephen Thompson", "Charlie Radke", "Stephen Thomps
          ("Alatengheili", "Juan Diaz", "Alateng Heili", "Juan Diaz", "same"),
          ("Ciryl Gane", "Josh Hokit", "Ciryl Gane", "Jake Hokit", None),             # late replacement, same surname
          ("Charles Radtke", "Stephen Thompson", "Charlie Radke", "Steve Thomson", None),  # both names off: no bout
-         ("Chris Duncan", "Drew Dober", "Christian Leroy Duncan", "Drew Dober", None)]
+         ("Chris Duncan", "Drew Dober", "Christian Leroy Duncan", "Drew Dober", None),
+         ("Daniel Roberts", "Jake Matthews", "Danny Roberts", "Jake Matthews", None),       # Danny replaces Daniel: no match
+         ("Daniel Roberts", "Jake Matthews", "Daniel Robers", "Jake Matthews", "same")]       # a feed typo still matches
 
 
 def old_py(a: str, b: str) -> bool:  # build_card_page.same() before Nov 11 (surname + first initial, no aliases)
