@@ -299,8 +299,24 @@ def load_odds(cache: Path):
     return by_id
 
 
-def summarize_odds(snaps, flipped, max_points=140, a_name=None):
-    """Build open/close/series from snapshots. Probabilities are for fighter A (flipped => A is 'away')."""
+_CLOSE_FIXES = None
+
+
+def close_fix(a, b, date):
+    """Kirk round 14: hand-fixed bouts in data/odds_close_fixes.json -> 'before' time (str) or None. Two bouts only."""
+    global _CLOSE_FIXES
+    if _CLOSE_FIXES is None:
+        p_ = REPO / "data" / "odds_close_fixes.json"
+        _CLOSE_FIXES = json.load(open(p_)).get("fixes", []) if p_.exists() else []
+    for x in _CLOSE_FIXES:
+        if str(date) == x["date"] and pair_match(a, b, x["a"], x["b"])[0] >= 2:
+            return x["before"]
+    return None
+
+
+def summarize_odds(snaps, flipped, max_points=140, a_name=None, close_before=None):
+    """Build open/close/series from snapshots. Probabilities are for fighter A (flipped => A is 'away').
+    close_before: hand fix only (data/odds_close_fixes.json); the published close and chart use snapshots strictly before it."""
     start = snaps[-1]["start"]
     pre = [s for s in snaps if s["t"] <= start] or snaps
     pts = []
@@ -363,6 +379,8 @@ def summarize_odds(snaps, flipped, max_points=140, a_name=None):
             rp.append({"t": pt["t"], "p": statistics.median(v[0] for v in rg), "da": statistics.median(v[1] for v in rg),
                        "db": statistics.median(v[2] for v in rg), "nb": len(rg), "per": {b: v for b, v in pt["per"].items() if b in US_REGULATED}})
     rp = [x for x in rp if x["t"] >= o["t"]]
+    if close_before:
+        rp = [x for x in rp if x["t"][:19] < close_before[:19]]
     ridx = list(range(len(rp)))
     if len(ridx) > max_points:
         st_ = (len(ridx) - 1) / (max_points - 1); ridx = sorted({round(i * st_) for i in range(max_points)})
@@ -823,7 +841,7 @@ def main():
             total22 += 1
             eid, fl = find_odds(oidx, by_id, f["a"], f["b"], e["date"])
             if eid:
-                o = summarize_odds(by_id[eid], fl, a_name=f["a"])
+                o = summarize_odds(by_id[eid], fl, a_name=f["a"], close_before=close_fix(f["a"], f["b"], e["date"]))
                 if o:
                     f["odds"] = o
                     matched += 1
