@@ -927,42 +927,42 @@
   },
   {
    "id": "v75",
-   "text": "-163",
+   "text": "-164",
    "fmt": "ml",
-   "rule": "oa_open_ml",
+   "rule": "lh_open_ml",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Drew Dober",
      "Chris Duncan"
     ],
     "side": "b"
    },
-   "desc": "OA open ML Chris Duncan",
-   "raw": -163
+   "desc": "LH open ML Chris Duncan",
+   "raw": -164
   },
   {
    "id": "v76",
-   "text": "1.5",
+   "text": "0.4",
    "fmt": "pts",
-   "rule": "oa_drift_abs",
+   "rule": "lh_drift_abs",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Drew Dober",
      "Chris Duncan"
     ]
    },
-   "desc": "OA drift pts",
-   "raw": 0.014500000000000013
+   "desc": "LH drift pts",
+   "raw": 0.003999999999999948
   },
   {
    "id": "v77",
-   "text": "59.5%",
+   "text": "59.3%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Drew Dober",
      "Chris Duncan"
@@ -970,25 +970,25 @@
     "side": "b",
     "at": "open"
    },
-   "desc": "OA open p Chris Duncan",
-   "raw": 0.5952
+   "desc": "LH open p Chris Duncan",
+   "raw": 0.593
   },
   {
    "id": "v78",
-   "text": "61.0%",
+   "text": "59.7%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Drew Dober",
      "Chris Duncan"
     ],
     "side": "b",
-    "at": "close"
+    "at": "current"
    },
-   "desc": "OA close p Chris Duncan",
-   "raw": 0.6097
+   "desc": "LH current p Chris Duncan",
+   "raw": 0.597
   },
   {
    "id": "v79",
@@ -2900,114 +2900,39 @@
   },
   {
    "id": "v237",
-   "text": "74%",
+   "text": "44%",
    "fmt": "pct0",
-   "rule": "labs_live",
+   "rule": "labs_wf",
    "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "owp"
+    "key": "lost1_won3"
    },
-   "desc": "Live 10+ owp",
-   "raw": 0.745
+   "desc": "Spot comeback won3",
+   "raw": 0.435
   },
   {
    "id": "v238",
-   "text": "58%",
+   "text": "35%",
    "fmt": "pct0",
-   "rule": "labs_live",
+   "rule": "labs_wf",
    "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "pre"
+    "key": "base_lost1_won3"
    },
-   "desc": "Live 10+ pre",
-   "raw": 0.576
+   "desc": "Spot comeback base",
+   "raw": 0.347
   },
   {
    "id": "v239",
-   "text": "627",
+   "text": "432",
    "fmt": "int",
-   "rule": "labs_live",
+   "rule": "labs_wf",
    "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "on"
+    "key": "lost1_n"
    },
-   "desc": "Live n on Out-landed by 10+ in round 1",
-   "raw": 627
+   "desc": "Spot comeback n",
+   "raw": 432
   },
   {
    "id": "v240",
-   "text": "55%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_wp"
-   },
-   "desc": "Live 10+ dog wp",
-   "raw": 0.551
-  },
-  {
-   "id": "v241",
-   "text": "36%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_pre"
-   },
-   "desc": "Live 10+ dog pre",
-   "raw": 0.359
-  },
-  {
-   "id": "v242",
-   "text": "198",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_n"
-   },
-   "desc": "Live n dog_n Out-landed by 10+ in round 1",
-   "raw": 198
-  },
-  {
-   "id": "v243",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "owp"
-   },
-   "desc": "Live ctrl owp",
-   "raw": 0.412
-  },
-  {
-   "id": "v244",
-   "text": "48%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "pre"
-   },
-   "desc": "Live ctrl pre",
-   "raw": 0.485
-  },
-  {
-   "id": "v245",
-   "text": "194",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "on"
-   },
-   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
-   "raw": 194
-  },
-  {
-   "id": "v246",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -3020,7 +2945,7 @@
    "raw": -208
   },
   {
-   "id": "v247",
+   "id": "v241",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -3033,7 +2958,7 @@
    "raw": -328
   },
   {
-   "id": "v248",
+   "id": "v242",
    "text": "+105",
    "fmt": "ml",
    "rule": "fight",
@@ -3046,7 +2971,7 @@
    "raw": 105
   },
   {
-   "id": "v249",
+   "id": "v243",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -3059,7 +2984,7 @@
    "raw": 100
   },
   {
-   "id": "v250",
+   "id": "v244",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -3072,7 +2997,7 @@
    "raw": 170
   },
   {
-   "id": "v251",
+   "id": "v245",
    "text": "-417",
    "fmt": "ml",
    "rule": "fight",
@@ -3085,7 +3010,7 @@
    "raw": -417
   },
   {
-   "id": "v252",
+   "id": "v246",
    "text": "-222",
    "fmt": "ml",
    "rule": "fight",
@@ -3098,7 +3023,7 @@
    "raw": -222
   },
   {
-   "id": "v253",
+   "id": "v247",
    "text": "-156",
    "fmt": "ml",
    "rule": "fight",
@@ -3111,7 +3036,7 @@
    "raw": -156
   },
   {
-   "id": "v254",
+   "id": "v248",
    "text": "-169",
    "fmt": "ml",
    "rule": "fight",
@@ -3124,7 +3049,7 @@
    "raw": -169
   },
   {
-   "id": "v255",
+   "id": "v249",
    "text": "-161",
    "fmt": "ml",
    "rule": "fight",
@@ -3137,7 +3062,7 @@
    "raw": -161
   },
   {
-   "id": "v256",
+   "id": "v250",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -3150,7 +3075,7 @@
    "raw": -132
   },
   {
-   "id": "v257",
+   "id": "v251",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -3163,7 +3088,7 @@
    "raw": -112
   },
   {
-   "id": "v258",
+   "id": "v252",
    "text": "+190",
    "fmt": "ml",
    "rule": "fight",
@@ -3176,7 +3101,7 @@
    "raw": 190
   },
   {
-   "id": "v259",
+   "id": "v253",
    "text": "+310",
    "fmt": "ml",
    "rule": "fight",
@@ -3189,7 +3114,7 @@
    "raw": 310
   },
   {
-   "id": "v260",
+   "id": "v254",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -3202,7 +3127,7 @@
    "raw": 155
   },
   {
-   "id": "v261",
+   "id": "v255",
    "text": "+145",
    "fmt": "ml",
    "rule": "fight",
@@ -3215,7 +3140,7 @@
    "raw": 145
   },
   {
-   "id": "v262",
+   "id": "v256",
    "text": "-110",
    "fmt": "ml",
    "rule": "fight",

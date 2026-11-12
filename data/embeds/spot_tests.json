@@ -1,0 +1,50 @@
+{
+ "source": "ufc_stats_backtest.zip out/results.json (UFC backtesting thread, claude/UFC_Stats_Backtest_2026-11-12.md)",
+ "source_sha256": "d32f35bf9f9d36d4a4d6f3c05dce270da69592841404bd76af717fcb4924dbbd",
+ "prereg_sha256": "60eebb78e63d261c0bb321732467face44c387e6263200ce52e2845edac11f22",
+ "price_years": "2022-26",
+ "T1": {
+  "n": 250,
+  "win": 0.708,
+  "imp": 0.6209,
+  "roi": 0.1099,
+  "ci": [
+   0.0114,
+   0.2092
+  ],
+  "years_pos": 4,
+  "years": 5,
+  "verdict": "LOG",
+  "cut": 1.913,
+  "label": "career strike differential"
+ },
+ "T17": {
+  "n": 179,
+  "win": 0.6816,
+  "imp": 0.5974,
+  "roi": 0.131,
+  "ci": [
+   -0.0056,
+   0.2669
+  ],
+  "years_pos": 5,
+  "years": 5,
+  "verdict": "LOG",
+  "label": "round-3 strike differential",
+  "cut": 2.9231
+ },
+ "T18_context": {
+  "n": 170,
+  "win": 0.5765,
+  "imp": 0.5159,
+  "roi": 0.0684,
+  "ci": [
+   -0.1017,
+   0.2461
+  ],
+  "years_pos": 4,
+  "years": 5,
+  "verdict": "NULL",
+  "label": "R3 minus R1 swing (pre-fight bet version of the comeback spot)"
+ }
+}

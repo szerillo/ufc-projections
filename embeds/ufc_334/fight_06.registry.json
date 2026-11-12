@@ -783,40 +783,40 @@
    "id": "v64",
    "text": "+180",
    "fmt": "ml",
-   "rule": "oa_open_ml",
+   "rule": "lh_open_ml",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Jim Miller",
      "Terrance McKinney"
     ],
     "side": "a"
    },
-   "desc": "OA open ML Jim Miller",
+   "desc": "LH open ML Jim Miller",
    "raw": 180
   },
   {
    "id": "v65",
-   "text": "0.4",
+   "text": "0.2",
    "fmt": "pts",
-   "rule": "oa_drift_abs",
+   "rule": "lh_drift_abs",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Jim Miller",
      "Terrance McKinney"
     ]
    },
-   "desc": "OA drift pts",
-   "raw": 0.003599999999999992
+   "desc": "LH drift pts",
+   "raw": 0.0020000000000000018
   },
   {
    "id": "v66",
-   "text": "34.2%",
+   "text": "34.1%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Jim Miller",
      "Terrance McKinney"
@@ -824,25 +824,25 @@
     "side": "a",
     "at": "open"
    },
-   "desc": "OA open p Jim Miller",
-   "raw": 0.3423
+   "desc": "LH open p Jim Miller",
+   "raw": 0.341
   },
   {
    "id": "v67",
-   "text": "34.6%",
+   "text": "34.3%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Jim Miller",
      "Terrance McKinney"
     ],
     "side": "a",
-    "at": "close"
+    "at": "current"
    },
-   "desc": "OA close p Jim Miller",
-   "raw": 0.3459
+   "desc": "LH current p Jim Miller",
+   "raw": 0.343
   },
   {
    "id": "v68",
@@ -3336,114 +3336,80 @@
   },
   {
    "id": "v274",
-   "text": "74%",
-   "fmt": "pct0",
-   "rule": "labs_live",
+   "text": "70.8%",
+   "fmt": "pct1",
+   "rule": "bt",
    "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "owp"
+    "test": "T1",
+    "key": "win"
    },
-   "desc": "Live 10+ owp",
-   "raw": 0.745
+   "desc": "Backtest T1 win",
+   "raw": 0.708
   },
   {
    "id": "v275",
-   "text": "58%",
-   "fmt": "pct0",
-   "rule": "labs_live",
+   "text": "62.1%",
+   "fmt": "pct1",
+   "rule": "bt",
    "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "pre"
+    "test": "T1",
+    "key": "imp"
    },
-   "desc": "Live 10+ pre",
-   "raw": 0.576
+   "desc": "Backtest T1 imp",
+   "raw": 0.6209
   },
   {
    "id": "v276",
-   "text": "627",
-   "fmt": "int",
-   "rule": "labs_live",
+   "text": "+11.0%",
+   "fmt": "spp",
+   "rule": "bt",
    "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "on"
+    "test": "T1",
+    "key": "roi"
    },
-   "desc": "Live n on Out-landed by 10+ in round 1",
-   "raw": 627
+   "desc": "Backtest T1 roi",
+   "raw": 0.1099
   },
   {
    "id": "v277",
-   "text": "55%",
-   "fmt": "pct0",
-   "rule": "labs_live",
+   "text": "250",
+   "fmt": "int",
+   "rule": "bt",
    "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_wp"
+    "test": "T1",
+    "key": "n"
    },
-   "desc": "Live 10+ dog wp",
-   "raw": 0.551
+   "desc": "Backtest T1 n",
+   "raw": 250
   },
   {
    "id": "v278",
-   "text": "36%",
-   "fmt": "pct0",
-   "rule": "labs_live",
+   "text": "+1.1%",
+   "fmt": "spp",
+   "rule": "bt",
    "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_pre"
+    "test": "T1",
+    "key": "ci",
+    "i": 0
    },
-   "desc": "Live 10+ dog pre",
-   "raw": 0.359
+   "desc": "Backtest T1 ci lo",
+   "raw": 0.0114
   },
   {
    "id": "v279",
-   "text": "198",
-   "fmt": "int",
-   "rule": "labs_live",
+   "text": "+20.9%",
+   "fmt": "spp",
+   "rule": "bt",
    "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_n"
+    "test": "T1",
+    "key": "ci",
+    "i": 1
    },
-   "desc": "Live n dog_n Out-landed by 10+ in round 1",
-   "raw": 198
+   "desc": "Backtest T1 ci hi",
+   "raw": 0.2092
   },
   {
    "id": "v280",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "owp"
-   },
-   "desc": "Live ctrl owp",
-   "raw": 0.412
-  },
-  {
-   "id": "v281",
-   "text": "48%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "pre"
-   },
-   "desc": "Live ctrl pre",
-   "raw": 0.485
-  },
-  {
-   "id": "v282",
-   "text": "194",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "on"
-   },
-   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
-   "raw": 194
-  },
-  {
-   "id": "v283",
    "text": "+219",
    "fmt": "ml",
    "rule": "fight",
@@ -3456,7 +3422,7 @@
    "raw": 219
   },
   {
-   "id": "v284",
+   "id": "v281",
    "text": "+550",
    "fmt": "ml",
    "rule": "fight",
@@ -3469,7 +3435,7 @@
    "raw": 550
   },
   {
-   "id": "v285",
+   "id": "v282",
    "text": "+195",
    "fmt": "ml",
    "rule": "fight",
@@ -3482,7 +3448,7 @@
    "raw": 195
   },
   {
-   "id": "v286",
+   "id": "v283",
    "text": "+154",
    "fmt": "ml",
    "rule": "fight",
@@ -3495,7 +3461,7 @@
    "raw": 154
   },
   {
-   "id": "v287",
+   "id": "v284",
    "text": "-149",
    "fmt": "ml",
    "rule": "fight",
@@ -3508,7 +3474,7 @@
    "raw": -149
   },
   {
-   "id": "v288",
+   "id": "v285",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -3521,7 +3487,7 @@
    "raw": -250
   },
   {
-   "id": "v289",
+   "id": "v286",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -3534,7 +3500,7 @@
    "raw": 180
   },
   {
-   "id": "v290",
+   "id": "v287",
    "text": "-189",
    "fmt": "ml",
    "rule": "fight",
@@ -3547,7 +3513,7 @@
    "raw": -189
   },
   {
-   "id": "v291",
+   "id": "v288",
    "text": "+146",
    "fmt": "ml",
    "rule": "fight",
@@ -3560,7 +3526,7 @@
    "raw": 146
   },
   {
-   "id": "v292",
+   "id": "v289",
    "text": "-109",
    "fmt": "ml",
    "rule": "fight",
@@ -3573,7 +3539,7 @@
    "raw": -109
   },
   {
-   "id": "v293",
+   "id": "v290",
    "text": "-185",
    "fmt": "ml",
    "rule": "fight",
@@ -3586,7 +3552,7 @@
    "raw": -185
   },
   {
-   "id": "v294",
+   "id": "v291",
    "text": "-106",
    "fmt": "ml",
    "rule": "fight",
@@ -3599,7 +3565,7 @@
    "raw": -106
   },
   {
-   "id": "v295",
+   "id": "v292",
    "text": "-167",
    "fmt": "ml",
    "rule": "fight",
@@ -3612,7 +3578,7 @@
    "raw": -167
   },
   {
-   "id": "v296",
+   "id": "v293",
    "text": "-588",
    "fmt": "ml",
    "rule": "fight",
@@ -3625,7 +3591,7 @@
    "raw": -588
   },
   {
-   "id": "v297",
+   "id": "v294",
    "text": "+135",
    "fmt": "ml",
    "rule": "fight",
@@ -3638,7 +3604,7 @@
    "raw": 135
   },
   {
-   "id": "v298",
+   "id": "v295",
    "text": "-571",
    "fmt": "ml",
    "rule": "fight",
@@ -3651,7 +3617,7 @@
    "raw": -571
   },
   {
-   "id": "v299",
+   "id": "v296",
    "text": "-278",
    "fmt": "ml",
    "rule": "fight",
@@ -3664,7 +3630,7 @@
    "raw": -278
   },
   {
-   "id": "v300",
+   "id": "v297",
    "text": "+135",
    "fmt": "ml",
    "rule": "fight",
@@ -3677,7 +3643,7 @@
    "raw": 135
   },
   {
-   "id": "v301",
+   "id": "v298",
    "text": "-116",
    "fmt": "ml",
    "rule": "fight",
@@ -3690,7 +3656,7 @@
    "raw": -116
   },
   {
-   "id": "v302",
+   "id": "v299",
    "text": "-909",
    "fmt": "ml",
    "rule": "fight",
@@ -3703,7 +3669,7 @@
    "raw": -909
   },
   {
-   "id": "v303",
+   "id": "v300",
    "text": "+140",
    "fmt": "ml",
    "rule": "fight",
@@ -3716,7 +3682,7 @@
    "raw": 140
   },
   {
-   "id": "v304",
+   "id": "v301",
    "text": "-104",
    "fmt": "ml",
    "rule": "fight",

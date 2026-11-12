@@ -929,40 +929,40 @@
    "id": "v75",
    "text": "+159",
    "fmt": "ml",
-   "rule": "oa_open_ml",
+   "rule": "lh_open_ml",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Kayla Harrison",
      "Amanda Nunes"
     ],
     "side": "b"
    },
-   "desc": "OA open ML Amanda Nunes",
+   "desc": "LH open ML Amanda Nunes",
    "raw": 159
   },
   {
    "id": "v76",
-   "text": "1.0",
+   "text": "0.5",
    "fmt": "pts",
-   "rule": "oa_drift_abs",
+   "rule": "lh_drift_abs",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Kayla Harrison",
      "Amanda Nunes"
     ]
    },
-   "desc": "OA drift pts",
-   "raw": 0.010299999999999976
+   "desc": "LH drift pts",
+   "raw": 0.0050000000000000044
   },
   {
    "id": "v77",
    "text": "37.0%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Kayla Harrison",
      "Amanda Nunes"
@@ -970,25 +970,25 @@
     "side": "b",
     "at": "open"
    },
-   "desc": "OA open p Amanda Nunes",
-   "raw": 0.3701
+   "desc": "LH open p Amanda Nunes",
+   "raw": 0.37
   },
   {
    "id": "v78",
-   "text": "38.0%",
+   "text": "37.5%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Kayla Harrison",
      "Amanda Nunes"
     ],
     "side": "b",
-    "at": "close"
+    "at": "current"
    },
-   "desc": "OA close p Amanda Nunes",
-   "raw": 0.38039999999999996
+   "desc": "LH current p Amanda Nunes",
+   "raw": 0.375
   },
   {
    "id": "v79",
@@ -2790,114 +2790,6 @@
   },
   {
    "id": "v228",
-   "text": "74%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "owp"
-   },
-   "desc": "Live 10+ owp",
-   "raw": 0.745
-  },
-  {
-   "id": "v229",
-   "text": "58%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "pre"
-   },
-   "desc": "Live 10+ pre",
-   "raw": 0.576
-  },
-  {
-   "id": "v230",
-   "text": "627",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "on"
-   },
-   "desc": "Live n on Out-landed by 10+ in round 1",
-   "raw": 627
-  },
-  {
-   "id": "v231",
-   "text": "55%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_wp"
-   },
-   "desc": "Live 10+ dog wp",
-   "raw": 0.551
-  },
-  {
-   "id": "v232",
-   "text": "36%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_pre"
-   },
-   "desc": "Live 10+ dog pre",
-   "raw": 0.359
-  },
-  {
-   "id": "v233",
-   "text": "198",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_n"
-   },
-   "desc": "Live n dog_n Out-landed by 10+ in round 1",
-   "raw": 198
-  },
-  {
-   "id": "v234",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "owp"
-   },
-   "desc": "Live ctrl owp",
-   "raw": 0.412
-  },
-  {
-   "id": "v235",
-   "text": "48%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "pre"
-   },
-   "desc": "Live ctrl pre",
-   "raw": 0.485
-  },
-  {
-   "id": "v236",
-   "text": "194",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "on"
-   },
-   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
-   "raw": 194
-  },
-  {
-   "id": "v237",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2910,7 +2802,7 @@
    "raw": -714
   },
   {
-   "id": "v238",
+   "id": "v229",
    "text": "-1111",
    "fmt": "ml",
    "rule": "fight",
@@ -2923,7 +2815,7 @@
    "raw": -1111
   },
   {
-   "id": "v239",
+   "id": "v230",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -2936,7 +2828,7 @@
    "raw": -455
   },
   {
-   "id": "v240",
+   "id": "v231",
    "text": "-312",
    "fmt": "ml",
    "rule": "fight",
@@ -2949,7 +2841,7 @@
    "raw": -312
   },
   {
-   "id": "v241",
+   "id": "v232",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",

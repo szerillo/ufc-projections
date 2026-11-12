@@ -171,6 +171,19 @@ def check(D, htmlfile, G):
             elif rule in ("oa_drift", "oa_drift_abs"):
                 f_ = by_name(EV[a["ev"]], a); v = f_["odds"]["close"]["p"] - f_["odds"]["open"]["p"]
                 if rule == "oa_drift_abs": v = abs(v)
+            elif rule == "bt":   # Block 59n: backtest numbers, from data/embeds/spot_tests.json (sha of the source results.json inside)
+                v = json.loads((REPO / "data/embeds/spot_tests.json").read_text())[a["test"]][a["key"]]
+                if "i" in a: v = v[a["i"]]
+            elif rule == "labs_wf":
+                cw_ = json.loads((FD / "labs.json").read_text())["cardio"]; v = cw_["base_lost1_won3"] if a["key"] == "base_lost1_won3" else cw_["wf"][a["key"]]
+            elif rule in ("lh_p", "lh_open_ml", "lh_drift_abs"):   # Block 59n: embed line history file, keyed by the pair
+                LHd = json.loads((REPO / a["lh"]).read_text())["fights"]
+                k_ = next(k_ for k_ in LHd if bout(*k_.split("|"), *a["pair"])); rec_ = LHd[k_]; first_ = is_(k_.split("|")[0], a["pair"][0])
+                if rule == "lh_p":
+                    v = rec_[a["at"]]["p"]; v = v if (a["side"] == "a") == first_ else 1 - v
+                elif rule == "lh_open_ml":
+                    v = rec_["open"]["m" + (a["side"] if first_ else ("b" if a["side"] == "a" else "a"))]
+                else: v = abs(rec_["current"]["p"] - rec_["open"]["p"])
             elif rule == "labs_live":
                 LV_ = G.setdefault("LIVE", {r_["label"]: r_ for r_ in json.loads((FD / "labs.json").read_text())["live"]["rows"]})
                 v = LV_[a["label"]][a["field"]]
@@ -234,25 +247,41 @@ def check(D, htmlfile, G):
             if not ef.exists() or not any(str(x["n"]) == n_ for x in json.loads(ef.read_text())["fights"]): bad.append(("link", "fight", f"{es_}/{n_} not on the site"))
         for sl_ in re.findall(r'#/fighter/([^/"]+)"', page):
             if not (FD / "fighters" / f"{sl_}.json").exists(): bad.append(("link", "fighter", f"{sl_} not on the site"))
-        # Block 59g: striking angles recomputed from the metrics file; the page must show exactly these
+        # Block 59n (Kirk round 6): Spot to watch recomputed (Round6_PREREG.md A); the page must show exactly these, in order
         EMv = json.loads((FD / "embed_metrics" / f"{G['SLUG']}.json").read_text())["fighters"]
         pa_, pb_ = (EMv.get(x_, {}) for x_ in reg["pair"]); want = []
+        STt = json.loads((REPO / "data/embeds/spot_tests.json").read_text())
         def td_(r): t = r.get("target_diff") or {}; return None if t.get("head") is None else t["head"] + t["body"] + t["leg"]
         ok4 = pa_.get("ufc_fights", 0) >= 4 and pb_.get("ufc_fights", 0) >= 4
-        if ok4 and td_(pa_) is not None and td_(pb_) is not None and abs(td_(pa_) - td_(pb_)) >= 2.0: want.append(reg["pair"][0] if td_(pa_) > td_(pb_) else reg["pair"][1])
-        ra_, rb_ = pa_.get("rounds", [{}] * 3)[2], pb_.get("rounds", [{}] * 3)[2]
-        if ok4 and ra_.get("diff_pm") is not None and rb_.get("diff_pm") is not None and ra_.get("fights", 0) >= 3 and rb_.get("fights", 0) >= 3 and abs(ra_["diff_pm"] - rb_["diff_pm"]) >= 2.9231:
-            want.append(reg["pair"][0] if ra_["diff_pm"] > rb_["diff_pm"] else reg["pair"][1])
-        m_ = re.search(r'<div class="ang">(.*?)</div>', page)
-        got = re.findall(r"<li><b>([^<]+)</b>", m_.group(1)) if m_ else []
-        if [g.split()[-1] for g in got] != [w.split()[-1] for w in want]: bad.append(("angle", "striking", f"page {got} vs recomputed {want}"))
-        # Block 59h: flip flag recomputed (R1 diff 1.0+ one way, R3 diff 1.0+ the other, both 3+ fights reaching R3)
-        rr = lambda r, i: (r.get("rounds") or [{}] * 3)[i]
-        a1, b1, a3, b3 = rr(pa_, 0).get("diff_pm"), rr(pb_, 0).get("diff_pm"), rr(pa_, 2).get("diff_pm"), rr(pb_, 2).get("diff_pm")
-        wantf = (None not in (a1, b1, a3, b3) and rr(pa_, 2).get("fights", 0) >= 3 and rr(pb_, 2).get("fights", 0) >= 3
-                 and min(rr(pa_, 0).get("mins", 0), rr(pb_, 0).get("mins", 0), rr(pa_, 2).get("mins", 0), rr(pb_, 2).get("mins", 0)) >= 15
-                 and ((a1 - b1 >= 1 and b3 - a3 >= 1) or (b1 - a1 >= 1 and a3 - b3 >= 1)))
-        if wantf != ('class="flip"' in page): bad.append(("flag", "flip", f"page {'class=\"flip\"' in page} vs recomputed {wantf}"))
+        if ok4 and td_(pa_) is not None and td_(pb_) is not None and abs(td_(pa_) - td_(pb_)) >= STt["T1"]["cut"]: want.append(("T1", reg["pair"][0] if td_(pa_) > td_(pb_) else reg["pair"][1]))
+        ra_, rb_ = (pa_.get("rounds") or [{}] * 3)[2], (pb_.get("rounds") or [{}] * 3)[2]
+        if ok4 and ra_.get("diff_pm") is not None and rb_.get("diff_pm") is not None and ra_.get("fights", 0) >= 3 and rb_.get("fights", 0) >= 3 and abs(ra_["diff_pm"] - rb_["diff_pm"]) >= STt["T17"]["cut"]:
+            want.append(("T17", reg["pair"][0] if ra_["diff_pm"] > rb_["diff_pm"] else reg["pair"][1]))
+        cu_ = {x_.get("s"): x_ for u_ in json.loads((FD / "labs.json").read_text())["cardio"].get("upcoming", []) for x_ in (u_["a"], u_["b"])}
+        sl_ = {is_(fight["a"]["name"], reg["pair"][0]) and "a" or "b": None}
+        ca_, cb_ = (cu_.get(fight[s_].get("slug")) for s_ in (("a", "b") if is_(fight["a"]["name"], reg["pair"][0]) else ("b", "a")))
+        if ca_ and cb_ and ca_.get("sw") is not None and cb_.get("sw") is not None and ca_["n"] >= 3 and cb_["n"] >= 3 and abs(ca_["sw"] - cb_["sw"]) >= 3:
+            want.append(("CB", reg["pair"][0] if ca_["sw"] > cb_["sw"] else reg["pair"][1]))
+        got = re.findall(r'<li data-spot="(T1|T17|CB)">(?:If )?<b>([^<]+)</b>', page)
+        if [(k_, g_.split()[-1]) for k_, g_ in got] != [(k_, w_.split()[-1]) for k_, w_ in want]: bad.append(("spot", "to watch", f"page {got} vs recomputed {want}"))
+        if re.search(r'class="(flip|ang)"|Live guide|Striking angle', page): bad.append(("spot", "old", "live guide, flip flag or angle box still on the page"))
+        # Block 59n: edge colour rule (coloured only at |shown edge| >= 2.0) and the Listed-price check (flagged = neutral + label)
+        LHall = json.loads((REPO / f"data/embeds/line_history_{G['SLUG']}.json").read_text())["fights"]
+        lk_ = next((k_ for k_ in LHall if bout(*k_.split("|"), *reg["pair"])), None); lrec = LHall.get(lk_) if lk_ else {}
+        unver = set()
+        for sd_, c_ in (lrec.get("listed") or {}).items():
+            if not c_["ok"]: unver.add(lk_.split("|")[0 if sd_ == "a" else 1])
+        for m_ in re.finditer(r'<span class="ech (pos|neg|flat)"><span data-id="(v\d+)">([^<]*)</span></span>(<span class="unv">price unverified</span>)?', page):
+            cls_, id_, t_, uv_ = m_.groups(); e_ = float(t_.replace("%", ""))
+            r_ = next(r_ for r_ in reg["rows"] if r_["id"] == id_)
+            is_ml = r_["desc"].startswith("Edge ML "); who = r_["desc"].replace("Edge ML ", "")
+            want_uv = is_ml and any(is_(who, u_) for u_ in unver)
+            want_cls = "flat" if want_uv else "pos" if e_ >= 2.0 else "neg" if e_ <= -2.0 else "flat"
+            if cls_ != want_cls: bad.append(("edge", "colour", f"{r_['desc']} {t_} is {cls_}, rule says {want_cls}"))
+            if bool(uv_) != want_uv: bad.append(("edge", "unverified", f"{r_['desc']}: 'price unverified' {'missing' if want_uv else 'not expected'}"))
+        # Block 59n: no book or offshore name anywhere on the page
+        for bk_ in ("Pinnacle", "BetOnline", "LowVig", "Bovada", "DraftKings", "FanDuel", "BetMGM", "Caesars", "BetRivers", "Circa", "Kalshi", "Polymarket", "Novig"):
+            if bk_.lower() in text.lower(): bad.append(("page", "book name", f"{bk_} named on the page"))
         # Block 59j: feed sanity, recomputed here: a broken method or distance market must show "price unavailable" and no number
         cz = lambda s_: sq(ALIAS.get(sq(s_), s_))
         of_ = next((x for x in G["ODDS"]["fights"] if {cz(x["fighter_a"]["name"]), cz(x["fighter_b"]["name"])} == {cz(reg["pair"][0]), cz(reg["pair"][1])}), None)
@@ -272,13 +301,15 @@ def check(D, htmlfile, G):
             if npu != want_pu: bad.append(("feed", "label", f"{npu} 'price unavailable' cells, want {want_pu}"))
         # Block 59k: the line move must carry its own "as of" time, equal to the event file's last snapshot
         f_ev = next((x for x in EV[reg["event"]]["fights"] if {sq(ALIAS.get(sq(x["a"]["name"]), x["a"]["name"])), sq(ALIAS.get(sq(x["b"]["name"]), x["b"]["name"]))} == {sq(ALIAS.get(sq(p_), p_)) for p_ in reg["pair"]}), None) if reg.get("event") in EV else None
-        if f_ev and f_ev.get("odds"):
-            want_as = f_ev["odds"]["close"]["t"][5:16].replace("-", "/").replace("T", " ")
+        if lrec.get("open") and lrec.get("current"):
+            want_as = lrec["current"]["t"][5:16].replace("-", "/").replace("T", " ")
             if f"line data as of {want_as} UTC" not in page: bad.append(("move", "as-of", f"line move missing 'as of {want_as} UTC'"))
+        elif lrec.get("open"):
+            if "current line not available" not in page: bad.append(("move", "opener only", "opener-only bout must say 'current line not available'"))
         # Block 59k (Kirk check 5): cross-source side check. The bp rule trusts the builder's choice of feed row for each
         # fighter; a wrong-side match would pass it. The shown moneyline split must agree with the line-history close
         # (a different feed, matched by different code) within 8 points; a swap shows as about 20+.
-        if f_ev and f_ev.get("odds"):
+        if lrec.get("current"):
             mk_ = {r_["args"].get("label"): r_ for r_ in reg["rows"] if r_["desc"].startswith("Market ML ")}
             shown = {r_["desc"].replace("Market ML ", ""): float(re.sub(r"[^0-9+-]", "", r_["text"])) for r_ in reg["rows"] if r_["desc"].startswith("Market ML ")}
             if len(shown) == 2:
@@ -286,21 +317,20 @@ def check(D, htmlfile, G):
                 first = reg["pair"][0]
                 if first in ia:
                     nv = ia[first] / sum(ia.values())
-                    lh = f_ev["odds"]["close"]["p"] if sq(ALIAS.get(sq(f_ev["a"]["name"]), f_ev["a"]["name"])) == sq(ALIAS.get(sq(first), first)) else 1 - f_ev["odds"]["close"]["p"]
+                    lh = lrec["current"]["p"] if is_(lk_.split("|")[0], first) else 1 - lrec["current"]["p"]
                     # side check v2 (claude/Side_Check_v2_PREREG_2026-11-12.md): flag when the split sits 4+ pts closer to the
                     # mirror of the line-history close than to the close itself; bouts within 4 pts of 50% cannot be told
                     if abs(lh - 0.5) < 0.04: G.setdefault("SIDE_UNCHECKED", []).append(first)
                     elif abs(nv - lh) - abs(nv - (1 - lh)) > 0.04: bad.append(("market", "side", f"{first}: market split {nv:.3f} is nearer the mirror of the line history {lh:.3f}, likely side swap"))
-        # Block 59j: footer timestamps must be the sources' own
+        # Block 59n (Kirk round 6, 4a): one "Data as of" line with the sources' own times and nothing else
         st_ = re.search(r'<div class="stamps">(.*?)</div>', page)
-        if not st_: bad.append(("footer", "stamps", "no source timestamps"))
+        sh_ = lambda t_: t_[5:16].replace("-", "/").replace("T", " ") + " UTC"
+        if not st_: bad.append(("footer", "stamps", "no Data as of line"))
         else:
-            want_ = [G["ODDS"]["updated_at"].replace("T", " ")[:16]]
-            if reg.get("published_at"): want_.append(reg["published_at"].replace("T", " ")[:16])
             exp_pub = json.loads(Path(REPO / reg["proj_file"]).read_text()).get("published_at") if reg.get("proj_file", "").endswith("projections.json") else None
-            if exp_pub and exp_pub.replace("T", " ")[:16] not in st_.group(1): bad.append(("footer", "stamps", "sheet export time differs from the export file"))
-            for w_ in want_:
-                if w_ not in st_.group(1): bad.append(("footer", "stamps", f"{w_} missing"))
+            lm_ = sh_(lrec["current"]["t"]) if lrec.get("current") and lrec.get("open") else (sh_(lrec["open"]["t"]) + " (opener only)" if lrec.get("open") else "n/a")
+            want_line = f'Data as of: sheet {sh_(exp_pub) if exp_pub else "n/a"} · odds {sh_(G["ODDS"]["updated_at"])} · line move {lm_}'
+            if H.unescape(st_.group(1)) != want_line: bad.append(("footer", "stamps", f"{H.unescape(st_.group(1))!r} != {want_line!r}"))
         # the decision-model accuracy quoted in the Cardio key must match labs.json
         acc_ = re.search(r"decisions (\d+)% of the time", page)
         if acc_ and int(acc_.group(1)) != round(json.loads((FD / "labs.json").read_text())["scoring"]["acc"] * 100): bad.append(("text", "key", "judging-model accuracy in the key"))
@@ -389,7 +419,84 @@ def run(D, G, slug, quiet=False):
         ok, nb = check(D, f, G); tot_ok += ok; tot_bad += nb
         n_rows += len(json.load(open(D / f.replace(".html", ".registry.json")))["rows"])
     tot_bad += card_check(D, G, slug)
+    tot_bad += lh_recheck(G, slug, quiet)
     return tot_ok, n_rows, tot_bad
+
+def lh_recheck(G, slug, quiet=False):
+    """Block 59n: recompute the embed line history and the Listed-price check from the raw archive with this file's own
+    code (Round6_PREREG.md C and D), and compare with data/embeds/line_history_<slug>.json. Skipped (with a note) without
+    the archive cache. Also: no offshore book may sit in any current line."""
+    import gzip, glob, statistics, datetime as dt_
+    LHp = REPO / f"data/embeds/line_history_{slug}.json"; LHd = json.loads(LHp.read_text())
+    if G.get("LH_OVERRIDE"): LHd = G["LH_OVERRIDE"]
+    REG_ = {"draftkings", "fanduel", "betmgm", "williamhill_us", "betrivers", "circasports"}
+    LIST_ = {"pinnacle", "draftkings", "fanduel", "betmgm", "williamhill_us", "betrivers", "betonlineag", "lowvig", "bovada", "circasports"}
+    nb_ = 0
+    for k_, r_ in LHd["fights"].items():
+        if r_.get("current") and set(r_["current"]["books"]) - REG_: print(f"  LH {k_}: offshore book in the current line"); nb_ += 1
+    cache = REPO / ".form_cache"
+    if not (cache / "oddsapi" / "compact" / "mma.jsonl.gz").exists():
+        print("LINE HISTORY RECHECK: skipped (no archive cache)"); return nb_
+    snaps = {}
+    def add(eid, t, st, h, a, books):
+        snaps.setdefault(eid, []).append((t, st, h, a, books))
+    with gzip.open(cache / "oddsapi" / "compact" / "mma.jsonl.gz", "rt") as fh:
+        for line in fh:
+            r = json.loads(line); add(r["id"], r["t"], r["start"], r["home"], r["away"], {b: m["h2h"] for b, m in r["books"].items() if m.get("h2h")})
+    for fp in sorted(glob.glob(str(cache / "oddsapi" / "mma" / "*.json.gz"))):
+        try: d = json.load(gzip.open(fp))
+        except Exception: continue
+        for ev in d.get("data", []):
+            bk = {}
+            for bm in ev.get("bookmakers", []):
+                for m in bm.get("markets", []):
+                    px = {o["name"]: o["price"] for o in m.get("outcomes", [])}
+                    if m["key"] == "h2h" and ev["home_team"] in px and ev["away_team"] in px: bk[bm["key"]] = [px[ev["home_team"]], px[ev["away_team"]]]
+            if bk: add(ev["id"], d.get("timestamp"), ev["commence_time"], ev["home_team"], ev["away_team"], bk)
+    lp = cache / "mma" / "oddsapi_live.jsonl"
+    if lp.exists():
+        for line in open(lp):
+            try: r = json.loads(line)
+            except Exception: continue
+            bk = {b: v for b, v in (r.get("books") or {}).items() if isinstance(v, list) and len(v) == 2}
+            if bk: add(r["id"], r["t"], r["start"], r["home"], r["away"], bk)
+    T = lambda x: dt_.datetime.fromisoformat(x.replace("Z", "+00:00"))
+    for k_, r_ in LHd["fights"].items():
+        eid = r_.get("event_id")
+        if not eid or eid not in snaps: continue
+        an_ = k_.split("|")[0]; ss = sorted(snaps[eid], key=lambda x: x[0]); start = ss[-1][1]; pre = [x for x in ss if x[0] <= start] or ss
+        def orient(x):
+            t, st, h, a, books = x
+            sc = lambda y: 2 if is_(an_, y) else difflib.SequenceMatcher(None, "".join(sorted(sq(an_))), "".join(sorted(sq(y)))).ratio()
+            amh = sc(h) >= sc(a)
+            return {b: ((v[0], v[1]) if amh else (v[1], v[0])) for b, v in books.items() if b in LIST_}
+        rows = [(x[0], orient(x)) for x in pre]; rows = [x for x in rows if x[1]]
+        nv_ = lambda da, db: (1 / da) / (1 / da + 1 / db)
+        op = next((x for x in rows if len(x[1]) >= 3), None)
+        regs = [x for x in rows if set(x[1]) & REG_ and (op is None or x[0] >= op[0])]
+        cur = regs[-1] if regs and (T(rows[-1][0]) - T(regs[-1][0])).total_seconds() <= 6 * 3600 else None
+        def med(x, bks): return round(statistics.median(nv_(*x[1][b]) for b in bks), 3)
+        want_o = (op[0], med(op, list(op[1]))) if op else None
+        want_c = (cur[0], med(cur, [b for b in cur[1] if b in REG_])) if cur else None
+        got_o = (r_["open"]["t"], r_["open"]["p"]) if r_.get("open") else None
+        got_c = (r_["current"]["t"], r_["current"]["p"]) if r_.get("current") else None
+        if got_o != want_o: print(f"  LH {k_}: opener {got_o} vs recomputed {want_o}"); nb_ += 1
+        if got_c != want_c: print(f"  LH {k_}: current {got_c} vs recomputed {want_c}"); nb_ += 1
+        if r_.get("listed"):
+            hi = T(LHd["export_published_at"]); lo = hi - dt_.timedelta(hours=24)
+            am_ = lambda d: round((d - 1) * 100) if d >= 2 else round(-100 / (d - 1))
+            dec = lambda m: 1 + (m / 100 if m > 0 else 100 / -m)
+            for sd_, i_ in (("a", 0), ("b", 1)):
+                L_ = r_["listed"][sd_]["listed"]; ok_ = False
+                for t, pr in rows:
+                    if not (lo <= T(t) <= hi): continue
+                    for b, v in pr.items():
+                        if b in REG_:
+                            x = am_(v[i_])
+                            if dec(x) >= dec(L_) or ((x > 0) == (L_ > 0) and abs(x - L_) <= 2): ok_ = True
+                if ok_ != r_["listed"][sd_]["ok"]: print(f"  LISTED {k_} {sd_} {L_}: file ok={r_['listed'][sd_]['ok']}, recomputed {ok_}"); nb_ += 1
+    if not quiet: print(f"LINE HISTORY RECHECK: {len(LHd['fights'])} bouts, {nb_} mismatches")
+    return nb_
 
 def negative(D, G, slug):
     """plant one error per copy; each must make the run fail."""
@@ -405,6 +512,9 @@ def negative(D, G, slug):
             t = r["text"]; t2 = re.sub(r"(\d)(?!.*\d)", lambda m: str((int(m.group(1)) + 1) % 10), t)
             return s_.replace(f'<span data-id="{r["id"]}">{H.escape(t)}</span>', f'<span data-id="{r["id"]}">{H.escape(t2)}</span>')
         return fn
+    def lh_shift(T, G_):
+        d_ = json.loads((REPO / f"data/embeds/line_history_{slug}.json").read_text()); k_ = next(k for k in d_["fights"] if "Harrison" in k)
+        d_["fights"][k_]["current"]["p"] = round(d_["fights"][k_]["current"]["p"] + 0.01, 3); G_["LH_OVERRIDE"] = d_
     def export_shift(T, G_):
         f0 = G_["PUB"]["fights"][0]; f0["sheet"]["true_fav"] += 0.002; f0["sheet"]["true_dog"] -= 0.002
     def export_method(T, G_):
@@ -419,8 +529,12 @@ def negative(D, G, slug):
         ("embed: wrong FIGHT number (fight 05)", plant_text("fight_05.html", lambda s_: s_.replace('fp-fight-num">FIGHT 5<', 'fp-fight-num">FIGHT 6<'))),
         ("embed: a model cell blanked (fight 10)", plant_text("fight_10.html", lambda s_: re.sub(r'<td class="model"><span class="odds">.*?</td>', '<td class="model dim">n/a</td>', s_, count=1, flags=re.S))),
         ("embed: an edge chip off by 0.1 (fight 13)", plant_text("fight_13.html", bump_first("edge", "spp"))),
-        ("embed: flip flag dropped (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace('class="flip"', 'class="flop"', 1))),
-        ("embed: striking angle dropped (fight 06)", plant_text("fight_06.html", lambda s_: re.sub(r'<div class="ang">.*?</ul></div>', "", s_, count=1))),
+        ("embed: Spot to watch dropped (fight 06)", plant_text("fight_06.html", lambda s_: re.sub(r'<div class="stk spot".*?</ul></div>', "", s_, count=1, flags=re.S))),
+        ("embed: Spot to watch added where no test fires (fight 05)", plant_text("fight_05.html", lambda s_: s_.replace('<div class="legend">', '<div class="stk spot" data-part="spot"><ul class="lvl"><li data-spot="T1"><b>Johnson</b> x</li></ul></div><div class="legend">', 1))),
+        ("embed: an edge under 2.0 coloured (fight 13)", plant_text("fight_13.html", lambda s_: re.sub(r'<span class="ech flat">(<span data-id="v\d+">[+-][01]\.\d%</span>)', r'<span class="ech pos">\1', s_, count=1))),
+        ("embed: 'price unverified' removed from Gordon (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace('<span class="unv">price unverified</span>', "", 1))),
+        ("embed: an offshore book named on the page (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace("Line move</span>", "Line move</span> Pinnacle", 1))),
+        ("line history: a current line moved 1 pt in the file (fight 12)", lh_shift),
         ("embed: past-fight link to a bout that is not on the site (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(#/fight/[^/"]+/)\d+"', r'\g<1>999"', s_, count=1))),
         ("embed: model renamed 'Sean' (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace("Moneyline · model vs market", "Moneyline · Sean vs market", 1))),
         ("card: one embed missing (fight 09)", lambda T, G_: (T / "fight_09.html").unlink()),

@@ -783,40 +783,40 @@
    "id": "v64",
    "text": "-141",
    "fmt": "ml",
-   "rule": "oa_open_ml",
+   "rule": "lh_open_ml",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Stephen Thompson",
      "Charles Radtke"
     ],
     "side": "a"
    },
-   "desc": "OA open ML Stephen Thompson",
+   "desc": "LH open ML Stephen Thompson",
    "raw": -141
   },
   {
    "id": "v65",
-   "text": "2.1",
+   "text": "2.2",
    "fmt": "pts",
-   "rule": "oa_drift_abs",
+   "rule": "lh_drift_abs",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Stephen Thompson",
      "Charles Radtke"
     ]
    },
-   "desc": "OA drift pts",
-   "raw": 0.021499999999999964
+   "desc": "LH drift pts",
+   "raw": 0.02199999999999991
   },
   {
    "id": "v66",
    "text": "56.0%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Stephen Thompson",
      "Charles Radtke"
@@ -824,25 +824,25 @@
     "side": "a",
     "at": "open"
    },
-   "desc": "OA open p Stephen Thompson",
-   "raw": 0.5604
+   "desc": "LH open p Stephen Thompson",
+   "raw": 0.56
   },
   {
    "id": "v67",
    "text": "58.2%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Stephen Thompson",
      "Charles Radtke"
     ],
     "side": "a",
-    "at": "close"
+    "at": "current"
    },
-   "desc": "OA close p Stephen Thompson",
-   "raw": 0.5819
+   "desc": "LH current p Stephen Thompson",
+   "raw": 0.582
   },
   {
    "id": "v68",
@@ -2728,114 +2728,6 @@
   },
   {
    "id": "v224",
-   "text": "74%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "owp"
-   },
-   "desc": "Live 10+ owp",
-   "raw": 0.745
-  },
-  {
-   "id": "v225",
-   "text": "58%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "pre"
-   },
-   "desc": "Live 10+ pre",
-   "raw": 0.576
-  },
-  {
-   "id": "v226",
-   "text": "627",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "on"
-   },
-   "desc": "Live n on Out-landed by 10+ in round 1",
-   "raw": 627
-  },
-  {
-   "id": "v227",
-   "text": "55%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_wp"
-   },
-   "desc": "Live 10+ dog wp",
-   "raw": 0.551
-  },
-  {
-   "id": "v228",
-   "text": "36%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_pre"
-   },
-   "desc": "Live 10+ dog pre",
-   "raw": 0.359
-  },
-  {
-   "id": "v229",
-   "text": "198",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_n"
-   },
-   "desc": "Live n dog_n Out-landed by 10+ in round 1",
-   "raw": 198
-  },
-  {
-   "id": "v230",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "owp"
-   },
-   "desc": "Live ctrl owp",
-   "raw": 0.412
-  },
-  {
-   "id": "v231",
-   "text": "48%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "pre"
-   },
-   "desc": "Live ctrl pre",
-   "raw": 0.485
-  },
-  {
-   "id": "v232",
-   "text": "194",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "on"
-   },
-   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
-   "raw": 194
-  },
-  {
-   "id": "v233",
    "text": "+375",
    "fmt": "ml",
    "rule": "fight",
@@ -2848,7 +2740,7 @@
    "raw": 375
   },
   {
-   "id": "v234",
+   "id": "v225",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -2861,7 +2753,7 @@
    "raw": 180
   },
   {
-   "id": "v235",
+   "id": "v226",
    "text": "+470",
    "fmt": "ml",
    "rule": "fight",
@@ -2874,7 +2766,7 @@
    "raw": 470
   },
   {
-   "id": "v236",
+   "id": "v227",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -2887,7 +2779,7 @@
    "raw": 155
   },
   {
-   "id": "v237",
+   "id": "v228",
    "text": "-192",
    "fmt": "ml",
    "rule": "fight",
@@ -2900,7 +2792,7 @@
    "raw": -192
   },
   {
-   "id": "v238",
+   "id": "v229",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -2913,7 +2805,7 @@
    "raw": -179
   },
   {
-   "id": "v239",
+   "id": "v230",
    "text": "+179",
    "fmt": "ml",
    "rule": "fight",
@@ -2926,7 +2818,7 @@
    "raw": 179
   },
   {
-   "id": "v240",
+   "id": "v231",
    "text": "-175",
    "fmt": "ml",
    "rule": "fight",
@@ -2939,7 +2831,7 @@
    "raw": -175
   },
   {
-   "id": "v241",
+   "id": "v232",
    "text": "+178",
    "fmt": "ml",
    "rule": "fight",
@@ -2952,7 +2844,7 @@
    "raw": 178
   },
   {
-   "id": "v242",
+   "id": "v233",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",

@@ -152,7 +152,7 @@
   },
   {
    "id": "v13",
-   "text": "+210",
+   "text": "+207",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -161,11 +161,11 @@
     "field": "cost"
    },
    "desc": "Market ML Macy Chiasson",
-   "raw": 210
+   "raw": 207
   },
   {
    "id": "v14",
-   "text": "32.3%",
+   "text": "32.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -173,7 +173,7 @@
     "label": "Macy Chiasson"
    },
    "desc": "Market implied Macy Chiasson",
-   "raw": 0.3225806451612903
+   "raw": 0.3257328990228013
   },
   {
    "id": "v15",
@@ -904,42 +904,42 @@
   },
   {
    "id": "v73",
-   "text": "-215",
+   "text": "-213",
    "fmt": "ml",
-   "rule": "oa_open_ml",
+   "rule": "lh_open_ml",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Macy Chiasson",
      "Bia Mesquita"
     ],
     "side": "b"
    },
-   "desc": "OA open ML Bia Mesquita",
-   "raw": -215
+   "desc": "LH open ML Bia Mesquita",
+   "raw": -213
   },
   {
    "id": "v74",
-   "text": "3.8",
+   "text": "3.4",
    "fmt": "pts",
-   "rule": "oa_drift_abs",
+   "rule": "lh_drift_abs",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Macy Chiasson",
      "Bia Mesquita"
     ]
    },
-   "desc": "OA drift pts",
-   "raw": 0.03760000000000002
+   "desc": "LH drift pts",
+   "raw": 0.033999999999999975
   },
   {
    "id": "v75",
-   "text": "65.5%",
+   "text": "65.6%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Macy Chiasson",
      "Bia Mesquita"
@@ -947,25 +947,25 @@
     "side": "b",
     "at": "open"
    },
-   "desc": "OA open p Bia Mesquita",
-   "raw": 0.6553
+   "desc": "LH open p Bia Mesquita",
+   "raw": 0.656
   },
   {
    "id": "v76",
-   "text": "69.3%",
+   "text": "69.0%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Macy Chiasson",
      "Bia Mesquita"
     ],
     "side": "b",
-    "at": "close"
+    "at": "current"
    },
-   "desc": "OA close p Bia Mesquita",
-   "raw": 0.6929000000000001
+   "desc": "LH current p Bia Mesquita",
+   "raw": 0.69
   },
   {
    "id": "v77",
@@ -2419,114 +2419,6 @@
   },
   {
    "id": "v197",
-   "text": "74%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "owp"
-   },
-   "desc": "Live 10+ owp",
-   "raw": 0.745
-  },
-  {
-   "id": "v198",
-   "text": "58%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "pre"
-   },
-   "desc": "Live 10+ pre",
-   "raw": 0.576
-  },
-  {
-   "id": "v199",
-   "text": "627",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "on"
-   },
-   "desc": "Live n on Out-landed by 10+ in round 1",
-   "raw": 627
-  },
-  {
-   "id": "v200",
-   "text": "55%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_wp"
-   },
-   "desc": "Live 10+ dog wp",
-   "raw": 0.551
-  },
-  {
-   "id": "v201",
-   "text": "36%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_pre"
-   },
-   "desc": "Live 10+ dog pre",
-   "raw": 0.359
-  },
-  {
-   "id": "v202",
-   "text": "198",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_n"
-   },
-   "desc": "Live n dog_n Out-landed by 10+ in round 1",
-   "raw": 198
-  },
-  {
-   "id": "v203",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "owp"
-   },
-   "desc": "Live ctrl owp",
-   "raw": 0.412
-  },
-  {
-   "id": "v204",
-   "text": "48%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "pre"
-   },
-   "desc": "Live ctrl pre",
-   "raw": 0.485
-  },
-  {
-   "id": "v205",
-   "text": "194",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "on"
-   },
-   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
-   "raw": 194
-  },
-  {
-   "id": "v206",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -2539,7 +2431,7 @@
    "raw": 155
   },
   {
-   "id": "v207",
+   "id": "v198",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -2552,7 +2444,7 @@
    "raw": -204
   },
   {
-   "id": "v208",
+   "id": "v199",
    "text": "-141",
    "fmt": "ml",
    "rule": "fight",
@@ -2565,7 +2457,7 @@
    "raw": -141
   },
   {
-   "id": "v209",
+   "id": "v200",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -2578,7 +2470,7 @@
    "raw": -112
   },
   {
-   "id": "v210",
+   "id": "v201",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2591,7 +2483,7 @@
    "raw": -250
   },
   {
-   "id": "v211",
+   "id": "v202",
    "text": "+150",
    "fmt": "ml",
    "rule": "fight",
@@ -2604,7 +2496,7 @@
    "raw": 150
   },
   {
-   "id": "v212",
+   "id": "v203",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -2617,7 +2509,7 @@
    "raw": 185
   },
   {
-   "id": "v213",
+   "id": "v204",
    "text": "-667",
    "fmt": "ml",
    "rule": "fight",
@@ -2630,7 +2522,7 @@
    "raw": -667
   },
   {
-   "id": "v214",
+   "id": "v205",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2643,7 +2535,7 @@
    "raw": -714
   },
   {
-   "id": "v215",
+   "id": "v206",
    "text": "-645",
    "fmt": "ml",
    "rule": "fight",

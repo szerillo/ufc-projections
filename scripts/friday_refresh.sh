@@ -43,6 +43,7 @@ t = re.search(r"newest snapshot (\S+)", open("/tmp/_refresh_odds.txt").read()).g
 age = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(t.replace("Z", "+00:00"))).total_seconds() / 3600
 print(f"  archive age {age:.1f} h"); sys.exit(0 if age < 3 else "line-history archive is more than 3 hours old")
 PY
+step "3b embed line history + Listed check";  python3 -I scripts/build_line_history.py --slug "$SLUG" --event "$EVENT" | tail -1
 step "4 stats file";       python3 -I scripts/build_embed_metrics.py --event "$EVENT" --cache .form_cache --out "form/data/embed_metrics/${SLUG}.json"
 step "5 embeds";           python3 scripts/build_fight_embeds.py | tail -1
 step "6 checks";           python3 scripts/verify_fight_embeds.py --slug "$SLUG" | tail -3

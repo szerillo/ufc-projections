@@ -927,42 +927,42 @@
   },
   {
    "id": "v75",
-   "text": "+101",
+   "text": "-101",
    "fmt": "ml",
-   "rule": "oa_open_ml",
+   "rule": "lh_open_ml",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Evan Elder",
      "Samuel Sanches"
     ],
     "side": "b"
    },
-   "desc": "OA open ML Samuel Sanches",
-   "raw": 101
+   "desc": "LH open ML Samuel Sanches",
+   "raw": -101
   },
   {
    "id": "v76",
-   "text": "4.6",
+   "text": "3.8",
    "fmt": "pts",
-   "rule": "oa_drift_abs",
+   "rule": "lh_drift_abs",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Evan Elder",
      "Samuel Sanches"
     ]
    },
-   "desc": "OA drift pts",
-   "raw": 0.04550000000000004
+   "desc": "LH drift pts",
+   "raw": 0.038000000000000034
   },
   {
    "id": "v77",
-   "text": "47.6%",
+   "text": "48.4%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Evan Elder",
      "Samuel Sanches"
@@ -970,25 +970,25 @@
     "side": "b",
     "at": "open"
    },
-   "desc": "OA open p Samuel Sanches",
-   "raw": 0.476
+   "desc": "LH open p Samuel Sanches",
+   "raw": 0.484
   },
   {
    "id": "v78",
    "text": "52.2%",
    "fmt": "pct1",
-   "rule": "oa_p",
+   "rule": "lh_p",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "lh": "data/embeds/line_history_ufc_334.json",
     "pair": [
      "Evan Elder",
      "Samuel Sanches"
     ],
     "side": "b",
-    "at": "close"
+    "at": "current"
    },
-   "desc": "OA close p Samuel Sanches",
-   "raw": 0.5215000000000001
+   "desc": "LH current p Samuel Sanches",
+   "raw": 0.522
   },
   {
    "id": "v79",
@@ -1706,114 +1706,6 @@
   },
   {
    "id": "v138",
-   "text": "74%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "owp"
-   },
-   "desc": "Live 10+ owp",
-   "raw": 0.745
-  },
-  {
-   "id": "v139",
-   "text": "58%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "pre"
-   },
-   "desc": "Live 10+ pre",
-   "raw": 0.576
-  },
-  {
-   "id": "v140",
-   "text": "627",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "on"
-   },
-   "desc": "Live n on Out-landed by 10+ in round 1",
-   "raw": 627
-  },
-  {
-   "id": "v141",
-   "text": "55%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_wp"
-   },
-   "desc": "Live 10+ dog wp",
-   "raw": 0.551
-  },
-  {
-   "id": "v142",
-   "text": "36%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_pre"
-   },
-   "desc": "Live 10+ dog pre",
-   "raw": 0.359
-  },
-  {
-   "id": "v143",
-   "text": "198",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed by 10+ in round 1",
-    "field": "dog_n"
-   },
-   "desc": "Live n dog_n Out-landed by 10+ in round 1",
-   "raw": 198
-  },
-  {
-   "id": "v144",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "owp"
-   },
-   "desc": "Live ctrl owp",
-   "raw": 0.412
-  },
-  {
-   "id": "v145",
-   "text": "48%",
-   "fmt": "pct0",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "pre"
-   },
-   "desc": "Live ctrl pre",
-   "raw": 0.485
-  },
-  {
-   "id": "v146",
-   "text": "194",
-   "fmt": "int",
-   "rule": "labs_live",
-   "args": {
-    "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "on"
-   },
-   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
-   "raw": 194
-  },
-  {
-   "id": "v147",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1826,7 +1718,7 @@
    "raw": -208
   },
   {
-   "id": "v148",
+   "id": "v139",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1839,7 +1731,7 @@
    "raw": -455
   },
   {
-   "id": "v149",
+   "id": "v140",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1852,7 +1744,7 @@
    "raw": -303
   },
   {
-   "id": "v150",
+   "id": "v141",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -1865,7 +1757,7 @@
    "raw": 175
   },
   {
-   "id": "v151",
+   "id": "v142",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",
