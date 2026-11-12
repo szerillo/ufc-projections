@@ -25,6 +25,9 @@ import sys
 import unicodedata
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from fighter_names import NAME_MATCH_JS, name_match, tokens  # noqa: E402
+
 REPO = Path(__file__).resolve().parents[1]
 TEMPLATE = REPO / "ufc_fn_cortes_acosta_walker_fight_form.html"
 WC_SHORT = {"Heavyweight": "HW", "Light Heavyweight": "LHW", "Middleweight": "MW", "Welterweight": "WW", "Lightweight": "LW",
@@ -32,23 +35,42 @@ WC_SHORT = {"Heavyweight": "HW", "Light Heavyweight": "LHW", "Middleweight": "MW
             "Women's Flyweight": "WFLW", "Women's Strawweight": "WSW", "Women's Featherweight": "WFW", "Catch Weight": "CW"}
 
 
-# Spellings the odds feed uses for a fighter, mapped to the card's spelling (one token each). The feed has "Charlie Radke"
-# for Charles Radtke (UFC 334); without this his price was never matched and the page threw on the null.
-TOKEN_ALIASES = {"radke": "radtke"}
-
-
 def norm(s: str) -> str:
-    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
-    return " ".join(TOKEN_ALIASES.get(w, w) for w in re.sub(r"[^a-z ]", " ", s).split() if w not in ("jr", "ii", "iii"))
+    return " ".join(tokens(s))
 
 
 def same(a: str, b: str) -> bool:
-    ta, tb = norm(a).split(), norm(b).split()
-    if not ta or not tb:
-        return False
-    if " ".join(ta) == " ".join(tb) or "".join(ta) == "".join(tb):
-        return True
-    return ta[-1] == tb[-1] and ta[0][0] == tb[0][0]
+    # one rule for every name match (stats rows, odds feed, sheet): scripts/fighter_names.py, tested by test_fighter_names.py
+    return name_match(a, b)
+
+LIVE_FIND_OLD = """  const aTokens = nameTokens(a.name);
+  const bTokens = nameTokens(b.name);
+  return (live.fights || []).find(f => {
+    const fA = nameTokens(f.fighter_a?.name);
+    const fB = nameTokens(f.fighter_b?.name);
+    // Match if the pair matches — both A and B find their opponent in one of
+    // the two slots (either A↔A/B↔B or A↔B/B↔A).
+    return (tokenOverlap(aTokens, fA) && tokenOverlap(bTokens, fB)) ||
+           (tokenOverlap(aTokens, fB) && tokenOverlap(bTokens, fA));
+  });"""
+LIVE_FIND_NEW = """  const M = fighterNameMatch;  // both fighters must match, in either slot
+  return (live.fights || []).find(f => {
+    const x = f.fighter_a?.name, y = f.fighter_b?.name;
+    return (M(a.name, x) && M(b.name, y)) || (M(a.name, y) && M(b.name, x));
+  });"""
+WHICH_OLD = """function whichFighter(label, f) {
+  const labelTokens = nameTokens(label);"""
+WHICH_NEW = """function whichFighter(label, f, lf) {
+  // a selection label starts with the feed's spelling of a fighter ("Charlie Radke KO/TKO/DQ"): map that spelling to a or b
+  const L = nameTokensRule(label).join(" ");
+  for (const fx of [lf && lf.fighter_a, lf && lf.fighter_b]) {
+    const t = nameTokensRule(fx && fx.name).join(" ");
+    if (t && (L === t || L.startsWith(t + " "))) {
+      if (fighterNameMatch(fx.name, f.a.name)) return "a";
+      if (fighterNameMatch(fx.name, f.b.name)) return "b";
+    }
+  }
+  const labelTokens = nameTokens(label);"""
 
 
 def american(p: float) -> int:
@@ -150,14 +172,9 @@ function rawImpliedPct(ml) {
 }
 
 function projNameMatch(x, y) {
-  const t = (s) => (s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z ]/g, " ").split(/\s+/).filter(w => w && !["jr", "ii", "iii"].includes(w));
-  const a = t(x), b = t(y);
-  if (!a.length || !b.length) return false;
-  if (a.join(" ") === b.join(" ") || a.join("") === b.join("")) return true;
-  // same surname: the first names must agree (one may be a prefix of the other, Chris / Christopher). The first initial alone
-  // let a late replacement with the same surname and initial (Josh vs Jake Hokit) inherit the old bout's numbers.
-  const fa = a[0], fb = b[0];
-  return a[a.length - 1] === b[b.length - 1] && a.length > 1 && b.length > 1 && fa.length >= 3 && fb.length >= 3 && (fa.startsWith(fb) || fb.startsWith(fa));
+  // shared fighter-name rule (fighterNameMatch, injected above from scripts/fighter_names.py): same surname or one letter off,
+  // and the first names must agree, so a late replacement with the same surname (Josh vs Jake Hokit) does not inherit numbers.
+  return fighterNameMatch(x, y);
 }
 
 let PROJ_UNMATCHED = [];
@@ -251,7 +268,7 @@ def patch(template: str, slug: str, fights_js: str, title: str, subtitle: str) -
     t = t[:i] + fights_js + "\n" + t[j:]
     i = t.index("// ============== USER PROJECTIONS (overrides) ==============")
     j = t.index("// ============== LIVE ODDS FETCH + MERGE ==============")
-    t = t[:i] + LOADER.replace("__SLUG__", slug) + "\n" + t[j:]
+    t = t[:i] + NAME_MATCH_JS + LOADER.replace("__SLUG__", slug) + "\n" + t[j:]
     t = re.sub(r'const ODDS_URL = "data/[a-z0-9_]+_odds.json";', f'const ODDS_URL = "data/{slug}_odds.json";', t, count=1)
     assert "applyUserProjections();" in t
     t = t.replace("applyUserProjections();", "await loadSheetProjections();", 1)
@@ -273,8 +290,11 @@ def patch(template: str, slug: str, fights_js: str, title: str, subtitle: str) -
                  ('<div class="pct">${listedPctB.toFixed(1)}%</div>', '<div class="pct">${listedPctB == null ? "—" : listedPctB.toFixed(1) + "%"}</div>'),
                  ('${projEdgeA > 0 ? "+" : ""}${projEdgeA.toFixed(1)}%', '${projEdgeA == null ? "—" : (projEdgeA > 0 ? "+" : "") + projEdgeA.toFixed(1) + "%"}'),
                  ('${projEdgeB > 0 ? "+" : ""}${projEdgeB.toFixed(1)}%', '${projEdgeB == null ? "—" : (projEdgeB > 0 ? "+" : "") + projEdgeB.toFixed(1) + "%"}'),
-                 # live-odds overlay: same feed spelling fix as TOKEN_ALIASES above
-                 (".filter(t => t.length >= 3 && !NAME_SUFFIXES.has(t));", ".filter(t => t.length >= 3 && !NAME_SUFFIXES.has(t)).map(t => ({ radke: \"radtke\" })[t] || t);")):
+                 # live-odds overlay: match bouts and selections with the shared name rule. Token overlap missed the feed's
+                 # "Charlie Radke" and "Alateng Heili" (no live odds for either bout) and let Jake Hokit match Josh Hokit.
+                 (LIVE_FIND_OLD, LIVE_FIND_NEW), (WHICH_OLD, WHICH_NEW),
+                 ("const which = whichFighter(sel.label || \"\", f);", "const which = whichFighter(sel.label || \"\", f, lf);"),
+                 ("const which = whichFighter(label, f);", "const which = whichFighter(label, f, lf);")):
         assert t.count(x) == 1, x
         t = t.replace(x, y)
     for bad in ("USER_PROJECTIONS_BY_FIGHT", "Cortes", "cortes_acosta"):

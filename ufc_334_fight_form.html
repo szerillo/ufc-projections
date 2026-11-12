@@ -2494,6 +2494,39 @@ ${(f.a.ctrl || f.b.ctrl) ? `
   panelsEl.appendChild(panel);
 }
 
+
+// ============== FIGHTER NAME RULE (scripts/fighter_names.py; tested by scripts/test_fighter_names.py) ==============
+const NAME_NICKS = {"alex": "alexander", "andy": "andrew", "beth": "elizabeth", "bill": "william", "bob": "robert", "bobby": "robert", "charlie": "charles", "chuck": "charles", "dan": "daniel", "danny": "daniel", "dick": "richard", "drew": "andrew", "ed": "edward", "eddie": "edward", "jim": "james", "jimmy": "james", "joe": "joseph", "kate": "katherine", "liz": "elizabeth", "manny": "manuel", "mick": "michael", "mike": "michael", "pete": "peter", "rick": "richard", "rob": "robert", "sasha": "alexander", "steve": "stephen", "tim": "timothy", "timmy": "timothy", "tom": "thomas", "tommy": "thomas", "tony": "anthony", "will": "william", "zach": "zachary", "zack": "zachary"};
+const NAME_SUFFIX_SET = new Set(["jr", "sr", "ii", "iii", "iv"]);
+function nameTokensRule(s) {
+  return (s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, " ").split(/\s+/).filter(t => t && !NAME_SUFFIX_SET.has(t));
+}
+function nameEdit1(a, b) {
+  if (a === b) return true;
+  if (Math.abs(a.length - b.length) > 1) return false;
+  if (a.length === b.length) {
+    const d = []; for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) d.push(i);
+    return d.length === 1 || (d.length === 2 && d[1] === d[0] + 1 && a[d[0]] === b[d[1]] && a[d[1]] === b[d[0]]);
+  }
+  if (a.length > b.length) [a, b] = [b, a];
+  for (let i = 0; i < b.length; i++) if (a === b.slice(0, i) + b.slice(i + 1)) return true;
+  return false;
+}
+function nameFirstOk(a, b) {
+  if (a === b) return true;
+  if (Math.min(a.length, b.length) >= 3 && (a.startsWith(b) || b.startsWith(a))) return true;
+  if (Math.min(a.length, b.length) >= 4 && a.slice(0, 4) === b.slice(0, 4)) return true;
+  return (NAME_NICKS[a] || a) === (NAME_NICKS[b] || b);
+}
+function fighterNameMatch(x, y) {
+  const a = nameTokensRule(x), b = nameTokensRule(y);
+  if (!a.length || !b.length) return false;
+  if (a.join("") === b.join("") || [...a].sort().join(" ") === [...b].sort().join(" ")) return true;
+  if (a.length < 2 || b.length < 2) return false;
+  const la = a[a.length - 1], lb = b[b.length - 1];
+  const surnameOk = la === lb || (Math.min(la.length, lb.length) >= 5 && nameEdit1(la, lb));
+  return surnameOk && nameFirstOk(a[0], b[0]);
+}
 // ============== SHEET PROJECTIONS (published from the UFC Model sheet) ==============
 // No projections are hard-coded on this page. The sheet's "Publish to site" writes
 // data/pending/<slug>_projections.json; the "Projections check" workflow recomputes every number
@@ -2512,14 +2545,9 @@ function rawImpliedPct(ml) {
 }
 
 function projNameMatch(x, y) {
-  const t = (s) => (s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z ]/g, " ").split(/\s+/).filter(w => w && !["jr", "ii", "iii"].includes(w));
-  const a = t(x), b = t(y);
-  if (!a.length || !b.length) return false;
-  if (a.join(" ") === b.join(" ") || a.join("") === b.join("")) return true;
-  // same surname: the first names must agree (one may be a prefix of the other, Chris / Christopher). The first initial alone
-  // let a late replacement with the same surname and initial (Josh vs Jake Hokit) inherit the old bout's numbers.
-  const fa = a[0], fb = b[0];
-  return a[a.length - 1] === b[b.length - 1] && a.length > 1 && b.length > 1 && fa.length >= 3 && fb.length >= 3 && (fa.startsWith(fb) || fb.startsWith(fa));
+  // shared fighter-name rule (fighterNameMatch, injected above from scripts/fighter_names.py): same surname or one letter off,
+  // and the first names must agree, so a late replacement with the same surname (Josh vs Jake Hokit) does not inherit numbers.
+  return fighterNameMatch(x, y);
 }
 
 let PROJ_UNMATCHED = [];
@@ -2626,7 +2654,7 @@ function nameTokens(name) {
     .normalize("NFD").replace(/[̀-ͯ]/g, "")
     .split(/[\s\-.]+/)
     .map(t => t.replace(/[^a-z0-9]/g, ""))
-    .filter(t => t.length >= 3 && !NAME_SUFFIXES.has(t)).map(t => ({ radke: "radtke" })[t] || t);
+    .filter(t => t.length >= 3 && !NAME_SUFFIXES.has(t));
   return new Set(raw);
 }
 function tokenOverlap(setA, setB) {
@@ -2635,22 +2663,26 @@ function tokenOverlap(setA, setB) {
 }
 
 function findLiveFight(live, a, b) {
-  const aTokens = nameTokens(a.name);
-  const bTokens = nameTokens(b.name);
+  const M = fighterNameMatch;  // both fighters must match, in either slot
   return (live.fights || []).find(f => {
-    const fA = nameTokens(f.fighter_a?.name);
-    const fB = nameTokens(f.fighter_b?.name);
-    // Match if the pair matches — both A and B find their opponent in one of
-    // the two slots (either A↔A/B↔B or A↔B/B↔A).
-    return (tokenOverlap(aTokens, fA) && tokenOverlap(bTokens, fB)) ||
-           (tokenOverlap(aTokens, fB) && tokenOverlap(bTokens, fA));
+    const x = f.fighter_a?.name, y = f.fighter_b?.name;
+    return (M(a.name, x) && M(b.name, y)) || (M(a.name, y) && M(b.name, x));
   });
 }
 
 // Given a market selection label (e.g., "Manel Kape KO/TKO/DQ"), return "a"
 // or "b" — whichever fighter has more overlapping name tokens with the label.
 // Falls back to null if neither fighter has any overlap.
-function whichFighter(label, f) {
+function whichFighter(label, f, lf) {
+  // a selection label starts with the feed's spelling of a fighter ("Charlie Radke KO/TKO/DQ"): map that spelling to a or b
+  const L = nameTokensRule(label).join(" ");
+  for (const fx of [lf && lf.fighter_a, lf && lf.fighter_b]) {
+    const t = nameTokensRule(fx && fx.name).join(" ");
+    if (t && (L === t || L.startsWith(t + " "))) {
+      if (fighterNameMatch(fx.name, f.a.name)) return "a";
+      if (fighterNameMatch(fx.name, f.b.name)) return "b";
+    }
+  }
   const labelTokens = nameTokens(label);
   const aTokens = nameTokens(f.a.name);
   const bTokens = nameTokens(f.b.name);
@@ -2685,7 +2717,7 @@ function mergeLiveOdds(live) {
     // Moneyline — assign each selection to the fighter with best token overlap
     const ml = m.moneyline || [];
     ml.forEach(sel => {
-      const which = whichFighter(sel.label || "", f);
+      const which = whichFighter(sel.label || "", f, lf);
       if (!which) return;
       const target = which === "a" ? f.a : f.b;
       const headline = pickBook(sel.books);
@@ -2734,7 +2766,7 @@ function mergeLiveOdds(live) {
     f._liveMethod = { a: {}, b: {} };
     mov.forEach(sel => {
       const label = sel.label || "";
-      const which = whichFighter(label, f);
+      const which = whichFighter(label, f, lf);
       const slug = sel.selection || "";
       if (!which || !slug) return;
       const headline = pickBook(sel.books);
