@@ -21,6 +21,8 @@ Sheet: Site > Publish to site
 2. **Store it in the sheet's script, not anywhere else.** In the UFC Model sheet: Extensions > Apps Script >
    Project Settings (gear) > Script Properties > Add script property: name `GITHUB_TOKEN`, value = the token. Save.
    Don't paste it in chat, a doc, a cell or a commit. If it ever leaks, revoke it on GitHub and make a new one.
+   The value is not hidden: anyone with edit access to the sheet can open Apps Script > Project Settings and read it
+   in plain text. Keep edit access to the sheet (and so the script) limited to you.
 3. **Add the script.** In the Apps Script editor: Files `+` > Script > name it `publish_to_site`, paste the contents of
    `scripts/apps_script/publish_to_site.gs`, Save. It adds no `onOpen`, so the loader's UFC menu is untouched.
 4. **Menu trigger.** Apps Script > Triggers (clock icon) > Add Trigger: function `publishMenu`, deployment Head,
@@ -50,7 +52,7 @@ so after the merge the page says "Projections coming" until you publish; the nam
 | 1 | 1 | Open https://github.com/szerillo/ufc-projections/compare/main...publish-to-site > Create pull request > Merge pull request > Confirm. | Green "Able to merge" before you click. After: main's top commit is "Merge pull request ... publish-to-site". |
 | 2 | 1 | Wait one minute, open https://szerillo.github.io/ufc-projections/ufc_334_fight_form.html | Page loads; the status line under the title says **Projections coming**. Actions tab lists **Projections check** and **Roll back projections**. |
 | 3 | 2 | github.com > Settings > Developer settings > Fine-grained tokens > Generate. Repository access: Only select > `ufc-projections`. Permissions: Contents **Read and write**, nothing else. Copy it. | The token's page shows 1 repository and "Contents: Read and write" (GitHub adds "Metadata: Read" on its own; that's expected). |
-| 4 | 1 | UFC Model sheet > Extensions > Apps Script > Project Settings > Script Properties > Add: `GITHUB_TOKEN` = the token > Save. Nowhere else. | `GITHUB_TOKEN` is listed with its value hidden. |
+| 4 | 1 | UFC Model sheet > Extensions > Apps Script > Project Settings > Script Properties > Add: `GITHUB_TOKEN` = the token > Save. Nowhere else. | `GITHUB_TOKEN` is listed. The value shows in plain text to anyone with edit access to the script, so keep sheet edit access to you. |
 | 5 | 1 | Apps Script: Files + > Script > `publish_to_site` > paste `scripts/apps_script/publish_to_site.gs` > Save. Your call first: the `include` line at the top sets which sheet fields go public (rec, flag, method, markov, gtd; all on as shipped). | Saves with no red error; `publishMenu` is in the function dropdown. |
 | 6 | 1 | Triggers (clock) > Add Trigger: `publishMenu`, From spreadsheet, On open > Save > approve the Google prompt. Reload the sheet. | A **Site** menu sits next to **UFC**. |
 | 7 | 1 | Main Card and Prelims: `Publish` in AR1, AR2:AR11 > Insert > Checkbox. Tick one fight > Site > **Preview publish**. | The preview lists exactly that one fight. |
