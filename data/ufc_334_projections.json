@@ -2,7 +2,7 @@
  "schema": 1,
  "slug": "ufc_334",
  "event": "Polymarket UFC 334: Gane vs Hokit",
- "published_at": "2026-11-12T21:41:39.598Z",
+ "published_at": "2026-11-12T22:47:18.373Z",
  "source": "UFC Model sheet, rules v4.7, Publish to site",
  "prices_loaded": "2026-11-12T21:19:20.049Z",
  "params": {
@@ -250,6 +250,86 @@
     "cons_fav": "-143",
     "best_dog": "+132 Caesars",
     "best_fav": "-155 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 5,
+   "calc_row": 5,
+   "tag": "170",
+   "dog": "Kevin Holland",
+   "fav": "Uros Medic",
+   "inputs": {
+    "dog_odds": 140,
+    "fav_odds": -154,
+    "open_dog": 0.5850959973966807,
+    "markov": 0.44,
+    "shift": 0.14574616168519455,
+    "tap": 0.23,
+    "junk": 0.34,
+    "tip": 0.47,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.40731237973059653,
+    "markov_shifted": 0.29425383831480545,
+    "q": 0.3903535985182279,
+    "true_dog": 0.3903535985182279,
+    "true_fav": 0.6096464014817722,
+    "dog_edge": -0.026313068148438812,
+    "fav_edge": 0.003347188883346952,
+    "drift": -0.1777836176660842,
+    "flag": "no dog bet (drifting)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.1628392722167168,
+     "ko": 0.46397717515193815,
+     "sub": 0.37318355263134506
+    },
+    "fav": {
+     "dec": 0.30688421632212803,
+     "ko": 0.6162781869760612,
+     "sub": 0.07683759670181078
+    }
+   },
+   "gtd": 0.2506557540422238,
+   "gtd_listed": 0.20011538887103317,
+   "markov_dec": {
+    "dog": 0.09,
+    "fav": 0.35
+   },
+   "method_inputs": {
+    "ap": 0.09,
+    "aq": 0.35,
+    "ad": 0.25,
+    "ae": 0.37,
+    "ah": 0.1,
+    "ai": 0.89,
+    "al": 0.474,
+    "am": 0.333,
+    "an": 0.193,
+    "s": 0.20011538887103317,
+    "cx": 0.7288,
+    "cy": 0.6034,
+    "ko_dog": 330,
+    "sub_dog": 512,
+    "ko_fav": 108,
+    "sub_fav": 1363
+   },
+   "price_source": {
+    "order": 4,
+    "dog": "Kevin Holland",
+    "fav": "Uros Medic",
+    "cons_dog": "137",
+    "cons_fav": "-137",
+    "best_dog": "+140 FanDuel",
+    "best_fav": "-150 BetRivers"
    },
    "outliers": []
   },
@@ -899,26 +979,114 @@
     "best_fav": "-333 BetRivers"
    },
    "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 9,
+   "calc_row": 15,
+   "tag": "155",
+   "dog": "Evan Elder",
+   "fav": "Samuel Sanches",
+   "inputs": {
+    "dog_odds": 102,
+    "fav_odds": -115,
+    "open_dog": 0.5439222684909776,
+    "markov": 0.41,
+    "shift": 0.14574616168519455,
+    "tap": 0.32,
+    "junk": 0.45,
+    "tip": 0.6,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.48066174826738206,
+    "markov_shifted": 0.2642538383148054,
+    "q": 0.4482005617744956,
+    "true_dog": 0.4482005617744956,
+    "true_fav": 0.5517994382255045,
+    "dog_edge": -0.04684894317599947,
+    "fav_edge": 0.01691571729527197,
+    "drift": -0.06326052022359552,
+    "flag": "SHARPS ON DOG - no dog bet (fav +5% 6/6y)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.4461297412071872,
+     "ko": 0.321335852196123,
+     "sub": 0.23253440659668984
+    },
+    "fav": {
+     "dec": 0.43105320127978486,
+     "ko": 0.4921516366933121,
+     "sub": 0.07679516202690306
+    }
+   },
+   "gtd": 0.43781051494486223,
+   "gtd_listed": 0.4241672278672951,
+   "markov_dec": {
+    "dog": 0.17,
+    "fav": 0.54
+   },
+   "method_inputs": {
+    "ap": 0.17,
+    "aq": 0.54,
+    "ad": 0.84,
+    "ae": 0.1,
+    "ah": 0.15,
+    "ai": 0.83,
+    "al": 0.48,
+    "am": 0.298,
+    "an": 0.222,
+    "s": 0.4241672278672951,
+    "cx": 0.5033,
+    "cy": 0.517,
+    "ko_dog": 574,
+    "sub_dog": 724,
+    "ko_fav": 177,
+    "sub_fav": 1694
+   },
+   "price_source": {
+    "order": 13,
+    "dog": "Evan Elder",
+    "fav": "Samuel Sanches",
+    "cons_dog": "108",
+    "cons_fav": "-108",
+    "best_dog": "+102 Caesars",
+    "best_fav": "-110 BetRivers"
+   },
+   "outliers": []
   }
  ],
- "line_pending": [
+ "manual_prices": [
   {
    "dog": "Kevin Holland",
    "fav": "Uros Medic",
-   "reason": "fav price -154 is not the Feed row's price -150 (OPP-1)"
+   "side": "fav",
+   "price": -154,
+   "feed_price": -150,
+   "seen": "DraftKings -154 at 2026-11-11T23:10:03Z",
+   "label": "manual price"
   },
   {
    "dog": "Evan Elder",
    "fav": "Samuel Sanches",
-   "reason": "fav price -115 is not the Feed row's price -110 (OPP-1)"
+   "side": "fav",
+   "price": -115,
+   "feed_price": -110,
+   "seen": "Caesars -115 at 2026-11-12T05:42:36Z",
+   "label": "manual price"
   }
  ],
  "verified": {
-  "at": "2026-11-12T22:28:55Z",
+  "at": "2026-11-12T22:47:36Z",
   "by": "scripts/verify_projections.py",
   "tolerance_pts": 9.999999999999999e-05,
-  "fights": 11,
-  "line_pending": 2,
-  "source_sha256": "266b4160c739ffb5a01b04efb5d1f58c148e7629b75a0fe6f0a8570d436cca9f"
+  "fights": 13,
+  "line_pending": 0,
+  "source_sha256": "806c75deaf561cec59cc88e5ac6170e05007da6d84bd49c409b47dd520315e49"
  }
 }
