@@ -1921,8 +1921,8 @@ const FIGHTS = [
   },
   {
     n: 8, card: "PRELIMS", weight: "Welterweight", rounds: "3R", conf: "MED",
-    a: { name: "Stephen Thompson", nick: "—", record: "17-9-1", ml: -158, win: 50, mktImp: 61.2, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 43.8, ht: "6'0\"", reach: 75, stance: "Orthodox", slpm: 4.05, sapm: 3.00, sdiff: 1.0, tdacc: "35%", tdR5: 0.08, tdd: "63%", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
-    b: { name: "Charles Radtke", nick: "—", record: "12-5-0", ml: null, win: 50, mktImp: 50, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 36.4, ht: "5'9\"", reach: 72, stance: "Orthodox", slpm: 2.50, sapm: 2.45, sdiff: 0.0, tdacc: "44%", tdR5: 0.66, tdd: "100%", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    a: { name: "Stephen Thompson", nick: "—", record: "17-9-1", ml: -158, win: 58.5, mktImp: 61.2, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 43.8, ht: "6'0\"", reach: 75, stance: "Orthodox", slpm: 4.05, sapm: 3.00, sdiff: 1.0, tdacc: "35%", tdR5: 0.08, tdd: "63%", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
+    b: { name: "Charles Radtke", nick: "—", record: "12-5-0", ml: 130, win: 41.5, mktImp: 43.5, ko: 0, sub: 0, dec: 0, kol: 0, subl: 0, decl: 0, ufc: "—", min: 0, age: 36.4, ht: "5'9\"", reach: 72, stance: "Orthodox", slpm: 2.50, sapm: 2.45, sdiff: 0.0, tdacc: "44%", tdR5: 0.66, tdd: "100%", ctrl: 0, sub_succ: "—", sub_def: "—", dist: 0, gnd: 0, log: [] },
     sim: { itd: 50, aKO: 0, aSub: 0, aDec: 0, bKO: 0, bSub: 0, bDec: 0 },
     noProj: true,
     notes: []
@@ -2247,8 +2247,8 @@ function renderPanel(f, isFirst) {
   const projOddsA = pctToAmericanOddsLocal(f.a.win);
   const projOddsB = pctToAmericanOddsLocal(f.b.win);
   const fmtMLOdds = (n) => n == null ? "—" : (n > 0 ? "+" + n : n.toString());
-  const projEdgeA = f.a.win - listedPctA;
-  const projEdgeB = f.b.win - listedPctB;
+  const projEdgeA = listedPctA == null ? null : f.a.win - listedPctA;
+  const projEdgeB = listedPctB == null ? null : f.b.win - listedPctB;
   const eClassProjA = edgeClass(projEdgeA);
   const eClassProjB = edgeClass(projEdgeB);
   const projectionsHTML = f.noProj ? projComingHTML(f) : sheetBlockHTML(f) + `
@@ -2266,12 +2266,12 @@ function renderPanel(f, isFirst) {
         <tbody>
           <tr><td class="tleft">${f.a.name}</td>
               <td><span class="odds">${projOddsA}</span><div class="pct">${f.a.win.toFixed(1)}%</div></td>
-              <td><span class="odds">${fmtMLOdds(listedA)}</span><div class="pct">${listedPctA.toFixed(1)}%</div></td>
-              <td><span class="edge-pill ${eClassProjA}">${projEdgeA > 0 ? "+" : ""}${projEdgeA.toFixed(1)}%</span></td></tr>
+              <td><span class="odds">${fmtMLOdds(listedA)}</span><div class="pct">${listedPctA == null ? "—" : listedPctA.toFixed(1) + "%"}</div></td>
+              <td><span class="edge-pill ${eClassProjA}">${projEdgeA == null ? "—" : (projEdgeA > 0 ? "+" : "") + projEdgeA.toFixed(1) + "%"}</span></td></tr>
           <tr><td class="tleft">${f.b.name}</td>
               <td><span class="odds">${projOddsB}</span><div class="pct">${f.b.win.toFixed(1)}%</div></td>
-              <td><span class="odds">${fmtMLOdds(listedB)}</span><div class="pct">${listedPctB.toFixed(1)}%</div></td>
-              <td><span class="edge-pill ${eClassProjB}">${projEdgeB > 0 ? "+" : ""}${projEdgeB.toFixed(1)}%</span></td></tr>
+              <td><span class="odds">${fmtMLOdds(listedB)}</span><div class="pct">${listedPctB == null ? "—" : listedPctB.toFixed(1) + "%"}</div></td>
+              <td><span class="edge-pill ${eClassProjB}">${projEdgeB == null ? "—" : (projEdgeB > 0 ? "+" : "") + projEdgeB.toFixed(1) + "%"}</span></td></tr>
         </tbody>
       </table>
       <div class="fp-proj-header"><span class="bullet"></span>Fight Length · GTD &amp; ITD</div>
@@ -2615,7 +2615,7 @@ function nameTokens(name) {
     .normalize("NFD").replace(/[̀-ͯ]/g, "")
     .split(/[\s\-.]+/)
     .map(t => t.replace(/[^a-z0-9]/g, ""))
-    .filter(t => t.length >= 3 && !NAME_SUFFIXES.has(t));
+    .filter(t => t.length >= 3 && !NAME_SUFFIXES.has(t)).map(t => ({ radke: "radtke" })[t] || t);
   return new Set(raw);
 }
 function tokenOverlap(setA, setB) {

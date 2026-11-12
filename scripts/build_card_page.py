@@ -32,9 +32,14 @@ WC_SHORT = {"Heavyweight": "HW", "Light Heavyweight": "LHW", "Middleweight": "MW
             "Women's Flyweight": "WFLW", "Women's Strawweight": "WSW", "Women's Featherweight": "WFW", "Catch Weight": "CW"}
 
 
+# Spellings the odds feed uses for a fighter, mapped to the card's spelling (one token each). The feed has "Charlie Radke"
+# for Charles Radtke (UFC 334); without this his price was never matched and the page threw on the null.
+TOKEN_ALIASES = {"radke": "radtke"}
+
+
 def norm(s: str) -> str:
     s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower()
-    return " ".join(w for w in re.sub(r"[^a-z ]", " ", s).split() if w not in ("jr", "ii", "iii"))
+    return " ".join(TOKEN_ALIASES.get(w, w) for w in re.sub(r"[^a-z ]", " ", s).split() if w not in ("jr", "ii", "iii"))
 
 
 def same(a: str, b: str) -> bool:
@@ -249,6 +254,18 @@ def patch(template: str, slug: str, fights_js: str, title: str, subtitle: str) -
     # embed=fight: highlight the tab for fight n (template picked tabs[n-1], which is the wrong tab when the main event is listed first)
     if "const tab = tabs[fightN - 1];" in t:
         t = t.replace("const tab = tabs[fightN - 1];", 'const tab = document.querySelector(\'.ff-tab[data-target="fp-\' + fightN + \'"]\');', 1)
+    # A fight with no listed price (odds feed missing or spelled differently) must not throw: one throw inside the
+    # render loop blanked every panel after it (UFC 334 dry run, Nov 11). Show "—" for the price and the edge instead.
+    for x, y in (("const projEdgeA = f.a.win - listedPctA;", "const projEdgeA = listedPctA == null ? null : f.a.win - listedPctA;"),
+                 ("const projEdgeB = f.b.win - listedPctB;", "const projEdgeB = listedPctB == null ? null : f.b.win - listedPctB;"),
+                 ('<div class="pct">${listedPctA.toFixed(1)}%</div>', '<div class="pct">${listedPctA == null ? "—" : listedPctA.toFixed(1) + "%"}</div>'),
+                 ('<div class="pct">${listedPctB.toFixed(1)}%</div>', '<div class="pct">${listedPctB == null ? "—" : listedPctB.toFixed(1) + "%"}</div>'),
+                 ('${projEdgeA > 0 ? "+" : ""}${projEdgeA.toFixed(1)}%', '${projEdgeA == null ? "—" : (projEdgeA > 0 ? "+" : "") + projEdgeA.toFixed(1) + "%"}'),
+                 ('${projEdgeB > 0 ? "+" : ""}${projEdgeB.toFixed(1)}%', '${projEdgeB == null ? "—" : (projEdgeB > 0 ? "+" : "") + projEdgeB.toFixed(1) + "%"}'),
+                 # live-odds overlay: same feed spelling fix as TOKEN_ALIASES above
+                 (".filter(t => t.length >= 3 && !NAME_SUFFIXES.has(t));", ".filter(t => t.length >= 3 && !NAME_SUFFIXES.has(t)).map(t => ({ radke: \"radtke\" })[t] || t);")):
+        assert t.count(x) == 1, x
+        t = t.replace(x, y)
     for bad in ("USER_PROJECTIONS_BY_FIGHT", "Cortes", "cortes_acosta"):
         assert bad not in t, bad
     return t
