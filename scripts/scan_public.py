@@ -3,7 +3,10 @@
 everything in audits/ and every file this branch adds OR modifies relative to the live branch is public once merged.
 Stops (exit 1) on any hit of:
   secrets/tokens (GitHub, Anthropic/OpenAI, AWS, Slack, Google API keys, private keys, a Google Sheets URL with an ID),
-  offshore sportsbook names, local paths (/Users/, /home/, C:\\Users), email addresses.
+  offshore sportsbook names, local paths (/Users/, /home/, C:\\Users), email addresses, sheet internals, working notes,
+  paper trades, unit stakes.
+KNOWN GAPS (Kirk round 19): a note that names a reviewer without a keyword ("Kirk says hold..."); a 1u stake ("1u on X");
+  a signed P&L line ("+0.35u on X"). The wide units count is printed as a report so these can be eyeballed.
 Code that must hold book keys to filter them out (the offshore list in the odds scripts) is listed in ALLOW with a reason;
 an allowed file is still scanned for every other category.
 
@@ -25,7 +28,11 @@ PAT = {
     "sheet internals": re.compile(r"(gid=\d{6,}|\b(Calculator|Snapshots|PropSnap|Main Card|Prelims)![A-Z]{1,2}\d+|\b(Calculator|PropSnap|Snapshots) (tab|sheet)\b)"),
     "working note": re.compile(r"\b(TODO|FIXME|NOTE FROM|DO NOT PUBLISH|INTERNAL ONLY)\b"),
     "paper trade": re.compile(r"paper[- ]trad", re.I),
+    # Kirk round 19 call 1: a stake in units ("0.35u", "2u"), blocking. Skips "1u" (methodology: "Flat 1u at the close") and
+    # signed P&L ("+4.68u"). KNOWN GAPS, not caught: a real 1u stake ("1u on Hokit") and a signed P&L line ("+0.35u on Hokit").
+    "unit stake": re.compile(r"(?<![+\-\d.])(?!1u\b)\d+(\.\d+)?u\b"),
 }
+WIDE_UNITS = re.compile(r"\d+(\.\d+)?u\b")   # report-only: any units figure, printed as a count in the rehearsal
 # file -> categories allowed, with the reason. Secrets, local paths and emails are never allowed outside this file.
 CODE_KEYS = "code: the odds archive's own book keys, needed to read it and to keep those books out of published lines; not rendered on any page"
 ALLOW = {
@@ -33,7 +40,7 @@ ALLOW = {
     "scripts/build_form.py": ({"offshore"}, CODE_KEYS),
     "scripts/form_model.py": ({"offshore"}, CODE_KEYS),
     "scripts/verify_fight_embeds.py": ({"offshore"}, CODE_KEYS),
-    "scripts/scan_public.py": ({"offshore", "local path", "email", "secret", "sheet internals", "working note", "paper trade"}, "the patterns themselves"),
+    "scripts/scan_public.py": ({"offshore", "local path", "email", "secret", "sheet internals", "working note", "paper trade", "unit stake"}, "the patterns themselves"),
     "form/app.js": ({"sheet internals"}, "Model page says the tracker is read from the sheet's Snapshots tab (public on main since Nov 10)"),
     ".github/workflows/price_freshness.yml": ({"email"}, "git bot identity for the report commit (users.noreply.github.com), not a person"),
 }
@@ -70,6 +77,8 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--base", default="origin/main"); ap.add_argument("--paths", nargs="*", default=[])
     a = ap.parse_args()
     fs = files(a.base, a.paths); hits = scan(fs)
+    wide = sum(len(WIDE_UNITS.findall((REPO / f).read_text(errors="ignore"))) for f in fs if (REPO / f).is_file() and not f.endswith(SKIP_SUFFIX))
+    print(f"UNITS (report only, wide pattern \\d+(\\.\\d+)?u): {wide} figures in the scanned files; the blocking 'unit stake' pattern is below")
     print(f"PUBLIC SCAN: {len(fs)} files (audits/ + added or modified vs {a.base}), {len(hits)} hits")
     for h in hits[:60]: print(f"  HIT {h[0]}:{h[1]} [{h[2]}] {h[3]}")
     sys.exit(1 if hits else 0)
