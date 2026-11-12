@@ -285,7 +285,10 @@ def check(D, htmlfile, G):
                 if first in ia:
                     nv = ia[first] / sum(ia.values())
                     lh = f_ev["odds"]["close"]["p"] if sq(ALIAS.get(sq(f_ev["a"]["name"]), f_ev["a"]["name"])) == sq(ALIAS.get(sq(first), first)) else 1 - f_ev["odds"]["close"]["p"]
-                    if abs(nv - lh) > 0.08: bad.append(("market", "side", f"{first}: market split {nv:.3f} vs line history {lh:.3f}, possible side swap"))
+                    # side check v2 (claude/Side_Check_v2_PREREG_2026-11-12.md): flag when the split sits 4+ pts closer to the
+                    # mirror of the line-history close than to the close itself; bouts within 4 pts of 50% cannot be told
+                    if abs(lh - 0.5) < 0.04: G.setdefault("SIDE_UNCHECKED", []).append(first)
+                    elif abs(nv - lh) - abs(nv - (1 - lh)) > 0.04: bad.append(("market", "side", f"{first}: market split {nv:.3f} is nearer the mirror of the line history {lh:.3f}, likely side swap"))
         # Block 59j: footer timestamps must be the sources' own
         st_ = re.search(r'<div class="stamps">(.*?)</div>', page)
         if not st_: bad.append(("footer", "stamps", "no source timestamps"))
@@ -475,6 +478,7 @@ if __name__ == "__main__":
     a = ap.parse_args(); D = Path(a.dir) if a.dir else REPO / "embeds" / a.slug; G = load_sources(a.slug)
     ok, n_rows, nb = run(D, G, a.slug); G_SLUG[0] = a.slug
     print(f"TOTAL: {ok}/{n_rows} numbers verified; {nb} mismatches/assertion failures")
+    if G.get("SIDE_UNCHECKED"): print(f"SIDE CHECK: not checkable (line within 4 pts of 50%): {', '.join(G['SIDE_UNCHECKED'])}")
     mc = metrics_check(a.slug) if (REPO / ".form_cache" / "ufc_fight_stats.csv").exists() else None
     if mc is None: print("METRICS FILE: not rechecked (no .form_cache CSVs on this machine)")
     else:
