@@ -72,6 +72,11 @@ def name_match(a: str, b: str) -> int:
         return 0
     if ta == tb:
         return 2
+    # Block 59m: same name once spaces are removed, in either token order ("Heili Alateng" = "Alatengheili")
+    import itertools
+    ja, jb = na.replace(" ", ""), nb.replace(" ", "")
+    if ja == jb or any("".join(p) == jb for p in itertools.permutations(na.split())) or any("".join(p) == ja for p in itertools.permutations(nb.split())):
+        return 2
     la, lb = na.split()[-1], nb.split()[-1]
     if la in tb or lb in ta:
         return 1
