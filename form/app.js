@@ -198,8 +198,8 @@ async function overlayLive(ev) {
   try { const d = await fetch(ev.bp_file + "?t=" + Math.floor(Date.now() / 6e5)).then(r => r.json());
     const nm = (x) => (x || "").toLowerCase().normalize("NFD").replace(/[^a-z ]/g, "");
     for (const bf of d.fights || []) { const sel = (bf.markets || {}).moneyline || []; if (sel.length < 2) continue;
-      const f = ev.fights.find(x => x.n === bf.n); if (!f) continue;
-      const pick = (name) => { const l = last(nm(name)); const s_ = sel.find(z => nm(z.label).includes(l)); return s_ && s_.books && s_.books.consensus ? s_.books.consensus.cost : null; };
+      const bl = sel.map(z => nm(z.label).replace(/ /g, "")); const has = (x) => [x.a.name, x.b.name].every(w => bl.some(l => l.includes(last(nm(w))))); const f = ev.fights.find(x => x.n === bf.n && has(x)) || ev.fights.find(has); if (!f) continue;   // number, confirmed by names (Block 54)
+      const pick = (name) => { const l = last(nm(name)); const s_ = sel.find(z => nm(z.label).replace(/ /g, "").includes(l)); return s_ && s_.books && s_.books.consensus ? s_.books.consensus.cost : null; };
       const ma = pick(f.a.name), mb = pick(f.b.name); if (ma != null && mb != null && bf.status !== "live") f.live = { ma, mb }; }
     ev.__live = d.updated_at; ev.odds_updated = d.updated_at; } catch (e) { /* keep baked odds */ }
 }
