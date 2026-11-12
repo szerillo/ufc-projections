@@ -3,7 +3,7 @@
  *
  * Paste this file into the sheet's Apps Script project as a NEW file (publish_to_site.gs).
  * It does not touch the loader and defines no onOpen(), so the loader's UFC menu is unchanged.
- * The "Site" menu comes from an installable On-open trigger on publishMenu_ (see PUBLISH.md).
+ * The "Site" menu comes from an installable On-open trigger on publishMenu (see PUBLISH.md).
  *
  * What it does, only when Sean runs it:
  *   1. Reads every fight row on Main Card and Prelims whose Publish checkbox (PUBLISH_COL) is ticked.
@@ -31,7 +31,8 @@ var PUB = {
   include: { rec: true, flag: true, method: true, markov: true, gtd: true }
 };
 
-function publishMenu_() {
+// No trailing underscore: Apps Script hides private (_) functions from the trigger list.
+function publishMenu() {
   SpreadsheetApp.getUi().createMenu('Site')
     .addItem('Publish to site', 'publishToSite')
     .addItem('Preview publish (no upload)', 'previewPublish')
