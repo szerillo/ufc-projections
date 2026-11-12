@@ -68,6 +68,7 @@ def main() -> int:
     fails += stamp_cases()
     fails += opponent_cases()
     fails += pending_cases()
+    fails += m0_cases()
     return 1 if fails else 0
 
 
@@ -164,6 +165,21 @@ def pending_cases() -> int:
         hard, pend = V.split_pending(doc, errs)
         ok = (len(hard) > 0) == (want_hard > 0) and len(pend) == want_pend
         print(("PASS " if ok else "FAIL ") + f"line pending, {name}: {'red' if hard else 'green'}, {len(pend)} pending")
+        fails += not ok
+    return fails
+
+
+def m0_cases() -> int:
+    """Block 52 M0: an exact 0% or 100% method share is red (blank inputs compute that way)."""
+    fails = 0
+    base = {"schema": 1, "slug": "fixture", "prices_loaded": dt.datetime.now(dt.timezone.utc).isoformat(), "params": {"b41": RADTKE["b41"], "b45": RADTKE["b45"]}}
+    for name, mut, want in (("Radtke shares as read", lambda m: None, False),
+                            ("dog KO set to exactly 0 (DEC takes it, side still sums to 1)", lambda m: m["dog"].update(dec=m["dog"]["dec"] + m["dog"]["ko"], ko=0.0), True)):
+        meth = {s_: dict(v) for s_, v in RADTKE["method"].items()}; mut(meth)
+        f = {"dog": "Charles Radtke", "fav": "Stephen Thompson", "publish": True, "inputs": {"dog_odds": 140, "fav_odds": -163}, "sheet": {}, "method": meth}
+        errs = [e for e in V.check({**base, "fights": [f]}, Path("fixture_projections.json"), odds_doc={"fights": []}) if "(M0)" in e]
+        ok = bool(errs) == want
+        print(("PASS " if ok else "FAIL ") + f"M0, {name}: {'red' if errs else 'green'}" + (f" ({errs[0]})" if errs else ""))
         fails += not ok
     return fails
 

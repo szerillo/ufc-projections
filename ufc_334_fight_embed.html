@@ -69,6 +69,7 @@ details td:last-child { text-align: right; font-variant-numeric: tabular-nums; c
 <div class="tip" id="tip"></div>
 <script>
 const SLUG = "ufc_334";
+const GAP_T = 0.2147;   // Markov-vs-sheet note: 90th percentile of |Markov - sheet| on the 8 graded cards before UFC 334 (Block 52)
 const PROJ_URL = `data/${SLUG}_projections.json`;
 const pct = (x) => x == null ? "n/a" : (100 * x).toFixed(1) + "%";
 const sgn = (x) => x == null ? "n/a" : (x > 0 ? "+" : "") + (100 * x).toFixed(1) + "%";
@@ -144,7 +145,7 @@ function render(doc, f) {
     <div class="row"><span class="lab">Sheet model</span>${splitBar("true", favW, dogW, f.fav, f.dog, "Sheet model")}</div>
     <div class="row"><span class="lab">Market no-vig</span>${splitBar("listed", 1 - s.listed, s.listed, f.fav, f.dog, "Market no-vig", true)}</div>
     ${inp.markov == null ? NOTE("markov", "Markov: not run for this fight.") : `<div class="row"><span class="lab">Markov</span>${splitBar("markov", 1 - inp.markov, inp.markov, f.fav, f.dog, "Markov", true)}</div>`}
-    ${gap != null && gap >= 0.08 ? `<div class="gap" data-rule="markov_gap">Markov and the sheet model are <b>${V("markov_gap", (100 * gap).toFixed(1) + " pts")}</b> apart on ${esc(f.dog)}. Markov is a stats-only simulation that never sees the market; the sheet gives it 15% weight, so a gap this size moves the sheet model only a little. It is a disagreement between models, not a display error.</div>` : ""}
+    ${gap != null && gap >= GAP_T ? `<div class="gap" data-rule="markov_gap">Markov and the sheet model are <b>${V("markov_gap", (100 * gap).toFixed(1) + " pts")}</b> apart on ${esc(f.dog)}. Markov is a stats-only simulation that never sees the market; the sheet gives it 15% weight, so a gap this size moves the sheet model only a little. It is a disagreement between models, not a display error.</div>` : ""}
     <div class="foot">Market no-vig is at the best bettable prices. Markov is the sim's win % as entered in the sheet, before the sheet's card shift.</div>
   </section>
 
@@ -156,7 +157,10 @@ function render(doc, f) {
     ${out.map(o => `<div class="foot">Outlier excluded: ${esc(o.book)} ${ml(o.odds)}</div>`).join("")}
   </section>
 
-  <section><h2>How it ends · method (share of all outcomes)</h2>${meth.length ? hbars(meth, Math.max(...meth.map(x => x.v))) : NOTE("method", "Method split not published for this fight.")}</section>
+  <section><h2>How it ends · method (share of all outcomes)</h2>${meth.length ? hbars(meth, Math.max(...meth.map(x => x.v))) + (() => {
+      const itd = [["fav", favW, f.fav], ["dog", dogW, f.dog]].filter(([sd]) => (m[sd] || {}).ko != null && (m[sd] || {}).sub != null)
+        .map(([sd, w, nm]) => `${esc(last(nm).replace(/^./, c => c.toUpperCase()))} <b data-k="${sd}_itd">${pct(w * (m[sd].ko + m[sd].sub))}</b>`);
+      return itd.length ? `<div class="foot">Inside the distance (KO + SUB): ${itd.join(" · ")}</div>` : ""; })() : NOTE("method", "Method split not published for this fight.")}</section>
 
   <section><h2>Goes the distance</h2>${f.gtd == null && f.gtd_listed == null ? NOTE("gtd", "Goes-the-distance numbers not published for this fight.") : `
     <div class="stat2">

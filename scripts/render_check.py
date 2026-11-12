@@ -64,6 +64,9 @@ def shown(sec: list, p: dict) -> dict:
     return out
 
 
+GAP_T = 0.2147   # Block 52: 90th percentile of |Markov J - model Q| on the 103 Snapshots rows of the 8 cards before UFC 334
+
+
 def expected2(p: dict) -> tuple[dict, set]:
     """(data-k -> text the v2 embed must show, set of data-absent keys it must show instead) from the verified file only."""
     s, i, m = p.get("sheet") or {}, p.get("inputs") or {}, p.get("method") or {}
@@ -87,12 +90,15 @@ def expected2(p: dict) -> tuple[dict, set]:
     else:
         e["markov_fav"], e["markov_dog"] = pc(1 - i["markov"]), pc(i["markov"])
         gap = abs(i["markov"] - s["true_dog"])
-        if gap >= 0.08: e["markov_gap"] = f"{100 * gap:.1f} pts"       # pre-registered Block 51 GAP rule
+        if gap >= GAP_T: e["markov_gap"] = f"{100 * gap:.1f} pts"      # Block 52 GAP rule: threshold set from earlier cards
     any_m = False
     for side, w in (("fav", s["true_fav"]), ("dog", s["true_dog"])):
         for k in ("dec", "ko", "sub"):
             v = (m.get(side) or {}).get(k)
             if v is not None: e[f"{side}_{k}"] = pc(w * v); any_m = True
+        sm = m.get(side) or {}
+        if sm.get("ko") is not None and sm.get("sub") is not None:
+            e[f"{side}_itd"] = pc(w * (sm["ko"] + sm["sub"]))           # Block 52 ITD: inside the distance, KO + SUB
     if not any_m: absent.add("method")
     h = p.get("odds_history")
     if h:
@@ -119,7 +125,15 @@ def consistency(p: dict, shown: dict) -> list[str]:
     g, dd, fd = num("gtd"), num("dog_dec"), num("fav_dec")
     if None not in (g, dd, fd) and abs(dd + fd - g) > 0.15 + 1e-9:
         bad.append(f"{tag}: shown DEC {fd:.1f} + {dd:.1f} = {fd + dd:.1f} vs shown GTD {g:.1f} (C1)")
+    for side in ("fav", "dog"):                                       # Block 52 ITD: shown ITD vs shown True % - shown DEC
+        it, t, dd = num(f"{side}_itd"), num(f"true_{side}"), num(f"{side}_dec")
+        if None not in (it, t, dd) and abs(t - dd - it) > 0.15 + 1e-9:
+            bad.append(f"{tag}: shown {side} ITD {it:.1f} vs shown True % - DEC {t - dd:.1f} (C6)")
     s, m = p.get("sheet") or {}, p.get("method") or {}
+    for side in ("fav", "dog"):                                       # C5: KO + SUB = 1 - DEC exactly in the file
+        sm = m.get(side) or {}
+        if None not in (sm.get("dec"), sm.get("ko"), sm.get("sub")) and abs(sm["ko"] + sm["sub"] - (1 - sm["dec"])) > 1e-9:
+            bad.append(f"{tag}: file {side} KO + SUB {sm['ko'] + sm['sub']:.9f} != 1 - DEC {1 - sm['dec']:.9f} (C5)")
     try:
         exact = s["true_fav"] * m["fav"]["dec"] + s["true_dog"] * m["dog"]["dec"]
         if p.get("gtd") is not None and abs(p["gtd"] - exact) > 1e-6:
@@ -147,7 +161,7 @@ async def embed2(pg, base: str, slug: str, doc: dict) -> tuple[int, list[str]]:
         for k in want_absent ^ gone:
             n += 1
             bad.append(f"{tag}: {k} " + ("is absent from the file but the embed does not say so" if k in want_absent else "is marked absent but the file has it"))
-        cons = consistency(p, seen); n += 4; bad += cons
+        cons = consistency(p, seen); n += 8; bad += cons
     return n, bad
 
 

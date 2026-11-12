@@ -214,6 +214,9 @@ def check(doc: dict, path: Path, now: dt.datetime | None = None, odds_doc: dict 
                 continue  # method shares are optional (blank until the sheet has them)
             if any(not 0 <= float(v) <= 1 for v in vals) or abs(sum(map(float, vals)) - 1) > 0.01:
                 errs.append(f"{tag}: {side} method shares {vals} not in [0,1] or not summing to 1")
+            for k, v in zip(("dec", "ko", "sub"), vals):     # Block 52 M0: an exact 0 or 100 comes from blank inputs, not a model
+                if float(v) in (0.0, 1.0):
+                    errs.append(f"{tag}: {side} {k} share is exactly {float(v) * 100:.0f}%; blank method inputs compute this way (M0)")
         g = f.get("gtd")
         if g is not None and not 0 <= float(g) <= 1:
             errs.append(f"{tag}: GTD {g} outside [0,1]")
