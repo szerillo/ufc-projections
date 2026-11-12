@@ -1,0 +1,8 @@
+MAIN GUARD: origin/main is 1cb78d94; since 727cb19c main changed only ['data/pending/ufc_334_projections.json', 'data/ufc_334_odds.json'] (allowlist: export, odds bot). Conflicts: ['data/ufc_334_odds.json']. odds file: main 2026-11-12T17:26:46Z, branch 2026-11-12T17:38:44Z -> take BRANCH's copy. Branch served set 3780 files, 0 offshore hits; main's new versions 0 hits. OK as a --no-ff merge via scripts/merge_main.sh (not a fast-forward).
+  odds conflict: main 2026-11-12T17:26:46Z, branch 2026-11-12T17:38:44Z
+  odds file resolved to the BRANCH copy, the newer
+TOTAL: 2967/2967 numbers verified; 0 mismatches/assertion failures
+SIDE CHECK: not checkable (line within 4 pts of 50%): Evan Elder
+METRICS FILE: verify_embed_metrics: 2984 values recomputed from the CSVs, 0 mismatches
+PUBLIC SCAN: 678 files (audits/ + added or modified vs origin/main), 0 hits
+MERGE READY: local branch _merge at 5c179de8 (nothing pushed). On Kirk's go: git push origin _merge:main

@@ -615,6 +615,16 @@ def negative(D, G, slug):
         def go(T, G_):
             p = T / name; s_ = p.read_text(); s2 = fn(s_); assert s2 != s_, "plant did not change the file"; p.write_text(s2)
         return go
+    def plant_any(fn):   # Kirk round 22: data-dependent plants pick the first fight page where they apply (fresh data moves targets)
+        def go(T, G_):
+            for p in sorted(T.glob("fight_*.html")):
+                s_ = p.read_text(); s2 = fn(s_)
+                if s2 != s_: p.write_text(s2); return
+            raise AssertionError("plant applied to no fight page")
+        return go
+    def unv_flip(s_):   # remove a 'price unverified' marker if the card has one; otherwise add one where none is due
+        if '<span class="unv">price unverified</span>' in s_: return s_.replace('<span class="unv">price unverified</span>', "", 1)
+        return re.sub(r'(<span class="ech (?:pos|neg|flat)"><span data-id="v\d+">[^<]*</span></span>)(?!<span class="unv">)', r'\1<span class="unv">price unverified</span>', s_, count=1)
     def bump_first(rule, fmt):
         def fn(s_):
             reg = json.load(open(D / "fight_13.registry.json"))
@@ -654,8 +664,8 @@ def negative(D, G, slug):
         ("embed: an edge chip off by 0.1 (fight 13)", plant_text("fight_13.html", bump_first("edge", "spp"))),
         ("embed: Spot to watch dropped (fight 06)", plant_text("fight_06.html", lambda s_: re.sub(r'<div class="stk spot".*?</ul></div>', "", s_, count=1, flags=re.S))),
         ("embed: Spot to watch added where no test fires (fight 05)", plant_text("fight_05.html", lambda s_: s_.replace('<div class="legend">', '<div class="stk spot" data-part="spot"><ul class="lvl"><li data-spot="T1"><b>Johnson</b> x</li></ul></div><div class="legend">', 1))),
-        ("embed: an edge under 2.0 coloured (fight 13)", plant_text("fight_13.html", lambda s_: re.sub(r'<span class="ech flat">(<span data-id="v\d+">[+-][01]\.\d%</span>)', r'<span class="ech pos">\1', s_, count=1))),
-        ("embed: 'price unverified' removed from Gordon (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace('<span class="unv">price unverified</span>', "", 1))),
+        ("embed: an edge under 2.0 coloured (first fight with one)", plant_any(lambda s_: re.sub(r'<span class="ech flat">(<span data-id="v\d+">[+-][01]\.\d%</span>)', r'<span class="ech pos">\1', s_, count=1))),
+        ("embed: 'price unverified' removed where due, or added where not due (first fight it applies to)", plant_any(unv_flip)),
         ("embed: an offshore book named on the page (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace('<span class="mvl">Line', 'Pinnacle <span class="mvl">Line', 1))),
         ("line history: a current line moved 1 pt in the file (fight 12)", lh_shift),
         ("shared input: a backtest number edited in spot_tests.json (builder and checker both read it)", st_edit),

@@ -1,0 +1,19 @@
+  (allow-publish-and-bot: not accepted; changed ['data/pending/ufc_334_projections.json', 'data/ufc_334_odds.json'], conflicts ['data/ufc_334_odds.json'], newer copy UNKNOWN, offshore hits in main's new files {})
+MAIN GUARD: origin/main is cc53108f, expected 727cb19c. REFUSING: the round-18 served-set result no longer applies.
+  main's new commits:
+    cc53108f 2026-11-12T12:36:46-05:00 odds [SIM, PLANT same updated_at as branch]
+    c265ac6f 2026-11-12T12:36:17-05:00 odds: live refresh [SIM bot, PLANTED newer price]
+    1cb78d94 2026-11-12T12:26:47-05:00 Publish ufc_334 projections from sheet (13 fights) [SIM export 2]
+    f266577d 2026-11-12T12:26:46-05:00 odds: live refresh [SIM bot]
+    37672de7 2026-11-12T12:26:30-05:00 Publish ufc_334 projections from sheet (13 fights) [SIM export 1]
+  files main changed since the check:
+    M	data/pending/ufc_334_projections.json
+    M	data/ufc_334_odds.json
+  the merge would CONFLICT:
+    1f0c8eebdfd2b10fdd7b2485c516d4cc337dfd3c
+    100644 8a4f19bc01941b5150344be00ae5e064cb258488 1	data/ufc_334_odds.json
+    100644 34aefbeee7c1cdfe770e4b186834d5f73a72728e 2	data/ufc_334_odds.json
+    100644 28c8e3f3902a988c2eb6e0a0a8a785634a941b99 3	data/ufc_334_odds.json
+    
+    Auto-merging data/ufc_334_odds.json
+    CONFLICT (content): Merge conflict in data/ufc_334_odds.json

@@ -7,7 +7,7 @@ set -euo pipefail; export EMBED_PIPELINE=1; cd "$(dirname "$0")/.."   # no lock 
 CARD="${CARD:-UFC 334: Gane vs. Hokit}"; SLUG="${SLUG:-ufc_334}"; EVENT="${EVENT:-form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json}"; ST="${ST:-/tmp/st}"
 OLD="2026-11-12T01:18:40"
 git fetch -q origin main
-python3 -I scripts/main_guard.py   # Kirk round 19 B: refuse if main moved since the served-set check (audits/MAIN_AT_CHECK.txt)
+python3 -I scripts/main_guard.py --allow-publish-and-bot   # Kirk round 22 call 1 (export/odds-bot allowlist). Round 19 B: refuse if main moved since the served-set check (audits/MAIN_AT_CHECK.txt)
 python3 -I scripts/scan_public.py --base origin/main   # Kirk round 16 call 2: secrets, offshore names, local paths, emails in audits/ + added files stop the rehearsal
 bash scripts/friday_refresh.sh "$CARD" "$SLUG" "$EVENT" "$ST" | tee /tmp/_rehearsal.txt
 python3 - "$SLUG" "$OLD" <<'PY'
@@ -24,7 +24,7 @@ print("Listed prices still unverified:", fl or "none")
 # Kirk round 17 A: an unverified Listed price is a merge blocker, not a note (round 16's dry run passed with 4 of them)
 if fl and os.environ.get("ALLOW_UNVERIFIED_LISTED") != "1": sys.exit("FAIL: Listed prices not seen at a US-regulated book in the 24 h before the export: " + ", ".join(fl))
 PY
-grep -q "0 mismatches/assertion failures" /tmp/_rehearsal.txt || { echo "FAIL: checks not green"; exit 1; }
+grep -qE "^TOTAL: [0-9]+/[0-9]+ numbers verified; 0 mismatches/assertion failures" /tmp/_rehearsal.txt || { echo "FAIL: checks not green"; exit 1; }
 python3 -I scripts/verify_fight_embeds.py --slug "$SLUG" --negative | tail -1 | tee /tmp/_neg.txt
 python3 -c "import re,sys; m=re.search(r'(\d+)/(\d+) planted errors caught', open('/tmp/_neg.txt').read()); sys.exit(0 if m and m.group(1)==m.group(2) else 'FAIL: negative suite')"
 echo "REHEARSAL PASS: ready for Kirk's merge go (nothing merged)"
