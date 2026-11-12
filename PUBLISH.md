@@ -57,6 +57,7 @@ Both files come from the repo; nothing is typed by hand. Do this before the Thur
 | T6 | Site > **Publish to site**, slug `ufc_334`, all 13 ticked (within 3 h of T4). This replaces the stale 01:18Z pending file (27 rejects). | Alert **Uploaded**; main's top commit "Publish ufc_334 projections from sheet (13 fights)". |
 | T7 | Merge `publish-to-site` into main (Claude, on Kirk's go), within 3 h of T4. | Projections check runs on the merge push, green, "Values compared: 286, mismatched: 0"; bot commit "projections: verified ...". |
 | T8 | After Pages deploys (about 1 min): `python3 -I scripts/render_check.py https://szerillo.github.io/ufc-projections ufc_334` (Claude). | "416 shown values compared, 0 mismatched" (13 fights x 16 values x page and embed). |
+| T9 | Kirk: Site > **Publish to site** once more (any time after T8). First real test of a Sheet publish starting the check on its own (the Apps Script commits through the contents API; never exercised with the workflow on main). | A Projections check run starts within 2 min and is green. No run in 2 min: Friday's manual Run workflow becomes a required step, not a fallback. |
 
 **Rollback to v2.7 (one step):** Code.gs > replace its contents with `scripts/apps_script/loader/Code_v2.7_installed.gs`
 (sha256 starts `e5233b99`; the installed file with two settings read from Script Properties, which T1 set to the same values)
