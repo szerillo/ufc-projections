@@ -253,6 +253,31 @@ def check(D, htmlfile, G):
                  and min(rr(pa_, 0).get("mins", 0), rr(pb_, 0).get("mins", 0), rr(pa_, 2).get("mins", 0), rr(pb_, 2).get("mins", 0)) >= 15
                  and ((a1 - b1 >= 1 and b3 - a3 >= 1) or (b1 - a1 >= 1 and a3 - b3 >= 1)))
         if wantf != ('class="flip"' in page): bad.append(("flag", "flip", f"page {'class=\"flip\"' in page} vs recomputed {wantf}"))
+        # Block 59j: feed sanity, recomputed here: a broken method or distance market must show "price unavailable" and no number
+        cz = lambda s_: sq(ALIAS.get(sq(s_), s_))
+        of_ = next((x for x in G["ODDS"]["fights"] if {cz(x["fighter_a"]["name"]), cz(x["fighter_b"]["name"])} == {cz(reg["pair"][0]), cz(reg["pair"][1])}), None)
+        if of_:
+            ip = lambda m: 100 / (m + 100) if m > 0 else -m / (-m + 100)
+            mv_ = of_["markets"].get("method_of_victory") or []
+            ex_ = [x for x in mv_ if x["label"].endswith(("KO/TKO/DQ", "Submission", "Points")) or x["label"] == "Draw"]
+            mbad = (sum(ip(x["books"]["consensus"]["cost"]) for x in ex_) > 1.40 or any(x["label"] == "Draw" and x["books"]["consensus"]["cost"] < 1000 for x in mv_)
+                    or sum(1 for x in mv_ if x.get("opening_cost") == 100) >= 2)
+            dbad = {x["label"] for x in (of_["markets"].get("fight_distance") or [])} != {"Yes", "No"}
+            used = {r_["args"].get("market") for r_ in reg["rows"] if r_["rule"] in ("bp", "bp_imp", "bp_imp_sum")}
+            if mbad and "method_of_victory" in used: bad.append(("feed", "method", "number shown from a market that fails the sanity rule"))
+            if dbad and "fight_distance" in used: bad.append(("feed", "distance", "number shown from a market that fails the sanity rule"))
+            npu = page.count(">price unavailable<"); want_pu = (8 if mbad else 0) + (2 if dbad else 0)
+            if npu != want_pu: bad.append(("feed", "label", f"{npu} 'price unavailable' cells, want {want_pu}"))
+        # Block 59j: footer timestamps must be the sources' own
+        st_ = re.search(r'<div class="stamps">(.*?)</div>', page)
+        if not st_: bad.append(("footer", "stamps", "no source timestamps"))
+        else:
+            want_ = [G["ODDS"]["updated_at"].replace("T", " ")[:16]]
+            if reg.get("published_at"): want_.append(reg["published_at"].replace("T", " ")[:16])
+            exp_pub = json.loads(Path(REPO / reg["proj_file"]).read_text()).get("published_at") if reg.get("proj_file", "").endswith("projections.json") else None
+            if exp_pub and exp_pub.replace("T", " ")[:16] not in st_.group(1): bad.append(("footer", "stamps", "sheet export time differs from the export file"))
+            for w_ in want_:
+                if w_ not in st_.group(1): bad.append(("footer", "stamps", f"{w_} missing"))
         # the decision-model accuracy quoted in the Cardio key must match labs.json
         acc_ = re.search(r"decisions (\d+)% of the time", page)
         if acc_ and int(acc_.group(1)) != round(json.loads((FD / "labs.json").read_text())["scoring"]["acc"] * 100): bad.append(("text", "key", "judging-model accuracy in the key"))

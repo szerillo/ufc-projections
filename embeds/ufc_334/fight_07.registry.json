@@ -1064,6 +1064,30 @@
   },
   {
    "id": "v85",
+   "text": "27",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 27
+  },
+  {
+   "id": "v86",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 8
+  },
+  {
+   "id": "v87",
    "text": "57%",
    "fmt": "pct0",
    "rule": "em",
@@ -1075,7 +1099,7 @@
    "raw": 0.5744
   },
   {
-   "id": "v86",
+   "id": "v88",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1087,19 +1111,7 @@
    "raw": 2
   },
   {
-   "id": "v87",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Drew Dober",
-    "path": "last5.fights"
-   },
-   "desc": "Power: drops or stops them on the feet last5 n a",
-   "raw": 5
-  },
-  {
-   "id": "v88",
+   "id": "v89",
    "text": "12",
    "fmt": "int",
    "rule": "em",
@@ -1109,18 +1121,6 @@
    },
    "desc": "Power: drops or stops them on the feet count a",
    "raw": 12
-  },
-  {
-   "id": "v89",
-   "text": "27",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Drew Dober",
-    "path": "ufc_fights"
-   },
-   "desc": "Power: drops or stops them on the feet fights a",
-   "raw": 27
   },
   {
    "id": "v90",
@@ -1148,18 +1148,6 @@
   },
   {
    "id": "v92",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Chris Duncan",
-    "path": "last5.fights"
-   },
-   "desc": "Power: drops or stops them on the feet last5 n b",
-   "raw": 5
-  },
-  {
-   "id": "v93",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1171,19 +1159,7 @@
    "raw": 2
   },
   {
-   "id": "v94",
-   "text": "8",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Chris Duncan",
-    "path": "ufc_fights"
-   },
-   "desc": "Power: drops or stops them on the feet fights b",
-   "raw": 8
-  },
-  {
-   "id": "v95",
+   "id": "v93",
    "text": "23%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -1195,7 +1171,7 @@
    "raw": 0.2309
   },
   {
-   "id": "v96",
+   "id": "v94",
    "text": "21%",
    "fmt": "pct0",
    "rule": "em",
@@ -1207,7 +1183,7 @@
    "raw": 0.2077
   },
   {
-   "id": "v97",
+   "id": "v95",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1219,19 +1195,7 @@
    "raw": 1
   },
   {
-   "id": "v98",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Drew Dober",
-    "path": "last5.fights"
-   },
-   "desc": "Durability: gets dropped or stopped last5 n a",
-   "raw": 5
-  },
-  {
-   "id": "v99",
+   "id": "v96",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1243,19 +1207,7 @@
    "raw": 3
   },
   {
-   "id": "v100",
-   "text": "27",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Drew Dober",
-    "path": "ufc_fights"
-   },
-   "desc": "Durability: gets dropped or stopped fights a",
-   "raw": 27
-  },
-  {
-   "id": "v101",
+   "id": "v97",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1267,7 +1219,7 @@
    "raw": 0.0
   },
   {
-   "id": "v102",
+   "id": "v98",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1279,19 +1231,7 @@
    "raw": 0
   },
   {
-   "id": "v103",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Chris Duncan",
-    "path": "last5.fights"
-   },
-   "desc": "Durability: gets dropped or stopped last5 n b",
-   "raw": 5
-  },
-  {
-   "id": "v104",
+   "id": "v99",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1303,19 +1243,7 @@
    "raw": 0
   },
   {
-   "id": "v105",
-   "text": "8",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Chris Duncan",
-    "path": "ufc_fights"
-   },
-   "desc": "Durability: gets dropped or stopped fights b",
-   "raw": 8
-  },
-  {
-   "id": "v106",
+   "id": "v100",
    "text": "26%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -1327,7 +1255,7 @@
    "raw": 0.2582
   },
   {
-   "id": "v107",
+   "id": "v101",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -1339,7 +1267,7 @@
    "raw": 11
   },
   {
-   "id": "v108",
+   "id": "v102",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1351,7 +1279,7 @@
    "raw": 3
   },
   {
-   "id": "v109",
+   "id": "v103",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1363,7 +1291,7 @@
    "raw": 4
   },
   {
-   "id": "v110",
+   "id": "v104",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1375,7 +1303,7 @@
    "raw": 4
   },
   {
-   "id": "v111",
+   "id": "v105",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1387,7 +1315,7 @@
    "raw": 3
   },
   {
-   "id": "v112",
+   "id": "v106",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1399,7 +1327,7 @@
    "raw": 3
   },
   {
-   "id": "v113",
+   "id": "v107",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1411,7 +1339,7 @@
    "raw": 2
   },
   {
-   "id": "v114",
+   "id": "v108",
    "text": "56%",
    "fmt": "pct0",
    "rule": "em",
@@ -1423,7 +1351,7 @@
    "raw": 0.5556
   },
   {
-   "id": "v115",
+   "id": "v109",
    "text": "+0.1",
    "fmt": "s1",
    "rule": "em",
@@ -1435,7 +1363,7 @@
    "raw": 0.066
   },
   {
-   "id": "v116",
+   "id": "v110",
    "text": "27",
    "fmt": "int",
    "rule": "em",
@@ -1447,7 +1375,7 @@
    "raw": 27
   },
   {
-   "id": "v117",
+   "id": "v111",
    "text": "47%",
    "fmt": "pct0",
    "rule": "em",
@@ -1459,7 +1387,7 @@
    "raw": 0.4706
   },
   {
-   "id": "v118",
+   "id": "v112",
    "text": "+0.8",
    "fmt": "s1",
    "rule": "em",
@@ -1471,7 +1399,7 @@
    "raw": 0.752
   },
   {
-   "id": "v119",
+   "id": "v113",
    "text": "17",
    "fmt": "int",
    "rule": "em",
@@ -1483,7 +1411,7 @@
    "raw": 17
   },
   {
-   "id": "v120",
+   "id": "v114",
    "text": "36%",
    "fmt": "pct0",
    "rule": "em",
@@ -1495,7 +1423,7 @@
    "raw": 0.3636
   },
   {
-   "id": "v121",
+   "id": "v115",
    "text": "-0.7",
    "fmt": "s1",
    "rule": "em",
@@ -1507,7 +1435,7 @@
    "raw": -0.71
   },
   {
-   "id": "v122",
+   "id": "v116",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -1519,7 +1447,7 @@
    "raw": 11
   },
   {
-   "id": "v123",
+   "id": "v117",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -1531,7 +1459,7 @@
    "raw": 0.5
   },
   {
-   "id": "v124",
+   "id": "v118",
    "text": "-0.2",
    "fmt": "s1",
    "rule": "em",
@@ -1543,7 +1471,7 @@
    "raw": -0.213
   },
   {
-   "id": "v125",
+   "id": "v119",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -1555,7 +1483,7 @@
    "raw": 8
   },
   {
-   "id": "v126",
+   "id": "v120",
    "text": "60%",
    "fmt": "pct0",
    "rule": "em",
@@ -1567,7 +1495,7 @@
    "raw": 0.6
   },
   {
-   "id": "v127",
+   "id": "v121",
    "text": "+0.0",
    "fmt": "s1",
    "rule": "em",
@@ -1579,7 +1507,7 @@
    "raw": 0.0
   },
   {
-   "id": "v128",
+   "id": "v122",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1591,7 +1519,7 @@
    "raw": 5
   },
   {
-   "id": "v129",
+   "id": "v123",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1603,7 +1531,7 @@
    "raw": 1.0
   },
   {
-   "id": "v130",
+   "id": "v124",
    "text": "+2.2",
    "fmt": "s1",
    "rule": "em",
@@ -1615,7 +1543,7 @@
    "raw": 2.2
   },
   {
-   "id": "v131",
+   "id": "v125",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1627,7 +1555,7 @@
    "raw": 3
   },
   {
-   "id": "v132",
+   "id": "v126",
    "text": "-7",
    "fmt": "sint",
    "rule": "em",
@@ -1639,7 +1567,7 @@
    "raw": -7
   },
   {
-   "id": "v133",
+   "id": "v127",
    "text": "+11",
    "fmt": "sint",
    "rule": "em",
@@ -1651,7 +1579,7 @@
    "raw": 11
   },
   {
-   "id": "v134",
+   "id": "v128",
    "text": "-20",
    "fmt": "sint",
    "rule": "em",
@@ -1663,7 +1591,7 @@
    "raw": -20
   },
   {
-   "id": "v135",
+   "id": "v129",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1675,7 +1603,7 @@
    "raw": 4
   },
   {
-   "id": "v136",
+   "id": "v130",
    "text": "+0",
    "fmt": "sint",
    "rule": "em",
@@ -1687,7 +1615,7 @@
    "raw": 0
   },
   {
-   "id": "v137",
+   "id": "v131",
    "text": "+25",
    "fmt": "sint",
    "rule": "em",
@@ -1699,7 +1627,7 @@
    "raw": 25
   },
   {
-   "id": "v138",
+   "id": "v132",
    "text": "-15",
    "fmt": "sint",
    "rule": "em",
@@ -1711,7 +1639,7 @@
    "raw": -15
   },
   {
-   "id": "v139",
+   "id": "v133",
    "text": "-22",
    "fmt": "sint",
    "rule": "em",
@@ -1723,7 +1651,7 @@
    "raw": -22
   },
   {
-   "id": "v140",
+   "id": "v134",
    "text": "+0",
    "fmt": "sint",
    "rule": "em",
@@ -1735,7 +1663,7 @@
    "raw": 0
   },
   {
-   "id": "v141",
+   "id": "v135",
    "text": "-19",
    "fmt": "sint",
    "rule": "em",
@@ -1747,7 +1675,7 @@
    "raw": -19
   },
   {
-   "id": "v142",
+   "id": "v136",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1759,7 +1687,7 @@
    "raw": 4
   },
   {
-   "id": "v143",
+   "id": "v137",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1771,7 +1699,7 @@
    "raw": 2
   },
   {
-   "id": "v144",
+   "id": "v138",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
@@ -1783,7 +1711,7 @@
    "raw": 8
   },
   {
-   "id": "v145",
+   "id": "v139",
    "text": "+6",
    "fmt": "sint",
    "rule": "em",
@@ -1795,7 +1723,7 @@
    "raw": 6
   },
   {
-   "id": "v146",
+   "id": "v140",
    "text": "+11",
    "fmt": "sint",
    "rule": "em",
@@ -1807,7 +1735,7 @@
    "raw": 11
   },
   {
-   "id": "v147",
+   "id": "v141",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1819,7 +1747,7 @@
    "raw": 4
   },
   {
-   "id": "v148",
+   "id": "v142",
    "text": "+7",
    "fmt": "sint",
    "rule": "em",
@@ -1831,7 +1759,7 @@
    "raw": 7
   },
   {
-   "id": "v149",
+   "id": "v143",
    "text": "+13",
    "fmt": "sint",
    "rule": "em",
@@ -1843,7 +1771,7 @@
    "raw": 13
   },
   {
-   "id": "v150",
+   "id": "v144",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1855,7 +1783,7 @@
    "raw": 4
   },
   {
-   "id": "v151",
+   "id": "v145",
    "text": "-11",
    "fmt": "sint",
    "rule": "em",
@@ -1867,7 +1795,7 @@
    "raw": -11
   },
   {
-   "id": "v152",
+   "id": "v146",
    "text": "+10",
    "fmt": "sint",
    "rule": "em",
@@ -1879,7 +1807,7 @@
    "raw": 10
   },
   {
-   "id": "v153",
+   "id": "v147",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -1891,7 +1819,7 @@
    "raw": 1
   },
   {
-   "id": "v154",
+   "id": "v148",
    "text": "-1",
    "fmt": "sint",
    "rule": "em",
@@ -1903,7 +1831,7 @@
    "raw": -1
   },
   {
-   "id": "v155",
+   "id": "v149",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -1915,7 +1843,7 @@
    "raw": -4
   },
   {
-   "id": "v156",
+   "id": "v150",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -1927,7 +1855,7 @@
    "raw": 1
   },
   {
-   "id": "v157",
+   "id": "v151",
    "text": "-2",
    "fmt": "sint",
    "rule": "em",
@@ -1939,7 +1867,7 @@
    "raw": -2
   },
   {
-   "id": "v158",
+   "id": "v152",
    "text": "-3",
    "fmt": "sint",
    "rule": "em",
@@ -1951,7 +1879,7 @@
    "raw": -3
   },
   {
-   "id": "v159",
+   "id": "v153",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1963,7 +1891,7 @@
    "raw": 2
   },
   {
-   "id": "v160",
+   "id": "v154",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
@@ -1975,7 +1903,7 @@
    "raw": 8
   },
   {
-   "id": "v161",
+   "id": "v155",
    "text": "-1",
    "fmt": "sint",
    "rule": "em",
@@ -1987,7 +1915,7 @@
    "raw": -1
   },
   {
-   "id": "v162",
+   "id": "v156",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1999,7 +1927,7 @@
    "raw": 4
   },
   {
-   "id": "v163",
+   "id": "v157",
    "text": "-17",
    "fmt": "sint",
    "rule": "em",
@@ -2011,7 +1939,7 @@
    "raw": -17
   },
   {
-   "id": "v164",
+   "id": "v158",
    "text": "+17",
    "fmt": "sint",
    "rule": "em",
@@ -2023,7 +1951,7 @@
    "raw": 17
   },
   {
-   "id": "v165",
+   "id": "v159",
    "text": "-6",
    "fmt": "sint",
    "rule": "em",
@@ -2035,7 +1963,7 @@
    "raw": -6
   },
   {
-   "id": "v166",
+   "id": "v160",
    "text": "-7",
    "fmt": "sint",
    "rule": "em",
@@ -2047,7 +1975,7 @@
    "raw": -7
   },
   {
-   "id": "v167",
+   "id": "v161",
    "text": "+19",
    "fmt": "sint",
    "rule": "em",
@@ -2059,7 +1987,7 @@
    "raw": 19
   },
   {
-   "id": "v168",
+   "id": "v162",
    "text": "-10",
    "fmt": "sint",
    "rule": "em",
@@ -2071,7 +1999,7 @@
    "raw": -10
   },
   {
-   "id": "v169",
+   "id": "v163",
    "text": "+10",
    "fmt": "sint",
    "rule": "em",
@@ -2083,7 +2011,7 @@
    "raw": 10
   },
   {
-   "id": "v170",
+   "id": "v164",
    "text": "+30",
    "fmt": "sint",
    "rule": "em",
@@ -2095,7 +2023,7 @@
    "raw": 30
   },
   {
-   "id": "v171",
+   "id": "v165",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
@@ -2107,7 +2035,7 @@
    "raw": 8
   },
   {
-   "id": "v172",
+   "id": "v166",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -2119,7 +2047,7 @@
    "raw": 1
   },
   {
-   "id": "v173",
+   "id": "v167",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -2131,7 +2059,7 @@
    "raw": 1
   },
   {
-   "id": "v174",
+   "id": "v168",
    "text": "+11",
    "fmt": "sint",
    "rule": "em",
@@ -2143,7 +2071,7 @@
    "raw": 11
   },
   {
-   "id": "v175",
+   "id": "v169",
    "text": "-14",
    "fmt": "sint",
    "rule": "em",
@@ -2155,7 +2083,7 @@
    "raw": -14
   },
   {
-   "id": "v176",
+   "id": "v170",
    "text": "+13",
    "fmt": "sint",
    "rule": "em",
@@ -2167,7 +2095,7 @@
    "raw": 13
   },
   {
-   "id": "v177",
+   "id": "v171",
    "text": "+3",
    "fmt": "sint",
    "rule": "em",
@@ -2179,7 +2107,7 @@
    "raw": 3
   },
   {
-   "id": "v178",
+   "id": "v172",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -2191,7 +2119,7 @@
    "raw": -4
   },
   {
-   "id": "v179",
+   "id": "v173",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
@@ -2203,7 +2131,7 @@
    "raw": 8
   },
   {
-   "id": "v180",
+   "id": "v174",
    "text": "-14",
    "fmt": "sint",
    "rule": "em",
@@ -2215,7 +2143,7 @@
    "raw": -14
   },
   {
-   "id": "v181",
+   "id": "v175",
    "text": "+0",
    "fmt": "sint",
    "rule": "em",
@@ -2227,7 +2155,7 @@
    "raw": 0
   },
   {
-   "id": "v182",
+   "id": "v176",
    "text": "+10",
    "fmt": "sint",
    "rule": "em",
@@ -2239,7 +2167,7 @@
    "raw": 10
   },
   {
-   "id": "v183",
+   "id": "v177",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -2251,7 +2179,7 @@
    "raw": -4
   },
   {
-   "id": "v184",
+   "id": "v178",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -2263,7 +2191,7 @@
    "raw": -4
   },
   {
-   "id": "v185",
+   "id": "v179",
    "text": "-10",
    "fmt": "sint",
    "rule": "em",
@@ -2275,7 +2203,7 @@
    "raw": -10
   },
   {
-   "id": "v186",
+   "id": "v180",
    "text": "-27",
    "fmt": "sint",
    "rule": "em",
@@ -2287,7 +2215,7 @@
    "raw": -27
   },
   {
-   "id": "v187",
+   "id": "v181",
    "text": "+3",
    "fmt": "sint",
    "rule": "em",
@@ -2299,7 +2227,7 @@
    "raw": 3
   },
   {
-   "id": "v188",
+   "id": "v182",
    "text": "+7",
    "fmt": "sint",
    "rule": "em",
@@ -2311,7 +2239,7 @@
    "raw": 7
   },
   {
-   "id": "v189",
+   "id": "v183",
    "text": "-13",
    "fmt": "sint",
    "rule": "em",
@@ -2323,7 +2251,7 @@
    "raw": -13
   },
   {
-   "id": "v190",
+   "id": "v184",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
@@ -2335,7 +2263,7 @@
    "raw": 8
   },
   {
-   "id": "v191",
+   "id": "v185",
    "text": "-18",
    "fmt": "sint",
    "rule": "em",
@@ -2347,7 +2275,7 @@
    "raw": -18
   },
   {
-   "id": "v192",
+   "id": "v186",
    "text": "-2",
    "fmt": "sint",
    "rule": "em",
@@ -2359,7 +2287,7 @@
    "raw": -2
   },
   {
-   "id": "v193",
+   "id": "v187",
    "text": "+10",
    "fmt": "sint",
    "rule": "em",
@@ -2371,7 +2299,7 @@
    "raw": 10
   },
   {
-   "id": "v194",
+   "id": "v188",
    "text": "-2",
    "fmt": "sint",
    "rule": "em",
@@ -2383,7 +2311,7 @@
    "raw": -2
   },
   {
-   "id": "v195",
+   "id": "v189",
    "text": "+3",
    "fmt": "sint",
    "rule": "em",
@@ -2395,7 +2323,7 @@
    "raw": 3
   },
   {
-   "id": "v196",
+   "id": "v190",
    "text": "-13",
    "fmt": "sint",
    "rule": "em",
@@ -2407,7 +2335,7 @@
    "raw": -13
   },
   {
-   "id": "v197",
+   "id": "v191",
    "text": "-9",
    "fmt": "sint",
    "rule": "em",
@@ -2419,7 +2347,7 @@
    "raw": -9
   },
   {
-   "id": "v198",
+   "id": "v192",
    "text": "+12",
    "fmt": "sint",
    "rule": "em",
@@ -2431,7 +2359,7 @@
    "raw": 12
   },
   {
-   "id": "v199",
+   "id": "v193",
    "text": "+7",
    "fmt": "sint",
    "rule": "em",
@@ -2443,7 +2371,7 @@
    "raw": 7
   },
   {
-   "id": "v200",
+   "id": "v194",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -2455,7 +2383,7 @@
    "raw": 4
   },
   {
-   "id": "v201",
+   "id": "v195",
    "text": "+28",
    "fmt": "sint",
    "rule": "em",
@@ -2467,7 +2395,7 @@
    "raw": 28
   },
   {
-   "id": "v202",
+   "id": "v196",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -2479,7 +2407,7 @@
    "raw": 1
   },
   {
-   "id": "v203",
+   "id": "v197",
    "text": "0.61",
    "fmt": "n2",
    "rule": "em",
@@ -2491,7 +2419,7 @@
    "raw": 0.608
   },
   {
-   "id": "v204",
+   "id": "v198",
    "text": "2.79",
    "fmt": "n2",
    "rule": "em",
@@ -2503,7 +2431,7 @@
    "raw": 2.795
   },
   {
-   "id": "v205",
+   "id": "v199",
    "text": "17%",
    "fmt": "pct0",
    "rule": "em",
@@ -2515,7 +2443,7 @@
    "raw": 0.1698
   },
   {
-   "id": "v206",
+   "id": "v200",
    "text": "41%",
    "fmt": "pct0",
    "rule": "em",
@@ -2527,7 +2455,7 @@
    "raw": 0.4062
   },
   {
-   "id": "v207",
+   "id": "v201",
    "text": "58%",
    "fmt": "pct0",
    "rule": "em",
@@ -2539,7 +2467,7 @@
    "raw": 0.5821
   },
   {
-   "id": "v208",
+   "id": "v202",
    "text": "56%",
    "fmt": "pct0",
    "rule": "em",
@@ -2551,7 +2479,7 @@
    "raw": 0.5556
   },
   {
-   "id": "v209",
+   "id": "v203",
    "text": "13%",
    "fmt": "pct0",
    "rule": "em",
@@ -2563,7 +2491,7 @@
    "raw": 0.1321
   },
   {
-   "id": "v210",
+   "id": "v204",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em",
@@ -2575,7 +2503,7 @@
    "raw": 0.2183
   },
   {
-   "id": "v211",
+   "id": "v205",
    "text": "-9.0%",
    "fmt": "spp",
    "rule": "em",
@@ -2587,7 +2515,7 @@
    "raw": -0.0897
   },
   {
-   "id": "v212",
+   "id": "v206",
    "text": "+12.2%",
    "fmt": "spp",
    "rule": "em",
@@ -2599,7 +2527,7 @@
    "raw": 0.1218
   },
   {
-   "id": "v213",
+   "id": "v207",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em",
@@ -2611,7 +2539,7 @@
    "raw": 0.2209
   },
   {
-   "id": "v214",
+   "id": "v208",
    "text": "10%",
    "fmt": "pct0",
    "rule": "em",
@@ -2623,7 +2551,7 @@
    "raw": 0.097
   },
   {
-   "id": "v215",
+   "id": "v209",
    "text": "0.07",
    "fmt": "n2",
    "rule": "em",
@@ -2635,7 +2563,7 @@
    "raw": 0.068
   },
   {
-   "id": "v216",
+   "id": "v210",
    "text": "0.65",
    "fmt": "n2",
    "rule": "em",
@@ -2647,7 +2575,7 @@
    "raw": 0.645
   },
   {
-   "id": "v217",
+   "id": "v211",
    "text": "+0.15",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2663,7 +2591,7 @@
    "raw": 0.15300000000000002
   },
   {
-   "id": "v218",
+   "id": "v212",
    "text": "+0.37",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2679,7 +2607,7 @@
    "raw": 0.372
   },
   {
-   "id": "v219",
+   "id": "v213",
    "text": "+0.15",
    "fmt": "s2",
    "rule": "em",
@@ -2691,7 +2619,7 @@
    "raw": 0.148
   },
   {
-   "id": "v220",
+   "id": "v214",
    "text": "+0.37",
    "fmt": "s2",
    "rule": "em",
@@ -2703,7 +2631,7 @@
    "raw": 0.373
   },
   {
-   "id": "v221",
+   "id": "v215",
    "text": "12",
    "fmt": "int",
    "rule": "em",
@@ -2715,7 +2643,7 @@
    "raw": 12
   },
   {
-   "id": "v222",
+   "id": "v216",
    "text": "27",
    "fmt": "int",
    "rule": "em",
@@ -2727,7 +2655,7 @@
    "raw": 27
   },
   {
-   "id": "v223",
+   "id": "v217",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -2739,7 +2667,7 @@
    "raw": 4
   },
   {
-   "id": "v224",
+   "id": "v218",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -2751,7 +2679,7 @@
    "raw": 8
   },
   {
-   "id": "v225",
+   "id": "v219",
    "text": "-0.24",
    "fmt": "s2",
    "rule": "em",
@@ -2763,7 +2691,7 @@
    "raw": -0.239
   },
   {
-   "id": "v226",
+   "id": "v220",
    "text": "-0.33",
    "fmt": "s2",
    "rule": "em",
@@ -2775,7 +2703,7 @@
    "raw": -0.33
   },
   {
-   "id": "v227",
+   "id": "v221",
    "text": "+0.13",
    "fmt": "s2",
    "rule": "em",
@@ -2787,7 +2715,7 @@
    "raw": 0.126
   },
   {
-   "id": "v228",
+   "id": "v222",
    "text": "+0.56",
    "fmt": "s2",
    "rule": "em",
@@ -2799,7 +2727,7 @@
    "raw": 0.559
   },
   {
-   "id": "v229",
+   "id": "v223",
    "text": "+0.27",
    "fmt": "s2",
    "rule": "em",
@@ -2811,7 +2739,7 @@
    "raw": 0.266
   },
   {
-   "id": "v230",
+   "id": "v224",
    "text": "+0.14",
    "fmt": "s2",
    "rule": "em",
@@ -2823,7 +2751,7 @@
    "raw": 0.143
   },
   {
-   "id": "v231",
+   "id": "v225",
    "text": "59%",
    "fmt": "pct0",
    "rule": "em",
@@ -2835,7 +2763,7 @@
    "raw": 0.5917
   },
   {
-   "id": "v232",
+   "id": "v226",
    "text": "58%",
    "fmt": "pct0",
    "rule": "em",
@@ -2847,7 +2775,7 @@
    "raw": 0.5827
   },
   {
-   "id": "v233",
+   "id": "v227",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -2859,7 +2787,7 @@
    "raw": 4
   },
   {
-   "id": "v234",
+   "id": "v228",
    "text": "15",
    "fmt": "int",
    "rule": "em",
@@ -2871,7 +2799,7 @@
    "raw": 15
   },
   {
-   "id": "v235",
+   "id": "v229",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -2883,7 +2811,7 @@
    "raw": 4
   },
   {
-   "id": "v236",
+   "id": "v230",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -2895,7 +2823,7 @@
    "raw": 8
   },
   {
-   "id": "v237",
+   "id": "v231",
    "text": "104%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2909,7 +2837,7 @@
    "raw": 1.038
   },
   {
-   "id": "v238",
+   "id": "v232",
    "text": "125%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2923,7 +2851,7 @@
    "raw": 1.253
   },
   {
-   "id": "v239",
+   "id": "v233",
    "text": "8.2",
    "fmt": "n1",
    "rule": "em",
@@ -2935,7 +2863,7 @@
    "raw": 8.237
   },
   {
-   "id": "v240",
+   "id": "v234",
    "text": "8.7",
    "fmt": "n1",
    "rule": "em",
@@ -2947,7 +2875,7 @@
    "raw": 8.721
   },
   {
-   "id": "v241",
+   "id": "v235",
    "text": "38%",
    "fmt": "pct0",
    "rule": "em",
@@ -2959,7 +2887,7 @@
    "raw": 0.3846
   },
   {
-   "id": "v242",
+   "id": "v236",
    "text": "38%",
    "fmt": "pct0",
    "rule": "em",
@@ -2971,7 +2899,7 @@
    "raw": 0.375
   },
   {
-   "id": "v243",
+   "id": "v237",
    "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2983,7 +2911,7 @@
    "raw": 0.745
   },
   {
-   "id": "v244",
+   "id": "v238",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2995,7 +2923,7 @@
    "raw": 0.576
   },
   {
-   "id": "v245",
+   "id": "v239",
    "text": "627",
    "fmt": "int",
    "rule": "labs_live",
@@ -3007,7 +2935,7 @@
    "raw": 627
   },
   {
-   "id": "v246",
+   "id": "v240",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -3019,7 +2947,7 @@
    "raw": 0.551
   },
   {
-   "id": "v247",
+   "id": "v241",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -3031,7 +2959,7 @@
    "raw": 0.359
   },
   {
-   "id": "v248",
+   "id": "v242",
    "text": "198",
    "fmt": "int",
    "rule": "labs_live",
@@ -3043,7 +2971,7 @@
    "raw": 198
   },
   {
-   "id": "v249",
+   "id": "v243",
    "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -3055,7 +2983,7 @@
    "raw": 0.412
   },
   {
-   "id": "v250",
+   "id": "v244",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -3067,7 +2995,7 @@
    "raw": 0.485
   },
   {
-   "id": "v251",
+   "id": "v245",
    "text": "194",
    "fmt": "int",
    "rule": "labs_live",
@@ -3079,7 +3007,7 @@
    "raw": 194
   },
   {
-   "id": "v252",
+   "id": "v246",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -3092,7 +3020,7 @@
    "raw": -208
   },
   {
-   "id": "v253",
+   "id": "v247",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -3105,7 +3033,7 @@
    "raw": -328
   },
   {
-   "id": "v254",
+   "id": "v248",
    "text": "+105",
    "fmt": "ml",
    "rule": "fight",
@@ -3118,7 +3046,7 @@
    "raw": 105
   },
   {
-   "id": "v255",
+   "id": "v249",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -3131,7 +3059,7 @@
    "raw": 100
   },
   {
-   "id": "v256",
+   "id": "v250",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -3144,7 +3072,7 @@
    "raw": 170
   },
   {
-   "id": "v257",
+   "id": "v251",
    "text": "-417",
    "fmt": "ml",
    "rule": "fight",
@@ -3157,7 +3085,7 @@
    "raw": -417
   },
   {
-   "id": "v258",
+   "id": "v252",
    "text": "-222",
    "fmt": "ml",
    "rule": "fight",
@@ -3170,7 +3098,7 @@
    "raw": -222
   },
   {
-   "id": "v259",
+   "id": "v253",
    "text": "-156",
    "fmt": "ml",
    "rule": "fight",
@@ -3183,7 +3111,7 @@
    "raw": -156
   },
   {
-   "id": "v260",
+   "id": "v254",
    "text": "-169",
    "fmt": "ml",
    "rule": "fight",
@@ -3196,7 +3124,7 @@
    "raw": -169
   },
   {
-   "id": "v261",
+   "id": "v255",
    "text": "-161",
    "fmt": "ml",
    "rule": "fight",
@@ -3209,7 +3137,7 @@
    "raw": -161
   },
   {
-   "id": "v262",
+   "id": "v256",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -3222,7 +3150,7 @@
    "raw": -132
   },
   {
-   "id": "v263",
+   "id": "v257",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -3235,7 +3163,7 @@
    "raw": -112
   },
   {
-   "id": "v264",
+   "id": "v258",
    "text": "+190",
    "fmt": "ml",
    "rule": "fight",
@@ -3248,7 +3176,7 @@
    "raw": 190
   },
   {
-   "id": "v265",
+   "id": "v259",
    "text": "+310",
    "fmt": "ml",
    "rule": "fight",
@@ -3261,7 +3189,7 @@
    "raw": 310
   },
   {
-   "id": "v266",
+   "id": "v260",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -3274,7 +3202,7 @@
    "raw": 155
   },
   {
-   "id": "v267",
+   "id": "v261",
    "text": "+145",
    "fmt": "ml",
    "rule": "fight",
@@ -3287,7 +3215,7 @@
    "raw": 145
   },
   {
-   "id": "v268",
+   "id": "v262",
    "text": "-110",
    "fmt": "ml",
    "rule": "fight",

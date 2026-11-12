@@ -1041,6 +1041,30 @@
   },
   {
    "id": "v83",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 14
+  },
+  {
+   "id": "v84",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 3
+  },
+  {
+   "id": "v85",
    "text": "2%",
    "fmt": "pct0",
    "rule": "em",
@@ -1052,7 +1076,7 @@
    "raw": 0.0241
   },
   {
-   "id": "v84",
+   "id": "v86",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1064,19 +1088,7 @@
    "raw": 0
   },
   {
-   "id": "v85",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Macy Chiasson",
-    "path": "last5.fights"
-   },
-   "desc": "Power: drops or stops them on the feet last5 n a",
-   "raw": 5
-  },
-  {
-   "id": "v86",
+   "id": "v87",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1086,18 +1098,6 @@
    },
    "desc": "Power: drops or stops them on the feet count a",
    "raw": 2
-  },
-  {
-   "id": "v87",
-   "text": "14",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Macy Chiasson",
-    "path": "ufc_fights"
-   },
-   "desc": "Power: drops or stops them on the feet fights a",
-   "raw": 14
   },
   {
    "id": "v88",
@@ -1125,18 +1125,6 @@
   },
   {
    "id": "v90",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "path": "last5.fights"
-   },
-   "desc": "Power: drops or stops them on the feet last5 n b",
-   "raw": 3
-  },
-  {
-   "id": "v91",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1148,19 +1136,7 @@
    "raw": 0
   },
   {
-   "id": "v92",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "path": "ufc_fights"
-   },
-   "desc": "Power: drops or stops them on the feet fights b",
-   "raw": 3
-  },
-  {
-   "id": "v93",
+   "id": "v91",
    "text": "9%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -1172,7 +1148,7 @@
    "raw": 0.0885
   },
   {
-   "id": "v94",
+   "id": "v92",
    "text": "7%",
    "fmt": "pct0",
    "rule": "em",
@@ -1184,7 +1160,7 @@
    "raw": 0.0676
   },
   {
-   "id": "v95",
+   "id": "v93",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1196,19 +1172,7 @@
    "raw": 0
   },
   {
-   "id": "v96",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Macy Chiasson",
-    "path": "last5.fights"
-   },
-   "desc": "Durability: gets dropped or stopped last5 n a",
-   "raw": 5
-  },
-  {
-   "id": "v97",
+   "id": "v94",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1220,19 +1184,7 @@
    "raw": 1
   },
   {
-   "id": "v98",
-   "text": "14",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Macy Chiasson",
-    "path": "ufc_fights"
-   },
-   "desc": "Durability: gets dropped or stopped fights a",
-   "raw": 14
-  },
-  {
-   "id": "v99",
+   "id": "v95",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1244,7 +1196,7 @@
    "raw": 0.0
   },
   {
-   "id": "v100",
+   "id": "v96",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1256,19 +1208,7 @@
    "raw": 0
   },
   {
-   "id": "v101",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "path": "last5.fights"
-   },
-   "desc": "Durability: gets dropped or stopped last5 n b",
-   "raw": 3
-  },
-  {
-   "id": "v102",
+   "id": "v97",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1280,19 +1220,7 @@
    "raw": 0
   },
   {
-   "id": "v103",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "path": "ufc_fights"
-   },
-   "desc": "Durability: gets dropped or stopped fights b",
-   "raw": 3
-  },
-  {
-   "id": "v104",
+   "id": "v98",
    "text": "12%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -1304,7 +1232,7 @@
    "raw": 0.1154
   },
   {
-   "id": "v105",
+   "id": "v99",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1316,7 +1244,7 @@
    "raw": 2
   },
   {
-   "id": "v106",
+   "id": "v100",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1328,7 +1256,7 @@
    "raw": 2
   },
   {
-   "id": "v107",
+   "id": "v101",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1340,7 +1268,7 @@
    "raw": 3
   },
   {
-   "id": "v108",
+   "id": "v102",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1352,7 +1280,7 @@
    "raw": 4
   },
   {
-   "id": "v109",
+   "id": "v103",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1364,7 +1292,7 @@
    "raw": 3
   },
   {
-   "id": "v110",
+   "id": "v104",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -1376,7 +1304,7 @@
    "raw": 0.5
   },
   {
-   "id": "v111",
+   "id": "v105",
    "text": "+0.4",
    "fmt": "s1",
    "rule": "em",
@@ -1388,7 +1316,7 @@
    "raw": 0.38
   },
   {
-   "id": "v112",
+   "id": "v106",
    "text": "14",
    "fmt": "int",
    "rule": "em",
@@ -1400,7 +1328,7 @@
    "raw": 14
   },
   {
-   "id": "v113",
+   "id": "v107",
    "text": "58%",
    "fmt": "pct0",
    "rule": "em",
@@ -1412,7 +1340,7 @@
    "raw": 0.5833
   },
   {
-   "id": "v114",
+   "id": "v108",
    "text": "+0.7",
    "fmt": "s1",
    "rule": "em",
@@ -1424,7 +1352,7 @@
    "raw": 0.685
   },
   {
-   "id": "v115",
+   "id": "v109",
    "text": "12",
    "fmt": "int",
    "rule": "em",
@@ -1436,7 +1364,7 @@
    "raw": 12
   },
   {
-   "id": "v116",
+   "id": "v110",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -1448,7 +1376,7 @@
    "raw": 0.5
   },
   {
-   "id": "v117",
+   "id": "v111",
    "text": "+0.3",
    "fmt": "s1",
    "rule": "em",
@@ -1460,7 +1388,7 @@
    "raw": 0.268
   },
   {
-   "id": "v118",
+   "id": "v112",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -1472,7 +1400,7 @@
    "raw": 8
   },
   {
-   "id": "v119",
+   "id": "v113",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1484,7 +1412,7 @@
    "raw": 1.0
   },
   {
-   "id": "v120",
+   "id": "v114",
    "text": "+4.2",
    "fmt": "s1",
    "rule": "em",
@@ -1496,7 +1424,7 @@
    "raw": 4.238
   },
   {
-   "id": "v121",
+   "id": "v115",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1508,7 +1436,7 @@
    "raw": 3
   },
   {
-   "id": "v122",
+   "id": "v116",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1520,7 +1448,7 @@
    "raw": 1.0
   },
   {
-   "id": "v123",
+   "id": "v117",
    "text": "-1.3",
    "fmt": "s1",
    "rule": "em",
@@ -1532,7 +1460,7 @@
    "raw": -1.343
   },
   {
-   "id": "v124",
+   "id": "v118",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1544,7 +1472,7 @@
    "raw": 1
   },
   {
-   "id": "v125",
+   "id": "v119",
    "text": "-2",
    "fmt": "sint",
    "rule": "em",
@@ -1556,7 +1484,7 @@
    "raw": -2
   },
   {
-   "id": "v126",
+   "id": "v120",
    "text": "-17",
    "fmt": "sint",
    "rule": "em",
@@ -1568,7 +1496,7 @@
    "raw": -17
   },
   {
-   "id": "v127",
+   "id": "v121",
    "text": "-1",
    "fmt": "sint",
    "rule": "em",
@@ -1580,7 +1508,7 @@
    "raw": -1
   },
   {
-   "id": "v128",
+   "id": "v122",
    "text": "-5",
    "fmt": "sint",
    "rule": "em",
@@ -1592,7 +1520,7 @@
    "raw": -5
   },
   {
-   "id": "v129",
+   "id": "v123",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1604,7 +1532,7 @@
    "raw": 2
   },
   {
-   "id": "v130",
+   "id": "v124",
    "text": "-12",
    "fmt": "sint",
    "rule": "em",
@@ -1616,7 +1544,7 @@
    "raw": -12
   },
   {
-   "id": "v131",
+   "id": "v125",
    "text": "+3",
    "fmt": "sint",
    "rule": "em",
@@ -1628,7 +1556,7 @@
    "raw": 3
   },
   {
-   "id": "v132",
+   "id": "v126",
    "text": "-9",
    "fmt": "sint",
    "rule": "em",
@@ -1640,7 +1568,7 @@
    "raw": -9
   },
   {
-   "id": "v133",
+   "id": "v127",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1652,7 +1580,7 @@
    "raw": 2
   },
   {
-   "id": "v134",
+   "id": "v128",
    "text": "+32",
    "fmt": "sint",
    "rule": "em",
@@ -1664,7 +1592,7 @@
    "raw": 32
   },
   {
-   "id": "v135",
+   "id": "v129",
    "text": "+12",
    "fmt": "sint",
    "rule": "em",
@@ -1676,7 +1604,7 @@
    "raw": 12
   },
   {
-   "id": "v136",
+   "id": "v130",
    "text": "+11",
    "fmt": "sint",
    "rule": "em",
@@ -1688,7 +1616,7 @@
    "raw": 11
   },
   {
-   "id": "v137",
+   "id": "v131",
    "text": "+11",
    "fmt": "sint",
    "rule": "em",
@@ -1700,7 +1628,7 @@
    "raw": 11
   },
   {
-   "id": "v138",
+   "id": "v132",
    "text": "-2",
    "fmt": "sint",
    "rule": "em",
@@ -1712,7 +1640,7 @@
    "raw": -2
   },
   {
-   "id": "v139",
+   "id": "v133",
    "text": "-12",
    "fmt": "sint",
    "rule": "em",
@@ -1724,7 +1652,7 @@
    "raw": -12
   },
   {
-   "id": "v140",
+   "id": "v134",
    "text": "-6",
    "fmt": "sint",
    "rule": "em",
@@ -1736,7 +1664,7 @@
    "raw": -6
   },
   {
-   "id": "v141",
+   "id": "v135",
    "text": "-2",
    "fmt": "sint",
    "rule": "em",
@@ -1748,7 +1676,7 @@
    "raw": -2
   },
   {
-   "id": "v142",
+   "id": "v136",
    "text": "+9",
    "fmt": "sint",
    "rule": "em",
@@ -1760,7 +1688,7 @@
    "raw": 9
   },
   {
-   "id": "v143",
+   "id": "v137",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
@@ -1772,7 +1700,7 @@
    "raw": 8
   },
   {
-   "id": "v144",
+   "id": "v138",
    "text": "+0",
    "fmt": "sint",
    "rule": "em",
@@ -1784,7 +1712,7 @@
    "raw": 0
   },
   {
-   "id": "v145",
+   "id": "v139",
    "text": "-10",
    "fmt": "sint",
    "rule": "em",
@@ -1796,7 +1724,7 @@
    "raw": -10
   },
   {
-   "id": "v146",
+   "id": "v140",
    "text": "+12",
    "fmt": "sint",
    "rule": "em",
@@ -1808,7 +1736,7 @@
    "raw": 12
   },
   {
-   "id": "v147",
+   "id": "v141",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1820,7 +1748,7 @@
    "raw": 4
   },
   {
-   "id": "v148",
+   "id": "v142",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -1832,7 +1760,7 @@
    "raw": 1
   },
   {
-   "id": "v149",
+   "id": "v143",
    "text": "+23",
    "fmt": "sint",
    "rule": "em",
@@ -1844,7 +1772,7 @@
    "raw": 23
   },
   {
-   "id": "v150",
+   "id": "v144",
    "text": "+7",
    "fmt": "sint",
    "rule": "em",
@@ -1856,7 +1784,7 @@
    "raw": 7
   },
   {
-   "id": "v151",
+   "id": "v145",
    "text": "-5",
    "fmt": "sint",
    "rule": "em",
@@ -1868,7 +1796,7 @@
    "raw": -5
   },
   {
-   "id": "v152",
+   "id": "v146",
    "text": "+12",
    "fmt": "sint",
    "rule": "em",
@@ -1880,7 +1808,7 @@
    "raw": 12
   },
   {
-   "id": "v153",
+   "id": "v147",
    "text": "-3",
    "fmt": "sint",
    "rule": "em",
@@ -1892,7 +1820,7 @@
    "raw": -3
   },
   {
-   "id": "v154",
+   "id": "v148",
    "text": "+6",
    "fmt": "sint",
    "rule": "em",
@@ -1904,7 +1832,7 @@
    "raw": 6
   },
   {
-   "id": "v155",
+   "id": "v149",
    "text": "-9",
    "fmt": "sint",
    "rule": "em",
@@ -1916,7 +1844,7 @@
    "raw": -9
   },
   {
-   "id": "v156",
+   "id": "v150",
    "text": "+7",
    "fmt": "sint",
    "rule": "em",
@@ -1928,7 +1856,7 @@
    "raw": 7
   },
   {
-   "id": "v157",
+   "id": "v151",
    "text": "+10",
    "fmt": "sint",
    "rule": "em",
@@ -1940,7 +1868,7 @@
    "raw": 10
   },
   {
-   "id": "v158",
+   "id": "v152",
    "text": "-8",
    "fmt": "sint",
    "rule": "em",
@@ -1952,7 +1880,7 @@
    "raw": -8
   },
   {
-   "id": "v159",
+   "id": "v153",
    "text": "-7",
    "fmt": "sint",
    "rule": "em",
@@ -1964,7 +1892,7 @@
    "raw": -7
   },
   {
-   "id": "v160",
+   "id": "v154",
    "text": "+18",
    "fmt": "sint",
    "rule": "em",
@@ -1976,7 +1904,7 @@
    "raw": 18
   },
   {
-   "id": "v161",
+   "id": "v155",
    "text": "+33",
    "fmt": "sint",
    "rule": "em",
@@ -1988,7 +1916,7 @@
    "raw": 33
   },
   {
-   "id": "v162",
+   "id": "v156",
    "text": "-3",
    "fmt": "sint",
    "rule": "em",
@@ -2000,7 +1928,7 @@
    "raw": -3
   },
   {
-   "id": "v163",
+   "id": "v157",
    "text": "1.87",
    "fmt": "n2",
    "rule": "em",
@@ -2012,7 +1940,7 @@
    "raw": 1.866
   },
   {
-   "id": "v164",
+   "id": "v158",
    "text": "3.57",
    "fmt": "n2",
    "rule": "em",
@@ -2024,7 +1952,7 @@
    "raw": 3.567
   },
   {
-   "id": "v165",
+   "id": "v159",
    "text": "36%",
    "fmt": "pct0",
    "rule": "em",
@@ -2036,7 +1964,7 @@
    "raw": 0.3585
   },
   {
-   "id": "v166",
+   "id": "v160",
    "text": "75%",
    "fmt": "pct0",
    "rule": "em",
@@ -2048,7 +1976,7 @@
    "raw": 0.75
   },
   {
-   "id": "v167",
+   "id": "v161",
    "text": "62%",
    "fmt": "pct0",
    "rule": "em",
@@ -2060,7 +1988,7 @@
    "raw": 0.625
   },
   {
-   "id": "v168",
+   "id": "v162",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -2072,7 +2000,7 @@
    "raw": 0.0
   },
   {
-   "id": "v169",
+   "id": "v163",
    "text": "34%",
    "fmt": "pct0",
    "rule": "em",
@@ -2084,7 +2012,7 @@
    "raw": 0.3415
   },
   {
-   "id": "v170",
+   "id": "v164",
    "text": "54%",
    "fmt": "pct0",
    "rule": "em",
@@ -2096,7 +2024,7 @@
    "raw": 0.5429
   },
   {
-   "id": "v171",
+   "id": "v165",
    "text": "+9.4%",
    "fmt": "spp",
    "rule": "em",
@@ -2108,7 +2036,7 @@
    "raw": 0.0941
   },
   {
-   "id": "v172",
+   "id": "v166",
    "text": "+41.0%",
    "fmt": "spp",
    "rule": "em",
@@ -2120,7 +2048,7 @@
    "raw": 0.41
   },
   {
-   "id": "v173",
+   "id": "v167",
    "text": "25%",
    "fmt": "pct0",
    "rule": "em",
@@ -2132,7 +2060,7 @@
    "raw": 0.2465
   },
   {
-   "id": "v174",
+   "id": "v168",
    "text": "11%",
    "fmt": "pct0",
    "rule": "em",
@@ -2144,7 +2072,7 @@
    "raw": 0.1149
   },
   {
-   "id": "v175",
+   "id": "v169",
    "text": "0.39",
    "fmt": "n2",
    "rule": "em",
@@ -2156,7 +2084,7 @@
    "raw": 0.393
   },
   {
-   "id": "v176",
+   "id": "v170",
    "text": "3.57",
    "fmt": "n2",
    "rule": "em",
@@ -2168,7 +2096,7 @@
    "raw": 3.567
   },
   {
-   "id": "v177",
+   "id": "v171",
    "text": "+0.45",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2184,7 +2112,7 @@
    "raw": 0.451
   },
   {
-   "id": "v178",
+   "id": "v172",
    "text": "+3.25",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2200,7 +2128,7 @@
    "raw": 3.25
   },
   {
-   "id": "v179",
+   "id": "v173",
    "text": "+0.45",
    "fmt": "s2",
    "rule": "em",
@@ -2212,7 +2140,7 @@
    "raw": 0.446
   },
   {
-   "id": "v180",
+   "id": "v174",
    "text": "+3.08",
    "fmt": "s2",
    "rule": "em",
@@ -2224,7 +2152,7 @@
    "raw": 3.078
   },
   {
-   "id": "v181",
+   "id": "v175",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -2236,7 +2164,7 @@
    "raw": 9
   },
   {
-   "id": "v182",
+   "id": "v176",
    "text": "14",
    "fmt": "int",
    "rule": "em",
@@ -2248,7 +2176,7 @@
    "raw": 14
   },
   {
-   "id": "v183",
+   "id": "v177",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2260,7 +2188,7 @@
    "raw": 2
   },
   {
-   "id": "v184",
+   "id": "v178",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2272,7 +2200,7 @@
    "raw": 3
   },
   {
-   "id": "v185",
+   "id": "v179",
    "text": "+0.09",
    "fmt": "s2",
    "rule": "em",
@@ -2284,7 +2212,7 @@
    "raw": 0.085
   },
   {
-   "id": "v186",
+   "id": "v180",
    "text": "+3.33",
    "fmt": "s2",
    "rule": "em",
@@ -2296,7 +2224,7 @@
    "raw": 3.329
   },
   {
-   "id": "v187",
+   "id": "v181",
    "text": "+0.30",
    "fmt": "s2",
    "rule": "em",
@@ -2308,7 +2236,7 @@
    "raw": 0.301
   },
   {
-   "id": "v188",
+   "id": "v182",
    "text": "+0.00",
    "fmt": "s2",
    "rule": "em",
@@ -2320,7 +2248,7 @@
    "raw": 0.0
   },
   {
-   "id": "v189",
+   "id": "v183",
    "text": "+0.07",
    "fmt": "s2",
    "rule": "em",
@@ -2332,7 +2260,7 @@
    "raw": 0.065
   },
   {
-   "id": "v190",
+   "id": "v184",
    "text": "-0.08",
    "fmt": "s2",
    "rule": "em",
@@ -2344,7 +2272,7 @@
    "raw": -0.079
   },
   {
-   "id": "v191",
+   "id": "v185",
    "text": "53%",
    "fmt": "pct0",
    "rule": "em",
@@ -2356,7 +2284,7 @@
    "raw": 0.5312
   },
   {
-   "id": "v192",
+   "id": "v186",
    "text": "73%",
    "fmt": "pct0",
    "rule": "em",
@@ -2368,7 +2296,7 @@
    "raw": 0.7317
   },
   {
-   "id": "v193",
+   "id": "v187",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -2380,7 +2308,7 @@
    "raw": 9
   },
   {
-   "id": "v194",
+   "id": "v188",
    "text": "13",
    "fmt": "int",
    "rule": "em",
@@ -2392,7 +2320,7 @@
    "raw": 13
   },
   {
-   "id": "v195",
+   "id": "v189",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2404,7 +2332,7 @@
    "raw": 2
   },
   {
-   "id": "v196",
+   "id": "v190",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2416,7 +2344,7 @@
    "raw": 3
   },
   {
-   "id": "v197",
+   "id": "v191",
    "text": "43%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2430,7 +2358,7 @@
    "raw": 0.433
   },
   {
-   "id": "v198",
+   "id": "v192",
    "text": "10.9",
    "fmt": "n1",
    "rule": "em",
@@ -2442,7 +2370,7 @@
    "raw": 10.907
   },
   {
-   "id": "v199",
+   "id": "v193",
    "text": "4.2",
    "fmt": "n1",
    "rule": "em",
@@ -2454,7 +2382,7 @@
    "raw": 4.206
   },
   {
-   "id": "v200",
+   "id": "v194",
    "text": "14%",
    "fmt": "pct0",
    "rule": "em",
@@ -2466,7 +2394,7 @@
    "raw": 0.1429
   },
   {
-   "id": "v201",
+   "id": "v195",
    "text": "67%",
    "fmt": "pct0",
    "rule": "em",
@@ -2478,7 +2406,7 @@
    "raw": 0.6667
   },
   {
-   "id": "v202",
+   "id": "v196",
    "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2490,7 +2418,7 @@
    "raw": 0.745
   },
   {
-   "id": "v203",
+   "id": "v197",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2502,7 +2430,7 @@
    "raw": 0.576
   },
   {
-   "id": "v204",
+   "id": "v198",
    "text": "627",
    "fmt": "int",
    "rule": "labs_live",
@@ -2514,7 +2442,7 @@
    "raw": 627
   },
   {
-   "id": "v205",
+   "id": "v199",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2526,7 +2454,7 @@
    "raw": 0.551
   },
   {
-   "id": "v206",
+   "id": "v200",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2538,7 +2466,7 @@
    "raw": 0.359
   },
   {
-   "id": "v207",
+   "id": "v201",
    "text": "198",
    "fmt": "int",
    "rule": "labs_live",
@@ -2550,7 +2478,7 @@
    "raw": 198
   },
   {
-   "id": "v208",
+   "id": "v202",
    "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2562,7 +2490,7 @@
    "raw": 0.412
   },
   {
-   "id": "v209",
+   "id": "v203",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2574,7 +2502,7 @@
    "raw": 0.485
   },
   {
-   "id": "v210",
+   "id": "v204",
    "text": "194",
    "fmt": "int",
    "rule": "labs_live",
@@ -2586,7 +2514,7 @@
    "raw": 194
   },
   {
-   "id": "v211",
+   "id": "v205",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -2599,7 +2527,7 @@
    "raw": 155
   },
   {
-   "id": "v212",
+   "id": "v206",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -2612,7 +2540,7 @@
    "raw": -204
   },
   {
-   "id": "v213",
+   "id": "v207",
    "text": "-141",
    "fmt": "ml",
    "rule": "fight",
@@ -2625,7 +2553,7 @@
    "raw": -141
   },
   {
-   "id": "v214",
+   "id": "v208",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -2638,7 +2566,7 @@
    "raw": -112
   },
   {
-   "id": "v215",
+   "id": "v209",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2651,7 +2579,7 @@
    "raw": -250
   },
   {
-   "id": "v216",
+   "id": "v210",
    "text": "+150",
    "fmt": "ml",
    "rule": "fight",
@@ -2664,7 +2592,7 @@
    "raw": 150
   },
   {
-   "id": "v217",
+   "id": "v211",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -2677,7 +2605,7 @@
    "raw": 185
   },
   {
-   "id": "v218",
+   "id": "v212",
    "text": "-667",
    "fmt": "ml",
    "rule": "fight",
@@ -2690,7 +2618,7 @@
    "raw": -667
   },
   {
-   "id": "v219",
+   "id": "v213",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2703,7 +2631,7 @@
    "raw": -714
   },
   {
-   "id": "v220",
+   "id": "v214",
    "text": "-645",
    "fmt": "ml",
    "rule": "fight",
