@@ -1,0 +1,123 @@
+diff --git a/scripts/build_form.py b/scripts/build_form.py
+index c120197b..fc6f5506 100644
+--- a/scripts/build_form.py
++++ b/scripts/build_form.py
+@@ -299,9 +299,58 @@ def load_odds(cache: Path):
+     return by_id
+ 
+ 
+-def summarize_odds(snaps, flipped, max_points=140, a_name=None):
++def _utc(x):
++    try:
++        return dt.datetime.fromisoformat(str(x).replace("Z", "+00:00").replace(" ", "T")).replace(tzinfo=dt.timezone.utc)
++    except Exception:
++        return None
++
++
++_BP_SCHED = None
++
++
++def bp_start(a, b, date):
++    """BettingPros scheduled_utc for a bout from the repo's data/*_odds.json files (both names, event date -1..+1), else None."""
++    global _BP_SCHED
++    if _BP_SCHED is None:
++        _BP_SCHED = []
++        for fp in sorted(glob.glob(str(REPO / "data" / "*_odds.json"))):
++            try:
++                for f in json.load(open(fp)).get("fights", []):
++                    t = _utc(f.get("scheduled_utc"))
++                    if t:
++                        _BP_SCHED.append((t, f["fighter_a"]["name"], f["fighter_b"]["name"]))
++            except Exception:
++                continue
++    if date is None:
++        return None
++    for t, x, y in _BP_SCHED:
++        if abs((t.date() - date).days) <= 1 and pair_match(a, b, x, y)[0] >= 1:
++            return t.strftime("%Y-%m-%dT%H:%M:%SZ")
++    return None
++
++
++def start_cut(snaps, sched=None):
++    """Kirk round 13 (Earlier_Start_PREREG sha 5c667602): the earliest start estimate on file. E1 = commence on the last
++    snapshot; E2 = BettingPros scheduled_utc if known; E3 = earliest commence on any snapshot within 12 h before E1."""
++    e1 = _utc(snaps[-1]["start"])
++    if e1 is None:
++        return None
++    ests = [e1]
++    for s in snaps:
++        c = _utc(s.get("start"))
++        if c and e1 - dt.timedelta(hours=12) <= c <= e1:
++            ests.append(c)
++    e2 = _utc(sched) if sched else None
++    if e2:
++        ests.append(e2)
++    return min(ests)
++
++
++def summarize_odds(snaps, flipped, max_points=140, a_name=None, sched=None):
+     """Build open/close/series from snapshots. Probabilities are for fighter A (flipped => A is 'away')."""
+     start = snaps[-1]["start"]
++    cut = start_cut(snaps, sched)
+     pre = [s for s in snaps if s["t"] <= start] or snaps
+     pts = []
+     for s in pre:
+@@ -363,6 +412,8 @@ def summarize_odds(snaps, flipped, max_points=140, a_name=None):
+             rp.append({"t": pt["t"], "p": statistics.median(v[0] for v in rg), "da": statistics.median(v[1] for v in rg),
+                        "db": statistics.median(v[2] for v in rg), "nb": len(rg), "per": {b: v for b, v in pt["per"].items() if b in US_REGULATED}})
+     rp = [x for x in rp if x["t"] >= o["t"]]
++    if cut is not None:   # Earlier_Start_PREREG: the published close and chart use only snapshots strictly before the cut
++        rp = [x for x in rp if (_utc(x["t"]) or cut) < cut]
+     ridx = list(range(len(rp)))
+     if len(ridx) > max_points:
+         st_ = (len(ridx) - 1) / (max_points - 1); ridx = sorted({round(i * st_) for i in range(max_points)})
+@@ -823,7 +874,7 @@ def main():
+             total22 += 1
+             eid, fl = find_odds(oidx, by_id, f["a"], f["b"], e["date"])
+             if eid:
+-                o = summarize_odds(by_id[eid], fl, a_name=f["a"])
++                o = summarize_odds(by_id[eid], fl, a_name=f["a"], sched=bp_start(f["a"], f["b"], e["date"]))
+                 if o:
+                     f["odds"] = o
+                     matched += 1
+@@ -1116,7 +1167,7 @@ def main():
+             if not eid:
+                 eid, fl = find_odds(oidx, by_id, an, bn, edate)
+             if eid:
+-                o = summarize_odds(by_id[eid], fl, a_name=fa["name"])
++                o = summarize_odds(by_id[eid], fl, a_name=fa["name"], sched=bf.get("scheduled_utc"))
+                 if o:
+                     fobj["odds"] = o
+             # Kirk round 12 (Form_Fix_PREREG sha d78b86a2): five rounds if the bout is a title fight (card_overrides title list,
+diff --git a/scripts/refresh_event_odds.py b/scripts/refresh_event_odds.py
+index a902fa53..c8c6f7f4 100644
+--- a/scripts/refresh_event_odds.py
++++ b/scripts/refresh_event_odds.py
+@@ -47,7 +47,8 @@ def main():
+     for f in ev["fights"]:
+         old = f.get("odds") or {}
+         eid, fl = BF.find_odds(idx, by_id, f["a"]["name"], f["b"]["name"], d)
+-        o = BF.summarize_odds(by_id[eid], fl, a_name=f["a"]["name"]) if eid else None
++        o = BF.summarize_odds(by_id[eid], fl, a_name=f["a"]["name"],
++                              sched=f.get("start") or BF.bp_start(f["a"]["name"], f["b"]["name"], d)) if eid else None
+         if o:
+             f["odds"] = BF.public_odds(o)   # Consensus_US_PREREG: published current line from US-regulated books only
+         oc, nc = (old.get("close") or {}), ((o or {}).get("close") or {})
+diff --git a/scripts/verify_fight_embeds.py b/scripts/verify_fight_embeds.py
+index a67f5c15..ca7abd8f 100644
+--- a/scripts/verify_fight_embeds.py
++++ b/scripts/verify_fight_embeds.py
+@@ -570,6 +570,13 @@ def lh_recheck(G, slug, quiet=False):
+             if not o_: print(f"  EVENT ODDS {an_} vs {bn_}: archive has the bout, the event file has no odds block"); nev_ += 1; continue
+             # Consensus_US_PREREG (round 12): opener from every listed book; current/close from US-regulated books only, none if none
+             rpts = [x for x in rpts if x[0] >= pts[0][0]]
++            # Earlier_Start_PREREG (round 13): the close only from snapshots strictly before the earliest start estimate
++            # (last-snapshot commence; any commence within 12 h before it; the event file's BettingPros start)
++            import datetime as _dt
++            P_ = lambda x: _dt.datetime.fromisoformat(str(x).replace("Z", "+00:00").replace(" ", "T")).replace(tzinfo=_dt.timezone.utc)
++            e1_ = P_(start); ests_ = [e1_] + [P_(x[1]) for x in ss if e1_ - _dt.timedelta(hours=12) <= P_(x[1]) <= e1_]
++            if f.get("start"): ests_.append(P_(f["start"]))
++            rpts = [x for x in rpts if P_(x[0]) < min(ests_)]
+             if set(o_.get("books") or {}) - REG_: print(f"  EVENT ODDS {an_} vs {bn_}: offshore book in the published book list"); nev_ += 1
+             if not rpts:
+                 if o_.get("close"): print(f"  EVENT ODDS {an_} vs {bn_}: a close is published but no US-regulated price exists"); nev_ += 1
