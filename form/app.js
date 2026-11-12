@@ -181,7 +181,7 @@ function cardTable(ev) {
       const mkp = f.sheet && f.sheet.listed != null && (m.src === "sheet" || m.src === "publish") ? f.sheet.listed : o.pa;
       if (mkp != null) { const e = m.a.win - mkp * 100; const side = e >= 0 ? f.a.name : f.b.name; edge = `<span class="${Math.abs(e) >= 3 ? "pos b" : "dim"}" title="Model minus no-vig market">${esc(side.split(" ").slice(-1)[0])} ${signed(Math.abs(e))}</span>`; }
     }
-    const rec = m && m.rec ? `<span class="pill y" title="${esc(m.rec_text || "Model bet recommendation")}">BET ${esc((m.rec === "a" ? f.a.name : f.b.name).split(" ").slice(-1)[0])}</span>` : (m && m.rec_text && /^lean/i.test(m.rec_text) ? `<span class="pill" title="${esc(m.rec_text)}">${esc(m.rec_text.split("[")[0].trim())}</span>` : "");
+    const rec = f.proj_src === "line_pending" ? `<span class="pill" title="${esc((f.sheet || {}).reason || "")}">Line pending</span>` : m && m.rec ? `<span class="pill y" title="${esc(m.rec_text || "Model bet recommendation")}">BET ${esc((m.rec === "a" ? f.a.name : f.b.name).split(" ").slice(-1)[0])}</span>` : (m && m.rec_text && /^lean/i.test(m.rec_text) ? `<span class="pill" title="${esc(m.rec_text)}">${esc(m.rec_text.split("[")[0].trim())}</span>` : "");
     const wa = f.result && f.result.winner === "a", wb = f.result && f.result.winner === "b";
     html += `<tr class="click" data-href="#/fight/${ev.slug}/${f.n}">
       <td class="c dim">${f.n}</td>
@@ -254,6 +254,7 @@ async function overlaySheet(ev) {
 function chip(t, k) { return t && t !== "-" ? `<span class="pill ${k || ""}" style="margin:0 4px 4px 0;white-space:normal;text-transform:none;letter-spacing:0;font-weight:600;font-size:11px">${esc(t)}</span>` : ""; }
 function sheetBox(f, final) {
   const s = f.sheet; if (!s) return "";
+  if (s.src === "line_pending") return `<h3>Model sheet</h3><div class="note">Line pending: the price did not tie to this bout, so no projection is shown. ${esc(s.reason || "")}</div>`;   // Block 58
   const P = (x) => x == null ? "—" : (x * 100).toFixed(1) + "%", inv = (x) => x == null ? null : 1 - x;
   const row = (lab, x, tip) => x == null ? "" : `<tr><td class="l b" title="${tip || ""}">${lab}</td><td>${P(x)}</td><td>${P(inv(x))}</td></tr>`;
   let h = `<h3>Model sheet${s.src === "publish" ? ' <span class="pill g">Publish to site export</span>' : s.live ? ' <span class="pill g">live from sheet</span>' : ""}</h3><div class="tw"><table><thead><tr><th class="l">Input</th><th>${esc(last(f.a.name))}</th><th>${esc(last(f.b.name))}</th></tr></thead><tbody>

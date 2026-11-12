@@ -122,7 +122,14 @@ def apply(doc, slug, repo=REPO, export=None, export_file=None):
     for f in doc["fights"]:
         an, bn = f["a"]["name"], f["b"]["name"]
         r = find_row(export, an, bn) if export else None
-        if r is not None:
+        held = next((x for x in (export or {}).get("line_pending") or [] if card_overrides.bout_is(x["dog"], x["fav"], an, bn)), None)
+        if held is not None:
+            # Block 58: the gate held this bout back (its price did not tie to this bout). Show no Sean numbers rather
+            # than the previous export's, which would stay on the page and be labeled as something else.
+            f.pop("model", None)
+            f["sheet"] = {"src": "line_pending", "rec": "-", "reason": held.get("reason")}
+            f["proj_src"] = "line_pending"
+        elif r is not None:
             a_dog = card_overrides.same(r["dog"], an)
             f["model"] = model_from_row(r, a_dog)
             f["sheet"] = sheet_from_row(r, a_dog, export.get("params") or {}, f.get("sheet"), export.get("published_at"))
