@@ -1,7 +1,10 @@
 {
  "fight": 3,
  "of": 13,
- "site_n": 3,
+ "site_pair": [
+  "Macy Chiasson",
+  "Bia Mesquita"
+ ],
  "pair": [
   "Macy Chiasson",
   "Bia Mesquita"
@@ -30,7 +33,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "a.elo"
    },
    "desc": "Macy Chiasson Elo",
@@ -43,7 +49,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "form.ra"
    },
    "desc": "Macy Chiasson Form Figure",
@@ -67,7 +76,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "b.elo"
    },
    "desc": "Bia Mesquita Elo",
@@ -80,7 +92,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "form.rb"
    },
    "desc": "Bia Mesquita Form Figure",
@@ -753,7 +768,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "odds.open.ma"
    },
    "desc": "OA open ML a",
@@ -766,7 +784,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "odds.open.mb"
    },
    "desc": "OA open ML b",
@@ -779,7 +800,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "odds.open.p"
    },
    "desc": "OA open p",
@@ -792,7 +816,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "odds.close.ma"
    },
    "desc": "OA close ML a",
@@ -805,7 +832,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "odds.close.mb"
    },
    "desc": "OA close ML b",
@@ -818,7 +848,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "odds.close.p"
    },
    "desc": "OA close p",
@@ -831,7 +864,10 @@
    "rule": "oa_drift",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ]
    },
    "desc": "OA drift pts",
    "raw": -0.0358
@@ -843,7 +879,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "side": "a"
    },
    "desc": "OA best a",
@@ -856,7 +895,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "side": "b"
    },
    "desc": "OA best b",
@@ -921,7 +963,10 @@
    "rule": "oa_len",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ]
    },
    "desc": "Chart points",
    "raw": 140
@@ -933,7 +978,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
     "path": "odds.n"
    },
    "desc": "Snapshots",

@@ -1,7 +1,10 @@
 {
  "fight": 2,
  "of": 13,
- "site_n": 2,
+ "site_pair": [
+  "Alatengheili",
+  "Juan Diaz"
+ ],
  "pair": [
   "Alatengheili",
   "Juan Diaz"
@@ -30,7 +33,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 2,
+    "pair": [
+     "Alatengheili",
+     "Juan Diaz"
+    ],
     "path": "a.elo"
    },
    "desc": "Alatengheili Elo",
@@ -54,7 +60,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 2,
+    "pair": [
+     "Alatengheili",
+     "Juan Diaz"
+    ],
     "path": "b.elo"
    },
    "desc": "Juan Diaz Elo",

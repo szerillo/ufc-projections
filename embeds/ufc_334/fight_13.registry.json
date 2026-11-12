@@ -1,7 +1,10 @@
 {
  "fight": 13,
  "of": 13,
- "site_n": 13,
+ "site_pair": [
+  "Ciryl Gane",
+  "Josh Hokit"
+ ],
  "pair": [
   "Ciryl Gane",
   "Josh Hokit"
@@ -30,7 +33,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "a.elo"
    },
    "desc": "Ciryl Gane Elo",
@@ -43,7 +49,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "form.ra"
    },
    "desc": "Ciryl Gane Form Figure",
@@ -67,7 +76,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "b.elo"
    },
    "desc": "Josh Hokit Elo",
@@ -80,7 +92,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "form.rb"
    },
    "desc": "Josh Hokit Form Figure",
@@ -753,7 +768,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "odds.open.ma"
    },
    "desc": "OA open ML a",
@@ -766,7 +784,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "odds.open.mb"
    },
    "desc": "OA open ML b",
@@ -779,7 +800,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "odds.open.p"
    },
    "desc": "OA open p",
@@ -792,7 +816,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "odds.close.ma"
    },
    "desc": "OA close ML a",
@@ -805,7 +832,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "odds.close.mb"
    },
    "desc": "OA close ML b",
@@ -818,7 +848,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "odds.close.p"
    },
    "desc": "OA close p",
@@ -831,7 +864,10 @@
    "rule": "oa_drift",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ]
    },
    "desc": "OA drift pts",
    "raw": -0.05479999999999996
@@ -843,7 +879,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "side": "a"
    },
    "desc": "OA best a",
@@ -856,7 +895,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "side": "b"
    },
    "desc": "OA best b",
@@ -921,7 +963,10 @@
    "rule": "oa_len",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ]
    },
    "desc": "Chart points",
    "raw": 140
@@ -933,7 +978,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 13,
+    "pair": [
+     "Ciryl Gane",
+     "Josh Hokit"
+    ],
     "path": "odds.n"
    },
    "desc": "Snapshots",

@@ -1,7 +1,10 @@
 {
  "fight": 4,
  "of": 13,
- "site_n": 4,
+ "site_pair": [
+  "Jared Gordon",
+  "Melquizael Costa"
+ ],
  "pair": [
   "Jared Gordon",
   "Melquizael Costa"
@@ -30,7 +33,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "a.elo"
    },
    "desc": "Jared Gordon Elo",
@@ -43,7 +49,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "form.ra"
    },
    "desc": "Jared Gordon Form Figure",
@@ -67,7 +76,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "b.elo"
    },
    "desc": "Melquizael Costa Elo",
@@ -80,7 +92,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "form.rb"
    },
    "desc": "Melquizael Costa Form Figure",
@@ -753,7 +768,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "odds.open.ma"
    },
    "desc": "OA open ML a",
@@ -766,7 +784,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "odds.open.mb"
    },
    "desc": "OA open ML b",
@@ -779,7 +800,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "odds.open.p"
    },
    "desc": "OA open p",
@@ -792,7 +816,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "odds.close.ma"
    },
    "desc": "OA close ML a",
@@ -805,7 +832,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "odds.close.mb"
    },
    "desc": "OA close ML b",
@@ -818,7 +848,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "odds.close.p"
    },
    "desc": "OA close p",
@@ -831,7 +864,10 @@
    "rule": "oa_drift",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ]
    },
    "desc": "OA drift pts",
    "raw": 0.0031999999999999806
@@ -843,7 +879,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "side": "a"
    },
    "desc": "OA best a",
@@ -856,7 +895,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "side": "b"
    },
    "desc": "OA best b",
@@ -921,7 +963,10 @@
    "rule": "oa_len",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ]
    },
    "desc": "Chart points",
    "raw": 140
@@ -933,7 +978,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 4,
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ],
     "path": "odds.n"
    },
    "desc": "Snapshots",
