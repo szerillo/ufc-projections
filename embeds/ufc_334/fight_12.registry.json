@@ -1,0 +1,1738 @@
+{
+ "fight": 12,
+ "of": 13,
+ "site_n": 12,
+ "pair": [
+  "Kayla Harrison",
+  "Amanda Nunes"
+ ],
+ "file": "fight_12.html",
+ "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+ "proj_src": "publish",
+ "proj_file": "data/pending/ufc_334_projections.json",
+ "published_at": "2026-11-12T01:18:40.423Z",
+ "rows": [
+  {
+   "id": "v1",
+   "text": "3-0-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Kayla Harrison UFC record",
+   "raw": "3-0-0"
+  },
+  {
+   "id": "v2",
+   "text": "1584",
+   "fmt": "int",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "a.elo"
+   },
+   "desc": "Kayla Harrison Elo",
+   "raw": 1584
+  },
+  {
+   "id": "v3",
+   "text": "67.6",
+   "fmt": "n1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "form.ra"
+   },
+   "desc": "Kayla Harrison Form Figure",
+   "raw": 67.6
+  },
+  {
+   "id": "v4",
+   "text": "16-2-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Amanda Nunes UFC record",
+   "raw": "16-2-0"
+  },
+  {
+   "id": "v5",
+   "text": "1691",
+   "fmt": "int",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "b.elo"
+   },
+   "desc": "Amanda Nunes Elo",
+   "raw": 1691
+  },
+  {
+   "id": "v6",
+   "text": "62.9",
+   "fmt": "n1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "form.rb"
+   },
+   "desc": "Amanda Nunes Form Figure",
+   "raw": 62.9
+  },
+  {
+   "id": "v7",
+   "text": "-183",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Sean ML Kayla Harrison",
+   "raw": 0.6464519023544782
+  },
+  {
+   "id": "v8",
+   "text": "64.6%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Sean win % Kayla Harrison",
+   "raw": 0.6464519023544782
+  },
+  {
+   "id": "v9",
+   "text": "-195",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Kayla Harrison",
+    "field": "cost"
+   },
+   "desc": "BP ML now Kayla Harrison",
+   "raw": -195
+  },
+  {
+   "id": "v10",
+   "text": "62.5%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "moneyline",
+    "label": "Kayla Harrison",
+    "other": "Amanda Nunes"
+   },
+   "desc": "BP ML no-vig Kayla Harrison",
+   "raw": 0.6248728382502544
+  },
+  {
+   "id": "v11",
+   "text": "-205",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Kayla Harrison",
+    "field": "opening_cost"
+   },
+   "desc": "BP ML open Kayla Harrison",
+   "raw": -205
+  },
+  {
+   "id": "v12",
+   "text": "+183",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Sean ML Amanda Nunes",
+   "raw": 0.35354809764552175
+  },
+  {
+   "id": "v13",
+   "text": "35.4%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Sean win % Amanda Nunes",
+   "raw": 0.35354809764552175
+  },
+  {
+   "id": "v14",
+   "text": "+152",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Amanda Nunes",
+    "field": "cost"
+   },
+   "desc": "BP ML now Amanda Nunes",
+   "raw": 152
+  },
+  {
+   "id": "v15",
+   "text": "37.5%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "moneyline",
+    "label": "Amanda Nunes",
+    "other": "Kayla Harrison"
+   },
+   "desc": "BP ML no-vig Amanda Nunes",
+   "raw": 0.3751271617497457
+  },
+  {
+   "id": "v16",
+   "text": "+163",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Amanda Nunes",
+    "field": "opening_cost"
+   },
+   "desc": "BP ML open Amanda Nunes",
+   "raw": 163
+  },
+  {
+   "id": "v17",
+   "text": "+298",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Sean dec ML Kayla Harrison",
+   "raw": 0.25154425578997186
+  },
+  {
+   "id": "v18",
+   "text": "25.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Sean dec % Kayla Harrison",
+   "raw": 0.25154425578997186
+  },
+  {
+   "id": "v19",
+   "text": "+300",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison Points",
+    "field": "cost"
+   },
+   "desc": "BP dec now Kayla Harrison",
+   "raw": 300
+  },
+  {
+   "id": "v20",
+   "text": "20.8%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "k": "dec"
+   },
+   "desc": "BP dec no-vig Kayla Harrison",
+   "raw": 0.20804717525229915
+  },
+  {
+   "id": "v21",
+   "text": "+280",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison Points",
+    "field": "opening_cost"
+   },
+   "desc": "BP dec open Kayla Harrison",
+   "raw": 280
+  },
+  {
+   "id": "v22",
+   "text": "+479",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Sean dec ML Amanda Nunes",
+   "raw": 0.17277357397092769
+  },
+  {
+   "id": "v23",
+   "text": "17.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Sean dec % Amanda Nunes",
+   "raw": 0.17277357397092769
+  },
+  {
+   "id": "v24",
+   "text": "+550",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes Points",
+    "field": "cost"
+   },
+   "desc": "BP dec now Amanda Nunes",
+   "raw": 550
+  },
+  {
+   "id": "v25",
+   "text": "12.8%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "k": "dec"
+   },
+   "desc": "BP dec no-vig Amanda Nunes",
+   "raw": 0.12802903092449178
+  },
+  {
+   "id": "v26",
+   "text": "+500",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes Points",
+    "field": "opening_cost"
+   },
+   "desc": "BP dec open Amanda Nunes",
+   "raw": 500
+  },
+  {
+   "id": "v27",
+   "text": "+1133",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Sean ko ML Kayla Harrison",
+   "raw": 0.08110804670082157
+  },
+  {
+   "id": "v28",
+   "text": "8.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Sean ko % Kayla Harrison",
+   "raw": 0.08110804670082157
+  },
+  {
+   "id": "v29",
+   "text": "+718",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "BP ko now Kayla Harrison",
+   "raw": 718
+  },
+  {
+   "id": "v30",
+   "text": "10.2%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "k": "ko"
+   },
+   "desc": "BP ko no-vig Kayla Harrison",
+   "raw": 0.10173456002557414
+  },
+  {
+   "id": "v31",
+   "text": "+800",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison KO/TKO/DQ",
+    "field": "opening_cost"
+   },
+   "desc": "BP ko open Kayla Harrison",
+   "raw": 800
+  },
+  {
+   "id": "v32",
+   "text": "+596",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Sean ko ML Amanda Nunes",
+   "raw": 0.1437776493505243
+  },
+  {
+   "id": "v33",
+   "text": "14.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Sean ko % Amanda Nunes",
+   "raw": 0.1437776493505243
+  },
+  {
+   "id": "v34",
+   "text": "+300",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "BP ko now Amanda Nunes",
+   "raw": 300
+  },
+  {
+   "id": "v35",
+   "text": "20.8%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "k": "ko"
+   },
+   "desc": "BP ko no-vig Amanda Nunes",
+   "raw": 0.20804717525229915
+  },
+  {
+   "id": "v36",
+   "text": "+340",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes KO/TKO/DQ",
+    "field": "opening_cost"
+   },
+   "desc": "BP ko open Amanda Nunes",
+   "raw": 340
+  },
+  {
+   "id": "v37",
+   "text": "+219",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Sean sub ML Kayla Harrison",
+   "raw": 0.31379959986368483
+  },
+  {
+   "id": "v38",
+   "text": "31.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Sean sub % Kayla Harrison",
+   "raw": 0.31379959986368483
+  },
+  {
+   "id": "v39",
+   "text": "+180",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison Submission",
+    "field": "cost"
+   },
+   "desc": "BP sub now Kayla Harrison",
+   "raw": 180
+  },
+  {
+   "id": "v40",
+   "text": "29.7%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "k": "sub"
+   },
+   "desc": "BP sub no-vig Kayla Harrison",
+   "raw": 0.29721025036042736
+  },
+  {
+   "id": "v41",
+   "text": "+190",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison Submission",
+    "field": "opening_cost"
+   },
+   "desc": "BP sub open Kayla Harrison",
+   "raw": 190
+  },
+  {
+   "id": "v42",
+   "text": "+2603",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Sean sub ML Amanda Nunes",
+   "raw": 0.03699687432406978
+  },
+  {
+   "id": "v43",
+   "text": "3.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Sean sub % Amanda Nunes",
+   "raw": 0.03699687432406978
+  },
+  {
+   "id": "v44",
+   "text": "+1949",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes Submission",
+    "field": "cost"
+   },
+   "desc": "BP sub now Amanda Nunes",
+   "raw": 1949
+  },
+  {
+   "id": "v45",
+   "text": "4.1%",
+   "fmt": "pct1",
+   "rule": "bp_mnv",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "k": "sub"
+   },
+   "desc": "BP sub no-vig Amanda Nunes",
+   "raw": 0.040614382674924183
+  },
+  {
+   "id": "v46",
+   "text": "+2500",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes Submission",
+    "field": "opening_cost"
+   },
+   "desc": "BP sub open Amanda Nunes",
+   "raw": 2500
+  },
+  {
+   "id": "v47",
+   "text": "+153",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Sean itd ML Kayla Harrison",
+   "raw": 0.3949076465645064
+  },
+  {
+   "id": "v48",
+   "text": "39.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Sean itd % Kayla Harrison",
+   "raw": 0.3949076465645064
+  },
+  {
+   "id": "v49",
+   "text": "+151",
+   "fmt": "mlp",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Kayla Harrison"
+   },
+   "desc": "BP ITD fair ML Kayla Harrison",
+   "raw": 0.3989448103860015
+  },
+  {
+   "id": "v50",
+   "text": "39.9%",
+   "fmt": "pct1",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Kayla Harrison"
+   },
+   "desc": "BP ITD no-vig Kayla Harrison",
+   "raw": 0.3989448103860015
+  },
+  {
+   "id": "v51",
+   "text": "+453",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Sean itd ML Amanda Nunes",
+   "raw": 0.18077452367459407
+  },
+  {
+   "id": "v52",
+   "text": "18.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Sean itd % Amanda Nunes",
+   "raw": 0.18077452367459407
+  },
+  {
+   "id": "v53",
+   "text": "+302",
+   "fmt": "mlp",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Amanda Nunes"
+   },
+   "desc": "BP ITD fair ML Amanda Nunes",
+   "raw": 0.24866155792722333
+  },
+  {
+   "id": "v54",
+   "text": "24.9%",
+   "fmt": "pct1",
+   "rule": "bp_mitd",
+   "args": {
+    "fighter": "Amanda Nunes"
+   },
+   "desc": "BP ITD no-vig Amanda Nunes",
+   "raw": 0.24866155792722333
+  },
+  {
+   "id": "v55",
+   "text": "+136",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Sean GTD fair ML",
+   "raw": 0.42431782976089955
+  },
+  {
+   "id": "v56",
+   "text": "42.4%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Sean GTD %",
+   "raw": 0.42431782976089955
+  },
+  {
+   "id": "v57",
+   "text": "+161",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "BP GTD yes now",
+   "raw": 161
+  },
+  {
+   "id": "v58",
+   "text": "-217",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "BP GTD no now",
+   "raw": -217
+  },
+  {
+   "id": "v59",
+   "text": "35.9%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "other": "No"
+   },
+   "desc": "BP GTD no-vig",
+   "raw": 0.3588530287422032
+  },
+  {
+   "id": "v60",
+   "text": "+148",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "opening_cost"
+   },
+   "desc": "BP GTD yes open",
+   "raw": 148
+  },
+  {
+   "id": "v61",
+   "text": "-196",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "odds.open.ma"
+   },
+   "desc": "OA open ML a",
+   "raw": -196
+  },
+  {
+   "id": "v62",
+   "text": "+159",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "odds.open.mb"
+   },
+   "desc": "OA open ML b",
+   "raw": 159
+  },
+  {
+   "id": "v63",
+   "text": "63.0%",
+   "fmt": "pct1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "odds.open.p"
+   },
+   "desc": "OA open p",
+   "raw": 0.6299
+  },
+  {
+   "id": "v64",
+   "text": "-192",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "odds.close.ma"
+   },
+   "desc": "OA close ML a",
+   "raw": -192
+  },
+  {
+   "id": "v65",
+   "text": "+160",
+   "fmt": "ml",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "odds.close.mb"
+   },
+   "desc": "OA close ML b",
+   "raw": 160
+  },
+  {
+   "id": "v66",
+   "text": "62.8%",
+   "fmt": "pct1",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "odds.close.p"
+   },
+   "desc": "OA close p",
+   "raw": 0.6281
+  },
+  {
+   "id": "v67",
+   "text": "0.2",
+   "fmt": "pts",
+   "rule": "oa_drift",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12
+   },
+   "desc": "OA drift pts",
+   "raw": -0.0018000000000000238
+  },
+  {
+   "id": "v68",
+   "text": "-185",
+   "fmt": "ml",
+   "rule": "oa_best",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "side": "a"
+   },
+   "desc": "OA best a",
+   "raw": -185
+  },
+  {
+   "id": "v69",
+   "text": "+165",
+   "fmt": "ml",
+   "rule": "oa_best",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "side": "b"
+   },
+   "desc": "OA best b",
+   "raw": 165
+  },
+  {
+   "id": "v70",
+   "text": "-205",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Kayla Harrison",
+    "field": "opening_cost"
+   },
+   "desc": "BP open a (move)",
+   "raw": -205
+  },
+  {
+   "id": "v71",
+   "text": "-195",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Kayla Harrison",
+    "field": "cost"
+   },
+   "desc": "BP now a (move)",
+   "raw": -195
+  },
+  {
+   "id": "v72",
+   "text": "+163",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Amanda Nunes",
+    "field": "opening_cost"
+   },
+   "desc": "BP open b (move)",
+   "raw": 163
+  },
+  {
+   "id": "v73",
+   "text": "+152",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Amanda Nunes",
+    "field": "cost"
+   },
+   "desc": "BP now b (move)",
+   "raw": 152
+  },
+  {
+   "id": "v74",
+   "text": "140",
+   "fmt": "int",
+   "rule": "oa_len",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12
+   },
+   "desc": "Chart points",
+   "raw": 140
+  },
+  {
+   "id": "v75",
+   "text": "460",
+   "fmt": "int",
+   "rule": "ev",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "n": 12,
+    "path": "odds.n"
+   },
+   "desc": "Snapshots",
+   "raw": 460
+  },
+  {
+   "id": "v76",
+   "text": "+210",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "KO/TKO/DQ",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_ending KO/TKO/DQ",
+   "raw": 210
+  },
+  {
+   "id": "v77",
+   "text": "+185",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "BP now fight_ending KO/TKO/DQ",
+   "raw": 185
+  },
+  {
+   "id": "v78",
+   "text": "35%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_ending",
+    "label": "KO/TKO/DQ"
+   },
+   "desc": "BP implied fight_ending KO/TKO/DQ",
+   "raw": 0.3508771929824561
+  },
+  {
+   "id": "v79",
+   "text": "+170",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Submission",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_ending Submission",
+   "raw": 170
+  },
+  {
+   "id": "v80",
+   "text": "+143",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Submission",
+    "field": "cost"
+   },
+   "desc": "BP now fight_ending Submission",
+   "raw": 143
+  },
+  {
+   "id": "v81",
+   "text": "41%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Submission"
+   },
+   "desc": "BP implied fight_ending Submission",
+   "raw": 0.411522633744856
+  },
+  {
+   "id": "v82",
+   "text": "+140",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Points",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_ending Points",
+   "raw": 140
+  },
+  {
+   "id": "v83",
+   "text": "+160",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Points",
+    "field": "cost"
+   },
+   "desc": "BP now fight_ending Points",
+   "raw": 160
+  },
+  {
+   "id": "v84",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_ending",
+    "label": "Points"
+   },
+   "desc": "BP implied fight_ending Points",
+   "raw": 0.38461538461538464
+  },
+  {
+   "id": "v85",
+   "text": "+148",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_distance Yes",
+   "raw": 148
+  },
+  {
+   "id": "v86",
+   "text": "+161",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "BP now fight_distance Yes",
+   "raw": 161
+  },
+  {
+   "id": "v87",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "BP implied fight_distance Yes",
+   "raw": 0.3831417624521073
+  },
+  {
+   "id": "v88",
+   "text": "-192",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "opening_cost"
+   },
+   "desc": "BP open fight_distance No",
+   "raw": -192
+  },
+  {
+   "id": "v89",
+   "text": "-217",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "BP now fight_distance No",
+   "raw": -217
+  },
+  {
+   "id": "v90",
+   "text": "68%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "BP implied fight_distance No",
+   "raw": 0.6845425867507886
+  },
+  {
+   "id": "v91",
+   "text": "3.5",
+   "fmt": "str",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over",
+    "field": "line"
+   },
+   "desc": "BP line total_rounds Over",
+   "raw": 3.5
+  },
+  {
+   "id": "v92",
+   "text": "+100",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over",
+    "field": "opening_cost"
+   },
+   "desc": "BP open total_rounds Over",
+   "raw": 100
+  },
+  {
+   "id": "v93",
+   "text": "+105",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over",
+    "field": "cost"
+   },
+   "desc": "BP now total_rounds Over",
+   "raw": 105
+  },
+  {
+   "id": "v94",
+   "text": "49%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Over"
+   },
+   "desc": "BP implied total_rounds Over",
+   "raw": 0.4878048780487805
+  },
+  {
+   "id": "v95",
+   "text": "3.5",
+   "fmt": "str",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under",
+    "field": "line"
+   },
+   "desc": "BP line total_rounds Under",
+   "raw": 3.5
+  },
+  {
+   "id": "v96",
+   "text": "-122",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under",
+    "field": "opening_cost"
+   },
+   "desc": "BP open total_rounds Under",
+   "raw": -122
+  },
+  {
+   "id": "v97",
+   "text": "-135",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under",
+    "field": "cost"
+   },
+   "desc": "BP now total_rounds Under",
+   "raw": -135
+  },
+  {
+   "id": "v98",
+   "text": "57%",
+   "fmt": "pct0",
+   "rule": "bp_imp",
+   "args": {
+    "market": "total_rounds",
+    "label": "Under"
+   },
+   "desc": "BP implied total_rounds Under",
+   "raw": 0.574468085106383
+  },
+  {
+   "id": "v99",
+   "text": "36.4",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Age a",
+   "raw": 36.369609856262834
+  },
+  {
+   "id": "v100",
+   "text": "38.5",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Age b",
+   "raw": 38.458590006844624
+  },
+  {
+   "id": "v101",
+   "text": "66\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 66
+  },
+  {
+   "id": "v102",
+   "text": "69\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 69
+  },
+  {
+   "id": "v103",
+   "text": "5'8\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "5'8\""
+  },
+  {
+   "id": "v104",
+   "text": "5'8\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "5'8\""
+  },
+  {
+   "id": "v105",
+   "text": "Southpaw",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Southpaw"
+  },
+  {
+   "id": "v106",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v107",
+   "text": "3",
+   "fmt": "int",
+   "rule": "nfights",
+   "args": {
+    "side": "a"
+   },
+   "desc": "UFC fights a",
+   "raw": 3
+  },
+  {
+   "id": "v108",
+   "text": "18",
+   "fmt": "int",
+   "rule": "nfights",
+   "args": {
+    "side": "b"
+   },
+   "desc": "UFC fights b",
+   "raw": 18
+  },
+  {
+   "id": "v109",
+   "text": "4.29",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "slpm"
+   },
+   "desc": "SLpM a",
+   "raw": 4.290220820189274
+  },
+  {
+   "id": "v110",
+   "text": "4.54",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "slpm"
+   },
+   "desc": "SLpM b",
+   "raw": 4.540117416829745
+  },
+  {
+   "id": "v111",
+   "text": "1.10",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "sapm"
+   },
+   "desc": "SApM a",
+   "raw": 1.1041009463722398
+  },
+  {
+   "id": "v112",
+   "text": "2.44",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "sapm"
+   },
+   "desc": "SApM b",
+   "raw": 2.4412915851272015
+  },
+  {
+   "id": "v113",
+   "text": "+3.19",
+   "fmt": "s2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "diff"
+   },
+   "desc": "Strike diff /min a",
+   "raw": 3.186119873817035
+  },
+  {
+   "id": "v114",
+   "text": "+2.10",
+   "fmt": "s2",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "diff"
+   },
+   "desc": "Strike diff /min b",
+   "raw": 2.098825831702544
+  },
+  {
+   "id": "v115",
+   "text": "62%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "acc"
+   },
+   "desc": "Strike accuracy a",
+   "raw": 0.6210045662100456
+  },
+  {
+   "id": "v116",
+   "text": "52%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "acc"
+   },
+   "desc": "Strike accuracy b",
+   "raw": 0.5201793721973094
+  },
+  {
+   "id": "v117",
+   "text": "66%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "dfn"
+   },
+   "desc": "Strike defence a",
+   "raw": 0.6601941747572815
+  },
+  {
+   "id": "v118",
+   "text": "59%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "dfn"
+   },
+   "desc": "Strike defence b",
+   "raw": 0.5929853181076672
+  },
+  {
+   "id": "v119",
+   "text": "2.84",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 2.8391167192429023
+  },
+  {
+   "id": "v120",
+   "text": "2.79",
+   "fmt": "n2",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 2.7886497064579254
+  },
+  {
+   "id": "v121",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 1.0
+  },
+  {
+   "id": "v122",
+   "text": "81%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.8125
+  },
+  {
+   "id": "v123",
+   "text": "59%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "a",
+    "key": "ctrlp"
+   },
+   "desc": "Control time a",
+   "raw": 0.594111461619348
+  },
+  {
+   "id": "v124",
+   "text": "34%",
+   "fmt": "pct0",
+   "rule": "stat",
+   "args": {
+    "side": "b",
+    "key": "ctrlp"
+   },
+   "desc": "Control time b",
+   "raw": 0.34230267449445534
+  },
+  {
+   "id": "v125",
+   "text": "101",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "fg"
+   },
+   "desc": "Fig Kayla Harrison Julianna Pena",
+   "raw": 100.7
+  },
+  {
+   "id": "v126",
+   "text": "-714",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Kayla Harrison Julianna Pena",
+   "raw": -714
+  },
+  {
+   "id": "v127",
+   "text": "88",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "fg"
+   },
+   "desc": "Fig Kayla Harrison Ketlen Vieira",
+   "raw": 88.3
+  },
+  {
+   "id": "v128",
+   "text": "-1111",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Kayla Harrison Ketlen Vieira",
+   "raw": -1111
+  },
+  {
+   "id": "v129",
+   "text": "102",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "fg"
+   },
+   "desc": "Fig Kayla Harrison Holly Holm",
+   "raw": 102.2
+  },
+  {
+   "id": "v130",
+   "text": "-455",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Kayla Harrison Holly Holm",
+   "raw": -455
+  },
+  {
+   "id": "v131",
+   "text": "94",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 0,
+    "key": "fg"
+   },
+   "desc": "Fig Amanda Nunes Irene Aldana",
+   "raw": 93.9
+  },
+  {
+   "id": "v132",
+   "text": "-312",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Amanda Nunes Irene Aldana",
+   "raw": -312
+  },
+  {
+   "id": "v133",
+   "text": "96",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "fg"
+   },
+   "desc": "Fig Amanda Nunes Julianna Pena",
+   "raw": 96.0
+  },
+  {
+   "id": "v134",
+   "text": "-263",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Amanda Nunes Julianna Pena",
+   "raw": -263
+  },
+  {
+   "id": "v135",
+   "text": "11",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 2,
+    "key": "fg"
+   },
+   "desc": "Fig Amanda Nunes Julianna Pena",
+   "raw": 10.6
+  },
+  {
+   "id": "v136",
+   "text": "104",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 3,
+    "key": "fg"
+   },
+   "desc": "Fig Amanda Nunes Megan Anderson",
+   "raw": 103.8
+  },
+  {
+   "id": "v137",
+   "text": "93",
+   "fmt": "r0",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 4,
+    "key": "fg"
+   },
+   "desc": "Fig Amanda Nunes Felicia Spencer",
+   "raw": 92.8
+  },
+  {
+   "id": "v138",
+   "text": "64.6%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Sheet % (note)",
+   "raw": 0.6464519023544782
+  },
+  {
+   "id": "v139",
+   "text": "2.2",
+   "fmt": "pts",
+   "rule": "gap_pub_bp",
+   "args": {
+    "side": "a",
+    "market": "moneyline",
+    "label": "Kayla Harrison",
+    "other": "Amanda Nunes"
+   },
+   "desc": "Sheet vs BP gap",
+   "raw": 0.021579064104223833
+  }
+ ],
+ "gaps": [
+  "Fight 12: BettingPros method_of_victory has unlabeled selections ['Kayla Harrison', 'Amanda Nunes']; not displayed."
+ ]
+}
