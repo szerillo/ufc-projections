@@ -72,7 +72,7 @@ def mls(v): return "—" if v is None else (f"+{v}" if v > 0 else str(v))
 FMT = {"pct1": lambda x: f"{x*100:.1f}%", "pct0": lambda x: f"{x*100:.0f}%", "ml": lambda x: mls(x), "mlp": lambda x: mls(ml_of(x)),
        "n1": lambda x: f"{x:.1f}", "n2": lambda x: f"{x:.2f}", "s2": lambda x: f"{x:+.2f}", "int": lambda x: str(x), "intc": lambda x: f"{x:,}",
        "d3": lambda x: f"{x:.3f}", "d4": lambda x: f"{x:.4f}", "str": lambda x: str(x), "in": lambda x: f'{x}"', "r0": lambda x: str(int(round(x))),
-       "pts": lambda x: f"{abs(x)*100:.1f}", "sp": lambda x: f"{x*100:+.1f}", "spp": lambda x: f"{x*100:+.1f}%"}
+       "pts": lambda x: f"{abs(x)*100:.1f}", "sp": lambda x: f"{x*100:+.1f}", "spp": lambda x: f"{x*100:+.1f}%", "s1": lambda x: f"{x:+.1f}", "mmss": lambda x: f"{int(x) // 60}:{int(round(x)) % 60:02d}"}
 
 class Reg:
     def __init__(s): s.rows = []
@@ -200,17 +200,46 @@ def build(names, outname):
 
     # ---------- header (site .ff-header + .fp-title-row, as in ufc_333_fight_form.html); text only ----------
     bp_t = BPO["updated_at"].replace("T", " ")[:16] + " UTC"
-    status = f'<div class="ff-odds-status"><span class="dot"></span>BettingPros snapshot {esc(bp_t)}</div>'
+    status = f'<div class="ff-odds-status"><span class="dot"></span>Odds updated {esc(bp_t)}</div>'
     def meta(F, g, side, key):
         fig = fm[key] if fm else None
         return (f'{esc(last(F["name"]))} <span class="num">{R(g["rec"], "str", "record", F["name"]+" UFC record", side=side)}</span> · Elo <span class="num">{R(f[side]["elo"], "int", "ev", F["name"]+" Elo", ev=EVF, pair=PAIR, path=f"{side}.elo")}</span>'
                 f' · Fig <span class="num">{R(fig, "n1", "ev", F["name"]+" Form Figure", ev=EVF, pair=PAIR, path=f"form.{key}") if fig is not None else "—"}</span>')
+    # ---------- tale of the tape (Block 59c): compact, open, under the names; arrows point at the side with the edge ----------
+    agA = (dt.date.fromisoformat(EVL["date"]) - dt.date.fromisoformat(FA["bio"]["dob"])).days / 365.25 if FA["bio"].get("dob") else None
+    agB = (dt.date.fromisoformat(EVL["date"]) - dt.date.fromisoformat(FB["bio"]["dob"])).days / 365.25 if FB["bio"].get("dob") else None
+    def inch(h):
+        m_ = re.match(r"(\d+)'\s*(\d+)", str(h or "")); return int(m_.group(1)) * 12 + int(m_.group(2)) if m_ else None
+    # rules: height 2+ in = 1 arrow, 4+ = 2; reach 2+ in = 1, 5+ = 2; age 3+ years younger = 1, 6+ = 2
+    RULES = {"Height": (2, 4), "Reach": (2, 5), "Age": (3, 6)}
+    def arrows(lab, va, vb, better):
+        if va is None or vb is None: return ""
+        d_ = (va - vb) if better == "hi" else (vb - va)
+        t1, t2 = RULES[lab]; k_ = 2 if abs(d_) >= t2 else 1 if abs(d_) >= t1 else 0
+        if not k_: return ""
+        return f'<span class="arw" aria-label="{k_} arrow{"s" if k_ > 1 else ""} toward {esc(last(an if d_ > 0 else bn))}">{("◀" if d_ > 0 else "▶") * k_}</span>'
+    def mrow(lab, ca, cb, arw="", win=None):
+        ea, eb = (" adv", "") if win == "a" else ("", " adv") if win == "b" else ("", "")
+        return f'<div class="mt-r"><div class="mt-a{ea}">{ca}</div><div class="mt-k">{lab}{arw}</div><div class="mt-b{eb}">{cb}</div></div>'
+    hA, hB = inch(FA["bio"].get("ht")), inch(FB["bio"].get("ht"))
+    ra_ = int(FA["bio"]["reach"]) if FA["bio"].get("reach") else None; rb_ = int(FB["bio"]["reach"]) if FB["bio"].get("reach") else None
+    def wside(va, vb, better, lab):
+        if va is None or vb is None or not arrows(lab, va, vb, better): return None
+        return "a" if ((va > vb) if better == "hi" else (va < vb)) else "b"
+    def v_(x, fmt, rule, desc, side, **k): return R(x, fmt, rule, desc, side=side, **k) if x not in (None, "") else '<span class="dim">n/a</span>'
+    mini_tape = ('<div class="mt" role="table" aria-label="Tale of the tape">'
+        + mrow("UFC record", v_(ga["rec"], "str", "record", an + " UFC record", "a"), v_(gb["rec"], "str", "record", bn + " UFC record", "b"))
+        + mrow("Age", v_(agA, "n1", "age", "Age a", "a"), v_(agB, "n1", "age", "Age b", "b"), arrows("Age", agA, agB, "lo"), wside(agA, agB, "lo", "Age"))
+        + mrow("Height", v_(FA["bio"].get("ht"), "str", "bio", "Height a", "a", key="ht"), v_(FB["bio"].get("ht"), "str", "bio", "Height b", "b", key="ht"), arrows("Height", hA, hB, "hi"), wside(hA, hB, "hi", "Height"))
+        + mrow("Reach", v_(ra_, "in", "bio_reach", "Reach a", "a"), v_(rb_, "in", "bio_reach", "Reach b", "b"), arrows("Reach", ra_, rb_, "hi"), wside(ra_, rb_, "hi", "Reach"))
+        + mrow("Stance", v_(FA["bio"].get("stance"), "str", "bio", "Stance a", "a", key="stance"), v_(FB["bio"].get("stance"), "str", "bio", "Stance b", "b", key="stance"))
+        + '</div>')
     head = f'''<div class="ff-header"><div class="ff-brand" aria-label="Action Network"><span class="ff-brand-text">ACTION</span><span class="ff-brand-check">{CHECK_SVG}</span></div>
 <div class="ff-title">{esc(EVL["name"])} · Fight Form</div><div class="ff-subtitle">{day} · {esc(EVL["location"])}</div>
 <div class="ff-byline-header">By <a href="https://twitter.com/SeanZerillo" target="_blank" rel="noopener">@SeanZerillo</a></div>{status}</div>
 <div class="panel"><div class="fp-title-row"><span class="fp-fight-num">FIGHT {n}</span><span class="fp-card-tag">{card_tag}</span>{'<span class="fp-title-belt">★ TITLE</span>' if f.get("title") else ""}{'<span class="fp-thin" title="3 or fewer UFC fights before this card">THIN SAMPLE</span>' if min(ga["n"], gb["n"]) <= 3 else ""}<span class="fp-weight">{esc(f["wc"])} · {sched} RDS</span></div>
 <div class="fp-headline">{esc(an)} <span class="vs">vs</span> {esc(bn)}</div>
-<div class="fp-odds">{meta(FA, ga, "a", "ra")}<br>{meta(FB, gb, "b", "rb")}</div>'''
+{mini_tape}'''
 
     # ---------- PROJECTION (Block 59b): the old embed's horizontal stacks, Model vs Listed vs Market, edge chips ----------
     # Market % is the straight conversion of the price (vig included), as Sean asked; nothing on this tab is de-vigged.
@@ -227,11 +256,6 @@ def build(names, outname):
     side_cls = {"a": "fav" if (pwin("a") or .5) >= .5 else "dog"}; side_cls["b"] = "dog" if side_cls["a"] == "fav" else "fav"
     proj = ""
     if pf:
-        # win probability bar (model only; the table carries the prices)
-        wa = pwin("a")
-        proj += (f'<div class="wb"><div class="wb-head"><span>{esc(last(an))}</span><span class="wb-t">Model win probability</span><span>{esc(last(bn))}</span></div>'
-                 f'<div class="wb-bar" role="img" aria-label="Model: {esc(last(an))} {wa*100:.1f}%, {esc(last(bn))} {(1-wa)*100:.1f}%"><i class="{side_cls["a"]}" style="width:{wa*100:.1f}%"><b>{R(wa, "pct1", "pub_win", "Bar model % a", side="a")}</b></i>'
-                 f'<i class="{side_cls["b"]} r" style="width:{(1-wa)*100:.1f}%"><b>{R(1-wa, "pct1", "pub_win", "Bar model % b", side="b")}</b></i></div></div>')
         # moneyline: Model | Listed | Market | Edge (edge = model minus listed implied, as the old embed did)
         body = ""
         for sd in ("a", "b"):
@@ -244,7 +268,8 @@ def build(names, outname):
                 mk = cell(R(c_, "ml", "bp", "Market ML " + F, market="moneyline", label=lab_, field="cost"), R(imp(c_), "pct1", "bp_imp", "Market implied " + F, market="moneyline", label=lab_))
             else:
                 mk = '<td class="dim">n/a</td>'
-            body += f'<tr><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}</td>{mdl}{lst}{mk}<td>{chip(m_id, l_id, "Edge ML " + F)}</td></tr>'
+            nmcell = f'<td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}<div class="nb"><i class="{side_cls[sd]}" style="width:{p_*100:.1f}%"></i></div></td>'
+            body += f'<tr>{nmcell}{mdl}{lst}{mk}<td>{chip(m_id, l_id, "Edge ML " + F)}</td></tr>'
         proj += stack("Moneyline · model vs market", ["Fighter", "Model", "Listed", "Market", "Edge"], body)
         # fight length: GTD (listed from the sheet) and ITD; edge vs listed for GTD, vs market for ITD
         body = ""
@@ -271,22 +296,16 @@ def build(names, outname):
             mk, ed = '<td class="dim">n/a</td>', '<span class="dim">n/a</span>'
         body += f'<tr><td class="l nm">Inside the distance</td>{mdl}<td class="dim">n/a</td>{mk}<td>{ed}</td></tr>'
         proj += stack("Fight length · GTD and ITD", ["Outcome", "Model", "Listed", "Market", "Edge"], body)
-        # method: bars (share of all outcomes) then the old per-fighter stack, each cell model / market / edge
-        bars = ""
-        mx = max(pwin(sd) * pf["method"][role(sd)][k] for sd in "ab" for k in ("dec", "ko", "sub")) or 1
-        for sd in ("a", "b"):
-            for k, kl in (("dec", "DEC"), ("ko", "KO"), ("sub", "SUB")):
-                v = pwin(sd) * pf["method"][role(sd)][k]
-                bars += (f'<div class="mb-row"><span class="mb-l">{esc(last(nm_of[sd]))} {kl}</span><div class="mb-track"><i class="{side_cls[sd]}" style="width:{v / mx * 100:.1f}%"></i></div>'
-                         f'<span class="mb-v">{R(v, "pct1", "pub_meth", f"Bar model {k} % {nm_of[sd]}", side=sd, k=k)}</span></div>')
-        proj += f'<div class="stk"><div class="stk-h"><span class="bullet"></span>How it ends · model</div><div class="mb" role="img" aria-label="Model method of victory, share of all outcomes">{bars}</div></div>'
+        mx = max(pwin(sd) * (pf["method"][role(sd)]["ko"] + pf["method"][role(sd)]["sub"]) for sd in "ab")
+        mx = max([mx] + [pwin(sd) * pf["method"][role(sd)][k] for sd in "ab" for k in ("dec", "ko", "sub")]) or 1
         body = ""
         for sd in ("a", "b"):
             F = nm_of[sd]; tds = ""
             for k in ("dec", "ko", "sub", "itd"):
                 m = pf["method"][role(sd)]; v = pwin(sd) * (m["ko"] + m["sub"] if k == "itd" else m[k])
                 mp = R(v, "mlp", "pub_meth", f"Model {k} ML {F}", side=sd, k=k); mpc = R(v, "pct1", "pub_meth", f"Model {k} % {F}", side=sd, k=k); m_id = lid()
-                if bf and m_ok:
+                own_ok = bf and not any(("draw" in w_ or "opening" in w_) for w_ in bad_why) and all(bp_sel(bf, "method_of_victory", f"{bp_name(bf, F)} {MOVL[x]}") for x in ("dec", "ko", "sub"))
+                if own_ok:
                     if k == "itd":
                         labs_ = [f"{bp_name(bf, F)} {MOVL[x]}" for x in ("ko", "sub")]
                         iv = sum(imp(bp_sel(bf, "method_of_victory", lb)["books"]["consensus"]["cost"]) for lb in labs_)
@@ -297,7 +316,7 @@ def build(names, outname):
                     x_id = lid(); ed = chip(m_id, x_id, f"Edge {k} {F}")
                 else:
                     live, ed = '<div class="live dim">mkt n/a</div>', ""
-                tds += f'<td data-k="{k}"><span class="odds">{mp}</span><div class="pct">{mpc}</div>{live}{ed}</td>'
+                tds += f'<td data-k="{k}"><span class="odds">{mp}</span><div class="pct">{mpc}</div><div class="cb"><i class="{side_cls[sd]}" style="width:{v / mx * 100:.1f}%"></i></div>{live}{ed}</td>'
             body += f'<tr class="{side_cls[sd]}"><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}</td>{tds}</tr>'
         proj += stack("Method · model vs market", ["Fighter", "DEC", "KO", "SUB", "ITD"], body)
         proj += '<div class="legend">Market % is the straight conversion of the price, vig included.</div>'
@@ -338,42 +357,50 @@ def build(names, outname):
         pass
     secs.append(sec("move", "Line movement", "open → now", body))
 
-    # ---------- props detail (BettingPros fight-level markets) ----------
-    body = ""
-    if bf:
-        rows_ = []
-        for mkt_, lab_ in [("fight_ending", "KO/TKO/DQ"), ("fight_ending", "Submission"), ("fight_ending", "Points"), ("fight_distance", "Yes"), ("fight_distance", "No"), ("total_rounds", "Over"), ("total_rounds", "Under")]:
-            s = bp_sel(bf, mkt_, lab_)
-            if not s: continue
-            c = s["books"]["consensus"]
-            lnh = (" " + R(c["line"], "str", "bp", f"BP line {mkt_} {lab_}", market=mkt_, label=lab_, field="line")) if mkt_ == "total_rounds" else ""
-            nice = {"fight_ending": "Fight ends by ", "fight_distance": "Goes the distance: ", "total_rounds": "Rounds "}[mkt_] + lab_
-            rows_.append(f'<tr><td class="l">{esc(nice)}{lnh}</td><td>{R(s["opening_cost"], "ml", "bp", f"BP open {mkt_} {lab_}", market=mkt_, label=lab_, field="opening_cost")}</td><td class="b">{R(c["cost"], "ml", "bp", f"BP now {mkt_} {lab_}", market=mkt_, label=lab_, field="cost")}</td><td class="dim">{R(imp(c["cost"]), "pct0", "bp_imp", f"BP implied {mkt_} {lab_}", market=mkt_, label=lab_)}</td></tr>')
-        odd = [s["label"] for s in bf["markets"].get("method_of_victory", []) if s["selection"] == ""]
-        body += f'<table class="t"><thead><tr><th class="l">BettingPros market</th><th>Open</th><th>Now</th><th>Implied</th></tr></thead><tbody>{"".join(rows_)}</tbody></table>'
-        if odd: gaps.append(f"Fight {n}: BettingPros method_of_victory has unlabeled selections {odd}; not displayed.")
-    secs.append(sec("props", "Props detail", "fight-level markets", body or '<div class="note">No prop markets on file.</div>'))
+    # ---------- props detail: dropped (Block 59c, Sean: our projections and stats are the star) ----------
 
-    # ---------- fighter stats ----------
-    agA = (dt.date.fromisoformat(EVL["date"]) - dt.date.fromisoformat(FA["bio"]["dob"])).days / 365.25 if FA["bio"].get("dob") else None
-    agB = (dt.date.fromisoformat(EVL["date"]) - dt.date.fromisoformat(FB["bio"]["dob"])).days / 365.25 if FB["bio"].get("dob") else None
-    def trow(lab, va, vb, fmt, rule, better=None, **args):
+    # ---------- our stats (Block 59c): labs.json (site-built metrics, cardio, pace) + UFCStats grappling rates ----------
+    LABS = json.load(open(L / "labs.json"))
+    def labv(section, slug, key):
+        if not slug: return None
+        if section == "metrics":
+            r_ = next((x for x in LABS["metrics"] if x.get("s") == slug), None); return None if r_ is None else r_.get(key)
+        sec_, sub_ = section.split(".")
+        for u in LABS[sec_][sub_]:
+            for sd_ in ("a", "b"):
+                if isinstance(u.get(sd_), dict) and u[sd_].get("s") == slug and u[sd_].get(key) is not None: return u[sd_][key]
+        return None
+    BIG = {"sd": 1.0, "hd": 0.8, "bd": 0.3, "ld": 0.3, "hdef": 0.08, "kd15": 0.3, "chin": 1.0, "sw": 6.0, "out": 0.3, "d3": 3.0, "min": 3.0, "r1": 0.2, "dec": 0.2,
+           "wko": 0.25, "wsub": 0.2, "lko": 0.2, "lsub": 0.15, "td15": 1.5, "tdd": 0.15, "ctd": 30}
+    def srow(lab, bkey, va, vb, fmt, rule, better, tip="", **args):
+        if va is None and vb is None: return ""
+        ca = R(va, fmt, rule, lab + " a", side="a", **dict(args, slug=A_.get("slug"))) if va is not None else '<span class="dim">n/a</span>'
+        cb = R(vb, fmt, rule, lab + " b", side="b", **dict(args, slug=B_.get("slug"))) if vb is not None else '<span class="dim">n/a</span>'
         ea = eb = ""
-        if better and va is not None and vb is not None and va != vb and not isinstance(va, str):
-            aw = va > vb if better == "hi" else va < vb; ea, eb = (" edge", "") if aw else ("", " edge")
-        ca = R(va, fmt, rule, lab + " a", side="a", **args) if va not in (None, "") else "—"
-        cb = R(vb, fmt, rule, lab + " b", side="b", **args) if vb not in (None, "") else "—"
-        return f'<div class="row"><div class="a{ea}">{ca}</div><div class="k">{lab}</div><div class="b{eb}">{cb}</div></div>'
-    ra_ = int(FA["bio"]["reach"]) if FA["bio"].get("reach") else None; rb_ = int(FB["bio"]["reach"]) if FB["bio"].get("reach") else None
-    tape = "".join([
-        trow("Age", agA, agB, "n1", "age", "lo"), trow("Reach", ra_, rb_, "in", "bio_reach", "hi"), trow("Height", FA["bio"].get("ht"), FB["bio"].get("ht"), "str", "bio", None, key="ht"),
-        trow("Stance", FA["bio"].get("stance"), FB["bio"].get("stance"), "str", "bio", None, key="stance"), trow("UFC fights", ga["n"], gb["n"], "int", "nfights"),
-        trow("SLpM", ga["slpm"], gb["slpm"], "n2", "stat", "hi", key="slpm"), trow("SApM", ga["sapm"], gb["sapm"], "n2", "stat", "lo", key="sapm"),
-        trow("Strike diff /min", ga["diff"], gb["diff"], "s2", "stat", "hi", key="diff"), trow("Strike accuracy", ga["acc"], gb["acc"], "pct0", "stat", "hi", key="acc"),
-        trow("Strike defence", ga["dfn"], gb["dfn"], "pct0", "stat", "hi", key="dfn"), trow("Takedowns /15", ga["td15"], gb["td15"], "n2", "stat", "hi", key="td15"),
-        trow("TD defence", ga["tdd"], gb["tdd"], "pct0", "stat", "hi", key="tdd"), trow("Control time", ga["ctrlp"], gb["ctrlp"], "pct0", "stat", "hi", key="ctrlp")])
+        if better and va is not None and vb is not None and va != vb:
+            aw = va > vb if better == "hi" else va < vb; big = abs(va - vb) >= BIG.get(bkey, 1e9)
+            cls_ = " adv big" if big else " adv"; ea, eb = (cls_, "") if aw else ("", cls_)
+        return f'<div class="row"><div class="a{ea}">{ca}</div><div class="k" title="{esc(tip)}">{lab}</div><div class="b{eb}">{cb}</div></div>'
+    def L3(section, key, lab, fmt, better, tip=""):
+        return srow(lab, key, labv(section, A_.get("slug"), key), labv(section, B_.get("slug"), key), fmt, "labs", better, tip, section=section, key=key)
+    def grp(title, rows_):
+        if not rows_: return ""
+        return f'<div class="sg"><div class="sg-h">{title}</div><div class="tape">{rows_}</div></div>'
+    stats_html = (f'<div class="tape"><div class="row hdr"><div class="a">{esc(last(an))}</div><div class="k vs">VS</div><div class="b">{esc(last(bn))}</div></div></div>'
+        + grp("Striking", L3("metrics", "sd", "Strike diff /min", "s2", "hi", "Sig. strikes landed minus absorbed per minute")
+              + L3("metrics", "hd", "Head diff /min", "s2", "hi") + L3("metrics", "bd", "Body diff /min", "s2", "hi") + L3("metrics", "ld", "Leg diff /min", "s2", "hi")
+              + L3("metrics", "hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed")
+              + L3("metrics", "kd15", "Knockdowns /15", "n2", "hi") + L3("metrics", "chin", "KD taken /100 head", "n2", "lo", "Knockdowns suffered per 100 head strikes absorbed"))
+        + grp("Cardio", L3("cardio.upcoming", "sw", "R1 to R3 swing", "s1", "hi", "Strike differential in round 3 minus round 1")
+              + L3("cardio.upcoming", "out", "Output kept R3", "pct0", "hi", "Round 3 strikes as a share of round 1")
+              + L3("cardio.upcoming", "d3", "R3 strike diff", "s1", "hi"))
+        + grp("Pace and finishes", L3("props.upcoming", "min", "Avg fight, min", "n1", None) + L3("props.upcoming", "r1", "Finished in R1", "pct0", None)
+              + L3("props.upcoming", "dec", "Goes to decision", "pct0", None) + L3("props.upcoming", "wko", "Wins by KO", "pct0", "hi")
+              + L3("props.upcoming", "wsub", "Wins by SUB", "pct0", "hi") + L3("props.upcoming", "lko", "Losses by KO", "pct0", "lo") + L3("props.upcoming", "lsub", "Losses by SUB", "pct0", "lo"))
+        + grp("Grappling", srow("Takedowns /15", "td15", ga["td15"], gb["td15"], "n2", "stat", "hi", key="td15") + srow("TD defence", "tdd", ga["tdd"], gb["tdd"], "pct0", "stat", "hi", key="tdd")
+              + L3("metrics", "ctd", "Control per TD", "mmss", "hi", "Seconds of control per takedown landed")))
     small = [F["name"] for F, g_ in [(FA, ga), (FB, gb)] if g_["n"] <= 3]
-    secs.insert(0, sec("stats", "Tale of the tape", "UFC only, before this fight", f'<div class="tape"><div class="row hdr"><div class="a">{esc(an)}</div><div class="k vs">VS</div><div class="b">{esc(bn)}</div></div>{tape}</div>', True))
+    secs.append(sec("ourstats", "Stats", "", stats_html))
 
     # ---------- recent form ----------
     def t5(F, Lf, sd):
@@ -384,8 +411,8 @@ def build(names, outname):
             m_ = (x.get("m") or "").replace("Decision - ", "").replace("Unanimous", "UD").replace("Split", "SD").replace("Majority", "MD").replace("Submission", "SUB").replace("TKO - Doctor's Stoppage", "TKO (Dr)").replace("Could Not Continue", "CNC")
             fin = m_ if m_ in ("UD", "SD", "MD") else f'{m_} R{x["rd"]}'
             mc = (x.get("od") or {}).get("mc")
-            rw.append(f'<tr><td class="l dim">{dt.date.fromisoformat(x["d"]).strftime("%b %y")}</td><td class="l"><b class="r-{x["r"].lower()}">{x["r"]}</b> {esc(x["o"])}</td><td class="l">{esc(fin)}</td><td>{R(x["fg"], "r0", "fight", "Fig "+F["name"]+" "+x["o"], side=sd, i=i, key="fg") if x.get("fg") is not None else "–"}</td><td class="dim">{R(mc, "ml", "fight", "Close "+F["name"]+" "+x["o"], side=sd, i=i, key="od.mc") if mc is not None else "—"}</td></tr>')
-        return f'<div class="col"><div class="cn">{esc(F["name"])} <span class="chips">{chips}</span></div><table class="t ft"><thead><tr><th class="l">When</th><th class="l">Result</th><th class="l">How</th><th>Fig</th><th>Close</th></tr></thead><tbody>{"".join(rw)}</tbody></table></div>'
+            rw.append(f'<tr><td class="l dim">{dt.date.fromisoformat(x["d"]).strftime("%b %y")}</td><td class="l"><b class="r-{x["r"].lower()}">{x["r"]}</b> {esc(x["o"])}</td><td class="l">{esc(fin)}</td><td class="dim">{R(mc, "ml", "fight", "Close "+F["name"]+" "+x["o"], side=sd, i=i, key="od.mc") if mc is not None else "—"}</td></tr>')
+        return f'<div class="col"><div class="cn">{esc(F["name"])} <span class="chips">{chips}</span></div><table class="t ft"><thead><tr><th class="l">When</th><th class="l">Result</th><th class="l">How</th><th>Close</th></tr></thead><tbody>{"".join(rw)}</tbody></table></div>'
     secs.append(sec("form", "Recent form", "last 5 UFC", f'<div class="ftw">{t5(FA, pa_, "a")}{t5(FB, pb_, "b")}</div>'))
 
     # ---------- notes: dropped (Block 59) ----------
@@ -393,9 +420,7 @@ def build(names, outname):
 
     nav = '<nav class="ffnav">' + "".join(f'<a href="#{i}">{t}</a>' for i, t in [("odds", "Odds"), ("move", "Movement"), ("props", "Props"), ("stats", "Stats"), ("form", "Form"), ("notes", "Notes")]) + "</nav>"
     # ---------- tabs (Block 59b): Projection first; tale of the tape collapsed at its top ----------
-    tape_t, tape_b = PANELS["stats"]
-    tape_d = f'<details class="collapsible taped"><summary>Tale of the tape<span class="meta">tap to open</span></summary><div class="body">{tape_b}</div></details>'
-    tabdefs = [("proj", "Projection", tape_d + top)] + [(k, t, PANELS[k][1]) for k, t in (("move", "Movement"), ("props", "Props"), ("form", "Form")) if k in PANELS]
+    tabdefs = [("proj", "Projection", top)] + [(k, t, PANELS[k][1]) for k, t in (("ourstats", "Stats"), ("move", "Movement"), ("form", "Form")) if k in PANELS]
     tabs_html = ('<div class="tabs" role="tablist" aria-label="Fight sections">' + "".join(
         f'<button type="button" role="tab" id="tb-{k}" aria-controls="tp-{k}" aria-selected="{"true" if i_ == 0 else "false"}" tabindex="{0 if i_ == 0 else -1}">{t}</button>' for i_, (k, t, _) in enumerate(tabdefs)) + '</div>'
         + "".join(f'<section class="tp" id="tp-{k}" role="tabpanel" aria-labelledby="tb-{k}" tabindex="0"><h2 class="tp-h">{t}</h2>{b}</section>' for k, t, b in tabdefs))
@@ -478,6 +503,19 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .mb-track{{height:14px;background:var(--bg-muted);border-radius:3px;overflow:hidden}}.mb-track i{{display:block;height:100%;border-radius:3px}}.mb-track i.fav{{background:#2a78d6}}.mb-track i.dog{{background:#eb6834}}.mb-v{{font:700 12px/1 "SF Mono",Menlo,monospace;text-align:right}}
 .drift{{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:2px 0 6px}}.drift .dl{{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--text-muted)}}.drift .dv{{font:800 20px/1 "SF Mono",Menlo,monospace}}.drift .dt{{font-size:12px;color:var(--text-muted)}}
 @media (max-width:440px){{.tabs{{padding:8px 10px 0}}.tabs [role=tab]{{font-size:11px;padding:8px 7px 9px}}.tp{{padding:10px 10px 4px}}.stk-t td,.stk-t th{{padding:7px 3px}}.stk-t td.nm{{font-size:11.5px}}.stk-t .odds{{font-size:11.5px}}.stk-t .pct{{font-size:10px}}.stk-t .live{{font-size:9.5px}}.ech{{font-size:10px;padding:2px 4px}}.mb-row{{grid-template-columns:84px 1fr 44px}}}}
+/* Block 59c: tape under the names, bars inside the stacks, stats groups */
+.mt{{margin:8px 0 2px;border:1px solid var(--border);border-radius:6px;overflow:hidden;font-variant-numeric:tabular-nums}}
+.mt-r{{display:grid;grid-template-columns:1fr 104px 1fr;border-bottom:1px solid var(--border)}}.mt-r:last-child{{border-bottom:0}}
+.mt-r>div{{padding:5px 8px;font-size:12.5px;display:flex;align-items:center}}.mt-a{{justify-content:flex-end}}.mt-a{{text-align:right;font-weight:700}}.mt-b{{font-weight:700}}
+.mt-k{{text-align:center;font-size:9.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);background:var(--bg-muted);flex-direction:column;justify-content:center;gap:1px}}
+.mt .adv{{background:var(--pos-soft);color:var(--pos-strong)}}.arw{{color:var(--action-green-dark);font-size:10px;letter-spacing:1px}}
+.nb{{height:5px;background:var(--bg-muted);border-radius:3px;margin-top:5px;max-width:120px;overflow:hidden}}.nb i,.cb i{{display:block;height:100%;border-radius:3px}}
+.nb i.fav,.cb i.fav{{background:#2a78d6}}.nb i.dog,.cb i.dog{{background:#eb6834}}
+.cb{{height:5px;background:var(--bg-muted);border-radius:3px;margin:4px auto 2px;width:80%;overflow:hidden}}
+.sg{{margin:0 0 12px}}.sg-h{{background:var(--header-bg);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:7px 10px;border-radius:6px 6px 0 0}}
+.sg .tape{{border:1px solid var(--border);border-top:0;border-radius:0 0 6px 6px}}
+.tape .adv{{background:var(--pos-soft);color:var(--pos-strong);font-weight:800}}.tape .adv.big{{background:#9fe3bb;color:#063d1e}}
+@media (max-width:440px){{.mt-r{{grid-template-columns:1fr 86px 1fr}}.mt-r>div{{padding:4px 6px;font-size:12px}}.mt-k{{font-size:8.5px}}}}
 /* Action Network badge stays visible at every width (the site widget hides it under 440 px; the embed keeps it) */
 @media (max-width:600px){{.ff-brand{{position:static;display:flex;justify-content:center;margin-bottom:6px}}.ff-header{{padding:12px 12px 10px}}.ff-title{{font-size:17px}}}}
 @media (max-width:440px){{.ff-header{{padding:9px 8px 8px}}.ff-brand{{display:flex!important;margin-bottom:5px}}.ff-title{{font-size:14px}}.ff-subtitle{{font-size:10px}}

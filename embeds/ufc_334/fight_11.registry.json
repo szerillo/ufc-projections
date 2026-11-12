@@ -28,38 +28,6 @@
   },
   {
    "id": "v2",
-   "text": "1632",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Caio Borralho",
-     "Yousri Belgaroui"
-    ],
-    "path": "a.elo"
-   },
-   "desc": "Caio Borralho Elo",
-   "raw": 1632
-  },
-  {
-   "id": "v3",
-   "text": "65.6",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Caio Borralho",
-     "Yousri Belgaroui"
-    ],
-    "path": "form.ra"
-   },
-   "desc": "Caio Borralho Form Figure",
-   "raw": 65.6
-  },
-  {
-   "id": "v4",
    "text": "3-0-0",
    "fmt": "str",
    "rule": "record",
@@ -70,61 +38,99 @@
    "raw": "3-0-0"
   },
   {
-   "id": "v5",
-   "text": "1573",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Caio Borralho",
-     "Yousri Belgaroui"
-    ],
-    "path": "b.elo"
-   },
-   "desc": "Yousri Belgaroui Elo",
-   "raw": 1573
-  },
-  {
-   "id": "v6",
-   "text": "75.1",
+   "id": "v3",
+   "text": "33.8",
    "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Caio Borralho",
-     "Yousri Belgaroui"
-    ],
-    "path": "form.rb"
-   },
-   "desc": "Yousri Belgaroui Form Figure",
-   "raw": 75.1
-  },
-  {
-   "id": "v7",
-   "text": "58.1%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "rule": "age",
    "args": {
     "side": "a"
    },
-   "desc": "Bar model % a",
-   "raw": 0.581196426430214
+   "desc": "Age a",
+   "raw": 33.82614647501711
   },
   {
-   "id": "v8",
-   "text": "41.9%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "id": "v4",
+   "text": "34.5",
+   "fmt": "n1",
+   "rule": "age",
    "args": {
     "side": "b"
    },
-   "desc": "Bar model % b",
-   "raw": 0.41880357356978604
+   "desc": "Age b",
+   "raw": 34.450376454483234
+  },
+  {
+   "id": "v5",
+   "text": "6'1\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "6'1\""
+  },
+  {
+   "id": "v6",
+   "text": "6'5\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "6'5\""
+  },
+  {
+   "id": "v7",
+   "text": "75\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 75
+  },
+  {
+   "id": "v8",
+   "text": "79\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 79
   },
   {
    "id": "v9",
+   "text": "Southpaw",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Southpaw"
+  },
+  {
+   "id": "v10",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v11",
    "text": "-139",
    "fmt": "mlp",
    "rule": "pub_win",
@@ -135,7 +141,7 @@
    "raw": 0.581196426430214
   },
   {
-   "id": "v10",
+   "id": "v12",
    "text": "58.1%",
    "fmt": "pct1",
    "rule": "pub_win",
@@ -146,7 +152,7 @@
    "raw": 0.581196426430214
   },
   {
-   "id": "v11",
+   "id": "v13",
    "text": "-155",
    "fmt": "ml",
    "rule": "pub_ml",
@@ -157,7 +163,7 @@
    "raw": -155
   },
   {
-   "id": "v12",
+   "id": "v14",
    "text": "60.8%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
@@ -168,7 +174,7 @@
    "raw": 0.6078431372549019
   },
   {
-   "id": "v13",
+   "id": "v15",
    "text": "-162",
    "fmt": "ml",
    "rule": "bp",
@@ -181,7 +187,7 @@
    "raw": -162
   },
   {
-   "id": "v14",
+   "id": "v16",
    "text": "61.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -193,21 +199,21 @@
    "raw": 0.6183206106870229
   },
   {
-   "id": "v15",
+   "id": "v17",
    "text": "-2.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v10",
-     "v12"
+     "v12",
+     "v14"
     ]
    },
    "desc": "Edge ML Caio Borralho",
    "raw": -0.026646710824687947
   },
   {
-   "id": "v16",
+   "id": "v18",
    "text": "+139",
    "fmt": "mlp",
    "rule": "pub_win",
@@ -218,7 +224,7 @@
    "raw": 0.41880357356978604
   },
   {
-   "id": "v17",
+   "id": "v19",
    "text": "41.9%",
    "fmt": "pct1",
    "rule": "pub_win",
@@ -229,7 +235,7 @@
    "raw": 0.41880357356978604
   },
   {
-   "id": "v18",
+   "id": "v20",
    "text": "+132",
    "fmt": "ml",
    "rule": "pub_ml",
@@ -240,7 +246,7 @@
    "raw": 132
   },
   {
-   "id": "v19",
+   "id": "v21",
    "text": "43.1%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
@@ -251,7 +257,7 @@
    "raw": 0.43103448275862066
   },
   {
-   "id": "v20",
+   "id": "v22",
    "text": "+130",
    "fmt": "ml",
    "rule": "bp",
@@ -264,7 +270,7 @@
    "raw": 130
   },
   {
-   "id": "v21",
+   "id": "v23",
    "text": "43.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -276,21 +282,21 @@
    "raw": 0.43478260869565216
   },
   {
-   "id": "v22",
+   "id": "v24",
    "text": "-1.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v17",
-     "v19"
+     "v19",
+     "v21"
     ]
    },
    "desc": "Edge ML Yousri Belgaroui",
    "raw": -0.012230909188834627
   },
   {
-   "id": "v23",
+   "id": "v25",
    "text": "-142",
    "fmt": "mlp",
    "rule": "pub",
@@ -301,7 +307,7 @@
    "raw": 0.5866270091145988
   },
   {
-   "id": "v24",
+   "id": "v26",
    "text": "58.7%",
    "fmt": "pct1",
    "rule": "pub",
@@ -312,7 +318,7 @@
    "raw": 0.5866270091145988
   },
   {
-   "id": "v25",
+   "id": "v27",
    "text": "-166",
    "fmt": "mlp",
    "rule": "pub",
@@ -323,7 +329,7 @@
    "raw": 0.6234796967241207
   },
   {
-   "id": "v26",
+   "id": "v28",
    "text": "62.3%",
    "fmt": "pct1",
    "rule": "pub",
@@ -334,7 +340,7 @@
    "raw": 0.6234796967241207
   },
   {
-   "id": "v27",
+   "id": "v29",
    "text": "-193",
    "fmt": "ml",
    "rule": "bp",
@@ -347,7 +353,7 @@
    "raw": -193
   },
   {
-   "id": "v28",
+   "id": "v30",
    "text": "65.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -359,21 +365,21 @@
    "raw": 0.658703071672355
   },
   {
-   "id": "v29",
+   "id": "v31",
    "text": "-3.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v24",
-     "v26"
+     "v26",
+     "v28"
     ]
    },
    "desc": "Edge GTD vs listed",
    "raw": -0.036852687609521984
   },
   {
-   "id": "v30",
+   "id": "v32",
    "text": "+142",
    "fmt": "mlp",
    "rule": "pub",
@@ -385,7 +391,7 @@
    "raw": 0.41337299088540125
   },
   {
-   "id": "v31",
+   "id": "v33",
    "text": "41.3%",
    "fmt": "pct1",
    "rule": "pub",
@@ -397,7 +403,7 @@
    "raw": 0.41337299088540125
   },
   {
-   "id": "v32",
+   "id": "v34",
    "text": "+145",
    "fmt": "ml",
    "rule": "bp",
@@ -410,7 +416,7 @@
    "raw": 145
   },
   {
-   "id": "v33",
+   "id": "v35",
    "text": "40.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -422,93 +428,21 @@
    "raw": 0.40816326530612246
   },
   {
-   "id": "v34",
+   "id": "v36",
    "text": "+0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v31",
-     "v33"
+     "v33",
+     "v35"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": 0.00520972557927879
   },
   {
-   "id": "v35",
-   "text": "36.9%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Bar model dec % Caio Borralho",
-   "raw": 0.3689460542873628
-  },
-  {
-   "id": "v36",
-   "text": "10.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Bar model ko % Caio Borralho",
-   "raw": 0.10139222188359799
-  },
-  {
    "id": "v37",
-   "text": "11.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Bar model sub % Caio Borralho",
-   "raw": 0.11085815025925314
-  },
-  {
-   "id": "v38",
-   "text": "21.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Bar model dec % Yousri Belgaroui",
-   "raw": 0.21768095482723593
-  },
-  {
-   "id": "v39",
-   "text": "17.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Bar model ko % Yousri Belgaroui",
-   "raw": 0.17511734950545532
-  },
-  {
-   "id": "v40",
-   "text": "2.6%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Bar model sub % Yousri Belgaroui",
-   "raw": 0.02600526923709477
-  },
-  {
-   "id": "v41",
    "text": "+171",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -520,7 +454,7 @@
    "raw": 0.3689460542873628
   },
   {
-   "id": "v42",
+   "id": "v38",
    "text": "36.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -532,7 +466,7 @@
    "raw": 0.3689460542873628
   },
   {
-   "id": "v43",
+   "id": "v39",
    "text": "+140",
    "fmt": "ml",
    "rule": "bp",
@@ -545,7 +479,7 @@
    "raw": 140
   },
   {
-   "id": "v44",
+   "id": "v40",
    "text": "41.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -557,21 +491,21 @@
    "raw": 0.4166666666666667
   },
   {
-   "id": "v45",
+   "id": "v41",
    "text": "-4.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v42",
-     "v44"
+     "v38",
+     "v40"
     ]
    },
    "desc": "Edge dec Caio Borralho",
    "raw": -0.04772061237930386
   },
   {
-   "id": "v46",
+   "id": "v42",
    "text": "+886",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -583,7 +517,7 @@
    "raw": 0.10139222188359799
   },
   {
-   "id": "v47",
+   "id": "v43",
    "text": "10.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -595,7 +529,7 @@
    "raw": 0.10139222188359799
   },
   {
-   "id": "v48",
+   "id": "v44",
    "text": "+800",
    "fmt": "ml",
    "rule": "bp",
@@ -608,7 +542,7 @@
    "raw": 800
   },
   {
-   "id": "v49",
+   "id": "v45",
    "text": "11.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -620,21 +554,21 @@
    "raw": 0.1111111111111111
   },
   {
-   "id": "v50",
+   "id": "v46",
    "text": "-1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v47",
-     "v49"
+     "v43",
+     "v45"
     ]
    },
    "desc": "Edge ko Caio Borralho",
    "raw": -0.009718889227513114
   },
   {
-   "id": "v51",
+   "id": "v47",
    "text": "+802",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -646,7 +580,7 @@
    "raw": 0.11085815025925314
   },
   {
-   "id": "v52",
+   "id": "v48",
    "text": "11.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -658,7 +592,7 @@
    "raw": 0.11085815025925314
   },
   {
-   "id": "v53",
+   "id": "v49",
    "text": "+600",
    "fmt": "ml",
    "rule": "bp",
@@ -671,7 +605,7 @@
    "raw": 600
   },
   {
-   "id": "v54",
+   "id": "v50",
    "text": "14.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -683,21 +617,21 @@
    "raw": 0.14285714285714285
   },
   {
-   "id": "v55",
+   "id": "v51",
    "text": "-3.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v52",
-     "v54"
+     "v48",
+     "v50"
     ]
    },
    "desc": "Edge sub Caio Borralho",
    "raw": -0.031998992597889714
   },
   {
-   "id": "v56",
+   "id": "v52",
    "text": "+371",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -709,7 +643,7 @@
    "raw": 0.21225037214285114
   },
   {
-   "id": "v57",
+   "id": "v53",
    "text": "21.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -721,7 +655,7 @@
    "raw": 0.21225037214285114
   },
   {
-   "id": "v58",
+   "id": "v54",
    "text": "25.4%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -736,21 +670,21 @@
    "raw": 0.25396825396825395
   },
   {
-   "id": "v59",
+   "id": "v55",
    "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v57",
-     "v58"
+     "v53",
+     "v54"
     ]
    },
    "desc": "Edge itd Caio Borralho",
    "raw": -0.041717881825402814
   },
   {
-   "id": "v60",
+   "id": "v56",
    "text": "+359",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -762,7 +696,7 @@
    "raw": 0.21768095482723593
   },
   {
-   "id": "v61",
+   "id": "v57",
    "text": "21.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -774,7 +708,7 @@
    "raw": 0.21768095482723593
   },
   {
-   "id": "v62",
+   "id": "v58",
    "text": "+280",
    "fmt": "ml",
    "rule": "bp",
@@ -787,7 +721,7 @@
    "raw": 280
   },
   {
-   "id": "v63",
+   "id": "v59",
    "text": "26.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -799,21 +733,21 @@
    "raw": 0.2631578947368421
   },
   {
-   "id": "v64",
+   "id": "v60",
    "text": "-4.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v61",
-     "v63"
+     "v57",
+     "v59"
     ]
    },
    "desc": "Edge dec Yousri Belgaroui",
    "raw": -0.04547693990960616
   },
   {
-   "id": "v65",
+   "id": "v61",
    "text": "+471",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -825,7 +759,7 @@
    "raw": 0.17511734950545532
   },
   {
-   "id": "v66",
+   "id": "v62",
    "text": "17.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -837,7 +771,7 @@
    "raw": 0.17511734950545532
   },
   {
-   "id": "v67",
+   "id": "v63",
    "text": "+433",
    "fmt": "ml",
    "rule": "bp",
@@ -850,7 +784,7 @@
    "raw": 433
   },
   {
-   "id": "v68",
+   "id": "v64",
    "text": "18.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -862,21 +796,21 @@
    "raw": 0.18761726078799248
   },
   {
-   "id": "v69",
+   "id": "v65",
    "text": "-1.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v66",
-     "v68"
+     "v62",
+     "v64"
     ]
    },
    "desc": "Edge ko Yousri Belgaroui",
    "raw": -0.012499911282537163
   },
   {
-   "id": "v70",
+   "id": "v66",
    "text": "+3745",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -888,7 +822,7 @@
    "raw": 0.02600526923709477
   },
   {
-   "id": "v71",
+   "id": "v67",
    "text": "2.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -900,7 +834,7 @@
    "raw": 0.02600526923709477
   },
   {
-   "id": "v72",
+   "id": "v68",
    "text": "+3143",
    "fmt": "ml",
    "rule": "bp",
@@ -913,7 +847,7 @@
    "raw": 3143
   },
   {
-   "id": "v73",
+   "id": "v69",
    "text": "3.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -925,21 +859,21 @@
    "raw": 0.030835646006783842
   },
   {
-   "id": "v74",
+   "id": "v70",
    "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v71",
-     "v73"
+     "v67",
+     "v69"
     ]
    },
    "desc": "Edge sub Yousri Belgaroui",
    "raw": -0.004830376769689074
   },
   {
-   "id": "v75",
+   "id": "v71",
    "text": "+397",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -951,7 +885,7 @@
    "raw": 0.2011226187425501
   },
   {
-   "id": "v76",
+   "id": "v72",
    "text": "20.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -963,7 +897,7 @@
    "raw": 0.2011226187425501
   },
   {
-   "id": "v77",
+   "id": "v73",
    "text": "21.8%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -978,21 +912,21 @@
    "raw": 0.21845290679477633
   },
   {
-   "id": "v78",
+   "id": "v74",
    "text": "-1.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v76",
-     "v77"
+     "v72",
+     "v73"
     ]
    },
    "desc": "Edge itd Yousri Belgaroui",
    "raw": -0.017330288052226223
   },
   {
-   "id": "v79",
+   "id": "v75",
    "text": "1.8",
    "fmt": "pts",
    "rule": "oa_drift",
@@ -1007,7 +941,7 @@
    "raw": 0.01759999999999995
   },
   {
-   "id": "v80",
+   "id": "v76",
    "text": "-161",
    "fmt": "ml",
    "rule": "oa_best",
@@ -1023,7 +957,7 @@
    "raw": -161
   },
   {
-   "id": "v81",
+   "id": "v77",
    "text": "+136",
    "fmt": "ml",
    "rule": "oa_best",
@@ -1039,7 +973,7 @@
    "raw": 136
   },
   {
-   "id": "v82",
+   "id": "v78",
    "text": "-125",
    "fmt": "ml",
    "rule": "bp",
@@ -1052,7 +986,7 @@
    "raw": -125
   },
   {
-   "id": "v83",
+   "id": "v79",
    "text": "-162",
    "fmt": "ml",
    "rule": "bp",
@@ -1065,7 +999,7 @@
    "raw": -162
   },
   {
-   "id": "v84",
+   "id": "v80",
    "text": "-105",
    "fmt": "ml",
    "rule": "bp",
@@ -1078,7 +1012,7 @@
    "raw": -105
   },
   {
-   "id": "v85",
+   "id": "v81",
    "text": "+130",
    "fmt": "ml",
    "rule": "bp",
@@ -1091,618 +1025,409 @@
    "raw": 130
   },
   {
-   "id": "v86",
-   "text": "+205",
-   "fmt": "ml",
-   "rule": "bp",
+   "id": "v82",
+   "text": "+0.67",
+   "fmt": "s2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "metrics",
+    "key": "sd",
+    "slug": "caio-borralho"
    },
-   "desc": "BP open fight_ending KO/TKO/DQ",
-   "raw": 205
+   "desc": "Strike diff /min a",
+   "raw": 0.67
+  },
+  {
+   "id": "v83",
+   "text": "+0.70",
+   "fmt": "s2",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "hd",
+    "slug": "caio-borralho"
+   },
+   "desc": "Head diff /min a",
+   "raw": 0.7
+  },
+  {
+   "id": "v84",
+   "text": "-0.04",
+   "fmt": "s2",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "bd",
+    "slug": "caio-borralho"
+   },
+   "desc": "Body diff /min a",
+   "raw": -0.04
+  },
+  {
+   "id": "v85",
+   "text": "+0.01",
+   "fmt": "s2",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "ld",
+    "slug": "caio-borralho"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.01
+  },
+  {
+   "id": "v86",
+   "text": "69%",
+   "fmt": "pct0",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "hdef",
+    "slug": "caio-borralho"
+   },
+   "desc": "Head defence a",
+   "raw": 0.692
   },
   {
    "id": "v87",
-   "text": "+220",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "0.32",
+   "fmt": "n2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "cost"
+    "side": "a",
+    "section": "metrics",
+    "key": "kd15",
+    "slug": "caio-borralho"
    },
-   "desc": "BP now fight_ending KO/TKO/DQ",
-   "raw": 220
+   "desc": "Knockdowns /15 a",
+   "raw": 0.32
   },
   {
    "id": "v88",
-   "text": "31%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ"
+    "side": "a",
+    "section": "metrics",
+    "key": "chin",
+    "slug": "caio-borralho"
    },
-   "desc": "BP implied fight_ending KO/TKO/DQ",
-   "raw": 0.3125
+   "desc": "KD taken /100 head a",
+   "raw": 0.0
   },
   {
    "id": "v89",
-   "text": "+460",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-1.3",
+   "fmt": "s1",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "sw",
+    "slug": "caio-borralho"
    },
-   "desc": "BP open fight_ending Submission",
-   "raw": 460
+   "desc": "R1 to R3 swing a",
+   "raw": -1.3
   },
   {
    "id": "v90",
-   "text": "+500",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "116%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "cost"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "caio-borralho"
    },
-   "desc": "BP now fight_ending Submission",
-   "raw": 500
+   "desc": "Output kept R3 a",
+   "raw": 1.165
   },
   {
    "id": "v91",
-   "text": "17%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
+   "text": "+3.0",
+   "fmt": "s1",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Submission"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "d3",
+    "slug": "caio-borralho"
    },
-   "desc": "BP implied fight_ending Submission",
-   "raw": 0.16666666666666666
+   "desc": "R3 strike diff a",
+   "raw": 3.0
   },
   {
    "id": "v92",
-   "text": "-195",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "15.4",
+   "fmt": "n1",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "min",
+    "slug": "caio-borralho"
    },
-   "desc": "BP open fight_ending Points",
-   "raw": -195
+   "desc": "Avg fight, min a",
+   "raw": 15.4
   },
   {
    "id": "v93",
-   "text": "-195",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "9.7",
+   "fmt": "n1",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "cost"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "min",
+    "slug": "yousri-belgaroui"
    },
-   "desc": "BP now fight_ending Points",
-   "raw": -195
+   "desc": "Avg fight, min b",
+   "raw": 9.7
   },
   {
    "id": "v94",
-   "text": "66%",
+   "text": "0%",
    "fmt": "pct0",
-   "rule": "bp_imp",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Points"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "r1",
+    "slug": "caio-borralho"
    },
-   "desc": "BP implied fight_ending Points",
-   "raw": 0.6610169491525424
+   "desc": "Finished in R1 a",
+   "raw": 0.0
   },
   {
    "id": "v95",
-   "text": "-195",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "r1",
+    "slug": "yousri-belgaroui"
    },
-   "desc": "BP open fight_distance Yes",
-   "raw": -195
+   "desc": "Finished in R1 b",
+   "raw": 0.333
   },
   {
    "id": "v96",
-   "text": "-193",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "78%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "dec",
+    "slug": "caio-borralho"
    },
-   "desc": "BP now fight_distance Yes",
-   "raw": -193
+   "desc": "Goes to decision a",
+   "raw": 0.778
   },
   {
    "id": "v97",
-   "text": "66%",
+   "text": "0%",
    "fmt": "pct0",
-   "rule": "bp_imp",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "Yes"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "dec",
+    "slug": "yousri-belgaroui"
    },
-   "desc": "BP implied fight_distance Yes",
-   "raw": 0.658703071672355
+   "desc": "Goes to decision b",
+   "raw": 0.0
   },
   {
    "id": "v98",
-   "text": "+145",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "11%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "wko",
+    "slug": "caio-borralho"
    },
-   "desc": "BP open fight_distance No",
-   "raw": 145
+   "desc": "Wins by KO a",
+   "raw": 0.111
   },
   {
    "id": "v99",
-   "text": "+145",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "wko",
+    "slug": "yousri-belgaroui"
    },
-   "desc": "BP now fight_distance No",
-   "raw": 145
+   "desc": "Wins by KO b",
+   "raw": 1.0
   },
   {
    "id": "v100",
-   "text": "41%",
+   "text": "11%",
    "fmt": "pct0",
-   "rule": "bp_imp",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "No"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "wsub",
+    "slug": "caio-borralho"
    },
-   "desc": "BP implied fight_distance No",
-   "raw": 0.40816326530612246
+   "desc": "Wins by SUB a",
+   "raw": 0.111
   },
   {
    "id": "v101",
-   "text": "2.5",
-   "fmt": "str",
-   "rule": "bp",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "line"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "wsub",
+    "slug": "yousri-belgaroui"
    },
-   "desc": "BP line total_rounds Over",
-   "raw": 2.5
+   "desc": "Wins by SUB b",
+   "raw": 0.0
   },
   {
    "id": "v102",
-   "text": "-230",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "lko",
+    "slug": "caio-borralho"
    },
-   "desc": "BP open total_rounds Over",
-   "raw": -230
+   "desc": "Losses by KO a",
+   "raw": 0.0
   },
   {
    "id": "v103",
-   "text": "-239",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "cost"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "lko",
+    "slug": "yousri-belgaroui"
    },
-   "desc": "BP now total_rounds Over",
-   "raw": -239
+   "desc": "Losses by KO b",
+   "raw": 0.0
   },
   {
    "id": "v104",
-   "text": "71%",
+   "text": "0%",
    "fmt": "pct0",
-   "rule": "bp_imp",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Over"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "lsub",
+    "slug": "caio-borralho"
    },
-   "desc": "BP implied total_rounds Over",
-   "raw": 0.7050147492625368
+   "desc": "Losses by SUB a",
+   "raw": 0.0
   },
   {
    "id": "v105",
-   "text": "2.5",
-   "fmt": "str",
-   "rule": "bp",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "line"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "lsub",
+    "slug": "yousri-belgaroui"
    },
-   "desc": "BP line total_rounds Under",
-   "raw": 2.5
+   "desc": "Losses by SUB b",
+   "raw": 0.0
   },
   {
    "id": "v106",
-   "text": "+175",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Under",
-   "raw": 175
-  },
-  {
-   "id": "v107",
-   "text": "+180",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Under",
-   "raw": 180
-  },
-  {
-   "id": "v108",
-   "text": "36%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under"
-   },
-   "desc": "BP implied total_rounds Under",
-   "raw": 0.35714285714285715
-  },
-  {
-   "id": "v109",
-   "text": "33.8",
-   "fmt": "n1",
-   "rule": "age",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Age a",
-   "raw": 33.82614647501711
-  },
-  {
-   "id": "v110",
-   "text": "34.5",
-   "fmt": "n1",
-   "rule": "age",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Age b",
-   "raw": 34.450376454483234
-  },
-  {
-   "id": "v111",
-   "text": "75\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Reach a",
-   "raw": 75
-  },
-  {
-   "id": "v112",
-   "text": "79\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Reach b",
-   "raw": 79
-  },
-  {
-   "id": "v113",
-   "text": "6'1\"",
-   "fmt": "str",
-   "rule": "bio",
-   "args": {
-    "side": "a",
-    "key": "ht"
-   },
-   "desc": "Height a",
-   "raw": "6'1\""
-  },
-  {
-   "id": "v114",
-   "text": "6'5\"",
-   "fmt": "str",
-   "rule": "bio",
-   "args": {
-    "side": "b",
-    "key": "ht"
-   },
-   "desc": "Height b",
-   "raw": "6'5\""
-  },
-  {
-   "id": "v115",
-   "text": "Southpaw",
-   "fmt": "str",
-   "rule": "bio",
-   "args": {
-    "side": "a",
-    "key": "stance"
-   },
-   "desc": "Stance a",
-   "raw": "Southpaw"
-  },
-  {
-   "id": "v116",
-   "text": "Orthodox",
-   "fmt": "str",
-   "rule": "bio",
-   "args": {
-    "side": "b",
-    "key": "stance"
-   },
-   "desc": "Stance b",
-   "raw": "Orthodox"
-  },
-  {
-   "id": "v117",
-   "text": "9",
-   "fmt": "int",
-   "rule": "nfights",
-   "args": {
-    "side": "a"
-   },
-   "desc": "UFC fights a",
-   "raw": 9
-  },
-  {
-   "id": "v118",
-   "text": "3",
-   "fmt": "int",
-   "rule": "nfights",
-   "args": {
-    "side": "b"
-   },
-   "desc": "UFC fights b",
-   "raw": 3
-  },
-  {
-   "id": "v119",
-   "text": "3.30",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "slpm"
-   },
-   "desc": "SLpM a",
-   "raw": 3.3041391721655673
-  },
-  {
-   "id": "v120",
-   "text": "8.35",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "slpm"
-   },
-   "desc": "SLpM b",
-   "raw": 8.349626221966647
-  },
-  {
-   "id": "v121",
-   "text": "2.63",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "sapm"
-   },
-   "desc": "SApM a",
-   "raw": 2.634673065386923
-  },
-  {
-   "id": "v122",
-   "text": "1.93",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "sapm"
-   },
-   "desc": "SApM b",
-   "raw": 1.932144910868315
-  },
-  {
-   "id": "v123",
-   "text": "+0.67",
-   "fmt": "s2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "diff"
-   },
-   "desc": "Strike diff /min a",
-   "raw": 0.6694661067786443
-  },
-  {
-   "id": "v124",
-   "text": "+6.42",
-   "fmt": "s2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "diff"
-   },
-   "desc": "Strike diff /min b",
-   "raw": 6.417481311098332
-  },
-  {
-   "id": "v125",
-   "text": "55%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "acc"
-   },
-   "desc": "Strike accuracy a",
-   "raw": 0.5510204081632653
-  },
-  {
-   "id": "v126",
-   "text": "65%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "acc"
-   },
-   "desc": "Strike accuracy b",
-   "raw": 0.6453333333333333
-  },
-  {
-   "id": "v127",
-   "text": "60%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "dfn"
-   },
-   "desc": "Strike defence a",
-   "raw": 0.5982436882546652
-  },
-  {
-   "id": "v128",
-   "text": "70%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "dfn"
-   },
-   "desc": "Strike defence b",
-   "raw": 0.6972972972972973
-  },
-  {
-   "id": "v129",
    "text": "1.08",
    "fmt": "n2",
    "rule": "stat",
    "args": {
     "side": "a",
-    "key": "td15"
+    "key": "td15",
+    "slug": "caio-borralho"
    },
    "desc": "Takedowns /15 a",
    "raw": 1.079784043191362
   },
   {
-   "id": "v130",
+   "id": "v107",
    "text": "0.52",
    "fmt": "n2",
    "rule": "stat",
    "args": {
     "side": "b",
-    "key": "td15"
+    "key": "td15",
+    "slug": "yousri-belgaroui"
    },
    "desc": "Takedowns /15 b",
    "raw": 0.5175388154111558
   },
   {
-   "id": "v131",
+   "id": "v108",
    "text": "74%",
    "fmt": "pct0",
    "rule": "stat",
    "args": {
     "side": "a",
-    "key": "tdd"
+    "key": "tdd",
+    "slug": "caio-borralho"
    },
    "desc": "TD defence a",
    "raw": 0.736842105263158
   },
   {
-   "id": "v132",
+   "id": "v109",
    "text": "56%",
    "fmt": "pct0",
    "rule": "stat",
    "args": {
     "side": "b",
-    "key": "tdd"
+    "key": "tdd",
+    "slug": "yousri-belgaroui"
    },
    "desc": "TD defence b",
    "raw": 0.5625
   },
   {
-   "id": "v133",
-   "text": "27%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "id": "v110",
+   "text": "3:44",
+   "fmt": "mmss",
+   "rule": "labs",
    "args": {
     "side": "a",
-    "key": "ctrlp"
+    "section": "metrics",
+    "key": "ctd",
+    "slug": "caio-borralho"
    },
-   "desc": "Control time a",
-   "raw": 0.26850629874025195
+   "desc": "Control per TD a",
+   "raw": 224.0
   },
   {
-   "id": "v134",
-   "text": "6%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "ctrlp"
-   },
-   "desc": "Control time b",
-   "raw": 0.056929269695227144
-  },
-  {
-   "id": "v135",
-   "text": "69",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 0,
-    "key": "fg"
-   },
-   "desc": "Fig Caio Borralho Reinier de Ridder",
-   "raw": 69.2
-  },
-  {
-   "id": "v136",
+   "id": "v111",
    "text": "-233",
    "fmt": "ml",
    "rule": "fight",
@@ -1715,20 +1440,7 @@
    "raw": -233
   },
   {
-   "id": "v137",
-   "text": "48",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Caio Borralho Nassourdine Imavov",
-   "raw": 47.8
-  },
-  {
-   "id": "v138",
+   "id": "v112",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -1741,20 +1453,7 @@
    "raw": -132
   },
   {
-   "id": "v139",
-   "text": "90",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Caio Borralho Jared Cannonier",
-   "raw": 90.0
-  },
-  {
-   "id": "v140",
+   "id": "v113",
    "text": "-244",
    "fmt": "ml",
    "rule": "fight",
@@ -1767,20 +1466,7 @@
    "raw": -244
   },
   {
-   "id": "v141",
-   "text": "95",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 3,
-    "key": "fg"
-   },
-   "desc": "Fig Caio Borralho Paul Craig",
-   "raw": 94.7
-  },
-  {
-   "id": "v142",
+   "id": "v114",
    "text": "-556",
    "fmt": "ml",
    "rule": "fight",
@@ -1793,20 +1479,7 @@
    "raw": -556
   },
   {
-   "id": "v143",
-   "text": "82",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 4,
-    "key": "fg"
-   },
-   "desc": "Fig Caio Borralho Abus Magomedov",
-   "raw": 82.2
-  },
-  {
-   "id": "v144",
+   "id": "v115",
    "text": "-282",
    "fmt": "ml",
    "rule": "fight",
@@ -1819,20 +1492,7 @@
    "raw": -282
   },
   {
-   "id": "v145",
-   "text": "94",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 0,
-    "key": "fg"
-   },
-   "desc": "Fig Yousri Belgaroui Djorden Santos",
-   "raw": 94.2
-  },
-  {
-   "id": "v146",
+   "id": "v116",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -1845,20 +1505,7 @@
    "raw": -714
   },
   {
-   "id": "v147",
-   "text": "102",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Yousri Belgaroui Mansur Abdul-Malik",
-   "raw": 102.5
-  },
-  {
-   "id": "v148",
+   "id": "v117",
    "text": "+124",
    "fmt": "ml",
    "rule": "fight",
@@ -1871,20 +1518,7 @@
    "raw": 124
   },
   {
-   "id": "v149",
-   "text": "108",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Yousri Belgaroui Azamat Bekoev",
-   "raw": 107.9
-  },
-  {
-   "id": "v150",
+   "id": "v118",
    "text": "+240",
    "fmt": "ml",
    "rule": "fight",
@@ -1897,7 +1531,5 @@
    "raw": 240
   }
  ],
- "gaps": [
-  "Fight 11: BettingPros method_of_victory has unlabeled selections ['Caio Borralho', 'Yousri Belgaroui']; not displayed."
- ]
+ "gaps": []
 }

@@ -44,7 +44,7 @@ def sml(m): return f"+{m}" if m > 0 else str(m)
 def fmt(x, k):
     return {"pct1": lambda: f"{x*100:.1f}%", "pct0": lambda: f"{x*100:.0f}%", "ml": lambda: sml(x), "mlp": lambda: sml(p2ml(x)), "n1": lambda: f"{x:.1f}",
             "n2": lambda: f"{x:.2f}", "s2": lambda: f"{x:+.2f}", "int": lambda: str(x), "intc": lambda: f"{x:,}", "d3": lambda: f"{x:.3f}", "d4": lambda: f"{x:.4f}",
-            "str": lambda: str(x), "in": lambda: f'{x}"', "r0": lambda: str(int(round(x))), "pts": lambda: f"{abs(x)*100:.1f}", "sp": lambda: f"{x*100:+.1f}", "spp": lambda: f"{x*100:+.1f}%"}[k]()
+            "str": lambda: str(x), "in": lambda: f'{x}"', "r0": lambda: str(int(round(x))), "pts": lambda: f"{abs(x)*100:.1f}", "sp": lambda: f"{x*100:+.1f}", "spp": lambda: f"{x*100:+.1f}%", "s1": lambda: f"{x:+.1f}", "mmss": lambda: f"{int(x) // 60}:{int(round(x)) % 60:02d}"}[k]()
 
 def dig(o, path):
     for p in str(path).split("."):
@@ -129,6 +129,14 @@ def check(D, htmlfile, G):
             elif rule == "pub": v = dig(pub, a["key"]); v = 1 - v if inv else v
             elif rule in ("pub_ml", "pub_ml_imp"):   # the sheet's listed price for this side (export inputs), and its straight implied %
                 role = pwin(a["side"])[1]; v = pub["inputs"][role + "_odds"]; v = implied(v) if rule == "pub_ml_imp" else v
+            elif rule == "labs":
+                # the site's own metrics in form/data/labs.json, looked up here by the fighter's slug
+                LJ = G.setdefault("LABS", json.loads((FD / "labs.json").read_text()))
+                if a["section"] == "metrics":
+                    v = next(x for x in LJ["metrics"] if x.get("s") == a["slug"])[a["key"]]
+                else:
+                    s1_, s2_ = a["section"].split(".")
+                    v = next(u[sd][a["key"]] for u in LJ[s1_][s2_] for sd in ("a", "b") if isinstance(u.get(sd), dict) and u[sd].get("s") == a["slug"] and u[sd].get(a["key"]) is not None)
             elif rule == "bp_imp_sum": v = sum(implied(bp_cost(a["market"], lb)) for lb in a["labels"])
             elif rule == "pubp": v = PUB["params"][a["key"]]
             elif rule == "bp": v = bp_cost(a["market"], a["label"], a["field"])
@@ -185,6 +193,8 @@ def check(D, htmlfile, G):
             if not mrules <= {"pub_win", "pub_meth", "pub"}: bad.append(("proj", "model rules", f"non-export rules in model cells: {mrules}"))
         if re.search(r"\bSean\b", re.sub(r"@SeanZerillo|twitter.com/SeanZerillo", "", page)): bad.append(("page", "label", "'Sean' used as the model name"))
         if re.search(r'class="op"', page): bad.append(("page", "open price", "o-prefixed open price in the projection"))
+        if re.search(r"BettingPros", text): bad.append(("page", "source name", "BettingPros named on the page"))
+        if re.search(r"\bElo\b|\bFig\b|Form Figure", text): bad.append(("page", "rating", "Elo or Form Figure shown"))
     # ---- v4 structural assertions ----
     # (a) method order DEC / KO / SUB in the merged table, and every method cell sits in the row of its own method
     rows_ = re.findall(r'<tr data-row="([a-z]+)"', page)

@@ -28,38 +28,6 @@
   },
   {
    "id": "v2",
-   "text": "1557",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Drew Dober",
-     "Chris Duncan"
-    ],
-    "path": "a.elo"
-   },
-   "desc": "Drew Dober Elo",
-   "raw": 1557
-  },
-  {
-   "id": "v3",
-   "text": "55.4",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Drew Dober",
-     "Chris Duncan"
-    ],
-    "path": "form.ra"
-   },
-   "desc": "Drew Dober Form Figure",
-   "raw": 55.4
-  },
-  {
-   "id": "v4",
    "text": "6-2-0",
    "fmt": "str",
    "rule": "record",
@@ -70,61 +38,99 @@
    "raw": "6-2-0"
   },
   {
-   "id": "v5",
-   "text": "1576",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Drew Dober",
-     "Chris Duncan"
-    ],
-    "path": "b.elo"
-   },
-   "desc": "Chris Duncan Elo",
-   "raw": 1576
-  },
-  {
-   "id": "v6",
-   "text": "57.6",
+   "id": "v3",
+   "text": "38.1",
    "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Drew Dober",
-     "Chris Duncan"
-    ],
-    "path": "form.rb"
-   },
-   "desc": "Chris Duncan Form Figure",
-   "raw": 57.6
-  },
-  {
-   "id": "v7",
-   "text": "37.0%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "rule": "age",
    "args": {
     "side": "a"
    },
-   "desc": "Bar model % a",
-   "raw": 0.3697886486555524
+   "desc": "Age a",
+   "raw": 38.06981519507187
   },
   {
-   "id": "v8",
-   "text": "63.0%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "id": "v4",
+   "text": "33.5",
+   "fmt": "n1",
+   "rule": "age",
    "args": {
     "side": "b"
    },
-   "desc": "Bar model % b",
-   "raw": 0.6302113513444476
+   "desc": "Age b",
+   "raw": 33.51403148528405
+  },
+  {
+   "id": "v5",
+   "text": "5'8\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "5'8\""
+  },
+  {
+   "id": "v6",
+   "text": "5'10\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "5'10\""
+  },
+  {
+   "id": "v7",
+   "text": "70\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 70
+  },
+  {
+   "id": "v8",
+   "text": "71\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 71
   },
   {
    "id": "v9",
+   "text": "Southpaw",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Southpaw"
+  },
+  {
+   "id": "v10",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v11",
    "text": "+170",
    "fmt": "mlp",
    "rule": "pub_win",
@@ -135,7 +141,7 @@
    "raw": 0.3697886486555524
   },
   {
-   "id": "v10",
+   "id": "v12",
    "text": "37.0%",
    "fmt": "pct1",
    "rule": "pub_win",
@@ -146,7 +152,7 @@
    "raw": 0.3697886486555524
   },
   {
-   "id": "v11",
+   "id": "v13",
    "text": "+135",
    "fmt": "ml",
    "rule": "pub_ml",
@@ -157,7 +163,7 @@
    "raw": 135
   },
   {
-   "id": "v12",
+   "id": "v14",
    "text": "42.6%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
@@ -168,7 +174,7 @@
    "raw": 0.425531914893617
   },
   {
-   "id": "v13",
+   "id": "v15",
    "text": "+142",
    "fmt": "ml",
    "rule": "bp",
@@ -181,7 +187,7 @@
    "raw": 142
   },
   {
-   "id": "v14",
+   "id": "v16",
    "text": "41.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -193,21 +199,21 @@
    "raw": 0.4132231404958678
   },
   {
-   "id": "v15",
+   "id": "v17",
    "text": "-5.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v10",
-     "v12"
+     "v12",
+     "v14"
     ]
    },
    "desc": "Edge ML Drew Dober",
    "raw": -0.05574326623806464
   },
   {
-   "id": "v16",
+   "id": "v18",
    "text": "-170",
    "fmt": "mlp",
    "rule": "pub_win",
@@ -218,7 +224,7 @@
    "raw": 0.6302113513444476
   },
   {
-   "id": "v17",
+   "id": "v19",
    "text": "63.0%",
    "fmt": "pct1",
    "rule": "pub_win",
@@ -229,7 +235,7 @@
    "raw": 0.6302113513444476
   },
   {
-   "id": "v18",
+   "id": "v20",
    "text": "-159",
    "fmt": "ml",
    "rule": "pub_ml",
@@ -240,7 +246,7 @@
    "raw": -159
   },
   {
-   "id": "v19",
+   "id": "v21",
    "text": "61.4%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
@@ -251,7 +257,7 @@
    "raw": 0.6138996138996139
   },
   {
-   "id": "v20",
+   "id": "v22",
    "text": "-172",
    "fmt": "ml",
    "rule": "bp",
@@ -264,7 +270,7 @@
    "raw": -172
   },
   {
-   "id": "v21",
+   "id": "v23",
    "text": "63.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -276,21 +282,21 @@
    "raw": 0.6323529411764706
   },
   {
-   "id": "v22",
+   "id": "v24",
    "text": "+1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v17",
-     "v19"
+     "v19",
+     "v21"
     ]
    },
    "desc": "Edge ML Chris Duncan",
    "raw": 0.016311737444833718
   },
   {
-   "id": "v23",
+   "id": "v25",
    "text": "+240",
    "fmt": "mlp",
    "rule": "pub",
@@ -301,7 +307,7 @@
    "raw": 0.29425977822072763
   },
   {
-   "id": "v24",
+   "id": "v26",
    "text": "29.4%",
    "fmt": "pct1",
    "rule": "pub",
@@ -312,7 +318,7 @@
    "raw": 0.29425977822072763
   },
   {
-   "id": "v25",
+   "id": "v27",
    "text": "+309",
    "fmt": "mlp",
    "rule": "pub",
@@ -323,7 +329,7 @@
    "raw": 0.24451553930530165
   },
   {
-   "id": "v26",
+   "id": "v28",
    "text": "24.5%",
    "fmt": "pct1",
    "rule": "pub",
@@ -334,7 +340,7 @@
    "raw": 0.24451553930530165
   },
   {
-   "id": "v27",
+   "id": "v29",
    "text": "+277",
    "fmt": "ml",
    "rule": "bp",
@@ -347,7 +353,7 @@
    "raw": 277
   },
   {
-   "id": "v28",
+   "id": "v30",
    "text": "26.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -359,21 +365,21 @@
    "raw": 0.26525198938992045
   },
   {
-   "id": "v29",
+   "id": "v31",
    "text": "+5.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v24",
-     "v26"
+     "v26",
+     "v28"
     ]
    },
    "desc": "Edge GTD vs listed",
    "raw": 0.04974423891542598
   },
   {
-   "id": "v30",
+   "id": "v32",
    "text": "-240",
    "fmt": "mlp",
    "rule": "pub",
@@ -385,7 +391,7 @@
    "raw": 0.7057402217792723
   },
   {
-   "id": "v31",
+   "id": "v33",
    "text": "70.6%",
    "fmt": "pct1",
    "rule": "pub",
@@ -397,7 +403,7 @@
    "raw": 0.7057402217792723
   },
   {
-   "id": "v32",
+   "id": "v34",
    "text": "-400",
    "fmt": "ml",
    "rule": "bp",
@@ -410,7 +416,7 @@
    "raw": -400
   },
   {
-   "id": "v33",
+   "id": "v35",
    "text": "80.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -422,93 +428,21 @@
    "raw": 0.8
   },
   {
-   "id": "v34",
+   "id": "v36",
    "text": "-9.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v31",
-     "v33"
+     "v33",
+     "v35"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": -0.09425977822072773
   },
   {
-   "id": "v35",
-   "text": "8.3%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Bar model dec % Drew Dober",
-   "raw": 0.08252097893943151
-  },
-  {
-   "id": "v36",
-   "text": "25.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Bar model ko % Drew Dober",
-   "raw": 0.252201094372541
-  },
-  {
    "id": "v37",
-   "text": "3.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Bar model sub % Drew Dober",
-   "raw": 0.03506657534357985
-  },
-  {
-   "id": "v38",
-   "text": "21.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Bar model dec % Chris Duncan",
-   "raw": 0.21173879928129613
-  },
-  {
-   "id": "v39",
-   "text": "18.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Bar model ko % Chris Duncan",
-   "raw": 0.18533636062266098
-  },
-  {
-   "id": "v40",
-   "text": "23.3%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Bar model sub % Chris Duncan",
-   "raw": 0.2331361914404905
-  },
-  {
-   "id": "v41",
    "text": "+1112",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -520,7 +454,7 @@
    "raw": 0.08252097893943151
   },
   {
-   "id": "v42",
+   "id": "v38",
    "text": "8.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -532,7 +466,7 @@
    "raw": 0.08252097893943151
   },
   {
-   "id": "v43",
+   "id": "v39",
    "text": "+1000",
    "fmt": "ml",
    "rule": "bp",
@@ -545,7 +479,7 @@
    "raw": 1000
   },
   {
-   "id": "v44",
+   "id": "v40",
    "text": "9.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -557,21 +491,21 @@
    "raw": 0.09090909090909091
   },
   {
-   "id": "v45",
+   "id": "v41",
    "text": "-0.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v42",
-     "v44"
+     "v38",
+     "v40"
     ]
    },
    "desc": "Edge dec Drew Dober",
    "raw": -0.008388111969659398
   },
   {
-   "id": "v46",
+   "id": "v42",
    "text": "+297",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -583,7 +517,7 @@
    "raw": 0.252201094372541
   },
   {
-   "id": "v47",
+   "id": "v43",
    "text": "25.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -595,7 +529,7 @@
    "raw": 0.252201094372541
   },
   {
-   "id": "v48",
+   "id": "v44",
    "text": "+192",
    "fmt": "ml",
    "rule": "bp",
@@ -608,7 +542,7 @@
    "raw": 192
   },
   {
-   "id": "v49",
+   "id": "v45",
    "text": "34.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -620,21 +554,21 @@
    "raw": 0.3424657534246575
   },
   {
-   "id": "v50",
+   "id": "v46",
    "text": "-9.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v47",
-     "v49"
+     "v43",
+     "v45"
     ]
    },
    "desc": "Edge ko Drew Dober",
    "raw": -0.0902646590521165
   },
   {
-   "id": "v51",
+   "id": "v47",
    "text": "+2752",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -646,7 +580,7 @@
    "raw": 0.03506657534357985
   },
   {
-   "id": "v52",
+   "id": "v48",
    "text": "3.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -658,7 +592,7 @@
    "raw": 0.03506657534357985
   },
   {
-   "id": "v53",
+   "id": "v49",
    "text": "+1800",
    "fmt": "ml",
    "rule": "bp",
@@ -671,7 +605,7 @@
    "raw": 1800
   },
   {
-   "id": "v54",
+   "id": "v50",
    "text": "5.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -683,21 +617,21 @@
    "raw": 0.05263157894736842
   },
   {
-   "id": "v55",
+   "id": "v51",
    "text": "-1.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v52",
-     "v54"
+     "v48",
+     "v50"
     ]
    },
    "desc": "Edge sub Drew Dober",
    "raw": -0.01756500360378857
   },
   {
-   "id": "v56",
+   "id": "v52",
    "text": "+248",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -709,7 +643,7 @@
    "raw": 0.2872676697161209
   },
   {
-   "id": "v57",
+   "id": "v53",
    "text": "28.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -721,7 +655,7 @@
    "raw": 0.2872676697161209
   },
   {
-   "id": "v58",
+   "id": "v54",
    "text": "39.5%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -736,21 +670,21 @@
    "raw": 0.39509733237202593
   },
   {
-   "id": "v59",
+   "id": "v55",
    "text": "-10.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v57",
-     "v58"
+     "v53",
+     "v54"
     ]
    },
    "desc": "Edge itd Drew Dober",
    "raw": -0.10782966265590505
   },
   {
-   "id": "v60",
+   "id": "v56",
    "text": "+372",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -762,7 +696,7 @@
    "raw": 0.21173879928129613
   },
   {
-   "id": "v61",
+   "id": "v57",
    "text": "21.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -774,7 +708,7 @@
    "raw": 0.21173879928129613
   },
   {
-   "id": "v62",
+   "id": "v58",
    "text": "+440",
    "fmt": "ml",
    "rule": "bp",
@@ -787,7 +721,7 @@
    "raw": 440
   },
   {
-   "id": "v63",
+   "id": "v59",
    "text": "18.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -799,21 +733,21 @@
    "raw": 0.18518518518518517
   },
   {
-   "id": "v64",
+   "id": "v60",
    "text": "+2.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v61",
-     "v63"
+     "v57",
+     "v59"
     ]
    },
    "desc": "Edge dec Chris Duncan",
    "raw": 0.026553614096110956
   },
   {
-   "id": "v65",
+   "id": "v61",
    "text": "+440",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -825,7 +759,7 @@
    "raw": 0.18533636062266098
   },
   {
-   "id": "v66",
+   "id": "v62",
    "text": "18.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -837,7 +771,7 @@
    "raw": 0.18533636062266098
   },
   {
-   "id": "v67",
+   "id": "v63",
    "text": "+292",
    "fmt": "ml",
    "rule": "bp",
@@ -850,7 +784,7 @@
    "raw": 292
   },
   {
-   "id": "v68",
+   "id": "v64",
    "text": "25.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -862,21 +796,21 @@
    "raw": 0.25510204081632654
   },
   {
-   "id": "v69",
+   "id": "v65",
    "text": "-7.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v66",
-     "v68"
+     "v62",
+     "v64"
     ]
    },
    "desc": "Edge ko Chris Duncan",
    "raw": -0.06976568019366555
   },
   {
-   "id": "v70",
+   "id": "v66",
    "text": "+329",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -888,7 +822,7 @@
    "raw": 0.2331361914404905
   },
   {
-   "id": "v71",
+   "id": "v67",
    "text": "23.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -900,7 +834,7 @@
    "raw": 0.2331361914404905
   },
   {
-   "id": "v72",
+   "id": "v68",
    "text": "+287",
    "fmt": "ml",
    "rule": "bp",
@@ -913,7 +847,7 @@
    "raw": 287
   },
   {
-   "id": "v73",
+   "id": "v69",
    "text": "25.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -925,21 +859,21 @@
    "raw": 0.25839793281653745
   },
   {
-   "id": "v74",
+   "id": "v70",
    "text": "-2.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v71",
-     "v73"
+     "v67",
+     "v69"
     ]
    },
    "desc": "Edge sub Chris Duncan",
    "raw": -0.025261741376046948
   },
   {
-   "id": "v75",
+   "id": "v71",
    "text": "+139",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -951,7 +885,7 @@
    "raw": 0.4184725520631515
   },
   {
-   "id": "v76",
+   "id": "v72",
    "text": "41.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -963,7 +897,7 @@
    "raw": 0.4184725520631515
   },
   {
-   "id": "v77",
+   "id": "v73",
    "text": "51.3%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -978,21 +912,21 @@
    "raw": 0.513499973632864
   },
   {
-   "id": "v78",
+   "id": "v74",
    "text": "-9.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v76",
-     "v77"
+     "v72",
+     "v73"
     ]
    },
    "desc": "Edge itd Chris Duncan",
    "raw": -0.09502742156971256
   },
   {
-   "id": "v79",
+   "id": "v75",
    "text": "0.2",
    "fmt": "pts",
    "rule": "oa_drift",
@@ -1007,7 +941,7 @@
    "raw": 0.0021999999999999797
   },
   {
-   "id": "v80",
+   "id": "v76",
    "text": "+136",
    "fmt": "ml",
    "rule": "oa_best",
@@ -1023,7 +957,7 @@
    "raw": 136
   },
   {
-   "id": "v81",
+   "id": "v77",
    "text": "-159",
    "fmt": "ml",
    "rule": "oa_best",
@@ -1039,7 +973,7 @@
    "raw": -159
   },
   {
-   "id": "v82",
+   "id": "v78",
    "text": "+115",
    "fmt": "ml",
    "rule": "bp",
@@ -1052,7 +986,7 @@
    "raw": 115
   },
   {
-   "id": "v83",
+   "id": "v79",
    "text": "+142",
    "fmt": "ml",
    "rule": "bp",
@@ -1065,7 +999,7 @@
    "raw": 142
   },
   {
-   "id": "v84",
+   "id": "v80",
    "text": "-145",
    "fmt": "ml",
    "rule": "bp",
@@ -1078,7 +1012,7 @@
    "raw": -145
   },
   {
-   "id": "v85",
+   "id": "v81",
    "text": "-172",
    "fmt": "ml",
    "rule": "bp",
@@ -1091,618 +1025,563 @@
    "raw": -172
   },
   {
-   "id": "v86",
-   "text": "-159",
-   "fmt": "ml",
-   "rule": "bp",
+   "id": "v82",
+   "text": "+0.15",
+   "fmt": "s2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "metrics",
+    "key": "sd",
+    "slug": "drew-dober"
    },
-   "desc": "BP open fight_ending KO/TKO/DQ",
-   "raw": -159
+   "desc": "Strike diff /min a",
+   "raw": 0.15
+  },
+  {
+   "id": "v83",
+   "text": "+0.37",
+   "fmt": "s2",
+   "rule": "labs",
+   "args": {
+    "side": "b",
+    "section": "metrics",
+    "key": "sd",
+    "slug": "chris-duncan"
+   },
+   "desc": "Strike diff /min b",
+   "raw": 0.37
+  },
+  {
+   "id": "v84",
+   "text": "-0.24",
+   "fmt": "s2",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "hd",
+    "slug": "drew-dober"
+   },
+   "desc": "Head diff /min a",
+   "raw": -0.24
+  },
+  {
+   "id": "v85",
+   "text": "-0.33",
+   "fmt": "s2",
+   "rule": "labs",
+   "args": {
+    "side": "b",
+    "section": "metrics",
+    "key": "hd",
+    "slug": "chris-duncan"
+   },
+   "desc": "Head diff /min b",
+   "raw": -0.33
+  },
+  {
+   "id": "v86",
+   "text": "+0.13",
+   "fmt": "s2",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "bd",
+    "slug": "drew-dober"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.13
   },
   {
    "id": "v87",
-   "text": "-130",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "+0.56",
+   "fmt": "s2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "cost"
+    "side": "b",
+    "section": "metrics",
+    "key": "bd",
+    "slug": "chris-duncan"
    },
-   "desc": "BP now fight_ending KO/TKO/DQ",
-   "raw": -130
+   "desc": "Body diff /min b",
+   "raw": 0.56
   },
   {
    "id": "v88",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
+   "text": "+0.27",
+   "fmt": "s2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ"
+    "side": "a",
+    "section": "metrics",
+    "key": "ld",
+    "slug": "drew-dober"
    },
-   "desc": "BP implied fight_ending KO/TKO/DQ",
-   "raw": 0.5652173913043478
+   "desc": "Leg diff /min a",
+   "raw": 0.27
   },
   {
    "id": "v89",
-   "text": "+235",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "+0.14",
+   "fmt": "s2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "opening_cost"
+    "side": "b",
+    "section": "metrics",
+    "key": "ld",
+    "slug": "chris-duncan"
    },
-   "desc": "BP open fight_ending Submission",
-   "raw": 235
+   "desc": "Leg diff /min b",
+   "raw": 0.14
   },
   {
    "id": "v90",
-   "text": "+230",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "59%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "cost"
+    "side": "a",
+    "section": "metrics",
+    "key": "hdef",
+    "slug": "drew-dober"
    },
-   "desc": "BP now fight_ending Submission",
-   "raw": 230
+   "desc": "Head defence a",
+   "raw": 0.592
   },
   {
    "id": "v91",
-   "text": "30%",
+   "text": "58%",
    "fmt": "pct0",
-   "rule": "bp_imp",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Submission"
+    "side": "b",
+    "section": "metrics",
+    "key": "hdef",
+    "slug": "chris-duncan"
    },
-   "desc": "BP implied fight_ending Submission",
-   "raw": 0.30303030303030304
+   "desc": "Head defence b",
+   "raw": 0.583
   },
   {
    "id": "v92",
-   "text": "+300",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "0.68",
+   "fmt": "n2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "metrics",
+    "key": "kd15",
+    "slug": "drew-dober"
    },
-   "desc": "BP open fight_ending Points",
-   "raw": 300
+   "desc": "Knockdowns /15 a",
+   "raw": 0.68
   },
   {
    "id": "v93",
-   "text": "+275",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "0.43",
+   "fmt": "n2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "cost"
+    "side": "b",
+    "section": "metrics",
+    "key": "kd15",
+    "slug": "chris-duncan"
    },
-   "desc": "BP now fight_ending Points",
-   "raw": 275
+   "desc": "Knockdowns /15 b",
+   "raw": 0.43
   },
   {
    "id": "v94",
-   "text": "27%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
+   "text": "0.44",
+   "fmt": "n2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Points"
+    "side": "a",
+    "section": "metrics",
+    "key": "chin",
+    "slug": "drew-dober"
    },
-   "desc": "BP implied fight_ending Points",
-   "raw": 0.26666666666666666
+   "desc": "KD taken /100 head a",
+   "raw": 0.44
   },
   {
    "id": "v95",
-   "text": "+280",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
+    "side": "b",
+    "section": "metrics",
+    "key": "chin",
+    "slug": "chris-duncan"
    },
-   "desc": "BP open fight_distance Yes",
-   "raw": 280
+   "desc": "KD taken /100 head b",
+   "raw": 0.0
   },
   {
    "id": "v96",
-   "text": "+277",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-10.4",
+   "fmt": "s1",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "sw",
+    "slug": "drew-dober"
    },
-   "desc": "BP now fight_distance Yes",
-   "raw": 277
+   "desc": "R1 to R3 swing a",
+   "raw": -10.4
   },
   {
    "id": "v97",
-   "text": "27%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
+   "text": "+12.7",
+   "fmt": "s1",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "Yes"
+    "side": "b",
+    "section": "cardio.upcoming",
+    "key": "sw",
+    "slug": "chris-duncan"
    },
-   "desc": "BP implied fight_distance Yes",
-   "raw": 0.26525198938992045
+   "desc": "R1 to R3 swing b",
+   "raw": 12.7
   },
   {
    "id": "v98",
-   "text": "-435",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "104%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "drew-dober"
    },
-   "desc": "BP open fight_distance No",
-   "raw": -435
+   "desc": "Output kept R3 a",
+   "raw": 1.038
   },
   {
    "id": "v99",
-   "text": "-400",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "125%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
+    "side": "b",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "chris-duncan"
    },
-   "desc": "BP now fight_distance No",
-   "raw": -400
+   "desc": "Output kept R3 b",
+   "raw": 1.253
   },
   {
    "id": "v100",
-   "text": "80%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
+   "text": "-7.6",
+   "fmt": "s1",
+   "rule": "labs",
    "args": {
-    "market": "fight_distance",
-    "label": "No"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "d3",
+    "slug": "drew-dober"
    },
-   "desc": "BP implied fight_distance No",
-   "raw": 0.8
+   "desc": "R3 strike diff a",
+   "raw": -7.6
   },
   {
    "id": "v101",
-   "text": "1.5",
-   "fmt": "str",
-   "rule": "bp",
+   "text": "+11.0",
+   "fmt": "s1",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "line"
+    "side": "b",
+    "section": "cardio.upcoming",
+    "key": "d3",
+    "slug": "chris-duncan"
    },
-   "desc": "BP line total_rounds Over",
-   "raw": 1.5
+   "desc": "R3 strike diff b",
+   "raw": 11.0
   },
   {
    "id": "v102",
-   "text": "-130",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "8.2",
+   "fmt": "n1",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "min",
+    "slug": "drew-dober"
    },
-   "desc": "BP open total_rounds Over",
-   "raw": -130
+   "desc": "Avg fight, min a",
+   "raw": 8.2
   },
   {
    "id": "v103",
-   "text": "-124",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "8.7",
+   "fmt": "n1",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "cost"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "min",
+    "slug": "chris-duncan"
    },
-   "desc": "BP now total_rounds Over",
-   "raw": -124
+   "desc": "Avg fight, min b",
+   "raw": 8.7
   },
   {
    "id": "v104",
-   "text": "55%",
+   "text": "38%",
    "fmt": "pct0",
-   "rule": "bp_imp",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Over"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "r1",
+    "slug": "drew-dober"
    },
-   "desc": "BP implied total_rounds Over",
-   "raw": 0.5535714285714286
+   "desc": "Finished in R1 a",
+   "raw": 0.385
   },
   {
    "id": "v105",
-   "text": "1.5",
-   "fmt": "str",
-   "rule": "bp",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "line"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "r1",
+    "slug": "chris-duncan"
    },
-   "desc": "BP line total_rounds Under",
-   "raw": 1.5
+   "desc": "Finished in R1 b",
+   "raw": 0.375
   },
   {
    "id": "v106",
-   "text": "+100",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "27%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "dec",
+    "slug": "drew-dober"
    },
-   "desc": "BP open total_rounds Under",
-   "raw": 100
+   "desc": "Goes to decision a",
+   "raw": 0.269
   },
   {
    "id": "v107",
-   "text": "-103",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "cost"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "dec",
+    "slug": "chris-duncan"
    },
-   "desc": "BP now total_rounds Under",
-   "raw": -103
+   "desc": "Goes to decision b",
+   "raw": 0.375
   },
   {
    "id": "v108",
-   "text": "51%",
+   "text": "42%",
    "fmt": "pct0",
-   "rule": "bp_imp",
+   "rule": "labs",
    "args": {
-    "market": "total_rounds",
-    "label": "Under"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "wko",
+    "slug": "drew-dober"
    },
-   "desc": "BP implied total_rounds Under",
-   "raw": 0.5073891625615764
+   "desc": "Wins by KO a",
+   "raw": 0.423
   },
   {
    "id": "v109",
-   "text": "38.1",
-   "fmt": "n1",
-   "rule": "age",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "side": "a"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "wko",
+    "slug": "chris-duncan"
    },
-   "desc": "Age a",
-   "raw": 38.06981519507187
+   "desc": "Wins by KO b",
+   "raw": 0.0
   },
   {
    "id": "v110",
-   "text": "33.5",
-   "fmt": "n1",
-   "rule": "age",
+   "text": "4%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "side": "b"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "wsub",
+    "slug": "drew-dober"
    },
-   "desc": "Age b",
-   "raw": 33.51403148528405
+   "desc": "Wins by SUB a",
+   "raw": 0.038
   },
   {
    "id": "v111",
-   "text": "70\"",
-   "fmt": "in",
-   "rule": "bio_reach",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "side": "a"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "wsub",
+    "slug": "chris-duncan"
    },
-   "desc": "Reach a",
-   "raw": 70
+   "desc": "Wins by SUB b",
+   "raw": 0.375
   },
   {
    "id": "v112",
-   "text": "71\"",
-   "fmt": "in",
-   "rule": "bio_reach",
+   "text": "12%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "side": "b"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "lko",
+    "slug": "drew-dober"
    },
-   "desc": "Reach b",
-   "raw": 71
+   "desc": "Losses by KO a",
+   "raw": 0.115
   },
   {
    "id": "v113",
-   "text": "5'8\"",
-   "fmt": "str",
-   "rule": "bio",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "side": "a",
-    "key": "ht"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "lko",
+    "slug": "chris-duncan"
    },
-   "desc": "Height a",
-   "raw": "5'8\""
+   "desc": "Losses by KO b",
+   "raw": 0.0
   },
   {
    "id": "v114",
-   "text": "5'10\"",
-   "fmt": "str",
-   "rule": "bio",
+   "text": "15%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "side": "b",
-    "key": "ht"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "lsub",
+    "slug": "drew-dober"
    },
-   "desc": "Height b",
-   "raw": "5'10\""
+   "desc": "Losses by SUB a",
+   "raw": 0.154
   },
   {
    "id": "v115",
-   "text": "Southpaw",
-   "fmt": "str",
-   "rule": "bio",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "side": "a",
-    "key": "stance"
+    "side": "b",
+    "section": "props.upcoming",
+    "key": "lsub",
+    "slug": "chris-duncan"
    },
-   "desc": "Stance a",
-   "raw": "Southpaw"
+   "desc": "Losses by SUB b",
+   "raw": 0.25
   },
   {
    "id": "v116",
-   "text": "Orthodox",
-   "fmt": "str",
-   "rule": "bio",
-   "args": {
-    "side": "b",
-    "key": "stance"
-   },
-   "desc": "Stance b",
-   "raw": "Orthodox"
-  },
-  {
-   "id": "v117",
-   "text": "27",
-   "fmt": "int",
-   "rule": "nfights",
-   "args": {
-    "side": "a"
-   },
-   "desc": "UFC fights a",
-   "raw": 27
-  },
-  {
-   "id": "v118",
-   "text": "8",
-   "fmt": "int",
-   "rule": "nfights",
-   "args": {
-    "side": "b"
-   },
-   "desc": "UFC fights b",
-   "raw": 8
-  },
-  {
-   "id": "v119",
-   "text": "4.48",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "slpm"
-   },
-   "desc": "SLpM a",
-   "raw": 4.479158843409689
-  },
-  {
-   "id": "v120",
-   "text": "4.60",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "slpm"
-   },
-   "desc": "SLpM b",
-   "raw": 4.6010511227902535
-  },
-  {
-   "id": "v121",
-   "text": "4.33",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "sapm"
-   },
-   "desc": "SApM a",
-   "raw": 4.325948178745776
-  },
-  {
-   "id": "v122",
-   "text": "4.23",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "sapm"
-   },
-   "desc": "SApM b",
-   "raw": 4.228380315336837
-  },
-  {
-   "id": "v123",
-   "text": "+0.15",
-   "fmt": "s2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "diff"
-   },
-   "desc": "Strike diff /min a",
-   "raw": 0.1532106646639129
-  },
-  {
-   "id": "v124",
-   "text": "+0.37",
-   "fmt": "s2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "diff"
-   },
-   "desc": "Strike diff /min b",
-   "raw": 0.37267080745341613
-  },
-  {
-   "id": "v125",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "acc"
-   },
-   "desc": "Strike accuracy a",
-   "raw": 0.4102352455633512
-  },
-  {
-   "id": "v126",
-   "text": "46%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "acc"
-   },
-   "desc": "Strike accuracy b",
-   "raw": 0.4618705035971223
-  },
-  {
-   "id": "v127",
-   "text": "53%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "dfn"
-   },
-   "desc": "Strike defence a",
-   "raw": 0.530791788856305
-  },
-  {
-   "id": "v128",
-   "text": "52%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "dfn"
-   },
-   "desc": "Strike defence b",
-   "raw": 0.5234248788368336
-  },
-  {
-   "id": "v129",
    "text": "0.61",
    "fmt": "n2",
    "rule": "stat",
    "args": {
     "side": "a",
-    "key": "td15"
+    "key": "td15",
+    "slug": "drew-dober"
    },
    "desc": "Takedowns /15 a",
    "raw": 0.6083364626361246
   },
   {
-   "id": "v130",
+   "id": "v117",
    "text": "2.80",
    "fmt": "n2",
    "rule": "stat",
    "args": {
     "side": "b",
-    "key": "td15"
+    "key": "td15",
+    "slug": "chris-duncan"
    },
    "desc": "Takedowns /15 b",
    "raw": 2.795031055900621
   },
   {
-   "id": "v131",
+   "id": "v118",
    "text": "58%",
    "fmt": "pct0",
    "rule": "stat",
    "args": {
     "side": "a",
-    "key": "tdd"
+    "key": "tdd",
+    "slug": "drew-dober"
    },
    "desc": "TD defence a",
    "raw": 0.582089552238806
   },
   {
-   "id": "v132",
+   "id": "v119",
    "text": "56%",
    "fmt": "pct0",
    "rule": "stat",
    "args": {
     "side": "b",
-    "key": "tdd"
+    "key": "tdd",
+    "slug": "chris-duncan"
    },
    "desc": "TD defence b",
    "raw": 0.5555555555555556
   },
   {
-   "id": "v133",
-   "text": "13%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "id": "v120",
+   "text": "3:15",
+   "fmt": "mmss",
+   "rule": "labs",
    "args": {
     "side": "a",
-    "key": "ctrlp"
+    "section": "metrics",
+    "key": "ctd",
+    "slug": "drew-dober"
    },
-   "desc": "Control time a",
-   "raw": 0.1321066466391288
+   "desc": "Control per TD a",
+   "raw": 195.0
   },
   {
-   "id": "v134",
-   "text": "22%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "id": "v121",
+   "text": "1:10",
+   "fmt": "mmss",
+   "rule": "labs",
    "args": {
     "side": "b",
-    "key": "ctrlp"
+    "section": "metrics",
+    "key": "ctd",
+    "slug": "chris-duncan"
    },
-   "desc": "Control time b",
-   "raw": 0.21834687052078355
+   "desc": "Control per TD b",
+   "raw": 70.0
   },
   {
-   "id": "v135",
-   "text": "87",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 0,
-    "key": "fg"
-   },
-   "desc": "Fig Drew Dober Michael Johnson",
-   "raw": 86.9
-  },
-  {
-   "id": "v136",
+   "id": "v122",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1715,20 +1594,7 @@
    "raw": -208
   },
   {
-   "id": "v137",
-   "text": "76",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Drew Dober Kyle Prepolec",
-   "raw": 76.1
-  },
-  {
-   "id": "v138",
+   "id": "v123",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -1741,20 +1607,7 @@
    "raw": -328
   },
   {
-   "id": "v139",
-   "text": "7",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Drew Dober Manuel Torres",
-   "raw": 7.2
-  },
-  {
-   "id": "v140",
+   "id": "v124",
    "text": "+105",
    "fmt": "ml",
    "rule": "fight",
@@ -1767,20 +1620,7 @@
    "raw": 105
   },
   {
-   "id": "v141",
-   "text": "46",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 3,
-    "key": "fg"
-   },
-   "desc": "Fig Drew Dober Jean Silva",
-   "raw": 45.5
-  },
-  {
-   "id": "v142",
+   "id": "v125",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -1793,20 +1633,7 @@
    "raw": 100
   },
   {
-   "id": "v143",
-   "text": "29",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 4,
-    "key": "fg"
-   },
-   "desc": "Fig Drew Dober Renato Moicano",
-   "raw": 29.2
-  },
-  {
-   "id": "v144",
+   "id": "v126",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -1819,20 +1646,7 @@
    "raw": 170
   },
   {
-   "id": "v145",
-   "text": "19",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 0,
-    "key": "fg"
-   },
-   "desc": "Fig Chris Duncan Renato Moicano",
-   "raw": 19.2
-  },
-  {
-   "id": "v146",
+   "id": "v127",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -1845,20 +1659,7 @@
    "raw": -132
   },
   {
-   "id": "v147",
-   "text": "108",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Chris Duncan Terrance McKinney",
-   "raw": 108.2
-  },
-  {
-   "id": "v148",
+   "id": "v128",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -1871,20 +1672,7 @@
    "raw": -112
   },
   {
-   "id": "v149",
-   "text": "57",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Chris Duncan Mateusz Rebecki",
-   "raw": 56.8
-  },
-  {
-   "id": "v150",
+   "id": "v129",
    "text": "+190",
    "fmt": "ml",
    "rule": "fight",
@@ -1897,20 +1685,7 @@
    "raw": 190
   },
   {
-   "id": "v151",
-   "text": "95",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 3,
-    "key": "fg"
-   },
-   "desc": "Fig Chris Duncan Jordan Vucenic",
-   "raw": 94.7
-  },
-  {
-   "id": "v152",
+   "id": "v130",
    "text": "+310",
    "fmt": "ml",
    "rule": "fight",
@@ -1923,20 +1698,7 @@
    "raw": 310
   },
   {
-   "id": "v153",
-   "text": "53",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 4,
-    "key": "fg"
-   },
-   "desc": "Fig Chris Duncan Bolaji Oki",
-   "raw": 52.6
-  },
-  {
-   "id": "v154",
+   "id": "v131",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -1949,7 +1711,5 @@
    "raw": 155
   }
  ],
- "gaps": [
-  "Fight 7: BettingPros method_of_victory has unlabeled selections ['Christopher Duncan', 'Drew Dober']; not displayed."
- ]
+ "gaps": []
 }

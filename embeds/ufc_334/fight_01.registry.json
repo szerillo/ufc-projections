@@ -28,38 +28,6 @@
   },
   {
    "id": "v2",
-   "text": "1515",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Evan Elder",
-     "Samuel Sanches"
-    ],
-    "path": "a.elo"
-   },
-   "desc": "Evan Elder Elo",
-   "raw": 1515
-  },
-  {
-   "id": "v3",
-   "text": "55.9",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Evan Elder",
-     "Samuel Sanches"
-    ],
-    "path": "form.ra"
-   },
-   "desc": "Evan Elder Form Figure",
-   "raw": 55.9
-  },
-  {
-   "id": "v4",
    "text": "0-0-0",
    "fmt": "str",
    "rule": "record",
@@ -70,61 +38,53 @@
    "raw": "0-0-0"
   },
   {
-   "id": "v5",
-   "text": "None",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Evan Elder",
-     "Samuel Sanches"
-    ],
-    "path": "b.elo"
-   },
-   "desc": "Samuel Sanches Elo",
-   "raw": null
-  },
-  {
-   "id": "v6",
-   "text": "50.0",
+   "id": "v3",
+   "text": "29.6",
    "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Evan Elder",
-     "Samuel Sanches"
-    ],
-    "path": "form.rb"
-   },
-   "desc": "Samuel Sanches Form Figure",
-   "raw": 50.0
-  },
-  {
-   "id": "v7",
-   "text": "45.3%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "rule": "age",
    "args": {
     "side": "a"
    },
-   "desc": "Bar model % a",
-   "raw": 0.452902810207559
+   "desc": "Age a",
+   "raw": 29.593429158110883
   },
   {
-   "id": "v8",
-   "text": "54.7%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "id": "v4",
+   "text": "5'10\"",
+   "fmt": "str",
+   "rule": "bio",
    "args": {
-    "side": "b"
+    "side": "a",
+    "key": "ht"
    },
-   "desc": "Bar model % b",
-   "raw": 0.547097189792441
+   "desc": "Height a",
+   "raw": "5'10\""
   },
   {
-   "id": "v9",
+   "id": "v5",
+   "text": "72\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 72
+  },
+  {
+   "id": "v6",
+   "text": "Switch",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Switch"
+  },
+  {
+   "id": "v7",
    "text": "+121",
    "fmt": "mlp",
    "rule": "pub_win",
@@ -135,7 +95,7 @@
    "raw": 0.452902810207559
   },
   {
-   "id": "v10",
+   "id": "v8",
    "text": "45.3%",
    "fmt": "pct1",
    "rule": "pub_win",
@@ -146,7 +106,7 @@
    "raw": 0.452902810207559
   },
   {
-   "id": "v11",
+   "id": "v9",
    "text": "+102",
    "fmt": "ml",
    "rule": "pub_ml",
@@ -157,7 +117,7 @@
    "raw": 102
   },
   {
-   "id": "v12",
+   "id": "v10",
    "text": "49.5%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
@@ -168,7 +128,7 @@
    "raw": 0.49504950495049505
   },
   {
-   "id": "v13",
+   "id": "v11",
    "text": "+102",
    "fmt": "ml",
    "rule": "bp",
@@ -181,7 +141,7 @@
    "raw": 102
   },
   {
-   "id": "v14",
+   "id": "v12",
    "text": "49.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -193,21 +153,21 @@
    "raw": 0.49504950495049505
   },
   {
-   "id": "v15",
+   "id": "v13",
    "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v10",
-     "v12"
+     "v8",
+     "v10"
     ]
    },
    "desc": "Edge ML Evan Elder",
    "raw": -0.04214669474293603
   },
   {
-   "id": "v16",
+   "id": "v14",
    "text": "-121",
    "fmt": "mlp",
    "rule": "pub_win",
@@ -218,7 +178,7 @@
    "raw": 0.547097189792441
   },
   {
-   "id": "v17",
+   "id": "v15",
    "text": "54.7%",
    "fmt": "pct1",
    "rule": "pub_win",
@@ -229,7 +189,7 @@
    "raw": 0.547097189792441
   },
   {
-   "id": "v18",
+   "id": "v16",
    "text": "-110",
    "fmt": "ml",
    "rule": "pub_ml",
@@ -240,7 +200,7 @@
    "raw": -110
   },
   {
-   "id": "v19",
+   "id": "v17",
    "text": "52.4%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
@@ -251,7 +211,7 @@
    "raw": 0.5238095238095238
   },
   {
-   "id": "v20",
+   "id": "v18",
    "text": "-125",
    "fmt": "ml",
    "rule": "bp",
@@ -264,7 +224,7 @@
    "raw": -125
   },
   {
-   "id": "v21",
+   "id": "v19",
    "text": "55.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -276,21 +236,21 @@
    "raw": 0.5555555555555556
   },
   {
-   "id": "v22",
+   "id": "v20",
    "text": "+2.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v17",
-     "v19"
+     "v15",
+     "v17"
     ]
    },
    "desc": "Edge ML Samuel Sanches",
    "raw": 0.023287665982917205
   },
   {
-   "id": "v23",
+   "id": "v21",
    "text": "+122",
    "fmt": "mlp",
    "rule": "pub",
@@ -301,7 +261,7 @@
    "raw": 0.4494660389681183
   },
   {
-   "id": "v24",
+   "id": "v22",
    "text": "44.9%",
    "fmt": "pct1",
    "rule": "pub",
@@ -312,7 +272,7 @@
    "raw": 0.4494660389681183
   },
   {
-   "id": "v25",
+   "id": "v23",
    "text": "+132",
    "fmt": "mlp",
    "rule": "pub",
@@ -323,7 +283,7 @@
    "raw": 0.4312167075336096
   },
   {
-   "id": "v26",
+   "id": "v24",
    "text": "43.1%",
    "fmt": "pct1",
    "rule": "pub",
@@ -334,7 +294,7 @@
    "raw": 0.4312167075336096
   },
   {
-   "id": "v27",
+   "id": "v25",
    "text": "+118",
    "fmt": "ml",
    "rule": "bp",
@@ -347,7 +307,7 @@
    "raw": 118
   },
   {
-   "id": "v28",
+   "id": "v26",
    "text": "45.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -359,21 +319,21 @@
    "raw": 0.45871559633027525
   },
   {
-   "id": "v29",
+   "id": "v27",
    "text": "+1.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v24",
-     "v26"
+     "v22",
+     "v24"
     ]
    },
    "desc": "Edge GTD vs listed",
    "raw": 0.018249331434508742
   },
   {
-   "id": "v30",
+   "id": "v28",
    "text": "-122",
    "fmt": "mlp",
    "rule": "pub",
@@ -385,7 +345,7 @@
    "raw": 0.5505339610318817
   },
   {
-   "id": "v31",
+   "id": "v29",
    "text": "55.1%",
    "fmt": "pct1",
    "rule": "pub",
@@ -397,7 +357,7 @@
    "raw": 0.5505339610318817
   },
   {
-   "id": "v32",
+   "id": "v30",
    "text": "-152",
    "fmt": "ml",
    "rule": "bp",
@@ -410,7 +370,7 @@
    "raw": -152
   },
   {
-   "id": "v33",
+   "id": "v31",
    "text": "60.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -422,93 +382,21 @@
    "raw": 0.6031746031746031
   },
   {
-   "id": "v34",
+   "id": "v32",
    "text": "-5.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v31",
-     "v33"
+     "v29",
+     "v31"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": -0.05264064214272146
   },
   {
-   "id": "v35",
-   "text": "16.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Bar model dec % Evan Elder",
-   "raw": 0.1614818334401974
-  },
-  {
-   "id": "v36",
-   "text": "17.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Bar model ko % Evan Elder",
-   "raw": 0.17169420573418046
-  },
-  {
-   "id": "v37",
-   "text": "12.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Bar model sub % Evan Elder",
-   "raw": 0.11972677103318118
-  },
-  {
-   "id": "v38",
-   "text": "28.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Bar model dec % Samuel Sanches",
-   "raw": 0.2879842055279209
-  },
-  {
-   "id": "v39",
-   "text": "22.4%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Bar model ko % Samuel Sanches",
-   "raw": 0.2235915149339652
-  },
-  {
-   "id": "v40",
-   "text": "3.6%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Bar model sub % Samuel Sanches",
-   "raw": 0.0355214693305549
-  },
-  {
-   "id": "v41",
+   "id": "v33",
    "text": "+519",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -520,7 +408,7 @@
    "raw": 0.1614818334401974
   },
   {
-   "id": "v42",
+   "id": "v34",
    "text": "16.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -532,7 +420,7 @@
    "raw": 0.1614818334401974
   },
   {
-   "id": "v43",
+   "id": "v35",
    "text": "+255",
    "fmt": "ml",
    "rule": "bp",
@@ -545,7 +433,7 @@
    "raw": 255
   },
   {
-   "id": "v44",
+   "id": "v36",
    "text": "28.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -557,21 +445,21 @@
    "raw": 0.28169014084507044
   },
   {
-   "id": "v45",
+   "id": "v37",
    "text": "-12.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v42",
-     "v44"
+     "v34",
+     "v36"
     ]
    },
    "desc": "Edge dec Evan Elder",
    "raw": -0.12020830740487304
   },
   {
-   "id": "v46",
+   "id": "v38",
    "text": "+482",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -583,7 +471,7 @@
    "raw": 0.17169420573418046
   },
   {
-   "id": "v47",
+   "id": "v39",
    "text": "17.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -595,7 +483,7 @@
    "raw": 0.17169420573418046
   },
   {
-   "id": "v48",
+   "id": "v40",
    "text": "+574",
    "fmt": "ml",
    "rule": "bp",
@@ -608,7 +496,7 @@
    "raw": 574
   },
   {
-   "id": "v49",
+   "id": "v41",
    "text": "14.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -620,21 +508,21 @@
    "raw": 0.14836795252225518
   },
   {
-   "id": "v50",
+   "id": "v42",
    "text": "+2.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v47",
-     "v49"
+     "v39",
+     "v41"
     ]
    },
    "desc": "Edge ko Evan Elder",
    "raw": 0.023326253211925274
   },
   {
-   "id": "v51",
+   "id": "v43",
    "text": "+735",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -646,7 +534,7 @@
    "raw": 0.11972677103318118
   },
   {
-   "id": "v52",
+   "id": "v44",
    "text": "12.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -658,7 +546,7 @@
    "raw": 0.11972677103318118
   },
   {
-   "id": "v53",
+   "id": "v45",
    "text": "+700",
    "fmt": "ml",
    "rule": "bp",
@@ -671,7 +559,7 @@
    "raw": 700
   },
   {
-   "id": "v54",
+   "id": "v46",
    "text": "12.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -683,21 +571,21 @@
    "raw": 0.125
   },
   {
-   "id": "v55",
+   "id": "v47",
    "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v52",
-     "v54"
+     "v44",
+     "v46"
     ]
    },
    "desc": "Edge sub Evan Elder",
    "raw": -0.005273228966818824
   },
   {
-   "id": "v56",
+   "id": "v48",
    "text": "+243",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -709,7 +597,7 @@
    "raw": 0.2914209767673616
   },
   {
-   "id": "v57",
+   "id": "v49",
    "text": "29.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -721,7 +609,7 @@
    "raw": 0.2914209767673616
   },
   {
-   "id": "v58",
+   "id": "v50",
    "text": "27.3%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -736,21 +624,21 @@
    "raw": 0.2733679525222552
   },
   {
-   "id": "v59",
+   "id": "v51",
    "text": "+1.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v57",
-     "v58"
+     "v49",
+     "v50"
     ]
    },
    "desc": "Edge itd Evan Elder",
    "raw": 0.018053024245106408
   },
   {
-   "id": "v60",
+   "id": "v52",
    "text": "+247",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -762,7 +650,7 @@
    "raw": 0.2879842055279209
   },
   {
-   "id": "v61",
+   "id": "v53",
    "text": "28.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -774,7 +662,7 @@
    "raw": 0.2879842055279209
   },
   {
-   "id": "v62",
+   "id": "v54",
    "text": "+400",
    "fmt": "ml",
    "rule": "bp",
@@ -787,7 +675,7 @@
    "raw": 400
   },
   {
-   "id": "v63",
+   "id": "v55",
    "text": "20.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -799,21 +687,21 @@
    "raw": 0.2
   },
   {
-   "id": "v64",
+   "id": "v56",
    "text": "+8.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v61",
-     "v63"
+     "v53",
+     "v55"
     ]
    },
    "desc": "Edge dec Samuel Sanches",
    "raw": 0.08798420552792091
   },
   {
-   "id": "v65",
+   "id": "v57",
    "text": "+347",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -825,7 +713,7 @@
    "raw": 0.2235915149339652
   },
   {
-   "id": "v66",
+   "id": "v58",
    "text": "22.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -837,7 +725,7 @@
    "raw": 0.2235915149339652
   },
   {
-   "id": "v67",
+   "id": "v59",
    "text": "+172",
    "fmt": "ml",
    "rule": "bp",
@@ -850,7 +738,7 @@
    "raw": 172
   },
   {
-   "id": "v68",
+   "id": "v60",
    "text": "36.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -862,21 +750,21 @@
    "raw": 0.36764705882352944
   },
   {
-   "id": "v69",
+   "id": "v61",
    "text": "-14.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v66",
-     "v68"
+     "v58",
+     "v60"
     ]
    },
    "desc": "Edge ko Samuel Sanches",
    "raw": -0.14405554388956424
   },
   {
-   "id": "v70",
+   "id": "v62",
    "text": "+2715",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -888,7 +776,7 @@
    "raw": 0.0355214693305549
   },
   {
-   "id": "v71",
+   "id": "v63",
    "text": "3.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -900,7 +788,7 @@
    "raw": 0.0355214693305549
   },
   {
-   "id": "v72",
+   "id": "v64",
    "text": "+1800",
    "fmt": "ml",
    "rule": "bp",
@@ -913,7 +801,7 @@
    "raw": 1800
   },
   {
-   "id": "v73",
+   "id": "v65",
    "text": "5.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -925,21 +813,21 @@
    "raw": 0.05263157894736842
   },
   {
-   "id": "v74",
+   "id": "v66",
    "text": "-1.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v71",
-     "v73"
+     "v63",
+     "v65"
     ]
    },
    "desc": "Edge sub Samuel Sanches",
    "raw": -0.017110109616813515
   },
   {
-   "id": "v75",
+   "id": "v67",
    "text": "+286",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -951,7 +839,7 @@
    "raw": 0.2591129842645201
   },
   {
-   "id": "v76",
+   "id": "v68",
    "text": "25.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -963,7 +851,7 @@
    "raw": 0.2591129842645201
   },
   {
-   "id": "v77",
+   "id": "v69",
    "text": "42.0%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -978,21 +866,21 @@
    "raw": 0.42027863777089786
   },
   {
-   "id": "v78",
+   "id": "v70",
    "text": "-16.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v76",
-     "v77"
+     "v68",
+     "v69"
     ]
    },
    "desc": "Edge itd Samuel Sanches",
    "raw": -0.16116565350637774
   },
   {
-   "id": "v79",
+   "id": "v71",
    "text": "4.1",
    "fmt": "pts",
    "rule": "oa_drift",
@@ -1007,7 +895,7 @@
    "raw": -0.041000000000000036
   },
   {
-   "id": "v80",
+   "id": "v72",
    "text": "+102",
    "fmt": "ml",
    "rule": "oa_best",
@@ -1023,7 +911,7 @@
    "raw": 102
   },
   {
-   "id": "v81",
+   "id": "v73",
    "text": "-118",
    "fmt": "ml",
    "rule": "oa_best",
@@ -1039,7 +927,7 @@
    "raw": -118
   },
   {
-   "id": "v82",
+   "id": "v74",
    "text": "-120",
    "fmt": "ml",
    "rule": "bp",
@@ -1052,7 +940,7 @@
    "raw": -120
   },
   {
-   "id": "v83",
+   "id": "v75",
    "text": "+102",
    "fmt": "ml",
    "rule": "bp",
@@ -1065,7 +953,7 @@
    "raw": 102
   },
   {
-   "id": "v84",
+   "id": "v76",
    "text": "-110",
    "fmt": "ml",
    "rule": "bp",
@@ -1078,7 +966,7 @@
    "raw": -110
   },
   {
-   "id": "v85",
+   "id": "v77",
    "text": "-125",
    "fmt": "ml",
    "rule": "bp",
@@ -1091,476 +979,271 @@
    "raw": -125
   },
   {
-   "id": "v86",
-   "text": "-115",
-   "fmt": "ml",
-   "rule": "bp",
+   "id": "v78",
+   "text": "+0.72",
+   "fmt": "s2",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "metrics",
+    "key": "sd",
+    "slug": "evan-elder"
    },
-   "desc": "BP open fight_ending KO/TKO/DQ",
-   "raw": -115
+   "desc": "Strike diff /min a",
+   "raw": 0.72
+  },
+  {
+   "id": "v79",
+   "text": "-0.51",
+   "fmt": "s2",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "hd",
+    "slug": "evan-elder"
+   },
+   "desc": "Head diff /min a",
+   "raw": -0.51
+  },
+  {
+   "id": "v80",
+   "text": "+1.03",
+   "fmt": "s2",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "bd",
+    "slug": "evan-elder"
+   },
+   "desc": "Body diff /min a",
+   "raw": 1.03
+  },
+  {
+   "id": "v81",
+   "text": "+0.21",
+   "fmt": "s2",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "ld",
+    "slug": "evan-elder"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.21
+  },
+  {
+   "id": "v82",
+   "text": "65%",
+   "fmt": "pct0",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "hdef",
+    "slug": "evan-elder"
+   },
+   "desc": "Head defence a",
+   "raw": 0.648
+  },
+  {
+   "id": "v83",
+   "text": "0.48",
+   "fmt": "n2",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "kd15",
+    "slug": "evan-elder"
+   },
+   "desc": "Knockdowns /15 a",
+   "raw": 0.48
+  },
+  {
+   "id": "v84",
+   "text": "0.52",
+   "fmt": "n2",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "metrics",
+    "key": "chin",
+    "slug": "evan-elder"
+   },
+   "desc": "KD taken /100 head a",
+   "raw": 0.52
+  },
+  {
+   "id": "v85",
+   "text": "-8.7",
+   "fmt": "s1",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "sw",
+    "slug": "evan-elder"
+   },
+   "desc": "R1 to R3 swing a",
+   "raw": -8.7
+  },
+  {
+   "id": "v86",
+   "text": "138%",
+   "fmt": "pct0",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "evan-elder"
+   },
+   "desc": "Output kept R3 a",
+   "raw": 1.38
   },
   {
    "id": "v87",
-   "text": "-105",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-5.0",
+   "fmt": "s1",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "cost"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "d3",
+    "slug": "evan-elder"
    },
-   "desc": "BP now fight_ending KO/TKO/DQ",
-   "raw": -105
+   "desc": "R3 strike diff a",
+   "raw": -5.0
   },
   {
    "id": "v88",
-   "text": "51%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
+   "text": "12.5",
+   "fmt": "n1",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "min",
+    "slug": "evan-elder"
    },
-   "desc": "BP implied fight_ending KO/TKO/DQ",
-   "raw": 0.5121951219512195
+   "desc": "Avg fight, min a",
+   "raw": 12.5
   },
   {
    "id": "v89",
-   "text": "+500",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "r1",
+    "slug": "evan-elder"
    },
-   "desc": "BP open fight_ending Submission",
-   "raw": 500
+   "desc": "Finished in R1 a",
+   "raw": 0.0
   },
   {
    "id": "v90",
-   "text": "+524",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "60%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "cost"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "dec",
+    "slug": "evan-elder"
    },
-   "desc": "BP now fight_ending Submission",
-   "raw": 524
+   "desc": "Goes to decision a",
+   "raw": 0.6
   },
   {
    "id": "v91",
-   "text": "16%",
+   "text": "0%",
    "fmt": "pct0",
-   "rule": "bp_imp",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Submission"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "wko",
+    "slug": "evan-elder"
    },
-   "desc": "BP implied fight_ending Submission",
-   "raw": 0.16025641025641027
+   "desc": "Wins by KO a",
+   "raw": 0.0
   },
   {
    "id": "v92",
-   "text": "+117",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "opening_cost"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "wsub",
+    "slug": "evan-elder"
    },
-   "desc": "BP open fight_ending Points",
-   "raw": 117
+   "desc": "Wins by SUB a",
+   "raw": 0.2
   },
   {
    "id": "v93",
-   "text": "+116",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "cost"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "lko",
+    "slug": "evan-elder"
    },
-   "desc": "BP now fight_ending Points",
-   "raw": 116
+   "desc": "Losses by KO a",
+   "raw": 0.2
   },
   {
    "id": "v94",
-   "text": "46%",
+   "text": "0%",
    "fmt": "pct0",
-   "rule": "bp_imp",
+   "rule": "labs",
    "args": {
-    "market": "fight_ending",
-    "label": "Points"
+    "side": "a",
+    "section": "props.upcoming",
+    "key": "lsub",
+    "slug": "evan-elder"
    },
-   "desc": "BP implied fight_ending Points",
-   "raw": 0.46296296296296297
+   "desc": "Losses by SUB a",
+   "raw": 0.0
   },
   {
    "id": "v95",
-   "text": "+117",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance Yes",
-   "raw": 117
-  },
-  {
-   "id": "v96",
-   "text": "+118",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance Yes",
-   "raw": 118
-  },
-  {
-   "id": "v97",
-   "text": "46%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes"
-   },
-   "desc": "BP implied fight_distance Yes",
-   "raw": 0.45871559633027525
-  },
-  {
-   "id": "v98",
-   "text": "-155",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance No",
-   "raw": -155
-  },
-  {
-   "id": "v99",
-   "text": "-152",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance No",
-   "raw": -152
-  },
-  {
-   "id": "v100",
-   "text": "60%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No"
-   },
-   "desc": "BP implied fight_distance No",
-   "raw": 0.6031746031746031
-  },
-  {
-   "id": "v101",
-   "text": "2.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Over",
-   "raw": 2.5
-  },
-  {
-   "id": "v102",
-   "text": "+100",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Over",
-   "raw": 100
-  },
-  {
-   "id": "v103",
-   "text": "-112",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Over",
-   "raw": -112
-  },
-  {
-   "id": "v104",
-   "text": "53%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over"
-   },
-   "desc": "BP implied total_rounds Over",
-   "raw": 0.5283018867924528
-  },
-  {
-   "id": "v105",
-   "text": "2.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Under",
-   "raw": 2.5
-  },
-  {
-   "id": "v106",
-   "text": "-130",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Under",
-   "raw": -130
-  },
-  {
-   "id": "v107",
-   "text": "-116",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Under",
-   "raw": -116
-  },
-  {
-   "id": "v108",
-   "text": "54%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under"
-   },
-   "desc": "BP implied total_rounds Under",
-   "raw": 0.5370370370370371
-  },
-  {
-   "id": "v109",
-   "text": "29.6",
-   "fmt": "n1",
-   "rule": "age",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Age a",
-   "raw": 29.593429158110883
-  },
-  {
-   "id": "v110",
-   "text": "72\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Reach a",
-   "raw": 72
-  },
-  {
-   "id": "v111",
-   "text": "5'10\"",
-   "fmt": "str",
-   "rule": "bio",
-   "args": {
-    "side": "a",
-    "key": "ht"
-   },
-   "desc": "Height a",
-   "raw": "5'10\""
-  },
-  {
-   "id": "v112",
-   "text": "Switch",
-   "fmt": "str",
-   "rule": "bio",
-   "args": {
-    "side": "a",
-    "key": "stance"
-   },
-   "desc": "Stance a",
-   "raw": "Switch"
-  },
-  {
-   "id": "v113",
-   "text": "5",
-   "fmt": "int",
-   "rule": "nfights",
-   "args": {
-    "side": "a"
-   },
-   "desc": "UFC fights a",
-   "raw": 5
-  },
-  {
-   "id": "v114",
-   "text": "0",
-   "fmt": "int",
-   "rule": "nfights",
-   "args": {
-    "side": "b"
-   },
-   "desc": "UFC fights b",
-   "raw": 0
-  },
-  {
-   "id": "v115",
-   "text": "5.66",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "slpm"
-   },
-   "desc": "SLpM a",
-   "raw": 5.657051282051282
-  },
-  {
-   "id": "v116",
-   "text": "4.94",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "sapm"
-   },
-   "desc": "SApM a",
-   "raw": 4.935897435897436
-  },
-  {
-   "id": "v117",
-   "text": "+0.72",
-   "fmt": "s2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "diff"
-   },
-   "desc": "Strike diff /min a",
-   "raw": 0.7211538461538461
-  },
-  {
-   "id": "v118",
-   "text": "51%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "acc"
-   },
-   "desc": "Strike accuracy a",
-   "raw": 0.5093795093795094
-  },
-  {
-   "id": "v119",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "dfn"
-   },
-   "desc": "Strike defence a",
-   "raw": 0.573997233748271
-  },
-  {
-   "id": "v120",
    "text": "0.48",
    "fmt": "n2",
    "rule": "stat",
    "args": {
     "side": "a",
-    "key": "td15"
+    "key": "td15",
+    "slug": "evan-elder"
    },
    "desc": "Takedowns /15 a",
    "raw": 0.48076923076923084
   },
   {
-   "id": "v121",
+   "id": "v96",
    "text": "40%",
    "fmt": "pct0",
    "rule": "stat",
    "args": {
     "side": "a",
-    "key": "tdd"
+    "key": "tdd",
+    "slug": "evan-elder"
    },
    "desc": "TD defence a",
    "raw": 0.4
   },
   {
-   "id": "v122",
-   "text": "9%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "ctrlp"
-   },
-   "desc": "Control time a",
-   "raw": 0.09161324786324786
-  },
-  {
-   "id": "v123",
-   "text": "74",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 0,
-    "key": "fg"
-   },
-   "desc": "Fig Evan Elder Gauge Young",
-   "raw": 73.8
-  },
-  {
-   "id": "v124",
+   "id": "v97",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1573,20 +1256,7 @@
    "raw": -208
   },
   {
-   "id": "v125",
-   "text": "84",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Evan Elder Darrius Flowers",
-   "raw": 83.8
-  },
-  {
-   "id": "v126",
+   "id": "v98",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1599,20 +1269,7 @@
    "raw": -455
   },
   {
-   "id": "v127",
-   "text": "69",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Evan Elder Genaro Valdez",
-   "raw": 69.1
-  },
-  {
-   "id": "v128",
+   "id": "v99",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1625,20 +1282,7 @@
    "raw": -303
   },
   {
-   "id": "v129",
-   "text": "46",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 3,
-    "key": "fg"
-   },
-   "desc": "Fig Evan Elder Nazim Sadykhov",
-   "raw": 46.2
-  },
-  {
-   "id": "v130",
+   "id": "v100",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -1651,20 +1295,7 @@
    "raw": 175
   },
   {
-   "id": "v131",
-   "text": "8",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 4,
-    "key": "fg"
-   },
-   "desc": "Fig Evan Elder Preston Parsons",
-   "raw": 8.2
-  },
-  {
-   "id": "v132",
+   "id": "v101",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",
@@ -1677,7 +1308,5 @@
    "raw": 125
   }
  ],
- "gaps": [
-  "Fight 1: BettingPros method_of_victory has unlabeled selections ['Samuel Sanches', 'Evan Elder']; not displayed."
- ]
+ "gaps": []
 }
