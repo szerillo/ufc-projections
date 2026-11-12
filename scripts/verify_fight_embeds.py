@@ -325,6 +325,8 @@ def check(D, htmlfile, G):
         if lrec.get("open") and lrec.get("current"):
             want_as = lrec["current"]["t"][5:16].replace("-", "/").replace("T", " ")
             if f"line data as of {want_as} UTC" not in page: bad.append(("move", "as-of", f"line move missing 'as of {want_as} UTC'"))
+            want_q = abs(lrec["current"]["p"] - lrec["open"]["p"]) < 0.01   # Kirk round 11 D: one-line "Steady" under 1 pt, bar otherwise
+            if want_q != ('class="mvrow mvq"' in page) or want_q == ('class="mvtr"' in page): bad.append(("move", "steady", f"one-line form {'expected' if want_q else 'not expected'}"))
         elif lrec.get("open"):
             if "current line not available" not in page: bad.append(("move", "opener only", "opener-only bout must say 'current line not available'"))
         # Block 59k (Kirk check 5): cross-source side check. The bp rule trusts the builder's choice of feed row for each
@@ -620,13 +622,14 @@ def negative(D, G, slug):
         ("embed: Spot to watch added where no test fires (fight 05)", plant_text("fight_05.html", lambda s_: s_.replace('<div class="legend">', '<div class="stk spot" data-part="spot"><ul class="lvl"><li data-spot="T1"><b>Johnson</b> x</li></ul></div><div class="legend">', 1))),
         ("embed: an edge under 2.0 coloured (fight 13)", plant_text("fight_13.html", lambda s_: re.sub(r'<span class="ech flat">(<span data-id="v\d+">[+-][01]\.\d%</span>)', r'<span class="ech pos">\1', s_, count=1))),
         ("embed: 'price unverified' removed from Gordon (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace('<span class="unv">price unverified</span>', "", 1))),
-        ("embed: an offshore book named on the page (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace("Line move</span>", "Line move</span> Pinnacle", 1))),
+        ("embed: an offshore book named on the page (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace('<span class="mvl">Line', 'Pinnacle <span class="mvl">Line', 1))),
         ("line history: a current line moved 1 pt in the file (fight 12)", lh_shift),
         ("shared input: a backtest number edited in spot_tests.json (builder and checker both read it)", st_edit),
         ("shared input: a locked file changed without a bless (card_overrides.json)", lock_edit),
         ("event file: one fighter's Form line swapped (main event)", ev_edit("form")),
         ("event file: odds close moved 2 pts (main event)", ev_edit("odds")),
         ("embed: one round-trend point moved (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(<circle cx="[\d.]+" cy=")([\d.]+)(" r="4")', lambda m: m.group(1) + f"{float(m.group(2)) + 9:.1f}" + m.group(3), s_, count=1))),
+        ("embed: a steady line drawn as 'Steady' where it moved 7 pts (fight 13)", plant_text("fight_13.html", lambda s_: s_.replace('class="mvrow"', 'class="mvrow mvq"', 1))),
         ("embed: Duncan's at-the-floor note removed (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace("Duncan: R3 sits right at the 15-minute floor; thin sample.", "", 1))),
         ("embed: Corrections link dropped from the footer (fight 03)", plant_text("fight_03.html", lambda s_: s_.replace('>Corrections</a>', '></a>', 1))),
         ("embed: a below-floor round drawn as a full dot (fight 08)", plant_text("fight_08.html", lambda s_: s_.replace('<circle class="thin" ', '<circle ', 1))),

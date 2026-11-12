@@ -21,7 +21,10 @@ const logit = (p) => Math.log(p / (1 - p)), sig = (z) => 1 / (1 + Math.exp(-z));
 const fair = (p) => p == null ? null : sig((window.__k || 1.2) * logit(Math.min(Math.max(p, 0.001), 0.999)));
 const ml2dec = (m) => m == null ? null : (m > 0 ? 1 + m / 100 : 1 + 100 / -m);
 const last = (n) => (n || "").split(" ").slice(-1)[0];
-function bestPrice(od, side) { let b = null; for (const [k, x] of Object.entries((od && od.books) || {})) { const m = x[side === "a" ? "ma" : "mb"]; if (m == null) continue; if (!b || ml2dec(m) > ml2dec(b.ml)) b = { ml: m, book: k }; } return b; }
+// Kirk round 11 call 3: per-book prices are not checked against an independent source, so they are not shown. Open, close and
+// moneyline only. Set to true to bring back the book table, best prices, the price board and the closing total.
+const SHOW_PER_BOOK = false;
+function bestPrice(od, side) { if (!SHOW_PER_BOOK) return null; let b = null; for (const [k, x] of Object.entries((od && od.books) || {})) { const m = x[side === "a" ? "ma" : "mb"]; if (m == null) continue; if (!b || ml2dec(m) > ml2dec(b.ml)) b = { ml: m, book: k }; } return b; }
 function methodRows(f) { // -> {a:{dec,ko,sub,itd,win}, b:{...}, gtd} using fair market win % when there is one, else the Form Line
   const fm = f.form; if (!fm || !fm.ms) return null;
   const o = oddsCells(f); const pa = o.pa != null ? fair(o.pa) : fm.p; if (pa == null) return null;
@@ -131,14 +134,14 @@ function lineChart(od, aName, bName) {
   const last = S[S.length - 1];
   return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Line history">
     ${grid}${ticks}
-    <path d="${path(3)}" fill="none" stroke="#0a8842" stroke-width="1" opacity=".75"/>
-    <path d="${path(4)}" fill="none" stroke="#1b4fb0" stroke-width="1" opacity=".75"/>
-    <path d="${path(2)}" fill="none" stroke="#d63636" stroke-width="1.4" stroke-dasharray="4 3"/>
+    ${SHOW_PER_BOOK ? `<path d="${path(3)}" fill="none" stroke="#0a8842" stroke-width="1" opacity=".75"/>` : ""}
+    ${SHOW_PER_BOOK ? `<path d="${path(4)}" fill="none" stroke="#1b4fb0" stroke-width="1" opacity=".75"/>` : ""}
+    ${SHOW_PER_BOOK ? `<path d="${path(2)}" fill="none" stroke="#d63636" stroke-width="1.4" stroke-dasharray="4 3"/>` : ""}
     <path d="${path(1)}" fill="none" stroke="#1a1a1a" stroke-width="2.2"/>
     <circle cx="${x(S[0][0]).toFixed(1)}" cy="${y(S[0][1]).toFixed(1)}" r="3.5" fill="#1a1a1a"/>
     <circle cx="${x(last[0]).toFixed(1)}" cy="${y(last[1]).toFixed(1)}" r="3.5" fill="#1a1a1a"/>
   </svg>
-  <div class="legend"><span><i style="border-color:#1a1a1a"></i>Consensus (no-vig) — ${esc(aName)} win %</span><span><i style="border-color:#d63636;border-top-style:dashed"></i>Pinnacle</span><span><i style="border-color:#0a8842"></i>DraftKings</span><span><i style="border-color:#1b4fb0"></i>FanDuel</span><span>right axis = ${esc(aName)} fair moneyline</span></div>`;
+  <div class="legend"><span><i style="border-color:#1a1a1a"></i>Consensus (no-vig) — ${esc(aName)} win %</span>${SHOW_PER_BOOK ? `<span><i style="border-color:#d63636;border-top-style:dashed"></i>Pinnacle</span><span><i style="border-color:#0a8842"></i>DraftKings</span><span><i style="border-color:#1b4fb0"></i>FanDuel</span><span>right axis = ${esc(aName)} fair moneyline</span>` : ""}</div>`;
 }
 
 /* ---------- shared bits ---------- */
@@ -288,8 +291,8 @@ function propsBox(f) {
   const p = f.props; if (!p) return "";
   const order = [["ML a", last(f.a.name) + " ML"], ["ML b", last(f.b.name) + " ML"], ["a DEC", last(f.a.name) + " by DEC"], ["a KO", last(f.a.name) + " by KO"], ["a SUB", last(f.a.name) + " by SUB"], ["b DEC", last(f.b.name) + " by DEC"], ["b KO", last(f.b.name) + " by KO"], ["b SUB", last(f.b.name) + " by SUB"], ["GTD", "Goes the distance"], ["O1.5", "Over 1.5"], ["O2.5", "Over 2.5"], ["O3.5", "Over 3.5"], ["O4.5", "Over 4.5"]];
   const cell = (x) => x && x[0] != null ? `${(x[0] * 100).toFixed(1)}% <span class="dim">${ml(x[1])}</span>` : "—";
-  const rows = order.filter(([k]) => p[k]).map(([k, lab]) => `<tr><td class="l b">${esc(lab)}</td><td>${cell(p[k].books)}</td><td>${p[k]["best-book"] ? ml(p[k]["best-book"][1]) + ' <span class="dim">' + esc(p[k]["best-book"][2]) + "</span>" : "—"}</td><td>${cell(p[k].exch)}</td></tr>`).join("");
-  return rows ? `<h3>Prop market at the close</h3><div class="tw"><table><thead><tr><th class="l">Market</th><th title="No-vig book consensus">Books</th><th>Best price</th><th title="Exchange price (Kalshi / Polymarket / Novig)">Exchange</th></tr></thead><tbody>${rows}</tbody></table></div>` : "";
+  const rows = order.filter(([k]) => p[k]).map(([k, lab]) => `<tr><td class="l b">${esc(lab)}</td><td>${cell(p[k].books)}</td>${SHOW_PER_BOOK ? `<td>${p[k]["best-book"] ? ml(p[k]["best-book"][1]) + ' <span class="dim">' + esc(p[k]["best-book"][2]) + "</span>" : "—"}</td>` : ""}<td>${cell(p[k].exch)}</td></tr>`).join("");
+  return rows ? `<h3>Prop market at the close</h3><div class="tw"><table><thead><tr><th class="l">Market</th><th title="No-vig book consensus">Books</th>${SHOW_PER_BOOK ? "<th>Best price</th>" : ""}<th title="Exchange price (Kalshi / Polymarket / Novig)">Exchange</th></tr></thead><tbody>${rows}</tbody></table></div>` : "";
 }
 function priceBoard(ev) {
   const rows = [];
@@ -400,10 +403,10 @@ async function vFight(slug, n) {
       <div class="kv"><span>First seen (${fdate(o.open.t.slice(0, 10))})</span><span>${esc(f.a.name)} ${ml(o.open.ma)} · ${esc(f.b.name)} ${ml(o.open.mb)} · ${pct(o.open.p)}</span></div>
       <div class="kv"><span>${final ? "Close" : "Now"} (${o.close.nb} books)</span><span><b>${esc(f.a.name)} ${ml(o.close.ma)} · ${esc(f.b.name)} ${ml(o.close.mb)}</b> · ${pct(o.close.p)}</span></div>
       <div class="kv"><span>Move</span><span class="${cls(Math.abs(mv) >= 1 ? 1 : 0)}">${signed(Math.abs(mv))} pts toward ${esc(mv >= 0 ? f.a.name : f.b.name)}</span></div>
-      ${o.total ? `<div class="kv"><span>Total rounds</span><span>${o.total.pt} · O ${ml(o.total.over)} / U ${ml(o.total.under)} · over ${pct(o.total.p_over)}</span></div>` : ""}
+      ${SHOW_PER_BOOK && o.total ? `<div class="kv"><span>Total rounds</span><span>${o.total.pt} · O ${ml(o.total.over)} / U ${ml(o.total.under)} · over ${pct(o.total.p_over)}</span></div>` : ""}
       <div class="kv"><span>Snapshots</span><span>${o.n}</span></div>`;
     const bk = Object.entries(o.books || {});
-    if (bk.length) html += `<div style="height:8px"></div><div class="tw"><table><thead><tr><th class="l">Book</th><th>${esc(f.a.name.split(" ").slice(-1)[0])}</th><th>${esc(f.b.name.split(" ").slice(-1)[0])}</th><th>No-vig</th></tr></thead><tbody>` +
+    if (SHOW_PER_BOOK && bk.length) html += `<div style="height:8px"></div><div class="tw"><table><thead><tr><th class="l">Book</th><th>${esc(f.a.name.split(" ").slice(-1)[0])}</th><th>${esc(f.b.name.split(" ").slice(-1)[0])}</th><th>No-vig</th></tr></thead><tbody>` +
       bk.map(([b, x]) => `<tr><td class="l">${esc((window.__books || {})[b] || b)}</td><td>${ml(x.ma)}</td><td>${ml(x.mb)}</td><td>${pct(x.p)}</td></tr>`).join("") + `</tbody></table></div>`;
   } else if (f.bp && f.bp.a && f.bp.a.cons != null) {
     html += `<div class="kv"><span>Open</span><span>${esc(f.a.name)} ${ml(f.bp.a.open)} · ${esc(f.b.name)} ${ml(f.bp.b.open)}</span></div><div class="kv"><span>${final ? "Close" : "Now"} (consensus)</span><span><b>${esc(f.a.name)} ${ml(f.bp.a.cons)} · ${esc(f.b.name)} ${ml(f.bp.b.cons)}</b></span></div><div class="kv"><span>DraftKings</span><span>${ml(f.bp.a.dk)} / ${ml(f.bp.b.dk)}</span></div><div class="kv"><span>FanDuel</span><span>${ml(f.bp.a.fd)} / ${ml(f.bp.b.fd)}</span></div>`;
@@ -427,8 +430,8 @@ async function vFight(slug, n) {
     const eA = fa_ != null && bA ? fa_ * ml2dec(bA.ml) - 1 : null, eB = fa_ != null && bB ? (1 - fa_) * ml2dec(bB.ml) - 1 : null;
     html += `<h3>Form numbers</h3><div class="tw"><table><thead><tr><th class="l"></th><th>${esc(last(f.a.name))}</th><th>${esc(last(f.b.name))}</th><th class="l">What it is</th></tr></thead><tbody>
       <tr><td class="l b">Fair line</td><td>${fa_ == null ? "—" : (fa_ * 100).toFixed(1) + "% · " + ml(p2ml(fa_))}</td><td>${fa_ == null ? "—" : ((1 - fa_) * 100).toFixed(1) + "% · " + ml(p2ml(1 - fa_))}</td><td class="l dim">Market, corrected for favorite-longshot bias</td></tr>
-      <tr><td class="l b">Best price</td><td>${bA ? ml(bA.ml) + " " + esc(bookName(bA.book)) : "—"}</td><td>${bB ? ml(bB.ml) + " " + esc(bookName(bB.book)) : "—"}</td><td class="l dim">${final ? "At the close" : "Last snapshot"}</td></tr>
-      <tr><td class="l b">Edge at best price</td><td class="${cls(eA)}">${eA == null ? "—" : signed(eA * 100) + "%"}</td><td class="${cls(eB)}">${eB == null ? "—" : signed(eB * 100) + "%"}</td><td class="l dim">Fair % × payout − 1</td></tr>
+      ${SHOW_PER_BOOK ? "" : "<!--"}<tr><td class="l b">Best price</td><td>${bA ? ml(bA.ml) + " " + esc(bookName(bA.book)) : "—"}</td><td>${bB ? ml(bB.ml) + " " + esc(bookName(bB.book)) : "—"}</td><td class="l dim">${final ? "At the close" : "Last snapshot"}</td></tr>
+      <tr><td class="l b">Edge at best price</td><td class="${cls(eA)}">${eA == null ? "—" : signed(eA * 100) + "%"}</td><td class="${cls(eB)}">${eB == null ? "—" : signed(eB * 100) + "%"}</td><td class="l dim">Fair % × payout − 1</td></tr>${SHOW_PER_BOOK ? "" : "-->"}
       <tr><td class="l b">Form Line</td><td>${fm.p == null ? "—" : (fm.p * 100).toFixed(1) + "%"}</td><td>${fm.p == null ? "—" : ((1 - fm.p) * 100).toFixed(1) + "%"}</td><td class="l dim">Stats-only model. Context, not a bet signal</td></tr>
 ${(() => { const M = methodRows(f); if (!M) return `<tr><td class="l b">Goes the distance</td><td colspan="2" class="c">${fm.g == null ? "—" : (fm.g * 100).toFixed(0) + "%"}</td><td class="l dim">Form distance model</td></tr>`;
         const r_ = (lab, k) => `<tr><td class="l b">${lab}</td><td>${(M.a[k] * 100).toFixed(0)}% · ${ml(p2ml(M.a[k]))}</td><td>${(M.b[k] * 100).toFixed(0)}% · ${ml(p2ml(M.b[k]))}</td><td class="l dim">${k === "dec" ? "Form method model on the " + M.src : ""}</td></tr>`;

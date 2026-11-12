@@ -431,14 +431,20 @@ def build(names, outname):
         tow = an if mv >= 0 else bn
         tsd = "a" if mv >= 0 else "b"
         po, pc = (o["open"]["p"], o["close"]["p"]) if tsd == "a" else (1 - o["open"]["p"], 1 - o["close"]["p"])
-        body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(tow))} opener <b class="mvo">{R(o["open"]["m" + tsd], "ml", "lh_open_ml", "LH open ML " + tow, lh=LHF, pair=PAIR, side=tsd)}</b> on {o["open"]["t"][5:10].replace("-", "/")}, '
-                f'moved <b>{R(abs(mv), "pts", "lh_drift_abs", "LH drift pts", lh=LHF, pair=PAIR)}&nbsp;pts</b>'
-                f'<span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div>'
-                f'<div class="mvtr" role="img" aria-label="{esc(last(tow))} win chance from {po*100:.1f}% at the opener to {pc*100:.1f}% now"><span class="mvp">{R(po, "pct1", "lh_p", "LH open p " + tow, lh=LHF, pair=PAIR, side=tsd, at="open")}</span>'
-                f'<div class="mvbar"><i class="mvfrom" style="left:{po*100:.1f}%"></i><i class="mvspan" style="left:{min(po,pc)*100:.1f}%;width:{abs(pc-po)*100:.1f}%"></i><i class="mvto" style="left:{pc*100:.1f}%"></i></div>'
-                f'<span class="mvp mve">{R(pc, "pct1", "lh_p", "LH current p " + tow, lh=LHF, pair=PAIR, side=tsd, at="current")}</span></div>'
-                f'<div class="mvc">{esc(last(tow))} win chance, opener to now</div>'
-                + (f'<details class="mvx"><summary>Price path</summary>{minispark(o["series"], an)}<div class="mvc">{esc(last(an))} win %, US-regulated books</div></details>' if len(o.get("series") or []) >= 2 else "") + '</div>')
+        if abs(mv) < 0.01:   # Kirk round 11 D: under 1 pt the bar shows nothing; one line instead (the site marks moves from 1 pt)
+            body = (f'<div class="mvrow mvq" data-part="move"><div class="mvt"><span class="mvl">Line</span> Steady · {esc(last(tow))} opened <b class="mvo">{R(o["open"]["m" + tsd], "ml", "lh_open_ml", "LH open ML " + tow, lh=LHF, pair=PAIR, side=tsd)}</b> {o["open"]["t"][5:10].replace("-", "/")} · '
+                    f'<b>{R(abs(mv), "pts", "lh_drift_abs", "LH drift pts", lh=LHF, pair=PAIR)}&nbsp;pts</b>'
+                    f'<span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div>'
+                    + (f'<details class="mvx"><summary>Price path</summary>{minispark(o["series"], an)}<div class="mvc">{esc(last(an))} win %, US-regulated books</div></details>' if len(o.get("series") or []) >= 2 else "") + '</div>')
+        else:
+                body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(tow))} opener <b class="mvo">{R(o["open"]["m" + tsd], "ml", "lh_open_ml", "LH open ML " + tow, lh=LHF, pair=PAIR, side=tsd)}</b> on {o["open"]["t"][5:10].replace("-", "/")}, '
+                    f'moved <b>{R(abs(mv), "pts", "lh_drift_abs", "LH drift pts", lh=LHF, pair=PAIR)}&nbsp;pts</b>'
+                    f'<span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div>'
+                    f'<div class="mvtr" role="img" aria-label="{esc(last(tow))} win chance from {po*100:.1f}% at the opener to {pc*100:.1f}% now"><span class="mvp">{R(po, "pct1", "lh_p", "LH open p " + tow, lh=LHF, pair=PAIR, side=tsd, at="open")}</span>'
+                    f'<div class="mvbar"><i class="mvfrom" style="left:{po*100:.1f}%"></i><i class="mvspan" style="left:{min(po,pc)*100:.1f}%;width:{abs(pc-po)*100:.1f}%"></i><i class="mvto" style="left:{pc*100:.1f}%"></i></div>'
+                    f'<span class="mvp mve">{R(pc, "pct1", "lh_p", "LH current p " + tow, lh=LHF, pair=PAIR, side=tsd, at="current")}</span></div>'
+                    f'<div class="mvc">{esc(last(tow))} win chance, opener to now</div>'
+                    + (f'<details class="mvx"><summary>Price path</summary>{minispark(o["series"], an)}<div class="mvc">{esc(last(an))} win %, US-regulated books</div></details>' if len(o.get("series") or []) >= 2 else "") + '</div>')
     elif o_open:   # Kirk round 6: opener only; no regulated current line
         fav_sd = "a" if o_open["p"] >= 0.5 else "b"; F_ = an if fav_sd == "a" else bn
         body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(F_))} opener <b class="mvo">{R(o_open["m" + fav_sd], "ml", "lh_open_ml", "LH open ML " + F_, lh=LHF, pair=PAIR, side=fav_sd)}</b> on {o_open["t"][5:10].replace("-", "/")}; '
