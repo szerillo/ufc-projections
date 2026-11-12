@@ -38,3 +38,13 @@ jobs:
           node-version: "20"
       - name: Live prices applied to N of M
         run: set -o pipefail; node scripts/live_overlay_check.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+
+  labs-card:
+    # Block 57: Labs next-card rows must be the current card (red on a cancelled fighter, a wrong number or a missing bout).
+    # Fix: python3 -I scripts/build_labs.py --upcoming-only
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Labs rows vs the upcoming card
+        run: set -o pipefail; python3 -I scripts/labs_card_check.py | tee -a "$GITHUB_STEP_SUMMARY"

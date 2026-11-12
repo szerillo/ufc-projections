@@ -57,6 +57,14 @@ def rnd(x, d=3):
     return None if x is None or (isinstance(x, float) and math.isnan(x)) else round(float(x), d)
 
 
+# --upcoming-only (Block 57): refresh just the next-card rows (cardio, props, sd_edge "upcoming") in the existing labs.json
+# from the current upcoming event file, leaving every other Labs number and file byte-for-byte as committed. Run it whenever
+# the card changes (cancellation, replacement, renumbering); scripts/labs_card_check.py goes red until it is run.
+UPCOMING_ONLY = "--upcoming-only" in sys.argv
+import os
+_out = lambda p, mode="w", **kw: open(os.devnull if UPCOMING_ONLY else p, mode, **kw)
+
+
 def main():
     bios = {}
     for p in glob.glob(str(D / "fighters" / "*.json")):
@@ -520,7 +528,7 @@ def main():
     out["late"] = [favstudy(late, "Line first posted 6 days or fewer before the fight, 5+ days after the rest of the card"), favstudy(norm_, "All other fights")]
 
     # ================= venue log (Las Vegas since the APEX opened) + altitude
-    with open(REPO / "data" / "venues_vegas.csv", "w", newline="") as fh:
+    with _out(REPO / "data" / "venues_vegas.csv", "w", newline="") as fh:
         w_ = csv.writer(fh); w_.writerow(["date", "event", "venue", "source"])
         for e in events:
             if (e.get("location") or "").startswith("Las Vegas") and e["date"] >= "2020-05-30":
@@ -754,11 +762,18 @@ def main():
     out["age_groups"] = ag
 
     try:
+        if UPCOMING_ONLY: raise RuntimeError("upcoming-only: rounds left as committed (labs_rounds writes event files)")
         import labs_rounds
         out["rounds"] = labs_rounds.build(F, CACHE, rnd, D)
     except Exception as ex:
         import traceback; traceback.print_exc(); print("round-level judging skipped:", ex)
 
+    if UPCOMING_ONLY:
+        cur = json.load(open(D / "labs.json"))
+        cur["cardio"]["upcoming"], cur["cardio"]["upcoming_name"] = out["cardio"]["upcoming"], out["cardio"].get("upcoming_name")
+        cur["props"]["upcoming"], cur["sd_edge"]["upcoming"] = out["props"]["upcoming"], out["sd_edge"]["upcoming"]
+        json.dump(cur, open(D / "labs.json", "w"), separators=(",", ":"))
+        print("labs.json: next-card rows refreshed only:", len(cur["cardio"]["upcoming"]), "bouts,", cur["cardio"]["upcoming_name"]); return
     json.dump(out, open(D / "labs.json", "w"), separators=(",", ":"))
     print("altitude", out["altitude"]); print("octfav", [(r["label"], r["n"], r["fin"], r["exp"], r["fav"]["owp"], r["fav"]["imp"], r["fav"]["roi"], r["pace"]) for r in out["octagon"]["fav"]])
     print("live", out["live"]); print("spots2", [(s["label"], s["n"], s["wp"], s["on"], s["owp"], s["imp"], s["roi"]) for s in out["situational"][-5:]])
