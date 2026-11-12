@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # Kirk round 22 call 1: the merge, done locally and checked, never pushed by this script.
-#   scripts/merge_main.sh            (branch embeds-v5, slug ufc_334)
+#   scripts/merge_main.sh            (branch go-live-334, slug ufc_334; BR=<branch> to override)
 # 1 main_guard with the export/odds-bot allowlist  2 --no-ff merge of the branch onto origin/main in a local branch _merge
 # 3 an odds-file conflict (the only one allowed) goes to the copy with the later "updated_at"; if that is main's (the bot's),
 #   the embeds are rebuilt on it so served prices never roll back  4 full verifier on the merge result, 0 mismatches
 # 5 prints the one push command for Kirk's go. Exits non-zero on anything else.
 set -euo pipefail; export EMBED_PIPELINE=1; cd "$(dirname "$0")/.."
-BR="${BR:-embeds-v5}"; SLUG="${SLUG:-ufc_334}"; ODDS="data/${SLUG}_odds.json"
+BR="${BR:-go-live-334}"; SLUG="${SLUG:-ufc_334}"; ODDS="data/${SLUG}_odds.json"
 git fetch -q origin
 python3 -I scripts/main_guard.py --allow-publish-and-bot --slug "$SLUG"
 git checkout -q -B _merge origin/main
