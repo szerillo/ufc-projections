@@ -37,6 +37,16 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--ref", default="origin/main"); ap.add_argument("--expected", default=None)
     a = ap.parse_args()
     exp = a.expected or (REPO / "audits/MAIN_AT_CHECK.txt").read_text().split()[0]
+    # Kirk round 20 E: never trust the local remote-tracking ref. Fetch main now and ask the remote directly; if either
+    # fails or they disagree, refuse (fail safe).
+    if a.ref == "origin/main":
+        f_ = subprocess.run(["git", "-C", str(REPO), "fetch", "-q", "origin", "+refs/heads/main:refs/remotes/origin/main"], capture_output=True, text=True, timeout=120)
+        ls_ = subprocess.run(["git", "-C", str(REPO), "ls-remote", "origin", "refs/heads/main"], capture_output=True, text=True, timeout=120)
+        if f_.returncode != 0 or ls_.returncode != 0 or not ls_.stdout.strip():
+            print(f"MAIN GUARD: could not fetch or read origin main ({(f_.stderr or ls_.stderr).strip()[:200]}). REFUSING: cannot confirm main."); sys.exit(1)
+        remote_ = ls_.stdout.split()[0]
+        if remote_ != git("rev-parse", "origin/main"):
+            print(f"MAIN GUARD: remote main {remote_[:8]} differs from the fetched ref. REFUSING."); sys.exit(1)
     cur = git("rev-parse", a.ref)
     if cur == exp and subprocess.run(["git", "-C", str(REPO), "merge-base", "--is-ancestor", cur, "HEAD"]).returncode == 0:
         print(f"MAIN GUARD: {a.ref} is {cur[:8]}, the commit the served-set checks were run against; merge is a fast-forward. OK")

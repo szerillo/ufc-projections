@@ -17,3 +17,9 @@ Logged 2026-11-12 (Kirk round 18). Nothing here is done before the card; the pub
    item 2. The embed box does not change before that.
 5. **Merge guard.** If main moved before the merge, `scripts/main_guard.py` refuses; redo the round-18 served-set check on the
    real merge result and record the new main SHA in `audits/MAIN_AT_CHECK.txt` on purpose.
+6. **Labs angle bugs found in round 20 (fix with the research refresh, pre-registered):**
+   - `form_model.angle_sides`: an angle where BOTH fighters qualify keeps only one side (dict overwrite). "Age 37 or older"
+     drops 43 bets in the fresh build; check every symmetric angle.
+   - Fighters who share a UFCStats name (Bruno Silva, Jean Silva, ...): the build takes the first namesake's DOB, stance and
+     reach. 15 "Younger by 5+", 5 "Under 32 vs 36+" and 8 "Reach 4+" memberships depend on which namesake is used.
+   - "Southpaw vs orthodox" is clean on both checks (the embed box on fight 10 uses it).

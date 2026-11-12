@@ -1,0 +1,33 @@
+{
+ "_doc": "Labs angles shown on embeds, rebuilt as the exact published research.json set (fresh build members minus the bouts the round-7 matcher fix added; n, wins, expected and P&L match research.json). Win CI: normal approximation. ROI CI shown: 10,000-draw bootstrap clustered by card (seed 20261112); per-bet normal and by-bet bootstrap kept for reference. Margin: expected ROI if the no-vig close were the true chance. Script: audits/round20/angle_stats.py.",
+ "southpaw": {
+  "n": 603,
+  "w": 323,
+  "act": 0.5357,
+  "exp": 0.5175,
+  "roi": -0.0421,
+  "pnl": -25.4,
+  "win_ci": [
+   0.4958,
+   0.5755
+  ],
+  "roi_sd": 1.032,
+  "roi_se": 0.042,
+  "roi_ci": [
+   -0.1245,
+   0.0403
+  ],
+  "roi_ci_boot_bets": [
+   -0.1244,
+   0.0417
+  ],
+  "cards": 202,
+  "roi_ci_boot_cards": [
+   -0.1228,
+   0.0369
+  ],
+  "margin_roi": -0.0398,
+  "boot_cards_share_above_margin": 0.474,
+  "angle": "southpaw"
+ }
+}

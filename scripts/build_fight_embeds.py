@@ -774,10 +774,33 @@ def build(names, outname):
                       f'<div class="dbar"><span>Won</span><i style="width:{bw_(ang_["act"])}"></i></div><div class="dbar exp"><span>Close expected</span><i style="width:{bw_(ang_["exp"])}"></i></div>'
                       f'<div class="dim dbn">95% range for the win rate: {R(DS_["win_ci"][0], "pct1", "dbstat", "Debut angle win CI lo", key="win_ci", i=0)} to {R(DS_["win_ci"][1], "pct1", "dbstat", "Debut angle win CI hi", key="win_ci", i=1)} (n {R(ang_["n"], "intc", "rs_angle", "Debut angle n 2", id="debut_vs_vet", key="n")}). '
                       f'Backing every debutant at the closing price returned {R(ang_["roi_c"], "spp", "rs_angle", "Debut angle ROI close", id="debut_vs_vet", key="roi_c")} per bet '
-                      f'(95% range {R(DS_["roi_ci"][0], "spp", "dbstat", "Debut angle ROI CI lo", key="roi_ci", i=0)} to {R(DS_["roi_ci"][1], "spp", "dbstat", "Debut angle ROI CI hi", key="roi_ci", i=1)}). '
+                      f'(95% range, resampled by card: {R(DS_["roi_ci_boot_cards"][0], "spp", "dbstat", "Debut angle ROI CI lo", key="roi_ci_boot_cards", i=0)} to {R(DS_["roi_ci_boot_cards"][1], "spp", "dbstat", "Debut angle ROI CI hi", key="roi_ci_boot_cards", i=1)}). '
                       f'That is not distinguishable from the bookmaker\'s margin alone at these prices ({R(DS_["margin_roi"], "spp", "dbstat", "Debut angle margin", key="margin_roi")}). '
                       f'From the site\'s Labs research ({RS_["from"]} to {RS_["to"]}). Context, not a pick.</div></div>')
-    top = top.replace("@@ANGLES@@", "").replace("@@LIVE@@", spot_html + debut_html)
+    # Kirk round 20: Labs angle "Southpaw vs orthodox" (research.json, graded against the close), on fight 10 only for now.
+    # Shown only if the fighter files say one side is Southpaw and the other Orthodox. Numbers: published research.json;
+    # ranges: data/embeds/angle_stats.json (same 603 bouts, card-clustered bootstrap). Context, not a pick.
+    ang_html = ""
+    ANGLE_EMBEDS = {10: "southpaw"}
+    if ANGLE_EMBEDS.get(n) == "southpaw":
+        sa_, sb_ = (FA.get("bio") or {}).get("stance"), (FB.get("bio") or {}).get("stance")
+        if {sa_, sb_} == {"Southpaw", "Orthodox"}:
+            RS2_ = json.load(open(FD / "research.json")); ag_ = {x_["id"]: x_ for x_ in RS2_["angles"]}["southpaw"]
+            AS_ = json.load(open(REPO / "data/embeds/angle_stats.json"))["southpaw"]
+            assert AS_["n"] == ag_["n"] and abs(AS_["act"] - ag_["act"]) < 1e-4 and abs(AS_["roi"] - ag_["roi_c"]) < 1e-4, "angle_stats.json is not the published research.json set"
+            sp_, ot_ = (an, bn) if sa_ == "Southpaw" else (bn, an)
+            bw2_ = lambda v_: f'{max(0.0, min(1.0, v_)) * 100:.1f}%'
+            ang_html = (f'<div class="stk debut angle" data-part="angle"><div class="stk-h"><span class="bullet"></span>Southpaw vs orthodox</div>'
+                        f'<div class="dbt"><b>{esc(last(sp_))}</b> fights southpaw against an orthodox <b>{esc(last(ot_))}</b>. '
+                        f'Since {RS2_["from"][:4]}, southpaws in this matchup won {R(ag_["act"], "pct1", "rs_angle", "Southpaw angle won", id="southpaw", key="act")} '
+                        f'of {R(ag_["n"], "intc", "rs_angle", "Southpaw angle n", id="southpaw", key="n")} fights; the closing line expected {R(ag_["exp"], "pct1", "rs_angle", "Southpaw angle expected", id="southpaw", key="exp")}.</div>'
+                        f'<div class="dbar"><span>Won</span><i style="width:{bw2_(ag_["act"])}"></i></div><div class="dbar exp"><span>Close expected</span><i style="width:{bw2_(ag_["exp"])}"></i></div>'
+                        f'<div class="dim dbn">95% range for the win rate: {R(AS_["win_ci"][0], "pct1", "angstat", "Southpaw angle win CI lo", angle="southpaw", key="win_ci", i=0)} to {R(AS_["win_ci"][1], "pct1", "angstat", "Southpaw angle win CI hi", angle="southpaw", key="win_ci", i=1)}. '
+                        f'Backing every southpaw here at the closing price returned {R(ag_["roi_c"], "spp", "rs_angle", "Southpaw angle ROI close", id="southpaw", key="roi_c")} per bet '
+                        f'(95% range, resampled by card: {R(AS_["roi_ci_boot_cards"][0], "spp", "angstat", "Southpaw angle ROI CI lo", angle="southpaw", key="roi_ci_boot_cards", i=0)} to {R(AS_["roi_ci_boot_cards"][1], "spp", "angstat", "Southpaw angle ROI CI hi", angle="southpaw", key="roi_ci_boot_cards", i=1)}). '
+                        f'That is not distinguishable from the bookmaker\'s margin alone at these prices ({R(AS_["margin_roi"], "spp", "angstat", "Southpaw angle margin", angle="southpaw", key="margin_roi")}). '
+                        f'From the site\'s Labs research ({RS2_["from"]} to {RS2_["to"]}). Context, not a pick.</div></div>')
+    top = top.replace("@@ANGLES@@", "").replace("@@LIVE@@", spot_html + debut_html + ang_html)
     small = [F["name"] for F, g_ in [(FA, ga), (FB, gb)] if g_["n"] <= 3]
     secs.append(sec("ourstats", "Stats", "", stats_html))
 

@@ -29,5 +29,12 @@
  ],
  "bootstrap": "10,000 resamples of the 233 per-bet returns, percentiles 2.5/97.5, seed 20261112 (round 19 check)",
  "bootstrap_share_above_margin": 0.121,
- "bootstrap_script_sha256": "0f826814e112"
+ "bootstrap_script_sha256": "0f826814e112",
+ "roi_ci_boot_cards": [
+  -0.2374,
+  0.0069
+ ],
+ "cards": 129,
+ "boot_cards_share_above_margin": 0.107,
+ "roi_ci_shown": "roi_ci_boot_cards: bets on one card are correlated, so the box shows the card-clustered bootstrap (Kirk round 20 D)"
 }

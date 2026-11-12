@@ -1838,27 +1838,27 @@
   },
   {
    "id": "v149",
-   "text": "-25.2%",
+   "text": "-23.7%",
    "fmt": "spp",
    "rule": "dbstat",
    "args": {
-    "key": "roi_ci",
+    "key": "roi_ci_boot_cards",
     "i": 0
    },
    "desc": "Debut angle ROI CI lo",
-   "raw": -0.252
+   "raw": -0.2374
   },
   {
    "id": "v150",
-   "text": "+1.4%",
+   "text": "+0.7%",
    "fmt": "spp",
    "rule": "dbstat",
    "args": {
-    "key": "roi_ci",
+    "key": "roi_ci_boot_cards",
     "i": 1
    },
    "desc": "Debut angle ROI CI hi",
-   "raw": 0.014
+   "raw": 0.0069
   },
   {
    "id": "v151",
