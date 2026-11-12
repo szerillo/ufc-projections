@@ -619,8 +619,12 @@ def build(names, outname):
         S_ = []
         for rec_, F_, sd_ in ((ema, an, "a"), (emb, bn, "b")):
             pts_ = [(i_, emv(rec_, f"rounds.{i_}.diff_pm")) for i_ in range(3) if (emv(rec_, f"rounds.{i_}.fights") or 0) >= 1 and emv(rec_, f"rounds.{i_}.diff_pm") is not None]
-            if len(pts_) >= 2: S_.append((F_, sd_, rec_, pts_))
-        if len(S_) < 2: return ""
+            S_.append((F_, sd_, rec_, pts_))
+        # Kirk round 8 A (Round_Trend_Floor_PREREG, sha 55e79839): 15-minute floor per round; line only through rounds at or
+        # above it, others hollow grey; chart only if both fighters have 2+ rounds at or above it
+        TF = 15.0
+        okr = lambda rec_, i_: (emv(rec_, f"rounds.{i_}.mins") or 0) >= TF
+        if any(sum(okr(rec_, i_) for i_, _ in pts_) < 2 for _, _, rec_, pts_ in S_): return ""
         vals_ = [v_ for *_, pts_ in S_ for _, v_ in pts_]; lo_, hi_ = min(vals_ + [0]), max(vals_ + [0]); pad_ = max(0.5, (hi_ - lo_) * 0.12); lo_ -= pad_; hi_ += pad_
         W_, H_, L_, Rm_, T_, B_ = 340, 150, 34, 92, 12, 24
         X_ = lambda i_: L_ + i_ * (W_ - L_ - Rm_) / 2; Y_ = lambda v_: T_ + (hi_ - v_) / (hi_ - lo_) * (H_ - T_ - B_)
@@ -631,18 +635,21 @@ def build(names, outname):
         ends_ = []
         for F_, sd_, rec_, pts_ in S_:
             c_ = col_[side_cls[sd_]]
-            g_.append(f'<polyline fill="none" stroke="{c_}" stroke-width="2" points="{" ".join(f"{X_(i_):.1f},{Y_(v_):.1f}" for i_, v_ in pts_)}"/>')
-            g_ += [f'<circle cx="{X_(i_):.1f}" cy="{Y_(v_):.1f}" r="4" fill="{c_}" stroke="#fff" stroke-width="2"/>' for i_, v_ in pts_]
-            ends_.append([Y_(pts_[-1][1]), F_, c_, pts_[-1]])
+            full_ = [(i_, v_) for i_, v_ in pts_ if okr(rec_, i_)]
+            g_.append(f'<polyline fill="none" stroke="{c_}" stroke-width="2" points="{" ".join(f"{X_(i_):.1f},{Y_(v_):.1f}" for i_, v_ in full_)}"/>')
+            g_ += [(f'<circle cx="{X_(i_):.1f}" cy="{Y_(v_):.1f}" r="4" fill="{c_}" stroke="#fff" stroke-width="2"/>' if okr(rec_, i_)
+                    else f'<circle class="thin" cx="{X_(i_):.1f}" cy="{Y_(v_):.1f}" r="4" fill="#fff" stroke="#a8a39a" stroke-width="2"/>') for i_, v_ in pts_]
+            ends_.append([Y_(full_[-1][1]), F_, c_, full_[-1]])
             TREND_PTS.setdefault(n, []).append((F_, [(i_, round(v_, 4)) for i_, v_ in pts_]))
         ends_.sort()
         if len(ends_) == 2 and ends_[1][0] - ends_[0][0] < 14: ends_[0][0] -= (14 - (ends_[1][0] - ends_[0][0])) / 2; ends_[1][0] = ends_[0][0] + 14
         for y_, F_, c_, (i_, v_) in ends_:
             g_.append(f'<text x="{X_(i_) + 9:.1f}" y="{y_ + 4:.1f}" font-size="11" font-weight="700" fill="#1d1b18">{esc(last(F_))}</text>')
-        legend_ = " · ".join(f'<b style="color:{col_[side_cls[sd_]]}">{esc(last(F_))}</b> ' + " → ".join(R(v_, "s1", "em", f"Trend R{i_ + 1} {F_}", fighter=F_, path=f"rounds.{i_}.diff_pm") for i_, v_ in pts_) for F_, sd_, rec_, pts_ in S_)
+        legend_ = " · ".join(f'<b style="color:{col_[side_cls[sd_]]}">{esc(last(F_))}</b> ' + " → ".join(R(v_, "s1", "em", f"Trend R{i_ + 1} {F_}", fighter=F_, path=f"rounds.{i_}.diff_pm")
+                             + ("" if okr(rec_, i_) else f' <span class="dim">({R(emv(rec_, f"rounds.{i_}.mins"), "r0", "em", f"Trend R{i_ + 1} mins {F_}", fighter=F_, path=f"rounds.{i_}.mins")} min)</span>') for i_, v_ in pts_) for F_, sd_, rec_, pts_ in S_)
         return (f'<div class="trend" data-part="trend"><div class="mvl">Strike diff per minute, by round</div>'
                 f'<svg viewBox="0 0 {W_} {H_}" role="img" aria-label="Strike differential per minute in rounds 1 to 3 for both fighters">{"".join(g_)}</svg>'
-                f'<div class="rt-n">{legend_}<br>Above the dashed line = out-landing opponents in that round. How many UFC fights reached each round is in the table below.</div></div>')
+                f'<div class="rt-n">{legend_}<br>Above the dashed line = out-landing opponents in that round. Lines join rounds with 15+ UFC minutes; hollow grey dots have less (minutes shown). Fight counts are in the table below.</div></div>')
     rounds_html = trend_svg() + rounds_html
     champ = ""
     if nrd == 5:
@@ -707,7 +714,8 @@ def build(names, outname):
         spots.append(("CB", w_, f'<li data-spot="CB">If <b>{esc(last(w_))}</b> loses R1 on strikes, don\'t write off R3: fighters with the better late-round record who dropped R1 '
                      f'won R3 on strikes {R(CW["wf"]["lost1_won3"], "pct0", "labs_wf", "Spot comeback won3", key="lost1_won3")} of the time vs {R(CW["base_lost1_won3"], "pct0", "labs_wf", "Spot comeback base", key="base_lost1_won3")} for all R1 losers. '
                      f'<span class="dim">Based on {R(CW["wf"]["lost1_n"], "int", "labs_wf", "Spot comeback n", key="lost1_n")} fights. Tested on round results, not live prices.</span></li>'))
-    spot_html = (f'<div class="stk spot" data-part="spot"><div class="stk-h"><span class="bullet"></span>Spot to watch</div><ul class="lvl">{"".join(x[2] for x in spots)}</ul></div>') if spots else ""
+    spot_html = (f'<div class="stk spot" data-part="spot"><div class="stk-h"><span class="bullet"></span>Spot to watch</div><ul class="lvl">{"".join(x[2] for x in spots)}</ul>'
+                 + ('<div class="see">See round trend: Stats › Cardio</div>' if 'data-part="trend"' in rounds_html else "") + '</div>') if spots else ""
     SPOTS[n] = [(k_, w_) for k_, w_, _ in spots]
     top = top.replace("@@ANGLES@@", "").replace("@@LIVE@@", spot_html)
     small = [F["name"] for F, g_ in [(FA, ga), (FB, gb)] if g_["n"] <= 3]
@@ -854,7 +862,7 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .mvtr{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:6px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvtr .mve{{color:#0a8842}}.mvbar{{position:relative;height:8px;border-radius:4px;background:linear-gradient(90deg,#e9e5dc,#d9d4c8)}}.mvbar i{{position:absolute;top:50%;transform:translate(-50%,-50%)}}.mvfrom{{width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid #1a1a1a}}.mvto{{width:12px;height:12px;border-radius:50%;background:#0a8842;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}}.mvspan{{height:4px;background:#0a8842;opacity:.5;transform:translateY(-50%)!important}}.mvx>summary{{cursor:pointer;font-size:10.5px;color:var(--text-muted);margin-top:6px;list-style:none}}.mvx>summary::-webkit-details-marker{{display:none}}.mvx>summary::before{{content:"▸ "}}.mvx[open]>summary::before{{content:"▾ "}}
 .ds{{padding:8px 10px;border-bottom:1px solid var(--border)}}.ds-h{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}}.ds-r{{display:grid;grid-template-columns:70px 1fr auto;gap:8px;align-items:center;margin:4px 0}}.ds-d{{display:flex;flex-wrap:wrap;gap:3px}}.ds-d i{{width:9px;height:9px;border-radius:50%;display:inline-block}}.ds-d i.on{{background:#0a8842}}.ds-d i.off{{background:#fff;border:1.5px solid #c9c3b6;box-sizing:border-box}}.ds-k{{font:800 12px/1 "SF Mono",Menlo,monospace;white-space:nowrap}}
 .ddb{{all:unset;cursor:pointer;display:block;width:100%}}.ddb:focus-visible{{outline:2px solid #2a78d6;outline-offset:2px}}.dd{{margin:6px 8px 10px;border:1px solid var(--border);border-radius:8px;overflow:hidden}}.dd-h{{display:flex;justify-content:space-between;align-items:center;background:#0e1116;color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:6px 10px}}.ddx{{all:unset;cursor:pointer;font-size:16px;line-height:1;padding:0 4px}}.r-d{{color:var(--text-muted)}}
-.spot .lvl{{margin:0;padding:8px 12px 10px 28px;font-size:12.5px}}.spot .lvl li{{margin:4px 0}}.spot b{{font-weight:800}}.spot .dim{{display:block;font-size:11px}}.trend{{padding:8px 4px 6px}}.trend svg{{width:100%;height:auto;display:block}}.trend .mvl{{display:block;margin:0 0 2px 4px}}.spot .unconf{{display:block;font-size:11px;font-weight:700;color:#8a5a00}}.flip{{padding:8px 12px;background:#eef5ff;border-bottom:1px solid var(--border);font-size:12.5px}}
+.spot .lvl{{margin:0;padding:8px 12px 10px 28px;font-size:12.5px}}.spot .lvl li{{margin:4px 0}}.spot b{{font-weight:800}}.spot .dim{{display:block;font-size:11px}}.trend{{padding:8px 4px 6px}}.trend svg{{width:100%;height:auto;display:block}}.trend .mvl{{display:block;margin:0 0 2px 4px}}.spot .see{{padding:0 12px 10px 28px;font-size:11.5px;font-weight:700;color:var(--text-muted)}}.spot .unconf{{display:block;font-size:11px;font-weight:700;color:#8a5a00}}.flip{{padding:8px 12px;background:#eef5ff;border-bottom:1px solid var(--border);font-size:12.5px}}
 .part .ff-subtitle,.part .ff-odds-status,.part .tabs,.part .tp{{display:none}}.part .partw{{margin-top:8px}}.part .xpl{{display:none}}
 .sc-n{{padding:6px 12px 0;font-size:11px;color:var(--text-muted)}}
 .stamps{{margin-top:4px;font-size:10px;color:var(--text-muted)}}

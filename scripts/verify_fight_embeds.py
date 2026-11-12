@@ -268,11 +268,17 @@ def check(D, htmlfile, G):
         # Block 59o: round-trend chart. Present iff both fighters have 2+ of R1-R3 with 1+ fight; the plotted y of every point
         # must equal the metrics file's rounds.N.diff_pm on the chart's own scale (recomputed from the SVG coordinates)
         tp_ = [[(i_, rr_["diff_pm"]) for i_, rr_ in enumerate((x_.get("rounds") or [])[:3]) if (rr_ or {}).get("fights", 0) >= 1 and rr_.get("diff_pm") is not None] for x_ in (pa_, pb_)]
-        want_tr = all(len(t_) >= 2 for t_ in tp_)
+        TF_ = 15.0   # Round_Trend_Floor_PREREG sha 55e79839
+        okm_ = [[i_ for i_, rr_ in enumerate((x_.get("rounds") or [])[:3]) if (rr_ or {}).get("fights", 0) >= 1 and (rr_.get("mins") or 0) >= TF_] for x_ in (pa_, pb_)]
+        want_tr = all(len(t_) >= 2 for t_ in okm_)
+        if want_tr:
+            nthin_ = sum(1 for t_, o_ in zip(tp_, okm_) for i_, _ in t_ if i_ not in o_)
+            if page.split('data-part="trend"')[1].split("</svg>")[0].count('class="thin"') != nthin_: bad.append(("trend", "floor", f"hollow dots != {nthin_} rounds under {TF_} min"))
+        if (bool(re.search(r'data-spot="', page)) and want_tr) != ("See round trend" in page): bad.append(("spot", "pointer", "'See round trend' pointer must show exactly when both Spot to watch and the chart show"))
         if want_tr != ('data-part="trend"' in page): bad.append(("trend", "presence", f"page {'data-part=\"trend\"' in page} vs recomputed {want_tr}"))
         if want_tr:
             vals_ = [v_ for t_ in tp_ for _, v_ in t_]; lo_, hi_ = min(vals_ + [0]), max(vals_ + [0]); pad_ = max(0.5, (hi_ - lo_) * 0.12); lo_ -= pad_; hi_ += pad_
-            ys_ = [float(y_) for y_ in re.findall(r'<circle cx="[\d.]+" cy="([\d.]+)" r="4"', page.split('data-part="trend"')[1].split("</svg>")[0])]
+            ys_ = [float(y_) for y_ in re.findall(r'<circle (?:class="thin" )?cx="[\d.]+" cy="([\d.]+)" r="4"', page.split('data-part="trend"')[1].split("</svg>")[0])]
             want_ys = [round(12 + (hi_ - v_) / (hi_ - lo_) * (150 - 12 - 24), 1) for t_ in tp_ for _, v_ in t_]
             if sorted(ys_) != sorted(want_ys): bad.append(("trend", "points", f"plotted y {ys_} vs recomputed {want_ys}"))
         if re.search(r'class="(flip|ang)"|Live guide|Striking angle', page): bad.append(("spot", "old", "live guide, flip flag or angle box still on the page"))
@@ -431,7 +437,18 @@ def run(D, G, slug, quiet=False):
         n_rows += len(json.load(open(D / f.replace(".html", ".registry.json")))["rows"])
     tot_bad += card_check(D, G, slug)
     tot_bad += lh_recheck(G, slug, quiet)
+    tot_bad += spot_pin(G)
     return tot_ok, n_rows, tot_bad
+
+# Kirk round 8 D: the builder and this checker both read data/embeds/spot_tests.json, so an edit there moved the page and the
+# check together and nothing caught it. The file is a frozen copy of the backtest's out/results.json (sha d32f35bf...), so its
+# own hash is pinned here; changing a backtest number now needs a deliberate edit of this line.
+SPOT_TESTS_SHA = "090bf40ed0b292db88a7db2deac0b685ddf78377026b421dbbf2b703b63cbb56"
+def spot_pin(G):
+    import hashlib
+    b_ = (REPO / "data/embeds/spot_tests.json").read_bytes() if not G.get("ST_OVERRIDE") else G["ST_OVERRIDE"]
+    if hashlib.sha256(b_).hexdigest() != SPOT_TESTS_SHA: print("  SPOT TESTS: data/embeds/spot_tests.json differs from the pinned backtest copy"); return 1
+    return 0
 
 def lh_recheck(G, slug, quiet=False):
     """Block 59n: recompute the embed line history and the Listed-price check from the raw archive with this file's own
@@ -525,6 +542,8 @@ def negative(D, G, slug):
             t = r["text"]; t2 = re.sub(r"(\d)(?!.*\d)", lambda m: str((int(m.group(1)) + 1) % 10), t)
             return s_.replace(f'<span data-id="{r["id"]}">{H.escape(t)}</span>', f'<span data-id="{r["id"]}">{H.escape(t2)}</span>')
         return fn
+    def st_edit(T, G_):
+        d_ = json.loads((REPO / "data/embeds/spot_tests.json").read_text()); d_["T1"]["win"] = 0.718; G_["ST_OVERRIDE"] = json.dumps(d_, indent=1).encode()
     def lh_shift(T, G_):
         d_ = json.loads((REPO / f"data/embeds/line_history_{slug}.json").read_text()); k_ = next(k for k in d_["fights"] if "Harrison" in k)
         d_["fights"][k_]["current"]["p"] = round(d_["fights"][k_]["current"]["p"] + 0.01, 3); G_["LH_OVERRIDE"] = d_
@@ -548,7 +567,9 @@ def negative(D, G, slug):
         ("embed: 'price unverified' removed from Gordon (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace('<span class="unv">price unverified</span>', "", 1))),
         ("embed: an offshore book named on the page (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace("Line move</span>", "Line move</span> Pinnacle", 1))),
         ("line history: a current line moved 1 pt in the file (fight 12)", lh_shift),
+        ("shared input: a backtest number edited in spot_tests.json (builder and checker both read it)", st_edit),
         ("embed: one round-trend point moved (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(<circle cx="[\d.]+" cy=")([\d.]+)(" r="4")', lambda m: m.group(1) + f"{float(m.group(2)) + 9:.1f}" + m.group(3), s_, count=1))),
+        ("embed: a below-floor round drawn as a full dot (fight 08)", plant_text("fight_08.html", lambda s_: s_.replace('<circle class="thin" ', '<circle ', 1))),
         ("embed: T1 'never confirmed' line removed (fight 06)", plant_text("fight_06.html", lambda s_: s_.replace("Never confirmed on new cards", "Confirmed", 1))),
         ("embed: past-fight link to a bout that is not on the site (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(#/fight/[^/"]+/)\d+"', r'\g<1>999"', s_, count=1))),
         ("embed: model renamed 'Sean' (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace("Moneyline · model vs market", "Moneyline · Sean vs market", 1))),
