@@ -1,0 +1,56 @@
+{
+ "contract": "fight-embed data contract",
+ "version": 1,
+ "frozen": "2026-11-12 (Block 53). Change = new version file; never edit v1 in place.",
+ "file": "data/<slug>_projections.json (written only by the Projections check after scripts/verify_projections.py passes)",
+ "identify_a_fight_by": "fighter names (doc.fights[].dog / .fav, matched with scripts/fighter_names.py bout_slots). Never by a fight number: the site event file numbers UFC 334 Gane vs Hokit 14, the card page numbers it 13, and number 3 (Sadykhov vs Nascimento, cancelled) no longer exists.",
+ "units": {
+  "prob": "fraction 0..1 (render as % with 1 decimal)",
+  "share": "fraction 0..1 of THAT fighter's wins (dec + ko + sub = 1 per fighter)",
+  "american": "integer American odds, e.g. -195, 165",
+  "time": "ISO 8601 UTC string",
+  "pts": "difference of two probs, fraction (render x100 with sign)"
+ },
+ "doc_fields": {
+  "slug": {"type": "string", "required": true},
+  "event": {"type": "string", "required": true},
+  "published_at": {"type": "time", "required": true},
+  "prices_loaded": {"type": "time", "required": true},
+  "verified.at": {"type": "time", "required": true, "note": "added by the check at promote"},
+  "line_pending": {"type": "list of {dog, fav, reason}", "required": false, "note": "bouts held back by the opponent guard: show 'Line pending', no numbers"}
+ },
+ "fight_fields": {
+  "dog": {"type": "string", "required": true},
+  "fav": {"type": "string", "required": true},
+  "tag": {"type": "string", "required": true, "note": "weight tag as the sheet shows it, e.g. 265-5 (5 = five rounds), w = women"},
+  "sheet.true_dog": {"type": "prob", "required": true, "source": "Calculator L"},
+  "sheet.true_fav": {"type": "prob", "required": true, "source": "tab K"},
+  "sheet.listed": {"type": "prob", "required": true, "source": "Calculator G: dog no-vig at the best bettable prices"},
+  "sheet.dog_edge": {"type": "pts", "required": true, "source": "tab H"},
+  "sheet.fav_edge": {"type": "pts", "required": true, "source": "tab M"},
+  "sheet.drift": {"type": "pts", "required": true, "source": "Calculator W = G - F"},
+  "sheet.rec": {"type": "string", "required": false, "note": "absent when Sean does not publish recs: hide, never show '-'"},
+  "sheet.flag": {"type": "string", "required": false, "note": "absent when not published: hide"},
+  "inputs.dog_odds": {"type": "american", "required": true, "source": "tab D (best bettable dog price)"},
+  "inputs.fav_odds": {"type": "american", "required": true, "source": "tab I"},
+  "inputs.open_dog": {"type": "prob", "required": false, "source": "Calculator F = sheet open: BFO opener de-vigged, kept from the first card load. Label it 'Sheet open', never just 'Open'."},
+  "inputs.markov": {"type": "prob", "required": false, "source": "Calculator J: Markov dog win % as entered, before the card shift"},
+  "method.fav.dec|ko|sub": {"type": "share", "required": false, "source": "tab Z:AB"},
+  "method.dog.dec|ko|sub": {"type": "share", "required": false, "source": "tab V:X"},
+  "gtd": {"type": "prob", "required": false, "source": "tab Q = true_fav x fav.dec + true_dog x dog.dec (exact)"},
+  "gtd_listed": {"type": "prob", "required": false, "source": "tab S: best-price raw implied (not de-vigged)"},
+  "outliers": {"type": "list of {side, odds, book, excluded}", "required": false, "note": "show 'Outlier excluded: <book> <odds>' only when excluded is true"},
+  "odds_history": {"type": "{source, books, side, through, dog_points: [[time, dk prob|null, fd prob|null]]}", "required": false, "note": "DraftKings / FanDuel dog no-vig, copied by the check from the site event file; starts at a different time than the sheet open"}
+ },
+ "derived": {
+  "true % per fighter": "sheet.true_fav, sheet.true_dog",
+  "method points": "true_<side> x method.<side>.<k>",
+  "ITD points per fighter": "true_<side> x (ko + sub) = true_<side> - DEC points (exact)",
+  "GTD": "gtd (the file value is the truth; the two shown DEC points may sum 0.1 off by rounding)",
+  "market fav no-vig": "1 - sheet.listed",
+  "markov fav": "1 - inputs.markov",
+  "markov gap note": "show when |inputs.markov - sheet.true_dog| >= 0.2147 (Block 52 threshold)"
+ },
+ "missing": "Any optional field absent or null: show an explicit 'not published' / 'not recorded' line. Never a default, never 50/50, never 0%.",
+ "checked_by": "scripts/render_check.py --embed2 (data-k values, absence lines, sums C1-C6) and scripts/contract_check.py (this file vs a projections file)"
+}
