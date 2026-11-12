@@ -141,7 +141,7 @@ XPL = {
              ("Listed", "The price on our sheet when the projection was published."),
              ("Market", "The current consensus price. The % is the straight conversion of that price, so it still includes the book's margin."),
              ("Edge", "Model % minus the listed % (moneyline, goes the distance) or minus the market % (inside the distance, method). Positive means the model likes that side more than the price does."),
-             ("Price unavailable", "The odds feed has a price, but it fails our sanity rule (a one-sided market, a draw near even money, or prices with a margin over 40%), so we do not show it. Not offered = no price in the feed."),
+             ("Price unavailable", "The odds feed has a price, but it fails our sanity rule (rule v3: a one-sided distance market; this bout's method prices adding up to over 140% or, when complete, under 100%; a draw shorter than +1000; or two of them opening at exactly +100), so we do not show it. Not offered = no price in the feed."),
              ("Line move", "How far the consensus win chance has moved since the line opened, with the opening price of the side it moved toward."),
              ("Live guide", "What happened in UFC fights with closing lines (2022-26) that went past round 1, after round 1 went a certain way, next to the closing-line win chance of the same fighters. Flip fight: one fighter out-strikes opponents in round 1 by 1+ per minute more, the other in round 3; each needs 15+ minutes of round 1 and of round 3 in the UFC."),
              ("Striking angle", "Shows when one fighter clears a striking gap we track: career strike differential 2+ per minute better, or round-3 differential about 3+ per minute better (both fighters with 4+ UFC fights). Tracked on paper, not a bet signal yet.")],
@@ -218,17 +218,20 @@ def mov_ok(bf, an, bn):
     have = {s["label"] for s in mv}
     miss = [F for F in (an, bn) if not all(f"{bp_name(bf, F)} {MOVL[k]}" in have for k in ("dec", "ko", "sub"))]
     if miss: why.append("method market has no DEC/KO/SUB prices for " + " or ".join(miss))
-    dr = next((s for s in mv if s["label"] == "Draw"), None)
-    if dr and dr["books"]["consensus"]["cost"] < 1000: why.append(f'draw priced {mls(dr["books"]["consensus"]["cost"])}')
-    if sum(1 for s in mv if s.get("opening_cost") == 100) >= 2: why.append("opening prices of exactly +100")
-    # Block 59j (Kirk): exhaustive "<fighter> <method>" + draw rows priced at a 40%+ margin cannot be a real book
-    ex = [s for s in mv if s["label"].endswith(tuple(MOVL.values())) or s["label"] == "Draw"]
-    tot = sum((100 / (c + 100) if c > 0 else -c / (-c + 100)) for c in (s["books"]["consensus"]["cost"] for s in ex))
-    if tot > 1.40: why.append(f"method outcomes sum to {tot * 100:.0f}% (margin over 40%)")
+    # Broken-price rule v3 (claude/Price_Rule_v3_PREREG_2026-11-12.md, sha 93ee47e7; passed its one run): judged only on
+    # the rows this embed reads, "<fighter> KO/TKO/DQ | Submission | Points" for the bout's two feed names, plus "Draw"
+    use = [s for s in mv if s["label"] == "Draw" or s["label"] in {f"{bp_name(bf, F)} {MOVL[k]}" for F in (an, bn) for k in ("dec", "ko", "sub")}]
+    ip = lambda c: 100 / (c + 100) if c > 0 else -c / (-c + 100)
+    tot = sum(ip(s["books"]["consensus"]["cost"]) for s in use)
+    if tot > 1.40: why.append(f"method outcomes sum to {tot * 100:.0f}% (margin over 40%)")                     # B
+    if len(use) >= 7 and tot < 1.0: why.append(f"complete method set sums to {tot * 100:.0f}% (under 100%)")    # C
+    dr = next((s for s in use if s["label"] == "Draw"), None)
+    if dr and dr["books"]["consensus"]["cost"] < 1000: why.append(f'draw priced {mls(dr["books"]["consensus"]["cost"])}')  # D
+    if sum(1 for s in use if s.get("opening_cost") == 100) >= 2: why.append("opening prices of exactly +100")   # O
     fd = {s["label"] for s in bf["markets"].get("fight_distance", [])}
     d_ok = {"Yes", "No"} <= fd
     if not d_ok: why.append("distance market has only " + "/".join(sorted(fd)))
-    return not any("draw" in w or "opening" in w or "method market" in w or "margin" in w for w in why), d_ok, why
+    return not any("draw" in w or "opening" in w or "method market" in w or "margin" in w or "under 100" in w for w in why), d_ok, why
 
 # ---------------------------------------------------------------- build one fight
 def build(names, outname):
@@ -375,7 +378,7 @@ def build(names, outname):
             for k in ("dec", "ko", "sub", "itd"):
                 m = pf["method"][role(sd)]; v = pwin(sd) * (m["ko"] + m["sub"] if k == "itd" else m[k])
                 mp = R(v, "mlp", "pub_meth", f"Model {k} ML {F}", side=sd, k=k); mpc = R(v, "pct1", "pub_meth", f"Model {k} % {F}", side=sd, k=k); m_id = lid()
-                broken = bool(bf) and any(("draw" in w_ or "opening" in w_ or "margin" in w_) for w_ in bad_why)
+                broken = bool(bf) and any(("draw" in w_ or "opening" in w_ or "margin" in w_ or "under 100" in w_) for w_ in bad_why)
                 own_ok = bf and not broken and all(bp_sel(bf, "method_of_victory", f"{bp_name(bf, F)} {MOVL[x]}") for x in ("dec", "ko", "sub"))
                 if own_ok:
                     if k == "itd":

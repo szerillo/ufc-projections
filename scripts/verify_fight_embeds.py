@@ -259,9 +259,11 @@ def check(D, htmlfile, G):
         if of_:
             ip = lambda m: 100 / (m + 100) if m > 0 else -m / (-m + 100)
             mv_ = of_["markets"].get("method_of_victory") or []
-            ex_ = [x for x in mv_ if x["label"].endswith(("KO/TKO/DQ", "Submission", "Points")) or x["label"] == "Draw"]
-            mbad = (sum(ip(x["books"]["consensus"]["cost"]) for x in ex_) > 1.40 or any(x["label"] == "Draw" and x["books"]["consensus"]["cost"] < 1000 for x in mv_)
-                    or sum(1 for x in mv_ if x.get("opening_cost") == 100) >= 2)
+            nm_ = [of_["fighter_a"]["name"], of_["fighter_b"]["name"]]   # rule v3: only the bout's own rows + draw
+            ex_ = [x for x in mv_ if x["label"] == "Draw" or any(x["label"] == f"{n_} {m_}" for n_ in nm_ for m_ in ("KO/TKO/DQ", "Submission", "Points"))]
+            tt_ = sum(ip(x["books"]["consensus"]["cost"]) for x in ex_)
+            mbad = (tt_ > 1.40 or (len(ex_) >= 7 and tt_ < 1.0) or any(x["label"] == "Draw" and x["books"]["consensus"]["cost"] < 1000 for x in ex_)
+                    or sum(1 for x in ex_ if x.get("opening_cost") == 100) >= 2)
             dbad = {x["label"] for x in (of_["markets"].get("fight_distance") or [])} != {"Yes", "No"}
             used = {r_["args"].get("market") for r_ in reg["rows"] if r_["rule"] in ("bp", "bp_imp", "bp_imp_sum")}
             if mbad and "method_of_victory" in used: bad.append(("feed", "method", "number shown from a market that fails the sanity rule"))
