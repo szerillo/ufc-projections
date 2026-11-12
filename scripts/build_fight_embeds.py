@@ -64,6 +64,7 @@ pair = lambda x1, y1, x2, y2: (same(x1, x2) and same(y1, y2)) or (same(x1, y2) a
 def ml_of(p):
     if p is None or p <= 0 or p >= 1: return None
     return -round(100 * p / (1 - p)) if p >= 0.5 else round(100 * (1 - p) / p)
+US_BOOKS = {"draftkings", "fanduel", "betmgm", "williamhill_us", "caesars", "betrivers", "fanatics", "espnbet", "hardrockbet", "circasports"}
 def imp(m): return 100 / (m + 100) if m > 0 else -m / (-m + 100)
 def dec_odds(m): return 1 + m / 100 if m > 0 else 1 + 100 / -m
 def fair(p): p = min(max(p, .001), .999); return 1 / (1 + math.exp(-K * math.log(p / (1 - p))))
@@ -284,6 +285,7 @@ def build(names, outname):
         def best(sd):
             b = None
             for k, x in o["books"].items():
+                if k not in US_BOOKS: continue   # Block 57: only US-regulated books are named (same list as form/app.js)
                 m = x["ma" if sd == "a" else "mb"]
                 if m is not None and (b is None or dec_odds(m) > dec_odds(b[0])): b = (m, k)
             return b

@@ -13,6 +13,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 FD = REPO / "form" / "data"
+US = {"draftkings", "fanduel", "betmgm", "williamhill_us", "caesars", "betrivers", "fanatics", "espnbet", "hardrockbet", "circasports"}   # written here, not imported
 sq = lambda s: re.sub(r"[^a-z]", "", (s or "").lower())
 sur = lambda s: sq(s.split()[-1])
 def is_(x, y):
@@ -125,7 +126,7 @@ def check(D, htmlfile, G):
                 f_ = next(x for x in EV[a["ev"]]["fights"] if x["n"] == a["n"]); v = len(f_["odds"]["series"])
             elif rule == "oa_best":
                 f_ = next(x for x in EV[a["ev"]]["fights"] if x["n"] == a["n"]); k = "ma" if a["side"] == "a" else "mb"
-                v = max((b[k] for b in f_["odds"]["books"].values() if b.get(k) is not None), key=lambda m: m / 100 if m > 0 else 100 / -m)
+                v = max((b[k] for bk, b in f_["odds"]["books"].items() if bk in US and b.get(k) is not None), key=lambda m: m / 100 if m > 0 else 100 / -m)   # US books only (Block 57)
             elif rule == "age": v = (date.fromisoformat(DATE) - date.fromisoformat(FT[a["side"]]["bio"]["dob"])).days / 365.25
             elif rule == "bio_reach": v = int(FT[a["side"]]["bio"]["reach"])
             elif rule == "bio": v = FT[a["side"]]["bio"][a["key"]]
