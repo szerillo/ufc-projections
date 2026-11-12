@@ -44,7 +44,7 @@ def sml(m): return f"+{m}" if m > 0 else str(m)
 def fmt(x, k):
     return {"pct1": lambda: f"{x*100:.1f}%", "pct0": lambda: f"{x*100:.0f}%", "ml": lambda: sml(x), "mlp": lambda: sml(p2ml(x)), "n1": lambda: f"{x:.1f}",
             "n2": lambda: f"{x:.2f}", "s2": lambda: f"{x:+.2f}", "int": lambda: str(x), "intc": lambda: f"{x:,}", "d3": lambda: f"{x:.3f}", "d4": lambda: f"{x:.4f}",
-            "str": lambda: str(x), "in": lambda: f'{x}"', "r0": lambda: str(int(round(x))), "pts": lambda: f"{abs(x)*100:.1f}"}[k]()
+            "str": lambda: str(x), "in": lambda: f'{x}"', "r0": lambda: str(int(round(x))), "pts": lambda: f"{abs(x)*100:.1f}", "sp": lambda: f"{x*100:+.1f}"}[k]()
 
 def dig(o, path):
     for p in str(path).split("."):
@@ -102,12 +102,18 @@ def check(D, htmlfile, G):
         return (p if sd == "a" else 1 - p), f_
 
     ok, bad = 0, []
+    vals = {}   # Block 59: values this script recomputed, by row id, for the edge rule
     for r in reg["rows"]:
         a, rule, txt = r["args"], r["rule"], shown.get(r["id"])
         if txt is None: bad.append((r["id"], r["desc"], "missing from HTML")); continue
         try:
             inv = a.get("inv")
-            if rule == "record":
+            if rule == "edge":
+                # Sean % minus market no-vig %, both recomputed here from their own sources (rows listed in "of")
+                x_, y_ = a["of"]
+                if x_ not in vals or y_ not in vals: raise KeyError(f"edge needs {x_}, {y_} verified first")
+                v = vals[x_] - vals[y_]
+            elif rule == "record":
                 L_ = prior[a["side"]]; c = lambda t: sum(1 for x in L_ if x["r"] == t); nc = len(L_) - c("W") - c("L") - c("D")
                 v = f'{c("W")}-{c("L")}-{c("D")}' + (f" ({nc} NC)" if nc else "")
             elif rule in ("ev", "ev_p"):
@@ -147,7 +153,7 @@ def check(D, htmlfile, G):
             elif rule == "stat": v = stat(a["side"], a["key"])
             elif rule == "fight": v = dig(prior[a["side"]][a["i"]], a["key"])
             else: bad.append((r["id"], r["desc"], f"no verifier rule {rule}")); continue
-            exp = fmt(v, r["fmt"])
+            exp = fmt(v, r["fmt"]); vals[r["id"]] = v
         except Exception as e:
             bad.append((r["id"], r["desc"], f"error {e!r}")); continue
         if exp == txt: ok += 1

@@ -151,16 +151,17 @@
   },
   {
    "id": "v11",
-   "text": "-125",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "+1.0",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "moneyline",
-    "label": "Stephen Thompson",
-    "field": "opening_cost"
+    "of": [
+     "v8",
+     "v10"
+    ]
    },
-   "desc": "BP ML open Stephen Thompson",
-   "raw": -125
+   "desc": "Edge v8-v10",
+   "raw": 0.009598266835065483
   },
   {
    "id": "v12",
@@ -212,16 +213,17 @@
   },
   {
    "id": "v16",
-   "text": "-105",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-1.0",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "moneyline",
-    "label": "Charlie Radke",
-    "field": "opening_cost"
+    "of": [
+     "v13",
+     "v15"
+    ]
    },
-   "desc": "BP ML open Charles Radtke",
-   "raw": -105
+   "desc": "Edge v13-v15",
+   "raw": -0.009598266835065483
   },
   {
    "id": "v17",
@@ -478,130 +480,68 @@
   },
   {
    "id": "v38",
-   "text": "-155",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-1.7",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
+    "of": [
+     "v34",
+     "v37"
+    ]
    },
-   "desc": "BP GTD yes open",
-   "raw": -155
+   "desc": "Edge GTD",
+   "raw": -0.017078810252215026
   },
   {
    "id": "v39",
-   "text": "-141",
-   "fmt": "ml",
-   "rule": "ev",
+   "text": "59.7%",
+   "fmt": "pct1",
+   "rule": "pub_win",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Stephen Thompson",
-     "Charles Radtke"
-    ],
-    "path": "odds.open.ma"
+    "side": "a"
    },
-   "desc": "OA open ML a",
-   "raw": -141
+   "desc": "Bar Sean % a",
+   "raw": 0.5967397732958282
   },
   {
    "id": "v40",
-   "text": "+118",
-   "fmt": "ml",
-   "rule": "ev",
+   "text": "40.3%",
+   "fmt": "pct1",
+   "rule": "pub_win",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Stephen Thompson",
-     "Charles Radtke"
-    ],
-    "path": "odds.open.mb"
+    "side": "b"
    },
-   "desc": "OA open ML b",
-   "raw": 118
+   "desc": "Bar Sean % b",
+   "raw": 0.40326022670417183
   },
   {
    "id": "v41",
-   "text": "56.0%",
+   "text": "58.7%",
    "fmt": "pct1",
-   "rule": "ev",
+   "rule": "bp_nv",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Stephen Thompson",
-     "Charles Radtke"
-    ],
-    "path": "odds.open.p"
+    "market": "moneyline",
+    "label": "Stephen Thompson",
+    "other": "Charlie Radke"
    },
-   "desc": "OA open p",
-   "raw": 0.5604
+   "desc": "Bar BP no-vig a",
+   "raw": 0.5871415064607627
   },
   {
    "id": "v42",
-   "text": "-147",
-   "fmt": "ml",
-   "rule": "ev",
+   "text": "41.3%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Stephen Thompson",
-     "Charles Radtke"
-    ],
-    "path": "odds.close.ma"
+    "market": "moneyline",
+    "label": "Charlie Radke",
+    "other": "Stephen Thompson"
    },
-   "desc": "OA close ML a",
-   "raw": -147
+   "desc": "Bar BP no-vig b",
+   "raw": 0.4128584935392373
   },
   {
    "id": "v43",
-   "text": "+125",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Stephen Thompson",
-     "Charles Radtke"
-    ],
-    "path": "odds.close.mb"
-   },
-   "desc": "OA close ML b",
-   "raw": 125
-  },
-  {
-   "id": "v44",
-   "text": "57.2%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Stephen Thompson",
-     "Charles Radtke"
-    ],
-    "path": "odds.close.p"
-   },
-   "desc": "OA close p",
-   "raw": 0.572
-  },
-  {
-   "id": "v45",
-   "text": "1.2",
-   "fmt": "pts",
-   "rule": "oa_drift",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Stephen Thompson",
-     "Charles Radtke"
-    ]
-   },
-   "desc": "OA drift pts",
-   "raw": 0.011599999999999944
-  },
-  {
-   "id": "v46",
    "text": "-147",
    "fmt": "ml",
    "rule": "oa_best",
@@ -617,7 +557,7 @@
    "raw": -147
   },
   {
-   "id": "v47",
+   "id": "v44",
    "text": "+124",
    "fmt": "ml",
    "rule": "oa_best",
@@ -633,7 +573,7 @@
    "raw": 124
   },
   {
-   "id": "v48",
+   "id": "v45",
    "text": "-125",
    "fmt": "ml",
    "rule": "bp",
@@ -646,7 +586,7 @@
    "raw": -125
   },
   {
-   "id": "v49",
+   "id": "v46",
    "text": "-162",
    "fmt": "ml",
    "rule": "bp",
@@ -659,7 +599,7 @@
    "raw": -162
   },
   {
-   "id": "v50",
+   "id": "v47",
    "text": "-105",
    "fmt": "ml",
    "rule": "bp",
@@ -672,7 +612,7 @@
    "raw": -105
   },
   {
-   "id": "v51",
+   "id": "v48",
    "text": "+130",
    "fmt": "ml",
    "rule": "bp",
@@ -685,38 +625,7 @@
    "raw": 130
   },
   {
-   "id": "v52",
-   "text": "140",
-   "fmt": "int",
-   "rule": "oa_len",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Stephen Thompson",
-     "Charles Radtke"
-    ]
-   },
-   "desc": "Chart points",
-   "raw": 140
-  },
-  {
-   "id": "v53",
-   "text": "448",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Stephen Thompson",
-     "Charles Radtke"
-    ],
-    "path": "odds.n"
-   },
-   "desc": "Snapshots",
-   "raw": 448
-  },
-  {
-   "id": "v54",
+   "id": "v49",
    "text": "+160",
    "fmt": "ml",
    "rule": "bp",
@@ -729,7 +638,7 @@
    "raw": 160
   },
   {
-   "id": "v55",
+   "id": "v50",
    "text": "+175",
    "fmt": "ml",
    "rule": "bp",
@@ -742,7 +651,7 @@
    "raw": 175
   },
   {
-   "id": "v56",
+   "id": "v51",
    "text": "36%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -754,7 +663,7 @@
    "raw": 0.36363636363636365
   },
   {
-   "id": "v57",
+   "id": "v52",
    "text": "+500",
    "fmt": "ml",
    "rule": "bp",
@@ -767,7 +676,7 @@
    "raw": 500
   },
   {
-   "id": "v58",
+   "id": "v53",
    "text": "+550",
    "fmt": "ml",
    "rule": "bp",
@@ -780,7 +689,7 @@
    "raw": 550
   },
   {
-   "id": "v59",
+   "id": "v54",
    "text": "15%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -792,7 +701,7 @@
    "raw": 0.15384615384615385
   },
   {
-   "id": "v60",
+   "id": "v55",
    "text": "-155",
    "fmt": "ml",
    "rule": "bp",
@@ -805,7 +714,7 @@
    "raw": -155
   },
   {
-   "id": "v61",
+   "id": "v56",
    "text": "-155",
    "fmt": "ml",
    "rule": "bp",
@@ -818,7 +727,7 @@
    "raw": -155
   },
   {
-   "id": "v62",
+   "id": "v57",
    "text": "61%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -830,7 +739,7 @@
    "raw": 0.6078431372549019
   },
   {
-   "id": "v63",
+   "id": "v58",
    "text": "-155",
    "fmt": "ml",
    "rule": "bp",
@@ -843,7 +752,7 @@
    "raw": -155
   },
   {
-   "id": "v64",
+   "id": "v59",
    "text": "-149",
    "fmt": "ml",
    "rule": "bp",
@@ -856,7 +765,7 @@
    "raw": -149
   },
   {
-   "id": "v65",
+   "id": "v60",
    "text": "60%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -868,7 +777,7 @@
    "raw": 0.5983935742971888
   },
   {
-   "id": "v66",
+   "id": "v61",
    "text": "+117",
    "fmt": "ml",
    "rule": "bp",
@@ -881,7 +790,7 @@
    "raw": 117
   },
   {
-   "id": "v67",
+   "id": "v62",
    "text": "+113",
    "fmt": "ml",
    "rule": "bp",
@@ -894,7 +803,7 @@
    "raw": 113
   },
   {
-   "id": "v68",
+   "id": "v63",
    "text": "47%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -906,7 +815,7 @@
    "raw": 0.4694835680751174
   },
   {
-   "id": "v69",
+   "id": "v64",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -919,7 +828,7 @@
    "raw": 2.5
   },
   {
-   "id": "v70",
+   "id": "v65",
    "text": "-188",
    "fmt": "ml",
    "rule": "bp",
@@ -932,7 +841,7 @@
    "raw": -188
   },
   {
-   "id": "v71",
+   "id": "v66",
    "text": "-183",
    "fmt": "ml",
    "rule": "bp",
@@ -945,7 +854,7 @@
    "raw": -183
   },
   {
-   "id": "v72",
+   "id": "v67",
    "text": "65%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -957,7 +866,7 @@
    "raw": 0.6466431095406361
   },
   {
-   "id": "v73",
+   "id": "v68",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -970,7 +879,7 @@
    "raw": 2.5
   },
   {
-   "id": "v74",
+   "id": "v69",
    "text": "+145",
    "fmt": "ml",
    "rule": "bp",
@@ -983,7 +892,7 @@
    "raw": 145
   },
   {
-   "id": "v75",
+   "id": "v70",
    "text": "+145",
    "fmt": "ml",
    "rule": "bp",
@@ -996,7 +905,7 @@
    "raw": 145
   },
   {
-   "id": "v76",
+   "id": "v71",
    "text": "41%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1008,7 +917,7 @@
    "raw": 0.40816326530612246
   },
   {
-   "id": "v77",
+   "id": "v72",
    "text": "43.8",
    "fmt": "n1",
    "rule": "age",
@@ -1019,7 +928,7 @@
    "raw": 43.75633127994524
   },
   {
-   "id": "v78",
+   "id": "v73",
    "text": "36.4",
    "fmt": "n1",
    "rule": "age",
@@ -1030,7 +939,7 @@
    "raw": 36.35044490075291
   },
   {
-   "id": "v79",
+   "id": "v74",
    "text": "75\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1041,7 +950,7 @@
    "raw": 75
   },
   {
-   "id": "v80",
+   "id": "v75",
    "text": "72\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1052,7 +961,7 @@
    "raw": 72
   },
   {
-   "id": "v81",
+   "id": "v76",
    "text": "6'0\"",
    "fmt": "str",
    "rule": "bio",
@@ -1064,7 +973,7 @@
    "raw": "6'0\""
   },
   {
-   "id": "v82",
+   "id": "v77",
    "text": "5'9\"",
    "fmt": "str",
    "rule": "bio",
@@ -1076,7 +985,7 @@
    "raw": "5'9\""
   },
   {
-   "id": "v83",
+   "id": "v78",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1088,7 +997,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v84",
+   "id": "v79",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1100,7 +1009,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v85",
+   "id": "v80",
    "text": "22",
    "fmt": "int",
    "rule": "nfights",
@@ -1111,7 +1020,7 @@
    "raw": 22
   },
   {
-   "id": "v86",
+   "id": "v81",
    "text": "7",
    "fmt": "int",
    "rule": "nfights",
@@ -1122,7 +1031,7 @@
    "raw": 7
   },
   {
-   "id": "v87",
+   "id": "v82",
    "text": "4.05",
    "fmt": "n2",
    "rule": "stat",
@@ -1134,7 +1043,7 @@
    "raw": 4.046737259402223
   },
   {
-   "id": "v88",
+   "id": "v83",
    "text": "2.50",
    "fmt": "n2",
    "rule": "stat",
@@ -1146,7 +1055,7 @@
    "raw": 2.5027624309392262
   },
   {
-   "id": "v89",
+   "id": "v84",
    "text": "3.00",
    "fmt": "n2",
    "rule": "stat",
@@ -1158,7 +1067,7 @@
    "raw": 3.001408377236451
   },
   {
-   "id": "v90",
+   "id": "v85",
    "text": "2.45",
    "fmt": "n2",
    "rule": "stat",
@@ -1170,7 +1079,7 @@
    "raw": 2.453038674033149
   },
   {
-   "id": "v91",
+   "id": "v86",
    "text": "+1.05",
    "fmt": "s2",
    "rule": "stat",
@@ -1182,7 +1091,7 @@
    "raw": 1.0453288821657714
   },
   {
-   "id": "v92",
+   "id": "v87",
    "text": "+0.05",
    "fmt": "s2",
    "rule": "stat",
@@ -1194,7 +1103,7 @@
    "raw": 0.049723756906077346
   },
   {
-   "id": "v93",
+   "id": "v88",
    "text": "46%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1206,7 +1115,7 @@
    "raw": 0.46014234875444837
   },
   {
-   "id": "v94",
+   "id": "v89",
    "text": "54%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1218,7 +1127,7 @@
    "raw": 0.5392857142857143
   },
   {
-   "id": "v95",
+   "id": "v90",
    "text": "55%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1230,7 +1139,7 @@
    "raw": 0.5489181561618062
   },
   {
-   "id": "v96",
+   "id": "v91",
    "text": "55%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1242,7 +1151,7 @@
    "raw": 0.5474006116207951
   },
   {
-   "id": "v97",
+   "id": "v92",
    "text": "0.23",
    "fmt": "n2",
    "rule": "stat",
@@ -1254,7 +1163,7 @@
    "raw": 0.23472953940848157
   },
   {
-   "id": "v98",
+   "id": "v93",
    "text": "1.99",
    "fmt": "n2",
    "rule": "stat",
@@ -1266,7 +1175,7 @@
    "raw": 1.9889502762430937
   },
   {
-   "id": "v99",
+   "id": "v94",
    "text": "63%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1278,7 +1187,7 @@
    "raw": 0.6329113924050633
   },
   {
-   "id": "v100",
+   "id": "v95",
    "text": "100%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1290,7 +1199,7 @@
    "raw": 1.0
   },
   {
-   "id": "v101",
+   "id": "v96",
    "text": "6%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1302,7 +1211,7 @@
    "raw": 0.06040373480778259
   },
   {
-   "id": "v102",
+   "id": "v97",
    "text": "51%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1314,7 +1223,7 @@
    "raw": 0.5138121546961326
   },
   {
-   "id": "v103",
+   "id": "v98",
    "text": "49",
    "fmt": "r0",
    "rule": "fight",
@@ -1327,7 +1236,7 @@
    "raw": 49.4
   },
   {
-   "id": "v104",
+   "id": "v99",
    "text": "+375",
    "fmt": "ml",
    "rule": "fight",
@@ -1340,7 +1249,7 @@
    "raw": 375
   },
   {
-   "id": "v105",
+   "id": "v100",
    "text": "28",
    "fmt": "r0",
    "rule": "fight",
@@ -1353,7 +1262,7 @@
    "raw": 28.0
   },
   {
-   "id": "v106",
+   "id": "v101",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -1366,7 +1275,7 @@
    "raw": 180
   },
   {
-   "id": "v107",
+   "id": "v102",
    "text": "24",
    "fmt": "r0",
    "rule": "fight",
@@ -1379,7 +1288,7 @@
    "raw": 24.0
   },
   {
-   "id": "v108",
+   "id": "v103",
    "text": "+470",
    "fmt": "ml",
    "rule": "fight",
@@ -1392,7 +1301,7 @@
    "raw": 470
   },
   {
-   "id": "v109",
+   "id": "v104",
    "text": "93",
    "fmt": "r0",
    "rule": "fight",
@@ -1405,7 +1314,7 @@
    "raw": 92.8
   },
   {
-   "id": "v110",
+   "id": "v105",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -1418,7 +1327,7 @@
    "raw": 155
   },
   {
-   "id": "v111",
+   "id": "v106",
    "text": "24",
    "fmt": "r0",
    "rule": "fight",
@@ -1431,7 +1340,7 @@
    "raw": 24.5
   },
   {
-   "id": "v112",
+   "id": "v107",
    "text": "56",
    "fmt": "r0",
    "rule": "fight",
@@ -1444,7 +1353,7 @@
    "raw": 55.8
   },
   {
-   "id": "v113",
+   "id": "v108",
    "text": "-192",
    "fmt": "ml",
    "rule": "fight",
@@ -1457,7 +1366,7 @@
    "raw": -192
   },
   {
-   "id": "v114",
+   "id": "v109",
    "text": "83",
    "fmt": "r0",
    "rule": "fight",
@@ -1470,7 +1379,7 @@
    "raw": 83.3
   },
   {
-   "id": "v115",
+   "id": "v110",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -1483,7 +1392,7 @@
    "raw": -179
   },
   {
-   "id": "v116",
+   "id": "v111",
    "text": "12",
    "fmt": "r0",
    "rule": "fight",
@@ -1496,7 +1405,7 @@
    "raw": 11.8
   },
   {
-   "id": "v117",
+   "id": "v112",
    "text": "+179",
    "fmt": "ml",
    "rule": "fight",
@@ -1509,7 +1418,7 @@
    "raw": 179
   },
   {
-   "id": "v118",
+   "id": "v113",
    "text": "100",
    "fmt": "r0",
    "rule": "fight",
@@ -1522,7 +1431,7 @@
    "raw": 100.4
   },
   {
-   "id": "v119",
+   "id": "v114",
    "text": "-175",
    "fmt": "ml",
    "rule": "fight",
@@ -1535,7 +1444,7 @@
    "raw": -175
   },
   {
-   "id": "v120",
+   "id": "v115",
    "text": "14",
    "fmt": "r0",
    "rule": "fight",
@@ -1548,7 +1457,7 @@
    "raw": 13.9
   },
   {
-   "id": "v121",
+   "id": "v116",
    "text": "+178",
    "fmt": "ml",
    "rule": "fight",
@@ -1559,31 +1468,6 @@
    },
    "desc": "Close Charles Radtke Carlos Prates",
    "raw": 178
-  },
-  {
-   "id": "v122",
-   "text": "59.7%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sheet % (note)",
-   "raw": 0.5967397732958282
-  },
-  {
-   "id": "v123",
-   "text": "1.0",
-   "fmt": "pts",
-   "rule": "gap_pub_bp",
-   "args": {
-    "side": "a",
-    "market": "moneyline",
-    "label": "Stephen Thompson",
-    "other": "Charlie Radke"
-   },
-   "desc": "Sheet vs BP gap",
-   "raw": 0.009598266835065483
   }
  ],
  "gaps": [

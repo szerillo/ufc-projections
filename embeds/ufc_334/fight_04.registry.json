@@ -151,16 +151,17 @@
   },
   {
    "id": "v11",
-   "text": "+290",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-1.2",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "moneyline",
-    "label": "Jared Gordon",
-    "field": "opening_cost"
+    "of": [
+     "v8",
+     "v10"
+    ]
    },
-   "desc": "BP ML open Jared Gordon",
-   "raw": 290
+   "desc": "Edge v8-v10",
+   "raw": -0.011746225383565456
   },
   {
    "id": "v12",
@@ -212,16 +213,17 @@
   },
   {
    "id": "v16",
-   "text": "-400",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "+1.2",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "moneyline",
-    "label": "Melquizael Costa",
-    "field": "opening_cost"
+    "of": [
+     "v13",
+     "v15"
+    ]
    },
-   "desc": "BP ML open Melquizael Costa",
-   "raw": -400
+   "desc": "Edge v13-v15",
+   "raw": 0.0117462253835654
   },
   {
    "id": "v17",
@@ -274,16 +276,17 @@
   },
   {
    "id": "v21",
-   "text": "+550",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-0.0",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "method_of_victory",
-    "label": "Jared Gordon Points",
-    "field": "opening_cost"
+    "of": [
+     "v18",
+     "v20"
+    ]
    },
-   "desc": "BP dec open Jared Gordon",
-   "raw": 550
+   "desc": "Edge v18-v20",
+   "raw": -0.00019442190591137387
   },
   {
    "id": "v22",
@@ -336,16 +339,17 @@
   },
   {
    "id": "v26",
-   "text": "+250",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "+3.0",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "method_of_victory",
-    "label": "Melquizael Costa Points",
-    "field": "opening_cost"
+    "of": [
+     "v23",
+     "v25"
+    ]
    },
-   "desc": "BP dec open Melquizael Costa",
-   "raw": 250
+   "desc": "Edge v23-v25",
+   "raw": 0.029859362341980944
   },
   {
    "id": "v27",
@@ -398,16 +402,17 @@
   },
   {
    "id": "v31",
-   "text": "+900",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-1.3",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "method_of_victory",
-    "label": "Jared Gordon KO/TKO/DQ",
-    "field": "opening_cost"
+    "of": [
+     "v28",
+     "v30"
+    ]
    },
-   "desc": "BP ko open Jared Gordon",
-   "raw": 900
+   "desc": "Edge v28-v30",
+   "raw": -0.012562975465857606
   },
   {
    "id": "v32",
@@ -460,16 +465,17 @@
   },
   {
    "id": "v36",
-   "text": "+130",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "+3.5",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "method_of_victory",
-    "label": "Melquizael Costa KO/TKO/DQ",
-    "field": "opening_cost"
+    "of": [
+     "v33",
+     "v35"
+    ]
    },
-   "desc": "BP ko open Melquizael Costa",
-   "raw": 130
+   "desc": "Edge v33-v35",
+   "raw": 0.034885569129721405
   },
   {
    "id": "v37",
@@ -522,16 +528,17 @@
   },
   {
    "id": "v41",
-   "text": "+1700",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-0.3",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "method_of_victory",
-    "label": "Jared Gordon Submission",
-    "field": "opening_cost"
+    "of": [
+     "v38",
+     "v40"
+    ]
    },
-   "desc": "BP sub open Jared Gordon",
-   "raw": 1700
+   "desc": "Edge v38-v40",
+   "raw": -0.003033221643582891
   },
   {
    "id": "v42",
@@ -584,16 +591,17 @@
   },
   {
    "id": "v46",
-   "text": "+410",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-3.3",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "method_of_victory",
-    "label": "Melquizael Costa Submission",
-    "field": "opening_cost"
+    "of": [
+     "v43",
+     "v45"
+    ]
    },
-   "desc": "BP sub open Melquizael Costa",
-   "raw": 410
+   "desc": "Edge v43-v45",
+   "raw": -0.03281142936802642
   },
   {
    "id": "v47",
@@ -643,6 +651,20 @@
   },
   {
    "id": "v51",
+   "text": "-1.6",
+   "fmt": "sp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v48",
+     "v50"
+    ]
+   },
+   "desc": "Edge v48-v50",
+   "raw": -0.01559619710944049
+  },
+  {
+   "id": "v52",
    "text": "-101",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -654,7 +676,7 @@
    "raw": 0.5025139961899447
   },
   {
-   "id": "v52",
+   "id": "v53",
    "text": "50.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -666,7 +688,7 @@
    "raw": 0.5025139961899447
   },
   {
-   "id": "v53",
+   "id": "v54",
    "text": "-100",
    "fmt": "mlp",
    "rule": "bp_mitd",
@@ -677,7 +699,7 @@
    "raw": 0.5004398564282497
   },
   {
-   "id": "v54",
+   "id": "v55",
    "text": "50.0%",
    "fmt": "pct1",
    "rule": "bp_mitd",
@@ -688,7 +710,21 @@
    "raw": 0.5004398564282497
   },
   {
-   "id": "v55",
+   "id": "v56",
+   "text": "+0.2",
+   "fmt": "sp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v53",
+     "v55"
+    ]
+   },
+   "desc": "Edge v53-v55",
+   "raw": 0.0020741397616950152
+  },
+  {
+   "id": "v57",
    "text": "+155",
    "fmt": "mlp",
    "rule": "pub",
@@ -699,7 +735,7 @@
    "raw": 0.3915493525259707
   },
   {
-   "id": "v56",
+   "id": "v58",
    "text": "39.2%",
    "fmt": "pct1",
    "rule": "pub",
@@ -710,7 +746,7 @@
    "raw": 0.3915493525259707
   },
   {
-   "id": "v57",
+   "id": "v59",
    "text": "+148",
    "fmt": "ml",
    "rule": "bp",
@@ -723,7 +759,7 @@
    "raw": 148
   },
   {
-   "id": "v58",
+   "id": "v60",
    "text": "-194",
    "fmt": "ml",
    "rule": "bp",
@@ -736,7 +772,7 @@
    "raw": -194
   },
   {
-   "id": "v59",
+   "id": "v61",
    "text": "37.9%",
    "fmt": "pct1",
    "rule": "bp_nv",
@@ -749,131 +785,69 @@
    "raw": 0.37929610898957583
   },
   {
-   "id": "v60",
-   "text": "+138",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP GTD yes open",
-   "raw": 138
-  },
-  {
-   "id": "v61",
-   "text": "+300",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jared Gordon",
-     "Melquizael Costa"
-    ],
-    "path": "odds.open.ma"
-   },
-   "desc": "OA open ML a",
-   "raw": 300
-  },
-  {
    "id": "v62",
-   "text": "-377",
-   "fmt": "ml",
-   "rule": "ev",
+   "text": "+1.2",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jared Gordon",
-     "Melquizael Costa"
-    ],
-    "path": "odds.open.mb"
+    "of": [
+     "v58",
+     "v61"
+    ]
    },
-   "desc": "OA open ML b",
-   "raw": -377
+   "desc": "Edge GTD",
+   "raw": 0.012253243536394842
   },
   {
    "id": "v63",
-   "text": "24.0%",
+   "text": "23.2%",
    "fmt": "pct1",
-   "rule": "ev",
+   "rule": "pub_win",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jared Gordon",
-     "Melquizael Costa"
-    ],
-    "path": "odds.open.p"
+    "side": "a"
    },
-   "desc": "OA open p",
-   "raw": 0.2401
+   "desc": "Bar Sean % a",
+   "raw": 0.23240177360963868
   },
   {
    "id": "v64",
-   "text": "+295",
-   "fmt": "ml",
-   "rule": "ev",
+   "text": "76.8%",
+   "fmt": "pct1",
+   "rule": "pub_win",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jared Gordon",
-     "Melquizael Costa"
-    ],
-    "path": "odds.close.ma"
+    "side": "b"
    },
-   "desc": "OA close ML a",
-   "raw": 295
+   "desc": "Bar Sean % b",
+   "raw": 0.7675982263903613
   },
   {
    "id": "v65",
-   "text": "-370",
-   "fmt": "ml",
-   "rule": "ev",
+   "text": "24.4%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jared Gordon",
-     "Melquizael Costa"
-    ],
-    "path": "odds.close.mb"
+    "market": "moneyline",
+    "label": "Jared Gordon",
+    "other": "Melquizael Costa"
    },
-   "desc": "OA close ML b",
-   "raw": -370
+   "desc": "Bar BP no-vig a",
+   "raw": 0.24414799899320414
   },
   {
    "id": "v66",
-   "text": "24.3%",
+   "text": "75.6%",
    "fmt": "pct1",
-   "rule": "ev",
+   "rule": "bp_nv",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jared Gordon",
-     "Melquizael Costa"
-    ],
-    "path": "odds.close.p"
+    "market": "moneyline",
+    "label": "Melquizael Costa",
+    "other": "Jared Gordon"
    },
-   "desc": "OA close p",
-   "raw": 0.2433
+   "desc": "Bar BP no-vig b",
+   "raw": 0.7558520010067958
   },
   {
    "id": "v67",
-   "text": "0.3",
-   "fmt": "pts",
-   "rule": "oa_drift",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jared Gordon",
-     "Melquizael Costa"
-    ]
-   },
-   "desc": "OA drift pts",
-   "raw": 0.0031999999999999806
-  },
-  {
-   "id": "v68",
    "text": "+300",
    "fmt": "ml",
    "rule": "oa_best",
@@ -889,7 +863,7 @@
    "raw": 300
   },
   {
-   "id": "v69",
+   "id": "v68",
    "text": "-370",
    "fmt": "ml",
    "rule": "oa_best",
@@ -905,7 +879,7 @@
    "raw": -370
   },
   {
-   "id": "v70",
+   "id": "v69",
    "text": "+290",
    "fmt": "ml",
    "rule": "bp",
@@ -918,7 +892,7 @@
    "raw": 290
   },
   {
-   "id": "v71",
+   "id": "v70",
    "text": "+290",
    "fmt": "ml",
    "rule": "bp",
@@ -931,7 +905,7 @@
    "raw": 290
   },
   {
-   "id": "v72",
+   "id": "v71",
    "text": "-400",
    "fmt": "ml",
    "rule": "bp",
@@ -944,7 +918,7 @@
    "raw": -400
   },
   {
-   "id": "v73",
+   "id": "v72",
    "text": "-385",
    "fmt": "ml",
    "rule": "bp",
@@ -957,38 +931,7 @@
    "raw": -385
   },
   {
-   "id": "v74",
-   "text": "140",
-   "fmt": "int",
-   "rule": "oa_len",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jared Gordon",
-     "Melquizael Costa"
-    ]
-   },
-   "desc": "Chart points",
-   "raw": 140
-  },
-  {
-   "id": "v75",
-   "text": "448",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jared Gordon",
-     "Melquizael Costa"
-    ],
-    "path": "odds.n"
-   },
-   "desc": "Snapshots",
-   "raw": 448
-  },
-  {
-   "id": "v76",
+   "id": "v73",
    "text": "+104",
    "fmt": "ml",
    "rule": "bp",
@@ -1001,7 +944,7 @@
    "raw": 104
   },
   {
-   "id": "v77",
+   "id": "v74",
    "text": "+109",
    "fmt": "ml",
    "rule": "bp",
@@ -1014,7 +957,7 @@
    "raw": 109
   },
   {
-   "id": "v78",
+   "id": "v75",
    "text": "48%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1026,7 +969,7 @@
    "raw": 0.4784688995215311
   },
   {
-   "id": "v79",
+   "id": "v76",
    "text": "+295",
    "fmt": "ml",
    "rule": "bp",
@@ -1039,7 +982,7 @@
    "raw": 295
   },
   {
-   "id": "v80",
+   "id": "v77",
    "text": "+321",
    "fmt": "ml",
    "rule": "bp",
@@ -1052,7 +995,7 @@
    "raw": 321
   },
   {
-   "id": "v81",
+   "id": "v78",
    "text": "24%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1064,7 +1007,7 @@
    "raw": 0.2375296912114014
   },
   {
-   "id": "v82",
+   "id": "v79",
    "text": "+138",
    "fmt": "ml",
    "rule": "bp",
@@ -1077,7 +1020,7 @@
    "raw": 138
   },
   {
-   "id": "v83",
+   "id": "v80",
    "text": "+136",
    "fmt": "ml",
    "rule": "bp",
@@ -1090,7 +1033,7 @@
    "raw": 136
   },
   {
-   "id": "v84",
+   "id": "v81",
    "text": "42%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1102,7 +1045,7 @@
    "raw": 0.423728813559322
   },
   {
-   "id": "v85",
+   "id": "v82",
    "text": "+138",
    "fmt": "ml",
    "rule": "bp",
@@ -1115,7 +1058,7 @@
    "raw": 138
   },
   {
-   "id": "v86",
+   "id": "v83",
    "text": "+148",
    "fmt": "ml",
    "rule": "bp",
@@ -1128,7 +1071,7 @@
    "raw": 148
   },
   {
-   "id": "v87",
+   "id": "v84",
    "text": "40%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1140,7 +1083,7 @@
    "raw": 0.4032258064516129
   },
   {
-   "id": "v88",
+   "id": "v85",
    "text": "-186",
    "fmt": "ml",
    "rule": "bp",
@@ -1153,7 +1096,7 @@
    "raw": -186
   },
   {
-   "id": "v89",
+   "id": "v86",
    "text": "-194",
    "fmt": "ml",
    "rule": "bp",
@@ -1166,7 +1109,7 @@
    "raw": -194
   },
   {
-   "id": "v90",
+   "id": "v87",
    "text": "66%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1178,7 +1121,7 @@
    "raw": 0.6598639455782312
   },
   {
-   "id": "v91",
+   "id": "v88",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -1191,7 +1134,7 @@
    "raw": 2.5
   },
   {
-   "id": "v92",
+   "id": "v89",
    "text": "+110",
    "fmt": "ml",
    "rule": "bp",
@@ -1204,7 +1147,7 @@
    "raw": 110
   },
   {
-   "id": "v93",
+   "id": "v90",
    "text": "+112",
    "fmt": "ml",
    "rule": "bp",
@@ -1217,7 +1160,7 @@
    "raw": 112
   },
   {
-   "id": "v94",
+   "id": "v91",
    "text": "47%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1229,7 +1172,7 @@
    "raw": 0.4716981132075472
   },
   {
-   "id": "v95",
+   "id": "v92",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -1242,7 +1185,7 @@
    "raw": 2.5
   },
   {
-   "id": "v96",
+   "id": "v93",
    "text": "-140",
    "fmt": "ml",
    "rule": "bp",
@@ -1255,7 +1198,7 @@
    "raw": -140
   },
   {
-   "id": "v97",
+   "id": "v94",
    "text": "-142",
    "fmt": "ml",
    "rule": "bp",
@@ -1268,7 +1211,7 @@
    "raw": -142
   },
   {
-   "id": "v98",
+   "id": "v95",
    "text": "59%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1280,7 +1223,7 @@
    "raw": 0.5867768595041323
   },
   {
-   "id": "v99",
+   "id": "v96",
    "text": "38.2",
    "fmt": "n1",
    "rule": "age",
@@ -1291,7 +1234,7 @@
    "raw": 38.18754277891855
   },
   {
-   "id": "v100",
+   "id": "v97",
    "text": "30.2",
    "fmt": "n1",
    "rule": "age",
@@ -1302,7 +1245,7 @@
    "raw": 30.16563997262149
   },
   {
-   "id": "v101",
+   "id": "v98",
    "text": "68\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1313,7 +1256,7 @@
    "raw": 68
   },
   {
-   "id": "v102",
+   "id": "v99",
    "text": "71\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1324,7 +1267,7 @@
    "raw": 71
   },
   {
-   "id": "v103",
+   "id": "v100",
    "text": "5'9\"",
    "fmt": "str",
    "rule": "bio",
@@ -1336,7 +1279,7 @@
    "raw": "5'9\""
   },
   {
-   "id": "v104",
+   "id": "v101",
    "text": "5'10\"",
    "fmt": "str",
    "rule": "bio",
@@ -1348,7 +1291,7 @@
    "raw": "5'10\""
   },
   {
-   "id": "v105",
+   "id": "v102",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1360,7 +1303,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v106",
+   "id": "v103",
    "text": "Southpaw",
    "fmt": "str",
    "rule": "bio",
@@ -1372,7 +1315,7 @@
    "raw": "Southpaw"
   },
   {
-   "id": "v107",
+   "id": "v104",
    "text": "18",
    "fmt": "int",
    "rule": "nfights",
@@ -1383,7 +1326,7 @@
    "raw": 18
   },
   {
-   "id": "v108",
+   "id": "v105",
    "text": "10",
    "fmt": "int",
    "rule": "nfights",
@@ -1394,7 +1337,7 @@
    "raw": 10
   },
   {
-   "id": "v109",
+   "id": "v106",
    "text": "5.57",
    "fmt": "n2",
    "rule": "stat",
@@ -1406,7 +1349,7 @@
    "raw": 5.571276972055182
   },
   {
-   "id": "v110",
+   "id": "v107",
    "text": "4.29",
    "fmt": "n2",
    "rule": "stat",
@@ -1418,7 +1361,7 @@
    "raw": 4.29368029739777
   },
   {
-   "id": "v111",
+   "id": "v108",
    "text": "4.11",
    "fmt": "n2",
    "rule": "stat",
@@ -1430,7 +1373,7 @@
    "raw": 4.112133003183587
   },
   {
-   "id": "v112",
+   "id": "v109",
    "text": "3.19",
    "fmt": "n2",
    "rule": "stat",
@@ -1442,7 +1385,7 @@
    "raw": 3.1877323420074353
   },
   {
-   "id": "v113",
+   "id": "v110",
    "text": "+1.46",
    "fmt": "s2",
    "rule": "stat",
@@ -1454,7 +1397,7 @@
    "raw": 1.4591439688715953
   },
   {
-   "id": "v114",
+   "id": "v111",
    "text": "+1.11",
    "fmt": "s2",
    "rule": "stat",
@@ -1466,7 +1409,7 @@
    "raw": 1.1059479553903346
   },
   {
-   "id": "v115",
+   "id": "v112",
    "text": "54%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1478,7 +1421,7 @@
    "raw": 0.5373592630501536
   },
   {
-   "id": "v116",
+   "id": "v113",
    "text": "47%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1490,7 +1433,7 @@
    "raw": 0.46998982706002035
   },
   {
-   "id": "v117",
+   "id": "v114",
    "text": "55%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1502,7 +1445,7 @@
    "raw": 0.5548535324526134
   },
   {
-   "id": "v118",
+   "id": "v115",
    "text": "50%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1514,7 +1457,7 @@
    "raw": 0.5036179450072359
   },
   {
-   "id": "v119",
+   "id": "v116",
    "text": "1.91",
    "fmt": "n2",
    "rule": "stat",
@@ -1526,7 +1469,7 @@
    "raw": 1.910152104704634
   },
   {
-   "id": "v120",
+   "id": "v117",
    "text": "1.53",
    "fmt": "n2",
    "rule": "stat",
@@ -1538,7 +1481,7 @@
    "raw": 1.5334572490706322
   },
   {
-   "id": "v121",
+   "id": "v118",
    "text": "60%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1550,7 +1493,7 @@
    "raw": 0.6046511627906976
   },
   {
-   "id": "v122",
+   "id": "v119",
    "text": "51%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1562,7 +1505,7 @@
    "raw": 0.5094339622641509
   },
   {
-   "id": "v123",
+   "id": "v120",
    "text": "34%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1574,7 +1517,7 @@
    "raw": 0.3379908029713477
   },
   {
-   "id": "v124",
+   "id": "v121",
    "text": "17%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1586,7 +1529,7 @@
    "raw": 0.16759603469640644
   },
   {
-   "id": "v125",
+   "id": "v122",
    "text": "28",
    "fmt": "r0",
    "rule": "fight",
@@ -1599,7 +1542,7 @@
    "raw": 28.0
   },
   {
-   "id": "v126",
+   "id": "v123",
    "text": "-260",
    "fmt": "ml",
    "rule": "fight",
@@ -1612,7 +1555,7 @@
    "raw": -260
   },
   {
-   "id": "v127",
+   "id": "v124",
    "text": "9",
    "fmt": "r0",
    "rule": "fight",
@@ -1625,7 +1568,7 @@
    "raw": 9.4
   },
   {
-   "id": "v128",
+   "id": "v125",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -1638,7 +1581,7 @@
    "raw": -179
   },
   {
-   "id": "v129",
+   "id": "v126",
    "text": "101",
    "fmt": "r0",
    "rule": "fight",
@@ -1651,7 +1594,7 @@
    "raw": 100.9
   },
   {
-   "id": "v130",
+   "id": "v127",
    "text": "-122",
    "fmt": "ml",
    "rule": "fight",
@@ -1664,7 +1607,7 @@
    "raw": -122
   },
   {
-   "id": "v131",
+   "id": "v128",
    "text": "58",
    "fmt": "r0",
    "rule": "fight",
@@ -1677,7 +1620,7 @@
    "raw": 58.4
   },
   {
-   "id": "v132",
+   "id": "v129",
    "text": "+195",
    "fmt": "ml",
    "rule": "fight",
@@ -1690,7 +1633,7 @@
    "raw": 195
   },
   {
-   "id": "v133",
+   "id": "v130",
    "text": "90",
    "fmt": "r0",
    "rule": "fight",
@@ -1703,7 +1646,7 @@
    "raw": 89.8
   },
   {
-   "id": "v134",
+   "id": "v131",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -1716,7 +1659,7 @@
    "raw": -204
   },
   {
-   "id": "v135",
+   "id": "v132",
    "text": "23",
    "fmt": "r0",
    "rule": "fight",
@@ -1729,7 +1672,7 @@
    "raw": 22.8
   },
   {
-   "id": "v136",
+   "id": "v133",
    "text": "+102",
    "fmt": "ml",
    "rule": "fight",
@@ -1742,7 +1685,7 @@
    "raw": 102
   },
   {
-   "id": "v137",
+   "id": "v134",
    "text": "99",
    "fmt": "r0",
    "rule": "fight",
@@ -1755,7 +1698,7 @@
    "raw": 98.8
   },
   {
-   "id": "v138",
+   "id": "v135",
    "text": "-247",
    "fmt": "ml",
    "rule": "fight",
@@ -1768,7 +1711,7 @@
    "raw": -247
   },
   {
-   "id": "v139",
+   "id": "v136",
    "text": "104",
    "fmt": "r0",
    "rule": "fight",
@@ -1781,7 +1724,7 @@
    "raw": 103.6
   },
   {
-   "id": "v140",
+   "id": "v137",
    "text": "-153",
    "fmt": "ml",
    "rule": "fight",
@@ -1794,7 +1737,7 @@
    "raw": -153
   },
   {
-   "id": "v141",
+   "id": "v138",
    "text": "82",
    "fmt": "r0",
    "rule": "fight",
@@ -1807,7 +1750,7 @@
    "raw": 82.0
   },
   {
-   "id": "v142",
+   "id": "v139",
    "text": "-164",
    "fmt": "ml",
    "rule": "fight",
@@ -1820,7 +1763,7 @@
    "raw": -164
   },
   {
-   "id": "v143",
+   "id": "v140",
    "text": "60",
    "fmt": "r0",
    "rule": "fight",
@@ -1833,7 +1776,7 @@
    "raw": 59.8
   },
   {
-   "id": "v144",
+   "id": "v141",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -1844,31 +1787,6 @@
    },
    "desc": "Close Melquizael Costa Christian Rodriguez",
    "raw": 180
-  },
-  {
-   "id": "v145",
-   "text": "23.2%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sheet % (note)",
-   "raw": 0.23240177360963868
-  },
-  {
-   "id": "v146",
-   "text": "1.2",
-   "fmt": "pts",
-   "rule": "gap_pub_bp",
-   "args": {
-    "side": "a",
-    "market": "moneyline",
-    "label": "Jared Gordon",
-    "other": "Melquizael Costa"
-   },
-   "desc": "Sheet vs BP gap",
-   "raw": -0.011746225383565456
   }
  ],
  "gaps": [

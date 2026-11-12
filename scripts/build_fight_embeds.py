@@ -72,7 +72,7 @@ def mls(v): return "—" if v is None else (f"+{v}" if v > 0 else str(v))
 FMT = {"pct1": lambda x: f"{x*100:.1f}%", "pct0": lambda x: f"{x*100:.0f}%", "ml": lambda x: mls(x), "mlp": lambda x: mls(ml_of(x)),
        "n1": lambda x: f"{x:.1f}", "n2": lambda x: f"{x:.2f}", "s2": lambda x: f"{x:+.2f}", "int": lambda x: str(x), "intc": lambda x: f"{x:,}",
        "d3": lambda x: f"{x:.3f}", "d4": lambda x: f"{x:.4f}", "str": lambda x: str(x), "in": lambda x: f'{x}"', "r0": lambda x: str(int(round(x))),
-       "pts": lambda x: f"{abs(x)*100:.1f}"}
+       "pts": lambda x: f"{abs(x)*100:.1f}", "sp": lambda x: f"{x*100:+.1f}"}
 
 class Reg:
     def __init__(s): s.rows = []
@@ -208,7 +208,7 @@ def build(names, outname):
     head = f'''<div class="ff-header"><div class="ff-brand" aria-label="Action Network"><span class="ff-brand-text">ACTION</span><span class="ff-brand-check">{CHECK_SVG}</span></div>
 <div class="ff-title">{esc(EVL["name"])} · Fight Form</div><div class="ff-subtitle">{day} · {esc(EVL["location"])}</div>
 <div class="ff-byline-header">By <a href="https://twitter.com/SeanZerillo" target="_blank" rel="noopener">@SeanZerillo</a></div>{status}</div>
-<div class="panel"><div class="fp-title-row"><span class="fp-fight-num">FIGHT {n}</span><span class="fp-card-tag">{card_tag}</span>{'<span class="fp-title-belt">★ TITLE</span>' if f.get("title") else ""}<span class="fp-weight">{esc(f["wc"])} · {sched} RDS</span></div>
+<div class="panel"><div class="fp-title-row"><span class="fp-fight-num">FIGHT {n}</span><span class="fp-card-tag">{card_tag}</span>{'<span class="fp-title-belt">★ TITLE</span>' if f.get("title") else ""}{'<span class="fp-thin" title="3 or fewer UFC fights before this card">THIN SAMPLE</span>' if min(ga["n"], gb["n"]) <= 3 else ""}<span class="fp-weight">{esc(f["wc"])} · {sched} RDS</span></div>
 <div class="fp-headline">{esc(an)} <span class="vs">vs</span> {esc(bn)}</div>
 <div class="fp-odds">{meta(FA, ga, "a", "ra")}<br>{meta(FB, gb, "b", "rb")}</div>'''
 
@@ -238,16 +238,28 @@ def build(names, outname):
             c = s["books"]["consensus"]["cost"]; nv = imp(c) / (imp(c) + imp(s2["books"]["consensus"]["cost"]))
             lab = bp_name(bf, F)
             return (f'<td><span class="odds">{R(c, "ml", "bp", "BP ML now "+F, market="moneyline", label=lab, field="cost")}</span><div class="pct">{R(nv, "pct1", "bp_nv", "BP ML no-vig "+F, market="moneyline", label=lab, other=bp_name(bf, nm_of[oth[sd]]))}</div>'
-                    f'<div class="op">o {R(s["opening_cost"], "ml", "bp", "BP ML open "+F, market="moneyline", label=lab, field="opening_cost")}</div></td>')
+                    '</td>')
         if not m_ok: return '<td class="dim">n/a</td>'
         if k == "itd":
             v = mov_nv(F, "ko") + mov_nv(F, "sub")
-            return f'<td><span class="odds drv">{R(v, "mlp", "bp_mitd", f"BP ITD fair ML {F}", fighter=F)}</span><div class="pct">{R(v, "pct1", "bp_mitd", f"BP ITD no-vig {F}", fighter=F)}</div><div class="op">KO+SUB</div></td>'
+            return f'<td><span class="odds drv">{R(v, "mlp", "bp_mitd", f"BP ITD fair ML {F}", fighter=F)}</span><div class="pct">{R(v, "pct1", "bp_mitd", f"BP ITD no-vig {F}", fighter=F)}</div></td>'
         lab = f"{bp_name(bf, F)} {MOVL[k]}"; s = bp_sel(bf, "method_of_victory", lab)
         return (f'<td><span class="odds">{R(s["books"]["consensus"]["cost"], "ml", "bp", f"BP {k} now {F}", market="method_of_victory", label=lab, field="cost")}</span><div class="pct">{R(mov_nv(F, k), "pct1", "bp_mnv", f"BP {k} no-vig {F}", fighter=F, k=k)}</div>'
-                f'<div class="op">o {R(s["opening_cost"], "ml", "bp", f"BP {k} open {F}", market="method_of_victory", label=lab, field="opening_cost")}</div></td>')
+                '</td>')
     LABS = [("win", "Win", "ML"), ("dec", "DEC", "decision"), ("ko", "KO", "KO/TKO"), ("sub", "SUB", "submission"), ("itd", "ITD", "KO + SUB")]
-    rows = "".join(f'<tr data-row="{k}"><th class="rl">{lab}<small>{sub}</small></th>{sean("a", k)}{mkt("a", k)}{sean("b", k)}{mkt("b", k)}</tr>' for k, lab, sub in LABS)
+    def last_pct(i0):
+        ids = [r_["id"] for r_ in R.rows[i0:] if r_["fmt"] == "pct1"]
+        return ids[-1] if ids else None
+    def edged(sean_html_fn, mkt_html_fn):
+        """Block 59: the market cell carries the edge chip, Sean % minus market no-vig %, both read back from the registry"""
+        i0 = len(R.rows); sh = sean_html_fn(); sid = last_pct(i0)
+        i1 = len(R.rows); mh = mkt_html_fn(); mid = last_pct(i1)
+        if sid and mid and mh.endswith("</td>"):
+            sv = next(r_["raw"] for r_ in R.rows if r_["id"] == sid); mv_ = next(r_["raw"] for r_ in R.rows if r_["id"] == mid)
+            e = sv - mv_; cls = "pos" if e >= 0.03 else "neg" if e <= -0.03 else "flat"
+            mh = mh[:-5] + f'<div class="edge {cls}">{R(e, "sp", "edge", "Edge " + str(sid) + "-" + str(mid), of=[sid, mid])}</div></td>'
+        return sh + mh
+    rows = "".join(f'<tr data-row="{k}"><th class="rl">{lab}<small>{sub}</small></th>{edged(lambda: sean("a", k), lambda: mkt("a", k))}{edged(lambda: sean("b", k), lambda: mkt("b", k))}</tr>' for k, lab, sub in LABS)
     # GTD is fight-level: Sean's number spans both Sean columns, market spans both market columns
     if pf:
         g = pf["gtd"]; gs = f'<td class="proj" colspan="2"><span class="odds">{R(g, "mlp", "pub", "Sean GTD fair ML", key="gtd")}</span><div class="pct">{R(g, "pct1", "pub", "Sean GTD %", key="gtd")}</div></td>'
@@ -260,20 +272,37 @@ def build(names, outname):
         y, no = bp_sel(bf, "fight_distance", "Yes"), bp_sel(bf, "fight_distance", "No")
         nv = imp(y["books"]["consensus"]["cost"]) / (imp(y["books"]["consensus"]["cost"]) + imp(no["books"]["consensus"]["cost"]))
         gm = (f'<td colspan="2"><span class="odds">Y {R(y["books"]["consensus"]["cost"], "ml", "bp", "BP GTD yes now", market="fight_distance", label="Yes", field="cost")} / N {R(no["books"]["consensus"]["cost"], "ml", "bp", "BP GTD no now", market="fight_distance", label="No", field="cost")}</span>'
-              f'<div class="pct">{R(nv, "pct1", "bp_nv", "BP GTD no-vig", market="fight_distance", label="Yes", other="No")}</div><div class="op">o Y {R(y["opening_cost"], "ml", "bp", "BP GTD yes open", market="fight_distance", label="Yes", field="opening_cost")}</div></td>')
+              f'<div class="pct">{R(nv, "pct1", "bp_nv", "BP GTD no-vig", market="fight_distance", label="Yes", other="No")}</div></td>')
     else:
         gm = '<td class="dim" colspan="2">n/a</td>'
+    if pf and bf and d_ok:
+        gid = next(r_["id"] for r_ in reversed(R.rows) if r_["desc"] == "Sean GTD %"); mid_ = next(r_["id"] for r_ in reversed(R.rows) if r_["desc"] == "BP GTD no-vig")
+        e = next(r_["raw"] for r_ in R.rows if r_["id"] == gid) - next(r_["raw"] for r_ in R.rows if r_["id"] == mid_)
+        cls = "pos" if e >= 0.03 else "neg" if e <= -0.03 else "flat"
+        gm = gm[:-5] + f'<div class="edge {cls}">{R(e, "sp", "edge", "Edge GTD", of=[gid, mid_])}</div></td>'
     rows += f'<tr data-row="gtd" class="gtd"><th class="rl">GTD<small>goes distance</small></th>{gs}{gm}</tr>'
     fav_sd = "a" if (pwin("a") or .5) >= .5 else "b"
     tbl = f'''<div class="fp-proj-header"><span class="bullet"></span>Sean's projection vs market</div>
 <table class="fp-proj-table pvm" data-proj-src="{proj_src or "none"}"><colgroup><col class="c0"><col><col><col><col></colgroup><thead>
 <tr class="who"><th></th><th colspan="2" class="{"fav" if fav_sd == "a" else "dog"}">{esc(last(an))}</th><th colspan="2" class="{"fav" if fav_sd == "b" else "dog"}">{esc(last(bn))}</th></tr>
 <tr class="src"><th></th><th class="proj">Sean</th><th>Market</th><th class="proj">Sean</th><th>Market</th></tr></thead><tbody>{rows}</tbody></table>
-<div class="cap"><b>Sean</b> = fair price and % from Sean's projection sheet (win % × the sheet's DEC / KO / SUB split; ITD = KO + SUB){SRC_NOTE[proj_src]}. <b>Market</b> = BettingPros consensus price, de-vigged % below, o = open.{" Method % de-vigged across the full method market; ITD = no-vig KO + SUB." if bf and m_ok else ""}{(" Method / GTD market n/a where BettingPros prices for this bout are missing or look broken (" + esc("; ".join(bad_why)) + ").") if bf and bad_why else ""}</div>'''
+<div class="cap-unused" hidden><b>Sean</b> = fair price and % from Sean's projection sheet (win % × the sheet's DEC / KO / SUB split; ITD = KO + SUB){SRC_NOTE[proj_src]}. <b>Market</b> = BettingPros consensus price, de-vigged % below, o = open.{" Method % de-vigged across the full method market; ITD = no-vig KO + SUB." if bf and m_ok else ""}{(" Method / GTD market n/a where BettingPros prices for this bout are missing or look broken (" + esc("; ".join(bad_why)) + ").") if bf and bad_why else ""}</div>'''
+    tbl = tbl.split('<div class="cap-unused"')[0]   # Block 59: caption dropped; one-line legend under the table instead
     if bf and bad_why: gaps.append(f"Fight {n}: BettingPros method/distance markets suspect ({'; '.join(bad_why)}); market cells shown as n/a.")
     if not pf: gaps.append(f"Fight {n}: no row in the Publish to site export; Sean cells " + ("from the event file's model block (" + proj_src + ")." if EM else "empty."))
-    asof = f'<div class="asof">{"Sheet: " + esc(PUB["source"]) + ", published " + esc(PUB["published_at"][:16].replace("T"," ")) + " UTC. " if pf else ("Sheet: site build pull (no Publish to site export). " if EM else "")}{"Market: BettingPros consensus, " + esc(bp_t) + "." if bf else ""}</div>'
-    top = f'<section id="odds" class="top"><div class="fp-proj">{tbl}</div>{asof}</section>'
+    wbar = ""
+    if pf and bf:
+        la_, lb_ = bp_name(bf, an), bp_name(bf, bn); s_a = bp_sel(bf, "moneyline", la_); s_b = bp_sel(bf, "moneyline", lb_)
+        nva = imp(s_a["books"]["consensus"]["cost"]) / (imp(s_a["books"]["consensus"]["cost"]) + imp(s_b["books"]["consensus"]["cost"]))
+        def wrow(lab_, p_, cls_, sp_a, sp_b):
+            return (f'<div class="wb-row"><span class="wb-l">{lab_}</span><div class="wb-bar {cls_}" role="img" aria-label="{lab_}: {esc(last(an))} {p_*100:.1f}%, {esc(last(bn))} {(1-p_)*100:.1f}%">'
+                    f'<i class="wa" style="width:{p_*100:.1f}%"><b>{sp_a}</b></i><i class="wbb" style="width:{(1-p_)*100:.1f}%"><b>{sp_b}</b></i></div></div>')
+        wbar = (f'<div class="wb"><div class="wb-head"><span>{esc(last(an))}</span><span class="wb-t">Win probability</span><span>{esc(last(bn))}</span></div>'
+                + wrow("Sean", pwin("a"), "s", R(pwin("a"), "pct1", "pub_win", "Bar Sean % a", side="a"), R(pwin("b"), "pct1", "pub_win", "Bar Sean % b", side="b"))
+                + wrow("Market", nva, "m", R(nva, "pct1", "bp_nv", "Bar BP no-vig a", market="moneyline", label=la_, other=lb_), R(1 - nva, "pct1", "bp_nv", "Bar BP no-vig b", market="moneyline", label=lb_, other=la_)) + '</div>')
+    asof_unused = f'<div class="asof">{"Sheet: " + esc(PUB["source"]) + ", published " + esc(PUB["published_at"][:16].replace("T"," ")) + " UTC. " if pf else ("Sheet: site build pull (no Publish to site export). " if EM else "")}{"Market: BettingPros consensus, " + esc(bp_t) + "." if bf else ""}</div>'
+    legend = '<div class="legend"><b>Sean</b> fair price · <b>Market</b> BettingPros consensus, no-vig % · <b>Edge</b> Sean minus market, pts</div>'
+    top = f'<section id="odds" class="top">{wbar}<div class="fp-proj">{tbl}</div>{legend}</section>'
 
     def sec(id_, title, meta_, body, open_=False):
         return f'<details class="collapsible" id="{id_}"{" open" if open_ else ""}><summary><span class="bullet"></span>{title}<span class="meta">{meta_}</span></summary><div class="body">{body}</div></details>'
@@ -291,20 +320,17 @@ def build(names, outname):
                 if m is not None and (b is None or dec_odds(m) > dec_odds(b[0])): b = (m, k)
             return b
         ba, bb = best("a"), best("b")
-        body += sparkline(o["series"]) + f'''<div class="kv"><span>Odds API open {o["open"]["t"][:10]}</span><span>{esc(last(an))} {R(o["open"]["ma"], "ml", "ev", "OA open ML a", ev=EVF, pair=PAIR, path="odds.open.ma")} · {esc(last(bn))} {R(o["open"]["mb"], "ml", "ev", "OA open ML b", ev=EVF, pair=PAIR, path="odds.open.mb")} · {R(o["open"]["p"], "pct1", "ev", "OA open p", ev=EVF, pair=PAIR, path="odds.open.p")}</span></div>
-<div class="kv"><span>Odds API latest {o["close"]["t"][:10]}</span><span>{esc(last(an))} {R(o["close"]["ma"], "ml", "ev", "OA close ML a", ev=EVF, pair=PAIR, path="odds.close.ma")} · {esc(last(bn))} {R(o["close"]["mb"], "ml", "ev", "OA close ML b", ev=EVF, pair=PAIR, path="odds.close.mb")} · {R(o["close"]["p"], "pct1", "ev", "OA close p", ev=EVF, pair=PAIR, path="odds.close.p")}</span></div>
-<div class="kv"><span>Drift</span><span>{R(mv, "pts", "oa_drift", "OA drift pts", ev=EVF, pair=PAIR)} pts toward {esc(an if mv >= 0 else bn)}</span></div>
-<div class="kv"><span>Best price (Odds API latest)</span><span>{esc(last(an))} {R(ba[0], "ml", "oa_best", "OA best a", ev=EVF, pair=PAIR, side="a")} {esc(BOOKS.get(ba[1], ba[1]))} · {esc(last(bn))} {R(bb[0], "ml", "oa_best", "OA best b", ev=EVF, pair=PAIR, side="b")} {esc(BOOKS.get(bb[1], bb[1]))}</span></div>'''
+        body += sparkline(o["series"]) + f'''<div class="kv"><span>Best US price</span><span>{esc(last(an))} {R(ba[0], "ml", "oa_best", "OA best a", ev=EVF, pair=PAIR, side="a")} {esc(BOOKS.get(ba[1], ba[1]))} · {esc(last(bn))} {R(bb[0], "ml", "oa_best", "OA best b", ev=EVF, pair=PAIR, side="b")} {esc(BOOKS.get(bb[1], bb[1]))}</span></div>'''
     else:
         gaps.append(f"Fight {n}: no Odds API line history (no odds block in the event file).")
     if bf:
         la, lb = bp_name(bf, an), bp_name(bf, bn); sa, sb = bp_sel(bf, "moneyline", la), bp_sel(bf, "moneyline", lb)
         body += f'<div class="kv"><span>BettingPros open → now</span><span>{esc(last(an))} {R(sa["opening_cost"], "ml", "bp", "BP open a (move)", market="moneyline", label=la, field="opening_cost")} → {R(sa["books"]["consensus"]["cost"], "ml", "bp", "BP now a (move)", market="moneyline", label=la, field="cost")} · {esc(last(bn))} {R(sb["opening_cost"], "ml", "bp", "BP open b (move)", market="moneyline", label=lb, field="opening_cost")} → {R(sb["books"]["consensus"]["cost"], "ml", "bp", "BP now b (move)", market="moneyline", label=lb, field="cost")}</span></div>'
     if o:
-        body += f'<div class="note">Chart: Odds API no-vig consensus for {esc(an)}, {R(len(o["series"]), "int", "oa_len", "Chart points", ev=EVF, pair=PAIR)} points from {R(o["n"], "int", "ev", "Snapshots", ev=EVF, pair=PAIR, path="odds.n")} snapshots, last {o["close"]["t"][:16].replace("T"," ")} UTC. BettingPros row is newer ({esc(bp_t)}).</div>'
+        pass   # Block 59: chart caption dropped
     else:
-        body += '<div class="note">No Odds API history for this bout, so no chart; BettingPros open → now only.</div>'
-    secs.append(sec("move", "Line movement", "open → now", body, True))
+        pass
+    secs.append(sec("move", "Line movement", "open → now", body))
 
     # ---------- props detail (BettingPros fight-level markets) ----------
     body = ""
@@ -341,7 +367,7 @@ def build(names, outname):
         trow("Strike defence", ga["dfn"], gb["dfn"], "pct0", "stat", "hi", key="dfn"), trow("Takedowns /15", ga["td15"], gb["td15"], "n2", "stat", "hi", key="td15"),
         trow("TD defence", ga["tdd"], gb["tdd"], "pct0", "stat", "hi", key="tdd"), trow("Control time", ga["ctrlp"], gb["ctrlp"], "pct0", "stat", "hi", key="ctrlp")])
     small = [F["name"] for F, g_ in [(FA, ga), (FB, gb)] if g_["n"] <= 3]
-    secs.append(sec("stats", "Fighter stats", "UFC only, before this fight", f'<div class="tape"><div class="row hdr"><div class="a">{esc(last(an))}</div><div class="k"></div><div class="b">{esc(last(bn))}</div></div>{tape}</div><div class="note">Green = better side. UFCStats rows before {EVL["date"]}.{(" THIN SAMPLE: " + esc(" and ".join(small)) + " (3 or fewer UFC fights).") if small else ""}</div>'))
+    secs.insert(0, sec("stats", "Tale of the tape", "UFC only, before this fight", f'<div class="tape"><div class="row hdr"><div class="a">{esc(an)}</div><div class="k vs">VS</div><div class="b">{esc(bn)}</div></div>{tape}</div>', True))
 
     # ---------- recent form ----------
     def t5(F, Lf, sd):
@@ -356,18 +382,8 @@ def build(names, outname):
         return f'<div class="col"><div class="cn">{esc(F["name"])} <span class="chips">{chips}</span></div><table class="t ft"><thead><tr><th class="l">When</th><th class="l">Result</th><th class="l">How</th><th>Fig</th><th>Close</th></tr></thead><tbody>{"".join(rw)}</tbody></table></div>'
     secs.append(sec("form", "Recent form", "last 5 UFC", f'<div class="ftw">{t5(FA, pa_, "a")}{t5(FB, pb_, "b")}</div>'))
 
-    # ---------- notes ----------
-    ps = []
-    if pf and bf:
-        la, lb = bp_name(bf, an), bp_name(bf, bn)
-        s, s2 = bp_sel(bf, "moneyline", la), bp_sel(bf, "moneyline", lb)
-        nv = imp(s["books"]["consensus"]["cost"]) / (imp(s["books"]["consensus"]["cost"]) + imp(s2["books"]["consensus"]["cost"]))
-        ps.append(f'Sean\'s sheet has {esc(an)} at {R(pwin("a"), "pct1", "pub_win", "Sheet % (note)", side="a")}, {R(pwin("a") - nv, "pts", "gap_pub_bp", "Sheet vs BP gap", side="a", market="moneyline", label=la, other=lb)} pts {"above" if pwin("a") > nv else "below"} the de-vigged market. Sheet flag: “{esc(pf["sheet"]["flag"])}”, rec “{esc(pf["sheet"]["rec"])}”.')
-    cav = ["Timestamps differ by source: sheet export, BettingPros file and Odds API were pulled at different times (shown on each block).",
-           "Markov sim, Form Line and other model numbers are not shown in embeds (THIN SAMPLE runs, e.g. this card's Markov favourites, are artifacts)."]
-    if bf: cav.append("BettingPros <code>no_vig_pct</code> fields do not sum to 100%, so the card de-vigs consensus prices itself.")
-    if small: cav.append("THIN SAMPLE: " + esc(", ".join(small)) + " (3 or fewer UFC fights before this card).")
-    secs.append(sec("notes", "Notes &amp; data caveats", "read before using", "".join(f"<p>{x}</p>" for x in ps) + "<ul>" + "".join(f"<li>{x}</li>" for x in cav) + "</ul>"))
+    # ---------- notes: dropped (Block 59) ----------
+    pass   # Block 59: notes and caveats section dropped
 
     nav = '<nav class="ffnav">' + "".join(f'<a href="#{i}">{t}</a>' for i, t in [("odds", "Odds"), ("move", "Movement"), ("props", "Props"), ("stats", "Stats"), ("form", "Form"), ("notes", "Notes")]) + "</nav>"
     page = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light only">
@@ -414,6 +430,18 @@ table.t td{{padding:6px;text-align:right;border-bottom:1px solid var(--border);v
 .ft td,.ft th{{font-size:11.5px;padding:4px 5px}}
 #notes p{{font-size:12.5px;margin:4px 0 8px}}#notes li{{font-size:12px;margin:3px 0;color:var(--text-muted)}}
 .foot{{padding:10px 16px;background:var(--bg-muted);font-size:10.5px;color:var(--text-muted);border-top:1px solid var(--border)}}
+/* Block 59: middle-ground layout (dark header kept; old embed's tape and dark section bars; edge chips; win bar) */
+.legend{{font-size:10.5px;color:var(--text-muted);margin:6px 2px 10px}}
+.pvm .edge{{display:inline-block;margin-top:3px;font:800 10.5px/1 "SF Mono",Menlo,monospace;padding:3px 5px;border-radius:4px}}
+.pvm .edge.pos{{background:var(--pos-soft);color:var(--pos-strong)}}.pvm .edge.neg{{background:var(--neg-soft);color:var(--neg-strong)}}.pvm .edge.flat{{color:var(--text-muted)}}
+.wb{{margin:2px 0 12px}}.wb-head{{display:flex;justify-content:space-between;font-weight:800;font-size:12px;margin-bottom:4px}}.wb-t{{font-size:9.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--text-muted);align-self:center}}
+.wb-row{{display:grid;grid-template-columns:54px 1fr;align-items:center;gap:8px;margin:4px 0}}.wb-l{{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--text-muted)}}
+.wb-bar{{display:flex;height:22px;border-radius:4px;overflow:hidden;gap:2px}}.wb-bar i{{display:flex;align-items:center;font-style:normal;min-width:44px}}
+.wb-bar b{{font:800 11px/1 "SF Mono",Menlo,monospace;color:#fff;padding:0 7px}}.wb-bar .wbb{{justify-content:flex-end}}
+.wb-bar.s .wa{{background:#0e1116}}.wb-bar.s .wbb{{background:#6b6b6b}}.wb-bar.m .wa{{background:var(--action-green-dark)}}.wb-bar.m .wbb{{background:#9bd8b4}}.wb-bar.m .wbb b{{color:#0a3d20}}
+.tape .row.hdr{{background:var(--header-bg);color:#fff;font-size:13px}}.tape .row.hdr .vs{{background:var(--action-green);color:#fff;font-weight:900;letter-spacing:1px}}
+.tape .edge{{background:var(--pos-soft)}}
+.fp-thin{{font-size:10px;font-weight:800;line-height:1;letter-spacing:.6px;padding:4px 6px;border-radius:3px;background:#fff3cd;color:#7a5a00;margin-left:6px}}
 /* Action Network badge stays visible at every width (the site widget hides it under 440 px; the embed keeps it) */
 @media (max-width:600px){{.ff-brand{{position:static;display:flex;justify-content:center;margin-bottom:6px}}.ff-header{{padding:12px 12px 10px}}.ff-title{{font-size:17px}}}}
 @media (max-width:440px){{.ff-header{{padding:9px 8px 8px}}.ff-brand{{display:flex!important;margin-bottom:5px}}.ff-title{{font-size:14px}}.ff-subtitle{{font-size:10px}}
@@ -423,9 +451,8 @@ table.t td{{padding:6px;text-align:right;border-bottom:1px solid var(--border);v
 details.collapsible>summary{{padding:8px 10px;font-size:10px}}details.collapsible>summary .meta{{display:none}}details.collapsible>.body{{padding:10px}}
 table.t{{font-size:11.5px}}table.t td,table.t th{{padding:5px 3px}}.kv{{font-size:11.5px;flex-wrap:wrap}}.tape .row{{font-size:12px}}.tape .k{{font-size:9.5px}}}}
 </style></head><body><div class="ff">
-{head}</div>{nav}{top}<div class="secs">{"".join(secs)}</div>
-<div class="foot"><b>Fight Form</b> · Fight {n} of {NB}: fights are numbered by bout order on the card (1 = first early prelim, {NB} = main event), per the UFC.com order{CANC}. Sources: UFC Model sheet ({"Publish to site export" if proj_src == "publish" else "site build pull" if proj_src else "no projection"}), BettingPros, The Odds API, UFCStats. Not betting advice.</div></div>
-<script>/* open a collapsed section when its nav chip is used */document.querySelectorAll('.ffnav a').forEach(function(a){{a.addEventListener('click',function(){{var d=document.querySelector(a.getAttribute('href'));if(d&&d.tagName==='DETAILS')d.open=true;}});}});</script>
+{head}</div>{top}<div class="secs">{"".join(secs)}</div>
+<div class="foot"><b>Fight Form</b> by @SeanZerillo</div></div>
 </body></html>'''
     (OUT / outname).write_text(page)
     reg = dict(fight=n, of=NB, site_pair=PAIR, pair=[an, bn], file=outname, event=EVF, proj_src=proj_src, proj_file=PUBF if pf else (EVF if EM else None),

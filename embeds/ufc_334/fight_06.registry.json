@@ -151,16 +151,17 @@
   },
   {
    "id": "v11",
-   "text": "+175",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-4.3",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "moneyline",
-    "label": "Jim Miller",
-    "field": "opening_cost"
+    "of": [
+     "v8",
+     "v10"
+    ]
    },
-   "desc": "BP ML open Jim Miller",
-   "raw": 175
+   "desc": "Edge v8-v10",
+   "raw": -0.04311687826779287
   },
   {
    "id": "v12",
@@ -212,16 +213,17 @@
   },
   {
    "id": "v16",
-   "text": "-230",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "+4.3",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "moneyline",
-    "label": "Terrance Mckinney",
-    "field": "opening_cost"
+    "of": [
+     "v13",
+     "v15"
+    ]
    },
-   "desc": "BP ML open Terrance McKinney",
-   "raw": -230
+   "desc": "Edge v13-v15",
+   "raw": 0.04311687826779298
   },
   {
    "id": "v17",
@@ -478,130 +480,68 @@
   },
   {
    "id": "v38",
-   "text": "+700",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "+10.0",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
+    "of": [
+     "v34",
+     "v37"
+    ]
    },
-   "desc": "BP GTD yes open",
-   "raw": 700
+   "desc": "Edge GTD",
+   "raw": 0.09959393334563386
   },
   {
    "id": "v39",
-   "text": "+180",
-   "fmt": "ml",
-   "rule": "ev",
+   "text": "32.3%",
+   "fmt": "pct1",
+   "rule": "pub_win",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jim Miller",
-     "Terrance McKinney"
-    ],
-    "path": "odds.open.ma"
+    "side": "a"
    },
-   "desc": "OA open ML a",
-   "raw": 180
+   "desc": "Bar Sean % a",
+   "raw": 0.3227367802687925
   },
   {
    "id": "v40",
-   "text": "-217",
-   "fmt": "ml",
-   "rule": "ev",
+   "text": "67.7%",
+   "fmt": "pct1",
+   "rule": "pub_win",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jim Miller",
-     "Terrance McKinney"
-    ],
-    "path": "odds.open.mb"
+    "side": "b"
    },
-   "desc": "OA open ML b",
-   "raw": -217
+   "desc": "Bar Sean % b",
+   "raw": 0.6772632197312075
   },
   {
    "id": "v41",
-   "text": "34.2%",
+   "text": "36.6%",
    "fmt": "pct1",
-   "rule": "ev",
+   "rule": "bp_nv",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jim Miller",
-     "Terrance McKinney"
-    ],
-    "path": "odds.open.p"
+    "market": "moneyline",
+    "label": "Jim Miller",
+    "other": "Terrance Mckinney"
    },
-   "desc": "OA open p",
-   "raw": 0.3423
+   "desc": "Bar BP no-vig a",
+   "raw": 0.36585365853658536
   },
   {
    "id": "v42",
-   "text": "+164",
-   "fmt": "ml",
-   "rule": "ev",
+   "text": "63.4%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
    "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jim Miller",
-     "Terrance McKinney"
-    ],
-    "path": "odds.close.ma"
+    "market": "moneyline",
+    "label": "Terrance Mckinney",
+    "other": "Jim Miller"
    },
-   "desc": "OA close ML a",
-   "raw": 164
+   "desc": "Bar BP no-vig b",
+   "raw": 0.6341463414634146
   },
   {
    "id": "v43",
-   "text": "-200",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jim Miller",
-     "Terrance McKinney"
-    ],
-    "path": "odds.close.mb"
-   },
-   "desc": "OA close ML b",
-   "raw": -200
-  },
-  {
-   "id": "v44",
-   "text": "36.1%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jim Miller",
-     "Terrance McKinney"
-    ],
-    "path": "odds.close.p"
-   },
-   "desc": "OA close p",
-   "raw": 0.361
-  },
-  {
-   "id": "v45",
-   "text": "1.9",
-   "fmt": "pts",
-   "rule": "oa_drift",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jim Miller",
-     "Terrance McKinney"
-    ]
-   },
-   "desc": "OA drift pts",
-   "raw": 0.018699999999999994
-  },
-  {
-   "id": "v46",
    "text": "+180",
    "fmt": "ml",
    "rule": "oa_best",
@@ -617,7 +557,7 @@
    "raw": 180
   },
   {
-   "id": "v47",
+   "id": "v44",
    "text": "-196",
    "fmt": "ml",
    "rule": "oa_best",
@@ -633,7 +573,7 @@
    "raw": -196
   },
   {
-   "id": "v48",
+   "id": "v45",
    "text": "+175",
    "fmt": "ml",
    "rule": "bp",
@@ -646,7 +586,7 @@
    "raw": 175
   },
   {
-   "id": "v49",
+   "id": "v46",
    "text": "+160",
    "fmt": "ml",
    "rule": "bp",
@@ -659,7 +599,7 @@
    "raw": 160
   },
   {
-   "id": "v50",
+   "id": "v47",
    "text": "-230",
    "fmt": "ml",
    "rule": "bp",
@@ -672,7 +612,7 @@
    "raw": -230
   },
   {
-   "id": "v51",
+   "id": "v48",
    "text": "-200",
    "fmt": "ml",
    "rule": "bp",
@@ -685,38 +625,7 @@
    "raw": -200
   },
   {
-   "id": "v52",
-   "text": "140",
-   "fmt": "int",
-   "rule": "oa_len",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jim Miller",
-     "Terrance McKinney"
-    ]
-   },
-   "desc": "Chart points",
-   "raw": 140
-  },
-  {
-   "id": "v53",
-   "text": "448",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "pair": [
-     "Jim Miller",
-     "Terrance McKinney"
-    ],
-    "path": "odds.n"
-   },
-   "desc": "Snapshots",
-   "raw": 448
-  },
-  {
-   "id": "v54",
+   "id": "v49",
    "text": "-120",
    "fmt": "ml",
    "rule": "bp",
@@ -729,7 +638,7 @@
    "raw": -120
   },
   {
-   "id": "v55",
+   "id": "v50",
    "text": "-110",
    "fmt": "ml",
    "rule": "bp",
@@ -742,7 +651,7 @@
    "raw": -110
   },
   {
-   "id": "v56",
+   "id": "v51",
    "text": "52%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -754,7 +663,7 @@
    "raw": 0.5238095238095238
   },
   {
-   "id": "v57",
+   "id": "v52",
    "text": "-103",
    "fmt": "ml",
    "rule": "bp",
@@ -767,7 +676,7 @@
    "raw": -103
   },
   {
-   "id": "v58",
+   "id": "v53",
    "text": "+100",
    "fmt": "ml",
    "rule": "bp",
@@ -780,7 +689,7 @@
    "raw": 100
   },
   {
-   "id": "v59",
+   "id": "v54",
    "text": "50%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -792,7 +701,7 @@
    "raw": 0.5
   },
   {
-   "id": "v60",
+   "id": "v55",
    "text": "+750",
    "fmt": "ml",
    "rule": "bp",
@@ -805,7 +714,7 @@
    "raw": 750
   },
   {
-   "id": "v61",
+   "id": "v56",
    "text": "+900",
    "fmt": "ml",
    "rule": "bp",
@@ -818,7 +727,7 @@
    "raw": 900
   },
   {
-   "id": "v62",
+   "id": "v57",
    "text": "10%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -830,7 +739,7 @@
    "raw": 0.1
   },
   {
-   "id": "v63",
+   "id": "v58",
    "text": "+700",
    "fmt": "ml",
    "rule": "bp",
@@ -843,7 +752,7 @@
    "raw": 700
   },
   {
-   "id": "v64",
+   "id": "v59",
    "text": "+847",
    "fmt": "ml",
    "rule": "bp",
@@ -856,7 +765,7 @@
    "raw": 847
   },
   {
-   "id": "v65",
+   "id": "v60",
    "text": "11%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -868,7 +777,7 @@
    "raw": 0.10559662090813093
   },
   {
-   "id": "v66",
+   "id": "v61",
    "text": "-1667",
    "fmt": "ml",
    "rule": "bp",
@@ -881,7 +790,7 @@
    "raw": -1667
   },
   {
-   "id": "v67",
+   "id": "v62",
    "text": "-2000",
    "fmt": "ml",
    "rule": "bp",
@@ -894,7 +803,7 @@
    "raw": -2000
   },
   {
-   "id": "v68",
+   "id": "v63",
    "text": "95%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -906,7 +815,7 @@
    "raw": 0.9523809523809523
   },
   {
-   "id": "v69",
+   "id": "v64",
    "text": "1.5",
    "fmt": "str",
    "rule": "bp",
@@ -919,7 +828,7 @@
    "raw": 1.5
   },
   {
-   "id": "v70",
+   "id": "v65",
    "text": "+300",
    "fmt": "ml",
    "rule": "bp",
@@ -932,7 +841,7 @@
    "raw": 300
   },
   {
-   "id": "v71",
+   "id": "v66",
    "text": "+280",
    "fmt": "ml",
    "rule": "bp",
@@ -945,7 +854,7 @@
    "raw": 280
   },
   {
-   "id": "v72",
+   "id": "v67",
    "text": "26%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -957,7 +866,7 @@
    "raw": 0.2631578947368421
   },
   {
-   "id": "v73",
+   "id": "v68",
    "text": "1.5",
    "fmt": "str",
    "rule": "bp",
@@ -970,7 +879,7 @@
    "raw": 1.5
   },
   {
-   "id": "v74",
+   "id": "v69",
    "text": "-425",
    "fmt": "ml",
    "rule": "bp",
@@ -983,7 +892,7 @@
    "raw": -425
   },
   {
-   "id": "v75",
+   "id": "v70",
    "text": "-400",
    "fmt": "ml",
    "rule": "bp",
@@ -996,7 +905,7 @@
    "raw": -400
   },
   {
-   "id": "v76",
+   "id": "v71",
    "text": "80%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1008,7 +917,7 @@
    "raw": 0.8
   },
   {
-   "id": "v77",
+   "id": "v72",
    "text": "43.2",
    "fmt": "n1",
    "rule": "age",
@@ -1019,7 +928,7 @@
    "raw": 43.20876112251882
   },
   {
-   "id": "v78",
+   "id": "v73",
    "text": "32.2",
    "fmt": "n1",
    "rule": "age",
@@ -1030,7 +939,7 @@
    "raw": 32.16427104722793
   },
   {
-   "id": "v79",
+   "id": "v74",
    "text": "71\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1041,7 +950,7 @@
    "raw": 71
   },
   {
-   "id": "v80",
+   "id": "v75",
    "text": "73\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1052,7 +961,7 @@
    "raw": 73
   },
   {
-   "id": "v81",
+   "id": "v76",
    "text": "5'8\"",
    "fmt": "str",
    "rule": "bio",
@@ -1064,7 +973,7 @@
    "raw": "5'8\""
   },
   {
-   "id": "v82",
+   "id": "v77",
    "text": "5'10\"",
    "fmt": "str",
    "rule": "bio",
@@ -1076,7 +985,7 @@
    "raw": "5'10\""
   },
   {
-   "id": "v83",
+   "id": "v78",
    "text": "Southpaw",
    "fmt": "str",
    "rule": "bio",
@@ -1088,7 +997,7 @@
    "raw": "Southpaw"
   },
   {
-   "id": "v84",
+   "id": "v79",
    "text": "Switch",
    "fmt": "str",
    "rule": "bio",
@@ -1100,7 +1009,7 @@
    "raw": "Switch"
   },
   {
-   "id": "v85",
+   "id": "v80",
    "text": "47",
    "fmt": "int",
    "rule": "nfights",
@@ -1111,7 +1020,7 @@
    "raw": 47
   },
   {
-   "id": "v86",
+   "id": "v81",
    "text": "14",
    "fmt": "int",
    "rule": "nfights",
@@ -1122,7 +1031,7 @@
    "raw": 14
   },
   {
-   "id": "v87",
+   "id": "v82",
    "text": "2.92",
    "fmt": "n2",
    "rule": "stat",
@@ -1134,7 +1043,7 @@
    "raw": 2.9186444419913897
   },
   {
-   "id": "v88",
+   "id": "v83",
    "text": "7.95",
    "fmt": "n2",
    "rule": "stat",
@@ -1146,7 +1055,7 @@
    "raw": 7.953555878084179
   },
   {
-   "id": "v89",
+   "id": "v84",
    "text": "3.43",
    "fmt": "n2",
    "rule": "stat",
@@ -1158,7 +1067,7 @@
    "raw": 3.430842256319682
   },
   {
-   "id": "v90",
+   "id": "v85",
    "text": "4.76",
    "fmt": "n2",
    "rule": "stat",
@@ -1170,7 +1079,7 @@
    "raw": 4.760522496371553
   },
   {
-   "id": "v91",
+   "id": "v86",
    "text": "-0.51",
    "fmt": "s2",
    "rule": "stat",
@@ -1182,7 +1091,7 @@
    "raw": -0.5121978143282924
   },
   {
-   "id": "v92",
+   "id": "v87",
    "text": "+3.19",
    "fmt": "s2",
    "rule": "stat",
@@ -1194,7 +1103,7 @@
    "raw": 3.1930333817126266
   },
   {
-   "id": "v93",
+   "id": "v88",
    "text": "42%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1206,7 +1115,7 @@
    "raw": 0.42142174051641695
   },
   {
-   "id": "v94",
+   "id": "v89",
    "text": "56%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1218,7 +1127,7 @@
    "raw": 0.5580448065173116
   },
   {
-   "id": "v95",
+   "id": "v90",
    "text": "57%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1230,7 +1139,7 @@
    "raw": 0.5674923462287782
   },
   {
-   "id": "v96",
+   "id": "v91",
    "text": "42%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1242,7 +1151,7 @@
    "raw": 0.41637010676156583
   },
   {
-   "id": "v97",
+   "id": "v92",
    "text": "1.49",
    "fmt": "n2",
    "rule": "stat",
@@ -1254,7 +1163,7 @@
    "raw": 1.4902307097913678
   },
   {
-   "id": "v98",
+   "id": "v93",
    "text": "3.05",
    "fmt": "n2",
    "rule": "stat",
@@ -1266,7 +1175,7 @@
    "raw": 3.047895500725689
   },
   {
-   "id": "v99",
+   "id": "v94",
    "text": "48%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1278,7 +1187,7 @@
    "raw": 0.47619047619047616
   },
   {
-   "id": "v100",
+   "id": "v95",
    "text": "73%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1290,7 +1199,7 @@
    "raw": 0.7272727272727273
   },
   {
-   "id": "v101",
+   "id": "v96",
    "text": "21%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1302,7 +1211,7 @@
    "raw": 0.2079699746108842
   },
   {
-   "id": "v102",
+   "id": "v97",
    "text": "45%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1314,7 +1223,7 @@
    "raw": 0.4513788098693759
   },
   {
-   "id": "v103",
+   "id": "v98",
    "text": "81",
    "fmt": "r0",
    "rule": "fight",
@@ -1327,7 +1236,7 @@
    "raw": 80.6
   },
   {
-   "id": "v104",
+   "id": "v99",
    "text": "+219",
    "fmt": "ml",
    "rule": "fight",
@@ -1340,7 +1249,7 @@
    "raw": 219
   },
   {
-   "id": "v105",
+   "id": "v100",
    "text": "32",
    "fmt": "r0",
    "rule": "fight",
@@ -1353,7 +1262,7 @@
    "raw": 31.8
   },
   {
-   "id": "v106",
+   "id": "v101",
    "text": "+550",
    "fmt": "ml",
    "rule": "fight",
@@ -1366,7 +1275,7 @@
    "raw": 550
   },
   {
-   "id": "v107",
+   "id": "v102",
    "text": "65",
    "fmt": "r0",
    "rule": "fight",
@@ -1379,7 +1288,7 @@
    "raw": 65.0
   },
   {
-   "id": "v108",
+   "id": "v103",
    "text": "+195",
    "fmt": "ml",
    "rule": "fight",
@@ -1392,7 +1301,7 @@
    "raw": 195
   },
   {
-   "id": "v109",
+   "id": "v104",
    "text": "23",
    "fmt": "r0",
    "rule": "fight",
@@ -1405,7 +1314,7 @@
    "raw": 22.9
   },
   {
-   "id": "v110",
+   "id": "v105",
    "text": "+154",
    "fmt": "ml",
    "rule": "fight",
@@ -1418,7 +1327,7 @@
    "raw": 154
   },
   {
-   "id": "v111",
+   "id": "v106",
    "text": "84",
    "fmt": "r0",
    "rule": "fight",
@@ -1431,7 +1340,7 @@
    "raw": 84.0
   },
   {
-   "id": "v112",
+   "id": "v107",
    "text": "-149",
    "fmt": "ml",
    "rule": "fight",
@@ -1444,7 +1353,7 @@
    "raw": -149
   },
   {
-   "id": "v113",
+   "id": "v108",
    "text": "50",
    "fmt": "r0",
    "rule": "fight",
@@ -1457,7 +1366,7 @@
    "raw": 50.5
   },
   {
-   "id": "v114",
+   "id": "v109",
    "text": "-109",
    "fmt": "ml",
    "rule": "fight",
@@ -1470,7 +1379,7 @@
    "raw": -109
   },
   {
-   "id": "v115",
+   "id": "v110",
    "text": "104",
    "fmt": "r0",
    "rule": "fight",
@@ -1483,7 +1392,7 @@
    "raw": 103.5
   },
   {
-   "id": "v116",
+   "id": "v111",
    "text": "-185",
    "fmt": "ml",
    "rule": "fight",
@@ -1496,7 +1405,7 @@
    "raw": -185
   },
   {
-   "id": "v117",
+   "id": "v112",
    "text": "7",
    "fmt": "r0",
    "rule": "fight",
@@ -1509,7 +1418,7 @@
    "raw": 6.8
   },
   {
-   "id": "v118",
+   "id": "v113",
    "text": "-106",
    "fmt": "ml",
    "rule": "fight",
@@ -1522,7 +1431,7 @@
    "raw": -106
   },
   {
-   "id": "v119",
+   "id": "v114",
    "text": "94",
    "fmt": "r0",
    "rule": "fight",
@@ -1535,7 +1444,7 @@
    "raw": 93.6
   },
   {
-   "id": "v120",
+   "id": "v115",
    "text": "-167",
    "fmt": "ml",
    "rule": "fight",
@@ -1548,7 +1457,7 @@
    "raw": -167
   },
   {
-   "id": "v121",
+   "id": "v116",
    "text": "95",
    "fmt": "r0",
    "rule": "fight",
@@ -1561,7 +1470,7 @@
    "raw": 95.3
   },
   {
-   "id": "v122",
+   "id": "v117",
    "text": "-588",
    "fmt": "ml",
    "rule": "fight",
@@ -1572,31 +1481,6 @@
    },
    "desc": "Close Terrance McKinney Damir Hadzovic",
    "raw": -588
-  },
-  {
-   "id": "v123",
-   "text": "32.3%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sheet % (note)",
-   "raw": 0.3227367802687925
-  },
-  {
-   "id": "v124",
-   "text": "4.3",
-   "fmt": "pts",
-   "rule": "gap_pub_bp",
-   "args": {
-    "side": "a",
-    "market": "moneyline",
-    "label": "Jim Miller",
-    "other": "Terrance Mckinney"
-   },
-   "desc": "Sheet vs BP gap",
-   "raw": -0.04311687826779287
   }
  ],
  "gaps": [

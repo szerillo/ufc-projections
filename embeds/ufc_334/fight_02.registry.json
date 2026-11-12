@@ -119,16 +119,17 @@
   },
   {
    "id": "v9",
-   "text": "+270",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "-0.1",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "moneyline",
-    "label": "Alateng Heili",
-    "field": "opening_cost"
+    "of": [
+     "v6",
+     "v8"
+    ]
    },
-   "desc": "BP ML open Alatengheili",
-   "raw": 270
+   "desc": "Edge v6-v8",
+   "raw": -0.0006074162332123656
   },
   {
    "id": "v10",
@@ -180,16 +181,17 @@
   },
   {
    "id": "v14",
-   "text": "-350",
-   "fmt": "ml",
-   "rule": "bp",
+   "text": "+0.1",
+   "fmt": "sp",
+   "rule": "edge",
    "args": {
-    "market": "moneyline",
-    "label": "Juan Diaz",
-    "field": "opening_cost"
+    "of": [
+     "v11",
+     "v13"
+    ]
    },
-   "desc": "BP ML open Juan Diaz",
-   "raw": -350
+   "desc": "Edge v11-v13",
+   "raw": 0.0006074162332123656
   },
   {
    "id": "v15",
@@ -407,6 +409,54 @@
   },
   {
    "id": "v33",
+   "text": "25.2%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Bar Sean % a",
+   "raw": 0.25242084756221156
+  },
+  {
+   "id": "v34",
+   "text": "74.8%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Bar Sean % b",
+   "raw": 0.7475791524377884
+  },
+  {
+   "id": "v35",
+   "text": "25.3%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "moneyline",
+    "label": "Alateng Heili",
+    "other": "Juan Diaz"
+   },
+   "desc": "Bar BP no-vig a",
+   "raw": 0.2530282637954239
+  },
+  {
+   "id": "v36",
+   "text": "74.7%",
+   "fmt": "pct1",
+   "rule": "bp_nv",
+   "args": {
+    "market": "moneyline",
+    "label": "Juan Diaz",
+    "other": "Alateng Heili"
+   },
+   "desc": "Bar BP no-vig b",
+   "raw": 0.746971736204576
+  },
+  {
+   "id": "v37",
    "text": "+270",
    "fmt": "ml",
    "rule": "bp",
@@ -419,7 +469,7 @@
    "raw": 270
   },
   {
-   "id": "v34",
+   "id": "v38",
    "text": "+275",
    "fmt": "ml",
    "rule": "bp",
@@ -432,7 +482,7 @@
    "raw": 275
   },
   {
-   "id": "v35",
+   "id": "v39",
    "text": "-350",
    "fmt": "ml",
    "rule": "bp",
@@ -445,7 +495,7 @@
    "raw": -350
   },
   {
-   "id": "v36",
+   "id": "v40",
    "text": "-370",
    "fmt": "ml",
    "rule": "bp",
@@ -458,7 +508,7 @@
    "raw": -370
   },
   {
-   "id": "v37",
+   "id": "v41",
    "text": "-270",
    "fmt": "ml",
    "rule": "bp",
@@ -471,7 +521,7 @@
    "raw": -270
   },
   {
-   "id": "v38",
+   "id": "v42",
    "text": "-257",
    "fmt": "ml",
    "rule": "bp",
@@ -484,7 +534,7 @@
    "raw": -257
   },
   {
-   "id": "v39",
+   "id": "v43",
    "text": "72%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -496,7 +546,7 @@
    "raw": 0.7198879551820728
   },
   {
-   "id": "v40",
+   "id": "v44",
    "text": "-270",
    "fmt": "ml",
    "rule": "bp",
@@ -509,7 +559,7 @@
    "raw": -270
   },
   {
-   "id": "v41",
+   "id": "v45",
    "text": "-257",
    "fmt": "ml",
    "rule": "bp",
@@ -522,7 +572,7 @@
    "raw": -257
   },
   {
-   "id": "v42",
+   "id": "v46",
    "text": "72%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -534,7 +584,7 @@
    "raw": 0.7198879551820728
   },
   {
-   "id": "v43",
+   "id": "v47",
    "text": "-257",
    "fmt": "ml",
    "rule": "bp",
@@ -547,7 +597,7 @@
    "raw": -257
   },
   {
-   "id": "v44",
+   "id": "v48",
    "text": "-257",
    "fmt": "ml",
    "rule": "bp",
@@ -560,7 +610,7 @@
    "raw": -257
   },
   {
-   "id": "v45",
+   "id": "v49",
    "text": "72%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -572,7 +622,7 @@
    "raw": 0.7198879551820728
   },
   {
-   "id": "v46",
+   "id": "v50",
    "text": "-4900",
    "fmt": "ml",
    "rule": "bp",
@@ -585,7 +635,7 @@
    "raw": -4900
   },
   {
-   "id": "v47",
+   "id": "v51",
    "text": "-3233",
    "fmt": "ml",
    "rule": "bp",
@@ -598,7 +648,7 @@
    "raw": -3233
   },
   {
-   "id": "v48",
+   "id": "v52",
    "text": "97%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -610,7 +660,7 @@
    "raw": 0.96999699969997
   },
   {
-   "id": "v49",
+   "id": "v53",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -623,7 +673,7 @@
    "raw": 2.5
   },
   {
-   "id": "v50",
+   "id": "v54",
    "text": "-166",
    "fmt": "ml",
    "rule": "bp",
@@ -636,7 +686,7 @@
    "raw": -166
   },
   {
-   "id": "v51",
+   "id": "v55",
    "text": "-188",
    "fmt": "ml",
    "rule": "bp",
@@ -649,7 +699,7 @@
    "raw": -188
   },
   {
-   "id": "v52",
+   "id": "v56",
    "text": "65%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -661,7 +711,7 @@
    "raw": 0.6527777777777778
   },
   {
-   "id": "v53",
+   "id": "v57",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -674,7 +724,7 @@
    "raw": 2.5
   },
   {
-   "id": "v54",
+   "id": "v58",
    "text": "+130",
    "fmt": "ml",
    "rule": "bp",
@@ -687,7 +737,7 @@
    "raw": 130
   },
   {
-   "id": "v55",
+   "id": "v59",
    "text": "+145",
    "fmt": "ml",
    "rule": "bp",
@@ -700,7 +750,7 @@
    "raw": 145
   },
   {
-   "id": "v56",
+   "id": "v60",
    "text": "41%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -712,7 +762,7 @@
    "raw": 0.40816326530612246
   },
   {
-   "id": "v57",
+   "id": "v61",
    "text": "34.9",
    "fmt": "n1",
    "rule": "age",
@@ -723,7 +773,7 @@
    "raw": 34.91854893908282
   },
   {
-   "id": "v58",
+   "id": "v62",
    "text": "28.4",
    "fmt": "n1",
    "rule": "age",
@@ -734,7 +784,7 @@
    "raw": 28.449007529089666
   },
   {
-   "id": "v59",
+   "id": "v63",
    "text": "66\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -745,7 +795,7 @@
    "raw": 66
   },
   {
-   "id": "v60",
+   "id": "v64",
    "text": "5'5\"",
    "fmt": "str",
    "rule": "bio",
@@ -757,7 +807,7 @@
    "raw": "5'5\""
   },
   {
-   "id": "v61",
+   "id": "v65",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -769,7 +819,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v62",
+   "id": "v66",
    "text": "10",
    "fmt": "int",
    "rule": "nfights",
@@ -780,7 +830,7 @@
    "raw": 10
   },
   {
-   "id": "v63",
+   "id": "v67",
    "text": "1",
    "fmt": "int",
    "rule": "nfights",
@@ -791,7 +841,7 @@
    "raw": 1
   },
   {
-   "id": "v64",
+   "id": "v68",
    "text": "2.71",
    "fmt": "n2",
    "rule": "stat",
@@ -803,7 +853,7 @@
    "raw": 2.710200073646741
   },
   {
-   "id": "v65",
+   "id": "v69",
    "text": "1.42",
    "fmt": "n2",
    "rule": "stat",
@@ -815,7 +865,7 @@
    "raw": 1.4233576642335768
   },
   {
-   "id": "v66",
+   "id": "v70",
    "text": "4.96",
    "fmt": "n2",
    "rule": "stat",
@@ -827,7 +877,7 @@
    "raw": 4.963790352276912
   },
   {
-   "id": "v67",
+   "id": "v71",
    "text": "1.64",
    "fmt": "n2",
    "rule": "stat",
@@ -839,7 +889,7 @@
    "raw": 1.6423357664233578
   },
   {
-   "id": "v68",
+   "id": "v72",
    "text": "-2.25",
    "fmt": "s2",
    "rule": "stat",
@@ -851,7 +901,7 @@
    "raw": -2.2535902786301705
   },
   {
-   "id": "v69",
+   "id": "v73",
    "text": "-0.22",
    "fmt": "s2",
    "rule": "stat",
@@ -863,7 +913,7 @@
    "raw": -0.21897810218978103
   },
   {
-   "id": "v70",
+   "id": "v74",
    "text": "32%",
    "fmt": "pct0",
    "rule": "stat",
@@ -875,7 +925,7 @@
    "raw": 0.3188908145580589
   },
   {
-   "id": "v71",
+   "id": "v75",
    "text": "52%",
    "fmt": "pct0",
    "rule": "stat",
@@ -887,7 +937,7 @@
    "raw": 0.52
   },
   {
-   "id": "v72",
+   "id": "v76",
    "text": "57%",
    "fmt": "pct0",
    "rule": "stat",
@@ -899,7 +949,7 @@
    "raw": 0.5651612903225807
   },
   {
-   "id": "v73",
+   "id": "v77",
    "text": "55%",
    "fmt": "pct0",
    "rule": "stat",
@@ -911,7 +961,7 @@
    "raw": 0.5454545454545454
   },
   {
-   "id": "v74",
+   "id": "v78",
    "text": "1.88",
    "fmt": "n2",
    "rule": "stat",
@@ -923,7 +973,7 @@
    "raw": 1.8779918988584754
   },
   {
-   "id": "v75",
+   "id": "v79",
    "text": "8.21",
    "fmt": "n2",
    "rule": "stat",
@@ -935,7 +985,7 @@
    "raw": 8.211678832116789
   },
   {
-   "id": "v76",
+   "id": "v80",
    "text": "75%",
    "fmt": "pct0",
    "rule": "stat",
@@ -947,7 +997,7 @@
    "raw": 0.75
   },
   {
-   "id": "v77",
+   "id": "v81",
    "text": "16%",
    "fmt": "pct0",
    "rule": "stat",
@@ -959,7 +1009,7 @@
    "raw": 0.15564011292500307
   },
   {
-   "id": "v78",
+   "id": "v82",
    "text": "42%",
    "fmt": "pct0",
    "rule": "stat",
@@ -971,7 +1021,7 @@
    "raw": 0.41605839416058393
   },
   {
-   "id": "v79",
+   "id": "v83",
    "text": "38",
    "fmt": "r0",
    "rule": "fight",
@@ -984,7 +1034,7 @@
    "raw": 37.6
   },
   {
-   "id": "v80",
+   "id": "v84",
    "text": "24",
    "fmt": "r0",
    "rule": "fight",
@@ -997,7 +1047,7 @@
    "raw": 24.3
   },
   {
-   "id": "v81",
+   "id": "v85",
    "text": "63",
    "fmt": "r0",
    "rule": "fight",
@@ -1010,7 +1060,7 @@
    "raw": 63.1
   },
   {
-   "id": "v82",
+   "id": "v86",
    "text": "28",
    "fmt": "r0",
    "rule": "fight",
@@ -1023,7 +1073,7 @@
    "raw": 28.0
   },
   {
-   "id": "v83",
+   "id": "v87",
    "text": "77",
    "fmt": "r0",
    "rule": "fight",
@@ -1036,7 +1086,7 @@
    "raw": 77.1
   },
   {
-   "id": "v84",
+   "id": "v88",
    "text": "94",
    "fmt": "r0",
    "rule": "fight",
@@ -1049,7 +1099,7 @@
    "raw": 94.0
   },
   {
-   "id": "v85",
+   "id": "v89",
    "text": "+193",
    "fmt": "ml",
    "rule": "fight",
@@ -1060,31 +1110,6 @@
    },
    "desc": "Close Juan Diaz Malcolm Wellmaker",
    "raw": 193
-  },
-  {
-   "id": "v86",
-   "text": "25.2%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sheet % (note)",
-   "raw": 0.25242084756221156
-  },
-  {
-   "id": "v87",
-   "text": "0.1",
-   "fmt": "pts",
-   "rule": "gap_pub_bp",
-   "args": {
-    "side": "a",
-    "market": "moneyline",
-    "label": "Alateng Heili",
-    "other": "Juan Diaz"
-   },
-   "desc": "Sheet vs BP gap",
-   "raw": -0.0006074162332123656
   }
  ],
  "gaps": [
