@@ -42,38 +42,32 @@ Sheet: Site > Publish to site
    didn't match and the site kept the last good file. Fix the sheet and publish again.
 5. Re-publish any time (price moves, new Markov run). Unticking a fight and re-publishing removes it from the page.
 
-## Go-live checklist (Friday morning, about 10 minutes, in order)
+## Friday script (UFC 334 go-live, in this order)
 
-Already done on the branch (Nov 11): it merges into main with no conflicts; the dry-run projections are off the live path,
-so after the merge the page says "Projections coming" until you publish; the name, crash and sheet-mirror tests pass.
+Already done (Nov 11): token, Script Property, `publishMenu` trigger and Publish checkboxes are set up (Kirk); the branch
+merges into main with no conflicts; the merge was rehearsed twice (13 s from merge to verified file).
+**The merge waits for Sean's go.** Fill in the time column as you go.
 
-| # | Min | Do | Proof it worked (check exactly this) |
-|---|---|---|---|
-| 1 | 1 | Open https://github.com/szerillo/ufc-projections/compare/main...publish-to-site > Create pull request > Merge pull request > Confirm. | Green "Able to merge" before you click. After: main's top commit is "Merge pull request ... publish-to-site". |
-| 2 | 1 | Wait one minute, open https://szerillo.github.io/ufc-projections/ufc_334_fight_form.html | Page loads; the status line under the title says **Projections coming**. Actions tab lists **Projections check** and **Roll back projections**. |
-| 3 | 2 | github.com > Settings > Developer settings > Fine-grained tokens > Generate. Repository access: Only select > `ufc-projections`. Permissions: Contents **Read and write**, nothing else. Copy it. | The token's page shows 1 repository and "Contents: Read and write" (GitHub adds "Metadata: Read" on its own; that's expected). |
-| 4 | 1 | UFC Model sheet > Extensions > Apps Script > Project Settings > Script Properties > Add: `GITHUB_TOKEN` = the token > Save. Nowhere else. | `GITHUB_TOKEN` is listed. The value shows in plain text to anyone with edit access to the script, so keep sheet edit access to you. |
-| 5 | 1 | Apps Script: Files + > Script > `publish_to_site` > paste `scripts/apps_script/publish_to_site.gs` > Save. Your call first: the `include` line at the top sets which sheet fields go public (rec, flag, method, markov, gtd; all on as shipped). | Saves with no red error; `publishMenu` is in the function dropdown. |
-| 6 | 1 | Triggers (clock) > Add Trigger: `publishMenu`, From spreadsheet, On open > Save > approve the Google prompt. Reload the sheet. | A **Site** menu sits next to **UFC**. |
-| 7 | 1 | Main Card and Prelims: `Publish` in AR1, AR2:AR11 > Insert > Checkbox. Tick one fight > Site > **Preview publish**. | The preview lists exactly that one fight. |
-| 8 | 1 | UFC > Refresh prices. Tick every fight you've checked > Site > **Publish to site** > slug `ufc_334` > OK. | Alert says **Uploaded**. Within a minute Actions > Projections check is green and main has a commit "projections: verified from sheet at ...". This is the first real use of your token. |
-| 9 | 1 | Reload the card page (step 2 link) and open one fight embed. | Status reads "Projections · N of 13 fights · updated X min ago" in green, no amber text. Pick one fight: the dog's True % equals Calculator column L for that row, and "Goes the distance" equals column Q on its Main Card / Prelims row. |
+| # | Who | Do | Proof it worked | Time (ET) |
+|---|---|---|---|---|
+| 0 | Kirk | Apps Script > `publish_to_site` > replace its contents with `scripts/apps_script/publish_to_site.gs` from the branch > Save. (It now also exports the method inputs and the price-load stamp; without them the check goes red.) | Saves with no red error; Site > Preview publish lists the ticked fights. | |
+| 1 | Kirk | UFC > **Refresh prices**. | Feed!F1 ("Loaded") shows the current time. | |
+| 2 | Kirk | Site > **Publish to site**, slug `ufc_334`, every Main Card and Prelims fight ticked. Do steps 3-4 within 3 hours of step 1. | Alert says **Uploaded**; main's top commit is "Publish ufc_334 projections from sheet (13 fights)". | |
+| 3 | Kirk, on Sean's go | https://github.com/szerillo/ufc-projections/compare/main...publish-to-site > Create pull request > **Merge pull request** > Confirm. | "Able to merge" before the click; main's top commit is the merge. | |
+| 4 | automatic | **Projections check** starts by itself (the merge brings the workflow to main). | Actions: green within about 20 s; main gets "projections: verified from sheet at ...". Not started in 2 min: Actions > Projections check > Run workflow (main). | |
+| 5 | automatic | Pages deploys the verified file. | About 1 minute (median 46 s, max 68 s). | |
+| 6 | Kirk | Open https://szerillo.github.io/ufc-projections/ufc_334_fight_form.html and one fight embed. | Status **green**: "Projections · 13 of 13 fights · updated X min ago · prices loaded X min ago", no amber text, every panel filled. Spot check one fight: dog True % = Calculator L, "Goes the distance" = column Q. | |
+| 7 | Sean | Share the page (or not). | | |
 
-**After the merge** the Projections check starts by itself (the merge brings `projections.yml` to main, and that
-change now triggers it); it checks every pending file, including one published before the merge. Rehearsed Nov 11 on
-branch `merge-sim`: merge pushed 01:40:36Z, check started 01:40:40Z, verified file committed 01:40:47Z, run green at
-01:40:52Z; the site then needs one Pages deploy (median 46 s, max 68 s). If no green run shows within 2 minutes, run
-Actions > Projections check > Run workflow on main once.
+**No-go** (don't share the page) if any of these happen: the merge shows a conflict; no green Projections check within
+2 minutes even after one manual run; the check is red (the run summary names every number that didn't match; "prices
+were loaded X h ago" means repeat steps 1-2, which re-runs the check by itself now that it's on main); the page status is
+amber ("could not be read", "not on this card", "spelled differently", "over 12h old"); or the spot check disagrees with
+the sheet. If a bad file already went live: **Roll back projections** (below) and the page returns to "Projections coming".
 
-The check recomputes every True %, edge, flag and rec, but not the method split or the fight GTD (it has no copy of
-those sheet formulas). Step 9 checks one of each by hand: the dog's True % = Calculator column L, and the page's
-"Goes the distance" = that fight's Main Card / Prelims column Q.
-
-**No-go:** stop and don't share the page if any of these happen: step 1 shows a conflict; step 8's alert shows an error
-(401, 403 or 404 means the token or its repository access is wrong: redo step 3); the Projections check is red twice
-after a fresh publish; or step 9 shows amber ("could not be read", "not on this card", "over 12h old") or a True % that
-doesn't match the sheet. If a bad file already went live, run **Roll back projections** (below) and the page returns to
-"Projections coming". Nothing else on the site depends on this page.
+What the check covers now: every True %, edge, flag and rec, the method split (dec/KO/sub, both sides) and the fight GTD,
+recomputed from the file's own inputs within 0.1 pts, plus a price-load stamp no older than 3 hours at the time of the
+check (pre-registered Nov 11). The step 6 spot check stays as a second look, not as the only check.
 
 ## Saturday odds (the card-night loop)
 
