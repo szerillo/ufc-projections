@@ -45,10 +45,15 @@ The same holds on the full files (helpers = lines 171-190, grading = line 1093 t
    no changed values except the "graded" timestamps (Snapshots AY, PropSnap Q): those rows were hand-corrected Nov 11
    to what the fix computes. Anything else changing: restore the previous Code.gs from version history.
 
-## v2.9 candidate: refresh guard (Kirk round 29 A, Nov 12). NOT installed; v2.8 is the frozen Thursday install.
-`Code_v2.9_guard.gs` = v2.8 plus: a Refresh never clears a row whose bout is missing from ufc.com but still listed on
-BestFightOdds (any book, Polymarket included) or Novig; the row is kept exactly as it was and the alert says REFUSED. A drop in
-the ufc.com bout count against the last load is the alert's first line. A really cancelled bout that a price source still lists
-is removed with UFC > Remove a cancelled bout (last name, confirmed; one bout only). TRAP logic unchanged from v2.8.
-Tests: `node test_guard.js` (13/13 on v2.9); `node test_guard.js Code_v2.8_patched.gs` shows the Nov 12 bug (6/13).
-Install = replace Code.gs (as T2) with this file; rollback = paste Code_v2.8_patched.gs back.
+## v2.9: refresh guard (Kirk rounds 29-30, Nov 12). Install on Kirk's go, Thursday (PUBLISH.md T1-T5); sha256 c8d938d7...
+`Code_v2.9_guard.gs` = `Code_v2.8_patched.gs` (7200be8d) plus the refresh guard and nothing else (60 lines in, 8 changed;
+`python3 price_identity.py Code_v2.8_patched.gs Code_v2.9_guard.gs` shows every price/TRAP function and block byte-identical).
+- A Refresh never clears a row whose bout is missing from ufc.com but still listed on BestFightOdds (any book, Polymarket
+  included) or Novig: the row is kept exactly as it was, the alert says REFUSED.
+- A source that fails or comes back empty is "unknown", never "not listed": BestFightOdds unreachable = the refresh writes
+  nothing at all (v2.8 blanked every price); Novig unreachable = no row is cleared.
+- A drop in the ufc.com bout count against the last load (keyed on the ufc.com event URL) is the alert's first line.
+- UFC > Remove a cancelled bout: the typed name must match exactly one row (whole words) on Main Card + Prelims; a wrong or
+  shared name, or a bout still on ufc.com, removes nothing and says so.
+Tests: `node test_guard.js` -> 25/25 on v2.9; `node test_guard.js Code_v2.8_patched.gs` -> 5/25 (shows the Nov 12 clear).
+Rollback: paste Code_v2.8_patched.gs (keeps the TRAP rule) or Code_v2.7_installed.gs (full revert), then Refresh prices.

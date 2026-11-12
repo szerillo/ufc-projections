@@ -1,8 +1,10 @@
 /**
- * PATCH loader-guard (Kirk round 28 A, v2.9 candidate on top of v2.8): a refresh never clears a row whose bout is missing from
+ * PATCH loader-guard (Kirk rounds 29-30, v2.9 on top of v2.8): a refresh never clears a row whose bout is missing from
  *   ufc.com but still listed on BestFightOdds (any book, Polymarket included) or Novig; it keeps the row as it was and warns.
  *   A drop in the ufc.com bout count against the last load is the first line of the alert. Removing a really cancelled bout
- *   that a price source still lists takes UFC > Remove a cancelled bout (named, confirmed).
+ *   that a price source still lists takes UFC > Remove a cancelled bout (named, confirmed; the name must match exactly one row on the card).
+ *   A source that fails or returns nothing is never read as "not listed": BestFightOdds unreachable = the whole refresh
+ *   writes nothing; Novig unreachable = no row is cleared. The bout-count memory is keyed on the ufc.com event URL.
  * PATCH loader-patch Block 47: TRAP outlier prices excluded from D/I (best price); AH marks them 'excluded from D/I'.
  * UFC Model — card loader (Apps Script)  v2.7  Nov 5 2026 (Snapshots archive the method layer: your AD-AJ inputs, model shares, model vs market joint method probs, 6-way method Brier)
  * v2.6.1  Oct 28 2026 (warns when ufc.com shows <6 main for a Fight Night; accepts a tab named 'Card Order')
@@ -132,15 +134,24 @@ function removeCancelledMenu() {   // loader-guard: the deliberate override for 
   if (ui.alert('Remove a cancelled bout', 'Clear the row for the bout with "' + r.getResponseText().trim() + '" if ufc.com no longer lists it? Hand inputs on that row are cleared too.', ui.ButtonSet.YES_NO) !== ui.Button.YES) return;
   loadCard_(ev, { writeNames: false, forceOpen: false, allowRemove: [r.getResponseText().trim()] });
 }
-var HELD_ROW_ = { held: true };   // loader-guard: a row kept exactly as it was (bout missing from ufc.com, still priced elsewhere)
+var HELD_ROW_ = { held: true }, NOVIG_DOWN_ = false;   // loader-guard: a row kept exactly as it was (bout missing from ufc.com, still priced elsewhere)
 function extSource_(card, n1, n2) {   // which price sources still list this pair ('' = none)
   var src = [];
   ((card && card.ext) || []).forEach(function (e) { if (((nameScore_(n1, e.a) && nameScore_(n2, e.b)) || (nameScore_(n1, e.b) && nameScore_(n2, e.a))) && src.indexOf(e.src) < 0) src.push(e.src); });
   return src.join(', ');
 }
-function allowedRemove_(opt, n1, n2) { return (opt.allowRemove || []).some(function (x) { var k = normTxt_(x); return normTxt_(n1).indexOf(k) >= 0 || normTxt_(n2).indexOf(k) >= 0; }); }
+function resolveRemove_(ss, opt) {   // the override names ONE bout: the name must match exactly one row (whole words) on Main Card + Prelims
+  opt.removeRow = null; if (!opt.allowRemove || !opt.allowRemove.length) return;
+  var k = normTxt_(opt.allowRemove[0]), hits = [];
+  [['Main Card', MAIN_ROWS], ['Prelims', PRE_ROWS]].forEach(function (t) { var sh = ss.getSheetByName(t[0]); if (!sh) return; var v = sh.getRange(t[1][0], 2, t[1][1] - t[1][0] + 1, 2).getValues();
+    v.forEach(function (r, i) { if (k.trim() && (normTxt_(r[0]).indexOf(k) >= 0 || normTxt_(r[1]).indexOf(k) >= 0)) hits.push(t[0] + '#' + (t[1][0] + i)); }); });
+  if (hits.length === 1) opt.removeRow = hits[0];
+  else WARN.unshift('!!! Remove a cancelled bout: "' + opt.allowRemove[0] + '" matches ' + hits.length + ' rows on this card (' + (hits.length ? 'shared name: ' + hits.join(', ') : 'no fighter by that name') + '). Nothing was removed; use the fighter\'s full name.');
+}
+function allowedRemove_(opt, sh, row) { return !!opt.removeRow && opt.removeRow === sh.getName() + '#' + row; }
 function countGuard_(card, opt) {   // loud warning when ufc.com lists fewer bouts than at the last load of this card
-  var P = PropertiesService.getDocumentProperties(), key = 'UFC_BOUTS_' + card.pk, prev = Number(P.getProperty(key) || 0), n = card.ufcCount;
+  var P = PropertiesService.getDocumentProperties(), key = 'UFC_BOUTS_' + String(card.url).replace(/[^A-Za-z0-9]+/g, '_'),   // keyed on the ufc.com event URL: the BFO page id (pk) changes when BFO splits a card or is down
+      prev = Number(P.getProperty(key) || 0), n = card.ufcCount;
   var msg = (prev && n < prev) ? '!!! ufc.com now lists ' + n + ' bouts for this card; the last load had ' + prev + '. ufc.com may be mid-edit: check every row below before publishing.' : '';
   return { msg: msg, save: function (refused) { if (!refused || opt.allowRemove) P.setProperty(key, String(n)); } };
 }
@@ -403,7 +414,7 @@ function novigEvents_() {
       }
       Object.keys(o).forEach(function (k) { walk(o[k]); }); })(j);
     return out;
-  } catch (e) { WARN.push('Novig events: ' + e.message); return []; }
+  } catch (e) { WARN.push('Novig events: ' + e.message); NOVIG_DOWN_ = true; return []; }
 }
 function novigMarkets_(eventId) {
   try {
@@ -602,7 +613,7 @@ function buildCard_(ev) {
   var cands;
   if (ev.bfo) cands = String(ev.bfo).split(',').map(function (p) { return { path: p.trim() }; }).filter(function (p) { return p.path; });
   else { var all = bfoCandidates_(evc.date); var near = all.filter(function (e) { return e.near; }); cands = near.length ? near : all.slice(0, 3); }
-  var best = { books: [], fights: [], path: '' }, paths = [], bookSeen = {};
+  var best = { books: [], fights: [], path: '' }, paths = [], bookSeen = {}, bfoErr_ = 0;   // loader-guard: bfoErr_
   for (var ci = 0; ci < cands.length; ci++) {
     try { var be = bfoEvent_(cands[ci].path); var hits = 0;
       evc.bouts.forEach(function (b) { be.fights.forEach(function (f) { if ((nameScore_(b.red, f.f1) && nameScore_(b.blue, f.f2)) || (nameScore_(b.red, f.f2) && nameScore_(b.blue, f.f1))) hits++; }); });
@@ -610,7 +621,7 @@ function buildCard_(ev) {
       paths.push(cands[ci].path);
       be.fights.forEach(function (f) { f.path = cands[ci].path; best.fights.push(f); });
       be.books.forEach(function (bk) { if (!bookSeen[bk]) { bookSeen[bk] = 1; best.books.push(bk); } });
-    } catch (e) { WARN.push('BFO ' + cands[ci].path + ': ' + e.message); }
+    } catch (e) { WARN.push('BFO ' + cands[ci].path + ': ' + e.message); bfoErr_++; }
   }
   best.path = paths.join(',');
   if (!paths.length) WARN.push('No BestFightOdds page matched this card — prices blank.');
@@ -623,8 +634,11 @@ function buildCard_(ev) {
   var ext = best.fights.map(function (x) { return { a: x.f1, b: x.f2, src: 'BestFightOdds' + (x.ml && x.ml.Polymarket ? ' (Polymarket too)' : '') }; });   // loader-guard
   var out = { ufcCount: evc.bouts.length, ext: ext, ordered: !!evc.ordered, name: evc.name, date: evc.date, pk: paths.length ? (paths[0].match(/-(\d+)$/) || ['', evc.url])[1] : evc.url, url: evc.url, bfo: best.path, fights: [] };
   var mainCount = 0;
-  var nvEvents = NOVIG_ON ? novigEvents_() : [], nvHit = 0;
+  NOVIG_DOWN_ = false; var nvEvents = NOVIG_ON ? novigEvents_() : [], nvHit = 0;
   nvEvents.forEach(function (e) { out.ext.push({ a: e.home, b: e.away, src: 'Novig' }); });   // loader-guard
+  out.srcDown = [];   // loader-guard: a source that failed or came back empty is unknown, never 'not listed'
+  if (bfoErr_ || !paths.length) out.srcDown.push('BestFightOdds');
+  if (NOVIG_ON && (NOVIG_DOWN_ || !nvEvents.length)) out.srcDown.push('Novig');
   evc.bouts.forEach(function (b, idx) {
     var f = null, fi = -1; for (var i = 0; i < best.fights.length; i++) { var x = best.fights[i]; if ((nameScore_(b.red, x.f1) && nameScore_(b.blue, x.f2)) || (nameScore_(b.red, x.f2) && nameScore_(b.blue, x.f1))) { f = x; fi = i; break; } }
     // Novig (v2.4): find the event by the two names, pull its markets, fold them in as book "Novig" (weight by volume)
@@ -716,7 +730,9 @@ function buildCard_(ev) {
 function loadCard_(ev, opt) {
   var ss = SpreadsheetApp.getActive(); syncLayout_(ss);
   WARN.length = 0;
-  var card = buildCard_(ev); var pk = card.pk; opt.card = card; var cg = countGuard_(card, opt); opt.refused = 0;   // loader-guard
+  var card = buildCard_(ev); var pk = card.pk; opt.card = card; opt.refused = 0;   // loader-guard
+  if (!opt.writeNames && card.srcDown.indexOf('BestFightOdds') >= 0) { SpreadsheetApp.getUi().alert('!!! REFUSED, source unreachable: BestFightOdds failed or returned no page for this card. Nothing was written; every row and price is as it was. Refresh again in a few minutes.' + (WARN.length ? '\n\n' + WARN.join('\n') : '')); return; }
+  var cg = countGuard_(card, opt); resolveRemove_(ss, opt);
   // New card (different event pk than the one on the sheet): wipe last card's hand inputs and take fresh openers.
   var feed = ss.getSheetByName('Feed'); var prevPk = feed ? String(feed.getRange('B2').getValue()) : '';
   var cleared = false;
@@ -757,6 +773,7 @@ function loadCard_(ev, opt) {
   writeFeed_(ss, card);
   var edgesHit = writeEdges_(ss, card);
   var noOdds = card.fights.filter(function (f) { return f.pDog == null; }).map(function (f) { return f.dog + ' vs ' + f.fav; });
+  if (opt.removeRow && !opt.removed) WARN.unshift('!!! Remove a cancelled bout: ' + opt.removeRow.replace('#', ' row ') + ' is still on ufc.com. Nothing was removed.');
   cg.save(opt.refused);
   var msg = (cg.msg ? cg.msg + '\n\n' : '') + card.name + ' (' + card.date + ') loaded: ' + main.length + ' main / ' + pre.length + ' prelim fights.' + (edgesHit ? ' Edges tab: ' + edgesHit + ' fighters priced.' : '');
   if (noOdds.length) msg += '\n\nNo moneyline posted yet for: ' + noOdds.join('; ') + ' (names written, prices blank — refresh later).';
@@ -811,7 +828,9 @@ function writeTab_(sh, fights, rows, opt) {
     var cur = sh.getRange(rows[0], 2, nRows, 2).getValues();
     for (var q = 0; q < nRows; q++) { var fq = slots[q];
       if (!fq) { var src_ = (String(cur[q][0] || '').trim() || String(cur[q][1] || '').trim()) ? extSource_(opt.card, cur[q][0], cur[q][1]) : '';
-        if (src_ && !allowedRemove_(opt, cur[q][0], cur[q][1])) { WARN.unshift('!!! ' + sh.getName() + ' row ' + (rows[0] + q) + ': ' + cur[q][0] + ' vs ' + cur[q][1] + ' is missing from ufc.com but still listed on ' + src_ + '. REFUSED to clear it: row kept exactly as it was, its prices were NOT refreshed. If the bout is really off, use UFC > Remove a cancelled bout.'); slots[q] = HELD_ROW_; opt.refused = (opt.refused || 0) + 1; continue; }
+        if (!src_ && (String(cur[q][0] || '').trim() || String(cur[q][1] || '').trim()) && opt.card && opt.card.srcDown.length) src_ = 'an unreachable source (' + opt.card.srcDown.join(', ') + ': failed or empty, so not known)';
+        if (allowedRemove_(opt, sh, rows[0] + q)) opt.removed = true;
+        if (src_ && !allowedRemove_(opt, sh, rows[0] + q)) { WARN.unshift('!!! ' + sh.getName() + ' row ' + (rows[0] + q) + ': ' + cur[q][0] + ' vs ' + cur[q][1] + ' is missing from ufc.com but still listed on ' + src_ + '. REFUSED to clear it: row kept exactly as it was, its prices were NOT refreshed. If the bout is really off, use UFC > Remove a cancelled bout.'); slots[q] = HELD_ROW_; opt.refused = (opt.refused || 0) + 1; continue; }
         if (String(cur[q][0] || '').trim() || String(cur[q][1] || '').trim()) { WARN.push(sh.getName() + ' row ' + (rows[0] + q) + ': ' + cur[q][0] + ' vs ' + cur[q][1] + ' is no longer on this tab (moved or cancelled) — names cleared.'); sh.getRange(rows[0] + q, 1, 1, 3).clearContent(); } continue; }
       if (!nameScore_(cur[q][0], fq.dog)) { WARN.push(sh.getName() + ' row ' + (rows[0] + q) + ': ' + cur[q][0] + ' -> ' + fq.dog + ' (booking/spelling change)'); sh.getRange(rows[0] + q, 2).setValue(fq.dog); }
       else if (String(cur[q][0]) !== fq.dog) sh.getRange(rows[0] + q, 2).setValue(fq.dog);
