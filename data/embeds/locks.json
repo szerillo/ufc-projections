@@ -1,7 +1,7 @@
 {
  "locks": {
   "ufc_334": {
-   "data/card_overrides.json": "b9e94ebacc4f65ae890e301239ec1e24efe8260f3c46e33d123ddc6d4d6e21b7",
+   "data/card_overrides.json": "c4a22bb387efbadaa3d2bb1a8ea863370cef7b3638406456626b3b7efcfd4964",
    "embed.html": "6521dbb86150d5ef1d39d26f33db38c619d3e264c89af401ef2c273fa0604837",
    "form/data/labs.json": "b34d8ad60920c6ab60b088bd28c1108c7b93d6d72aee8f1d60c83bfb236637e8",
    "form/data/index.json": "da6e09523edd7a3fd7fbd5a6999dd0ca43af743d27cbfdb76c5101249a371f00",
@@ -200,6 +200,18 @@
     "data/card_overrides.json": [
      "b0de30ebbdb9a239cf31f65381f81cb3b749d26118720b0a45064721ae66daf4",
      "b9e94ebacc4f65ae890e301239ec1e24efe8260f3c46e33d123ddc6d4d6e21b7"
+    ]
+   }
+  },
+  {
+   "at": "2026-11-12T15:13:15Z",
+   "who": "claude",
+   "slug": "ufc_334",
+   "reason": "Kirk round 16 A: ufc_334 five_rounds_sources (UFC.com + Tapology by eye), both list only the two title bouts",
+   "changed": {
+    "data/card_overrides.json": [
+     "b9e94ebacc4f65ae890e301239ec1e24efe8260f3c46e33d123ddc6d4d6e21b7",
+     "c4a22bb387efbadaa3d2bb1a8ea863370cef7b3638406456626b3b7efcfd4964"
     ]
    }
   }

@@ -688,7 +688,7 @@ def build(names, outname):
                 f'R{i_ + 1} ' + (R(v_, "r0", "em", f"Depth R{i_ + 1} mins {F_}", fighter=F_, path=f"rounds.{i_}.mins") if v_ is not None else "0") for i_, v_ in enumerate(ms_)) + " min")
         return (f'<div class="trend depth" data-part="depth"><div class="mvl">UFC minutes on record, by round</div>'
                 f'<svg viewBox="0 0 {W_} {H_}" role="img" aria-label="UFC minutes on record in rounds 1 to 3 for both fighters, against the 15-minute floor">{"".join(g_)}</svg>'
-                f'<div class="rt-n">{"<br>".join(legend_)}<br>The round-by-round trend chart needs 15+ UFC minutes in at least two rounds for both fighters. Faded bars are under the floor.</div></div>')
+                f'<div class="rt-n">{"<br>".join(legend_)}<br>UFC fights only; pre-UFC fights are not counted. The round-by-round trend chart needs 15+ UFC minutes in at least two rounds for both fighters. Faded bars are under the floor.</div></div>')
     tr_ = trend_svg()
     rounds_html = (tr_ or depth_svg()) + rounds_html
     champ = ""

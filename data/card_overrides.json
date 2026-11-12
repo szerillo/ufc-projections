@@ -9,7 +9,9 @@
       {"out": "Adrian Yanez", "in": "Alatengheili", "opp": "Juan Diaz"}
     ],
     "five_rounds": [],
-    "five_rounds_source": "UFC.com event page ufc-334, checked 2026-11-12 14:55 UTC: two title bouts (Gane-Hokit, Harrison-Nunes); UFC.com shows no round count for other bouts and labels none as five rounds. [] = checked, none.",
+    "five_rounds_sources": {"_doc": "Five-round bouts each source shows, any reason (title or not). check_rounds.py: all sources must agree, else UNVERIFIED (fails); the non-title, non-main ones must equal five_rounds.",
+      "UFC.com event page ufc-334, 2026-11-12 14:55 UTC (title bouts only; no round count printed for other bouts)": [["Ciryl Gane", "Josh Hokit"], ["Kayla Harrison", "Amanda Nunes"]],
+      "Tapology event 147320-ufc-334, read by eye 2026-11-12 15:20 UTC (5 x 5 on these two; 3 x 5 on the other 11)": [["Ciryl Gane", "Josh Hokit"], ["Kayla Harrison", "Amanda Nunes"]]},
     "title": [
       ["Ciryl Gane", "Josh Hokit"],
       ["Kayla Harrison", "Amanda Nunes"]

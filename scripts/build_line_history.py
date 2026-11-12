@@ -130,7 +130,12 @@ def main():
         lc = rec.get("listed") or {}
         print(f"{f['n']:>2} {an} vs {bn}: open {o and (o['t'][5:16], o['nb'], o['p'])} current {c and (c['t'][5:16], c['nb'], c['p'])} "
               f"listed {[ (sd, v['listed'], v['ok']) for sd, v in lc.items()]}")
-    p = Path(a.out or REPO / "data/embeds" / f"line_history_{a.slug}.json"); p.write_text(json.dumps(out, indent=1))
+    # Kirk round 16 call 2: this file is public once merged, so no non-US book is named in it; "books" lists keep the count
+    def mask(x):
+        if isinstance(x, dict): return {k: (["offshore" if b in OFF else b for b in v] if k == "books" and isinstance(v, list) else mask(v)) for k, v in x.items()}
+        if isinstance(x, list): return [mask(v) for v in x]
+        return x
+    p = Path(a.out or REPO / "data/embeds" / f"line_history_{a.slug}.json"); p.write_text(json.dumps(mask(out), indent=1))
     print("wrote", p)
 
 
