@@ -1785,6 +1785,30 @@
   },
   {
    "id": "v145",
+   "text": "+12.0%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.1204
+  },
+  {
+   "id": "v146",
+   "text": "+0.5%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.0046
+  },
+  {
+   "id": "v147",
    "text": "1%",
    "fmt": "pct0",
    "rule": "em",
@@ -1796,7 +1820,7 @@
    "raw": 0.0067
   },
   {
-   "id": "v146",
+   "id": "v148",
    "text": "10%",
    "fmt": "pct0",
    "rule": "em",
@@ -1808,7 +1832,7 @@
    "raw": 0.1002
   },
   {
-   "id": "v147",
+   "id": "v149",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1820,7 +1844,7 @@
    "raw": 0.0
   },
   {
-   "id": "v148",
+   "id": "v150",
    "text": "0.27",
    "fmt": "n2",
    "rule": "em",
@@ -1832,7 +1856,7 @@
    "raw": 0.272
   },
   {
-   "id": "v149",
+   "id": "v151",
    "text": "+2.68",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1848,7 +1872,7 @@
    "raw": 2.6790000000000003
   },
   {
-   "id": "v150",
+   "id": "v152",
    "text": "-0.63",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1864,7 +1888,7 @@
    "raw": -0.6339999999999999
   },
   {
-   "id": "v151",
+   "id": "v153",
    "text": "+2.57",
    "fmt": "s2",
    "rule": "em",
@@ -1876,7 +1900,7 @@
    "raw": 2.567
   },
   {
-   "id": "v152",
+   "id": "v154",
    "text": "-0.73",
    "fmt": "s2",
    "rule": "em",
@@ -1888,7 +1912,7 @@
    "raw": -0.728
   },
   {
-   "id": "v153",
+   "id": "v155",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1900,7 +1924,7 @@
    "raw": 1
   },
   {
-   "id": "v154",
+   "id": "v156",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1912,7 +1936,7 @@
    "raw": 1
   },
   {
-   "id": "v155",
+   "id": "v157",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1924,7 +1948,7 @@
    "raw": 1
   },
   {
-   "id": "v156",
+   "id": "v158",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1936,7 +1960,7 @@
    "raw": 5
   },
   {
-   "id": "v157",
+   "id": "v159",
    "text": "+1.47",
    "fmt": "s2",
    "rule": "em",
@@ -1948,7 +1972,7 @@
    "raw": 1.473
   },
   {
-   "id": "v158",
+   "id": "v160",
    "text": "+0.23",
    "fmt": "s2",
    "rule": "em",
@@ -1960,7 +1984,7 @@
    "raw": 0.235
   },
   {
-   "id": "v159",
+   "id": "v161",
    "text": "+0.94",
    "fmt": "s2",
    "rule": "em",
@@ -1972,7 +1996,7 @@
    "raw": 0.938
   },
   {
-   "id": "v160",
+   "id": "v162",
    "text": "-0.69",
    "fmt": "s2",
    "rule": "em",
@@ -1984,7 +2008,7 @@
    "raw": -0.688
   },
   {
-   "id": "v161",
+   "id": "v163",
    "text": "+0.27",
    "fmt": "s2",
    "rule": "em",
@@ -1996,7 +2020,7 @@
    "raw": 0.268
   },
   {
-   "id": "v162",
+   "id": "v164",
    "text": "-0.18",
    "fmt": "s2",
    "rule": "em",
@@ -2008,21 +2032,31 @@
    "raw": -0.181
   },
   {
-   "id": "v163",
-   "text": "66%",
+   "id": "v165",
+   "text": "63%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "hdef",
-    "slug": "luis-gurule"
+    "fighter": "Bilal Hasan",
+    "path": "hdef"
    },
-   "desc": "Head defence b",
-   "raw": 0.658
+   "desc": "Head defence a",
+   "raw": 0.6304
   },
   {
-   "id": "v164",
+   "id": "v166",
+   "text": "66%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.6585
+  },
+  {
+   "id": "v167",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -2034,7 +2068,7 @@
    "raw": 1
   },
   {
-   "id": "v165",
+   "id": "v168",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -2046,7 +2080,7 @@
    "raw": 1
   },
   {
-   "id": "v166",
+   "id": "v169",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2058,7 +2092,7 @@
    "raw": 2
   },
   {
-   "id": "v167",
+   "id": "v170",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -2070,7 +2104,7 @@
    "raw": 5
   },
   {
-   "id": "v168",
+   "id": "v171",
    "text": "211%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2084,47 +2118,67 @@
    "raw": 2.109
   },
   {
-   "id": "v169",
-   "text": "11.0",
+   "id": "v172",
+   "text": "7.5",
    "fmt": "n1",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "min",
-    "slug": "luis-gurule"
+    "fighter": "Bilal Hasan",
+    "path": "pace.min"
    },
-   "desc": "Avg fight, min b",
-   "raw": 11.0
+   "desc": "Avg fight, min a",
+   "raw": 7.467
   },
   {
-   "id": "v170",
+   "id": "v173",
+   "text": "11.0",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 11.043
+  },
+  {
+   "id": "v174",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v175",
    "text": "20%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "r1",
-    "slug": "luis-gurule"
+    "fighter": "Luis Gurule",
+    "path": "pace.r1"
    },
    "desc": "Finished in R1 b",
    "raw": 0.2
   },
   {
-   "id": "v171",
-   "text": "75%",
+   "id": "v176",
+   "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed by 10+ in round 1",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live 10+ wp",
-   "raw": 0.754
+   "desc": "Live 10+ owp",
+   "raw": 0.745
   },
   {
-   "id": "v172",
+   "id": "v177",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2136,7 +2190,19 @@
    "raw": 0.576
   },
   {
-   "id": "v173",
+   "id": "v178",
+   "text": "627",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed by 10+ in round 1",
+   "raw": 627
+  },
+  {
+   "id": "v179",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2148,7 +2214,7 @@
    "raw": 0.551
   },
   {
-   "id": "v174",
+   "id": "v180",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2160,19 +2226,31 @@
    "raw": 0.359
   },
   {
-   "id": "v175",
-   "text": "45%",
+   "id": "v181",
+   "text": "198",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_n"
+   },
+   "desc": "Live n dog_n Out-landed by 10+ in round 1",
+   "raw": 198
+  },
+  {
+   "id": "v182",
+   "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live ctrl wp",
-   "raw": 0.45
+   "desc": "Live ctrl owp",
+   "raw": 0.412
   },
   {
-   "id": "v176",
+   "id": "v183",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2184,7 +2262,19 @@
    "raw": 0.485
   },
   {
-   "id": "v177",
+   "id": "v184",
+   "text": "194",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
+   "raw": 194
+  },
+  {
+   "id": "v185",
    "text": "-526",
    "fmt": "ml",
    "rule": "fight",
@@ -2197,7 +2287,7 @@
    "raw": -526
   },
   {
-   "id": "v178",
+   "id": "v186",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -2210,7 +2300,7 @@
    "raw": 185
   },
   {
-   "id": "v179",
+   "id": "v187",
    "text": "-105",
    "fmt": "ml",
    "rule": "fight",
@@ -2223,7 +2313,7 @@
    "raw": -105
   },
   {
-   "id": "v180",
+   "id": "v188",
    "text": "+308",
    "fmt": "ml",
    "rule": "fight",
@@ -2236,7 +2326,7 @@
    "raw": 308
   },
   {
-   "id": "v181",
+   "id": "v189",
    "text": "-206",
    "fmt": "ml",
    "rule": "fight",
@@ -2249,7 +2339,7 @@
    "raw": -206
   },
   {
-   "id": "v182",
+   "id": "v190",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",

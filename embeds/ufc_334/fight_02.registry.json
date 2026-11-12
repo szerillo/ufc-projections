@@ -1508,6 +1508,30 @@
   },
   {
    "id": "v126",
+   "text": "+12.6%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.1262
+  },
+  {
+   "id": "v127",
+   "text": "+41.0%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.4099
+  },
+  {
+   "id": "v128",
    "text": "2%",
    "fmt": "pct0",
    "rule": "em",
@@ -1519,7 +1543,7 @@
    "raw": 0.0236
   },
   {
-   "id": "v127",
+   "id": "v129",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1531,7 +1555,7 @@
    "raw": 0.0
   },
   {
-   "id": "v128",
+   "id": "v130",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1543,7 +1567,7 @@
    "raw": 0.0
   },
   {
-   "id": "v129",
+   "id": "v131",
    "text": "1.64",
    "fmt": "n2",
    "rule": "em",
@@ -1555,7 +1579,7 @@
    "raw": 1.642
   },
   {
-   "id": "v130",
+   "id": "v132",
    "text": "-2.25",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1571,7 +1595,7 @@
    "raw": -2.254
   },
   {
-   "id": "v131",
+   "id": "v133",
    "text": "-0.22",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1587,7 +1611,7 @@
    "raw": -0.21900000000000003
   },
   {
-   "id": "v132",
+   "id": "v134",
    "text": "-2.30",
    "fmt": "s2",
    "rule": "em",
@@ -1599,7 +1623,7 @@
    "raw": -2.301
   },
   {
-   "id": "v133",
+   "id": "v135",
    "text": "-0.27",
    "fmt": "s2",
    "rule": "em",
@@ -1611,7 +1635,7 @@
    "raw": -0.27
   },
   {
-   "id": "v134",
+   "id": "v136",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1623,7 +1647,7 @@
    "raw": 2
   },
   {
-   "id": "v135",
+   "id": "v137",
    "text": "10",
    "fmt": "int",
    "rule": "em",
@@ -1635,7 +1659,7 @@
    "raw": 10
   },
   {
-   "id": "v136",
+   "id": "v138",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1647,7 +1671,7 @@
    "raw": 0
   },
   {
-   "id": "v137",
+   "id": "v139",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1659,7 +1683,7 @@
    "raw": 1
   },
   {
-   "id": "v138",
+   "id": "v140",
    "text": "-1.08",
    "fmt": "s2",
    "rule": "em",
@@ -1671,7 +1695,7 @@
    "raw": -1.083
   },
   {
-   "id": "v139",
+   "id": "v141",
    "text": "+0.00",
    "fmt": "s2",
    "rule": "em",
@@ -1683,7 +1707,7 @@
    "raw": 0.0
   },
   {
-   "id": "v140",
+   "id": "v142",
    "text": "-0.50",
    "fmt": "s2",
    "rule": "em",
@@ -1695,7 +1719,7 @@
    "raw": -0.501
   },
   {
-   "id": "v141",
+   "id": "v143",
    "text": "-0.66",
    "fmt": "s2",
    "rule": "em",
@@ -1707,7 +1731,7 @@
    "raw": -0.657
   },
   {
-   "id": "v142",
+   "id": "v144",
    "text": "-0.67",
    "fmt": "s2",
    "rule": "em",
@@ -1719,7 +1743,7 @@
    "raw": -0.67
   },
   {
-   "id": "v143",
+   "id": "v145",
    "text": "+0.44",
    "fmt": "s2",
    "rule": "em",
@@ -1731,21 +1755,31 @@
    "raw": 0.438
   },
   {
-   "id": "v144",
+   "id": "v146",
    "text": "65%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "hdef",
-    "slug": "alatengheili"
+    "fighter": "Alatengheili",
+    "path": "hdef"
    },
    "desc": "Head defence a",
-   "raw": 0.653
+   "raw": 0.6533
   },
   {
-   "id": "v145",
+   "id": "v147",
+   "text": "73%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.7273
+  },
+  {
+   "id": "v148",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -1757,7 +1791,7 @@
    "raw": 6
   },
   {
-   "id": "v146",
+   "id": "v149",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -1769,7 +1803,7 @@
    "raw": 7
   },
   {
-   "id": "v147",
+   "id": "v150",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1781,7 +1815,7 @@
    "raw": 1
   },
   {
-   "id": "v148",
+   "id": "v151",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1793,19 +1827,67 @@
    "raw": 1
   },
   {
-   "id": "v149",
-   "text": "75%",
+   "id": "v152",
+   "text": "13.4",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 13.42
+  },
+  {
+   "id": "v153",
+   "text": "9.1",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 9.133
+  },
+  {
+   "id": "v154",
+   "text": "11%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.1111
+  },
+  {
+   "id": "v155",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.0
+  },
+  {
+   "id": "v156",
+   "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed by 10+ in round 1",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live 10+ wp",
-   "raw": 0.754
+   "desc": "Live 10+ owp",
+   "raw": 0.745
   },
   {
-   "id": "v150",
+   "id": "v157",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1817,7 +1899,19 @@
    "raw": 0.576
   },
   {
-   "id": "v151",
+   "id": "v158",
+   "text": "627",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed by 10+ in round 1",
+   "raw": 627
+  },
+  {
+   "id": "v159",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1829,7 +1923,7 @@
    "raw": 0.551
   },
   {
-   "id": "v152",
+   "id": "v160",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1841,19 +1935,31 @@
    "raw": 0.359
   },
   {
-   "id": "v153",
-   "text": "45%",
+   "id": "v161",
+   "text": "198",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_n"
+   },
+   "desc": "Live n dog_n Out-landed by 10+ in round 1",
+   "raw": 198
+  },
+  {
+   "id": "v162",
+   "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live ctrl wp",
-   "raw": 0.45
+   "desc": "Live ctrl owp",
+   "raw": 0.412
   },
   {
-   "id": "v154",
+   "id": "v163",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1865,7 +1971,19 @@
    "raw": 0.485
   },
   {
-   "id": "v155",
+   "id": "v164",
+   "text": "194",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
+   "raw": 194
+  },
+  {
+   "id": "v165",
    "text": "+193",
    "fmt": "ml",
    "rule": "fight",

@@ -2468,6 +2468,30 @@
   },
   {
    "id": "v202",
+   "text": "+61.0%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.6098
+  },
+  {
+   "id": "v203",
+   "text": "+28.8%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.2877
+  },
+  {
+   "id": "v204",
    "text": "1%",
    "fmt": "pct0",
    "rule": "em",
@@ -2479,7 +2503,7 @@
    "raw": 0.0079
   },
   {
-   "id": "v203",
+   "id": "v205",
    "text": "6%",
    "fmt": "pct0",
    "rule": "em",
@@ -2491,7 +2515,7 @@
    "raw": 0.0646
   },
   {
-   "id": "v204",
+   "id": "v206",
    "text": "0.95",
    "fmt": "n2",
    "rule": "em",
@@ -2503,7 +2527,7 @@
    "raw": 0.946
   },
   {
-   "id": "v205",
+   "id": "v207",
    "text": "0.73",
    "fmt": "n2",
    "rule": "em",
@@ -2515,7 +2539,7 @@
    "raw": 0.734
   },
   {
-   "id": "v206",
+   "id": "v208",
    "text": "+3.18",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2531,7 +2555,7 @@
    "raw": 3.1849999999999996
   },
   {
-   "id": "v207",
+   "id": "v209",
    "text": "+2.10",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2547,7 +2571,7 @@
    "raw": 2.1
   },
   {
-   "id": "v208",
+   "id": "v210",
    "text": "+3.38",
    "fmt": "s2",
    "rule": "em",
@@ -2559,7 +2583,7 @@
    "raw": 3.379
   },
   {
-   "id": "v209",
+   "id": "v211",
    "text": "+2.19",
    "fmt": "s2",
    "rule": "em",
@@ -2571,7 +2595,7 @@
    "raw": 2.189
   },
   {
-   "id": "v210",
+   "id": "v212",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2583,7 +2607,7 @@
    "raw": 3
   },
   {
-   "id": "v211",
+   "id": "v213",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2595,7 +2619,7 @@
    "raw": 3
   },
   {
-   "id": "v212",
+   "id": "v214",
    "text": "16",
    "fmt": "int",
    "rule": "em",
@@ -2607,7 +2631,7 @@
    "raw": 16
   },
   {
-   "id": "v213",
+   "id": "v215",
    "text": "18",
    "fmt": "int",
    "rule": "em",
@@ -2619,7 +2643,7 @@
    "raw": 18
   },
   {
-   "id": "v214",
+   "id": "v216",
    "text": "+2.40",
    "fmt": "s2",
    "rule": "em",
@@ -2631,7 +2655,7 @@
    "raw": 2.397
   },
   {
-   "id": "v215",
+   "id": "v217",
    "text": "+1.42",
    "fmt": "s2",
    "rule": "em",
@@ -2643,7 +2667,7 @@
    "raw": 1.424
   },
   {
-   "id": "v216",
+   "id": "v218",
    "text": "+0.66",
    "fmt": "s2",
    "rule": "em",
@@ -2655,7 +2679,7 @@
    "raw": 0.662
   },
   {
-   "id": "v217",
+   "id": "v219",
    "text": "+0.25",
    "fmt": "s2",
    "rule": "em",
@@ -2667,7 +2691,7 @@
    "raw": 0.25
   },
   {
-   "id": "v218",
+   "id": "v220",
    "text": "+0.13",
    "fmt": "s2",
    "rule": "em",
@@ -2679,7 +2703,7 @@
    "raw": 0.126
   },
   {
-   "id": "v219",
+   "id": "v221",
    "text": "+0.43",
    "fmt": "s2",
    "rule": "em",
@@ -2691,7 +2715,31 @@
    "raw": 0.426
   },
   {
-   "id": "v220",
+   "id": "v222",
+   "text": "72%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.7237
+  },
+  {
+   "id": "v223",
+   "text": "66%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.6623
+  },
+  {
+   "id": "v224",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2703,7 +2751,7 @@
    "raw": 3
   },
   {
-   "id": "v221",
+   "id": "v225",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2715,7 +2763,7 @@
    "raw": 3
   },
   {
-   "id": "v222",
+   "id": "v226",
    "text": "10",
    "fmt": "int",
    "rule": "em",
@@ -2727,7 +2775,7 @@
    "raw": 10
   },
   {
-   "id": "v223",
+   "id": "v227",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -2739,7 +2787,7 @@
    "raw": 11
   },
   {
-   "id": "v224",
+   "id": "v228",
    "text": "71%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2753,75 +2801,67 @@
    "raw": 0.712
   },
   {
-   "id": "v225",
+   "id": "v229",
    "text": "10.6",
    "fmt": "n1",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "min",
-    "slug": "kayla-harrison"
+    "fighter": "Kayla Harrison",
+    "path": "pace.min"
    },
    "desc": "Avg fight, min a",
-   "raw": 10.6
+   "raw": 10.567
   },
   {
-   "id": "v226",
+   "id": "v230",
    "text": "11.4",
    "fmt": "n1",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "min",
-    "slug": "amanda-nunes"
+    "fighter": "Amanda Nunes",
+    "path": "pace.min"
    },
    "desc": "Avg fight, min b",
-   "raw": 11.4
+   "raw": 11.356
   },
   {
-   "id": "v227",
+   "id": "v231",
    "text": "0%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "r1",
-    "slug": "kayla-harrison"
+    "fighter": "Kayla Harrison",
+    "path": "pace.r1"
    },
    "desc": "Finished in R1 a",
    "raw": 0.0
   },
   {
-   "id": "v228",
+   "id": "v232",
    "text": "50%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "r1",
-    "slug": "amanda-nunes"
+    "fighter": "Amanda Nunes",
+    "path": "pace.r1"
    },
    "desc": "Finished in R1 b",
    "raw": 0.5
   },
   {
-   "id": "v229",
-   "text": "75%",
+   "id": "v233",
+   "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed by 10+ in round 1",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live 10+ wp",
-   "raw": 0.754
+   "desc": "Live 10+ owp",
+   "raw": 0.745
   },
   {
-   "id": "v230",
+   "id": "v234",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2833,7 +2873,19 @@
    "raw": 0.576
   },
   {
-   "id": "v231",
+   "id": "v235",
+   "text": "627",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed by 10+ in round 1",
+   "raw": 627
+  },
+  {
+   "id": "v236",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2845,7 +2897,7 @@
    "raw": 0.551
   },
   {
-   "id": "v232",
+   "id": "v237",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2857,19 +2909,31 @@
    "raw": 0.359
   },
   {
-   "id": "v233",
-   "text": "45%",
+   "id": "v238",
+   "text": "198",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_n"
+   },
+   "desc": "Live n dog_n Out-landed by 10+ in round 1",
+   "raw": 198
+  },
+  {
+   "id": "v239",
+   "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live ctrl wp",
-   "raw": 0.45
+   "desc": "Live ctrl owp",
+   "raw": 0.412
   },
   {
-   "id": "v234",
+   "id": "v240",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2881,7 +2945,19 @@
    "raw": 0.485
   },
   {
-   "id": "v235",
+   "id": "v241",
+   "text": "194",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
+   "raw": 194
+  },
+  {
+   "id": "v242",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2894,7 +2970,7 @@
    "raw": -714
   },
   {
-   "id": "v236",
+   "id": "v243",
    "text": "-1111",
    "fmt": "ml",
    "rule": "fight",
@@ -2907,7 +2983,7 @@
    "raw": -1111
   },
   {
-   "id": "v237",
+   "id": "v244",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -2920,7 +2996,7 @@
    "raw": -455
   },
   {
-   "id": "v238",
+   "id": "v245",
    "text": "-312",
    "fmt": "ml",
    "rule": "fight",
@@ -2933,7 +3009,7 @@
    "raw": -312
   },
   {
-   "id": "v239",
+   "id": "v246",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",

@@ -2528,6 +2528,30 @@
   },
   {
    "id": "v207",
+   "text": "+22.2%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.2217
+  },
+  {
+   "id": "v208",
+   "text": "-14.3%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": -0.1431
+  },
+  {
+   "id": "v209",
    "text": "12%",
    "fmt": "pct0",
    "rule": "em",
@@ -2539,7 +2563,7 @@
    "raw": 0.1194
   },
   {
-   "id": "v208",
+   "id": "v210",
    "text": "32%",
    "fmt": "pct0",
    "rule": "em",
@@ -2551,7 +2575,7 @@
    "raw": 0.3203
   },
   {
-   "id": "v209",
+   "id": "v211",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -2563,7 +2587,7 @@
    "raw": 0.0
   },
   {
-   "id": "v210",
+   "id": "v212",
    "text": "0.84",
    "fmt": "n2",
    "rule": "em",
@@ -2575,7 +2599,7 @@
    "raw": 0.836
   },
   {
-   "id": "v211",
+   "id": "v213",
    "text": "+1.46",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2591,7 +2615,7 @@
    "raw": 1.459
   },
   {
-   "id": "v212",
+   "id": "v214",
    "text": "+1.11",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2607,7 +2631,7 @@
    "raw": 1.1059999999999999
   },
   {
-   "id": "v213",
+   "id": "v215",
    "text": "+1.48",
    "fmt": "s2",
    "rule": "em",
@@ -2619,7 +2643,7 @@
    "raw": 1.483
   },
   {
-   "id": "v214",
+   "id": "v216",
    "text": "+1.19",
    "fmt": "s2",
    "rule": "em",
@@ -2631,7 +2655,7 @@
    "raw": 1.186
   },
   {
-   "id": "v215",
+   "id": "v217",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -2643,7 +2667,7 @@
    "raw": 11
   },
   {
-   "id": "v216",
+   "id": "v218",
    "text": "18",
    "fmt": "int",
    "rule": "em",
@@ -2655,7 +2679,7 @@
    "raw": 18
   },
   {
-   "id": "v217",
+   "id": "v219",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -2667,7 +2691,7 @@
    "raw": 9
   },
   {
-   "id": "v218",
+   "id": "v220",
    "text": "10",
    "fmt": "int",
    "rule": "em",
@@ -2679,7 +2703,7 @@
    "raw": 10
   },
   {
-   "id": "v219",
+   "id": "v221",
    "text": "+1.30",
    "fmt": "s2",
    "rule": "em",
@@ -2691,7 +2715,7 @@
    "raw": 1.3
   },
   {
-   "id": "v220",
+   "id": "v222",
    "text": "-0.16",
    "fmt": "s2",
    "rule": "em",
@@ -2703,7 +2727,7 @@
    "raw": -0.158
   },
   {
-   "id": "v221",
+   "id": "v223",
    "text": "+0.07",
    "fmt": "s2",
    "rule": "em",
@@ -2715,7 +2739,7 @@
    "raw": 0.074
   },
   {
-   "id": "v222",
+   "id": "v224",
    "text": "+0.60",
    "fmt": "s2",
    "rule": "em",
@@ -2727,7 +2751,7 @@
    "raw": 0.604
   },
   {
-   "id": "v223",
+   "id": "v225",
    "text": "+0.09",
    "fmt": "s2",
    "rule": "em",
@@ -2739,7 +2763,7 @@
    "raw": 0.085
   },
   {
-   "id": "v224",
+   "id": "v226",
    "text": "+0.66",
    "fmt": "s2",
    "rule": "em",
@@ -2751,35 +2775,31 @@
    "raw": 0.66
   },
   {
-   "id": "v225",
+   "id": "v227",
    "text": "63%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "hdef",
-    "slug": "jared-gordon"
+    "fighter": "Jared Gordon",
+    "path": "hdef"
    },
    "desc": "Head defence a",
-   "raw": 0.627
+   "raw": 0.6273
   },
   {
-   "id": "v226",
+   "id": "v228",
    "text": "58%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "hdef",
-    "slug": "melquizael-costa"
+    "fighter": "Melquizael Costa",
+    "path": "hdef"
    },
    "desc": "Head defence b",
-   "raw": 0.584
+   "raw": 0.5839
   },
   {
-   "id": "v227",
+   "id": "v229",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -2791,7 +2811,7 @@
    "raw": 11
   },
   {
-   "id": "v228",
+   "id": "v230",
    "text": "15",
    "fmt": "int",
    "rule": "em",
@@ -2803,7 +2823,7 @@
    "raw": 15
   },
   {
-   "id": "v229",
+   "id": "v231",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2815,7 +2835,7 @@
    "raw": 2
   },
   {
-   "id": "v230",
+   "id": "v232",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -2827,7 +2847,7 @@
    "raw": 9
   },
   {
-   "id": "v231",
+   "id": "v233",
    "text": "130%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2841,7 +2861,7 @@
    "raw": 1.298
   },
   {
-   "id": "v232",
+   "id": "v234",
    "text": "103%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2855,75 +2875,67 @@
    "raw": 1.028
   },
   {
-   "id": "v233",
+   "id": "v235",
    "text": "10.8",
    "fmt": "n1",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "min",
-    "slug": "jared-gordon"
+    "fighter": "Jared Gordon",
+    "path": "pace.min"
    },
    "desc": "Avg fight, min a",
-   "raw": 10.8
-  },
-  {
-   "id": "v234",
-   "text": "10.8",
-   "fmt": "n1",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "min",
-    "slug": "melquizael-costa"
-   },
-   "desc": "Avg fight, min b",
-   "raw": 10.8
-  },
-  {
-   "id": "v235",
-   "text": "29%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "r1",
-    "slug": "jared-gordon"
-   },
-   "desc": "Finished in R1 a",
-   "raw": 0.294
+   "raw": 10.817
   },
   {
    "id": "v236",
+   "text": "10.8",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 10.76
+  },
+  {
+   "id": "v237",
+   "text": "29%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.2941
+  },
+  {
+   "id": "v238",
    "text": "30%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "r1",
-    "slug": "melquizael-costa"
+    "fighter": "Melquizael Costa",
+    "path": "pace.r1"
    },
    "desc": "Finished in R1 b",
    "raw": 0.3
   },
   {
-   "id": "v237",
-   "text": "75%",
+   "id": "v239",
+   "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed by 10+ in round 1",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live 10+ wp",
-   "raw": 0.754
+   "desc": "Live 10+ owp",
+   "raw": 0.745
   },
   {
-   "id": "v238",
+   "id": "v240",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2935,7 +2947,19 @@
    "raw": 0.576
   },
   {
-   "id": "v239",
+   "id": "v241",
+   "text": "627",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed by 10+ in round 1",
+   "raw": 627
+  },
+  {
+   "id": "v242",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2947,7 +2971,7 @@
    "raw": 0.551
   },
   {
-   "id": "v240",
+   "id": "v243",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2959,19 +2983,31 @@
    "raw": 0.359
   },
   {
-   "id": "v241",
-   "text": "45%",
+   "id": "v244",
+   "text": "198",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_n"
+   },
+   "desc": "Live n dog_n Out-landed by 10+ in round 1",
+   "raw": 198
+  },
+  {
+   "id": "v245",
+   "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live ctrl wp",
-   "raw": 0.45
+   "desc": "Live ctrl owp",
+   "raw": 0.412
   },
   {
-   "id": "v242",
+   "id": "v246",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2983,7 +3019,19 @@
    "raw": 0.485
   },
   {
-   "id": "v243",
+   "id": "v247",
+   "text": "194",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
+   "raw": 194
+  },
+  {
+   "id": "v248",
    "text": "+2.4",
    "fmt": "s1",
    "rule": "em",
@@ -2995,7 +3043,7 @@
    "raw": 2.365
   },
   {
-   "id": "v244",
+   "id": "v249",
    "text": "+0.1",
    "fmt": "s1",
    "rule": "em",
@@ -3007,7 +3055,7 @@
    "raw": 0.138
   },
   {
-   "id": "v245",
+   "id": "v250",
    "text": "+1.7",
    "fmt": "s1",
    "rule": "em",
@@ -3019,7 +3067,7 @@
    "raw": 1.684
   },
   {
-   "id": "v246",
+   "id": "v251",
    "text": "-0.1",
    "fmt": "s1",
    "rule": "em",
@@ -3031,7 +3079,31 @@
    "raw": -0.092
   },
   {
-   "id": "v247",
+   "id": "v252",
+   "text": "46",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Flip R1 mins Melquizael Costa",
+   "raw": 45.67
+  },
+  {
+   "id": "v253",
+   "text": "49",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Flip R3 mins Jared Gordon",
+   "raw": 49.28
+  },
+  {
+   "id": "v254",
    "text": "-260",
    "fmt": "ml",
    "rule": "fight",
@@ -3044,7 +3116,7 @@
    "raw": -260
   },
   {
-   "id": "v248",
+   "id": "v255",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -3057,7 +3129,7 @@
    "raw": -179
   },
   {
-   "id": "v249",
+   "id": "v256",
    "text": "-122",
    "fmt": "ml",
    "rule": "fight",
@@ -3070,7 +3142,7 @@
    "raw": -122
   },
   {
-   "id": "v250",
+   "id": "v257",
    "text": "+195",
    "fmt": "ml",
    "rule": "fight",
@@ -3083,7 +3155,7 @@
    "raw": 195
   },
   {
-   "id": "v251",
+   "id": "v258",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -3096,7 +3168,7 @@
    "raw": -204
   },
   {
-   "id": "v252",
+   "id": "v259",
    "text": "+220",
    "fmt": "ml",
    "rule": "fight",
@@ -3109,7 +3181,7 @@
    "raw": 220
   },
   {
-   "id": "v253",
+   "id": "v260",
    "text": "+219",
    "fmt": "ml",
    "rule": "fight",
@@ -3122,7 +3194,7 @@
    "raw": 219
   },
   {
-   "id": "v254",
+   "id": "v261",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",
@@ -3135,7 +3207,7 @@
    "raw": -263
   },
   {
-   "id": "v255",
+   "id": "v262",
    "text": "+163",
    "fmt": "ml",
    "rule": "fight",
@@ -3148,7 +3220,7 @@
    "raw": 163
   },
   {
-   "id": "v256",
+   "id": "v263",
    "text": "+102",
    "fmt": "ml",
    "rule": "fight",
@@ -3161,7 +3233,7 @@
    "raw": 102
   },
   {
-   "id": "v257",
+   "id": "v264",
    "text": "-247",
    "fmt": "ml",
    "rule": "fight",
@@ -3174,7 +3246,7 @@
    "raw": -247
   },
   {
-   "id": "v258",
+   "id": "v265",
    "text": "-153",
    "fmt": "ml",
    "rule": "fight",
@@ -3187,7 +3259,7 @@
    "raw": -153
   },
   {
-   "id": "v259",
+   "id": "v266",
    "text": "-164",
    "fmt": "ml",
    "rule": "fight",
@@ -3200,7 +3272,7 @@
    "raw": -164
   },
   {
-   "id": "v260",
+   "id": "v267",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -3213,7 +3285,7 @@
    "raw": 180
   },
   {
-   "id": "v261",
+   "id": "v268",
    "text": "-130",
    "fmt": "ml",
    "rule": "fight",
@@ -3226,7 +3298,7 @@
    "raw": -130
   },
   {
-   "id": "v262",
+   "id": "v269",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -3239,7 +3311,7 @@
    "raw": -204
   },
   {
-   "id": "v263",
+   "id": "v270",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -3252,7 +3324,7 @@
    "raw": -250
   },
   {
-   "id": "v264",
+   "id": "v271",
    "text": "-227",
    "fmt": "ml",
    "rule": "fight",
@@ -3265,7 +3337,7 @@
    "raw": -227
   },
   {
-   "id": "v265",
+   "id": "v272",
    "text": "+300",
    "fmt": "ml",
    "rule": "fight",

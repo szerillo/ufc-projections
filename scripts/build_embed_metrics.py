@@ -55,6 +55,7 @@ def bucket(r):
 
 
 SOS = json.loads((REPO / "form/data/labs.json").read_text())["sos"]   # beta100 (strikes/min per 100 Elo of opponent) and mean
+GADJ = json.loads((REPO / "data/embeds/grappling_adjust.json").read_text())
 HALF = 0.5 ** (1 / 3)   # per-fight decay: a fight 3 back counts half as much as the latest
 
 
@@ -87,6 +88,9 @@ def main():
     res = {}
     for r in csv.DictReader(open(D / "ufc_fight_results.csv", encoding="utf-8")):
         res[(r["EVENT"].strip(), r["BOUT"].strip())] = r
+    TOTT = {}
+    for r in csv.DictReader(open(D / "ufc_fighter_tott.csv", encoding="utf-8")):
+        TOTT.setdefault(canon(r["FIGHTER"]), r)
     rows = defaultdict(dict)   # (event, bout) -> {(round, fighter): row}
     for r in csv.DictReader(open(D / "ufc_fight_stats.csv", encoding="utf-8")):
         m = re.match(r"Round (\d+)", r["ROUND"] or "")
@@ -122,6 +126,7 @@ def main():
             tgt = {"head": [0, 0], "body": [0, 0], "leg": [0, 0]}         # landed, absorbed
             kd_for = kd_ag = ko_w = ko_l = nf = 0; secs_tot = 0
             gp = dict(tdl=0, tda=0, otdl=0, otda=0, cf=0, ca=0, sa=0); hist = []; flog = []
+            ohl = oha = 0; dsecs = []; r1fin = 0                         # opponent head landed/attempted; decided-bout seconds; R1 finishes
             ff = {x_["d"]: x_ for x_ in (json.loads((REPO / "form/data/fighters" / f"{f[sd]['slug']}.json").read_text())["fights"] if f[sd].get("slug") and (REPO / "form/data/fighters" / f"{f[sd]['slug']}.json").exists() else [])}
             pw = dr = 0; oc = {"w": {"ko": 0, "sub": 0, "dec": 0}, "l": {"ko": 0, "sub": 0, "dec": 0}}
             for (e, b), byr in rows.items():
@@ -136,6 +141,8 @@ def main():
                 nf += 1; last_r = int(r_["ROUND"]); last_s = secs(r_["TIME"])
                 win = (r_["OUTCOME"].split("/")[0] == "W") == (b.split(" vs. ")[0].strip() == mi)
                 decided = r_["OUTCOME"] in ("W/L", "L/W")
+                if decided:
+                    dsecs.append((last_r - 1) * 300 + last_s); r1fin += last_r == 1 and "Decision" not in r_["METHOD"]
                 if "KO/TKO" in r_["METHOD"] and decided:
                     if win: ko_w += 1
                     else: ko_l += 1
@@ -169,6 +176,7 @@ def main():
                     gp["cf"] += ctrl(x["CTRL"]); gp["ca"] += ctrl(y["CTRL"]); gp["sa"] += int(float(x["SUB.ATT"] or 0))
                     for k_, col in (("head", "HEAD"), ("body", "BODY"), ("leg", "LEG")):
                         tgt[k_][0] += of(x[col])[0]; tgt[k_][1] += of(y[col])[0]
+                    ohl += of(y["HEAD"])[0]; oha += of(y["HEAD"])[1]
             mins = secs_tot / 60
             land = sum(v[0] for v in tgt.values())
             rec = {"name": name, "ufc_fights": nf, "minutes": round(mins, 1),
@@ -176,7 +184,7 @@ def main():
                    "target_diff": {k_: (round((v[0] - v[1]) / mins, 3) if mins else None) for k_, v in tgt.items()},
                    "rounds": [{"r": rd, "fights": N[rd], "landed_pm": round(L[rd] / (R[rd] / 60), 3) if R[rd] else None,
                                "diff_pm": round((L[rd] - A[rd]) / (R[rd] / 60), 3) if R[rd] else None,
-                               "won": round(WON[rd] / N[rd], 4) if N[rd] else None} for rd in range(1, 6)],
+                               "won": round(WON[rd] / N[rd], 4) if N[rd] else None, "mins": round(R[rd] / 60, 2)} for rd in range(1, 6)],
                    "ufc_ko_wins": ko_w, "ufc_ko_losses": ko_l, "power_fights": pw, "dropped_fights": dr, "outcomes": oc, "kd_for": kd_for, "kd_against": kd_ag}
             # recency weighting: most recent UFC fight counts 1, each fight further back counts less (half weight 3 fights back)
             hist.sort(reverse=True); wts = [HALF ** i for i in range(len(hist))]; ws = sum(wts)
@@ -187,6 +195,10 @@ def main():
                            "tdd": round(1 - gp["otdl"] / gp["otda"], 4) if gp["otda"] else None,
                            "ctrl": round(gp["cf"] / secs_tot, 4) if secs_tot else None, "ctrl_ag": round(gp["ca"] / secs_tot, 4) if secs_tot else None,
                            "sub15": round(gp["sa"] / mins * 15, 3) if mins else None}
+            # same definitions as Labs (labs.json props / metrics), with no minimum fight count:
+            # decided UFC bouts only for pace; head defence = share of opponents' head strike attempts that missed
+            rec["pace"] = {"n": len(dsecs), "min": round(sum(dsecs) / len(dsecs) / 60, 3) if dsecs else None, "r1": round(r1fin / len(dsecs), 4) if dsecs else None}
+            rec["hdef"] = round(1 - ohl / oha, 4) if oha else None
             # per-fight log (newest first) for the dot strips and the round drill-down
             flog.sort(key=lambda e_: e_["d"], reverse=True); rec["fights"] = flog
             # consistency: fights they out-landed the opponent in; fights they won the grappling in (more control time, or more
@@ -201,10 +213,25 @@ def main():
             if ow and sdv is not None:
                 moe = sum(a_ * b_ for a_, b_ in ow) / sum(b_ for _, b_ in ow)
                 rec["sos"] = {"sd": round(sdv, 3), "opp_elo": round(moe, 1), "adj_sd": round(sdv - SOS["beta100"] / 100 * (moe - SOS["mean"]), 3)}
+            # net control share, raw and opponent-adjusted (data/embeds/grappling_adjust.json, pre-registered test passed):
+            # per prior bout (control for - against) / bout seconds, minus gamma x (opponent strength - mean) / 100; weights = bout seconds
+            ws_ = sum(e_["secs"] for e_ in flog if e_["secs"])
+            if ws_:
+                rec["grap"]["net_ctrl"] = round(sum(e_["cf"] - e_["ca"] for e_ in flog) / ws_, 4)
+                rec["grap"]["adj_net_ctrl"] = round(sum(((e_["cf"] - e_["ca"]) / e_["secs"] - (GADJ["gamma_per100"] * (e_["oe"] - GADJ["strength_mean"]) / 100 if e_["oe"] else 0)) * e_["secs"]
+                                                    for e_ in flog if e_["secs"]) / ws_, 4)
             e13 = sum(R[1:4]) / 60; e45 = sum(R[4:6]) / 60
             if e45 > 0 and e13 > 0:
                 rec["r45"] = {"fights": N[4], "landed_pm_13": round(sum(L[1:4]) / e13, 3), "landed_pm_45": round(sum(L[4:6]) / e45, 3),
                               "diff_pm_13": round((sum(L[1:4]) - sum(A[1:4])) / e13, 3), "diff_pm_45": round((sum(L[4:6]) - sum(A[4:6])) / e45, 3)}
+            # UFC debutants have no fighter file: take the tale of the tape from the UFCStats fighter list (same format as the fighter files)
+            if not (f[sd].get("slug") and (REPO / "form/data/fighters" / f"{f[sd]['slug']}.json").exists()):
+                tr = TOTT.get(canon(name))
+                if tr:
+                    ht = re.match(r"(\d+)' (\d+)\"", tr["HEIGHT"] or ""); rc = re.match(r"(\d+)\"", tr["REACH"] or "")
+                    dob = dt.datetime.strptime(tr["DOB"].strip(), "%b %d, %Y").date().isoformat() if tr["DOB"].strip() not in ("", "--") else None
+                    rec["bio"] = {"ht": f"{ht.group(1)}'{ht.group(2)}\"" if ht else None, "reach": rc.group(1) if rc else None,
+                                  "stance": tr["STANCE"].strip(), "dob": dob, "url": tr["URL"].strip(), "source": "UFCStats fighter list (debut)"}
             out["fighters"][name] = rec
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text(json.dumps(out, indent=1, sort_keys=True))

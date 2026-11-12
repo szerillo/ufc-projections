@@ -1,5 +1,5 @@
 {
- "built": "2026-11-12T09:23:41+00:00",
+ "built": "2026-11-12T09:53:02+00:00",
  "date": "2026-11-14",
  "division_dropped_share": {
   "Bantamweight": 0.217,
@@ -347,8 +347,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.1262,
     "ctrl": 0.1556,
     "ctrl_ag": 0.0236,
+    "net_ctrl": 0.1321,
     "sub15": 0.0,
     "td15": 1.878,
     "td_acc": 0.425,
@@ -358,6 +360,7 @@
     "k": 6,
     "n": 7
    },
+   "hdef": 0.6533,
    "kd_against": 0,
    "kd_for": 1,
    "last5": {
@@ -383,6 +386,11 @@
      "sub": 0
     }
    },
+   "pace": {
+    "min": 13.42,
+    "n": 9,
+    "r1": 0.1111
+   },
    "power_fights": 1,
    "power_w": 0.0721,
    "rounds": [
@@ -390,6 +398,7 @@
      "diff_pm": -2.075,
      "fights": 10,
      "landed_pm": 2.315,
+     "mins": 45.78,
      "r": 1,
      "won": 0.4
     },
@@ -397,6 +406,7 @@
      "diff_pm": -1.756,
      "fights": 9,
      "landed_pm": 3.422,
+     "mins": 45.0,
      "r": 2,
      "won": 0.2222
     },
@@ -404,6 +414,7 @@
      "diff_pm": -2.933,
      "fights": 9,
      "landed_pm": 2.4,
+     "mins": 45.0,
      "r": 3,
      "won": 0.2222
     },
@@ -411,6 +422,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -418,6 +430,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -988,8 +1001,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.2877,
     "ctrl": 0.3423,
     "ctrl_ag": 0.0646,
+    "net_ctrl": 0.2777,
     "sub15": 0.734,
     "td15": 2.789,
     "td_acc": 0.5672,
@@ -999,6 +1014,7 @@
     "k": 10,
     "n": 11
    },
+   "hdef": 0.6623,
    "kd_against": 0,
    "kd_for": 8,
    "last5": {
@@ -1024,6 +1040,11 @@
      "sub": 3
     }
    },
+   "pace": {
+    "min": 11.356,
+    "n": 18,
+    "r1": 0.5
+   },
    "power_fights": 6,
    "power_w": 0.2998,
    "r45": {
@@ -1038,6 +1059,7 @@
      "diff_pm": 4.059,
      "fights": 18,
      "landed_pm": 5.864,
+     "mins": 67.02,
      "r": 1,
      "won": 1.0
     },
@@ -1045,6 +1067,7 @@
      "diff_pm": -0.138,
      "fights": 9,
      "landed_pm": 4.236,
+     "mins": 43.43,
      "r": 2,
      "won": 0.7778
     },
@@ -1052,6 +1075,7 @@
      "diff_pm": 0.743,
      "fights": 8,
      "landed_pm": 3.301,
+     "mins": 36.35,
      "r": 3,
      "won": 0.75
     },
@@ -1059,6 +1083,7 @@
      "diff_pm": 3.3,
      "fights": 6,
      "landed_pm": 5.367,
+     "mins": 30.0,
      "r": 4,
      "won": 0.8333
     },
@@ -1066,6 +1091,7 @@
      "diff_pm": 1.341,
      "fights": 6,
      "landed_pm": 2.536,
+     "mins": 27.6,
      "r": 5,
      "won": 0.8333
     }
@@ -1166,8 +1192,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.41,
     "ctrl": 0.5429,
     "ctrl_ag": 0.1149,
+    "net_ctrl": 0.428,
     "sub15": 3.567,
     "td15": 3.567,
     "td_acc": 0.75,
@@ -1177,6 +1205,7 @@
     "k": 2,
     "n": 3
    },
+   "hdef": 0.7317,
    "kd_against": 0,
    "kd_for": 0,
    "last5": {
@@ -1202,6 +1231,11 @@
      "sub": 3
     }
    },
+   "pace": {
+    "min": 4.206,
+    "n": 3,
+    "r1": 0.6667
+   },
    "power_fights": 0,
    "power_w": 0.0,
    "rounds": [
@@ -1209,6 +1243,7 @@
      "diff_pm": 4.238,
      "fights": 3,
      "landed_pm": 5.49,
+     "mins": 10.38,
      "r": 1,
      "won": 1.0
     },
@@ -1216,6 +1251,7 @@
      "diff_pm": -1.343,
      "fights": 1,
      "landed_pm": 0.0,
+     "mins": 2.23,
      "r": 2,
      "won": 1.0
     },
@@ -1223,6 +1259,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 3,
      "won": null
     },
@@ -1230,6 +1267,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -1237,6 +1275,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -1293,8 +1332,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.1204,
     "ctrl": 0.1406,
     "ctrl_ag": 0.0067,
+    "net_ctrl": 0.1339,
     "sub15": 0.0,
     "td15": 2.009,
     "td_acc": 1.0,
@@ -1304,6 +1345,7 @@
     "k": 1,
     "n": 1
    },
+   "hdef": 0.6304,
    "kd_against": 0,
    "kd_for": 1,
    "last5": {
@@ -1329,6 +1371,11 @@
      "sub": 0
     }
    },
+   "pace": {
+    "min": 7.467,
+    "n": 1,
+    "r1": 0.0
+   },
    "power_fights": 1,
    "power_w": 1.0,
    "rounds": [
@@ -1336,6 +1383,7 @@
      "diff_pm": 4.2,
      "fights": 1,
      "landed_pm": 7.6,
+     "mins": 5.0,
      "r": 1,
      "won": 1.0
     },
@@ -1343,6 +1391,7 @@
      "diff_pm": -0.405,
      "fights": 1,
      "landed_pm": 6.081,
+     "mins": 2.47,
      "r": 2,
      "won": 1.0
     },
@@ -1350,6 +1399,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 3,
      "won": null
     },
@@ -1357,6 +1407,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -1364,6 +1415,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -1691,8 +1743,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.2055,
     "ctrl": 0.2685,
     "ctrl_ag": 0.0747,
+    "net_ctrl": 0.1938,
     "sub15": 0.432,
     "td15": 1.08,
     "td_acc": 0.4545,
@@ -1702,6 +1756,7 @@
     "k": 8,
     "n": 8
    },
+   "hdef": 0.6922,
    "kd_against": 0,
    "kd_for": 3,
    "last5": {
@@ -1727,6 +1782,11 @@
      "sub": 1
     }
    },
+   "pace": {
+    "min": 15.435,
+    "n": 9,
+    "r1": 0.0
+   },
    "power_fights": 3,
    "power_w": 0.36,
    "r45": {
@@ -1741,6 +1801,7 @@
      "diff_pm": 0.756,
      "fights": 9,
      "landed_pm": 3.022,
+     "mins": 45.0,
      "r": 1,
      "won": 0.7778
     },
@@ -1748,6 +1809,7 @@
      "diff_pm": -0.075,
      "fights": 9,
      "landed_pm": 2.451,
+     "mins": 39.98,
      "r": 2,
      "won": 0.5556
     },
@@ -1755,6 +1817,7 @@
      "diff_pm": 0.619,
      "fights": 7,
      "landed_pm": 3.212,
+     "mins": 33.93,
      "r": 3,
      "won": 1.0
     },
@@ -1762,6 +1825,7 @@
      "diff_pm": -0.1,
      "fights": 2,
      "landed_pm": 4.2,
+     "mins": 10.0,
      "r": 4,
      "won": 0.5
     },
@@ -1769,6 +1833,7 @@
      "diff_pm": 4.2,
      "fights": 2,
      "landed_pm": 7.4,
+     "mins": 10.0,
      "r": 5,
      "won": 1.0
     }
@@ -1965,8 +2030,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": -0.4602,
     "ctrl": 0.0577,
     "ctrl_ag": 0.5045,
+    "net_ctrl": -0.4468,
     "sub15": 0.245,
     "td15": 0.245,
     "td_acc": 0.3333,
@@ -1976,6 +2043,7 @@
     "k": 1,
     "n": 6
    },
+   "hdef": 0.5337,
    "kd_against": 3,
    "kd_for": 1,
    "last5": {
@@ -2001,6 +2069,11 @@
      "sub": 0
     }
    },
+   "pace": {
+    "min": 10.203,
+    "n": 6,
+    "r1": 0.3333
+   },
    "power_fights": 2,
    "power_w": 0.2599,
    "rounds": [
@@ -2008,6 +2081,7 @@
      "diff_pm": 0.897,
      "fights": 6,
      "landed_pm": 3.724,
+     "mins": 29.0,
      "r": 1,
      "won": 0.3333
     },
@@ -2015,6 +2089,7 @@
      "diff_pm": 2.962,
      "fights": 4,
      "landed_pm": 4.414,
+     "mins": 17.22,
      "r": 2,
      "won": 0.5
     },
@@ -2022,6 +2097,7 @@
      "diff_pm": -0.4,
      "fights": 3,
      "landed_pm": 1.933,
+     "mins": 15.0,
      "r": 3,
      "won": 0.0
     },
@@ -2029,6 +2105,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -2036,6 +2113,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -2254,8 +2332,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.4506,
     "ctrl": 0.5138,
     "ctrl_ag": 0.0401,
+    "net_ctrl": 0.4738,
     "sub15": 0.497,
     "td15": 1.989,
     "td_acc": 0.4444,
@@ -2265,6 +2345,7 @@
     "k": 3,
     "n": 3
    },
+   "hdef": 0.6585,
    "kd_against": 2,
    "kd_for": 2,
    "last5": {
@@ -2290,6 +2371,11 @@
      "sub": 1
     }
    },
+   "pace": {
+    "min": 8.619,
+    "n": 7,
+    "r1": 0.4286
+   },
    "power_fights": 2,
    "power_w": 0.2097,
    "rounds": [
@@ -2297,6 +2383,7 @@
      "diff_pm": 0.197,
      "fights": 7,
      "landed_pm": 2.663,
+     "mins": 30.42,
      "r": 1,
      "won": 0.7143
     },
@@ -2304,6 +2391,7 @@
      "diff_pm": 0.713,
      "fights": 4,
      "landed_pm": 2.851,
+     "mins": 15.43,
      "r": 2,
      "won": 0.5
     },
@@ -2311,6 +2399,7 @@
      "diff_pm": -0.967,
      "fights": 3,
      "landed_pm": 1.795,
+     "mins": 14.48,
      "r": 3,
      "won": 0.6667
     },
@@ -2318,6 +2407,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -2325,6 +2415,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -2570,8 +2661,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.1218,
     "ctrl": 0.2183,
     "ctrl_ag": 0.097,
+    "net_ctrl": 0.1214,
     "sub15": 0.645,
     "td15": 2.795,
     "td_acc": 0.4062,
@@ -2581,6 +2674,7 @@
     "k": 4,
     "n": 8
    },
+   "hdef": 0.5827,
    "kd_against": 0,
    "kd_for": 2,
    "last5": {
@@ -2606,6 +2700,11 @@
      "sub": 3
     }
    },
+   "pace": {
+    "min": 8.721,
+    "n": 8,
+    "r1": 0.375
+   },
    "power_fights": 2,
    "power_w": 0.3168,
    "rounds": [
@@ -2613,6 +2712,7 @@
      "diff_pm": -0.213,
      "fights": 8,
      "landed_pm": 4.173,
+     "mins": 32.83,
      "r": 1,
      "won": 0.5
     },
@@ -2620,6 +2720,7 @@
      "diff_pm": 0.0,
      "fights": 5,
      "landed_pm": 3.693,
+     "mins": 21.93,
      "r": 2,
      "won": 0.6
     },
@@ -2627,6 +2728,7 @@
      "diff_pm": 2.2,
      "fights": 3,
      "landed_pm": 6.867,
+     "mins": 15.0,
      "r": 3,
      "won": 1.0
     },
@@ -2634,6 +2736,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -2641,6 +2744,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -3103,8 +3207,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.0426,
     "ctrl": 0.0893,
     "ctrl_ag": 0.0782,
+    "net_ctrl": 0.0111,
     "sub15": 0.577,
     "td15": 0.66,
     "td_acc": 0.2353,
@@ -3114,6 +3220,7 @@
     "k": 3,
     "n": 6
    },
+   "hdef": 0.7634,
    "kd_against": 1,
    "kd_for": 4,
    "last5": {
@@ -3139,6 +3246,11 @@
      "sub": 2
     }
    },
+   "pace": {
+    "min": 13.642,
+    "n": 13,
+    "r1": 0.1538
+   },
    "power_fights": 5,
    "power_w": 0.4245,
    "r45": {
@@ -3153,6 +3265,7 @@
      "diff_pm": 2.293,
      "fights": 14,
      "landed_pm": 4.647,
+     "mins": 65.85,
      "r": 1,
      "won": 0.8571
     },
@@ -3160,6 +3273,7 @@
      "diff_pm": 4.084,
      "fights": 11,
      "landed_pm": 6.429,
+     "mins": 47.75,
      "r": 2,
      "won": 0.9091
     },
@@ -3167,6 +3281,7 @@
      "diff_pm": 4.513,
      "fights": 8,
      "landed_pm": 6.626,
+     "mins": 38.33,
      "r": 3,
      "won": 0.75
     },
@@ -3174,6 +3289,7 @@
      "diff_pm": 2.4,
      "fights": 3,
      "landed_pm": 4.933,
+     "mins": 15.0,
      "r": 4,
      "won": 0.6667
     },
@@ -3181,6 +3297,7 @@
      "diff_pm": 0.533,
      "fights": 3,
      "landed_pm": 2.8,
+     "mins": 15.0,
      "r": 5,
      "won": 1.0
     }
@@ -3291,8 +3408,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": -0.0145,
     "ctrl": 0.2863,
     "ctrl_ag": 0.2805,
+    "net_ctrl": 0.0058,
     "sub15": 0.651,
     "td15": 1.952,
     "td_acc": 1.0,
@@ -3302,6 +3421,7 @@
     "k": 1,
     "n": 2
    },
+   "hdef": 0.7527,
    "kd_against": 0,
    "kd_for": 1,
    "last5": {
@@ -3327,6 +3447,11 @@
      "sub": 1
     }
    },
+   "pace": {
+    "min": 7.683,
+    "n": 3,
+    "r1": 0.3333
+   },
    "power_fights": 1,
    "power_w": 0.4126,
    "rounds": [
@@ -3334,6 +3459,7 @@
      "diff_pm": 1.375,
      "fights": 3,
      "landed_pm": 2.579,
+     "mins": 11.63,
      "r": 1,
      "won": 0.6667
     },
@@ -3341,6 +3467,7 @@
      "diff_pm": 0.935,
      "fights": 2,
      "landed_pm": 2.182,
+     "mins": 6.42,
      "r": 2,
      "won": 1.0
     },
@@ -3348,6 +3475,7 @@
      "diff_pm": 0.4,
      "fights": 1,
      "landed_pm": 4.4,
+     "mins": 5.0,
      "r": 3,
      "won": 1.0
     },
@@ -3355,6 +3483,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -3362,6 +3491,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -4125,8 +4255,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": -0.0897,
     "ctrl": 0.1321,
     "ctrl_ag": 0.2209,
+    "net_ctrl": -0.0888,
     "sub15": 0.068,
     "td15": 0.608,
     "td_acc": 0.1698,
@@ -4136,6 +4268,7 @@
     "k": 4,
     "n": 15
    },
+   "hdef": 0.5917,
    "kd_against": 3,
    "kd_for": 10,
    "last5": {
@@ -4161,6 +4294,11 @@
      "sub": 1
     }
    },
+   "pace": {
+    "min": 8.237,
+    "n": 26,
+    "r1": 0.3846
+   },
    "power_fights": 12,
    "power_w": 0.5744,
    "rounds": [
@@ -4168,6 +4306,7 @@
      "diff_pm": 0.066,
      "fights": 27,
      "landed_pm": 4.201,
+     "mins": 106.63,
      "r": 1,
      "won": 0.5556
     },
@@ -4175,6 +4314,7 @@
      "diff_pm": 0.752,
      "fights": 17,
      "landed_pm": 4.716,
+     "mins": 74.43,
      "r": 2,
      "won": 0.4706
     },
@@ -4182,6 +4322,7 @@
      "diff_pm": -0.71,
      "fights": 11,
      "landed_pm": 4.774,
+     "mins": 40.85,
      "r": 3,
      "won": 0.3636
     },
@@ -4189,6 +4330,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -4196,6 +4338,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -4380,8 +4523,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": -0.069,
     "ctrl": 0.0916,
     "ctrl_ag": 0.1386,
+    "net_ctrl": -0.047,
     "sub15": 0.481,
     "td15": 0.481,
     "td_acc": 0.1538,
@@ -4391,6 +4536,7 @@
     "k": 3,
     "n": 4
    },
+   "hdef": 0.6479,
    "kd_against": 1,
    "kd_for": 2,
    "last5": {
@@ -4416,6 +4562,11 @@
      "sub": 1
     }
    },
+   "pace": {
+    "min": 12.48,
+    "n": 5,
+    "r1": 0.0
+   },
    "power_fights": 2,
    "power_w": 0.3403,
    "rounds": [
@@ -4423,6 +4574,7 @@
      "diff_pm": 1.24,
      "fights": 5,
      "landed_pm": 5.76,
+     "mins": 25.0,
      "r": 1,
      "won": 0.8
     },
@@ -4430,6 +4582,7 @@
      "diff_pm": 1.516,
      "fights": 5,
      "landed_pm": 5.697,
+     "mins": 21.77,
      "r": 2,
      "won": 0.8
     },
@@ -4437,6 +4590,7 @@
      "diff_pm": -1.215,
      "fights": 4,
      "landed_pm": 5.437,
+     "mins": 15.63,
      "r": 3,
      "won": 0.5
     },
@@ -4444,6 +4598,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -4451,6 +4606,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -4991,8 +5147,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.2217,
     "ctrl": 0.338,
     "ctrl_ag": 0.1194,
+    "net_ctrl": 0.2186,
     "sub15": 0.0,
     "td15": 1.91,
     "td_acc": 0.3478,
@@ -5002,6 +5160,7 @@
     "k": 11,
     "n": 15
    },
+   "hdef": 0.6273,
    "kd_against": 3,
    "kd_for": 2,
    "last5": {
@@ -5027,6 +5186,11 @@
      "sub": 0
     }
    },
+   "pace": {
+    "min": 10.817,
+    "n": 17,
+    "r1": 0.2941
+   },
    "power_fights": 2,
    "power_w": 0.2152,
    "rounds": [
@@ -5034,6 +5198,7 @@
      "diff_pm": 0.138,
      "fights": 18,
      "landed_pm": 4.424,
+     "mins": 79.78,
      "r": 1,
      "won": 0.5
     },
@@ -5041,6 +5206,7 @@
      "diff_pm": 3.047,
      "fights": 12,
      "landed_pm": 5.926,
+     "mins": 59.4,
      "r": 2,
      "won": 0.8333
     },
@@ -5048,6 +5214,7 @@
      "diff_pm": 1.684,
      "fights": 11,
      "landed_pm": 7.0,
+     "mins": 49.28,
      "r": 3,
      "won": 0.6364
     },
@@ -5055,6 +5222,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -5062,6 +5230,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -6410,8 +6579,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": -0.053,
     "ctrl": 0.208,
     "ctrl_ag": 0.2687,
+    "net_ctrl": -0.0607,
     "sub15": 1.722,
     "td15": 1.49,
     "td_acc": 0.45,
@@ -6421,6 +6592,7 @@
     "k": 18,
     "n": 41
    },
+   "hdef": 0.6356,
    "kd_against": 3,
    "kd_for": 6,
    "last5": {
@@ -6446,6 +6618,11 @@
      "sub": 14
     }
    },
+   "pace": {
+    "min": 9.542,
+    "n": 46,
+    "r1": 0.3261
+   },
    "power_fights": 6,
    "power_w": 0.1233,
    "rounds": [
@@ -6453,6 +6630,7 @@
      "diff_pm": 0.216,
      "fights": 47,
      "landed_pm": 3.265,
+     "mins": 194.78,
      "r": 1,
      "won": 0.6596
     },
@@ -6460,6 +6638,7 @@
      "diff_pm": -0.949,
      "fights": 32,
      "landed_pm": 2.569,
+     "mins": 140.15,
      "r": 2,
      "won": 0.4375
     },
@@ -6467,6 +6646,7 @@
      "diff_pm": -1.195,
      "fights": 25,
      "landed_pm": 2.762,
+     "mins": 118.02,
      "r": 3,
      "won": 0.32
     },
@@ -6474,6 +6654,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -6481,6 +6662,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -6613,8 +6795,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.2461,
     "ctrl": 0.2827,
     "ctrl_ag": 0.0693,
+    "net_ctrl": 0.2134,
     "sub15": 0.499,
     "td15": 1.497,
     "td_acc": 0.5,
@@ -6624,6 +6808,7 @@
     "k": 2,
     "n": 3
    },
+   "hdef": 0.5185,
    "kd_against": 0,
    "kd_for": 3,
    "last5": {
@@ -6649,6 +6834,11 @@
      "sub": 0
     }
    },
+   "pace": {
+    "min": 7.517,
+    "n": 4,
+    "r1": 0.5
+   },
    "power_fights": 3,
    "power_w": 0.7285,
    "rounds": [
@@ -6656,6 +6846,7 @@
      "diff_pm": 4.147,
      "fights": 4,
      "landed_pm": 8.042,
+     "mins": 15.92,
      "r": 1,
      "won": 0.75
     },
@@ -6663,6 +6854,7 @@
      "diff_pm": 4.044,
      "fights": 2,
      "landed_pm": 10.82,
+     "mins": 9.15,
      "r": 2,
      "won": 1.0
     },
@@ -6670,6 +6862,7 @@
      "diff_pm": 4.4,
      "fights": 1,
      "landed_pm": 16.4,
+     "mins": 5.0,
      "r": 3,
      "won": 1.0
     },
@@ -6677,6 +6870,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -6684,6 +6878,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -6740,8 +6935,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.4099,
     "ctrl": 0.4161,
     "ctrl_ag": 0.0,
+    "net_ctrl": 0.4161,
     "sub15": 1.642,
     "td15": 8.212,
     "td_acc": 0.625,
@@ -6751,6 +6948,7 @@
     "k": 1,
     "n": 1
    },
+   "hdef": 0.7273,
    "kd_against": 0,
    "kd_for": 0,
    "last5": {
@@ -6776,6 +6974,11 @@
      "sub": 1
     }
    },
+   "pace": {
+    "min": 9.133,
+    "n": 1,
+    "r1": 0.0
+   },
    "power_fights": 0,
    "power_w": 0.0,
    "rounds": [
@@ -6783,6 +6986,7 @@
      "diff_pm": -0.8,
      "fights": 1,
      "landed_pm": 1.2,
+     "mins": 5.0,
      "r": 1,
      "won": 1.0
     },
@@ -6790,6 +6994,7 @@
      "diff_pm": 0.484,
      "fights": 1,
      "landed_pm": 1.694,
+     "mins": 4.13,
      "r": 2,
      "won": 1.0
     },
@@ -6797,6 +7002,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 3,
      "won": null
     },
@@ -6804,6 +7010,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -6811,6 +7018,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -6926,8 +7134,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.6098,
     "ctrl": 0.5941,
     "ctrl_ag": 0.0079,
+    "net_ctrl": 0.5862,
     "sub15": 0.946,
     "td15": 2.839,
     "td_acc": 0.375,
@@ -6937,6 +7147,7 @@
     "k": 3,
     "n": 3
    },
+   "hdef": 0.7237,
    "kd_against": 0,
    "kd_for": 0,
    "last5": {
@@ -6962,6 +7173,11 @@
      "sub": 2
     }
    },
+   "pace": {
+    "min": 10.567,
+    "n": 3,
+    "r1": 0.0
+   },
    "power_fights": 0,
    "power_w": 0.0,
    "rounds": [
@@ -6969,6 +7185,7 @@
      "diff_pm": 3.933,
      "fights": 3,
      "landed_pm": 4.733,
+     "mins": 15.0,
      "r": 1,
      "won": 1.0
     },
@@ -6976,6 +7193,7 @@
      "diff_pm": 2.051,
      "fights": 3,
      "landed_pm": 3.59,
+     "mins": 11.7,
      "r": 2,
      "won": 1.0
     },
@@ -6983,6 +7201,7 @@
      "diff_pm": 3.6,
      "fights": 1,
      "landed_pm": 4.6,
+     "mins": 5.0,
      "r": 3,
      "won": 1.0
     },
@@ -6990,6 +7209,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -6997,6 +7217,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -7869,8 +8090,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": -0.1812,
     "ctrl": 0.1322,
     "ctrl_ag": 0.3264,
+    "net_ctrl": -0.1942,
     "sub15": 0.632,
     "td15": 0.827,
     "td_acc": 0.3953,
@@ -7880,6 +8103,7 @@
     "k": 8,
     "n": 23
    },
+   "hdef": 0.6019,
    "kd_against": 2,
    "kd_for": 7,
    "last5": {
@@ -7905,6 +8129,11 @@
      "sub": 6
     }
    },
+   "pace": {
+    "min": 10.881,
+    "n": 28,
+    "r1": 0.2857
+   },
    "power_fights": 6,
    "power_w": 0.2371,
    "r45": {
@@ -7919,6 +8148,7 @@
      "diff_pm": 1.536,
      "fights": 29,
      "landed_pm": 4.801,
+     "mins": 123.72,
      "r": 1,
      "won": 0.5862
     },
@@ -7926,6 +8156,7 @@
      "diff_pm": 1.049,
      "fights": 20,
      "landed_pm": 4.805,
+     "mins": 86.78,
      "r": 2,
      "won": 0.6
     },
@@ -7933,6 +8164,7 @@
      "diff_pm": 0.261,
      "fights": 16,
      "landed_pm": 3.307,
+     "mins": 72.88,
      "r": 3,
      "won": 0.375
     },
@@ -7940,6 +8172,7 @@
      "diff_pm": -2.2,
      "fights": 3,
      "landed_pm": 1.6,
+     "mins": 15.0,
      "r": 4,
      "won": 0.0
     },
@@ -7947,6 +8180,7 @@
      "diff_pm": 0.4,
      "fights": 2,
      "landed_pm": 1.2,
+     "mins": 10.0,
      "r": 5,
      "won": 0.5
     }
@@ -8121,8 +8355,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.0046,
     "ctrl": 0.1162,
     "ctrl_ag": 0.1002,
+    "net_ctrl": 0.016,
     "sub15": 0.272,
     "td15": 0.815,
     "td_acc": 0.1765,
@@ -8132,6 +8368,7 @@
     "k": 2,
     "n": 5
    },
+   "hdef": 0.6585,
    "kd_against": 1,
    "kd_for": 0,
    "last5": {
@@ -8157,6 +8394,11 @@
      "sub": 0
     }
    },
+   "pace": {
+    "min": 11.043,
+    "n": 5,
+    "r1": 0.2
+   },
    "power_fights": 0,
    "power_w": 0.0,
    "rounds": [
@@ -8164,6 +8406,7 @@
      "diff_pm": -1.93,
      "fights": 5,
      "landed_pm": 2.402,
+     "mins": 23.32,
      "r": 1,
      "won": 0.4
     },
@@ -8171,6 +8414,7 @@
      "diff_pm": -0.533,
      "fights": 4,
      "landed_pm": 5.207,
+     "mins": 16.9,
      "r": 2,
      "won": 0.5
     },
@@ -8178,6 +8422,7 @@
      "diff_pm": 1.267,
      "fights": 3,
      "landed_pm": 8.867,
+     "mins": 15.0,
      "r": 3,
      "won": 0.6667
     },
@@ -8185,6 +8430,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -8192,6 +8438,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -8629,8 +8876,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.0941,
     "ctrl": 0.3415,
     "ctrl_ag": 0.2465,
+    "net_ctrl": 0.0951,
     "sub15": 0.393,
     "td15": 1.866,
     "td_acc": 0.3585,
@@ -8640,6 +8889,7 @@
     "k": 9,
     "n": 13
    },
+   "hdef": 0.5312,
    "kd_against": 1,
    "kd_for": 2,
    "last5": {
@@ -8665,6 +8915,11 @@
      "sub": 2
     }
    },
+   "pace": {
+    "min": 10.907,
+    "n": 14,
+    "r1": 0.1429
+   },
    "power_fights": 2,
    "power_w": 0.0241,
    "rounds": [
@@ -8672,6 +8927,7 @@
      "diff_pm": 0.38,
      "fights": 14,
      "landed_pm": 4.124,
+     "mins": 65.72,
      "r": 1,
      "won": 0.5
     },
@@ -8679,6 +8935,7 @@
      "diff_pm": 0.685,
      "fights": 12,
      "landed_pm": 3.022,
+     "mins": 49.63,
      "r": 2,
      "won": 0.5833
     },
@@ -8686,6 +8943,7 @@
      "diff_pm": 0.268,
      "fights": 8,
      "landed_pm": 1.847,
+     "mins": 37.35,
      "r": 3,
      "won": 0.5
     },
@@ -8693,6 +8951,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -8700,6 +8959,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -9019,8 +9279,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": -0.1431,
     "ctrl": 0.1676,
     "ctrl_ag": 0.3203,
+    "net_ctrl": -0.1527,
     "sub15": 0.836,
     "td15": 1.533,
     "td_acc": 0.3548,
@@ -9030,6 +9292,7 @@
     "k": 2,
     "n": 9
    },
+   "hdef": 0.5839,
    "kd_against": 2,
    "kd_for": 2,
    "last5": {
@@ -9055,6 +9318,11 @@
      "sub": 2
     }
    },
+   "pace": {
+    "min": 10.76,
+    "n": 10,
+    "r1": 0.3
+   },
    "power_fights": 2,
    "power_w": 0.326,
    "r45": {
@@ -9069,6 +9337,7 @@
      "diff_pm": 2.365,
      "fights": 10,
      "landed_pm": 3.985,
+     "mins": 45.67,
      "r": 1,
      "won": 0.7
     },
@@ -9076,6 +9345,7 @@
      "diff_pm": 0.432,
      "fights": 7,
      "landed_pm": 4.518,
+     "mins": 30.1,
      "r": 2,
      "won": 0.5714
     },
@@ -9083,6 +9353,7 @@
      "diff_pm": -0.092,
      "fights": 5,
      "landed_pm": 5.038,
+     "mins": 21.83,
      "r": 3,
      "won": 0.6
     },
@@ -9090,6 +9361,7 @@
      "diff_pm": 0.0,
      "fights": 1,
      "landed_pm": 4.6,
+     "mins": 5.0,
      "r": 4,
      "won": 0.0
     },
@@ -9097,6 +9369,7 @@
      "diff_pm": 0.0,
      "fights": 1,
      "landed_pm": 2.2,
+     "mins": 5.0,
      "r": 5,
      "won": 0.0
     }
@@ -9121,6 +9394,14 @@
    "ufc_ko_wins": 2
   },
   "Samuel Sanches": {
+   "bio": {
+    "dob": "2003-01-28",
+    "ht": "5'10\"",
+    "reach": "74",
+    "source": "UFCStats fighter list (debut)",
+    "stance": "Orthodox",
+    "url": "http://ufcstats.com/fighter-details/438d497617ecb16e"
+   },
    "dropped_fights": 0,
    "dropped_w": null,
    "fights": [],
@@ -9136,6 +9417,7 @@
     "k": 0,
     "n": 0
    },
+   "hdef": null,
    "kd_against": 0,
    "kd_for": 0,
    "last5": {
@@ -9161,6 +9443,11 @@
      "sub": 0
     }
    },
+   "pace": {
+    "min": null,
+    "n": 0,
+    "r1": null
+   },
    "power_fights": 0,
    "power_w": null,
    "rounds": [
@@ -9168,6 +9455,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 1,
      "won": null
     },
@@ -9175,6 +9463,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 2,
      "won": null
     },
@@ -9182,6 +9471,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 3,
      "won": null
     },
@@ -9189,6 +9479,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -9196,6 +9487,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -9924,8 +10216,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": -0.1065,
     "ctrl": 0.0604,
     "ctrl_ag": 0.1884,
+    "net_ctrl": -0.128,
     "sub15": 0.0,
     "td15": 0.235,
     "td_acc": 0.3571,
@@ -9935,6 +10229,7 @@
     "k": 4,
     "n": 15
    },
+   "hdef": 0.6575,
    "kd_against": 6,
    "kd_for": 10,
    "last5": {
@@ -9960,6 +10255,11 @@
      "sub": 0
     }
    },
+   "pace": {
+    "min": 14.025,
+    "n": 21,
+    "r1": 0.1905
+   },
    "power_fights": 8,
    "power_w": 0.0905,
    "r45": {
@@ -9974,6 +10274,7 @@
      "diff_pm": 0.038,
      "fights": 22,
      "landed_pm": 3.181,
+     "mins": 105.93,
      "r": 1,
      "won": 0.5909
     },
@@ -9981,6 +10282,7 @@
      "diff_pm": 1.379,
      "fights": 18,
      "landed_pm": 4.229,
+     "mins": 86.3,
      "r": 2,
      "won": 0.6667
     },
@@ -9988,6 +10290,7 @@
      "diff_pm": 1.743,
      "fights": 15,
      "landed_pm": 4.635,
+     "mins": 72.28,
      "r": 3,
      "won": 0.6
     },
@@ -9995,6 +10298,7 @@
      "diff_pm": 1.733,
      "fights": 6,
      "landed_pm": 4.533,
+     "mins": 30.0,
      "r": 4,
      "won": 0.8333
     },
@@ -10002,6 +10306,7 @@
      "diff_pm": 1.32,
      "fights": 5,
      "landed_pm": 4.8,
+     "mins": 25.0,
      "r": 5,
      "won": 0.6
     }
@@ -10349,8 +10654,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": 0.3438,
     "ctrl": 0.4514,
     "ctrl_ag": 0.104,
+    "net_ctrl": 0.3474,
     "sub15": 2.177,
     "td15": 3.048,
     "td_acc": 0.4667,
@@ -10360,6 +10667,7 @@
     "k": 8,
     "n": 9
    },
+   "hdef": 0.4975,
    "kd_against": 5,
    "kd_for": 3,
    "last5": {
@@ -10385,6 +10693,11 @@
      "sub": 3
     }
    },
+   "pace": {
+    "min": 2.461,
+    "n": 14,
+    "r1": 0.8571
+   },
    "power_fights": 4,
    "power_w": 0.1239,
    "rounds": [
@@ -10392,6 +10705,7 @@
      "diff_pm": 3.929,
      "fights": 14,
      "landed_pm": 8.567,
+     "mins": 31.05,
      "r": 1,
      "won": 0.6429
     },
@@ -10399,6 +10713,7 @@
      "diff_pm": -3.529,
      "fights": 2,
      "landed_pm": 2.353,
+     "mins": 3.4,
      "r": 2,
      "won": 0.0
     },
@@ -10406,6 +10721,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 3,
      "won": null
     },
@@ -10413,6 +10729,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -10420,6 +10737,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -10711,8 +11029,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": -0.2636,
     "ctrl": 0.038,
     "ctrl_ag": 0.2997,
+    "net_ctrl": -0.2618,
     "sub15": 0.0,
     "td15": 0.356,
     "td_acc": 0.5,
@@ -10722,6 +11042,7 @@
     "k": 1,
     "n": 5
    },
+   "hdef": 0.6494,
    "kd_against": 3,
    "kd_for": 9,
    "last5": {
@@ -10747,6 +11068,11 @@
      "sub": 0
     }
    },
+   "pace": {
+    "min": 3.832,
+    "n": 11,
+    "r1": 0.7273
+   },
    "power_fights": 8,
    "power_w": 0.8272,
    "rounds": [
@@ -10754,6 +11080,7 @@
      "diff_pm": 2.017,
      "fights": 11,
      "landed_pm": 5.501,
+     "mins": 27.27,
      "r": 1,
      "won": 0.6364
     },
@@ -10761,6 +11088,7 @@
      "diff_pm": 0.407,
      "fights": 3,
      "landed_pm": 3.908,
+     "mins": 12.28,
      "r": 2,
      "won": 0.6667
     },
@@ -10768,6 +11096,7 @@
      "diff_pm": 5.769,
      "fights": 1,
      "landed_pm": 10.0,
+     "mins": 2.6,
      "r": 3,
      "won": 1.0
     },
@@ -10775,6 +11104,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -10782,6 +11112,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }
@@ -10897,8 +11228,10 @@
     }
    ],
    "grap": {
+    "adj_net_ctrl": -0.1253,
     "ctrl": 0.0569,
     "ctrl_ag": 0.1869,
+    "net_ctrl": -0.13,
     "sub15": 0.0,
     "td15": 0.518,
     "td_acc": 1.0,
@@ -10908,6 +11241,7 @@
     "k": 0,
     "n": 2
    },
+   "hdef": 0.7438,
    "kd_against": 0,
    "kd_for": 3,
    "last5": {
@@ -10933,6 +11267,11 @@
      "sub": 0
     }
    },
+   "pace": {
+    "min": 9.661,
+    "n": 3,
+    "r1": 0.3333
+   },
    "power_fights": 3,
    "power_w": 1.0,
    "rounds": [
@@ -10940,6 +11279,7 @@
      "diff_pm": 4.994,
      "fights": 3,
      "landed_pm": 7.283,
+     "mins": 14.42,
      "r": 1,
      "won": 1.0
     },
@@ -10947,6 +11287,7 @@
      "diff_pm": 6.2,
      "fights": 2,
      "landed_pm": 8.2,
+     "mins": 10.0,
      "r": 2,
      "won": 1.0
     },
@@ -10954,6 +11295,7 @@
      "diff_pm": 11.387,
      "fights": 2,
      "landed_pm": 12.044,
+     "mins": 4.57,
      "r": 3,
      "won": 1.0
     },
@@ -10961,6 +11303,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 4,
      "won": null
     },
@@ -10968,6 +11311,7 @@
      "diff_pm": null,
      "fights": 0,
      "landed_pm": null,
+     "mins": 0.0,
      "r": 5,
      "won": null
     }

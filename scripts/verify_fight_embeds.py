@@ -7,7 +7,7 @@ and for the whole card.
     python3 scripts/verify_fight_embeds.py --slug ufc_334            # exit 1 on any mismatch
     python3 scripts/verify_fight_embeds.py --slug ufc_334 --negative # plant errors in a temp copy; every one must be caught
 """
-import argparse, difflib, json, math, re, shutil, sys, tempfile, html as H
+import argparse, difflib, json, math, re, shutil, subprocess, sys, tempfile, html as H
 from datetime import date
 from pathlib import Path
 
@@ -70,7 +70,9 @@ def check(D, htmlfile, G):
     shown = {m.group(1): H.unescape(m.group(2)) for m in re.finditer(r'<span data-id="(v\d+)">([^<]*)</span>', page)}
     fight = next(x for x in EV[reg["event"]]["fights"] if bout(x["a"]["name"], x["b"]["name"], *reg["pair"]))
     A, B = fight["a"]["name"], fight["b"]["name"]; NM = {"a": A, "b": B}
-    FT = {s: (json.load(open(FD / "fighters" / f'{fight[s]["slug"]}.json')) if fight[s].get("slug") and (FD / "fighters" / f'{fight[s]["slug"]}.json').exists() else {"bio": {}, "fights": []}) for s in "ab"}
+    EMB = json.loads((FD / "embed_metrics" / f"{G['SLUG']}.json").read_text())["fighters"] if (FD / "embed_metrics" / f"{G['SLUG']}.json").exists() else {}
+    FT = {s: (json.load(open(FD / "fighters" / f'{fight[s]["slug"]}.json')) if fight[s].get("slug") and (FD / "fighters" / f'{fight[s]["slug"]}.json').exists()
+              else {"bio": (EMB.get(fight[s]["name"]) or {}).get("bio") or {}, "fights": []}) for s in "ab"}   # debut bio checked by verify_embed_metrics
     prior = {s: [x for x in FT[s]["fights"] if x["d"] < DATE] for s in "ab"}
     pub = next((p for p in PUB["fights"] if p.get("publish") is not False and bout(p["dog"], p["fav"], A, B)), None)
     bpf = next((x for x in BPO["fights"] if bout(x["fighter_a"]["name"], x["fighter_b"]["name"], A, B)), None)
@@ -247,7 +249,9 @@ def check(D, htmlfile, G):
         # Block 59h: flip flag recomputed (R1 diff 1.0+ one way, R3 diff 1.0+ the other, both 3+ fights reaching R3)
         rr = lambda r, i: (r.get("rounds") or [{}] * 3)[i]
         a1, b1, a3, b3 = rr(pa_, 0).get("diff_pm"), rr(pb_, 0).get("diff_pm"), rr(pa_, 2).get("diff_pm"), rr(pb_, 2).get("diff_pm")
-        wantf = None not in (a1, b1, a3, b3) and rr(pa_, 2).get("fights", 0) >= 3 and rr(pb_, 2).get("fights", 0) >= 3 and ((a1 - b1 >= 1 and b3 - a3 >= 1) or (b1 - a1 >= 1 and a3 - b3 >= 1))
+        wantf = (None not in (a1, b1, a3, b3) and rr(pa_, 2).get("fights", 0) >= 3 and rr(pb_, 2).get("fights", 0) >= 3
+                 and min(rr(pa_, 0).get("mins", 0), rr(pb_, 0).get("mins", 0), rr(pa_, 2).get("mins", 0), rr(pb_, 2).get("mins", 0)) >= 15
+                 and ((a1 - b1 >= 1 and b3 - a3 >= 1) or (b1 - a1 >= 1 and a3 - b3 >= 1)))
         if wantf != ('class="flip"' in page): bad.append(("flag", "flip", f"page {'class=\"flip\"' in page} vs recomputed {wantf}"))
         # the decision-model accuracy quoted in the Cardio key must match labs.json
         acc_ = re.search(r"decisions (\d+)% of the time", page)
@@ -383,14 +387,55 @@ def negative(D, G, slug):
             with contextlib.redirect_stdout(io.StringIO()):
                 _, _, nb = run(T, G_, slug)
         print(f"  NEGATIVE {'CAUGHT ' if nb else 'MISSED '} {nb:>3} failures · {label}"); caught += bool(nb)
-    print(f"negative test: {caught}/{len(plants)} planted errors caught")
-    return caught == len(plants)
+    # Block 59i (Kirk check 4): a bug UPSTREAM of the metrics file. The page check trusts that file, so the plant goes into
+    # a copy of build_embed_metrics.py (control seconds dropped); the independent CSV recompute must flag the result.
+    up = upstream_plant()
+    print(f"  NEGATIVE {'CAUGHT ' if up else 'MISSED '} upstream · metrics builder drops control seconds (page check alone cannot see this)")
+    caught += bool(up)
+    print(f"negative test: {caught}/{len(plants) + 1} planted errors caught")
+    return caught == len(plants) + 1
+
+
+def metrics_check(slug, metrics=None):
+    """Independent recompute of the metrics file from the UFCStats CSVs (scripts/verify_embed_metrics.py). None if no CSV cache."""
+    cache = REPO / ".form_cache"
+    if not (cache / "ufc_fight_stats.csv").exists(): return None
+    evf = metrics_event_file()
+    r = subprocess.run([sys.executable, "-I", str(REPO / "scripts/verify_embed_metrics.py"), "--event", evf, "--cache", str(cache),
+                        "--metrics", metrics or str(FD / "embed_metrics" / f"{slug}.json")], capture_output=True, text=True)
+    return r.returncode, r.stdout.strip().splitlines()[0] if r.stdout.strip() else r.stderr.strip()[-300:]
+
+
+def upstream_plant():
+    src = (REPO / "scripts/build_embed_metrics.py").read_text()
+    bad_src = src.replace("return int(m.group(1)) * 60 + int(m.group(2)) if m else 0", "return int(m.group(1)) * 60 if m else 0")
+    if bad_src == src: return False
+    with tempfile.TemporaryDirectory() as td:
+        sp = REPO / "scripts" / "_plant_build_embed_metrics.py"; out = Path(td) / "m.json"
+        try:
+            sp.write_text(bad_src)
+            evf = metrics_event_file()
+            subprocess.run([sys.executable, "-I", str(sp), "--event", evf, "--cache", str(REPO / ".form_cache"), "--out", str(out)], check=True, capture_output=True)
+        finally:
+            sp.unlink(missing_ok=True)
+        r = metrics_check(G_SLUG[0], str(out))
+        return r is not None and r[0] != 0
+
+
+G_SLUG = ["ufc_334"]
+def metrics_event_file():
+    """The event file the metrics file was built for (its "event" field)."""
+    return str(REPO / "form/data/events" / (json.loads((FD / "embed_metrics" / f"{G_SLUG[0]}.json").read_text())["event"] + ".json"))
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--slug", default="ufc_334"); ap.add_argument("--dir"); ap.add_argument("--negative", action="store_true")
     a = ap.parse_args(); D = Path(a.dir) if a.dir else REPO / "embeds" / a.slug; G = load_sources(a.slug)
-    ok, n_rows, nb = run(D, G, a.slug)
+    ok, n_rows, nb = run(D, G, a.slug); G_SLUG[0] = a.slug
     print(f"TOTAL: {ok}/{n_rows} numbers verified; {nb} mismatches/assertion failures")
+    mc = metrics_check(a.slug) if (REPO / ".form_cache" / "ufc_fight_stats.csv").exists() else None
+    if mc is None: print("METRICS FILE: not rechecked (no .form_cache CSVs on this machine)")
+    else:
+        print(f"METRICS FILE: {mc[1]}"); nb += mc[0] != 0
     good = nb == 0
     if a.negative: good = negative(D, G, a.slug) and good
     sys.exit(0 if good else 1)

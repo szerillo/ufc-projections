@@ -50,6 +50,17 @@
   },
   {
    "id": "v4",
+   "text": "23.8",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Age b",
+   "raw": 23.794661190965094
+  },
+  {
+   "id": "v5",
    "text": "5'10\"",
    "fmt": "str",
    "rule": "bio",
@@ -61,7 +72,19 @@
    "raw": "5'10\""
   },
   {
-   "id": "v5",
+   "id": "v6",
+   "text": "5'10\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "5'10\""
+  },
+  {
+   "id": "v7",
    "text": "72\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -72,7 +95,18 @@
    "raw": 72
   },
   {
-   "id": "v6",
+   "id": "v8",
+   "text": "74\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 74
+  },
+  {
+   "id": "v9",
    "text": "Switch",
    "fmt": "str",
    "rule": "bio",
@@ -84,7 +118,19 @@
    "raw": "Switch"
   },
   {
-   "id": "v7",
+   "id": "v10",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v11",
    "text": "+121",
    "fmt": "mlp",
    "rule": "pub_win",
@@ -95,7 +141,7 @@
    "raw": 0.452902810207559
   },
   {
-   "id": "v8",
+   "id": "v12",
    "text": "45.3%",
    "fmt": "pct1",
    "rule": "pub_win",
@@ -106,7 +152,7 @@
    "raw": 0.452902810207559
   },
   {
-   "id": "v9",
+   "id": "v13",
    "text": "+102",
    "fmt": "ml",
    "rule": "pub_ml",
@@ -117,7 +163,7 @@
    "raw": 102
   },
   {
-   "id": "v10",
+   "id": "v14",
    "text": "49.5%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
@@ -128,7 +174,7 @@
    "raw": 0.49504950495049505
   },
   {
-   "id": "v11",
+   "id": "v15",
    "text": "+102",
    "fmt": "ml",
    "rule": "bp",
@@ -141,7 +187,7 @@
    "raw": 102
   },
   {
-   "id": "v12",
+   "id": "v16",
    "text": "49.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -153,21 +199,21 @@
    "raw": 0.49504950495049505
   },
   {
-   "id": "v13",
+   "id": "v17",
    "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v8",
-     "v10"
+     "v12",
+     "v14"
     ]
    },
    "desc": "Edge ML Evan Elder",
    "raw": -0.04214669474293603
   },
   {
-   "id": "v14",
+   "id": "v18",
    "text": "-121",
    "fmt": "mlp",
    "rule": "pub_win",
@@ -178,7 +224,7 @@
    "raw": 0.547097189792441
   },
   {
-   "id": "v15",
+   "id": "v19",
    "text": "54.7%",
    "fmt": "pct1",
    "rule": "pub_win",
@@ -189,7 +235,7 @@
    "raw": 0.547097189792441
   },
   {
-   "id": "v16",
+   "id": "v20",
    "text": "-110",
    "fmt": "ml",
    "rule": "pub_ml",
@@ -200,7 +246,7 @@
    "raw": -110
   },
   {
-   "id": "v17",
+   "id": "v21",
    "text": "52.4%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
@@ -211,7 +257,7 @@
    "raw": 0.5238095238095238
   },
   {
-   "id": "v18",
+   "id": "v22",
    "text": "-125",
    "fmt": "ml",
    "rule": "bp",
@@ -224,7 +270,7 @@
    "raw": -125
   },
   {
-   "id": "v19",
+   "id": "v23",
    "text": "55.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -236,21 +282,21 @@
    "raw": 0.5555555555555556
   },
   {
-   "id": "v20",
+   "id": "v24",
    "text": "+2.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v15",
-     "v17"
+     "v19",
+     "v21"
     ]
    },
    "desc": "Edge ML Samuel Sanches",
    "raw": 0.023287665982917205
   },
   {
-   "id": "v21",
+   "id": "v25",
    "text": "+122",
    "fmt": "mlp",
    "rule": "pub",
@@ -261,7 +307,7 @@
    "raw": 0.4494660389681183
   },
   {
-   "id": "v22",
+   "id": "v26",
    "text": "44.9%",
    "fmt": "pct1",
    "rule": "pub",
@@ -272,7 +318,7 @@
    "raw": 0.4494660389681183
   },
   {
-   "id": "v23",
+   "id": "v27",
    "text": "+132",
    "fmt": "mlp",
    "rule": "pub",
@@ -283,7 +329,7 @@
    "raw": 0.4312167075336096
   },
   {
-   "id": "v24",
+   "id": "v28",
    "text": "43.1%",
    "fmt": "pct1",
    "rule": "pub",
@@ -294,7 +340,7 @@
    "raw": 0.4312167075336096
   },
   {
-   "id": "v25",
+   "id": "v29",
    "text": "+118",
    "fmt": "ml",
    "rule": "bp",
@@ -307,7 +353,7 @@
    "raw": 118
   },
   {
-   "id": "v26",
+   "id": "v30",
    "text": "45.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -319,21 +365,21 @@
    "raw": 0.45871559633027525
   },
   {
-   "id": "v27",
+   "id": "v31",
    "text": "+1.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v22",
-     "v24"
+     "v26",
+     "v28"
     ]
    },
    "desc": "Edge GTD vs listed",
    "raw": 0.018249331434508742
   },
   {
-   "id": "v28",
+   "id": "v32",
    "text": "-122",
    "fmt": "mlp",
    "rule": "pub",
@@ -345,7 +391,7 @@
    "raw": 0.5505339610318817
   },
   {
-   "id": "v29",
+   "id": "v33",
    "text": "55.1%",
    "fmt": "pct1",
    "rule": "pub",
@@ -357,7 +403,7 @@
    "raw": 0.5505339610318817
   },
   {
-   "id": "v30",
+   "id": "v34",
    "text": "-152",
    "fmt": "ml",
    "rule": "bp",
@@ -370,7 +416,7 @@
    "raw": -152
   },
   {
-   "id": "v31",
+   "id": "v35",
    "text": "60.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -382,21 +428,21 @@
    "raw": 0.6031746031746031
   },
   {
-   "id": "v32",
+   "id": "v36",
    "text": "-5.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v29",
-     "v31"
+     "v33",
+     "v35"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": -0.05264064214272146
   },
   {
-   "id": "v33",
+   "id": "v37",
    "text": "+519",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -408,7 +454,7 @@
    "raw": 0.1614818334401974
   },
   {
-   "id": "v34",
+   "id": "v38",
    "text": "16.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -420,7 +466,7 @@
    "raw": 0.1614818334401974
   },
   {
-   "id": "v35",
+   "id": "v39",
    "text": "+255",
    "fmt": "ml",
    "rule": "bp",
@@ -433,7 +479,7 @@
    "raw": 255
   },
   {
-   "id": "v36",
+   "id": "v40",
    "text": "28.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -445,21 +491,21 @@
    "raw": 0.28169014084507044
   },
   {
-   "id": "v37",
+   "id": "v41",
    "text": "-12.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v34",
-     "v36"
+     "v38",
+     "v40"
     ]
    },
    "desc": "Edge dec Evan Elder",
    "raw": -0.12020830740487304
   },
   {
-   "id": "v38",
+   "id": "v42",
    "text": "+482",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -471,7 +517,7 @@
    "raw": 0.17169420573418046
   },
   {
-   "id": "v39",
+   "id": "v43",
    "text": "17.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -483,7 +529,7 @@
    "raw": 0.17169420573418046
   },
   {
-   "id": "v40",
+   "id": "v44",
    "text": "+574",
    "fmt": "ml",
    "rule": "bp",
@@ -496,7 +542,7 @@
    "raw": 574
   },
   {
-   "id": "v41",
+   "id": "v45",
    "text": "14.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -508,21 +554,21 @@
    "raw": 0.14836795252225518
   },
   {
-   "id": "v42",
+   "id": "v46",
    "text": "+2.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v39",
-     "v41"
+     "v43",
+     "v45"
     ]
    },
    "desc": "Edge ko Evan Elder",
    "raw": 0.023326253211925274
   },
   {
-   "id": "v43",
+   "id": "v47",
    "text": "+735",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -534,7 +580,7 @@
    "raw": 0.11972677103318118
   },
   {
-   "id": "v44",
+   "id": "v48",
    "text": "12.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -546,7 +592,7 @@
    "raw": 0.11972677103318118
   },
   {
-   "id": "v45",
+   "id": "v49",
    "text": "+700",
    "fmt": "ml",
    "rule": "bp",
@@ -559,7 +605,7 @@
    "raw": 700
   },
   {
-   "id": "v46",
+   "id": "v50",
    "text": "12.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -571,21 +617,21 @@
    "raw": 0.125
   },
   {
-   "id": "v47",
+   "id": "v51",
    "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v44",
-     "v46"
+     "v48",
+     "v50"
     ]
    },
    "desc": "Edge sub Evan Elder",
    "raw": -0.005273228966818824
   },
   {
-   "id": "v48",
+   "id": "v52",
    "text": "+243",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -597,7 +643,7 @@
    "raw": 0.2914209767673616
   },
   {
-   "id": "v49",
+   "id": "v53",
    "text": "29.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -609,7 +655,7 @@
    "raw": 0.2914209767673616
   },
   {
-   "id": "v50",
+   "id": "v54",
    "text": "27.3%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -624,21 +670,21 @@
    "raw": 0.2733679525222552
   },
   {
-   "id": "v51",
+   "id": "v55",
    "text": "+1.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v49",
-     "v50"
+     "v53",
+     "v54"
     ]
    },
    "desc": "Edge itd Evan Elder",
    "raw": 0.018053024245106408
   },
   {
-   "id": "v52",
+   "id": "v56",
    "text": "+247",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -650,7 +696,7 @@
    "raw": 0.2879842055279209
   },
   {
-   "id": "v53",
+   "id": "v57",
    "text": "28.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -662,7 +708,7 @@
    "raw": 0.2879842055279209
   },
   {
-   "id": "v54",
+   "id": "v58",
    "text": "+400",
    "fmt": "ml",
    "rule": "bp",
@@ -675,7 +721,7 @@
    "raw": 400
   },
   {
-   "id": "v55",
+   "id": "v59",
    "text": "20.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -687,21 +733,21 @@
    "raw": 0.2
   },
   {
-   "id": "v56",
+   "id": "v60",
    "text": "+8.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v53",
-     "v55"
+     "v57",
+     "v59"
     ]
    },
    "desc": "Edge dec Samuel Sanches",
    "raw": 0.08798420552792091
   },
   {
-   "id": "v57",
+   "id": "v61",
    "text": "+347",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -713,7 +759,7 @@
    "raw": 0.2235915149339652
   },
   {
-   "id": "v58",
+   "id": "v62",
    "text": "22.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -725,7 +771,7 @@
    "raw": 0.2235915149339652
   },
   {
-   "id": "v59",
+   "id": "v63",
    "text": "+172",
    "fmt": "ml",
    "rule": "bp",
@@ -738,7 +784,7 @@
    "raw": 172
   },
   {
-   "id": "v60",
+   "id": "v64",
    "text": "36.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -750,21 +796,21 @@
    "raw": 0.36764705882352944
   },
   {
-   "id": "v61",
+   "id": "v65",
    "text": "-14.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v58",
-     "v60"
+     "v62",
+     "v64"
     ]
    },
    "desc": "Edge ko Samuel Sanches",
    "raw": -0.14405554388956424
   },
   {
-   "id": "v62",
+   "id": "v66",
    "text": "+2715",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -776,7 +822,7 @@
    "raw": 0.0355214693305549
   },
   {
-   "id": "v63",
+   "id": "v67",
    "text": "3.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -788,7 +834,7 @@
    "raw": 0.0355214693305549
   },
   {
-   "id": "v64",
+   "id": "v68",
    "text": "+1800",
    "fmt": "ml",
    "rule": "bp",
@@ -801,7 +847,7 @@
    "raw": 1800
   },
   {
-   "id": "v65",
+   "id": "v69",
    "text": "5.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -813,21 +859,21 @@
    "raw": 0.05263157894736842
   },
   {
-   "id": "v66",
+   "id": "v70",
    "text": "-1.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v63",
-     "v65"
+     "v67",
+     "v69"
     ]
    },
    "desc": "Edge sub Samuel Sanches",
    "raw": -0.017110109616813515
   },
   {
-   "id": "v67",
+   "id": "v71",
    "text": "+286",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -839,7 +885,7 @@
    "raw": 0.2591129842645201
   },
   {
-   "id": "v68",
+   "id": "v72",
    "text": "25.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -851,7 +897,7 @@
    "raw": 0.2591129842645201
   },
   {
-   "id": "v69",
+   "id": "v73",
    "text": "42.0%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -866,21 +912,21 @@
    "raw": 0.42027863777089786
   },
   {
-   "id": "v70",
+   "id": "v74",
    "text": "-16.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v68",
-     "v69"
+     "v72",
+     "v73"
     ]
    },
    "desc": "Edge itd Samuel Sanches",
    "raw": -0.16116565350637774
   },
   {
-   "id": "v71",
+   "id": "v75",
    "text": "+101",
    "fmt": "ml",
    "rule": "oa_open_ml",
@@ -896,7 +942,7 @@
    "raw": 101
   },
   {
-   "id": "v72",
+   "id": "v76",
    "text": "4.1",
    "fmt": "pts",
    "rule": "oa_drift_abs",
@@ -911,7 +957,7 @@
    "raw": 0.041000000000000036
   },
   {
-   "id": "v73",
+   "id": "v77",
    "text": "47.6%",
    "fmt": "pct1",
    "rule": "oa_p",
@@ -928,7 +974,7 @@
    "raw": 0.476
   },
   {
-   "id": "v74",
+   "id": "v78",
    "text": "51.7%",
    "fmt": "pct1",
    "rule": "oa_p",
@@ -945,7 +991,7 @@
    "raw": 0.517
   },
   {
-   "id": "v75",
+   "id": "v79",
    "text": "46%",
    "fmt": "pct0",
    "rule": "em",
@@ -957,7 +1003,7 @@
    "raw": 0.4589
   },
   {
-   "id": "v76",
+   "id": "v80",
    "text": "38%",
    "fmt": "pct0",
    "rule": "em",
@@ -969,7 +1015,7 @@
    "raw": 0.3796
   },
   {
-   "id": "v77",
+   "id": "v81",
    "text": "16%",
    "fmt": "pct0",
    "rule": "em",
@@ -981,7 +1027,7 @@
    "raw": 0.1615
   },
   {
-   "id": "v78",
+   "id": "v82",
    "text": "34%",
    "fmt": "pct0",
    "rule": "em",
@@ -993,7 +1039,7 @@
    "raw": 0.3403
   },
   {
-   "id": "v79",
+   "id": "v83",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1005,7 +1051,7 @@
    "raw": 2
   },
   {
-   "id": "v80",
+   "id": "v84",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1017,7 +1063,7 @@
    "raw": 5
   },
   {
-   "id": "v81",
+   "id": "v85",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1029,7 +1075,7 @@
    "raw": 2
   },
   {
-   "id": "v82",
+   "id": "v86",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1041,7 +1087,7 @@
    "raw": 5
   },
   {
-   "id": "v83",
+   "id": "v87",
    "text": "23%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -1053,7 +1099,7 @@
    "raw": 0.2309
   },
   {
-   "id": "v84",
+   "id": "v88",
    "text": "19%",
    "fmt": "pct0",
    "rule": "em",
@@ -1065,7 +1111,7 @@
    "raw": 0.1897
   },
   {
-   "id": "v85",
+   "id": "v89",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1077,7 +1123,7 @@
    "raw": 1
   },
   {
-   "id": "v86",
+   "id": "v90",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1089,7 +1135,7 @@
    "raw": 5
   },
   {
-   "id": "v87",
+   "id": "v91",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1101,7 +1147,7 @@
    "raw": 1
   },
   {
-   "id": "v88",
+   "id": "v92",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1113,7 +1159,7 @@
    "raw": 5
   },
   {
-   "id": "v89",
+   "id": "v93",
    "text": "26%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -1125,7 +1171,7 @@
    "raw": 0.2582
   },
   {
-   "id": "v90",
+   "id": "v94",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1137,7 +1183,7 @@
    "raw": 1
   },
   {
-   "id": "v91",
+   "id": "v95",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1149,7 +1195,7 @@
    "raw": 2
   },
   {
-   "id": "v92",
+   "id": "v96",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1161,7 +1207,7 @@
    "raw": 1
   },
   {
-   "id": "v93",
+   "id": "v97",
    "text": "80%",
    "fmt": "pct0",
    "rule": "em",
@@ -1173,7 +1219,7 @@
    "raw": 0.8
   },
   {
-   "id": "v94",
+   "id": "v98",
    "text": "+1.2",
    "fmt": "s1",
    "rule": "em",
@@ -1185,7 +1231,7 @@
    "raw": 1.24
   },
   {
-   "id": "v95",
+   "id": "v99",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1197,7 +1243,7 @@
    "raw": 5
   },
   {
-   "id": "v96",
+   "id": "v100",
    "text": "80%",
    "fmt": "pct0",
    "rule": "em",
@@ -1209,7 +1255,7 @@
    "raw": 0.8
   },
   {
-   "id": "v97",
+   "id": "v101",
    "text": "+1.5",
    "fmt": "s1",
    "rule": "em",
@@ -1221,7 +1267,7 @@
    "raw": 1.516
   },
   {
-   "id": "v98",
+   "id": "v102",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1233,7 +1279,7 @@
    "raw": 5
   },
   {
-   "id": "v99",
+   "id": "v103",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -1245,7 +1291,7 @@
    "raw": 0.5
   },
   {
-   "id": "v100",
+   "id": "v104",
    "text": "-1.2",
    "fmt": "s1",
    "rule": "em",
@@ -1257,7 +1303,7 @@
    "raw": -1.215
   },
   {
-   "id": "v101",
+   "id": "v105",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1269,7 +1315,7 @@
    "raw": 4
   },
   {
-   "id": "v102",
+   "id": "v106",
    "text": "+14",
    "fmt": "sint",
    "rule": "em",
@@ -1281,7 +1327,7 @@
    "raw": 14
   },
   {
-   "id": "v103",
+   "id": "v107",
    "text": "+13",
    "fmt": "sint",
    "rule": "em",
@@ -1293,7 +1339,7 @@
    "raw": 13
   },
   {
-   "id": "v104",
+   "id": "v108",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -1305,7 +1351,7 @@
    "raw": 1
   },
   {
-   "id": "v105",
+   "id": "v109",
    "text": "+7",
    "fmt": "sint",
    "rule": "em",
@@ -1317,7 +1363,7 @@
    "raw": 7
   },
   {
-   "id": "v106",
+   "id": "v110",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -1329,7 +1375,7 @@
    "raw": -4
   },
   {
-   "id": "v107",
+   "id": "v111",
    "text": "+16",
    "fmt": "sint",
    "rule": "em",
@@ -1341,7 +1387,7 @@
    "raw": 16
   },
   {
-   "id": "v108",
+   "id": "v112",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
@@ -1353,7 +1399,7 @@
    "raw": 8
   },
   {
-   "id": "v109",
+   "id": "v113",
    "text": "+15",
    "fmt": "sint",
    "rule": "em",
@@ -1365,7 +1411,7 @@
    "raw": 15
   },
   {
-   "id": "v110",
+   "id": "v114",
    "text": "+3",
    "fmt": "sint",
    "rule": "em",
@@ -1377,7 +1423,7 @@
    "raw": 3
   },
   {
-   "id": "v111",
+   "id": "v115",
    "text": "-9",
    "fmt": "sint",
    "rule": "em",
@@ -1389,7 +1435,7 @@
    "raw": -9
   },
   {
-   "id": "v112",
+   "id": "v116",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1401,7 +1447,7 @@
    "raw": 4
   },
   {
-   "id": "v113",
+   "id": "v117",
    "text": "+16",
    "fmt": "sint",
    "rule": "em",
@@ -1413,7 +1459,7 @@
    "raw": 16
   },
   {
-   "id": "v114",
+   "id": "v118",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -1425,7 +1471,7 @@
    "raw": -4
   },
   {
-   "id": "v115",
+   "id": "v119",
    "text": "-35",
    "fmt": "sint",
    "rule": "em",
@@ -1437,7 +1483,7 @@
    "raw": -35
   },
   {
-   "id": "v116",
+   "id": "v120",
    "text": "0.48",
    "fmt": "n2",
    "rule": "em",
@@ -1449,7 +1495,7 @@
    "raw": 0.481
   },
   {
-   "id": "v117",
+   "id": "v121",
    "text": "15%",
    "fmt": "pct0",
    "rule": "em",
@@ -1461,7 +1507,7 @@
    "raw": 0.1538
   },
   {
-   "id": "v118",
+   "id": "v122",
    "text": "40%",
    "fmt": "pct0",
    "rule": "em",
@@ -1473,7 +1519,7 @@
    "raw": 0.4
   },
   {
-   "id": "v119",
+   "id": "v123",
    "text": "9%",
    "fmt": "pct0",
    "rule": "em",
@@ -1485,7 +1531,19 @@
    "raw": 0.0916
   },
   {
-   "id": "v120",
+   "id": "v124",
+   "text": "-6.9%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": -0.069
+  },
+  {
+   "id": "v125",
    "text": "14%",
    "fmt": "pct0",
    "rule": "em",
@@ -1497,7 +1555,7 @@
    "raw": 0.1386
   },
   {
-   "id": "v121",
+   "id": "v126",
    "text": "0.48",
    "fmt": "n2",
    "rule": "em",
@@ -1509,7 +1567,7 @@
    "raw": 0.481
   },
   {
-   "id": "v122",
+   "id": "v127",
    "text": "+0.72",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1525,7 +1583,7 @@
    "raw": 0.721
   },
   {
-   "id": "v123",
+   "id": "v128",
    "text": "+0.54",
    "fmt": "s2",
    "rule": "em",
@@ -1537,7 +1595,7 @@
    "raw": 0.54
   },
   {
-   "id": "v124",
+   "id": "v129",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1549,7 +1607,7 @@
    "raw": 4
   },
   {
-   "id": "v125",
+   "id": "v130",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1561,7 +1619,7 @@
    "raw": 5
   },
   {
-   "id": "v126",
+   "id": "v131",
    "text": "-0.51",
    "fmt": "s2",
    "rule": "em",
@@ -1573,7 +1631,7 @@
    "raw": -0.513
   },
   {
-   "id": "v127",
+   "id": "v132",
    "text": "+1.03",
    "fmt": "s2",
    "rule": "em",
@@ -1585,7 +1643,7 @@
    "raw": 1.026
   },
   {
-   "id": "v128",
+   "id": "v133",
    "text": "+0.21",
    "fmt": "s2",
    "rule": "em",
@@ -1597,21 +1655,19 @@
    "raw": 0.208
   },
   {
-   "id": "v129",
+   "id": "v134",
    "text": "65%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "hdef",
-    "slug": "evan-elder"
+    "fighter": "Evan Elder",
+    "path": "hdef"
    },
    "desc": "Head defence a",
-   "raw": 0.648
+   "raw": 0.6479
   },
   {
-   "id": "v130",
+   "id": "v135",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1623,7 +1679,7 @@
    "raw": 3
   },
   {
-   "id": "v131",
+   "id": "v136",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1635,7 +1691,7 @@
    "raw": 4
   },
   {
-   "id": "v132",
+   "id": "v137",
    "text": "138%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1649,47 +1705,43 @@
    "raw": 1.38
   },
   {
-   "id": "v133",
+   "id": "v138",
    "text": "12.5",
    "fmt": "n1",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "min",
-    "slug": "evan-elder"
+    "fighter": "Evan Elder",
+    "path": "pace.min"
    },
    "desc": "Avg fight, min a",
-   "raw": 12.5
+   "raw": 12.48
   },
   {
-   "id": "v134",
+   "id": "v139",
    "text": "0%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "r1",
-    "slug": "evan-elder"
+    "fighter": "Evan Elder",
+    "path": "pace.r1"
    },
    "desc": "Finished in R1 a",
    "raw": 0.0
   },
   {
-   "id": "v135",
-   "text": "75%",
+   "id": "v140",
+   "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed by 10+ in round 1",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live 10+ wp",
-   "raw": 0.754
+   "desc": "Live 10+ owp",
+   "raw": 0.745
   },
   {
-   "id": "v136",
+   "id": "v141",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1701,7 +1753,19 @@
    "raw": 0.576
   },
   {
-   "id": "v137",
+   "id": "v142",
+   "text": "627",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed by 10+ in round 1",
+   "raw": 627
+  },
+  {
+   "id": "v143",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1713,7 +1777,7 @@
    "raw": 0.551
   },
   {
-   "id": "v138",
+   "id": "v144",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1725,19 +1789,31 @@
    "raw": 0.359
   },
   {
-   "id": "v139",
-   "text": "45%",
+   "id": "v145",
+   "text": "198",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_n"
+   },
+   "desc": "Live n dog_n Out-landed by 10+ in round 1",
+   "raw": 198
+  },
+  {
+   "id": "v146",
+   "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live ctrl wp",
-   "raw": 0.45
+   "desc": "Live ctrl owp",
+   "raw": 0.412
   },
   {
-   "id": "v140",
+   "id": "v147",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1749,7 +1825,19 @@
    "raw": 0.485
   },
   {
-   "id": "v141",
+   "id": "v148",
+   "text": "194",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
+   "raw": 194
+  },
+  {
+   "id": "v149",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1762,7 +1850,7 @@
    "raw": -208
   },
   {
-   "id": "v142",
+   "id": "v150",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1775,7 +1863,7 @@
    "raw": -455
   },
   {
-   "id": "v143",
+   "id": "v151",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1788,7 +1876,7 @@
    "raw": -303
   },
   {
-   "id": "v144",
+   "id": "v152",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -1801,7 +1889,7 @@
    "raw": 175
   },
   {
-   "id": "v145",
+   "id": "v153",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",

@@ -142,7 +142,7 @@ XPL = {
              ("Market", "The current consensus price. The % is the straight conversion of that price, so it still includes the book's margin."),
              ("Edge", "Model % minus the listed % (moneyline, goes the distance) or minus the market % (inside the distance, method). Positive means the model likes that side more than the price does."),
              ("Line move", "How far the consensus win chance has moved since the line opened, with the opening price of the side it moved toward."),
-             ("Live guide", "What happened historically in UFC fights after round 1 went a certain way (all fights since 2010, from our round data). Flip fight: one fighter out-strikes opponents in round 1 by 1+ per minute more, the other in round 3."),
+             ("Live guide", "What happened in UFC fights with closing lines (2022-26) that went past round 1, after round 1 went a certain way, next to the closing-line win chance of the same fighters. Flip fight: one fighter out-strikes opponents in round 1 by 1+ per minute more, the other in round 3; each needs 15+ minutes of round 1 and of round 3 in the UFC."),
              ("Striking angle", "Shows when one fighter clears a striking gap we track: career strike differential 2+ per minute better, or round-3 differential about 3+ per minute better (both fighters with 4+ UFC fights). Tracked on paper, not a bet signal yet.")],
     "st": [("Where they land", "Share of each fighter's landed significant strikes that hit the head, body and legs."),
            ("Diff /min", "Strikes landed minus strikes absorbed to that target, per minute of fight time."),
@@ -150,6 +150,8 @@ XPL = {
     "gr": [("Takedowns /15", "Takedowns landed per 15 minutes."),
            ("TD accuracy / defence", "Share of their takedown attempts that land; share of opponents' attempts they stop."),
            ("Time in control / controlled", "Share of fight time spent controlling the opponent, or being controlled."),
+           ("Net control, opp-adjusted", "Control time minus time controlled, as a share of fight time, corrected for how strong the opponents were. Controlling good opponents counts for more. In testing it predicted who wins the grappling better than the raw number in each of the last five years."),
+           ("Won the grappling", "Fights with real grappling (a minute of control or a takedown): who had more control time, or more takedowns when control was level."),
            ("Sub attempts /15", "Submission attempts per 15 minutes.")],
     "pw": [("Power", "Share of UFC fights where they knocked the opponent down or stopped them on the feet. Ground-and-pound finishes without a knockdown do not count."),
            ("Durability", "Share of UFC fights where they were knocked down or stopped by strikes (doctor and injury stoppages left out). Lower is better, so the scale runs backwards: right is better on both."),
@@ -232,7 +234,9 @@ def build(names, outname):
     n, pos = bout_no(an, bn)
     def ffile(X):   # UFC debutants have no fighter file (no UFC fights yet)
         p_ = L / "fighters" / f'{X["slug"]}.json' if X.get("slug") else None
-        return json.load(open(p_)) if p_ and p_.exists() else {"name": X["name"], "bio": {}, "fights": []}
+        if p_ and p_.exists(): return json.load(open(p_))
+        em_ = json.load(open(L / "embed_metrics" / f"{SLUG}.json"))["fighters"].get(X["name"]) or {}   # Block 59i: debut bio from UFCStats list
+        return {"name": X["name"], "bio": em_.get("bio") or {}, "fights": []}
     FA, FB = ffile(A_), ffile(B_)
     pa_ = [x for x in FA["fights"] if x["d"] < EVL["date"]]; pb_ = [x for x in FB["fights"] if x["d"] < EVL["date"]]
     ga, gb = agg(pa_), agg(pb_)
@@ -564,10 +568,11 @@ def build(names, outname):
         champ = (E("r45.fights", "Fights to R4+", "int", None) + E("r45.landed_pm_13", "Output R1-3 /min", "n1", "hi") + E("r45.landed_pm_45", "Output R4-5 /min", "n1", "hi")
                  + E("r45.diff_pm_45", "Diff R4-5 /min", "s1", "hi"))
         if not champ: champ = '<div class="note">Neither fighter has been past round 3 in the UFC.</div>'
-    BIG.update({"td15": 1.0, "td_acc": 0.15, "tdd": 0.15, "ctrl": 0.10, "ctrl_ag": 0.10, "sub15": 0.5})
+    BIG.update({"td15": 1.0, "td_acc": 0.15, "tdd": 0.15, "ctrl": 0.10, "ctrl_ag": 0.10, "sub15": 0.5, "adj_net_ctrl": 0.15})
     grap_html = (E("grap.td15", "Takedowns /15", "n2", "hi", "Takedowns landed per 15 minutes") + E("grap.td_acc", "TD accuracy", "pct0", "hi")
                  + E("grap.tdd", "TD defence", "pct0", "hi", "Share of opponents' takedown attempts stopped")
                  + E("grap.ctrl", "Time in control", "pct0", "hi", "Share of fight time spent controlling the opponent")
+                 + E("grap.adj_net_ctrl", "Net control, opp-adjusted", "spp", "hi", "Control time minus time controlled, as a share of fight time, corrected for the strength of the opponents")
                  + E("grap.ctrl_ag", "Time controlled", "pct0", "lo", "Share of fight time spent being controlled")
                  + E("grap.sub15", "Sub attempts /15", "n2", "hi"))
     # Block 59f: Stats sub-toggles, in Sean's order. Without JS every group shows.
@@ -585,12 +590,12 @@ def build(names, outname):
         tot_row = f'<div class="row"><div class="a{ea}">{totcell(ta_, an)}</div><div class="k">Strike diff /min</div><div class="b{eb}">{totcell(tb_, bn)}</div></div>'
     tot_row += E("sos.adj_sd", "Opp-adjusted diff", "s2", "hi", "Strike differential corrected for the quality of opponents faced")
     groups = [("st", "Striking", "Striking", target_html + strip("Out-landed the opponent", "out_landed", _ol, "UFC fights where they landed more significant strikes") + '<div class="tape">' + tot_row + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
-               + E("target_diff.leg", "Leg diff /min", "s2", "hi") + L3("metrics", "hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed") + '</div>'),
+               + E("target_diff.leg", "Leg diff /min", "s2", "hi") + E("hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed") + '</div>'),
               ("gr", "Grappling", "Grappling", strip("Won the grappling", "grap_won", _gw, "Fights with real grappling (a minute of control or a takedown): more control time, or more takedowns when control is level") + '<div class="tape">' + grap_html + '</div>'),
               ("pw", "Power", "Power and durability", power_html),
               ("ca", "Cardio", "Cardio" + (" · 5 rounds" if nrd == 5 else ""), rounds_html + ('<div class="tape">' + champ + '</div>' if nrd == 5 else "")
                + '<div class="tape">' + L3("cardio.upcoming", "out", "Output kept R3", "pct0", "hi", "Round 3 strikes as a share of round 1") + '</div>'),
-              ("en", "Endings", "How their fights end", outcome_html + '<div class="tape">' + L3("props.upcoming", "min", "Avg fight, min", "n1", None) + L3("props.upcoming", "r1", "Finished in R1", "pct0", None) + '</div>')]
+              ("en", "Endings", "How their fights end", outcome_html + '<div class="tape">' + E("pace.min", "Avg fight, min", "n1", None) + E("pace.r1", "Finished in R1", "pct0", None) + '</div>')]
     groups = [(k, t, h, grp(h, b)) for k, t, h, b in groups if b]
     stats_html = ('<div class="sgt" role="group" aria-label="Stat groups">' + "".join(f'<button type="button" data-g="{k}" aria-pressed="{"true" if i_ == 0 else "false"}">{t}</button>' for i_, (k, t, _, _) in enumerate(groups)) + '</div>'
                   + f'<div class="tape"><div class="row hdr"><div class="a">{esc(last(an))}</div><div class="k vs">VS</div><div class="b">{esc(last(bn))}</div></div></div>'
@@ -615,25 +620,33 @@ def build(names, outname):
     k10 = "Out-landed by 10+ in round 1"; lv = LIVE.get(k10)
     dog_ = an if side_cls["a"] == "dog" else bn; fav_ = bn if dog_ == an else an
     live_rows = []
+    # Kirk check 1: the % and the "before the fight" % must come from the same fights, so only the priced subset is shown
+    # (closing lines exist 2022-2026; on = fights with a close, owp = their win rate). Rows under 100 fights say so.
+    def lv_n(row, key_n):
+        n_ = row[key_n]
+        return f' <span class="dim">· {R(n_, "int", "labs_live", "Live n " + key_n + " " + row["label"], label=row["label"], field=key_n)} fights, 2022-26{" · small sample" if n_ < 100 else ""}</span>'
     if lv:
-        live_rows.append(f'<li>Out-lands the other by 10+ in R1: wins {R(lv["wp"], "pct0", "labs_live", "Live 10+ wp", label=k10, field="wp")} '
-                         f'<span class="dim">(was {R(lv["pre"], "pct0", "labs_live", "Live 10+ pre", label=k10, field="pre")} before the fight)</span></li>')
+        live_rows.append(f'<li>Out-lands the other by 10+ in R1: wins {R(lv["owp"], "pct0", "labs_live", "Live 10+ owp", label=k10, field="owp")} '
+                         f'<span class="dim">(was {R(lv["pre"], "pct0", "labs_live", "Live 10+ pre", label=k10, field="pre")} before the fight)</span>{lv_n(lv, "on")}</li>')
         live_rows.append(f'<li>If <b>{esc(last(dog_))}</b> (the dog) does it: underdogs won {R(lv["dog_wp"], "pct0", "labs_live", "Live 10+ dog wp", label=k10, field="dog_wp")} '
-                         f'<span class="dim">(was {R(lv["dog_pre"], "pct0", "labs_live", "Live 10+ dog pre", label=k10, field="dog_pre")})</span></li>')
+                         f'<span class="dim">(was {R(lv["dog_pre"], "pct0", "labs_live", "Live 10+ dog pre", label=k10, field="dog_pre")})</span>{lv_n(lv, "dog_n")}</li>')
     kc = "Out-landed in round 1 but gave up 2+ min of control"; lc = LIVE.get(kc)
     if lc:
-        live_rows.append(f'<li>Wins R1 on strikes but gets held down 2+ min: wins only {R(lc["wp"], "pct0", "labs_live", "Live ctrl wp", label=kc, field="wp")} '
-                         f'<span class="dim">(was {R(lc["pre"], "pct0", "labs_live", "Live ctrl pre", label=kc, field="pre")})</span></li>')
+        live_rows.append(f'<li>Wins R1 on strikes but gets held down 2+ min: wins only {R(lc["owp"], "pct0", "labs_live", "Live ctrl owp", label=kc, field="owp")} '
+                         f'<span class="dim">(was {R(lc["pre"], "pct0", "labs_live", "Live ctrl pre", label=kc, field="pre")})</span>{lv_n(lc, "on")}</li>')
     flip = ""
     # flip: one fighter out-strikes the other early (R1 diff /min 1.0+ better), the other late (R3 diff 1.0+ better); both 3+ fights reaching R3
     w1a, w1b, w3a, w3b = (emv(ema, "rounds.0.diff_pm"), emv(emb, "rounds.0.diff_pm"), emv(ema, "rounds.2.diff_pm"), emv(emb, "rounds.2.diff_pm"))
-    if None not in (w1a, w1b, w3a, w3b) and (emv(ema, "rounds.2.fights") or 0) >= 3 and (emv(emb, "rounds.2.fights") or 0) >= 3:
+    FLIP_MIN = 15.0   # Kirk check 3: each fighter needs 15+ minutes of round-1 and of round-3 data (three full rounds' worth)
+    if (None not in (w1a, w1b, w3a, w3b) and (emv(ema, "rounds.2.fights") or 0) >= 3 and (emv(emb, "rounds.2.fights") or 0) >= 3
+            and min(emv(ema, "rounds.0.mins") or 0, emv(emb, "rounds.0.mins") or 0, emv(ema, "rounds.2.mins") or 0, emv(emb, "rounds.2.mins") or 0) >= FLIP_MIN):
         if (w1a - w1b >= 1.0 and w3b - w3a >= 1.0) or (w1b - w1a >= 1.0 and w3a - w3b >= 1.0):
             st_, fi_ = (an, bn) if w1a > w1b else (bn, an)
             r1s, r1o = (w1a, w1b) if st_ == an else (w1b, w1a); r3f, r3o = (w3b, w3a) if st_ == an else (w3a, w3b)
             flip = (f'<div class="flip"><span class="mvl">Flip fight</span> <b>{esc(last(st_))}</b> starts better '
                     f'(R1 strike diff {R(r1s, "s1", "em", "Flip R1 " + st_, fighter=st_, path="rounds.0.diff_pm")} vs {R(r1o, "s1", "em", "Flip R1 " + fi_, fighter=fi_, path="rounds.0.diff_pm")} per min), '
                     f'<b>{esc(last(fi_))}</b> finishes better (R3 {R(r3f, "s1", "em", "Flip R3 " + fi_, fighter=fi_, path="rounds.2.diff_pm")} vs {R(r3o, "s1", "em", "Flip R3 " + st_, fighter=st_, path="rounds.2.diff_pm")}). '
+                    f'<span class="dim">Based on {R(emv(ema if st_ == an else emb, "rounds.0.mins"), "r0", "em", "Flip R1 mins " + st_, fighter=st_, path="rounds.0.mins")} min of R1 for {esc(last(st_))} and {R(emv(ema if fi_ == an else emb, "rounds.2.mins"), "r0", "em", "Flip R3 mins " + fi_, fighter=fi_, path="rounds.2.mins")} min of R3 for {esc(last(fi_))}.</span> '
                     f'Don\'t overreact to round 1.</div>')
     live_html = (f'<div class="stk live" data-part="live"><div class="stk-h"><span class="bullet"></span>Live guide · round 1</div>{flip}'
                  f'<ul class="lvl">{"".join(live_rows)}</ul></div>') if live_rows else ""

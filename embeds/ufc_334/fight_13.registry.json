@@ -2372,6 +2372,30 @@
   },
   {
    "id": "v194",
+   "text": "+4.3%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.0426
+  },
+  {
+   "id": "v195",
+   "text": "+24.6%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.2461
+  },
+  {
+   "id": "v196",
    "text": "8%",
    "fmt": "pct0",
    "rule": "em",
@@ -2383,7 +2407,7 @@
    "raw": 0.0782
   },
   {
-   "id": "v195",
+   "id": "v197",
    "text": "7%",
    "fmt": "pct0",
    "rule": "em",
@@ -2395,7 +2419,7 @@
    "raw": 0.0693
   },
   {
-   "id": "v196",
+   "id": "v198",
    "text": "0.58",
    "fmt": "n2",
    "rule": "em",
@@ -2407,7 +2431,7 @@
    "raw": 0.577
   },
   {
-   "id": "v197",
+   "id": "v199",
    "text": "0.50",
    "fmt": "n2",
    "rule": "em",
@@ -2419,7 +2443,7 @@
    "raw": 0.499
   },
   {
-   "id": "v198",
+   "id": "v200",
    "text": "+3.09",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2435,7 +2459,7 @@
    "raw": 3.0940000000000003
   },
   {
-   "id": "v199",
+   "id": "v201",
    "text": "+4.16",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2451,7 +2475,7 @@
    "raw": 4.158
   },
   {
-   "id": "v200",
+   "id": "v202",
    "text": "+3.35",
    "fmt": "s2",
    "rule": "em",
@@ -2463,7 +2487,7 @@
    "raw": 3.347
   },
   {
-   "id": "v201",
+   "id": "v203",
    "text": "+4.44",
    "fmt": "s2",
    "rule": "em",
@@ -2475,7 +2499,7 @@
    "raw": 4.438
   },
   {
-   "id": "v202",
+   "id": "v204",
    "text": "14",
    "fmt": "int",
    "rule": "em",
@@ -2487,7 +2511,7 @@
    "raw": 14
   },
   {
-   "id": "v203",
+   "id": "v205",
    "text": "14",
    "fmt": "int",
    "rule": "em",
@@ -2499,7 +2523,7 @@
    "raw": 14
   },
   {
-   "id": "v204",
+   "id": "v206",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -2511,7 +2535,7 @@
    "raw": 4
   },
   {
-   "id": "v205",
+   "id": "v207",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -2523,7 +2547,7 @@
    "raw": 4
   },
   {
-   "id": "v206",
+   "id": "v208",
    "text": "+1.46",
    "fmt": "s2",
    "rule": "em",
@@ -2535,7 +2559,7 @@
    "raw": 1.462
   },
   {
-   "id": "v207",
+   "id": "v209",
    "text": "+4.06",
    "fmt": "s2",
    "rule": "em",
@@ -2547,7 +2571,7 @@
    "raw": 4.058
   },
   {
-   "id": "v208",
+   "id": "v210",
    "text": "+0.91",
    "fmt": "s2",
    "rule": "em",
@@ -2559,7 +2583,7 @@
    "raw": 0.912
   },
   {
-   "id": "v209",
+   "id": "v211",
    "text": "+0.20",
    "fmt": "s2",
    "rule": "em",
@@ -2571,7 +2595,7 @@
    "raw": 0.2
   },
   {
-   "id": "v210",
+   "id": "v212",
    "text": "+0.72",
    "fmt": "s2",
    "rule": "em",
@@ -2583,7 +2607,7 @@
    "raw": 0.72
   },
   {
-   "id": "v211",
+   "id": "v213",
    "text": "-0.10",
    "fmt": "s2",
    "rule": "em",
@@ -2595,21 +2619,31 @@
    "raw": -0.1
   },
   {
-   "id": "v212",
+   "id": "v214",
    "text": "76%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "hdef",
-    "slug": "ciryl-gane"
+    "fighter": "Ciryl Gane",
+    "path": "hdef"
    },
    "desc": "Head defence a",
-   "raw": 0.763
+   "raw": 0.7634
   },
   {
-   "id": "v213",
+   "id": "v215",
+   "text": "52%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.5185
+  },
+  {
+   "id": "v216",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2621,7 +2655,7 @@
    "raw": 3
   },
   {
-   "id": "v214",
+   "id": "v217",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -2633,7 +2667,7 @@
    "raw": 6
   },
   {
-   "id": "v215",
+   "id": "v218",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2645,7 +2679,7 @@
    "raw": 2
   },
   {
-   "id": "v216",
+   "id": "v219",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2657,7 +2691,7 @@
    "raw": 3
   },
   {
-   "id": "v217",
+   "id": "v220",
    "text": "163%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2671,75 +2705,67 @@
    "raw": 1.626
   },
   {
-   "id": "v218",
+   "id": "v221",
    "text": "13.6",
    "fmt": "n1",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "min",
-    "slug": "ciryl-gane"
+    "fighter": "Ciryl Gane",
+    "path": "pace.min"
    },
    "desc": "Avg fight, min a",
-   "raw": 13.6
+   "raw": 13.642
   },
   {
-   "id": "v219",
+   "id": "v222",
    "text": "7.5",
    "fmt": "n1",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "min",
-    "slug": "josh-hokit"
+    "fighter": "Josh Hokit",
+    "path": "pace.min"
    },
    "desc": "Avg fight, min b",
-   "raw": 7.5
+   "raw": 7.517
   },
   {
-   "id": "v220",
+   "id": "v223",
    "text": "15%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "r1",
-    "slug": "ciryl-gane"
+    "fighter": "Ciryl Gane",
+    "path": "pace.r1"
    },
    "desc": "Finished in R1 a",
-   "raw": 0.154
+   "raw": 0.1538
   },
   {
-   "id": "v221",
+   "id": "v224",
    "text": "50%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "r1",
-    "slug": "josh-hokit"
+    "fighter": "Josh Hokit",
+    "path": "pace.r1"
    },
    "desc": "Finished in R1 b",
    "raw": 0.5
   },
   {
-   "id": "v222",
-   "text": "75%",
+   "id": "v225",
+   "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed by 10+ in round 1",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live 10+ wp",
-   "raw": 0.754
+   "desc": "Live 10+ owp",
+   "raw": 0.745
   },
   {
-   "id": "v223",
+   "id": "v226",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2751,7 +2777,19 @@
    "raw": 0.576
   },
   {
-   "id": "v224",
+   "id": "v227",
+   "text": "627",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed by 10+ in round 1",
+   "raw": 627
+  },
+  {
+   "id": "v228",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2763,7 +2801,7 @@
    "raw": 0.551
   },
   {
-   "id": "v225",
+   "id": "v229",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2775,19 +2813,31 @@
    "raw": 0.359
   },
   {
-   "id": "v226",
-   "text": "45%",
+   "id": "v230",
+   "text": "198",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_n"
+   },
+   "desc": "Live n dog_n Out-landed by 10+ in round 1",
+   "raw": 198
+  },
+  {
+   "id": "v231",
+   "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live ctrl wp",
-   "raw": 0.45
+   "desc": "Live ctrl owp",
+   "raw": 0.412
   },
   {
-   "id": "v227",
+   "id": "v232",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2799,7 +2849,19 @@
    "raw": 0.485
   },
   {
-   "id": "v228",
+   "id": "v233",
+   "text": "194",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
+   "raw": 194
+  },
+  {
+   "id": "v234",
    "text": "-110",
    "fmt": "ml",
    "rule": "fight",
@@ -2812,7 +2874,7 @@
    "raw": -110
   },
   {
-   "id": "v229",
+   "id": "v235",
    "text": "+298",
    "fmt": "ml",
    "rule": "fight",
@@ -2825,7 +2887,7 @@
    "raw": 298
   },
   {
-   "id": "v230",
+   "id": "v236",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -2838,7 +2900,7 @@
    "raw": -370
   },
   {
-   "id": "v231",
+   "id": "v237",
    "text": "+145",
    "fmt": "ml",
    "rule": "fight",
@@ -2851,7 +2913,7 @@
    "raw": 145
   },
   {
-   "id": "v232",
+   "id": "v238",
    "text": "-500",
    "fmt": "ml",
    "rule": "fight",
@@ -2864,7 +2926,7 @@
    "raw": -500
   },
   {
-   "id": "v233",
+   "id": "v239",
    "text": "-147",
    "fmt": "ml",
    "rule": "fight",
@@ -2877,7 +2939,7 @@
    "raw": -147
   },
   {
-   "id": "v234",
+   "id": "v240",
    "text": "-435",
    "fmt": "ml",
    "rule": "fight",
@@ -2890,7 +2952,7 @@
    "raw": -435
   },
   {
-   "id": "v235",
+   "id": "v241",
    "text": "-118",
    "fmt": "ml",
    "rule": "fight",
@@ -2903,7 +2965,7 @@
    "raw": -118
   },
   {
-   "id": "v236",
+   "id": "v242",
    "text": "-270",
    "fmt": "ml",
    "rule": "fight",
@@ -2916,7 +2978,7 @@
    "raw": -270
   },
   {
-   "id": "v237",
+   "id": "v243",
    "text": "-417",
    "fmt": "ml",
    "rule": "fight",

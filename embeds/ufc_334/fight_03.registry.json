@@ -2097,6 +2097,30 @@
   },
   {
    "id": "v171",
+   "text": "+9.4%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.0941
+  },
+  {
+   "id": "v172",
+   "text": "+41.0%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.41
+  },
+  {
+   "id": "v173",
    "text": "25%",
    "fmt": "pct0",
    "rule": "em",
@@ -2108,7 +2132,7 @@
    "raw": 0.2465
   },
   {
-   "id": "v172",
+   "id": "v174",
    "text": "11%",
    "fmt": "pct0",
    "rule": "em",
@@ -2120,7 +2144,7 @@
    "raw": 0.1149
   },
   {
-   "id": "v173",
+   "id": "v175",
    "text": "0.39",
    "fmt": "n2",
    "rule": "em",
@@ -2132,7 +2156,7 @@
    "raw": 0.393
   },
   {
-   "id": "v174",
+   "id": "v176",
    "text": "3.57",
    "fmt": "n2",
    "rule": "em",
@@ -2144,7 +2168,7 @@
    "raw": 3.567
   },
   {
-   "id": "v175",
+   "id": "v177",
    "text": "+0.45",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2160,7 +2184,7 @@
    "raw": 0.451
   },
   {
-   "id": "v176",
+   "id": "v178",
    "text": "+3.25",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2176,7 +2200,7 @@
    "raw": 3.25
   },
   {
-   "id": "v177",
+   "id": "v179",
    "text": "+0.45",
    "fmt": "s2",
    "rule": "em",
@@ -2188,7 +2212,7 @@
    "raw": 0.446
   },
   {
-   "id": "v178",
+   "id": "v180",
    "text": "+3.08",
    "fmt": "s2",
    "rule": "em",
@@ -2200,7 +2224,7 @@
    "raw": 3.078
   },
   {
-   "id": "v179",
+   "id": "v181",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -2212,7 +2236,7 @@
    "raw": 9
   },
   {
-   "id": "v180",
+   "id": "v182",
    "text": "14",
    "fmt": "int",
    "rule": "em",
@@ -2224,7 +2248,7 @@
    "raw": 14
   },
   {
-   "id": "v181",
+   "id": "v183",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2236,7 +2260,7 @@
    "raw": 2
   },
   {
-   "id": "v182",
+   "id": "v184",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2248,7 +2272,7 @@
    "raw": 3
   },
   {
-   "id": "v183",
+   "id": "v185",
    "text": "+0.09",
    "fmt": "s2",
    "rule": "em",
@@ -2260,7 +2284,7 @@
    "raw": 0.085
   },
   {
-   "id": "v184",
+   "id": "v186",
    "text": "+3.33",
    "fmt": "s2",
    "rule": "em",
@@ -2272,7 +2296,7 @@
    "raw": 3.329
   },
   {
-   "id": "v185",
+   "id": "v187",
    "text": "+0.30",
    "fmt": "s2",
    "rule": "em",
@@ -2284,7 +2308,7 @@
    "raw": 0.301
   },
   {
-   "id": "v186",
+   "id": "v188",
    "text": "+0.00",
    "fmt": "s2",
    "rule": "em",
@@ -2296,7 +2320,7 @@
    "raw": 0.0
   },
   {
-   "id": "v187",
+   "id": "v189",
    "text": "+0.07",
    "fmt": "s2",
    "rule": "em",
@@ -2308,7 +2332,7 @@
    "raw": 0.065
   },
   {
-   "id": "v188",
+   "id": "v190",
    "text": "-0.08",
    "fmt": "s2",
    "rule": "em",
@@ -2320,21 +2344,31 @@
    "raw": -0.079
   },
   {
-   "id": "v189",
+   "id": "v191",
    "text": "53%",
    "fmt": "pct0",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "hdef",
-    "slug": "macy-chiasson"
+    "fighter": "Macy Chiasson",
+    "path": "hdef"
    },
    "desc": "Head defence a",
-   "raw": 0.531
+   "raw": 0.5312
   },
   {
-   "id": "v190",
+   "id": "v192",
+   "text": "73%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.7317
+  },
+  {
+   "id": "v193",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -2346,7 +2380,7 @@
    "raw": 9
   },
   {
-   "id": "v191",
+   "id": "v194",
    "text": "13",
    "fmt": "int",
    "rule": "em",
@@ -2358,7 +2392,7 @@
    "raw": 13
   },
   {
-   "id": "v192",
+   "id": "v195",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2370,7 +2404,7 @@
    "raw": 2
   },
   {
-   "id": "v193",
+   "id": "v196",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2382,7 +2416,7 @@
    "raw": 3
   },
   {
-   "id": "v194",
+   "id": "v197",
    "text": "43%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2396,75 +2430,67 @@
    "raw": 0.433
   },
   {
-   "id": "v195",
+   "id": "v198",
    "text": "10.9",
    "fmt": "n1",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "min",
-    "slug": "macy-chiasson"
+    "fighter": "Macy Chiasson",
+    "path": "pace.min"
    },
    "desc": "Avg fight, min a",
-   "raw": 10.9
-  },
-  {
-   "id": "v196",
-   "text": "4.2",
-   "fmt": "n1",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "min",
-    "slug": "bia-mesquita"
-   },
-   "desc": "Avg fight, min b",
-   "raw": 4.2
-  },
-  {
-   "id": "v197",
-   "text": "14%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "r1",
-    "slug": "macy-chiasson"
-   },
-   "desc": "Finished in R1 a",
-   "raw": 0.143
-  },
-  {
-   "id": "v198",
-   "text": "67%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "r1",
-    "slug": "bia-mesquita"
-   },
-   "desc": "Finished in R1 b",
-   "raw": 0.667
+   "raw": 10.907
   },
   {
    "id": "v199",
-   "text": "75%",
+   "text": "4.2",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 4.206
+  },
+  {
+   "id": "v200",
+   "text": "14%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.1429
+  },
+  {
+   "id": "v201",
+   "text": "67%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.6667
+  },
+  {
+   "id": "v202",
+   "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed by 10+ in round 1",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live 10+ wp",
-   "raw": 0.754
+   "desc": "Live 10+ owp",
+   "raw": 0.745
   },
   {
-   "id": "v200",
+   "id": "v203",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2476,7 +2502,19 @@
    "raw": 0.576
   },
   {
-   "id": "v201",
+   "id": "v204",
+   "text": "627",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed by 10+ in round 1",
+   "raw": 627
+  },
+  {
+   "id": "v205",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2488,7 +2526,7 @@
    "raw": 0.551
   },
   {
-   "id": "v202",
+   "id": "v206",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2500,19 +2538,31 @@
    "raw": 0.359
   },
   {
-   "id": "v203",
-   "text": "45%",
+   "id": "v207",
+   "text": "198",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_n"
+   },
+   "desc": "Live n dog_n Out-landed by 10+ in round 1",
+   "raw": 198
+  },
+  {
+   "id": "v208",
+   "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
    "args": {
     "label": "Out-landed in round 1 but gave up 2+ min of control",
-    "field": "wp"
+    "field": "owp"
    },
-   "desc": "Live ctrl wp",
-   "raw": 0.45
+   "desc": "Live ctrl owp",
+   "raw": 0.412
   },
   {
-   "id": "v204",
+   "id": "v209",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2524,7 +2574,19 @@
    "raw": 0.485
   },
   {
-   "id": "v205",
+   "id": "v210",
+   "text": "194",
+   "fmt": "int",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "on"
+   },
+   "desc": "Live n on Out-landed in round 1 but gave up 2+ min of control",
+   "raw": 194
+  },
+  {
+   "id": "v211",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -2537,7 +2599,7 @@
    "raw": 155
   },
   {
-   "id": "v206",
+   "id": "v212",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -2550,7 +2612,7 @@
    "raw": -204
   },
   {
-   "id": "v207",
+   "id": "v213",
    "text": "-141",
    "fmt": "ml",
    "rule": "fight",
@@ -2563,7 +2625,7 @@
    "raw": -141
   },
   {
-   "id": "v208",
+   "id": "v214",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -2576,7 +2638,7 @@
    "raw": -112
   },
   {
-   "id": "v209",
+   "id": "v215",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2589,7 +2651,7 @@
    "raw": -250
   },
   {
-   "id": "v210",
+   "id": "v216",
    "text": "+150",
    "fmt": "ml",
    "rule": "fight",
@@ -2602,7 +2664,7 @@
    "raw": 150
   },
   {
-   "id": "v211",
+   "id": "v217",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -2615,7 +2677,7 @@
    "raw": 185
   },
   {
-   "id": "v212",
+   "id": "v218",
    "text": "-667",
    "fmt": "ml",
    "rule": "fight",
@@ -2628,7 +2690,7 @@
    "raw": -667
   },
   {
-   "id": "v213",
+   "id": "v219",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2641,7 +2703,7 @@
    "raw": -714
   },
   {
-   "id": "v214",
+   "id": "v220",
    "text": "-645",
    "fmt": "ml",
    "rule": "fight",
