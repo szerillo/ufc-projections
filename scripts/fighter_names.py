@@ -165,3 +165,4 @@ function fighterBoutSlots(a1, b1, a2, b2) {
   return null;
 }
 """.replace("%DISTINCT%", "[" + ", ".join(f'"{a}|{b}"' for a, b in sorted(_DISTINCT)) + "]").replace("%NICKS%", "{" + ", ".join(f'"{k}": "{v}"' for k, v in sorted(NICKNAMES.items())) + "}")
+# rehearsal touch (Block 48): forces the workflow to re-check every pending file
