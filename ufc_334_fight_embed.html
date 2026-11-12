@@ -169,13 +169,13 @@ function render(doc, f) {
     const a = inp.open_dog, b = s.listed, lo = Math.min(a, b) - 0.03, hi = Math.max(a, b) + 0.03, y = (v) => 58 - 46 * (v - lo) / (hi - lo);
     return `<svg viewBox="0 0 300 80" role="img" aria-label="Underdog no-vig: open ${pct(a)}, now ${pct(b)}, drift ${sgn(s.drift)}">
       <line x1="40" y1="${y(a)}" x2="260" y2="${y(b)}" stroke="var(--dog)" stroke-width="2"/>
-      <circle cx="40" cy="${y(a)}" r="5" fill="var(--dog)" stroke="var(--surface-1)" stroke-width="2" data-tip="Open (consensus no-vig) ${pct(a)}"/>
+      <circle cx="40" cy="${y(a)}" r="5" fill="var(--dog)" stroke="var(--surface-1)" stroke-width="2" data-tip="Sheet open: consensus no-vig when the sheet first loaded the card ${pct(a)}"/>
       <circle cx="260" cy="${y(b)}" r="5" fill="var(--dog)" stroke="var(--surface-1)" stroke-width="2" data-tip="Now (no-vig at best price) ${pct(b)}"/>
       <text x="40" y="${y(a) - 10}" text-anchor="middle">${V("open_dog", pct(a))}</text>
       <text x="260" y="${y(b) - 10}" text-anchor="middle">${V("listed_dog", pct(b))}</text>
-      <text class="muted" x="40" y="76" text-anchor="middle">Open</text><text class="muted" x="260" y="76" text-anchor="middle">Now</text>
+      <text class="muted" x="40" y="76" text-anchor="middle">Sheet open</text><text class="muted" x="260" y="76" text-anchor="middle">Now</text>
       <text class="muted" x="150" y="76" text-anchor="middle">Drift ${V("drift", sgn(s.drift))}</text></svg>`; })()}
-    ${f.odds_history ? `<div class="foot" style="margin-top:6px">By book, through ${esc(f.odds_history.through)} UTC</div>${spark(f.odds_history, f.dog)}` : NOTE("odds_history", "Book-by-book price history not available for this fight.")}
+    ${f.odds_history ? `<div class="foot" style="margin-top:6px">By book since the first archived price, through ${esc(f.odds_history.through)} UTC (a different start point from the sheet open)</div>${spark(f.odds_history, f.dog)}` : NOTE("odds_history", "Book-by-book price history not available for this fight.")}
   </section>
 
   ${hasRec || hasFlag ? `<div class="rec">${hasRec ? `Model rec: <b data-k="rec">${esc(s.rec)}</b>` : ""}${hasRec && hasFlag ? "<br>" : ""}${hasFlag ? `<span style="color:var(--text-secondary)">Flag: <span data-k="flag">${esc(s.flag)}</span></span>` : ""}</div>` : ""}
