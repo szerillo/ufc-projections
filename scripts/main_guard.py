@@ -23,6 +23,14 @@ def git(*a, check=True):
 
 
 # Kirk round 24 call 1: every code file that reads the odds files (writer fetch_odds.py and this guard excluded)
+# Kirk round 32 A: the publish script de4c2be3 (installed Nov 12) adds these keys to the projections export. They are read by
+# publish-to-site's scripts/verify_projections.py (the projections check), not by the site. Exact paths, list positions
+# collapsed; any other new key in the export still refuses.
+KNOWN_EXPORT_KEYS = {
+    ".fights[].method_inputs", *(".fights[].method_inputs." + k for k in ("ap", "aq", "ad", "ae", "ah", "ai", "al", "am", "an", "s", "cx", "cy", "ko_dog", "sub_dog", "ko_fav", "sub_fav")),
+    ".fights[].outliers", *(".fights[].outliers[]." + k for k in ("book", "excluded", "odds", "side")),
+    ".fights[].price_source", *(".fights[].price_source." + k for k in ("order", "dog", "fav", "cons_dog", "cons_fav", "best_dog", "best_fav")),
+    ".params.b41", ".prices_loaded"}
 READERS = ["scripts/build_fight_embeds.py", "scripts/verify_fight_embeds.py", "scripts/build_form.py", "scripts/check_site_projections.py",
            "scripts/markov_blocks.py", "scripts/inputs_to_blocks.py", "scripts/odds_tick.py", "scripts/odds_live_window.py",
            "scripts/build_line_history.py", "scripts/refresh_event_odds.py", "scripts/listed_price_report.py", "form/app.js", "embed.html"]
@@ -117,8 +125,12 @@ def main():
                 # approval cannot unlock it. Additions only; a dropped key always refuses.
                 appr_ = set(__import__("os").environ.get("GUARD_APPROVE_KEYS", "").split())
                 add_, rem_ = kn_ - ko_ if ko_ is not None else set(), ko_ - kn_ if ko_ is not None else set()
-                if ko_ is not None and ko_ != kn_:
+                if ko_ is not None and ko_ != kn_ and (rem_ or add_ - (KNOWN_EXPORT_KEYS if f.endswith(f"{a.slug}_projections.json") else set())):
                     is_odds_ = f in (ODDS, NEXT_CARD_ODDS); hard_ = list(rem_ and [f"dropped keys {sorted(rem_)}"] or [])
+                    if f.endswith(f"{a.slug}_projections.json"):   # Kirk round 32 A
+                        known_ = add_ & KNOWN_EXPORT_KEYS
+                        if known_: print(f"  {f}: {len(known_)} known export keys (publish script de4c2be3, read by verify_projections.py)")
+                        add_ = add_ - KNOWN_EXPORT_KEYS
                     for k_ in sorted(add_):
                         fld_ = k_.rstrip("[]").split(".")[-1].rstrip("[]")
                         readers_ = {}
@@ -151,10 +163,10 @@ def main():
             try: newer_ = "main" if odds_newer.newer(dm_, db_)[0] == "A" else "branch"
             except Exception as e_: newer_ = ""; print(f"  odds file: cannot tell which copy is newer: {e_}")
             newer_ = newer_ and f" odds file: main {tm_}, branch {tb_} -> take {newer_.upper()}'s copy" + (" and rebuild the embeds on it" if newer_ == "main" else "") + "."
-        if chg_ and set(chg_) <= ALLOWED and mt_.returncode in (0, 1) and conf_ in ([], [ODDS]) and (not conf_ or newer_) and not main_hits_:
+        if (chg_ or cur == exp) and set(chg_) <= ALLOWED and mt_.returncode in (0, 1) and conf_ in ([], [ODDS]) and (not conf_ or newer_) and not main_hits_:
             n_, hits_ = served_scan("HEAD")
             if not hits_:
-                print(f"MAIN GUARD: {a.ref} is {cur[:8]}; since {exp[:8]} main changed only {chg_} (allowlist: export, odds bot). "
+                print(f"MAIN GUARD: {a.ref} is {cur[:8]}; since {exp[:8]} main changed only {chg_ or 'nothing'} (allowlist: export, odds bot). "
                       f"Conflicts: {conf_ or 'none'}.{newer_} Branch served set {n_} files, 0 offshore hits; main's new versions pass the full scan and keep their key layout. "
                       f"OK as a --no-ff merge via scripts/merge_main.sh (not a fast-forward).")
                 return

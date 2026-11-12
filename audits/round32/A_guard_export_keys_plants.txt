@@ -1,0 +1,23 @@
+== plant: real (main export at fb73fd7f), checked commit 727cb19c
+MAIN GUARD: origin/main is fb73fd7f; since 727cb19c main changed only ['data/fn_prochazka_stirling_odds.json', 'data/pending/ufc_334_projections.json', 'data/ufc_334_odds.json'] (allowlist: export, odds bot). Conflicts: ['data/ufc_334_odds.json']. odds file: main 2026-11-12T17:40:32Z, branch 2026-11
+exit 0
+== plant: unknown (main export at b08cb221), checked commit 727cb19c
+  data/pending/ufc_334_projections.json: 32 known export keys (publish script de4c2be3, read by verify_projections.py)
+  NEW KEY data/pending/ufc_334_projections.json: .fights[].sheet_url
+  NO MERGE TONIGHT (approval cannot unlock): .fights[].sheet_url: new key in a non-odds file
+  (allow-publish-and-bot: not accepted; changed ['data/fn_prochazka_stirling_odds.json', 'data/pending/ufc_334_projections.json', 'data/ufc_334_odds.json'], conflicts ['data/ufc_334_odds.json'], newer copy known, problems in main's new files {'data/pending/ufc_334_projections.json': ['key layout cha
+MAIN GUARD: b08cb221a9ec826422163d5f1d339398baa7b174 is b08cb221, expected 727cb19c. REFUSING: the round-18 served-set result no longer applies.
+exit 1
+== plant: unknown_nested (main export at 026a9633), checked commit 727cb19c
+  data/pending/ufc_334_projections.json: 32 known export keys (publish script de4c2be3, read by verify_projections.py)
+  NEW KEY data/pending/ufc_334_projections.json: .fights[].price_source.raw_cell
+  NO MERGE TONIGHT (approval cannot unlock): .fights[].price_source.raw_cell: new key in a non-odds file
+  (allow-publish-and-bot: not accepted; changed ['data/fn_prochazka_stirling_odds.json', 'data/pending/ufc_334_projections.json', 'data/ufc_334_odds.json'], conflicts ['data/ufc_334_odds.json'], newer copy known, problems in main's new files {'data/pending/ufc_334_projections.json': ['key layout cha
+MAIN GUARD: 026a963302db8aa8a3337e5bf837de47b1ddb07e is 026a9633, expected 727cb19c. REFUSING: the round-18 served-set result no longer applies.
+exit 1
+== plant: drop (main export at 5c85a8c3), checked commit 727cb19c
+  data/pending/ufc_334_projections.json: 32 known export keys (publish script de4c2be3, read by verify_projections.py)
+  NO MERGE TONIGHT (approval cannot unlock): dropped keys ['.fights[].gtd']
+  (allow-publish-and-bot: not accepted; changed ['data/fn_prochazka_stirling_odds.json', 'data/pending/ufc_334_projections.json', 'data/ufc_334_odds.json'], conflicts ['data/ufc_334_odds.json'], newer copy known, problems in main's new files {'data/pending/ufc_334_projections.json': ["key layout cha
+MAIN GUARD: 5c85a8c3df923dde6691ee7668360919be50687e is 5c85a8c3, expected 727cb19c. REFUSING: the round-18 served-set result no longer applies.
+exit 1
