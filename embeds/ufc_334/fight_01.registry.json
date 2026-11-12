@@ -1460,6 +1460,42 @@
   },
   {
    "id": "v118",
+   "text": "25",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Evan Elder",
+   "raw": 25.0
+  },
+  {
+   "id": "v119",
+   "text": "22",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Evan Elder",
+   "raw": 21.77
+  },
+  {
+   "id": "v120",
+   "text": "16",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Evan Elder",
+   "raw": 15.63
+  },
+  {
+   "id": "v121",
    "text": "0.48",
    "fmt": "n2",
    "rule": "em",
@@ -1471,7 +1507,7 @@
    "raw": 0.481
   },
   {
-   "id": "v119",
+   "id": "v122",
    "text": "15%",
    "fmt": "pct0",
    "rule": "em",
@@ -1483,7 +1519,7 @@
    "raw": 0.1538
   },
   {
-   "id": "v120",
+   "id": "v123",
    "text": "40%",
    "fmt": "pct0",
    "rule": "em",
@@ -1495,7 +1531,7 @@
    "raw": 0.4
   },
   {
-   "id": "v121",
+   "id": "v124",
    "text": "9%",
    "fmt": "pct0",
    "rule": "em",
@@ -1507,7 +1543,7 @@
    "raw": 0.0916
   },
   {
-   "id": "v122",
+   "id": "v125",
    "text": "-6.9%",
    "fmt": "spp",
    "rule": "em",
@@ -1519,7 +1555,7 @@
    "raw": -0.069
   },
   {
-   "id": "v123",
+   "id": "v126",
    "text": "14%",
    "fmt": "pct0",
    "rule": "em",
@@ -1531,7 +1567,7 @@
    "raw": 0.1386
   },
   {
-   "id": "v124",
+   "id": "v127",
    "text": "0.48",
    "fmt": "n2",
    "rule": "em",
@@ -1543,7 +1579,7 @@
    "raw": 0.481
   },
   {
-   "id": "v125",
+   "id": "v128",
    "text": "+0.72",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1559,7 +1595,7 @@
    "raw": 0.721
   },
   {
-   "id": "v126",
+   "id": "v129",
    "text": "+0.54",
    "fmt": "s2",
    "rule": "em",
@@ -1571,7 +1607,7 @@
    "raw": 0.54
   },
   {
-   "id": "v127",
+   "id": "v130",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1583,7 +1619,7 @@
    "raw": 4
   },
   {
-   "id": "v128",
+   "id": "v131",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1595,7 +1631,7 @@
    "raw": 5
   },
   {
-   "id": "v129",
+   "id": "v132",
    "text": "-0.51",
    "fmt": "s2",
    "rule": "em",
@@ -1607,7 +1643,7 @@
    "raw": -0.513
   },
   {
-   "id": "v130",
+   "id": "v133",
    "text": "+1.03",
    "fmt": "s2",
    "rule": "em",
@@ -1619,7 +1655,7 @@
    "raw": 1.026
   },
   {
-   "id": "v131",
+   "id": "v134",
    "text": "+0.21",
    "fmt": "s2",
    "rule": "em",
@@ -1631,7 +1667,7 @@
    "raw": 0.208
   },
   {
-   "id": "v132",
+   "id": "v135",
    "text": "65%",
    "fmt": "pct0",
    "rule": "em",
@@ -1643,7 +1679,7 @@
    "raw": 0.6479
   },
   {
-   "id": "v133",
+   "id": "v136",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1655,7 +1691,7 @@
    "raw": 3
   },
   {
-   "id": "v134",
+   "id": "v137",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1667,7 +1703,7 @@
    "raw": 4
   },
   {
-   "id": "v135",
+   "id": "v138",
    "text": "138%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1681,7 +1717,7 @@
    "raw": 1.38
   },
   {
-   "id": "v136",
+   "id": "v139",
    "text": "12.5",
    "fmt": "n1",
    "rule": "em",
@@ -1693,7 +1729,7 @@
    "raw": 12.48
   },
   {
-   "id": "v137",
+   "id": "v140",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1705,7 +1741,7 @@
    "raw": 0.0
   },
   {
-   "id": "v138",
+   "id": "v141",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1718,7 +1754,7 @@
    "raw": -208
   },
   {
-   "id": "v139",
+   "id": "v142",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1731,7 +1767,7 @@
    "raw": -455
   },
   {
-   "id": "v140",
+   "id": "v143",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1744,7 +1780,7 @@
    "raw": -303
   },
   {
-   "id": "v141",
+   "id": "v144",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -1757,7 +1793,7 @@
    "raw": 175
   },
   {
-   "id": "v142",
+   "id": "v145",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",

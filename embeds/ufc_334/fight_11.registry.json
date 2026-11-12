@@ -1882,6 +1882,78 @@
   },
   {
    "id": "v154",
+   "text": "45",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Caio Borralho",
+   "raw": 45.0
+  },
+  {
+   "id": "v155",
+   "text": "40",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Caio Borralho",
+   "raw": 39.98
+  },
+  {
+   "id": "v156",
+   "text": "34",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Caio Borralho",
+   "raw": 33.93
+  },
+  {
+   "id": "v157",
+   "text": "14",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Yousri Belgaroui",
+   "raw": 14.42
+  },
+  {
+   "id": "v158",
+   "text": "10",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Yousri Belgaroui",
+   "raw": 10.0
+  },
+  {
+   "id": "v159",
+   "text": "5",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Yousri Belgaroui",
+   "raw": 4.57
+  },
+  {
+   "id": "v160",
    "text": "1.08",
    "fmt": "n2",
    "rule": "em",
@@ -1893,7 +1965,7 @@
    "raw": 1.08
   },
   {
-   "id": "v155",
+   "id": "v161",
    "text": "0.52",
    "fmt": "n2",
    "rule": "em",
@@ -1905,7 +1977,7 @@
    "raw": 0.518
   },
   {
-   "id": "v156",
+   "id": "v162",
    "text": "45%",
    "fmt": "pct0",
    "rule": "em",
@@ -1917,7 +1989,7 @@
    "raw": 0.4545
   },
   {
-   "id": "v157",
+   "id": "v163",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1929,7 +2001,7 @@
    "raw": 1.0
   },
   {
-   "id": "v158",
+   "id": "v164",
    "text": "74%",
    "fmt": "pct0",
    "rule": "em",
@@ -1941,7 +2013,7 @@
    "raw": 0.7368
   },
   {
-   "id": "v159",
+   "id": "v165",
    "text": "56%",
    "fmt": "pct0",
    "rule": "em",
@@ -1953,7 +2025,7 @@
    "raw": 0.5625
   },
   {
-   "id": "v160",
+   "id": "v166",
    "text": "27%",
    "fmt": "pct0",
    "rule": "em",
@@ -1965,7 +2037,7 @@
    "raw": 0.2685
   },
   {
-   "id": "v161",
+   "id": "v167",
    "text": "6%",
    "fmt": "pct0",
    "rule": "em",
@@ -1977,7 +2049,7 @@
    "raw": 0.0569
   },
   {
-   "id": "v162",
+   "id": "v168",
    "text": "+20.5%",
    "fmt": "spp",
    "rule": "em",
@@ -1989,7 +2061,7 @@
    "raw": 0.2055
   },
   {
-   "id": "v163",
+   "id": "v169",
    "text": "-12.5%",
    "fmt": "spp",
    "rule": "em",
@@ -2001,7 +2073,7 @@
    "raw": -0.1253
   },
   {
-   "id": "v164",
+   "id": "v170",
    "text": "7%",
    "fmt": "pct0",
    "rule": "em",
@@ -2013,7 +2085,7 @@
    "raw": 0.0747
   },
   {
-   "id": "v165",
+   "id": "v171",
    "text": "19%",
    "fmt": "pct0",
    "rule": "em",
@@ -2025,7 +2097,7 @@
    "raw": 0.1869
   },
   {
-   "id": "v166",
+   "id": "v172",
    "text": "0.43",
    "fmt": "n2",
    "rule": "em",
@@ -2037,7 +2109,7 @@
    "raw": 0.432
   },
   {
-   "id": "v167",
+   "id": "v173",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -2049,7 +2121,7 @@
    "raw": 0.0
   },
   {
-   "id": "v168",
+   "id": "v174",
    "text": "+0.67",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2065,7 +2137,7 @@
    "raw": 0.6689999999999999
   },
   {
-   "id": "v169",
+   "id": "v175",
    "text": "+6.42",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2081,7 +2153,7 @@
    "raw": 6.417
   },
   {
-   "id": "v170",
+   "id": "v176",
    "text": "+0.77",
    "fmt": "s2",
    "rule": "em",
@@ -2093,7 +2165,7 @@
    "raw": 0.765
   },
   {
-   "id": "v171",
+   "id": "v177",
    "text": "+6.46",
    "fmt": "s2",
    "rule": "em",
@@ -2105,7 +2177,7 @@
    "raw": 6.455
   },
   {
-   "id": "v172",
+   "id": "v178",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -2117,7 +2189,7 @@
    "raw": 7
   },
   {
-   "id": "v173",
+   "id": "v179",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -2129,7 +2201,7 @@
    "raw": 9
   },
   {
-   "id": "v174",
+   "id": "v180",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2141,7 +2213,7 @@
    "raw": 3
   },
   {
-   "id": "v175",
+   "id": "v181",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2153,7 +2225,7 @@
    "raw": 3
   },
   {
-   "id": "v176",
+   "id": "v182",
    "text": "+0.70",
    "fmt": "s2",
    "rule": "em",
@@ -2165,7 +2237,7 @@
    "raw": 0.698
   },
   {
-   "id": "v177",
+   "id": "v183",
    "text": "+3.52",
    "fmt": "s2",
    "rule": "em",
@@ -2177,7 +2249,7 @@
    "raw": 3.519
   },
   {
-   "id": "v178",
+   "id": "v184",
    "text": "-0.04",
    "fmt": "s2",
    "rule": "em",
@@ -2189,7 +2261,7 @@
    "raw": -0.036
   },
   {
-   "id": "v179",
+   "id": "v185",
    "text": "+1.73",
    "fmt": "s2",
    "rule": "em",
@@ -2201,7 +2273,7 @@
    "raw": 1.725
   },
   {
-   "id": "v180",
+   "id": "v186",
    "text": "+0.01",
    "fmt": "s2",
    "rule": "em",
@@ -2213,7 +2285,7 @@
    "raw": 0.007
   },
   {
-   "id": "v181",
+   "id": "v187",
    "text": "+1.17",
    "fmt": "s2",
    "rule": "em",
@@ -2225,7 +2297,7 @@
    "raw": 1.173
   },
   {
-   "id": "v182",
+   "id": "v188",
    "text": "69%",
    "fmt": "pct0",
    "rule": "em",
@@ -2237,7 +2309,7 @@
    "raw": 0.6922
   },
   {
-   "id": "v183",
+   "id": "v189",
    "text": "74%",
    "fmt": "pct0",
    "rule": "em",
@@ -2249,7 +2321,7 @@
    "raw": 0.7438
   },
   {
-   "id": "v184",
+   "id": "v190",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2261,7 +2333,7 @@
    "raw": 3
   },
   {
-   "id": "v185",
+   "id": "v191",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -2273,7 +2345,7 @@
    "raw": 8
   },
   {
-   "id": "v186",
+   "id": "v192",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -2285,7 +2357,7 @@
    "raw": 8
   },
   {
-   "id": "v187",
+   "id": "v193",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -2297,7 +2369,7 @@
    "raw": 0
   },
   {
-   "id": "v188",
+   "id": "v194",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2309,7 +2381,7 @@
    "raw": 2
   },
   {
-   "id": "v189",
+   "id": "v195",
    "text": "116%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2323,7 +2395,7 @@
    "raw": 1.165
   },
   {
-   "id": "v190",
+   "id": "v196",
    "text": "15.4",
    "fmt": "n1",
    "rule": "em",
@@ -2335,7 +2407,7 @@
    "raw": 15.435
   },
   {
-   "id": "v191",
+   "id": "v197",
    "text": "9.7",
    "fmt": "n1",
    "rule": "em",
@@ -2347,7 +2419,7 @@
    "raw": 9.661
   },
   {
-   "id": "v192",
+   "id": "v198",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -2359,7 +2431,7 @@
    "raw": 0.0
   },
   {
-   "id": "v193",
+   "id": "v199",
    "text": "33%",
    "fmt": "pct0",
    "rule": "em",
@@ -2371,7 +2443,7 @@
    "raw": 0.3333
   },
   {
-   "id": "v194",
+   "id": "v200",
    "text": "-233",
    "fmt": "ml",
    "rule": "fight",
@@ -2384,7 +2456,7 @@
    "raw": -233
   },
   {
-   "id": "v195",
+   "id": "v201",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -2397,7 +2469,7 @@
    "raw": -132
   },
   {
-   "id": "v196",
+   "id": "v202",
    "text": "-244",
    "fmt": "ml",
    "rule": "fight",
@@ -2410,7 +2482,7 @@
    "raw": -244
   },
   {
-   "id": "v197",
+   "id": "v203",
    "text": "-556",
    "fmt": "ml",
    "rule": "fight",
@@ -2423,7 +2495,7 @@
    "raw": -556
   },
   {
-   "id": "v198",
+   "id": "v204",
    "text": "-282",
    "fmt": "ml",
    "rule": "fight",
@@ -2436,7 +2508,7 @@
    "raw": -282
   },
   {
-   "id": "v199",
+   "id": "v205",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -2449,7 +2521,7 @@
    "raw": -370
   },
   {
-   "id": "v200",
+   "id": "v206",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -2462,7 +2534,7 @@
    "raw": -208
   },
   {
-   "id": "v201",
+   "id": "v207",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2475,7 +2547,7 @@
    "raw": -250
   },
   {
-   "id": "v202",
+   "id": "v208",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -2488,7 +2560,7 @@
    "raw": 100
   },
   {
-   "id": "v203",
+   "id": "v209",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2501,7 +2573,7 @@
    "raw": -714
   },
   {
-   "id": "v204",
+   "id": "v210",
    "text": "+124",
    "fmt": "ml",
    "rule": "fight",
@@ -2514,7 +2586,7 @@
    "raw": 124
   },
   {
-   "id": "v205",
+   "id": "v211",
    "text": "+240",
    "fmt": "ml",
    "rule": "fight",

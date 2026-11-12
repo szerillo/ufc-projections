@@ -660,7 +660,37 @@ def build(names, outname):
         return (f'<div class="trend" data-part="trend"><div class="mvl">Strike diff per minute, by round</div>'
                 f'<svg viewBox="0 0 {W_} {H_}" role="img" aria-label="Strike differential per minute in rounds 1 to 3 for both fighters">{"".join(g_)}</svg>'
                 f'<div class="rt-n">{legend_}<br>Above the dashed line = out-landing opponents in that round. Lines join rounds with 15+ UFC minutes; hollow grey dots have less (minutes shown). Fight counts are in the table below.</div>{note_}</div>')
-    rounds_html = trend_svg() + rounds_html
+    def depth_svg():
+        """Kirk round 15 C: where the round-trend chart is hidden (coverage gap: under the 15-minute floor), show the UFC
+        minutes on record in each of rounds 1 to 3 for both fighters against that floor, so the gap is visible, not blank."""
+        TF = 15.0; rows_ = []
+        for rec_, F_, sd_ in ((ema, an, "a"), (emb, bn, "b")):
+            rows_.append((F_, sd_, rec_, [emv(rec_, f"rounds.{i_}.mins") if rec_ else None for i_ in range(3)]))
+        mx_ = max([TF * 1.25] + [v_ or 0 for *_, ms_ in rows_ for v_ in ms_])
+        W_, L_, Rm_, T_, rh_ = 340, 30, 14, 16, 26; H_ = T_ + 3 * rh_ + 18
+        X_ = lambda v_: L_ + (v_ / mx_) * (W_ - L_ - Rm_)
+        col_ = {"fav": "#2a78d6", "dog": "#eb6834"}
+        g_ = [f'<line x1="{X_(TF):.1f}" x2="{X_(TF):.1f}" y1="{T_ - 6}" y2="{T_ + 3 * rh_}" stroke="#8a857c" stroke-width="1" stroke-dasharray="3 3"/>',
+              f'<text x="{X_(TF):.1f}" y="{T_ - 8}" text-anchor="middle" font-size="10" fill="#6b665e">15 min floor</text>']
+        for i_ in range(3):
+            y0_ = T_ + i_ * rh_
+            g_.append(f'<text x="{L_ - 6}" y="{y0_ + 15}" text-anchor="end" font-size="10.5" fill="#6b665e">R{i_ + 1}</text>')
+            for j_, (F_, sd_, rec_, ms_) in enumerate(rows_):
+                v_ = ms_[i_] or 0
+                g_.append(f'<rect x="{L_}" y="{y0_ + 3 + j_ * 10}" width="{max(X_(v_) - L_, 0):.1f}" height="8" rx="2" fill="{col_[side_cls[sd_]]}"'
+                          + ('' if v_ >= TF else ' fill-opacity="0.45"') + '/>')
+        g_.append(f'<text x="{L_}" y="{H_ - 4}" font-size="10" fill="#6b665e">0</text><text x="{X_(mx_):.1f}" y="{H_ - 4}" text-anchor="end" font-size="10" fill="#6b665e">{mx_:.0f} min</text>')
+        legend_ = []
+        for F_, sd_, rec_, ms_ in rows_:
+            if not rec_ or all(not v_ for v_ in ms_):
+                legend_.append(f'<b style="color:{col_[side_cls[sd_]]}">{esc(last(F_))}</b> no UFC rounds on record'); continue
+            legend_.append(f'<b style="color:{col_[side_cls[sd_]]}">{esc(last(F_))}</b> ' + " · ".join(
+                f'R{i_ + 1} ' + (R(v_, "r0", "em", f"Depth R{i_ + 1} mins {F_}", fighter=F_, path=f"rounds.{i_}.mins") if v_ is not None else "0") for i_, v_ in enumerate(ms_)) + " min")
+        return (f'<div class="trend depth" data-part="depth"><div class="mvl">UFC minutes on record, by round</div>'
+                f'<svg viewBox="0 0 {W_} {H_}" role="img" aria-label="UFC minutes on record in rounds 1 to 3 for both fighters, against the 15-minute floor">{"".join(g_)}</svg>'
+                f'<div class="rt-n">{"<br>".join(legend_)}<br>The round-by-round trend chart needs 15+ UFC minutes in at least two rounds for both fighters. Faded bars are under the floor.</div></div>')
+    tr_ = trend_svg()
+    rounds_html = (tr_ or depth_svg()) + rounds_html
     champ = ""
     if nrd == 5:
         champ = (E("r45.fights", "Fights to R4+", "int", None) + E("r45.landed_pm_13", "Output R1-3 /min", "n1", "hi") + E("r45.landed_pm_45", "Output R4-5 /min", "n1", "hi")

@@ -48,6 +48,7 @@ step "3b embed line history + Listed check"
 python3 -I scripts/fetch_kalshi_ufc.py --out "data/embeds/kalshi_${SLUG}.json"   # dormant fallback input only
 python3 -I scripts/build_line_history.py --slug "$SLUG" --event "$EVENT" --kalshi "data/embeds/kalshi_${SLUG}.json" | tail -1
 python3 -c "import json,sys; d=json.load(open('data/embeds/line_history_${SLUG}.json')); k=[x for x,v in d['fights'].items() if v.get('current_source')=='kalshi_fallback']; print('  Kalshi fallback used for:', k or 'none')"
+step "3c rounds";          python3 -I scripts/check_rounds.py --slug "$SLUG" --event "$EVENT"   # Kirk round 15: fails on a main/title bout built as 3 rounds, or no five_rounds key within 72 h
 step "4 stats file";       python3 -I scripts/build_embed_metrics.py --event "$EVENT" --cache .form_cache --out "form/data/embed_metrics/${SLUG}.json"
 step "5 embeds";           python3 scripts/build_fight_embeds.py | tail -1
 step "6 checks";           python3 scripts/verify_fight_embeds.py --slug "$SLUG" | tail -3

@@ -310,8 +310,15 @@ def close_fix(a, b, date):
         _CLOSE_FIXES = json.load(open(p_)).get("fixes", []) if p_.exists() else []
     for x in _CLOSE_FIXES:
         if str(date) == x["date"] and pair_match(a, b, x["a"], x["b"])[0] >= 2:
+            x["_used"] = x.get("_used", 0) + 1
             return x["before"]
     return None
+
+
+def close_fixes_unused():
+    """Kirk round 15 B: every hand fix must match exactly one bout in the build, or the build stops (a renamed fighter or a
+    wrong date would otherwise drop the fix silently)."""
+    return [f'{x["a"]} vs {x["b"]} {x["date"]} (matched {x.get("_used", 0)})' for x in (_CLOSE_FIXES or []) if x.get("_used", 0) != 1]
 
 
 def summarize_odds(snaps, flipped, max_points=140, a_name=None, close_before=None):
@@ -846,6 +853,9 @@ def main():
                     f["odds"] = o
                     matched += 1
     print(f"  odds matched to {matched}/{total22} UFC fights since 2022")
+    close_fix("", "", None)   # loads data/odds_close_fixes.json even when no 2022+ bout reached it
+    if close_fixes_unused():
+        sys.exit("odds_close_fixes.json: fix not applied to exactly one bout: " + "; ".join(close_fixes_unused()))
 
     print("loading model widgets…")
     widgets = load_widgets()

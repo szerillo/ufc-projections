@@ -184,7 +184,10 @@ function cardTable(ev) {
     if (m && m.a && m.a.win != null) {
       model = `${m.a.win.toFixed(0)} / ${m.b.win.toFixed(0)}`;
       const mkp = f.sheet && f.sheet.listed != null && (m.src === "sheet" || m.src === "publish") ? f.sheet.listed : o.pa;
-      if (mkp != null) { const e = m.a.win - mkp * 100; const side = e >= 0 ? f.a.name : f.b.name; edge = `<span class="${Math.abs(e) >= 3 ? "pos b" : "dim"}" title="Model minus no-vig market">${esc(side.split(" ").slice(-1)[0])} ${signed(Math.abs(e))}</span>`; }
+      // Kirk round 15 (Thin_Market_Display_PREREG sha ab02a912): a close from fewer than 3 US-regulated books is a thin market:
+      // no colour and a note; the number is unchanged
+      const thinN = !f.live && mkp === o.pa && f.odds && f.odds.close && f.odds.close.nb < 3 ? f.odds.close.nb : null;
+      if (mkp != null) { const e = m.a.win - mkp * 100; const side = e >= 0 ? f.a.name : f.b.name; edge = `<span class="${Math.abs(e) >= 3 && thinN == null ? "pos b" : "dim"}" title="Model minus no-vig market">${esc(side.split(" ").slice(-1)[0])} ${signed(Math.abs(e))}</span>` + (thinN != null ? ` <span class="dim">thin market (${thinN} ${thinN === 1 ? "book" : "books"})</span>` : ""); }
     }
     const rec = m && m.rec ? `<span class="pill y" title="${esc(m.rec_text || "Model bet recommendation")}">BET ${esc((m.rec === "a" ? f.a.name : f.b.name).split(" ").slice(-1)[0])}</span>` : (m && m.rec_text && /^lean/i.test(m.rec_text) ? `<span class="pill" title="${esc(m.rec_text)}">${esc(m.rec_text.split("[")[0].trim())}</span>` : "");
     const wa = f.result && f.result.winner === "a", wb = f.result && f.result.winner === "b";
@@ -342,7 +345,7 @@ async function vCard(slug) {
     <div class="links" style="margin-top:8px">${ev.widget ? `<a href="${ev.widget.file}" target="_blank" rel="noopener">Projection tables (widget)</a>` : ""}${ev.url ? `<a href="${esc(ev.url)}" target="_blank" rel="noopener">UFCStats event</a>` : ""}<a href="#/sheet/${ev.slug}">Printable form sheet</a></div>
     ${cardTable(ev)}${ev.status === "upcoming" ? priceBoard(ev) : ""}${methodBoard(ev)}`;
   if (movers.length) html += `<h3>Biggest line moves (open → ${ev.status === "final" ? "close" : "now"})</h3><div class="tw"><table><thead><tr><th class="l">Bout</th><th>Open</th><th>${ev.status === "final" ? "Close" : "Now"}</th><th>Move</th><th class="l">Toward</th><th class="l">Result</th></tr></thead><tbody>` +
-    movers.map(({ f, mv }) => { const side = mv >= 0 ? "a" : "b"; const hit = f.result && f.result.winner ? (f.result.winner === side ? '<span class="W">steam won</span>' : '<span class="L">steam lost</span>') : ""; return `<tr class="click" data-href="#/fight/${ev.slug}/${f.n}"><td class="l">${esc(f.a.name)} vs ${esc(f.b.name)}</td><td>${ml(f.odds.open.ma)} / ${ml(f.odds.open.mb)}</td><td>${ml(f.odds.close.ma)} / ${ml(f.odds.close.mb)}</td><td class="b">${signed(Math.abs(mv))}</td><td class="l">${esc(f[side].name)}</td><td class="l">${hit}</td></tr>`; }).join("") + `</tbody></table></div>`;
+    movers.map(({ f, mv }) => { const side = mv >= 0 ? "a" : "b"; const thinN = f.odds.close.nb < 3 ? f.odds.close.nb : null; const hit = thinN != null && f.result && f.result.winner ? `<span class="dim">thin market (${thinN} ${thinN === 1 ? "book" : "books"})</span>` : f.result && f.result.winner ? (f.result.winner === side ? '<span class="W">steam won</span>' : '<span class="L">steam lost</span>') : ""; return `<tr class="click" data-href="#/fight/${ev.slug}/${f.n}"><td class="l">${esc(f.a.name)} vs ${esc(f.b.name)}</td><td>${ml(f.odds.open.ma)} / ${ml(f.odds.open.mb)}</td><td>${ml(f.odds.close.ma)} / ${ml(f.odds.close.mb)}</td><td class="b">${signed(Math.abs(mv))}</td><td class="l">${esc(f[side].name)}</td><td class="l">${hit}</td></tr>`; }).join("") + `</tbody></table></div>`;
   $app.innerHTML = html; wireRows();
 }
 
