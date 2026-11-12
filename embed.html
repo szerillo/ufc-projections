@@ -961,12 +961,13 @@ function rebuildFightOptions() {
   const fights = FIGHTS_BY_CARD[$card.value] || [];
   const prevN = $fight.value;
   $fight.innerHTML = "";
-  fights.forEach(f => {
+  fights.forEach(f => { try {  // one bad roster entry skips only that fight
+    if (!f || f.n == null) throw new Error("roster entry without a fight number");
     const opt = document.createElement("option");
     opt.value = f.n;
     opt.textContent = `${f.n} · ${f.matchup} · ${f.meta}`;
     $fight.appendChild(opt);
-  });
+  } catch (e) { console.warn("[embed] fight option skipped:", e && e.message); } });
   // Try to preserve previous selection; otherwise default to first (main event)
   if (Array.from($fight.options).some(o => o.value === prevN)) {
     $fight.value = prevN;
@@ -1035,7 +1036,8 @@ function iframeForFight(n) {
 function buildPerFight() {
   $fightList.innerHTML = "";
   const fights = FIGHTS_BY_CARD[$card.value] || [];
-  fights.forEach(f => {
+  fights.forEach(f => { try {
+    if (!f || f.n == null) throw new Error("roster entry without a fight number");
     const code = iframeForFight(f.n);
     const src = code.match(/src="([^"]+)"/)[1];
     const card = document.createElement("div");
@@ -1064,7 +1066,7 @@ function buildPerFight() {
       </div>
     `;
     $fightList.appendChild(card);
-  });
+  } catch (e) { console.warn("[embed] fight card skipped:", e && e.message); } });
 
   // Wire mini copy buttons
   $fightList.querySelectorAll(".copy-mini").forEach(btn => {
@@ -1084,7 +1086,7 @@ function buildPerFight() {
 
 // Bulk "Copy all 7" button
 $copyAll.addEventListener("click", async () => {
-  const allCodes = (FIGHTS_BY_CARD[$card.value] || []).map(f => `<!-- Fight ${f.n}: ${f.matchup} -->\n${iframeForFight(f.n)}`).join("\n\n");
+  const allCodes = (FIGHTS_BY_CARD[$card.value] || []).filter(f => f && f.n != null).map(f => `<!-- Fight ${f.n}: ${f.matchup} -->\n${iframeForFight(f.n)}`).join("\n\n");
   try {
     await navigator.clipboard.writeText(allCodes);
     $copyAll.textContent = "Copied all 7!";

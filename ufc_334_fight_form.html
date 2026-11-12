@@ -2135,7 +2135,7 @@ function dirArrow(level) {
 function renderTabs() {
   // Skip fights without full ToT data (slpm===0 means minimal)
   const withPanels = FIGHTS.filter(hasPanel);
-  withPanels.forEach((f, idx) => {
+  withPanels.forEach((f, idx) => { try {
     const aLast = f.a.tab || f.a.name.split(" ").slice(-1)[0];
     const bLast = f.b.tab || f.b.name.split(" ").slice(-1)[0];
     const btn = document.createElement("button");
@@ -2150,7 +2150,18 @@ function renderTabs() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
     tabsEl.appendChild(btn);
-  });
+  } catch (e) {  // still give the fight a plain tab so its panel can be reached
+    ffErr("tab", f, e);
+    const btn = document.createElement("button");
+    btn.className = "ff-tab" + (idx === 0 ? " active" : ""); btn.dataset.target = "fp-" + f.n; btn.textContent = "Fight " + f.n;
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".ff-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".fight-panel").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      const el = document.getElementById("fp-" + f.n); if (el) el.classList.add("active");
+    });
+    tabsEl.appendChild(btn);
+  } });
 }
 
 function renderPanel(f, isFirst) {
@@ -2527,6 +2538,37 @@ function fighterNameMatch(x, y) {
   const surnameOk = la === lb || (Math.min(la.length, lb.length) >= 5 && nameEdit1(la, lb));
   return surnameOk && nameFirstOk(a[0], b[0]);
 }
+
+// ============== PER-RECORD GUARDS (scripts/build_card_page.py GUARD_JS; tests: scripts/test_card_guards.py) ==============
+const FF_ERRORS = [];
+function ffEsc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+function ffErr(where, rec, e) {
+  const id = rec && typeof rec === "object" ? (rec.n != null ? "fight " + rec.n : (rec.fav ? rec.fav + " vs " + rec.dog : "")) : "";
+  FF_ERRORS.push(where + (id ? " (" + id + ")" : "") + ": " + ((e && e.message) || e));
+  try { console.warn("[fight-form]", FF_ERRORS[FF_ERRORS.length - 1]); } catch (_) {}
+}
+function ffFightOk(f) {
+  return !!(f && typeof f === "object" && Number.isFinite(f.n) && f.sim && typeof f.sim === "object" &&
+            f.a && f.b && typeof f.a.name === "string" && typeof f.b.name === "string" && f.a.name && f.b.name);
+}
+// a fight record without names, number or sim block cannot be drawn at all: leave it off and say so
+for (let i = FIGHTS.length - 1; i >= 0; i--) if (!ffFightOk(FIGHTS[i])) { ffErr("card data", { n: FIGHTS[i] && FIGHTS[i].n }, "fight record is malformed, left off the page"); FIGHTS.splice(i, 1); }
+function ffPanelStub(f, isFirst) {
+  const old = document.getElementById("fp-" + f.n); if (old) old.remove();
+  const d = document.createElement("div");
+  d.className = "fight-panel" + (isFirst ? " active" : ""); d.id = "fp-" + f.n;
+  d.innerHTML = `<div class="fp-proj"><div class="fp-proj-header"><span class="bullet"></span>${ffEsc(f.a.name)} vs ${ffEsc(f.b.name)}</div>
+    <div style="padding:10px 4px;font-size:12px;color:var(--text-muted);">This fight's numbers could not be shown. The rest of the card is unaffected.</div></div>`;
+  panelsEl.appendChild(d);
+}
+function ffErrRow(f, cols) {
+  return `<tr><td colspan="${cols}" style="padding:8px;text-align:center;color:var(--text-muted);font-size:11px;">Fight ${ffEsc(f && f.n)}: numbers could not be shown</td></tr>`;
+}
+function ffReportErrors() {
+  if (!FF_ERRORS.length) return;
+  const el = document.getElementById("ff-proj-status");
+  if (el) { el.className = "ff-odds-status stale"; el.innerHTML += ` · <b>${FF_ERRORS.length} record${FF_ERRORS.length > 1 ? "s" : ""} could not be shown</b>`; }
+}
 // ============== SHEET PROJECTIONS (published from the UFC Model sheet) ==============
 // No projections are hard-coded on this page. The sheet's "Publish to site" writes
 // data/pending/<slug>_projections.json; the "Projections check" workflow recomputes every number
@@ -2550,10 +2592,23 @@ function projNameMatch(x, y) {
   return fighterNameMatch(x, y);
 }
 
-let PROJ_UNMATCHED = [];
+let PROJ_UNMATCHED = [], PROJ_BAD = [];
+// A published record is used only if every field it feeds is the right type; anything else is listed in the status line.
+function projRecordOk(p) {
+  const pr = (x) => x == null || (typeof x === "number" && x >= 0 && x <= 1);
+  if (!p || typeof p !== "object" || typeof p.fav !== "string" || typeof p.dog !== "string") return false;
+  if (p.sheet != null && (typeof p.sheet !== "object" || !pr(p.sheet.true_dog))) return false;
+  if (!pr(p.gtd)) return false;
+  for (const side of ["dog", "fav"]) {
+    const m = p.method && p.method[side];
+    if (m != null && (typeof m !== "object" || !pr(m.dec) || !pr(m.ko) || !pr(m.sub))) return false;
+  }
+  return true;
+}
 function applySheetProjections(doc) {
-  PROJ_UNMATCHED = [];
-  (doc.fights || []).forEach(p => {
+  PROJ_UNMATCHED = []; PROJ_BAD = [];
+  (Array.isArray(doc && doc.fights) ? doc.fights : []).forEach((p, i) => { try {
+    if (!projRecordOk(p)) { PROJ_BAD.push(p && p.fav && p.dog ? p.fav + " vs " + p.dog : "record " + (i + 1)); return; }
     const f = FIGHTS.find(x => (projNameMatch(x.a.name, p.dog) && projNameMatch(x.b.name, p.fav)) ||
                                (projNameMatch(x.a.name, p.fav) && projNameMatch(x.b.name, p.dog)));
     if (!f) { PROJ_UNMATCHED.push(p.fav + " vs " + p.dog); return; }   // published but not on this page: a late change the page has not caught up with
@@ -2580,7 +2635,7 @@ function applySheetProjections(doc) {
     f.noProj = false;
     f.a.mktImp = rawImpliedPct(f.a.ml);
     f.b.mktImp = rawImpliedPct(f.b.ml);
-  });
+  } catch (e) { ffErr("projections", p, e); PROJ_BAD.push(p && p.fav ? p.fav + " vs " + p.dog : "record " + (i + 1)); } });
 }
 
 async function loadSheetProjections() {
@@ -2594,8 +2649,9 @@ async function loadSheetProjections() {
     if (el) {
       el.className = "ff-odds-status fresh";
       el.innerHTML = `<span class="dot"></span>Projections · ${n} of ${FIGHTS.length} fights · updated ${fmtAgo(SHEET_PROJ.published_at)}` +
-        (PROJ_UNMATCHED.length ? ` · <b>${PROJ_UNMATCHED.length} published fight${PROJ_UNMATCHED.length > 1 ? "s" : ""} not on this card: ${PROJ_UNMATCHED.join("; ")}</b>` : "");
-      if (PROJ_UNMATCHED.length) el.className = "ff-odds-status stale";
+        (PROJ_UNMATCHED.length ? ` · <b>${PROJ_UNMATCHED.length} published fight${PROJ_UNMATCHED.length > 1 ? "s" : ""} not on this card: ${ffEsc(PROJ_UNMATCHED.join("; "))}</b>` : "") +
+        (PROJ_BAD.length ? ` · <b>${PROJ_BAD.length} published fight${PROJ_BAD.length > 1 ? "s" : ""} could not be read: ${ffEsc(PROJ_BAD.join("; "))}</b>` : "");
+      if (PROJ_UNMATCHED.length || PROJ_BAD.length) el.className = "ff-odds-status stale";
       // freshness guard: numbers older than 12h stay up but are labelled (prices and news move; Sean re-publishes before the card)
       const ageH = (Date.now() - Date.parse(SHEET_PROJ.published_at)) / 36e5;
       if (!(ageH <= 12)) { el.className = "ff-odds-status stale"; el.innerHTML += ` · <b>over 12h old, check before using</b>`; }
@@ -2664,8 +2720,8 @@ function tokenOverlap(setA, setB) {
 
 function findLiveFight(live, a, b) {
   const M = fighterNameMatch;  // both fighters must match, in either slot
-  return (live.fights || []).find(f => {
-    const x = f.fighter_a?.name, y = f.fighter_b?.name;
+  return (Array.isArray(live && live.fights) ? live.fights : []).find(f => {
+    const x = f?.fighter_a?.name, y = f?.fighter_b?.name;
     return (M(a.name, x) && M(b.name, y)) || (M(a.name, y) && M(b.name, x));
   });
 }
@@ -2707,7 +2763,7 @@ function fmtAgo(updatedIso) {
 
 function mergeLiveOdds(live) {
   // For each FIGHTS entry, splice in current ML + props from live data
-  FIGHTS.forEach(f => {
+  FIGHTS.forEach(f => { try {
     const lf = findLiveFight(live, f.a, f.b);
     if (!lf) return;
     f._live = { event_id: lf.event_id, scheduled: lf.scheduled_utc, status: lf.status };
@@ -2716,7 +2772,7 @@ function mergeLiveOdds(live) {
 
     // Moneyline — assign each selection to the fighter with best token overlap
     const ml = m.moneyline || [];
-    ml.forEach(sel => {
+    ml.forEach(sel => { try {
       const which = whichFighter(sel.label || "", f, lf);
       if (!which) return;
       const target = which === "a" ? f.a : f.b;
@@ -2732,12 +2788,12 @@ function mergeLiveOdds(live) {
           all_books: sel.books,
         };
       }
-    });
+    } catch (e) { ffErr("live odds selection", f, e); } });
 
     // Fight distance (GTD/ITD)
     const dist = m.fight_distance || [];
     f._liveDistance = { yes: null, no: null };
-    dist.forEach(sel => {
+    dist.forEach(sel => { try {
       const slot = (sel.selection === "yes") ? "yes" : "no";
       const headline = pickBook(sel.books);
       const cons = consensusBook(sel.books);
@@ -2748,31 +2804,31 @@ function mergeLiveOdds(live) {
           no_vig_pct: cons ? cons.no_vig_pct : null,
         };
       }
-    });
+    } catch (e) { ffErr("live odds selection", f, e); } });
 
     // Total rounds (over/under 2.5)
     const tot = m.total_rounds || [];
     f._liveTotal = { line: null, over: null, under: null };
-    tot.forEach(sel => {
+    tot.forEach(sel => { try {
       const headline = pickBook(sel.books);
       if (!headline) return;
       f._liveTotal.line = headline.line;
       if (sel.selection === "over") f._liveTotal.over = headline.cost;
       else if (sel.selection === "under") f._liveTotal.under = headline.cost;
-    });
+    } catch (e) { ffErr("live odds selection", f, e); } });
 
     // Method of victory per fighter — token-overlap match on the label
     const mov = m.method_of_victory || [];
     f._liveMethod = { a: {}, b: {} };
-    mov.forEach(sel => {
+    mov.forEach(sel => { try {
       const label = sel.label || "";
       const which = whichFighter(label, f, lf);
       const slug = sel.selection || "";
       if (!which || !slug) return;
       const headline = pickBook(sel.books);
       if (headline) f._liveMethod[which][slug] = { cost: headline.cost, book: headline.name };
-    });
-  });
+    } catch (e) { ffErr("live odds selection", f, e); } });
+  } catch (e) { ffErr("live odds", f, e); } });
 }
 
 function updateOddsStatus(live, err) {
@@ -2809,10 +2865,11 @@ function updateOddsStatus(live, err) {
   }
   // 3. Render
   renderTabs();
-  FIGHTS.filter(hasPanel).forEach((f, idx) => renderPanel(f, idx === 0));
+  FIGHTS.filter(hasPanel).forEach((f, idx) => { try { renderPanel(f, idx === 0); } catch (e) { ffErr("panel", f, e); ffPanelStub(f, idx === 0); } });
   renderMLTable("favorite");
   renderLengthTable();
   renderMethodTable();
+  ffReportErrors();
   // No full-ToT fights on this card → hide Fight Form tab, default to Moneylines
   if (!FIGHTS.some(hasPanel)) {
     const ft = document.querySelector('.view-tab[data-view="form"]');
@@ -2880,7 +2937,7 @@ function projEdgeClass(e) {
   if (e <= -1.5) return "edge-pill neg";
   return "edge-pill neutral";
 }
-function fmtSignedPct(n) { return (n > 0 ? "+" : "") + n.toFixed(1) + "%"; }
+function fmtSignedPct(n) { return n == null || !Number.isFinite(n) ? "—" : (n > 0 ? "+" : "") + n.toFixed(1) + "%"; }
 
 function pctToAmericanOdds(pct) {
   const p = pct / 100;
@@ -2912,7 +2969,7 @@ function renderMLTable(side) {
   }
   let html = "";
   let lastCard = null;
-  sorted.forEach(f => {
+  sorted.forEach(f => { try {
     let group = (f.card === "PRELIMS") ? "PRELIMS" : "MAIN CARD";
     if (group !== lastCard) {
       html += `<tr class="card-divider"><td colspan="7"><span class="card-bullet"></span>${group}</td></tr>`;
@@ -2933,8 +2990,8 @@ function renderMLTable(side) {
 
     const projOdds = pctToAmericanOdds(fighter.win);
     const projPct = fighter.win;
-    const listedOddsTxt = (listedCost > 0 ? "+" : "") + listedCost;
-    const edge = projPct - listedPct;
+    const listedOddsTxt = listedCost == null ? "—" : (listedCost > 0 ? "+" : "") + listedCost;
+    const edge = listedPct == null ? null : projPct - listedPct;
 
     html += `
       <tr>
@@ -2946,11 +3003,11 @@ function renderMLTable(side) {
         <td class="proj-cell-odds grp-divider-left">${projOdds}</td>
         <td class="proj-cell-pct">${projPct.toFixed(1)}%</td>
         <td class="proj-cell-odds grp-divider-left">${listedOddsTxt}</td>
-        <td class="proj-cell-pct">${listedPct.toFixed(1)}%</td>
+        <td class="proj-cell-pct">${listedPct == null ? "—" : listedPct.toFixed(1) + "%"}</td>
         <td class="grp-divider-left"><span class="${projEdgeClass(edge)}">${fmtSignedPct(edge)}</span></td>
       </tr>
     `;
-  });
+  } catch (e) { ffErr("table", f, e); html += ffErrRow(f, 7); } });
   tbody.innerHTML = html;
 }
 
@@ -2969,7 +3026,7 @@ function renderLengthTable() {
     return;
   }
   let html = "";
-  sorted.forEach(f => {
+  sorted.forEach(f => { try {
     const gtdPct = 100 - f.sim.itd;
     const itdPct = f.sim.itd;
     // Projected YES = goes the distance, NO = inside the distance
@@ -2999,7 +3056,7 @@ function renderLengthTable() {
         </td>
       </tr>
     `;
-  });
+  } catch (e) { ffErr("table", f, e); html += ffErrRow(f, 5); } });
   tbody.innerHTML = html;
 }
 
@@ -3017,7 +3074,7 @@ function renderMethodTable() {
     return;
   }
   let html = "";
-  sorted.forEach(f => {
+  sorted.forEach(f => { try {
     const aIsFav = f.a.ml < f.b.ml;
     const fav = aIsFav ? f.a : f.b;
     const dog = aIsFav ? f.b : f.a;
@@ -3050,7 +3107,7 @@ function renderMethodTable() {
         <td class="method-odds itd">${itdCell(dogSim.ko + dogSim.sub)}</td>
       </tr>
     `;
-  });
+  } catch (e) { ffErr("table", f, e); html += ffErrRow(f, 5); } });
   tbody.innerHTML = html;
 }
 

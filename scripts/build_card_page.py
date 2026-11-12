@@ -54,8 +54,8 @@ LIVE_FIND_OLD = """  const aTokens = nameTokens(a.name);
            (tokenOverlap(aTokens, fB) && tokenOverlap(bTokens, fA));
   });"""
 LIVE_FIND_NEW = """  const M = fighterNameMatch;  // both fighters must match, in either slot
-  return (live.fights || []).find(f => {
-    const x = f.fighter_a?.name, y = f.fighter_b?.name;
+  return (Array.isArray(live && live.fights) ? live.fights : []).find(f => {
+    const x = f?.fighter_a?.name, y = f?.fighter_b?.name;
     return (M(a.name, x) && M(b.name, y)) || (M(a.name, y) && M(b.name, x));
   });"""
 WHICH_OLD = """function whichFighter(label, f) {
@@ -71,6 +71,96 @@ WHICH_NEW = """function whichFighter(label, f, lf) {
     }
   }
   const labelTokens = nameTokens(label);"""
+
+# Per-record guards (crash audit, Nov 11): one bad record must cost only its own fight, never the rest of the page.
+GUARD_JS = r"""
+// ============== PER-RECORD GUARDS (scripts/build_card_page.py GUARD_JS; tests: scripts/test_card_guards.py) ==============
+const FF_ERRORS = [];
+function ffEsc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+function ffErr(where, rec, e) {
+  const id = rec && typeof rec === "object" ? (rec.n != null ? "fight " + rec.n : (rec.fav ? rec.fav + " vs " + rec.dog : "")) : "";
+  FF_ERRORS.push(where + (id ? " (" + id + ")" : "") + ": " + ((e && e.message) || e));
+  try { console.warn("[fight-form]", FF_ERRORS[FF_ERRORS.length - 1]); } catch (_) {}
+}
+function ffFightOk(f) {
+  return !!(f && typeof f === "object" && Number.isFinite(f.n) && f.sim && typeof f.sim === "object" &&
+            f.a && f.b && typeof f.a.name === "string" && typeof f.b.name === "string" && f.a.name && f.b.name);
+}
+// a fight record without names, number or sim block cannot be drawn at all: leave it off and say so
+for (let i = FIGHTS.length - 1; i >= 0; i--) if (!ffFightOk(FIGHTS[i])) { ffErr("card data", { n: FIGHTS[i] && FIGHTS[i].n }, "fight record is malformed, left off the page"); FIGHTS.splice(i, 1); }
+function ffPanelStub(f, isFirst) {
+  const old = document.getElementById("fp-" + f.n); if (old) old.remove();
+  const d = document.createElement("div");
+  d.className = "fight-panel" + (isFirst ? " active" : ""); d.id = "fp-" + f.n;
+  d.innerHTML = `<div class="fp-proj"><div class="fp-proj-header"><span class="bullet"></span>${ffEsc(f.a.name)} vs ${ffEsc(f.b.name)}</div>
+    <div style="padding:10px 4px;font-size:12px;color:var(--text-muted);">This fight's numbers could not be shown. The rest of the card is unaffected.</div></div>`;
+  panelsEl.appendChild(d);
+}
+function ffErrRow(f, cols) {
+  return `<tr><td colspan="${cols}" style="padding:8px;text-align:center;color:var(--text-muted);font-size:11px;">Fight ${ffEsc(f && f.n)}: numbers could not be shown</td></tr>`;
+}
+function ffReportErrors() {
+  if (!FF_ERRORS.length) return;
+  const el = document.getElementById("ff-proj-status");
+  if (el) { el.className = "ff-odds-status stale"; el.innerHTML += ` · <b>${FF_ERRORS.length} record${FF_ERRORS.length > 1 ? "s" : ""} could not be shown</b>`; }
+}
+"""
+
+
+def guard_loops(t: str) -> str:
+    """Wrap every per-record loop of the template in try/catch (file:line list in Block 40)."""
+    def rep(x, y, n=1):
+        nonlocal t
+        assert t.count(x) == n, (t.count(x), x[:80])
+        t = t.replace(x, y)
+    # tabs
+    rep("""  withPanels.forEach((f, idx) => {
+    const aLast""", """  withPanels.forEach((f, idx) => { try {
+    const aLast""")
+    rep("""    tabsEl.appendChild(btn);
+  });
+}""", """    tabsEl.appendChild(btn);
+  } catch (e) {  // still give the fight a plain tab so its panel can be reached
+    ffErr("tab", f, e);
+    const btn = document.createElement("button");
+    btn.className = "ff-tab" + (idx === 0 ? " active" : ""); btn.dataset.target = "fp-" + f.n; btn.textContent = "Fight " + f.n;
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".ff-tab").forEach(t => t.classList.remove("active"));
+      document.querySelectorAll(".fight-panel").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      const el = document.getElementById("fp-" + f.n); if (el) el.classList.add("active");
+    });
+    tabsEl.appendChild(btn);
+  } });
+}""")
+    # panels
+    rep("FIGHTS.filter(hasPanel).forEach((f, idx) => renderPanel(f, idx === 0));",
+        "FIGHTS.filter(hasPanel).forEach((f, idx) => { try { renderPanel(f, idx === 0); } catch (e) { ffErr(\"panel\", f, e); ffPanelStub(f, idx === 0); } });")
+    # live odds: each fight, and each selection inside it
+    i = t.index("function mergeLiveOdds(live) {"); j = t.index("\n}\n", i)
+    body = t[i:j]
+    assert body.count("  FIGHTS.forEach(f => {") == 1 and body.count("\n  });") == 1, "mergeLiveOdds shape"
+    assert body.count(".forEach(sel => {") == 4 and body.count("\n    });") == 4, "mergeLiveOdds selection loops"
+    body = body.replace("  FIGHTS.forEach(f => {", "  FIGHTS.forEach(f => { try {").replace("\n  });", "\n  } catch (e) { ffErr(\"live odds\", f, e); } });")
+    body = body.replace(".forEach(sel => {", ".forEach(sel => { try {").replace("\n    });", "\n    } catch (e) { ffErr(\"live odds selection\", f, e); } });")
+    t = t[:i] + body + t[j:]
+    # the three projection tables: a row that throws becomes one "could not be shown" row
+    rep("  sorted.forEach(f => {", "  sorted.forEach(f => { try {", 3)
+    k = 0
+    for cols in (7, 5, 5):
+        x = "\n  });\n  tbody.innerHTML = html;"
+        k = t.index(x, k)
+        y = f"\n  }} catch (e) {{ ffErr(\"table\", f, e); html += ffErrRow(f, {cols}); }} }});\n  tbody.innerHTML = html;"
+        t = t[:k] + y + t[k + len(x):]; k += len(y)
+    # moneyline table: no listed price must show a dash, not throw (same failure as the Radtke panels)
+    rep("    const listedOddsTxt = (listedCost > 0 ? \"+\" : \"\") + listedCost;\n    const edge = projPct - listedPct;",
+        "    const listedOddsTxt = listedCost == null ? \"—\" : (listedCost > 0 ? \"+\" : \"\") + listedCost;\n    const edge = listedPct == null ? null : projPct - listedPct;")
+    rep("<td class=\"proj-cell-pct\">${listedPct.toFixed(1)}%</td>", "<td class=\"proj-cell-pct\">${listedPct == null ? \"—\" : listedPct.toFixed(1) + \"%\"}</td>")
+    rep("function fmtSignedPct(n) { return (n > 0 ? \"+\" : \"\") + n.toFixed(1) + \"%\"; }",
+        "function fmtSignedPct(n) { return n == null || !Number.isFinite(n) ? \"—\" : (n > 0 ? \"+\" : \"\") + n.toFixed(1) + \"%\"; }")
+    # say on the page when anything was skipped
+    rep("  renderMethodTable();\n  // No full-ToT fights", "  renderMethodTable();\n  ffReportErrors();\n  // No full-ToT fights")
+    return t
 
 
 def american(p: float) -> int:
@@ -177,10 +267,23 @@ function projNameMatch(x, y) {
   return fighterNameMatch(x, y);
 }
 
-let PROJ_UNMATCHED = [];
+let PROJ_UNMATCHED = [], PROJ_BAD = [];
+// A published record is used only if every field it feeds is the right type; anything else is listed in the status line.
+function projRecordOk(p) {
+  const pr = (x) => x == null || (typeof x === "number" && x >= 0 && x <= 1);
+  if (!p || typeof p !== "object" || typeof p.fav !== "string" || typeof p.dog !== "string") return false;
+  if (p.sheet != null && (typeof p.sheet !== "object" || !pr(p.sheet.true_dog))) return false;
+  if (!pr(p.gtd)) return false;
+  for (const side of ["dog", "fav"]) {
+    const m = p.method && p.method[side];
+    if (m != null && (typeof m !== "object" || !pr(m.dec) || !pr(m.ko) || !pr(m.sub))) return false;
+  }
+  return true;
+}
 function applySheetProjections(doc) {
-  PROJ_UNMATCHED = [];
-  (doc.fights || []).forEach(p => {
+  PROJ_UNMATCHED = []; PROJ_BAD = [];
+  (Array.isArray(doc && doc.fights) ? doc.fights : []).forEach((p, i) => { try {
+    if (!projRecordOk(p)) { PROJ_BAD.push(p && p.fav && p.dog ? p.fav + " vs " + p.dog : "record " + (i + 1)); return; }
     const f = FIGHTS.find(x => (projNameMatch(x.a.name, p.dog) && projNameMatch(x.b.name, p.fav)) ||
                                (projNameMatch(x.a.name, p.fav) && projNameMatch(x.b.name, p.dog)));
     if (!f) { PROJ_UNMATCHED.push(p.fav + " vs " + p.dog); return; }   // published but not on this page: a late change the page has not caught up with
@@ -207,7 +310,7 @@ function applySheetProjections(doc) {
     f.noProj = false;
     f.a.mktImp = rawImpliedPct(f.a.ml);
     f.b.mktImp = rawImpliedPct(f.b.ml);
-  });
+  } catch (e) { ffErr("projections", p, e); PROJ_BAD.push(p && p.fav ? p.fav + " vs " + p.dog : "record " + (i + 1)); } });
 }
 
 async function loadSheetProjections() {
@@ -221,8 +324,9 @@ async function loadSheetProjections() {
     if (el) {
       el.className = "ff-odds-status fresh";
       el.innerHTML = `<span class="dot"></span>Projections · ${n} of ${FIGHTS.length} fights · updated ${fmtAgo(SHEET_PROJ.published_at)}` +
-        (PROJ_UNMATCHED.length ? ` · <b>${PROJ_UNMATCHED.length} published fight${PROJ_UNMATCHED.length > 1 ? "s" : ""} not on this card: ${PROJ_UNMATCHED.join("; ")}</b>` : "");
-      if (PROJ_UNMATCHED.length) el.className = "ff-odds-status stale";
+        (PROJ_UNMATCHED.length ? ` · <b>${PROJ_UNMATCHED.length} published fight${PROJ_UNMATCHED.length > 1 ? "s" : ""} not on this card: ${ffEsc(PROJ_UNMATCHED.join("; "))}</b>` : "") +
+        (PROJ_BAD.length ? ` · <b>${PROJ_BAD.length} published fight${PROJ_BAD.length > 1 ? "s" : ""} could not be read: ${ffEsc(PROJ_BAD.join("; "))}</b>` : "");
+      if (PROJ_UNMATCHED.length || PROJ_BAD.length) el.className = "ff-odds-status stale";
       // freshness guard: numbers older than 12h stay up but are labelled (prices and news move; Sean re-publishes before the card)
       const ageH = (Date.now() - Date.parse(SHEET_PROJ.published_at)) / 36e5;
       if (!(ageH <= 12)) { el.className = "ff-odds-status stale"; el.innerHTML += ` · <b>over 12h old, check before using</b>`; }
@@ -268,7 +372,7 @@ def patch(template: str, slug: str, fights_js: str, title: str, subtitle: str) -
     t = t[:i] + fights_js + "\n" + t[j:]
     i = t.index("// ============== USER PROJECTIONS (overrides) ==============")
     j = t.index("// ============== LIVE ODDS FETCH + MERGE ==============")
-    t = t[:i] + NAME_MATCH_JS + LOADER.replace("__SLUG__", slug) + "\n" + t[j:]
+    t = t[:i] + NAME_MATCH_JS + GUARD_JS + LOADER.replace("__SLUG__", slug) + "\n" + t[j:]
     t = re.sub(r'const ODDS_URL = "data/[a-z0-9_]+_odds.json";', f'const ODDS_URL = "data/{slug}_odds.json";', t, count=1)
     assert "applyUserProjections();" in t
     t = t.replace("applyUserProjections();", "await loadSheetProjections();", 1)
@@ -297,6 +401,7 @@ def patch(template: str, slug: str, fights_js: str, title: str, subtitle: str) -
                  ("const which = whichFighter(label, f);", "const which = whichFighter(label, f, lf);")):
         assert t.count(x) == 1, x
         t = t.replace(x, y)
+    t = guard_loops(t)
     for bad in ("USER_PROJECTIONS_BY_FIGHT", "Cortes", "cortes_acosta"):
         assert bad not in t, bad
     return t
