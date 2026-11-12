@@ -40,20 +40,33 @@ FIXTURES = [
 ]
 
 
+def src(dog, fav, inp, **over):
+    """The Feed row a correct publish exports as price_source (Block 46, OPP-1)."""
+    return {"order": 13, "dog": dog, "fav": fav, "best_dog": f"{inp['dog_odds']:+d} FanDuel", "best_fav": f"{inp['fav_odds']:+d} BetRivers",
+            "cons_dog": "", "cons_fav": "", **over}
+
+
+def odds(*names):
+    """A minimal BettingPros odds file with one bout per pair of names (OPP-2)."""
+    return {"fights": [{"fighter_a": {"name": a}, "fighter_b": {"name": b}} for a, b in zip(names[::2], names[1::2])]}
+
+
 def main() -> int:
     fails = 0
     for fx in FIXTURES:
         r = V.S.row({**fx["inputs"], "dog": fx["dog"], "fav": fx["fav"]})
         doc = {"schema": 1, "slug": "fixture", "prices_loaded": dt.datetime.now(dt.timezone.utc).isoformat(), "fights": [{
             "dog": fx["dog"], "fav": fx["fav"], "publish": True, "inputs": fx["inputs"],
-            "sheet": {**{ok: r[rk] for rk, ok in V.NUM_KEYS}, "flag": fx["expected_flag"], "rec": fx["expected_rec"]}}]}
-        errs = V.check(doc, Path("fixture_projections.json"))
+            "sheet": {**{ok: r[rk] for rk, ok in V.NUM_KEYS}, "flag": fx["expected_flag"], "rec": fx["expected_rec"]},
+            "price_source": src(fx["dog"], fx["fav"], fx["inputs"])}]}
+        errs = V.check(doc, Path("fixture_projections.json"), odds_doc=odds(fx["dog"], fx["fav"]))
         print(("PASS " if not errs else "FAIL ") + fx["name"])
         for e in errs:
             print("   ", e)
         fails += bool(errs)
     fails += method_cases()
     fails += stamp_cases()
+    fails += opponent_cases()
     return 1 if fails else 0
 
 
@@ -110,6 +123,30 @@ def stamp_cases() -> int:
         got = "red" if errs else "green"
         ok = got == want and (hours is None or abs(age - hours) < 1e-9)
         print(("PASS " if ok else "FAIL ") + f"stamp {stamp:28} ({name}): age {age if age is None else round(age, 2)} h -> {got}")
+        fails += not ok
+    return fails
+
+
+def opponent_cases() -> int:
+    """Opponent-match guard (pre-registered Block 46). Alatengheili replaced Adrian Yanez against Juan Diaz; the DK DFS list
+    still pairs Diaz with Yanez. The price must come from the Feed row for this bout, and the bout must be in the odds file."""
+    inp = {"dog_odds": 275, "fav_odds": -335}
+    feed = odds("Alateng Heili", "Juan Diaz")                     # BettingPros spells it in two words
+    cases = [("Diaz priced from his own bout", src("Alatengheili", "Juan Diaz", inp), "Alatengheili", feed, False),
+             ("Diaz priced from a Yanez vs Diaz row", src("Adrian Yanez", "Juan Diaz", inp), "Alatengheili", feed, True),
+             ("names right, Feed price +300 vs input +275", src("Alatengheili", "Juan Diaz", inp, best_dog="+300 FanDuel"), "Alatengheili", feed, True),
+             ("blank best price falls back to consensus 275", src("Alatengheili", "Juan Diaz", inp, best_dog="", cons_dog="275"), "Alatengheili", feed, False),
+             ("fight listed as Yanez vs Diaz (not in odds file)", src("Adrian Yanez", "Juan Diaz", inp), "Adrian Yanez", feed, True),
+             ("no price_source (old script)", None, "Alatengheili", feed, True),
+             ("no odds file", src("Alatengheili", "Juan Diaz", inp), "Alatengheili", None, True)]
+    fails = 0
+    for name, ps, dog, od, want_red in cases:
+        f = {"dog": dog, "fav": "Juan Diaz", "inputs": inp}
+        if ps is not None:
+            f["price_source"] = ps
+        errs = V.opponent_errs({"slug": "fixture"}, [f], od)
+        ok = bool(errs) == want_red
+        print(("PASS " if ok else "FAIL ") + f"opponent guard, {name}: {'red' if errs else 'green'}")
         fails += not ok
     return fails
 

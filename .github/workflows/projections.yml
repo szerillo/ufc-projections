@@ -13,6 +13,7 @@ on:
       - ".github/workflows/projections.yml"
       - "scripts/verify_projections.py"
       - "scripts/sheet_v47.py"
+      - "scripts/fighter_names.py"
   workflow_dispatch: {}
 
 permissions:

@@ -84,6 +84,13 @@ function buildDoc_(slug) {
   var calc = ss.getSheetByName('Calculator');
   var C = calc.getRange('A1:AA20').getValues();             // C[row-1][col-1]
   var shift = num_(calc.getRange('B42').getValue());
+  // Feed rows by bout order, so each fight can say which Feed row (bout and price) the loader filled it from (Block 46, OPP-1)
+  var FD = ss.getSheetByName('Feed').getRange('A1:M40').getValues(), FEED = {}, nMain = 0;
+  FD.forEach(function (x) {
+    if (typeof x[0] !== 'number' || !String(x[3] || '').trim()) return;
+    FEED[x[0]] = x;
+    if (x[1] === 'ME' || x[1] === 'MC') nMain++;
+  });
   var fights = [];
   PUB.tabs.forEach(function (t) {
     var sh = ss.getSheetByName(t.name);
@@ -118,6 +125,9 @@ function buildDoc_(slug) {
                             al: num_(m[37]), am: num_(m[38]), an: num_(m[39]), s: num_(m[18]), cx: num_(c[23]), cy: num_(c[24]),
                             ko_dog: num_(LT[k][0]), sub_dog: num_(LT[k][1]), ko_fav: num_(LT[k + 1][0]), sub_fav: num_(LT[k + 1][1]) };
       }
+      var ord = (t.name === 'Prelims' ? nMain : 0) + (r - 1), fx = FEED[ord];
+      f.price_source = fx ? { order: ord, dog: String(fx[3]).trim(), fav: String(fx[4]).trim(), cons_dog: String(fx[9]), cons_fav: String(fx[10]),
+                              best_dog: String(fx[11] || ''), best_fav: String(fx[12] || '') } : null;
       if (!PUB.include.rec) delete f.sheet.rec;     // left out of the file entirely; the check then skips it
       if (!PUB.include.flag) delete f.sheet.flag;
       fights.push(f);

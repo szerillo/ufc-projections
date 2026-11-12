@@ -23,6 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sheet_v47 as S  # noqa: E402
+import fighter_names as FN  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[1]
 TOL = 1e-6           # 0.0001 percentage points. Block 45: the mirror reproduces the sheet's getValues bit for bit on all
@@ -49,6 +50,38 @@ def rec_norm(s: str | None) -> str:
     return re.sub(r"\s+", " ", (s or "-").strip())
 
 
+def _lead_price(s) -> int | None:
+    m = re.match(r"\s*([+-]?\d+)", str(s or ""))
+    return int(m.group(1)) if m else None
+
+
+def opponent_errs(doc: dict, fights: list, odds_doc: dict | None) -> list[str]:
+    """Opponent-match guard, pre-registered Block 46 (OPP-1, OPP-2). A price is only trusted if it came from this bout."""
+    errs = []
+    bouts = None
+    if odds_doc is None:
+        errs.append(f"odds file data/{doc.get('slug')}_odds.json missing or unreadable, so no fight can be matched to a real bout (OPP-2)")
+    else:
+        bouts = [((b.get("fighter_a") or {}).get("name", ""), (b.get("fighter_b") or {}).get("name", "")) for b in odds_doc.get("fights") or []]
+    for f in fights:
+        tag = f"{f.get('dog')} vs {f.get('fav')}"
+        ps, inp = f.get("price_source"), f.get("inputs") or {}
+        if not isinstance(ps, dict):
+            errs.append(f"{tag}: price_source missing, so the price cannot be tied to this bout (publish with the current script) (OPP-1)")
+        else:
+            for side in ("dog", "fav"):
+                if not FN.strict_match(str(ps.get(side) or ""), str(f.get(side) or "")):
+                    errs.append(f"{tag}: price taken from Feed row {ps.get('order')} '{ps.get('dog')} vs {ps.get('fav')}', "
+                                f"whose {side} is not {f.get(side)} (OPP-1)")
+                want = _lead_price(ps.get("best_" + side)) if str(ps.get("best_" + side) or "").strip() else _lead_price(ps.get("cons_" + side))
+                got = inp.get(side + "_odds")
+                if want is None or not isinstance(got, (int, float)) or int(got) != want:
+                    errs.append(f"{tag}: {side} price {got} is not the Feed row's price {want} (OPP-1)")
+        if bouts is not None and not any(FN.bout_slots(str(f.get("dog") or ""), str(f.get("fav") or ""), a, b) for a, b in bouts):
+            errs.append(f"{tag}: no such bout in data/{doc.get('slug')}_odds.json (OPP-2)")
+    return errs
+
+
 def price_age_h(doc: dict, now: dt.datetime | None = None) -> float | None:
     s = doc.get("prices_loaded")
     if not s:
@@ -59,7 +92,14 @@ def price_age_h(doc: dict, now: dt.datetime | None = None) -> float | None:
     return ((now or dt.datetime.now(dt.timezone.utc)) - t).total_seconds() / 3600
 
 
-def check(doc: dict, path: Path, now: dt.datetime | None = None) -> list[str]:
+def load_odds(slug: str) -> dict | None:
+    try:
+        return json.loads((REPO / "data" / f"{slug}_odds.json").read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def check(doc: dict, path: Path, now: dt.datetime | None = None, odds_doc: dict | None | str = "auto") -> list[str]:
     errs: list[str] = []
     try:
         age = price_age_h(doc, now)
@@ -136,6 +176,8 @@ def check(doc: dict, path: Path, now: dt.datetime | None = None) -> list[str]:
                     errs.append(f"{tag}: {side} {k} sheet {float(v)*100:.2f} vs recomputed {r[side][k]*100:.2f}")
         if f.get("gtd") is not None and abs(float(f["gtd"]) - r["gtd"]) > TOL:
             errs.append(f"{tag}: GTD sheet {float(f['gtd'])*100:.2f} vs recomputed {r['gtd']*100:.2f}")
+    # opponent-match guard (Block 46): the price must come from this bout, and the bout must exist in the odds feed
+    errs += opponent_errs(doc, fights, load_odds(str(doc.get("slug"))) if odds_doc == "auto" else odds_doc)
     # the params block must agree with the per-fight inputs the numbers were checked against (Block 43 seed test)
     ps = (doc.get("params") or {}).get("shift")
     for f in fights:
@@ -178,7 +220,7 @@ def main() -> int:
     if errs:
         lines += ["**FAIL. Not promoted; the live file is unchanged.**", ""] + [f"- {e}" for e in errs]
     else:
-        lines += [f"**PASS.** Every number matches scripts/sheet_v47.py within {TOL_PTS:g} pts; flags and recs identical."]
+        lines += [f"**PASS.** Every number matches scripts/sheet_v47.py within {TOL_PTS:g} pts; flags and recs identical; every price ties to its own bout (Feed row and odds feed)."]
     report = "\n".join(lines) + "\n"
     print(report)
     if a.report:
