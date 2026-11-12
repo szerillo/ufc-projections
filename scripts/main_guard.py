@@ -145,8 +145,11 @@ def main():
         newer_ = ""
         if conf_ == [ODDS]:
             import json as _j
-            tm_ = _j.loads(git("show", f"{cur}:{ODDS}")).get("updated_at"); tb_ = _j.loads(git("show", f"HEAD:{ODDS}")).get("updated_at")
-            newer_ = "main" if (tm_ and tb_ and tm_ > tb_) else "branch" if (tm_ and tb_ and tb_ > tm_) else ""
+            import odds_newer   # Kirk round 26 C: parsed times + the data inside must agree
+            dm_, db_ = _j.loads(git("show", f"{cur}:{ODDS}")), _j.loads(git("show", f"HEAD:{ODDS}"))
+            tm_, tb_ = dm_.get("updated_at"), db_.get("updated_at")
+            try: newer_ = "main" if odds_newer.newer(dm_, db_)[0] == "A" else "branch"
+            except Exception as e_: newer_ = ""; print(f"  odds file: cannot tell which copy is newer: {e_}")
             newer_ = newer_ and f" odds file: main {tm_}, branch {tb_} -> take {newer_.upper()}'s copy" + (" and rebuild the embeds on it" if newer_ == "main" else "") + "."
         if chg_ and set(chg_) <= ALLOWED and mt_.returncode in (0, 1) and conf_ in ([], [ODDS]) and (not conf_ or newer_) and not main_hits_:
             n_, hits_ = served_scan("HEAD")

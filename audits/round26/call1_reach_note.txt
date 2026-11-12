@@ -1,0 +1,11 @@
+Kirk round 26 call 1: "Reach not listed; Form treats it as equal." beside Form Lines with a blank reach, UFC 334 only.
+Source: form/data/reach_notes.json, written by scripts/reach_notes.py from the fighter files: fights 1 (Samuel Sanches, debut,
+no fighter file), 2 (Juan Diaz), 3 (Bia Mesquita). No other card has an entry.
+Diff: form/app.js 15 lines (3 places a Form Line shows + boot load), reach_notes.json (new), reach_notes.py (new). No embed,
+event, fighter or locked file changes (locks 31/0).
+Render at 390 px, local site, 0 page errors:
+  card page: dagger on rows 3, 2, 1 only; one footnote
+  fight pages 1-13: note on 1, 2, 3 only (twice each: the Form row's description cell and a note under the Form table, so it is
+  visible on phones where that column scrolls off)
+  printable sheet: 3 notes
+  past card (Nov 7): 0 notes, 0 daggers

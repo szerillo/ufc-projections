@@ -1,0 +1,10 @@
+archive tree hash before: c2c5dfc6478c2c2d
+run 1 exit=0 : LISTED PRICE REPORT ufc_334 at 2026-11-12T19:05:20 UTC (report only). Archive newest snapshot 2026-11-12T18:46 UTC; expo
+archive tree hash after run 1: c2c5dfc6478c2c2d
+run 2 exit=0 : LISTED PRICE REPORT ufc_334 at 2026-11-12T19:05:22 UTC (report only). Archive newest snapshot 2026-11-12T18:46 UTC; expo
+archive tree hash after run 2: c2c5dfc6478c2c2d
+git status of tracked files: 1 changed
+0
+control: the round-25 report (writes into the cache)
+before: c2c5dfc6478c2c2d
+after:  9fc7b03c7edc9812  (changes whenever the live file has moved)

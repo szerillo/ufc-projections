@@ -410,7 +410,7 @@
   },
   {
    "id": "v34",
-   "text": "+450",
+   "text": "+500",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -419,11 +419,11 @@
     "field": "cost"
    },
    "desc": "Market dec Alatengheili",
-   "raw": 450
+   "raw": 500
   },
   {
    "id": "v35",
-   "text": "18.2%",
+   "text": "16.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -431,11 +431,11 @@
     "label": "Alateng Heili Points"
    },
    "desc": "Market dec implied Alatengheili",
-   "raw": 0.18181818181818182
+   "raw": 0.16666666666666666
   },
   {
    "id": "v36",
-   "text": "-5.7%",
+   "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -445,7 +445,7 @@
     ]
    },
    "desc": "Edge dec Alatengheili",
-   "raw": -0.05674456773450287
+   "raw": -0.041593052582987705
   },
   {
    "id": "v37",
@@ -652,7 +652,7 @@
   },
   {
    "id": "v53",
-   "text": "-105",
+   "text": "-110",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -661,11 +661,11 @@
     "field": "cost"
    },
    "desc": "Market dec Juan Diaz",
-   "raw": -105
+   "raw": -110
   },
   {
    "id": "v54",
-   "text": "51.2%",
+   "text": "52.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -673,11 +673,11 @@
     "label": "Juan Diaz Points"
    },
    "desc": "Market dec implied Juan Diaz",
-   "raw": 0.5121951219512195
+   "raw": 0.5238095238095238
   },
   {
    "id": "v55",
-   "text": "+0.8%",
+   "text": "-0.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -687,7 +687,7 @@
     ]
    },
    "desc": "Edge dec Juan Diaz",
-   "raw": 0.00799433960268392
+   "raw": -0.003620062255620393
   },
   {
    "id": "v56",
@@ -886,7 +886,7 @@
   },
   {
    "id": "v71",
-   "text": "3.0",
+   "text": "2.8",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -897,7 +897,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.03
+   "raw": 0.027999999999999997
   },
   {
    "id": "v72",
@@ -918,7 +918,7 @@
   },
   {
    "id": "v73",
-   "text": "77.0%",
+   "text": "76.8%",
    "fmt": "pct1",
    "rule": "lh_p",
    "args": {
@@ -931,7 +931,7 @@
     "at": "current"
    },
    "desc": "LH current p Juan Diaz",
-   "raw": 0.77
+   "raw": 0.768
   },
   {
    "id": "v74",

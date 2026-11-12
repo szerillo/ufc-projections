@@ -38,3 +38,9 @@ Logged 2026-11-12 (Kirk round 18). Nothing here is done before the card; the pub
    close; the box's "now" used US-regulated books only. Same book set for Gane: -7.3 pts and 157/1,733 = 9.1% (box showed -7.1
    and 166 = 9.6%). To bring it back, pre-register ONE book set for both sides: either rebuild the reference set from US-regulated
    books at open and close, or show an all-books "now" on the box (which breaks the US-only current-line rule, so likely the former).
+9. **Missing reach vs newness (Kirk round 26).** Round 25's pre-registered check flagged Form overrating the fighter with a
+   missing reach (-17.3 pts, 269 bouts), but it does not separate a missing reach from being new or low-profile, and "missing"
+   was read from today's data, not fight time (audits/round26/A_reach_dating.txt). Pre-register a test that (a) dates reach as of
+   fight time from archived UFCStats pages, (b) compares against bouts matched on UFC fight count, and (c) removes the shared-name
+   rows (Jean Silva 1977 row, blank Mike Davis row, wrong Victor Valenzuela row). No public claim about direction until then;
+   the site says only "Reach not listed; Form treats it as equal."

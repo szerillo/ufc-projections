@@ -13,15 +13,10 @@ git checkout -q -B _merge origin/main
 if ! git merge --no-ff --no-edit -m "Merge $BR into main (scripts/merge_main.sh)" "$BR" >/tmp/_merge.txt 2>&1; then
   U="$(git diff --name-only --diff-filter=U)"
   if [ "$U" != "$ODDS" ]; then echo "MERGE FAIL: conflicts outside the odds file: $U"; git merge --abort; exit 1; fi
-  W="$(python3 - "$ODDS" <<'PY'
-import json, subprocess, sys
-f = sys.argv[1]
-t = {s: json.loads(subprocess.run(["git", "show", f":{n}:{f}"], capture_output=True, text=True, check=True).stdout).get("updated_at") for s, n in (("ours", 2), ("theirs", 3))}
-if not t["ours"] or not t["theirs"] or t["ours"] == t["theirs"]: sys.exit(f"cannot tell which odds file is newer: {t}")
-print("ours" if t["ours"] > t["theirs"] else "theirs")
-print(f"  odds conflict: main {t['ours']}, branch {t['theirs']}", file=sys.stderr)
-PY
-)" || { git merge --abort; exit 1; }
+  git show ":2:$ODDS" > /tmp/_odds_main.json; git show ":3:$ODDS" > /tmp/_odds_branch.json
+  # Kirk round 26 C: times compared as times, and the data inside must agree (scripts/odds_newer.py)
+  W="$(python3 -I scripts/odds_newer.py /tmp/_odds_main.json /tmp/_odds_branch.json)" || { git merge --abort; echo "MERGE FAIL: newer odds file unknown"; exit 1; }
+  W="$( [ "$W" = A ] && echo ours || echo theirs )"
   git checkout --"$W" -- "$ODDS"; git add "$ODDS"
   git commit -q --no-edit
   echo "  odds file resolved to $( [ "$W" = ours ] && echo "MAIN's (bot) copy, the newer" || echo "the BRANCH copy, the newer")"

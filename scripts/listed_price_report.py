@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Current US-regulated price for every Listed cell (Kirk round 18, call 4). REPORT ONLY: writes nothing, changes nothing.
+"""Current US-regulated price for every Listed cell (Kirk round 18, call 4). REPORT ONLY: writes nothing in the repo (round 26: the live odds file goes to a temp scratch copy).
 
 Run right before pasting Listed prices into the sheet:
     python3 scripts/listed_price_report.py --slug ufc_334 --event form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json
@@ -27,7 +27,15 @@ def main():
     a = ap.parse_args()
     cache = Path(a.cache)
     if not a.no_fetch:
-        BF.fetch(BF.ST_RAW + "mma/oddsapi_live.jsonl", cache / "mma" / "oddsapi_live.jsonl", timeout=300)
+        # Kirk round 26 call 2: read-only. The newest live odds file goes to a scratch copy of the cache (the rest of the
+        # archive is linked read-only), so the repo's .form_cache, which the checks read, is never written.
+        import tempfile, atexit, shutil
+        scratch = Path(tempfile.mkdtemp(prefix="listed_report_")); atexit.register(shutil.rmtree, scratch, True)
+        for sub in ("oddsapi",):
+            if (cache / sub).exists(): (scratch / sub).symlink_to((cache / sub).resolve(), target_is_directory=True)
+        (scratch / "mma").mkdir()
+        BF.fetch(BF.ST_RAW + "mma/oddsapi_live.jsonl", scratch / "mma" / "oddsapi_live.jsonl", timeout=300)
+        cache = scratch
     ev = json.loads(Path(a.event).read_text()); d = dt.date.fromisoformat(ev["date"])
     exp = json.loads(Path(a.export or REPO / "data/pending" / f"{a.slug}_projections.json").read_text())
     by_id = BF.load_odds(cache); idx = BF.index_odds(by_id)
