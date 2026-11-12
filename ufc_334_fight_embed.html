@@ -145,7 +145,7 @@ function render(doc, f) {
     <div class="row"><span class="lab">Sheet model</span>${splitBar("true", favW, dogW, f.fav, f.dog, "Sheet model")}</div>
     <div class="row"><span class="lab">Market no-vig</span>${splitBar("listed", 1 - s.listed, s.listed, f.fav, f.dog, "Market no-vig", true)}</div>
     ${inp.markov == null ? NOTE("markov", "Markov: not run for this fight.") : `<div class="row"><span class="lab">Markov</span>${splitBar("markov", 1 - inp.markov, inp.markov, f.fav, f.dog, "Markov", true)}</div>`}
-    ${gap != null && gap >= GAP_T ? `<div class="gap" data-rule="markov_gap">Markov and the sheet model are <b>${V("markov_gap", (100 * gap).toFixed(1) + " pts")}</b> apart on ${esc(f.dog)}. Markov is a stats-only simulation that never sees the market; the sheet gives it 15% weight, so a gap this size moves the sheet model only a little. It is a disagreement between models, not a display error.</div>` : ""}
+    ${gap != null && gap >= GAP_T ? `<div class="gap" data-rule="markov_gap">Markov and the sheet model are <b>${V("markov_gap", (100 * gap).toFixed(1) + " pts")}</b> apart on ${esc(f.dog)}. Markov is a stats-only simulation that never sees the market; the sheet gives it 15% weight, so a gap this size moves the sheet model only a little. It is a disagreement between models, not a display error. On the 8 earlier graded cards, 11 fights had a gap this size; the sheet was closer in 8, which is too few fights to say which model is usually right.</div>` : ""}
     <div class="foot">Market no-vig is at the best bettable prices. Markov is the sim's win % as entered in the sheet, before the sheet's card shift.</div>
   </section>
 
