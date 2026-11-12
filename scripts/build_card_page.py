@@ -26,7 +26,7 @@ import unicodedata
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from fighter_names import NAME_MATCH_JS, name_match, tokens  # noqa: E402
+from fighter_names import NAME_MATCH_JS, best_match, bout_slots, name_match, strict_match, tokens  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[1]
 TEMPLATE = REPO / "ufc_fn_cortes_acosta_walker_fight_form.html"
@@ -39,9 +39,8 @@ def norm(s: str) -> str:
     return " ".join(tokens(s))
 
 
-def same(a: str, b: str) -> bool:
-    # one rule for every name match (stats rows, odds feed, sheet): scripts/fighter_names.py, tested by test_fighter_names.py
-    return name_match(a, b)
+# Every name match goes through scripts/fighter_names.py (tested by test_fighter_names.py): one name in a list by
+# best_match (strict, else the only loose match), a bout by bout_slots (one fighter strict, the other at least loose).
 
 LIVE_FIND_OLD = """  const aTokens = nameTokens(a.name);
   const bTokens = nameTokens(b.name);
@@ -53,11 +52,8 @@ LIVE_FIND_OLD = """  const aTokens = nameTokens(a.name);
     return (tokenOverlap(aTokens, fA) && tokenOverlap(bTokens, fB)) ||
            (tokenOverlap(aTokens, fB) && tokenOverlap(bTokens, fA));
   });"""
-LIVE_FIND_NEW = """  const M = fighterNameMatch;  // both fighters must match, in either slot
-  return (Array.isArray(live && live.fights) ? live.fights : []).find(f => {
-    const x = f?.fighter_a?.name, y = f?.fighter_b?.name;
-    return (M(a.name, x) && M(b.name, y)) || (M(a.name, y) && M(b.name, x));
-  });"""
+LIVE_FIND_NEW = """  // the bout matches when one fighter matches strictly and the other at least loosely, in either slot order
+  return (Array.isArray(live && live.fights) ? live.fights : []).find(f => fighterBoutSlots(a.name, b.name, f?.fighter_a?.name, f?.fighter_b?.name) != null);"""
 WHICH_OLD = """function whichFighter(label, f) {
   const labelTokens = nameTokens(label);"""
 WHICH_NEW = """function whichFighter(label, f, lf) {
@@ -66,8 +62,10 @@ WHICH_NEW = """function whichFighter(label, f, lf) {
   for (const fx of [lf && lf.fighter_a, lf && lf.fighter_b]) {
     const t = nameTokensRule(fx && fx.name).join(" ");
     if (t && (L === t || L.startsWith(t + " "))) {
-      if (fighterNameMatch(fx.name, f.a.name)) return "a";
-      if (fighterNameMatch(fx.name, f.b.name)) return "b";
+      if (fighterStrictMatch(fx.name, f.a.name)) return "a";
+      if (fighterStrictMatch(fx.name, f.b.name)) return "b";
+      const ma = fighterNameMatch(fx.name, f.a.name), mb = fighterNameMatch(fx.name, f.b.name);
+      if (ma !== mb) return ma ? "a" : "b";
     }
   }
   const labelTokens = nameTokens(label);"""
@@ -199,16 +197,27 @@ def build_fights(slug: str, event: dict, stats_rows: list[dict], odds: dict | No
     for f in event["fights"]:
         by_pair[(f["a"]["name"], f["b"]["name"])] = f
     titled = {tuple(sorted(t)) for t in ov.get("title") or []}
-    stat = lambda nm: next((r for r in stats_rows if same(r["Fighter"], nm)), None)
+    def stat(nm):
+        hit = best_match(nm, [r["Fighter"] for r in stats_rows])
+        return next((r for r in stats_rows if r["Fighter"] == hit), None) if hit else None
 
-    def price(nm):
+    def prices(x, y):
+        """Moneylines for page bout (x, y): find the feed bout with bout_slots, then read each fighter's selection."""
         for fo in (odds or {}).get("fights", []):
-            for m in fo["markets"].get("moneyline", []):
-                if same(m["label"], nm):
-                    b = m["books"]
-                    c = (b.get("consensus") or {}).get("cost")
-                    return c if c is not None else next((v.get("cost") for v in b.values() if v.get("cost") is not None), None)
-        return None
+            fa, fb = (fo.get("fighter_a") or {}).get("name"), (fo.get("fighter_b") or {}).get("name")
+            slots = bout_slots(x, y, fa, fb)
+            if not slots:
+                continue
+            fx, fy = (fa, fb) if slots == "same" else (fb, fa)
+            def cost(feed_name):
+                for m in fo["markets"].get("moneyline", []):
+                    if strict_match(m["label"], feed_name):
+                        b = m["books"]
+                        c = (b.get("consensus") or {}).get("cost")
+                        return c if c is not None else next((v.get("cost") for v in b.values() if v.get("cost") is not None), None)
+                return None
+            return cost(fx), cost(fy)
+        return None, None
 
     out, meta = [], []
     n_total = len(order)
@@ -217,7 +226,7 @@ def build_fights(slug: str, event: dict, stats_rows: list[dict], odds: dict | No
         ev = next((f for k, f in by_pair.items() if {norm(k[0]), norm(k[1])} == {norm(x), norm(y)}), None)
         if ev is None:
             raise SystemExit(f"bout {x} vs {y} from card_overrides order is not in the event file")
-        mx, my = price(x), price(y)
+        mx, my = prices(x, y)
         a, b = (x, y) if (mx is None or my is None or mx <= my) else (y, x)
         ma, mb = (mx, my) if a == x else (my, mx)
         pa = pb = None
@@ -261,11 +270,9 @@ function rawImpliedPct(ml) {
   return Math.abs(m) / (Math.abs(m) + 100) * 100;
 }
 
-function projNameMatch(x, y) {
-  // shared fighter-name rule (fighterNameMatch, injected above from scripts/fighter_names.py): same surname or one letter off,
-  // and the first names must agree, so a late replacement with the same surname (Josh vs Jake Hokit) does not inherit numbers.
-  return fighterNameMatch(x, y);
-}
+// A published bout is matched to a page bout with the shared rule (fighterBoutSlots, from scripts/fighter_names.py): one
+// fighter must match strictly and the other at least loosely, so a late replacement with a near name (Josh vs Jake
+// Hokit) or a near-namesake (Chris Duncan vs Christian Leroy Duncan) does not inherit the old bout's numbers.
 
 let PROJ_UNMATCHED = [], PROJ_BAD = [];
 // A published record is used only if every field it feeds is the right type; anything else is listed in the status line.
@@ -284,11 +291,10 @@ function applySheetProjections(doc) {
   PROJ_UNMATCHED = []; PROJ_BAD = [];
   (Array.isArray(doc && doc.fights) ? doc.fights : []).forEach((p, i) => { try {
     if (!projRecordOk(p)) { PROJ_BAD.push(p && p.fav && p.dog ? p.fav + " vs " + p.dog : "record " + (i + 1)); return; }
-    const f = FIGHTS.find(x => (projNameMatch(x.a.name, p.dog) && projNameMatch(x.b.name, p.fav)) ||
-                               (projNameMatch(x.a.name, p.fav) && projNameMatch(x.b.name, p.dog)));
+    const f = FIGHTS.find(x => fighterBoutSlots(x.a.name, x.b.name, p.dog, p.fav) != null);
     if (!f) { PROJ_UNMATCHED.push(p.fav + " vs " + p.dog); return; }   // published but not on this page: a late change the page has not caught up with
     if (!p.sheet || p.sheet.true_dog == null) return;
-    const aIsDog = projNameMatch(f.a.name, p.dog);
+    const aIsDog = fighterBoutSlots(f.a.name, f.b.name, p.dog, p.fav) === "same";
     const dogW = 100 * p.sheet.true_dog, favW = 100 - dogW;
     const sh = (side, w) => {
       const m = (p.method || {})[side] || {};

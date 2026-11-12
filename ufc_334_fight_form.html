@@ -2509,8 +2509,12 @@ ${(f.a.ctrl || f.b.ctrl) ? `
 // ============== FIGHTER NAME RULE (scripts/fighter_names.py; tested by scripts/test_fighter_names.py) ==============
 const NAME_NICKS = {"alex": "alexander", "andy": "andrew", "beth": "elizabeth", "bill": "william", "bob": "robert", "bobby": "robert", "charlie": "charles", "chuck": "charles", "dan": "daniel", "danny": "daniel", "dick": "richard", "drew": "andrew", "ed": "edward", "eddie": "edward", "jim": "james", "jimmy": "james", "joe": "joseph", "kate": "katherine", "liz": "elizabeth", "manny": "manuel", "mick": "michael", "mike": "michael", "pete": "peter", "rick": "richard", "rob": "robert", "sasha": "alexander", "steve": "stephen", "tim": "timothy", "timmy": "timothy", "tom": "thomas", "tommy": "thomas", "tony": "anthony", "will": "william", "zach": "zachary", "zack": "zachary"};
 const NAME_SUFFIX_SET = new Set(["jr", "sr", "ii", "iii", "iv"]);
-function nameTokensRule(s) {
-  return (s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, " ").split(/\s+/).filter(t => t && !NAME_SUFFIX_SET.has(t));
+function nameRawTokens(s) {
+  return String(s == null ? "" : s).normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, " ").split(/\s+/).filter(Boolean);
+}
+function nameTokensRule(s) { return nameRawTokens(s).filter(t => !NAME_SUFFIX_SET.has(t)); }
+function nameSameLetters(a, b) {
+  return a.length > 0 && b.length > 0 && (a.join(" ") === b.join(" ") || a.join("") === b.join("") || [...a].sort().join(" ") === [...b].sort().join(" "));
 }
 function nameEdit1(a, b) {
   if (a === b) return true;
@@ -2526,17 +2530,23 @@ function nameEdit1(a, b) {
 function nameFirstOk(a, b) {
   if (a === b) return true;
   if (Math.min(a.length, b.length) >= 3 && (a.startsWith(b) || b.startsWith(a))) return true;
-  if (Math.min(a.length, b.length) >= 4 && a.slice(0, 4) === b.slice(0, 4)) return true;
   return (NAME_NICKS[a] || a) === (NAME_NICKS[b] || b);
 }
-function fighterNameMatch(x, y) {
+function fighterStrictMatch(x, y) { return nameSameLetters(nameRawTokens(x), nameRawTokens(y)); }
+function fighterNameMatch(x, y) {  // loose: trust it only inside a bout the other fighter confirms
+  if (fighterStrictMatch(x, y)) return true;
   const a = nameTokensRule(x), b = nameTokensRule(y);
-  if (!a.length || !b.length) return false;
-  if (a.join("") === b.join("") || [...a].sort().join(" ") === [...b].sort().join(" ")) return true;
-  if (a.length < 2 || b.length < 2) return false;
+  if (nameSameLetters(a, b)) return true;
+  if (a.length < 2 || a.length !== b.length || a.slice(1, -1).join(" ") !== b.slice(1, -1).join(" ")) return false;
   const la = a[a.length - 1], lb = b[b.length - 1];
   const surnameOk = la === lb || (Math.min(la.length, lb.length) >= 5 && nameEdit1(la, lb));
   return surnameOk && nameFirstOk(a[0], b[0]);
+}
+function fighterBoutSlots(a1, b1, a2, b2) {
+  const S = fighterStrictMatch, L = fighterNameMatch;
+  if ((S(a1, a2) && L(b1, b2)) || (L(a1, a2) && S(b1, b2))) return "same";
+  if ((S(a1, b2) && L(b1, a2)) || (L(a1, b2) && S(b1, a2))) return "swap";
+  return null;
 }
 
 // ============== PER-RECORD GUARDS (scripts/build_card_page.py GUARD_JS; tests: scripts/test_card_guards.py) ==============
@@ -2586,11 +2596,9 @@ function rawImpliedPct(ml) {
   return Math.abs(m) / (Math.abs(m) + 100) * 100;
 }
 
-function projNameMatch(x, y) {
-  // shared fighter-name rule (fighterNameMatch, injected above from scripts/fighter_names.py): same surname or one letter off,
-  // and the first names must agree, so a late replacement with the same surname (Josh vs Jake Hokit) does not inherit numbers.
-  return fighterNameMatch(x, y);
-}
+// A published bout is matched to a page bout with the shared rule (fighterBoutSlots, from scripts/fighter_names.py): one
+// fighter must match strictly and the other at least loosely, so a late replacement with a near name (Josh vs Jake
+// Hokit) or a near-namesake (Chris Duncan vs Christian Leroy Duncan) does not inherit the old bout's numbers.
 
 let PROJ_UNMATCHED = [], PROJ_BAD = [];
 // A published record is used only if every field it feeds is the right type; anything else is listed in the status line.
@@ -2609,11 +2617,10 @@ function applySheetProjections(doc) {
   PROJ_UNMATCHED = []; PROJ_BAD = [];
   (Array.isArray(doc && doc.fights) ? doc.fights : []).forEach((p, i) => { try {
     if (!projRecordOk(p)) { PROJ_BAD.push(p && p.fav && p.dog ? p.fav + " vs " + p.dog : "record " + (i + 1)); return; }
-    const f = FIGHTS.find(x => (projNameMatch(x.a.name, p.dog) && projNameMatch(x.b.name, p.fav)) ||
-                               (projNameMatch(x.a.name, p.fav) && projNameMatch(x.b.name, p.dog)));
+    const f = FIGHTS.find(x => fighterBoutSlots(x.a.name, x.b.name, p.dog, p.fav) != null);
     if (!f) { PROJ_UNMATCHED.push(p.fav + " vs " + p.dog); return; }   // published but not on this page: a late change the page has not caught up with
     if (!p.sheet || p.sheet.true_dog == null) return;
-    const aIsDog = projNameMatch(f.a.name, p.dog);
+    const aIsDog = fighterBoutSlots(f.a.name, f.b.name, p.dog, p.fav) === "same";
     const dogW = 100 * p.sheet.true_dog, favW = 100 - dogW;
     const sh = (side, w) => {
       const m = (p.method || {})[side] || {};
@@ -2719,11 +2726,8 @@ function tokenOverlap(setA, setB) {
 }
 
 function findLiveFight(live, a, b) {
-  const M = fighterNameMatch;  // both fighters must match, in either slot
-  return (Array.isArray(live && live.fights) ? live.fights : []).find(f => {
-    const x = f?.fighter_a?.name, y = f?.fighter_b?.name;
-    return (M(a.name, x) && M(b.name, y)) || (M(a.name, y) && M(b.name, x));
-  });
+  // the bout matches when one fighter matches strictly and the other at least loosely, in either slot order
+  return (Array.isArray(live && live.fights) ? live.fights : []).find(f => fighterBoutSlots(a.name, b.name, f?.fighter_a?.name, f?.fighter_b?.name) != null);
 }
 
 // Given a market selection label (e.g., "Manel Kape KO/TKO/DQ"), return "a"
@@ -2735,8 +2739,10 @@ function whichFighter(label, f, lf) {
   for (const fx of [lf && lf.fighter_a, lf && lf.fighter_b]) {
     const t = nameTokensRule(fx && fx.name).join(" ");
     if (t && (L === t || L.startsWith(t + " "))) {
-      if (fighterNameMatch(fx.name, f.a.name)) return "a";
-      if (fighterNameMatch(fx.name, f.b.name)) return "b";
+      if (fighterStrictMatch(fx.name, f.a.name)) return "a";
+      if (fighterStrictMatch(fx.name, f.b.name)) return "b";
+      const ma = fighterNameMatch(fx.name, f.a.name), mb = fighterNameMatch(fx.name, f.b.name);
+      if (ma !== mb) return ma ? "a" : "b";
     }
   }
   const labelTokens = nameTokens(label);
