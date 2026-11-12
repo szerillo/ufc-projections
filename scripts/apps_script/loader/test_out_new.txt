@@ -10,4 +10,6 @@ PASS 5 regression: different surnames, split decision for the dog
      alert: x: 1 results found, 1 snapshot rows graded, 0 PropSnap rows graded, 0 Archive bets filled.
 PASS 6 card picker: Feed!B2 holds the next card (4433), grade the Oct 31 card (4427)
      alert: x: 1 results found, 1 snapshot rows graded, 0 PropSnap rows graded, 0 Archive bets filled.
-all 6 cases passed
+PASS 7 replaced opponent: sheet Amaya vs Valesca Machado, the bout was Amaya vs Tina Black (Sept 26) -> leave ungraded
+     alert: x: 1 results found, 0 snapshot rows graded, 0 PropSnap rows graded, 0 Archive bets filled. | (No snapshot for this pk — run "Snapshot card" before the next one.)
+all 7 cases passed

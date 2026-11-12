@@ -94,6 +94,10 @@ const CASES = [
     snap: { 0: '4427', 6: 'Dakota Hope', 7: 'Francis Marshall', 14: 0.4, 15: 0.45, 16: 0.42, 22: '-' },
     bouts: [bout('Francis Marshall', 'Dakota Hope', 'Dakota Hope', 'Decision - Split', 3, '5:00', '/athlete/francis-marshall', '/athlete/dakota-hope')],
     expectSnap: { 40: 1 } },
+  { name: '7 replaced opponent: sheet Amaya vs Valesca Machado, the bout was Amaya vs Tina Black (Sept 26) -> leave ungraded', feedPk: '4401', pickPk: '4401', url, event: 'x',
+    snap: { 0: '4401', 6: 'Melissa Amaya', 7: 'Valesca Machado', 15: 0.24, 16: 0.2596, 22: 'BET Valesca Machado', 33: -150 },
+    bouts: [bout('Melissa Amaya', 'Tina Black', 'Tina Black', 'KO/TKO', 2, '1:10', '/athlete/melissa-amaya', '/athlete/tina-black')],
+    expectSnap: { 35: '', 40: '', 41: '', 46: '', 48: '' } },
 ];
 let fail = 0;
 for (const tc of CASES) {

@@ -23,11 +23,14 @@ Read through `SP_(name, default)` (one added line). Never paste these values int
 - L1179: keeps each corner's full name and athlete URL next to the last name.
 - L1200-1201: the sheet dog's corner comes from full names, then (same surname) first name or URL slug; dogWon comes
   from the winner's corner. The old code compared last names, so Yana vs Luana Santos was always a Yana win.
+- L1189 `findRes`: one exact name no longer grades a bout on its own; the other corner must share a name token with the
+  other sheet fighter. v2.7 graded Melissa Amaya vs Valesca Machado (Sept 26) against Amaya vs Tina Black (Machado was
+  replaced), including a +0.49u win for the "BET Valesca Machado" rec. A replaced bout is now left ungraded.
 - L1304 `propSnapGrade_`: grades on the Snapshots side and lists PropSnap rows whose name labels are swapped.
 
 ## Test
-    node test_grading_names.js v2.7_name_helpers_L170-189.gs v2.7_grading_L1092-1340.gs   # 3 of 6 fail
-    node test_grading_names.js v2.7_name_helpers_L170-189.gs patched_grading.gs            # 6 of 6 pass
+    node test_grading_names.js v2.7_name_helpers_L170-189.gs v2.7_grading_L1092-1340.gs   # 4 of 7 fail
+    node test_grading_names.js v2.7_name_helpers_L170-189.gs patched_grading.gs            # 7 of 7 pass
 The same holds on the full files (helpers = lines 171-190, grading = line 1093 to the end of each file).
 
 ## Sunday install (about 10 minutes)

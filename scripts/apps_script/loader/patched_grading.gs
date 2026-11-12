@@ -95,7 +95,12 @@ function gradeCard() {
     for (i = 0; i < res.length; i++) { x = res[i]; if ((x.n1 === norm(dog) && x.n2 === norm(fav)) || (x.n1 === norm(fav) && x.n2 === norm(dog))) return x; }
     for (i = 0; i < res.length; i++) { x = res[i]; var ld = lastOf(dog), lf = lastOf(fav); var hit = function (l, a) { return l === a || a.indexOf(l) >= 0 || l.indexOf(a) >= 0; };
       if ((hit(ld, x.l1) && hit(lf, x.l2)) || (hit(ld, x.l2) && hit(lf, x.l1))) return x; }
-    for (i = 0; i < res.length; i++) { x = res[i]; if (x.n1 === norm(dog) || x.n2 === norm(dog) || x.n1 === norm(fav) || x.n2 === norm(fav)) return x; }
+    // PATCH loader-patch (Block 43): one exact name is not enough on its own; the other corner must share a name token with the
+    // other sheet fighter (Patricio Pitbull = Patricio Freire passes; a replaced opponent, Valesca Machado vs Tina Black, does not)
+    var tok = function (s) { return String(s || '').toLowerCase().replace(/[^a-z ]/g, ' ').split(/\s+/).filter(function (t) { return t.length >= 3; }); };
+    var shares = function (a, b) { var tb = tok(b); return tok(a).some(function (t) { return tb.indexOf(t) >= 0; }); };
+    for (i = 0; i < res.length; i++) { x = res[i];
+      if ((x.n1 === norm(dog) && shares(x.full2, fav)) || (x.n2 === norm(dog) && shares(x.full1, fav)) || (x.n1 === norm(fav) && shares(x.full2, dog)) || (x.n2 === norm(fav) && shares(x.full1, dog))) return x; }
     for (i = 0; i < res.length; i++) { x = res[i]; if ((nameScore_(x.full1, dog) && nameScore_(x.full2, fav)) || (nameScore_(x.full1, fav) && nameScore_(x.full2, dog))) return x; }
     return null;
   };
