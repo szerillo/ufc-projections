@@ -88,6 +88,7 @@ function buildDoc_(slug) {
   PUB.tabs.forEach(function (t) {
     var sh = ss.getSheetByName(t.name);
     var M = sh.getRange('A1:AQ12').getValues();
+    var LT = sh.getRange('P14:Q35').getValues();             // market KO / SUB prices: dog row 14+2k, fav row 15+2k (W / AA formulas)
     var P = sh.getRange(PUB.publishCol + '1:' + PUB.publishCol + '12').getValues();
     for (var r = t.first; r <= t.last; r++) {
       if (P[r - 1][0] !== true) continue;                     // only ticked fights
@@ -111,6 +112,12 @@ function buildDoc_(slug) {
                                            fav: { dec: num_(m[25]), ko: num_(m[26]), sub: num_(m[27]) } };
       if (PUB.include.gtd) { f.gtd = num_(m[16]); f.gtd_listed = num_(m[18]); }
       if (PUB.include.markov) f.markov_dec = { dog: num_(m[41]), fav: num_(m[42]) };
+      if (PUB.include.method || PUB.include.gtd) {             // what the check needs to recompute V:AB and Q (Block 44)
+        var k = 2 * (r - 2);
+        f.method_inputs = { ap: num_(m[41]), aq: num_(m[42]), ad: num_(m[29]), ae: num_(m[30]), ah: num_(m[33]), ai: num_(m[34]),
+                            al: num_(m[37]), am: num_(m[38]), an: num_(m[39]), s: num_(m[18]), cx: num_(c[23]), cy: num_(c[24]),
+                            ko_dog: num_(LT[k][0]), sub_dog: num_(LT[k][1]), ko_fav: num_(LT[k + 1][0]), sub_fav: num_(LT[k + 1][1]) };
+      }
       if (!PUB.include.rec) delete f.sheet.rec;     // left out of the file entirely; the check then skips it
       if (!PUB.include.flag) delete f.sheet.flag;
       fights.push(f);
@@ -122,11 +129,13 @@ function buildDoc_(slug) {
       if (d2 || f2 || P[r2 - 1][0] === true) OUTSIDE_.push(t.name + ' row ' + r2 + ': ' + (d2 || '?') + ' vs ' + (f2 || '?') + (P[r2 - 1][0] === true ? ' (ticked)' : ''));
     }
   });
+  var loaded = ss.getSheetByName('Feed').getRange('F1').getValue();   // "Loaded": set by Load next card and Refresh prices
   return {
     schema: 1, slug: slug, event: String(ss.getSheetByName('Feed').getRange('B1').getValue() || ''),
     published_at: new Date().toISOString(), source: 'UFC Model sheet, rules v4.7, Publish to site',
+    prices_loaded: loaded instanceof Date ? loaded.toISOString() : null,
     params: { shift: shift, b43: num_(calc.getRange('B43').getValue()), b44: num_(calc.getRange('B44').getValue()),
-              b45: num_(calc.getRange('B45').getValue()) },
+              b45: num_(calc.getRange('B45').getValue()), b41: num_(calc.getRange('B41').getValue()) },
     fights: fights
   };
 }

@@ -26,6 +26,7 @@ import sheet_v47 as S  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[1]
 TOL = 0.001          # 0.1 percentage points, on 0-1 probabilities
+MAX_PRICE_AGE_H = 3  # pre-registered Nov 11 (Block 44): prices must be refreshed within 3 h of the check
 NUM_KEYS = [("listed", "listed"), ("H", "markov_shifted"), ("Q", "q"), ("true_dog", "true_dog"),
             ("true_fav", "true_fav"), ("dog_edge", "dog_edge"), ("fav_edge", "fav_edge"), ("drift", "drift")]
 SLUG_RE = re.compile(r"^[a-z0-9_]+$")
@@ -46,8 +47,21 @@ def rec_norm(s: str | None) -> str:
     return re.sub(r"\s+", " ", (s or "-").strip())
 
 
-def check(doc: dict, path: Path) -> list[str]:
+def price_age_h(doc: dict, now: dt.datetime | None = None) -> float | None:
+    s = doc.get("prices_loaded")
+    if not s:
+        return None
+    t = dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))
+    return ((now or dt.datetime.now(dt.timezone.utc)) - t).total_seconds() / 3600
+
+
+def check(doc: dict, path: Path, now: dt.datetime | None = None) -> list[str]:
     errs: list[str] = []
+    age = price_age_h(doc, now)
+    if age is None:
+        errs.append("no prices_loaded stamp (publish with the current script, after UFC > Refresh prices)")
+    elif age > MAX_PRICE_AGE_H:
+        errs.append(f"prices were loaded {age:.1f} h ago (limit {MAX_PRICE_AGE_H} h): run UFC > Refresh prices, then publish again")
     slug = doc.get("slug", "")
     if doc.get("schema") != 1:
         errs.append(f"schema is {doc.get('schema')!r}, expected 1")
@@ -93,6 +107,25 @@ def check(doc: dict, path: Path) -> list[str]:
         g = f.get("gtd")
         if g is not None and not 0 <= float(g) <= 1:
             errs.append(f"{tag}: GTD {g} outside [0,1]")
+    # method split and fight GTD: recomputed from the file's own method_inputs with the tab formulas (Block 44)
+    params = doc.get("params") or {}
+    for f in fights:
+        tag = f"{f.get('dog')} vs {f.get('fav')}"
+        if f.get("method") is None and f.get("gtd") is None:
+            continue
+        mi = f.get("method_inputs")
+        L = (f.get("sheet") or {}).get("true_dog")
+        if not isinstance(mi, dict) or not isinstance(L, (int, float)):
+            errs.append(f"{tag}: method_inputs missing, so the method split and GTD cannot be checked (publish with the current script)")
+            continue
+        r = S.method_gtd(float(L), {**mi, "b41": params.get("b41"), "b45": params.get("b45")})
+        for side in ("dog", "fav"):
+            for k in ("dec", "ko", "sub"):
+                v = ((f.get("method") or {}).get(side) or {}).get(k)
+                if v is not None and abs(float(v) - r[side][k]) > TOL:
+                    errs.append(f"{tag}: {side} {k} sheet {float(v)*100:.2f} vs recomputed {r[side][k]*100:.2f}")
+        if f.get("gtd") is not None and abs(float(f["gtd"]) - r["gtd"]) > TOL:
+            errs.append(f"{tag}: GTD sheet {float(f['gtd'])*100:.2f} vs recomputed {r['gtd']*100:.2f}")
     # the params block must agree with the per-fight inputs the numbers were checked against (Block 43 seed test)
     ps = (doc.get("params") or {}).get("shift")
     for f in fights:

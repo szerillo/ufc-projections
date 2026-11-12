@@ -351,7 +351,9 @@ async function loadSheetProjections() {
       // a sheet name that differs from the page's is unusual (both come from the same card), so it turns the line amber
       if (PROJ_UNMATCHED.length || PROJ_BAD.length || FF_FUZZY.proj.length) el.className = "ff-odds-status stale";
       // freshness guard: numbers older than 12h stay up but are labelled (prices and news move; Sean re-publishes before the card)
-      const ageH = (Date.now() - Date.parse(SHEET_PROJ.published_at)) / 36e5;
+      // the sheet's prices are as old as their last load (Feed "Loaded", published as prices_loaded), not the publish time
+      if (SHEET_PROJ.prices_loaded) el.innerHTML += ` · prices loaded ${fmtAgo(SHEET_PROJ.prices_loaded)}`;
+      const ageH = (Date.now() - Math.min(Date.parse(SHEET_PROJ.published_at), Date.parse(SHEET_PROJ.prices_loaded || SHEET_PROJ.published_at))) / 36e5;
       if (!(ageH <= 12)) { el.className = "ff-odds-status stale"; el.innerHTML += ` · <b>over 12h old, check before using</b>`; }
     }
   } catch (e) {
