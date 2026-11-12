@@ -2250,6 +2250,78 @@
   },
   {
    "id": "v185",
+   "text": "+0.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "Trend R1 Stephen Thompson",
+   "raw": 0.038
+  },
+  {
+   "id": "v186",
+   "text": "+1.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "Trend R2 Stephen Thompson",
+   "raw": 1.379
+  },
+  {
+   "id": "v187",
+   "text": "+1.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "Trend R3 Stephen Thompson",
+   "raw": 1.743
+  },
+  {
+   "id": "v188",
+   "text": "+0.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "Trend R1 Charles Radtke",
+   "raw": 0.197
+  },
+  {
+   "id": "v189",
+   "text": "+0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "Trend R2 Charles Radtke",
+   "raw": 0.713
+  },
+  {
+   "id": "v190",
+   "text": "-1.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "Trend R3 Charles Radtke",
+   "raw": -0.967
+  },
+  {
+   "id": "v191",
    "text": "0.23",
    "fmt": "n2",
    "rule": "em",
@@ -2261,7 +2333,7 @@
    "raw": 0.235
   },
   {
-   "id": "v186",
+   "id": "v192",
    "text": "1.99",
    "fmt": "n2",
    "rule": "em",
@@ -2273,7 +2345,7 @@
    "raw": 1.989
   },
   {
-   "id": "v187",
+   "id": "v193",
    "text": "36%",
    "fmt": "pct0",
    "rule": "em",
@@ -2285,7 +2357,7 @@
    "raw": 0.3571
   },
   {
-   "id": "v188",
+   "id": "v194",
    "text": "44%",
    "fmt": "pct0",
    "rule": "em",
@@ -2297,7 +2369,7 @@
    "raw": 0.4444
   },
   {
-   "id": "v189",
+   "id": "v195",
    "text": "63%",
    "fmt": "pct0",
    "rule": "em",
@@ -2309,7 +2381,7 @@
    "raw": 0.6329
   },
   {
-   "id": "v190",
+   "id": "v196",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -2321,7 +2393,7 @@
    "raw": 1.0
   },
   {
-   "id": "v191",
+   "id": "v197",
    "text": "6%",
    "fmt": "pct0",
    "rule": "em",
@@ -2333,7 +2405,7 @@
    "raw": 0.0604
   },
   {
-   "id": "v192",
+   "id": "v198",
    "text": "51%",
    "fmt": "pct0",
    "rule": "em",
@@ -2345,7 +2417,7 @@
    "raw": 0.5138
   },
   {
-   "id": "v193",
+   "id": "v199",
    "text": "-10.7%",
    "fmt": "spp",
    "rule": "em",
@@ -2357,7 +2429,7 @@
    "raw": -0.1065
   },
   {
-   "id": "v194",
+   "id": "v200",
    "text": "+45.1%",
    "fmt": "spp",
    "rule": "em",
@@ -2369,7 +2441,7 @@
    "raw": 0.4506
   },
   {
-   "id": "v195",
+   "id": "v201",
    "text": "19%",
    "fmt": "pct0",
    "rule": "em",
@@ -2381,7 +2453,7 @@
    "raw": 0.1884
   },
   {
-   "id": "v196",
+   "id": "v202",
    "text": "4%",
    "fmt": "pct0",
    "rule": "em",
@@ -2393,7 +2465,7 @@
    "raw": 0.0401
   },
   {
-   "id": "v197",
+   "id": "v203",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -2405,7 +2477,7 @@
    "raw": 0.0
   },
   {
-   "id": "v198",
+   "id": "v204",
    "text": "0.50",
    "fmt": "n2",
    "rule": "em",
@@ -2417,7 +2489,7 @@
    "raw": 0.497
   },
   {
-   "id": "v199",
+   "id": "v205",
    "text": "+1.04",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2433,7 +2505,7 @@
    "raw": 1.045
   },
   {
-   "id": "v200",
+   "id": "v206",
    "text": "+0.05",
    "fmt": "s2",
    "rule": "em_sum",
@@ -2449,7 +2521,7 @@
    "raw": 0.04899999999999999
   },
   {
-   "id": "v201",
+   "id": "v207",
    "text": "+1.22",
    "fmt": "s2",
    "rule": "em",
@@ -2461,7 +2533,7 @@
    "raw": 1.222
   },
   {
-   "id": "v202",
+   "id": "v208",
    "text": "-0.14",
    "fmt": "s2",
    "rule": "em",
@@ -2473,7 +2545,7 @@
    "raw": -0.143
   },
   {
-   "id": "v203",
+   "id": "v209",
    "text": "16",
    "fmt": "int",
    "rule": "em",
@@ -2485,7 +2557,7 @@
    "raw": 16
   },
   {
-   "id": "v204",
+   "id": "v210",
    "text": "22",
    "fmt": "int",
    "rule": "em",
@@ -2497,7 +2569,7 @@
    "raw": 22
   },
   {
-   "id": "v205",
+   "id": "v211",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2509,7 +2581,7 @@
    "raw": 3
   },
   {
-   "id": "v206",
+   "id": "v212",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -2521,7 +2593,7 @@
    "raw": 7
   },
   {
-   "id": "v207",
+   "id": "v213",
    "text": "+1.08",
    "fmt": "s2",
    "rule": "em",
@@ -2533,7 +2605,7 @@
    "raw": 1.08
   },
   {
-   "id": "v208",
+   "id": "v214",
    "text": "+0.96",
    "fmt": "s2",
    "rule": "em",
@@ -2545,7 +2617,7 @@
    "raw": 0.961
   },
   {
-   "id": "v209",
+   "id": "v215",
    "text": "+0.42",
    "fmt": "s2",
    "rule": "em",
@@ -2557,7 +2629,7 @@
    "raw": 0.416
   },
   {
-   "id": "v210",
+   "id": "v216",
    "text": "-0.63",
    "fmt": "s2",
    "rule": "em",
@@ -2569,7 +2641,7 @@
    "raw": -0.63
   },
   {
-   "id": "v211",
+   "id": "v217",
    "text": "-0.45",
    "fmt": "s2",
    "rule": "em",
@@ -2581,7 +2653,7 @@
    "raw": -0.451
   },
   {
-   "id": "v212",
+   "id": "v218",
    "text": "-0.28",
    "fmt": "s2",
    "rule": "em",
@@ -2593,7 +2665,7 @@
    "raw": -0.282
   },
   {
-   "id": "v213",
+   "id": "v219",
    "text": "66%",
    "fmt": "pct0",
    "rule": "em",
@@ -2605,7 +2677,7 @@
    "raw": 0.6575
   },
   {
-   "id": "v214",
+   "id": "v220",
    "text": "66%",
    "fmt": "pct0",
    "rule": "em",
@@ -2617,7 +2689,7 @@
    "raw": 0.6585
   },
   {
-   "id": "v215",
+   "id": "v221",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -2629,7 +2701,7 @@
    "raw": 4
   },
   {
-   "id": "v216",
+   "id": "v222",
    "text": "15",
    "fmt": "int",
    "rule": "em",
@@ -2641,7 +2713,7 @@
    "raw": 15
   },
   {
-   "id": "v217",
+   "id": "v223",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2653,7 +2725,7 @@
    "raw": 3
   },
   {
-   "id": "v218",
+   "id": "v224",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2665,7 +2737,7 @@
    "raw": 3
   },
   {
-   "id": "v219",
+   "id": "v225",
    "text": "190%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2679,7 +2751,7 @@
    "raw": 1.896
   },
   {
-   "id": "v220",
+   "id": "v226",
    "text": "14.0",
    "fmt": "n1",
    "rule": "em",
@@ -2691,7 +2763,7 @@
    "raw": 14.025
   },
   {
-   "id": "v221",
+   "id": "v227",
    "text": "8.6",
    "fmt": "n1",
    "rule": "em",
@@ -2703,7 +2775,7 @@
    "raw": 8.619
   },
   {
-   "id": "v222",
+   "id": "v228",
    "text": "19%",
    "fmt": "pct0",
    "rule": "em",
@@ -2715,7 +2787,7 @@
    "raw": 0.1905
   },
   {
-   "id": "v223",
+   "id": "v229",
    "text": "43%",
    "fmt": "pct0",
    "rule": "em",
@@ -2727,7 +2799,7 @@
    "raw": 0.4286
   },
   {
-   "id": "v224",
+   "id": "v230",
    "text": "+375",
    "fmt": "ml",
    "rule": "fight",
@@ -2740,7 +2812,7 @@
    "raw": 375
   },
   {
-   "id": "v225",
+   "id": "v231",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -2753,7 +2825,7 @@
    "raw": 180
   },
   {
-   "id": "v226",
+   "id": "v232",
    "text": "+470",
    "fmt": "ml",
    "rule": "fight",
@@ -2766,7 +2838,7 @@
    "raw": 470
   },
   {
-   "id": "v227",
+   "id": "v233",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -2779,7 +2851,7 @@
    "raw": 155
   },
   {
-   "id": "v228",
+   "id": "v234",
    "text": "-192",
    "fmt": "ml",
    "rule": "fight",
@@ -2792,7 +2864,7 @@
    "raw": -192
   },
   {
-   "id": "v229",
+   "id": "v235",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -2805,7 +2877,7 @@
    "raw": -179
   },
   {
-   "id": "v230",
+   "id": "v236",
    "text": "+179",
    "fmt": "ml",
    "rule": "fight",
@@ -2818,7 +2890,7 @@
    "raw": 179
   },
   {
-   "id": "v231",
+   "id": "v237",
    "text": "-175",
    "fmt": "ml",
    "rule": "fight",
@@ -2831,7 +2903,7 @@
    "raw": -175
   },
   {
-   "id": "v232",
+   "id": "v238",
    "text": "+178",
    "fmt": "ml",
    "rule": "fight",
@@ -2844,7 +2916,7 @@
    "raw": 178
   },
   {
-   "id": "v233",
+   "id": "v239",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",

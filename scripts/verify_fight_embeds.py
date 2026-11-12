@@ -264,6 +264,17 @@ def check(D, htmlfile, G):
             want.append(("CB", reg["pair"][0] if ca_["sw"] > cb_["sw"] else reg["pair"][1]))
         got = re.findall(r'<li data-spot="(T1|T17|CB)">(?:If )?<b>([^<]+)</b>', page)
         if [(k_, g_.split()[-1]) for k_, g_ in got] != [(k_, w_.split()[-1]) for k_, w_ in want]: bad.append(("spot", "to watch", f"page {got} vs recomputed {want}"))
+        if any(k_ == "T1" for k_, _ in want) and "Never confirmed on new cards" not in page: bad.append(("spot", "T1 label", "T1 note must say it was never confirmed on new cards"))
+        # Block 59o: round-trend chart. Present iff both fighters have 2+ of R1-R3 with 1+ fight; the plotted y of every point
+        # must equal the metrics file's rounds.N.diff_pm on the chart's own scale (recomputed from the SVG coordinates)
+        tp_ = [[(i_, rr_["diff_pm"]) for i_, rr_ in enumerate((x_.get("rounds") or [])[:3]) if (rr_ or {}).get("fights", 0) >= 1 and rr_.get("diff_pm") is not None] for x_ in (pa_, pb_)]
+        want_tr = all(len(t_) >= 2 for t_ in tp_)
+        if want_tr != ('data-part="trend"' in page): bad.append(("trend", "presence", f"page {'data-part=\"trend\"' in page} vs recomputed {want_tr}"))
+        if want_tr:
+            vals_ = [v_ for t_ in tp_ for _, v_ in t_]; lo_, hi_ = min(vals_ + [0]), max(vals_ + [0]); pad_ = max(0.5, (hi_ - lo_) * 0.12); lo_ -= pad_; hi_ += pad_
+            ys_ = [float(y_) for y_ in re.findall(r'<circle cx="[\d.]+" cy="([\d.]+)" r="4"', page.split('data-part="trend"')[1].split("</svg>")[0])]
+            want_ys = [round(12 + (hi_ - v_) / (hi_ - lo_) * (150 - 12 - 24), 1) for t_ in tp_ for _, v_ in t_]
+            if sorted(ys_) != sorted(want_ys): bad.append(("trend", "points", f"plotted y {ys_} vs recomputed {want_ys}"))
         if re.search(r'class="(flip|ang)"|Live guide|Striking angle', page): bad.append(("spot", "old", "live guide, flip flag or angle box still on the page"))
         # Block 59n: edge colour rule (coloured only at |shown edge| >= 2.0) and the Listed-price check (flagged = neutral + label)
         LHall = json.loads((REPO / f"data/embeds/line_history_{G['SLUG']}.json").read_text())["fights"]
@@ -433,7 +444,8 @@ def lh_recheck(G, slug, quiet=False):
     LIST_ = {"pinnacle", "draftkings", "fanduel", "betmgm", "williamhill_us", "betrivers", "betonlineag", "lowvig", "bovada", "circasports"}
     nb_ = 0
     for k_, r_ in LHd["fights"].items():
-        if r_.get("current") and set(r_["current"]["books"]) - REG_: print(f"  LH {k_}: offshore book in the current line"); nb_ += 1
+        if r_.get("current") and set(r_["current"]["books"]) - REG_ and not (r_.get("current_source") == "kalshi_fallback" and r_["current"]["books"] == ["kalshi"]):
+            print(f"  LH {k_}: offshore book in the current line"); nb_ += 1
     cache = REPO / ".form_cache"
     if not (cache / "oddsapi" / "compact" / "mma.jsonl.gz").exists():
         print("LINE HISTORY RECHECK: skipped (no archive cache)"); return nb_
@@ -479,7 +491,8 @@ def lh_recheck(G, slug, quiet=False):
         want_o = (op[0], med(op, list(op[1]))) if op else None
         want_c = (cur[0], med(cur, [b for b in cur[1] if b in REG_])) if cur else None
         got_o = (r_["open"]["t"], r_["open"]["p"]) if r_.get("open") else None
-        got_c = (r_["current"]["t"], r_["current"]["p"]) if r_.get("current") else None
+        got_c = (r_["current"]["t"], r_["current"]["p"]) if r_.get("current") and r_.get("current_source") != "kalshi_fallback" else None
+        if r_.get("current_source") == "kalshi_fallback" and want_c is not None: print(f"  LH {k_}: Kalshi fallback used although a regulated price exists"); nb_ += 1
         if got_o != want_o: print(f"  LH {k_}: opener {got_o} vs recomputed {want_o}"); nb_ += 1
         if got_c != want_c: print(f"  LH {k_}: current {got_c} vs recomputed {want_c}"); nb_ += 1
         if r_.get("listed"):
@@ -535,6 +548,8 @@ def negative(D, G, slug):
         ("embed: 'price unverified' removed from Gordon (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace('<span class="unv">price unverified</span>', "", 1))),
         ("embed: an offshore book named on the page (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace("Line move</span>", "Line move</span> Pinnacle", 1))),
         ("line history: a current line moved 1 pt in the file (fight 12)", lh_shift),
+        ("embed: one round-trend point moved (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(<circle cx="[\d.]+" cy=")([\d.]+)(" r="4")', lambda m: m.group(1) + f"{float(m.group(2)) + 9:.1f}" + m.group(3), s_, count=1))),
+        ("embed: T1 'never confirmed' line removed (fight 06)", plant_text("fight_06.html", lambda s_: s_.replace("Never confirmed on new cards", "Confirmed", 1))),
         ("embed: past-fight link to a bout that is not on the site (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(#/fight/[^/"]+/)\d+"', r'\g<1>999"', s_, count=1))),
         ("embed: model renamed 'Sean' (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace("Moneyline · model vs market", "Moneyline · Sean vs market", 1))),
         ("card: one embed missing (fight 09)", lambda T, G_: (T / "fight_09.html").unlink()),

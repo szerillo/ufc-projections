@@ -129,6 +129,7 @@ PARTS = {"Moneyline": "ml", "Fight": "length", "Method": "method"}   # Block 59h
 
 
 SPOTS = {}
+TREND_PTS = {}
 LHF = f"data/embeds/line_history_{SLUG}.json"; LH = json.loads((REPO / LHF).read_text())
 LABS_ACC = json.loads((REPO / "form/data/labs.json").read_text())["scoring"]["acc"]   # decision-model accuracy, quoted in the key
 
@@ -612,6 +613,37 @@ def build(names, outname):
     rounds_html = ('<table class="rt"><thead><tr><th class="l">Rounds won</th>' + "".join(f"<th>R{r_+1}</th>" for r_ in range(nrd)) + '</tr></thead><tbody>'
                    + rcells(ema, an, "a") + rcells(emb, bn, "b") + '</tbody></table><div class="rt-n">big = rounds won · small = strike diff per min · fights reaching the round · tap a cell for the fights</div>'
                    + ddpanels(ema, an, "a") + ddpanels(emb, bn, "b"))
+    # Block 59o (Kirk round 7): round trend. Strike differential per minute in R1, R2, R3 for both fighters (the same
+    # rounds.N.diff_pm numbers as the table), drawn as two lines on one axis with a zero line; a round needs 1+ fight.
+    def trend_svg():
+        S_ = []
+        for rec_, F_, sd_ in ((ema, an, "a"), (emb, bn, "b")):
+            pts_ = [(i_, emv(rec_, f"rounds.{i_}.diff_pm")) for i_ in range(3) if (emv(rec_, f"rounds.{i_}.fights") or 0) >= 1 and emv(rec_, f"rounds.{i_}.diff_pm") is not None]
+            if len(pts_) >= 2: S_.append((F_, sd_, rec_, pts_))
+        if len(S_) < 2: return ""
+        vals_ = [v_ for *_, pts_ in S_ for _, v_ in pts_]; lo_, hi_ = min(vals_ + [0]), max(vals_ + [0]); pad_ = max(0.5, (hi_ - lo_) * 0.12); lo_ -= pad_; hi_ += pad_
+        W_, H_, L_, Rm_, T_, B_ = 340, 150, 34, 92, 12, 24
+        X_ = lambda i_: L_ + i_ * (W_ - L_ - Rm_) / 2; Y_ = lambda v_: T_ + (hi_ - v_) / (hi_ - lo_) * (H_ - T_ - B_)
+        col_ = {"fav": "#2a78d6", "dog": "#eb6834"}
+        g_ = [f'<line x1="{L_}" x2="{W_ - Rm_}" y1="{Y_(0):.1f}" y2="{Y_(0):.1f}" stroke="#b9b4aa" stroke-width="1" stroke-dasharray="3 3"/>',
+              f'<text x="{L_ - 6}" y="{Y_(0) + 3:.1f}" text-anchor="end" font-size="10" fill="#6b665e">0</text>']
+        g_ += [f'<text x="{X_(i_):.1f}" y="{H_ - 6}" text-anchor="middle" font-size="10.5" fill="#6b665e">R{i_ + 1}</text>' for i_ in range(3)]
+        ends_ = []
+        for F_, sd_, rec_, pts_ in S_:
+            c_ = col_[side_cls[sd_]]
+            g_.append(f'<polyline fill="none" stroke="{c_}" stroke-width="2" points="{" ".join(f"{X_(i_):.1f},{Y_(v_):.1f}" for i_, v_ in pts_)}"/>')
+            g_ += [f'<circle cx="{X_(i_):.1f}" cy="{Y_(v_):.1f}" r="4" fill="{c_}" stroke="#fff" stroke-width="2"/>' for i_, v_ in pts_]
+            ends_.append([Y_(pts_[-1][1]), F_, c_, pts_[-1]])
+            TREND_PTS.setdefault(n, []).append((F_, [(i_, round(v_, 4)) for i_, v_ in pts_]))
+        ends_.sort()
+        if len(ends_) == 2 and ends_[1][0] - ends_[0][0] < 14: ends_[0][0] -= (14 - (ends_[1][0] - ends_[0][0])) / 2; ends_[1][0] = ends_[0][0] + 14
+        for y_, F_, c_, (i_, v_) in ends_:
+            g_.append(f'<text x="{X_(i_) + 9:.1f}" y="{y_ + 4:.1f}" font-size="11" font-weight="700" fill="#1d1b18">{esc(last(F_))}</text>')
+        legend_ = " · ".join(f'<b style="color:{col_[side_cls[sd_]]}">{esc(last(F_))}</b> ' + " → ".join(R(v_, "s1", "em", f"Trend R{i_ + 1} {F_}", fighter=F_, path=f"rounds.{i_}.diff_pm") for i_, v_ in pts_) for F_, sd_, rec_, pts_ in S_)
+        return (f'<div class="trend" data-part="trend"><div class="mvl">Strike diff per minute, by round</div>'
+                f'<svg viewBox="0 0 {W_} {H_}" role="img" aria-label="Strike differential per minute in rounds 1 to 3 for both fighters">{"".join(g_)}</svg>'
+                f'<div class="rt-n">{legend_}<br>Above the dashed line = out-landing opponents in that round. How many UFC fights reached each round is in the table below.</div></div>')
+    rounds_html = trend_svg() + rounds_html
     champ = ""
     if nrd == 5:
         champ = (E("r45.fights", "Fights to R4+", "int", None) + E("r45.landed_pm_13", "Output R1-3 /min", "n1", "hi") + E("r45.landed_pm_45", "Output R4-5 /min", "n1", "hi")
@@ -660,8 +692,8 @@ def build(names, outname):
     if ta_ is not None and tb_ is not None and ok4 and abs(ta_ - tb_) >= ST["T1"]["cut"]:
         w_ = an if ta_ > tb_ else bn; o_ = bn if w_ == an else an
         spots.append(("T1", w_, f'<li data-spot="T1"><b>{esc(last(w_))}</b> has the striking edge: career strike diff {totcell(ta_ if w_ == an else tb_, w_)} vs {totcell(tb_ if w_ == an else ta_, o_)} per min. '
-                     f'<span class="dim">Fighters with a gap this size won {btn("T1", "win", "pct1")} vs {btn("T1", "imp", "pct1")} priced in, {btn("T1", "roi", "spp")} ROI on {btn("T1", "n", "int")} bets (2022-26, 95% CI {btci("T1")}). '
-                     f'Logged, not yet confirmed on new cards; never tested live.</span></li>'))
+                     f'<span class="dim">Fighters with a gap this size won {btn("T1", "win", "pct1")} vs {btn("T1", "imp", "pct1")} priced in, {btn("T1", "roi", "spp")} ROI (95% CI {btci("T1")}). '
+                     f'</span><span class="unconf">Never confirmed on new cards: all {btn("T1", "n", "int")} bets are from the 2022-26 data the angle was found on. This card is its first out-of-sample test. Never tested live.</span></li>'))
     r3a, r3b = emv(ema, "rounds.2.diff_pm"), emv(emb, "rounds.2.diff_pm")
     if (r3a is not None and r3b is not None and (emv(ema, "rounds.2.fights") or 0) >= 3 and (emv(emb, "rounds.2.fights") or 0) >= 3
             and ok4 and abs(r3a - r3b) >= ST["T17"]["cut"]):
@@ -674,7 +706,7 @@ def build(names, outname):
         late = ca_ if ca_["sw"] > cb_["sw"] else cb_; w_ = an if late is ca_ else bn
         spots.append(("CB", w_, f'<li data-spot="CB">If <b>{esc(last(w_))}</b> loses R1 on strikes, don\'t write off R3: fighters with the better late-round record who dropped R1 '
                      f'won R3 on strikes {R(CW["wf"]["lost1_won3"], "pct0", "labs_wf", "Spot comeback won3", key="lost1_won3")} of the time vs {R(CW["base_lost1_won3"], "pct0", "labs_wf", "Spot comeback base", key="base_lost1_won3")} for all R1 losers. '
-                     f'<span class="dim">Based on {R(CW["wf"]["lost1_n"], "int", "labs_wf", "Spot comeback n", key="lost1_n")} fights. Tested on round results only, not on live prices.</span></li>'))
+                     f'<span class="dim">Based on {R(CW["wf"]["lost1_n"], "int", "labs_wf", "Spot comeback n", key="lost1_n")} fights. Tested on round results, not live prices.</span></li>'))
     spot_html = (f'<div class="stk spot" data-part="spot"><div class="stk-h"><span class="bullet"></span>Spot to watch</div><ul class="lvl">{"".join(x[2] for x in spots)}</ul></div>') if spots else ""
     SPOTS[n] = [(k_, w_) for k_, w_, _ in spots]
     top = top.replace("@@ANGLES@@", "").replace("@@LIVE@@", spot_html)
@@ -822,7 +854,7 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .mvtr{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:6px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvtr .mve{{color:#0a8842}}.mvbar{{position:relative;height:8px;border-radius:4px;background:linear-gradient(90deg,#e9e5dc,#d9d4c8)}}.mvbar i{{position:absolute;top:50%;transform:translate(-50%,-50%)}}.mvfrom{{width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid #1a1a1a}}.mvto{{width:12px;height:12px;border-radius:50%;background:#0a8842;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}}.mvspan{{height:4px;background:#0a8842;opacity:.5;transform:translateY(-50%)!important}}.mvx>summary{{cursor:pointer;font-size:10.5px;color:var(--text-muted);margin-top:6px;list-style:none}}.mvx>summary::-webkit-details-marker{{display:none}}.mvx>summary::before{{content:"▸ "}}.mvx[open]>summary::before{{content:"▾ "}}
 .ds{{padding:8px 10px;border-bottom:1px solid var(--border)}}.ds-h{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}}.ds-r{{display:grid;grid-template-columns:70px 1fr auto;gap:8px;align-items:center;margin:4px 0}}.ds-d{{display:flex;flex-wrap:wrap;gap:3px}}.ds-d i{{width:9px;height:9px;border-radius:50%;display:inline-block}}.ds-d i.on{{background:#0a8842}}.ds-d i.off{{background:#fff;border:1.5px solid #c9c3b6;box-sizing:border-box}}.ds-k{{font:800 12px/1 "SF Mono",Menlo,monospace;white-space:nowrap}}
 .ddb{{all:unset;cursor:pointer;display:block;width:100%}}.ddb:focus-visible{{outline:2px solid #2a78d6;outline-offset:2px}}.dd{{margin:6px 8px 10px;border:1px solid var(--border);border-radius:8px;overflow:hidden}}.dd-h{{display:flex;justify-content:space-between;align-items:center;background:#0e1116;color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:6px 10px}}.ddx{{all:unset;cursor:pointer;font-size:16px;line-height:1;padding:0 4px}}.r-d{{color:var(--text-muted)}}
-.spot .lvl{{margin:0;padding:8px 12px 10px 28px;font-size:12.5px}}.spot .lvl li{{margin:4px 0}}.spot b{{font-weight:800}}.spot .dim{{display:block;font-size:11px}}.flip{{padding:8px 12px;background:#eef5ff;border-bottom:1px solid var(--border);font-size:12.5px}}
+.spot .lvl{{margin:0;padding:8px 12px 10px 28px;font-size:12.5px}}.spot .lvl li{{margin:4px 0}}.spot b{{font-weight:800}}.spot .dim{{display:block;font-size:11px}}.trend{{padding:8px 4px 6px}}.trend svg{{width:100%;height:auto;display:block}}.trend .mvl{{display:block;margin:0 0 2px 4px}}.spot .unconf{{display:block;font-size:11px;font-weight:700;color:#8a5a00}}.flip{{padding:8px 12px;background:#eef5ff;border-bottom:1px solid var(--border);font-size:12.5px}}
 .part .ff-subtitle,.part .ff-odds-status,.part .tabs,.part .tp{{display:none}}.part .partw{{margin-top:8px}}.part .xpl{{display:none}}
 .sc-n{{padding:6px 12px 0;font-size:11px;color:var(--text-muted)}}
 .stamps{{margin-top:4px;font-size:10px;color:var(--text-muted)}}

@@ -91,9 +91,22 @@ def listed_check(snaps, fl, a_name, listed_a, listed_b, until):
     return {sd: {"listed": L, "ok": seen[sd] is not None, "hit": seen[sd], "best_regulated": best[sd]} for sd, L in (("a", listed_a), ("b", listed_b))}, [lo, hi]
 
 
+def kalshi_fallback(K, an, bn):
+    """Dormant (Kalshi_Fallback_PREREG): both '<fighter> wins' markets, last trade <= 3 h before the read, spread <= 3 cents."""
+    pick = lambda nm: max(K["markets"], key=lambda m: BF.name_match(nm, m["name"]), default=None)
+    ma, mb = pick(an), pick(bn)
+    if not ma or not mb or BF.name_match(an, ma["name"]) < 1 or BF.name_match(bn, mb["name"]) < 1 or ma["event"] != mb["event"]: return None
+    for m in (ma, mb):
+        if not m["last_trade"] or (ts(K["read_at"]) - ts(m["last_trade"])).total_seconds() > 3 * 3600 or m["ask"] - m["bid"] > 0.03 + 1e-9: return None
+    xa, xb = (ma["bid"] + ma["ask"]) / 2, (mb["bid"] + mb["ask"]) / 2
+    p = xa / (xa + xb)
+    return {"t": K["read_at"], "p": round(p, 3), "ma": am(1 / p), "mb": am(1 / (1 - p)), "nb": 1, "books": ["kalshi"]}
+
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--slug", required=True); ap.add_argument("--event", required=True)
     ap.add_argument("--cache", default=str(REPO / ".form_cache")); ap.add_argument("--export", default=None); ap.add_argument("--out", default=None)
+    ap.add_argument("--kalshi", default=None, help="data/embeds/kalshi_<slug>.json; used only by the dormant fallback (Kalshi_Fallback_PREREG sha 4b6d292e)")
     a = ap.parse_args()
     ev = json.loads(Path(a.event).read_text()); d = dt.date.fromisoformat(ev["date"])
     exp = json.loads(Path(a.export or REPO / "data/pending" / f"{a.slug}_projections.json").read_text())
@@ -105,6 +118,7 @@ def main():
         eid, fl = BF.find_odds(idx, by_id, an, bn, d)
         rec = {"n": f["n"], "event_id": eid}
         if eid: rec.update(history(by_id[eid], fl, an) or {})
+        if not rec.get("current") and a.kalshi: rec["current"] = kalshi_fallback(json.loads(Path(a.kalshi).read_text()), an, bn); rec["current_source"] = "kalshi_fallback" if rec["current"] else None
         pf = next((x for x in exp["fights"] if {BF.norm(x["fav"]), BF.norm(x["dog"])} == {BF.norm(an), BF.norm(bn)}
                    or (BF.name_match(x["fav"], an) and BF.name_match(x["dog"], bn)) or (BF.name_match(x["fav"], bn) and BF.name_match(x["dog"], an))), None)
         if pf and eid:
