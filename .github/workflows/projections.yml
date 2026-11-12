@@ -53,7 +53,7 @@ jobs:
           else
             changed=""
           fi
-          if [ "${{ github.event_name }}" = "push" ] && ! echo "$changed" | grep -qE '^(\.github/workflows/projections\.yml|scripts/verify_projections\.py|scripts/sheet_v47\.py)$'; then
+          if [ "${{ github.event_name }}" = "push" ] && ! echo "$changed" | grep -qE '^(\.github/workflows/projections\.yml|scripts/verify_projections\.py|scripts/sheet_v47\.py|scripts/fighter_names\.py)$'; then
             files=$(echo "$changed" | grep -E '^data/pending/.*_projections\.json$')
           else
             files=$(ls data/pending/*_projections.json 2>/dev/null)

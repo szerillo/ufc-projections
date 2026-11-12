@@ -34,6 +34,8 @@ MAX_PRICE_AGE_H = 3  # pre-registered Nov 11 (Block 44): prices must be refreshe
 NUM_KEYS = [("listed", "listed"), ("H", "markov_shifted"), ("Q", "q"), ("true_dog", "true_dog"),
             ("true_fav", "true_fav"), ("dog_edge", "dog_edge"), ("fav_edge", "fav_edge"), ("drift", "drift")]
 SLUG_RE = re.compile(r"^[a-z0-9_]+$")
+# Values the last check() compared against a recomputation or a source (replaces the hand-picked "48/48" render count, Block 48)
+COMPARED = {"n": 0}
 
 
 def flag_code(s: str | None) -> str:
@@ -71,6 +73,7 @@ def opponent_errs(doc: dict, fights: list, odds_doc: dict | None) -> list[str]:
             errs.append(f"{tag}: price_source missing, so the price cannot be tied to this bout (publish with the current script) (OPP-1)")
         else:
             for side in ("dog", "fav"):
+                COMPARED["n"] += 2
                 if not FN.strict_match(str(ps.get(side) or ""), str(f.get(side) or "")):
                     errs.append(f"{tag}: price taken from Feed row {ps.get('order')} '{ps.get('dog')} vs {ps.get('fav')}', "
                                 f"whose {side} is not {f.get(side)} (OPP-1)")
@@ -78,6 +81,7 @@ def opponent_errs(doc: dict, fights: list, odds_doc: dict | None) -> list[str]:
                 got = inp.get(side + "_odds")
                 if want is None or not isinstance(got, (int, float)) or int(got) != want:
                     errs.append(f"{tag}: {side} price {got} is not the Feed row's price {want} (OPP-1)")
+        COMPARED["n"] += bouts is not None
         if bouts is not None and not any(FN.bout_slots(str(f.get("dog") or ""), str(f.get("fav") or ""), a, b) for a, b in bouts):
             errs.append(f"{tag}: no such bout in data/{doc.get('slug')}_odds.json (OPP-2)")
     return errs
@@ -118,6 +122,7 @@ def load_odds(slug: str) -> dict | None:
 
 def check(doc: dict, path: Path, now: dt.datetime | None = None, odds_doc: dict | None | str = "auto") -> list[str]:
     errs: list[str] = []
+    COMPARED["n"] = 0
     try:
         age = price_age_h(doc, now)
     except ValueError as ex:
@@ -156,9 +161,11 @@ def check(doc: dict, path: Path, now: dt.datetime | None = None, odds_doc: dict 
             if out.get(ok) is None:
                 errs.append(f"{tag}: sheet value {ok} missing")
                 continue
+            COMPARED["n"] += 1
             d = abs(r[rk] - float(out[ok]))
             if d > TOL:
                 errs.append(f"{tag}: {ok} sheet {float(out[ok])*100:.2f} vs recomputed {r[rk]*100:.2f} ({d*100:.2f} pts)")
+        COMPARED["n"] += ("flag" in out) + ("rec" in out)
         if "flag" in out and flag_code(out.get("flag")) != flag_code(r["flag"]):
             errs.append(f"{tag}: flag sheet {out.get('flag')!r} vs recomputed {r['flag']!r}")
         if "rec" in out and rec_norm(out.get("rec")) != rec_norm(r["rec"]):
@@ -189,8 +196,10 @@ def check(doc: dict, path: Path, now: dt.datetime | None = None, odds_doc: dict 
         for side in ("dog", "fav"):
             for k in ("dec", "ko", "sub"):
                 v = ((f.get("method") or {}).get(side) or {}).get(k)
+                COMPARED["n"] += v is not None
                 if v is not None and abs(float(v) - r[side][k]) > TOL:
                     errs.append(f"{tag}: {side} {k} sheet {float(v)*100:.2f} vs recomputed {r[side][k]*100:.2f}")
+        COMPARED["n"] += f.get("gtd") is not None
         if f.get("gtd") is not None and abs(float(f["gtd"]) - r["gtd"]) > TOL:
             errs.append(f"{tag}: GTD sheet {float(f['gtd'])*100:.2f} vs recomputed {r['gtd']*100:.2f}")
     # opponent-match guard (Block 46): the price must come from this bout, and the bout must exist in the odds feed
@@ -239,7 +248,7 @@ def main() -> int:
     if errs:
         lines += ["**FAIL. Not promoted; the live file is unchanged.**", ""] + [f"- {e}" for e in errs]
     else:
-        lines += [f"**PASS.** Every number matches scripts/sheet_v47.py within {TOL_PTS:g} pts; flags and recs identical; every price ties to its own bout (Feed row and odds feed)."]
+        lines += [f"**PASS.** Every number matches scripts/sheet_v47.py within {TOL_PTS:g} pts; flags and recs identical; every price ties to its own bout (Feed row and odds feed). **Values compared: {COMPARED['n']}, mismatched: 0.**"]
         if pending:
             lines += ["", f"**Line pending ({len(pending)}):** shown on the page as \"Line pending\", no numbers:"] + \
                      [f"- {x['dog']} vs {x['fav']}: {x['reason']}" for x in pending]
