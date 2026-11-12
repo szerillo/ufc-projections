@@ -925,30 +925,34 @@
    "id": "v74",
    "text": "86.9%",
    "fmt": "pct1",
-   "rule": "oa_open",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Bilal Hasan",
      "Luis Gurule"
-    ]
+    ],
+    "side": "a",
+    "at": "open"
    },
-   "desc": "OA open p",
+   "desc": "OA open p Bilal Hasan",
    "raw": 0.869
   },
   {
    "id": "v75",
    "text": "87.2%",
    "fmt": "pct1",
-   "rule": "oa_close",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Bilal Hasan",
      "Luis Gurule"
-    ]
+    ],
+    "side": "a",
+    "at": "close"
    },
-   "desc": "OA close p",
+   "desc": "OA close p Bilal Hasan",
    "raw": 0.8721
   },
   {
@@ -1529,6 +1533,174 @@
   },
   {
    "id": "v124",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Bilal Hasan 0",
+   "raw": 21
+  },
+  {
+   "id": "v125",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Bilal Hasan 0",
+   "raw": -1
+  },
+  {
+   "id": "v126",
+   "text": "-16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Luis Gurule 0",
+   "raw": -16
+  },
+  {
+   "id": "v127",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Luis Gurule 1",
+   "raw": 5
+  },
+  {
+   "id": "v128",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Luis Gurule 2",
+   "raw": -13
+  },
+  {
+   "id": "v129",
+   "text": "-23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Luis Gurule 3",
+   "raw": -23
+  },
+  {
+   "id": "v130",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Luis Gurule 4",
+   "raw": 2
+  },
+  {
+   "id": "v131",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Luis Gurule 1",
+   "raw": 9
+  },
+  {
+   "id": "v132",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Luis Gurule 2",
+   "raw": -10
+  },
+  {
+   "id": "v133",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Luis Gurule 3",
+   "raw": 0
+  },
+  {
+   "id": "v134",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Luis Gurule 4",
+   "raw": -8
+  },
+  {
+   "id": "v135",
+   "text": "+22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Luis Gurule 1",
+   "raw": 22
+  },
+  {
+   "id": "v136",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Luis Gurule 2",
+   "raw": -6
+  },
+  {
+   "id": "v137",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Luis Gurule 3",
+   "raw": 3
+  },
+  {
+   "id": "v138",
    "text": "2.01",
    "fmt": "n2",
    "rule": "em",
@@ -1540,7 +1712,7 @@
    "raw": 2.009
   },
   {
-   "id": "v125",
+   "id": "v139",
    "text": "0.81",
    "fmt": "n2",
    "rule": "em",
@@ -1552,7 +1724,7 @@
    "raw": 0.815
   },
   {
-   "id": "v126",
+   "id": "v140",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1564,7 +1736,7 @@
    "raw": 1.0
   },
   {
-   "id": "v127",
+   "id": "v141",
    "text": "18%",
    "fmt": "pct0",
    "rule": "em",
@@ -1576,7 +1748,7 @@
    "raw": 0.1765
   },
   {
-   "id": "v128",
+   "id": "v142",
    "text": "73%",
    "fmt": "pct0",
    "rule": "em",
@@ -1588,7 +1760,7 @@
    "raw": 0.7333
   },
   {
-   "id": "v129",
+   "id": "v143",
    "text": "14%",
    "fmt": "pct0",
    "rule": "em",
@@ -1600,7 +1772,7 @@
    "raw": 0.1406
   },
   {
-   "id": "v130",
+   "id": "v144",
    "text": "12%",
    "fmt": "pct0",
    "rule": "em",
@@ -1612,7 +1784,7 @@
    "raw": 0.1162
   },
   {
-   "id": "v131",
+   "id": "v145",
    "text": "1%",
    "fmt": "pct0",
    "rule": "em",
@@ -1624,7 +1796,7 @@
    "raw": 0.0067
   },
   {
-   "id": "v132",
+   "id": "v146",
    "text": "10%",
    "fmt": "pct0",
    "rule": "em",
@@ -1636,7 +1808,7 @@
    "raw": 0.1002
   },
   {
-   "id": "v133",
+   "id": "v147",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1648,7 +1820,7 @@
    "raw": 0.0
   },
   {
-   "id": "v134",
+   "id": "v148",
    "text": "0.27",
    "fmt": "n2",
    "rule": "em",
@@ -1660,7 +1832,7 @@
    "raw": 0.272
   },
   {
-   "id": "v135",
+   "id": "v149",
    "text": "+2.68",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1676,7 +1848,7 @@
    "raw": 2.6790000000000003
   },
   {
-   "id": "v136",
+   "id": "v150",
    "text": "-0.63",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1692,7 +1864,79 @@
    "raw": -0.6339999999999999
   },
   {
-   "id": "v137",
+   "id": "v151",
+   "text": "+2.57",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 2.567
+  },
+  {
+   "id": "v152",
+   "text": "-0.73",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": -0.728
+  },
+  {
+   "id": "v153",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v154",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v155",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Luis Gurule",
+   "raw": 1
+  },
+  {
+   "id": "v156",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Luis Gurule",
+   "raw": 5
+  },
+  {
+   "id": "v157",
    "text": "+1.47",
    "fmt": "s2",
    "rule": "em",
@@ -1704,7 +1948,7 @@
    "raw": 1.473
   },
   {
-   "id": "v138",
+   "id": "v158",
    "text": "+0.23",
    "fmt": "s2",
    "rule": "em",
@@ -1716,7 +1960,7 @@
    "raw": 0.235
   },
   {
-   "id": "v139",
+   "id": "v159",
    "text": "+0.94",
    "fmt": "s2",
    "rule": "em",
@@ -1728,7 +1972,7 @@
    "raw": 0.938
   },
   {
-   "id": "v140",
+   "id": "v160",
    "text": "-0.69",
    "fmt": "s2",
    "rule": "em",
@@ -1740,7 +1984,7 @@
    "raw": -0.688
   },
   {
-   "id": "v141",
+   "id": "v161",
    "text": "+0.27",
    "fmt": "s2",
    "rule": "em",
@@ -1752,7 +1996,7 @@
    "raw": 0.268
   },
   {
-   "id": "v142",
+   "id": "v162",
    "text": "-0.18",
    "fmt": "s2",
    "rule": "em",
@@ -1764,7 +2008,7 @@
    "raw": -0.181
   },
   {
-   "id": "v143",
+   "id": "v163",
    "text": "66%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1778,7 +2022,55 @@
    "raw": 0.658
   },
   {
-   "id": "v144",
+   "id": "v164",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v165",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v166",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Luis Gurule",
+   "raw": 2
+  },
+  {
+   "id": "v167",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Luis Gurule",
+   "raw": 5
+  },
+  {
+   "id": "v168",
    "text": "211%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1792,7 +2084,7 @@
    "raw": 2.109
   },
   {
-   "id": "v145",
+   "id": "v169",
    "text": "11.0",
    "fmt": "n1",
    "rule": "labs",
@@ -1806,7 +2098,7 @@
    "raw": 11.0
   },
   {
-   "id": "v146",
+   "id": "v170",
    "text": "20%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1820,7 +2112,79 @@
    "raw": 0.2
   },
   {
-   "id": "v147",
+   "id": "v171",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "wp"
+   },
+   "desc": "Live 10+ wp",
+   "raw": 0.754
+  },
+  {
+   "id": "v172",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "pre"
+   },
+   "desc": "Live 10+ pre",
+   "raw": 0.576
+  },
+  {
+   "id": "v173",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_wp"
+   },
+   "desc": "Live 10+ dog wp",
+   "raw": 0.551
+  },
+  {
+   "id": "v174",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_pre"
+   },
+   "desc": "Live 10+ dog pre",
+   "raw": 0.359
+  },
+  {
+   "id": "v175",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "wp"
+   },
+   "desc": "Live ctrl wp",
+   "raw": 0.45
+  },
+  {
+   "id": "v176",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "pre"
+   },
+   "desc": "Live ctrl pre",
+   "raw": 0.485
+  },
+  {
+   "id": "v177",
    "text": "-526",
    "fmt": "ml",
    "rule": "fight",
@@ -1833,7 +2197,7 @@
    "raw": -526
   },
   {
-   "id": "v148",
+   "id": "v178",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -1846,7 +2210,7 @@
    "raw": 185
   },
   {
-   "id": "v149",
+   "id": "v179",
    "text": "-105",
    "fmt": "ml",
    "rule": "fight",
@@ -1859,7 +2223,7 @@
    "raw": -105
   },
   {
-   "id": "v150",
+   "id": "v180",
    "text": "+308",
    "fmt": "ml",
    "rule": "fight",
@@ -1872,7 +2236,7 @@
    "raw": 308
   },
   {
-   "id": "v151",
+   "id": "v181",
    "text": "-206",
    "fmt": "ml",
    "rule": "fight",
@@ -1885,7 +2249,7 @@
    "raw": -206
   },
   {
-   "id": "v152",
+   "id": "v182",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",

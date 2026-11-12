@@ -814,30 +814,34 @@
    "id": "v66",
    "text": "56.0%",
    "fmt": "pct1",
-   "rule": "oa_open",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Stephen Thompson",
      "Charles Radtke"
-    ]
+    ],
+    "side": "a",
+    "at": "open"
    },
-   "desc": "OA open p",
+   "desc": "OA open p Stephen Thompson",
    "raw": 0.5604
   },
   {
    "id": "v67",
    "text": "57.2%",
    "fmt": "pct1",
-   "rule": "oa_close",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Stephen Thompson",
      "Charles Radtke"
-    ]
+    ],
+    "side": "a",
+    "at": "close"
    },
-   "desc": "OA close p",
+   "desc": "OA close p Stephen Thompson",
    "raw": 0.572
   },
   {
@@ -1490,6 +1494,834 @@
   },
   {
    "id": "v122",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 0",
+   "raw": -8
+  },
+  {
+   "id": "v123",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 1",
+   "raw": 9
+  },
+  {
+   "id": "v124",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 2",
+   "raw": -2
+  },
+  {
+   "id": "v125",
+   "text": "-15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 3",
+   "raw": -15
+  },
+  {
+   "id": "v126",
+   "text": "-34",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 4",
+   "raw": -34
+  },
+  {
+   "id": "v127",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 5",
+   "raw": -5
+  },
+  {
+   "id": "v128",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 6",
+   "raw": 18
+  },
+  {
+   "id": "v129",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 7",
+   "raw": -6
+  },
+  {
+   "id": "v130",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 8",
+   "raw": 5
+  },
+  {
+   "id": "v131",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 9",
+   "raw": 1
+  },
+  {
+   "id": "v132",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 10",
+   "raw": 1
+  },
+  {
+   "id": "v133",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 11",
+   "raw": 1
+  },
+  {
+   "id": "v134",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 12",
+   "raw": -13
+  },
+  {
+   "id": "v135",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 13",
+   "raw": 5
+  },
+  {
+   "id": "v136",
+   "text": "+17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.14.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 14",
+   "raw": 17
+  },
+  {
+   "id": "v137",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.15.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 15",
+   "raw": 15
+  },
+  {
+   "id": "v138",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.16.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 16",
+   "raw": -13
+  },
+  {
+   "id": "v139",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.17.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 17",
+   "raw": 19
+  },
+  {
+   "id": "v140",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.18.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 18",
+   "raw": -5
+  },
+  {
+   "id": "v141",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.19.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 19",
+   "raw": -3
+  },
+  {
+   "id": "v142",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.20.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 20",
+   "raw": 3
+  },
+  {
+   "id": "v143",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.21.rw.0.2"
+   },
+   "desc": "R1 fight diff Stephen Thompson 21",
+   "raw": 14
+  },
+  {
+   "id": "v144",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 0",
+   "raw": 13
+  },
+  {
+   "id": "v145",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 1",
+   "raw": 10
+  },
+  {
+   "id": "v146",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 2",
+   "raw": -10
+  },
+  {
+   "id": "v147",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 3",
+   "raw": 5
+  },
+  {
+   "id": "v148",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 4",
+   "raw": -3
+  },
+  {
+   "id": "v149",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 5",
+   "raw": -1
+  },
+  {
+   "id": "v150",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 6",
+   "raw": 15
+  },
+  {
+   "id": "v151",
+   "text": "+26",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 7",
+   "raw": 26
+  },
+  {
+   "id": "v152",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 8",
+   "raw": 10
+  },
+  {
+   "id": "v153",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 9",
+   "raw": -3
+  },
+  {
+   "id": "v154",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 10",
+   "raw": 4
+  },
+  {
+   "id": "v155",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 11",
+   "raw": 0
+  },
+  {
+   "id": "v156",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.12.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 12",
+   "raw": 2
+  },
+  {
+   "id": "v157",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.13.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 13",
+   "raw": 7
+  },
+  {
+   "id": "v158",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.16.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 16",
+   "raw": 11
+  },
+  {
+   "id": "v159",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.18.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 18",
+   "raw": 11
+  },
+  {
+   "id": "v160",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.19.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 19",
+   "raw": 7
+  },
+  {
+   "id": "v161",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.20.rw.1.2"
+   },
+   "desc": "R2 fight diff Stephen Thompson 20",
+   "raw": 15
+  },
+  {
+   "id": "v162",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 0",
+   "raw": -3
+  },
+  {
+   "id": "v163",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 1",
+   "raw": -4
+  },
+  {
+   "id": "v164",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 3",
+   "raw": 18
+  },
+  {
+   "id": "v165",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 4",
+   "raw": -2
+  },
+  {
+   "id": "v166",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 5",
+   "raw": -4
+  },
+  {
+   "id": "v167",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 6",
+   "raw": 18
+  },
+  {
+   "id": "v168",
+   "text": "+41",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 7",
+   "raw": 41
+  },
+  {
+   "id": "v169",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.9.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 9",
+   "raw": -1
+  },
+  {
+   "id": "v170",
+   "text": "+23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.10.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 10",
+   "raw": 23
+  },
+  {
+   "id": "v171",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.11.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 11",
+   "raw": -1
+  },
+  {
+   "id": "v172",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.12.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 12",
+   "raw": 2
+  },
+  {
+   "id": "v173",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.13.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 13",
+   "raw": 8
+  },
+  {
+   "id": "v174",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.16.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 16",
+   "raw": 13
+  },
+  {
+   "id": "v175",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.19.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 19",
+   "raw": 5
+  },
+  {
+   "id": "v176",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "fights.20.rw.2.2"
+   },
+   "desc": "R3 fight diff Stephen Thompson 20",
+   "raw": 13
+  },
+  {
+   "id": "v177",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Charles Radtke 0",
+   "raw": -1
+  },
+  {
+   "id": "v178",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Charles Radtke 1",
+   "raw": 6
+  },
+  {
+   "id": "v179",
+   "text": "-17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Charles Radtke 2",
+   "raw": -17
+  },
+  {
+   "id": "v180",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Charles Radtke 3",
+   "raw": 5
+  },
+  {
+   "id": "v181",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Charles Radtke 4",
+   "raw": -1
+  },
+  {
+   "id": "v182",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Charles Radtke 5",
+   "raw": 14
+  },
+  {
+   "id": "v183",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Charles Radtke 6",
+   "raw": 0
+  },
+  {
+   "id": "v184",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Charles Radtke 0",
+   "raw": -5
+  },
+  {
+   "id": "v185",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Charles Radtke 1",
+   "raw": 18
+  },
+  {
+   "id": "v186",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Charles Radtke 2",
+   "raw": -9
+  },
+  {
+   "id": "v187",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Charles Radtke 6",
+   "raw": 7
+  },
+  {
+   "id": "v188",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Charles Radtke 0",
+   "raw": 1
+  },
+  {
+   "id": "v189",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Charles Radtke 1",
+   "raw": 1
+  },
+  {
+   "id": "v190",
+   "text": "-16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Charles Radtke 6",
+   "raw": -16
+  },
+  {
+   "id": "v191",
    "text": "0.23",
    "fmt": "n2",
    "rule": "em",
@@ -1501,7 +2333,7 @@
    "raw": 0.235
   },
   {
-   "id": "v123",
+   "id": "v192",
    "text": "1.99",
    "fmt": "n2",
    "rule": "em",
@@ -1513,7 +2345,7 @@
    "raw": 1.989
   },
   {
-   "id": "v124",
+   "id": "v193",
    "text": "36%",
    "fmt": "pct0",
    "rule": "em",
@@ -1525,7 +2357,7 @@
    "raw": 0.3571
   },
   {
-   "id": "v125",
+   "id": "v194",
    "text": "44%",
    "fmt": "pct0",
    "rule": "em",
@@ -1537,7 +2369,7 @@
    "raw": 0.4444
   },
   {
-   "id": "v126",
+   "id": "v195",
    "text": "63%",
    "fmt": "pct0",
    "rule": "em",
@@ -1549,7 +2381,7 @@
    "raw": 0.6329
   },
   {
-   "id": "v127",
+   "id": "v196",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1561,7 +2393,7 @@
    "raw": 1.0
   },
   {
-   "id": "v128",
+   "id": "v197",
    "text": "6%",
    "fmt": "pct0",
    "rule": "em",
@@ -1573,7 +2405,7 @@
    "raw": 0.0604
   },
   {
-   "id": "v129",
+   "id": "v198",
    "text": "51%",
    "fmt": "pct0",
    "rule": "em",
@@ -1585,7 +2417,7 @@
    "raw": 0.5138
   },
   {
-   "id": "v130",
+   "id": "v199",
    "text": "19%",
    "fmt": "pct0",
    "rule": "em",
@@ -1597,7 +2429,7 @@
    "raw": 0.1884
   },
   {
-   "id": "v131",
+   "id": "v200",
    "text": "4%",
    "fmt": "pct0",
    "rule": "em",
@@ -1609,7 +2441,7 @@
    "raw": 0.0401
   },
   {
-   "id": "v132",
+   "id": "v201",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1621,7 +2453,7 @@
    "raw": 0.0
   },
   {
-   "id": "v133",
+   "id": "v202",
    "text": "0.50",
    "fmt": "n2",
    "rule": "em",
@@ -1633,7 +2465,7 @@
    "raw": 0.497
   },
   {
-   "id": "v134",
+   "id": "v203",
    "text": "+1.04",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1649,7 +2481,7 @@
    "raw": 1.045
   },
   {
-   "id": "v135",
+   "id": "v204",
    "text": "+0.05",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1665,7 +2497,79 @@
    "raw": 0.04899999999999999
   },
   {
-   "id": "v136",
+   "id": "v205",
+   "text": "+1.22",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 1.222
+  },
+  {
+   "id": "v206",
+   "text": "-0.14",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": -0.143
+  },
+  {
+   "id": "v207",
+   "text": "16",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Stephen Thompson",
+   "raw": 16
+  },
+  {
+   "id": "v208",
+   "text": "22",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Stephen Thompson",
+   "raw": 22
+  },
+  {
+   "id": "v209",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Charles Radtke",
+   "raw": 3
+  },
+  {
+   "id": "v210",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Charles Radtke",
+   "raw": 7
+  },
+  {
+   "id": "v211",
    "text": "+1.08",
    "fmt": "s2",
    "rule": "em",
@@ -1677,7 +2581,7 @@
    "raw": 1.08
   },
   {
-   "id": "v137",
+   "id": "v212",
    "text": "+0.96",
    "fmt": "s2",
    "rule": "em",
@@ -1689,7 +2593,7 @@
    "raw": 0.961
   },
   {
-   "id": "v138",
+   "id": "v213",
    "text": "+0.42",
    "fmt": "s2",
    "rule": "em",
@@ -1701,7 +2605,7 @@
    "raw": 0.416
   },
   {
-   "id": "v139",
+   "id": "v214",
    "text": "-0.63",
    "fmt": "s2",
    "rule": "em",
@@ -1713,7 +2617,7 @@
    "raw": -0.63
   },
   {
-   "id": "v140",
+   "id": "v215",
    "text": "-0.45",
    "fmt": "s2",
    "rule": "em",
@@ -1725,7 +2629,7 @@
    "raw": -0.451
   },
   {
-   "id": "v141",
+   "id": "v216",
    "text": "-0.28",
    "fmt": "s2",
    "rule": "em",
@@ -1737,7 +2641,7 @@
    "raw": -0.282
   },
   {
-   "id": "v142",
+   "id": "v217",
    "text": "66%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1751,7 +2655,7 @@
    "raw": 0.658
   },
   {
-   "id": "v143",
+   "id": "v218",
    "text": "66%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1765,7 +2669,55 @@
    "raw": 0.659
   },
   {
-   "id": "v144",
+   "id": "v219",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Stephen Thompson",
+   "raw": 4
+  },
+  {
+   "id": "v220",
+   "text": "15",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Stephen Thompson",
+   "raw": 15
+  },
+  {
+   "id": "v221",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Charles Radtke",
+   "raw": 3
+  },
+  {
+   "id": "v222",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Charles Radtke",
+   "raw": 3
+  },
+  {
+   "id": "v223",
    "text": "190%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1779,7 +2731,7 @@
    "raw": 1.896
   },
   {
-   "id": "v145",
+   "id": "v224",
    "text": "14.0",
    "fmt": "n1",
    "rule": "labs",
@@ -1793,7 +2745,7 @@
    "raw": 14.0
   },
   {
-   "id": "v146",
+   "id": "v225",
    "text": "8.6",
    "fmt": "n1",
    "rule": "labs",
@@ -1807,7 +2759,7 @@
    "raw": 8.6
   },
   {
-   "id": "v147",
+   "id": "v226",
    "text": "19%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1821,7 +2773,7 @@
    "raw": 0.19
   },
   {
-   "id": "v148",
+   "id": "v227",
    "text": "43%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1835,7 +2787,79 @@
    "raw": 0.429
   },
   {
-   "id": "v149",
+   "id": "v228",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "wp"
+   },
+   "desc": "Live 10+ wp",
+   "raw": 0.754
+  },
+  {
+   "id": "v229",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "pre"
+   },
+   "desc": "Live 10+ pre",
+   "raw": 0.576
+  },
+  {
+   "id": "v230",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_wp"
+   },
+   "desc": "Live 10+ dog wp",
+   "raw": 0.551
+  },
+  {
+   "id": "v231",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_pre"
+   },
+   "desc": "Live 10+ dog pre",
+   "raw": 0.359
+  },
+  {
+   "id": "v232",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "wp"
+   },
+   "desc": "Live ctrl wp",
+   "raw": 0.45
+  },
+  {
+   "id": "v233",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "pre"
+   },
+   "desc": "Live ctrl pre",
+   "raw": 0.485
+  },
+  {
+   "id": "v234",
    "text": "+375",
    "fmt": "ml",
    "rule": "fight",
@@ -1848,7 +2872,7 @@
    "raw": 375
   },
   {
-   "id": "v150",
+   "id": "v235",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -1861,7 +2885,7 @@
    "raw": 180
   },
   {
-   "id": "v151",
+   "id": "v236",
    "text": "+470",
    "fmt": "ml",
    "rule": "fight",
@@ -1874,7 +2898,7 @@
    "raw": 470
   },
   {
-   "id": "v152",
+   "id": "v237",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -1887,7 +2911,7 @@
    "raw": 155
   },
   {
-   "id": "v153",
+   "id": "v238",
    "text": "-192",
    "fmt": "ml",
    "rule": "fight",
@@ -1900,7 +2924,7 @@
    "raw": -192
   },
   {
-   "id": "v154",
+   "id": "v239",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -1913,7 +2937,7 @@
    "raw": -179
   },
   {
-   "id": "v155",
+   "id": "v240",
    "text": "+179",
    "fmt": "ml",
    "rule": "fight",
@@ -1926,7 +2950,7 @@
    "raw": 179
   },
   {
-   "id": "v156",
+   "id": "v241",
    "text": "-175",
    "fmt": "ml",
    "rule": "fight",
@@ -1939,7 +2963,7 @@
    "raw": -175
   },
   {
-   "id": "v157",
+   "id": "v242",
    "text": "+178",
    "fmt": "ml",
    "rule": "fight",
@@ -1952,7 +2976,7 @@
    "raw": 178
   },
   {
-   "id": "v158",
+   "id": "v243",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",

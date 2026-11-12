@@ -814,30 +814,34 @@
    "id": "v66",
    "text": "34.2%",
    "fmt": "pct1",
-   "rule": "oa_open",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Jim Miller",
      "Terrance McKinney"
-    ]
+    ],
+    "side": "a",
+    "at": "open"
    },
-   "desc": "OA open p",
+   "desc": "OA open p Jim Miller",
    "raw": 0.3423
   },
   {
    "id": "v67",
    "text": "36.1%",
    "fmt": "pct1",
-   "rule": "oa_close",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Jim Miller",
      "Terrance McKinney"
-    ]
+    ],
+    "side": "a",
+    "at": "close"
    },
-   "desc": "OA close p",
+   "desc": "OA close p Jim Miller",
    "raw": 0.361
   },
   {
@@ -1454,6 +1458,1446 @@
   },
   {
    "id": "v119",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 0",
+   "raw": 2
+  },
+  {
+   "id": "v120",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 1",
+   "raw": 0
+  },
+  {
+   "id": "v121",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 2",
+   "raw": -6
+  },
+  {
+   "id": "v122",
+   "text": "-26",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 3",
+   "raw": -26
+  },
+  {
+   "id": "v123",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 4",
+   "raw": 0
+  },
+  {
+   "id": "v124",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 5",
+   "raw": 2
+  },
+  {
+   "id": "v125",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 6",
+   "raw": -8
+  },
+  {
+   "id": "v126",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 7",
+   "raw": 4
+  },
+  {
+   "id": "v127",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 8",
+   "raw": 12
+  },
+  {
+   "id": "v128",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 9",
+   "raw": 14
+  },
+  {
+   "id": "v129",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 10",
+   "raw": -7
+  },
+  {
+   "id": "v130",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 11",
+   "raw": -1
+  },
+  {
+   "id": "v131",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 12",
+   "raw": 1
+  },
+  {
+   "id": "v132",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 13",
+   "raw": 3
+  },
+  {
+   "id": "v133",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.14.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 14",
+   "raw": 0
+  },
+  {
+   "id": "v134",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.15.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 15",
+   "raw": -4
+  },
+  {
+   "id": "v135",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.16.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 16",
+   "raw": 1
+  },
+  {
+   "id": "v136",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.17.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 17",
+   "raw": 10
+  },
+  {
+   "id": "v137",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.18.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 18",
+   "raw": -14
+  },
+  {
+   "id": "v138",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.19.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 19",
+   "raw": 7
+  },
+  {
+   "id": "v139",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.20.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 20",
+   "raw": -19
+  },
+  {
+   "id": "v140",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.21.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 21",
+   "raw": -8
+  },
+  {
+   "id": "v141",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.22.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 22",
+   "raw": 2
+  },
+  {
+   "id": "v142",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.23.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 23",
+   "raw": 15
+  },
+  {
+   "id": "v143",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.24.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 24",
+   "raw": 7
+  },
+  {
+   "id": "v144",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.25.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 25",
+   "raw": 2
+  },
+  {
+   "id": "v145",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.26.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 26",
+   "raw": 0
+  },
+  {
+   "id": "v146",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.27.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 27",
+   "raw": 0
+  },
+  {
+   "id": "v147",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.28.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 28",
+   "raw": -9
+  },
+  {
+   "id": "v148",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.29.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 29",
+   "raw": 3
+  },
+  {
+   "id": "v149",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.30.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 30",
+   "raw": -4
+  },
+  {
+   "id": "v150",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.31.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 31",
+   "raw": -5
+  },
+  {
+   "id": "v151",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.32.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 32",
+   "raw": 5
+  },
+  {
+   "id": "v152",
+   "text": "+30",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.33.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 33",
+   "raw": 30
+  },
+  {
+   "id": "v153",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.34.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 34",
+   "raw": -7
+  },
+  {
+   "id": "v154",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.35.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 35",
+   "raw": -12
+  },
+  {
+   "id": "v155",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.36.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 36",
+   "raw": -5
+  },
+  {
+   "id": "v156",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.37.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 37",
+   "raw": 2
+  },
+  {
+   "id": "v157",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.38.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 38",
+   "raw": -4
+  },
+  {
+   "id": "v158",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.39.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 39",
+   "raw": 8
+  },
+  {
+   "id": "v159",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.40.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 40",
+   "raw": 2
+  },
+  {
+   "id": "v160",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.41.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 41",
+   "raw": 4
+  },
+  {
+   "id": "v161",
+   "text": "+24",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.42.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 42",
+   "raw": 24
+  },
+  {
+   "id": "v162",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.43.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 43",
+   "raw": 7
+  },
+  {
+   "id": "v163",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.44.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 44",
+   "raw": -4
+  },
+  {
+   "id": "v164",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.45.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 45",
+   "raw": 13
+  },
+  {
+   "id": "v165",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.46.rw.0.2"
+   },
+   "desc": "R1 fight diff Jim Miller 46",
+   "raw": 5
+  },
+  {
+   "id": "v166",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 1",
+   "raw": -4
+  },
+  {
+   "id": "v167",
+   "text": "-41",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 3",
+   "raw": -41
+  },
+  {
+   "id": "v168",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 4",
+   "raw": 6
+  },
+  {
+   "id": "v169",
+   "text": "-18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 6",
+   "raw": -18
+  },
+  {
+   "id": "v170",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 7",
+   "raw": -1
+  },
+  {
+   "id": "v171",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 8",
+   "raw": 15
+  },
+  {
+   "id": "v172",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 9",
+   "raw": 4
+  },
+  {
+   "id": "v173",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 10",
+   "raw": 0
+  },
+  {
+   "id": "v174",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 11",
+   "raw": -10
+  },
+  {
+   "id": "v175",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.13.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 13",
+   "raw": -19
+  },
+  {
+   "id": "v176",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.19.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 19",
+   "raw": -19
+  },
+  {
+   "id": "v177",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.20.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 20",
+   "raw": -4
+  },
+  {
+   "id": "v178",
+   "text": "-18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.21.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 21",
+   "raw": -18
+  },
+  {
+   "id": "v179",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.22.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 22",
+   "raw": -3
+  },
+  {
+   "id": "v180",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.23.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 23",
+   "raw": 1
+  },
+  {
+   "id": "v181",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.25.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 25",
+   "raw": 14
+  },
+  {
+   "id": "v182",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.26.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 26",
+   "raw": -6
+  },
+  {
+   "id": "v183",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.27.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 27",
+   "raw": 7
+  },
+  {
+   "id": "v184",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.28.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 28",
+   "raw": -6
+  },
+  {
+   "id": "v185",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.29.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 29",
+   "raw": -10
+  },
+  {
+   "id": "v186",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.32.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 32",
+   "raw": -19
+  },
+  {
+   "id": "v187",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.33.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 33",
+   "raw": 5
+  },
+  {
+   "id": "v188",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.34.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 34",
+   "raw": -14
+  },
+  {
+   "id": "v189",
+   "text": "-24",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.36.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 36",
+   "raw": -24
+  },
+  {
+   "id": "v190",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.37.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 37",
+   "raw": 1
+  },
+  {
+   "id": "v191",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.39.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 39",
+   "raw": 2
+  },
+  {
+   "id": "v192",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.40.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 40",
+   "raw": -1
+  },
+  {
+   "id": "v193",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.42.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 42",
+   "raw": 0
+  },
+  {
+   "id": "v194",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.43.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 43",
+   "raw": 7
+  },
+  {
+   "id": "v195",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.44.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 44",
+   "raw": -3
+  },
+  {
+   "id": "v196",
+   "text": "+24",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.45.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 45",
+   "raw": 24
+  },
+  {
+   "id": "v197",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.46.rw.1.2"
+   },
+   "desc": "R2 fight diff Jim Miller 46",
+   "raw": 1
+  },
+  {
+   "id": "v198",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 1",
+   "raw": -4
+  },
+  {
+   "id": "v199",
+   "text": "-62",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 3",
+   "raw": -62
+  },
+  {
+   "id": "v200",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 4",
+   "raw": -6
+  },
+  {
+   "id": "v201",
+   "text": "-15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 6",
+   "raw": -15
+  },
+  {
+   "id": "v202",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.10.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 10",
+   "raw": -1
+  },
+  {
+   "id": "v203",
+   "text": "-16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.11.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 11",
+   "raw": -16
+  },
+  {
+   "id": "v204",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.13.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 13",
+   "raw": -14
+  },
+  {
+   "id": "v205",
+   "text": "-17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.19.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 19",
+   "raw": -17
+  },
+  {
+   "id": "v206",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.20.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 20",
+   "raw": -9
+  },
+  {
+   "id": "v207",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.21.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 21",
+   "raw": 0
+  },
+  {
+   "id": "v208",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.22.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 22",
+   "raw": -7
+  },
+  {
+   "id": "v209",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.23.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 23",
+   "raw": 10
+  },
+  {
+   "id": "v210",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.25.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 25",
+   "raw": -8
+  },
+  {
+   "id": "v211",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.27.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 27",
+   "raw": 3
+  },
+  {
+   "id": "v212",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.28.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 28",
+   "raw": -1
+  },
+  {
+   "id": "v213",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.32.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 32",
+   "raw": -12
+  },
+  {
+   "id": "v214",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.33.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 33",
+   "raw": 21
+  },
+  {
+   "id": "v215",
+   "text": "-22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.36.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 36",
+   "raw": -22
+  },
+  {
+   "id": "v216",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.37.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 37",
+   "raw": 14
+  },
+  {
+   "id": "v217",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.39.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 39",
+   "raw": -4
+  },
+  {
+   "id": "v218",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.40.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 40",
+   "raw": 5
+  },
+  {
+   "id": "v219",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.43.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 43",
+   "raw": 3
+  },
+  {
+   "id": "v220",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.44.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 44",
+   "raw": -5
+  },
+  {
+   "id": "v221",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.45.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 45",
+   "raw": 4
+  },
+  {
+   "id": "v222",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "fights.46.rw.2.2"
+   },
+   "desc": "R3 fight diff Jim Miller 46",
+   "raw": 2
+  },
+  {
+   "id": "v223",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 0",
+   "raw": 2
+  },
+  {
+   "id": "v224",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 1",
+   "raw": 12
+  },
+  {
+   "id": "v225",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 2",
+   "raw": -7
+  },
+  {
+   "id": "v226",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 3",
+   "raw": -1
+  },
+  {
+   "id": "v227",
+   "text": "+50",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 4",
+   "raw": 50
+  },
+  {
+   "id": "v228",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 5",
+   "raw": 0
+  },
+  {
+   "id": "v229",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 6",
+   "raw": 13
+  },
+  {
+   "id": "v230",
+   "text": "+29",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 7",
+   "raw": 29
+  },
+  {
+   "id": "v231",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 8",
+   "raw": 0
+  },
+  {
+   "id": "v232",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 9",
+   "raw": -10
+  },
+  {
+   "id": "v233",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 10",
+   "raw": 9
+  },
+  {
+   "id": "v234",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 11",
+   "raw": 19
+  },
+  {
+   "id": "v235",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 12",
+   "raw": 2
+  },
+  {
+   "id": "v236",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Terrance McKinney 13",
+   "raw": 4
+  },
+  {
+   "id": "v237",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Terrance McKinney 8",
+   "raw": -2
+  },
+  {
+   "id": "v238",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Terrance McKinney 9",
+   "raw": -10
+  },
+  {
+   "id": "v239",
    "text": "1.49",
    "fmt": "n2",
    "rule": "em",
@@ -1465,7 +2909,7 @@
    "raw": 1.49
   },
   {
-   "id": "v120",
+   "id": "v240",
    "text": "3.05",
    "fmt": "n2",
    "rule": "em",
@@ -1477,7 +2921,7 @@
    "raw": 3.048
   },
   {
-   "id": "v121",
+   "id": "v241",
    "text": "45%",
    "fmt": "pct0",
    "rule": "em",
@@ -1489,7 +2933,7 @@
    "raw": 0.45
   },
   {
-   "id": "v122",
+   "id": "v242",
    "text": "47%",
    "fmt": "pct0",
    "rule": "em",
@@ -1501,7 +2945,7 @@
    "raw": 0.4667
   },
   {
-   "id": "v123",
+   "id": "v243",
    "text": "48%",
    "fmt": "pct0",
    "rule": "em",
@@ -1513,7 +2957,7 @@
    "raw": 0.4762
   },
   {
-   "id": "v124",
+   "id": "v244",
    "text": "73%",
    "fmt": "pct0",
    "rule": "em",
@@ -1525,7 +2969,7 @@
    "raw": 0.7273
   },
   {
-   "id": "v125",
+   "id": "v245",
    "text": "21%",
    "fmt": "pct0",
    "rule": "em",
@@ -1537,7 +2981,7 @@
    "raw": 0.208
   },
   {
-   "id": "v126",
+   "id": "v246",
    "text": "45%",
    "fmt": "pct0",
    "rule": "em",
@@ -1549,7 +2993,7 @@
    "raw": 0.4514
   },
   {
-   "id": "v127",
+   "id": "v247",
    "text": "27%",
    "fmt": "pct0",
    "rule": "em",
@@ -1561,7 +3005,7 @@
    "raw": 0.2687
   },
   {
-   "id": "v128",
+   "id": "v248",
    "text": "10%",
    "fmt": "pct0",
    "rule": "em",
@@ -1573,7 +3017,7 @@
    "raw": 0.104
   },
   {
-   "id": "v129",
+   "id": "v249",
    "text": "1.72",
    "fmt": "n2",
    "rule": "em",
@@ -1585,7 +3029,7 @@
    "raw": 1.722
   },
   {
-   "id": "v130",
+   "id": "v250",
    "text": "2.18",
    "fmt": "n2",
    "rule": "em",
@@ -1597,7 +3041,7 @@
    "raw": 2.177
   },
   {
-   "id": "v131",
+   "id": "v251",
    "text": "-0.51",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1613,7 +3057,7 @@
    "raw": -0.512
   },
   {
-   "id": "v132",
+   "id": "v252",
    "text": "+3.19",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1629,7 +3073,79 @@
    "raw": 3.194
   },
   {
-   "id": "v133",
+   "id": "v253",
+   "text": "-0.45",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": -0.445
+  },
+  {
+   "id": "v254",
+   "text": "+3.19",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 3.192
+  },
+  {
+   "id": "v255",
+   "text": "21",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Jim Miller",
+   "raw": 21
+  },
+  {
+   "id": "v256",
+   "text": "47",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Jim Miller",
+   "raw": 47
+  },
+  {
+   "id": "v257",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Terrance McKinney",
+   "raw": 9
+  },
+  {
+   "id": "v258",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Terrance McKinney",
+   "raw": 14
+  },
+  {
+   "id": "v259",
    "text": "-0.62",
    "fmt": "s2",
    "rule": "em",
@@ -1641,7 +3157,7 @@
    "raw": -0.618
   },
   {
-   "id": "v134",
+   "id": "v260",
    "text": "+3.98",
    "fmt": "s2",
    "rule": "em",
@@ -1653,7 +3169,7 @@
    "raw": 3.977
   },
   {
-   "id": "v135",
+   "id": "v261",
    "text": "-0.19",
    "fmt": "s2",
    "rule": "em",
@@ -1665,7 +3181,7 @@
    "raw": -0.188
   },
   {
-   "id": "v136",
+   "id": "v262",
    "text": "-0.26",
    "fmt": "s2",
    "rule": "em",
@@ -1677,7 +3193,7 @@
    "raw": -0.261
   },
   {
-   "id": "v137",
+   "id": "v263",
    "text": "+0.29",
    "fmt": "s2",
    "rule": "em",
@@ -1689,7 +3205,7 @@
    "raw": 0.294
   },
   {
-   "id": "v138",
+   "id": "v264",
    "text": "-0.52",
    "fmt": "s2",
    "rule": "em",
@@ -1701,7 +3217,7 @@
    "raw": -0.522
   },
   {
-   "id": "v139",
+   "id": "v265",
    "text": "64%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1715,7 +3231,7 @@
    "raw": 0.636
   },
   {
-   "id": "v140",
+   "id": "v266",
    "text": "50%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1729,7 +3245,55 @@
    "raw": 0.498
   },
   {
-   "id": "v141",
+   "id": "v267",
+   "text": "18",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Jim Miller",
+   "raw": 18
+  },
+  {
+   "id": "v268",
+   "text": "41",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Jim Miller",
+   "raw": 41
+  },
+  {
+   "id": "v269",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Terrance McKinney",
+   "raw": 8
+  },
+  {
+   "id": "v270",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Terrance McKinney",
+   "raw": 9
+  },
+  {
+   "id": "v271",
    "text": "84%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1743,7 +3307,7 @@
    "raw": 0.843
   },
   {
-   "id": "v142",
+   "id": "v272",
    "text": "9.5",
    "fmt": "n1",
    "rule": "labs",
@@ -1757,7 +3321,7 @@
    "raw": 9.5
   },
   {
-   "id": "v143",
+   "id": "v273",
    "text": "2.5",
    "fmt": "n1",
    "rule": "labs",
@@ -1771,7 +3335,7 @@
    "raw": 2.5
   },
   {
-   "id": "v144",
+   "id": "v274",
    "text": "33%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1785,7 +3349,7 @@
    "raw": 0.326
   },
   {
-   "id": "v145",
+   "id": "v275",
    "text": "86%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1799,7 +3363,7 @@
    "raw": 0.857
   },
   {
-   "id": "v146",
+   "id": "v276",
    "text": "+3.19",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1815,7 +3379,7 @@
    "raw": 3.194
   },
   {
-   "id": "v147",
+   "id": "v277",
    "text": "-0.51",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1831,7 +3395,79 @@
    "raw": -0.512
   },
   {
-   "id": "v148",
+   "id": "v278",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "wp"
+   },
+   "desc": "Live 10+ wp",
+   "raw": 0.754
+  },
+  {
+   "id": "v279",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "pre"
+   },
+   "desc": "Live 10+ pre",
+   "raw": 0.576
+  },
+  {
+   "id": "v280",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_wp"
+   },
+   "desc": "Live 10+ dog wp",
+   "raw": 0.551
+  },
+  {
+   "id": "v281",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_pre"
+   },
+   "desc": "Live 10+ dog pre",
+   "raw": 0.359
+  },
+  {
+   "id": "v282",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "wp"
+   },
+   "desc": "Live ctrl wp",
+   "raw": 0.45
+  },
+  {
+   "id": "v283",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "pre"
+   },
+   "desc": "Live ctrl pre",
+   "raw": 0.485
+  },
+  {
+   "id": "v284",
    "text": "+219",
    "fmt": "ml",
    "rule": "fight",
@@ -1844,7 +3480,7 @@
    "raw": 219
   },
   {
-   "id": "v149",
+   "id": "v285",
    "text": "+550",
    "fmt": "ml",
    "rule": "fight",
@@ -1857,7 +3493,7 @@
    "raw": 550
   },
   {
-   "id": "v150",
+   "id": "v286",
    "text": "+195",
    "fmt": "ml",
    "rule": "fight",
@@ -1870,7 +3506,7 @@
    "raw": 195
   },
   {
-   "id": "v151",
+   "id": "v287",
    "text": "+154",
    "fmt": "ml",
    "rule": "fight",
@@ -1883,7 +3519,7 @@
    "raw": 154
   },
   {
-   "id": "v152",
+   "id": "v288",
    "text": "-149",
    "fmt": "ml",
    "rule": "fight",
@@ -1896,7 +3532,7 @@
    "raw": -149
   },
   {
-   "id": "v153",
+   "id": "v289",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -1909,7 +3545,7 @@
    "raw": -250
   },
   {
-   "id": "v154",
+   "id": "v290",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -1922,7 +3558,7 @@
    "raw": 180
   },
   {
-   "id": "v155",
+   "id": "v291",
    "text": "-189",
    "fmt": "ml",
    "rule": "fight",
@@ -1935,7 +3571,7 @@
    "raw": -189
   },
   {
-   "id": "v156",
+   "id": "v292",
    "text": "+146",
    "fmt": "ml",
    "rule": "fight",
@@ -1948,7 +3584,7 @@
    "raw": 146
   },
   {
-   "id": "v157",
+   "id": "v293",
    "text": "-109",
    "fmt": "ml",
    "rule": "fight",
@@ -1961,7 +3597,7 @@
    "raw": -109
   },
   {
-   "id": "v158",
+   "id": "v294",
    "text": "-185",
    "fmt": "ml",
    "rule": "fight",
@@ -1974,7 +3610,7 @@
    "raw": -185
   },
   {
-   "id": "v159",
+   "id": "v295",
    "text": "-106",
    "fmt": "ml",
    "rule": "fight",
@@ -1987,7 +3623,7 @@
    "raw": -106
   },
   {
-   "id": "v160",
+   "id": "v296",
    "text": "-167",
    "fmt": "ml",
    "rule": "fight",
@@ -2000,7 +3636,7 @@
    "raw": -167
   },
   {
-   "id": "v161",
+   "id": "v297",
    "text": "-588",
    "fmt": "ml",
    "rule": "fight",
@@ -2013,7 +3649,7 @@
    "raw": -588
   },
   {
-   "id": "v162",
+   "id": "v298",
    "text": "+135",
    "fmt": "ml",
    "rule": "fight",
@@ -2026,7 +3662,7 @@
    "raw": 135
   },
   {
-   "id": "v163",
+   "id": "v299",
    "text": "-571",
    "fmt": "ml",
    "rule": "fight",
@@ -2039,7 +3675,7 @@
    "raw": -571
   },
   {
-   "id": "v164",
+   "id": "v300",
    "text": "-278",
    "fmt": "ml",
    "rule": "fight",
@@ -2052,7 +3688,7 @@
    "raw": -278
   },
   {
-   "id": "v165",
+   "id": "v301",
    "text": "+135",
    "fmt": "ml",
    "rule": "fight",
@@ -2065,7 +3701,7 @@
    "raw": 135
   },
   {
-   "id": "v166",
+   "id": "v302",
    "text": "-116",
    "fmt": "ml",
    "rule": "fight",
@@ -2078,7 +3714,7 @@
    "raw": -116
   },
   {
-   "id": "v167",
+   "id": "v303",
    "text": "-909",
    "fmt": "ml",
    "rule": "fight",
@@ -2091,7 +3727,7 @@
    "raw": -909
   },
   {
-   "id": "v168",
+   "id": "v304",
    "text": "+140",
    "fmt": "ml",
    "rule": "fight",
@@ -2104,7 +3740,7 @@
    "raw": 140
   },
   {
-   "id": "v169",
+   "id": "v305",
    "text": "-104",
    "fmt": "ml",
    "rule": "fight",

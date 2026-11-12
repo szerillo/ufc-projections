@@ -54,6 +54,7 @@ def bucket(r):
     return "ko" if "KO/TKO" in m else "sub" if "Submission" in m else "dec" if "Decision" in m else None
 
 
+SOS = json.loads((REPO / "form/data/labs.json").read_text())["sos"]   # beta100 (strikes/min per 100 Elo of opponent) and mean
 HALF = 0.5 ** (1 / 3)   # per-fight decay: a fight 3 back counts half as much as the latest
 
 
@@ -120,7 +121,8 @@ def main():
             WON = [0.0] * 6                                               # per round: rounds won (finish = won/lost; else scoring model)
             tgt = {"head": [0, 0], "body": [0, 0], "leg": [0, 0]}         # landed, absorbed
             kd_for = kd_ag = ko_w = ko_l = nf = 0; secs_tot = 0
-            gp = dict(tdl=0, tda=0, otdl=0, otda=0, cf=0, ca=0, sa=0); hist = []
+            gp = dict(tdl=0, tda=0, otdl=0, otda=0, cf=0, ca=0, sa=0); hist = []; flog = []
+            ff = {x_["d"]: x_ for x_ in (json.loads((REPO / "form/data/fighters" / f"{f[sd]['slug']}.json").read_text())["fights"] if f[sd].get("slug") and (REPO / "form/data/fighters" / f"{f[sd]['slug']}.json").exists() else [])}
             pw = dr = 0; oc = {"w": {"ko": 0, "sub": 0, "dec": 0}, "l": {"ko": 0, "sub": 0, "dec": 0}}
             for (e, b), byr in rows.items():
                 d_ = date.get(e)
@@ -144,14 +146,22 @@ def main():
                 kl = decided and not win and ko_loss(r_)
                 pw += (kdf > 0) or (sk and win); dr += (kda > 0) or kl
                 hist.append((d_, int((kdf > 0) or (sk and win)), int((kda > 0) or kl)))
+                fx = ff.get(d_) or {}
+                ent = {"d": d_, "o": op, "es": fx.get("es"), "n": fx.get("n"), "r": "W" if decided and win else "L" if decided else "D",
+                       "oe": fx.get("oe"), "secs": 0, "sl": 0, "sa": 0, "cf": 0, "ca": 0, "tdl": 0, "tdo": 0, "rw": []}
+                flog.append(ent)
                 for rd in range(1, last_r + 1):
                     if rd > 5: break
                     x, y = byr.get((rd, mi)), byr.get((rd, op))
                     if not x or not y: continue
                     s_ = last_s if rd == last_r else 300
-                    if rd == last_r and decided and "Decision" not in r_["METHOD"]: WON[rd] += 1.0 if win else 0.0
+                    if rd == last_r and decided and "Decision" not in r_["METHOD"]: rw_ = 1.0 if win else 0.0
                     else:
-                        sc = rscore(x) - rscore(y); WON[rd] += 1.0 if sc > 0 else 0.0 if sc < 0 else 0.5
+                        sc = rscore(x) - rscore(y); rw_ = 1.0 if sc > 0 else 0.0 if sc < 0 else 0.5
+                    WON[rd] += rw_
+                    ent["rw"].append([rd, rw_, of(x["SIG.STR."])[0] - of(y["SIG.STR."])[0]])
+                    ent["secs"] += s_; ent["sl"] += of(x["SIG.STR."])[0]; ent["sa"] += of(y["SIG.STR."])[0]
+                    ent["cf"] += ctrl(x["CTRL"]); ent["ca"] += ctrl(y["CTRL"]); ent["tdl"] += of(x["TD"])[0]; ent["tdo"] += of(y["TD"])[0]
                     R[rd] += s_; N[rd] += 1; L[rd] += of(x["SIG.STR."])[0]; A[rd] += of(y["SIG.STR."])[0]; secs_tot += s_
                     kd_for += int(float(x["KD"] or 0)); kd_ag += int(float(y["KD"] or 0))
                     a_, b_ = of(x["TD"]), of(y["TD"])
@@ -177,6 +187,20 @@ def main():
                            "tdd": round(1 - gp["otdl"] / gp["otda"], 4) if gp["otda"] else None,
                            "ctrl": round(gp["cf"] / secs_tot, 4) if secs_tot else None, "ctrl_ag": round(gp["ca"] / secs_tot, 4) if secs_tot else None,
                            "sub15": round(gp["sa"] / mins * 15, 3) if mins else None}
+            # per-fight log (newest first) for the dot strips and the round drill-down
+            flog.sort(key=lambda e_: e_["d"], reverse=True); rec["fights"] = flog
+            # consistency: fights they out-landed the opponent in; fights they won the grappling in (more control time, or more
+            # takedowns when control is level), counting only fights with 60+ s of control or a takedown on either side
+            rec["out_landed"] = {"k": sum(1 for e_ in flog if e_["sl"] > e_["sa"]), "n": sum(1 for e_ in flog if e_["secs"])}
+            gf = [e_ for e_ in flog if e_["cf"] + e_["ca"] >= 60 or e_["tdl"] + e_["tdo"] > 0]
+            rec["grap_won"] = {"k": sum(1 for e_ in gf if (e_["cf"] - e_["ca"] > 0) or (e_["cf"] == e_["ca"] and e_["tdl"] > e_["tdo"])), "n": len(gf)}
+            # schedule-adjusted strike differential, as Labs (labs.json sos): sd - beta * (time-weighted opponent Elo - mean),
+            # opponent Elo at fight time from the fighter file, fights of 3+ minutes only
+            ow = [(e_["oe"], e_["secs"]) for e_ in flog if e_["oe"] and e_["secs"] >= 180]
+            sdv = sum(e_["sl"] - e_["sa"] for e_ in flog) / (secs_tot / 60) if secs_tot else None
+            if ow and sdv is not None:
+                moe = sum(a_ * b_ for a_, b_ in ow) / sum(b_ for _, b_ in ow)
+                rec["sos"] = {"sd": round(sdv, 3), "opp_elo": round(moe, 1), "adj_sd": round(sdv - SOS["beta100"] / 100 * (moe - SOS["mean"]), 3)}
             e13 = sum(R[1:4]) / 60; e45 = sum(R[4:6]) / 60
             if e45 > 0 and e13 > 0:
                 rec["r45"] = {"fights": N[4], "landed_pm_13": round(sum(L[1:4]) / e13, 3), "landed_pm_45": round(sum(L[4:6]) / e45, 3),

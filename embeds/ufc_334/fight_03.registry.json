@@ -935,33 +935,37 @@
   },
   {
    "id": "v75",
-   "text": "34.5%",
+   "text": "65.5%",
    "fmt": "pct1",
-   "rule": "oa_open",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Macy Chiasson",
      "Bia Mesquita"
-    ]
+    ],
+    "side": "b",
+    "at": "open"
    },
-   "desc": "OA open p",
-   "raw": 0.3447
+   "desc": "OA open p Bia Mesquita",
+   "raw": 0.6553
   },
   {
    "id": "v76",
-   "text": "30.9%",
+   "text": "69.1%",
    "fmt": "pct1",
-   "rule": "oa_close",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Macy Chiasson",
      "Bia Mesquita"
-    ]
+    ],
+    "side": "b",
+    "at": "close"
    },
-   "desc": "OA close p",
-   "raw": 0.3089
+   "desc": "OA close p Bia Mesquita",
+   "raw": 0.6911
   },
   {
    "id": "v77",
@@ -1541,6 +1545,462 @@
   },
   {
    "id": "v125",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 0",
+   "raw": -2
+  },
+  {
+   "id": "v126",
+   "text": "-17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 1",
+   "raw": -17
+  },
+  {
+   "id": "v127",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 2",
+   "raw": -1
+  },
+  {
+   "id": "v128",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 3",
+   "raw": -5
+  },
+  {
+   "id": "v129",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 4",
+   "raw": 2
+  },
+  {
+   "id": "v130",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 5",
+   "raw": -12
+  },
+  {
+   "id": "v131",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 6",
+   "raw": 3
+  },
+  {
+   "id": "v132",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 7",
+   "raw": -9
+  },
+  {
+   "id": "v133",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 8",
+   "raw": 2
+  },
+  {
+   "id": "v134",
+   "text": "+32",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 9",
+   "raw": 32
+  },
+  {
+   "id": "v135",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 10",
+   "raw": 12
+  },
+  {
+   "id": "v136",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 11",
+   "raw": 11
+  },
+  {
+   "id": "v137",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 12",
+   "raw": 11
+  },
+  {
+   "id": "v138",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 13",
+   "raw": -2
+  },
+  {
+   "id": "v139",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 0",
+   "raw": -12
+  },
+  {
+   "id": "v140",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 1",
+   "raw": -6
+  },
+  {
+   "id": "v141",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 2",
+   "raw": -2
+  },
+  {
+   "id": "v142",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 3",
+   "raw": 9
+  },
+  {
+   "id": "v143",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 5",
+   "raw": 8
+  },
+  {
+   "id": "v144",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 6",
+   "raw": 0
+  },
+  {
+   "id": "v145",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 7",
+   "raw": -10
+  },
+  {
+   "id": "v146",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 8",
+   "raw": 12
+  },
+  {
+   "id": "v147",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 9",
+   "raw": 4
+  },
+  {
+   "id": "v148",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 10",
+   "raw": 1
+  },
+  {
+   "id": "v149",
+   "text": "+23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 11",
+   "raw": 23
+  },
+  {
+   "id": "v150",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.13.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 13",
+   "raw": 7
+  },
+  {
+   "id": "v151",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 0",
+   "raw": -5
+  },
+  {
+   "id": "v152",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 1",
+   "raw": 12
+  },
+  {
+   "id": "v153",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 2",
+   "raw": -3
+  },
+  {
+   "id": "v154",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 5",
+   "raw": 6
+  },
+  {
+   "id": "v155",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 6",
+   "raw": -9
+  },
+  {
+   "id": "v156",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 8",
+   "raw": 7
+  },
+  {
+   "id": "v157",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.9.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 9",
+   "raw": 10
+  },
+  {
+   "id": "v158",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.10.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 10",
+   "raw": -8
+  },
+  {
+   "id": "v159",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Bia Mesquita 0",
+   "raw": -7
+  },
+  {
+   "id": "v160",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Bia Mesquita 1",
+   "raw": 18
+  },
+  {
+   "id": "v161",
+   "text": "+33",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Bia Mesquita 2",
+   "raw": 33
+  },
+  {
+   "id": "v162",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Bia Mesquita 2",
+   "raw": -3
+  },
+  {
+   "id": "v163",
    "text": "1.87",
    "fmt": "n2",
    "rule": "em",
@@ -1552,7 +2012,7 @@
    "raw": 1.866
   },
   {
-   "id": "v126",
+   "id": "v164",
    "text": "3.57",
    "fmt": "n2",
    "rule": "em",
@@ -1564,7 +2024,7 @@
    "raw": 3.567
   },
   {
-   "id": "v127",
+   "id": "v165",
    "text": "36%",
    "fmt": "pct0",
    "rule": "em",
@@ -1576,7 +2036,7 @@
    "raw": 0.3585
   },
   {
-   "id": "v128",
+   "id": "v166",
    "text": "75%",
    "fmt": "pct0",
    "rule": "em",
@@ -1588,7 +2048,7 @@
    "raw": 0.75
   },
   {
-   "id": "v129",
+   "id": "v167",
    "text": "62%",
    "fmt": "pct0",
    "rule": "em",
@@ -1600,7 +2060,7 @@
    "raw": 0.625
   },
   {
-   "id": "v130",
+   "id": "v168",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1612,7 +2072,7 @@
    "raw": 0.0
   },
   {
-   "id": "v131",
+   "id": "v169",
    "text": "34%",
    "fmt": "pct0",
    "rule": "em",
@@ -1624,7 +2084,7 @@
    "raw": 0.3415
   },
   {
-   "id": "v132",
+   "id": "v170",
    "text": "54%",
    "fmt": "pct0",
    "rule": "em",
@@ -1636,7 +2096,7 @@
    "raw": 0.5429
   },
   {
-   "id": "v133",
+   "id": "v171",
    "text": "25%",
    "fmt": "pct0",
    "rule": "em",
@@ -1648,7 +2108,7 @@
    "raw": 0.2465
   },
   {
-   "id": "v134",
+   "id": "v172",
    "text": "11%",
    "fmt": "pct0",
    "rule": "em",
@@ -1660,7 +2120,7 @@
    "raw": 0.1149
   },
   {
-   "id": "v135",
+   "id": "v173",
    "text": "0.39",
    "fmt": "n2",
    "rule": "em",
@@ -1672,7 +2132,7 @@
    "raw": 0.393
   },
   {
-   "id": "v136",
+   "id": "v174",
    "text": "3.57",
    "fmt": "n2",
    "rule": "em",
@@ -1684,7 +2144,7 @@
    "raw": 3.567
   },
   {
-   "id": "v137",
+   "id": "v175",
    "text": "+0.45",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1700,7 +2160,7 @@
    "raw": 0.451
   },
   {
-   "id": "v138",
+   "id": "v176",
    "text": "+3.25",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1716,7 +2176,79 @@
    "raw": 3.25
   },
   {
-   "id": "v139",
+   "id": "v177",
+   "text": "+0.45",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.446
+  },
+  {
+   "id": "v178",
+   "text": "+3.08",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 3.078
+  },
+  {
+   "id": "v179",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Macy Chiasson",
+   "raw": 9
+  },
+  {
+   "id": "v180",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Macy Chiasson",
+   "raw": 14
+  },
+  {
+   "id": "v181",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Bia Mesquita",
+   "raw": 2
+  },
+  {
+   "id": "v182",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Bia Mesquita",
+   "raw": 3
+  },
+  {
+   "id": "v183",
    "text": "+0.09",
    "fmt": "s2",
    "rule": "em",
@@ -1728,7 +2260,7 @@
    "raw": 0.085
   },
   {
-   "id": "v140",
+   "id": "v184",
    "text": "+3.33",
    "fmt": "s2",
    "rule": "em",
@@ -1740,7 +2272,7 @@
    "raw": 3.329
   },
   {
-   "id": "v141",
+   "id": "v185",
    "text": "+0.30",
    "fmt": "s2",
    "rule": "em",
@@ -1752,7 +2284,7 @@
    "raw": 0.301
   },
   {
-   "id": "v142",
+   "id": "v186",
    "text": "+0.00",
    "fmt": "s2",
    "rule": "em",
@@ -1764,7 +2296,7 @@
    "raw": 0.0
   },
   {
-   "id": "v143",
+   "id": "v187",
    "text": "+0.07",
    "fmt": "s2",
    "rule": "em",
@@ -1776,7 +2308,7 @@
    "raw": 0.065
   },
   {
-   "id": "v144",
+   "id": "v188",
    "text": "-0.08",
    "fmt": "s2",
    "rule": "em",
@@ -1788,7 +2320,7 @@
    "raw": -0.079
   },
   {
-   "id": "v145",
+   "id": "v189",
    "text": "53%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1802,7 +2334,55 @@
    "raw": 0.531
   },
   {
-   "id": "v146",
+   "id": "v190",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Macy Chiasson",
+   "raw": 9
+  },
+  {
+   "id": "v191",
+   "text": "13",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Macy Chiasson",
+   "raw": 13
+  },
+  {
+   "id": "v192",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Bia Mesquita",
+   "raw": 2
+  },
+  {
+   "id": "v193",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Bia Mesquita",
+   "raw": 3
+  },
+  {
+   "id": "v194",
    "text": "43%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1816,7 +2396,7 @@
    "raw": 0.433
   },
   {
-   "id": "v147",
+   "id": "v195",
    "text": "10.9",
    "fmt": "n1",
    "rule": "labs",
@@ -1830,7 +2410,7 @@
    "raw": 10.9
   },
   {
-   "id": "v148",
+   "id": "v196",
    "text": "4.2",
    "fmt": "n1",
    "rule": "labs",
@@ -1844,7 +2424,7 @@
    "raw": 4.2
   },
   {
-   "id": "v149",
+   "id": "v197",
    "text": "14%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1858,7 +2438,7 @@
    "raw": 0.143
   },
   {
-   "id": "v150",
+   "id": "v198",
    "text": "67%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1872,7 +2452,79 @@
    "raw": 0.667
   },
   {
-   "id": "v151",
+   "id": "v199",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "wp"
+   },
+   "desc": "Live 10+ wp",
+   "raw": 0.754
+  },
+  {
+   "id": "v200",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "pre"
+   },
+   "desc": "Live 10+ pre",
+   "raw": 0.576
+  },
+  {
+   "id": "v201",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_wp"
+   },
+   "desc": "Live 10+ dog wp",
+   "raw": 0.551
+  },
+  {
+   "id": "v202",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_pre"
+   },
+   "desc": "Live 10+ dog pre",
+   "raw": 0.359
+  },
+  {
+   "id": "v203",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "wp"
+   },
+   "desc": "Live ctrl wp",
+   "raw": 0.45
+  },
+  {
+   "id": "v204",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "pre"
+   },
+   "desc": "Live ctrl pre",
+   "raw": 0.485
+  },
+  {
+   "id": "v205",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -1885,7 +2537,7 @@
    "raw": 155
   },
   {
-   "id": "v152",
+   "id": "v206",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -1898,7 +2550,7 @@
    "raw": -204
   },
   {
-   "id": "v153",
+   "id": "v207",
    "text": "-141",
    "fmt": "ml",
    "rule": "fight",
@@ -1911,7 +2563,7 @@
    "raw": -141
   },
   {
-   "id": "v154",
+   "id": "v208",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -1924,7 +2576,7 @@
    "raw": -112
   },
   {
-   "id": "v155",
+   "id": "v209",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -1937,7 +2589,7 @@
    "raw": -250
   },
   {
-   "id": "v156",
+   "id": "v210",
    "text": "+150",
    "fmt": "ml",
    "rule": "fight",
@@ -1950,7 +2602,7 @@
    "raw": 150
   },
   {
-   "id": "v157",
+   "id": "v211",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -1963,7 +2615,7 @@
    "raw": 185
   },
   {
-   "id": "v158",
+   "id": "v212",
    "text": "-667",
    "fmt": "ml",
    "rule": "fight",
@@ -1976,7 +2628,7 @@
    "raw": -667
   },
   {
-   "id": "v159",
+   "id": "v213",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -1989,7 +2641,7 @@
    "raw": -714
   },
   {
-   "id": "v160",
+   "id": "v214",
    "text": "-645",
    "fmt": "ml",
    "rule": "fight",

@@ -958,33 +958,37 @@
   },
   {
    "id": "v77",
-   "text": "62.4%",
+   "text": "37.6%",
    "fmt": "pct1",
-   "rule": "oa_open",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Donte Johnson",
      "Cesar Almeida"
-    ]
+    ],
+    "side": "b",
+    "at": "open"
    },
-   "desc": "OA open p",
-   "raw": 0.6241
+   "desc": "OA open p Cesar Almeida",
+   "raw": 0.3759
   },
   {
    "id": "v78",
-   "text": "60.6%",
+   "text": "39.4%",
    "fmt": "pct1",
-   "rule": "oa_close",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Donte Johnson",
      "Cesar Almeida"
-    ]
+    ],
+    "side": "b",
+    "at": "close"
    },
-   "desc": "OA close p",
-   "raw": 0.6064
+   "desc": "OA close p Cesar Almeida",
+   "raw": 0.39359999999999995
   },
   {
    "id": "v79",
@@ -1624,6 +1628,234 @@
   },
   {
    "id": "v132",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Donte Johnson 0",
+   "raw": 5
+  },
+  {
+   "id": "v133",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Donte Johnson 1",
+   "raw": 5
+  },
+  {
+   "id": "v134",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Donte Johnson 2",
+   "raw": 6
+  },
+  {
+   "id": "v135",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Donte Johnson 1",
+   "raw": 7
+  },
+  {
+   "id": "v136",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Donte Johnson 2",
+   "raw": -1
+  },
+  {
+   "id": "v137",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Donte Johnson 1",
+   "raw": 2
+  },
+  {
+   "id": "v138",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 0",
+   "raw": 12
+  },
+  {
+   "id": "v139",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 1",
+   "raw": -1
+  },
+  {
+   "id": "v140",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 2",
+   "raw": 3
+  },
+  {
+   "id": "v141",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 3",
+   "raw": 7
+  },
+  {
+   "id": "v142",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 4",
+   "raw": 5
+  },
+  {
+   "id": "v143",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 5",
+   "raw": 0
+  },
+  {
+   "id": "v144",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Cesar Almeida 1",
+   "raw": 0
+  },
+  {
+   "id": "v145",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Cesar Almeida 3",
+   "raw": 12
+  },
+  {
+   "id": "v146",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Cesar Almeida 4",
+   "raw": 11
+  },
+  {
+   "id": "v147",
+   "text": "+28",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Cesar Almeida 5",
+   "raw": 28
+  },
+  {
+   "id": "v148",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Cesar Almeida 1",
+   "raw": -1
+  },
+  {
+   "id": "v149",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Cesar Almeida 3",
+   "raw": -6
+  },
+  {
+   "id": "v150",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Cesar Almeida 4",
+   "raw": 1
+  },
+  {
+   "id": "v151",
    "text": "1.95",
    "fmt": "n2",
    "rule": "em",
@@ -1635,7 +1867,7 @@
    "raw": 1.952
   },
   {
-   "id": "v133",
+   "id": "v152",
    "text": "0.24",
    "fmt": "n2",
    "rule": "em",
@@ -1647,7 +1879,7 @@
    "raw": 0.245
   },
   {
-   "id": "v134",
+   "id": "v153",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1659,7 +1891,7 @@
    "raw": 1.0
   },
   {
-   "id": "v135",
+   "id": "v154",
    "text": "33%",
    "fmt": "pct0",
    "rule": "em",
@@ -1671,7 +1903,7 @@
    "raw": 0.3333
   },
   {
-   "id": "v136",
+   "id": "v155",
    "text": "77%",
    "fmt": "pct0",
    "rule": "em",
@@ -1683,7 +1915,7 @@
    "raw": 0.7692
   },
   {
-   "id": "v137",
+   "id": "v156",
    "text": "48%",
    "fmt": "pct0",
    "rule": "em",
@@ -1695,7 +1927,7 @@
    "raw": 0.4848
   },
   {
-   "id": "v138",
+   "id": "v157",
    "text": "29%",
    "fmt": "pct0",
    "rule": "em",
@@ -1707,7 +1939,7 @@
    "raw": 0.2863
   },
   {
-   "id": "v139",
+   "id": "v158",
    "text": "6%",
    "fmt": "pct0",
    "rule": "em",
@@ -1719,7 +1951,7 @@
    "raw": 0.0577
   },
   {
-   "id": "v140",
+   "id": "v159",
    "text": "28%",
    "fmt": "pct0",
    "rule": "em",
@@ -1731,7 +1963,7 @@
    "raw": 0.2805
   },
   {
-   "id": "v141",
+   "id": "v160",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -1743,7 +1975,7 @@
    "raw": 0.5045
   },
   {
-   "id": "v142",
+   "id": "v161",
    "text": "0.65",
    "fmt": "n2",
    "rule": "em",
@@ -1755,7 +1987,7 @@
    "raw": 0.651
   },
   {
-   "id": "v143",
+   "id": "v162",
    "text": "0.24",
    "fmt": "n2",
    "rule": "em",
@@ -1767,7 +1999,7 @@
    "raw": 0.245
   },
   {
-   "id": "v144",
+   "id": "v163",
    "text": "+1.04",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1783,7 +2015,7 @@
    "raw": 1.0410000000000001
   },
   {
-   "id": "v145",
+   "id": "v164",
    "text": "+1.16",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1799,7 +2031,79 @@
    "raw": 1.1600000000000001
   },
   {
-   "id": "v146",
+   "id": "v165",
+   "text": "+0.87",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.868
+  },
+  {
+   "id": "v166",
+   "text": "+1.05",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 1.049
+  },
+  {
+   "id": "v167",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Donte Johnson",
+   "raw": 3
+  },
+  {
+   "id": "v168",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Donte Johnson",
+   "raw": 3
+  },
+  {
+   "id": "v169",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Cesar Almeida",
+   "raw": 5
+  },
+  {
+   "id": "v170",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Cesar Almeida",
+   "raw": 6
+  },
+  {
+   "id": "v171",
    "text": "+1.30",
    "fmt": "s2",
    "rule": "em",
@@ -1811,7 +2115,7 @@
    "raw": 1.302
   },
   {
-   "id": "v147",
+   "id": "v172",
    "text": "-0.10",
    "fmt": "s2",
    "rule": "em",
@@ -1823,7 +2127,7 @@
    "raw": -0.098
   },
   {
-   "id": "v148",
+   "id": "v173",
    "text": "-0.09",
    "fmt": "s2",
    "rule": "em",
@@ -1835,7 +2139,7 @@
    "raw": -0.087
   },
   {
-   "id": "v149",
+   "id": "v174",
    "text": "+0.77",
    "fmt": "s2",
    "rule": "em",
@@ -1847,7 +2151,7 @@
    "raw": 0.768
   },
   {
-   "id": "v150",
+   "id": "v175",
    "text": "-0.17",
    "fmt": "s2",
    "rule": "em",
@@ -1859,7 +2163,7 @@
    "raw": -0.174
   },
   {
-   "id": "v151",
+   "id": "v176",
    "text": "+0.49",
    "fmt": "s2",
    "rule": "em",
@@ -1871,7 +2175,7 @@
    "raw": 0.49
   },
   {
-   "id": "v152",
+   "id": "v177",
    "text": "53%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1885,7 +2189,55 @@
    "raw": 0.534
   },
   {
-   "id": "v153",
+   "id": "v178",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Donte Johnson",
+   "raw": 1
+  },
+  {
+   "id": "v179",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Donte Johnson",
+   "raw": 2
+  },
+  {
+   "id": "v180",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Cesar Almeida",
+   "raw": 1
+  },
+  {
+   "id": "v181",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Cesar Almeida",
+   "raw": 6
+  },
+  {
+   "id": "v182",
    "text": "75%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1899,7 +2251,7 @@
    "raw": 0.75
   },
   {
-   "id": "v154",
+   "id": "v183",
    "text": "7.7",
    "fmt": "n1",
    "rule": "labs",
@@ -1913,7 +2265,7 @@
    "raw": 7.7
   },
   {
-   "id": "v155",
+   "id": "v184",
    "text": "10.2",
    "fmt": "n1",
    "rule": "labs",
@@ -1927,7 +2279,7 @@
    "raw": 10.2
   },
   {
-   "id": "v156",
+   "id": "v185",
    "text": "33%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1941,7 +2293,7 @@
    "raw": 0.333
   },
   {
-   "id": "v157",
+   "id": "v186",
    "text": "33%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1955,7 +2307,79 @@
    "raw": 0.333
   },
   {
-   "id": "v158",
+   "id": "v187",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "wp"
+   },
+   "desc": "Live 10+ wp",
+   "raw": 0.754
+  },
+  {
+   "id": "v188",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "pre"
+   },
+   "desc": "Live 10+ pre",
+   "raw": 0.576
+  },
+  {
+   "id": "v189",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_wp"
+   },
+   "desc": "Live 10+ dog wp",
+   "raw": 0.551
+  },
+  {
+   "id": "v190",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_pre"
+   },
+   "desc": "Live 10+ dog pre",
+   "raw": 0.359
+  },
+  {
+   "id": "v191",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "wp"
+   },
+   "desc": "Live ctrl wp",
+   "raw": 0.45
+  },
+  {
+   "id": "v192",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "pre"
+   },
+   "desc": "Live ctrl pre",
+   "raw": 0.485
+  },
+  {
+   "id": "v193",
    "text": "-323",
    "fmt": "ml",
    "rule": "fight",
@@ -1968,7 +2392,7 @@
    "raw": -323
   },
   {
-   "id": "v159",
+   "id": "v194",
    "text": "-833",
    "fmt": "ml",
    "rule": "fight",
@@ -1981,7 +2405,7 @@
    "raw": -833
   },
   {
-   "id": "v160",
+   "id": "v195",
    "text": "-351",
    "fmt": "ml",
    "rule": "fight",
@@ -1994,7 +2418,7 @@
    "raw": -351
   },
   {
-   "id": "v161",
+   "id": "v196",
    "text": "+215",
    "fmt": "ml",
    "rule": "fight",
@@ -2007,7 +2431,7 @@
    "raw": 215
   },
   {
-   "id": "v162",
+   "id": "v197",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -2020,7 +2444,7 @@
    "raw": 180
   },
   {
-   "id": "v163",
+   "id": "v198",
    "text": "-256",
    "fmt": "ml",
    "rule": "fight",
@@ -2033,7 +2457,7 @@
    "raw": -256
   },
   {
-   "id": "v164",
+   "id": "v199",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -2046,7 +2470,7 @@
    "raw": -455
   },
   {
-   "id": "v165",
+   "id": "v200",
    "text": "-120",
    "fmt": "ml",
    "rule": "fight",
@@ -2059,7 +2483,7 @@
    "raw": -120
   },
   {
-   "id": "v166",
+   "id": "v201",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",

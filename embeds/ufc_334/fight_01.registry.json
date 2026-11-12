@@ -912,33 +912,37 @@
   },
   {
    "id": "v73",
-   "text": "52.4%",
+   "text": "47.6%",
    "fmt": "pct1",
-   "rule": "oa_open",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Evan Elder",
      "Samuel Sanches"
-    ]
+    ],
+    "side": "b",
+    "at": "open"
    },
-   "desc": "OA open p",
-   "raw": 0.524
+   "desc": "OA open p Samuel Sanches",
+   "raw": 0.476
   },
   {
    "id": "v74",
-   "text": "48.3%",
+   "text": "51.7%",
    "fmt": "pct1",
-   "rule": "oa_close",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Evan Elder",
      "Samuel Sanches"
-    ]
+    ],
+    "side": "b",
+    "at": "close"
    },
-   "desc": "OA close p",
-   "raw": 0.483
+   "desc": "OA close p Samuel Sanches",
+   "raw": 0.517
   },
   {
    "id": "v75",
@@ -1266,6 +1270,174 @@
   },
   {
    "id": "v102",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Evan Elder 0",
+   "raw": 14
+  },
+  {
+   "id": "v103",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Evan Elder 1",
+   "raw": 13
+  },
+  {
+   "id": "v104",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Evan Elder 2",
+   "raw": 1
+  },
+  {
+   "id": "v105",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Evan Elder 3",
+   "raw": 7
+  },
+  {
+   "id": "v106",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Evan Elder 4",
+   "raw": -4
+  },
+  {
+   "id": "v107",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Evan Elder 0",
+   "raw": 16
+  },
+  {
+   "id": "v108",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Evan Elder 1",
+   "raw": 8
+  },
+  {
+   "id": "v109",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Evan Elder 2",
+   "raw": 15
+  },
+  {
+   "id": "v110",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Evan Elder 3",
+   "raw": 3
+  },
+  {
+   "id": "v111",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Evan Elder 4",
+   "raw": -9
+  },
+  {
+   "id": "v112",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Evan Elder 0",
+   "raw": 4
+  },
+  {
+   "id": "v113",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Evan Elder 2",
+   "raw": 16
+  },
+  {
+   "id": "v114",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Evan Elder 3",
+   "raw": -4
+  },
+  {
+   "id": "v115",
+   "text": "-35",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Evan Elder 4",
+   "raw": -35
+  },
+  {
+   "id": "v116",
    "text": "0.48",
    "fmt": "n2",
    "rule": "em",
@@ -1277,7 +1449,7 @@
    "raw": 0.481
   },
   {
-   "id": "v103",
+   "id": "v117",
    "text": "15%",
    "fmt": "pct0",
    "rule": "em",
@@ -1289,7 +1461,7 @@
    "raw": 0.1538
   },
   {
-   "id": "v104",
+   "id": "v118",
    "text": "40%",
    "fmt": "pct0",
    "rule": "em",
@@ -1301,7 +1473,7 @@
    "raw": 0.4
   },
   {
-   "id": "v105",
+   "id": "v119",
    "text": "9%",
    "fmt": "pct0",
    "rule": "em",
@@ -1313,7 +1485,7 @@
    "raw": 0.0916
   },
   {
-   "id": "v106",
+   "id": "v120",
    "text": "14%",
    "fmt": "pct0",
    "rule": "em",
@@ -1325,7 +1497,7 @@
    "raw": 0.1386
   },
   {
-   "id": "v107",
+   "id": "v121",
    "text": "0.48",
    "fmt": "n2",
    "rule": "em",
@@ -1337,7 +1509,7 @@
    "raw": 0.481
   },
   {
-   "id": "v108",
+   "id": "v122",
    "text": "+0.72",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1353,7 +1525,43 @@
    "raw": 0.721
   },
   {
-   "id": "v109",
+   "id": "v123",
+   "text": "+0.54",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.54
+  },
+  {
+   "id": "v124",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Evan Elder",
+   "raw": 4
+  },
+  {
+   "id": "v125",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Evan Elder",
+   "raw": 5
+  },
+  {
+   "id": "v126",
    "text": "-0.51",
    "fmt": "s2",
    "rule": "em",
@@ -1365,7 +1573,7 @@
    "raw": -0.513
   },
   {
-   "id": "v110",
+   "id": "v127",
    "text": "+1.03",
    "fmt": "s2",
    "rule": "em",
@@ -1377,7 +1585,7 @@
    "raw": 1.026
   },
   {
-   "id": "v111",
+   "id": "v128",
    "text": "+0.21",
    "fmt": "s2",
    "rule": "em",
@@ -1389,7 +1597,7 @@
    "raw": 0.208
   },
   {
-   "id": "v112",
+   "id": "v129",
    "text": "65%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1403,7 +1611,31 @@
    "raw": 0.648
   },
   {
-   "id": "v113",
+   "id": "v130",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Evan Elder",
+   "raw": 3
+  },
+  {
+   "id": "v131",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Evan Elder",
+   "raw": 4
+  },
+  {
+   "id": "v132",
    "text": "138%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1417,7 +1649,7 @@
    "raw": 1.38
   },
   {
-   "id": "v114",
+   "id": "v133",
    "text": "12.5",
    "fmt": "n1",
    "rule": "labs",
@@ -1431,7 +1663,7 @@
    "raw": 12.5
   },
   {
-   "id": "v115",
+   "id": "v134",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1445,7 +1677,79 @@
    "raw": 0.0
   },
   {
-   "id": "v116",
+   "id": "v135",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "wp"
+   },
+   "desc": "Live 10+ wp",
+   "raw": 0.754
+  },
+  {
+   "id": "v136",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "pre"
+   },
+   "desc": "Live 10+ pre",
+   "raw": 0.576
+  },
+  {
+   "id": "v137",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_wp"
+   },
+   "desc": "Live 10+ dog wp",
+   "raw": 0.551
+  },
+  {
+   "id": "v138",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_pre"
+   },
+   "desc": "Live 10+ dog pre",
+   "raw": 0.359
+  },
+  {
+   "id": "v139",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "wp"
+   },
+   "desc": "Live ctrl wp",
+   "raw": 0.45
+  },
+  {
+   "id": "v140",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "pre"
+   },
+   "desc": "Live ctrl pre",
+   "raw": 0.485
+  },
+  {
+   "id": "v141",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1458,7 +1762,7 @@
    "raw": -208
   },
   {
-   "id": "v117",
+   "id": "v142",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1471,7 +1775,7 @@
    "raw": -455
   },
   {
-   "id": "v118",
+   "id": "v143",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1484,7 +1788,7 @@
    "raw": -303
   },
   {
-   "id": "v119",
+   "id": "v144",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -1497,7 +1801,7 @@
    "raw": 175
   },
   {
-   "id": "v120",
+   "id": "v145",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",

@@ -44,7 +44,7 @@ def sml(m): return f"+{m}" if m > 0 else str(m)
 def fmt(x, k):
     return {"pct1": lambda: f"{x*100:.1f}%", "pct0": lambda: f"{x*100:.0f}%", "ml": lambda: sml(x), "mlp": lambda: sml(p2ml(x)), "n1": lambda: f"{x:.1f}",
             "n2": lambda: f"{x:.2f}", "s2": lambda: f"{x:+.2f}", "int": lambda: str(x), "intc": lambda: f"{x:,}", "d3": lambda: f"{x:.3f}", "d4": lambda: f"{x:.4f}",
-            "str": lambda: str(x), "in": lambda: f'{x}"', "r0": lambda: str(int(round(x))), "pts": lambda: f"{abs(x)*100:.1f}", "sp": lambda: f"{x*100:+.1f}", "spp": lambda: f"{x*100:+.1f}%", "s1": lambda: f"{x:+.1f}", "mmss": lambda: f"{int(x) // 60}:{int(round(x)) % 60:02d}"}[k]()
+            "str": lambda: str(x), "in": lambda: f'{x}"', "r0": lambda: str(int(round(x))), "pts": lambda: f"{abs(x)*100:.1f}", "sp": lambda: f"{x*100:+.1f}", "spp": lambda: f"{x*100:+.1f}%", "s1": lambda: f"{x:+.1f}", "sint": lambda: f"{int(x):+d}", "mmss": lambda: f"{int(x) // 60}:{int(round(x)) % 60:02d}"}[k]()
 
 def dig(o, path):
     for p in str(path).split("."):
@@ -169,6 +169,13 @@ def check(D, htmlfile, G):
             elif rule in ("oa_drift", "oa_drift_abs"):
                 f_ = by_name(EV[a["ev"]], a); v = f_["odds"]["close"]["p"] - f_["odds"]["open"]["p"]
                 if rule == "oa_drift_abs": v = abs(v)
+            elif rule == "labs_live":
+                LV_ = G.setdefault("LIVE", {r_["label"]: r_ for r_ in json.loads((FD / "labs.json").read_text())["live"]["rows"]})
+                v = LV_[a["label"]][a["field"]]
+            elif rule == "oa_p":   # win chance at open/close for the named side (event file a = first name of the pair)
+                f_ = by_name(EV[a["ev"]], a); v = f_["odds"][a["at"]]["p"]
+                c_ = lambda s_: sq(ALIAS.get(sq(s_), s_)); first = c_(f_["a"]["name"]) == c_(a["pair"][0])
+                if (a["side"] == "b") == first: v = 1 - v
             elif rule == "oa_open_ml":
                 f_ = by_name(EV[a["ev"]], a); v = f_["odds"]["open"]["m" + a["side"]]
                 c_ = lambda s_: sq(ALIAS.get(sq(s_), s_))   # side a must be the first name of the pair in the event file too
@@ -237,6 +244,11 @@ def check(D, htmlfile, G):
         m_ = re.search(r'<div class="ang">(.*?)</div>', page)
         got = re.findall(r"<li><b>([^<]+)</b>", m_.group(1)) if m_ else []
         if [g.split()[-1] for g in got] != [w.split()[-1] for w in want]: bad.append(("angle", "striking", f"page {got} vs recomputed {want}"))
+        # Block 59h: flip flag recomputed (R1 diff 1.0+ one way, R3 diff 1.0+ the other, both 3+ fights reaching R3)
+        rr = lambda r, i: (r.get("rounds") or [{}] * 3)[i]
+        a1, b1, a3, b3 = rr(pa_, 0).get("diff_pm"), rr(pb_, 0).get("diff_pm"), rr(pa_, 2).get("diff_pm"), rr(pb_, 2).get("diff_pm")
+        wantf = None not in (a1, b1, a3, b3) and rr(pa_, 2).get("fights", 0) >= 3 and rr(pb_, 2).get("fights", 0) >= 3 and ((a1 - b1 >= 1 and b3 - a3 >= 1) or (b1 - a1 >= 1 and a3 - b3 >= 1))
+        if wantf != ('class="flip"' in page): bad.append(("flag", "flip", f"page {'class=\"flip\"' in page} vs recomputed {wantf}"))
         # the decision-model accuracy quoted in the Cardio key must match labs.json
         acc_ = re.search(r"decisions (\d+)% of the time", page)
         if acc_ and int(acc_.group(1)) != round(json.loads((FD / "labs.json").read_text())["scoring"]["acc"] * 100): bad.append(("text", "key", "judging-model accuracy in the key"))
@@ -355,6 +367,7 @@ def negative(D, G, slug):
         ("embed: wrong FIGHT number (fight 05)", plant_text("fight_05.html", lambda s_: s_.replace('fp-fight-num">FIGHT 5<', 'fp-fight-num">FIGHT 6<'))),
         ("embed: a model cell blanked (fight 10)", plant_text("fight_10.html", lambda s_: re.sub(r'<td class="model"><span class="odds">.*?</td>', '<td class="model dim">n/a</td>', s_, count=1, flags=re.S))),
         ("embed: an edge chip off by 0.1 (fight 13)", plant_text("fight_13.html", bump_first("edge", "spp"))),
+        ("embed: flip flag dropped (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace('class="flip"', 'class="flop"', 1))),
         ("embed: striking angle dropped (fight 06)", plant_text("fight_06.html", lambda s_: re.sub(r'<div class="ang">.*?</ul></div>', "", s_, count=1))),
         ("embed: past-fight link to a bout that is not on the site (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(#/fight/[^/"]+/)\d+"', r'\g<1>999"', s_, count=1))),
         ("embed: model renamed 'Sean' (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace("Moneyline · model vs market", "Moneyline · Sean vs market", 1))),

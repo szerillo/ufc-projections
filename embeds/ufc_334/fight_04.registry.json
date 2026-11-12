@@ -960,30 +960,34 @@
    "id": "v77",
    "text": "24.0%",
    "fmt": "pct1",
-   "rule": "oa_open",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Jared Gordon",
      "Melquizael Costa"
-    ]
+    ],
+    "side": "a",
+    "at": "open"
    },
-   "desc": "OA open p",
+   "desc": "OA open p Jared Gordon",
    "raw": 0.2401
   },
   {
    "id": "v78",
    "text": "24.3%",
    "fmt": "pct1",
-   "rule": "oa_close",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Jared Gordon",
      "Melquizael Costa"
-    ]
+    ],
+    "side": "a",
+    "at": "close"
    },
-   "desc": "OA close p",
+   "desc": "OA close p Jared Gordon",
    "raw": 0.2433
   },
   {
@@ -1672,6 +1676,762 @@
   },
   {
    "id": "v136",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 0",
+   "raw": -2
+  },
+  {
+   "id": "v137",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 1",
+   "raw": 1
+  },
+  {
+   "id": "v138",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 2",
+   "raw": 2
+  },
+  {
+   "id": "v139",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 3",
+   "raw": -19
+  },
+  {
+   "id": "v140",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 4",
+   "raw": 1
+  },
+  {
+   "id": "v141",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 5",
+   "raw": -6
+  },
+  {
+   "id": "v142",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 6",
+   "raw": 3
+  },
+  {
+   "id": "v143",
+   "text": "+27",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 7",
+   "raw": 27
+  },
+  {
+   "id": "v144",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 8",
+   "raw": 5
+  },
+  {
+   "id": "v145",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 9",
+   "raw": -9
+  },
+  {
+   "id": "v146",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 10",
+   "raw": 16
+  },
+  {
+   "id": "v147",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 11",
+   "raw": 1
+  },
+  {
+   "id": "v148",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 12",
+   "raw": -3
+  },
+  {
+   "id": "v149",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 13",
+   "raw": -5
+  },
+  {
+   "id": "v150",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.14.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 14",
+   "raw": 18
+  },
+  {
+   "id": "v151",
+   "text": "-21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.15.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 15",
+   "raw": -21
+  },
+  {
+   "id": "v152",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.16.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 16",
+   "raw": -7
+  },
+  {
+   "id": "v153",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.17.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Gordon 17",
+   "raw": 9
+  },
+  {
+   "id": "v154",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 1",
+   "raw": -2
+  },
+  {
+   "id": "v155",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 3",
+   "raw": 18
+  },
+  {
+   "id": "v156",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 6",
+   "raw": -4
+  },
+  {
+   "id": "v157",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 7",
+   "raw": 16
+  },
+  {
+   "id": "v158",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 8",
+   "raw": 4
+  },
+  {
+   "id": "v159",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 9",
+   "raw": 13
+  },
+  {
+   "id": "v160",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 10",
+   "raw": 11
+  },
+  {
+   "id": "v161",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 11",
+   "raw": 0
+  },
+  {
+   "id": "v162",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.13.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 13",
+   "raw": 18
+  },
+  {
+   "id": "v163",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.14.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 14",
+   "raw": 12
+  },
+  {
+   "id": "v164",
+   "text": "+53",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.16.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 16",
+   "raw": 53
+  },
+  {
+   "id": "v165",
+   "text": "+42",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.17.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Gordon 17",
+   "raw": 42
+  },
+  {
+   "id": "v166",
+   "text": "-25",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 1",
+   "raw": -25
+  },
+  {
+   "id": "v167",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 3",
+   "raw": -4
+  },
+  {
+   "id": "v168",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 6",
+   "raw": -2
+  },
+  {
+   "id": "v169",
+   "text": "+37",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 7",
+   "raw": 37
+  },
+  {
+   "id": "v170",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 8",
+   "raw": 14
+  },
+  {
+   "id": "v171",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.9.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 9",
+   "raw": 9
+  },
+  {
+   "id": "v172",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.10.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 10",
+   "raw": 16
+  },
+  {
+   "id": "v173",
+   "text": "+23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.11.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 11",
+   "raw": 23
+  },
+  {
+   "id": "v174",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.13.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 13",
+   "raw": 1
+  },
+  {
+   "id": "v175",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.14.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 14",
+   "raw": -9
+  },
+  {
+   "id": "v176",
+   "text": "+23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "fights.16.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Gordon 16",
+   "raw": 23
+  },
+  {
+   "id": "v177",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Melquizael Costa 0",
+   "raw": 1
+  },
+  {
+   "id": "v178",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Melquizael Costa 1",
+   "raw": 12
+  },
+  {
+   "id": "v179",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Melquizael Costa 2",
+   "raw": 2
+  },
+  {
+   "id": "v180",
+   "text": "+22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Melquizael Costa 3",
+   "raw": 22
+  },
+  {
+   "id": "v181",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Melquizael Costa 4",
+   "raw": 11
+  },
+  {
+   "id": "v182",
+   "text": "+20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Melquizael Costa 5",
+   "raw": 20
+  },
+  {
+   "id": "v183",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Melquizael Costa 6",
+   "raw": 3
+  },
+  {
+   "id": "v184",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Melquizael Costa 7",
+   "raw": 1
+  },
+  {
+   "id": "v185",
+   "text": "+29",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Melquizael Costa 8",
+   "raw": 29
+  },
+  {
+   "id": "v186",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Melquizael Costa 9",
+   "raw": 7
+  },
+  {
+   "id": "v187",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Melquizael Costa 0",
+   "raw": 3
+  },
+  {
+   "id": "v188",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Melquizael Costa 3",
+   "raw": 10
+  },
+  {
+   "id": "v189",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Melquizael Costa 4",
+   "raw": 7
+  },
+  {
+   "id": "v190",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Melquizael Costa 6",
+   "raw": 3
+  },
+  {
+   "id": "v191",
+   "text": "-24",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Melquizael Costa 7",
+   "raw": -24
+  },
+  {
+   "id": "v192",
+   "text": "+20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Melquizael Costa 8",
+   "raw": 20
+  },
+  {
+   "id": "v193",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Melquizael Costa 9",
+   "raw": -6
+  },
+  {
+   "id": "v194",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Melquizael Costa 0",
+   "raw": -2
+  },
+  {
+   "id": "v195",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Melquizael Costa 3",
+   "raw": 1
+  },
+  {
+   "id": "v196",
+   "text": "-17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Melquizael Costa 4",
+   "raw": -17
+  },
+  {
+   "id": "v197",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Melquizael Costa 6",
+   "raw": 4
+  },
+  {
+   "id": "v198",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Melquizael Costa 8",
+   "raw": 12
+  },
+  {
+   "id": "v199",
    "text": "1.91",
    "fmt": "n2",
    "rule": "em",
@@ -1683,7 +2443,7 @@
    "raw": 1.91
   },
   {
-   "id": "v137",
+   "id": "v200",
    "text": "1.53",
    "fmt": "n2",
    "rule": "em",
@@ -1695,7 +2455,7 @@
    "raw": 1.533
   },
   {
-   "id": "v138",
+   "id": "v201",
    "text": "35%",
    "fmt": "pct0",
    "rule": "em",
@@ -1707,7 +2467,7 @@
    "raw": 0.3478
   },
   {
-   "id": "v139",
+   "id": "v202",
    "text": "35%",
    "fmt": "pct0",
    "rule": "em",
@@ -1719,7 +2479,7 @@
    "raw": 0.3548
   },
   {
-   "id": "v140",
+   "id": "v203",
    "text": "60%",
    "fmt": "pct0",
    "rule": "em",
@@ -1731,7 +2491,7 @@
    "raw": 0.6047
   },
   {
-   "id": "v141",
+   "id": "v204",
    "text": "51%",
    "fmt": "pct0",
    "rule": "em",
@@ -1743,7 +2503,7 @@
    "raw": 0.5094
   },
   {
-   "id": "v142",
+   "id": "v205",
    "text": "34%",
    "fmt": "pct0",
    "rule": "em",
@@ -1755,7 +2515,7 @@
    "raw": 0.338
   },
   {
-   "id": "v143",
+   "id": "v206",
    "text": "17%",
    "fmt": "pct0",
    "rule": "em",
@@ -1767,7 +2527,7 @@
    "raw": 0.1676
   },
   {
-   "id": "v144",
+   "id": "v207",
    "text": "12%",
    "fmt": "pct0",
    "rule": "em",
@@ -1779,7 +2539,7 @@
    "raw": 0.1194
   },
   {
-   "id": "v145",
+   "id": "v208",
    "text": "32%",
    "fmt": "pct0",
    "rule": "em",
@@ -1791,7 +2551,7 @@
    "raw": 0.3203
   },
   {
-   "id": "v146",
+   "id": "v209",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1803,7 +2563,7 @@
    "raw": 0.0
   },
   {
-   "id": "v147",
+   "id": "v210",
    "text": "0.84",
    "fmt": "n2",
    "rule": "em",
@@ -1815,7 +2575,7 @@
    "raw": 0.836
   },
   {
-   "id": "v148",
+   "id": "v211",
    "text": "+1.46",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1831,7 +2591,7 @@
    "raw": 1.459
   },
   {
-   "id": "v149",
+   "id": "v212",
    "text": "+1.11",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1847,7 +2607,79 @@
    "raw": 1.1059999999999999
   },
   {
-   "id": "v150",
+   "id": "v213",
+   "text": "+1.48",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 1.483
+  },
+  {
+   "id": "v214",
+   "text": "+1.19",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 1.186
+  },
+  {
+   "id": "v215",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Jared Gordon",
+   "raw": 11
+  },
+  {
+   "id": "v216",
+   "text": "18",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Jared Gordon",
+   "raw": 18
+  },
+  {
+   "id": "v217",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Melquizael Costa",
+   "raw": 9
+  },
+  {
+   "id": "v218",
+   "text": "10",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Melquizael Costa",
+   "raw": 10
+  },
+  {
+   "id": "v219",
    "text": "+1.30",
    "fmt": "s2",
    "rule": "em",
@@ -1859,7 +2691,7 @@
    "raw": 1.3
   },
   {
-   "id": "v151",
+   "id": "v220",
    "text": "-0.16",
    "fmt": "s2",
    "rule": "em",
@@ -1871,7 +2703,7 @@
    "raw": -0.158
   },
   {
-   "id": "v152",
+   "id": "v221",
    "text": "+0.07",
    "fmt": "s2",
    "rule": "em",
@@ -1883,7 +2715,7 @@
    "raw": 0.074
   },
   {
-   "id": "v153",
+   "id": "v222",
    "text": "+0.60",
    "fmt": "s2",
    "rule": "em",
@@ -1895,7 +2727,7 @@
    "raw": 0.604
   },
   {
-   "id": "v154",
+   "id": "v223",
    "text": "+0.09",
    "fmt": "s2",
    "rule": "em",
@@ -1907,7 +2739,7 @@
    "raw": 0.085
   },
   {
-   "id": "v155",
+   "id": "v224",
    "text": "+0.66",
    "fmt": "s2",
    "rule": "em",
@@ -1919,7 +2751,7 @@
    "raw": 0.66
   },
   {
-   "id": "v156",
+   "id": "v225",
    "text": "63%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1933,7 +2765,7 @@
    "raw": 0.627
   },
   {
-   "id": "v157",
+   "id": "v226",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1947,7 +2779,55 @@
    "raw": 0.584
   },
   {
-   "id": "v158",
+   "id": "v227",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Jared Gordon",
+   "raw": 11
+  },
+  {
+   "id": "v228",
+   "text": "15",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Jared Gordon",
+   "raw": 15
+  },
+  {
+   "id": "v229",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Melquizael Costa",
+   "raw": 2
+  },
+  {
+   "id": "v230",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Melquizael Costa",
+   "raw": 9
+  },
+  {
+   "id": "v231",
    "text": "130%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1961,7 +2841,7 @@
    "raw": 1.298
   },
   {
-   "id": "v159",
+   "id": "v232",
    "text": "103%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1975,7 +2855,7 @@
    "raw": 1.028
   },
   {
-   "id": "v160",
+   "id": "v233",
    "text": "10.8",
    "fmt": "n1",
    "rule": "labs",
@@ -1989,7 +2869,7 @@
    "raw": 10.8
   },
   {
-   "id": "v161",
+   "id": "v234",
    "text": "10.8",
    "fmt": "n1",
    "rule": "labs",
@@ -2003,7 +2883,7 @@
    "raw": 10.8
   },
   {
-   "id": "v162",
+   "id": "v235",
    "text": "29%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2017,7 +2897,7 @@
    "raw": 0.294
   },
   {
-   "id": "v163",
+   "id": "v236",
    "text": "30%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2031,7 +2911,127 @@
    "raw": 0.3
   },
   {
-   "id": "v164",
+   "id": "v237",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "wp"
+   },
+   "desc": "Live 10+ wp",
+   "raw": 0.754
+  },
+  {
+   "id": "v238",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "pre"
+   },
+   "desc": "Live 10+ pre",
+   "raw": 0.576
+  },
+  {
+   "id": "v239",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_wp"
+   },
+   "desc": "Live 10+ dog wp",
+   "raw": 0.551
+  },
+  {
+   "id": "v240",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_pre"
+   },
+   "desc": "Live 10+ dog pre",
+   "raw": 0.359
+  },
+  {
+   "id": "v241",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "wp"
+   },
+   "desc": "Live ctrl wp",
+   "raw": 0.45
+  },
+  {
+   "id": "v242",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "pre"
+   },
+   "desc": "Live ctrl pre",
+   "raw": 0.485
+  },
+  {
+   "id": "v243",
+   "text": "+2.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "Flip R1 Melquizael Costa",
+   "raw": 2.365
+  },
+  {
+   "id": "v244",
+   "text": "+0.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "Flip R1 Jared Gordon",
+   "raw": 0.138
+  },
+  {
+   "id": "v245",
+   "text": "+1.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "Flip R3 Jared Gordon",
+   "raw": 1.684
+  },
+  {
+   "id": "v246",
+   "text": "-0.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "Flip R3 Melquizael Costa",
+   "raw": -0.092
+  },
+  {
+   "id": "v247",
    "text": "-260",
    "fmt": "ml",
    "rule": "fight",
@@ -2044,7 +3044,7 @@
    "raw": -260
   },
   {
-   "id": "v165",
+   "id": "v248",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -2057,7 +3057,7 @@
    "raw": -179
   },
   {
-   "id": "v166",
+   "id": "v249",
    "text": "-122",
    "fmt": "ml",
    "rule": "fight",
@@ -2070,7 +3070,7 @@
    "raw": -122
   },
   {
-   "id": "v167",
+   "id": "v250",
    "text": "+195",
    "fmt": "ml",
    "rule": "fight",
@@ -2083,7 +3083,7 @@
    "raw": 195
   },
   {
-   "id": "v168",
+   "id": "v251",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -2096,7 +3096,7 @@
    "raw": -204
   },
   {
-   "id": "v169",
+   "id": "v252",
    "text": "+220",
    "fmt": "ml",
    "rule": "fight",
@@ -2109,7 +3109,7 @@
    "raw": 220
   },
   {
-   "id": "v170",
+   "id": "v253",
    "text": "+219",
    "fmt": "ml",
    "rule": "fight",
@@ -2122,7 +3122,7 @@
    "raw": 219
   },
   {
-   "id": "v171",
+   "id": "v254",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",
@@ -2135,7 +3135,7 @@
    "raw": -263
   },
   {
-   "id": "v172",
+   "id": "v255",
    "text": "+163",
    "fmt": "ml",
    "rule": "fight",
@@ -2148,7 +3148,7 @@
    "raw": 163
   },
   {
-   "id": "v173",
+   "id": "v256",
    "text": "+102",
    "fmt": "ml",
    "rule": "fight",
@@ -2161,7 +3161,7 @@
    "raw": 102
   },
   {
-   "id": "v174",
+   "id": "v257",
    "text": "-247",
    "fmt": "ml",
    "rule": "fight",
@@ -2174,7 +3174,7 @@
    "raw": -247
   },
   {
-   "id": "v175",
+   "id": "v258",
    "text": "-153",
    "fmt": "ml",
    "rule": "fight",
@@ -2187,7 +3187,7 @@
    "raw": -153
   },
   {
-   "id": "v176",
+   "id": "v259",
    "text": "-164",
    "fmt": "ml",
    "rule": "fight",
@@ -2200,7 +3200,7 @@
    "raw": -164
   },
   {
-   "id": "v177",
+   "id": "v260",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -2213,7 +3213,7 @@
    "raw": 180
   },
   {
-   "id": "v178",
+   "id": "v261",
    "text": "-130",
    "fmt": "ml",
    "rule": "fight",
@@ -2226,7 +3226,7 @@
    "raw": -130
   },
   {
-   "id": "v179",
+   "id": "v262",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -2239,7 +3239,7 @@
    "raw": -204
   },
   {
-   "id": "v180",
+   "id": "v263",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2252,7 +3252,7 @@
    "raw": -250
   },
   {
-   "id": "v181",
+   "id": "v264",
    "text": "-227",
    "fmt": "ml",
    "rule": "fight",
@@ -2265,7 +3265,7 @@
    "raw": -227
   },
   {
-   "id": "v182",
+   "id": "v265",
    "text": "+300",
    "fmt": "ml",
    "rule": "fight",

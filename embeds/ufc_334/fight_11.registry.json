@@ -960,30 +960,34 @@
    "id": "v77",
    "text": "57.4%",
    "fmt": "pct1",
-   "rule": "oa_open",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Caio Borralho",
      "Yousri Belgaroui"
-    ]
+    ],
+    "side": "a",
+    "at": "open"
    },
-   "desc": "OA open p",
+   "desc": "OA open p Caio Borralho",
    "raw": 0.5743
   },
   {
    "id": "v78",
    "text": "59.2%",
    "fmt": "pct1",
-   "rule": "oa_close",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Caio Borralho",
      "Yousri Belgaroui"
-    ]
+    ],
+    "side": "a",
+    "at": "close"
    },
-   "desc": "OA close p",
+   "desc": "OA close p Caio Borralho",
    "raw": 0.5919
   },
   {
@@ -1600,6 +1604,390 @@
   },
   {
    "id": "v130",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 0",
+   "raw": 5
+  },
+  {
+   "id": "v131",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 1",
+   "raw": -4
+  },
+  {
+   "id": "v132",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 2",
+   "raw": 3
+  },
+  {
+   "id": "v133",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 3",
+   "raw": 5
+  },
+  {
+   "id": "v134",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 4",
+   "raw": 4
+  },
+  {
+   "id": "v135",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 5",
+   "raw": -1
+  },
+  {
+   "id": "v136",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 6",
+   "raw": 6
+  },
+  {
+   "id": "v137",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 7",
+   "raw": 3
+  },
+  {
+   "id": "v138",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 8",
+   "raw": 13
+  },
+  {
+   "id": "v139",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 0",
+   "raw": -3
+  },
+  {
+   "id": "v140",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 1",
+   "raw": -6
+  },
+  {
+   "id": "v141",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 2",
+   "raw": -5
+  },
+  {
+   "id": "v142",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 3",
+   "raw": 9
+  },
+  {
+   "id": "v143",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 4",
+   "raw": 1
+  },
+  {
+   "id": "v144",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 5",
+   "raw": 5
+  },
+  {
+   "id": "v145",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 6",
+   "raw": 0
+  },
+  {
+   "id": "v146",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 7",
+   "raw": -10
+  },
+  {
+   "id": "v147",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 8",
+   "raw": 6
+  },
+  {
+   "id": "v148",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 0",
+   "raw": 0
+  },
+  {
+   "id": "v149",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 1",
+   "raw": 4
+  },
+  {
+   "id": "v150",
+   "text": "+22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 2",
+   "raw": 22
+  },
+  {
+   "id": "v151",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 4",
+   "raw": 8
+  },
+  {
+   "id": "v152",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 6",
+   "raw": -1
+  },
+  {
+   "id": "v153",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 7",
+   "raw": -12
+  },
+  {
+   "id": "v154",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 8",
+   "raw": 0
+  },
+  {
+   "id": "v155",
+   "text": "+30",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Yousri Belgaroui 0",
+   "raw": 30
+  },
+  {
+   "id": "v156",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Yousri Belgaroui 1",
+   "raw": 15
+  },
+  {
+   "id": "v157",
+   "text": "+27",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Yousri Belgaroui 2",
+   "raw": 27
+  },
+  {
+   "id": "v158",
+   "text": "+37",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Yousri Belgaroui 1",
+   "raw": 37
+  },
+  {
+   "id": "v159",
+   "text": "+25",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Yousri Belgaroui 2",
+   "raw": 25
+  },
+  {
+   "id": "v160",
+   "text": "+26",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Yousri Belgaroui 1",
+   "raw": 26
+  },
+  {
+   "id": "v161",
+   "text": "+26",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Yousri Belgaroui 2",
+   "raw": 26
+  },
+  {
+   "id": "v162",
    "text": "1.08",
    "fmt": "n2",
    "rule": "em",
@@ -1611,7 +1999,7 @@
    "raw": 1.08
   },
   {
-   "id": "v131",
+   "id": "v163",
    "text": "0.52",
    "fmt": "n2",
    "rule": "em",
@@ -1623,7 +2011,7 @@
    "raw": 0.518
   },
   {
-   "id": "v132",
+   "id": "v164",
    "text": "45%",
    "fmt": "pct0",
    "rule": "em",
@@ -1635,7 +2023,7 @@
    "raw": 0.4545
   },
   {
-   "id": "v133",
+   "id": "v165",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1647,7 +2035,7 @@
    "raw": 1.0
   },
   {
-   "id": "v134",
+   "id": "v166",
    "text": "74%",
    "fmt": "pct0",
    "rule": "em",
@@ -1659,7 +2047,7 @@
    "raw": 0.7368
   },
   {
-   "id": "v135",
+   "id": "v167",
    "text": "56%",
    "fmt": "pct0",
    "rule": "em",
@@ -1671,7 +2059,7 @@
    "raw": 0.5625
   },
   {
-   "id": "v136",
+   "id": "v168",
    "text": "27%",
    "fmt": "pct0",
    "rule": "em",
@@ -1683,7 +2071,7 @@
    "raw": 0.2685
   },
   {
-   "id": "v137",
+   "id": "v169",
    "text": "6%",
    "fmt": "pct0",
    "rule": "em",
@@ -1695,7 +2083,7 @@
    "raw": 0.0569
   },
   {
-   "id": "v138",
+   "id": "v170",
    "text": "7%",
    "fmt": "pct0",
    "rule": "em",
@@ -1707,7 +2095,7 @@
    "raw": 0.0747
   },
   {
-   "id": "v139",
+   "id": "v171",
    "text": "19%",
    "fmt": "pct0",
    "rule": "em",
@@ -1719,7 +2107,7 @@
    "raw": 0.1869
   },
   {
-   "id": "v140",
+   "id": "v172",
    "text": "0.43",
    "fmt": "n2",
    "rule": "em",
@@ -1731,7 +2119,7 @@
    "raw": 0.432
   },
   {
-   "id": "v141",
+   "id": "v173",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1743,7 +2131,7 @@
    "raw": 0.0
   },
   {
-   "id": "v142",
+   "id": "v174",
    "text": "+0.67",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1759,7 +2147,7 @@
    "raw": 0.6689999999999999
   },
   {
-   "id": "v143",
+   "id": "v175",
    "text": "+6.42",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1775,7 +2163,79 @@
    "raw": 6.417
   },
   {
-   "id": "v144",
+   "id": "v176",
+   "text": "+0.77",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.765
+  },
+  {
+   "id": "v177",
+   "text": "+6.46",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 6.455
+  },
+  {
+   "id": "v178",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Caio Borralho",
+   "raw": 7
+  },
+  {
+   "id": "v179",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Caio Borralho",
+   "raw": 9
+  },
+  {
+   "id": "v180",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Yousri Belgaroui",
+   "raw": 3
+  },
+  {
+   "id": "v181",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Yousri Belgaroui",
+   "raw": 3
+  },
+  {
+   "id": "v182",
    "text": "+0.70",
    "fmt": "s2",
    "rule": "em",
@@ -1787,7 +2247,7 @@
    "raw": 0.698
   },
   {
-   "id": "v145",
+   "id": "v183",
    "text": "+3.52",
    "fmt": "s2",
    "rule": "em",
@@ -1799,7 +2259,7 @@
    "raw": 3.519
   },
   {
-   "id": "v146",
+   "id": "v184",
    "text": "-0.04",
    "fmt": "s2",
    "rule": "em",
@@ -1811,7 +2271,7 @@
    "raw": -0.036
   },
   {
-   "id": "v147",
+   "id": "v185",
    "text": "+1.73",
    "fmt": "s2",
    "rule": "em",
@@ -1823,7 +2283,7 @@
    "raw": 1.725
   },
   {
-   "id": "v148",
+   "id": "v186",
    "text": "+0.01",
    "fmt": "s2",
    "rule": "em",
@@ -1835,7 +2295,7 @@
    "raw": 0.007
   },
   {
-   "id": "v149",
+   "id": "v187",
    "text": "+1.17",
    "fmt": "s2",
    "rule": "em",
@@ -1847,7 +2307,7 @@
    "raw": 1.173
   },
   {
-   "id": "v150",
+   "id": "v188",
    "text": "69%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1861,7 +2321,55 @@
    "raw": 0.692
   },
   {
-   "id": "v151",
+   "id": "v189",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Caio Borralho",
+   "raw": 8
+  },
+  {
+   "id": "v190",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Caio Borralho",
+   "raw": 8
+  },
+  {
+   "id": "v191",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Yousri Belgaroui",
+   "raw": 0
+  },
+  {
+   "id": "v192",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Yousri Belgaroui",
+   "raw": 2
+  },
+  {
+   "id": "v193",
    "text": "116%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1875,7 +2383,7 @@
    "raw": 1.165
   },
   {
-   "id": "v152",
+   "id": "v194",
    "text": "15.4",
    "fmt": "n1",
    "rule": "labs",
@@ -1889,7 +2397,7 @@
    "raw": 15.4
   },
   {
-   "id": "v153",
+   "id": "v195",
    "text": "9.7",
    "fmt": "n1",
    "rule": "labs",
@@ -1903,7 +2411,7 @@
    "raw": 9.7
   },
   {
-   "id": "v154",
+   "id": "v196",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1917,7 +2425,7 @@
    "raw": 0.0
   },
   {
-   "id": "v155",
+   "id": "v197",
    "text": "33%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1931,7 +2439,79 @@
    "raw": 0.333
   },
   {
-   "id": "v156",
+   "id": "v198",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "wp"
+   },
+   "desc": "Live 10+ wp",
+   "raw": 0.754
+  },
+  {
+   "id": "v199",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "pre"
+   },
+   "desc": "Live 10+ pre",
+   "raw": 0.576
+  },
+  {
+   "id": "v200",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_wp"
+   },
+   "desc": "Live 10+ dog wp",
+   "raw": 0.551
+  },
+  {
+   "id": "v201",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_pre"
+   },
+   "desc": "Live 10+ dog pre",
+   "raw": 0.359
+  },
+  {
+   "id": "v202",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "wp"
+   },
+   "desc": "Live ctrl wp",
+   "raw": 0.45
+  },
+  {
+   "id": "v203",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "pre"
+   },
+   "desc": "Live ctrl pre",
+   "raw": 0.485
+  },
+  {
+   "id": "v204",
    "text": "-233",
    "fmt": "ml",
    "rule": "fight",
@@ -1944,7 +2524,7 @@
    "raw": -233
   },
   {
-   "id": "v157",
+   "id": "v205",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -1957,7 +2537,7 @@
    "raw": -132
   },
   {
-   "id": "v158",
+   "id": "v206",
    "text": "-244",
    "fmt": "ml",
    "rule": "fight",
@@ -1970,7 +2550,7 @@
    "raw": -244
   },
   {
-   "id": "v159",
+   "id": "v207",
    "text": "-556",
    "fmt": "ml",
    "rule": "fight",
@@ -1983,7 +2563,7 @@
    "raw": -556
   },
   {
-   "id": "v160",
+   "id": "v208",
    "text": "-282",
    "fmt": "ml",
    "rule": "fight",
@@ -1996,7 +2576,7 @@
    "raw": -282
   },
   {
-   "id": "v161",
+   "id": "v209",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -2009,7 +2589,7 @@
    "raw": -370
   },
   {
-   "id": "v162",
+   "id": "v210",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -2022,7 +2602,7 @@
    "raw": -208
   },
   {
-   "id": "v163",
+   "id": "v211",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2035,7 +2615,7 @@
    "raw": -250
   },
   {
-   "id": "v164",
+   "id": "v212",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -2048,7 +2628,7 @@
    "raw": 100
   },
   {
-   "id": "v165",
+   "id": "v213",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2061,7 +2641,7 @@
    "raw": -714
   },
   {
-   "id": "v166",
+   "id": "v214",
    "text": "+124",
    "fmt": "ml",
    "rule": "fight",
@@ -2074,7 +2654,7 @@
    "raw": 124
   },
   {
-   "id": "v167",
+   "id": "v215",
    "text": "+240",
    "fmt": "ml",
    "rule": "fight",

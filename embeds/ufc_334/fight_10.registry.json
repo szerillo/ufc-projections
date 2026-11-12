@@ -958,33 +958,37 @@
   },
   {
    "id": "v77",
-   "text": "59.3%",
+   "text": "40.7%",
    "fmt": "pct1",
-   "rule": "oa_open",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Uros Medic",
      "Kevin Holland"
-    ]
+    ],
+    "side": "b",
+    "at": "open"
    },
-   "desc": "OA open p",
-   "raw": 0.593
+   "desc": "OA open p Kevin Holland",
+   "raw": 0.40700000000000003
   },
   {
    "id": "v78",
-   "text": "57.6%",
+   "text": "42.4%",
    "fmt": "pct1",
-   "rule": "oa_close",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Uros Medic",
      "Kevin Holland"
-    ]
+    ],
+    "side": "b",
+    "at": "close"
    },
-   "desc": "OA close p",
-   "raw": 0.5762
+   "desc": "OA close p Kevin Holland",
+   "raw": 0.42379999999999995
   },
   {
    "id": "v79",
@@ -1636,6 +1640,966 @@
   },
   {
    "id": "v133",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 0",
+   "raw": 10
+  },
+  {
+   "id": "v134",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 1",
+   "raw": 7
+  },
+  {
+   "id": "v135",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 2",
+   "raw": 6
+  },
+  {
+   "id": "v136",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 3",
+   "raw": 0
+  },
+  {
+   "id": "v137",
+   "text": "-11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 4",
+   "raw": -11
+  },
+  {
+   "id": "v138",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 5",
+   "raw": 0
+  },
+  {
+   "id": "v139",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 6",
+   "raw": 9
+  },
+  {
+   "id": "v140",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 7",
+   "raw": 1
+  },
+  {
+   "id": "v141",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 8",
+   "raw": 7
+  },
+  {
+   "id": "v142",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 9",
+   "raw": -19
+  },
+  {
+   "id": "v143",
+   "text": "+45",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Uros Medic 10",
+   "raw": 45
+  },
+  {
+   "id": "v144",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Uros Medic 6",
+   "raw": -3
+  },
+  {
+   "id": "v145",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Uros Medic 7",
+   "raw": 1
+  },
+  {
+   "id": "v146",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Uros Medic 8",
+   "raw": 7
+  },
+  {
+   "id": "v147",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Uros Medic 7",
+   "raw": 15
+  },
+  {
+   "id": "v148",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 0",
+   "raw": 2
+  },
+  {
+   "id": "v149",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 1",
+   "raw": -3
+  },
+  {
+   "id": "v150",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 2",
+   "raw": 11
+  },
+  {
+   "id": "v151",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 3",
+   "raw": 13
+  },
+  {
+   "id": "v152",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 4",
+   "raw": 14
+  },
+  {
+   "id": "v153",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 5",
+   "raw": -1
+  },
+  {
+   "id": "v154",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 6",
+   "raw": -1
+  },
+  {
+   "id": "v155",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 7",
+   "raw": 0
+  },
+  {
+   "id": "v156",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 8",
+   "raw": -6
+  },
+  {
+   "id": "v157",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 9",
+   "raw": -1
+  },
+  {
+   "id": "v158",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 10",
+   "raw": 5
+  },
+  {
+   "id": "v159",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 11",
+   "raw": 16
+  },
+  {
+   "id": "v160",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 12",
+   "raw": 15
+  },
+  {
+   "id": "v161",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 13",
+   "raw": 0
+  },
+  {
+   "id": "v162",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.14.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 14",
+   "raw": 13
+  },
+  {
+   "id": "v163",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.15.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 15",
+   "raw": 12
+  },
+  {
+   "id": "v164",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.16.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 16",
+   "raw": -6
+  },
+  {
+   "id": "v165",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.17.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 17",
+   "raw": 7
+  },
+  {
+   "id": "v166",
+   "text": "-11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.18.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 18",
+   "raw": -11
+  },
+  {
+   "id": "v167",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.19.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 19",
+   "raw": 13
+  },
+  {
+   "id": "v168",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.20.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 20",
+   "raw": 9
+  },
+  {
+   "id": "v169",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.21.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 21",
+   "raw": 16
+  },
+  {
+   "id": "v170",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.22.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 22",
+   "raw": 12
+  },
+  {
+   "id": "v171",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.23.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 23",
+   "raw": 14
+  },
+  {
+   "id": "v172",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.24.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 24",
+   "raw": 12
+  },
+  {
+   "id": "v173",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.25.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 25",
+   "raw": 3
+  },
+  {
+   "id": "v174",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.26.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 26",
+   "raw": 7
+  },
+  {
+   "id": "v175",
+   "text": "+48",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.27.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 27",
+   "raw": 48
+  },
+  {
+   "id": "v176",
+   "text": "-23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.28.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Holland 28",
+   "raw": -23
+  },
+  {
+   "id": "v177",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 0",
+   "raw": 5
+  },
+  {
+   "id": "v178",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 1",
+   "raw": -3
+  },
+  {
+   "id": "v179",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 2",
+   "raw": -19
+  },
+  {
+   "id": "v180",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 3",
+   "raw": 3
+  },
+  {
+   "id": "v181",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 4",
+   "raw": 14
+  },
+  {
+   "id": "v182",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 8",
+   "raw": 6
+  },
+  {
+   "id": "v183",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 9",
+   "raw": 15
+  },
+  {
+   "id": "v184",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 11",
+   "raw": 8
+  },
+  {
+   "id": "v185",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.12.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 12",
+   "raw": -5
+  },
+  {
+   "id": "v186",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.14.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 14",
+   "raw": 2
+  },
+  {
+   "id": "v187",
+   "text": "+17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.15.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 15",
+   "raw": 17
+  },
+  {
+   "id": "v188",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.17.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 17",
+   "raw": -1
+  },
+  {
+   "id": "v189",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.18.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 18",
+   "raw": 6
+  },
+  {
+   "id": "v190",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.21.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 21",
+   "raw": 3
+  },
+  {
+   "id": "v191",
+   "text": "+24",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.22.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 22",
+   "raw": 24
+  },
+  {
+   "id": "v192",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.24.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 24",
+   "raw": 0
+  },
+  {
+   "id": "v193",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.25.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 25",
+   "raw": -10
+  },
+  {
+   "id": "v194",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.26.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 26",
+   "raw": 9
+  },
+  {
+   "id": "v195",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.27.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 27",
+   "raw": 11
+  },
+  {
+   "id": "v196",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.28.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Holland 28",
+   "raw": 6
+  },
+  {
+   "id": "v197",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 0",
+   "raw": 3
+  },
+  {
+   "id": "v198",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 1",
+   "raw": 9
+  },
+  {
+   "id": "v199",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 2",
+   "raw": 13
+  },
+  {
+   "id": "v200",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 4",
+   "raw": 12
+  },
+  {
+   "id": "v201",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 8",
+   "raw": -12
+  },
+  {
+   "id": "v202",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.9.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 9",
+   "raw": 8
+  },
+  {
+   "id": "v203",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.11.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 11",
+   "raw": -2
+  },
+  {
+   "id": "v204",
+   "text": "-18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.12.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 12",
+   "raw": -18
+  },
+  {
+   "id": "v205",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.17.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 17",
+   "raw": 2
+  },
+  {
+   "id": "v206",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.18.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 18",
+   "raw": -4
+  },
+  {
+   "id": "v207",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.21.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 21",
+   "raw": -2
+  },
+  {
+   "id": "v208",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.22.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 22",
+   "raw": 3
+  },
+  {
+   "id": "v209",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.25.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 25",
+   "raw": 14
+  },
+  {
+   "id": "v210",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.26.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 26",
+   "raw": 1
+  },
+  {
+   "id": "v211",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.27.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 27",
+   "raw": 13
+  },
+  {
+   "id": "v212",
+   "text": "-21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "fights.28.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Holland 28",
+   "raw": -21
+  },
+  {
+   "id": "v213",
    "text": "0.36",
    "fmt": "n2",
    "rule": "em",
@@ -1647,7 +2611,7 @@
    "raw": 0.356
   },
   {
-   "id": "v134",
+   "id": "v214",
    "text": "0.83",
    "fmt": "n2",
    "rule": "em",
@@ -1659,7 +2623,7 @@
    "raw": 0.827
   },
   {
-   "id": "v135",
+   "id": "v215",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -1671,7 +2635,7 @@
    "raw": 0.5
   },
   {
-   "id": "v136",
+   "id": "v216",
    "text": "40%",
    "fmt": "pct0",
    "rule": "em",
@@ -1683,7 +2647,7 @@
    "raw": 0.3953
   },
   {
-   "id": "v137",
+   "id": "v217",
    "text": "56%",
    "fmt": "pct0",
    "rule": "em",
@@ -1695,7 +2659,7 @@
    "raw": 0.5556
   },
   {
-   "id": "v138",
+   "id": "v218",
    "text": "58%",
    "fmt": "pct0",
    "rule": "em",
@@ -1707,7 +2671,7 @@
    "raw": 0.5776
   },
   {
-   "id": "v139",
+   "id": "v219",
    "text": "4%",
    "fmt": "pct0",
    "rule": "em",
@@ -1719,7 +2683,7 @@
    "raw": 0.038
   },
   {
-   "id": "v140",
+   "id": "v220",
    "text": "13%",
    "fmt": "pct0",
    "rule": "em",
@@ -1731,7 +2695,7 @@
    "raw": 0.1322
   },
   {
-   "id": "v141",
+   "id": "v221",
    "text": "30%",
    "fmt": "pct0",
    "rule": "em",
@@ -1743,7 +2707,7 @@
    "raw": 0.2997
   },
   {
-   "id": "v142",
+   "id": "v222",
    "text": "33%",
    "fmt": "pct0",
    "rule": "em",
@@ -1755,7 +2719,7 @@
    "raw": 0.3264
   },
   {
-   "id": "v143",
+   "id": "v223",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1767,7 +2731,7 @@
    "raw": 0.0
   },
   {
-   "id": "v144",
+   "id": "v224",
    "text": "0.63",
    "fmt": "n2",
    "rule": "em",
@@ -1779,7 +2743,7 @@
    "raw": 0.632
   },
   {
-   "id": "v145",
+   "id": "v225",
    "text": "+1.78",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1795,7 +2759,7 @@
    "raw": 1.7790000000000001
   },
   {
-   "id": "v146",
+   "id": "v226",
    "text": "+0.88",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1811,7 +2775,79 @@
    "raw": 0.879
   },
   {
-   "id": "v147",
+   "id": "v227",
+   "text": "+1.76",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 1.759
+  },
+  {
+   "id": "v228",
+   "text": "+0.98",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 0.985
+  },
+  {
+   "id": "v229",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Uros Medic",
+   "raw": 7
+  },
+  {
+   "id": "v230",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Uros Medic",
+   "raw": 11
+  },
+  {
+   "id": "v231",
+   "text": "20",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Kevin Holland",
+   "raw": 20
+  },
+  {
+   "id": "v232",
+   "text": "29",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Kevin Holland",
+   "raw": 29
+  },
+  {
+   "id": "v233",
    "text": "+1.54",
    "fmt": "s2",
    "rule": "em",
@@ -1823,7 +2859,7 @@
    "raw": 1.542
   },
   {
-   "id": "v148",
+   "id": "v234",
    "text": "+0.42",
    "fmt": "s2",
    "rule": "em",
@@ -1835,7 +2871,7 @@
    "raw": 0.422
   },
   {
-   "id": "v149",
+   "id": "v235",
    "text": "+0.40",
    "fmt": "s2",
    "rule": "em",
@@ -1847,7 +2883,7 @@
    "raw": 0.403
   },
   {
-   "id": "v150",
+   "id": "v236",
    "text": "-0.03",
    "fmt": "s2",
    "rule": "em",
@@ -1859,7 +2895,7 @@
    "raw": -0.026
   },
   {
-   "id": "v151",
+   "id": "v237",
    "text": "-0.17",
    "fmt": "s2",
    "rule": "em",
@@ -1871,7 +2907,7 @@
    "raw": -0.166
   },
   {
-   "id": "v152",
+   "id": "v238",
    "text": "+0.48",
    "fmt": "s2",
    "rule": "em",
@@ -1883,7 +2919,7 @@
    "raw": 0.483
   },
   {
-   "id": "v153",
+   "id": "v239",
    "text": "65%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1897,7 +2933,7 @@
    "raw": 0.649
   },
   {
-   "id": "v154",
+   "id": "v240",
    "text": "60%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1911,7 +2947,55 @@
    "raw": 0.602
   },
   {
-   "id": "v155",
+   "id": "v241",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Uros Medic",
+   "raw": 1
+  },
+  {
+   "id": "v242",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Uros Medic",
+   "raw": 5
+  },
+  {
+   "id": "v243",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Kevin Holland",
+   "raw": 8
+  },
+  {
+   "id": "v244",
+   "text": "23",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Kevin Holland",
+   "raw": 23
+  },
+  {
+   "id": "v245",
    "text": "76%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1925,7 +3009,7 @@
    "raw": 0.763
   },
   {
-   "id": "v156",
+   "id": "v246",
    "text": "3.8",
    "fmt": "n1",
    "rule": "labs",
@@ -1939,7 +3023,7 @@
    "raw": 3.8
   },
   {
-   "id": "v157",
+   "id": "v247",
    "text": "10.9",
    "fmt": "n1",
    "rule": "labs",
@@ -1953,7 +3037,7 @@
    "raw": 10.9
   },
   {
-   "id": "v158",
+   "id": "v248",
    "text": "73%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1967,7 +3051,7 @@
    "raw": 0.727
   },
   {
-   "id": "v159",
+   "id": "v249",
    "text": "29%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1981,7 +3065,79 @@
    "raw": 0.286
   },
   {
-   "id": "v160",
+   "id": "v250",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "wp"
+   },
+   "desc": "Live 10+ wp",
+   "raw": 0.754
+  },
+  {
+   "id": "v251",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "pre"
+   },
+   "desc": "Live 10+ pre",
+   "raw": 0.576
+  },
+  {
+   "id": "v252",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_wp"
+   },
+   "desc": "Live 10+ dog wp",
+   "raw": 0.551
+  },
+  {
+   "id": "v253",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_pre"
+   },
+   "desc": "Live 10+ dog pre",
+   "raw": 0.359
+  },
+  {
+   "id": "v254",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "wp"
+   },
+   "desc": "Live ctrl wp",
+   "raw": 0.45
+  },
+  {
+   "id": "v255",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "pre"
+   },
+   "desc": "Live ctrl pre",
+   "raw": 0.485
+  },
+  {
+   "id": "v256",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -1994,7 +3150,7 @@
    "raw": -328
   },
   {
-   "id": "v161",
+   "id": "v257",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -2007,7 +3163,7 @@
    "raw": 170
   },
   {
-   "id": "v162",
+   "id": "v258",
    "text": "-131",
    "fmt": "ml",
    "rule": "fight",
@@ -2020,7 +3176,7 @@
    "raw": -131
   },
   {
-   "id": "v163",
+   "id": "v259",
    "text": "-357",
    "fmt": "ml",
    "rule": "fight",
@@ -2033,7 +3189,7 @@
    "raw": -357
   },
   {
-   "id": "v164",
+   "id": "v260",
    "text": "-206",
    "fmt": "ml",
    "rule": "fight",
@@ -2046,7 +3202,7 @@
    "raw": -206
   },
   {
-   "id": "v165",
+   "id": "v261",
    "text": "-270",
    "fmt": "ml",
    "rule": "fight",
@@ -2059,7 +3215,7 @@
    "raw": -270
   },
   {
-   "id": "v166",
+   "id": "v262",
    "text": "-104",
    "fmt": "ml",
    "rule": "fight",
@@ -2072,7 +3228,7 @@
    "raw": -104
   },
   {
-   "id": "v167",
+   "id": "v263",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -2085,7 +3241,7 @@
    "raw": 175
   },
   {
-   "id": "v168",
+   "id": "v264",
    "text": "+130",
    "fmt": "ml",
    "rule": "fight",
@@ -2098,7 +3254,7 @@
    "raw": 130
   },
   {
-   "id": "v169",
+   "id": "v265",
    "text": "-123",
    "fmt": "ml",
    "rule": "fight",
@@ -2111,7 +3267,7 @@
    "raw": -123
   },
   {
-   "id": "v170",
+   "id": "v266",
    "text": "-109",
    "fmt": "ml",
    "rule": "fight",
@@ -2124,7 +3280,7 @@
    "raw": -109
   },
   {
-   "id": "v171",
+   "id": "v267",
    "text": "-625",
    "fmt": "ml",
    "rule": "fight",
@@ -2137,7 +3293,7 @@
    "raw": -625
   },
   {
-   "id": "v172",
+   "id": "v268",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -2150,7 +3306,7 @@
    "raw": -179
   },
   {
-   "id": "v173",
+   "id": "v269",
    "text": "-102",
    "fmt": "ml",
    "rule": "fight",
@@ -2163,7 +3319,7 @@
    "raw": -102
   },
   {
-   "id": "v174",
+   "id": "v270",
    "text": "+114",
    "fmt": "ml",
    "rule": "fight",
@@ -2176,7 +3332,7 @@
    "raw": 114
   },
   {
-   "id": "v175",
+   "id": "v271",
    "text": "-147",
    "fmt": "ml",
    "rule": "fight",
@@ -2189,7 +3345,7 @@
    "raw": -147
   },
   {
-   "id": "v176",
+   "id": "v272",
    "text": "-294",
    "fmt": "ml",
    "rule": "fight",
@@ -2202,7 +3358,7 @@
    "raw": -294
   },
   {
-   "id": "v177",
+   "id": "v273",
    "text": "-135",
    "fmt": "ml",
    "rule": "fight",
@@ -2215,7 +3371,7 @@
    "raw": -135
   },
   {
-   "id": "v178",
+   "id": "v274",
    "text": "+101",
    "fmt": "ml",
    "rule": "fight",
@@ -2228,7 +3384,7 @@
    "raw": 101
   },
   {
-   "id": "v179",
+   "id": "v275",
    "text": "-145",
    "fmt": "ml",
    "rule": "fight",
@@ -2241,7 +3397,7 @@
    "raw": -145
   },
   {
-   "id": "v180",
+   "id": "v276",
    "text": "-244",
    "fmt": "ml",
    "rule": "fight",
@@ -2254,7 +3410,7 @@
    "raw": -244
   },
   {
-   "id": "v181",
+   "id": "v277",
    "text": "-185",
    "fmt": "ml",
    "rule": "fight",
@@ -2267,7 +3423,7 @@
    "raw": -185
   },
   {
-   "id": "v182",
+   "id": "v278",
    "text": "+460",
    "fmt": "ml",
    "rule": "fight",
@@ -2280,7 +3436,7 @@
    "raw": 460
   },
   {
-   "id": "v183",
+   "id": "v279",
    "text": "-333",
    "fmt": "ml",
    "rule": "fight",
@@ -2293,7 +3449,7 @@
    "raw": -333
   },
   {
-   "id": "v184",
+   "id": "v280",
    "text": "-400",
    "fmt": "ml",
    "rule": "fight",

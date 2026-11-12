@@ -958,33 +958,37 @@
   },
   {
    "id": "v77",
-   "text": "63.0%",
+   "text": "37.0%",
    "fmt": "pct1",
-   "rule": "oa_open",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Kayla Harrison",
      "Amanda Nunes"
-    ]
+    ],
+    "side": "b",
+    "at": "open"
    },
-   "desc": "OA open p",
-   "raw": 0.6299
+   "desc": "OA open p Amanda Nunes",
+   "raw": 0.3701
   },
   {
    "id": "v78",
-   "text": "62.8%",
+   "text": "37.2%",
    "fmt": "pct1",
-   "rule": "oa_close",
+   "rule": "oa_p",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Kayla Harrison",
      "Amanda Nunes"
-    ]
+    ],
+    "side": "b",
+    "at": "close"
    },
-   "desc": "OA close p",
-   "raw": 0.6281
+   "desc": "OA close p Amanda Nunes",
+   "raw": 0.3719
   },
   {
    "id": "v79",
@@ -1672,6 +1676,654 @@
   },
   {
    "id": "v136",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Kayla Harrison 0",
+   "raw": 2
+  },
+  {
+   "id": "v137",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Kayla Harrison 1",
+   "raw": 12
+  },
+  {
+   "id": "v138",
+   "text": "+45",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Kayla Harrison 2",
+   "raw": 45
+  },
+  {
+   "id": "v139",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Kayla Harrison 0",
+   "raw": 19
+  },
+  {
+   "id": "v140",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Kayla Harrison 1",
+   "raw": 1
+  },
+  {
+   "id": "v141",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Kayla Harrison 2",
+   "raw": 4
+  },
+  {
+   "id": "v142",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Kayla Harrison 1",
+   "raw": 18
+  },
+  {
+   "id": "v143",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 0",
+   "raw": 13
+  },
+  {
+   "id": "v144",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 1",
+   "raw": 4
+  },
+  {
+   "id": "v145",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 2",
+   "raw": 5
+  },
+  {
+   "id": "v146",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 3",
+   "raw": 16
+  },
+  {
+   "id": "v147",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 4",
+   "raw": 19
+  },
+  {
+   "id": "v148",
+   "text": "+31",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 5",
+   "raw": 31
+  },
+  {
+   "id": "v149",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 6",
+   "raw": 6
+  },
+  {
+   "id": "v150",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 7",
+   "raw": 10
+  },
+  {
+   "id": "v151",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 8",
+   "raw": 14
+  },
+  {
+   "id": "v152",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 9",
+   "raw": 14
+  },
+  {
+   "id": "v153",
+   "text": "+20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 10",
+   "raw": 20
+  },
+  {
+   "id": "v154",
+   "text": "+37",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 11",
+   "raw": 37
+  },
+  {
+   "id": "v155",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 12",
+   "raw": 6
+  },
+  {
+   "id": "v156",
+   "text": "+25",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 13",
+   "raw": 25
+  },
+  {
+   "id": "v157",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.14.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 14",
+   "raw": 14
+  },
+  {
+   "id": "v158",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.15.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 15",
+   "raw": 18
+  },
+  {
+   "id": "v159",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.16.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 16",
+   "raw": 13
+  },
+  {
+   "id": "v160",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.17.rw.0.2"
+   },
+   "desc": "R1 fight diff Amanda Nunes 17",
+   "raw": 7
+  },
+  {
+   "id": "v161",
+   "text": "+20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Amanda Nunes 0",
+   "raw": 20
+  },
+  {
+   "id": "v162",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Amanda Nunes 1",
+   "raw": -6
+  },
+  {
+   "id": "v163",
+   "text": "-38",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Amanda Nunes 2",
+   "raw": -38
+  },
+  {
+   "id": "v164",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Amanda Nunes 4",
+   "raw": 12
+  },
+  {
+   "id": "v165",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Amanda Nunes 5",
+   "raw": -7
+  },
+  {
+   "id": "v166",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Amanda Nunes 8",
+   "raw": 9
+  },
+  {
+   "id": "v167",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Amanda Nunes 9",
+   "raw": 4
+  },
+  {
+   "id": "v168",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.12.rw.1.2"
+   },
+   "desc": "R2 fight diff Amanda Nunes 12",
+   "raw": 19
+  },
+  {
+   "id": "v169",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.15.rw.1.2"
+   },
+   "desc": "R2 fight diff Amanda Nunes 15",
+   "raw": -19
+  },
+  {
+   "id": "v170",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Amanda Nunes 0",
+   "raw": 15
+  },
+  {
+   "id": "v171",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Amanda Nunes 1",
+   "raw": 8
+  },
+  {
+   "id": "v172",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Amanda Nunes 4",
+   "raw": 19
+  },
+  {
+   "id": "v173",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Amanda Nunes 5",
+   "raw": 8
+  },
+  {
+   "id": "v174",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Amanda Nunes 8",
+   "raw": 6
+  },
+  {
+   "id": "v175",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.9.rw.2.2"
+   },
+   "desc": "R3 fight diff Amanda Nunes 9",
+   "raw": 2
+  },
+  {
+   "id": "v176",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.12.rw.2.2"
+   },
+   "desc": "R3 fight diff Amanda Nunes 12",
+   "raw": -14
+  },
+  {
+   "id": "v177",
+   "text": "-17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.15.rw.2.2"
+   },
+   "desc": "R3 fight diff Amanda Nunes 15",
+   "raw": -17
+  },
+  {
+   "id": "v178",
+   "text": "+35",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.0.rw.3.2"
+   },
+   "desc": "R4 fight diff Amanda Nunes 0",
+   "raw": 35
+  },
+  {
+   "id": "v179",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.1.rw.3.2"
+   },
+   "desc": "R4 fight diff Amanda Nunes 1",
+   "raw": 12
+  },
+  {
+   "id": "v180",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.4.rw.3.2"
+   },
+   "desc": "R4 fight diff Amanda Nunes 4",
+   "raw": 21
+  },
+  {
+   "id": "v181",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.5.rw.3.2"
+   },
+   "desc": "R4 fight diff Amanda Nunes 5",
+   "raw": 8
+  },
+  {
+   "id": "v182",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.8.rw.3.2"
+   },
+   "desc": "R4 fight diff Amanda Nunes 8",
+   "raw": 19
+  },
+  {
+   "id": "v183",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.9.rw.3.2"
+   },
+   "desc": "R4 fight diff Amanda Nunes 9",
+   "raw": 4
+  },
+  {
+   "id": "v184",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.0.rw.4.2"
+   },
+   "desc": "R5 fight diff Amanda Nunes 0",
+   "raw": 18
+  },
+  {
+   "id": "v185",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.1.rw.4.2"
+   },
+   "desc": "R5 fight diff Amanda Nunes 1",
+   "raw": 7
+  },
+  {
+   "id": "v186",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.4.rw.4.2"
+   },
+   "desc": "R5 fight diff Amanda Nunes 4",
+   "raw": 11
+  },
+  {
+   "id": "v187",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.5.rw.4.2"
+   },
+   "desc": "R5 fight diff Amanda Nunes 5",
+   "raw": -1
+  },
+  {
+   "id": "v188",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.8.rw.4.2"
+   },
+   "desc": "R5 fight diff Amanda Nunes 8",
+   "raw": 12
+  },
+  {
+   "id": "v189",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "fights.9.rw.4.2"
+   },
+   "desc": "R5 fight diff Amanda Nunes 9",
+   "raw": -10
+  },
+  {
+   "id": "v190",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -1683,7 +2335,7 @@
    "raw": 6
   },
   {
-   "id": "v137",
+   "id": "v191",
    "text": "4.7",
    "fmt": "n1",
    "rule": "em",
@@ -1695,7 +2347,7 @@
    "raw": 4.748
   },
   {
-   "id": "v138",
+   "id": "v192",
    "text": "4.0",
    "fmt": "n1",
    "rule": "em",
@@ -1707,7 +2359,7 @@
    "raw": 4.01
   },
   {
-   "id": "v139",
+   "id": "v193",
    "text": "+2.4",
    "fmt": "s1",
    "rule": "em",
@@ -1719,7 +2371,7 @@
    "raw": 2.361
   },
   {
-   "id": "v140",
+   "id": "v194",
    "text": "2.84",
    "fmt": "n2",
    "rule": "em",
@@ -1731,7 +2383,7 @@
    "raw": 2.839
   },
   {
-   "id": "v141",
+   "id": "v195",
    "text": "2.79",
    "fmt": "n2",
    "rule": "em",
@@ -1743,7 +2395,7 @@
    "raw": 2.789
   },
   {
-   "id": "v142",
+   "id": "v196",
    "text": "38%",
    "fmt": "pct0",
    "rule": "em",
@@ -1755,7 +2407,7 @@
    "raw": 0.375
   },
   {
-   "id": "v143",
+   "id": "v197",
    "text": "57%",
    "fmt": "pct0",
    "rule": "em",
@@ -1767,7 +2419,7 @@
    "raw": 0.5672
   },
   {
-   "id": "v144",
+   "id": "v198",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1779,7 +2431,7 @@
    "raw": 1.0
   },
   {
-   "id": "v145",
+   "id": "v199",
    "text": "81%",
    "fmt": "pct0",
    "rule": "em",
@@ -1791,7 +2443,7 @@
    "raw": 0.8125
   },
   {
-   "id": "v146",
+   "id": "v200",
    "text": "59%",
    "fmt": "pct0",
    "rule": "em",
@@ -1803,7 +2455,7 @@
    "raw": 0.5941
   },
   {
-   "id": "v147",
+   "id": "v201",
    "text": "34%",
    "fmt": "pct0",
    "rule": "em",
@@ -1815,7 +2467,7 @@
    "raw": 0.3423
   },
   {
-   "id": "v148",
+   "id": "v202",
    "text": "1%",
    "fmt": "pct0",
    "rule": "em",
@@ -1827,7 +2479,7 @@
    "raw": 0.0079
   },
   {
-   "id": "v149",
+   "id": "v203",
    "text": "6%",
    "fmt": "pct0",
    "rule": "em",
@@ -1839,7 +2491,7 @@
    "raw": 0.0646
   },
   {
-   "id": "v150",
+   "id": "v204",
    "text": "0.95",
    "fmt": "n2",
    "rule": "em",
@@ -1851,7 +2503,7 @@
    "raw": 0.946
   },
   {
-   "id": "v151",
+   "id": "v205",
    "text": "0.73",
    "fmt": "n2",
    "rule": "em",
@@ -1863,7 +2515,7 @@
    "raw": 0.734
   },
   {
-   "id": "v152",
+   "id": "v206",
    "text": "+3.18",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1879,7 +2531,7 @@
    "raw": 3.1849999999999996
   },
   {
-   "id": "v153",
+   "id": "v207",
    "text": "+2.10",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1895,7 +2547,79 @@
    "raw": 2.1
   },
   {
-   "id": "v154",
+   "id": "v208",
+   "text": "+3.38",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 3.379
+  },
+  {
+   "id": "v209",
+   "text": "+2.19",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 2.189
+  },
+  {
+   "id": "v210",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Kayla Harrison",
+   "raw": 3
+  },
+  {
+   "id": "v211",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Kayla Harrison",
+   "raw": 3
+  },
+  {
+   "id": "v212",
+   "text": "16",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Amanda Nunes",
+   "raw": 16
+  },
+  {
+   "id": "v213",
+   "text": "18",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Amanda Nunes",
+   "raw": 18
+  },
+  {
+   "id": "v214",
    "text": "+2.40",
    "fmt": "s2",
    "rule": "em",
@@ -1907,7 +2631,7 @@
    "raw": 2.397
   },
   {
-   "id": "v155",
+   "id": "v215",
    "text": "+1.42",
    "fmt": "s2",
    "rule": "em",
@@ -1919,7 +2643,7 @@
    "raw": 1.424
   },
   {
-   "id": "v156",
+   "id": "v216",
    "text": "+0.66",
    "fmt": "s2",
    "rule": "em",
@@ -1931,7 +2655,7 @@
    "raw": 0.662
   },
   {
-   "id": "v157",
+   "id": "v217",
    "text": "+0.25",
    "fmt": "s2",
    "rule": "em",
@@ -1943,7 +2667,7 @@
    "raw": 0.25
   },
   {
-   "id": "v158",
+   "id": "v218",
    "text": "+0.13",
    "fmt": "s2",
    "rule": "em",
@@ -1955,7 +2679,7 @@
    "raw": 0.126
   },
   {
-   "id": "v159",
+   "id": "v219",
    "text": "+0.43",
    "fmt": "s2",
    "rule": "em",
@@ -1967,7 +2691,55 @@
    "raw": 0.426
   },
   {
-   "id": "v160",
+   "id": "v220",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Kayla Harrison",
+   "raw": 3
+  },
+  {
+   "id": "v221",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Kayla Harrison",
+   "raw": 3
+  },
+  {
+   "id": "v222",
+   "text": "10",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Amanda Nunes",
+   "raw": 10
+  },
+  {
+   "id": "v223",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Amanda Nunes",
+   "raw": 11
+  },
+  {
+   "id": "v224",
    "text": "71%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1981,7 +2753,7 @@
    "raw": 0.712
   },
   {
-   "id": "v161",
+   "id": "v225",
    "text": "10.6",
    "fmt": "n1",
    "rule": "labs",
@@ -1995,7 +2767,7 @@
    "raw": 10.6
   },
   {
-   "id": "v162",
+   "id": "v226",
    "text": "11.4",
    "fmt": "n1",
    "rule": "labs",
@@ -2009,7 +2781,7 @@
    "raw": 11.4
   },
   {
-   "id": "v163",
+   "id": "v227",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2023,7 +2795,7 @@
    "raw": 0.0
   },
   {
-   "id": "v164",
+   "id": "v228",
    "text": "50%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2037,7 +2809,79 @@
    "raw": 0.5
   },
   {
-   "id": "v165",
+   "id": "v229",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "wp"
+   },
+   "desc": "Live 10+ wp",
+   "raw": 0.754
+  },
+  {
+   "id": "v230",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "pre"
+   },
+   "desc": "Live 10+ pre",
+   "raw": 0.576
+  },
+  {
+   "id": "v231",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_wp"
+   },
+   "desc": "Live 10+ dog wp",
+   "raw": 0.551
+  },
+  {
+   "id": "v232",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed by 10+ in round 1",
+    "field": "dog_pre"
+   },
+   "desc": "Live 10+ dog pre",
+   "raw": 0.359
+  },
+  {
+   "id": "v233",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "wp"
+   },
+   "desc": "Live ctrl wp",
+   "raw": 0.45
+  },
+  {
+   "id": "v234",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "labs_live",
+   "args": {
+    "label": "Out-landed in round 1 but gave up 2+ min of control",
+    "field": "pre"
+   },
+   "desc": "Live ctrl pre",
+   "raw": 0.485
+  },
+  {
+   "id": "v235",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2050,7 +2894,7 @@
    "raw": -714
   },
   {
-   "id": "v166",
+   "id": "v236",
    "text": "-1111",
    "fmt": "ml",
    "rule": "fight",
@@ -2063,7 +2907,7 @@
    "raw": -1111
   },
   {
-   "id": "v167",
+   "id": "v237",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -2076,7 +2920,7 @@
    "raw": -455
   },
   {
-   "id": "v168",
+   "id": "v238",
    "text": "-312",
    "fmt": "ml",
    "rule": "fight",
@@ -2089,7 +2933,7 @@
    "raw": -312
   },
   {
-   "id": "v169",
+   "id": "v239",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",
