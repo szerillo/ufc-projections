@@ -534,6 +534,41 @@ def lh_recheck(G, slug, quiet=False):
                             x = am_(v[i_])
                             if dec(x) >= dec(L_) or ((x > 0) == (L_ > 0) and abs(x - L_) <= 2): ok_ = True
                 if ok_ != r_["listed"][sd_]["ok"]: print(f"  LISTED {k_} {sd_} {L_}: file ok={r_['listed'][sd_]['ok']}, recomputed {ok_}"); nb_ += 1
+    # Kirk round 10 A: the event file's odds block (the public fight page's open/close) is rewritten every Friday and is not
+    # locked, so it is recomputed here from the raw archive with this file's own matching (bout found by names and date, not
+    # by the builder's event id) and its own summary (all listed books, no-vig median per snapshot, lone-book opener dropped).
+    evp_ = next((REPO / "form/data/events" / f'{u["slug"]}.json' for u in json.loads((FD / "index.json").read_text()).get("upcoming", [])
+                 if json.loads((FD / "events" / f'{u["slug"]}.json').read_text()).get("bp_file") == f"data/{slug}_odds.json"), None)
+    nev_ = 0
+    if evp_:
+        EVd = json.loads(evp_.read_text()); d0 = date.fromisoformat(EVd["date"])
+        msc = lambda x, y: 2 if is_(x, y) else difflib.SequenceMatcher(None, "".join(sorted(sq(x))), "".join(sorted(sq(y)))).ratio()
+        heads = {e: (v[-1][2], v[-1][3], v[-1][1]) for e, v in snaps.items()}
+        for f in EVd["fights"]:
+            an_, bn_ = f["a"]["name"], f["b"]["name"]
+            cands = [e for e, (h, w, st) in heads.items() if abs((date.fromisoformat(st[:10]) - d0).days) <= 2
+                     and max(min(msc(an_, h), msc(bn_, w)), min(msc(an_, w), msc(bn_, h))) >= 0.85]
+            o_ = f.get("odds")
+            if not cands:
+                if o_: print(f"  EVENT ODDS {an_} vs {bn_}: odds block present but no archive bout found"); nev_ += 1
+                continue
+            e = max(cands, key=lambda e: len(snaps[e])); ss = sorted(snaps[e], key=lambda x: x[0]); start = ss[-1][1]
+            pre = [x for x in ss if x[0] <= start] or ss
+            pts = []
+            for t, st, h, w, books in pre:
+                amh = msc(an_, h) >= msc(an_, w)
+                pr = [((v[0], v[1]) if amh else (v[1], v[0])) for b, v in books.items() if b in LIST_]
+                nv = [(1 / x) / (1 / x + 1 / y) for x, y in pr]
+                if nv: pts.append((t, statistics.median(nv), len(nv), statistics.median(x for x, _ in pr), statistics.median(y for _, y in pr)))
+            while len(pts) > 2 and pts[0][2] <= 1 and abs(pts[0][1] - pts[1][1]) > 0.12: pts.pop(0)
+            if not pts: continue
+            if not o_: print(f"  EVENT ODDS {an_} vs {bn_}: archive has the bout, the event file has no odds block"); nev_ += 1; continue
+            for k, pt in (("open", pts[0]), ("close", pts[-1])):
+                amx = lambda d: round((d - 1) * 100) if d >= 2 else round(-100 / (d - 1))
+                if o_[k]["t"][:19] != pt[0][:19] or abs(o_[k]["p"] - pt[1]) > 0.0006 or abs(o_[k]["ma"] - amx(pt[3])) > 1 or abs(o_[k]["mb"] - amx(pt[4])) > 1:
+                    print(f"  EVENT ODDS {an_} vs {bn_}: {k} {o_[k]['t'][:16]} {o_[k]['p']} vs recomputed {pt[0][:16]} {pt[1]:.4f}"); nev_ += 1
+        if not quiet: print(f"EVENT ODDS RECHECK: {len(EVd['fights'])} bouts, {nev_} mismatches")
+    nb_ += nev_
     if not quiet: print(f"LINE HISTORY RECHECK: {len(LHd['fights'])} bouts, {nb_} mismatches")
     return nb_
 
@@ -553,6 +588,15 @@ def negative(D, G, slug):
         return fn
     def lock_edit(T, G_):   # a shared, locked file changed after the bless (card_overrides.json, one byte), restored right after the check
         p_ = REPO / "data/card_overrides.json"; G_["RESTORE"] = (p_, p_.read_bytes()); p_.write_bytes(p_.read_bytes() + b"\n")
+    def ev_edit(which):   # Kirk round 10 A: the event file's Form block (locked) and odds block (recomputed from the archive)
+        def go(T, G_):
+            p_ = next((REPO / "form/data/events" / f'{u["slug"]}.json' for u in json.loads((FD / "index.json").read_text())["upcoming"]
+                       if json.loads((FD / "events" / f'{u["slug"]}.json').read_text()).get("bp_file") == f"data/{slug}_odds.json"))
+            G_["RESTORE"] = (p_, p_.read_bytes()); d_ = json.loads(p_.read_bytes()); f_ = max(d_["fights"], key=lambda x: x["n"])
+            if which == "form": f_["form"]["p"] = round(1 - f_["form"]["p"], 4)
+            else: f_["odds"]["close"]["p"] = round(f_["odds"]["close"]["p"] + 0.02, 4)
+            p_.write_text(json.dumps(d_, separators=(",", ":"), ensure_ascii=False))
+        return go
     def st_edit(T, G_):
         d_ = json.loads((REPO / "data/embeds/spot_tests.json").read_text()); d_["T1"]["win"] = 0.718; G_["ST_OVERRIDE"] = json.dumps(d_, indent=1).encode()
     def lh_shift(T, G_):
@@ -580,6 +624,8 @@ def negative(D, G, slug):
         ("line history: a current line moved 1 pt in the file (fight 12)", lh_shift),
         ("shared input: a backtest number edited in spot_tests.json (builder and checker both read it)", st_edit),
         ("shared input: a locked file changed without a bless (card_overrides.json)", lock_edit),
+        ("event file: one fighter's Form line swapped (main event)", ev_edit("form")),
+        ("event file: odds close moved 2 pts (main event)", ev_edit("odds")),
         ("embed: one round-trend point moved (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(<circle cx="[\d.]+" cy=")([\d.]+)(" r="4")', lambda m: m.group(1) + f"{float(m.group(2)) + 9:.1f}" + m.group(3), s_, count=1))),
         ("embed: Duncan's at-the-floor note removed (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace("Duncan: R3 sits right at the 15-minute floor; thin sample.", "", 1))),
         ("embed: Corrections link dropped from the footer (fight 03)", plant_text("fight_03.html", lambda s_: s_.replace('>Corrections</a>', '></a>', 1))),

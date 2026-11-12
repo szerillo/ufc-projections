@@ -6,7 +6,7 @@
 
 Locked files have no independent source the checker can recompute them from. Files with an independent source are not
 locked: line history (raw odds archive), the stats file (UFCStats CSVs), the odds feed (archive side check), the sheet export
-(it is the source; export age gate). The event file is locked minus the blocks the Friday refresh rewrites (odds, form, bp).
+(it is the source; export age gate). The event file is locked minus its odds block, which the Friday refresh rewrites and the checker recomputes from the raw archive.
 A bless writes the new fingerprints with who, why and old -> new into data/embeds/locks.json; it refuses to run inside the
 Friday refresh or the rehearsal (EMBED_PIPELINE=1), so a pipeline run can never re-bless its own inputs.
 """
@@ -23,7 +23,7 @@ def view(p):
     if "/events/" in str(p):
         d = json.loads(b)
         for f in d.get("fights", []):
-            for k in ("odds", "form", "bp"): f.pop(k, None)
+            f.pop("odds", None)   # Kirk round 10 A: only the odds block is left out (the Friday refresh rewrites it; the checker recomputes it from the archive)
         b = json.dumps(d, sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(b).hexdigest()
 def files(slug):
@@ -41,7 +41,7 @@ def main():
     if a.cmd == "check":
         for f, (o, n) in changed.items(): print(f"  LOCK: {f} {'not pinned' if o is None else 'changed since it was blessed'} ({(o or '-')[:12]} -> {n[:12]})")
         print(f"LOCKS: {len(cur)} files, {len(changed)} changed"); sys.exit(1 if changed else 0)
-    if os.environ.get("EMBED_PIPELINE") == "1": sys.exit("refusing to bless inside a pipeline run: bless by hand, with a reason")
+    if os.environ.get("EMBED_PIPELINE") == "1" or os.environ.get("GITHUB_ACTIONS") == "true": sys.exit("refusing to bless inside a pipeline run: bless by hand, with a reason")
     if not a.reason or len(a.reason) < 10: sys.exit("a bless needs --reason (what changed and why it is legitimate)")
     for f, (o, n) in changed.items(): print(f"  bless {f}: {(o or '-')[:12]} -> {n[:12]}")
     L["locks"][a.slug] = cur

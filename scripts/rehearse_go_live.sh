@@ -3,7 +3,7 @@
 #   scripts/rehearse_go_live.sh            (UFC 334 defaults; sharp-tracker checkout at /tmp/st)
 # Passes only if: the export is newer than the 01:18 UTC Nov 12 export and under 2 h old; the full Friday refresh is green;
 # every planted error is caught; Gordon/Costa/Hasan Listed flags are reported (cleared or still flagged). Changes nothing on main.
-set -euo pipefail; cd "$(dirname "$0")/.."
+set -euo pipefail; export EMBED_PIPELINE=1; cd "$(dirname "$0")/.."   # no lock bless anywhere inside the rehearsal (round 10 B)
 CARD="${CARD:-UFC 334: Gane vs. Hokit}"; SLUG="${SLUG:-ufc_334}"; EVENT="${EVENT:-form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json}"; ST="${ST:-/tmp/st}"
 OLD="2026-11-12T01:18:40"
 bash scripts/friday_refresh.sh "$CARD" "$SLUG" "$EVENT" "$ST" | tee /tmp/_rehearsal.txt

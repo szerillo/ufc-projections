@@ -43,7 +43,7 @@ t = re.search(r"newest snapshot (\S+)", open("/tmp/_refresh_odds.txt").read()).g
 age = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(t.replace("Z", "+00:00"))).total_seconds() / 3600
 print(f"  archive age {age:.1f} h"); sys.exit(0 if age < 3 else "line-history archive is more than 3 hours old")
 PY
-python3 -I scripts/check_price_freshness.py --event "$EVENT" | tail -1   # Kirk round 9 A: every unstarted bout priced in the last 3 h, else stop
+python3 -I scripts/check_price_freshness.py --event "$EVENT" | tail -1   # Kirk round 9 A: every unstarted bout priced in the last 4 h (Staleness_Threshold_PREREG), else stop
 step "3b embed line history + Listed check"
 python3 -I scripts/fetch_kalshi_ufc.py --out "data/embeds/kalshi_${SLUG}.json"   # dormant fallback input only
 python3 -I scripts/build_line_history.py --slug "$SLUG" --event "$EVENT" --kalshi "data/embeds/kalshi_${SLUG}.json" | tail -1
