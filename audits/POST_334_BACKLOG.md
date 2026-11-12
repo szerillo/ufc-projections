@@ -1,58 +1,61 @@
-# After UFC 334 (Nov 14 2026): first items, in order
+# After UFC 334 (Nov 14 2026): open items, in priority order
 
-Logged 2026-11-12 (Kirk round 18). Nothing here is done before the card; the publish script is frozen until then.
+Rewritten at the code freeze (Kirk, Nov 12). Nothing here is done before the card except the merge itself, the Saturday check or a
+real bug. Every rule or threshold change is pre-registered first and run once. Evidence for each item is in the round folders
+named.
 
-1. **Publish export: remove sheet coordinates and raw inputs.** `data/pending/<slug>_projections.json` is public once on main.
-   It carries sheet coordinates per fight (`tab`, `row`, `calc_row`) and raw sheet inputs (`tap`, `junk`, `tip`, `markov`,
-   `shift`, `open_dog`, `ctx`, `manual`). Change the publish script (frozen at de4c2be3 until after 334) to drop them, then
-   check every consumer (`publish_source.py`, `build_fight_embeds.py`, `verify_fight_embeds.py` rules `pub_ml`, `pubp`)
-   still has what it needs. Pre-register the field list and run the public scan on the new export.
-2. **Refresh `form/data/research.json`** from a full build. It was built on 2,388 fights; the current code gives 2,420 (the
-   round 7 matcher fix). Every Labs number moves; the embed debut box moves from 233 / 49.8% / -11.9% to 234 / 49.6% / -12.3%
-   (the added bout: 2025-02-08 Rongzhu vs Kody Steele). Rebuild `data/embeds/debut_angle_stats.json` with it.
-3. **`scripts/check_rounds.py --post`** for the first real post-card five-round comparison (UFC 334's pre-fight version is
-   committed).
-4. **TUF sensitivity for the debut angle** (Kirk round 19). Pre-register, then run the debut_vs_vet angle with TUF tournament
-   bouts counted both ways (as prior UFC fights, as now; and not counted). Report both with the research.json refresh in
-   item 2. The embed box does not change before that.
-5. **Merge guard.** If main moved before the merge, `scripts/main_guard.py` refuses; redo the round-18 served-set check on the
-   real merge result and record the new main SHA in `audits/MAIN_AT_CHECK.txt` on purpose.
-6. **Labs angle bugs (round 20 found, round 21 measured; fix with the research refresh in item 2, pre-registered).** Live on main
-   now; Labs and the fight-page angle rows carry an "under review" mark from `form/data/labs_review.json` until the rebuild.
-   - `form_model.angle_sides`: when BOTH fighters qualify only side b is kept (dict overwrite). 8 angles: off_big_fig (+148
-     bets on the published set), off_bad_fig (+113), age37 (+43), moving_up (+24), power_vs_chin (+9), moving_down (+7),
-     wrestler_weak_tdd (+6), wrestler_strong_tdd (+2). Also drops one side's chip on upcoming fight pages (334: fights 13, 12).
-   - Shared UFCStats names (Bruno Silva, Jean Silva, Mike Davis, Anthony Romero, Victor Valenzuela): `load_ufcstats` takes the
-     FIRST tott row; wrong in 23 of 30 bouts since 2022 (fight-page IDs in `audits/round21/ns_ids.txt`). 36 memberships change
-     in younger5, vs_36, reach4, age37 and southpaw (southpaw +2: Romero 2026-10-03, Levy 2024-03-16). The same row feeds the
-     Form model's age/reach/stance features, so those fighters' Form Lines move too; fight histories are also merged by name
-     (fighter pages already show the shared-name banner).
-   - Together: 111 displayed Labs numbers in 12 of 46 angles change; no angle's ROI at the close changes sign
-     (`audits/round21/labs_fix_effect.txt`). Fix: key bios and histories by UFCStats fighter ID, count every qualifying side.
-7. **Bio values where UFCStats and UFC.com disagree (Kirk round 24 call 2).** Bia Mesquita reach (UFCStats 67", UFC.com 67.50)
-   and Juan Diaz reach (69" vs 69.50) stay "not listed" for UFC 334: Bio_Fill_PREREG said the two must agree, and no rounding
-   tolerance is added after the fact. Hasan and Diaz stance stay "not listed" (UFC.com has no stance field). After 334,
-   pre-register a rule for half-inch differences and for a second stance source before using either. Note: a missing reach
-   zeroes the Form model's reach term (read as equal reach), in training and prediction alike (audits/round24/B_missing_reach.txt).
-8. **Drift box (Kirk round 25 A): pulled before shipping.** The Labs drift reference (1,733 fights) is all books at open and at
-   close; the box's "now" used US-regulated books only. Same book set for Gane: -7.3 pts and 157/1,733 = 9.1% (box showed -7.1
-   and 166 = 9.6%). To bring it back, pre-register ONE book set for both sides: either rebuild the reference set from US-regulated
-   books at open and close, or show an all-books "now" on the box (which breaks the US-only current-line rule, so likely the former).
-9. **Missing reach vs newness (Kirk round 26).** Round 25's pre-registered check flagged Form overrating the fighter with a
-   missing reach (-17.3 pts, 269 bouts), but it does not separate a missing reach from being new or low-profile, and "missing"
-   was read from today's data, not fight time (audits/round26/A_reach_dating.txt). Pre-register a test that (a) dates reach as of
-   fight time from archived UFCStats pages, (b) compares against bouts matched on UFC fight count, and (c) removes the shared-name
-   rows (Jean Silva 1977 row, blank Mike Davis row, wrong Victor Valenzuela row). No public claim about direction until then;
-   the site says only "Reach not listed; Form treats it as equal."
-10. **Fighter bio refresh from UFCStats pages (Kirk round 27 call 1).** Pre-registered in audits/round27/Bio_Refresh_PREREG_post334.md.
-   Round 27 A found the upstream bio file stale on the 334 card; the list of numbers it would move is in audits/round27/A_moves.txt.
-   Round 28 B: one rule for all changes, blanks included: UFCStats and UFC.com must agree exactly (stance: no change, no second
-   source). Round 28 holds (form/data/form_holds.json: fight 3 Form Line, Belgaroui height, Labs height rows 3 in / 4 in) are
-   released only by a build whose inputs pass that rule; run scripts/form_holds.py after any labs or form rebuild until then.
-11. **Corrections backlog: fight 11 Form Line (Kirk round 29 call 1).** Left as shown (Borralho 40.2%). It reads Yousri
-   Belgaroui's height from our file (6'5"); UFCStats (6'6") and UFC.com (78.00 in = 6'6") agree with each other, not with us.
-   Round 27's full rebuild moved it to 40.0% (height plus refit, 0.19 pts). Fix with the bio refresh (item 10); list it on the
-   corrections page then, naming the source conflict.
-12. **Loader guard v2.9 (Kirk round 29 A).** Candidate on branch `loader-guard` (refuse to clear a row still listed on
-   BestFightOdds/Polymarket/Novig; loud bout-count drop; named override "Remove a cancelled bout"). Not installed: the Thursday
-   loader is frozen at v2.8. Install only on Kirk's go.
+1. **Grade UFC 334.**
+   Next: Sunday or Monday, run Grade last card in the sheet (Snapshots and PropSnap), then `python3 -I scripts/check_rounds.py --post`.
+   Record Markov window card 9 of 10.
+   Re-judge, without changing them, the 4 h price-staleness threshold (round 11: "set on UFC 334 data") and the thin-market display.
+2. **Loader v2.9 in its first live week.**
+   - Installed Thursday if Kirk ran T1-T5; otherwise v2.7 or v2.8 is live.
+   - Next: log every `!!!` alert line from Friday and Saturday (REFUSED rows, source-unreachable refusals, bout-count drops) and whether each was right.
+   - Only the node harness has exercised the guard (25 plants), never real Apps Script; first real refusals get read by hand.
+   - Evidence: audits/round30.
+3. **BFO's stale Caesars column.**
+   - BFO showed Gordon +420 / Costa -625 for 40+ hours. Caesars' own US feed was +300 to +310 all week (audits/round30/B_caesars_420.txt).
+   - The TRAP rule caught it, but only because an exchange fair existed.
+   - Next: pre-register a stale-book check (a book's price unchanged for N hours while the consensus moves, or disagreeing with that book's own feed), and decide what D uses when it fires.
+4. **Fighter bio refresh** (prereg: audits/round27/Bio_Refresh_PREREG_post334.md, two-source rule from round 28 B). Next: run it as pre-registered.
+   - Fetch UFCStats and UFC.com by fighter ID.
+   - Build twice and diff every page number.
+   - Any change that can't be traced to a refreshed field reverts the whole refresh.
+
+   The refresh releases or keeps the round 28 holds (fight 3 Form Line, Belgaroui height, Labs height rows 3 in / 4 in): run `scripts/form_holds.py` after every rebuild until each hold is released by name.
+   It also carries:
+   - **Fight 11 Form Line correction:** Borralho 40.2% to about 40.0%, with Belgaroui's height conflict (6'5" ours vs 6'6" UFCStats and UFC.com) named on the corrections page.
+   - **Shared-name fix:** bios keyed by fighter ID (see item 5).
+5. **Labs angle bugs** (round 20 found, round 21 measured; live on main with "under review" marks from form/data/labs_review.json).
+   - Both-sides overwrite in `form_model.angle_sides`: 8 angles.
+   - Shared UFCStats names (Bruno Silva, Jean Silva, Mike Davis, Anthony Romero, Victor Valenzuela) take the wrong bio row in 23 of 30 bouts.
+   - Together, 111 shown numbers in 12 angles move; no ROI sign changes.
+   - Next: pre-register the fix (key bios and histories by fighter ID, count every qualifying side), ship it with item 6, remove the marks.
+6. **Research refresh** (`form/data/research.json`, 2,388 to 2,420 fights).
+   - The debut box moves from 233 / 49.8% / -11.9% to 234 / 49.6% / -12.3%.
+   - Next: full build, rebuild `data/embeds/debut_angle_stats.json`, one corrections entry.
+   - Run with items 5 and 7.
+7. **TUF sensitivity for the debut angle** (round 19). Next: pre-register, then run debut_vs_vet with TUF tournament bouts counted both ways. Report it alongside item 6; the embed box doesn't change before that.
+8. **Publish export: strip sheet coordinates and raw inputs** (round 18). The publish script unfreezes after 334.
+   Next:
+   - Pre-register the field list to drop (`tab`, `row`, `calc_row`, `tap`, `junk`, `tip`, `markov`, `shift`, `open_dog`, `ctx`, `manual`).
+   - Check every consumer: `publish_source.py`, `build_fight_embeds.py`, verifier rules `pub_ml` / `pubp`, and the projections check.
+   - Run the public scan on the new export.
+9. **Missing reach vs newness** (rounds 25-26: -17.3 pts flagged, not separable). Next: pre-register a test that:
+   - dates reach at fight time from archived UFCStats pages;
+   - matches on UFC fight count;
+   - drops the shared-name rows.
+   No public claim about direction until it's run; the site keeps "Reach not listed; Form treats it as equal."
+10. **Mesquita / Diaz reach and the half-inch rule** (round 24 call 2).
+    - UFCStats 67 / 69 vs UFC.com 67.50 / 69.50: "not listed" on 334.
+    - Next: pre-register whether a half-inch difference counts as agreement. This decides whether fight 3's Form Line can come back after item 4.
+11. **Stance second source (southpaw box)** (rounds 21-22).
+    - The southpaw box is off for 334 (`STANCE_2ND = {}`). UFC.com has no stance field, so stance never passes a two-source rule.
+    - Next: pre-register a second stance source (no Tapology scraping, no reading stance off fight film by eye) or retire the box.
+12. **Drift box** (round 25 A: pulled; the reference set used all books, "now" used US books only).
+    Next: pre-register one book set for both ends, most likely rebuilding the reference from US-regulated books at open and close. Then decide whether it returns.
+13. **TRAP cutoff is post hoc** (Block 48: the 4.0-point exclusion rule was set after seeing Gordon).
+    Next: after 10 more cards, report every TRAP flag with the book's own feed price (item 3) and the close. Keep or change the cutoff only on a pre-registered bar.
+14. **Merge-guard record.** After the merge, record the new main SHA in `audits/MAIN_AT_CHECK.txt` on purpose (round 18 served-set check on the real merge result).
+15. **publish-to-site branch.** It carries PUBLISH.md (v2.9 install, T6-T9).
+    Next: merge it into main on Kirk's go per PUBLISH.md T7 when the projections path goes live, or fold PUBLISH.md into main after 334.
