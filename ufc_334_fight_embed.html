@@ -69,9 +69,9 @@ details td:last-child { text-align: right; font-variant-numeric: tabular-nums; c
 <script>
 const SLUG = "ufc_334";
 const PROJ_URL = `data/${SLUG}_projections.json`;
-const pct = (x) => x == null ? "—" : (100 * x).toFixed(1) + "%";
-const sgn = (x) => x == null ? "—" : (x > 0 ? "+" : "") + (100 * x).toFixed(1) + "%";
-const ml = (v) => v == null ? "—" : (v > 0 ? "+" + v : "" + v);
+const pct = (x) => x == null ? "n/a" : (100 * x).toFixed(1) + "%";
+const sgn = (x) => x == null ? "n/a" : (x > 0 ? "+" : "") + (100 * x).toFixed(1) + "%";
+const ml = (v) => v == null ? "n/a" : (v > 0 ? "+" + v : "" + v);
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const last = (n) => String(n || "").trim().toLowerCase().split(/\s+/).pop();
 const V = (k, txt) => `<tspan data-k="${k}">${esc(txt)}</tspan>`;

@@ -67,7 +67,9 @@ def shown(sec: list, p: dict) -> dict:
 def expected2(p: dict) -> dict:
     """data-k -> text the v2 embed must show for this fight, formatted from the verified file only."""
     s, i, m = p.get("sheet") or {}, p.get("inputs") or {}, p.get("method") or {}
-    ml = lambda v: "—" if v is None else (f"+{int(v)}" if v > 0 else str(int(v)))
+    pc = lambda x: "n/a" if x is None else f"{100 * x:.1f}%"           # the v2 embed prints n/a, not a dash, for a missing value
+    sg = lambda x: "n/a" if x is None else f"{'+' if x > 0 else ''}{100 * x:.1f}%"
+    ml = lambda v: "n/a" if v is None else (f"+{int(v)}" if v > 0 else str(int(v)))
     e = {"true_fav": pc(s["true_fav"]), "true_dog": pc(s["true_dog"]), "listed_fav": pc(1 - s["listed"]), "listed_dog": pc(s["listed"]),
          "fav_edge": sg(s.get("fav_edge")), "dog_edge": sg(s.get("dog_edge")), "fav_odds": ml(i.get("fav_odds")),
          "dog_odds": ml(i.get("dog_odds")), "gtd": pc(p.get("gtd")), "gtd_listed": pc(p.get("gtd_listed")),
