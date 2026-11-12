@@ -75,7 +75,9 @@ def row(f):
         rec = f"BET {f['fav']} (80%+ rule, shop)"
     elif dog_edge >= 0.08 and flag == "ok":
         rec = f"BET {f['dog']}"
-    elif fav_edge >= 0.02 and (f.get("tip") or 0) >= 0.5:
+    elif fav_edge >= 0.02 and flag.startswith("SHARPS"):
+        # Main Card!N2 keys the fade off the FLAG text (LEFT(AA,6)="SHARPS"), so a D-code dog
+        # with sharps on it gets no fade. Fixed 2026-11-11 (audit block 31).
         rec = f"BET {f['fav']} (fade sharp dog)"
     elif fav_edge >= 0.03:
         rec = f"BET {f['fav']}"
@@ -85,8 +87,12 @@ def row(f):
         rec = f"lean {f['fav']}"
     else:
         rec = "-"
-    if drift <= -0.03 and rec != "-":
-        rec += f" [late: ->FAV {abs(drift)*100:.0f}%]"
+    if drift <= -0.03 and rec.startswith("BET") and f["fav"] in rec:
+        # Main Card!N2: the late tag only goes on favorite BET strings (80%+, fade, plain BET fav)
+        # Whole percent, half rounded up as Sheets does (Python's :.0f rounds half to even). Matches all 5 late
+        # tags in Snapshots history; none sat on a .5 tie, so tie handling is assumed, not observed.
+        pct = int(abs(drift) * 100 + 0.5 + 1e-9)
+        rec += f" [late: fav moved {pct}% from open]"
     return {"listed": listed, "H": H, "Q": Q, "true_dog": true_dog, "true_fav": true_fav, "hold": E + J - 1,
             "dog_edge": dog_edge, "fav_edge": fav_edge, "drift": drift, "flag": flag, "rec": rec}
 
