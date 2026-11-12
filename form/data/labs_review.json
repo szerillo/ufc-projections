@@ -1,0 +1,20 @@
+{
+ "as_of": "2026-11-12",
+ "angles": [
+  "younger5",
+  "vs_36",
+  "reach4",
+  "southpaw",
+  "off_big_fig",
+  "off_bad_fig",
+  "moving_up",
+  "moving_down",
+  "age37",
+  "wrestler_weak_tdd",
+  "wrestler_strong_tdd",
+  "power_vs_chin"
+ ],
+ "short": "under review",
+ "note": "Under review (found Nov 12, 2026): the marked angles have two known build errors. When both fighters qualified (for example both 37 or older, or both coming off a 90+ Form Figure), only one side was counted. For five names that two UFC fighters share, the wrong fighter's age, reach or stance was used. Corrected numbers come with the next full rebuild after UFC 334. The corrections move fight counts by up to 148, and no angle's return at the close changes sign.",
+ "source": "audits/round21/labs_fix_effect.py, audits/round21/namesake_effect.py"
+}

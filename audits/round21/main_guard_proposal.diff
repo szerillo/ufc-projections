@@ -1,0 +1,40 @@
+diff --git a/scripts/main_guard.py b/scripts/main_guard.py
+index 02c490d0..60827efe 100644
+--- a/scripts/main_guard.py
++++ b/scripts/main_guard.py
+@@ -35,6 +35,7 @@ def served_scan(tree):
+ 
+ def main():
+     ap = argparse.ArgumentParser(); ap.add_argument("--ref", default="origin/main"); ap.add_argument("--expected", default=None)
++    ap.add_argument("--allow-publish-and-bot", action="store_true", help="PROPOSAL, round 21: accept main moving only by the publish export and the odds bot")
+     a = ap.parse_args()
+     exp = a.expected or (REPO / "audits/MAIN_AT_CHECK.txt").read_text().split()[0]
+     # Kirk round 20 E: never trust the local remote-tracking ref. Fetch main now and ask the remote directly; if either
+@@ -51,6 +52,27 @@ def main():
+     if cur == exp and subprocess.run(["git", "-C", str(REPO), "merge-base", "--is-ancestor", cur, "HEAD"]).returncode == 0:
+         print(f"MAIN GUARD: {a.ref} is {cur[:8]}, the commit the served-set checks were run against; merge is a fast-forward. OK")
+         return
++    # PROPOSAL (Kirk round 21 call 1, not active until Kirk's go): between the check and the merge, main may move ONLY by the
++    # sheet's Publish to site export (data/pending/<slug>_projections.json) and the odds bot (data/<slug>_odds.json). If every
++    # file main changed matches that, main still contains the checked commit, the branch's served set is clean and main's new
++    # versions of those files are clean, the merge is OK as a --no-ff merge (not a fast-forward). A conflict is allowed only in
++    # data/<slug>_odds.json and is resolved to the branch's version (the embeds were built from it; the bot overwrites it next
++    # tick). Anything else still refuses.
++    ALLOWED = re.compile(r"^data/(pending/[a-z0-9_]+_projections|[a-z0-9_]+_odds)\.json$"); ODDS = re.compile(r"^data/[a-z0-9_]+_odds\.json$")
++    if a.allow_publish_and_bot and git("merge-base", exp, cur, check=False) == exp:
++        chg_ = [l.split("\t")[-1] for l in git("diff", "--name-status", exp, cur, check=False).splitlines()]
++        mt_ = subprocess.run(["git", "-C", str(REPO), "merge-tree", "--write-tree", "--name-only", cur, "HEAD"], capture_output=True, text=True)
++        conf_ = [l for l in mt_.stdout.split("\n\n")[0].splitlines()[1:] if l.strip()] if mt_.returncode == 1 else []
++        main_hits_ = {f: len(OFF.findall(git("show", f"{cur}:{f}", check=False))) for f in chg_}
++        main_hits_ = {f: n for f, n in main_hits_.items() if n}
++        if chg_ and all(ALLOWED.match(f) for f in chg_) and mt_.returncode in (0, 1) and all(ODDS.match(f) for f in conf_) and not main_hits_:
++            n_, hits_ = served_scan("HEAD")
++            if not hits_:
++                print(f"MAIN GUARD: {a.ref} is {cur[:8]}; since {exp[:8]} main changed only {chg_} (publish export / odds bot); "
++                      f"conflicts to resolve to the branch version: {conf_ or 'none'}. Branch served set {n_} files, 0 offshore hits; "
++                      f"main's new versions 0 hits. OK as a --no-ff merge (not a fast-forward).")
++                return
++        print(f"  (allow-publish-and-bot: not accepted; changed {chg_[:8]}, conflicts {conf_[:8]}, offshore hits in main's new files {main_hits_})")
+     print(f"MAIN GUARD: {a.ref} is {cur[:8]}, expected {exp[:8]}. REFUSING: the round-18 served-set result no longer applies.")
+     new = git("log", "--format=%h %cI %s", f"{exp}..{cur}", check=False)
+     print("  main's new commits:\n    " + ("\n    ".join(new.splitlines()) or "(none: main was rewritten)"))

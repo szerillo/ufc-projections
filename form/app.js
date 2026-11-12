@@ -450,7 +450,7 @@ ${(() => { const M = methodRows(f); if (!M) return `<tr><td class="l b">Goes the
     </tbody></table></div>`;
     const A_ = window.__angles || {}, ang = Object.entries(fm.ang || {}).filter(([k]) => A_[k] && !/^(fav|dog)_all$/.test(k));
     if (ang.length) html += `<h3>Angles in play</h3><div class="tw"><table><thead><tr><th class="l">Angle</th><th class="l">Side</th><th title="Fights since 2022">N</th><th title="Actual win %">Won</th><th title="Win % the closing line implied">Mkt</th><th title="Flat bet at the consensus close">ROI</th></tr></thead><tbody>` +
-      ang.map(([k, s_]) => { const a = A_[k]; return `<tr><td class="l">${esc(a[0])}</td><td class="l b">${esc(last(f[s_].name))}</td><td>${a[1]}</td><td>${(a[2] * 100).toFixed(1)}%</td><td class="dim">${(a[3] * 100).toFixed(1)}%</td><td class="${cls(a[4])}">${signed(a[4] * 100)}%</td></tr>`; }).join("") + `</tbody></table></div>`;
+      ang.map(([k, s_]) => { const a = A_[k]; return `<tr><td class="l">${esc(a[0])}${(window.__review || {})[k] ? ' <span class="neg">· under review</span>' : ""}</td><td class="l b">${esc(last(f[s_].name))}</td><td>${a[1]}</td><td>${(a[2] * 100).toFixed(1)}%</td><td class="dim">${(a[3] * 100).toFixed(1)}%</td><td class="${cls(a[4])}">${signed(a[4] * 100)}%</td></tr>`; }).join("") + `</tbody></table></div>`;
   }
   html += `</div></div>`;
 
@@ -647,6 +647,7 @@ async function vRankings() {
 
 async function vResearch() {
   const R = await getJSON("research.json");
+  const RV = await getJSON("labs_review.json").catch(() => null), RVs = new Set((RV && RV.angles) || []);  // Kirk round 21 call 3
   const P = (x, d = 1) => x == null ? "—" : (x * 100).toFixed(d) + "%";
   const sg = (x, d = 1) => x == null ? "—" : `<span class="${cls(x)}">${signed(x * 100, d)}%</span>`;
   const tbl = (head, rows) => `<div class="tw"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
@@ -670,8 +671,8 @@ async function vResearch() {
   `</div><div><h3>Which book closes sharpest?</h3>` + (R.books ? tbl(`<th class="l">Book</th><th>Log loss</th><th>Brier</th>`, R.books.rows.map(x => `<tr><td class="l b">${esc(bookName(x.book))}</td><td>${x.ll}</td><td>${x.brier}</td></tr>`).join("")) + `<div class="note">${R.books.n.toLocaleString()} fights where all seven books had a closing price. The differences are tiny.</div>` : "") + `</div></div>
   <h3>Simple strategies</h3>` + tbl(`<th class="l">Strategy</th><th>Bets</th><th>Won</th><th>ROI</th><th>Units</th><th class="l">ROI by year</th>`, R.sims.map(x => `<tr><td class="l b">${esc(x.name)}</td><td>${x.n}</td><td>${P(x.win)}</td><td>${sg(x.roi)}</td><td class="${cls(x.pnl)}">${signed(x.pnl, 1)}</td><td class="l dim">${Object.entries(x.years).map(([y, v]) => `${y.slice(2)}: ${signed(v[1] * 100, 0)}%`).join(" · ")}</td></tr>`).join("")) +
   `<h3>Angles · every one graded against the closing line</h3>` + tbl(`<th class="l">Angle (bet the fighter described)</th><th>Fights</th><th>Won</th><th>Mkt</th><th title="Standard errors above or below the market's expectation">z</th><th>ROI at close</th><th title="Uses the first-seen price">ROI at open</th><th class="l">ROI by year (close)</th>`,
-    R.angles.map(a => `<tr><td class="l b">${esc(a.name)}</td><td>${a.n}</td><td>${P(a.act)}</td><td class="dim">${P(a.exp)}</td><td class="${Math.abs(a.z) >= 2 ? "b " + cls(a.z) : "dim"}">${signed(a.z, 2)}</td><td>${sg(a.roi_c)}</td><td>${sg(a.roi_o)}</td><td class="l dim">${Object.entries(a.years).map(([y, v]) => `${y.slice(2)}: ${signed(v[2] / v[0] * 100, 0)}%`).join(" · ")}</td></tr>`).join("")) +
-  `<div class="note">With ${R.angles.length} angles tested, one or two will clear z = 2 by luck. Steam angles at the "open" price use information you would not have had at the open. 2026 first-seen prices are often fight-week prices.</div>
+    R.angles.map(a => `<tr><td class="l b">${esc(a.name)}${RVs.has(a.id) ? ` <span class="neg">· ${esc(RV.short)}</span>` : ""}</td><td>${a.n}</td><td>${P(a.act)}</td><td class="dim">${P(a.exp)}</td><td class="${Math.abs(a.z) >= 2 ? "b " + cls(a.z) : "dim"}">${signed(a.z, 2)}</td><td>${sg(a.roi_c)}</td><td>${sg(a.roi_o)}</td><td class="l dim">${Object.entries(a.years).map(([y, v]) => `${y.slice(2)}: ${signed(v[2] / v[0] * 100, 0)}%`).join(" · ")}</td></tr>`).join("")) +
+  `<div class="note">With ${R.angles.length} angles tested, one or two will clear z = 2 by luck. Steam angles at the "open" price use information you would not have had at the open. 2026 first-seen prices are often fight-week prices.</div>${RV && RVs.size ? `<div class="note neg">${esc(RV.note)}</div>` : ""}
   <div class="grid2"><div><h3>Totals · is the over priced right?</h3>` + tbl(`<th class="l">Line</th><th>Fights</th><th>Mkt over</th><th>Went over</th><th>Gap</th><th>Over ROI</th><th>Under ROI</th>`, R.totals.map(x => `<tr><td class="l b">${x.pt}</td><td>${x.n}</td><td>${P(x.exp)}</td><td class="b">${P(x.act)}</td><td>${sg(x.act - x.exp)}</td><td>${sg(x.roi_over)}</td><td>${sg(x.roi_under)}</td></tr>`).join("")) +
   (R.gtd ? `<h3>Form distance model</h3>` + tbl(`<th class="l">Model said</th><th>Fights</th><th>Avg</th><th>Went distance</th>`, R.gtd_calib.map(x => `<tr><td class="l">${x.band}</td><td>${x.n}</td><td>${P(x.exp)}</td><td class="b">${P(x.act)}</td></tr>`).join("")) + `<div class="note">Log loss ${R.gtd.ll_model} against ${R.gtd.ll_base} for the division base rate alone, on ${R.gtd.n.toLocaleString()} fights since 2022.</div>` : "") +
   `</div><div><h3>Division base rates · last five years</h3>` + tbl(`<th class="l">Division</th><th>Rds</th><th>Fights</th><th>Decision</th><th>KO/TKO</th><th>Sub</th><th>R1 finish</th><th>Avg min</th>`, R.wc.filter(x => x.n >= 40).map(x => `<tr><td class="l b">${esc(x.wc)}</td><td>${x.sched}</td><td>${x.n}</td><td>${P(x.dec, 0)}</td><td>${P(x.ko, 0)}</td><td>${P(x.sub, 0)}</td><td>${P(x.r1, 0)}</td><td>${x.avg_min}</td></tr>`).join("")) + `</div></div>
@@ -1083,7 +1084,8 @@ async function route() {
   $app.innerHTML = `<div class="banner">Page not found.</div>`;
 }
 window.addEventListener("hashchange", route);
-const boot = getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__built = i.built; window.__angles = i.angles; }).catch(() => {});
+const boot = Promise.all([getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__built = i.built; window.__angles = i.angles; }).catch(() => {}),
+  getJSON("labs_review.json").then(r => { window.__review = Object.fromEntries((r.angles || []).map(k => [k, 1])); }).catch(() => {})]);  // Kirk round 21 call 3
 const $q = document.getElementById("q"), $dd = document.getElementById("dd");
 if ($q) {
   let S = null;

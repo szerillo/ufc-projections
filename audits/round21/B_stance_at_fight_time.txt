@@ -1,0 +1,29 @@
+Challenge B: the southpaw angle uses each fighter's CURRENT UFCStats stance for bouts back to 2022.
+Test: 10 random pre-2024 southpaw-angle bouts (seed 21, B_sample.json), both fighters (20 pages). For each, the Wayback
+Machine snapshot of the UFCStats fighter-details page nearest the fight date (read in Sean's Chrome, same-origin fetch on
+web.archive.org), stance field compared with today's UFCStats label.
+date|fighter id|status|snapshot used|archived stance   -> today's label (tott cache)
+20220514|760a55d5b6098cbe (Carlos Candelario)|200|20220630184252|Southpaw -> Southpaw
+20220514|4461d7e47375a895 (Tatsuro Taira)|200|20220711231400|Orthodox -> Orthodox
+20220618|262d32ebda89efc4 (Natalia Silva)|200|20230217015634|Southpaw -> Southpaw
+20220618|a9e260472d321361 (Jasmine Jasudavicius)|200|20220412091937|Orthodox -> Orthodox
+20220730|a01a62132460a98d (Adam Fugitt)|200|20230609020036|Southpaw -> Southpaw
+20220730|c32aeb1a59e6272d (Michael Morales)|200|20220802120359|Orthodox -> Orthodox
+20221029|040a74bb0a465c54 (Arnold Allen)|200|20221028205414|Southpaw -> Southpaw
+20221029|751de04455cfaac0 (Calvin Kattar)|200|20221028205503|Orthodox -> Orthodox
+20221217|0d65c432720accb9 (Michal Oleksiejczuk)|200|20221207132155|Southpaw -> Southpaw
+20221217|f14f644d41ade29f (Cody Brundage)|200|20230205050840|Orthodox -> Orthodox
+20221217|5d1b7e3dd9e11074 (Manel Kape)|200|20221210000850|Southpaw -> Southpaw
+20221217|9ada30894bf04e19 (David Dvorak)|200|20230101174016|Orthodox -> Orthodox
+20230422|f14cf73e51b29254 (Sergei Pavlovich)|200|20230425192816|Southpaw -> Southpaw
+20230422|fa6796c55d6c5440 (Curtis Blaydes)|200|20230327184017|Orthodox -> Orthodox
+20230603|d1941565abf50b16 (Jim Miller)|200|20230604133222|Southpaw -> Southpaw
+20230603|a75a48bfe776b2c2 (Jesse Butler)|200|20230930234906|Orthodox -> Orthodox
+20230729|029eaff01e6bb8f0 (Dustin Poirier)|200|20230728084740|Southpaw -> Southpaw
+20230729|9e8f6c728eb01124 (Justin Gaethje)|200|20230728084720|Orthodox -> Orthodox
+20230902|8b1ed83b02303075 (Taylor Lapilus)|200|20230901135423|Southpaw -> Southpaw
+20230902|42ac4020cba261ad (Caolan Loughran)|200|20230901135455|Orthodox -> Orthodox
+Result: 20/20 archived labels equal today's label. 13 of 20 snapshots are within 60 days of the fight; the furthest is
+~8 months (Natalia Silva, Fugitt, Butler).
+Limit: this shows UFCStats did not relabel these fighters; it cannot show the stance actually used in the fight (one label
+per fighter, switch hitters, Nunes/Harrison-type cases). That is the gap the pre-registered second source was meant to close.

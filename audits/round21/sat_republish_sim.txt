@@ -1,0 +1,9 @@
+archive newest 2026-11-12T15:16:16Z; T1 ('Fri 7:30 pm ET') = 2026-11-11T22:16:16Z; T2 ('Sat 12:30 pm ET') = 2026-11-12T15:16:16Z; window 24 h
+Friday window ['2026-11-10T22:16:16', '2026-11-11T22:16:16']; Saturday window ['2026-11-11T15:16:16', '2026-11-12T15:16:16'] (re-anchored to the new published_at)
+Case F  (Friday, pasted from report): NO cells 0 []
+Case S1 (Saturday republish, no new paste): NO cells 3
+   bout 13 b listed 185 -> best regulated in Saturday window (180, 'draftkings', '2026-11-11T15:30')
+   bout 2 b listed -323 -> best regulated in Saturday window (-333, 'betrivers', '2026-11-11T16:13')
+   bout 1 b listed -110 -> best regulated in Saturday window (-115, 'williamhill_us', '2026-11-12T05:42')
+Case S2 (Saturday, re-pasted from a fresh report): NO cells 0
+Price movement inside the 17 h: cells whose best regulated price changed: 9

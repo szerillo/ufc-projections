@@ -17,9 +17,15 @@ Logged 2026-11-12 (Kirk round 18). Nothing here is done before the card; the pub
    item 2. The embed box does not change before that.
 5. **Merge guard.** If main moved before the merge, `scripts/main_guard.py` refuses; redo the round-18 served-set check on the
    real merge result and record the new main SHA in `audits/MAIN_AT_CHECK.txt` on purpose.
-6. **Labs angle bugs found in round 20 (fix with the research refresh, pre-registered):**
-   - `form_model.angle_sides`: an angle where BOTH fighters qualify keeps only one side (dict overwrite). "Age 37 or older"
-     drops 43 bets in the fresh build; check every symmetric angle.
-   - Fighters who share a UFCStats name (Bruno Silva, Jean Silva, ...): the build takes the first namesake's DOB, stance and
-     reach. 15 "Younger by 5+", 5 "Under 32 vs 36+" and 8 "Reach 4+" memberships depend on which namesake is used.
-   - "Southpaw vs orthodox" is clean on both checks (the embed box on fight 10 uses it).
+6. **Labs angle bugs (round 20 found, round 21 measured; fix with the research refresh in item 2, pre-registered).** Live on main
+   now; Labs and the fight-page angle rows carry an "under review" mark from `form/data/labs_review.json` until the rebuild.
+   - `form_model.angle_sides`: when BOTH fighters qualify only side b is kept (dict overwrite). 8 angles: off_big_fig (+148
+     bets on the published set), off_bad_fig (+113), age37 (+43), moving_up (+24), power_vs_chin (+9), moving_down (+7),
+     wrestler_weak_tdd (+6), wrestler_strong_tdd (+2). Also drops one side's chip on upcoming fight pages (334: fights 13, 12).
+   - Shared UFCStats names (Bruno Silva, Jean Silva, Mike Davis, Anthony Romero, Victor Valenzuela): `load_ufcstats` takes the
+     FIRST tott row; wrong in 23 of 30 bouts since 2022 (fight-page IDs in `audits/round21/ns_ids.txt`). 36 memberships change
+     in younger5, vs_36, reach4, age37 and southpaw (southpaw +2: Romero 2026-10-03, Levy 2024-03-16). The same row feeds the
+     Form model's age/reach/stance features, so those fighters' Form Lines move too; fight histories are also merged by name
+     (fighter pages already show the shared-name banner).
+   - Together: 111 displayed Labs numbers in 12 of 46 angles change; no angle's ROI at the close changes sign
+     (`audits/round21/labs_fix_effect.txt`). Fix: key bios and histories by UFCStats fighter ID, count every qualifying side.

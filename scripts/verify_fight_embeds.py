@@ -184,13 +184,17 @@ def check(D, htmlfile, G):
                 if abs(ds_["roi_ci"][0] - (ds_["roi"] - 1.96 * ds_["roi_se"])) > 2e-4 or abs(ds_["roi_ci"][1] - (ds_["roi"] + 1.96 * ds_["roi_se"])) > 2e-4: raise ValueError("ROI CI does not follow from roi and se")
                 if a["key"].startswith("roi_ci_boot") and not (ds_[a["key"]][0] < ds_["roi"] < ds_[a["key"]][1]): raise ValueError("bootstrap ROI range does not contain the ROI")
                 v = ds_[a["key"]]; v = v[a["i"]] if "i" in a else v
-            elif rule == "angstat":   # Kirk round 20: Labs angle box ranges; same checks as dbstat, per angle
+            elif rule == "angstat":   # Kirk round 21: southpaw box v2 = Labs' published set plus the listed corrected bouts
                 as_ = json.loads((REPO / "data/embeds/angle_stats.json").read_text())[a["angle"]]; rs_ = {x_["id"]: x_ for x_ in json.loads((FD / "research.json").read_text())["angles"]}[a["angle"]]
-                if as_["n"] != rs_["n"] or as_["w"] != rs_["w"] or abs(as_["act"] - rs_["act"]) > 1e-4 or abs(as_["roi"] - rs_["roi_c"]) > 1e-4: raise ValueError("angle_stats.json does not match research.json")
-                se_ = (rs_["act"] * (1 - rs_["act"]) / rs_["n"]) ** 0.5
-                if abs(as_["win_ci"][0] - (rs_["act"] - 1.96 * se_)) > 2e-4 or abs(as_["win_ci"][1] - (rs_["act"] + 1.96 * se_)) > 2e-4: raise ValueError("win CI does not follow from act and n")
+                if as_["published_n"] != rs_["n"] or as_["n"] != rs_["n"] + len(as_["added"]): raise ValueError("angle_stats.json is not Labs' set plus the listed bouts")
+                if abs(as_["act"] - as_["w"] / as_["n"]) > 1e-4: raise ValueError("act does not follow from w and n")
+                se_ = (as_["act"] * (1 - as_["act"]) / as_["n"]) ** 0.5
+                if abs(as_["win_ci"][0] - (as_["act"] - 1.96 * se_)) > 2e-4 or abs(as_["win_ci"][1] - (as_["act"] + 1.96 * se_)) > 2e-4: raise ValueError("win CI does not follow from act and n")
                 if not (as_["roi_ci_boot_cards"][0] < as_["roi"] < as_["roi_ci_boot_cards"][1]): raise ValueError("bootstrap ROI range does not contain the ROI")
-                v = as_[a["key"]]; v = v[a["i"]] if "i" in a else v
+                sp_ = as_["split"]
+                if sp_["favorite"]["n"] + sp_["underdog"]["n"] != as_["n"] or abs((sp_["favorite"]["roi"] * sp_["favorite"]["n"] + sp_["underdog"]["roi"] * sp_["underdog"]["n"]) / as_["n"] - as_["roi"]) > 2e-4: raise ValueError("favorite/underdog split does not add up")
+                src_ = as_["split"][a["sub"]] if a.get("sub") else as_
+                v = src_[a["key"]]; v = v[a["i"]] if "i" in a else v
             elif rule == "ufc_n":   # UFC fights before the card, from the fighter file (0 if no file: a debut)
                 fx_ = next((json.loads(p_.read_text()) for p_ in (FD / "fighters").glob("*.json") if json.loads(p_.read_text()).get("name") == a["fighter"]), None)
                 v = len([x_ for x_ in (fx_ or {}).get("fights", []) if x_["d"] < a["date"]])

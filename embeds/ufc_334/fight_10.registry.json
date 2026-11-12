@@ -3078,118 +3078,6 @@
   },
   {
    "id": "v252",
-   "text": "53.6%",
-   "fmt": "pct1",
-   "rule": "rs_angle",
-   "args": {
-    "id": "southpaw",
-    "key": "act"
-   },
-   "desc": "Southpaw angle won",
-   "raw": 0.5357
-  },
-  {
-   "id": "v253",
-   "text": "603",
-   "fmt": "intc",
-   "rule": "rs_angle",
-   "args": {
-    "id": "southpaw",
-    "key": "n"
-   },
-   "desc": "Southpaw angle n",
-   "raw": 603
-  },
-  {
-   "id": "v254",
-   "text": "51.7%",
-   "fmt": "pct1",
-   "rule": "rs_angle",
-   "args": {
-    "id": "southpaw",
-    "key": "exp"
-   },
-   "desc": "Southpaw angle expected",
-   "raw": 0.5175
-  },
-  {
-   "id": "v255",
-   "text": "49.6%",
-   "fmt": "pct1",
-   "rule": "angstat",
-   "args": {
-    "angle": "southpaw",
-    "key": "win_ci",
-    "i": 0
-   },
-   "desc": "Southpaw angle win CI lo",
-   "raw": 0.4958
-  },
-  {
-   "id": "v256",
-   "text": "57.6%",
-   "fmt": "pct1",
-   "rule": "angstat",
-   "args": {
-    "angle": "southpaw",
-    "key": "win_ci",
-    "i": 1
-   },
-   "desc": "Southpaw angle win CI hi",
-   "raw": 0.5755
-  },
-  {
-   "id": "v257",
-   "text": "-4.2%",
-   "fmt": "spp",
-   "rule": "rs_angle",
-   "args": {
-    "id": "southpaw",
-    "key": "roi_c"
-   },
-   "desc": "Southpaw angle ROI close",
-   "raw": -0.0421
-  },
-  {
-   "id": "v258",
-   "text": "-12.3%",
-   "fmt": "spp",
-   "rule": "angstat",
-   "args": {
-    "angle": "southpaw",
-    "key": "roi_ci_boot_cards",
-    "i": 0
-   },
-   "desc": "Southpaw angle ROI CI lo",
-   "raw": -0.1228
-  },
-  {
-   "id": "v259",
-   "text": "+3.7%",
-   "fmt": "spp",
-   "rule": "angstat",
-   "args": {
-    "angle": "southpaw",
-    "key": "roi_ci_boot_cards",
-    "i": 1
-   },
-   "desc": "Southpaw angle ROI CI hi",
-   "raw": 0.0369
-  },
-  {
-   "id": "v260",
-   "text": "-4.0%",
-   "fmt": "spp",
-   "rule": "angstat",
-   "args": {
-    "angle": "southpaw",
-    "key": "margin_roi"
-   },
-   "desc": "Southpaw angle margin",
-   "raw": -0.0398
-  },
-  {
-   "id": "v261",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -3202,7 +3090,7 @@
    "raw": -328
   },
   {
-   "id": "v262",
+   "id": "v253",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -3215,7 +3103,7 @@
    "raw": 170
   },
   {
-   "id": "v263",
+   "id": "v254",
    "text": "-131",
    "fmt": "ml",
    "rule": "fight",
@@ -3228,7 +3116,7 @@
    "raw": -131
   },
   {
-   "id": "v264",
+   "id": "v255",
    "text": "-357",
    "fmt": "ml",
    "rule": "fight",
@@ -3241,7 +3129,7 @@
    "raw": -357
   },
   {
-   "id": "v265",
+   "id": "v256",
    "text": "-206",
    "fmt": "ml",
    "rule": "fight",
@@ -3254,7 +3142,7 @@
    "raw": -206
   },
   {
-   "id": "v266",
+   "id": "v257",
    "text": "-270",
    "fmt": "ml",
    "rule": "fight",
@@ -3267,7 +3155,7 @@
    "raw": -270
   },
   {
-   "id": "v267",
+   "id": "v258",
    "text": "-104",
    "fmt": "ml",
    "rule": "fight",
@@ -3280,7 +3168,7 @@
    "raw": -104
   },
   {
-   "id": "v268",
+   "id": "v259",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -3293,7 +3181,7 @@
    "raw": 175
   },
   {
-   "id": "v269",
+   "id": "v260",
    "text": "+130",
    "fmt": "ml",
    "rule": "fight",
@@ -3306,7 +3194,7 @@
    "raw": 130
   },
   {
-   "id": "v270",
+   "id": "v261",
    "text": "-123",
    "fmt": "ml",
    "rule": "fight",
@@ -3319,7 +3207,7 @@
    "raw": -123
   },
   {
-   "id": "v271",
+   "id": "v262",
    "text": "-109",
    "fmt": "ml",
    "rule": "fight",
@@ -3332,7 +3220,7 @@
    "raw": -109
   },
   {
-   "id": "v272",
+   "id": "v263",
    "text": "-625",
    "fmt": "ml",
    "rule": "fight",
@@ -3345,7 +3233,7 @@
    "raw": -625
   },
   {
-   "id": "v273",
+   "id": "v264",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -3358,7 +3246,7 @@
    "raw": -179
   },
   {
-   "id": "v274",
+   "id": "v265",
    "text": "-102",
    "fmt": "ml",
    "rule": "fight",
@@ -3371,7 +3259,7 @@
    "raw": -102
   },
   {
-   "id": "v275",
+   "id": "v266",
    "text": "+114",
    "fmt": "ml",
    "rule": "fight",
@@ -3384,7 +3272,7 @@
    "raw": 114
   },
   {
-   "id": "v276",
+   "id": "v267",
    "text": "-147",
    "fmt": "ml",
    "rule": "fight",
@@ -3397,7 +3285,7 @@
    "raw": -147
   },
   {
-   "id": "v277",
+   "id": "v268",
    "text": "-294",
    "fmt": "ml",
    "rule": "fight",
@@ -3410,7 +3298,7 @@
    "raw": -294
   },
   {
-   "id": "v278",
+   "id": "v269",
    "text": "-135",
    "fmt": "ml",
    "rule": "fight",
@@ -3423,7 +3311,7 @@
    "raw": -135
   },
   {
-   "id": "v279",
+   "id": "v270",
    "text": "+101",
    "fmt": "ml",
    "rule": "fight",
@@ -3436,7 +3324,7 @@
    "raw": 101
   },
   {
-   "id": "v280",
+   "id": "v271",
    "text": "-145",
    "fmt": "ml",
    "rule": "fight",
@@ -3449,7 +3337,7 @@
    "raw": -145
   },
   {
-   "id": "v281",
+   "id": "v272",
    "text": "-244",
    "fmt": "ml",
    "rule": "fight",
@@ -3462,7 +3350,7 @@
    "raw": -244
   },
   {
-   "id": "v282",
+   "id": "v273",
    "text": "-185",
    "fmt": "ml",
    "rule": "fight",
@@ -3475,7 +3363,7 @@
    "raw": -185
   },
   {
-   "id": "v283",
+   "id": "v274",
    "text": "+460",
    "fmt": "ml",
    "rule": "fight",
@@ -3488,7 +3376,7 @@
    "raw": 460
   },
   {
-   "id": "v284",
+   "id": "v275",
    "text": "-333",
    "fmt": "ml",
    "rule": "fight",
@@ -3501,7 +3389,7 @@
    "raw": -333
   },
   {
-   "id": "v285",
+   "id": "v276",
    "text": "-400",
    "fmt": "ml",
    "rule": "fight",
