@@ -1,0 +1,13 @@
+Challenge B: props post late.
+The fetcher always writes the same 5 markets per fight (moneyline, fight_ending, method_of_victory, fight_distance, total_rounds;
+empty list when nothing is posted). Late props fill those lists; they do not add market names. The layout check collapses list
+positions, so more lines in a market already seen on the card (B1: main event total_rounds 2 -> 4 entries) PASS with no approval
+(guard 11.5 s). The layout check trips only when BettingPros adds a field never seen in the checked file, or when a market was
+empty on every bout at check time (none was).
+B2 plant: a new field .fights[].markets.total_rounds[].alt_line -> REFUSED (0.1 s), message names the exact key.
+What Kirk approves: that exact key path, nothing else: GUARD_APPROVE_KEYS=".fights[].markets.total_rounds[].alt_line".
+  wrong path approved -> still refused; a dropped key -> refused; new key outside .fights[].markets -> refused; only the two odds files.
+What makes it safe: the guard still runs the full public scan on the file; merge_main.sh then rebuilds on the newer file and the
+full verifier must end 0 mismatches (the builder reads named fields only, so an unknown field cannot reach a page); the public scan
+runs again. Sandbox: approval -> merge_main.sh MERGE READY, 2,964/2,964 verified, scan 0 hits.
+Time: Kirk reads one line (the refusal names the key), then one rerun: guard 11.7 s; merge_main.sh about 20 s.

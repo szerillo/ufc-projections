@@ -59,7 +59,10 @@ def main():
     # main's new versions of the allowed files must be clean, and a conflict is allowed only in the odds file. That conflict is
     # NOT resolved blindly: the guard reads both copies' "updated_at" and names the newer one; scripts/merge_main.sh takes the
     # newer copy and, if it is main's, rebuilds and re-verifies the embeds on it before anything is pushed.
-    ALLOWED = {f"data/pending/{a.slug}_projections.json", f"data/{a.slug}_projections.json", f"data/{a.slug}_odds.json"}
+    # Kirk round 23 call 1: the odds bot also writes the next card's file; that exact path is allowed by default (no globs).
+    # It still has to pass the full public scan and the key-layout check below on every run.
+    NEXT_CARD_ODDS = "data/fn_prochazka_stirling_odds.json"
+    ALLOWED = {f"data/pending/{a.slug}_projections.json", f"data/{a.slug}_projections.json", f"data/{a.slug}_odds.json", NEXT_CARD_ODDS}
     ALLOWED |= set(a.allow_path) | {p_ for p_ in __import__("os").environ.get("GUARD_ALLOW_PATHS", "").split() if p_}
     ODDS = f"data/{a.slug}_odds.json"
     if a.allow_publish_and_bot and git("merge-base", exp, cur, check=False) == exp:
@@ -86,7 +89,14 @@ def main():
             try:
                 old_ = git("show", f"{exp}:{f}", check=False)
                 ko_, kn_ = keys_(_j.loads(old_), odds=f == ODDS) if old_ else None, keys_(_j.loads(txt_), odds=f == ODDS)
-                if ko_ is not None and ko_ != kn_: h_.append(f"key layout changed: +{sorted(kn_ - ko_)[:4]} -{sorted(ko_ - kn_)[:4]}")
+                # Kirk round 23 B: Kirk may approve NEW odds-file keys by exact path (GUARD_APPROVE_KEYS, space-separated), only
+                # under .fights[].markets, only additions; a dropped key or any other new key still refuses.
+                appr_ = set(__import__("os").environ.get("GUARD_APPROVE_KEYS", "").split())
+                add_, rem_ = kn_ - ko_ if ko_ is not None else set(), ko_ - kn_ if ko_ is not None else set()
+                ok_appr_ = f == ODDS or f == NEXT_CARD_ODDS
+                if add_ and not rem_ and ok_appr_ and add_ <= appr_ and all(k.startswith(".fights[].markets.") for k in add_):
+                    print(f"  {f}: new keys approved by GUARD_APPROVE_KEYS: {sorted(add_)}")
+                elif ko_ is not None and ko_ != kn_: h_.append(f"key layout changed: +{sorted(add_)} -{sorted(rem_)}")
             except ValueError: h_.append("not valid JSON")
             if h_: main_hits_[f] = h_
         newer_ = ""

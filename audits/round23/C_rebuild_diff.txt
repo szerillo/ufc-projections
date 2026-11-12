@@ -1,0 +1,7 @@
+Challenge C: does merge_main.sh's rebuild change only odds-derived numbers?
+No-op: the branch rebuilt on its own odds file vs the committed branch embeds -> 0 changed, 0 added, 0 removed (2,962 numbers);
+       byte-identical files (git diff --stat empty).
+Rebuild: merge_main.sh rebuilt on main's newer odds file (sandbox, main stamped 19:11Z) vs that no-op:
+  numbers: 4 changed, all BettingPros rules: bp 2, bp_imp 2 (+150 -> +145, +320 -> +310, 40.0% -> 40.8%, 23.8% -> 24.4%)
+  text: 26 lines, all "Odds updated ..." / "Data as of ... odds ..." stamps (2 per fight x 13)
+  non-odds changes: 0

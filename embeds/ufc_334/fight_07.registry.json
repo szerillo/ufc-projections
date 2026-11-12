@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "+145",
+   "text": "+150",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Drew Dober",
-   "raw": 145
+   "raw": 150
   },
   {
    "id": "v16",
-   "text": "40.8%",
+   "text": "40.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Drew Dober"
    },
    "desc": "Market implied Drew Dober",
-   "raw": 0.40816326530612246
+   "raw": 0.4
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "-175",
+   "text": "-188",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Chris Duncan",
-   "raw": -175
+   "raw": -188
   },
   {
    "id": "v23",
-   "text": "63.6%",
+   "text": "65.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Christopher Duncan"
    },
    "desc": "Market implied Chris Duncan",
-   "raw": 0.6363636363636364
+   "raw": 0.6527777777777778
   },
   {
    "id": "v24",
@@ -467,7 +467,7 @@
   },
   {
    "id": "v39",
-   "text": "+1000",
+   "text": "+1050",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -476,11 +476,11 @@
     "field": "cost"
    },
    "desc": "Market dec Drew Dober",
-   "raw": 1000
+   "raw": 1050
   },
   {
    "id": "v40",
-   "text": "9.1%",
+   "text": "8.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -488,11 +488,11 @@
     "label": "Drew Dober Points"
    },
    "desc": "Market dec implied Drew Dober",
-   "raw": 0.09090909090909091
+   "raw": 0.08695652173913043
   },
   {
    "id": "v41",
-   "text": "-0.8%",
+   "text": "-0.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -502,7 +502,7 @@
     ]
    },
    "desc": "Edge dec Drew Dober",
-   "raw": -0.008388111969659398
+   "raw": -0.004435542799698919
   },
   {
    "id": "v42",
@@ -530,7 +530,7 @@
   },
   {
    "id": "v44",
-   "text": "+192",
+   "text": "+212",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -539,11 +539,11 @@
     "field": "cost"
    },
    "desc": "Market ko Drew Dober",
-   "raw": 192
+   "raw": 212
   },
   {
    "id": "v45",
-   "text": "34.2%",
+   "text": "32.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -551,11 +551,11 @@
     "label": "Drew Dober KO/TKO/DQ"
    },
    "desc": "Market ko implied Drew Dober",
-   "raw": 0.3424657534246575
+   "raw": 0.32051282051282054
   },
   {
    "id": "v46",
-   "text": "-9.0%",
+   "text": "-6.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -565,7 +565,7 @@
     ]
    },
    "desc": "Edge ko Drew Dober",
-   "raw": -0.0902646590521165
+   "raw": -0.06831172614027953
   },
   {
    "id": "v47",
@@ -593,7 +593,7 @@
   },
   {
    "id": "v49",
-   "text": "+1800",
+   "text": "+2000",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -602,11 +602,11 @@
     "field": "cost"
    },
    "desc": "Market sub Drew Dober",
-   "raw": 1800
+   "raw": 2000
   },
   {
    "id": "v50",
-   "text": "5.3%",
+   "text": "4.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -614,11 +614,11 @@
     "label": "Drew Dober Submission"
    },
    "desc": "Market sub implied Drew Dober",
-   "raw": 0.05263157894736842
+   "raw": 0.047619047619047616
   },
   {
    "id": "v51",
-   "text": "-1.8%",
+   "text": "-1.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -628,7 +628,7 @@
     ]
    },
    "desc": "Edge sub Drew Dober",
-   "raw": -0.01756500360378857
+   "raw": -0.012552472275467769
   },
   {
    "id": "v52",
@@ -656,7 +656,7 @@
   },
   {
    "id": "v54",
-   "text": "39.5%",
+   "text": "36.8%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -667,11 +667,11 @@
     ]
    },
    "desc": "Market ITD implied Drew Dober",
-   "raw": 0.39509733237202593
+   "raw": 0.36813186813186816
   },
   {
    "id": "v55",
-   "text": "-10.8%",
+   "text": "-8.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -681,7 +681,7 @@
     ]
    },
    "desc": "Edge itd Drew Dober",
-   "raw": -0.10782966265590505
+   "raw": -0.08086419841574727
   },
   {
    "id": "v56",
@@ -709,7 +709,7 @@
   },
   {
    "id": "v58",
-   "text": "+440",
+   "text": "+410",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -718,11 +718,11 @@
     "field": "cost"
    },
    "desc": "Market dec Chris Duncan",
-   "raw": 440
+   "raw": 410
   },
   {
    "id": "v59",
-   "text": "18.5%",
+   "text": "19.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -730,11 +730,11 @@
     "label": "Christopher Duncan Points"
    },
    "desc": "Market dec implied Chris Duncan",
-   "raw": 0.18518518518518517
+   "raw": 0.19607843137254902
   },
   {
    "id": "v60",
-   "text": "+2.7%",
+   "text": "+1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -744,7 +744,7 @@
     ]
    },
    "desc": "Edge dec Chris Duncan",
-   "raw": 0.026553614096110956
+   "raw": 0.015660367908747114
   },
   {
    "id": "v61",
@@ -772,7 +772,7 @@
   },
   {
    "id": "v63",
-   "text": "+292",
+   "text": "+278",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -781,11 +781,11 @@
     "field": "cost"
    },
    "desc": "Market ko Chris Duncan",
-   "raw": 292
+   "raw": 278
   },
   {
    "id": "v64",
-   "text": "25.5%",
+   "text": "26.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -793,11 +793,11 @@
     "label": "Christopher Duncan KO/TKO/DQ"
    },
    "desc": "Market ko implied Chris Duncan",
-   "raw": 0.25510204081632654
+   "raw": 0.26455026455026454
   },
   {
    "id": "v65",
-   "text": "-7.0%",
+   "text": "-7.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -807,7 +807,7 @@
     ]
    },
    "desc": "Edge ko Chris Duncan",
-   "raw": -0.06976568019366555
+   "raw": -0.07921390392760355
   },
   {
    "id": "v66",
@@ -835,7 +835,7 @@
   },
   {
    "id": "v68",
-   "text": "+287",
+   "text": "+264",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -844,11 +844,11 @@
     "field": "cost"
    },
    "desc": "Market sub Chris Duncan",
-   "raw": 287
+   "raw": 264
   },
   {
    "id": "v69",
-   "text": "25.8%",
+   "text": "27.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -856,11 +856,11 @@
     "label": "Christopher Duncan Submission"
    },
    "desc": "Market sub implied Chris Duncan",
-   "raw": 0.25839793281653745
+   "raw": 0.27472527472527475
   },
   {
    "id": "v70",
-   "text": "-2.5%",
+   "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -870,7 +870,7 @@
     ]
    },
    "desc": "Edge sub Chris Duncan",
-   "raw": -0.025261741376046948
+   "raw": -0.04158908328478425
   },
   {
    "id": "v71",
@@ -898,7 +898,7 @@
   },
   {
    "id": "v73",
-   "text": "51.3%",
+   "text": "53.9%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -909,11 +909,11 @@
     ]
    },
    "desc": "Market ITD implied Chris Duncan",
-   "raw": 0.513499973632864
+   "raw": 0.5392755392755393
   },
   {
    "id": "v74",
-   "text": "-9.5%",
+   "text": "-12.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -923,7 +923,7 @@
     ]
    },
    "desc": "Edge itd Chris Duncan",
-   "raw": -0.09502742156971256
+   "raw": -0.1208029872123878
   },
   {
    "id": "v75",

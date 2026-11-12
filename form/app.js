@@ -382,8 +382,8 @@ async function vFight(slug, n) {
   html += `<div class="grid2"><div><h3>Tale of the tape · entering this fight</h3><div class="tape">
     ${tapeRow("Age", agA ? agA.toFixed(1) : "—", agB ? agB.toFixed(1) : "—", "lo")}
     ${tapeRow("Height", esc(ba.ht || "—"), esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
-    ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "—", bb.reach ? bb.reach + '"' : "—", "hi")}
-    ${tapeRow("Stance", esc(ba.stance || "—"), esc(bb.stance || "—"), null)}
+    ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "not listed", bb.reach ? bb.reach + '"' : "not listed", "hi")}
+    ${tapeRow("Stance", esc(ba.stance || "not listed"), esc(bb.stance || "not listed"), null)}
     ${tapeRow("UFC record", ga.rec, gb.rec, null)}
     ${tapeRow("Form Figure rating", f.form ? f.form.ra.toFixed(1) : "—", f.form ? f.form.rb.toFixed(1) : "—", "hi")}
     ${tapeRow("Last 3 figures", pa.slice(0, 3).map(x => x.fg == null ? "–" : Math.round(x.fg)).join(" · ") || "—", pb.slice(0, 3).map(x => x.fg == null ? "–" : Math.round(x.fg)).join(" · ") || "—", null)}
@@ -502,7 +502,7 @@ async function vFighter(slug) {
   $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/fighters">Fighters</a> › ${esc(F.name)}</div>
     <h2>${esc(F.name)}</h2>
     ${F.dup_name ? '<div class="banner">Two UFC fighters share this name. Their fights are combined on this page.</div>' : ""}
-    <div class="stats"><div><b>${g.rec}</b><span>UFC record</span></div><div><b>${F.fig == null ? "—" : F.fig.toFixed(1)}</b><span>Form Figure rating</span></div><div><b>${F.elo || "—"}</b><span>Elo</span></div><div><b>${streak(F.fights)}</b><span>Streak</span></div><div><b>${age ? age.toFixed(1) : "—"}</b><span>Age</span></div><div><b>${esc(b.ht || "—")}</b><span>Height</span></div><div><b>${b.reach ? b.reach + '"' : "—"}</b><span>Reach</span></div><div><b>${esc(b.stance || "—")}</b><span>Stance</span></div><div><b>${F.fights[0] ? esc(F.fights[0].wc.replace("Women's ", "W ")) : "—"}</b><span>Last weight</span></div></div>
+    <div class="stats"><div><b>${g.rec}</b><span>UFC record</span></div><div><b>${F.fig == null ? "—" : F.fig.toFixed(1)}</b><span>Form Figure rating</span></div><div><b>${F.elo || "—"}</b><span>Elo</span></div><div><b>${streak(F.fights)}</b><span>Streak</span></div><div><b>${age ? age.toFixed(1) : "—"}</b><span>Age</span></div><div><b>${esc(b.ht || "—")}</b><span>Height</span></div><div><b>${b.reach ? b.reach + '"' : "not listed"}</b><span>Reach</span></div><div><b>${esc(b.stance || "not listed")}</b><span>Stance</span></div><div><b>${F.fights[0] ? esc(F.fights[0].wc.replace("Women's ", "W ")) : "—"}</b><span>Last weight</span></div></div>
     <div class="grid3" style="margin-top:14px">
       <div class="box"><h3 style="margin-top:0">Striking</h3><div class="kv"><span>SLpM</span><span>${v(g.slpm)}</span></div><div class="kv"><span>SApM</span><span>${v(g.sapm)}</span></div><div class="kv"><span>Diff / min</span><span class="${cls(g.diff)}">${g.diff == null ? "—" : signed(g.diff, 2)}</span></div><div class="kv"><span>Accuracy / defense</span><span>${pc(g.acc)} / ${pc(g.def)}</span></div><div class="kv"><span>R1 diff / min</span><span class="${cls(g.r1diff)}">${g.r1diff == null ? "—" : signed(g.r1diff, 2)}</span></div><div class="kv"><span>R3+ diff / min (${g.latemin.toFixed(0)} min)</span><span class="${cls(g.latediff)}">${g.latediff == null ? "—" : signed(g.latediff, 2)}</span></div><div class="kv"><span>KD per 15 (for-against)</span><span>${v(g.kd15)} - ${v(g.okd15)}</span></div></div>
       <div class="box"><h3 style="margin-top:0">Grappling</h3><div class="kv"><span>TD per 15</span><span>${v(g.td15)}</span></div><div class="kv"><span>TD acc / def</span><span>${pc(g.tdacc)} / ${pc(g.tdd)}</span></div><div class="kv"><span>Control %</span><span>${pc(g.ctrlp)}</span></div><div class="kv"><span>Controlled %</span><span>${pc(g.octrlp)}</span></div><div class="kv"><span>Sub att per 15</span><span>${v(g.sub15)}</span></div></div>
@@ -546,8 +546,8 @@ async function vCompare(sa, sb) {
   <h3>Tale of the tape · today</h3><div class="tape">
     ${tapeRow("Age", aA ? aA.toFixed(1) : "—", aB ? aB.toFixed(1) : "—", "lo")}
     ${tapeRow("Height", esc(ba.ht || "—"), esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
-    ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "—", bb.reach ? bb.reach + '"' : "—", "hi")}
-    ${tapeRow("Stance", esc(ba.stance || "—"), esc(bb.stance || "—"), null)}
+    ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "not listed", bb.reach ? bb.reach + '"' : "not listed", "hi")}
+    ${tapeRow("Stance", esc(ba.stance || "not listed"), esc(bb.stance || "not listed"), null)}
     ${tapeRow("Form Figure rating", A.fig == null ? "—" : A.fig.toFixed(1), B.fig == null ? "—" : B.fig.toFixed(1), "hi")}
     ${tapeRow("Last 3 figures", A.fights.slice(0, 3).map(x => x.fg == null ? "–" : Math.round(x.fg)).join(" · "), B.fights.slice(0, 3).map(x => x.fg == null ? "–" : Math.round(x.fg)).join(" · "), null)}
     ${tapeRow("Elo", A.elo || "—", B.elo || "—", "hi")}

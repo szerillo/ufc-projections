@@ -16,9 +16,10 @@ R="$(git ls-remote origin refs/heads/main | cut -f1)"
 python3 - "$SLUG" "$EVENT" <<'PY'
 import subprocess, sys, re
 slug, event = sys.argv[1:3]
-ALLOWED = {f"data/pending/{slug}_projections.json", f"data/{slug}_projections.json", f"data/{slug}_odds.json",
-           f"data/embeds/line_history_{slug}.json", f"data/embeds/kalshi_{slug}.json", f"form/data/embed_metrics/{slug}.json", event,
-           f"embeds/{slug}/card.json"} | {f"embeds/{slug}/fight_{i:02d}.{x}" for i in range(1, 15) for x in ("html", "registry.json")}
+# Kirk round 23 call 3: only what a dry-run refresh actually wrote (audits/round23/refresh_writes.txt). The export is not on the
+# list: on Saturday it reaches main through Sean's publish, so the refresh copies it unchanged. card.json was not written.
+ALLOWED = {f"data/{slug}_odds.json", f"data/embeds/line_history_{slug}.json", f"data/embeds/kalshi_{slug}.json",
+           f"form/data/embed_metrics/{slug}.json", event} | {f"embeds/{slug}/fight_{i:02d}.{x}" for i in range(1, 14) for x in ("html", "registry.json")}
 st = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"], capture_output=True, text=True, check=True).stdout.splitlines()
 paths = [l[3:].split(" -> ")[-1] for l in st if l.strip()]
 bad = [p for p in paths if p not in ALLOWED]

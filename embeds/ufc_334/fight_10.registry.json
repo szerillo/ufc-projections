@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "-162",
+   "text": "-156",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Uros Medic",
-   "raw": -162
+   "raw": -156
   },
   {
    "id": "v16",
-   "text": "61.8%",
+   "text": "60.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Uros Medic"
    },
    "desc": "Market implied Uros Medic",
-   "raw": 0.6183206106870229
+   "raw": 0.609375
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "+136",
+   "text": "+130",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Kevin Holland",
-   "raw": 136
+   "raw": 130
   },
   {
    "id": "v23",
-   "text": "42.4%",
+   "text": "43.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Kevin Holland"
    },
    "desc": "Market implied Kevin Holland",
-   "raw": 0.423728813559322
+   "raw": 0.43478260869565216
   },
   {
    "id": "v24",
@@ -341,7 +341,7 @@
   },
   {
    "id": "v29",
-   "text": "+395",
+   "text": "+385",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -350,11 +350,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 395
+   "raw": 385
   },
   {
    "id": "v30",
-   "text": "20.2%",
+   "text": "20.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -362,7 +362,7 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.20202020202020202
+   "raw": 0.20618556701030927
   },
   {
    "id": "v31",
@@ -404,7 +404,7 @@
   },
   {
    "id": "v34",
-   "text": "-619",
+   "text": "-595",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -413,11 +413,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": -619
+   "raw": -595
   },
   {
    "id": "v35",
-   "text": "86.1%",
+   "text": "85.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -425,11 +425,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.8609179415855355
+   "raw": 0.8561151079136691
   },
   {
    "id": "v36",
-   "text": "-11.1%",
+   "text": "-10.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -439,7 +439,7 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.11133626257461215
+   "raw": -0.10653342890274575
   },
   {
    "id": "v37",
@@ -467,7 +467,7 @@
   },
   {
    "id": "v39",
-   "text": "+774",
+   "text": "+724",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -476,11 +476,11 @@
     "field": "cost"
    },
    "desc": "Market dec Uros Medic",
-   "raw": 774
+   "raw": 724
   },
   {
    "id": "v40",
-   "text": "11.4%",
+   "text": "12.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -488,11 +488,11 @@
     "label": "Uros Medic Points"
    },
    "desc": "Market dec implied Uros Medic",
-   "raw": 0.11441647597254005
+   "raw": 0.12135922330097088
   },
   {
    "id": "v41",
-   "text": "+7.1%",
+   "text": "+6.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -502,7 +502,7 @@
     ]
    },
    "desc": "Edge dec Uros Medic",
-   "raw": 0.07101376467777924
+   "raw": 0.06407101734934842
   },
   {
    "id": "v42",
@@ -772,7 +772,7 @@
   },
   {
    "id": "v63",
-   "text": "+314",
+   "text": "+330",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -781,11 +781,11 @@
     "field": "cost"
    },
    "desc": "Market ko Kevin Holland",
-   "raw": 314
+   "raw": 330
   },
   {
    "id": "v64",
-   "text": "24.2%",
+   "text": "23.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -793,11 +793,11 @@
     "label": "Kevin Holland KO/TKO/DQ"
    },
    "desc": "Market ko implied Kevin Holland",
-   "raw": 0.24154589371980675
+   "raw": 0.23255813953488372
   },
   {
    "id": "v65",
-   "text": "-5.7%",
+   "text": "-4.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -807,7 +807,7 @@
     ]
    },
    "desc": "Edge ko Kevin Holland",
-   "raw": -0.05747660982292413
+   "raw": -0.048488855638001094
   },
   {
    "id": "v66",
@@ -898,7 +898,7 @@
   },
   {
    "id": "v73",
-   "text": "41.6%",
+   "text": "40.7%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -909,11 +909,11 @@
     ]
    },
    "desc": "Market ITD implied Kevin Holland",
-   "raw": 0.4157619215943712
+   "raw": 0.40677416740944816
   },
   {
    "id": "v74",
-   "text": "-8.4%",
+   "text": "-7.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -923,7 +923,7 @@
     ]
    },
    "desc": "Edge itd Kevin Holland",
-   "raw": -0.08365333553097709
+   "raw": -0.07466558134605406
   },
   {
    "id": "v75",

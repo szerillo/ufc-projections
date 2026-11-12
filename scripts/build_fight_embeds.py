@@ -314,13 +314,13 @@ def build(names, outname):
     def wside(va, vb, better, lab):
         if va is None or vb is None or not arrows(lab, va, vb, better): return None
         return "a" if ((va > vb) if better == "hi" else (va < vb)) else "b"
-    def v_(x, fmt, rule, desc, side, **k): return R(x, fmt, rule, desc, side=side, **k) if x not in (None, "") else '<span class="dim">n/a</span>'
+    def v_(x, fmt, rule, desc, side, miss="n/a", **k): return R(x, fmt, rule, desc, side=side, **k) if x not in (None, "") else f'<span class="dim">{miss}</span>'   # Kirk round 22 call 2: blank reach/stance read "not listed"
     mini_tape = ('<div class="mt" data-part="tape" role="table" aria-label="Tale of the tape">'
         + mrow("UFC record", v_(ga["rec"], "str", "record", an + " UFC record", "a"), v_(gb["rec"], "str", "record", bn + " UFC record", "b"))
         + mrow("Age", v_(agA, "n1", "age", "Age a", "a"), v_(agB, "n1", "age", "Age b", "b"), arrows("Age", agA, agB, "lo"), wside(agA, agB, "lo", "Age"))
         + mrow("Height", v_(FA["bio"].get("ht"), "str", "bio", "Height a", "a", key="ht"), v_(FB["bio"].get("ht"), "str", "bio", "Height b", "b", key="ht"), arrows("Height", hA, hB, "hi"), wside(hA, hB, "hi", "Height"))
-        + mrow("Reach", v_(ra_, "in", "bio_reach", "Reach a", "a"), v_(rb_, "in", "bio_reach", "Reach b", "b"), arrows("Reach", ra_, rb_, "hi"), wside(ra_, rb_, "hi", "Reach"))
-        + mrow("Stance", v_(FA["bio"].get("stance"), "str", "bio", "Stance a", "a", key="stance"), v_(FB["bio"].get("stance"), "str", "bio", "Stance b", "b", key="stance"))
+        + mrow("Reach", v_(ra_, "in", "bio_reach", "Reach a", "a", miss="not listed"), v_(rb_, "in", "bio_reach", "Reach b", "b", miss="not listed"), arrows("Reach", ra_, rb_, "hi"), wside(ra_, rb_, "hi", "Reach"))
+        + mrow("Stance", v_(FA["bio"].get("stance"), "str", "bio", "Stance a", "a", miss="not listed", key="stance"), v_(FB["bio"].get("stance"), "str", "bio", "Stance b", "b", miss="not listed", key="stance"))
         + '</div>')
     head = f'''<div class="ff-header"><div class="ff-brand" aria-label="Action Network"><span class="ff-brand-text">ACTION</span><span class="ff-brand-check">{CHECK_SVG}</span></div>
 <div class="ff-title">{esc(EVL["name"])} · Fight Form</div><div class="ff-subtitle">{day} · {esc(EVL["location"])}</div>

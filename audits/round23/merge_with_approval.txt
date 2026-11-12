@@ -1,0 +1,11 @@
+  data/ufc_334_odds.json: new keys approved by GUARD_APPROVE_KEYS: ['.fights[].markets.total_rounds[].alt_line']
+MAIN GUARD: origin/main is 140472f6; since 727cb19c main changed only ['data/fn_prochazka_stirling_odds.json', 'data/ufc_334_odds.json'] (allowlist: export, odds bot). Conflicts: ['data/ufc_334_odds.json']. odds file: main 2026-11-12T19:11:30Z, branch 2026-11-12T18:09:02Z -> take MAIN's copy and rebuild the embeds on it. Branch served set 3790 files, 0 offshore hits; main's new versions pass the full scan and keep their key layout. OK as a --no-ff merge via scripts/merge_main.sh (not a fast-forward).
+  odds conflict: main 2026-11-12T19:11:30Z, branch 2026-11-12T18:09:02Z
+  odds file resolved to MAIN's (bot) copy, the newer
+  served odds file differs from the one the embeds were built on: rebuilding the embeds on it
+13 embeds in <sandbox>/embeds/ufc_334; Sean's numbers from data/pending/ufc_334_projections.json
+TOTAL: 2964/2964 numbers verified; 0 mismatches/assertion failures
+SIDE CHECK: not checkable (line within 4 pts of 50%): Evan Elder
+METRICS FILE: verify_embed_metrics: 2984 values recomputed from the CSVs, 0 mismatches
+PUBLIC SCAN: 687 files (audits/ + added or modified vs origin/main), 0 hits
+MERGE READY: local branch _merge at 5887837e (nothing pushed). On Kirk's go: git push origin _merge:main

@@ -140,7 +140,7 @@
   },
   {
    "id": "v12",
-   "text": "+310",
+   "text": "+320",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -149,11 +149,11 @@
     "field": "cost"
    },
    "desc": "Market ML Alatengheili",
-   "raw": 310
+   "raw": 320
   },
   {
    "id": "v13",
-   "text": "24.4%",
+   "text": "23.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -161,7 +161,7 @@
     "label": "Alateng Heili"
    },
    "desc": "Market implied Alatengheili",
-   "raw": 0.24390243902439024
+   "raw": 0.23809523809523808
   },
   {
    "id": "v14",
@@ -223,7 +223,7 @@
   },
   {
    "id": "v19",
-   "text": "-395",
+   "text": "-425",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -232,11 +232,11 @@
     "field": "cost"
    },
    "desc": "Market ML Juan Diaz",
-   "raw": -395
+   "raw": -425
   },
   {
    "id": "v20",
-   "text": "79.8%",
+   "text": "81.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -244,7 +244,7 @@
     "label": "Juan Diaz"
    },
    "desc": "Market implied Juan Diaz",
-   "raw": 0.797979797979798
+   "raw": 0.8095238095238095
   },
   {
    "id": "v21",
@@ -284,7 +284,7 @@
   },
   {
    "id": "v24",
-   "text": "-185",
+   "text": "-188",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -293,11 +293,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": -185
+   "raw": -188
   },
   {
    "id": "v25",
-   "text": "64.9%",
+   "text": "65.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -305,11 +305,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.6491228070175439
+   "raw": 0.6527777777777778
   },
   {
    "id": "v26",
-   "text": "-0.4%",
+   "text": "-0.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -319,7 +319,7 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.0038597313799615396
+   "raw": -0.007514702140195451
   },
   {
    "id": "v27",
@@ -347,7 +347,7 @@
   },
   {
    "id": "v29",
-   "text": "+140",
+   "text": "+144",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -356,11 +356,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": 140
+   "raw": 144
   },
   {
    "id": "v30",
-   "text": "41.7%",
+   "text": "41.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -368,11 +368,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.4166666666666667
+   "raw": 0.4098360655737705
   },
   {
    "id": "v31",
-   "text": "-6.2%",
+   "text": "-5.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -382,7 +382,7 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.061929742304249025
+   "raw": -0.05509914121135284
   },
   {
    "id": "v32",
@@ -410,6 +410,45 @@
   },
   {
    "id": "v34",
+   "text": "+450",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Alatengheili",
+   "raw": 450
+  },
+  {
+   "id": "v35",
+   "text": "18.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili Points"
+   },
+   "desc": "Market dec implied Alatengheili",
+   "raw": 0.18181818181818182
+  },
+  {
+   "id": "v36",
+   "text": "-5.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v33",
+     "v35"
+    ]
+   },
+   "desc": "Edge dec Alatengheili",
+   "raw": -0.05674456773450287
+  },
+  {
+   "id": "v37",
    "text": "+1132",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -421,7 +460,7 @@
    "raw": 0.08119246262409927
   },
   {
-   "id": "v35",
+   "id": "v38",
    "text": "8.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -433,7 +472,46 @@
    "raw": 0.08119246262409927
   },
   {
-   "id": "v36",
+   "id": "v39",
+   "text": "+1200",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Alatengheili",
+   "raw": 1200
+  },
+  {
+   "id": "v40",
+   "text": "7.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Alatengheili",
+   "raw": 0.07692307692307693
+  },
+  {
+   "id": "v41",
+   "text": "+0.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v38",
+     "v40"
+    ]
+   },
+   "desc": "Edge ko Alatengheili",
+   "raw": 0.004269385701022338
+  },
+  {
+   "id": "v42",
    "text": "+2067",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -445,7 +523,7 @@
    "raw": 0.04615477085443335
   },
   {
-   "id": "v37",
+   "id": "v43",
    "text": "4.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -457,7 +535,46 @@
    "raw": 0.04615477085443335
   },
   {
-   "id": "v38",
+   "id": "v44",
+   "text": "+3500",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Alatengheili",
+   "raw": 3500
+  },
+  {
+   "id": "v45",
+   "text": "2.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili Submission"
+   },
+   "desc": "Market sub implied Alatengheili",
+   "raw": 0.027777777777777776
+  },
+  {
+   "id": "v46",
+   "text": "+1.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v43",
+     "v45"
+    ]
+   },
+   "desc": "Edge sub Alatengheili",
+   "raw": 0.018376993076655572
+  },
+  {
+   "id": "v47",
    "text": "+685",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -469,7 +586,7 @@
    "raw": 0.1273472334785326
   },
   {
-   "id": "v39",
+   "id": "v48",
    "text": "12.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -481,7 +598,36 @@
    "raw": 0.1273472334785326
   },
   {
-   "id": "v40",
+   "id": "v49",
+   "text": "10.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Alateng Heili KO/TKO/DQ",
+     "Alateng Heili Submission"
+    ]
+   },
+   "desc": "Market ITD implied Alatengheili",
+   "raw": 0.1047008547008547
+  },
+  {
+   "id": "v50",
+   "text": "+2.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v48",
+     "v49"
+    ]
+   },
+   "desc": "Edge itd Alatengheili",
+   "raw": 0.022646378777677903
+  },
+  {
+   "id": "v51",
    "text": "-108",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -493,7 +639,7 @@
    "raw": 0.5201894615539034
   },
   {
-   "id": "v41",
+   "id": "v52",
    "text": "52.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -505,7 +651,46 @@
    "raw": 0.5201894615539034
   },
   {
-   "id": "v42",
+   "id": "v53",
+   "text": "-105",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Juan Diaz Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Juan Diaz",
+   "raw": -105
+  },
+  {
+   "id": "v54",
+   "text": "51.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Juan Diaz Points"
+   },
+   "desc": "Market dec implied Juan Diaz",
+   "raw": 0.5121951219512195
+  },
+  {
+   "id": "v55",
+   "text": "+0.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v52",
+     "v54"
+    ]
+   },
+   "desc": "Edge dec Juan Diaz",
+   "raw": 0.00799433960268392
+  },
+  {
+   "id": "v56",
    "text": "+527",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -517,7 +702,7 @@
    "raw": 0.15960441275333567
   },
   {
-   "id": "v43",
+   "id": "v57",
    "text": "16.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -529,7 +714,46 @@
    "raw": 0.15960441275333567
   },
   {
-   "id": "v44",
+   "id": "v58",
+   "text": "+354",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Juan Diaz KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Juan Diaz",
+   "raw": 354
+  },
+  {
+   "id": "v59",
+   "text": "22.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Juan Diaz KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Juan Diaz",
+   "raw": 0.22026431718061673
+  },
+  {
+   "id": "v60",
+   "text": "-6.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v57",
+     "v59"
+    ]
+   },
+   "desc": "Edge ko Juan Diaz",
+   "raw": -0.06065990442728106
+  },
+  {
+   "id": "v61",
    "text": "+1375",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -541,7 +765,7 @@
    "raw": 0.06778527813054921
   },
   {
-   "id": "v45",
+   "id": "v62",
    "text": "6.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -553,7 +777,46 @@
    "raw": 0.06778527813054921
   },
   {
-   "id": "v46",
+   "id": "v63",
+   "text": "+524",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Juan Diaz Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Juan Diaz",
+   "raw": 524
+  },
+  {
+   "id": "v64",
+   "text": "16.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Juan Diaz Submission"
+   },
+   "desc": "Market sub implied Juan Diaz",
+   "raw": 0.16025641025641027
+  },
+  {
+   "id": "v65",
+   "text": "-9.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v62",
+     "v64"
+    ]
+   },
+   "desc": "Edge sub Juan Diaz",
+   "raw": -0.09247113212586106
+  },
+  {
+   "id": "v66",
    "text": "+340",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -565,7 +828,7 @@
    "raw": 0.22738969088388492
   },
   {
-   "id": "v47",
+   "id": "v67",
    "text": "22.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -577,7 +840,36 @@
    "raw": 0.22738969088388492
   },
   {
-   "id": "v48",
+   "id": "v68",
+   "text": "38.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Juan Diaz KO/TKO/DQ",
+     "Juan Diaz Submission"
+    ]
+   },
+   "desc": "Market ITD implied Juan Diaz",
+   "raw": 0.38052072743702703
+  },
+  {
+   "id": "v69",
+   "text": "-15.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v67",
+     "v68"
+    ]
+   },
+   "desc": "Edge itd Juan Diaz",
+   "raw": -0.1531310365531421
+  },
+  {
+   "id": "v70",
    "text": "-333",
    "fmt": "ml",
    "rule": "lh_open_ml",
@@ -593,8 +885,8 @@
    "raw": -333
   },
   {
-   "id": "v49",
-   "text": "2.6",
+   "id": "v71",
+   "text": "2.7",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -605,10 +897,10 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.025999999999999995
+   "raw": 0.026999999999999996
   },
   {
-   "id": "v50",
+   "id": "v72",
    "text": "74.0%",
    "fmt": "pct1",
    "rule": "lh_p",
@@ -625,8 +917,8 @@
    "raw": 0.74
   },
   {
-   "id": "v51",
-   "text": "76.6%",
+   "id": "v73",
+   "text": "76.7%",
    "fmt": "pct1",
    "rule": "lh_p",
    "args": {
@@ -639,10 +931,10 @@
     "at": "current"
    },
    "desc": "LH current p Juan Diaz",
-   "raw": 0.766
+   "raw": 0.767
   },
   {
-   "id": "v52",
+   "id": "v74",
    "text": "66%",
    "fmt": "pct0",
    "rule": "em",
@@ -654,7 +946,7 @@
    "raw": 0.6576
   },
   {
-   "id": "v53",
+   "id": "v75",
    "text": "20%",
    "fmt": "pct0",
    "rule": "em",
@@ -666,7 +958,7 @@
    "raw": 0.2038
   },
   {
-   "id": "v54",
+   "id": "v76",
    "text": "14%",
    "fmt": "pct0",
    "rule": "em",
@@ -678,7 +970,7 @@
    "raw": 0.1386
   },
   {
-   "id": "v55",
+   "id": "v77",
    "text": "23%",
    "fmt": "pct0",
    "rule": "em",
@@ -690,7 +982,7 @@
    "raw": 0.2308
   },
   {
-   "id": "v56",
+   "id": "v78",
    "text": "23%",
    "fmt": "pct0",
    "rule": "em",
@@ -702,7 +994,7 @@
    "raw": 0.2308
   },
   {
-   "id": "v57",
+   "id": "v79",
    "text": "54%",
    "fmt": "pct0",
    "rule": "em",
@@ -714,7 +1006,7 @@
    "raw": 0.5385
   },
   {
-   "id": "v58",
+   "id": "v80",
    "text": "10",
    "fmt": "int",
    "rule": "em",
@@ -726,7 +1018,7 @@
    "raw": 10
   },
   {
-   "id": "v59",
+   "id": "v81",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -738,7 +1030,7 @@
    "raw": 1
   },
   {
-   "id": "v60",
+   "id": "v82",
    "text": "7%",
    "fmt": "pct0",
    "rule": "em",
@@ -750,7 +1042,7 @@
    "raw": 0.0721
   },
   {
-   "id": "v61",
+   "id": "v83",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -762,7 +1054,7 @@
    "raw": 0
   },
   {
-   "id": "v62",
+   "id": "v84",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -774,7 +1066,7 @@
    "raw": 1
   },
   {
-   "id": "v63",
+   "id": "v85",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -786,7 +1078,7 @@
    "raw": 0.0
   },
   {
-   "id": "v64",
+   "id": "v86",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -798,7 +1090,7 @@
    "raw": 0
   },
   {
-   "id": "v65",
+   "id": "v87",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -810,7 +1102,7 @@
    "raw": 0
   },
   {
-   "id": "v66",
+   "id": "v88",
    "text": "20%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -822,7 +1114,7 @@
    "raw": 0.1983
   },
   {
-   "id": "v67",
+   "id": "v89",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -834,7 +1126,7 @@
    "raw": 0.0
   },
   {
-   "id": "v68",
+   "id": "v90",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -846,7 +1138,7 @@
    "raw": 0
   },
   {
-   "id": "v69",
+   "id": "v91",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -858,7 +1150,7 @@
    "raw": 0
   },
   {
-   "id": "v70",
+   "id": "v92",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -870,7 +1162,7 @@
    "raw": 0.0
   },
   {
-   "id": "v71",
+   "id": "v93",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -882,7 +1174,7 @@
    "raw": 0
   },
   {
-   "id": "v72",
+   "id": "v94",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -894,7 +1186,7 @@
    "raw": 0
   },
   {
-   "id": "v73",
+   "id": "v95",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -906,7 +1198,7 @@
    "raw": 0.217
   },
   {
-   "id": "v74",
+   "id": "v96",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -918,7 +1210,7 @@
    "raw": 1
   },
   {
-   "id": "v75",
+   "id": "v97",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -930,7 +1222,7 @@
    "raw": 5
   },
   {
-   "id": "v76",
+   "id": "v98",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -942,7 +1234,7 @@
    "raw": 3
   },
   {
-   "id": "v77",
+   "id": "v99",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -954,7 +1246,7 @@
    "raw": 1
   },
   {
-   "id": "v78",
+   "id": "v100",
    "text": "40%",
    "fmt": "pct0",
    "rule": "em",
@@ -966,7 +1258,7 @@
    "raw": 0.4
   },
   {
-   "id": "v79",
+   "id": "v101",
    "text": "-2.1",
    "fmt": "s1",
    "rule": "em",
@@ -978,7 +1270,7 @@
    "raw": -2.075
   },
   {
-   "id": "v80",
+   "id": "v102",
    "text": "10",
    "fmt": "int",
    "rule": "em",
@@ -990,7 +1282,7 @@
    "raw": 10
   },
   {
-   "id": "v81",
+   "id": "v103",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em",
@@ -1002,7 +1294,7 @@
    "raw": 0.2222
   },
   {
-   "id": "v82",
+   "id": "v104",
    "text": "-1.8",
    "fmt": "s1",
    "rule": "em",
@@ -1014,7 +1306,7 @@
    "raw": -1.756
   },
   {
-   "id": "v83",
+   "id": "v105",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -1026,7 +1318,7 @@
    "raw": 9
   },
   {
-   "id": "v84",
+   "id": "v106",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em",
@@ -1038,7 +1330,7 @@
    "raw": 0.2222
   },
   {
-   "id": "v85",
+   "id": "v107",
    "text": "-2.9",
    "fmt": "s1",
    "rule": "em",
@@ -1050,7 +1342,7 @@
    "raw": -2.933
   },
   {
-   "id": "v86",
+   "id": "v108",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -1062,7 +1354,7 @@
    "raw": 9
   },
   {
-   "id": "v87",
+   "id": "v109",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1074,7 +1366,7 @@
    "raw": 1.0
   },
   {
-   "id": "v88",
+   "id": "v110",
    "text": "-0.8",
    "fmt": "s1",
    "rule": "em",
@@ -1086,7 +1378,7 @@
    "raw": -0.8
   },
   {
-   "id": "v89",
+   "id": "v111",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1098,7 +1390,7 @@
    "raw": 1
   },
   {
-   "id": "v90",
+   "id": "v112",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -1110,7 +1402,7 @@
    "raw": 1.0
   },
   {
-   "id": "v91",
+   "id": "v113",
    "text": "+0.5",
    "fmt": "s1",
    "rule": "em",
@@ -1122,7 +1414,7 @@
    "raw": 0.484
   },
   {
-   "id": "v92",
+   "id": "v114",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1134,7 +1426,7 @@
    "raw": 1
   },
   {
-   "id": "v93",
+   "id": "v115",
    "text": "-19",
    "fmt": "sint",
    "rule": "em",
@@ -1146,7 +1438,7 @@
    "raw": -19
   },
   {
-   "id": "v94",
+   "id": "v116",
    "text": "-26",
    "fmt": "sint",
    "rule": "em",
@@ -1158,7 +1450,7 @@
    "raw": -26
   },
   {
-   "id": "v95",
+   "id": "v117",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -1170,7 +1462,7 @@
    "raw": 1
   },
   {
-   "id": "v96",
+   "id": "v118",
    "text": "-28",
    "fmt": "sint",
    "rule": "em",
@@ -1182,7 +1474,7 @@
    "raw": -28
   },
   {
-   "id": "v97",
+   "id": "v119",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1194,7 +1486,7 @@
    "raw": 4
   },
   {
-   "id": "v98",
+   "id": "v120",
    "text": "+7",
    "fmt": "sint",
    "rule": "em",
@@ -1206,7 +1498,7 @@
    "raw": 7
   },
   {
-   "id": "v99",
+   "id": "v121",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -1218,7 +1510,7 @@
    "raw": 1
   },
   {
-   "id": "v100",
+   "id": "v122",
    "text": "-21",
    "fmt": "sint",
    "rule": "em",
@@ -1230,7 +1522,7 @@
    "raw": -21
   },
   {
-   "id": "v101",
+   "id": "v123",
    "text": "-7",
    "fmt": "sint",
    "rule": "em",
@@ -1242,7 +1534,7 @@
    "raw": -7
   },
   {
-   "id": "v102",
+   "id": "v124",
    "text": "-7",
    "fmt": "sint",
    "rule": "em",
@@ -1254,7 +1546,7 @@
    "raw": -7
   },
   {
-   "id": "v103",
+   "id": "v125",
    "text": "-5",
    "fmt": "sint",
    "rule": "em",
@@ -1266,7 +1558,7 @@
    "raw": -5
   },
   {
-   "id": "v104",
+   "id": "v126",
    "text": "-15",
    "fmt": "sint",
    "rule": "em",
@@ -1278,7 +1570,7 @@
    "raw": -15
   },
   {
-   "id": "v105",
+   "id": "v127",
    "text": "-11",
    "fmt": "sint",
    "rule": "em",
@@ -1290,7 +1582,7 @@
    "raw": -11
   },
   {
-   "id": "v106",
+   "id": "v128",
    "text": "-21",
    "fmt": "sint",
    "rule": "em",
@@ -1302,7 +1594,7 @@
    "raw": -21
   },
   {
-   "id": "v107",
+   "id": "v129",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1314,7 +1606,7 @@
    "raw": 2
   },
   {
-   "id": "v108",
+   "id": "v130",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1326,7 +1618,7 @@
    "raw": 4
   },
   {
-   "id": "v109",
+   "id": "v131",
    "text": "-15",
    "fmt": "sint",
    "rule": "em",
@@ -1338,7 +1630,7 @@
    "raw": -15
   },
   {
-   "id": "v110",
+   "id": "v132",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1350,7 +1642,7 @@
    "raw": 2
   },
   {
-   "id": "v111",
+   "id": "v133",
    "text": "-20",
    "fmt": "sint",
    "rule": "em",
@@ -1362,7 +1654,7 @@
    "raw": -20
   },
   {
-   "id": "v112",
+   "id": "v134",
    "text": "-3",
    "fmt": "sint",
    "rule": "em",
@@ -1374,7 +1666,7 @@
    "raw": -3
   },
   {
-   "id": "v113",
+   "id": "v135",
    "text": "-23",
    "fmt": "sint",
    "rule": "em",
@@ -1386,7 +1678,7 @@
    "raw": -23
   },
   {
-   "id": "v114",
+   "id": "v136",
    "text": "-9",
    "fmt": "sint",
    "rule": "em",
@@ -1398,7 +1690,7 @@
    "raw": -9
   },
   {
-   "id": "v115",
+   "id": "v137",
    "text": "-23",
    "fmt": "sint",
    "rule": "em",
@@ -1410,7 +1702,7 @@
    "raw": -23
   },
   {
-   "id": "v116",
+   "id": "v138",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1422,7 +1714,7 @@
    "raw": 4
   },
   {
-   "id": "v117",
+   "id": "v139",
    "text": "-13",
    "fmt": "sint",
    "rule": "em",
@@ -1434,7 +1726,7 @@
    "raw": -13
   },
   {
-   "id": "v118",
+   "id": "v140",
    "text": "-27",
    "fmt": "sint",
    "rule": "em",
@@ -1446,7 +1738,7 @@
    "raw": -27
   },
   {
-   "id": "v119",
+   "id": "v141",
    "text": "-16",
    "fmt": "sint",
    "rule": "em",
@@ -1458,7 +1750,7 @@
    "raw": -16
   },
   {
-   "id": "v120",
+   "id": "v142",
    "text": "-22",
    "fmt": "sint",
    "rule": "em",
@@ -1470,7 +1762,7 @@
    "raw": -22
   },
   {
-   "id": "v121",
+   "id": "v143",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -1482,7 +1774,7 @@
    "raw": -4
   },
   {
-   "id": "v122",
+   "id": "v144",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1494,7 +1786,7 @@
    "raw": 2
   },
   {
-   "id": "v123",
+   "id": "v145",
    "text": "46",
    "fmt": "r0",
    "rule": "em",
@@ -1506,7 +1798,7 @@
    "raw": 45.78
   },
   {
-   "id": "v124",
+   "id": "v146",
    "text": "45",
    "fmt": "r0",
    "rule": "em",
@@ -1518,7 +1810,7 @@
    "raw": 45.0
   },
   {
-   "id": "v125",
+   "id": "v147",
    "text": "45",
    "fmt": "r0",
    "rule": "em",
@@ -1530,7 +1822,7 @@
    "raw": 45.0
   },
   {
-   "id": "v126",
+   "id": "v148",
    "text": "5",
    "fmt": "r0",
    "rule": "em",
@@ -1542,7 +1834,7 @@
    "raw": 5.0
   },
   {
-   "id": "v127",
+   "id": "v149",
    "text": "4",
    "fmt": "r0",
    "rule": "em",
@@ -1554,7 +1846,7 @@
    "raw": 4.13
   },
   {
-   "id": "v128",
+   "id": "v150",
    "text": "0",
    "fmt": "r0",
    "rule": "em",
@@ -1566,7 +1858,7 @@
    "raw": 0.0
   },
   {
-   "id": "v129",
+   "id": "v151",
    "text": "1.88",
    "fmt": "n2",
    "rule": "em",
@@ -1578,7 +1870,7 @@
    "raw": 1.878
   },
   {
-   "id": "v130",
+   "id": "v152",
    "text": "8.21",
    "fmt": "n2",
    "rule": "em",
@@ -1590,7 +1882,7 @@
    "raw": 8.212
   },
   {
-   "id": "v131",
+   "id": "v153",
    "text": "42%",
    "fmt": "pct0",
    "rule": "em",
@@ -1602,7 +1894,7 @@
    "raw": 0.425
   },
   {
-   "id": "v132",
+   "id": "v154",
    "text": "62%",
    "fmt": "pct0",
    "rule": "em",
@@ -1614,7 +1906,7 @@
    "raw": 0.625
   },
   {
-   "id": "v133",
+   "id": "v155",
    "text": "75%",
    "fmt": "pct0",
    "rule": "em",
@@ -1626,7 +1918,7 @@
    "raw": 0.75
   },
   {
-   "id": "v134",
+   "id": "v156",
    "text": "16%",
    "fmt": "pct0",
    "rule": "em",
@@ -1638,7 +1930,7 @@
    "raw": 0.1556
   },
   {
-   "id": "v135",
+   "id": "v157",
    "text": "42%",
    "fmt": "pct0",
    "rule": "em",
@@ -1650,7 +1942,7 @@
    "raw": 0.4161
   },
   {
-   "id": "v136",
+   "id": "v158",
    "text": "+12.6%",
    "fmt": "spp",
    "rule": "em",
@@ -1662,7 +1954,7 @@
    "raw": 0.1262
   },
   {
-   "id": "v137",
+   "id": "v159",
    "text": "+41.0%",
    "fmt": "spp",
    "rule": "em",
@@ -1674,7 +1966,7 @@
    "raw": 0.4099
   },
   {
-   "id": "v138",
+   "id": "v160",
    "text": "2%",
    "fmt": "pct0",
    "rule": "em",
@@ -1686,7 +1978,7 @@
    "raw": 0.0236
   },
   {
-   "id": "v139",
+   "id": "v161",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1698,7 +1990,7 @@
    "raw": 0.0
   },
   {
-   "id": "v140",
+   "id": "v162",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1710,7 +2002,7 @@
    "raw": 0.0
   },
   {
-   "id": "v141",
+   "id": "v163",
    "text": "1.64",
    "fmt": "n2",
    "rule": "em",
@@ -1722,7 +2014,7 @@
    "raw": 1.642
   },
   {
-   "id": "v142",
+   "id": "v164",
    "text": "-2.25",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1738,7 +2030,7 @@
    "raw": -2.254
   },
   {
-   "id": "v143",
+   "id": "v165",
    "text": "-0.22",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1754,7 +2046,7 @@
    "raw": -0.21900000000000003
   },
   {
-   "id": "v144",
+   "id": "v166",
    "text": "-2.30",
    "fmt": "s2",
    "rule": "em",
@@ -1766,7 +2058,7 @@
    "raw": -2.301
   },
   {
-   "id": "v145",
+   "id": "v167",
    "text": "-0.27",
    "fmt": "s2",
    "rule": "em",
@@ -1778,7 +2070,7 @@
    "raw": -0.27
   },
   {
-   "id": "v146",
+   "id": "v168",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1790,7 +2082,7 @@
    "raw": 2
   },
   {
-   "id": "v147",
+   "id": "v169",
    "text": "10",
    "fmt": "int",
    "rule": "em",
@@ -1802,7 +2094,7 @@
    "raw": 10
   },
   {
-   "id": "v148",
+   "id": "v170",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1814,7 +2106,7 @@
    "raw": 0
   },
   {
-   "id": "v149",
+   "id": "v171",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1826,7 +2118,7 @@
    "raw": 1
   },
   {
-   "id": "v150",
+   "id": "v172",
    "text": "-1.08",
    "fmt": "s2",
    "rule": "em",
@@ -1838,7 +2130,7 @@
    "raw": -1.083
   },
   {
-   "id": "v151",
+   "id": "v173",
    "text": "+0.00",
    "fmt": "s2",
    "rule": "em",
@@ -1850,7 +2142,7 @@
    "raw": 0.0
   },
   {
-   "id": "v152",
+   "id": "v174",
    "text": "-0.50",
    "fmt": "s2",
    "rule": "em",
@@ -1862,7 +2154,7 @@
    "raw": -0.501
   },
   {
-   "id": "v153",
+   "id": "v175",
    "text": "-0.66",
    "fmt": "s2",
    "rule": "em",
@@ -1874,7 +2166,7 @@
    "raw": -0.657
   },
   {
-   "id": "v154",
+   "id": "v176",
    "text": "-0.67",
    "fmt": "s2",
    "rule": "em",
@@ -1886,7 +2178,7 @@
    "raw": -0.67
   },
   {
-   "id": "v155",
+   "id": "v177",
    "text": "+0.44",
    "fmt": "s2",
    "rule": "em",
@@ -1898,7 +2190,7 @@
    "raw": 0.438
   },
   {
-   "id": "v156",
+   "id": "v178",
    "text": "65%",
    "fmt": "pct0",
    "rule": "em",
@@ -1910,7 +2202,7 @@
    "raw": 0.6533
   },
   {
-   "id": "v157",
+   "id": "v179",
    "text": "73%",
    "fmt": "pct0",
    "rule": "em",
@@ -1922,7 +2214,7 @@
    "raw": 0.7273
   },
   {
-   "id": "v158",
+   "id": "v180",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1934,7 +2226,7 @@
    "raw": 1
   },
   {
-   "id": "v159",
+   "id": "v181",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -1946,7 +2238,7 @@
    "raw": 6
   },
   {
-   "id": "v160",
+   "id": "v182",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -1958,7 +2250,7 @@
    "raw": 7
   },
   {
-   "id": "v161",
+   "id": "v183",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1970,7 +2262,7 @@
    "raw": 1
   },
   {
-   "id": "v162",
+   "id": "v184",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1982,7 +2274,7 @@
    "raw": 1
   },
   {
-   "id": "v163",
+   "id": "v185",
    "text": "13.4",
    "fmt": "n1",
    "rule": "em",
@@ -1994,7 +2286,7 @@
    "raw": 13.42
   },
   {
-   "id": "v164",
+   "id": "v186",
    "text": "9.1",
    "fmt": "n1",
    "rule": "em",
@@ -2006,7 +2298,7 @@
    "raw": 9.133
   },
   {
-   "id": "v165",
+   "id": "v187",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -2018,7 +2310,7 @@
    "raw": 1
   },
   {
-   "id": "v166",
+   "id": "v188",
    "text": "11%",
    "fmt": "pct0",
    "rule": "em",
@@ -2030,7 +2322,7 @@
    "raw": 0.1111
   },
   {
-   "id": "v167",
+   "id": "v189",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -2042,7 +2334,7 @@
    "raw": 0.0
   },
   {
-   "id": "v168",
+   "id": "v190",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -2054,7 +2346,7 @@
    "raw": 1
   },
   {
-   "id": "v169",
+   "id": "v191",
    "text": "+193",
    "fmt": "ml",
    "rule": "fight",

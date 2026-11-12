@@ -1,0 +1,5 @@
+Challenge E: assumption "main has not moved between merge_main.sh's MERGE READY and Kirk's push".
+Sandbox: MERGE READY at d1ab75ef; the bot then pushes a values-only change to the next-card file.
+Kirk's push `git push origin _merge:main`: REJECTED (non-fast-forward); main unchanged. Fails safe: nothing half-merged.
+Recovery: rerun scripts/merge_main.sh (20 s; guard sees the new bot commit, same checks) -> MERGE READY 16351b7f -> push OK (fast-forward).
+Side result: a bot push that ADDS a key (plant "_race") makes the rerun refuse on the layout check until Kirk approves it.
