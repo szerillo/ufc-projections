@@ -6,7 +6,7 @@ go-live-334 = embeds-v5 + publish-to-site, merged into main on Kirk's go. Friday
 ## Sean, Friday (and Saturday after 12:00 pm ET)
 1. In the sheet: menu **UFC > Refresh prices** and wait for it to finish. If the alert has any line starting with `!!!`, stop and tell Claude. Then menu **Site > Publish to site** and wait for the "published" message.
 2. In the repo run `python3 scripts/listed_price_report.py --slug ufc_334 --event form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json` (about 5 s). It reads the export you just published.
-3. For each row ending "NO: paste a current US-regulated price", type that row's "Best US now" price straight into the fighter's price cell on Main Card or Prelims (column D for the underdog, column I for the favorite). Do NOT run Refresh after this: Refresh rewrites D and I.
+3. For each row ending "NO: paste a current US-regulated price", type that row's "Best US now" price straight into the fighter's price cell on Main Card or Prelims (column D for the underdog, column I for the favorite). Type it exactly as the report shows it. Do NOT run Refresh after this: Refresh rewrites D and I. The projections check accepts a typed price as a "manual price" only if a US-regulated book showed it (or better) for that bout in the 24 hours before your publish; any other typed price leaves that fight as "Line pending" on the page (the other fights still go live).
 4. Menu **Site > Publish to site** again (no Refresh), then tell Claude "published" with the time.
 5. Limits: the checks refuse by themselves if your export is over 2 hours old; if Claude tells you so, redo steps 1 to 4. The embed refresh blocks 24 hours after your last publish.
 

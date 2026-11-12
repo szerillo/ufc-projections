@@ -30,7 +30,11 @@ KNOWN_EXPORT_KEYS = {
     ".fights[].method_inputs", *(".fights[].method_inputs." + k for k in ("ap", "aq", "ad", "ae", "ah", "ai", "al", "am", "an", "s", "cx", "cy", "ko_dog", "sub_dog", "ko_fav", "sub_fav")),
     ".fights[].outliers", *(".fights[].outliers[]." + k for k in ("book", "excluded", "odds", "side")),
     ".fights[].price_source", *(".fights[].price_source." + k for k in ("order", "dog", "fav", "cons_dog", "cons_fav", "best_dog", "best_fav")),
-    ".params.b41", ".prices_loaded"}
+    ".params.b41", ".prices_loaded",
+    # Kirk round 33: the projections check writes these into the live file (data/<slug>_projections.json)
+    ".line_pending", *(".line_pending[]." + k for k in ("dog", "fav", "reason")),
+    ".manual_prices", *(".manual_prices[]." + k for k in ("dog", "fav", "side", "price", "feed_price", "seen", "label")),
+    ".verified", *(".verified." + k for k in ("at", "by", "tolerance_pts", "fights", "line_pending", "source_sha256"))}
 READERS = ["scripts/build_fight_embeds.py", "scripts/verify_fight_embeds.py", "scripts/build_form.py", "scripts/check_site_projections.py",
            "scripts/markov_blocks.py", "scripts/inputs_to_blocks.py", "scripts/odds_tick.py", "scripts/odds_live_window.py",
            "scripts/build_line_history.py", "scripts/refresh_event_odds.py", "scripts/listed_price_report.py", "form/app.js", "embed.html"]

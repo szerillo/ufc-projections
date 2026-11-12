@@ -36,6 +36,76 @@ NUM_KEYS = [("listed", "listed"), ("H", "markov_shifted"), ("Q", "q"), ("true_do
 SLUG_RE = re.compile(r"^[a-z0-9_]+$")
 # Values the last check() compared against a recomputation or a source (replaces the hand-picked "48/48" render count, Block 48)
 COMPARED = {"n": 0}
+MANUAL = []          # MP-1 accepted typed prices, written to the live file as "manual_prices"
+
+# MP-1 (Kirk round 33, Nov 12; written before running it): a typed D/I price that differs from the Feed row passes OPP-1
+# only if a US-regulated book showed it (or better for the bettor, or within 2 American cents) for THIS bout in the 24 h
+# before the export's published_at, in sharp-tracker's odds archive. Same books, window and tolerance as the go-live Listed
+# gate (scripts/build_line_history.py REG, LISTED_WINDOW_H, TOL, better_or_near), so a price the gate accepts passes here and
+# one it rejects stays line_pending. Archive unreachable = not confirmed = line_pending (never a silent pass).
+MP_REG = ("draftkings", "fanduel", "betmgm", "williamhill_us", "betrivers", "circasports")
+MP_NAME = {"draftkings": "DraftKings", "fanduel": "FanDuel", "betmgm": "BetMGM", "williamhill_us": "Caesars", "betrivers": "BetRivers", "circasports": "Circa"}
+MP_WINDOW_H, MP_TOL = 24, 2
+MP_URL = "https://raw.githubusercontent.com/szerillo/sharp-tracker/main/data/mma/oddsapi_live.jsonl"
+_MP_ARCH: dict = {}
+
+
+def _mp_archive():
+    """Snapshots of the odds archive's live file: env MANUAL_PRICE_ARCHIVE (a local path) or the public raw file. None = unreachable."""
+    if "rows" in _MP_ARCH:
+        return _MP_ARCH["rows"]
+    import os, urllib.request
+    rows = None
+    try:
+        src = os.environ.get("MANUAL_PRICE_ARCHIVE")
+        if src == "UNREACHABLE":
+            raise OSError("archive marked unreachable")
+        txt = Path(src).read_text(encoding="utf-8") if src else urllib.request.urlopen(MP_URL, timeout=90).read().decode("utf-8")
+        rows = [json.loads(l) for l in txt.splitlines() if l.strip()]
+    except Exception:  # noqa: BLE001
+        rows = None
+    _MP_ARCH["rows"] = rows
+    return rows
+
+
+def _mp_am(d):
+    if not d or d <= 1:
+        return None
+    return int(round((d - 1) * 100)) if d >= 2 else int(round(-100 / (d - 1)))
+
+
+def _mp_better_or_near(book_am, typed):
+    if (book_am > 0) == (typed > 0) and abs(book_am - typed) <= MP_TOL:
+        return True
+    dec = lambda x: 1 + (x / 100 if x > 0 else 100 / -x)
+    return dec(book_am) >= dec(typed)
+
+
+def manual_hit(fighter: str, opponent: str, typed: int, until: str):
+    """(book, snapshot time, book price) if a US-regulated book showed `typed` or better for `fighter` in this bout in the
+    MP_WINDOW_H hours before `until`; None if not; "unreachable" if the archive could not be read."""
+    rows = _mp_archive()
+    if rows is None:
+        return "unreachable"
+    hi = dt.datetime.fromisoformat(str(until).replace("Z", "+00:00")); lo = hi - dt.timedelta(hours=MP_WINDOW_H)
+    for r in rows:
+        try:
+            t = dt.datetime.fromisoformat(str(r["t"]).replace("Z", "+00:00"))
+        except Exception:  # noqa: BLE001
+            continue
+        if not (lo <= t <= hi):
+            continue
+        slot = FN.bout_slots(fighter, opponent, str(r.get("home", "")), str(r.get("away", "")))
+        if slot is None:
+            continue
+        i = 0 if slot == "same" else 1
+        for b, pr in (r.get("books") or {}).items():
+            if b not in MP_REG or not isinstance(pr, list) or len(pr) != 2:
+                continue
+            x = _mp_am(pr[i])
+            if x is not None and _mp_better_or_near(x, int(typed)):
+                return (MP_NAME.get(b, b), r["t"], x)
+    return None
 
 
 def flag_code(s: str | None) -> str:
@@ -80,7 +150,15 @@ def opponent_errs(doc: dict, fights: list, odds_doc: dict | None) -> list[str]:
                 want = _lead_price(ps.get("best_" + side)) if str(ps.get("best_" + side) or "").strip() else _lead_price(ps.get("cons_" + side))
                 got = inp.get(side + "_odds")
                 if want is None or not isinstance(got, (int, float)) or int(got) != want:
-                    errs.append(f"{tag}: {side} price {got} is not the Feed row's price {want} (OPP-1)")
+                    hit = manual_hit(str(f.get(side)), str(f.get("fav" if side == "dog" else "dog")), int(got), str(doc.get("published_at"))) \
+                        if isinstance(got, (int, float)) and abs(got) >= 100 and doc.get("published_at") else None
+                    if isinstance(hit, tuple):   # MP-1: a typed US-regulated price, accepted and labelled
+                        MANUAL.append({"dog": f.get("dog"), "fav": f.get("fav"), "side": side, "price": int(got), "feed_price": want,
+                                       "seen": f"{hit[0]} {hit[2]:+d} at {hit[1]}", "label": "manual price"})
+                    else:
+                        why = " (odds archive unreachable, so the typed price cannot be confirmed; MP-1)" if hit == "unreachable" else \
+                              f" and no US-regulated book showed it for this bout in the {MP_WINDOW_H} h before the export (MP-1)"
+                        errs.append(f"{tag}: {side} price {got} is not the Feed row's price {want}{why} (OPP-1)")
         COMPARED["n"] += bouts is not None
         if bouts is not None and not any(FN.bout_slots(str(f.get("dog") or ""), str(f.get("fav") or ""), a, b) for a, b in bouts):
             errs.append(f"{tag}: no such bout in data/{doc.get('slug')}_odds.json (OPP-2)")
@@ -123,6 +201,7 @@ def load_odds(slug: str) -> dict | None:
 def check(doc: dict, path: Path, now: dt.datetime | None = None, odds_doc: dict | None | str = "auto") -> list[str]:
     errs: list[str] = []
     COMPARED["n"] = 0
+    MANUAL.clear()
     try:
         age = price_age_h(doc, now)
     except ValueError as ex:
@@ -249,6 +328,9 @@ def main() -> int:
         lines += ["**FAIL. Not promoted; the live file is unchanged.**", ""] + [f"- {e}" for e in errs]
     else:
         lines += [f"**PASS.** Every number matches scripts/sheet_v47.py within {TOL_PTS:g} pts; flags and recs identical; every price ties to its own bout (Feed row and odds feed). **Values compared: {COMPARED['n']}, mismatched: 0.**"]
+        if MANUAL:
+            lines += ["", f"**Manual prices ({len(MANUAL)}):** typed into D/I, accepted by MP-1 (seen at a US-regulated book in the {MP_WINDOW_H} h before the export):"] + \
+                     [f"- {x['dog']} vs {x['fav']}: {x['side']} {x['price']:+d} (Feed row {x['feed_price']:+d}); seen {x['seen']}" for x in MANUAL]
         if pending:
             lines += ["", f"**Line pending ({len(pending)}):** shown on the page as \"Line pending\", no numbers:"] + \
                      [f"- {x['dog']} vs {x['fav']}: {x['reason']}" for x in pending]
@@ -263,6 +345,8 @@ def main() -> int:
             held = {(x["dog"], x["fav"]) for x in pending}
             doc["fights"] = [f for f in doc["fights"] if (f.get("dog"), f.get("fav")) not in held]
             doc["line_pending"] = pending
+        if MANUAL:
+            doc["manual_prices"] = list(MANUAL)
         doc["verified"] = {"at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
                            "by": "scripts/verify_projections.py", "tolerance_pts": TOL_PTS, "fights": len(doc["fights"]),
                            "line_pending": len(pending), "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}

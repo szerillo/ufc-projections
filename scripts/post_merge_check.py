@@ -64,6 +64,8 @@ def report(a, paths, bad):
     for b in bad[:20]: print("  " + b)
     if bad: print("POST-MERGE CHECK FAIL: the site is not serving this commit yet (deploy or edge cache; query strings do not bypass it). Rerun with --wait 600."); sys.exit(1)
     st, _ = fetch(f"{a.base}/_audit/locks_history.json")
+    if isinstance(st, int) and 500 <= st < 600:   # Kirk round 33: one retry on a server error (Nov 12: a one-off 503, then 404)
+        print(f"  _audit/locks_history.json: HTTP {st}, retrying once in 10 s"); time.sleep(10); st, _ = fetch(f"{a.base}/_audit/locks_history.json")
     print(f"  _audit/locks_history.json: HTTP {st}")
     if st != 404: print("POST-MERGE CHECK FAIL: the audit file is served"); sys.exit(1)
     print("POST-MERGE CHECK PASS")

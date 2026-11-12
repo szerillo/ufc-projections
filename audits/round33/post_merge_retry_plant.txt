@@ -1,0 +1,10 @@
+== audit file answers 503 once (report step only, no served files)
+POST-MERGE: 0 served files compared with origin/main (810dd8ad); 0 differ
+  _audit/locks_history.json: HTTP 503, retrying once in 10 s
+  _audit/locks_history.json: HTTP 404
+POST-MERGE CHECK PASS
+== audit file answers 503 always (report step only, no served files)
+  _audit/locks_history.json: HTTP 503, retrying once in 10 s
+  _audit/locks_history.json: HTTP 503
+POST-MERGE CHECK FAIL: the audit file is served
+exit 1
