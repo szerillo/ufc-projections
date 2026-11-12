@@ -54,6 +54,10 @@ Both files come from the repo; nothing is typed by hand. Do this before the Thur
 | T4 | UFC > **Refresh prices**. | Feed!F1 shows now. Prelims, Jared Gordon row: D = **+300** (not +420); Feed best dog "+300 FanDuel"; Calculator AH on his row ends "TRAP, excluded from D/I". (If Caesars has since moved off +420, the TRAP may be gone; then D is simply the best price.) |
 | T5 | Site > **Preview publish** (no upload). | First line: `Script build b47-out · price row matches 13/13 · method inputs 13/13 · TRAP prices in D/I 0 · prices loaded ...`. Red: any other build name, a count below 13/13, or **TRAP prices in D/I 1 or more**. |
 
+| T6 | Site > **Publish to site**, slug `ufc_334`, all 13 ticked (within 3 h of T4). This replaces the stale 01:18Z pending file (27 rejects). | Alert **Uploaded**; main's top commit "Publish ufc_334 projections from sheet (13 fights)". |
+| T7 | Merge `publish-to-site` into main (Claude, on Kirk's go), within 3 h of T4. | Projections check runs on the merge push, green, "Values compared: 286, mismatched: 0"; bot commit "projections: verified ...". |
+| T8 | After Pages deploys (about 1 min): `python3 -I scripts/render_check.py https://szerillo.github.io/ufc-projections ufc_334` (Claude). | "416 shown values compared, 0 mismatched" (13 fights x 16 values x page and embed). |
+
 **Rollback to v2.7 (one step):** Code.gs > replace its contents with `scripts/apps_script/loader/Code_v2.7_installed.gs`
 (sha256 starts `e5233b99`; the installed file with two settings read from Script Properties, which T1 set to the same values)
 > Save, then UFC > Refresh prices. Proof: Preview shows `TRAP prices in D/I 1` again while Caesars is still +420, and Gordon's
@@ -73,7 +77,7 @@ merges into main with no conflicts; the merge was rehearsed twice (13 s from mer
 | 3 | Kirk, on Sean's go | https://github.com/szerillo/ufc-projections/compare/main...publish-to-site > Create pull request > **Merge pull request** > Confirm. | "Able to merge" before the click; main's top commit is the merge. | |
 | 4 | automatic | **Projections check** starts by itself (the merge brings the workflow to main). | Actions: green within about 20 s; main gets "projections: verified from sheet at ...". Not started in 2 min: Actions > Projections check > Run workflow (main). | |
 | 5 | automatic | Pages deploys the verified file. | About 1 minute (median 46 s, max 68 s). | |
-| 6 | Kirk | Open https://szerillo.github.io/ufc-projections/ufc_334_fight_form.html and one fight embed. | Status **green**: "Projections · 13 of 13 fights · updated X min ago · prices loaded X min ago", no amber text, every panel filled. Spot check one fight: dog True % = Calculator L, "Goes the distance" = column Q. | |
+| 6 | Claude, then Kirk | `python3 -I scripts/render_check.py https://szerillo.github.io/ufc-projections ufc_334` (every shown value on the page and all 13 embeds vs the verified file; red lists surface, bout, field, expected, shown). Then Kirk opens https://szerillo.github.io/ufc-projections/ufc_334_fight_form.html and one fight embed. | Status **green**: "Projections · 13 of 13 fights · updated X min ago · prices loaded X min ago", no amber text, every panel filled. Spot check one fight: dog True % = Calculator L, "Goes the distance" = column Q. | |
 | 7 | Sean | Share the page (or not). | | |
 
 **No-go** (don't share the page) if any of these happen: the merge shows a conflict; no green Projections check within
