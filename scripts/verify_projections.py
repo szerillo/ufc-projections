@@ -7,7 +7,7 @@ from the inputs carried in the file and compares it with the numbers the sheet e
 
     python3 -I scripts/verify_projections.py data/pending/ufc_334_projections.json [--promote] [--report out.md]
 
-PASS (exit 0): every number within 0.1 pts, flag code and recommendation text identical incl. late tag (when exported), method shares
+PASS (exit 0): every number within 0.0001 pts, flag code and recommendation text identical incl. late tag (when exported), method shares
 and GTD sane. With --promote the file is copied to data/<slug>_projections.json with a
 "verified" block added. FAIL (exit 1): nothing is promoted, the live file is left as it was.
 Exit 2: the file can't be read or is malformed.
@@ -25,7 +25,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import sheet_v47 as S  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[1]
-TOL = 0.001          # 0.1 percentage points, on 0-1 probabilities
+TOL = 1e-6           # 0.0001 percentage points. Block 45: the mirror reproduces the sheet's getValues bit for bit on all
+                     # 13 UFC 334 fights (largest gap 0; 5e-11 when inputs come from a 10-digit xlsx export), so 0.1 pts was 20 million x too loose
+TOL_PTS = TOL * 100
 MAX_PRICE_AGE_H = 3  # pre-registered Nov 11 (Block 44): prices must be refreshed within 3 h of the check
 NUM_KEYS = [("listed", "listed"), ("H", "markov_shifted"), ("Q", "q"), ("true_dog", "true_dog"),
             ("true_fav", "true_fav"), ("dog_edge", "dog_edge"), ("fav_edge", "fav_edge"), ("drift", "drift")]
@@ -52,13 +54,21 @@ def price_age_h(doc: dict, now: dt.datetime | None = None) -> float | None:
     if not s:
         return None
     t = dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))
+    if t.tzinfo is None:   # a stamp without an offset could be any time zone: refuse it rather than guess (Block 45)
+        raise ValueError(f"prices_loaded {s!r} has no time zone offset")
     return ((now or dt.datetime.now(dt.timezone.utc)) - t).total_seconds() / 3600
 
 
 def check(doc: dict, path: Path, now: dt.datetime | None = None) -> list[str]:
     errs: list[str] = []
-    age = price_age_h(doc, now)
-    if age is None:
+    try:
+        age = price_age_h(doc, now)
+    except ValueError as ex:
+        age = -1.0
+        errs.append(f"{ex}: publish with the current script (it writes UTC, e.g. 2026-11-13T04:30:00.000Z)")
+    if age == -1.0:
+        pass
+    elif age is None:
         errs.append("no prices_loaded stamp (publish with the current script, after UFC > Refresh prices)")
     elif age > MAX_PRICE_AGE_H:
         errs.append(f"prices were loaded {age:.1f} h ago (limit {MAX_PRICE_AGE_H} h): run UFC > Refresh prices, then publish again")
@@ -147,13 +157,28 @@ def main() -> int:
     except Exception as ex:  # noqa: BLE001
         print(f"FAIL: cannot read {path}: {ex}")
         return 2
-    errs = check(doc, path)
     n = len(doc.get("fights") or [])
-    lines = [f"## Projections check: {path.name}", "", f"Published {doc.get('published_at')} · {n} fight(s) · tolerance 0.1 pts", ""]
+    # Already live: this exact file was verified and promoted before (a manual re-run, or a later push that re-checks every
+    # pending file). Re-checking it would only add the price-age rule against a clock that kept moving (Block 45).
+    live = REPO / "data" / f"{doc.get('slug', '')}_projections.json"
+    if live.exists():
+        try:
+            cur = json.loads(live.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            cur = None
+        if isinstance(cur, dict) and {k: v for k, v in cur.items() if k != "verified"} == doc:
+            msg = (f"## Projections check: {path.name}\n\n**Already live.** This file was verified at "
+                   f"{(cur.get('verified') or {}).get('at')} and is what the page shows; nothing to check or promote.\n")
+            print(msg)
+            if a.report:
+                Path(a.report).write_text(msg, encoding="utf-8")
+            return 0
+    errs = check(doc, path)
+    lines = [f"## Projections check: {path.name}", "", f"Published {doc.get('published_at')} · {n} fight(s) · tolerance {TOL_PTS:g} pts", ""]
     if errs:
         lines += ["**FAIL. Not promoted; the live file is unchanged.**", ""] + [f"- {e}" for e in errs]
     else:
-        lines += ["**PASS.** Every number matches scripts/sheet_v47.py within 0.1 pts; flags and recs identical."]
+        lines += [f"**PASS.** Every number matches scripts/sheet_v47.py within {TOL_PTS:g} pts; flags and recs identical."]
     report = "\n".join(lines) + "\n"
     print(report)
     if a.report:
@@ -162,7 +187,7 @@ def main() -> int:
         return 1
     if a.promote:
         doc["verified"] = {"at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-                           "by": "scripts/verify_projections.py", "tolerance_pts": 0.1, "fights": n}
+                           "by": "scripts/verify_projections.py", "tolerance_pts": TOL_PTS, "fights": n}
         live = REPO / "data" / f"{doc['slug']}_projections.json"
         live.write_text(json.dumps(doc, indent=1) + "\n", encoding="utf-8")
         print(f"promoted -> {live.relative_to(REPO)}")

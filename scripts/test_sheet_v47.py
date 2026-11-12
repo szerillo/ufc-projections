@@ -53,6 +53,7 @@ def main() -> int:
             print("   ", e)
         fails += bool(errs)
     fails += method_cases()
+    fails += stamp_cases()
     return 1 if fails else 0
 
 
@@ -84,6 +85,31 @@ def method_cases() -> int:
         errs = [e for e in V.check({**base, "fights": [f]}, Path("fixture_projections.json")) if "GTD" in e or " dec " in e or " ko " in e or " sub " in e]
         ok = bool(errs) == want_red
         print(("PASS " if ok else "FAIL ") + f"check on {name}: {'red' if errs else 'green'}")
+        fails += not ok
+    return fails
+
+
+def stamp_cases() -> int:
+    """The Feed 'Loaded' stamp is written in the sheet's time zone (America/New_York); the script exports it with
+    toISOString(), i.e. UTC with a Z. A refresh at 11:30 pm ET on Nov 12 is 04:30 UTC on Nov 13 (the UTC date has moved)."""
+    now = dt.datetime(2026, 11, 13, 5, 0, tzinfo=dt.timezone.utc)          # 12:00 am ET Nov 13
+    cases = [("written 11:30 pm ET, exported as UTC Z", "2026-11-13T04:30:00.000Z", "green", 0.5),
+             ("same moment with an explicit -05:00 offset", "2026-11-12T23:30:00-05:00", "green", 0.5),
+             ("same wall-clock time with no offset", "2026-11-12T23:30:00", "red", None),
+             ("written 11:30 pm ET the night before (Nov 11)", "2026-11-12T04:30:00.000Z", "red", 24.5),
+             ("11:30 pm ET read as if it were UTC (the mistake to avoid)", "2026-11-12T23:30:00Z", "red", 5.5)]
+    fails = 0
+    for name, stamp, want, hours in cases:
+        doc = {"schema": 1, "slug": "fixture", "prices_loaded": stamp, "fights": [{"dog": "a b", "fav": "c d", "publish": True,
+               "inputs": {"dog_odds": 150, "fav_odds": -170}, "sheet": {}}]}
+        errs = [e for e in V.check(doc, Path("fixture_projections.json"), now=now) if "prices" in e]
+        try:
+            age = V.price_age_h(doc, now)
+        except ValueError:
+            age = None
+        got = "red" if errs else "green"
+        ok = got == want and (hours is None or abs(age - hours) < 1e-9)
+        print(("PASS " if ok else "FAIL ") + f"stamp {stamp:28} ({name}): age {age if age is None else round(age, 2)} h -> {got}")
         fails += not ok
     return fails
 

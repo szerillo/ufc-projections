@@ -6,7 +6,7 @@ One action in the sheet publishes the ticked fights to the card page. Nothing is
 Sheet: Site > Publish to site
   -> data/pending/<slug>_projections.json   (GitHub contents API, Sean's token)
   -> Action "Projections check": scripts/verify_projections.py recomputes every fight with scripts/sheet_v47.py
-       all numbers within 0.1 pts, flag and rec identical -> copied to data/<slug>_projections.json
+       all numbers within 0.0001 pts, flag and rec identical -> copied to data/<slug>_projections.json
        anything off -> run fails, live file untouched
   -> <slug>_fight_form.html reads data/<slug>_projections.json at page load ("updated X ago")
        no file yet -> "Projections coming"
@@ -66,7 +66,7 @@ amber ("could not be read", "not on this card", "spelled differently", "over 12h
 the sheet. If a bad file already went live: **Roll back projections** (below) and the page returns to "Projections coming".
 
 What the check covers now: every True %, edge, flag and rec, the method split (dec/KO/sub, both sides) and the fight GTD,
-recomputed from the file's own inputs within 0.1 pts, plus a price-load stamp no older than 3 hours at the time of the
+recomputed from the file's own inputs within 0.0001 pts, plus a price-load stamp no older than 3 hours at the time of the
 check (pre-registered Nov 11). The step 6 spot check stays as a second look, not as the only check.
 
 ## Saturday odds (the card-night loop)
