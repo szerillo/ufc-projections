@@ -929,7 +929,7 @@
    "id": "v75",
    "text": "0.2",
    "fmt": "pts",
-   "rule": "oa_drift",
+   "rule": "oa_drift_abs",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
@@ -938,94 +938,40 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": -0.0018000000000000238
+   "raw": 0.0018000000000000238
   },
   {
    "id": "v76",
-   "text": "-192",
-   "fmt": "ml",
-   "rule": "oa_best",
+   "text": "63.0%",
+   "fmt": "pct1",
+   "rule": "oa_open",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Kayla Harrison",
      "Amanda Nunes"
-    ],
-    "side": "a"
+    ]
    },
-   "desc": "OA best a",
-   "raw": -192
+   "desc": "OA open p",
+   "raw": 0.6299
   },
   {
    "id": "v77",
-   "text": "+165",
-   "fmt": "ml",
-   "rule": "oa_best",
+   "text": "62.8%",
+   "fmt": "pct1",
+   "rule": "oa_close",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Kayla Harrison",
      "Amanda Nunes"
-    ],
-    "side": "b"
+    ]
    },
-   "desc": "OA best b",
-   "raw": 165
+   "desc": "OA close p",
+   "raw": 0.6281
   },
   {
    "id": "v78",
-   "text": "-205",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Kayla Harrison",
-    "field": "opening_cost"
-   },
-   "desc": "BP open a (move)",
-   "raw": -205
-  },
-  {
-   "id": "v79",
-   "text": "-195",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Kayla Harrison",
-    "field": "cost"
-   },
-   "desc": "BP now a (move)",
-   "raw": -195
-  },
-  {
-   "id": "v80",
-   "text": "+163",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Amanda Nunes",
-    "field": "opening_cost"
-   },
-   "desc": "BP open b (move)",
-   "raw": 163
-  },
-  {
-   "id": "v81",
-   "text": "+152",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Amanda Nunes",
-    "field": "cost"
-   },
-   "desc": "BP now b (move)",
-   "raw": 152
-  },
-  {
-   "id": "v82",
    "text": "71%",
    "fmt": "pct0",
    "rule": "em",
@@ -1037,7 +983,7 @@
    "raw": 0.7132
   },
   {
-   "id": "v83",
+   "id": "v79",
    "text": "20%",
    "fmt": "pct0",
    "rule": "em",
@@ -1049,7 +995,7 @@
    "raw": 0.1985
   },
   {
-   "id": "v84",
+   "id": "v80",
    "text": "9%",
    "fmt": "pct0",
    "rule": "em",
@@ -1061,7 +1007,7 @@
    "raw": 0.0882
   },
   {
-   "id": "v85",
+   "id": "v81",
    "text": "68%",
    "fmt": "pct0",
    "rule": "em",
@@ -1073,7 +1019,7 @@
    "raw": 0.6778
   },
   {
-   "id": "v86",
+   "id": "v82",
    "text": "13%",
    "fmt": "pct0",
    "rule": "em",
@@ -1085,7 +1031,7 @@
    "raw": 0.1336
   },
   {
-   "id": "v87",
+   "id": "v83",
    "text": "19%",
    "fmt": "pct0",
    "rule": "em",
@@ -1097,173 +1043,331 @@
    "raw": 0.1886
   },
   {
-   "id": "v88",
-   "text": "30%",
+   "id": "v84",
+   "text": "0%",
    "fmt": "pct0",
-   "rule": "em_car",
+   "rule": "em",
    "args": {
     "fighter": "Kayla Harrison",
-    "key": "ko_wins"
+    "path": "power_w"
    },
-   "desc": "Power: KO'd opponents in a",
-   "raw": 0.3
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.0
+  },
+  {
+   "id": "v85",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v86",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "last5.fights"
+   },
+   "desc": "Power: drops or stops them on the feet last5 n a",
+   "raw": 3
+  },
+  {
+   "id": "v87",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 0
+  },
+  {
+   "id": "v88",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "ufc_fights"
+   },
+   "desc": "Power: drops or stops them on the feet fights a",
+   "raw": 3
   },
   {
    "id": "v89",
-   "text": "6",
-   "fmt": "int",
-   "rule": "em_car_n",
+   "text": "30%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "fighter": "Kayla Harrison",
-    "key": "ko_wins"
+    "fighter": "Amanda Nunes",
+    "path": "power_w"
    },
-   "desc": "Power: KO'd opponents in count a",
-   "raw": 6
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.2998
   },
   {
    "id": "v90",
-   "text": "20",
+   "text": "1",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
-    "fighter": "Kayla Harrison",
-    "key": "fights"
+    "fighter": "Amanda Nunes",
+    "path": "last5.power"
    },
-   "desc": "Power: KO'd opponents in fights a",
-   "raw": 20
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 1
   },
   {
    "id": "v91",
-   "text": "46%",
-   "fmt": "pct0",
-   "rule": "em_car",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
    "args": {
     "fighter": "Amanda Nunes",
-    "key": "ko_wins"
+    "path": "last5.fights"
    },
-   "desc": "Power: KO'd opponents in b",
-   "raw": 0.4642857142857143
+   "desc": "Power: drops or stops them on the feet last5 n b",
+   "raw": 5
   },
   {
    "id": "v92",
-   "text": "13",
+   "text": "6",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
     "fighter": "Amanda Nunes",
-    "key": "ko_wins"
+    "path": "power_fights"
    },
-   "desc": "Power: KO'd opponents in count b",
-   "raw": 13
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 6
   },
   {
    "id": "v93",
-   "text": "28",
+   "text": "18",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
     "fighter": "Amanda Nunes",
-    "key": "fights"
+    "path": "ufc_fights"
    },
-   "desc": "Power: KO'd opponents in fights b",
-   "raw": 28
+   "desc": "Power: drops or stops them on the feet fights b",
+   "raw": 18
   },
   {
    "id": "v94",
-   "text": "8%",
+   "text": "9%",
    "fmt": "pct0",
    "rule": "em_div",
    "args": {
-    "wc": "Women's Bantamweight"
+    "wc": "Women's Bantamweight",
+    "key": "power"
    },
-   "desc": "Division KO share",
-   "raw": 0.0769
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.0885
   },
   {
    "id": "v95",
    "text": "0%",
    "fmt": "pct0",
-   "rule": "em_car",
+   "rule": "em",
    "args": {
     "fighter": "Kayla Harrison",
-    "key": "ko_losses"
+    "path": "dropped_w"
    },
-   "desc": "Chin: been KO'd in a",
+   "desc": "Durability: gets dropped or stopped a",
    "raw": 0.0
   },
   {
    "id": "v96",
    "text": "0",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
     "fighter": "Kayla Harrison",
-    "key": "ko_losses"
+    "path": "last5.dropped"
    },
-   "desc": "Chin: been KO'd in count a",
+   "desc": "Durability: gets dropped or stopped last5 a",
    "raw": 0
   },
   {
    "id": "v97",
-   "text": "20",
+   "text": "3",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
     "fighter": "Kayla Harrison",
-    "key": "fights"
+    "path": "last5.fights"
    },
-   "desc": "Chin: been KO'd in fights a",
-   "raw": 20
+   "desc": "Durability: gets dropped or stopped last5 n a",
+   "raw": 3
   },
   {
    "id": "v98",
-   "text": "7%",
-   "fmt": "pct0",
-   "rule": "em_car",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "fighter": "Amanda Nunes",
-    "key": "ko_losses"
+    "fighter": "Kayla Harrison",
+    "path": "dropped_fights"
    },
-   "desc": "Chin: been KO'd in b",
-   "raw": 0.07142857142857142
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 0
   },
   {
    "id": "v99",
-   "text": "2",
+   "text": "3",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
-    "fighter": "Amanda Nunes",
-    "key": "ko_losses"
+    "fighter": "Kayla Harrison",
+    "path": "ufc_fights"
    },
-   "desc": "Chin: been KO'd in count b",
-   "raw": 2
+   "desc": "Durability: gets dropped or stopped fights a",
+   "raw": 3
   },
   {
    "id": "v100",
-   "text": "28",
-   "fmt": "int",
-   "rule": "em_car_n",
+   "text": "1%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
     "fighter": "Amanda Nunes",
-    "key": "fights"
+    "path": "dropped_w"
    },
-   "desc": "Chin: been KO'd in fights b",
-   "raw": 28
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.0065
   },
   {
    "id": "v101",
-   "text": "8%",
-   "fmt": "pct0",
-   "rule": "em_div",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "wc": "Women's Bantamweight"
+    "fighter": "Amanda Nunes",
+    "path": "last5.dropped"
    },
-   "desc": "Division KO share",
-   "raw": 0.0769
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 0
   },
   {
    "id": "v102",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "last5.fights"
+   },
+   "desc": "Durability: gets dropped or stopped last5 n b",
+   "raw": 5
+  },
+  {
+   "id": "v103",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 1
+  },
+  {
+   "id": "v104",
+   "text": "18",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "ufc_fights"
+   },
+   "desc": "Durability: gets dropped or stopped fights b",
+   "raw": 18
+  },
+  {
+   "id": "v105",
+   "text": "12%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Women's Bantamweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.1154
+  },
+  {
+   "id": "v106",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Kayla Harrison",
+   "raw": 2
+  },
+  {
+   "id": "v107",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Kayla Harrison",
+   "raw": 1
+  },
+  {
+   "id": "v108",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Amanda Nunes",
+   "raw": 7
+  },
+  {
+   "id": "v109",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Amanda Nunes",
+   "raw": 3
+  },
+  {
+   "id": "v110",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Amanda Nunes",
+   "raw": 6
+  },
+  {
+   "id": "v111",
    "text": "+3.9",
    "fmt": "s1",
    "rule": "em",
@@ -1275,7 +1379,7 @@
    "raw": 3.933
   },
   {
-   "id": "v103",
+   "id": "v112",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1287,7 +1391,7 @@
    "raw": 3
   },
   {
-   "id": "v104",
+   "id": "v113",
    "text": "+2.1",
    "fmt": "s1",
    "rule": "em",
@@ -1299,7 +1403,7 @@
    "raw": 2.051
   },
   {
-   "id": "v105",
+   "id": "v114",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1311,7 +1415,7 @@
    "raw": 3
   },
   {
-   "id": "v106",
+   "id": "v115",
    "text": "+3.6",
    "fmt": "s1",
    "rule": "em",
@@ -1323,7 +1427,7 @@
    "raw": 3.6
   },
   {
-   "id": "v107",
+   "id": "v116",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1335,7 +1439,7 @@
    "raw": 1
   },
   {
-   "id": "v108",
+   "id": "v117",
    "text": "+4.1",
    "fmt": "s1",
    "rule": "em",
@@ -1347,7 +1451,7 @@
    "raw": 4.059
   },
   {
-   "id": "v109",
+   "id": "v118",
    "text": "18",
    "fmt": "int",
    "rule": "em",
@@ -1359,7 +1463,7 @@
    "raw": 18
   },
   {
-   "id": "v110",
+   "id": "v119",
    "text": "-0.1",
    "fmt": "s1",
    "rule": "em",
@@ -1371,7 +1475,7 @@
    "raw": -0.138
   },
   {
-   "id": "v111",
+   "id": "v120",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -1383,7 +1487,7 @@
    "raw": 9
   },
   {
-   "id": "v112",
+   "id": "v121",
    "text": "+0.7",
    "fmt": "s1",
    "rule": "em",
@@ -1395,7 +1499,7 @@
    "raw": 0.743
   },
   {
-   "id": "v113",
+   "id": "v122",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -1407,7 +1511,7 @@
    "raw": 8
   },
   {
-   "id": "v114",
+   "id": "v123",
    "text": "+3.3",
    "fmt": "s1",
    "rule": "em",
@@ -1419,7 +1523,7 @@
    "raw": 3.3
   },
   {
-   "id": "v115",
+   "id": "v124",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -1431,7 +1535,7 @@
    "raw": 6
   },
   {
-   "id": "v116",
+   "id": "v125",
    "text": "+1.3",
    "fmt": "s1",
    "rule": "em",
@@ -1443,7 +1547,7 @@
    "raw": 1.341
   },
   {
-   "id": "v117",
+   "id": "v126",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -1455,7 +1559,7 @@
    "raw": 6
   },
   {
-   "id": "v118",
+   "id": "v127",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -1467,7 +1571,7 @@
    "raw": 6
   },
   {
-   "id": "v119",
+   "id": "v128",
    "text": "4.7",
    "fmt": "n1",
    "rule": "em",
@@ -1479,7 +1583,7 @@
    "raw": 4.748
   },
   {
-   "id": "v120",
+   "id": "v129",
    "text": "4.0",
    "fmt": "n1",
    "rule": "em",
@@ -1491,7 +1595,7 @@
    "raw": 4.01
   },
   {
-   "id": "v121",
+   "id": "v130",
    "text": "+2.4",
    "fmt": "s1",
    "rule": "em",
@@ -1503,7 +1607,151 @@
    "raw": 2.361
   },
   {
-   "id": "v122",
+   "id": "v131",
+   "text": "2.84",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 2.839
+  },
+  {
+   "id": "v132",
+   "text": "2.79",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 2.789
+  },
+  {
+   "id": "v133",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.375
+  },
+  {
+   "id": "v134",
+   "text": "57%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.5672
+  },
+  {
+   "id": "v135",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 1.0
+  },
+  {
+   "id": "v136",
+   "text": "81%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.8125
+  },
+  {
+   "id": "v137",
+   "text": "59%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.5941
+  },
+  {
+   "id": "v138",
+   "text": "34%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.3423
+  },
+  {
+   "id": "v139",
+   "text": "1%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.0079
+  },
+  {
+   "id": "v140",
+   "text": "6%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.0646
+  },
+  {
+   "id": "v141",
+   "text": "0.95",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.946
+  },
+  {
+   "id": "v142",
+   "text": "0.73",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.734
+  },
+  {
+   "id": "v143",
    "text": "+2.40",
    "fmt": "s2",
    "rule": "em",
@@ -1515,7 +1763,7 @@
    "raw": 2.397
   },
   {
-   "id": "v123",
+   "id": "v144",
    "text": "+1.42",
    "fmt": "s2",
    "rule": "em",
@@ -1527,7 +1775,7 @@
    "raw": 1.424
   },
   {
-   "id": "v124",
+   "id": "v145",
    "text": "+0.66",
    "fmt": "s2",
    "rule": "em",
@@ -1539,7 +1787,7 @@
    "raw": 0.662
   },
   {
-   "id": "v125",
+   "id": "v146",
    "text": "+0.25",
    "fmt": "s2",
    "rule": "em",
@@ -1551,7 +1799,7 @@
    "raw": 0.25
   },
   {
-   "id": "v126",
+   "id": "v147",
    "text": "+0.13",
    "fmt": "s2",
    "rule": "em",
@@ -1563,7 +1811,7 @@
    "raw": 0.126
   },
   {
-   "id": "v127",
+   "id": "v148",
    "text": "+0.43",
    "fmt": "s2",
    "rule": "em",
@@ -1575,7 +1823,7 @@
    "raw": 0.426
   },
   {
-   "id": "v128",
+   "id": "v149",
    "text": "71%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1589,7 +1837,7 @@
    "raw": 0.712
   },
   {
-   "id": "v129",
+   "id": "v150",
    "text": "10.6",
    "fmt": "n1",
    "rule": "labs",
@@ -1603,7 +1851,7 @@
    "raw": 10.6
   },
   {
-   "id": "v130",
+   "id": "v151",
    "text": "11.4",
    "fmt": "n1",
    "rule": "labs",
@@ -1617,7 +1865,7 @@
    "raw": 11.4
   },
   {
-   "id": "v131",
+   "id": "v152",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1631,7 +1879,7 @@
    "raw": 0.0
   },
   {
-   "id": "v132",
+   "id": "v153",
    "text": "50%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1645,199 +1893,7 @@
    "raw": 0.5
   },
   {
-   "id": "v133",
-   "text": "33%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "dec",
-    "slug": "kayla-harrison"
-   },
-   "desc": "Goes to decision a",
-   "raw": 0.333
-  },
-  {
-   "id": "v134",
-   "text": "33%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "dec",
-    "slug": "amanda-nunes"
-   },
-   "desc": "Goes to decision b",
-   "raw": 0.333
-  },
-  {
-   "id": "v135",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "wko",
-    "slug": "kayla-harrison"
-   },
-   "desc": "Wins by KO a",
-   "raw": 0.0
-  },
-  {
-   "id": "v136",
-   "text": "39%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "wko",
-    "slug": "amanda-nunes"
-   },
-   "desc": "Wins by KO b",
-   "raw": 0.389
-  },
-  {
-   "id": "v137",
-   "text": "67%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "wsub",
-    "slug": "kayla-harrison"
-   },
-   "desc": "Wins by SUB a",
-   "raw": 0.667
-  },
-  {
-   "id": "v138",
-   "text": "17%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "wsub",
-    "slug": "amanda-nunes"
-   },
-   "desc": "Wins by SUB b",
-   "raw": 0.167
-  },
-  {
-   "id": "v139",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "lko",
-    "slug": "kayla-harrison"
-   },
-   "desc": "Losses by KO a",
-   "raw": 0.0
-  },
-  {
-   "id": "v140",
-   "text": "6%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "lko",
-    "slug": "amanda-nunes"
-   },
-   "desc": "Losses by KO b",
-   "raw": 0.056
-  },
-  {
-   "id": "v141",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "lsub",
-    "slug": "kayla-harrison"
-   },
-   "desc": "Losses by SUB a",
-   "raw": 0.0
-  },
-  {
-   "id": "v142",
-   "text": "6%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "lsub",
-    "slug": "amanda-nunes"
-   },
-   "desc": "Losses by SUB b",
-   "raw": 0.056
-  },
-  {
-   "id": "v143",
-   "text": "2.84",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "td15",
-    "slug": "kayla-harrison"
-   },
-   "desc": "Takedowns /15 a",
-   "raw": 2.8391167192429023
-  },
-  {
-   "id": "v144",
-   "text": "2.79",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "td15",
-    "slug": "amanda-nunes"
-   },
-   "desc": "Takedowns /15 b",
-   "raw": 2.7886497064579254
-  },
-  {
-   "id": "v145",
-   "text": "100%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "tdd",
-    "slug": "kayla-harrison"
-   },
-   "desc": "TD defence a",
-   "raw": 1.0
-  },
-  {
-   "id": "v146",
-   "text": "81%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "tdd",
-    "slug": "amanda-nunes"
-   },
-   "desc": "TD defence b",
-   "raw": 0.8125
-  },
-  {
-   "id": "v147",
+   "id": "v154",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -1850,7 +1906,7 @@
    "raw": -714
   },
   {
-   "id": "v148",
+   "id": "v155",
    "text": "-1111",
    "fmt": "ml",
    "rule": "fight",
@@ -1863,7 +1919,7 @@
    "raw": -1111
   },
   {
-   "id": "v149",
+   "id": "v156",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1876,7 +1932,7 @@
    "raw": -455
   },
   {
-   "id": "v150",
+   "id": "v157",
    "text": "-312",
    "fmt": "ml",
    "rule": "fight",
@@ -1889,7 +1945,7 @@
    "raw": -312
   },
   {
-   "id": "v151",
+   "id": "v158",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",

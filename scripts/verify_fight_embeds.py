@@ -130,16 +130,14 @@ def check(D, htmlfile, G):
             elif rule == "pub": v = dig(pub, a["key"]); v = 1 - v if inv else v
             elif rule in ("pub_ml", "pub_ml_imp"):   # the sheet's listed price for this side (export inputs), and its straight implied %
                 role = pwin(a["side"])[1]; v = pub["inputs"][role + "_odds"]; v = implied(v) if rule == "pub_ml_imp" else v
-            elif rule in ("em", "em_car", "em_car_n", "em_div"):
-                # Block 59d: form/data/embed_metrics/<card>.json (our UFCStats rows) and data/embeds/<card>_career.json (career record)
+            elif rule in ("em", "em_share", "em_div"):
+                # Block 59d/e: form/data/embed_metrics/<card>.json (our UFCStats rows, every UFC fight)
                 EM_ = G.setdefault("EMX", json.loads((FD / "embed_metrics" / f"{G['SLUG']}.json").read_text()))
-                CA_ = G.setdefault("CAR", json.loads((REPO / "data" / "embeds" / f"{G['SLUG']}_career.json").read_text())["fighters"])
                 if rule == "em":
                     v = EM_["fighters"][a["fighter"]]
                     for k_ in a["path"].split("."): v = v[int(k_)] if isinstance(v, list) else v[k_]
-                elif rule == "em_car": c_ = CA_[a["fighter"]]; v = c_[a["key"]] / c_["fights"]
-                elif rule == "em_car_n": v = CA_[a["fighter"]][a["key"]]
-                else: v = EM_["division_ko_share"][a["wc"]]
+                elif rule == "em_share": r_ = EM_["fighters"][a["fighter"]]; v = r_[a["key"]] / r_["ufc_fights"]
+                else: v = EM_["division_power_share" if a.get("key", "power") == "power" else "division_dropped_share"][a["wc"]]
             elif rule == "labs":
                 # the site's own metrics in form/data/labs.json, looked up here by the fighter's slug
                 LJ = G.setdefault("LABS", json.loads((FD / "labs.json").read_text()))
@@ -161,8 +159,11 @@ def check(D, htmlfile, G):
                 v = p * {"ko": ms[0], "sub": ms[1], "dec": ms[2], "itd": ms[0] + ms[1]}[a["k"]]
             elif rule == "form_gtd":
                 p, f_ = form_win(a, "a"); v = p * f_["form"]["ms"]["a"][2] + (1 - p) * f_["form"]["ms"]["b"][2]
-            elif rule == "oa_drift":
+            elif rule in ("oa_drift", "oa_drift_abs"):
                 f_ = by_name(EV[a["ev"]], a); v = f_["odds"]["close"]["p"] - f_["odds"]["open"]["p"]
+                if rule == "oa_drift_abs": v = abs(v)
+            elif rule in ("oa_open", "oa_close"):
+                f_ = by_name(EV[a["ev"]], a); v = f_["odds"]["open" if rule == "oa_open" else "close"]["p"]
             elif rule == "oa_len":
                 f_ = by_name(EV[a["ev"]], a); v = len(f_["odds"]["series"])
             elif rule == "oa_best":
@@ -202,7 +203,8 @@ def check(D, htmlfile, G):
         if pub is not None:
             if len(mids) != 24: bad.append(("proj", "model cells", f"{len(mids)} model numbers, want 24"))
             if not mrules <= {"pub_win", "pub_meth", "pub"}: bad.append(("proj", "model rules", f"non-export rules in model cells: {mrules}"))
-        if re.search(r"\bSean\b", re.sub(r"@SeanZerillo|twitter.com/SeanZerillo", "", page)): bad.append(("page", "label", "'Sean' used as the model name"))
+        # Block 59f: an opponent named Sean in the fight history (Dober vs Sean Spencer) is not the model label
+        if re.search(r"\bSean\b(?! [A-Z][a-z])", re.sub(r"@SeanZerillo|twitter.com/SeanZerillo", "", page)) or re.search(r">Sean<|Sean (fair|vs|ML|%)", page): bad.append(("page", "label", "'Sean' used as the model name"))
         if re.search(r'class="op"', page): bad.append(("page", "open price", "o-prefixed open price in the projection"))
         if re.search(r"BettingPros", text): bad.append(("page", "source name", "BettingPros named on the page"))
         if re.search(r"\bElo\b|\bFig\b|Form Figure", text): bad.append(("page", "rating", "Elo or Form Figure shown"))

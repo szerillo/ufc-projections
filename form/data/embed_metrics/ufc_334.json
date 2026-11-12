@@ -1,35 +1,70 @@
 {
- "built": "2026-11-12T08:24:48+00:00",
+ "built": "2026-11-12T08:53:58+00:00",
  "date": "2026-11-14",
- "division_ko_share": {
-  "Bantamweight": 0.1397,
-  "Catch Weight": 0.1,
-  "Featherweight": 0.1643,
-  "Flyweight": 0.1239,
-  "Heavyweight": 0.2264,
-  "Light Heavyweight": 0.2411,
-  "Lightweight": 0.1786,
-  "Middleweight": 0.1906,
-  "Welterweight": 0.1671,
-  "Women's Bantamweight": 0.0769,
-  "Women's Flyweight": 0.0876,
-  "Women's Strawweight": 0.0826
+ "division_dropped_share": {
+  "Bantamweight": 0.217,
+  "Catch Weight": 0.25,
+  "Featherweight": 0.25,
+  "Flyweight": 0.203,
+  "Heavyweight": 0.2623,
+  "Light Heavyweight": 0.3063,
+  "Lightweight": 0.2582,
+  "Middleweight": 0.2541,
+  "Welterweight": 0.2329,
+  "Women's Bantamweight": 0.1154,
+  "Women's Flyweight": 0.1336,
+  "Women's Strawweight": 0.1317
+ },
+ "division_power_share": {
+  "Bantamweight": 0.1983,
+  "Catch Weight": 0.2167,
+  "Featherweight": 0.225,
+  "Flyweight": 0.1923,
+  "Heavyweight": 0.2189,
+  "Light Heavyweight": 0.2569,
+  "Lightweight": 0.2309,
+  "Middleweight": 0.2188,
+  "Welterweight": 0.2146,
+  "Women's Bantamweight": 0.0885,
+  "Women's Flyweight": 0.0945,
+  "Women's Strawweight": 0.1049
  },
  "event": "2026-11-14-ufc-334-gane-vs-hokit",
  "fighters": {
   "Alatengheili": {
-   "career": {
-    "fights": 30,
-    "ko_losses": 3,
-    "ko_wins": 5,
-    "losses": 10,
-    "sherdog": "https://www.sherdog.com/fighter/Heili-Alateng-150691",
-    "wins": 18
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "grap": {
+    "ctrl": 0.1556,
+    "ctrl_ag": 0.0236,
+    "sub15": 0.0,
+    "td15": 1.878,
+    "td_acc": 0.425,
+    "tdd": 0.75
    },
    "kd_against": 0,
    "kd_for": 1,
+   "last5": {
+    "dropped": 0,
+    "fights": 5,
+    "power": 0
+   },
    "minutes": 135.8,
    "name": "Alatengheili",
+   "outcomes": {
+    "l": {
+     "dec": 3,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 5,
+     "ko": 1,
+     "sub": 0
+    }
+   },
+   "power_fights": 1,
+   "power_w": 0.0721,
    "rounds": [
     {
      "diff_pm": -2.075,
@@ -77,18 +112,39 @@
    "ufc_ko_wins": 1
   },
   "Amanda Nunes": {
-   "career": {
-    "fights": 28,
-    "ko_losses": 2,
-    "ko_wins": 13,
-    "losses": 5,
-    "sherdog": "https://www.sherdog.com/fighter/Amanda-Nunes-31496",
-    "wins": 23
+   "dropped_fights": 1,
+   "dropped_w": 0.0065,
+   "grap": {
+    "ctrl": 0.3423,
+    "ctrl_ag": 0.0646,
+    "sub15": 0.734,
+    "td15": 2.789,
+    "td_acc": 0.5672,
+    "tdd": 0.8125
    },
    "kd_against": 0,
    "kd_for": 8,
+   "last5": {
+    "dropped": 0,
+    "fights": 5,
+    "power": 1
+   },
    "minutes": 204.4,
    "name": "Amanda Nunes",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 1,
+     "sub": 1
+    },
+    "w": {
+     "dec": 6,
+     "ko": 7,
+     "sub": 3
+    }
+   },
+   "power_fights": 6,
+   "power_w": 0.2998,
    "r45": {
     "diff_pm_13": 1.996,
     "diff_pm_45": 2.361,
@@ -143,18 +199,39 @@
    "ufc_ko_wins": 7
   },
   "Bia Mesquita": {
-   "career": {
-    "fights": 8,
-    "ko_losses": 0,
-    "ko_wins": 1,
-    "losses": 0,
-    "sherdog": "https://www.sherdog.com/fighter/Beatriz-Mesquita-451242",
-    "wins": 8
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "grap": {
+    "ctrl": 0.5429,
+    "ctrl_ag": 0.1149,
+    "sub15": 3.567,
+    "td15": 3.567,
+    "td_acc": 0.75,
+    "tdd": 0.0
    },
    "kd_against": 0,
    "kd_for": 0,
+   "last5": {
+    "dropped": 0,
+    "fights": 3,
+    "power": 0
+   },
    "minutes": 12.6,
    "name": "Bia Mesquita",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 3
+    }
+   },
+   "power_fights": 0,
+   "power_w": 0.0,
    "rounds": [
     {
      "diff_pm": 4.238,
@@ -202,18 +279,39 @@
    "ufc_ko_wins": 0
   },
   "Bilal Hasan": {
-   "career": {
-    "fights": 11,
-    "ko_losses": 0,
-    "ko_wins": 8,
-    "losses": 0,
-    "sherdog": "https://www.sherdog.com/fighter/Bilal-Hasan-400714",
-    "wins": 10
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "grap": {
+    "ctrl": 0.1406,
+    "ctrl_ag": 0.0067,
+    "sub15": 0.0,
+    "td15": 2.009,
+    "td_acc": 1.0,
+    "tdd": null
    },
    "kd_against": 0,
    "kd_for": 1,
+   "last5": {
+    "dropped": 0,
+    "fights": 1,
+    "power": 1
+   },
    "minutes": 7.5,
    "name": "Bilal Hasan",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 1,
+     "sub": 0
+    }
+   },
+   "power_fights": 1,
+   "power_w": 1.0,
    "rounds": [
     {
      "diff_pm": 4.2,
@@ -261,18 +359,39 @@
    "ufc_ko_wins": 1
   },
   "Caio Borralho": {
-   "career": {
-    "fights": 21,
-    "ko_losses": 0,
-    "ko_wins": 5,
-    "losses": 2,
-    "sherdog": "https://www.sherdog.com/fighter/Caio-Borralho-188043",
-    "wins": 18
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "grap": {
+    "ctrl": 0.2685,
+    "ctrl_ag": 0.0747,
+    "sub15": 0.432,
+    "td15": 1.08,
+    "td_acc": 0.4545,
+    "tdd": 0.7368
    },
    "kd_against": 0,
    "kd_for": 3,
+   "last5": {
+    "dropped": 0,
+    "fights": 5,
+    "power": 3
+   },
    "minutes": 138.9,
    "name": "Caio Borralho",
+   "outcomes": {
+    "l": {
+     "dec": 1,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 6,
+     "ko": 1,
+     "sub": 1
+    }
+   },
+   "power_fights": 3,
+   "power_w": 0.36,
    "r45": {
     "diff_pm_13": 0.437,
     "diff_pm_45": 2.05,
@@ -327,18 +446,39 @@
    "ufc_ko_wins": 1
   },
   "Cesar Almeida": {
-   "career": {
-    "fights": 10,
-    "ko_losses": 1,
-    "ko_wins": 5,
-    "losses": 3,
-    "sherdog": "https://www.sherdog.com/fighter/Cesar-Almeida-217983",
-    "wins": 7
+   "dropped_fights": 3,
+   "dropped_w": 0.5575,
+   "grap": {
+    "ctrl": 0.0577,
+    "ctrl_ag": 0.5045,
+    "sub15": 0.245,
+    "td15": 0.245,
+    "td_acc": 0.3333,
+    "tdd": 0.4848
    },
    "kd_against": 3,
    "kd_for": 1,
+   "last5": {
+    "dropped": 3,
+    "fights": 5,
+    "power": 1
+   },
    "minutes": 61.2,
    "name": "Cesar Almeida",
+   "outcomes": {
+    "l": {
+     "dec": 2,
+     "ko": 1,
+     "sub": 0
+    },
+    "w": {
+     "dec": 1,
+     "ko": 2,
+     "sub": 0
+    }
+   },
+   "power_fights": 2,
+   "power_w": 0.2599,
    "rounds": [
     {
      "diff_pm": 0.897,
@@ -386,18 +526,39 @@
    "ufc_ko_wins": 2
   },
   "Charles Radtke": {
-   "career": {
-    "fights": 17,
-    "ko_losses": 3,
-    "ko_wins": 5,
-    "losses": 5,
-    "sherdog": "https://www.sherdog.com/fighter/Charles-Radtke-175669",
-    "wins": 12
+   "dropped_fights": 2,
+   "dropped_w": 0.2643,
+   "grap": {
+    "ctrl": 0.5138,
+    "ctrl_ag": 0.0401,
+    "sub15": 0.497,
+    "td15": 1.989,
+    "td_acc": 0.4444,
+    "tdd": 1.0
    },
    "kd_against": 2,
    "kd_for": 2,
+   "last5": {
+    "dropped": 2,
+    "fights": 5,
+    "power": 1
+   },
    "minutes": 60.3,
    "name": "Charles Radtke",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 2,
+     "sub": 0
+    },
+    "w": {
+     "dec": 2,
+     "ko": 2,
+     "sub": 1
+    }
+   },
+   "power_fights": 2,
+   "power_w": 0.2097,
    "rounds": [
     {
      "diff_pm": 0.197,
@@ -445,18 +606,39 @@
    "ufc_ko_wins": 2
   },
   "Chris Duncan": {
-   "career": {
-    "fights": 18,
-    "ko_losses": 1,
-    "ko_wins": 7,
-    "losses": 3,
-    "sherdog": "https://www.sherdog.com/fighter/Chris-Duncan-74346",
-    "wins": 15
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "grap": {
+    "ctrl": 0.2183,
+    "ctrl_ag": 0.097,
+    "sub15": 0.645,
+    "td15": 2.795,
+    "td_acc": 0.4062,
+    "tdd": 0.5556
    },
    "kd_against": 0,
    "kd_for": 2,
+   "last5": {
+    "dropped": 0,
+    "fights": 5,
+    "power": 2
+   },
    "minutes": 69.8,
    "name": "Chris Duncan",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 2
+    },
+    "w": {
+     "dec": 3,
+     "ko": 0,
+     "sub": 3
+    }
+   },
+   "power_fights": 2,
+   "power_w": 0.3168,
    "rounds": [
     {
      "diff_pm": -0.213,
@@ -504,18 +686,39 @@
    "ufc_ko_wins": 0
   },
   "Ciryl Gane": {
-   "career": {
-    "fights": 17,
-    "ko_losses": 0,
-    "ko_wins": 7,
-    "losses": 2,
-    "sherdog": "https://www.sherdog.com/fighter/Ciryl-Gane-293973",
-    "wins": 14
+   "dropped_fights": 1,
+   "dropped_w": 0.0676,
+   "grap": {
+    "ctrl": 0.0893,
+    "ctrl_ag": 0.0782,
+    "sub15": 0.577,
+    "td15": 0.66,
+    "td_acc": 0.2353,
+    "tdd": 0.4706
    },
    "kd_against": 1,
    "kd_for": 4,
+   "last5": {
+    "dropped": 0,
+    "fights": 5,
+    "power": 2
+   },
    "minutes": 181.9,
    "name": "Ciryl Gane",
+   "outcomes": {
+    "l": {
+     "dec": 1,
+     "ko": 0,
+     "sub": 1
+    },
+    "w": {
+     "dec": 4,
+     "ko": 5,
+     "sub": 2
+    }
+   },
+   "power_fights": 5,
+   "power_w": 0.4245,
    "r45": {
     "diff_pm_13": 3.416,
     "diff_pm_45": 1.467,
@@ -570,18 +773,39 @@
    "ufc_ko_wins": 5
   },
   "Donte Johnson": {
-   "career": {
-    "fights": 9,
-    "ko_losses": 0,
-    "ko_wins": 7,
-    "losses": 0,
-    "sherdog": "https://www.sherdog.com/fighter/Donte-Johnson-414279",
-    "wins": 9
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "grap": {
+    "ctrl": 0.2863,
+    "ctrl_ag": 0.2805,
+    "sub15": 0.651,
+    "td15": 1.952,
+    "td_acc": 1.0,
+    "tdd": 0.7692
    },
    "kd_against": 0,
    "kd_for": 1,
+   "last5": {
+    "dropped": 0,
+    "fights": 3,
+    "power": 1
+   },
    "minutes": 23.1,
    "name": "Donte Johnson",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 1,
+     "ko": 1,
+     "sub": 1
+    }
+   },
+   "power_fights": 1,
+   "power_w": 0.4126,
    "rounds": [
     {
      "diff_pm": 1.375,
@@ -629,18 +853,39 @@
    "ufc_ko_wins": 1
   },
   "Drew Dober": {
-   "career": {
-    "fights": 45,
-    "ko_losses": 4,
-    "ko_wins": 17,
-    "losses": 15,
-    "sherdog": "https://www.sherdog.com/fighter/Drew-Dober-23982",
-    "wins": 29
+   "dropped_fights": 3,
+   "dropped_w": 0.2077,
+   "grap": {
+    "ctrl": 0.1321,
+    "ctrl_ag": 0.2209,
+    "sub15": 0.068,
+    "td15": 0.608,
+    "td_acc": 0.1698,
+    "tdd": 0.5821
    },
    "kd_against": 3,
    "kd_for": 10,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 2
+   },
    "minutes": 221.9,
    "name": "Drew Dober",
+   "outcomes": {
+    "l": {
+     "dec": 4,
+     "ko": 2,
+     "sub": 4
+    },
+    "w": {
+     "dec": 3,
+     "ko": 11,
+     "sub": 1
+    }
+   },
+   "power_fights": 12,
+   "power_w": 0.5744,
    "rounds": [
     {
      "diff_pm": 0.066,
@@ -688,18 +933,39 @@
    "ufc_ko_wins": 11
   },
   "Evan Elder": {
-   "career": {
-    "fights": 12,
-    "ko_losses": 1,
-    "ko_wins": 4,
-    "losses": 2,
-    "sherdog": "https://www.sherdog.com/fighter/Evan-Elder-269245",
-    "wins": 10
+   "dropped_fights": 1,
+   "dropped_w": 0.1897,
+   "grap": {
+    "ctrl": 0.0916,
+    "ctrl_ag": 0.1386,
+    "sub15": 0.481,
+    "td15": 0.481,
+    "td_acc": 0.1538,
+    "tdd": 0.4
    },
    "kd_against": 1,
    "kd_for": 2,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 2
+   },
    "minutes": 62.4,
    "name": "Evan Elder",
+   "outcomes": {
+    "l": {
+     "dec": 1,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 2,
+     "ko": 0,
+     "sub": 1
+    }
+   },
+   "power_fights": 2,
+   "power_w": 0.3403,
    "rounds": [
     {
      "diff_pm": 1.24,
@@ -747,18 +1013,39 @@
    "ufc_ko_wins": 0
   },
   "Jared Gordon": {
-   "career": {
-    "fights": 31,
-    "ko_losses": 5,
-    "ko_wins": 8,
-    "losses": 9,
-    "sherdog": "https://www.sherdog.com/fighter/Jared-Gordon-74057",
-    "wins": 21
+   "dropped_fights": 4,
+   "dropped_w": 0.1942,
+   "grap": {
+    "ctrl": 0.338,
+    "ctrl_ag": 0.1194,
+    "sub15": 0.0,
+    "td15": 1.91,
+    "td_acc": 0.3478,
+    "tdd": 0.6047
    },
    "kd_against": 3,
    "kd_for": 2,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 2
+   },
    "minutes": 188.5,
    "name": "Jared Gordon",
+   "outcomes": {
+    "l": {
+     "dec": 2,
+     "ko": 4,
+     "sub": 2
+    },
+    "w": {
+     "dec": 6,
+     "ko": 3,
+     "sub": 0
+    }
+   },
+   "power_fights": 2,
+   "power_w": 0.2152,
    "rounds": [
     {
      "diff_pm": 0.138,
@@ -806,18 +1093,39 @@
    "ufc_ko_wins": 3
   },
   "Jim Miller": {
-   "career": {
-    "fights": 59,
-    "ko_losses": 2,
-    "ko_wins": 7,
-    "losses": 19,
-    "sherdog": "https://www.sherdog.com/fighter/Jim-Miller-14463",
-    "wins": 39
+   "dropped_fights": 3,
+   "dropped_w": 0.1066,
+   "grap": {
+    "ctrl": 0.208,
+    "ctrl_ag": 0.2687,
+    "sub15": 1.722,
+    "td15": 1.49,
+    "td_acc": 0.45,
+    "tdd": 0.4762
    },
    "kd_against": 3,
    "kd_for": 6,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 0
+   },
    "minutes": 452.9,
    "name": "Jim Miller",
+   "outcomes": {
+    "l": {
+     "dec": 13,
+     "ko": 2,
+     "sub": 3
+    },
+    "w": {
+     "dec": 8,
+     "ko": 6,
+     "sub": 14
+    }
+   },
+   "power_fights": 6,
+   "power_w": 0.1233,
    "rounds": [
     {
      "diff_pm": 0.216,
@@ -865,18 +1173,39 @@
    "ufc_ko_wins": 6
   },
   "Josh Hokit": {
-   "career": {
-    "fights": 10,
-    "ko_losses": 0,
-    "ko_wins": 6,
-    "losses": 0,
-    "sherdog": "https://www.sherdog.com/fighter/Josh-Hokit-433441",
-    "wins": 10
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "grap": {
+    "ctrl": 0.2827,
+    "ctrl_ag": 0.0693,
+    "sub15": 0.499,
+    "td15": 1.497,
+    "td_acc": 0.5,
+    "tdd": 0.7778
    },
    "kd_against": 0,
    "kd_for": 3,
+   "last5": {
+    "dropped": 0,
+    "fights": 4,
+    "power": 3
+   },
    "minutes": 30.1,
    "name": "Josh Hokit",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 1,
+     "ko": 3,
+     "sub": 0
+    }
+   },
+   "power_fights": 3,
+   "power_w": 0.7285,
    "rounds": [
     {
      "diff_pm": 4.147,
@@ -924,18 +1253,39 @@
    "ufc_ko_wins": 3
   },
   "Juan Diaz": {
-   "career": {
-    "fights": 18,
-    "ko_losses": 0,
-    "ko_wins": 5,
-    "losses": 1,
-    "sherdog": "https://www.sherdog.com/fighter/Juan-Diaz-283661",
-    "wins": 16
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "grap": {
+    "ctrl": 0.4161,
+    "ctrl_ag": 0.0,
+    "sub15": 1.642,
+    "td15": 8.212,
+    "td_acc": 0.625,
+    "tdd": null
    },
    "kd_against": 0,
    "kd_for": 0,
+   "last5": {
+    "dropped": 0,
+    "fights": 1,
+    "power": 0
+   },
    "minutes": 9.1,
    "name": "Juan Diaz",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 1
+    }
+   },
+   "power_fights": 0,
+   "power_w": 0.0,
    "rounds": [
     {
      "diff_pm": -0.8,
@@ -983,18 +1333,39 @@
    "ufc_ko_wins": 0
   },
   "Kayla Harrison": {
-   "career": {
-    "fights": 20,
-    "ko_losses": 0,
-    "ko_wins": 6,
-    "losses": 1,
-    "sherdog": "https://www.sherdog.com/fighter/Kayla-Harrison-237039",
-    "wins": 19
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "grap": {
+    "ctrl": 0.5941,
+    "ctrl_ag": 0.0079,
+    "sub15": 0.946,
+    "td15": 2.839,
+    "td_acc": 0.375,
+    "tdd": 1.0
    },
    "kd_against": 0,
    "kd_for": 0,
+   "last5": {
+    "dropped": 0,
+    "fights": 3,
+    "power": 0
+   },
    "minutes": 31.7,
    "name": "Kayla Harrison",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 1,
+     "ko": 0,
+     "sub": 2
+    }
+   },
+   "power_fights": 0,
+   "power_w": 0.0,
    "rounds": [
     {
      "diff_pm": 3.933,
@@ -1042,18 +1413,39 @@
    "ufc_ko_wins": 0
   },
   "Kevin Holland": {
-   "career": {
-    "fights": 45,
-    "ko_losses": 2,
-    "ko_wins": 14,
-    "losses": 15,
-    "sherdog": "https://www.sherdog.com/fighter/Kevin-Holland-108999",
-    "wins": 29
+   "dropped_fights": 2,
+   "dropped_w": 0.143,
+   "grap": {
+    "ctrl": 0.1322,
+    "ctrl_ag": 0.3264,
+    "sub15": 0.632,
+    "td15": 0.827,
+    "td_acc": 0.3953,
+    "tdd": 0.5776
    },
    "kd_against": 2,
    "kd_for": 7,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 2
+   },
    "minutes": 308.4,
    "name": "Kevin Holland",
+   "outcomes": {
+    "l": {
+     "dec": 7,
+     "ko": 2,
+     "sub": 3
+    },
+    "w": {
+     "dec": 5,
+     "ko": 5,
+     "sub": 6
+    }
+   },
+   "power_fights": 6,
+   "power_w": 0.2371,
    "r45": {
     "diff_pm_13": 1.059,
     "diff_pm_45": -1.16,
@@ -1108,18 +1500,39 @@
    "ufc_ko_wins": 5
   },
   "Luis Gurule": {
-   "career": {
-    "fights": 15,
-    "ko_losses": 1,
-    "ko_wins": 5,
-    "losses": 4,
-    "sherdog": "https://www.sherdog.com/fighter/Luis-Gurule-390304",
-    "wins": 11
+   "dropped_fights": 1,
+   "dropped_w": 0.1195,
+   "grap": {
+    "ctrl": 0.1162,
+    "ctrl_ag": 0.1002,
+    "sub15": 0.272,
+    "td15": 0.815,
+    "td_acc": 0.1765,
+    "tdd": 0.7333
    },
    "kd_against": 1,
    "kd_for": 0,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 0
+   },
    "minutes": 55.2,
    "name": "Luis Gurule",
+   "outcomes": {
+    "l": {
+     "dec": 2,
+     "ko": 1,
+     "sub": 1
+    },
+    "w": {
+     "dec": 1,
+     "ko": 0,
+     "sub": 0
+    }
+   },
+   "power_fights": 0,
+   "power_w": 0.0,
    "rounds": [
     {
      "diff_pm": -1.93,
@@ -1167,18 +1580,39 @@
    "ufc_ko_wins": 0
   },
   "Macy Chiasson": {
-   "career": {
-    "fights": 16,
-    "ko_losses": 1,
-    "ko_wins": 3,
-    "losses": 6,
-    "sherdog": "https://www.sherdog.com/fighter/Macy-Chiasson-190279",
-    "wins": 10
+   "dropped_fights": 1,
+   "dropped_w": 0.0676,
+   "grap": {
+    "ctrl": 0.3415,
+    "ctrl_ag": 0.2465,
+    "sub15": 0.393,
+    "td15": 1.866,
+    "td_acc": 0.3585,
+    "tdd": 0.625
    },
    "kd_against": 1,
    "kd_for": 2,
+   "last5": {
+    "dropped": 0,
+    "fights": 5,
+    "power": 0
+   },
    "minutes": 152.7,
    "name": "Macy Chiasson",
+   "outcomes": {
+    "l": {
+     "dec": 4,
+     "ko": 1,
+     "sub": 1
+    },
+    "w": {
+     "dec": 3,
+     "ko": 2,
+     "sub": 2
+    }
+   },
+   "power_fights": 2,
+   "power_w": 0.0241,
    "rounds": [
     {
      "diff_pm": 0.38,
@@ -1226,18 +1660,39 @@
    "ufc_ko_wins": 2
   },
   "Melquizael Costa": {
-   "career": {
-    "fights": 34,
-    "ko_losses": 2,
-    "ko_wins": 9,
-    "losses": 8,
-    "sherdog": "https://www.sherdog.com/fighter/Melquizael-Costa-168403",
-    "wins": 26
+   "dropped_fights": 2,
+   "dropped_w": 0.2745,
+   "grap": {
+    "ctrl": 0.1676,
+    "ctrl_ag": 0.3203,
+    "sub15": 0.836,
+    "td15": 1.533,
+    "td_acc": 0.3548,
+    "tdd": 0.5094
    },
    "kd_against": 2,
    "kd_for": 2,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 2
+   },
    "minutes": 107.6,
    "name": "Melquizael Costa",
+   "outcomes": {
+    "l": {
+     "dec": 1,
+     "ko": 1,
+     "sub": 1
+    },
+    "w": {
+     "dec": 3,
+     "ko": 2,
+     "sub": 2
+    }
+   },
+   "power_fights": 2,
+   "power_w": 0.326,
    "r45": {
     "diff_pm_13": 1.219,
     "diff_pm_45": 0.0,
@@ -1292,18 +1747,39 @@
    "ufc_ko_wins": 2
   },
   "Samuel Sanches": {
-   "career": {
-    "fights": 12,
-    "ko_losses": 0,
-    "ko_wins": 8,
-    "losses": 1,
-    "sherdog": "https://www.sherdog.com/fighter/Samuel-Sanches-389956",
-    "wins": 11
+   "dropped_fights": 0,
+   "dropped_w": null,
+   "grap": {
+    "ctrl": null,
+    "ctrl_ag": null,
+    "sub15": null,
+    "td15": null,
+    "td_acc": null,
+    "tdd": null
    },
    "kd_against": 0,
    "kd_for": 0,
+   "last5": {
+    "dropped": 0,
+    "fights": 0,
+    "power": 0
+   },
    "minutes": 0.0,
    "name": "Samuel Sanches",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    }
+   },
+   "power_fights": 0,
+   "power_w": null,
    "rounds": [
     {
      "diff_pm": null,
@@ -1351,18 +1827,39 @@
    "ufc_ko_wins": 0
   },
   "Stephen Thompson": {
-   "career": {
-    "fights": 27,
-    "ko_losses": 2,
-    "ko_wins": 8,
-    "losses": 9,
-    "sherdog": "https://www.sherdog.com/fighter/Stephen-Thompson-59608",
-    "wins": 17
+   "dropped_fights": 6,
+   "dropped_w": 0.2592,
+   "grap": {
+    "ctrl": 0.0604,
+    "ctrl_ag": 0.1884,
+    "sub15": 0.0,
+    "td15": 0.235,
+    "td_acc": 0.3571,
+    "tdd": 0.6329
    },
    "kd_against": 6,
    "kd_for": 10,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 0
+   },
    "minutes": 319.5,
    "name": "Stephen Thompson",
+   "outcomes": {
+    "l": {
+     "dec": 6,
+     "ko": 2,
+     "sub": 1
+    },
+    "w": {
+     "dec": 6,
+     "ko": 6,
+     "sub": 0
+    }
+   },
+   "power_fights": 8,
+   "power_w": 0.0905,
    "r45": {
     "diff_pm_13": 0.941,
     "diff_pm_45": 1.545,
@@ -1417,18 +1914,39 @@
    "ufc_ko_wins": 6
   },
   "Terrance McKinney": {
-   "career": {
-    "fights": 27,
-    "ko_losses": 6,
-    "ko_wins": 9,
-    "losses": 9,
-    "sherdog": "https://www.sherdog.com/fighter/Terrance-McKinney-232591",
-    "wins": 18
+   "dropped_fights": 5,
+   "dropped_w": 0.4614,
+   "grap": {
+    "ctrl": 0.4514,
+    "ctrl_ag": 0.104,
+    "sub15": 2.177,
+    "td15": 3.048,
+    "td_acc": 0.4667,
+    "tdd": 0.7273
    },
    "kd_against": 5,
    "kd_for": 3,
+   "last5": {
+    "dropped": 2,
+    "fights": 5,
+    "power": 0
+   },
    "minutes": 34.5,
    "name": "Terrance McKinney",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 4,
+     "sub": 2
+    },
+    "w": {
+     "dec": 0,
+     "ko": 5,
+     "sub": 3
+    }
+   },
+   "power_fights": 4,
+   "power_w": 0.1239,
    "rounds": [
     {
      "diff_pm": 3.929,
@@ -1476,18 +1994,39 @@
    "ufc_ko_wins": 5
   },
   "Uros Medic": {
-   "career": {
-    "fights": 17,
-    "ko_losses": 1,
-    "ko_wins": 12,
-    "losses": 3,
-    "sherdog": "https://www.sherdog.com/fighter/Uros-Medic-272505",
-    "wins": 14
+   "dropped_fights": 3,
+   "dropped_w": 0.2453,
+   "grap": {
+    "ctrl": 0.038,
+    "ctrl_ag": 0.2997,
+    "sub15": 0.0,
+    "td15": 0.356,
+    "td_acc": 0.5,
+    "tdd": 0.5556
    },
    "kd_against": 3,
    "kd_for": 9,
+   "last5": {
+    "dropped": 2,
+    "fights": 5,
+    "power": 4
+   },
    "minutes": 42.1,
    "name": "Uros Medic",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 1,
+     "sub": 2
+    },
+    "w": {
+     "dec": 0,
+     "ko": 8,
+     "sub": 0
+    }
+   },
+   "power_fights": 8,
+   "power_w": 0.8272,
    "rounds": [
     {
      "diff_pm": 2.017,
@@ -1535,18 +2074,39 @@
    "ufc_ko_wins": 8
   },
   "Yousri Belgaroui": {
-   "career": {
-    "fights": 14,
-    "ko_losses": 0,
-    "ko_wins": 9,
-    "losses": 3,
-    "sherdog": "https://www.sherdog.com/fighter/Yousri-Belgaroui-380449",
-    "wins": 11
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "grap": {
+    "ctrl": 0.0569,
+    "ctrl_ag": 0.1869,
+    "sub15": 0.0,
+    "td15": 0.518,
+    "td_acc": 1.0,
+    "tdd": 0.5625
    },
    "kd_against": 0,
    "kd_for": 3,
+   "last5": {
+    "dropped": 0,
+    "fights": 3,
+    "power": 3
+   },
    "minutes": 29.0,
    "name": "Yousri Belgaroui",
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 3,
+     "sub": 0
+    }
+   },
+   "power_fights": 3,
+   "power_w": 1.0,
    "rounds": [
     {
      "diff_pm": 4.994,
@@ -1595,7 +2155,6 @@
   }
  },
  "sources": {
-  "career": "data/embeds/ufc_334_career.json",
   "ufcstats": "Greco1899/scrape_ufc_stats CSVs"
  }
 }

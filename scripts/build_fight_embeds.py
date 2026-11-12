@@ -122,6 +122,20 @@ def sparkline(series):
             f'<circle cx="{X(ta):.1f}" cy="{Y(pa):.1f}" r="3.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/><circle cx="{X(tb):.1f}" cy="{Y(pb):.1f}" r="4" fill="#0a8842"/>'
             f'<text x="{X(tb)+7:.1f}" y="{Y(pb)+4:.1f}" font-size="11" font-weight="700" fill="#0a8842">{pb*100:.1f}%</text></svg>')
 
+def minispark(series, who):
+    """Block 59f: small line under the moneyline stack (market win % of the first-named fighter)."""
+    W, H, Lm, Rm, T, B = 300, 46, 4, 44, 6, 6
+    pts = [(dt.datetime.fromisoformat(r[0]), r[1]) for r in series if r[1] is not None]
+    t0, t1 = pts[0][0], pts[-1][0]; lo = min(p for _, p in pts); hi = max(p for _, p in pts)
+    pad = max(.01, (hi - lo) * .15); lo, hi = lo - pad, hi + pad
+    X = lambda t: Lm + (W - Lm - Rm) * ((t - t0).total_seconds() / max(1, (t1 - t0).total_seconds()))
+    Y = lambda p: T + (H - T - B) * (1 - (p - lo) / (hi - lo))
+    d = "".join(("M" if i == 0 else "L") + f"{X(t):.1f} {Y(p):.1f}" for i, (t, p) in enumerate(pts))
+    (ta, pa), (tb, pb) = pts[0], pts[-1]
+    return (f'<svg class="mspark" viewBox="0 0 {W} {H}" preserveAspectRatio="none" role="img" aria-label="{esc(who)} market win % from {pa*100:.0f}% to {pb*100:.0f}%">'
+            f'<path d="{d}" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>'
+            f'<circle cx="{X(ta):.1f}" cy="{Y(pa):.1f}" r="2.5" fill="#fff" stroke="#1a1a1a"/><circle cx="{X(tb):.1f}" cy="{Y(pb):.1f}" r="3" fill="#0a8842"/></svg>')
+
 # ---------------------------------------------------------------- CSS: copied verbatim from the site's fight-form widget
 def css_rules(src, selectors):
     out = []
@@ -270,7 +284,7 @@ def build(names, outname):
                 mk = '<td class="dim">n/a</td>'
             nmcell = f'<td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}<div class="nb"><i class="{side_cls[sd]}" style="width:{p_*100:.1f}%"></i></div></td>'
             body += f'<tr>{nmcell}{mdl}{lst}{mk}<td>{chip(m_id, l_id, "Edge ML " + F)}</td></tr>'
-        proj += stack("Moneyline · model vs market", ["Fighter", "Model", "Listed", "Market", "Edge"], body)
+        proj += stack("Moneyline · model vs market", ["Fighter", "Model", "Listed", "Market", "Edge"], body).replace("</table></div>", "</table>@@MOVE@@</div>", 1)
         # fight length: GTD (listed from the sheet) and ITD; edge vs listed for GTD, vs market for ITD
         body = ""
         g = pf["gtd"]
@@ -331,31 +345,19 @@ def build(names, outname):
         return f'<details class="collapsible" id="{id_}"{" open" if open_ else ""}><summary><span class="bullet"></span>{title}<span class="meta">{meta_}</span></summary><div class="body">{body}</div></details>'
     secs = []
 
-    # ---------- line movement (directly under the table) ----------
+    # ---------- line movement: folded into the moneyline stack (Block 59f: no books, no open -> now) ----------
     body = ""
     if o:
         mv = o["close"]["p"] - o["open"]["p"]
-        def best(sd):
-            b = None
-            for k, x in o["books"].items():
-                if k not in US_BOOKS: continue   # Block 57: only US-regulated books are named (same list as form/app.js)
-                m = x["ma" if sd == "a" else "mb"]
-                if m is not None and (b is None or dec_odds(m) > dec_odds(b[0])): b = (m, k)
-            return b
-        ba, bb = best("a"), best("b")
         tow = an if mv >= 0 else bn
-        body += (f'<div class="drift"><span class="dl">Drift</span><span class="dv">{R(mv, "pts", "oa_drift", "OA drift pts", ev=EVF, pair=PAIR)} pts</span><span class="dt">toward {esc(last(tow))} since {o["open"]["t"][5:10].replace("-", "/")}</span></div>')
-        body += sparkline(o["series"]) + f'''<div class="kv"><span>Best US price</span><span>{esc(last(an))} {R(ba[0], "ml", "oa_best", "OA best a", ev=EVF, pair=PAIR, side="a")} {esc(BOOKS.get(ba[1], ba[1]))} · {esc(last(bn))} {R(bb[0], "ml", "oa_best", "OA best b", ev=EVF, pair=PAIR, side="b")} {esc(BOOKS.get(bb[1], bb[1]))}</span></div>'''
+        body = (f'<div class="mvrow"><div class="mvt"><span class="mvl">Line move</span> <b>{R(abs(mv), "pts", "oa_drift_abs", "OA drift pts", ev=EVF, pair=PAIR)} pts</b> toward {esc(last(tow))} since {o["open"]["t"][5:10].replace("-", "/")}</div>'
+                f'<div class="mvs"><span>{R(o["open"]["p"], "pct1", "oa_open", "OA open p", ev=EVF, pair=PAIR)}</span>{minispark(o["series"], an)}<span class="mve">{R(o["close"]["p"], "pct1", "oa_close", "OA close p", ev=EVF, pair=PAIR)}</span></div>'
+                f'<div class="mvc">{esc(last(an))} market win %</div></div>')
     else:
         gaps.append(f"Fight {n}: no Odds API line history (no odds block in the event file).")
-    if bf:
-        la, lb = bp_name(bf, an), bp_name(bf, bn); sa, sb = bp_sel(bf, "moneyline", la), bp_sel(bf, "moneyline", lb)
-        body += f'<div class="kv"><span>Open → now</span><span>{esc(last(an))} {R(sa["opening_cost"], "ml", "bp", "BP open a (move)", market="moneyline", label=la, field="opening_cost")} → {R(sa["books"]["consensus"]["cost"], "ml", "bp", "BP now a (move)", market="moneyline", label=la, field="cost")} · {esc(last(bn))} {R(sb["opening_cost"], "ml", "bp", "BP open b (move)", market="moneyline", label=lb, field="opening_cost")} → {R(sb["books"]["consensus"]["cost"], "ml", "bp", "BP now b (move)", market="moneyline", label=lb, field="cost")}</span></div>'
-    if o:
-        pass   # Block 59: chart caption dropped
-    else:
-        pass
-    secs.append(sec("move", "Line movement", "open → now", body))
+    proj = proj.replace("@@MOVE@@", body)
+    top = proj
+
 
     # ---------- props detail: dropped (Block 59c, Sean: our projections and stats are the star) ----------
 
@@ -415,30 +417,53 @@ def build(names, outname):
         return f'<div class="tb-row"><span class="tb-n">{esc(last(F))}</span><div class="tb-bar" role="img" aria-label="{esc(F)} lands {t_["head"]*100:.0f}% head, {t_["body"]*100:.0f}% body, {t_["leg"]*100:.0f}% legs">{seg}</div></div>'
     target_html = (f'<div class="tb"><div class="tb-key"><span><i class="tb-head"></i>Head</span><span><i class="tb-body"></i>Body</span><span><i class="tb-leg"></i>Legs</span><span class="dim">where they land</span></div>'
                    f'{tbar(ema, an, "a")}{tbar(emb, bn, "b")}</div>')
-    # power and chin on a scale against the division: career KO wins / KO losses as a share of all pro fights
-    car = {an: (ema.get("career") or {}), bn: (emb.get("career") or {})}
+    # power and durability on the feet, against the division: share of UFC fights with a knockdown or a standing KO/TKO,
+    # for (power) and against (durability). Ground-and-pound finishes with no knockdown are left out.
     wc_ = re.sub(r"^(UFC )?(Interim )?", "", f.get("wc") or "")
-    davg = EMX["division_ko_share"].get(wc_)
-    def scale(title, key, tip):
+    def scale(title, key, flip, ends):
+        davg = EMX["division_power_share" if key == "power" else "division_dropped_share"].get(wc_)
         vals = {}
-        for F, sd in ((an, "a"), (bn, "b")):
-            c_ = car[F]
-            if c_.get("fights"): vals[sd] = (c_[key] / c_["fights"], c_[key], c_["fights"])
+        for F, sd, rec in ((an, "a", ema), (bn, "b", emb)):
+            if rec.get("ufc_fights"): vals[sd] = (rec[key + "_w"], rec[key + "_fights"], rec["ufc_fights"], rec["last5"][key], rec["last5"]["fights"])
         if not vals: return ""
         top = max([0.5] + [v[0] for v in vals.values()] + ([davg] if davg else []))
-        marks = ""
-        pos = {sd: v[0] / top * 100 for sd, v in vals.items()}
+        px = lambda v: (1 - v / top) * 100 if flip else v / top * 100     # durability runs backwards: right = rarely dropped
+        pos = {sd: px(v[0]) for sd, v in vals.items()}
         close = len(pos) == 2 and abs(pos["a"] - pos["b"]) < 4
-        for sd, (v, k_, n_) in vals.items():
+        marks = ""
+        for sd in vals:
             F = an if sd == "a" else bn
             dy = (";top:-2px" if sd == "a" else ";top:10px") if close else ""
-            marks += f'<i class="sc-dot {side_cls[sd]}" style="left:{max(pos[sd], 1.5):.1f}%{dy}" title="{esc(F)}"></i>'
-        avg = f'<i class="sc-avg" style="left:{davg / top * 100:.1f}%"></i>' if davg else ""
-        lab = "".join(f'<div class="sc-l"><i class="dot {side_cls[sd]}"></i>{esc(last(an if sd == "a" else bn))} <b>{R(v, "pct0", "em_car", f"{title} {sd}", fighter=(an if sd == "a" else bn), key=key)}</b> <span class="dim">({R(k_, "int", "em_car_n", f"{title} count {sd}", fighter=(an if sd == "a" else bn), key=key)} of {R(n_, "int", "em_car_n", f"{title} fights {sd}", fighter=(an if sd == "a" else bn), key="fights")})</span></div>' for sd, (v, k_, n_) in vals.items())
-        avgl = f'<div class="sc-l dim">Division average {R(davg, "pct0", "em_div", "Division KO share", wc=wc_)}</div>' if davg else ""
-        return f'<div class="sc"><div class="sc-h" title="{esc(tip)}">{title}</div><div class="sc-track" role="img" aria-label="{esc(title)}">{avg}{marks}</div>{lab}{avgl}</div>'
-    power_html = (scale("Power: KO'd opponents in", "ko_wins", "KO/TKO wins as a share of all pro fights, all promotions")
-                  + scale("Chin: been KO'd in", "ko_losses", "KO/TKO losses as a share of all pro fights, all promotions"))
+            marks += f'<i class="sc-dot {side_cls[sd]}" style="left:{min(max(pos[sd], 1.5), 98.5):.1f}%{dy}" title="{esc(F)}"></i>'
+        avg = f'<i class="sc-avg" style="left:{px(davg):.1f}%"></i>' if davg else ""
+        def lab(sd, v, k_, n_, k5, n5):
+            F = an if sd == "a" else bn
+            tag = ""
+            if davg and n_ >= 5 and abs(v - davg) >= 0.05:
+                good = (v < davg) if flip else (v > davg)
+                tag = f' <span class="sc-t {"up" if good else "dn"}">{"better" if good else "worse"} than avg</span>'
+            elif davg and n_ < 5: tag = ' <span class="sc-t">small sample</span>'
+            return (f'<div class="sc-l"><i class="dot {side_cls[sd]}"></i>{esc(last(F))} <b>{R(v, "pct0", "em", f"{title} {sd}", fighter=F, path=key + "_w")}</b>'
+                    f' <span class="dim">· last 5: {R(k5, "int", "em", f"{title} last5 {sd}", fighter=F, path="last5." + key)} of {R(n5, "int", "em", f"{title} last5 n {sd}", fighter=F, path="last5.fights")}'
+                    f' · all: {R(k_, "int", "em", f"{title} count {sd}", fighter=F, path=key + "_fights")} of {R(n_, "int", "em", f"{title} fights {sd}", fighter=F, path="ufc_fights")}</span>{tag}</div>')
+        labs_ = "".join(lab(sd, *vals[sd]) for sd in vals)
+        avgl = f'<div class="sc-l dim">Division average {R(davg, "pct0", "em_div", "Division share " + title, wc=wc_, key=key)}</div>' if davg else ""
+        return (f'<div class="sc"><div class="sc-h">{title}</div><div class="sc-track" role="img" aria-label="{esc(title)}">{avg}{marks}</div>'
+                f'<div class="sc-e"><span>{ends[0]}</span><span>{ends[1]}</span></div>{labs_}{avgl}</div>')
+    power_html = (scale("Power: drops or stops them on the feet", "power", False, ("rarely", "often"))
+                  + scale("Durability: gets dropped or stopped", "dropped", True, ("often", "rarely")))
+    # how their fights end: one bar per fighter, UFC wins (KO, SUB, DEC) then losses (DEC, SUB, KO), counts in the segments
+    OC = (("w", "ko", "W KO"), ("w", "sub", "W SUB"), ("w", "dec", "W DEC"), ("l", "dec", "L DEC"), ("l", "sub", "L SUB"), ("l", "ko", "L KO"))
+    def obar(rec, F):
+        oc = rec.get("outcomes")
+        tot = sum(oc[w][m] for w, m, _ in OC) if oc else 0
+        if not tot: return f'<div class="tb-row"><span class="tb-n">{esc(last(F))}</span><span class="dim">no UFC results</span></div>'
+        seg = "".join(f'<i class="oc-{w}{m}" style="width:{oc[w][m] / tot * 100:.1f}%" title="{lab_} {oc[w][m]}"><b>{R(oc[w][m], "int", "em", f"Outcome {w}{m} {F}", fighter=F, path=f"outcomes.{w}.{m}") if oc[w][m] / tot >= 0.09 else ""}</b></i>'
+                      for w, m, lab_ in OC if oc[w][m])
+        wl = f'{sum(oc["w"].values())}-{sum(oc["l"].values())}'
+        return f'<div class="tb-row"><span class="tb-n">{esc(last(F))}</span><div class="tb-bar oc" role="img" aria-label="{esc(F)} UFC {wl}: ' + ", ".join(f"{lab_} {oc[w][m]}" for w, m, lab_ in OC) + f'">{seg}</div></div>'
+    outcome_html = ('<div class="tb"><div class="tb-key">' + "".join(f'<span><i class="oc-{w}{m}"></i>{lab_}</span>' for w, m, lab_ in OC) + '</div>'
+                    + obar(ema, an) + obar(emb, bn) + '</div>')
     # cardio by round (UFC rounds, every fight): strike differential per minute, rounds 1-3, plus 4-5 when the fight is scheduled for 5
     nrd = 5 if (f.get("sched") or 3) == 5 else 3
     def rcells(rec, F, sd):
@@ -456,31 +481,42 @@ def build(names, outname):
         champ = (E("r45.fights", "Fights to R4+", "int", None) + E("r45.landed_pm_13", "Output R1-3 /min", "n1", "hi") + E("r45.landed_pm_45", "Output R4-5 /min", "n1", "hi")
                  + E("r45.diff_pm_45", "Diff R4-5 /min", "s1", "hi"))
         if not champ: champ = '<div class="note">Neither fighter has been past round 3 in the UFC.</div>'
-    stats_html = (f'<div class="tape"><div class="row hdr"><div class="a">{esc(last(an))}</div><div class="k vs">VS</div><div class="b">{esc(last(bn))}</div></div></div>'
-        + grp("Striking", target_html + '<div class="tape">' + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
-              + E("target_diff.leg", "Leg diff /min", "s2", "hi") + L3("metrics", "hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed") + '</div>')
-        + grp("Power and chin", power_html)
-        + grp("Cardio" + (" · 5 rounds" if nrd == 5 else ""), rounds_html + ('<div class="tape">' + champ + '</div>' if nrd == 5 else "")
-              + '<div class="tape">' + L3("cardio.upcoming", "out", "Output kept R3", "pct0", "hi", "Round 3 strikes as a share of round 1") + '</div>')
-        + grp("Pace and finishes", L3("props.upcoming", "min", "Avg fight, min", "n1", None) + L3("props.upcoming", "r1", "Finished in R1", "pct0", None)
-              + L3("props.upcoming", "dec", "Goes to decision", "pct0", None) + L3("props.upcoming", "wko", "Wins by KO", "pct0", "hi")
-              + L3("props.upcoming", "wsub", "Wins by SUB", "pct0", "hi") + L3("props.upcoming", "lko", "Losses by KO", "pct0", "lo") + L3("props.upcoming", "lsub", "Losses by SUB", "pct0", "lo"))
-        + grp("Grappling", srow("Takedowns /15", "td15", ga["td15"], gb["td15"], "n2", "stat", "hi", key="td15") + srow("TD defence", "tdd", ga["tdd"], gb["tdd"], "pct0", "stat", "hi", key="tdd")
-              + L3("metrics", "ctd", "Control per TD", "mmss", "hi", "Seconds of control per takedown landed")))
+    BIG.update({"td15": 1.0, "td_acc": 0.15, "tdd": 0.15, "ctrl": 0.10, "ctrl_ag": 0.10, "sub15": 0.5})
+    grap_html = (E("grap.td15", "Takedowns /15", "n2", "hi", "Takedowns landed per 15 minutes") + E("grap.td_acc", "TD accuracy", "pct0", "hi")
+                 + E("grap.tdd", "TD defence", "pct0", "hi", "Share of opponents' takedown attempts stopped")
+                 + E("grap.ctrl", "Time in control", "pct0", "hi", "Share of fight time spent controlling the opponent")
+                 + E("grap.ctrl_ag", "Time controlled", "pct0", "lo", "Share of fight time spent being controlled")
+                 + E("grap.sub15", "Sub attempts /15", "n2", "hi"))
+    # Block 59f: Stats sub-toggles, in Sean's order. Without JS every group shows.
+    groups = [("st", "Striking", "Striking", target_html + '<div class="tape">' + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
+               + E("target_diff.leg", "Leg diff /min", "s2", "hi") + L3("metrics", "hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed") + '</div>'),
+              ("gr", "Grappling", "Grappling", grap_html),
+              ("pw", "Power", "Power and durability", power_html),
+              ("ca", "Cardio", "Cardio" + (" · 5 rounds" if nrd == 5 else ""), rounds_html + ('<div class="tape">' + champ + '</div>' if nrd == 5 else "")
+               + '<div class="tape">' + L3("cardio.upcoming", "out", "Output kept R3", "pct0", "hi", "Round 3 strikes as a share of round 1") + '</div>'),
+              ("en", "Endings", "How their fights end", outcome_html + '<div class="tape">' + L3("props.upcoming", "min", "Avg fight, min", "n1", None) + L3("props.upcoming", "r1", "Finished in R1", "pct0", None) + '</div>')]
+    groups = [(k, t, h, grp(h, b)) for k, t, h, b in groups if b]
+    stats_html = ('<div class="sgt" role="group" aria-label="Stat groups">' + "".join(f'<button type="button" data-g="{k}" aria-pressed="{"true" if i_ == 0 else "false"}">{t}</button>' for i_, (k, t, _, _) in enumerate(groups)) + '</div>'
+                  + f'<div class="tape"><div class="row hdr"><div class="a">{esc(last(an))}</div><div class="k vs">VS</div><div class="b">{esc(last(bn))}</div></div></div>'
+                  + "".join(f'<div class="sgw" data-g="{k}">{h}</div>' for k, _, _, h in groups))
     small = [F["name"] for F, g_ in [(FA, ga), (FB, gb)] if g_["n"] <= 3]
     secs.append(sec("ourstats", "Stats", "", stats_html))
 
     # ---------- recent form ----------
     def t5(F, Lf, sd):
         if not Lf: return f'<div class="col"><div class="cn">{esc(F["name"])}</div><div class="note">No prior UFC fights.</div></div>'
-        chips = "".join(f'<i class="r {x["r"].lower()}">{x["r"] if x["r"] in "WLD" else "NC"}</i>' for x in Lf[:5])
-        rw = []
-        for i, x in enumerate(Lf[:5]):
+        def row(i, x):
             m_ = (x.get("m") or "").replace("Decision - ", "").replace("Unanimous", "UD").replace("Split", "SD").replace("Majority", "MD").replace("Submission", "SUB").replace("TKO - Doctor's Stoppage", "TKO (Dr)").replace("Could Not Continue", "CNC")
             fin = m_ if m_ in ("UD", "SD", "MD") else f'{m_} R{x["rd"]}'
             mc = (x.get("od") or {}).get("mc")
-            rw.append(f'<tr><td class="l dim">{dt.date.fromisoformat(x["d"]).strftime("%b %y")}</td><td class="l"><b class="r-{x["r"].lower()}">{x["r"]}</b> {esc(x["o"])}</td><td class="l">{esc(fin)}</td><td class="dim">{R(mc, "ml", "fight", "Close "+F["name"]+" "+x["o"], side=sd, i=i, key="od.mc") if mc is not None else "—"}</td></tr>')
-        return f'<div class="col"><div class="cn">{esc(F["name"])} <span class="chips">{chips}</span></div><table class="t ft"><thead><tr><th class="l">When</th><th class="l">Result</th><th class="l">How</th><th>Close</th></tr></thead><tbody>{"".join(rw)}</tbody></table></div>'
+            return f'<tr><td class="l dim">{dt.date.fromisoformat(x["d"]).strftime("%b %y")}</td><td class="l"><b class="r-{x["r"].lower()}">{x["r"]}</b> {esc(x["o"])}</td><td class="l">{esc(fin)}</td><td class="dim">{R(mc, "ml", "fight", "Close "+F["name"]+" "+x["o"], side=sd, i=i, key="od.mc") if mc is not None else "—"}</td></tr>'
+        head = '<thead><tr><th class="l">When</th><th class="l">Result</th><th class="l">How</th><th>Close</th></tr></thead>'
+        rows5 = "".join(row(i, x) for i, x in enumerate(Lf[:5]))
+        more = ""
+        if len(Lf) > 5:   # Block 59f: full UFC history behind a toggle
+            more = (f'<details class="fmore"><summary>All {len(Lf)} UFC fights</summary><table class="t ft">{head}<tbody>'
+                    + "".join(row(i, x) for i, x in enumerate(Lf) if i >= 5) + '</tbody></table></details>')
+        return f'<div class="col"><div class="cn">{esc(F["name"])}</div><table class="t ft">{head}<tbody>{rows5}</tbody></table>{more}</div>'
     secs.append(sec("form", "Recent form", "last 5 UFC", f'<div class="ftw">{t5(FA, pa_, "a")}{t5(FB, pb_, "b")}</div>'))
 
     # ---------- notes: dropped (Block 59) ----------
@@ -488,7 +524,8 @@ def build(names, outname):
 
     nav = '<nav class="ffnav">' + "".join(f'<a href="#{i}">{t}</a>' for i, t in [("odds", "Odds"), ("move", "Movement"), ("props", "Props"), ("stats", "Stats"), ("form", "Form"), ("notes", "Notes")]) + "</nav>"
     # ---------- tabs (Block 59b): Projection first; tale of the tape collapsed at its top ----------
-    tabdefs = [("proj", "Projection", top)] + [(k, t, PANELS[k][1]) for k, t in (("ourstats", "Stats"), ("move", "Movement"), ("form", "Form")) if k in PANELS]
+    # Block 59e: Movement folded into Projection (Sean: consolidate), as a compact block under the method stack
+    tabdefs = [("proj", "Projection", top)] + [(k, t, PANELS[k][1]) for k, t in (("ourstats", "Stats"), ("form", "Form")) if k in PANELS]
     tabs_html = ('<div class="tabs" role="tablist" aria-label="Fight sections">' + "".join(
         f'<button type="button" role="tab" id="tb-{k}" aria-controls="tp-{k}" aria-selected="{"true" if i_ == 0 else "false"}" tabindex="{0 if i_ == 0 else -1}">{t}</button>' for i_, (k, t, _) in enumerate(tabdefs)) + '</div>'
         + "".join(f'<section class="tp" id="tp-{k}" role="tabpanel" aria-labelledby="tb-{k}" tabindex="0"><h2 class="tp-h">{t}</h2>{b}</section>' for k, t, b in tabdefs))
@@ -593,7 +630,12 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .sc{{padding:9px 12px;border-bottom:1px solid var(--border)}}.sc:last-child{{border-bottom:0}}.sc-h{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}}
 .sc-track{{position:relative;height:8px;background:linear-gradient(90deg,var(--bg-muted),#d9d4c8);border-radius:4px;margin:4px 6px 8px}}
 .sc-dot{{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}}.sc-dot.fav{{background:#2a78d6}}.sc-dot.dog{{background:#eb6834}}
-.sc-avg{{position:absolute;top:-5px;width:2px;height:18px;background:#0e1116;transform:translateX(-1px)}}.sc-l{{font-size:12px;margin:2px 0}}.sc-l b{{font-family:"SF Mono",Menlo,monospace}}
+.sc-avg{{position:absolute;top:-5px;width:2px;height:18px;background:#0e1116;transform:translateX(-1px)}}.sc-l{{font-size:12px;margin:2px 0}}.oc i b{{color:#fff}}.oc-wko{{background:#0a7a3a}}.oc-wsub{{background:#22a85a}}.oc-wdec{{background:#8fd6aa}}.oc-ldec{{background:#f2b8b0}}.oc-lsub{{background:#e0675a}}.oc-lko{{background:#b3261e}}.oc .oc-wdec b,.oc .oc-ldec b{{color:#0e1116}}.tb-bar.oc i{{min-width:0}}
+.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
+.sgt{{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}}.sgt button{{flex:1 1 0;min-width:0;border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 2px;font:700 11px/1 inherit;letter-spacing:-.1px;white-space:nowrap;font-family:inherit;color:var(--text-muted);cursor:pointer}}.sgt button[aria-pressed=true]{{background:#0e1116;border-color:#0e1116;color:#fff}}.js .sgw{{display:none}}.js .sgw.on{{display:block}}
+.fmore{{margin:4px 0 12px}}.fmore>summary{{cursor:pointer;font-size:12px;font-weight:700;color:var(--action-green-dark);padding:6px 2px;list-style:none}}.fmore>summary::-webkit-details-marker{{display:none}}.fmore>summary::before{{content:"▸ "}}.fmore[open]>summary::before{{content:"▾ "}}.fmore[open]>summary{{font-size:0}}.fmore[open]>summary::before{{font-size:12px}}.fmore[open]>summary::after{{content:"Hide older fights";font-size:12px}}
+.mvb{{margin:10px 0 0;border:1px solid var(--border);border-radius:8px;overflow:hidden}}.mvb-h{{background:#0e1116;color:#fff;font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:7px 12px}}
+.sc-e{{display:flex;justify-content:space-between;font-size:10px;color:var(--text-muted);margin:-4px 6px 6px;text-transform:uppercase;letter-spacing:.4px}}.sc-t{{font-size:10px;font-weight:700;padding:1px 5px;border-radius:3px;background:var(--bg-muted);color:var(--text-muted)}}.sc-t.up{{background:#d9f5e4;color:#0a7a3a}}.sc-t.dn{{background:#fde3e0;color:#b3261e}}.sc-l b{{font-family:"SF Mono",Menlo,monospace}}
 .rt{{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}}.rt th{{background:var(--bg-muted);font-size:9.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);padding:6px 4px;text-align:center}}
 .rt td{{padding:7px 4px;text-align:center;border-top:1px solid var(--border);font:700 12px/1.2 "SF Mono",Menlo,monospace}}.rt td small{{display:block;font:600 9px/1 inherit;font-family:inherit;color:var(--text-muted);margin-top:2px}}
 .rt td.pos{{background:var(--pos-soft);color:var(--pos-strong)}}.rt td.neg{{background:var(--neg-soft);color:var(--neg-strong)}}.rt td.nm{{font-family:inherit;font-size:12px;text-align:left}}
@@ -613,7 +655,10 @@ table.t{{font-size:11.5px}}table.t td,table.t th{{padding:5px 3px}}.kv{{font-siz
 function show(i,f){{tabs.forEach(function(t,j){{var on=j===i;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;ps[j].hidden=!on;}});if(f)tabs[i].focus();}}
 tabs.forEach(function(t,i){{t.addEventListener('click',function(){{show(i);}});t.addEventListener('keydown',function(e){{var k=e.key,n=tabs.length;
 if(k==='ArrowRight'){{show((i+1)%n,1);e.preventDefault();}}if(k==='ArrowLeft'){{show((i+n-1)%n,1);e.preventDefault();}}if(k==='Home'){{show(0,1);e.preventDefault();}}if(k==='End'){{show(n-1,1);e.preventDefault();}}}});}});
-document.documentElement.classList.add('js');show(0);}})();</script>
+document.documentElement.classList.add('js');show(0);
+var gb=[].slice.call(document.querySelectorAll('.sgt button')),gw=[].slice.call(document.querySelectorAll('.sgw'));
+function sg(k){{gb.forEach(function(b){{b.setAttribute('aria-pressed',b.dataset.g===k);}});gw.forEach(function(w){{w.classList.toggle('on',w.dataset.g===k);}});}}
+gb.forEach(function(b){{b.addEventListener('click',function(){{sg(b.dataset.g);}});}});if(gb.length)sg(gb[0].dataset.g);}})();</script>
 </body></html>'''
     (OUT / outname).write_text(page)
     reg = dict(fight=n, of=NB, site_pair=PAIR, pair=[an, bn], file=outname, event=EVF, proj_src=proj_src, proj_file=PUBF if pf else (EVF if EM else None),

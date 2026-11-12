@@ -783,7 +783,7 @@
    "id": "v64",
    "text": "1.2",
    "fmt": "pts",
-   "rule": "oa_drift",
+   "rule": "oa_drift_abs",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
@@ -796,90 +796,36 @@
   },
   {
    "id": "v65",
-   "text": "-147",
-   "fmt": "ml",
-   "rule": "oa_best",
+   "text": "56.0%",
+   "fmt": "pct1",
+   "rule": "oa_open",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Stephen Thompson",
      "Charles Radtke"
-    ],
-    "side": "a"
+    ]
    },
-   "desc": "OA best a",
-   "raw": -147
+   "desc": "OA open p",
+   "raw": 0.5604
   },
   {
    "id": "v66",
-   "text": "+124",
-   "fmt": "ml",
-   "rule": "oa_best",
+   "text": "57.2%",
+   "fmt": "pct1",
+   "rule": "oa_close",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Stephen Thompson",
      "Charles Radtke"
-    ],
-    "side": "b"
+    ]
    },
-   "desc": "OA best b",
-   "raw": 124
+   "desc": "OA close p",
+   "raw": 0.572
   },
   {
    "id": "v67",
-   "text": "-125",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Stephen Thompson",
-    "field": "opening_cost"
-   },
-   "desc": "BP open a (move)",
-   "raw": -125
-  },
-  {
-   "id": "v68",
-   "text": "-162",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Stephen Thompson",
-    "field": "cost"
-   },
-   "desc": "BP now a (move)",
-   "raw": -162
-  },
-  {
-   "id": "v69",
-   "text": "-105",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Charlie Radke",
-    "field": "opening_cost"
-   },
-   "desc": "BP open b (move)",
-   "raw": -105
-  },
-  {
-   "id": "v70",
-   "text": "+130",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Charlie Radke",
-    "field": "cost"
-   },
-   "desc": "BP now b (move)",
-   "raw": 130
-  },
-  {
-   "id": "v71",
    "text": "66%",
    "fmt": "pct0",
    "rule": "em",
@@ -891,7 +837,7 @@
    "raw": 0.6628
   },
   {
-   "id": "v72",
+   "id": "v68",
    "text": "24%",
    "fmt": "pct0",
    "rule": "em",
@@ -903,7 +849,7 @@
    "raw": 0.2359
   },
   {
-   "id": "v73",
+   "id": "v69",
    "text": "10%",
    "fmt": "pct0",
    "rule": "em",
@@ -915,7 +861,7 @@
    "raw": 0.1013
   },
   {
-   "id": "v74",
+   "id": "v70",
    "text": "85%",
    "fmt": "pct0",
    "rule": "em",
@@ -927,7 +873,7 @@
    "raw": 0.8477
   },
   {
-   "id": "v75",
+   "id": "v71",
    "text": "5%",
    "fmt": "pct0",
    "rule": "em",
@@ -939,7 +885,7 @@
    "raw": 0.053
   },
   {
-   "id": "v76",
+   "id": "v72",
    "text": "10%",
    "fmt": "pct0",
    "rule": "em",
@@ -951,173 +897,367 @@
    "raw": 0.0993
   },
   {
-   "id": "v77",
-   "text": "30%",
+   "id": "v73",
+   "text": "9%",
    "fmt": "pct0",
-   "rule": "em_car",
+   "rule": "em",
    "args": {
     "fighter": "Stephen Thompson",
-    "key": "ko_wins"
+    "path": "power_w"
    },
-   "desc": "Power: KO'd opponents in a",
-   "raw": 0.2962962962962963
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.0905
   },
   {
-   "id": "v78",
-   "text": "8",
+   "id": "v74",
+   "text": "0",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
     "fighter": "Stephen Thompson",
-    "key": "ko_wins"
+    "path": "last5.power"
    },
-   "desc": "Power: KO'd opponents in count a",
-   "raw": 8
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 0
   },
   {
-   "id": "v79",
-   "text": "27",
-   "fmt": "int",
-   "rule": "em_car_n",
-   "args": {
-    "fighter": "Stephen Thompson",
-    "key": "fights"
-   },
-   "desc": "Power: KO'd opponents in fights a",
-   "raw": 27
-  },
-  {
-   "id": "v80",
-   "text": "29%",
-   "fmt": "pct0",
-   "rule": "em_car",
-   "args": {
-    "fighter": "Charles Radtke",
-    "key": "ko_wins"
-   },
-   "desc": "Power: KO'd opponents in b",
-   "raw": 0.29411764705882354
-  },
-  {
-   "id": "v81",
+   "id": "v75",
    "text": "5",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
-    "fighter": "Charles Radtke",
-    "key": "ko_wins"
+    "fighter": "Stephen Thompson",
+    "path": "last5.fights"
    },
-   "desc": "Power: KO'd opponents in count b",
+   "desc": "Power: drops or stops them on the feet last5 n a",
    "raw": 5
   },
   {
-   "id": "v82",
-   "text": "17",
+   "id": "v76",
+   "text": "8",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 8
+  },
+  {
+   "id": "v77",
+   "text": "22",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "ufc_fights"
+   },
+   "desc": "Power: drops or stops them on the feet fights a",
+   "raw": 22
+  },
+  {
+   "id": "v78",
+   "text": "21%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
     "fighter": "Charles Radtke",
-    "key": "fights"
+    "path": "power_w"
    },
-   "desc": "Power: KO'd opponents in fights b",
-   "raw": 17
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.2097
   },
   {
-   "id": "v83",
-   "text": "17%",
-   "fmt": "pct0",
-   "rule": "em_div",
+   "id": "v79",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "wc": "Welterweight"
+    "fighter": "Charles Radtke",
+    "path": "last5.power"
    },
-   "desc": "Division KO share",
-   "raw": 0.1671
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 1
   },
   {
-   "id": "v84",
-   "text": "7%",
-   "fmt": "pct0",
-   "rule": "em_car",
+   "id": "v80",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "fighter": "Stephen Thompson",
-    "key": "ko_losses"
+    "fighter": "Charles Radtke",
+    "path": "last5.fights"
    },
-   "desc": "Chin: been KO'd in a",
-   "raw": 0.07407407407407407
+   "desc": "Power: drops or stops them on the feet last5 n b",
+   "raw": 5
   },
   {
-   "id": "v85",
+   "id": "v81",
    "text": "2",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
-    "fighter": "Stephen Thompson",
-    "key": "ko_losses"
+    "fighter": "Charles Radtke",
+    "path": "power_fights"
    },
-   "desc": "Chin: been KO'd in count a",
+   "desc": "Power: drops or stops them on the feet count b",
    "raw": 2
   },
   {
-   "id": "v86",
-   "text": "27",
+   "id": "v82",
+   "text": "7",
    "fmt": "int",
-   "rule": "em_car_n",
-   "args": {
-    "fighter": "Stephen Thompson",
-    "key": "fights"
-   },
-   "desc": "Chin: been KO'd in fights a",
-   "raw": 27
-  },
-  {
-   "id": "v87",
-   "text": "18%",
-   "fmt": "pct0",
-   "rule": "em_car",
+   "rule": "em",
    "args": {
     "fighter": "Charles Radtke",
-    "key": "ko_losses"
+    "path": "ufc_fights"
    },
-   "desc": "Chin: been KO'd in b",
-   "raw": 0.17647058823529413
+   "desc": "Power: drops or stops them on the feet fights b",
+   "raw": 7
   },
   {
-   "id": "v88",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em_car_n",
-   "args": {
-    "fighter": "Charles Radtke",
-    "key": "ko_losses"
-   },
-   "desc": "Chin: been KO'd in count b",
-   "raw": 3
-  },
-  {
-   "id": "v89",
-   "text": "17",
-   "fmt": "int",
-   "rule": "em_car_n",
-   "args": {
-    "fighter": "Charles Radtke",
-    "key": "fights"
-   },
-   "desc": "Chin: been KO'd in fights b",
-   "raw": 17
-  },
-  {
-   "id": "v90",
-   "text": "17%",
+   "id": "v83",
+   "text": "21%",
    "fmt": "pct0",
    "rule": "em_div",
    "args": {
-    "wc": "Welterweight"
+    "wc": "Welterweight",
+    "key": "power"
    },
-   "desc": "Division KO share",
-   "raw": 0.1671
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2146
+  },
+  {
+   "id": "v84",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.2592
+  },
+  {
+   "id": "v85",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 1
+  },
+  {
+   "id": "v86",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "last5.fights"
+   },
+   "desc": "Durability: gets dropped or stopped last5 n a",
+   "raw": 5
+  },
+  {
+   "id": "v87",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 6
+  },
+  {
+   "id": "v88",
+   "text": "22",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "ufc_fights"
+   },
+   "desc": "Durability: gets dropped or stopped fights a",
+   "raw": 22
+  },
+  {
+   "id": "v89",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.2643
+  },
+  {
+   "id": "v90",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 2
   },
   {
    "id": "v91",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "last5.fights"
+   },
+   "desc": "Durability: gets dropped or stopped last5 n b",
+   "raw": 5
+  },
+  {
+   "id": "v92",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 2
+  },
+  {
+   "id": "v93",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "ufc_fights"
+   },
+   "desc": "Durability: gets dropped or stopped fights b",
+   "raw": 7
+  },
+  {
+   "id": "v94",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Welterweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.2329
+  },
+  {
+   "id": "v95",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Stephen Thompson",
+   "raw": 6
+  },
+  {
+   "id": "v96",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Stephen Thompson",
+   "raw": 6
+  },
+  {
+   "id": "v97",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Stephen Thompson",
+   "raw": 6
+  },
+  {
+   "id": "v98",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Stephen Thompson",
+   "raw": 2
+  },
+  {
+   "id": "v99",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Charles Radtke",
+   "raw": 2
+  },
+  {
+   "id": "v100",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Charles Radtke",
+   "raw": 1
+  },
+  {
+   "id": "v101",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Charles Radtke",
+   "raw": 2
+  },
+  {
+   "id": "v102",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Charles Radtke",
+   "raw": 2
+  },
+  {
+   "id": "v103",
    "text": "+0.0",
    "fmt": "s1",
    "rule": "em",
@@ -1129,7 +1269,7 @@
    "raw": 0.038
   },
   {
-   "id": "v92",
+   "id": "v104",
    "text": "22",
    "fmt": "int",
    "rule": "em",
@@ -1141,7 +1281,7 @@
    "raw": 22
   },
   {
-   "id": "v93",
+   "id": "v105",
    "text": "+1.4",
    "fmt": "s1",
    "rule": "em",
@@ -1153,7 +1293,7 @@
    "raw": 1.379
   },
   {
-   "id": "v94",
+   "id": "v106",
    "text": "18",
    "fmt": "int",
    "rule": "em",
@@ -1165,7 +1305,7 @@
    "raw": 18
   },
   {
-   "id": "v95",
+   "id": "v107",
    "text": "+1.7",
    "fmt": "s1",
    "rule": "em",
@@ -1177,7 +1317,7 @@
    "raw": 1.743
   },
   {
-   "id": "v96",
+   "id": "v108",
    "text": "15",
    "fmt": "int",
    "rule": "em",
@@ -1189,7 +1329,7 @@
    "raw": 15
   },
   {
-   "id": "v97",
+   "id": "v109",
    "text": "+0.2",
    "fmt": "s1",
    "rule": "em",
@@ -1201,7 +1341,7 @@
    "raw": 0.197
   },
   {
-   "id": "v98",
+   "id": "v110",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -1213,7 +1353,7 @@
    "raw": 7
   },
   {
-   "id": "v99",
+   "id": "v111",
    "text": "+0.7",
    "fmt": "s1",
    "rule": "em",
@@ -1225,7 +1365,7 @@
    "raw": 0.713
   },
   {
-   "id": "v100",
+   "id": "v112",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1237,7 +1377,7 @@
    "raw": 4
   },
   {
-   "id": "v101",
+   "id": "v113",
    "text": "-1.0",
    "fmt": "s1",
    "rule": "em",
@@ -1249,7 +1389,7 @@
    "raw": -0.967
   },
   {
-   "id": "v102",
+   "id": "v114",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1261,7 +1401,151 @@
    "raw": 3
   },
   {
-   "id": "v103",
+   "id": "v115",
+   "text": "0.23",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 0.235
+  },
+  {
+   "id": "v116",
+   "text": "1.99",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 1.989
+  },
+  {
+   "id": "v117",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.3571
+  },
+  {
+   "id": "v118",
+   "text": "44%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.4444
+  },
+  {
+   "id": "v119",
+   "text": "63%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.6329
+  },
+  {
+   "id": "v120",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 1.0
+  },
+  {
+   "id": "v121",
+   "text": "6%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.0604
+  },
+  {
+   "id": "v122",
+   "text": "51%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.5138
+  },
+  {
+   "id": "v123",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.1884
+  },
+  {
+   "id": "v124",
+   "text": "4%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.0401
+  },
+  {
+   "id": "v125",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Stephen Thompson",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v126",
+   "text": "0.50",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Charles Radtke",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.497
+  },
+  {
+   "id": "v127",
    "text": "+1.08",
    "fmt": "s2",
    "rule": "em",
@@ -1273,7 +1557,7 @@
    "raw": 1.08
   },
   {
-   "id": "v104",
+   "id": "v128",
    "text": "+0.96",
    "fmt": "s2",
    "rule": "em",
@@ -1285,7 +1569,7 @@
    "raw": 0.961
   },
   {
-   "id": "v105",
+   "id": "v129",
    "text": "+0.42",
    "fmt": "s2",
    "rule": "em",
@@ -1297,7 +1581,7 @@
    "raw": 0.416
   },
   {
-   "id": "v106",
+   "id": "v130",
    "text": "-0.63",
    "fmt": "s2",
    "rule": "em",
@@ -1309,7 +1593,7 @@
    "raw": -0.63
   },
   {
-   "id": "v107",
+   "id": "v131",
    "text": "-0.45",
    "fmt": "s2",
    "rule": "em",
@@ -1321,7 +1605,7 @@
    "raw": -0.451
   },
   {
-   "id": "v108",
+   "id": "v132",
    "text": "-0.28",
    "fmt": "s2",
    "rule": "em",
@@ -1333,7 +1617,7 @@
    "raw": -0.282
   },
   {
-   "id": "v109",
+   "id": "v133",
    "text": "66%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1347,7 +1631,7 @@
    "raw": 0.658
   },
   {
-   "id": "v110",
+   "id": "v134",
    "text": "66%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1361,7 +1645,7 @@
    "raw": 0.659
   },
   {
-   "id": "v111",
+   "id": "v135",
    "text": "190%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1375,7 +1659,7 @@
    "raw": 1.896
   },
   {
-   "id": "v112",
+   "id": "v136",
    "text": "14.0",
    "fmt": "n1",
    "rule": "labs",
@@ -1389,7 +1673,7 @@
    "raw": 14.0
   },
   {
-   "id": "v113",
+   "id": "v137",
    "text": "8.6",
    "fmt": "n1",
    "rule": "labs",
@@ -1403,7 +1687,7 @@
    "raw": 8.6
   },
   {
-   "id": "v114",
+   "id": "v138",
    "text": "19%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1417,7 +1701,7 @@
    "raw": 0.19
   },
   {
-   "id": "v115",
+   "id": "v139",
    "text": "43%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1431,227 +1715,7 @@
    "raw": 0.429
   },
   {
-   "id": "v116",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "dec",
-    "slug": "stephen-thompson"
-   },
-   "desc": "Goes to decision a",
-   "raw": 0.571
-  },
-  {
-   "id": "v117",
-   "text": "29%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "dec",
-    "slug": "charles-radtke"
-   },
-   "desc": "Goes to decision b",
-   "raw": 0.286
-  },
-  {
-   "id": "v118",
-   "text": "29%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "wko",
-    "slug": "stephen-thompson"
-   },
-   "desc": "Wins by KO a",
-   "raw": 0.286
-  },
-  {
-   "id": "v119",
-   "text": "29%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "wko",
-    "slug": "charles-radtke"
-   },
-   "desc": "Wins by KO b",
-   "raw": 0.286
-  },
-  {
-   "id": "v120",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "wsub",
-    "slug": "stephen-thompson"
-   },
-   "desc": "Wins by SUB a",
-   "raw": 0.0
-  },
-  {
-   "id": "v121",
-   "text": "14%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "wsub",
-    "slug": "charles-radtke"
-   },
-   "desc": "Wins by SUB b",
-   "raw": 0.143
-  },
-  {
-   "id": "v122",
-   "text": "10%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "lko",
-    "slug": "stephen-thompson"
-   },
-   "desc": "Losses by KO a",
-   "raw": 0.095
-  },
-  {
-   "id": "v123",
-   "text": "29%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "lko",
-    "slug": "charles-radtke"
-   },
-   "desc": "Losses by KO b",
-   "raw": 0.286
-  },
-  {
-   "id": "v124",
-   "text": "5%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "lsub",
-    "slug": "stephen-thompson"
-   },
-   "desc": "Losses by SUB a",
-   "raw": 0.048
-  },
-  {
-   "id": "v125",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "lsub",
-    "slug": "charles-radtke"
-   },
-   "desc": "Losses by SUB b",
-   "raw": 0.0
-  },
-  {
-   "id": "v126",
-   "text": "0.23",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "td15",
-    "slug": "stephen-thompson"
-   },
-   "desc": "Takedowns /15 a",
-   "raw": 0.23472953940848157
-  },
-  {
-   "id": "v127",
-   "text": "1.99",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "td15",
-    "slug": "charles-radtke"
-   },
-   "desc": "Takedowns /15 b",
-   "raw": 1.9889502762430937
-  },
-  {
-   "id": "v128",
-   "text": "63%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "tdd",
-    "slug": "stephen-thompson"
-   },
-   "desc": "TD defence a",
-   "raw": 0.6329113924050633
-  },
-  {
-   "id": "v129",
-   "text": "100%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "tdd",
-    "slug": "charles-radtke"
-   },
-   "desc": "TD defence b",
-   "raw": 1.0
-  },
-  {
-   "id": "v130",
-   "text": "3:52",
-   "fmt": "mmss",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "ctd",
-    "slug": "stephen-thompson"
-   },
-   "desc": "Control per TD a",
-   "raw": 232.0
-  },
-  {
-   "id": "v131",
-   "text": "3:52",
-   "fmt": "mmss",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "ctd",
-    "slug": "charles-radtke"
-   },
-   "desc": "Control per TD b",
-   "raw": 232.0
-  },
-  {
-   "id": "v132",
+   "id": "v140",
    "text": "+375",
    "fmt": "ml",
    "rule": "fight",
@@ -1664,7 +1728,7 @@
    "raw": 375
   },
   {
-   "id": "v133",
+   "id": "v141",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -1677,7 +1741,7 @@
    "raw": 180
   },
   {
-   "id": "v134",
+   "id": "v142",
    "text": "+470",
    "fmt": "ml",
    "rule": "fight",
@@ -1690,7 +1754,7 @@
    "raw": 470
   },
   {
-   "id": "v135",
+   "id": "v143",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -1703,7 +1767,7 @@
    "raw": 155
   },
   {
-   "id": "v136",
+   "id": "v144",
    "text": "-192",
    "fmt": "ml",
    "rule": "fight",
@@ -1716,7 +1780,7 @@
    "raw": -192
   },
   {
-   "id": "v137",
+   "id": "v145",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -1729,7 +1793,7 @@
    "raw": -179
   },
   {
-   "id": "v138",
+   "id": "v146",
    "text": "+179",
    "fmt": "ml",
    "rule": "fight",
@@ -1742,7 +1806,7 @@
    "raw": 179
   },
   {
-   "id": "v139",
+   "id": "v147",
    "text": "-175",
    "fmt": "ml",
    "rule": "fight",
@@ -1755,7 +1819,7 @@
    "raw": -175
   },
   {
-   "id": "v140",
+   "id": "v148",
    "text": "+178",
    "fmt": "ml",
    "rule": "fight",
@@ -1766,6 +1830,19 @@
    },
    "desc": "Close Charles Radtke Carlos Prates",
    "raw": 178
+  },
+  {
+   "id": "v149",
+   "text": "+170",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 5,
+    "key": "od.mc"
+   },
+   "desc": "Close Charles Radtke Gilbert Urbina",
+   "raw": 170
   }
  ],
  "gaps": []

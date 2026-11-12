@@ -929,7 +929,7 @@
    "id": "v75",
    "text": "0.2",
    "fmt": "pts",
-   "rule": "oa_drift",
+   "rule": "oa_drift_abs",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
@@ -942,90 +942,36 @@
   },
   {
    "id": "v76",
-   "text": "+136",
-   "fmt": "ml",
-   "rule": "oa_best",
+   "text": "40.5%",
+   "fmt": "pct1",
+   "rule": "oa_open",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Drew Dober",
      "Chris Duncan"
-    ],
-    "side": "a"
+    ]
    },
-   "desc": "OA best a",
-   "raw": 136
+   "desc": "OA open p",
+   "raw": 0.4048
   },
   {
    "id": "v77",
-   "text": "-159",
-   "fmt": "ml",
-   "rule": "oa_best",
+   "text": "40.7%",
+   "fmt": "pct1",
+   "rule": "oa_close",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
     "pair": [
      "Drew Dober",
      "Chris Duncan"
-    ],
-    "side": "b"
+    ]
    },
-   "desc": "OA best b",
-   "raw": -159
+   "desc": "OA close p",
+   "raw": 0.407
   },
   {
    "id": "v78",
-   "text": "+115",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Drew Dober",
-    "field": "opening_cost"
-   },
-   "desc": "BP open a (move)",
-   "raw": 115
-  },
-  {
-   "id": "v79",
-   "text": "+142",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Drew Dober",
-    "field": "cost"
-   },
-   "desc": "BP now a (move)",
-   "raw": 142
-  },
-  {
-   "id": "v80",
-   "text": "-145",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Christopher Duncan",
-    "field": "opening_cost"
-   },
-   "desc": "BP open b (move)",
-   "raw": -145
-  },
-  {
-   "id": "v81",
-   "text": "-172",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Christopher Duncan",
-    "field": "cost"
-   },
-   "desc": "BP now b (move)",
-   "raw": -172
-  },
-  {
-   "id": "v82",
    "text": "63%",
    "fmt": "pct0",
    "rule": "em",
@@ -1037,7 +983,7 @@
    "raw": 0.6318
   },
   {
-   "id": "v83",
+   "id": "v79",
    "text": "23%",
    "fmt": "pct0",
    "rule": "em",
@@ -1049,7 +995,7 @@
    "raw": 0.2264
   },
   {
-   "id": "v84",
+   "id": "v80",
    "text": "14%",
    "fmt": "pct0",
    "rule": "em",
@@ -1061,7 +1007,7 @@
    "raw": 0.1419
   },
   {
-   "id": "v85",
+   "id": "v81",
    "text": "60%",
    "fmt": "pct0",
    "rule": "em",
@@ -1073,7 +1019,7 @@
    "raw": 0.6044
   },
   {
-   "id": "v86",
+   "id": "v82",
    "text": "23%",
    "fmt": "pct0",
    "rule": "em",
@@ -1085,7 +1031,7 @@
    "raw": 0.2274
   },
   {
-   "id": "v87",
+   "id": "v83",
    "text": "17%",
    "fmt": "pct0",
    "rule": "em",
@@ -1097,173 +1043,355 @@
    "raw": 0.1682
   },
   {
-   "id": "v88",
-   "text": "38%",
+   "id": "v84",
+   "text": "57%",
    "fmt": "pct0",
-   "rule": "em_car",
+   "rule": "em",
    "args": {
     "fighter": "Drew Dober",
-    "key": "ko_wins"
+    "path": "power_w"
    },
-   "desc": "Power: KO'd opponents in a",
-   "raw": 0.37777777777777777
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.5744
+  },
+  {
+   "id": "v85",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 2
+  },
+  {
+   "id": "v86",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "last5.fights"
+   },
+   "desc": "Power: drops or stops them on the feet last5 n a",
+   "raw": 5
+  },
+  {
+   "id": "v87",
+   "text": "12",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 12
+  },
+  {
+   "id": "v88",
+   "text": "27",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "ufc_fights"
+   },
+   "desc": "Power: drops or stops them on the feet fights a",
+   "raw": 27
   },
   {
    "id": "v89",
-   "text": "17",
-   "fmt": "int",
-   "rule": "em_car_n",
+   "text": "32%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "fighter": "Drew Dober",
-    "key": "ko_wins"
+    "fighter": "Chris Duncan",
+    "path": "power_w"
    },
-   "desc": "Power: KO'd opponents in count a",
-   "raw": 17
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.3168
   },
   {
    "id": "v90",
-   "text": "45",
+   "text": "2",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
-    "fighter": "Drew Dober",
-    "key": "fights"
+    "fighter": "Chris Duncan",
+    "path": "last5.power"
    },
-   "desc": "Power: KO'd opponents in fights a",
-   "raw": 45
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 2
   },
   {
    "id": "v91",
-   "text": "39%",
-   "fmt": "pct0",
-   "rule": "em_car",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
    "args": {
     "fighter": "Chris Duncan",
-    "key": "ko_wins"
+    "path": "last5.fights"
    },
-   "desc": "Power: KO'd opponents in b",
-   "raw": 0.3888888888888889
+   "desc": "Power: drops or stops them on the feet last5 n b",
+   "raw": 5
   },
   {
    "id": "v92",
-   "text": "7",
+   "text": "2",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
     "fighter": "Chris Duncan",
-    "key": "ko_wins"
+    "path": "power_fights"
    },
-   "desc": "Power: KO'd opponents in count b",
-   "raw": 7
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 2
   },
   {
    "id": "v93",
-   "text": "18",
+   "text": "8",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
     "fighter": "Chris Duncan",
-    "key": "fights"
+    "path": "ufc_fights"
    },
-   "desc": "Power: KO'd opponents in fights b",
-   "raw": 18
+   "desc": "Power: drops or stops them on the feet fights b",
+   "raw": 8
   },
   {
    "id": "v94",
-   "text": "18%",
+   "text": "23%",
    "fmt": "pct0",
    "rule": "em_div",
    "args": {
-    "wc": "Lightweight"
+    "wc": "Lightweight",
+    "key": "power"
    },
-   "desc": "Division KO share",
-   "raw": 0.1786
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2309
   },
   {
    "id": "v95",
-   "text": "9%",
+   "text": "21%",
    "fmt": "pct0",
-   "rule": "em_car",
+   "rule": "em",
    "args": {
     "fighter": "Drew Dober",
-    "key": "ko_losses"
+    "path": "dropped_w"
    },
-   "desc": "Chin: been KO'd in a",
-   "raw": 0.08888888888888889
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.2077
   },
   {
    "id": "v96",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em_car_n",
-   "args": {
-    "fighter": "Drew Dober",
-    "key": "ko_losses"
-   },
-   "desc": "Chin: been KO'd in count a",
-   "raw": 4
-  },
-  {
-   "id": "v97",
-   "text": "45",
-   "fmt": "int",
-   "rule": "em_car_n",
-   "args": {
-    "fighter": "Drew Dober",
-    "key": "fights"
-   },
-   "desc": "Chin: been KO'd in fights a",
-   "raw": 45
-  },
-  {
-   "id": "v98",
-   "text": "6%",
-   "fmt": "pct0",
-   "rule": "em_car",
-   "args": {
-    "fighter": "Chris Duncan",
-    "key": "ko_losses"
-   },
-   "desc": "Chin: been KO'd in b",
-   "raw": 0.05555555555555555
-  },
-  {
-   "id": "v99",
    "text": "1",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
    "args": {
-    "fighter": "Chris Duncan",
-    "key": "ko_losses"
+    "fighter": "Drew Dober",
+    "path": "last5.dropped"
    },
-   "desc": "Chin: been KO'd in count b",
+   "desc": "Durability: gets dropped or stopped last5 a",
    "raw": 1
   },
   {
-   "id": "v100",
-   "text": "18",
+   "id": "v97",
+   "text": "5",
    "fmt": "int",
-   "rule": "em_car_n",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "last5.fights"
+   },
+   "desc": "Durability: gets dropped or stopped last5 n a",
+   "raw": 5
+  },
+  {
+   "id": "v98",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 3
+  },
+  {
+   "id": "v99",
+   "text": "27",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "ufc_fights"
+   },
+   "desc": "Durability: gets dropped or stopped fights a",
+   "raw": 27
+  },
+  {
+   "id": "v100",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
     "fighter": "Chris Duncan",
-    "key": "fights"
+    "path": "dropped_w"
    },
-   "desc": "Chin: been KO'd in fights b",
-   "raw": 18
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.0
   },
   {
    "id": "v101",
-   "text": "18%",
-   "fmt": "pct0",
-   "rule": "em_div",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "wc": "Lightweight"
+    "fighter": "Chris Duncan",
+    "path": "last5.dropped"
    },
-   "desc": "Division KO share",
-   "raw": 0.1786
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 0
   },
   {
    "id": "v102",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "last5.fights"
+   },
+   "desc": "Durability: gets dropped or stopped last5 n b",
+   "raw": 5
+  },
+  {
+   "id": "v103",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 0
+  },
+  {
+   "id": "v104",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "ufc_fights"
+   },
+   "desc": "Durability: gets dropped or stopped fights b",
+   "raw": 8
+  },
+  {
+   "id": "v105",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.2582
+  },
+  {
+   "id": "v106",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Drew Dober",
+   "raw": 11
+  },
+  {
+   "id": "v107",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Drew Dober",
+   "raw": 3
+  },
+  {
+   "id": "v108",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Drew Dober",
+   "raw": 4
+  },
+  {
+   "id": "v109",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "outcomes.l.sub"
+   },
+   "desc": "Outcome lsub Drew Dober",
+   "raw": 4
+  },
+  {
+   "id": "v110",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Chris Duncan",
+   "raw": 3
+  },
+  {
+   "id": "v111",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Chris Duncan",
+   "raw": 3
+  },
+  {
+   "id": "v112",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "outcomes.l.sub"
+   },
+   "desc": "Outcome lsub Chris Duncan",
+   "raw": 2
+  },
+  {
+   "id": "v113",
    "text": "+0.1",
    "fmt": "s1",
    "rule": "em",
@@ -1275,7 +1403,7 @@
    "raw": 0.066
   },
   {
-   "id": "v103",
+   "id": "v114",
    "text": "27",
    "fmt": "int",
    "rule": "em",
@@ -1287,7 +1415,7 @@
    "raw": 27
   },
   {
-   "id": "v104",
+   "id": "v115",
    "text": "+0.8",
    "fmt": "s1",
    "rule": "em",
@@ -1299,7 +1427,7 @@
    "raw": 0.752
   },
   {
-   "id": "v105",
+   "id": "v116",
    "text": "17",
    "fmt": "int",
    "rule": "em",
@@ -1311,7 +1439,7 @@
    "raw": 17
   },
   {
-   "id": "v106",
+   "id": "v117",
    "text": "-0.7",
    "fmt": "s1",
    "rule": "em",
@@ -1323,7 +1451,7 @@
    "raw": -0.71
   },
   {
-   "id": "v107",
+   "id": "v118",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -1335,7 +1463,7 @@
    "raw": 11
   },
   {
-   "id": "v108",
+   "id": "v119",
    "text": "-0.2",
    "fmt": "s1",
    "rule": "em",
@@ -1347,7 +1475,7 @@
    "raw": -0.213
   },
   {
-   "id": "v109",
+   "id": "v120",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -1359,7 +1487,7 @@
    "raw": 8
   },
   {
-   "id": "v110",
+   "id": "v121",
    "text": "+0.0",
    "fmt": "s1",
    "rule": "em",
@@ -1371,7 +1499,7 @@
    "raw": 0.0
   },
   {
-   "id": "v111",
+   "id": "v122",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1383,7 +1511,7 @@
    "raw": 5
   },
   {
-   "id": "v112",
+   "id": "v123",
    "text": "+2.2",
    "fmt": "s1",
    "rule": "em",
@@ -1395,7 +1523,7 @@
    "raw": 2.2
   },
   {
-   "id": "v113",
+   "id": "v124",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1407,7 +1535,151 @@
    "raw": 3
   },
   {
-   "id": "v114",
+   "id": "v125",
+   "text": "0.61",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 0.608
+  },
+  {
+   "id": "v126",
+   "text": "2.79",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 2.795
+  },
+  {
+   "id": "v127",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.1698
+  },
+  {
+   "id": "v128",
+   "text": "41%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.4062
+  },
+  {
+   "id": "v129",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.5821
+  },
+  {
+   "id": "v130",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.5556
+  },
+  {
+   "id": "v131",
+   "text": "13%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.1321
+  },
+  {
+   "id": "v132",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.2183
+  },
+  {
+   "id": "v133",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.2209
+  },
+  {
+   "id": "v134",
+   "text": "10%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.097
+  },
+  {
+   "id": "v135",
+   "text": "0.07",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.068
+  },
+  {
+   "id": "v136",
+   "text": "0.65",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.645
+  },
+  {
+   "id": "v137",
    "text": "-0.24",
    "fmt": "s2",
    "rule": "em",
@@ -1419,7 +1691,7 @@
    "raw": -0.239
   },
   {
-   "id": "v115",
+   "id": "v138",
    "text": "-0.33",
    "fmt": "s2",
    "rule": "em",
@@ -1431,7 +1703,7 @@
    "raw": -0.33
   },
   {
-   "id": "v116",
+   "id": "v139",
    "text": "+0.13",
    "fmt": "s2",
    "rule": "em",
@@ -1443,7 +1715,7 @@
    "raw": 0.126
   },
   {
-   "id": "v117",
+   "id": "v140",
    "text": "+0.56",
    "fmt": "s2",
    "rule": "em",
@@ -1455,7 +1727,7 @@
    "raw": 0.559
   },
   {
-   "id": "v118",
+   "id": "v141",
    "text": "+0.27",
    "fmt": "s2",
    "rule": "em",
@@ -1467,7 +1739,7 @@
    "raw": 0.266
   },
   {
-   "id": "v119",
+   "id": "v142",
    "text": "+0.14",
    "fmt": "s2",
    "rule": "em",
@@ -1479,7 +1751,7 @@
    "raw": 0.143
   },
   {
-   "id": "v120",
+   "id": "v143",
    "text": "59%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1493,7 +1765,7 @@
    "raw": 0.592
   },
   {
-   "id": "v121",
+   "id": "v144",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1507,7 +1779,7 @@
    "raw": 0.583
   },
   {
-   "id": "v122",
+   "id": "v145",
    "text": "104%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1521,7 +1793,7 @@
    "raw": 1.038
   },
   {
-   "id": "v123",
+   "id": "v146",
    "text": "125%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1535,7 +1807,7 @@
    "raw": 1.253
   },
   {
-   "id": "v124",
+   "id": "v147",
    "text": "8.2",
    "fmt": "n1",
    "rule": "labs",
@@ -1549,7 +1821,7 @@
    "raw": 8.2
   },
   {
-   "id": "v125",
+   "id": "v148",
    "text": "8.7",
    "fmt": "n1",
    "rule": "labs",
@@ -1563,7 +1835,7 @@
    "raw": 8.7
   },
   {
-   "id": "v126",
+   "id": "v149",
    "text": "38%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1577,7 +1849,7 @@
    "raw": 0.385
   },
   {
-   "id": "v127",
+   "id": "v150",
    "text": "38%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1591,227 +1863,7 @@
    "raw": 0.375
   },
   {
-   "id": "v128",
-   "text": "27%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "dec",
-    "slug": "drew-dober"
-   },
-   "desc": "Goes to decision a",
-   "raw": 0.269
-  },
-  {
-   "id": "v129",
-   "text": "38%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "dec",
-    "slug": "chris-duncan"
-   },
-   "desc": "Goes to decision b",
-   "raw": 0.375
-  },
-  {
-   "id": "v130",
-   "text": "42%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "wko",
-    "slug": "drew-dober"
-   },
-   "desc": "Wins by KO a",
-   "raw": 0.423
-  },
-  {
-   "id": "v131",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "wko",
-    "slug": "chris-duncan"
-   },
-   "desc": "Wins by KO b",
-   "raw": 0.0
-  },
-  {
-   "id": "v132",
-   "text": "4%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "wsub",
-    "slug": "drew-dober"
-   },
-   "desc": "Wins by SUB a",
-   "raw": 0.038
-  },
-  {
-   "id": "v133",
-   "text": "38%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "wsub",
-    "slug": "chris-duncan"
-   },
-   "desc": "Wins by SUB b",
-   "raw": 0.375
-  },
-  {
-   "id": "v134",
-   "text": "12%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "lko",
-    "slug": "drew-dober"
-   },
-   "desc": "Losses by KO a",
-   "raw": 0.115
-  },
-  {
-   "id": "v135",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "lko",
-    "slug": "chris-duncan"
-   },
-   "desc": "Losses by KO b",
-   "raw": 0.0
-  },
-  {
-   "id": "v136",
-   "text": "15%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "props.upcoming",
-    "key": "lsub",
-    "slug": "drew-dober"
-   },
-   "desc": "Losses by SUB a",
-   "raw": 0.154
-  },
-  {
-   "id": "v137",
-   "text": "25%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "props.upcoming",
-    "key": "lsub",
-    "slug": "chris-duncan"
-   },
-   "desc": "Losses by SUB b",
-   "raw": 0.25
-  },
-  {
-   "id": "v138",
-   "text": "0.61",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "td15",
-    "slug": "drew-dober"
-   },
-   "desc": "Takedowns /15 a",
-   "raw": 0.6083364626361246
-  },
-  {
-   "id": "v139",
-   "text": "2.80",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "td15",
-    "slug": "chris-duncan"
-   },
-   "desc": "Takedowns /15 b",
-   "raw": 2.795031055900621
-  },
-  {
-   "id": "v140",
-   "text": "58%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "tdd",
-    "slug": "drew-dober"
-   },
-   "desc": "TD defence a",
-   "raw": 0.582089552238806
-  },
-  {
-   "id": "v141",
-   "text": "56%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "tdd",
-    "slug": "chris-duncan"
-   },
-   "desc": "TD defence b",
-   "raw": 0.5555555555555556
-  },
-  {
-   "id": "v142",
-   "text": "3:15",
-   "fmt": "mmss",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "ctd",
-    "slug": "drew-dober"
-   },
-   "desc": "Control per TD a",
-   "raw": 195.0
-  },
-  {
-   "id": "v143",
-   "text": "1:10",
-   "fmt": "mmss",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "ctd",
-    "slug": "chris-duncan"
-   },
-   "desc": "Control per TD b",
-   "raw": 70.0
-  },
-  {
-   "id": "v144",
+   "id": "v151",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1824,7 +1876,7 @@
    "raw": -208
   },
   {
-   "id": "v145",
+   "id": "v152",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -1837,7 +1889,7 @@
    "raw": -328
   },
   {
-   "id": "v146",
+   "id": "v153",
    "text": "+105",
    "fmt": "ml",
    "rule": "fight",
@@ -1850,7 +1902,7 @@
    "raw": 105
   },
   {
-   "id": "v147",
+   "id": "v154",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -1863,7 +1915,7 @@
    "raw": 100
   },
   {
-   "id": "v148",
+   "id": "v155",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -1876,7 +1928,72 @@
    "raw": 170
   },
   {
-   "id": "v149",
+   "id": "v156",
+   "text": "-417",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 5,
+    "key": "od.mc"
+   },
+   "desc": "Close Drew Dober Ricky Glenn",
+   "raw": -417
+  },
+  {
+   "id": "v157",
+   "text": "-222",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 6,
+    "key": "od.mc"
+   },
+   "desc": "Close Drew Dober Matt Frevola",
+   "raw": -222
+  },
+  {
+   "id": "v158",
+   "text": "-156",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 7,
+    "key": "od.mc"
+   },
+   "desc": "Close Drew Dober King Green",
+   "raw": -156
+  },
+  {
+   "id": "v159",
+   "text": "-169",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 8,
+    "key": "od.mc"
+   },
+   "desc": "Close Drew Dober Rafael Alves",
+   "raw": -169
+  },
+  {
+   "id": "v160",
+   "text": "-161",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 9,
+    "key": "od.mc"
+   },
+   "desc": "Close Drew Dober Terrance McKinney",
+   "raw": -161
+  },
+  {
+   "id": "v161",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -1889,7 +2006,7 @@
    "raw": -132
   },
   {
-   "id": "v150",
+   "id": "v162",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -1902,7 +2019,7 @@
    "raw": -112
   },
   {
-   "id": "v151",
+   "id": "v163",
    "text": "+190",
    "fmt": "ml",
    "rule": "fight",
@@ -1915,7 +2032,7 @@
    "raw": 190
   },
   {
-   "id": "v152",
+   "id": "v164",
    "text": "+310",
    "fmt": "ml",
    "rule": "fight",
@@ -1928,7 +2045,7 @@
    "raw": 310
   },
   {
-   "id": "v153",
+   "id": "v165",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -1939,6 +2056,32 @@
    },
    "desc": "Close Chris Duncan Bolaji Oki",
    "raw": 155
+  },
+  {
+   "id": "v166",
+   "text": "+145",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 5,
+    "key": "od.mc"
+   },
+   "desc": "Close Chris Duncan Manuel Torres",
+   "raw": 145
+  },
+  {
+   "id": "v167",
+   "text": "-110",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 7,
+    "key": "od.mc"
+   },
+   "desc": "Close Chris Duncan Omar Morales",
+   "raw": -110
   }
  ],
  "gaps": []
