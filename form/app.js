@@ -172,7 +172,9 @@ function resultText(f) {
   const w = r.winner === "a" ? f.a.name : f.b.name;
   return `${esc(w)} · ${esc(shortMethod(r.method))} · R${r.round} ${esc(r.time)}`;
 }
-const reachNote = (ev, f) => { const R = window.__reach; return R && ((R.events || {})[ev.slug] || []).some(x => x.n === f.n) ? R.text : null; };  // Kirk round 26 call 1
+const heldLine = (f) => (f && f.form && f.form.held) || null;   // Kirk round 28 call 1: Form Line pulled, fact line in its place (form/data/form_holds.json)
+const bioHeld = (b, k) => (b && b[k + "_held"]) || null;          // Kirk round 28 A: a bio field pulled (sources differ)
+const reachNote = (ev, f) => { const R = window.__reach; return !heldLine(f) && R && ((R.events || {})[ev.slug] || []).some(x => x.n === f.n) ? R.text : null; };  // Kirk round 26 call 1
 function cardTable(ev) {
   const final = ev.status === "final";
   let html = "", group = null;
@@ -199,13 +201,14 @@ function cardTable(ev) {
       <td>${o.open}</td><td>${o.close}</td>
       <td class="${cls(o.mv)}" title="Move in ${esc(f.a.name)} implied win %">${o.mv == null ? "—" : signed(o.mv)}</td>
       <td title="Bias-adjusted fair win % for ${esc(f.a.name)}">${o.pa == null ? "—" : (fair(o.pa) * 100).toFixed(0) + "%"}</td>
-      <td class="dim" title="Form Line: stats-only win % for ${esc(f.a.name)}${reachNote(ev, f) ? ". " + esc(reachNote(ev, f)) : ""}">${f.form && f.form.p != null ? (f.form.p * 100).toFixed(0) + "%" : "—"}${reachNote(ev, f) ? "<sup>†</sup>" : ""}</td>
+      ${heldLine(f) ? `<td class="dim" title="${esc(heldLine(f))}">held<sup>‡</sup></td>` : `<td class="dim" title="Form Line: stats-only win % for ${esc(f.a.name)}${reachNote(ev, f) ? ". " + esc(reachNote(ev, f)) : ""}">${f.form && f.form.p != null ? (f.form.p * 100).toFixed(0) + "%" : "—"}${reachNote(ev, f) ? "<sup>†</sup>" : ""}</td>`}
       <td class="dim" title="Form goes-the-distance %">${(() => { const M = methodRows(f); return M ? (M.gtd * 100).toFixed(0) + "%" : (f.form && f.form.g != null ? (f.form.g * 100).toFixed(0) + "%" : "—"); })()}</td>
       <td>${model}</td><td>${edge}</td>
       <td class="l">${final ? resultText(f) : '<span class="dim">' + startLabel(f) + "</span>"}</td>
       <td class="c">›</td></tr>`;
   });
-  const rn_ = (ev.fights || []).some(f => reachNote(ev, f)) ? `<div class="note">† ${esc(window.__reach.text)}</div>` : "";
+  const hl_ = (ev.fights || []).filter(f => heldLine(f));
+  const rn_ = ((ev.fights || []).some(f => reachNote(ev, f)) ? `<div class="note">† ${esc(window.__reach.text)}</div>` : "") + (hl_.length ? `<div class="note">‡ ${hl_.map(f => "Fight " + f.n).join(", ")}: ${esc(heldLine(hl_[0]))}.</div>` : "");
   return `<div class="tw"><table><thead><tr><th class="c">#</th><th class="l">Bout</th><th>Open</th><th>${final ? "Close" : "Current"}</th><th title="Open→now move in first fighter's no-vig win %">Move</th><th title="Market win % for the first fighter after correcting the favorite-longshot bias">Fair</th><th title="Form Line: stats-only win % for the first fighter">Form</th><th title="Form Line: chance the fight goes the distance">GTD</th><th title="Model win % (first / second)">Model</th><th>Edge</th><th class="l">${final ? "Result" : "Start"}</th><th></th></tr></thead><tbody>${html}</tbody></table></div>${rn_}`;
 }
 async function overlayLive(ev) {
@@ -383,7 +386,7 @@ async function vFight(slug, n) {
   // tale of the tape (as of fight night)
   html += `<div class="grid2"><div><h3>Tale of the tape · entering this fight</h3><div class="tape">
     ${tapeRow("Age", agA ? agA.toFixed(1) : "—", agB ? agB.toFixed(1) : "—", "lo")}
-    ${tapeRow("Height", esc(ba.ht || "—"), esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
+    ${tapeRow("Height", bioHeld(ba, "ht") ? "held · sources differ" : esc(ba.ht || "—"), bioHeld(bb, "ht") ? "held · sources differ" : esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
     ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "not listed", bb.reach ? bb.reach + '"' : "not listed", "hi")}
     ${tapeRow("Stance", esc(ba.stance || "not listed"), esc(bb.stance || "not listed"), null)}
     ${tapeRow("UFC record", ga.rec, gb.rec, null)}
@@ -445,11 +448,11 @@ async function vFight(slug, n) {
       <tr><td class="l b">Fair line</td><td>${fa_ == null ? "—" : (fa_ * 100).toFixed(1) + "% · " + ml(p2ml(fa_))}</td><td>${fa_ == null ? "—" : ((1 - fa_) * 100).toFixed(1) + "% · " + ml(p2ml(1 - fa_))}</td><td class="l dim">Market, corrected for favorite-longshot bias</td></tr>
       ${SHOW_PER_BOOK ? "" : "<!--"}<tr><td class="l b">Best price</td><td>${bA ? ml(bA.ml) + " " + esc(bookName(bA.book)) : "—"}</td><td>${bB ? ml(bB.ml) + " " + esc(bookName(bB.book)) : "—"}</td><td class="l dim">${final ? "At the close" : "Last snapshot"}</td></tr>
       <tr><td class="l b">Edge at best price</td><td class="${cls(eA)}">${eA == null ? "—" : signed(eA * 100) + "%"}</td><td class="${cls(eB)}">${eB == null ? "—" : signed(eB * 100) + "%"}</td><td class="l dim">Fair % × payout − 1</td></tr>${SHOW_PER_BOOK ? "" : "-->"}
-      <tr><td class="l b">Form Line</td><td>${fm.p == null ? "—" : (fm.p * 100).toFixed(1) + "%"}</td><td>${fm.p == null ? "—" : ((1 - fm.p) * 100).toFixed(1) + "%"}</td><td class="l dim">Stats-only model. Context, not a bet signal${reachNote(ev, f) ? ". " + esc(reachNote(ev, f)) : ""}</td></tr>
+      ${heldLine(f) ? `<tr><td class="l b">Form Line</td><td colspan="2" class="c dim">held</td><td class="l dim">${esc(heldLine(f))}</td></tr>` : `<tr><td class="l b">Form Line</td><td>${fm.p == null ? "—" : (fm.p * 100).toFixed(1) + "%"}</td><td>${fm.p == null ? "—" : ((1 - fm.p) * 100).toFixed(1) + "%"}</td><td class="l dim">Stats-only model. Context, not a bet signal${reachNote(ev, f) ? ". " + esc(reachNote(ev, f)) : ""}</td></tr>`}
 ${(() => { const M = methodRows(f); if (!M) return `<tr><td class="l b">Goes the distance</td><td colspan="2" class="c">${fm.g == null ? "—" : (fm.g * 100).toFixed(0) + "%"}</td><td class="l dim">Form distance model</td></tr>`;
         const r_ = (lab, k) => `<tr><td class="l b">${lab}</td><td>${(M.a[k] * 100).toFixed(0)}% · ${ml(p2ml(M.a[k]))}</td><td>${(M.b[k] * 100).toFixed(0)}% · ${ml(p2ml(M.b[k]))}</td><td class="l dim">${k === "dec" ? "Form method model on the " + M.src : ""}</td></tr>`;
         return r_("By decision", "dec") + r_("By KO/TKO", "ko") + r_("By submission", "sub") + r_("Inside distance", "itd") + `<tr><td class="l b">Goes the distance</td><td colspan="2" class="c">${(M.gtd * 100).toFixed(0)}% · ${ml(p2ml(M.gtd))} <span class="dim">(division base ${fm.base == null ? "—" : (fm.base * 100).toFixed(0) + "%"})</span></td><td class="l dim">Both decision chances added</td></tr>`; })()}
-    </tbody></table></div>${reachNote(ev, f) ? `<div class="note">Form Line: ${esc(reachNote(ev, f))}</div>` : ""}`;   // Kirk round 26 call 1: visible on phones
+    </tbody></table></div>${reachNote(ev, f) ? `<div class="note">Form Line: ${esc(reachNote(ev, f))}</div>` : ""}${heldLine(f) ? `<div class="note">${esc(heldLine(f))}.</div>` : ""}`;   // Kirk round 26 call 1: visible on phones
     const A_ = window.__angles || {}, ang = Object.entries(fm.ang || {}).filter(([k]) => A_[k] && !/^(fav|dog)_all$/.test(k));
     if (ang.length) html += `<h3>Angles in play</h3><div class="tw"><table><thead><tr><th class="l">Angle</th><th class="l">Side</th><th title="Fights since 2022">N</th><th title="Actual win %">Won</th><th title="Win % the closing line implied">Mkt</th><th title="Flat bet at the consensus close">ROI</th></tr></thead><tbody>` +
       ang.map(([k, s_]) => { const a = A_[k]; return `<tr><td class="l">${esc(a[0])}${(window.__review || {})[k] ? ' <span class="neg">· under review</span>' : ""}</td><td class="l b">${esc(last(f[s_].name))}</td><td>${a[1]}</td><td>${(a[2] * 100).toFixed(1)}%</td><td class="dim">${(a[3] * 100).toFixed(1)}%</td><td class="${cls(a[4])}">${signed(a[4] * 100)}%</td></tr>`; }).join("") + `</tbody></table></div>`;
@@ -504,7 +507,7 @@ async function vFighter(slug) {
   $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/fighters">Fighters</a> › ${esc(F.name)}</div>
     <h2>${esc(F.name)}</h2>
     ${F.dup_name ? '<div class="banner">Two UFC fighters share this name. Their fights are combined on this page.</div>' : ""}
-    <div class="stats"><div><b>${g.rec}</b><span>UFC record</span></div><div><b>${F.fig == null ? "—" : F.fig.toFixed(1)}</b><span>Form Figure rating</span></div><div><b>${F.elo || "—"}</b><span>Elo</span></div><div><b>${streak(F.fights)}</b><span>Streak</span></div><div><b>${age ? age.toFixed(1) : "—"}</b><span>Age</span></div><div><b>${esc(b.ht || "—")}</b><span>Height</span></div><div><b>${b.reach ? b.reach + '"' : "not listed"}</b><span>Reach</span></div><div><b>${esc(b.stance || "not listed")}</b><span>Stance</span></div><div><b>${F.fights[0] ? esc(F.fights[0].wc.replace("Women's ", "W ")) : "—"}</b><span>Last weight</span></div></div>
+    <div class="stats"><div><b>${g.rec}</b><span>UFC record</span></div><div><b>${F.fig == null ? "—" : F.fig.toFixed(1)}</b><span>Form Figure rating</span></div><div><b>${F.elo || "—"}</b><span>Elo</span></div><div><b>${streak(F.fights)}</b><span>Streak</span></div><div><b>${age ? age.toFixed(1) : "—"}</b><span>Age</span></div><div><b>${bioHeld(b, "ht") ? "held · sources differ" : esc(b.ht || "—")}</b><span>Height</span></div><div><b>${b.reach ? b.reach + '"' : "not listed"}</b><span>Reach</span></div><div><b>${esc(b.stance || "not listed")}</b><span>Stance</span></div><div><b>${F.fights[0] ? esc(F.fights[0].wc.replace("Women's ", "W ")) : "—"}</b><span>Last weight</span></div></div>
     <div class="grid3" style="margin-top:14px">
       <div class="box"><h3 style="margin-top:0">Striking</h3><div class="kv"><span>SLpM</span><span>${v(g.slpm)}</span></div><div class="kv"><span>SApM</span><span>${v(g.sapm)}</span></div><div class="kv"><span>Diff / min</span><span class="${cls(g.diff)}">${g.diff == null ? "—" : signed(g.diff, 2)}</span></div><div class="kv"><span>Accuracy / defense</span><span>${pc(g.acc)} / ${pc(g.def)}</span></div><div class="kv"><span>R1 diff / min</span><span class="${cls(g.r1diff)}">${g.r1diff == null ? "—" : signed(g.r1diff, 2)}</span></div><div class="kv"><span>R3+ diff / min (${g.latemin.toFixed(0)} min)</span><span class="${cls(g.latediff)}">${g.latediff == null ? "—" : signed(g.latediff, 2)}</span></div><div class="kv"><span>KD per 15 (for-against)</span><span>${v(g.kd15)} - ${v(g.okd15)}</span></div></div>
       <div class="box"><h3 style="margin-top:0">Grappling</h3><div class="kv"><span>TD per 15</span><span>${v(g.td15)}</span></div><div class="kv"><span>TD acc / def</span><span>${pc(g.tdacc)} / ${pc(g.tdd)}</span></div><div class="kv"><span>Control %</span><span>${pc(g.ctrlp)}</span></div><div class="kv"><span>Controlled %</span><span>${pc(g.octrlp)}</span></div><div class="kv"><span>Sub att per 15</span><span>${v(g.sub15)}</span></div></div>
@@ -547,7 +550,7 @@ async function vCompare(sa, sb) {
   <div class="bout"><div class="f r"><a href="#/fighter/${A.slug}">${esc(A.name)}</a><small>UFC ${ga.rec} · Fig ${A.fig == null ? "—" : A.fig.toFixed(0)} · Elo ${A.elo || "—"} · ${streak(A.fights)}</small></div><div class="vs">vs</div><div class="f"><a href="#/fighter/${B.slug}">${esc(B.name)}</a><small>UFC ${gb.rec} · Fig ${B.fig == null ? "—" : B.fig.toFixed(0)} · Elo ${B.elo || "—"} · ${streak(B.fights)}</small></div></div>
   <h3>Tale of the tape · today</h3><div class="tape">
     ${tapeRow("Age", aA ? aA.toFixed(1) : "—", aB ? aB.toFixed(1) : "—", "lo")}
-    ${tapeRow("Height", esc(ba.ht || "—"), esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
+    ${tapeRow("Height", bioHeld(ba, "ht") ? "held · sources differ" : esc(ba.ht || "—"), bioHeld(bb, "ht") ? "held · sources differ" : esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
     ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "not listed", bb.reach ? bb.reach + '"' : "not listed", "hi")}
     ${tapeRow("Stance", esc(ba.stance || "not listed"), esc(bb.stance || "not listed"), null)}
     ${tapeRow("Form Figure rating", A.fig == null ? "—" : A.fig.toFixed(1), B.fig == null ? "—" : B.fig.toFixed(1), "hi")}
@@ -691,8 +694,8 @@ async function vSheet(slug) {
     const [A, B] = await Promise.all([f.a.slug ? getJSON(`fighters/${f.a.slug}.json`).catch(() => null) : null, f.b.slug ? getJSON(`fighters/${f.b.slug}.json`).catch(() => null) : null]);
     const pa = A ? A.fights.filter(x => x.d < ev.date) : [], pb = B ? B.fights.filter(x => x.d < ev.date) : [], ga = agg(pa), gb = agg(pb), o = oddsCells(f), fm = f.form || {};
     const ba = (A && A.bio) || {}, bb = (B && B.bio) || {}, v = (x, d = 2) => x == null ? "—" : x.toFixed(d), ag = (b_) => { const a_ = ageAt(b_.dob, ev.date); return a_ ? a_.toFixed(1) : "—"; };
-    const side = (x, g, b_, fig, P) => `<b>${esc(x.name)}</b> · UFC ${g.rec} · Fig ${fig == null ? "—" : fig.toFixed(0)} · age ${ag(b_)} · ${esc(b_.ht || "—")} / ${b_.reach ? b_.reach + '"' : "—"} · ${esc(b_.stance || "—")} · SLpM ${v(g.slpm)} / SApM ${v(g.sapm)} · TD15 ${v(g.td15)} · TDD ${g.tdd == null ? "—" : (g.tdd * 100).toFixed(0) + "%"} · Ctrl ${g.ctrlp == null ? "—" : (g.ctrlp * 100).toFixed(0) + "%"} · layoff ${P[0] ? daysBetween(ev.date, P[0].d) + "d" : "debut"}`;
-    html += `<section class="sheet"><div class="pp-head"><div class="n"><span class="pill k">${f.n}</span> <a href="#/fight/${ev.slug}/${f.n}">${esc(f.a.name)} vs ${esc(f.b.name)}</a></div><div class="sub">${esc(f.wc || "")}${f.sched ? " · " + f.sched + "R" : ""} · ${o.close.replace(/<\/?b>/g, "")}${o.pa != null ? " · fair " + (fair(o.pa) * 100).toFixed(0) + "%" : ""}${fm.p != null ? " · Form " + (fm.p * 100).toFixed(0) + "%" + (reachNote(ev, f) ? " (" + esc(reachNote(ev, f)) + ")" : "") : ""}${(() => { const M = methodRows(f); return M ? " · GTD " + (M.gtd * 100).toFixed(0) + "%" : ""; })()}${f.model && f.model.a.win != null ? " · model " + f.model.a.win.toFixed(0) + "/" + f.model.b.win.toFixed(0) : ""}</div></div>
+    const side = (x, g, b_, fig, P) => `<b>${esc(x.name)}</b> · UFC ${g.rec} · Fig ${fig == null ? "—" : fig.toFixed(0)} · age ${ag(b_)} · ${bioHeld(b_, "ht") ? "height held (sources differ)" : esc(b_.ht || "—")} / ${b_.reach ? b_.reach + '"' : "—"} · ${esc(b_.stance || "—")} · SLpM ${v(g.slpm)} / SApM ${v(g.sapm)} · TD15 ${v(g.td15)} · TDD ${g.tdd == null ? "—" : (g.tdd * 100).toFixed(0) + "%"} · Ctrl ${g.ctrlp == null ? "—" : (g.ctrlp * 100).toFixed(0) + "%"} · layoff ${P[0] ? daysBetween(ev.date, P[0].d) + "d" : "debut"}`;
+    html += `<section class="sheet"><div class="pp-head"><div class="n"><span class="pill k">${f.n}</span> <a href="#/fight/${ev.slug}/${f.n}">${esc(f.a.name)} vs ${esc(f.b.name)}</a></div><div class="sub">${esc(f.wc || "")}${f.sched ? " · " + f.sched + "R" : ""} · ${o.close.replace(/<\/?b>/g, "")}${o.pa != null ? " · fair " + (fair(o.pa) * 100).toFixed(0) + "%" : ""}${heldLine(f) ? " · " + esc(heldLine(f)) : ""}${fm.p != null ? " · Form " + (fm.p * 100).toFixed(0) + "%" + (reachNote(ev, f) ? " (" + esc(reachNote(ev, f)) + ")" : "") : ""}${(() => { const M = methodRows(f); return M ? " · GTD " + (M.gtd * 100).toFixed(0) + "%" : ""; })()}${f.model && f.model.a.win != null ? " · model " + f.model.a.win.toFixed(0) + "/" + f.model.b.win.toFixed(0) : ""}</div></div>
       <div class="box" style="font:12px/1.5 var(--mono)">${side(f.a, ga, ba, fm.ra, pa)}<br>${side(f.b, gb, bb, fm.rb, pb)}</div>
       <div style="height:4px"></div>${ppTable(pa, { name: f.a.name, limit: 6 }).replace("<thead>", `<caption>${esc(f.a.name)}</caption><thead>`)}<div style="height:4px"></div>${ppTable(pb, { name: f.b.name, limit: 6 }).replace("<thead>", `<caption>${esc(f.b.name)}</caption><thead>`)}</section>`;
   }
@@ -873,7 +876,7 @@ function multiLine(series, xs, { fmt = (v) => (v * 100).toFixed(0) + "%", h = 22
 const roiTd = (v) => `<td class="${cls(v)}">${v == null ? "—" : signed(v * 100) + "%"}</td>`;
 function studyTable(rows, who) {
   return `<div class="tw"><table><thead><tr><th class="l">Bucket</th><th title="All fights since 2010">Fights</th><th>${who} win %</th><th title="Fights with a closing line (2022 on)">With line</th><th>Win % (line era)</th><th title="No-vig closing probability">Market %</th><th title="Flat 1u at the closing consensus price">ROI at close</th></tr></thead><tbody>` +
-    rows.map(r => `<tr><td class="l b">${esc(r.label)}</td><td>${r.n}</td><td class="b">${pct(r.wp)}</td><td class="dim">${r.on}</td><td>${pct(r.owp)}</td><td>${pct(r.imp)}</td>${roiTd(r.roi)}</tr>`).join("") + `</tbody></table></div>`;
+    rows.map(r => r.held ? `<tr><td class="l b">${esc(r.label)}</td><td colspan="6" class="l dim">${esc(r.held)}</td></tr>` : `<tr><td class="l b">${esc(r.label)}</td><td>${r.n}</td><td class="b">${pct(r.wp)}</td><td class="dim">${r.on}</td><td>${pct(r.owp)}</td><td>${pct(r.imp)}</td>${roiTd(r.roi)}</tr>`).join("") + `</tbody></table></div>`;
 }
 function venueTable(rows) {
   return `<div class="tw"><table><thead><tr><th class="l">Venue</th><th>Cards</th><th>Fights</th><th>Finish</th><th title="Expected from the weight classes on the cards">Expected</th><th>KO/TKO</th><th>Sub</th><th title="Round 3 strike attempts as a share of round 1, fights reaching the end of round 3">R3 output kept</th><th>Favorite win %</th><th>Market %</th><th>Favorite ROI</th></tr></thead><tbody>${rows.map(r => `<tr><td class="l b">${esc(r.label)}</td><td class="dim">${r.ev}</td><td class="dim">${r.n}</td><td class="b">${pct(r.fin)}</td><td class="dim">${pct(r.exp)}</td><td>${pct(r.ko)}</td><td>${pct(r.sub)}</td><td>${pct(r.pace.kept, 0)}</td><td>${pct(r.fav.owp)} <span class="dim">(${r.fav.on})</span></td><td>${pct(r.fav.imp)}</td>${roiTd(r.fav.roi)}</tr>`).join("")}</tbody></table></div>`;
@@ -1088,7 +1091,7 @@ async function route() {
 window.addEventListener("hashchange", route);
 const boot = Promise.all([getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__built = i.built; window.__angles = i.angles; }).catch(() => {}),
   getJSON("labs_review.json").then(r => { window.__review = Object.fromEntries((r.angles || []).map(k => [k, 1])); }).catch(() => {}),  // Kirk round 21 call 3
-  getJSON("reach_notes.json").then(r => { window.__reach = r; }).catch(() => {})]);  // Kirk round 26 call 1
+  getJSON("reach_notes.json").then(r => { window.__reach = r; }).catch(() => {})]);   // (holds travel inside the data files: form.held, bio.*_held, labs row.held)  // Kirk round 26 call 1
 const $q = document.getElementById("q"), $dd = document.getElementById("dd");
 if ($q) {
   let S = null;

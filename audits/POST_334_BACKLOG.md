@@ -46,3 +46,6 @@ Logged 2026-11-12 (Kirk round 18). Nothing here is done before the card; the pub
    the site says only "Reach not listed; Form treats it as equal."
 10. **Fighter bio refresh from UFCStats pages (Kirk round 27 call 1).** Pre-registered in audits/round27/Bio_Refresh_PREREG_post334.md.
    Round 27 A found the upstream bio file stale on the 334 card; the list of numbers it would move is in audits/round27/A_moves.txt.
+   Round 28 B: one rule for all changes, blanks included: UFCStats and UFC.com must agree exactly (stance: no change, no second
+   source). Round 28 holds (form/data/form_holds.json: fight 3 Form Line, Belgaroui height, Labs height rows 3 in / 4 in) are
+   released only by a build whose inputs pass that rule; run scripts/form_holds.py after any labs or form rebuild until then.

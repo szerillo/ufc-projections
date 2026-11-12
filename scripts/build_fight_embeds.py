@@ -318,7 +318,7 @@ def build(names, outname):
     mini_tape = ('<div class="mt" data-part="tape" role="table" aria-label="Tale of the tape">'
         + mrow("UFC record", v_(ga["rec"], "str", "record", an + " UFC record", "a"), v_(gb["rec"], "str", "record", bn + " UFC record", "b"))
         + mrow("Age", v_(agA, "n1", "age", "Age a", "a"), v_(agB, "n1", "age", "Age b", "b"), arrows("Age", agA, agB, "lo"), wside(agA, agB, "lo", "Age"))
-        + mrow("Height", v_(FA["bio"].get("ht"), "str", "bio", "Height a", "a", key="ht"), v_(FB["bio"].get("ht"), "str", "bio", "Height b", "b", key="ht"), arrows("Height", hA, hB, "hi"), wside(hA, hB, "hi", "Height"))
+        + mrow("Height", v_(FA["bio"].get("ht"), "str", "bio", "Height a", "a", miss="held" if FA["bio"].get("ht_held") else "n/a", key="ht"), v_(FB["bio"].get("ht"), "str", "bio", "Height b", "b", miss="held" if FB["bio"].get("ht_held") else "n/a", key="ht"), arrows("Height", hA, hB, "hi"), wside(hA, hB, "hi", "Height"))
         + mrow("Reach", v_(ra_, "in", "bio_reach", "Reach a", "a", miss="not listed"), v_(rb_, "in", "bio_reach", "Reach b", "b", miss="not listed"), arrows("Reach", ra_, rb_, "hi"), wside(ra_, rb_, "hi", "Reach"))
         + mrow("Stance", v_(FA["bio"].get("stance"), "str", "bio", "Stance a", "a", miss="not listed", key="stance"), v_(FB["bio"].get("stance"), "str", "bio", "Stance b", "b", miss="not listed", key="stance"))
         + '</div>')

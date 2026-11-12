@@ -13,12 +13,20 @@ height, reach, stance, date of birth. Weight class and records are not bio field
   same-origin in a browser tab, for every fighter with a UFC fight since 2015 plus every fighter on an upcoming card.
 - Shared names: the ID decides; the shared-name bug (round 21) is fixed in the same build by keying bios by ID.
 
-## Pass bar (fixed now)
-- A field is replaced only if the live page has a value and our file differs (blank or different).
-- A live value that differs from a non-blank file value (e.g. Yousri Belgaroui 6'5" -> 6'6") is applied only if a second
-  source agrees: UFC.com athlete page for height/reach (exact match, no rounding: 67 vs 67.50 is a disagreement), and for stance
-  no second source exists, so stance changes from non-blank values are NOT applied (blank -> value is applied, UFCStats only).
-- Blank -> value for height/reach: UFCStats alone (the field was missing, not contested). Kirk may require UFC.com here too.
+## Pass bar (revised Kirk round 28 B, before anything is pulled; supersedes the round 27 text)
+ONE rule for every change, blank or not: a field takes a new value only if UFCStats (fighter-details by ID) and the UFC.com
+athlete page show the same value. Exact match, no rounding (67 vs 67.50 disagree; 5'6" = 66.00 agrees).
+- Height, reach: both sources must agree. Otherwise the field keeps what it has today (a blank stays blank and reads
+  "not listed"; a value that a later check shows to be contested is held, as round 28 held Belgaroui's height).
+- Stance: UFC.com shows no stance, so no stance changes in this refresh (blank stays "not listed").
+- DOB: UFC.com shows age, not a date; age must be consistent with the UFCStats DOB on the read date, else no change.
+- Why one rule: round 23's fill already used two sources on these same fighters and rejected Mesquita and Diaz reach on a
+  half inch; round 28 call 1 pulled fight 3's Form Line because UFCStats-only values are unverified. Filling blanks from
+  UFCStats alone would publish exactly the values that call called unverified. The cost is known and visible: some fields
+  stay "not listed". Known now (round 23 reads): Mesquita reach 67 vs 67.50 and height 5'4" vs 66.00, Diaz reach 69 vs 69.50
+  and height 5'8" vs 68.50 all fail, so they stay blank; Hasan height 5'7" vs 67.00 passes.
+- Release of round 28 holds: fight 3's Form Line returns only from a build whose inputs all pass this rule; with Mesquita's
+  height and reach still failing, it stays held and Kirk decides between keeping the hold and showing it with "not listed".
 - Every changed number on any page (Form Lines, angles, tale of the tape, Labs) is listed by a diff of two full builds (before /
   after), as in round 23; any change not traced to a refreshed field reverts the whole refresh.
 - Labs research numbers move with the refresh; they ship with the research refresh (backlog item 2), with one corrections entry.

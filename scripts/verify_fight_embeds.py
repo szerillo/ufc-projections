@@ -471,6 +471,92 @@ def card_check(D, G, slug):
     for b in bad: print("   ", *b)
     return len(bad)
 
+def hold_check(D, G, slug, quiet=False):
+    """Kirk round 28 (call 1, A, D): a held number must be gone from every place the site shows it. The holds file names
+    what is held; the pulled values live only in the audit record (audits/round28/hold_values.json), which this check
+    reads to search the event file, the embeds, embed.html, index.html, the card's data files and the rendered pages
+    (card, held fight pages, sheet, held fighters' pages, compare, Labs size tab) for any leftover copy."""
+    import importlib.util
+    bad = []
+    hp = FD / "form_holds.json"
+    if not hp.exists(): return 0
+    sp_ = importlib.util.spec_from_file_location("form_holds", REPO / "scripts/form_holds.py"); FH = importlib.util.module_from_spec(sp_); sp_.loader.exec_module(FH)
+    bad += [("hold", "data", x) for x in FH.problems()]
+    H_ = json.loads(hp.read_text()); recp = REPO / "audits/round28/hold_values.json"
+    rec = json.loads(recp.read_text()) if recp.exists() else {"form_line": {}, "bio": {}}
+    evs = H_["form_line"]["events"]; cj = json.loads((D / "card.json").read_text()); evslug = Path(cj["event"]).stem
+    held_n = evs.get(evslug, [])
+    toks = []
+    for n in held_n:
+        r_ = rec["form_line"].get(f"{evslug}#{n}")
+        if not r_: bad.append(("hold", f"fight {n}", "no audit record of the held value (cannot search for leftovers)")); continue
+        p_ = r_["p"]; toks += [f"{p_:.4f}", f"{1 - p_:.4f}", f"{p_ * 100:.1f}%", f"{(1 - p_) * 100:.1f}%", f"{p_ * 100:.0f}%", f"{(1 - p_) * 100:.0f}%", f"{p_ * 100:.2f}", f"{(1 - p_) * 100:.2f}"]
+    files = [REPO / cj["event"], REPO / "embed.html", REPO / "index.html", FD / "reach_notes.json", FD / "form_holds.json",
+             FD / "embed_metrics" / f"{slug}.json"] + sorted(D.glob("*.html")) + sorted(D.glob("*.json")) + sorted((REPO / "data/embeds").glob(f"*{slug}*"))
+    for fp in files:
+        if not fp.exists(): continue
+        t_ = fp.read_text(encoding="utf-8", errors="ignore")
+        # 4-decimal copies anywhere in these files; percent copies only in the held fight's own embed (a "63.3%" elsewhere can be another stat)
+        own = any(fp.name == f"fight_{n:02d}.html" for n in held_n)
+        for tk in toks:
+            if (tk in t_) if (own or tk.startswith("0.")) else (tk.endswith("%") and re.search(r"Form[^<>]{0,40}?(?<![\d.])" + re.escape(tk), t_)): bad.append(("hold", str(fp.relative_to(REPO)) if str(fp).startswith(str(REPO)) else fp.name, f"held Form Line value {tk} still present"))
+    # held bio fields: the pulled value must not appear next to the fighter anywhere it is shown
+    hts = {}
+    for k_, v_ in rec.get("bio", {}).items():
+        sl, key = k_.split("."); m_ = re.match(r"(\d+)'\s*(\d+)", str(v_))
+        if m_: hts[sl] = [f"{m_.group(1)}'{m_.group(2)}", f"{m_.group(1)}' {m_.group(2)}", f"{m_.group(1)}&#x27;{m_.group(2)}", f"{m_.group(1)}&#39;{m_.group(2)}"]
+    ev = json.loads((REPO / cj["event"]).read_text())
+    for sl, tk_ in hts.items():
+        f_ = next((f for f in ev["fights"] if sl in (f["a"].get("slug"), f["b"].get("slug"))), None)
+        if f_ is None: continue
+        for fp in D.glob("fight_*.registry.json"):
+            r_ = json.loads(fp.read_text())
+            if bout(f_["a"]["name"], f_["b"]["name"], *r_["pair"]):
+                t_ = (D / fp.name.replace(".registry.json", ".html")).read_text()
+                if any(x in t_ for x in tk_): bad.append(("hold", fp.name.replace(".registry.json", ".html"), f"held height of {sl} still shown"))
+    # rendered pages
+    routes = [f"#/card/{evslug}", f"#/sheet/{evslug}", "#/labs/size"] + [f"#/fight/{evslug}/{n}" for n in held_n]
+    for sl in hts:
+        f_ = next((f for f in ev["fights"] if sl in (f["a"].get("slug"), f["b"].get("slug"))), None)
+        routes += [f"#/fighter/{sl}"] + ([f"#/fight/{evslug}/{f_['n']}", f"#/compare/{f_['a']['slug']}/{f_['b']['slug']}"] if f_ else [])
+    rr = subprocess.run(["node", str(REPO / "scripts/site_render.js")] + routes, capture_output=True, text=True)
+    if rr.returncode != 0: bad.append(("hold", "render", rr.stderr.strip()[-200:]))
+    else:
+        P_ = json.loads(rr.stdout)
+        for rt, h_ in P_.items():   # 4-decimal copies anywhere on a page
+            for tk in toks:   # 4-decimal copies anywhere; percent copies when a "Form" label sits just before them
+                if (tk in h_) if tk.startswith("0.") else (tk.endswith("%") and re.search(r"Form[^<>]{0,40}?(?<![\d.])" + re.escape(tk), h_)): bad.append(("hold", rt, f"held Form Line value {tk} shown"))
+        card = P_[f"#/card/{evslug}"]; sheet = P_[f"#/sheet/{evslug}"]
+        for n in held_n:
+            m_ = re.search(r'href="#/fight/' + re.escape(evslug) + "/" + str(n) + r'".*?</tr>', card, re.S) or re.search(r'data-href="#/fight/' + re.escape(evslug) + "/" + str(n) + r'".*?</tr>', card, re.S)
+            row = m_.group(0) if m_ else ""
+            if not row or "held<sup>" not in row: bad.append(("hold", "card page", f"fight {n} Form cell not held"))
+            seg = sheet.split(f'href="#/fight/{evslug}/{n}"', 1)[1].split('<div class="sub">', 1)[-1].split("</div>", 1)[0] if f'href="#/fight/{evslug}/{n}"' in sheet else ""   # the fight's summary line
+            if not seg or H_["form_line"]["text"] not in seg or re.search(r"· Form \d+%", seg): bad.append(("hold", "sheet", f"fight {n} Form Line not held"))
+            fp_ = P_[f"#/fight/{evslug}/{n}"]
+            fseg = fp_.split("<h3>Form numbers</h3>", 1)[1].split("</table>", 1)[0] if "<h3>Form numbers</h3>" in fp_ else ""
+            pct_ = [t for t in toks if t.endswith("%")] + [f"{float(t[:-1]):.0f}%" for t in toks if t.endswith("%")]
+            for zone, seg_ in (("fight page Form numbers", fseg), ("card page row", row), ("sheet line", seg)):
+                for tk in pct_:
+                    if re.search(r"(?<![\d.])" + re.escape(tk), seg_): bad.append(("hold", zone, f"fight {n}: held value {tk} shown"))
+            if "Form Line 5+ pts" in fp_ or "Form Line 10+ pts" in fp_ or "Form Line likes" in fp_: bad.append(("hold", f"fight {n} page", "Form Line angle still in play"))
+            if H_["form_line"]["text"] not in fp_: bad.append(("hold", f"fight {n} page", "held text missing"))
+        for sl, tk_ in hts.items():
+            for rt, h_ in P_.items():
+                if rt.startswith("#/labs") or rt.startswith("#/card"): continue
+                if rt.startswith("#/sheet"):
+                    nm = next((f[s]["name"] for f in ev["fights"] for s in "ab" if f[s].get("slug") == sl), None)
+                    h_ = h_.split(f"<b>{H.escape(nm)}</b>", 1)[1].split("<br>", 1)[0].split("</div>", 1)[0] if nm and f"<b>{H.escape(nm)}</b>" in h_ else ""
+                if any(x in h_ for x in tk_): bad.append(("hold", rt, f"held height of {sl} shown"))
+        lab = P_["#/labs/size"]
+        for sec, labels in H_["labs"]["rows"].items():
+            for lb in labels:
+                if not re.search(r"<td class=\"l b\">" + re.escape(lb) + r"</td><td colspan=\"6\" class=\"l dim\">" + re.escape(H_["labs"]["text"]), H.unescape(lab)): bad.append(("hold", "labs size", f"{sec} {lb} not held on the page"))
+    bad = list(dict.fromkeys(bad))
+    if bad or not quiet: print(f"holds: {len(bad)} failures ({len(toks)} Form Line tokens, {sum(len(v) for v in hts.values())} height tokens, {len(routes)} pages rendered)")
+    for b in bad: print("   ", *b)
+    return len(bad)
+
 def run(D, G, slug, quiet=False):
     tot_ok = tot_bad = n_rows = 0
     for f in sorted(p.name for p in D.glob("fight_*.html")):
@@ -479,6 +565,7 @@ def run(D, G, slug, quiet=False):
     tot_bad += card_check(D, G, slug)
     tot_bad += lh_recheck(G, slug, quiet)
     tot_bad += spot_pin(G)
+    tot_bad += hold_check(D, G, slug, quiet)   # Kirk round 28
     lk_ = subprocess.run([sys.executable, "-I", str(REPO / "scripts/embed_locks.py"), "check", "--slug", slug], capture_output=True, text=True)
     if lk_.returncode != 0: print(lk_.stdout.strip()); tot_bad += 1
     elif not quiet: print(lk_.stdout.strip().splitlines()[-1])
@@ -663,7 +750,29 @@ def negative(D, G, slug):
         m = G_["PUB"]["fights"][1]["method"]["dog"]; m["ko"], m["sub"] = m["sub"], m["ko"]
     def export_gtd(T, G_):
         G_["PUB"]["fights"][2]["gtd"] += 0.01
+    # Kirk round 28 D: a held number left behind somewhere the site shows it
+    REC_ = json.loads((REPO / "audits/round28/hold_values.json").read_text()) if (REPO / "audits/round28/hold_values.json").exists() else {"form_line": {}}
+    def held_key():
+        k_ = next(iter(REC_["form_line"])); return k_.split("#")[0], int(k_.split("#")[1]), REC_["form_line"][k_]["p"]
+    def hold_rebuilt(T, G_):   # a rebuild writes the Form Line back and drops the hold flag: card, fight page and sheet show it
+        es, n_, p_ = held_key(); fp = FD / "events" / f"{es}.json"; G_["RESTORE"] = (fp, fp.read_bytes()); d_ = json.loads(fp.read_bytes())
+        f_ = next(x for x in d_["fights"] if x["n"] == n_); f_["form"]["p"] = p_; f_["form"].pop("held", None)
+        fp.write_text(json.dumps(d_, separators=(",", ":"), ensure_ascii=False))
+    def hold_card_json(T, G_):   # a leftover copy in the embed JSON
+        es, n_, p_ = held_key(); c_ = json.loads((T / "card.json").read_text()); next(x for x in c_["card"] if x["fight"] == n_)["form_line"] = p_
+        (T / "card.json").write_text(json.dumps(c_, indent=1))
+    def hold_og(T, G_):   # a leftover copy in page head text (the site has no OG tags today; this plants one)
+        es, n_, p_ = held_key(); fp = REPO / "index.html"; G_["RESTORE"] = (fp, fp.read_bytes())
+        fp.write_text(fp.read_text().replace("<head>", f'<head><meta property="og:description" content="UFC 334: Macy Chiasson Form Line {p_ * 100:.1f}%">', 1))
+    def hold_labs(T, G_):   # a held Labs row gets its number back
+        fp = FD / "labs.json"; G_["RESTORE"] = (fp, fp.read_bytes()); d_ = json.loads(fp.read_bytes())
+        r_ = next(x for x in d_["height_gap"] if x.get("held")); r_["wp"] = 0.526; fp.write_text(json.dumps(d_, separators=(",", ":")))
     plants = [
+        ("hold: Form Line written back by a rebuild, hold flag dropped (card, fight page, sheet)", hold_rebuilt),
+        ("hold: leftover Form Line copy in the embed JSON (card.json)", hold_card_json),
+        ("hold: leftover Form Line copy in page head text (OG description)", hold_og),
+        ("hold: Belgaroui's held height back on the fight 11 embed", plant_text("fight_11.html", lambda s_: s_.replace('<span class="dim">held</span>', "6&#x27;5&quot;", 1))),
+        ("hold: a held Labs row gets its number back (labs.json)", hold_labs),
         ("embed: Sean win % text off by 0.1 (fight 13)", plant_text("fight_13.html", bump_first("pub_win", "pct1"))),
         ("embed: Sean KO % text off (fight 13)", plant_text("fight_13.html", bump_first("pub_meth", "pct1"))),
         ("embed: KO and SUB cells swapped in the method stack (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace('<td data-k="ko">', '<td data-k="@@">', 1).replace('<td data-k="sub">', '<td data-k="ko">', 1).replace('<td data-k="@@">', '<td data-k="sub">', 1))),
@@ -698,12 +807,15 @@ def negative(D, G, slug):
     for label, fn in plants:
         with tempfile.TemporaryDirectory() as td:
             T = Path(td) / "e"; shutil.copytree(D, T); G_ = copy.deepcopy(G); fn(T, G_)
+            buf = io.StringIO()
             try:
-                with contextlib.redirect_stdout(io.StringIO()):
+                with contextlib.redirect_stdout(buf):
                     _, _, nb = run(T, G_, slug)
             finally:
                 if G_.get("RESTORE"): G_["RESTORE"][0].write_bytes(G_["RESTORE"][1])
-        print(f"  NEGATIVE {'CAUGHT ' if nb else 'MISSED '} {nb:>3} failures · {label}"); caught += bool(nb)
+        nh = sum(1 for l_ in buf.getvalue().splitlines() if l_.startswith("    hold "))   # failures from the hold check alone
+        print(f"  NEGATIVE {'CAUGHT ' if nb else 'MISSED '} {nb:>3} failures{f' ({nh} from the hold check)' if label.startswith('hold:') else ''} · {label}"); caught += bool(nb)
+        if label.startswith("hold:"): print("        " + " | ".join(l_.strip()[5:] for l_ in buf.getvalue().splitlines() if l_.startswith("    hold "))[:500])
     # Block 59i (Kirk check 4): a bug UPSTREAM of the metrics file. The page check trusts that file, so the plant goes into
     # a copy of build_embed_metrics.py (control seconds dropped); the independent CSV recompute must flag the result.
     up = upstream_plant()

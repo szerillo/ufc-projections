@@ -28,7 +28,7 @@ def view(p):
     return hashlib.sha256(b).hexdigest()
 def files(slug):
     ev = event_file(slug); d = json.loads(ev.read_text())
-    out = ["data/card_overrides.json", "embed.html", "form/data/labs.json", "form/data/index.json", "data/embeds/spot_tests.json", str(ev.relative_to(REPO))]
+    out = ["data/card_overrides.json", "embed.html", "form/data/labs.json", "form/data/index.json", "form/data/form_holds.json", "data/embeds/spot_tests.json", str(ev.relative_to(REPO))]
     out += sorted(f"form/data/fighters/{f[s]['slug']}.json" for f in d["fights"] for s in "ab" if f[s].get("slug") and (REPO / f"form/data/fighters/{f[s]['slug']}.json").exists())
     return out
 def current(slug): return {f: view(REPO / f) for f in files(slug)}

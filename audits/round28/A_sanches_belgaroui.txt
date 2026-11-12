@@ -1,0 +1,24 @@
+Kirk round 28 A: do the live DOB (Samuel Sanches) and live height (Yousri Belgaroui) move any public number?
+
+1) Samuel Sanches DOB. Round 27 compared fighter FILES; Sanches has none (debut), so every field counted as a mismatch.
+   What the pages and the Form model actually read for a debut is the UFCStats bio row (.form_cache/ufc_fighter_tott.csv):
+     Samuel Sanches | 5' 10" | 74" | Orthodox | Jan 28, 2003      (live UFCStats today: 5' 10" | 74 | Orthodox | Jan 28, 2003)
+   Same DOB. Embed fight 1 age b = 23.8 (registry v4 raw 23.7947 = 2026-11-14 minus 2003-01-28). Age angles (younger5, vs_36,
+   age37), the method model's age term and Labs age buckets read the same row. Nothing on fight 1 moves.
+   Correction to round 27's table: Sanches' height, reach, stance and DOB were not real mismatches of the Form input.
+   Against what Form reads, round 27's bio counts become height 4, reach 2, stance 2, DOB 0 (records unchanged, see C).
+   The round 27 move of Elder's Form Line (45.05% -> 45.04%) comes from the model refit on other fighters' changed bios.
+
+2) Yousri Belgaroui height: our file 6'5"; live UFCStats 6'6"; UFC.com athlete page Height 78.00 (= 6'6", search snippet
+   of ufc.com/athlete/yousri-belgaroui read 2026-11-12). Two sources agree with each other and not with our file.
+   Public numbers that read it:
+   a) Height on the fight 11 tale of the tape (site fight page, compare page, sheet line, Belgaroui's fighter page) and on the
+      fight 11 embed (6'5", with 2 "taller" arrows at a 4-inch gap; live gives 5 inches, still 2 arrows).      -> HELD
+   b) Labs "Height advantage" study: Belgaroui's win over Mansur Abdul-Malik (6'2") moves from the 3-in to the 4-in bucket
+      (his other two UFC wins stay in 5+ in). Same-code scratch build of build_labs.py, only his height changed:
+        3 in: n 1094 -> 1093, win% 52.6 -> 52.5, ROI +0.8% -> +0.4%;  4 in: n 624 -> 625, win% 55.3 -> 55.4, ROI -1.6% -> -1.0%
+      (scratch base, not the shipped file, which was built earlier; the shipped rows move the same way by one fight)  -> HELD
+   c) Fight 11 Form Line (Borralho 40.2% -> 40.0% in round 27's full rebuild, height plus refit): Kirk call 2 says leave
+      fight 11 as is. Not held. Flagged for Kirk.
+   No angle uses height (form_model.angle_sides has no height angle). The Markov raw-stats CSV already lists 6'6 (it does not
+   read our file).
