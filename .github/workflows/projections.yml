@@ -65,7 +65,8 @@ jobs:
             echo "Nothing verified to commit."
           else
             git commit -m "projections: verified from sheet at $(date -u +%Y-%m-%dT%H:%MZ)"
-            for i in 1 2 3; do git pull --rebase --quiet && git push && break; sleep 5; done
+            ok=0; for i in 1 2 3; do if git pull --rebase --quiet && git push; then ok=1; break; fi; sleep 5; done
+            [ "$ok" = 1 ] || { echo "push failed after 3 tries; nothing changed on the site"; exit 1; }
           fi
 
       - name: Fail when any file did not match
