@@ -56,6 +56,22 @@ Sheet: Site > Publish to site
 
 A red check never touches the live file: fix the sheet and publish again.
 
+## Undo a bad publish (one step)
+
+GitHub > Actions > **Roll back projections** > Run workflow (slug `ufc_334`). Or, from any browser: in the repo,
+Add file > Create new file, name it `data/rollback/ufc_334.txt`, leave it empty, Commit. Either way the card page goes back
+to the version from the publish before the latest one (or to "Projections coming" if there was none), and the bad
+pending file is deleted so it can't come back. Running it twice changes nothing more. Tested on the branch Nov 11:
+13 s from the request to the restored file; the site then needs one Pages deploy (median 46 s, max 68 s over the last 20).
+
+To undo a rollback, publish again from the sheet. Don't revert the rollback commit in git: that puts the request file back
+and rolls back again.
+
+## Tests for the card page
+
+`python3 -I scripts/test_fighter_names.py` (name rule, Python and page copies) and `python3 -I scripts/test_card_guards.py`
+(one corrupted record per loop; the rest of the page must render).
+
 ## What the file contains
 
 Per ticked fight: names, the inputs the check needs (best dog/fav price, open %, Markov %, Markov shift B42, Tapology / Junkie /
