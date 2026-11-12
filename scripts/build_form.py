@@ -695,10 +695,21 @@ def write_model_compare(doc, pending=None, bp_fights=None):
                       "sheet_pub_markov_in": None if pf["inputs"].get("markov") is None else round(pf["inputs"]["markov"] if a_dog else 1 - pf["inputs"]["markov"], 4),
                       "sheet_pub_meth_a": pf["method"][ra], "sheet_pub_meth_b": pf["method"][rb], "sheet_pub_flag": pf["sheet"].get("flag"),
                       "sheet_pub_at": pending.get("published_at")})
+            # Calculator inputs exactly as the sheet holds them (dog %, not oriented to A): C Tap, D Junk, E Tip, J Markov
+            pin = pf.get("inputs") or {}
+            r.update({"sheet_dog": pf["dog"], "pub_tap_dog": pin.get("tap"), "pub_junk_dog": pin.get("junk"), "pub_tip_dog": pin.get("tip"),
+                      "pub_markov_j_dog": pin.get("markov")})
         wm = f.get("model") or {}
         if wm and wm.get("src") != "sheet" and (wm.get("a") or {}).get("win") is not None:
             r["widget_p"] = round(wm["a"]["win"] / 100, 4)
         r.update({"sheet_build_p": sh.get("model"), "sheet_build_gtd": sh.get("gtd"), "sheet_build_markov": sh.get("markov")})
+        if sh:
+            # same C/D/E/J from the build's own sheet pull, converted back to dog %
+            dog_a = sh.get("dog") == "a"
+            undo = lambda x: x if (x is None or dog_a) else round(1 - x, 4)
+            r.setdefault("sheet_dog", an if dog_a else bn)
+            r.update({"build_tap_dog": undo(sh.get("tap")), "build_junk_dog": undo(sh.get("junk")), "build_tip_dog": undo(sh.get("tip")),
+                      "build_markov_j_dog": undo(sh.get("markov"))})
         a_, b_ = bpm.get("a") or {}, bpm.get("b") or {}
         r.update({"bp_open_ml": [a_.get("open"), b_.get("open")], "bp_open_p": _nv(a_.get("open"), b_.get("open")),
                   "bp_now_ml": [a_.get("cons"), b_.get("cons")], "bp_now_p": _nv(a_.get("cons"), b_.get("cons"))})
@@ -722,7 +733,8 @@ def write_model_compare(doc, pending=None, bp_fights=None):
     json.dump({"event": doc["name"], "slug": doc["slug"], "date": doc["date"], "status": doc.get("status"),
                "_doc": write_model_compare.__doc__.strip(), "fights": rows}, open(d_ / f"{doc['slug']}.json", "w"), indent=1)
     cols = ["bout", "site_n", "a", "b", "sheet_pub_p", "sheet_build_p", "widget_p", "bp_open_p", "bp_now_p", "oa_open_p", "oa_close_p", "markov_p", "markov_raw",
-            "markov_thin", "form_p", "sheet_pub_gtd", "sheet_build_gtd", "bp_gtd_p", "markov_dec", "form_gtd", "form_div_base", "markov_thin_why"]
+            "markov_thin", "form_p", "sheet_pub_gtd", "sheet_build_gtd", "bp_gtd_p", "markov_dec", "form_gtd", "form_div_base", "markov_thin_why",
+            "sheet_dog", "pub_tap_dog", "pub_junk_dog", "pub_tip_dog", "pub_markov_j_dog", "build_tap_dog", "build_junk_dog", "build_tip_dog", "build_markov_j_dog"]
     with open(d_ / f"{doc['slug']}.csv", "w", newline="") as fh:
         w_ = csv.writer(fh)
         w_.writerow(cols)
