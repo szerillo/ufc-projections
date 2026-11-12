@@ -18,6 +18,7 @@ Writes: form/data/index.json, events/*.json, fighters/*.json, search.json, model
 from __future__ import annotations
 import form_model
 import card_overrides
+import publish_source
 import math
 import argparse, csv, datetime as dt, glob, gzip, io, json, os, re, statistics, subprocess, sys, unicodedata, urllib.request
 from collections import defaultdict
@@ -1149,10 +1150,14 @@ def main():
         fo = doc["fights"]
         for err in card_overrides.check(slug, doc):
             print("  card override check", slug, err, file=sys.stderr)
+        # model_compare logs the build's own sheet pull next to the export, so it runs before the export replaces it
+        pend, pend_p = publish_source.load_export(slug, REPO)
+        n_mc = write_model_compare(doc, pend, d["fights"])
+        # Sean's projection (win %, DEC/KO/SUB split, GTD) on the site = the "Publish to site" export when one exists
+        doc = publish_source.apply(doc, slug, REPO, pend, str(pend_p.relative_to(REPO)) if pend_p else None)
+        fo = doc["fights"]
         json.dump(doc, open(OUT / "events" / f"{eslug}.json", "w"), separators=(",", ":"))
-        pend = REPO / "data" / "pending" / f"{slug}_projections.json"
-        n_mc = write_model_compare(doc, json.load(open(pend)) if pend.exists() else None, d["fights"])
-        print(f"  {eslug}: Markov on {sum(1 for x in fo if x.get('markov'))}/{len(fo)} fights; model_compare {n_mc} rows")
+        print(f"  {eslug}: Markov on {sum(1 for x in fo if x.get('markov'))}/{len(fo)} fights; model_compare {n_mc} rows; projections {doc['proj_source']['fights']} from {doc['proj_source']['file'] or 'build'}")
         up_index.append({"name": name, "slug": eslug, "date": edate.isoformat(), "loc": doc["location"], "nf": len(fo), "model": bool(w) or any(x.get("model") for x in fo),
                          "main": f"{fo[0]['a']['name']} vs {fo[0]['b']['name']}" if fo else ""})
 

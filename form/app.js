@@ -173,7 +173,7 @@ function cardTable(ev) {
     let model = "—", edge = "—";
     if (m && m.a && m.a.win != null) {
       model = `${m.a.win.toFixed(0)} / ${m.b.win.toFixed(0)}`;
-      const mkp = f.sheet && f.sheet.listed != null && m.src === "sheet" ? f.sheet.listed : o.pa;
+      const mkp = f.sheet && f.sheet.listed != null && (m.src === "sheet" || m.src === "publish") ? f.sheet.listed : o.pa;
       if (mkp != null) { const e = m.a.win - mkp * 100; const side = e >= 0 ? f.a.name : f.b.name; edge = `<span class="${Math.abs(e) >= 3 ? "pos b" : "dim"}" title="Model minus no-vig market">${esc(side.split(" ").slice(-1)[0])} ${signed(Math.abs(e))}</span>`; }
     }
     const rec = m && m.rec ? `<span class="pill y" title="${esc(m.rec_text || "Model bet recommendation")}">BET ${esc((m.rec === "a" ? f.a.name : f.b.name).split(" ").slice(-1)[0])}</span>` : (m && m.rec_text && /^lean/i.test(m.rec_text) ? `<span class="pill" title="${esc(m.rec_text)}">${esc(m.rec_text.split("[")[0].trim())}</span>` : "");
@@ -198,7 +198,10 @@ async function overlayLive(ev) {
   try { const d = await fetch(ev.bp_file + "?t=" + Math.floor(Date.now() / 6e5)).then(r => r.json());
     const nm = (x) => (x || "").toLowerCase().normalize("NFD").replace(/[^a-z ]/g, "");
     for (const bf of d.fights || []) { const sel = (bf.markets || {}).moneyline || []; if (sel.length < 2) continue;
-      const f = ev.fights.find(x => x.n === bf.n); if (!f) continue;
+      // match on names, not n: the feed numbers bouts itself and can disagree with the card order
+      const fa = bf.fighter_a && bf.fighter_a.name, fb = bf.fighter_b && bf.fighter_b.name;
+      const one = (x, y) => !!y && (sameFighter(x, y) || nm(x).replace(/ /g, "") === nm(y).replace(/ /g, ""));  // one fighter is enough: nobody is on two bouts
+      const f = ev.fights.find(x => one(x.a.name, fa) || one(x.a.name, fb) || one(x.b.name, fa) || one(x.b.name, fb)); if (!f) continue;
       const pick = (name) => { const l = last(nm(name)); const s_ = sel.find(z => nm(z.label).includes(l)); return s_ && s_.books && s_.books.consensus ? s_.books.consensus.cost : null; };
       const ma = pick(f.a.name), mb = pick(f.b.name); if (ma != null && mb != null && bf.status !== "live") f.live = { ma, mb }; }
     ev.__live = d.updated_at; ev.odds_updated = d.updated_at; } catch (e) { /* keep baked odds */ }
@@ -247,7 +250,7 @@ function sheetBox(f, final) {
   const s = f.sheet; if (!s) return "";
   const P = (x) => x == null ? "—" : (x * 100).toFixed(1) + "%", inv = (x) => x == null ? null : 1 - x;
   const row = (lab, x, tip) => x == null ? "" : `<tr><td class="l b" title="${tip || ""}">${lab}</td><td>${P(x)}</td><td>${P(inv(x))}</td></tr>`;
-  let h = `<h3>Model sheet${s.live ? ' <span class="pill g">live from sheet</span>' : ""}</h3><div class="tw"><table><thead><tr><th class="l">Input</th><th>${esc(last(f.a.name))}</th><th>${esc(last(f.b.name))}</th></tr></thead><tbody>
+  let h = `<h3>Model sheet${s.src === "publish" ? ' <span class="pill g">Publish to site export</span>' : s.live ? ' <span class="pill g">live from sheet</span>' : ""}</h3><div class="tw"><table><thead><tr><th class="l">Input</th><th>${esc(last(f.a.name))}</th><th>${esc(last(f.b.name))}</th></tr></thead><tbody>
     ${row("Tapology picks", s.tap, "Share of Tapology users picking each fighter")}${row("MMA Junkie picks", s.junk)}${row("Tipsters", s.tip)}
     ${row("Opening line (no-vig)", s.open)}${row("Listed line", s.listed)}${row("Closing line", s.close)}${row("Exchange fair price", s.exch)}
     ${row("Markov sim", s.markov, "Markov fight simulator win %")}
@@ -411,8 +414,9 @@ async function vFight(slug, n) {
   if (m && m.a && m.a.win != null) {
     const mk = o ? o.close.p * 100 : null;
     const row = (lab, X, name, mkp) => `<tr><td class="l b">${esc(name)}</td><td>${X.win.toFixed(1)}%</td><td>${ml(p2ml(X.win / 100))}</td><td>${ml(X.ml)}</td><td class="${cls(X.ml != null ? X.win - ml2p(X.ml) * 100 : null)}">${X.ml != null ? signed(X.win - ml2p(X.ml) * 100) : "—"}</td><td class="${cls(mkp != null ? X.win - mkp : null)}">${mkp != null ? signed(X.win - mkp) : "—"}</td><td>${X.dec != null ? X.dec.toFixed(0) : "—"}</td><td>${X.ko != null ? X.ko.toFixed(0) : "—"}</td><td>${X.sub != null ? X.sub.toFixed(0) : "—"}</td></tr>`;
-    html += `<h3>Model projection${m.src === "sheet" ? " · from the model sheet" : ""} ${m.rec ? `<span class="pill y">Bet ${esc(m.rec === "a" ? f.a.name : f.b.name)}</span>` : ""}</h3><div class="tw"><table><thead><tr><th class="l">Fighter</th><th>Win</th><th>Fair</th><th title="Listed price when published">Listed</th><th title="Model minus listed implied %">Edge</th><th title="Model minus no-vig ${final ? "close" : "current"}">vs ${final ? "close" : "now"}</th><th>DEC%</th><th>KO%</th><th>SUB%</th></tr></thead><tbody>${row("a", m.a, f.a.name, mk)}${row("b", m.b, f.b.name, mk == null ? null : 100 - mk)}</tbody></table></div>
-    ${m.gtd != null ? `<div class="note">Model goes-the-distance: ${m.gtd}%${o && o.total ? ` · market over ${o.total.pt}: ${pct(o.total.p_over)}` : ""}</div>` : ""}`;
+    html += `<h3>Model projection${m.src === "publish" ? " · Sean's sheet, Publish to site export" : m.src === "sheet" ? " · from the model sheet" : ""} ${m.rec ? `<span class="pill y">Bet ${esc(m.rec === "a" ? f.a.name : f.b.name)}</span>` : ""}</h3><div class="tw"><table><thead><tr><th class="l">Fighter</th><th>Win</th><th>Fair</th><th title="Listed price when published">Listed</th><th title="Model minus listed implied %">Edge</th><th title="Model minus no-vig ${final ? "close" : "current"}">vs ${final ? "close" : "now"}</th><th>DEC%</th><th>KO%</th><th>SUB%</th></tr></thead><tbody>${row("a", m.a, f.a.name, mk)}${row("b", m.b, f.b.name, mk == null ? null : 100 - mk)}</tbody></table></div>
+    ${m.src === "publish" && ev.proj_source && ev.proj_source.published_at ? `<div class="note" data-proj-src="publish">Win %, DEC / KO / SUB and GTD from the sheet's Publish to site export, published ${esc(ev.proj_source.published_at.slice(0, 16).replace("T", " "))} UTC.</div>` : m.src === "sheet" ? `<div class="note" data-proj-src="sheet">No Publish to site export for this card: numbers are from the build's sheet pull.</div>` : ""}
+    ${m.gtd != null ? `<div class="note">Model goes-the-distance: ${(+m.gtd).toFixed(1)}%${o && o.total ? ` · market over ${o.total.pt}: ${pct(o.total.p_over)}` : ""}</div>` : ""}`;
   }
   html += sheetBox(f, final) + buildUp(f) + markovBox(f) + propsBox(f);
   // form numbers + angles

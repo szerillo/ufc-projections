@@ -119,6 +119,10 @@ def apply_doc(slug, doc, fighters_dir=None, path=OVR_PATH):
                     return i
             return len(order) + 100  # unknown bouts sink to the bottom, flagged by check()
         fights.sort(key=rank)
+        # fight number = bout order on the card: 1 = first early prelim, len = main event.
+        # The feed's own n goes stale when a bout is cancelled or moved, so it is rebuilt from `order`.
+        for i, f in enumerate(fights):
+            f["n"] = len(fights) - i
     if fights:
         fights[0]["sched"] = 5
     doc["fights"] = fights
@@ -161,6 +165,8 @@ def check(slug, doc, index=None, path=OVR_PATH):
         got = [(f["a"]["name"], f["b"]["name"]) for f in doc["fights"]]
         if len(got) != len(order) or not all(bout_is(a, b, x, y) for (a, b), (x, y) in zip(got, order)):
             errs.append("order differs from overrides")
+        if [f["n"] for f in doc["fights"]] != list(range(len(doc["fights"]), 0, -1)):
+            errs.append("fight numbers are not bout order (main event = %d ... opener = 1)" % len(doc["fights"]))
     seg = o.get("segments")
     if seg and n_main(doc["fights"]) != seg.get("main"):
         errs.append(f"site will show {n_main(doc['fights'])} main card bouts, real card has {seg.get('main')} (app.js heuristic)")
