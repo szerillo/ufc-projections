@@ -50,7 +50,7 @@ merges into main with no conflicts; the merge was rehearsed twice (13 s from mer
 
 | # | Who | Do | Proof it worked | Time (ET) |
 |---|---|---|---|---|
-| 0 | Kirk | Apps Script > `publish_to_site` > replace its contents with `scripts/apps_script/publish_to_site.gs` from the branch (sha256 starts `ad775bf8`) > Save. (It exports the method inputs, the price-load stamp and each fight's Feed price row; without them the check goes red.) | Saves with no red error; Site > Preview publish opens with **Script build b46-opp · price row matches 13/13 · method inputs 13/13 · prices loaded ...**. Any other build name, a count below 13/13, or no such line = the old file or a partial paste: paste again before step 1. | |
+| 0 | Kirk | Apps Script > `publish_to_site` > replace its contents with `scripts/apps_script/publish_to_site.gs` from the branch (sha256 starts `de4c2be3`) > Save. (It exports the method inputs, the price-load stamp, each fight's Feed price row and the flagged outliers; without them the check goes red.) | Saves with no red error; Site > Preview publish opens with **Script build b47-out · price row matches 13/13 · method inputs 13/13 · TRAP prices in D/I 0 · prices loaded ...**. Another build name, a count below 13/13, or no such line = old file or partial paste: paste again. **TRAP prices in D/I 1** means loader v2.7 is still installed (Gordon +420 drives the rec): install loader v2.8 first. | |
 | 1 | Kirk | UFC > **Refresh prices**. | Feed!F1 ("Loaded") shows the current time. | |
 | 2 | Kirk | Site > **Publish to site**, slug `ufc_334`, every Main Card and Prelims fight ticked. Do steps 3-4 within 3 hours of step 1. | Alert says **Uploaded**; main's top commit is "Publish ufc_334 projections from sheet (13 fights)". | |
 | 3 | Kirk, on Sean's go | https://github.com/szerillo/ufc-projections/compare/main...publish-to-site > Create pull request > **Merge pull request** > Confirm. | "Able to merge" before the click; main's top commit is the merge. | |
@@ -68,7 +68,9 @@ the sheet. If a bad file already went live: **Roll back projections** (below) an
 What the check covers now: every True %, edge, flag and rec, the method split (dec/KO/sub, both sides) and the fight GTD,
 recomputed from the file's own inputs within 0.0001 pts, plus a price-load stamp no older than 3 hours at the time of the
 check (pre-registered Nov 11), plus an opponent-match guard (pre-registered Nov 11, Block 46): each price must be the price on
-the Feed row for that same bout, and the bout must exist in `data/<slug>_odds.json`. The step 6 spot check stays as a second look, not as the only check.
+the Feed row for that same bout, and the bout must exist in `data/<slug>_odds.json`. A bout that fails only that guard is
+held back as **Line pending** (no numbers on the page) and the rest go live; any other failure keeps the whole file off (Block 47).
+With loader v2.8 a TRAP price (4+ pts better than the exchange fair) never drives the price; the page says "Outlier excluded". The step 6 spot check stays as a second look, not as the only check.
 
 ## Saturday odds (the card-night loop)
 

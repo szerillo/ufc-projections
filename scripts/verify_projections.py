@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import re
 import sys
@@ -80,6 +81,22 @@ def opponent_errs(doc: dict, fights: list, odds_doc: dict | None) -> list[str]:
         if bouts is not None and not any(FN.bout_slots(str(f.get("dog") or ""), str(f.get("fav") or ""), a, b) for a, b in bouts):
             errs.append(f"{tag}: no such bout in data/{doc.get('slug')}_odds.json (OPP-2)")
     return errs
+
+
+def split_pending(doc: dict, errs: list[str]) -> tuple[list[str], list[dict]]:
+    """Line pending (pre-registered Block 47, LP-1/LP-2): a fight whose only errors are opponent-guard errors is held back
+    as line_pending instead of failing the file. Any other error, a missing odds file, or every fight pending stays red."""
+    tags = {f"{f.get('dog')} vs {f.get('fav')}": f for f in doc.get("fights") or []}
+    hard, held = [], {}
+    for e in errs:
+        tag = next((t for t in tags if e.startswith(t + ": ")), None)
+        if tag is not None and "(OPP-" in e:
+            held.setdefault(tag, []).append(e[len(tag) + 2:])
+        else:
+            hard.append(e)
+    if held and len(held) == len(tags):
+        hard.append(f"every fight failed the opponent guard ({len(held)} of {len(tags)}), so nothing would be published (LP)")
+    return hard, [{"dog": tags[t].get("dog"), "fav": tags[t].get("fav"), "reason": "; ".join(r)} for t, r in held.items()]
 
 
 def price_age_h(doc: dict, now: dt.datetime | None = None) -> float | None:
@@ -208,19 +225,24 @@ def main() -> int:
             cur = json.loads(live.read_text(encoding="utf-8"))
         except Exception:  # noqa: BLE001
             cur = None
-        if isinstance(cur, dict) and {k: v for k, v in cur.items() if k != "verified"} == doc:
+        src_sha = hashlib.sha256(path.read_bytes()).hexdigest()
+        if isinstance(cur, dict) and ({k: v for k, v in cur.items() if k != "verified"} == doc
+                                      or (cur.get("verified") or {}).get("source_sha256") == src_sha):
             msg = (f"## Projections check: {path.name}\n\n**Already live.** This file was verified at "
                    f"{(cur.get('verified') or {}).get('at')} and is what the page shows; nothing to check or promote.\n")
             print(msg)
             if a.report:
                 Path(a.report).write_text(msg, encoding="utf-8")
             return 0
-    errs = check(doc, path)
+    errs, pending = split_pending(doc, check(doc, path))
     lines = [f"## Projections check: {path.name}", "", f"Published {doc.get('published_at')} · {n} fight(s) · tolerance {TOL_PTS:g} pts", ""]
     if errs:
         lines += ["**FAIL. Not promoted; the live file is unchanged.**", ""] + [f"- {e}" for e in errs]
     else:
         lines += [f"**PASS.** Every number matches scripts/sheet_v47.py within {TOL_PTS:g} pts; flags and recs identical; every price ties to its own bout (Feed row and odds feed)."]
+        if pending:
+            lines += ["", f"**Line pending ({len(pending)}):** shown on the page as \"Line pending\", no numbers:"] + \
+                     [f"- {x['dog']} vs {x['fav']}: {x['reason']}" for x in pending]
     report = "\n".join(lines) + "\n"
     print(report)
     if a.report:
@@ -228,8 +250,13 @@ def main() -> int:
     if errs:
         return 1
     if a.promote:
+        if pending:
+            held = {(x["dog"], x["fav"]) for x in pending}
+            doc["fights"] = [f for f in doc["fights"] if (f.get("dog"), f.get("fav")) not in held]
+            doc["line_pending"] = pending
         doc["verified"] = {"at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-                           "by": "scripts/verify_projections.py", "tolerance_pts": TOL_PTS, "fights": n}
+                           "by": "scripts/verify_projections.py", "tolerance_pts": TOL_PTS, "fights": len(doc["fights"]),
+                           "line_pending": len(pending), "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
         live = REPO / "data" / f"{doc['slug']}_projections.json"
         live.write_text(json.dumps(doc, indent=1) + "\n", encoding="utf-8")
         print(f"promoted -> {live.relative_to(REPO)}")

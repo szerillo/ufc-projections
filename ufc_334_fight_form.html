@@ -2613,7 +2613,7 @@ function rawImpliedPct(ml) {
 // fighter must match strictly and the other at least loosely, so a late replacement with a near name (Josh vs Jake
 // Hokit) or a near-namesake (Chris Duncan vs Christian Leroy Duncan) does not inherit the old bout's numbers.
 
-let PROJ_UNMATCHED = [], PROJ_BAD = [];
+let PROJ_UNMATCHED = [], PROJ_BAD = [], PROJ_PENDING = [];
 // A published record is used only if every field it feeds is the right type; anything else is listed in the status line.
 function projRecordOk(p) {
   const pr = (x) => x == null || (typeof x === "number" && x >= 0 && x <= 1);
@@ -2657,6 +2657,12 @@ function applySheetProjections(doc) {
     f.a.mktImp = rawImpliedPct(f.a.ml);
     f.b.mktImp = rawImpliedPct(f.b.ml);
   } catch (e) { ffErr("projections", p, e); PROJ_BAD.push(p && p.fav ? p.fav + " vs " + p.dog : "record " + (i + 1)); } });
+  // bouts the check held back because the price did not tie to the bout (opponent guard, Block 47): "Line pending", no numbers
+  PROJ_PENDING = [];
+  (Array.isArray(doc && doc.line_pending) ? doc.line_pending : []).forEach(lp => {
+    const f = lp && FIGHTS.find(x => fighterBoutSlots(x.a.name, x.b.name, lp.dog, lp.fav) != null);
+    if (f && f.noProj) { f.linePending = true; PROJ_PENDING.push(f.a.name + " vs " + f.b.name); }
+  });
 }
 
 async function loadSheetProjections() {
@@ -2671,6 +2677,7 @@ async function loadSheetProjections() {
       el.className = "ff-odds-status fresh";
       el.innerHTML = `<span class="dot"></span>Projections · ${n} of ${FIGHTS.length} fights · updated ${fmtAgo(SHEET_PROJ.published_at)}` +
         (PROJ_UNMATCHED.length ? ` · <b>${PROJ_UNMATCHED.length} published fight${PROJ_UNMATCHED.length > 1 ? "s" : ""} not on this card: ${ffEsc(PROJ_UNMATCHED.join("; "))}</b>` : "") +
+        (PROJ_PENDING.length ? ` · line pending: ${ffEsc(PROJ_PENDING.join("; "))}` : "") +
         (PROJ_BAD.length ? ` · <b>${PROJ_BAD.length} published fight${PROJ_BAD.length > 1 ? "s" : ""} could not be read: ${ffEsc(PROJ_BAD.join("; "))}</b>` : "") +
         ffFuzzyText("proj");
       // a sheet name that differs from the page's is unusual (both come from the same card), so it turns the line amber
@@ -2687,6 +2694,8 @@ async function loadSheetProjections() {
 }
 
 function projComingHTML(f) {
+  if (f.linePending) return `<div class="fp-proj"><div class="fp-proj-header"><span class="bullet"></span>Line pending</div>
+    <div style="padding:10px 4px;font-size:12px;color:var(--text-muted);">The sheet's price for ${f.a.name} vs ${f.b.name} did not match this bout, so no numbers are shown until it does.</div></div>`;
   return `<div class="fp-proj"><div class="fp-proj-header"><span class="bullet"></span>Projections coming</div>
     <div style="padding:10px 4px;font-size:12px;color:var(--text-muted);">Model numbers for ${f.a.name} vs ${f.b.name} post once Sean publishes them from the sheet.</div></div>`;
 }
@@ -2705,6 +2714,7 @@ function sheetBlockHTML(f) {
     </table>
     ${s.flag != null || s.rec != null ? `<div style="font-size:11px;padding:4px 2px 8px;color:var(--text-muted);">
       ${s.flag != null ? `Flag: <b>${s.flag}</b>` : ""}${s.flag != null && s.rec != null ? " · " : ""}${s.rec != null ? `Model rec: <b>${s.rec}</b>` : ""}</div>` : ""}
+    ${(p.outliers || []).filter(o => o && o.excluded).map(o => `<div style="font-size:11px;padding:0 2px 8px;color:var(--text-muted);">Outlier excluded: ${ffEsc(o.book)} ${o.odds > 0 ? "+" : ""}${ffEsc(o.odds)}</div>`).join("")}
   </div>`;
 }
 

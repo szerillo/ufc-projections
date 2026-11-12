@@ -67,6 +67,7 @@ def main() -> int:
     fails += method_cases()
     fails += stamp_cases()
     fails += opponent_cases()
+    fails += pending_cases()
     return 1 if fails else 0
 
 
@@ -147,6 +148,22 @@ def opponent_cases() -> int:
         errs = V.opponent_errs({"slug": "fixture"}, [f], od)
         ok = bool(errs) == want_red
         print(("PASS " if ok else "FAIL ") + f"opponent guard, {name}: {'red' if errs else 'green'}")
+        fails += not ok
+    return fails
+
+
+def pending_cases() -> int:
+    """Line pending (pre-registered Block 47): opponent-guard errors hold one bout back; anything else stays whole-file red."""
+    doc = {"fights": [{"dog": "Alatengheili", "fav": "Juan Diaz"}, {"dog": "Evan Elder", "fav": "Samuel Sanches"}]}
+    opp = "Alatengheili vs Juan Diaz: price taken from Feed row 12 'Adrian Yanez vs Juan Diaz', whose dog is not Alatengheili (OPP-1)"
+    cases = [("only Diaz fails the guard", [opp], 0, 1), ("Diaz guard + a number off on Elder", [opp, "Evan Elder vs Samuel Sanches: true_dog sheet 1 vs 2"], 1, 1),
+             ("odds file missing", ["odds file data/x_odds.json missing or unreadable, so no fight can be matched to a real bout (OPP-2)"], 1, 0),
+             ("both fights fail the guard", [opp, "Evan Elder vs Samuel Sanches: no such bout in data/x_odds.json (OPP-2)"], 1, 2)]
+    fails = 0
+    for name, errs, want_hard, want_pend in cases:
+        hard, pend = V.split_pending(doc, errs)
+        ok = (len(hard) > 0) == (want_hard > 0) and len(pend) == want_pend
+        print(("PASS " if ok else "FAIL ") + f"line pending, {name}: {'red' if hard else 'green'}, {len(pend)} pending")
         fails += not ok
     return fails
 

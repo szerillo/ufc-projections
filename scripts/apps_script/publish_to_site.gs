@@ -19,7 +19,7 @@
  */
 
 var PUB = {
-  build: 'b46-opp',               // shown in the preview, so the step 0 paste can be confirmed in the sheet itself
+  build: 'b47-out',               // shown in the preview, so the step 0 paste can be confirmed in the sheet itself
   owner: 'szerillo',
   repo: 'ufc-projections',
   branch: 'main',                 // dry runs used branch 'publish-to-site'
@@ -68,8 +68,9 @@ function publish_(upload) {
   });
   var nps = doc.fights.filter(function (f) { return f.price_source && f.price_source.dog === f.dog && f.price_source.fav === f.fav; }).length;
   var nmi = doc.fights.filter(function (f) { return f.method_inputs; }).length;
+  var ntrap = doc.fights.filter(function (f) { return f.outliers.some(function (o) { return !o.excluded; }); }).length;
   var stamp = 'Script build ' + PUB.build + ' · price row matches ' + nps + '/' + doc.fights.length + ' · method inputs ' + nmi + '/' +
-      doc.fights.length + ' · prices loaded ' + (doc.prices_loaded || 'MISSING') + '\n\n';
+      doc.fights.length + ' · TRAP prices in D/I ' + ntrap + ' · prices loaded ' + (doc.prices_loaded || 'MISSING') + '\n\n';
   var msg = stamp + doc.fights.length + ' fight(s) to data/pending/' + slug + '_projections.json on ' + PUB.branch + ':\n\n' + lines.join('\n') + outside;
   if (!upload) { ui.alert('Preview (nothing uploaded)', msg, ui.ButtonSet.OK); return; }
   if (ui.alert('Publish to site?', msg + '\n\nThe site updates only after the check passes (about 2 minutes).', ui.ButtonSet.OK_CANCEL) !== ui.Button.OK) return;
@@ -88,7 +89,7 @@ function buildDoc_(slug) {
   OUTSIDE_ = [];
   var ss = SpreadsheetApp.getActive();
   var calc = ss.getSheetByName('Calculator');
-  var C = calc.getRange('A1:AA20').getValues();             // C[row-1][col-1]
+  var C = calc.getRange('A1:AH20').getValues();             // C[row-1][col-1]; AH (index 33) = ML outliers vs exchange
   var shift = num_(calc.getRange('B42').getValue());
   // Feed rows by bout order, so each fight can say which Feed row (bout and price) the loader filled it from (Block 46, OPP-1)
   var FD = ss.getSheetByName('Feed').getRange('A1:M40').getValues(), FEED = {}, nMain = 0;
@@ -134,6 +135,14 @@ function buildDoc_(slug) {
       var ord = (t.name === 'Prelims' ? nMain : 0) + (r - 1), fx = FEED[ord];
       f.price_source = fx ? { order: ord, dog: String(fx[3]).trim(), fav: String(fx[4]).trim(), cons_dog: String(fx[9]), cons_fav: String(fx[10]),
                               best_dog: String(fx[11] || ''), best_fav: String(fx[12] || '') } : null;
+      // ML outliers the loader flagged as TRAP in Calculator AH ("DOG +420 Caesars (+4.4 TRAP, excluded from D/I)").
+      // excluded = the TRAP price is not the price in D / I (loader v2.8 skips it; v2.7 still used it) (Block 47, OUT-3)
+      f.outliers = [];
+      var re = /(DOG|FAV) ([+-]\d+) ([^(|]+?) \(\+[\d.]+ TRAP/g, mm;
+      while ((mm = re.exec(String(c[33] || ''))) !== null) {
+        var side = mm[1] === 'DOG' ? 'dog' : 'fav', o = Number(mm[2]);
+        f.outliers.push({ side: side, odds: o, book: mm[3].trim(), excluded: o !== f.inputs[side + '_odds'] });
+      }
       if (!PUB.include.rec) delete f.sheet.rec;     // left out of the file entirely; the check then skips it
       if (!PUB.include.flag) delete f.sheet.flag;
       fights.push(f);
