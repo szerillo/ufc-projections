@@ -30,6 +30,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--slug", default="ufc_334")
 ap.add_argument("--event", help="event file (default: the upcoming event whose bp_file is data/<slug>_odds.json)")
 ap.add_argument("--out", help="output dir (default embeds/<slug>)")
+ap.add_argument("--line-history", help="line history file (default data/embeds/line_history_<slug>.json); round 12 C, scratch tests")
 ap.add_argument("--no-vs-bar", action="store_true", help="Kirk round 6 4d comparison only: drop the VS name bar on Stats (kept: it is the only name label over the stat columns)")
 ARGS = ap.parse_args()
 SLUG = ARGS.slug
@@ -130,7 +131,7 @@ PARTS = {"Moneyline": "ml", "Fight": "length", "Method": "method"}   # Block 59h
 
 SPOTS = {}
 TREND_PTS = {}
-LHF = f"data/embeds/line_history_{SLUG}.json"; LH = json.loads((REPO / LHF).read_text())
+LHF = ARGS.line_history or f"data/embeds/line_history_{SLUG}.json"; LH = json.loads((REPO / LHF).read_text())
 LABS_ACC = json.loads((REPO / "form/data/labs.json").read_text())["scoring"]["acc"]   # decision-model accuracy, quoted in the key
 
 

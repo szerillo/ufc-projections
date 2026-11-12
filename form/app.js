@@ -4,7 +4,14 @@
 const DATA = "form/data/";
 const $app = document.getElementById("app");
 const cache = {};
-const getJSON = (p) => cache[p] || (cache[p] = fetch(DATA + p).then(r => { if (!r.ok) throw new Error(p + " " + r.status); return r.json(); }));
+// Kirk round 12 call 2: a bout's clock time is shown only when the build that wrote it (the feed's scheduled time) is under 6 hours
+// old, labelled ET; otherwise nothing, since the card's date is already on the page.
+const startLabel = (f) => { if (!f.start || !window.__built) return ""; const age = Date.now() - Date.parse(window.__built.endsWith("Z") ? window.__built : window.__built + "Z");
+  if (!(age >= 0 && age < 6 * 3600e3)) return ""; return new Date(f.start.replace(" ", "T") + (f.start.endsWith("Z") ? "" : "Z")).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }) + " ET"; };
+// Kirk round 12 (Consensus_US_PREREG): a bout with no US-regulated price has an opener but no current line. Every view that
+// needs a current line treats it as having no odds; the fight page still shows the opener (f.odds_open).
+const usOnly = (d) => { if (d && Array.isArray(d.fights)) for (const f of d.fights) if (f.odds && !f.odds.close) { f.odds_open = f.odds.open; f.odds = null; } return d; };
+const getJSON = (p) => cache[p] || (cache[p] = fetch(DATA + p).then(r => { if (!r.ok) throw new Error(p + " " + r.status); return r.json(); }).then(d => p.startsWith("events/") ? usOnly(d) : d));
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const ml = (v) => v == null ? "—" : (v > 0 ? "+" + v : "" + v);
 const pct = (p, d = 1) => p == null ? "—" : (p * 100).toFixed(d) + "%";
@@ -191,10 +198,10 @@ function cardTable(ev) {
       <td class="dim" title="Form Line: stats-only win % for ${esc(f.a.name)}">${f.form && f.form.p != null ? (f.form.p * 100).toFixed(0) + "%" : "—"}</td>
       <td class="dim" title="Form goes-the-distance %">${(() => { const M = methodRows(f); return M ? (M.gtd * 100).toFixed(0) + "%" : (f.form && f.form.g != null ? (f.form.g * 100).toFixed(0) + "%" : "—"); })()}</td>
       <td>${model}</td><td>${edge}</td>
-      <td class="l">${final ? resultText(f) : '<span class="dim">' + (f.start ? new Date(f.start.replace(" ", "T") + "Z").toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" }) : "") + "</span>"}</td>
+      <td class="l">${final ? resultText(f) : '<span class="dim">' + startLabel(f) + "</span>"}</td>
       <td class="c">›</td></tr>`;
   });
-  return `<div class="tw"><table><thead><tr><th class="c">#</th><th class="l">Bout</th><th>Open</th><th>${final ? "Close" : "Current"}</th><th title="Open→now move in first fighter's no-vig win %">Move</th><th title="Market win % for the first fighter after correcting the favorite-longshot bias">Fair</th><th title="Form Line: stats-only win % for the first fighter">Form</th><th title="Form Line: chance the fight goes the distance">GTD</th><th title="Model win % (first / second)">Model</th><th>Edge</th><th class="l">${final ? "Result" : "Local time"}</th><th></th></tr></thead><tbody>${html}</tbody></table></div>`;
+  return `<div class="tw"><table><thead><tr><th class="c">#</th><th class="l">Bout</th><th>Open</th><th>${final ? "Close" : "Current"}</th><th title="Open→now move in first fighter's no-vig win %">Move</th><th title="Market win % for the first fighter after correcting the favorite-longshot bias">Fair</th><th title="Form Line: stats-only win % for the first fighter">Form</th><th title="Form Line: chance the fight goes the distance">GTD</th><th title="Model win % (first / second)">Model</th><th>Edge</th><th class="l">${final ? "Result" : "Start"}</th><th></th></tr></thead><tbody>${html}</tbody></table></div>`;
 }
 async function overlayLive(ev) {
   if (ev.status !== "upcoming" || !ev.bp_file || ev.__live) return;
@@ -401,7 +408,7 @@ async function vFight(slug, n) {
     const mv = (o.close.p - o.open.p) * 100;
     html += lineChart(o, f.a.name, f.b.name) + `<div style="height:8px"></div>
       <div class="kv"><span>First seen (${fdate(o.open.t.slice(0, 10))})</span><span>${esc(f.a.name)} ${ml(o.open.ma)} · ${esc(f.b.name)} ${ml(o.open.mb)} · ${pct(o.open.p)}</span></div>
-      <div class="kv"><span>${final ? "Close" : "Now"} (${o.close.nb} books)</span><span><b>${esc(f.a.name)} ${ml(o.close.ma)} · ${esc(f.b.name)} ${ml(o.close.mb)}</b> · ${pct(o.close.p)}</span></div>
+      <div class="kv"><span>${final ? "Close" : "Now"} (${o.close.nb} US-regulated books)</span><span><b>${esc(f.a.name)} ${ml(o.close.ma)} · ${esc(f.b.name)} ${ml(o.close.mb)}</b> · ${pct(o.close.p)}</span></div>
       <div class="kv"><span>Move</span><span class="${cls(Math.abs(mv) >= 1 ? 1 : 0)}">${signed(Math.abs(mv))} pts toward ${esc(mv >= 0 ? f.a.name : f.b.name)}</span></div>
       ${SHOW_PER_BOOK && o.total ? `<div class="kv"><span>Total rounds</span><span>${o.total.pt} · O ${ml(o.total.over)} / U ${ml(o.total.under)} · over ${pct(o.total.p_over)}</span></div>` : ""}
       <div class="kv"><span>Snapshots</span><span>${o.n}</span></div>`;
@@ -409,8 +416,9 @@ async function vFight(slug, n) {
     if (SHOW_PER_BOOK && bk.length) html += `<div style="height:8px"></div><div class="tw"><table><thead><tr><th class="l">Book</th><th>${esc(f.a.name.split(" ").slice(-1)[0])}</th><th>${esc(f.b.name.split(" ").slice(-1)[0])}</th><th>No-vig</th></tr></thead><tbody>` +
       bk.map(([b, x]) => `<tr><td class="l">${esc((window.__books || {})[b] || b)}</td><td>${ml(x.ma)}</td><td>${ml(x.mb)}</td><td>${pct(x.p)}</td></tr>`).join("") + `</tbody></table></div>`;
   } else if (f.bp && f.bp.a && f.bp.a.cons != null) {
-    html += `<div class="kv"><span>Open</span><span>${esc(f.a.name)} ${ml(f.bp.a.open)} · ${esc(f.b.name)} ${ml(f.bp.b.open)}</span></div><div class="kv"><span>${final ? "Close" : "Now"} (consensus)</span><span><b>${esc(f.a.name)} ${ml(f.bp.a.cons)} · ${esc(f.b.name)} ${ml(f.bp.b.cons)}</b></span></div><div class="kv"><span>DraftKings</span><span>${ml(f.bp.a.dk)} / ${ml(f.bp.b.dk)}</span></div><div class="kv"><span>FanDuel</span><span>${ml(f.bp.a.fd)} / ${ml(f.bp.b.fd)}</span></div>`;
-  } else html += `<div class="note">No line history on file for this fight.</div>`;
+    html += `<div class="kv"><span>Open</span><span>${esc(f.a.name)} ${ml(f.bp.a.open)} · ${esc(f.b.name)} ${ml(f.bp.b.open)}</span></div><div class="kv"><span>${final ? "Close" : "Now"} (consensus)</span><span><b>${esc(f.a.name)} ${ml(f.bp.a.cons)} · ${esc(f.b.name)} ${ml(f.bp.b.cons)}</b></span></div>${SHOW_PER_BOOK ? `<div class="kv"><span>DraftKings</span><span>${ml(f.bp.a.dk)} / ${ml(f.bp.b.dk)}</span></div><div class="kv"><span>FanDuel</span><span>${ml(f.bp.a.fd)} / ${ml(f.bp.b.fd)}</span></div>` : ""}`;
+  } else if (f.odds_open) html += `<div class="kv"><span>First seen (${fdate(f.odds_open.t.slice(0, 10))})</span><span>${esc(f.a.name)} ${ml(f.odds_open.ma)} · ${esc(f.b.name)} ${ml(f.odds_open.mb)} · ${pct(f.odds_open.p)}</span></div><div class="note">No US-regulated price on file, so no current line.</div>`;
+  else html += `<div class="note">No line history on file for this fight.</div>`;
   html += `</div>`;
 
   // model
@@ -611,7 +619,7 @@ async function vAbout() {
   <p><b>MMA Fight Form</b> is a past-performance sheet for fights: everything a handicapper wants on one page, in the same place every time.</p>
   <p><b>Past performances.</b> One line per UFC fight: opponent and their rating going in, result, method, round and time, the closing moneyline and how far it moved from the open, significant strikes for and against, knockdowns, takedowns, control time and the layoff since the previous fight.</p>
   <p><b>Tale of the tape.</b> Rates are rebuilt as of fight night from fights before that date, so a historical page shows what was knowable then.</p>
-  <p><b>Lines.</b> Consensus is the median no-vig price across the US books and Pinnacle in the odds archive. From 2022 through 2025 there are two snapshots a day; 2026 has fight-weekend snapshots plus the live feed, so "first seen" can be later than the true opener.</p>
+  <p><b>Lines.</b> The current and closing line is the median no-vig price across the US-regulated sportsbooks in the odds archive; "first seen" is the earliest price we recorded from any listed book. Research tables on this site keep using the full historical closing line. From 2022 through 2025 there are two snapshots a day; 2026 has fight-weekend snapshots plus the live feed, so "first seen" can be later than the true opener.</p>
   <p><b>Model.</b> Where a projection was published, the fight page shows win and method probabilities, the listed price at the time, and the edge against both that price and the close.</p>
   <p><b>Model.</b> The projection is market-anchored, not a prediction from scratch. Five years of UFC fights say the closing line is well calibrated and that fighter stats, Elo, fan and tipster consensus, sharp money, offshore books and line drift add nothing to it. So the model starts from the listed line and makes a few small, evidence-backed moves: a 15% pull toward an independent Markov-chain simulation of the fight, a 4-point cut for women's underdogs, context codes for debutant, regional decision-grinder and retiring fighters, and a fade when the public is heavier on the underdog than the price is. Each fight page shows that build-up line by line.</p>
   <p><b>Bet rules.</b> Underdogs need 8 points of edge and a clean flag (no debut code, no sharp or public pile-on, no 4-point drift). Favorites need 3 points. Favorites priced 80% or higher are a standing bet at the best price. Five-round fights with the distance priced at 40% or more are a standing GTD bet. Inside-the-distance, unders and method props are shown as information because they lose most years.</p>
@@ -1072,7 +1080,7 @@ async function route() {
   $app.innerHTML = `<div class="banner">Page not found.</div>`;
 }
 window.addEventListener("hashchange", route);
-const boot = getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__angles = i.angles; }).catch(() => {});
+const boot = getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__built = i.built; window.__angles = i.angles; }).catch(() => {});
 const $q = document.getElementById("q"), $dd = document.getElementById("dd");
 if ($q) {
   let S = null;

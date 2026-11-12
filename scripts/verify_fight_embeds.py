@@ -287,7 +287,7 @@ def check(D, htmlfile, G):
             if sorted(ys_) != sorted(want_ys): bad.append(("trend", "points", f"plotted y {ys_} vs recomputed {want_ys}"))
         if re.search(r'class="(flip|ang)"|Live guide|Striking angle', page): bad.append(("spot", "old", "live guide, flip flag or angle box still on the page"))
         # Block 59n: edge colour rule (coloured only at |shown edge| >= 2.0) and the Listed-price check (flagged = neutral + label)
-        LHall = json.loads((REPO / f"data/embeds/line_history_{G['SLUG']}.json").read_text())["fights"]
+        LHall = json.loads((G.get("LH_PATH") or REPO / f"data/embeds/line_history_{G['SLUG']}.json").read_text())["fights"]
         lk_ = next((k_ for k_ in LHall if bout(*k_.split("|"), *reg["pair"])), None); lrec = LHall.get(lk_) if lk_ else {}
         unver = set()
         for sd_, c_ in (lrec.get("listed") or {}).items():
@@ -466,7 +466,7 @@ def lh_recheck(G, slug, quiet=False):
     code (Round6_PREREG.md C and D), and compare with data/embeds/line_history_<slug>.json. Skipped (with a note) without
     the archive cache. Also: no offshore book may sit in any current line."""
     import gzip, glob, statistics, datetime as dt_
-    LHp = REPO / f"data/embeds/line_history_{slug}.json"; LHd = json.loads(LHp.read_text())
+    LHp = G.get("LH_PATH") or REPO / f"data/embeds/line_history_{slug}.json"; LHd = json.loads(LHp.read_text())
     if G.get("LH_OVERRIDE"): LHd = G["LH_OVERRIDE"]
     REG_ = {"draftkings", "fanduel", "betmgm", "williamhill_us", "betrivers", "circasports"}
     LIST_ = {"pinnacle", "draftkings", "fanduel", "betmgm", "williamhill_us", "betrivers", "betonlineag", "lowvig", "bovada", "circasports"}
@@ -474,7 +474,7 @@ def lh_recheck(G, slug, quiet=False):
     for k_, r_ in LHd["fights"].items():
         if r_.get("current") and set(r_["current"]["books"]) - REG_ and not (r_.get("current_source") == "kalshi_fallback" and r_["current"]["books"] == ["kalshi"]):
             print(f"  LH {k_}: offshore book in the current line"); nb_ += 1
-    cache = REPO / ".form_cache"
+    cache = G.get("ARCHIVE") or (REPO / ".form_cache")
     if not (cache / "oddsapi" / "compact" / "mma.jsonl.gz").exists():
         print("LINE HISTORY RECHECK: skipped (no archive cache)"); return nb_
     snaps = {}
@@ -548,7 +548,8 @@ def lh_recheck(G, slug, quiet=False):
         heads = {e: (v[-1][2], v[-1][3], v[-1][1]) for e, v in snaps.items()}
         for f in EVd["fights"]:
             an_, bn_ = f["a"]["name"], f["b"]["name"]
-            cands = [e for e, (h, w, st) in heads.items() if abs((date.fromisoformat(st[:10]) - d0).days) <= 2
+            # Date_Window_PREREG (round 12): archive start date minus card date was -1, 0 or +1 on all 2,302 past bouts
+            cands = [e for e, (h, w, st) in heads.items() if -1 <= (date.fromisoformat(st[:10]) - d0).days <= 1
                      and max(min(msc(an_, h), msc(bn_, w)), min(msc(an_, w), msc(bn_, h))) >= 0.85]
             o_ = f.get("odds")
             if not cands:
@@ -556,16 +557,25 @@ def lh_recheck(G, slug, quiet=False):
                 continue
             e = max(cands, key=lambda e: len(snaps[e])); ss = sorted(snaps[e], key=lambda x: x[0]); start = ss[-1][1]
             pre = [x for x in ss if x[0] <= start] or ss
-            pts = []
+            pts = []; rpts = []
             for t, st, h, w, books in pre:
                 amh = msc(an_, h) >= msc(an_, w)
-                pr = [((v[0], v[1]) if amh else (v[1], v[0])) for b, v in books.items() if b in LIST_]
-                nv = [(1 / x) / (1 / x + 1 / y) for x, y in pr]
+                prb = {b: ((v[0], v[1]) if amh else (v[1], v[0])) for b, v in books.items() if b in LIST_}
+                pr = list(prb.values()); nv = [(1 / x) / (1 / x + 1 / y) for x, y in pr]
                 if nv: pts.append((t, statistics.median(nv), len(nv), statistics.median(x for x, _ in pr), statistics.median(y for _, y in pr)))
+                rg = [v for b, v in prb.items() if b in REG_]
+                if rg: rpts.append((t, statistics.median((1 / x) / (1 / x + 1 / y) for x, y in rg), len(rg), statistics.median(x for x, _ in rg), statistics.median(y for _, y in rg)))
             while len(pts) > 2 and pts[0][2] <= 1 and abs(pts[0][1] - pts[1][1]) > 0.12: pts.pop(0)
             if not pts: continue
             if not o_: print(f"  EVENT ODDS {an_} vs {bn_}: archive has the bout, the event file has no odds block"); nev_ += 1; continue
-            for k, pt in (("open", pts[0]), ("close", pts[-1])):
+            # Consensus_US_PREREG (round 12): opener from every listed book; current/close from US-regulated books only, none if none
+            rpts = [x for x in rpts if x[0] >= pts[0][0]]
+            if set(o_.get("books") or {}) - REG_: print(f"  EVENT ODDS {an_} vs {bn_}: offshore book in the published book list"); nev_ += 1
+            if not rpts:
+                if o_.get("close"): print(f"  EVENT ODDS {an_} vs {bn_}: a close is published but no US-regulated price exists"); nev_ += 1
+                continue
+            if not o_.get("close"): print(f"  EVENT ODDS {an_} vs {bn_}: US-regulated price exists but no close is published"); nev_ += 1; continue
+            for k, pt in (("open", pts[0]), ("close", rpts[-1])):
                 amx = lambda d: round((d - 1) * 100) if d >= 2 else round(-100 / (d - 1))
                 if o_[k]["t"][:19] != pt[0][:19] or abs(o_[k]["p"] - pt[1]) > 0.0006 or abs(o_[k]["ma"] - amx(pt[3])) > 1 or abs(o_[k]["mb"] - amx(pt[4])) > 1:
                     print(f"  EVENT ODDS {an_} vs {bn_}: {k} {o_[k]['t'][:16]} {o_[k]['p']} vs recomputed {pt[0][:16]} {pt[1]:.4f}"); nev_ += 1
@@ -693,7 +703,11 @@ def metrics_event_file():
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--slug", default="ufc_334"); ap.add_argument("--dir"); ap.add_argument("--negative", action="store_true")
+    ap.add_argument("--archive", help="odds archive cache to recheck against (default .form_cache); round 12 C, for scratch tests")
+    ap.add_argument("--line-history", help="line history file to check (default data/embeds/line_history_<slug>.json)")
     a = ap.parse_args(); D = Path(a.dir) if a.dir else REPO / "embeds" / a.slug; G = load_sources(a.slug)
+    if a.archive: G["ARCHIVE"] = Path(a.archive)
+    if a.line_history: G["LH_PATH"] = Path(a.line_history)
     ok, n_rows, nb = run(D, G, a.slug); G_SLUG[0] = a.slug
     print(f"TOTAL: {ok}/{n_rows} numbers verified; {nb} mismatches/assertion failures")
     if G.get("SIDE_UNCHECKED"): print(f"SIDE CHECK: not checkable (line within 4 pts of 50%): {', '.join(G['SIDE_UNCHECKED'])}")

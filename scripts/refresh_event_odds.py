@@ -49,7 +49,7 @@ def main():
         eid, fl = BF.find_odds(idx, by_id, f["a"]["name"], f["b"]["name"], d)
         o = BF.summarize_odds(by_id[eid], fl, a_name=f["a"]["name"]) if eid else None
         if o:
-            f["odds"] = o
+            f["odds"] = BF.public_odds(o)   # Consensus_US_PREREG: published current line from US-regulated books only
         oc, nc = (old.get("close") or {}), ((o or {}).get("close") or {})
         print(f"  {f['n']:>2} {f['a']['name']} vs {f['b']['name']}: close {oc.get('t', '-')} p={oc.get('p', '-')} -> {nc.get('t', 'no match, kept old')} p={nc.get('p', '-')}")
     evp.write_text(json.dumps(ev, separators=(",", ":"), ensure_ascii=False))

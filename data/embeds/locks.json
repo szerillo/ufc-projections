@@ -6,7 +6,7 @@
    "form/data/labs.json": "b34d8ad60920c6ab60b088bd28c1108c7b93d6d72aee8f1d60c83bfb236637e8",
    "form/data/index.json": "da6e09523edd7a3fd7fbd5a6999dd0ca43af743d27cbfdb76c5101249a371f00",
    "data/embeds/spot_tests.json": "090bf40ed0b292db88a7db2deac0b685ddf78377026b421dbbf2b703b63cbb56",
-   "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json": "2cb41112b7453dced88b990c57bdcefe3cfc2a8aefbb4c2fed448d4af6e7e9be",
+   "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json": "e8270bdb12acf718be7f258c6dd14d1173b0a7d3f26f2318f5100f161ab4262c",
    "form/data/fighters/alatengheili.json": "47c0528aaf43d58c62c5be2bcc6e05b14bd9769630c732776562b64b612000b1",
    "form/data/fighters/amanda-nunes.json": "6d6ebfda4a2b90edf8674cf5a5cc02cc0fe2ab014b3f611689997db6ea15d80f",
    "form/data/fighters/bia-mesquita.json": "fa9ffec9c01b4f722e96dd62adff44c9d795ae13272afb8ba5952f7d7872d938",
@@ -176,6 +176,18 @@
     "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json": [
      "f4e700a755777cd938b5ba376ade306fa1f557ff217217a9df721b16674cf010",
      "2cb41112b7453dced88b990c57bdcefe3cfc2a8aefbb4c2fed448d4af6e7e9be"
+    ]
+   }
+  },
+  {
+   "at": "2026-11-12T13:47:08Z",
+   "who": "Claude",
+   "slug": "ufc_334",
+   "reason": "Kirk round 12 call 1, Form fix (Form_Fix_PREREG sha d78b86a2, pass bar met): UFC 334 Form blocks rebuilt; Harrison-Nunes now on the 5-round basis, Gane-Hokit base with interim heavyweight bouts counted",
+   "changed": {
+    "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json": [
+     "2cb41112b7453dced88b990c57bdcefe3cfc2a8aefbb4c2fed448d4af6e7e9be",
+     "e8270bdb12acf718be7f258c6dd14d1173b0a7d3f26f2318f5100f161ab4262c"
     ]
    }
   }

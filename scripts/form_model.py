@@ -269,6 +269,7 @@ class FormModel:
         return s
 
     def wc_base(self, wc, date, sched=3):
+        wc = (wc or "").replace("Interim ", "")
         rows = [d for (t, d, s5) in self.wc_hist[wc] if (date - t).days <= 365 * 5 and (date - t).days > 0 and s5 == (sched == 5)]
         allr = [d for (t, d, s5) in self.wc_hist["*"] if (date - t).days <= 365 * 5 and (date - t).days > 0]
         g = (sum(allr) + 5) / (len(allr) + 10)
@@ -302,7 +303,8 @@ class FormModel:
             if f["kind"] == "nc":
                 continue
             dec = 1 if is_dec(f) else 0
-            self.wc_hist[f["wc"]].append((f["date"], dec, f["sched"] == 5)); self.wc_hist["*"].append((f["date"], dec, f["sched"] == 5))
+            # Kirk round 12 (Form_Fix_PREREG sha d78b86a2): interim title bouts count in their division, as m_hist already does
+            self.wc_hist[f["wc"].replace("Interim ", "")].append((f["date"], dec, f["sched"] == 5)); self.wc_hist["*"].append((f["date"], dec, f["sched"] == 5))
             mc = mclass(f)
             if mc is not None:
                 self.m_hist[f["wc"].replace("Interim ", "")].append((f["date"], mc)); self.m_hist["*"].append((f["date"], mc))

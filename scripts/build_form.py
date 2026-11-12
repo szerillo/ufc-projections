@@ -354,7 +354,37 @@ def summarize_odds(snaps, flipped, max_points=140, a_name=None):
                       r3(pts[i]["per"]["pinnacle"][0]) if "pinnacle" in pts[i]["per"] else None,
                       r3(pts[i]["per"]["draftkings"][0]) if "draftkings" in pts[i]["per"] else None,
                       r3(pts[i]["per"]["fanduel"][0]) if "fanduel" in pts[i]["per"] else None] for i in idx]
+    # Kirk round 12 (Consensus_US_PREREG sha cbb10eb9): the PUBLISHED current line and chart use US-regulated books only;
+    # the opener keeps every listed book. Research keeps the all-books close above. public_odds() builds the published block.
+    rp = []
+    for pt in pts:
+        rg = [v for b, v in pt["per"].items() if b in US_REGULATED]
+        if rg:
+            rp.append({"t": pt["t"], "p": statistics.median(v[0] for v in rg), "da": statistics.median(v[1] for v in rg),
+                       "db": statistics.median(v[2] for v in rg), "nb": len(rg), "per": {b: v for b, v in pt["per"].items() if b in US_REGULATED}})
+    rp = [x for x in rp if x["t"] >= o["t"]]
+    ridx = list(range(len(rp)))
+    if len(ridx) > max_points:
+        st_ = (len(ridx) - 1) / (max_points - 1); ridx = sorted({round(i * st_) for i in range(max_points)})
+    out["_reg"] = {"close": pack(rp[-1]) if rp else None,
+                   "books": {b: {"p": r3(v[0]), "ma": dec_to_american(v[1]), "mb": dec_to_american(v[2])} for b, v in rp[-1]["per"].items()} if rp else {},
+                   "series": [[o["t"][:16], r3(o["p"]), None, None, None]] + [[rp[i]["t"][:16], r3(rp[i]["p"]),
+                              None, r3(rp[i]["per"]["draftkings"][0]) if "draftkings" in rp[i]["per"] else None,
+                              r3(rp[i]["per"]["fanduel"][0]) if "fanduel" in rp[i]["per"] else None] for i in ridx]}
     return out
+
+
+US_REGULATED = ("draftkings", "fanduel", "betmgm", "williamhill_us", "betrivers", "circasports")
+
+
+def public_odds(o):
+    """The odds block as published: opener (all books), current/close and chart from US-regulated books only (no close if none)."""
+    if not o or "_reg" not in o:
+        return o
+    r = o["_reg"]; pub = {"open": o["open"], "n": o.get("n"), "start": o.get("start"), "books": r["books"], "series": r["series"], "close_src": "us_regulated"}
+    if r["close"]:
+        pub["close"] = r["close"]
+    return pub
 
 
 def index_odds(by_id):
@@ -720,7 +750,7 @@ def write_model_compare(doc, pending=None, bp_fights=None):
         r.update({"bp_open_ml": [a_.get("open"), b_.get("open")], "bp_open_p": _nv(a_.get("open"), b_.get("open")),
                   "bp_now_ml": [a_.get("cons"), b_.get("cons")], "bp_now_p": _nv(a_.get("cons"), b_.get("cons"))})
         if od:
-            r.update({"oa_open_p": od["open"]["p"], "oa_open_t": od["open"]["t"], "oa_close_p": od["close"]["p"], "oa_close_t": od["close"]["t"],
+            r.update({"oa_open_p": od["open"]["p"], "oa_open_t": od["open"]["t"], "oa_close_p": (od.get("close") or {}).get("p"), "oa_close_t": (od.get("close") or {}).get("t"),
                       "oa_close_is_final": doc.get("status") == "final"})
         for bf in bp_fights or []:
             if pair_match_sq(bf["fighter_a"]["name"], bf["fighter_b"]["name"], an, bn)[0] >= 1:
@@ -1010,7 +1040,7 @@ def main():
              "stats": {"a": f["sa"], "b": f["sb"]}, "url": f["url"]}
         for k in ("odds", "model", "bp", "sheet", "markov", "props"):
             if f.get(k):
-                o[k] = f[k]
+                o[k] = public_odds(f[k]) if k == "odds" else f[k]
         o["form"] = {"p": r3(f.get("fl")), "g": r3(f.get("gl")), "base": r3(f.get("_base")),
                      "ra": round(f["_A"]["fig"], 1), "rb": round(f["_B"]["fig"], 1), "ang": f.get("_angles") or {}}
         if f.get("ms"):
@@ -1089,7 +1119,11 @@ def main():
                 o = summarize_odds(by_id[eid], fl, a_name=fa["name"])
                 if o:
                     fobj["odds"] = o
-            sched_u = 5 if bf["n"] == max(x["n"] for x in d["fights"]) else 3
+            # Kirk round 12 (Form_Fix_PREREG sha d78b86a2): five rounds if the bout is a title fight (card_overrides title list,
+            # from UFC.com) or the main event; it used to be the main event only, so a title co-main was built as 3 rounds
+            ovr_t = (card_overrides.load(slug) or {}).get("title", [])
+            is_title = any(card_overrides.bout_is(an, bn, x_, y_) for x_, y_ in ovr_t)
+            sched_u = 5 if (is_title or bf["n"] == max(x["n"] for x in d["fights"])) else 3
             fobj["sched"] = sched_u
             try:
                 pw, pg, SA, SB, base = FM.predict(fa["name"], fb["name"], edate, wcl, sched_u, fa["elo"], fb["elo"])
@@ -1145,6 +1179,7 @@ def main():
                     fobj["markov"] = {"p": round((100 - m_["shrunk"]) / 100 if fl else m_["shrunk"] / 100, 4), "raw": round((100 - m_["raw"]) / 100 if fl else m_["raw"] / 100, 4),
                                       "dec": round(m_["pdec"] / 100, 4), "exp": m_["exp"], "r": m_["r"], "thin": thin, "thin_why": why, "flags": m_.get("flags")}
                     break
+            if fobj.get("odds"): fobj["odds"] = public_odds(fobj["odds"])   # Consensus_US_PREREG
             fo.append(fobj)
         name = d.get("card") or slug
         eslug = f"{edate.isoformat()}-{slugify(name)}"[:90]
