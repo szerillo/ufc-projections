@@ -50,7 +50,7 @@ merges into main with no conflicts; the merge was rehearsed twice (13 s from mer
 
 | # | Who | Do | Proof it worked | Time (ET) |
 |---|---|---|---|---|
-| 0 | Kirk | Apps Script > `publish_to_site` > replace its contents with `scripts/apps_script/publish_to_site.gs` from the branch > Save. (It now also exports the method inputs and the price-load stamp; without them the check goes red.) | Saves with no red error; Site > Preview publish lists the ticked fights. | |
+| 0 | Kirk | Apps Script > `publish_to_site` > replace its contents with `scripts/apps_script/publish_to_site.gs` from the branch (sha256 starts `ad775bf8`) > Save. (It exports the method inputs, the price-load stamp and each fight's Feed price row; without them the check goes red.) | Saves with no red error; Site > Preview publish opens with **Script build b46-opp · price row matches 13/13 · method inputs 13/13 · prices loaded ...**. Any other build name, a count below 13/13, or no such line = the old file or a partial paste: paste again before step 1. | |
 | 1 | Kirk | UFC > **Refresh prices**. | Feed!F1 ("Loaded") shows the current time. | |
 | 2 | Kirk | Site > **Publish to site**, slug `ufc_334`, every Main Card and Prelims fight ticked. Do steps 3-4 within 3 hours of step 1. | Alert says **Uploaded**; main's top commit is "Publish ufc_334 projections from sheet (13 fights)". | |
 | 3 | Kirk, on Sean's go | https://github.com/szerillo/ufc-projections/compare/main...publish-to-site > Create pull request > **Merge pull request** > Confirm. | "Able to merge" before the click; main's top commit is the merge. | |
@@ -67,7 +67,8 @@ the sheet. If a bad file already went live: **Roll back projections** (below) an
 
 What the check covers now: every True %, edge, flag and rec, the method split (dec/KO/sub, both sides) and the fight GTD,
 recomputed from the file's own inputs within 0.0001 pts, plus a price-load stamp no older than 3 hours at the time of the
-check (pre-registered Nov 11). The step 6 spot check stays as a second look, not as the only check.
+check (pre-registered Nov 11), plus an opponent-match guard (pre-registered Nov 11, Block 46): each price must be the price on
+the Feed row for that same bout, and the bout must exist in `data/<slug>_odds.json`. The step 6 spot check stays as a second look, not as the only check.
 
 ## Saturday odds (the card-night loop)
 
@@ -111,8 +112,11 @@ Which of these are public is Sean's call.
 
 ## Limits
 
-- The check covers the moneyline block (sheet_v47 mirrors Calculator G/H/Q/L/W/AA and Main Card H/K/M/N). Method shares and
-  GTD are passed through with sanity checks only (each in [0,1], shares sum to 1); there is no Python mirror of those formulas.
+- The check mirrors the moneyline block (Calculator G/H/Q/L/W/AA, Main Card H/K/M/N) and, since Block 44, the method split
+  (V:AB) and fight GTD (Q). Blank Markov, the 0.03/0.97 clamp and the X<=0 AVERAGE fallback were tested in a scratch copy
+  of the sheet on Nov 11 (Block 46): the mirror matched Google's own recalculation within 5e-11.
+- The opponent guard uses the Feed and the BettingPros odds file, not the DK DFS list (EventPlayerIds), which can be stale
+  after a late replacement (UFC 334: it still pairs Juan Diaz with Adrian Yanez).
 - The Markov shift B42 is taken from the sheet as an input because it averages every row, including fights not published.
 - Rows: Main Card 2-6 and Prelims 2-9 (the rows with formulas). A fight placed on Main Card row 7 or Prelims rows 10-11 can't
   be published until those rows get formulas.

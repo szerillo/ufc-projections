@@ -11,13 +11,15 @@
  *   3. Shows a preview and asks for confirmation.
  *   4. Writes the file to szerillo/ufc-projections through the GitHub contents API.
  * A GitHub Action then recomputes every number with scripts/sheet_v47.py and only promotes the file
- * to data/<slug>_projections.json (what the site reads) if all of them match within 0.1 pts.
+ * to data/<slug>_projections.json (what the site reads) if all of them match within 0.0001 pts and every price
+ * ties to its own bout (Feed row and odds feed).
  *
  * The GitHub token lives in Script Properties under GITHUB_TOKEN. This script never logs or shows it.
  * Read-only on the sheet: it reads values and writes nothing back.
  */
 
 var PUB = {
+  build: 'b46-opp',               // shown in the preview, so the step 0 paste can be confirmed in the sheet itself
   owner: 'szerillo',
   repo: 'ufc-projections',
   branch: 'main',                 // dry runs used branch 'publish-to-site'
@@ -64,7 +66,11 @@ function publish_(upload) {
     return f.fav + ' vs ' + f.dog + ': dog true ' + pct_(f.sheet.true_dog) + ', listed ' + pct_(f.sheet.listed) +
       (PUB.include.rec ? ', rec ' + f.sheet.rec : '');
   });
-  var msg = doc.fights.length + ' fight(s) to data/pending/' + slug + '_projections.json on ' + PUB.branch + ':\n\n' + lines.join('\n') + outside;
+  var nps = doc.fights.filter(function (f) { return f.price_source && f.price_source.dog === f.dog && f.price_source.fav === f.fav; }).length;
+  var nmi = doc.fights.filter(function (f) { return f.method_inputs; }).length;
+  var stamp = 'Script build ' + PUB.build + ' · price row matches ' + nps + '/' + doc.fights.length + ' · method inputs ' + nmi + '/' +
+      doc.fights.length + ' · prices loaded ' + (doc.prices_loaded || 'MISSING') + '\n\n';
+  var msg = stamp + doc.fights.length + ' fight(s) to data/pending/' + slug + '_projections.json on ' + PUB.branch + ':\n\n' + lines.join('\n') + outside;
   if (!upload) { ui.alert('Preview (nothing uploaded)', msg, ui.ButtonSet.OK); return; }
   if (ui.alert('Publish to site?', msg + '\n\nThe site updates only after the check passes (about 2 minutes).', ui.ButtonSet.OK_CANCEL) !== ui.Button.OK) return;
 
