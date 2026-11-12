@@ -1742,6 +1742,66 @@
   },
   {
    "id": "v141",
+   "text": "5",
+   "fmt": "int",
+   "rule": "ufc_n",
+   "args": {
+    "fighter": "Evan Elder",
+    "date": "2026-11-14"
+   },
+   "desc": "Debut vet UFC fights",
+   "raw": 5
+  },
+  {
+   "id": "v142",
+   "text": "49.8%",
+   "fmt": "pct1",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "act"
+   },
+   "desc": "Debut angle won",
+   "raw": 0.4979
+  },
+  {
+   "id": "v143",
+   "text": "233",
+   "fmt": "intc",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "n"
+   },
+   "desc": "Debut angle n",
+   "raw": 233
+  },
+  {
+   "id": "v144",
+   "text": "50.4%",
+   "fmt": "pct1",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "exp"
+   },
+   "desc": "Debut angle expected",
+   "raw": 0.5044
+  },
+  {
+   "id": "v145",
+   "text": "-11.9%",
+   "fmt": "spp",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "roi_c"
+   },
+   "desc": "Debut angle ROI close",
+   "raw": -0.119
+  },
+  {
+   "id": "v146",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1754,7 +1814,7 @@
    "raw": -208
   },
   {
-   "id": "v142",
+   "id": "v147",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1767,7 +1827,7 @@
    "raw": -455
   },
   {
-   "id": "v143",
+   "id": "v148",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1780,7 +1840,7 @@
    "raw": -303
   },
   {
-   "id": "v144",
+   "id": "v149",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -1793,7 +1853,7 @@
    "raw": 175
   },
   {
-   "id": "v145",
+   "id": "v150",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",

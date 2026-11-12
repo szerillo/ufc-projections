@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Public-build scan (Kirk round 16, call 2). The repo is served as-is by GitHub Pages, so everything in audits/ and every
-file this branch adds relative to the live branch is public once merged. Stops (exit 1) on any hit of:
+"""Public-build scan (Kirk round 16 call 2; scope widened in round 17 call 1). The repo is served as-is by GitHub Pages, so
+everything in audits/ and every file this branch adds OR modifies relative to the live branch is public once merged.
+Stops (exit 1) on any hit of:
   secrets/tokens (GitHub, Anthropic/OpenAI, AWS, Slack, Google API keys, private keys, a Google Sheets URL with an ID),
   offshore sportsbook names, local paths (/Users/, /home/, C:\\Users), email addresses.
 Code that must hold book keys to filter them out (the offshore list in the odds scripts) is listed in ALLOW with a reason;
@@ -19,18 +20,28 @@ PAT = {
     "offshore": re.compile(r"\b(pinnacle|bovada|betonline(?:ag)?|lowvig|mybookie|betus|sportsbetting\.ag|everygame|betanysports)\b", re.I),
     "local path": re.compile(r"(/Users/[A-Za-z]|/home/[a-z]|C:\\\\Users)"),
     "email": re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}\b"),
+    # Kirk round 17 B: internal sheet references, working notes and paper trades (keywords only; see the round-17 report
+    # for what still gets through: names alone, and bare unit stakes, are too common in legitimate public text to match)
+    "sheet internals": re.compile(r"(gid=\d{6,}|\b(Calculator|Snapshots|PropSnap|Main Card|Prelims)![A-Z]{1,2}\d+|\b(Calculator|PropSnap|Snapshots) (tab|sheet)\b)"),
+    "working note": re.compile(r"\b(TODO|FIXME|NOTE FROM|DO NOT PUBLISH|INTERNAL ONLY)\b"),
+    "paper trade": re.compile(r"paper[- ]trad", re.I),
 }
-# file -> categories allowed, with the reason
+# file -> categories allowed, with the reason. Secrets, local paths and emails are never allowed outside this file.
+CODE_KEYS = "code: the odds archive's own book keys, needed to read it and to keep those books out of published lines; not rendered on any page"
 ALLOW = {
     "scripts/build_line_history.py": ({"offshore"}, "OFF tuple names offshore keys so they can be kept out of current lines"),
-    "scripts/scan_public.py": ({"offshore", "local path", "email", "secret"}, "the patterns themselves"),
+    "scripts/build_form.py": ({"offshore"}, CODE_KEYS),
+    "scripts/form_model.py": ({"offshore"}, CODE_KEYS),
+    "scripts/verify_fight_embeds.py": ({"offshore"}, CODE_KEYS),
+    "scripts/scan_public.py": ({"offshore", "local path", "email", "secret", "sheet internals", "working note", "paper trade"}, "the patterns themselves"),
+    "form/app.js": ({"sheet internals"}, "Model page says the tracker is read from the sheet's Snapshots tab (public on main since Nov 10)"),
     ".github/workflows/price_freshness.yml": ({"email"}, "git bot identity for the report commit (users.noreply.github.com), not a person"),
 }
 SKIP_SUFFIX = (".png", ".jpg", ".gif", ".gz", ".ico", ".woff", ".woff2")
 
 
 def files(base, extra):
-    added = subprocess.run(["git", "-C", str(REPO), "diff", "--name-only", "--diff-filter=A", f"{base}...HEAD"], capture_output=True, text=True, check=True).stdout.split()
+    added = subprocess.run(["git", "-C", str(REPO), "diff", "--name-only", "--diff-filter=AM", f"{base}...HEAD"], capture_output=True, text=True, check=True).stdout.split()
     out = set(added) | {str(p.relative_to(REPO)) for p in (REPO / "audits").rglob("*") if p.is_file()}
     for e in extra:
         p = (REPO / e) if not Path(e).is_absolute() else Path(e)
@@ -59,7 +70,7 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--base", default="origin/main"); ap.add_argument("--paths", nargs="*", default=[])
     a = ap.parse_args()
     fs = files(a.base, a.paths); hits = scan(fs)
-    print(f"PUBLIC SCAN: {len(fs)} files (audits/ + added vs {a.base}), {len(hits)} hits")
+    print(f"PUBLIC SCAN: {len(fs)} files (audits/ + added or modified vs {a.base}), {len(hits)} hits")
     for h in hits[:60]: print(f"  HIT {h[0]}:{h[1]} [{h[2]}] {h[3]}")
     sys.exit(1 if hits else 0)
 

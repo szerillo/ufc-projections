@@ -675,7 +675,7 @@ def research(model: FormModel):
     out["sims"] = [
         sim("Every favorite, consensus closing price", favside, cons),
         sim("Every favorite, best closing price across books", favside, best),
-        sim("Every favorite, Pinnacle close", favside, book("pinnacle")),
+        sim("Every favorite, sharp-book close", favside, book("pinnacle")),
         sim("Every favorite, DraftKings close", favside, book("draftkings")),
         sim("Every favorite, FanDuel close", favside, book("fanduel")),
         sim("Favorites 70%+, best closing price", lambda f: favside(f) if pfav(f) >= 0.7 else None, best),

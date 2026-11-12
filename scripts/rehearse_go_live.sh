@@ -10,7 +10,7 @@ git fetch -q origin main
 python3 -I scripts/scan_public.py --base origin/main   # Kirk round 16 call 2: secrets, offshore names, local paths, emails in audits/ + added files stop the rehearsal
 bash scripts/friday_refresh.sh "$CARD" "$SLUG" "$EVENT" "$ST" | tee /tmp/_rehearsal.txt
 python3 - "$SLUG" "$OLD" <<'PY'
-import json, sys, datetime as dt
+import json, os, sys, datetime as dt
 slug, old = sys.argv[1:3]
 x = json.load(open(f"data/pending/{slug}_projections.json")); t = x["published_at"][:19]
 age = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(t + "+00:00")).total_seconds() / 3600
@@ -20,6 +20,8 @@ if age > 2: sys.exit("FAIL: export older than 2 h")
 lh = json.load(open(f"data/embeds/line_history_{slug}.json"))["fights"]
 fl = [f"{k.split('|')[0 if s == 'a' else 1]} {v['listed'][s]['listed']:+d}" for k, v in lh.items() if v.get("listed") for s in "ab" if not v["listed"][s]["ok"]]
 print("Listed prices still unverified:", fl or "none")
+# Kirk round 17 A: an unverified Listed price is a merge blocker, not a note (round 16's dry run passed with 4 of them)
+if fl and os.environ.get("ALLOW_UNVERIFIED_LISTED") != "1": sys.exit("FAIL: Listed prices not seen at a US-regulated book in the 24 h before the export: " + ", ".join(fl))
 PY
 grep -q "0 mismatches/assertion failures" /tmp/_rehearsal.txt || { echo "FAIL: checks not green"; exit 1; }
 python3 -I scripts/verify_fight_embeds.py --slug "$SLUG" --negative | tail -1 | tee /tmp/_neg.txt

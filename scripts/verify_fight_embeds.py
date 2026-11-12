@@ -174,6 +174,11 @@ def check(D, htmlfile, G):
             elif rule == "bt":   # Block 59n: backtest numbers, from data/embeds/spot_tests.json (sha of the source results.json inside)
                 v = json.loads((REPO / "data/embeds/spot_tests.json").read_text())[a["test"]][a["key"]]
                 if "i" in a: v = v[a["i"]]
+            elif rule == "rs_angle":   # Kirk round 17 D: Labs angle numbers from research.json
+                v = {x_["id"]: x_ for x_ in json.loads((FD / "research.json").read_text())["angles"]}[a["id"]][a["key"]]
+            elif rule == "ufc_n":   # UFC fights before the card, from the fighter file (0 if no file: a debut)
+                fx_ = next((json.loads(p_.read_text()) for p_ in (FD / "fighters").glob("*.json") if json.loads(p_.read_text()).get("name") == a["fighter"]), None)
+                v = len([x_ for x_ in (fx_ or {}).get("fights", []) if x_["d"] < a["date"]])
             elif rule == "labs_wf":
                 cw_ = json.loads((FD / "labs.json").read_text())["cardio"]; v = cw_["base_lost1_won3"] if a["key"] == "base_lost1_won3" else cw_["wf"][a["key"]]
             elif rule in ("lh_p", "lh_open_ml", "lh_drift_abs"):   # Block 59n: embed line history file, keyed by the pair

@@ -34,6 +34,9 @@ BOOK_ORDER = ["pinnacle", "draftkings", "fanduel", "betmgm", "williamhill_us", "
 BOOK_LABEL = {"pinnacle": "Pinnacle", "draftkings": "DraftKings", "fanduel": "FanDuel", "betmgm": "BetMGM",
               "williamhill_us": "Caesars", "betrivers": "BetRivers", "betonlineag": "BetOnline", "lowvig": "LowVig",
               "bovada": "Bovada", "circasports": "Circa"}
+# Kirk round 17 call 1: neutral public keys and labels for the non-US books (index.json "books", research.json "books")
+PUBLIC_BOOK_KEY = {"pinnacle": "nonus_a", "betonlineag": "nonus_b", "lowvig": "nonus_c", "bovada": "nonus_d"}
+PUBLIC_BOOK_LABEL = {PUBLIC_BOOK_KEY.get(k, k): ("Non-US book " + PUBLIC_BOOK_KEY[k][-1].upper() if k in PUBLIC_BOOK_KEY else v) for k, v in BOOK_LABEL.items()}
 
 
 # ----------------------------------------------------------------- helpers
@@ -1353,10 +1356,13 @@ def main():
         return {"n": len(rs), "w": w_, "pnl": round(pn, 2), "risk": round(rk, 2)}
     model["splits"] = {"Favorites": split([x for x in recs if (x["ml"] or 0) < 0]), "Underdogs": split([x for x in recs if (x["ml"] or 0) > 0])}
     json.dump(model, open(OUT / "model.json", "w"), separators=(",", ":"))
+    # Kirk round 17 call 1: public files never name a non-US book; internal keys stay in code, public keys are neutral
+    if R.get("books"):
+        R["books"]["rows"] = [dict(x, book=PUBLIC_BOOK_KEY.get(x["book"], x["book"])) for x in R["books"]["rows"]]
     json.dump(R, open(OUT / "research.json", "w"), separators=(",", ":"))
 
     json.dump({"built": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z", "upcoming": up_index, "events": index_events,
-               "books": BOOK_LABEL, "k": R["k"],
+               "books": PUBLIC_BOOK_LABEL, "k": R["k"],
                "angles": {a["id"]: [a["name"], a["n"], a["act"], a["exp"], a["roi_c"], a["z"]] for a in R["angles"]}, "counts": {"events": len(events), "fights": sum(len(e["fights"]) for e in events.values()),
                                               "fighters": len(fighters), "odds_fights": matched}},
               open(OUT / "index.json", "w"), separators=(",", ":"))

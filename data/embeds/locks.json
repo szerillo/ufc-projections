@@ -4,7 +4,7 @@
    "data/card_overrides.json": "c4a22bb387efbadaa3d2bb1a8ea863370cef7b3638406456626b3b7efcfd4964",
    "embed.html": "6521dbb86150d5ef1d39d26f33db38c619d3e264c89af401ef2c273fa0604837",
    "form/data/labs.json": "b34d8ad60920c6ab60b088bd28c1108c7b93d6d72aee8f1d60c83bfb236637e8",
-   "form/data/index.json": "da6e09523edd7a3fd7fbd5a6999dd0ca43af743d27cbfdb76c5101249a371f00",
+   "form/data/index.json": "baaa997aeb0a573bd4e2b13b17aa96a7bc8a23c49cc1170e167ca4658d4c3c3d",
    "data/embeds/spot_tests.json": "090bf40ed0b292db88a7db2deac0b685ddf78377026b421dbbf2b703b63cbb56",
    "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json": "e8270bdb12acf718be7f258c6dd14d1173b0a7d3f26f2318f5100f161ab4262c",
    "form/data/fighters/alatengheili.json": "47c0528aaf43d58c62c5be2bcc6e05b14bd9769630c732776562b64b612000b1",
@@ -212,6 +212,18 @@
     "data/card_overrides.json": [
      "b9e94ebacc4f65ae890e301239ec1e24efe8260f3c46e33d123ddc6d4d6e21b7",
      "c4a22bb387efbadaa3d2bb1a8ea863370cef7b3638406456626b3b7efcfd4964"
+    ]
+   }
+  },
+  {
+   "at": "2026-11-12T15:35:50Z",
+   "who": "claude",
+   "slug": "ufc_334",
+   "reason": "Kirk round 17 call 1: index.json public book labels neutral (no non-US book named); numbers unchanged",
+   "changed": {
+    "form/data/index.json": [
+     "da6e09523edd7a3fd7fbd5a6999dd0ca43af743d27cbfdb76c5101249a371f00",
+     "baaa997aeb0a573bd4e2b13b17aa96a7bc8a23c49cc1170e167ca4658d4c3c3d"
     ]
    }
   }
