@@ -34,3 +34,7 @@ Logged 2026-11-12 (Kirk round 18). Nothing here is done before the card; the pub
    tolerance is added after the fact. Hasan and Diaz stance stay "not listed" (UFC.com has no stance field). After 334,
    pre-register a rule for half-inch differences and for a second stance source before using either. Note: a missing reach
    zeroes the Form model's reach term (read as equal reach), in training and prediction alike (audits/round24/B_missing_reach.txt).
+8. **Drift box (Kirk round 25 A): pulled before shipping.** The Labs drift reference (1,733 fights) is all books at open and at
+   close; the box's "now" used US-regulated books only. Same book set for Gane: -7.3 pts and 157/1,733 = 9.1% (box showed -7.1
+   and 166 = 9.6%). To bring it back, pre-register ONE book set for both sides: either rebuild the reference set from US-regulated
+   books at open and close, or show an all-books "now" on the box (which breaks the US-only current-line rule, so likely the former).

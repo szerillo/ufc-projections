@@ -15,11 +15,16 @@ REPO = Path(__file__).resolve().parents[1]
 git = lambda *a: subprocess.run(["git", "-C", str(REPO), *a], capture_output=True, check=True).stdout
 
 
+DEADLINE = [None]   # Kirk round 25 C: one overall deadline; no fetch may outlive it (a stalled server must not hang the check)
+
+
 def fetch(url):
+    left = 30 if DEADLINE[0] is None else max(1.0, min(30.0, DEADLINE[0] - time.time()))
     req = urllib.request.Request(f"{url}?cb={uuid.uuid4().hex}", headers={"Cache-Control": "no-cache", "Pragma": "no-cache"})
     try:
-        with urllib.request.urlopen(req, timeout=30) as r: return r.status, r.read()
+        with urllib.request.urlopen(req, timeout=left) as r: return r.status, r.read()
     except urllib.error.HTTPError as e: return e.code, b""
+    except Exception as e: return f"no answer ({type(e).__name__})", b""
 
 
 def main():
@@ -32,10 +37,12 @@ def main():
         parent = git("rev-parse", f"{a.ref}^1").decode().strip()
         paths = [p for p in git("diff", "--name-only", "--diff-filter=AM", parent, a.ref).decode().split()
                  if not any(s.startswith(("_", ".")) for s in p.split("/")) and not p.endswith((".md", ".py", ".sh", ".yml", ".pyc"))][: a.max]
-    t_end = time.time() + a.wait
+    t_end = time.time() + a.wait; DEADLINE[0] = t_end + 60   # the last pass may run at most 60 s past --wait
     while True:
         bad = check(a, paths)
-        if not bad or time.time() >= t_end: break
+        if not bad or time.time() >= t_end:
+            if bad: print(f"  gave up after {a.wait} s of rechecks")
+            break
         print(f"  {len(bad)} still differ; rechecking in 30 s"); time.sleep(30)
     report(a, paths, bad)
 
@@ -43,6 +50,8 @@ def main():
 def check(a, paths):
     bad = []
     for p in paths:
+        if DEADLINE[0] is not None and time.time() > DEADLINE[0]:
+            bad.append(f"{p}: not checked (deadline reached)"); continue
         want = hashlib.sha256(git("show", f"{a.ref}:{p}")).hexdigest()
         st, body = fetch(f"{a.base}/{p}")
         got = hashlib.sha256(body).hexdigest() if st == 200 else None

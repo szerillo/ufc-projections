@@ -1,0 +1,8 @@
+PRIMARY (M1, fighter with the missing reach): n 269, mean(won - Form p) -0.1725, 95% CI -0.2263 to -0.1186
+BAR (|mean| >= 0.03 and CI excludes 0): BIAS FLAGGED
+
+SECONDARY (descriptive): Form favorite's calibration and Brier by group
+L: n 5544 (2015-2026), Brier 0.2277 | 50-60: n 2564 Form 54.8% won 55.1% | 60-70: n 1867 Form 64.6% won 65.8% | 70-80: n 917 Form 74.1% won 73.0% | 80-100: n 196 Form 83.5% won 82.1%
+M1: n 269 (2015-2026), Brier 0.2321 | 50-60: n 138 Form 54.9% won 60.1% | 60-70: n 91 Form 64.6% won 64.8% | 70-80: n 32 Form 73.4% won 71.9% | 80-100: n 8 Form 83.3% won 62.5%
+M2: n 21 (2025-2026), Brier 0.2225 | 50-60: n 13 Form 52.6% won 38.5% | 60-70: n 6 Form 63.0% won 83.3% | 70-80: n 2 Form 70.9% won 100.0%
+decomposition: missing-reach side mean Form p 44.4%, won 27.1% (n 269)

@@ -456,7 +456,10 @@ def build(names, outname):
     # Kirk round 24 E (Drift_Box_PREREG sha f7cad6344ab0): how unusual is this line move? The Labs "drift" reference set
     # (data/embeds/drift_stats.json, reproduces research.json drift exactly) against this fight's opening-favorite move, open
     # to now from the line history file. Fight 13 only. Histogram of past moves in 2-pt bins, this fight's bin marked.
-    DRIFT_EMBEDS = {13}
+    # Kirk round 25 A: PULLED. The reference set is all books at open and close; the box's "now" was US-regulated only.
+    # On one book set Gane moves -7.3 (not -7.1) and 157 / 9.1% (not 166 / 9.6%). Off until the definition matches on both
+    # sides (audits/round25/A_same_books.txt; post-334 backlog item 8).
+    DRIFT_EMBEDS = set()
     if n in DRIFT_EMBEDS and o and o.get("open") and o.get("close"):
         DS2_ = json.load(open(REPO / "data/embeds/drift_stats.json")); mvs_ = DS2_["moves"]
         po_a, pc_a = o["open"]["p"], o["close"]["p"]; fsd_ = "a" if po_a >= 0.5 else "b"; FV_ = an if fsd_ == "a" else bn
