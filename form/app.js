@@ -24,7 +24,8 @@ const last = (n) => (n || "").split(" ").slice(-1)[0];
 // Block 55: only US-regulated books may render by name (allowlist, fails closed). Seed check: scripts/book_allow_check.py
 const US_BOOKS = ["draftkings", "fanduel", "betmgm", "williamhill_us", "caesars", "betrivers", "fanatics", "espnbet", "hardrockbet", "circasports", "circa"];
 const usBook = (k) => US_BOOKS.includes(String(k == null ? "" : k).toLowerCase().replace(/[^a-z_]/g, ""));
-const bestStr = (t) => { const m = String(t || "").match(/^(.*?[+-]\d+)\s+([A-Za-z][A-Za-z .]*)$/); return m && !usBook(m[2]) ? m[1] : String(t || ""); };   // sheet "best" text: drop a non-allowlisted book name
+const bestStr = (t, od, side) => { const m = String(t || "").match(/^(.*?)\|\s*([+-]?\d+)\s+([A-Za-z][A-Za-z .]*)$/); if (!m || usBook(m[3])) return String(t || "");   // sheet "consensus | best (book)": a non-US best is replaced by the best US price, or dropped (Block 56)
+  const b = bestPrice(od, side); return m[1].trim() + (b ? " | " + ml(b.ml) + " " + bookName(b.book) : ""); };
 const usBooks = (books) => Object.entries(books || {}).filter(([k]) => usBook(k));
 function bestPrice(od, side) { let b = null; for (const [k, x] of usBooks(od && od.books)) { const m = x[side === "a" ? "ma" : "mb"]; if (m == null) continue; if (!b || ml2dec(m) > ml2dec(b.ml)) b = { ml: m, book: k }; } return b; }
 function methodRows(f) { // -> {a:{dec,ko,sub,itd,win}, b:{...}, gtd} using fair market win % when there is one, else the Form Line
@@ -266,7 +267,7 @@ function sheetBox(f, final) {
     ${s.meth && s.meth.a && s.meth.a[0] != null ? `<tr><td class="l b" title="Share of each fighter's wins">Wins by DEC / KO / SUB</td><td>${s.meth.a.map(x => x == null ? "—" : (x * 100).toFixed(0)).join(" / ")}</td><td>${s.meth.b.map(x => x == null ? "—" : (x * 100).toFixed(0)).join(" / ")}</td></tr>` : ""}
     ${s.gtd != null ? `<tr><td class="l b">Fight GTD</td><td colspan="2" class="c">model ${P(s.gtd)}${s.gtd_listed != null ? " · listed " + P(s.gtd_listed) : ""}${s.gtd_close != null ? " · close " + P(s.gtd_close) : ""}${s.markov_dec != null ? " · Markov " + P(s.markov_dec) : ""}</td></tr>` : ""}
     ${s.o25_model != null ? `<tr><td class="l b">Over 2.5</td><td colspan="2" class="c">model ${P(s.o25_model)}${s.o25_listed != null ? " · listed " + P(s.o25_listed) : ""}</td></tr>` : ""}
-  </tbody></table></div><div style="margin-top:6px">${chip(s.rec, /^BET/i.test(s.rec) ? "y" : "")}${chip(s.play)}${chip(s.ou_play)}${chip(s.flag && s.flag !== "ok" ? s.flag : "", "r")}${chip(s.momentum && s.momentum !== "flat" ? s.momentum : "")}${s.best && s.best.a ? chip(last(f.a.name) + ": " + bestStr(s.best.a)) + chip(last(f.b.name) + ": " + bestStr(s.best.b)) : ""}${s.pl != null ? chip("Rec result " + signed(s.pl, 2) + "u", s.pl > 0 ? "g" : "r") : ""}</div>`;
+  </tbody></table></div><div style="margin-top:6px">${chip(s.rec, /^BET/i.test(s.rec) ? "y" : "")}${chip(s.play)}${chip(s.ou_play)}${chip(s.flag && s.flag !== "ok" ? s.flag : "", "r")}${chip(s.momentum && s.momentum !== "flat" ? s.momentum : "")}${s.best && s.best.a ? chip(last(f.a.name) + ": " + bestStr(s.best.a, f.odds, "a")) + chip(last(f.b.name) + ": " + bestStr(s.best.b, f.odds, "b")) : ""}${s.pl != null ? chip("Rec result " + signed(s.pl, 2) + "u", s.pl > 0 ? "g" : "r") : ""}</div>`;
   return h;
 }
 function buildUp(f) { // how the sheet's underdog number is built: listed + Markov pull - women - code - public overage
