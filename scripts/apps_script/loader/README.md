@@ -44,3 +44,11 @@ The same holds on the full files (helpers = lines 171-190, grading = line 1093 t
    Proof: the alert counts the card's rows, and a Snapshots/PropSnap export diffed against one taken just before shows
    no changed values except the "graded" timestamps (Snapshots AY, PropSnap Q): those rows were hand-corrected Nov 11
    to what the fix computes. Anything else changing: restore the previous Code.gs from version history.
+
+## v2.9 candidate: refresh guard (Kirk round 29 A, Nov 12). NOT installed; v2.8 is the frozen Thursday install.
+`Code_v2.9_guard.gs` = v2.8 plus: a Refresh never clears a row whose bout is missing from ufc.com but still listed on
+BestFightOdds (any book, Polymarket included) or Novig; the row is kept exactly as it was and the alert says REFUSED. A drop in
+the ufc.com bout count against the last load is the alert's first line. A really cancelled bout that a price source still lists
+is removed with UFC > Remove a cancelled bout (last name, confirmed; one bout only). TRAP logic unchanged from v2.8.
+Tests: `node test_guard.js` (13/13 on v2.9); `node test_guard.js Code_v2.8_patched.gs` shows the Nov 12 bug (6/13).
+Install = replace Code.gs (as T2) with this file; rollback = paste Code_v2.8_patched.gs back.
