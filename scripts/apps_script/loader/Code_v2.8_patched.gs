@@ -1,4 +1,5 @@
 /**
+ * PATCH loader-patch Block 47: TRAP outlier prices excluded from D/I (best price); AH marks them 'excluded from D/I'.
  * UFC Model — card loader (Apps Script)  v2.7  Nov 5 2026 (Snapshots archive the method layer: your AD-AJ inputs, model shares, model vs market joint method probs, 6-way method Brier)
  * v2.6.1  Oct 28 2026 (warns when ufc.com shows <6 main for a Fight Night; accepts a tab named 'Card Order')
  * v2.6  Oct 28 2026 (CardOrder tab: Tapology paste sets bout order + main/prelim split; main-card resize; hand inputs follow the fight)
@@ -162,7 +163,7 @@ function outliers_(rows, ref) {
   });
   return out.sort(function (a, b) { return b.delta - a.delta; });
 }
-function fmtOutl_(o, n1, n2) { return (o.side === 1 ? n1 : n2) + ' ' + fmtOdds_(o.odds) + ' ' + o.book + ' (' + (o.delta >= 0 ? '+' : '') + (Math.round(o.delta * 1000) / 10) + (o.delta >= OUTLIER_TRAP ? ' TRAP' : '') + ')'; }
+function fmtOutl_(o, n1, n2) { return (o.side === 1 ? n1 : n2) + ' ' + fmtOdds_(o.odds) + ' ' + o.book + ' (' + (o.delta >= 0 ? '+' : '') + (Math.round(o.delta * 1000) / 10) + (o.delta >= OUTLIER_TRAP ? ' TRAP, excluded from D/I' : '') + ')'; }
 
 
 // ---------------------------------------------------------------- fighter-name reconciliation
@@ -624,7 +625,12 @@ function buildCard_(ev) {
     var dogIs1 = p1 != null ? p1 < 0.5 : false;
     var dogName = dogIs1 ? b.red : b.blue, favName = dogIs1 ? b.blue : b.red;
     var pDog = p1 == null ? null : (dogIs1 ? p1 : 1 - p1), pDogOpen = p1open == null ? null : (dogIs1 ? p1open : 1 - p1open);
-    var bestPrice = function (side1) { var bb = null; books.filter(function (x) { return bettable_(x.book); }).forEach(function (x) { var o = side1 ? x.o1 : x.o2; if (!bb || payout_(o) > payout_(bb.odds)) bb = { odds: o, book: x.book }; }); return bb; };
+    // PATCH loader-patch (Block 47, pre-registered OUT-1/OUT-2): a TRAP price (4+ pts better than the exchange fair for that
+    // side) never becomes the best price. D/I take the best non-TRAP bettable book; none left -> consensus (the null fallback).
+    var exRef = exchFair_(books);
+    var bestPrice = function (side1) { var bb = null; books.filter(function (x) { return bettable_(x.book); }).forEach(function (x) { var o = side1 ? x.o1 : x.o2;
+      if (exRef && validOdds_(o) && ((side1 ? exRef.p : 1 - exRef.p) - imp_(o)) >= OUTLIER_TRAP) return;
+      if (!bb || payout_(o) > payout_(bb.odds)) bb = { odds: o, book: x.book }; }); return bb; };
     // props: pair consecutive rows (yes/no)
     var pr = f ? f.props : [];
     function propStat(pred) {

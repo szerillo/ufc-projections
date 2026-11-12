@@ -6,7 +6,10 @@ Nothing here is installed in the sheet. Install date: **Sunday Nov 15** (after U
 - `Code_v2.7_installed.gs`: the loader as installed, read from the script editor Nov 11 (installed file sha256
   `3a1fcc2989ec78d1`, 124,707 chars, 1,340 lines). Two settings were moved out of the code before upload (below);
   nothing else differs.
-- `Code_v2.8_patched.gs`: the same file with lines 1092-1340 replaced by `patched_grading.gs` (the grading fix).
+- `Code_v2.8_patched.gs`: the same file with lines 1092-1340 replaced by `patched_grading.gs` (the grading fix), plus (Block 47)
+  TRAP outlier prices excluded from D/I: a book 4+ pts better than the exchange fair never becomes the best price; the next
+  best bettable book is used, or the consensus if none is left. Calculator AH marks it "TRAP, excluded from D/I".
+  Test: `node scripts/apps_script/loader/test_out_trap.js` (Gordon, UFC 334: D +300 FanDuel, Caesars +420 excluded).
 - `v2.7_name_helpers_L170-189.gs`, `v2.7_grading_L1092-1340.gs`: the excerpts the test runs; `patched_grading.gs` is the fix.
 - `test_grading_names.js`: runs the loader's own gradeCard + propSnapGrade_ on an in-memory sheet.
 
