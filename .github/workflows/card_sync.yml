@@ -25,3 +25,16 @@ jobs:
       - name: Publish report to the run summary
         if: always()
         run: test -f sync_report.md && cat sync_report.md >> "$GITHUB_STEP_SUMMARY" || echo "no report written" >> "$GITHUB_STEP_SUMMARY"
+
+  live-overlay:
+    # Block 55: runs form/app.js's own overlayLive() on the repo files. Red if fewer than all bouts on an upcoming
+    # card get a live price, or a side gets another fighter's price. UFC 334 went 1 of 13 with nothing red.
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Live prices applied to N of M
+        run: set -o pipefail; node scripts/live_overlay_check.mjs | tee -a "$GITHUB_STEP_SUMMARY"

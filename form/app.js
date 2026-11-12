@@ -21,7 +21,12 @@ const logit = (p) => Math.log(p / (1 - p)), sig = (z) => 1 / (1 + Math.exp(-z));
 const fair = (p) => p == null ? null : sig((window.__k || 1.2) * logit(Math.min(Math.max(p, 0.001), 0.999)));
 const ml2dec = (m) => m == null ? null : (m > 0 ? 1 + m / 100 : 1 + 100 / -m);
 const last = (n) => (n || "").split(" ").slice(-1)[0];
-function bestPrice(od, side) { let b = null; for (const [k, x] of Object.entries((od && od.books) || {})) { const m = x[side === "a" ? "ma" : "mb"]; if (m == null) continue; if (!b || ml2dec(m) > ml2dec(b.ml)) b = { ml: m, book: k }; } return b; }
+// Block 55: only US-regulated books may render by name (allowlist, fails closed). Seed check: scripts/book_allow_check.py
+const US_BOOKS = ["draftkings", "fanduel", "betmgm", "williamhill_us", "caesars", "betrivers", "fanatics", "espnbet", "hardrockbet", "circasports", "circa"];
+const usBook = (k) => US_BOOKS.includes(String(k == null ? "" : k).toLowerCase().replace(/[^a-z_]/g, ""));
+const bestStr = (t) => { const m = String(t || "").match(/^(.*?[+-]\d+)\s+([A-Za-z][A-Za-z .]*)$/); return m && !usBook(m[2]) ? m[1] : String(t || ""); };   // sheet "best" text: drop a non-allowlisted book name
+const usBooks = (books) => Object.entries(books || {}).filter(([k]) => usBook(k));
+function bestPrice(od, side) { let b = null; for (const [k, x] of usBooks(od && od.books)) { const m = x[side === "a" ? "ma" : "mb"]; if (m == null) continue; if (!b || ml2dec(m) > ml2dec(b.ml)) b = { ml: m, book: k }; } return b; }
 function methodRows(f) { // -> {a:{dec,ko,sub,itd,win}, b:{...}, gtd} using fair market win % when there is one, else the Form Line
   const fm = f.form; if (!fm || !fm.ms) return null;
   const o = oddsCells(f); const pa = o.pa != null ? fair(o.pa) : fm.p; if (pa == null) return null;
@@ -29,10 +34,11 @@ function methodRows(f) { // -> {a:{dec,ko,sub,itd,win}, b:{...}, gtd} using fair
   const a = mk(pa, fm.ms.a), b = mk(1 - pa, fm.ms.b);
   return { a, b, gtd: a.dec + b.dec, src: o.pa != null ? "fair market win %" : "Form Line win %" };
 }
+const boutNo = (ev, f) => ev.status === "upcoming" ? ev.fights.length - ev.fights.indexOf(f) : f.n;   // shown number = place on the card (13 = main event); URL id stays f.n (Block 55)
 function methodBoard(ev) {
   const rows = [];
   for (const f of ev.fights) { const M = methodRows(f); if (!M) continue;
-    for (const s_ of ["a", "b"]) rows.push(`<tr class="click" data-href="#/fight/${ev.slug}/${f.n}"><td class="c dim">${f.n}</td><td class="l b">${esc(f[s_].name)}</td><td>${(M[s_].win * 100).toFixed(0)}%</td>` + ["dec", "ko", "sub", "itd"].map(k => `<td>${ml(p2ml(M[s_][k]))} <span class="dim">${(M[s_][k] * 100).toFixed(0)}%</span></td>`).join("") + (s_ === "a" ? `<td rowspan="2" class="b" style="border-left:1px solid var(--hair)">${(M.gtd * 100).toFixed(0)}% <span class="dim">${ml(p2ml(M.gtd))}</span></td>` : "") + `</tr>`); }
+    for (const s_ of ["a", "b"]) rows.push(`<tr class="click" data-href="#/fight/${ev.slug}/${f.n}"><td class="c dim">${boutNo(ev, f)}</td><td class="l b">${esc(f[s_].name)}</td><td>${(M[s_].win * 100).toFixed(0)}%</td>` + ["dec", "ko", "sub", "itd"].map(k => `<td>${ml(p2ml(M[s_][k]))} <span class="dim">${(M[s_][k] * 100).toFixed(0)}%</span></td>`).join("") + (s_ === "a" ? `<td rowspan="2" class="b" style="border-left:1px solid var(--hair)">${(M.gtd * 100).toFixed(0)}% <span class="dim">${ml(p2ml(M.gtd))}</span></td>` : "") + `</tr>`); }
   if (!rows.length) return "";
   return `<h3>Method board · Form fair prices</h3><div class="tw"><table><thead><tr><th class="c">#</th><th class="l">Fighter</th><th>Win</th><th>By decision</th><th>By KO/TKO</th><th>By sub</th><th>Inside distance</th><th>Fight GTD</th></tr></thead><tbody>${rows.join("")}</tbody></table></div><div class="note">Win % is the bias-adjusted market line; the method split comes from the Form method model (each fighter's finishing history, the opponent's loss history and the division's base rates). No vig included. GTD is the two decision chances added together.</div>`;
 }
@@ -133,12 +139,11 @@ function lineChart(od, aName, bName) {
     ${grid}${ticks}
     <path d="${path(3)}" fill="none" stroke="#0a8842" stroke-width="1" opacity=".75"/>
     <path d="${path(4)}" fill="none" stroke="#1b4fb0" stroke-width="1" opacity=".75"/>
-    <path d="${path(2)}" fill="none" stroke="#d63636" stroke-width="1.4" stroke-dasharray="4 3"/>
     <path d="${path(1)}" fill="none" stroke="#1a1a1a" stroke-width="2.2"/>
     <circle cx="${x(S[0][0]).toFixed(1)}" cy="${y(S[0][1]).toFixed(1)}" r="3.5" fill="#1a1a1a"/>
     <circle cx="${x(last[0]).toFixed(1)}" cy="${y(last[1]).toFixed(1)}" r="3.5" fill="#1a1a1a"/>
   </svg>
-  <div class="legend"><span><i style="border-color:#1a1a1a"></i>Consensus (no-vig) — ${esc(aName)} win %</span><span><i style="border-color:#d63636;border-top-style:dashed"></i>Pinnacle</span><span><i style="border-color:#0a8842"></i>DraftKings</span><span><i style="border-color:#1b4fb0"></i>FanDuel</span><span>right axis = ${esc(aName)} fair moneyline</span></div>`;
+  <div class="legend"><span><i style="border-color:#1a1a1a"></i>Consensus (no-vig) — ${esc(aName)} win %</span><span><i style="border-color:#0a8842"></i>DraftKings</span><span><i style="border-color:#1b4fb0"></i>FanDuel</span><span>right axis = ${esc(aName)} fair moneyline</span></div>`;
 }
 
 /* ---------- shared bits ---------- */
@@ -179,7 +184,7 @@ function cardTable(ev) {
     const rec = m && m.rec ? `<span class="pill y" title="${esc(m.rec_text || "Model bet recommendation")}">BET ${esc((m.rec === "a" ? f.a.name : f.b.name).split(" ").slice(-1)[0])}</span>` : (m && m.rec_text && /^lean/i.test(m.rec_text) ? `<span class="pill" title="${esc(m.rec_text)}">${esc(m.rec_text.split("[")[0].trim())}</span>` : "");
     const wa = f.result && f.result.winner === "a", wb = f.result && f.result.winner === "b";
     html += `<tr class="click" data-href="#/fight/${ev.slug}/${f.n}">
-      <td class="c dim">${f.n}</td>
+      <td class="c dim">${boutNo(ev, f)}</td>
       <td class="name"><span class="${wa ? "W" : ""}">${esc(f.a.name)}</span> <span class="dim">vs</span> <span class="${wb ? "W" : ""}">${esc(f.b.name)}</span> ${f.title ? '<span class="pill k">Title</span>' : ""} ${rec}
         <small>${esc(f.wc || "")}${f.sched ? " · " + f.sched + "R" : ""} · Fig ${f.form ? f.form.ra.toFixed(0) + " / " + f.form.rb.toFixed(0) : "—"}</small></td>
       <td>${o.open}</td><td>${o.close}</td>
@@ -197,10 +202,15 @@ async function overlayLive(ev) {
   if (ev.status !== "upcoming" || !ev.bp_file || ev.__live) return;
   try { const d = await fetch(ev.bp_file + "?t=" + Math.floor(Date.now() / 6e5)).then(r => r.json());
     const nm = (x) => (x || "").toLowerCase().normalize("NFD").replace(/[^a-z ]/g, "");
+    const al = await fetch("form/data/name_aliases.json?t=" + Math.floor(Date.now() / 6e5)).then(r => r.json()).catch(() => ({}));
+    const canon = (label) => { const k = nm(label).replace(/\s+/g, " ").trim(); return nm(al[k] || label).replace(/ /g, ""); };   // alias table, exact keys only
+    let hit = 0; const used = new Set();
     for (const bf of d.fights || []) { const sel = (bf.markets || {}).moneyline || []; if (sel.length < 2) continue;
-      const bl = sel.map(z => nm(z.label).replace(/ /g, "")); const has = (x) => [x.a.name, x.b.name].every(w => bl.some(l => l.includes(last(nm(w))))); const f = ev.fights.find(x => x.n === bf.n && has(x)) || ev.fights.find(has); if (!f) continue;   // number, confirmed by names (Block 54)
-      const pick = (name) => { const l = last(nm(name)); const s_ = sel.find(z => nm(z.label).replace(/ /g, "").includes(l)); return s_ && s_.books && s_.books.consensus ? s_.books.consensus.cost : null; };
-      const ma = pick(f.a.name), mb = pick(f.b.name); if (ma != null && mb != null && bf.status !== "live") f.live = { ma, mb }; }
+      const bl = sel.map(z => canon(z.label)); const has = (x) => [x.a.name, x.b.name].every(w => bl.some(l => l.includes(last(nm(w)))));
+      const cand = ev.fights.filter(has); if (cand.length !== 1 || used.has(cand[0].n)) continue; const f = cand[0]; used.add(f.n);   // keyed by both names, exactly one bout (Block 55)
+      const pick = (name) => { const l = last(nm(name)); const s_ = sel.find(z => canon(z.label).includes(l)); return s_ && s_.books && s_.books.consensus ? s_.books.consensus.cost : null; };
+      const ma = pick(f.a.name), mb = pick(f.b.name); if (ma != null && mb != null && bf.status !== "live") { f.live = { ma, mb }; hit++; } }
+    ev.__live_n = hit;
     ev.__live = d.updated_at; ev.odds_updated = d.updated_at; } catch (e) { /* keep baked odds */ }
 }
 /* ---------- live model sheet overlay (upcoming card) ---------- */
@@ -256,7 +266,7 @@ function sheetBox(f, final) {
     ${s.meth && s.meth.a && s.meth.a[0] != null ? `<tr><td class="l b" title="Share of each fighter's wins">Wins by DEC / KO / SUB</td><td>${s.meth.a.map(x => x == null ? "—" : (x * 100).toFixed(0)).join(" / ")}</td><td>${s.meth.b.map(x => x == null ? "—" : (x * 100).toFixed(0)).join(" / ")}</td></tr>` : ""}
     ${s.gtd != null ? `<tr><td class="l b">Fight GTD</td><td colspan="2" class="c">model ${P(s.gtd)}${s.gtd_listed != null ? " · listed " + P(s.gtd_listed) : ""}${s.gtd_close != null ? " · close " + P(s.gtd_close) : ""}${s.markov_dec != null ? " · Markov " + P(s.markov_dec) : ""}</td></tr>` : ""}
     ${s.o25_model != null ? `<tr><td class="l b">Over 2.5</td><td colspan="2" class="c">model ${P(s.o25_model)}${s.o25_listed != null ? " · listed " + P(s.o25_listed) : ""}</td></tr>` : ""}
-  </tbody></table></div><div style="margin-top:6px">${chip(s.rec, /^BET/i.test(s.rec) ? "y" : "")}${chip(s.play)}${chip(s.ou_play)}${chip(s.flag && s.flag !== "ok" ? s.flag : "", "r")}${chip(s.momentum && s.momentum !== "flat" ? s.momentum : "")}${s.best && s.best.a ? chip(last(f.a.name) + ": " + s.best.a) + chip(last(f.b.name) + ": " + s.best.b) : ""}${s.pl != null ? chip("Rec result " + signed(s.pl, 2) + "u", s.pl > 0 ? "g" : "r") : ""}</div>`;
+  </tbody></table></div><div style="margin-top:6px">${chip(s.rec, /^BET/i.test(s.rec) ? "y" : "")}${chip(s.play)}${chip(s.ou_play)}${chip(s.flag && s.flag !== "ok" ? s.flag : "", "r")}${chip(s.momentum && s.momentum !== "flat" ? s.momentum : "")}${s.best && s.best.a ? chip(last(f.a.name) + ": " + bestStr(s.best.a)) + chip(last(f.b.name) + ": " + bestStr(s.best.b)) : ""}${s.pl != null ? chip("Rec result " + signed(s.pl, 2) + "u", s.pl > 0 ? "g" : "r") : ""}</div>`;
   return h;
 }
 function buildUp(f) { // how the sheet's underdog number is built: listed + Markov pull - women - code - public overage
@@ -285,7 +295,7 @@ function propsBox(f) {
   const p = f.props; if (!p) return "";
   const order = [["ML a", last(f.a.name) + " ML"], ["ML b", last(f.b.name) + " ML"], ["a DEC", last(f.a.name) + " by DEC"], ["a KO", last(f.a.name) + " by KO"], ["a SUB", last(f.a.name) + " by SUB"], ["b DEC", last(f.b.name) + " by DEC"], ["b KO", last(f.b.name) + " by KO"], ["b SUB", last(f.b.name) + " by SUB"], ["GTD", "Goes the distance"], ["O1.5", "Over 1.5"], ["O2.5", "Over 2.5"], ["O3.5", "Over 3.5"], ["O4.5", "Over 4.5"]];
   const cell = (x) => x && x[0] != null ? `${(x[0] * 100).toFixed(1)}% <span class="dim">${ml(x[1])}</span>` : "—";
-  const rows = order.filter(([k]) => p[k]).map(([k, lab]) => `<tr><td class="l b">${esc(lab)}</td><td>${cell(p[k].books)}</td><td>${p[k]["best-book"] ? ml(p[k]["best-book"][1]) + ' <span class="dim">' + esc(p[k]["best-book"][2]) + "</span>" : "—"}</td><td>${cell(p[k].exch)}</td></tr>`).join("");
+  const rows = order.filter(([k]) => p[k]).map(([k, lab]) => `<tr><td class="l b">${esc(lab)}</td><td>${cell(p[k].books)}</td><td>${p[k]["best-book"] && usBook(p[k]["best-book"][2]) ? ml(p[k]["best-book"][1]) + ' <span class="dim">' + esc(p[k]["best-book"][2]) + "</span>" : "—"}</td><td>${cell(p[k].exch)}</td></tr>`).join("");
   return rows ? `<h3>Prop market at the close</h3><div class="tw"><table><thead><tr><th class="l">Market</th><th title="No-vig book consensus">Books</th><th>Best price</th><th title="Exchange price (Kalshi / Polymarket / Novig)">Exchange</th></tr></thead><tbody>${rows}</tbody></table></div>` : "";
 }
 function priceBoard(ev) {
@@ -345,7 +355,7 @@ const inches = (ht) => { const m = /(\d+)'(\d+)/.exec(ht || ""); return m ? +m[1
 async function vFight(slug, n) {
   const ev = await getJSON(`events/${slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev)]);
   const f = ev.fights.find(x => String(x.n) === String(n));
-  if (!f) { $app.innerHTML = `<div class="banner">Fight not found.</div>`; return; }
+  if (!f) { location.replace(`#/card/${ev.slug}`); return; }   // a removed or renumbered bout goes to its card, never to another bout (Block 55)
   const [A, B] = await Promise.all([f.a.slug ? getJSON(`fighters/${f.a.slug}.json`).catch(() => null) : null, f.b.slug ? getJSON(`fighters/${f.b.slug}.json`).catch(() => null) : null]);
   const prior = (F) => F ? F.fights.filter(x => x.d < ev.date) : [];
   const pa = prior(A), pb = prior(B), ga = agg(pa), gb = agg(pb);
@@ -357,8 +367,8 @@ async function vFight(slug, n) {
   const agA = ageAt(ba.dob, ev.date), agB = ageAt(bb.dob, ev.date);
   const layA = pa[0] ? daysBetween(ev.date, pa[0].d) : null, layB = pb[0] ? daysBetween(ev.date, pb[0].d) : null;
 
-  let html = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/card/${ev.slug}">${esc(ev.name)}</a> › Fight ${f.n}</div>
-  <div class="sub"><span class="pill k">Fight ${f.n}</span> ${f.title ? '<span class="pill y">Title</span>' : ""} ${esc(f.wc || "")}${f.sched ? " · " + f.sched + " rounds" : ""} · ${fdate(ev.date)} · ${esc(ev.location)}</div>
+  let html = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/card/${ev.slug}">${esc(ev.name)}</a> › Fight ${boutNo(ev, f)}</div>
+  <div class="sub"><span class="pill k">Fight ${boutNo(ev, f)}</span> ${f.title ? '<span class="pill y">Title</span>' : ""} ${esc(f.wc || "")}${f.sched ? " · " + f.sched + " rounds" : ""} · ${fdate(ev.date)} · ${esc(ev.location)}</div>
   <div class="bout"><div class="f r">${flink(f.a)}<small>UFC ${ga.rec} · Fig ${f.form ? f.form.ra.toFixed(0) : "—"} · Elo ${f.a.elo || "—"} · ${streak(pa)}</small></div><div class="vs">vs</div><div class="f">${flink(f.b)}<small>UFC ${gb.rec} · Fig ${f.form ? f.form.rb.toFixed(0) : "—"} · Elo ${f.b.elo || "—"} · ${streak(pb)}</small></div></div>`;
   if (final && f.result) html += `<div class="banner"><b>Result:</b> ${resultText(f)}${f.result.details ? " — " + esc(f.result.details) : ""}${f.result.ref ? " · Ref " + esc(f.result.ref) : ""}</div>`;
 
@@ -399,7 +409,7 @@ async function vFight(slug, n) {
       <div class="kv"><span>Move</span><span class="${cls(Math.abs(mv) >= 1 ? 1 : 0)}">${signed(Math.abs(mv))} pts toward ${esc(mv >= 0 ? f.a.name : f.b.name)}</span></div>
       ${o.total ? `<div class="kv"><span>Total rounds</span><span>${o.total.pt} · O ${ml(o.total.over)} / U ${ml(o.total.under)} · over ${pct(o.total.p_over)}</span></div>` : ""}
       <div class="kv"><span>Snapshots</span><span>${o.n}</span></div>`;
-    const bk = Object.entries(o.books || {});
+    const bk = usBooks(o.books);
     if (bk.length) html += `<div style="height:8px"></div><div class="tw"><table><thead><tr><th class="l">Book</th><th>${esc(f.a.name.split(" ").slice(-1)[0])}</th><th>${esc(f.b.name.split(" ").slice(-1)[0])}</th><th>No-vig</th></tr></thead><tbody>` +
       bk.map(([b, x]) => `<tr><td class="l">${esc((window.__books || {})[b] || b)}</td><td>${ml(x.ma)}</td><td>${ml(x.mb)}</td><td>${pct(x.p)}</td></tr>`).join("") + `</tbody></table></div>`;
   } else if (f.bp && f.bp.a && f.bp.a.cons != null) {
@@ -649,7 +659,7 @@ async function vResearch() {
   <h3>Scoreboard</h3>` + tbl(`<th class="l">Predictor</th><th>Fights</th><th>Log loss</th><th>Brier</th><th>Winner picked</th>`, R.scores.map(x => `<tr><td class="l b">${esc(x.k)}</td><td>${x.n}</td><td>${x.ll}</td><td>${x.brier}</td><td>${P(x.acc)}</td></tr>`).join("")) +
   (R.blend ? `<div class="note">Adding the Form Line to the close in a walk-forward blend moves log loss from ${R.blend.ll_close} to ${R.blend.ll_blend} (weights: close ${R.blend.w_close}, Form Line ${R.blend.w_form}).</div>` : "") +
   `<div class="grid2"><div><h3>Is the close calibrated? (favorite side)</h3>` + tbl(`<th class="l">No-vig favorite</th><th>Fights</th><th>Mkt</th><th>Won</th><th>Gap</th>`, R.calib_close.map(x => `<tr><td class="l">${x.band}</td><td>${x.n}</td><td>${P(x.exp)}</td><td class="b">${P(x.act)}</td><td>${sg(x.act - x.exp)}</td></tr>`).join("")) +
-  `</div><div><h3>Which book closes sharpest?</h3>` + (R.books ? tbl(`<th class="l">Book</th><th>Log loss</th><th>Brier</th>`, R.books.rows.map(x => `<tr><td class="l b">${esc(bookName(x.book))}</td><td>${x.ll}</td><td>${x.brier}</td></tr>`).join("")) + `<div class="note">${R.books.n.toLocaleString()} fights where all seven books had a closing price. The differences are tiny.</div>` : "") + `</div></div>
+  `</div><div><h3>Which book closes sharpest?</h3>` + (R.books ? tbl(`<th class="l">Book</th><th>Log loss</th><th>Brier</th>`, R.books.rows.filter(x => usBook(x.book)).map(x => `<tr><td class="l b">${esc(bookName(x.book))}</td><td>${x.ll}</td><td>${x.brier}</td></tr>`).join("")) + `<div class="note">${R.books.n.toLocaleString()} fights where all seven books had a closing price. The differences are tiny.</div>` : "") + `</div></div>
   <h3>Simple strategies</h3>` + tbl(`<th class="l">Strategy</th><th>Bets</th><th>Won</th><th>ROI</th><th>Units</th><th class="l">ROI by year</th>`, R.sims.map(x => `<tr><td class="l b">${esc(x.name)}</td><td>${x.n}</td><td>${P(x.win)}</td><td>${sg(x.roi)}</td><td class="${cls(x.pnl)}">${signed(x.pnl, 1)}</td><td class="l dim">${Object.entries(x.years).map(([y, v]) => `${y.slice(2)}: ${signed(v[1] * 100, 0)}%`).join(" · ")}</td></tr>`).join("")) +
   `<h3>Angles · every one graded against the closing line</h3>` + tbl(`<th class="l">Angle (bet the fighter described)</th><th>Fights</th><th>Won</th><th>Mkt</th><th title="Standard errors above or below the market's expectation">z</th><th>ROI at close</th><th title="Uses the first-seen price">ROI at open</th><th class="l">ROI by year (close)</th>`,
     R.angles.map(a => `<tr><td class="l b">${esc(a.name)}</td><td>${a.n}</td><td>${P(a.act)}</td><td class="dim">${P(a.exp)}</td><td class="${Math.abs(a.z) >= 2 ? "b " + cls(a.z) : "dim"}">${signed(a.z, 2)}</td><td>${sg(a.roi_c)}</td><td>${sg(a.roi_o)}</td><td class="l dim">${Object.entries(a.years).map(([y, v]) => `${y.slice(2)}: ${signed(v[2] / v[0] * 100, 0)}%`).join(" · ")}</td></tr>`).join("")) +
@@ -671,7 +681,7 @@ async function vSheet(slug) {
     const pa = A ? A.fights.filter(x => x.d < ev.date) : [], pb = B ? B.fights.filter(x => x.d < ev.date) : [], ga = agg(pa), gb = agg(pb), o = oddsCells(f), fm = f.form || {};
     const ba = (A && A.bio) || {}, bb = (B && B.bio) || {}, v = (x, d = 2) => x == null ? "—" : x.toFixed(d), ag = (b_) => { const a_ = ageAt(b_.dob, ev.date); return a_ ? a_.toFixed(1) : "—"; };
     const side = (x, g, b_, fig, P) => `<b>${esc(x.name)}</b> · UFC ${g.rec} · Fig ${fig == null ? "—" : fig.toFixed(0)} · age ${ag(b_)} · ${esc(b_.ht || "—")} / ${b_.reach ? b_.reach + '"' : "—"} · ${esc(b_.stance || "—")} · SLpM ${v(g.slpm)} / SApM ${v(g.sapm)} · TD15 ${v(g.td15)} · TDD ${g.tdd == null ? "—" : (g.tdd * 100).toFixed(0) + "%"} · Ctrl ${g.ctrlp == null ? "—" : (g.ctrlp * 100).toFixed(0) + "%"} · layoff ${P[0] ? daysBetween(ev.date, P[0].d) + "d" : "debut"}`;
-    html += `<section class="sheet"><div class="pp-head"><div class="n"><span class="pill k">${f.n}</span> <a href="#/fight/${ev.slug}/${f.n}">${esc(f.a.name)} vs ${esc(f.b.name)}</a></div><div class="sub">${esc(f.wc || "")}${f.sched ? " · " + f.sched + "R" : ""} · ${o.close.replace(/<\/?b>/g, "")}${o.pa != null ? " · fair " + (fair(o.pa) * 100).toFixed(0) + "%" : ""}${fm.p != null ? " · Form " + (fm.p * 100).toFixed(0) + "%" : ""}${(() => { const M = methodRows(f); return M ? " · GTD " + (M.gtd * 100).toFixed(0) + "%" : ""; })()}${f.model && f.model.a.win != null ? " · model " + f.model.a.win.toFixed(0) + "/" + f.model.b.win.toFixed(0) : ""}</div></div>
+    html += `<section class="sheet"><div class="pp-head"><div class="n"><span class="pill k">${boutNo(ev, f)}</span> <a href="#/fight/${ev.slug}/${f.n}">${esc(f.a.name)} vs ${esc(f.b.name)}</a></div><div class="sub">${esc(f.wc || "")}${f.sched ? " · " + f.sched + "R" : ""} · ${o.close.replace(/<\/?b>/g, "")}${o.pa != null ? " · fair " + (fair(o.pa) * 100).toFixed(0) + "%" : ""}${fm.p != null ? " · Form " + (fm.p * 100).toFixed(0) + "%" : ""}${(() => { const M = methodRows(f); return M ? " · GTD " + (M.gtd * 100).toFixed(0) + "%" : ""; })()}${f.model && f.model.a.win != null ? " · model " + f.model.a.win.toFixed(0) + "/" + f.model.b.win.toFixed(0) : ""}</div></div>
       <div class="box" style="font:12px/1.5 var(--mono)">${side(f.a, ga, ba, fm.ra, pa)}<br>${side(f.b, gb, bb, fm.rb, pb)}</div>
       <div style="height:4px"></div>${ppTable(pa, { name: f.a.name, limit: 6 }).replace("<thead>", `<caption>${esc(f.a.name)}</caption><thead>`)}<div style="height:4px"></div>${ppTable(pb, { name: f.b.name, limit: 6 }).replace("<thead>", `<caption>${esc(f.b.name)}</caption><thead>`)}</section>`;
   }

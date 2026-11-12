@@ -8,6 +8,9 @@ Surfaces: the site event file (fight-page URLs #/fight/<event>/<n>), the Betting
 the card page's FIGHTS, the embed builder roster, and any extra key list ({"14": "Ciryl Gane vs Josh Hokit", ...}, e.g.
 a visual layer's keys). Bouts are matched by fighter names (scripts/fighter_names.py; surnames for the embed roster).
 RED (exit 1) when a bout gets two different numbers, or a key names a bout that is not on the card.
+Block 55: the site event file's n is a URL id (#/fight/<event>/<n>), kept stable so shared and Labs links keep opening
+the same bout. It is checked for identity only (each id names exactly one bout on the card), not for number agreement.
+The site shows the card number (13 = main event) from bout order, not from n.
 """
 from __future__ import annotations
 
@@ -41,7 +44,7 @@ def main() -> int:
     ap.add_argument("--event", required=True); ap.add_argument("--odds", required=True)
     ap.add_argument("--page"); ap.add_argument("--embed"); ap.add_argument("--embed-key"); ap.add_argument("--keys")
     a = ap.parse_args()
-    S = {"site event file": [(f["n"], nm(f["a"]), nm(f["b"])) for f in json.loads(Path(a.event).read_text())["fights"]],
+    S = {"site event file (URL ids)": [(f["n"], nm(f["a"]), nm(f["b"])) for f in json.loads(Path(a.event).read_text())["fights"]],
          "odds file": [(f["n"], f["fighter_a"]["name"], f["fighter_b"]["name"]) for f in json.loads(Path(a.odds).read_text())["fights"]]}
     if a.page:
         page = Path(a.page).read_text()
@@ -60,7 +63,13 @@ def main() -> int:
             if not hit:
                 bad.append(f"{surf}: {num} = {x} vs {y} is not a bout on the card (odds file)")
                 continue
+            if len(hit) != 1:
+                bad.append(f"{surf}: {num} = {x} vs {y} matches {len(hit)} bouts on the card")
+            if surf.endswith("(URL ids)"):
+                continue
             for other, orows in S.items():
+                if other.endswith("(URL ids)"):
+                    continue
                 for on, A, B in orows:
                     if other != surf and same(x, y, A, B) and on != num:
                         bad.append(f"{x} vs {y}: {surf} says {num}, {other} says {on}")
