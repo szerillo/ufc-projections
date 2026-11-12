@@ -629,7 +629,106 @@ def load_markov():
             except ValueError:
                 continue
             out.append({"a": a, "b": b, "shrunk": nums[0], "raw": nums[1], "pdec": nums[2], "exp": nums[3], "r": nums[4:9], "file": fp.name})
+        # Flags column of the SHEET INPUT TABLE (row k = ARCHIVE line k), e.g. "artifact (thin pace)", "Hasan §1d, THIN", "SYN"
+        rows = [x for x in out if x["file"] == fp.name]
+        for line in txt.splitlines():
+            c = [x.strip() for x in line.strip().strip("|").split("|")]
+            if len(c) >= 7 and c[0].isdigit() and 1 <= int(c[0]) <= len(rows):
+                m_ = rows[int(c[0]) - 1]
+                if any(t and t in norm(c[1]) for t in toks(m_["a"]) | toks(m_["b"])):
+                    m_["flags"] = c[-1]
     return out
+
+
+def pair_match_sq(a, b, h, w):
+    """pair_match, plus a space-insensitive fallback ("Alateng Heili" = "Alatengheili"). Used only by the Markov attach / model log."""
+    sc, fl = pair_match(a, b, h, w)
+    if sc >= 2:
+        return sc, fl
+    q = lambda x: norm(x).replace(" ", "")
+    ok = lambda x, y: q(x) == q(y) or name_match(x, y) >= 2
+    if ok(a, h) and ok(b, w):
+        return 2, False
+    if ok(a, w) and ok(b, h):
+        return 2, True
+    return sc, fl
+
+
+def markov_thin(m_, nf_a, nf_b):
+    """THIN SAMPLE per the site glossary: 3 or fewer UFC fights on either side, or the run itself marked the sample thin."""
+    why = []
+    if min(nf_a or 0, nf_b or 0) <= 3:
+        why.append("3 or fewer UFC fights")
+    fl = m_.get("flags") or ""
+    if re.search(r"thin|artifact|\bSYN\b", fl, re.I):
+        why.append("run flag: " + fl)
+    return bool(why), "; ".join(why)
+
+
+def _nv(x, y):
+    if x is None or y is None:
+        return None
+    i = lambda m: 100 / (m + 100) if m > 0 else -m / (-m + 100)
+    return round(i(x) / (i(x) + i(y)), 4)
+
+
+def write_model_compare(doc, pending=None, bp_fights=None):
+    """form/data/model_compare/<event>.json + .csv: one row per fight with every model next to the market.
+    Data log only; no page reads it. Win % columns are for fighter A; bout = position on the card, 1 = opener."""
+    d_ = OUT / "model_compare"
+    d_.mkdir(parents=True, exist_ok=True)
+    fights = doc["fights"]
+    rows = []
+    for i, f in enumerate(fights):
+        an, bn = f["a"]["name"], f["b"]["name"]
+        sh, mk_, fm, od, bpm = f.get("sheet") or {}, f.get("markov"), f.get("form") or {}, f.get("odds"), f.get("bp") or {}
+        r = {"bout": len(fights) - i, "site_n": f["n"], "a": an, "b": bn, "status": doc.get("status")}
+        pf = None
+        for x in (pending or {}).get("fights", []):
+            if pair_match_sq(x["dog"], x["fav"], an, bn)[0] >= 1:
+                pf = x
+                break
+        if pf:
+            a_dog = not pair_match_sq(pf["dog"], pf["fav"], an, bn)[1]
+            ra, rb = ("dog", "fav") if a_dog else ("fav", "dog")
+            r.update({"sheet_pub_p": round(pf["sheet"]["true_" + ra], 4), "sheet_pub_gtd": None if pf.get("gtd") is None else round(pf["gtd"], 4),
+                      "sheet_pub_markov_in": None if pf["inputs"].get("markov") is None else round(pf["inputs"]["markov"] if a_dog else 1 - pf["inputs"]["markov"], 4),
+                      "sheet_pub_meth_a": pf["method"][ra], "sheet_pub_meth_b": pf["method"][rb], "sheet_pub_flag": pf["sheet"].get("flag"),
+                      "sheet_pub_at": pending.get("published_at")})
+        wm = f.get("model") or {}
+        if wm and wm.get("src") != "sheet" and (wm.get("a") or {}).get("win") is not None:
+            r["widget_p"] = round(wm["a"]["win"] / 100, 4)
+        r.update({"sheet_build_p": sh.get("model"), "sheet_build_gtd": sh.get("gtd"), "sheet_build_markov": sh.get("markov")})
+        a_, b_ = bpm.get("a") or {}, bpm.get("b") or {}
+        r.update({"bp_open_ml": [a_.get("open"), b_.get("open")], "bp_open_p": _nv(a_.get("open"), b_.get("open")),
+                  "bp_now_ml": [a_.get("cons"), b_.get("cons")], "bp_now_p": _nv(a_.get("cons"), b_.get("cons"))})
+        if od:
+            r.update({"oa_open_p": od["open"]["p"], "oa_open_t": od["open"]["t"], "oa_close_p": od["close"]["p"], "oa_close_t": od["close"]["t"],
+                      "oa_close_is_final": doc.get("status") == "final"})
+        for bf in bp_fights or []:
+            if pair_match_sq(bf["fighter_a"]["name"], bf["fighter_b"]["name"], an, bn)[0] >= 1:
+                cost = lambda lab: next((s["books"]["consensus"]["cost"] for s in (bf.get("markets") or {}).get("fight_distance", [])
+                                         if s.get("label") == lab and (s.get("books") or {}).get("consensus")), None)
+                r["bp_gtd_p"] = _nv(cost("Yes"), cost("No"))
+                break
+        if mk_:
+            thin, why = mk_.get("thin"), mk_.get("thin_why")
+            if thin is None:
+                thin, why = markov_thin(mk_, f["a"].get("nf"), f["b"].get("nf"))
+            r.update({"markov_p": mk_["p"], "markov_raw": mk_["raw"], "markov_dec": mk_["dec"], "markov_exp": mk_["exp"],
+                      "markov_thin": thin, "markov_thin_why": why, "markov_flags": mk_.get("flags")})
+        r.update({"form_p": fm.get("p"), "form_gtd": fm.get("g"), "form_div_base": fm.get("base")})
+        rows.append(r)
+    json.dump({"event": doc["name"], "slug": doc["slug"], "date": doc["date"], "status": doc.get("status"),
+               "_doc": write_model_compare.__doc__.strip(), "fights": rows}, open(d_ / f"{doc['slug']}.json", "w"), indent=1)
+    cols = ["bout", "site_n", "a", "b", "sheet_pub_p", "sheet_build_p", "widget_p", "bp_open_p", "bp_now_p", "oa_open_p", "oa_close_p", "markov_p", "markov_raw",
+            "markov_thin", "form_p", "sheet_pub_gtd", "sheet_build_gtd", "bp_gtd_p", "markov_dec", "form_gtd", "form_div_base", "markov_thin_why"]
+    with open(d_ / f"{doc['slug']}.csv", "w", newline="") as fh:
+        w_ = csv.writer(fh)
+        w_.writerow(cols)
+        for r in rows:
+            w_.writerow([r.get(c) for c in cols])
+    return len(rows)
 
 
 # ----------------------------------------------------------------- build
@@ -761,6 +860,7 @@ def main():
     bp = load_bp()
     today = dt.date.today()
     upcoming = []
+    bp_by_date = {}
     for slug, d in bp:
         fights = d.get("fights") or []
         if not fights:
@@ -791,6 +891,7 @@ def main():
                     break
         elif edate >= today - dt.timedelta(days=1):
             upcoming.append((slug, d, edate))
+        bp_by_date[edate] = fights
 
     # ------------------------------------------------ figures, Form Line, backtests
     print("fitting figures / Form Line / backtests…")
@@ -863,7 +964,7 @@ def main():
 
     (OUT / "fighters").mkdir(parents=True, exist_ok=True)
     (OUT / "events").mkdir(parents=True, exist_ok=True)
-    for old in list((OUT / "fighters").glob("*.json")) + list((OUT / "events").glob("*.json")):
+    for old in list((OUT / "fighters").glob("*.json")) + list((OUT / "events").glob("*.json")) + list((OUT / "model_compare").glob("*.*")):
         old.unlink()
 
     search = []
@@ -904,6 +1005,8 @@ def main():
         doc = {"name": e["name"], "slug": e["slug"], "date": e["date"].isoformat(), "location": e["location"], "status": "final",
                "url": e["url"], "widget": e.get("widget"), "fights": fo}
         json.dump(doc, open(OUT / "events" / f"{e['slug']}.json", "w"), separators=(",", ":"))
+        if e["date"].year >= 2026 and any(f.get("markov") or f.get("sheet") or f.get("model") for f in fo):
+            write_model_compare(doc, bp_fights=next((v for k, v in bp_by_date.items() if abs((k - e["date"]).days) <= 1), None))
         main_f = fo[0] if fo else None
         index_events.append({"name": e["name"], "slug": e["slug"], "date": e["date"].isoformat(), "loc": e["location"], "nf": len(fo),
                              "model": bool(e.get("widget")), "odds": sum(1 for f in fo if f.get("odds")),
@@ -1016,6 +1119,14 @@ def main():
                         fobj["model"] = {"a": ma_, "b": mb_, "gtd": None if so["gtd"] is None else round(so["gtd"] * 100, 1), "rec": rec_side,
                                          "rec_text": so["rec"], "src": "sheet"}
                     break
+            # Markov ARCHIVE row for the upcoming card (same attach as the completed-event loop; until now only graded cards got it)
+            for m_ in mk:
+                sc, fl = pair_match_sq(fa["name"], fb["name"], m_["a"], m_["b"])
+                if sc >= 2:
+                    thin, why = markov_thin(m_, fa["nf"], fb["nf"])
+                    fobj["markov"] = {"p": round((100 - m_["shrunk"]) / 100 if fl else m_["shrunk"] / 100, 4), "raw": round((100 - m_["raw"]) / 100 if fl else m_["raw"] / 100, 4),
+                                      "dec": round(m_["pdec"] / 100, 4), "exp": m_["exp"], "r": m_["r"], "thin": thin, "thin_why": why, "flags": m_.get("flags")}
+                    break
             fo.append(fobj)
         name = d.get("card") or slug
         eslug = f"{edate.isoformat()}-{slugify(name)}"[:90]
@@ -1027,6 +1138,9 @@ def main():
         for err in card_overrides.check(slug, doc):
             print("  card override check", slug, err, file=sys.stderr)
         json.dump(doc, open(OUT / "events" / f"{eslug}.json", "w"), separators=(",", ":"))
+        pend = REPO / "data" / "pending" / f"{slug}_projections.json"
+        n_mc = write_model_compare(doc, json.load(open(pend)) if pend.exists() else None, d["fights"])
+        print(f"  {eslug}: Markov on {sum(1 for x in fo if x.get('markov'))}/{len(fo)} fights; model_compare {n_mc} rows")
         up_index.append({"name": name, "slug": eslug, "date": edate.isoformat(), "loc": doc["location"], "nf": len(fo), "model": bool(w) or any(x.get("model") for x in fo),
                          "main": f"{fo[0]['a']['name']} vs {fo[0]['b']['name']}" if fo else ""})
 
