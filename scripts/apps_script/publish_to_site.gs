@@ -19,7 +19,7 @@
  */
 
 var PUB = {
-  build: 'b47-out',               // shown in the preview, so the step 0 paste can be confirmed in the sheet itself
+  build: 'b50-drift',               // shown in the preview, so the step 0 paste can be confirmed in the sheet itself
   owner: 'szerillo',
   repo: 'ufc-projections',
   branch: 'main',                 // dry runs used branch 'publish-to-site'
@@ -159,10 +159,18 @@ function buildDoc_(slug) {
     schema: 1, slug: slug, event: String(ss.getSheetByName('Feed').getRange('B1').getValue() || ''),
     published_at: new Date().toISOString(), source: 'UFC Model sheet, rules v4.7, Publish to site',
     prices_loaded: loaded instanceof Date ? loaded.toISOString() : null,
-    params: { shift: shift, b43: num_(calc.getRange('B43').getValue()), b44: num_(calc.getRange('B44').getValue()),
+    params: { shift: shift, shift_card_mean: cardMean_(C), b43: num_(calc.getRange('B43').getValue()), b44: num_(calc.getRange('B44').getValue()),
               b45: num_(calc.getRange('B45').getValue()), b41: num_(calc.getRange('B41').getValue()) },
     fights: fights
   };
+}
+
+// Mean of Markov J minus listed G over Calculator rows 2-17 with both numbers: what the B42 formula computes. Exported next to
+// B42 so the check can say when a frozen B42 has drifted from the card (Block 50, staged).
+function cardMean_(C) {
+  var d = [];
+  for (var r = 1; r <= 16; r++) { var j = C[r][9], g = C[r][6]; if (typeof j === 'number' && typeof g === 'number') d.push(j - g); }
+  return d.length ? d.reduce(function (a, b) { return a + b; }, 0) / d.length : null;
 }
 
 function putFile_(token, path, text, message) {

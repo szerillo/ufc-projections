@@ -68,6 +68,7 @@ def main() -> int:
     fails += stamp_cases()
     fails += opponent_cases()
     fails += pending_cases()
+    fails += drift_cases()
     return 1 if fails else 0
 
 
@@ -164,6 +165,20 @@ def pending_cases() -> int:
         hard, pend = V.split_pending(doc, errs)
         ok = (len(hard) > 0) == (want_hard > 0) and len(pend) == want_pend
         print(("PASS " if ok else "FAIL ") + f"line pending, {name}: {'red' if hard else 'green'}, {len(pend)} pending")
+        fails += not ok
+    return fails
+
+
+def drift_cases() -> int:
+    """Frozen-shift drift note (pre-registered Block 50): a note above 0.001, never a failure."""
+    B = 0.14693199554239184
+    cases = [("equal", B, True and False), ("+0.0011", B + 0.0011, True), ("+0.0009", B + 0.0009, False), ("absent", None, False)]
+    fails = 0
+    for name, mean, want in cases:
+        doc = {"params": {"shift": B, **({"shift_card_mean": mean} if mean is not None else {})}}
+        got = V.drift_note(doc) is not None
+        ok = got == want
+        print(("PASS " if ok else "FAIL ") + f"drift note, card mean {name}: {'note' if got else 'no note'}")
         fails += not ok
     return fails
 

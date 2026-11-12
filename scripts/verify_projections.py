@@ -103,6 +103,19 @@ def split_pending(doc: dict, errs: list[str]) -> tuple[list[str], list[dict]]:
     return hard, [{"dog": tags[t].get("dog"), "fav": tags[t].get("fav"), "reason": "; ".join(r)} for t, r in held.items()]
 
 
+DRIFT_NOTE = 0.001   # pre-registered Block 50: frozen B42 vs the card mean it would compute; a note only, never red
+
+
+def drift_note(doc: dict) -> str | None:
+    p = doc.get("params") or {}
+    a, b = p.get("shift"), p.get("shift_card_mean")
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)) or abs(a - b) <= DRIFT_NOTE:
+        return None
+    return (f"Note (not a failure): the card shift B42 is {a:.5f} but the card's Markov rows average {b:.5f} "
+            f"({abs(a - b) * 100:.2f} pts apart). If B42 is a frozen number, a bout or Markov value changed after it was frozen: "
+            f"re-freeze it if that was not intended.")
+
+
 def price_age_h(doc: dict, now: dt.datetime | None = None) -> float | None:
     s = doc.get("prices_loaded")
     if not s:
@@ -252,6 +265,9 @@ def main() -> int:
         if pending:
             lines += ["", f"**Line pending ({len(pending)}):** shown on the page as \"Line pending\", no numbers:"] + \
                      [f"- {x['dog']} vs {x['fav']}: {x['reason']}" for x in pending]
+    dn = drift_note(doc)
+    if dn:
+        lines += ["", dn]
     report = "\n".join(lines) + "\n"
     print(report)
     if a.report:
