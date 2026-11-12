@@ -103,28 +103,72 @@
   },
   {
    "id": "v7",
-   "text": "-148",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Stephen Thompson",
-   "raw": 0.5967397732958282
-  },
-  {
-   "id": "v8",
    "text": "59.7%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "Sean win % Stephen Thompson",
+   "desc": "Bar model % a",
    "raw": 0.5967397732958282
   },
   {
+   "id": "v8",
+   "text": "40.3%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Bar model % b",
+   "raw": 0.40326022670417183
+  },
+  {
    "id": "v9",
+   "text": "-148",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Stephen Thompson",
+   "raw": 0.5967397732958282
+  },
+  {
+   "id": "v10",
+   "text": "59.7%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Stephen Thompson",
+   "raw": 0.5967397732958282
+  },
+  {
+   "id": "v11",
+   "text": "-150",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Stephen Thompson",
+   "raw": -150
+  },
+  {
+   "id": "v12",
+   "text": "60.0%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Stephen Thompson",
+   "raw": 0.6
+  },
+  {
+   "id": "v13",
    "text": "-162",
    "fmt": "ml",
    "rule": "bp",
@@ -133,60 +177,81 @@
     "label": "Stephen Thompson",
     "field": "cost"
    },
-   "desc": "BP ML now Stephen Thompson",
+   "desc": "Market ML Stephen Thompson",
    "raw": -162
   },
   {
-   "id": "v10",
-   "text": "58.7%",
+   "id": "v14",
+   "text": "61.8%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Stephen Thompson",
-    "other": "Charlie Radke"
+    "label": "Stephen Thompson"
    },
-   "desc": "BP ML no-vig Stephen Thompson",
-   "raw": 0.5871415064607627
+   "desc": "Market implied Stephen Thompson",
+   "raw": 0.6183206106870229
   },
   {
-   "id": "v11",
-   "text": "+1.0",
-   "fmt": "sp",
+   "id": "v15",
+   "text": "-0.3%",
+   "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v8",
-     "v10"
+     "v10",
+     "v12"
     ]
    },
-   "desc": "Edge v8-v10",
-   "raw": 0.009598266835065483
+   "desc": "Edge ML Stephen Thompson",
+   "raw": -0.003260226704171809
   },
   {
-   "id": "v12",
+   "id": "v16",
    "text": "+148",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "Sean ML Charles Radtke",
+   "desc": "Model ML Charles Radtke",
    "raw": 0.40326022670417183
   },
   {
-   "id": "v13",
+   "id": "v17",
    "text": "40.3%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "Sean win % Charles Radtke",
+   "desc": "Model win % Charles Radtke",
    "raw": 0.40326022670417183
   },
   {
-   "id": "v14",
+   "id": "v18",
+   "text": "+140",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Charles Radtke",
+   "raw": 140
+  },
+  {
+   "id": "v19",
+   "text": "41.7%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Charles Radtke",
+   "raw": 0.4166666666666667
+  },
+  {
+   "id": "v20",
    "text": "+130",
    "fmt": "ml",
    "rule": "bp",
@@ -195,252 +260,81 @@
     "label": "Charlie Radke",
     "field": "cost"
    },
-   "desc": "BP ML now Charles Radtke",
+   "desc": "Market ML Charles Radtke",
    "raw": 130
   },
   {
-   "id": "v15",
-   "text": "41.3%",
+   "id": "v21",
+   "text": "43.5%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Charlie Radke",
-    "other": "Stephen Thompson"
+    "label": "Charlie Radke"
    },
-   "desc": "BP ML no-vig Charles Radtke",
-   "raw": 0.4128584935392373
-  },
-  {
-   "id": "v16",
-   "text": "-1.0",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v13",
-     "v15"
-    ]
-   },
-   "desc": "Edge v13-v15",
-   "raw": -0.009598266835065483
-  },
-  {
-   "id": "v17",
-   "text": "+205",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Stephen Thompson",
-   "raw": 0.3281073645988208
-  },
-  {
-   "id": "v18",
-   "text": "32.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Stephen Thompson",
-   "raw": 0.3281073645988208
-  },
-  {
-   "id": "v19",
-   "text": "+365",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Charles Radtke",
-   "raw": 0.2151718949619839
-  },
-  {
-   "id": "v20",
-   "text": "21.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Charles Radtke",
-   "raw": 0.2151718949619839
-  },
-  {
-   "id": "v21",
-   "text": "+336",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Stephen Thompson",
-   "raw": 0.22952104345659888
+   "desc": "Market implied Charles Radtke",
+   "raw": 0.43478260869565216
   },
   {
    "id": "v22",
-   "text": "23.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
+   "text": "-1.3%",
+   "fmt": "spp",
+   "rule": "edge",
    "args": {
-    "side": "a",
-    "k": "ko"
+    "of": [
+     "v17",
+     "v19"
+    ]
    },
-   "desc": "Sean ko % Stephen Thompson",
-   "raw": 0.22952104345659888
+   "desc": "Edge ML Charles Radtke",
+   "raw": -0.013406439962494854
   },
   {
    "id": "v23",
-   "text": "+706",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Charles Radtke",
-   "raw": 0.12409115411123015
-  },
-  {
-   "id": "v24",
-   "text": "12.4%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Charles Radtke",
-   "raw": 0.12409115411123015
-  },
-  {
-   "id": "v25",
-   "text": "+2457",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Stephen Thompson",
-   "raw": 0.03911136524040851
-  },
-  {
-   "id": "v26",
-   "text": "3.9%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Stephen Thompson",
-   "raw": 0.03911136524040851
-  },
-  {
-   "id": "v27",
-   "text": "+1463",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Charles Radtke",
-   "raw": 0.06399717763095777
-  },
-  {
-   "id": "v28",
-   "text": "6.4%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Charles Radtke",
-   "raw": 0.06399717763095777
-  },
-  {
-   "id": "v29",
-   "text": "+272",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Stephen Thompson",
-   "raw": 0.2686324086970074
-  },
-  {
-   "id": "v30",
-   "text": "26.9%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Stephen Thompson",
-   "raw": 0.2686324086970074
-  },
-  {
-   "id": "v31",
-   "text": "+432",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Charles Radtke",
-   "raw": 0.18808833174218792
-  },
-  {
-   "id": "v32",
-   "text": "18.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Charles Radtke",
-   "raw": 0.18808833174218792
-  },
-  {
-   "id": "v33",
    "text": "-119",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
-   "desc": "Sean GTD fair ML",
+   "desc": "Model GTD",
    "raw": 0.5432792595608047
   },
   {
-   "id": "v34",
+   "id": "v24",
    "text": "54.3%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
-   "desc": "Sean GTD %",
+   "desc": "Model GTD %",
    "raw": 0.5432792595608047
   },
   {
-   "id": "v35",
+   "id": "v25",
+   "text": "-132",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD price",
+   "raw": 0.5687832924663905
+  },
+  {
+   "id": "v26",
+   "text": "56.9%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD %",
+   "raw": 0.5687832924663905
+  },
+  {
+   "id": "v27",
    "text": "-149",
    "fmt": "ml",
    "rule": "bp",
@@ -449,11 +343,61 @@
     "label": "Yes",
     "field": "cost"
    },
-   "desc": "BP GTD yes now",
+   "desc": "Market GTD yes",
    "raw": -149
   },
   {
-   "id": "v36",
+   "id": "v28",
+   "text": "59.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.5983935742971888
+  },
+  {
+   "id": "v29",
+   "text": "-2.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v24",
+     "v26"
+    ]
+   },
+   "desc": "Edge GTD vs listed",
+   "raw": -0.025504032905585783
+  },
+  {
+   "id": "v30",
+   "text": "+119",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.4567207404391953
+  },
+  {
+   "id": "v31",
+   "text": "45.7%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.4567207404391953
+  },
+  {
+   "id": "v32",
    "text": "+113",
    "fmt": "ml",
    "rule": "bp",
@@ -462,86 +406,316 @@
     "label": "No",
     "field": "cost"
    },
-   "desc": "BP GTD no now",
+   "desc": "Market ITD no",
    "raw": 113
   },
   {
-   "id": "v37",
-   "text": "56.0%",
+   "id": "v33",
+   "text": "46.9%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "fight_distance",
-    "label": "Yes",
-    "other": "No"
+    "label": "No"
    },
-   "desc": "BP GTD no-vig",
-   "raw": 0.5603580698130197
+   "desc": "Market ITD implied",
+   "raw": 0.4694835680751174
   },
   {
-   "id": "v38",
-   "text": "-1.7",
-   "fmt": "sp",
+   "id": "v34",
+   "text": "-1.3%",
+   "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v34",
-     "v37"
+     "v31",
+     "v33"
     ]
    },
-   "desc": "Edge GTD",
-   "raw": -0.017078810252215026
+   "desc": "Edge ITD vs market",
+   "raw": -0.01276282763592207
+  },
+  {
+   "id": "v35",
+   "text": "32.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Bar model dec % Stephen Thompson",
+   "raw": 0.3281073645988208
+  },
+  {
+   "id": "v36",
+   "text": "23.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Bar model ko % Stephen Thompson",
+   "raw": 0.22952104345659888
+  },
+  {
+   "id": "v37",
+   "text": "3.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Bar model sub % Stephen Thompson",
+   "raw": 0.03911136524040851
+  },
+  {
+   "id": "v38",
+   "text": "21.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Bar model dec % Charles Radtke",
+   "raw": 0.2151718949619839
   },
   {
    "id": "v39",
-   "text": "59.7%",
+   "text": "12.4%",
    "fmt": "pct1",
-   "rule": "pub_win",
+   "rule": "pub_meth",
    "args": {
-    "side": "a"
+    "side": "b",
+    "k": "ko"
    },
-   "desc": "Bar Sean % a",
-   "raw": 0.5967397732958282
+   "desc": "Bar model ko % Charles Radtke",
+   "raw": 0.12409115411123015
   },
   {
    "id": "v40",
-   "text": "40.3%",
+   "text": "6.4%",
    "fmt": "pct1",
-   "rule": "pub_win",
+   "rule": "pub_meth",
    "args": {
-    "side": "b"
+    "side": "b",
+    "k": "sub"
    },
-   "desc": "Bar Sean % b",
-   "raw": 0.40326022670417183
+   "desc": "Bar model sub % Charles Radtke",
+   "raw": 0.06399717763095777
   },
   {
    "id": "v41",
-   "text": "58.7%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
+   "text": "+205",
+   "fmt": "mlp",
+   "rule": "pub_meth",
    "args": {
-    "market": "moneyline",
-    "label": "Stephen Thompson",
-    "other": "Charlie Radke"
+    "side": "a",
+    "k": "dec"
    },
-   "desc": "Bar BP no-vig a",
-   "raw": 0.5871415064607627
+   "desc": "Model dec ML Stephen Thompson",
+   "raw": 0.3281073645988208
   },
   {
    "id": "v42",
-   "text": "41.3%",
+   "text": "32.8%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "pub_meth",
    "args": {
-    "market": "moneyline",
-    "label": "Charlie Radke",
-    "other": "Stephen Thompson"
+    "side": "a",
+    "k": "dec"
    },
-   "desc": "Bar BP no-vig b",
-   "raw": 0.4128584935392373
+   "desc": "Model dec % Stephen Thompson",
+   "raw": 0.3281073645988208
   },
   {
    "id": "v43",
+   "text": "+336",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Stephen Thompson",
+   "raw": 0.22952104345659888
+  },
+  {
+   "id": "v44",
+   "text": "23.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Stephen Thompson",
+   "raw": 0.22952104345659888
+  },
+  {
+   "id": "v45",
+   "text": "+2457",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Stephen Thompson",
+   "raw": 0.03911136524040851
+  },
+  {
+   "id": "v46",
+   "text": "3.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Stephen Thompson",
+   "raw": 0.03911136524040851
+  },
+  {
+   "id": "v47",
+   "text": "+272",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Stephen Thompson",
+   "raw": 0.2686324086970074
+  },
+  {
+   "id": "v48",
+   "text": "26.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Stephen Thompson",
+   "raw": 0.2686324086970074
+  },
+  {
+   "id": "v49",
+   "text": "+365",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Charles Radtke",
+   "raw": 0.2151718949619839
+  },
+  {
+   "id": "v50",
+   "text": "21.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Charles Radtke",
+   "raw": 0.2151718949619839
+  },
+  {
+   "id": "v51",
+   "text": "+706",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Charles Radtke",
+   "raw": 0.12409115411123015
+  },
+  {
+   "id": "v52",
+   "text": "12.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Charles Radtke",
+   "raw": 0.12409115411123015
+  },
+  {
+   "id": "v53",
+   "text": "+1463",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Charles Radtke",
+   "raw": 0.06399717763095777
+  },
+  {
+   "id": "v54",
+   "text": "6.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Charles Radtke",
+   "raw": 0.06399717763095777
+  },
+  {
+   "id": "v55",
+   "text": "+432",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Charles Radtke",
+   "raw": 0.18808833174218792
+  },
+  {
+   "id": "v56",
+   "text": "18.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Charles Radtke",
+   "raw": 0.18808833174218792
+  },
+  {
+   "id": "v57",
+   "text": "1.2",
+   "fmt": "pts",
+   "rule": "oa_drift",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "pair": [
+     "Stephen Thompson",
+     "Charles Radtke"
+    ]
+   },
+   "desc": "OA drift pts",
+   "raw": 0.011599999999999944
+  },
+  {
+   "id": "v58",
    "text": "-147",
    "fmt": "ml",
    "rule": "oa_best",
@@ -557,7 +731,7 @@
    "raw": -147
   },
   {
-   "id": "v44",
+   "id": "v59",
    "text": "+124",
    "fmt": "ml",
    "rule": "oa_best",
@@ -573,7 +747,7 @@
    "raw": 124
   },
   {
-   "id": "v45",
+   "id": "v60",
    "text": "-125",
    "fmt": "ml",
    "rule": "bp",
@@ -586,7 +760,7 @@
    "raw": -125
   },
   {
-   "id": "v46",
+   "id": "v61",
    "text": "-162",
    "fmt": "ml",
    "rule": "bp",
@@ -599,7 +773,7 @@
    "raw": -162
   },
   {
-   "id": "v47",
+   "id": "v62",
    "text": "-105",
    "fmt": "ml",
    "rule": "bp",
@@ -612,7 +786,7 @@
    "raw": -105
   },
   {
-   "id": "v48",
+   "id": "v63",
    "text": "+130",
    "fmt": "ml",
    "rule": "bp",
@@ -625,7 +799,7 @@
    "raw": 130
   },
   {
-   "id": "v49",
+   "id": "v64",
    "text": "+160",
    "fmt": "ml",
    "rule": "bp",
@@ -638,7 +812,7 @@
    "raw": 160
   },
   {
-   "id": "v50",
+   "id": "v65",
    "text": "+175",
    "fmt": "ml",
    "rule": "bp",
@@ -651,7 +825,7 @@
    "raw": 175
   },
   {
-   "id": "v51",
+   "id": "v66",
    "text": "36%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -663,7 +837,7 @@
    "raw": 0.36363636363636365
   },
   {
-   "id": "v52",
+   "id": "v67",
    "text": "+500",
    "fmt": "ml",
    "rule": "bp",
@@ -676,7 +850,7 @@
    "raw": 500
   },
   {
-   "id": "v53",
+   "id": "v68",
    "text": "+550",
    "fmt": "ml",
    "rule": "bp",
@@ -689,7 +863,7 @@
    "raw": 550
   },
   {
-   "id": "v54",
+   "id": "v69",
    "text": "15%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -701,7 +875,7 @@
    "raw": 0.15384615384615385
   },
   {
-   "id": "v55",
+   "id": "v70",
    "text": "-155",
    "fmt": "ml",
    "rule": "bp",
@@ -714,7 +888,7 @@
    "raw": -155
   },
   {
-   "id": "v56",
+   "id": "v71",
    "text": "-155",
    "fmt": "ml",
    "rule": "bp",
@@ -727,7 +901,7 @@
    "raw": -155
   },
   {
-   "id": "v57",
+   "id": "v72",
    "text": "61%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -739,7 +913,7 @@
    "raw": 0.6078431372549019
   },
   {
-   "id": "v58",
+   "id": "v73",
    "text": "-155",
    "fmt": "ml",
    "rule": "bp",
@@ -752,7 +926,7 @@
    "raw": -155
   },
   {
-   "id": "v59",
+   "id": "v74",
    "text": "-149",
    "fmt": "ml",
    "rule": "bp",
@@ -765,7 +939,7 @@
    "raw": -149
   },
   {
-   "id": "v60",
+   "id": "v75",
    "text": "60%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -777,7 +951,7 @@
    "raw": 0.5983935742971888
   },
   {
-   "id": "v61",
+   "id": "v76",
    "text": "+117",
    "fmt": "ml",
    "rule": "bp",
@@ -790,7 +964,7 @@
    "raw": 117
   },
   {
-   "id": "v62",
+   "id": "v77",
    "text": "+113",
    "fmt": "ml",
    "rule": "bp",
@@ -803,7 +977,7 @@
    "raw": 113
   },
   {
-   "id": "v63",
+   "id": "v78",
    "text": "47%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -815,7 +989,7 @@
    "raw": 0.4694835680751174
   },
   {
-   "id": "v64",
+   "id": "v79",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -828,7 +1002,7 @@
    "raw": 2.5
   },
   {
-   "id": "v65",
+   "id": "v80",
    "text": "-188",
    "fmt": "ml",
    "rule": "bp",
@@ -841,7 +1015,7 @@
    "raw": -188
   },
   {
-   "id": "v66",
+   "id": "v81",
    "text": "-183",
    "fmt": "ml",
    "rule": "bp",
@@ -854,7 +1028,7 @@
    "raw": -183
   },
   {
-   "id": "v67",
+   "id": "v82",
    "text": "65%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -866,7 +1040,7 @@
    "raw": 0.6466431095406361
   },
   {
-   "id": "v68",
+   "id": "v83",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -879,7 +1053,7 @@
    "raw": 2.5
   },
   {
-   "id": "v69",
+   "id": "v84",
    "text": "+145",
    "fmt": "ml",
    "rule": "bp",
@@ -892,7 +1066,7 @@
    "raw": 145
   },
   {
-   "id": "v70",
+   "id": "v85",
    "text": "+145",
    "fmt": "ml",
    "rule": "bp",
@@ -905,7 +1079,7 @@
    "raw": 145
   },
   {
-   "id": "v71",
+   "id": "v86",
    "text": "41%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -917,7 +1091,7 @@
    "raw": 0.40816326530612246
   },
   {
-   "id": "v72",
+   "id": "v87",
    "text": "43.8",
    "fmt": "n1",
    "rule": "age",
@@ -928,7 +1102,7 @@
    "raw": 43.75633127994524
   },
   {
-   "id": "v73",
+   "id": "v88",
    "text": "36.4",
    "fmt": "n1",
    "rule": "age",
@@ -939,7 +1113,7 @@
    "raw": 36.35044490075291
   },
   {
-   "id": "v74",
+   "id": "v89",
    "text": "75\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -950,7 +1124,7 @@
    "raw": 75
   },
   {
-   "id": "v75",
+   "id": "v90",
    "text": "72\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -961,7 +1135,7 @@
    "raw": 72
   },
   {
-   "id": "v76",
+   "id": "v91",
    "text": "6'0\"",
    "fmt": "str",
    "rule": "bio",
@@ -973,7 +1147,7 @@
    "raw": "6'0\""
   },
   {
-   "id": "v77",
+   "id": "v92",
    "text": "5'9\"",
    "fmt": "str",
    "rule": "bio",
@@ -985,7 +1159,7 @@
    "raw": "5'9\""
   },
   {
-   "id": "v78",
+   "id": "v93",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -997,7 +1171,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v79",
+   "id": "v94",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1009,7 +1183,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v80",
+   "id": "v95",
    "text": "22",
    "fmt": "int",
    "rule": "nfights",
@@ -1020,7 +1194,7 @@
    "raw": 22
   },
   {
-   "id": "v81",
+   "id": "v96",
    "text": "7",
    "fmt": "int",
    "rule": "nfights",
@@ -1031,7 +1205,7 @@
    "raw": 7
   },
   {
-   "id": "v82",
+   "id": "v97",
    "text": "4.05",
    "fmt": "n2",
    "rule": "stat",
@@ -1043,7 +1217,7 @@
    "raw": 4.046737259402223
   },
   {
-   "id": "v83",
+   "id": "v98",
    "text": "2.50",
    "fmt": "n2",
    "rule": "stat",
@@ -1055,7 +1229,7 @@
    "raw": 2.5027624309392262
   },
   {
-   "id": "v84",
+   "id": "v99",
    "text": "3.00",
    "fmt": "n2",
    "rule": "stat",
@@ -1067,7 +1241,7 @@
    "raw": 3.001408377236451
   },
   {
-   "id": "v85",
+   "id": "v100",
    "text": "2.45",
    "fmt": "n2",
    "rule": "stat",
@@ -1079,7 +1253,7 @@
    "raw": 2.453038674033149
   },
   {
-   "id": "v86",
+   "id": "v101",
    "text": "+1.05",
    "fmt": "s2",
    "rule": "stat",
@@ -1091,7 +1265,7 @@
    "raw": 1.0453288821657714
   },
   {
-   "id": "v87",
+   "id": "v102",
    "text": "+0.05",
    "fmt": "s2",
    "rule": "stat",
@@ -1103,7 +1277,7 @@
    "raw": 0.049723756906077346
   },
   {
-   "id": "v88",
+   "id": "v103",
    "text": "46%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1115,7 +1289,7 @@
    "raw": 0.46014234875444837
   },
   {
-   "id": "v89",
+   "id": "v104",
    "text": "54%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1127,7 +1301,7 @@
    "raw": 0.5392857142857143
   },
   {
-   "id": "v90",
+   "id": "v105",
    "text": "55%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1139,7 +1313,7 @@
    "raw": 0.5489181561618062
   },
   {
-   "id": "v91",
+   "id": "v106",
    "text": "55%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1151,7 +1325,7 @@
    "raw": 0.5474006116207951
   },
   {
-   "id": "v92",
+   "id": "v107",
    "text": "0.23",
    "fmt": "n2",
    "rule": "stat",
@@ -1163,7 +1337,7 @@
    "raw": 0.23472953940848157
   },
   {
-   "id": "v93",
+   "id": "v108",
    "text": "1.99",
    "fmt": "n2",
    "rule": "stat",
@@ -1175,7 +1349,7 @@
    "raw": 1.9889502762430937
   },
   {
-   "id": "v94",
+   "id": "v109",
    "text": "63%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1187,7 +1361,7 @@
    "raw": 0.6329113924050633
   },
   {
-   "id": "v95",
+   "id": "v110",
    "text": "100%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1199,7 +1373,7 @@
    "raw": 1.0
   },
   {
-   "id": "v96",
+   "id": "v111",
    "text": "6%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1211,7 +1385,7 @@
    "raw": 0.06040373480778259
   },
   {
-   "id": "v97",
+   "id": "v112",
    "text": "51%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1223,7 +1397,7 @@
    "raw": 0.5138121546961326
   },
   {
-   "id": "v98",
+   "id": "v113",
    "text": "49",
    "fmt": "r0",
    "rule": "fight",
@@ -1236,7 +1410,7 @@
    "raw": 49.4
   },
   {
-   "id": "v99",
+   "id": "v114",
    "text": "+375",
    "fmt": "ml",
    "rule": "fight",
@@ -1249,7 +1423,7 @@
    "raw": 375
   },
   {
-   "id": "v100",
+   "id": "v115",
    "text": "28",
    "fmt": "r0",
    "rule": "fight",
@@ -1262,7 +1436,7 @@
    "raw": 28.0
   },
   {
-   "id": "v101",
+   "id": "v116",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -1275,7 +1449,7 @@
    "raw": 180
   },
   {
-   "id": "v102",
+   "id": "v117",
    "text": "24",
    "fmt": "r0",
    "rule": "fight",
@@ -1288,7 +1462,7 @@
    "raw": 24.0
   },
   {
-   "id": "v103",
+   "id": "v118",
    "text": "+470",
    "fmt": "ml",
    "rule": "fight",
@@ -1301,7 +1475,7 @@
    "raw": 470
   },
   {
-   "id": "v104",
+   "id": "v119",
    "text": "93",
    "fmt": "r0",
    "rule": "fight",
@@ -1314,7 +1488,7 @@
    "raw": 92.8
   },
   {
-   "id": "v105",
+   "id": "v120",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -1327,7 +1501,7 @@
    "raw": 155
   },
   {
-   "id": "v106",
+   "id": "v121",
    "text": "24",
    "fmt": "r0",
    "rule": "fight",
@@ -1340,7 +1514,7 @@
    "raw": 24.5
   },
   {
-   "id": "v107",
+   "id": "v122",
    "text": "56",
    "fmt": "r0",
    "rule": "fight",
@@ -1353,7 +1527,7 @@
    "raw": 55.8
   },
   {
-   "id": "v108",
+   "id": "v123",
    "text": "-192",
    "fmt": "ml",
    "rule": "fight",
@@ -1366,7 +1540,7 @@
    "raw": -192
   },
   {
-   "id": "v109",
+   "id": "v124",
    "text": "83",
    "fmt": "r0",
    "rule": "fight",
@@ -1379,7 +1553,7 @@
    "raw": 83.3
   },
   {
-   "id": "v110",
+   "id": "v125",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -1392,7 +1566,7 @@
    "raw": -179
   },
   {
-   "id": "v111",
+   "id": "v126",
    "text": "12",
    "fmt": "r0",
    "rule": "fight",
@@ -1405,7 +1579,7 @@
    "raw": 11.8
   },
   {
-   "id": "v112",
+   "id": "v127",
    "text": "+179",
    "fmt": "ml",
    "rule": "fight",
@@ -1418,7 +1592,7 @@
    "raw": 179
   },
   {
-   "id": "v113",
+   "id": "v128",
    "text": "100",
    "fmt": "r0",
    "rule": "fight",
@@ -1431,7 +1605,7 @@
    "raw": 100.4
   },
   {
-   "id": "v114",
+   "id": "v129",
    "text": "-175",
    "fmt": "ml",
    "rule": "fight",
@@ -1444,7 +1618,7 @@
    "raw": -175
   },
   {
-   "id": "v115",
+   "id": "v130",
    "text": "14",
    "fmt": "r0",
    "rule": "fight",
@@ -1457,7 +1631,7 @@
    "raw": 13.9
   },
   {
-   "id": "v116",
+   "id": "v131",
    "text": "+178",
    "fmt": "ml",
    "rule": "fight",
@@ -1471,7 +1645,6 @@
   }
  ],
  "gaps": [
-  "Fight 8: BettingPros method/distance markets suspect (method market has no DEC/KO/SUB prices for Charles Radtke); market cells shown as n/a.",
   "Fight 8: BettingPros method_of_victory has unlabeled selections ['Charlie Radke', 'Stephen Thompson']; not displayed."
  ]
 }

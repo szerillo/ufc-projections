@@ -103,28 +103,72 @@
   },
   {
    "id": "v7",
-   "text": "+170",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Drew Dober",
-   "raw": 0.3697886486555524
-  },
-  {
-   "id": "v8",
    "text": "37.0%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "Sean win % Drew Dober",
+   "desc": "Bar model % a",
    "raw": 0.3697886486555524
   },
   {
+   "id": "v8",
+   "text": "63.0%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Bar model % b",
+   "raw": 0.6302113513444476
+  },
+  {
    "id": "v9",
+   "text": "+170",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Drew Dober",
+   "raw": 0.3697886486555524
+  },
+  {
+   "id": "v10",
+   "text": "37.0%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Drew Dober",
+   "raw": 0.3697886486555524
+  },
+  {
+   "id": "v11",
+   "text": "+135",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Drew Dober",
+   "raw": 135
+  },
+  {
+   "id": "v12",
+   "text": "42.6%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Drew Dober",
+   "raw": 0.425531914893617
+  },
+  {
+   "id": "v13",
    "text": "+142",
    "fmt": "ml",
    "rule": "bp",
@@ -133,60 +177,81 @@
     "label": "Drew Dober",
     "field": "cost"
    },
-   "desc": "BP ML now Drew Dober",
+   "desc": "Market ML Drew Dober",
    "raw": 142
   },
   {
-   "id": "v10",
-   "text": "39.5%",
+   "id": "v14",
+   "text": "41.3%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Drew Dober",
-    "other": "Christopher Duncan"
+    "label": "Drew Dober"
    },
-   "desc": "BP ML no-vig Drew Dober",
-   "raw": 0.39521097291642454
+   "desc": "Market implied Drew Dober",
+   "raw": 0.4132231404958678
   },
   {
-   "id": "v11",
-   "text": "-2.5",
-   "fmt": "sp",
+   "id": "v15",
+   "text": "-5.6%",
+   "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v8",
-     "v10"
+     "v10",
+     "v12"
     ]
    },
-   "desc": "Edge v8-v10",
-   "raw": -0.025422324260872153
+   "desc": "Edge ML Drew Dober",
+   "raw": -0.05574326623806464
   },
   {
-   "id": "v12",
+   "id": "v16",
    "text": "-170",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "Sean ML Chris Duncan",
+   "desc": "Model ML Chris Duncan",
    "raw": 0.6302113513444476
   },
   {
-   "id": "v13",
+   "id": "v17",
    "text": "63.0%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "Sean win % Chris Duncan",
+   "desc": "Model win % Chris Duncan",
    "raw": 0.6302113513444476
   },
   {
-   "id": "v14",
+   "id": "v18",
+   "text": "-159",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Chris Duncan",
+   "raw": -159
+  },
+  {
+   "id": "v19",
+   "text": "61.4%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Chris Duncan",
+   "raw": 0.6138996138996139
+  },
+  {
+   "id": "v20",
    "text": "-172",
    "fmt": "ml",
    "rule": "bp",
@@ -195,558 +260,81 @@
     "label": "Christopher Duncan",
     "field": "cost"
    },
-   "desc": "BP ML now Chris Duncan",
+   "desc": "Market ML Chris Duncan",
    "raw": -172
   },
   {
-   "id": "v15",
-   "text": "60.5%",
+   "id": "v21",
+   "text": "63.2%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Christopher Duncan",
-    "other": "Drew Dober"
+    "label": "Christopher Duncan"
    },
-   "desc": "BP ML no-vig Chris Duncan",
-   "raw": 0.6047890270835755
-  },
-  {
-   "id": "v16",
-   "text": "+2.5",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v13",
-     "v15"
-    ]
-   },
-   "desc": "Edge v13-v15",
-   "raw": 0.025422324260872098
-  },
-  {
-   "id": "v17",
-   "text": "+1112",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Drew Dober",
-   "raw": 0.08252097893943151
-  },
-  {
-   "id": "v18",
-   "text": "8.3%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Drew Dober",
-   "raw": 0.08252097893943151
-  },
-  {
-   "id": "v19",
-   "text": "+1000",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Drew Dober Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Drew Dober",
-   "raw": 1000
-  },
-  {
-   "id": "v20",
-   "text": "7.5%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Drew Dober",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Drew Dober",
-   "raw": 0.07548711641313303
-  },
-  {
-   "id": "v21",
-   "text": "+0.7",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v18",
-     "v20"
-    ]
-   },
-   "desc": "Edge v18-v20",
-   "raw": 0.007033862526298479
+   "desc": "Market implied Chris Duncan",
+   "raw": 0.6323529411764706
   },
   {
    "id": "v22",
-   "text": "+372",
-   "fmt": "mlp",
-   "rule": "pub_meth",
+   "text": "+1.6%",
+   "fmt": "spp",
+   "rule": "edge",
    "args": {
-    "side": "b",
-    "k": "dec"
+    "of": [
+     "v17",
+     "v19"
+    ]
    },
-   "desc": "Sean dec ML Chris Duncan",
-   "raw": 0.21173879928129613
+   "desc": "Edge ML Chris Duncan",
+   "raw": 0.016311737444833718
   },
   {
    "id": "v23",
-   "text": "21.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Chris Duncan",
-   "raw": 0.21173879928129613
-  },
-  {
-   "id": "v24",
-   "text": "+440",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Christopher Duncan Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Chris Duncan",
-   "raw": 440
-  },
-  {
-   "id": "v25",
-   "text": "15.4%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Chris Duncan",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Chris Duncan",
-   "raw": 0.1537700519526784
-  },
-  {
-   "id": "v26",
-   "text": "+5.8",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v23",
-     "v25"
-    ]
-   },
-   "desc": "Edge v23-v25",
-   "raw": 0.05796874732861773
-  },
-  {
-   "id": "v27",
-   "text": "+297",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Drew Dober",
-   "raw": 0.252201094372541
-  },
-  {
-   "id": "v28",
-   "text": "25.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Drew Dober",
-   "raw": 0.252201094372541
-  },
-  {
-   "id": "v29",
-   "text": "+192",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Drew Dober KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Drew Dober",
-   "raw": 192
-  },
-  {
-   "id": "v30",
-   "text": "28.4%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Drew Dober",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Drew Dober",
-   "raw": 0.28436927415906277
-  },
-  {
-   "id": "v31",
-   "text": "-3.2",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v28",
-     "v30"
-    ]
-   },
-   "desc": "Edge v28-v30",
-   "raw": -0.032168179786521756
-  },
-  {
-   "id": "v32",
-   "text": "+440",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Chris Duncan",
-   "raw": 0.18533636062266098
-  },
-  {
-   "id": "v33",
-   "text": "18.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Chris Duncan",
-   "raw": 0.18533636062266098
-  },
-  {
-   "id": "v34",
-   "text": "+292",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Christopher Duncan KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Chris Duncan",
-   "raw": 292
-  },
-  {
-   "id": "v35",
-   "text": "21.2%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Chris Duncan",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Chris Duncan",
-   "raw": 0.2118260919756284
-  },
-  {
-   "id": "v36",
-   "text": "-2.6",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v33",
-     "v35"
-    ]
-   },
-   "desc": "Edge v33-v35",
-   "raw": -0.02648973135296742
-  },
-  {
-   "id": "v37",
-   "text": "+2752",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Drew Dober",
-   "raw": 0.03506657534357985
-  },
-  {
-   "id": "v38",
-   "text": "3.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Drew Dober",
-   "raw": 0.03506657534357985
-  },
-  {
-   "id": "v39",
-   "text": "+1800",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Drew Dober Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Drew Dober",
-   "raw": 1800
-  },
-  {
-   "id": "v40",
-   "text": "4.4%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Drew Dober",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Drew Dober",
-   "raw": 0.043703067397077015
-  },
-  {
-   "id": "v41",
-   "text": "-0.9",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v38",
-     "v40"
-    ]
-   },
-   "desc": "Edge v38-v40",
-   "raw": -0.008636492053497168
-  },
-  {
-   "id": "v42",
-   "text": "+329",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Chris Duncan",
-   "raw": 0.2331361914404905
-  },
-  {
-   "id": "v43",
-   "text": "23.3%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Chris Duncan",
-   "raw": 0.2331361914404905
-  },
-  {
-   "id": "v44",
-   "text": "+287",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Christopher Duncan Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Chris Duncan",
-   "raw": 287
-  },
-  {
-   "id": "v45",
-   "text": "21.5%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Chris Duncan",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Chris Duncan",
-   "raw": 0.2145628631897838
-  },
-  {
-   "id": "v46",
-   "text": "+1.9",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v43",
-     "v45"
-    ]
-   },
-   "desc": "Edge v43-v45",
-   "raw": 0.018573328250706705
-  },
-  {
-   "id": "v47",
-   "text": "+248",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Drew Dober",
-   "raw": 0.2872676697161209
-  },
-  {
-   "id": "v48",
-   "text": "28.7%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Drew Dober",
-   "raw": 0.2872676697161209
-  },
-  {
-   "id": "v49",
-   "text": "+205",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Drew Dober"
-   },
-   "desc": "BP ITD fair ML Drew Dober",
-   "raw": 0.3280723415561398
-  },
-  {
-   "id": "v50",
-   "text": "32.8%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Drew Dober"
-   },
-   "desc": "BP ITD no-vig Drew Dober",
-   "raw": 0.3280723415561398
-  },
-  {
-   "id": "v51",
-   "text": "-4.1",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v48",
-     "v50"
-    ]
-   },
-   "desc": "Edge v48-v50",
-   "raw": -0.0408046718400189
-  },
-  {
-   "id": "v52",
-   "text": "+139",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Chris Duncan",
-   "raw": 0.4184725520631515
-  },
-  {
-   "id": "v53",
-   "text": "41.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Chris Duncan",
-   "raw": 0.4184725520631515
-  },
-  {
-   "id": "v54",
-   "text": "+135",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Chris Duncan"
-   },
-   "desc": "BP ITD fair ML Chris Duncan",
-   "raw": 0.4263889551654122
-  },
-  {
-   "id": "v55",
-   "text": "42.6%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Chris Duncan"
-   },
-   "desc": "BP ITD no-vig Chris Duncan",
-   "raw": 0.4263889551654122
-  },
-  {
-   "id": "v56",
-   "text": "-0.8",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v53",
-     "v55"
-    ]
-   },
-   "desc": "Edge v53-v55",
-   "raw": -0.007916403102260716
-  },
-  {
-   "id": "v57",
    "text": "+240",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
-   "desc": "Sean GTD fair ML",
+   "desc": "Model GTD",
    "raw": 0.29425977822072763
   },
   {
-   "id": "v58",
+   "id": "v24",
    "text": "29.4%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
-   "desc": "Sean GTD %",
+   "desc": "Model GTD %",
    "raw": 0.29425977822072763
   },
   {
-   "id": "v59",
+   "id": "v25",
+   "text": "+309",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD price",
+   "raw": 0.24451553930530165
+  },
+  {
+   "id": "v26",
+   "text": "24.5%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD %",
+   "raw": 0.24451553930530165
+  },
+  {
+   "id": "v27",
    "text": "+277",
    "fmt": "ml",
    "rule": "bp",
@@ -755,11 +343,61 @@
     "label": "Yes",
     "field": "cost"
    },
-   "desc": "BP GTD yes now",
+   "desc": "Market GTD yes",
    "raw": 277
   },
   {
-   "id": "v60",
+   "id": "v28",
+   "text": "26.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.26525198938992045
+  },
+  {
+   "id": "v29",
+   "text": "+5.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v24",
+     "v26"
+    ]
+   },
+   "desc": "Edge GTD vs listed",
+   "raw": 0.04974423891542598
+  },
+  {
+   "id": "v30",
+   "text": "-240",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.7057402217792723
+  },
+  {
+   "id": "v31",
+   "text": "70.6%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.7057402217792723
+  },
+  {
+   "id": "v32",
    "text": "-400",
    "fmt": "ml",
    "rule": "bp",
@@ -768,86 +406,608 @@
     "label": "No",
     "field": "cost"
    },
-   "desc": "BP GTD no now",
+   "desc": "Market ITD no",
    "raw": -400
   },
   {
-   "id": "v61",
-   "text": "24.9%",
+   "id": "v33",
+   "text": "80.0%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "fight_distance",
-    "label": "Yes",
-    "other": "No"
+    "label": "No"
    },
-   "desc": "BP GTD no-vig",
-   "raw": 0.249003984063745
+   "desc": "Market ITD implied",
+   "raw": 0.8
   },
   {
-   "id": "v62",
-   "text": "+4.5",
-   "fmt": "sp",
+   "id": "v34",
+   "text": "-9.4%",
+   "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v58",
-     "v61"
+     "v31",
+     "v33"
     ]
    },
-   "desc": "Edge GTD",
-   "raw": 0.04525579415698264
+   "desc": "Edge ITD vs market",
+   "raw": -0.09425977822072773
+  },
+  {
+   "id": "v35",
+   "text": "8.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Bar model dec % Drew Dober",
+   "raw": 0.08252097893943151
+  },
+  {
+   "id": "v36",
+   "text": "25.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Bar model ko % Drew Dober",
+   "raw": 0.252201094372541
+  },
+  {
+   "id": "v37",
+   "text": "3.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Bar model sub % Drew Dober",
+   "raw": 0.03506657534357985
+  },
+  {
+   "id": "v38",
+   "text": "21.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Bar model dec % Chris Duncan",
+   "raw": 0.21173879928129613
+  },
+  {
+   "id": "v39",
+   "text": "18.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Bar model ko % Chris Duncan",
+   "raw": 0.18533636062266098
+  },
+  {
+   "id": "v40",
+   "text": "23.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Bar model sub % Chris Duncan",
+   "raw": 0.2331361914404905
+  },
+  {
+   "id": "v41",
+   "text": "+1112",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Drew Dober",
+   "raw": 0.08252097893943151
+  },
+  {
+   "id": "v42",
+   "text": "8.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Drew Dober",
+   "raw": 0.08252097893943151
+  },
+  {
+   "id": "v43",
+   "text": "+1000",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Drew Dober",
+   "raw": 1000
+  },
+  {
+   "id": "v44",
+   "text": "9.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober Points"
+   },
+   "desc": "Market dec implied Drew Dober",
+   "raw": 0.09090909090909091
+  },
+  {
+   "id": "v45",
+   "text": "-0.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v42",
+     "v44"
+    ]
+   },
+   "desc": "Edge dec Drew Dober",
+   "raw": -0.008388111969659398
+  },
+  {
+   "id": "v46",
+   "text": "+297",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Drew Dober",
+   "raw": 0.252201094372541
+  },
+  {
+   "id": "v47",
+   "text": "25.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Drew Dober",
+   "raw": 0.252201094372541
+  },
+  {
+   "id": "v48",
+   "text": "+192",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Drew Dober",
+   "raw": 192
+  },
+  {
+   "id": "v49",
+   "text": "34.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Drew Dober",
+   "raw": 0.3424657534246575
+  },
+  {
+   "id": "v50",
+   "text": "-9.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v47",
+     "v49"
+    ]
+   },
+   "desc": "Edge ko Drew Dober",
+   "raw": -0.0902646590521165
+  },
+  {
+   "id": "v51",
+   "text": "+2752",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Drew Dober",
+   "raw": 0.03506657534357985
+  },
+  {
+   "id": "v52",
+   "text": "3.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Drew Dober",
+   "raw": 0.03506657534357985
+  },
+  {
+   "id": "v53",
+   "text": "+1800",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Drew Dober",
+   "raw": 1800
+  },
+  {
+   "id": "v54",
+   "text": "5.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober Submission"
+   },
+   "desc": "Market sub implied Drew Dober",
+   "raw": 0.05263157894736842
+  },
+  {
+   "id": "v55",
+   "text": "-1.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v52",
+     "v54"
+    ]
+   },
+   "desc": "Edge sub Drew Dober",
+   "raw": -0.01756500360378857
+  },
+  {
+   "id": "v56",
+   "text": "+248",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Drew Dober",
+   "raw": 0.2872676697161209
+  },
+  {
+   "id": "v57",
+   "text": "28.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Drew Dober",
+   "raw": 0.2872676697161209
+  },
+  {
+   "id": "v58",
+   "text": "39.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Drew Dober KO/TKO/DQ",
+     "Drew Dober Submission"
+    ]
+   },
+   "desc": "Market ITD implied Drew Dober",
+   "raw": 0.39509733237202593
+  },
+  {
+   "id": "v59",
+   "text": "-10.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v57",
+     "v58"
+    ]
+   },
+   "desc": "Edge itd Drew Dober",
+   "raw": -0.10782966265590505
+  },
+  {
+   "id": "v60",
+   "text": "+372",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Chris Duncan",
+   "raw": 0.21173879928129613
+  },
+  {
+   "id": "v61",
+   "text": "21.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Chris Duncan",
+   "raw": 0.21173879928129613
+  },
+  {
+   "id": "v62",
+   "text": "+440",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Chris Duncan",
+   "raw": 440
   },
   {
    "id": "v63",
-   "text": "37.0%",
+   "text": "18.5%",
    "fmt": "pct1",
-   "rule": "pub_win",
+   "rule": "bp_imp",
    "args": {
-    "side": "a"
+    "market": "method_of_victory",
+    "label": "Christopher Duncan Points"
    },
-   "desc": "Bar Sean % a",
-   "raw": 0.3697886486555524
+   "desc": "Market dec implied Chris Duncan",
+   "raw": 0.18518518518518517
   },
   {
    "id": "v64",
-   "text": "63.0%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "text": "+2.7%",
+   "fmt": "spp",
+   "rule": "edge",
    "args": {
-    "side": "b"
+    "of": [
+     "v61",
+     "v63"
+    ]
    },
-   "desc": "Bar Sean % b",
-   "raw": 0.6302113513444476
+   "desc": "Edge dec Chris Duncan",
+   "raw": 0.026553614096110956
   },
   {
    "id": "v65",
-   "text": "39.5%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
+   "text": "+440",
+   "fmt": "mlp",
+   "rule": "pub_meth",
    "args": {
-    "market": "moneyline",
-    "label": "Drew Dober",
-    "other": "Christopher Duncan"
+    "side": "b",
+    "k": "ko"
    },
-   "desc": "Bar BP no-vig a",
-   "raw": 0.39521097291642454
+   "desc": "Model ko ML Chris Duncan",
+   "raw": 0.18533636062266098
   },
   {
    "id": "v66",
-   "text": "60.5%",
+   "text": "18.5%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "pub_meth",
    "args": {
-    "market": "moneyline",
-    "label": "Christopher Duncan",
-    "other": "Drew Dober"
+    "side": "b",
+    "k": "ko"
    },
-   "desc": "Bar BP no-vig b",
-   "raw": 0.6047890270835754
+   "desc": "Model ko % Chris Duncan",
+   "raw": 0.18533636062266098
   },
   {
    "id": "v67",
+   "text": "+292",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Chris Duncan",
+   "raw": 292
+  },
+  {
+   "id": "v68",
+   "text": "25.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Chris Duncan",
+   "raw": 0.25510204081632654
+  },
+  {
+   "id": "v69",
+   "text": "-7.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v66",
+     "v68"
+    ]
+   },
+   "desc": "Edge ko Chris Duncan",
+   "raw": -0.06976568019366555
+  },
+  {
+   "id": "v70",
+   "text": "+329",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Chris Duncan",
+   "raw": 0.2331361914404905
+  },
+  {
+   "id": "v71",
+   "text": "23.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Chris Duncan",
+   "raw": 0.2331361914404905
+  },
+  {
+   "id": "v72",
+   "text": "+287",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Chris Duncan",
+   "raw": 287
+  },
+  {
+   "id": "v73",
+   "text": "25.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan Submission"
+   },
+   "desc": "Market sub implied Chris Duncan",
+   "raw": 0.25839793281653745
+  },
+  {
+   "id": "v74",
+   "text": "-2.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v71",
+     "v73"
+    ]
+   },
+   "desc": "Edge sub Chris Duncan",
+   "raw": -0.025261741376046948
+  },
+  {
+   "id": "v75",
+   "text": "+139",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Chris Duncan",
+   "raw": 0.4184725520631515
+  },
+  {
+   "id": "v76",
+   "text": "41.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Chris Duncan",
+   "raw": 0.4184725520631515
+  },
+  {
+   "id": "v77",
+   "text": "51.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Christopher Duncan KO/TKO/DQ",
+     "Christopher Duncan Submission"
+    ]
+   },
+   "desc": "Market ITD implied Chris Duncan",
+   "raw": 0.513499973632864
+  },
+  {
+   "id": "v78",
+   "text": "-9.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v76",
+     "v77"
+    ]
+   },
+   "desc": "Edge itd Chris Duncan",
+   "raw": -0.09502742156971256
+  },
+  {
+   "id": "v79",
+   "text": "0.2",
+   "fmt": "pts",
+   "rule": "oa_drift",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ]
+   },
+   "desc": "OA drift pts",
+   "raw": 0.0021999999999999797
+  },
+  {
+   "id": "v80",
    "text": "+136",
    "fmt": "ml",
    "rule": "oa_best",
@@ -863,7 +1023,7 @@
    "raw": 136
   },
   {
-   "id": "v68",
+   "id": "v81",
    "text": "-159",
    "fmt": "ml",
    "rule": "oa_best",
@@ -879,7 +1039,7 @@
    "raw": -159
   },
   {
-   "id": "v69",
+   "id": "v82",
    "text": "+115",
    "fmt": "ml",
    "rule": "bp",
@@ -892,7 +1052,7 @@
    "raw": 115
   },
   {
-   "id": "v70",
+   "id": "v83",
    "text": "+142",
    "fmt": "ml",
    "rule": "bp",
@@ -905,7 +1065,7 @@
    "raw": 142
   },
   {
-   "id": "v71",
+   "id": "v84",
    "text": "-145",
    "fmt": "ml",
    "rule": "bp",
@@ -918,7 +1078,7 @@
    "raw": -145
   },
   {
-   "id": "v72",
+   "id": "v85",
    "text": "-172",
    "fmt": "ml",
    "rule": "bp",
@@ -931,7 +1091,7 @@
    "raw": -172
   },
   {
-   "id": "v73",
+   "id": "v86",
    "text": "-159",
    "fmt": "ml",
    "rule": "bp",
@@ -944,7 +1104,7 @@
    "raw": -159
   },
   {
-   "id": "v74",
+   "id": "v87",
    "text": "-130",
    "fmt": "ml",
    "rule": "bp",
@@ -957,7 +1117,7 @@
    "raw": -130
   },
   {
-   "id": "v75",
+   "id": "v88",
    "text": "57%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -969,7 +1129,7 @@
    "raw": 0.5652173913043478
   },
   {
-   "id": "v76",
+   "id": "v89",
    "text": "+235",
    "fmt": "ml",
    "rule": "bp",
@@ -982,7 +1142,7 @@
    "raw": 235
   },
   {
-   "id": "v77",
+   "id": "v90",
    "text": "+230",
    "fmt": "ml",
    "rule": "bp",
@@ -995,7 +1155,7 @@
    "raw": 230
   },
   {
-   "id": "v78",
+   "id": "v91",
    "text": "30%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1007,7 +1167,7 @@
    "raw": 0.30303030303030304
   },
   {
-   "id": "v79",
+   "id": "v92",
    "text": "+300",
    "fmt": "ml",
    "rule": "bp",
@@ -1020,7 +1180,7 @@
    "raw": 300
   },
   {
-   "id": "v80",
+   "id": "v93",
    "text": "+275",
    "fmt": "ml",
    "rule": "bp",
@@ -1033,7 +1193,7 @@
    "raw": 275
   },
   {
-   "id": "v81",
+   "id": "v94",
    "text": "27%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1045,7 +1205,7 @@
    "raw": 0.26666666666666666
   },
   {
-   "id": "v82",
+   "id": "v95",
    "text": "+280",
    "fmt": "ml",
    "rule": "bp",
@@ -1058,7 +1218,7 @@
    "raw": 280
   },
   {
-   "id": "v83",
+   "id": "v96",
    "text": "+277",
    "fmt": "ml",
    "rule": "bp",
@@ -1071,7 +1231,7 @@
    "raw": 277
   },
   {
-   "id": "v84",
+   "id": "v97",
    "text": "27%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1083,7 +1243,7 @@
    "raw": 0.26525198938992045
   },
   {
-   "id": "v85",
+   "id": "v98",
    "text": "-435",
    "fmt": "ml",
    "rule": "bp",
@@ -1096,7 +1256,7 @@
    "raw": -435
   },
   {
-   "id": "v86",
+   "id": "v99",
    "text": "-400",
    "fmt": "ml",
    "rule": "bp",
@@ -1109,7 +1269,7 @@
    "raw": -400
   },
   {
-   "id": "v87",
+   "id": "v100",
    "text": "80%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1121,7 +1281,7 @@
    "raw": 0.8
   },
   {
-   "id": "v88",
+   "id": "v101",
    "text": "1.5",
    "fmt": "str",
    "rule": "bp",
@@ -1134,7 +1294,7 @@
    "raw": 1.5
   },
   {
-   "id": "v89",
+   "id": "v102",
    "text": "-130",
    "fmt": "ml",
    "rule": "bp",
@@ -1147,7 +1307,7 @@
    "raw": -130
   },
   {
-   "id": "v90",
+   "id": "v103",
    "text": "-124",
    "fmt": "ml",
    "rule": "bp",
@@ -1160,7 +1320,7 @@
    "raw": -124
   },
   {
-   "id": "v91",
+   "id": "v104",
    "text": "55%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1172,7 +1332,7 @@
    "raw": 0.5535714285714286
   },
   {
-   "id": "v92",
+   "id": "v105",
    "text": "1.5",
    "fmt": "str",
    "rule": "bp",
@@ -1185,7 +1345,7 @@
    "raw": 1.5
   },
   {
-   "id": "v93",
+   "id": "v106",
    "text": "+100",
    "fmt": "ml",
    "rule": "bp",
@@ -1198,7 +1358,7 @@
    "raw": 100
   },
   {
-   "id": "v94",
+   "id": "v107",
    "text": "-103",
    "fmt": "ml",
    "rule": "bp",
@@ -1211,7 +1371,7 @@
    "raw": -103
   },
   {
-   "id": "v95",
+   "id": "v108",
    "text": "51%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1223,7 +1383,7 @@
    "raw": 0.5073891625615764
   },
   {
-   "id": "v96",
+   "id": "v109",
    "text": "38.1",
    "fmt": "n1",
    "rule": "age",
@@ -1234,7 +1394,7 @@
    "raw": 38.06981519507187
   },
   {
-   "id": "v97",
+   "id": "v110",
    "text": "33.5",
    "fmt": "n1",
    "rule": "age",
@@ -1245,7 +1405,7 @@
    "raw": 33.51403148528405
   },
   {
-   "id": "v98",
+   "id": "v111",
    "text": "70\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1256,7 +1416,7 @@
    "raw": 70
   },
   {
-   "id": "v99",
+   "id": "v112",
    "text": "71\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1267,7 +1427,7 @@
    "raw": 71
   },
   {
-   "id": "v100",
+   "id": "v113",
    "text": "5'8\"",
    "fmt": "str",
    "rule": "bio",
@@ -1279,7 +1439,7 @@
    "raw": "5'8\""
   },
   {
-   "id": "v101",
+   "id": "v114",
    "text": "5'10\"",
    "fmt": "str",
    "rule": "bio",
@@ -1291,7 +1451,7 @@
    "raw": "5'10\""
   },
   {
-   "id": "v102",
+   "id": "v115",
    "text": "Southpaw",
    "fmt": "str",
    "rule": "bio",
@@ -1303,7 +1463,7 @@
    "raw": "Southpaw"
   },
   {
-   "id": "v103",
+   "id": "v116",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1315,7 +1475,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v104",
+   "id": "v117",
    "text": "27",
    "fmt": "int",
    "rule": "nfights",
@@ -1326,7 +1486,7 @@
    "raw": 27
   },
   {
-   "id": "v105",
+   "id": "v118",
    "text": "8",
    "fmt": "int",
    "rule": "nfights",
@@ -1337,7 +1497,7 @@
    "raw": 8
   },
   {
-   "id": "v106",
+   "id": "v119",
    "text": "4.48",
    "fmt": "n2",
    "rule": "stat",
@@ -1349,7 +1509,7 @@
    "raw": 4.479158843409689
   },
   {
-   "id": "v107",
+   "id": "v120",
    "text": "4.60",
    "fmt": "n2",
    "rule": "stat",
@@ -1361,7 +1521,7 @@
    "raw": 4.6010511227902535
   },
   {
-   "id": "v108",
+   "id": "v121",
    "text": "4.33",
    "fmt": "n2",
    "rule": "stat",
@@ -1373,7 +1533,7 @@
    "raw": 4.325948178745776
   },
   {
-   "id": "v109",
+   "id": "v122",
    "text": "4.23",
    "fmt": "n2",
    "rule": "stat",
@@ -1385,7 +1545,7 @@
    "raw": 4.228380315336837
   },
   {
-   "id": "v110",
+   "id": "v123",
    "text": "+0.15",
    "fmt": "s2",
    "rule": "stat",
@@ -1397,7 +1557,7 @@
    "raw": 0.1532106646639129
   },
   {
-   "id": "v111",
+   "id": "v124",
    "text": "+0.37",
    "fmt": "s2",
    "rule": "stat",
@@ -1409,7 +1569,7 @@
    "raw": 0.37267080745341613
   },
   {
-   "id": "v112",
+   "id": "v125",
    "text": "41%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1421,7 +1581,7 @@
    "raw": 0.4102352455633512
   },
   {
-   "id": "v113",
+   "id": "v126",
    "text": "46%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1433,7 +1593,7 @@
    "raw": 0.4618705035971223
   },
   {
-   "id": "v114",
+   "id": "v127",
    "text": "53%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1445,7 +1605,7 @@
    "raw": 0.530791788856305
   },
   {
-   "id": "v115",
+   "id": "v128",
    "text": "52%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1457,7 +1617,7 @@
    "raw": 0.5234248788368336
   },
   {
-   "id": "v116",
+   "id": "v129",
    "text": "0.61",
    "fmt": "n2",
    "rule": "stat",
@@ -1469,7 +1629,7 @@
    "raw": 0.6083364626361246
   },
   {
-   "id": "v117",
+   "id": "v130",
    "text": "2.80",
    "fmt": "n2",
    "rule": "stat",
@@ -1481,7 +1641,7 @@
    "raw": 2.795031055900621
   },
   {
-   "id": "v118",
+   "id": "v131",
    "text": "58%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1493,7 +1653,7 @@
    "raw": 0.582089552238806
   },
   {
-   "id": "v119",
+   "id": "v132",
    "text": "56%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1505,7 +1665,7 @@
    "raw": 0.5555555555555556
   },
   {
-   "id": "v120",
+   "id": "v133",
    "text": "13%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1517,7 +1677,7 @@
    "raw": 0.1321066466391288
   },
   {
-   "id": "v121",
+   "id": "v134",
    "text": "22%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1529,7 +1689,7 @@
    "raw": 0.21834687052078355
   },
   {
-   "id": "v122",
+   "id": "v135",
    "text": "87",
    "fmt": "r0",
    "rule": "fight",
@@ -1542,7 +1702,7 @@
    "raw": 86.9
   },
   {
-   "id": "v123",
+   "id": "v136",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1555,7 +1715,7 @@
    "raw": -208
   },
   {
-   "id": "v124",
+   "id": "v137",
    "text": "76",
    "fmt": "r0",
    "rule": "fight",
@@ -1568,7 +1728,7 @@
    "raw": 76.1
   },
   {
-   "id": "v125",
+   "id": "v138",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -1581,7 +1741,7 @@
    "raw": -328
   },
   {
-   "id": "v126",
+   "id": "v139",
    "text": "7",
    "fmt": "r0",
    "rule": "fight",
@@ -1594,7 +1754,7 @@
    "raw": 7.2
   },
   {
-   "id": "v127",
+   "id": "v140",
    "text": "+105",
    "fmt": "ml",
    "rule": "fight",
@@ -1607,7 +1767,7 @@
    "raw": 105
   },
   {
-   "id": "v128",
+   "id": "v141",
    "text": "46",
    "fmt": "r0",
    "rule": "fight",
@@ -1620,7 +1780,7 @@
    "raw": 45.5
   },
   {
-   "id": "v129",
+   "id": "v142",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -1633,7 +1793,7 @@
    "raw": 100
   },
   {
-   "id": "v130",
+   "id": "v143",
    "text": "29",
    "fmt": "r0",
    "rule": "fight",
@@ -1646,7 +1806,7 @@
    "raw": 29.2
   },
   {
-   "id": "v131",
+   "id": "v144",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -1659,7 +1819,7 @@
    "raw": 170
   },
   {
-   "id": "v132",
+   "id": "v145",
    "text": "19",
    "fmt": "r0",
    "rule": "fight",
@@ -1672,7 +1832,7 @@
    "raw": 19.2
   },
   {
-   "id": "v133",
+   "id": "v146",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -1685,7 +1845,7 @@
    "raw": -132
   },
   {
-   "id": "v134",
+   "id": "v147",
    "text": "108",
    "fmt": "r0",
    "rule": "fight",
@@ -1698,7 +1858,7 @@
    "raw": 108.2
   },
   {
-   "id": "v135",
+   "id": "v148",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -1711,7 +1871,7 @@
    "raw": -112
   },
   {
-   "id": "v136",
+   "id": "v149",
    "text": "57",
    "fmt": "r0",
    "rule": "fight",
@@ -1724,7 +1884,7 @@
    "raw": 56.8
   },
   {
-   "id": "v137",
+   "id": "v150",
    "text": "+190",
    "fmt": "ml",
    "rule": "fight",
@@ -1737,7 +1897,7 @@
    "raw": 190
   },
   {
-   "id": "v138",
+   "id": "v151",
    "text": "95",
    "fmt": "r0",
    "rule": "fight",
@@ -1750,7 +1910,7 @@
    "raw": 94.7
   },
   {
-   "id": "v139",
+   "id": "v152",
    "text": "+310",
    "fmt": "ml",
    "rule": "fight",
@@ -1763,7 +1923,7 @@
    "raw": 310
   },
   {
-   "id": "v140",
+   "id": "v153",
    "text": "53",
    "fmt": "r0",
    "rule": "fight",
@@ -1776,7 +1936,7 @@
    "raw": 52.6
   },
   {
-   "id": "v141",
+   "id": "v154",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",

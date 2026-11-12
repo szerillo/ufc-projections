@@ -103,28 +103,72 @@
   },
   {
    "id": "v7",
-   "text": "-183",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Kayla Harrison",
-   "raw": 0.6464519023544782
-  },
-  {
-   "id": "v8",
    "text": "64.6%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "Sean win % Kayla Harrison",
+   "desc": "Bar model % a",
    "raw": 0.6464519023544782
   },
   {
+   "id": "v8",
+   "text": "35.4%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Bar model % b",
+   "raw": 0.35354809764552175
+  },
+  {
    "id": "v9",
+   "text": "-183",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Kayla Harrison",
+   "raw": 0.6464519023544782
+  },
+  {
+   "id": "v10",
+   "text": "64.6%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Kayla Harrison",
+   "raw": 0.6464519023544782
+  },
+  {
+   "id": "v11",
+   "text": "-180",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Kayla Harrison",
+   "raw": -180
+  },
+  {
+   "id": "v12",
+   "text": "64.3%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Kayla Harrison",
+   "raw": 0.6428571428571429
+  },
+  {
+   "id": "v13",
    "text": "-195",
    "fmt": "ml",
    "rule": "bp",
@@ -133,60 +177,81 @@
     "label": "Kayla Harrison",
     "field": "cost"
    },
-   "desc": "BP ML now Kayla Harrison",
+   "desc": "Market ML Kayla Harrison",
    "raw": -195
   },
   {
-   "id": "v10",
-   "text": "62.5%",
+   "id": "v14",
+   "text": "66.1%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Kayla Harrison",
-    "other": "Amanda Nunes"
+    "label": "Kayla Harrison"
    },
-   "desc": "BP ML no-vig Kayla Harrison",
-   "raw": 0.6248728382502544
+   "desc": "Market implied Kayla Harrison",
+   "raw": 0.6610169491525424
   },
   {
-   "id": "v11",
-   "text": "+2.2",
-   "fmt": "sp",
+   "id": "v15",
+   "text": "+0.4%",
+   "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v8",
-     "v10"
+     "v10",
+     "v12"
     ]
    },
-   "desc": "Edge v8-v10",
-   "raw": 0.021579064104223833
+   "desc": "Edge ML Kayla Harrison",
+   "raw": 0.0035947594973353425
   },
   {
-   "id": "v12",
+   "id": "v16",
    "text": "+183",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "Sean ML Amanda Nunes",
+   "desc": "Model ML Amanda Nunes",
    "raw": 0.35354809764552175
   },
   {
-   "id": "v13",
+   "id": "v17",
    "text": "35.4%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "Sean win % Amanda Nunes",
+   "desc": "Model win % Amanda Nunes",
    "raw": 0.35354809764552175
   },
   {
-   "id": "v14",
+   "id": "v18",
+   "text": "+163",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Amanda Nunes",
+   "raw": 163
+  },
+  {
+   "id": "v19",
+   "text": "38.0%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Amanda Nunes",
+   "raw": 0.38022813688212925
+  },
+  {
+   "id": "v20",
    "text": "+152",
    "fmt": "ml",
    "rule": "bp",
@@ -195,558 +260,81 @@
     "label": "Amanda Nunes",
     "field": "cost"
    },
-   "desc": "BP ML now Amanda Nunes",
+   "desc": "Market ML Amanda Nunes",
    "raw": 152
   },
   {
-   "id": "v15",
-   "text": "37.5%",
+   "id": "v21",
+   "text": "39.7%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Amanda Nunes",
-    "other": "Kayla Harrison"
+    "label": "Amanda Nunes"
    },
-   "desc": "BP ML no-vig Amanda Nunes",
-   "raw": 0.3751271617497457
-  },
-  {
-   "id": "v16",
-   "text": "-2.2",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v13",
-     "v15"
-    ]
-   },
-   "desc": "Edge v13-v15",
-   "raw": -0.021579064104223944
-  },
-  {
-   "id": "v17",
-   "text": "+298",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Kayla Harrison",
-   "raw": 0.25154425578997186
-  },
-  {
-   "id": "v18",
-   "text": "25.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Kayla Harrison",
-   "raw": 0.25154425578997186
-  },
-  {
-   "id": "v19",
-   "text": "+300",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Kayla Harrison Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Kayla Harrison",
-   "raw": 300
-  },
-  {
-   "id": "v20",
-   "text": "20.8%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Kayla Harrison",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Kayla Harrison",
-   "raw": 0.20804717525229915
-  },
-  {
-   "id": "v21",
-   "text": "+4.3",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v18",
-     "v20"
-    ]
-   },
-   "desc": "Edge v18-v20",
-   "raw": 0.043497080537672705
+   "desc": "Market implied Amanda Nunes",
+   "raw": 0.3968253968253968
   },
   {
    "id": "v22",
-   "text": "+479",
-   "fmt": "mlp",
-   "rule": "pub_meth",
+   "text": "-2.7%",
+   "fmt": "spp",
+   "rule": "edge",
    "args": {
-    "side": "b",
-    "k": "dec"
+    "of": [
+     "v17",
+     "v19"
+    ]
    },
-   "desc": "Sean dec ML Amanda Nunes",
-   "raw": 0.17277357397092769
+   "desc": "Edge ML Amanda Nunes",
+   "raw": -0.0266800392366075
   },
   {
    "id": "v23",
-   "text": "17.3%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Amanda Nunes",
-   "raw": 0.17277357397092769
-  },
-  {
-   "id": "v24",
-   "text": "+550",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Amanda Nunes Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Amanda Nunes",
-   "raw": 550
-  },
-  {
-   "id": "v25",
-   "text": "12.8%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Amanda Nunes",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Amanda Nunes",
-   "raw": 0.12802903092449178
-  },
-  {
-   "id": "v26",
-   "text": "+4.5",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v23",
-     "v25"
-    ]
-   },
-   "desc": "Edge v23-v25",
-   "raw": 0.04474454304643591
-  },
-  {
-   "id": "v27",
-   "text": "+1133",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Kayla Harrison",
-   "raw": 0.08110804670082157
-  },
-  {
-   "id": "v28",
-   "text": "8.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Kayla Harrison",
-   "raw": 0.08110804670082157
-  },
-  {
-   "id": "v29",
-   "text": "+718",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Kayla Harrison KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Kayla Harrison",
-   "raw": 718
-  },
-  {
-   "id": "v30",
-   "text": "10.2%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Kayla Harrison",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Kayla Harrison",
-   "raw": 0.10173456002557414
-  },
-  {
-   "id": "v31",
-   "text": "-2.1",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v28",
-     "v30"
-    ]
-   },
-   "desc": "Edge v28-v30",
-   "raw": -0.02062651332475257
-  },
-  {
-   "id": "v32",
-   "text": "+596",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Amanda Nunes",
-   "raw": 0.1437776493505243
-  },
-  {
-   "id": "v33",
-   "text": "14.4%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Amanda Nunes",
-   "raw": 0.1437776493505243
-  },
-  {
-   "id": "v34",
-   "text": "+300",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Amanda Nunes KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Amanda Nunes",
-   "raw": 300
-  },
-  {
-   "id": "v35",
-   "text": "20.8%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Amanda Nunes",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Amanda Nunes",
-   "raw": 0.20804717525229915
-  },
-  {
-   "id": "v36",
-   "text": "-6.4",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v33",
-     "v35"
-    ]
-   },
-   "desc": "Edge v33-v35",
-   "raw": -0.06426952590177484
-  },
-  {
-   "id": "v37",
-   "text": "+219",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Kayla Harrison",
-   "raw": 0.31379959986368483
-  },
-  {
-   "id": "v38",
-   "text": "31.4%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Kayla Harrison",
-   "raw": 0.31379959986368483
-  },
-  {
-   "id": "v39",
-   "text": "+180",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Kayla Harrison Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Kayla Harrison",
-   "raw": 180
-  },
-  {
-   "id": "v40",
-   "text": "29.7%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Kayla Harrison",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Kayla Harrison",
-   "raw": 0.29721025036042736
-  },
-  {
-   "id": "v41",
-   "text": "+1.7",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v38",
-     "v40"
-    ]
-   },
-   "desc": "Edge v38-v40",
-   "raw": 0.016589349503257467
-  },
-  {
-   "id": "v42",
-   "text": "+2603",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Amanda Nunes",
-   "raw": 0.03699687432406978
-  },
-  {
-   "id": "v43",
-   "text": "3.7%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Amanda Nunes",
-   "raw": 0.03699687432406978
-  },
-  {
-   "id": "v44",
-   "text": "+1949",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Amanda Nunes Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Amanda Nunes",
-   "raw": 1949
-  },
-  {
-   "id": "v45",
-   "text": "4.1%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Amanda Nunes",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Amanda Nunes",
-   "raw": 0.040614382674924183
-  },
-  {
-   "id": "v46",
-   "text": "-0.4",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v43",
-     "v45"
-    ]
-   },
-   "desc": "Edge v43-v45",
-   "raw": -0.0036175083508544065
-  },
-  {
-   "id": "v47",
-   "text": "+153",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Kayla Harrison",
-   "raw": 0.3949076465645064
-  },
-  {
-   "id": "v48",
-   "text": "39.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Kayla Harrison",
-   "raw": 0.3949076465645064
-  },
-  {
-   "id": "v49",
-   "text": "+151",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Kayla Harrison"
-   },
-   "desc": "BP ITD fair ML Kayla Harrison",
-   "raw": 0.3989448103860015
-  },
-  {
-   "id": "v50",
-   "text": "39.9%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Kayla Harrison"
-   },
-   "desc": "BP ITD no-vig Kayla Harrison",
-   "raw": 0.3989448103860015
-  },
-  {
-   "id": "v51",
-   "text": "-0.4",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v48",
-     "v50"
-    ]
-   },
-   "desc": "Edge v48-v50",
-   "raw": -0.0040371638214951044
-  },
-  {
-   "id": "v52",
-   "text": "+453",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Amanda Nunes",
-   "raw": 0.18077452367459407
-  },
-  {
-   "id": "v53",
-   "text": "18.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Amanda Nunes",
-   "raw": 0.18077452367459407
-  },
-  {
-   "id": "v54",
-   "text": "+302",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Amanda Nunes"
-   },
-   "desc": "BP ITD fair ML Amanda Nunes",
-   "raw": 0.24866155792722333
-  },
-  {
-   "id": "v55",
-   "text": "24.9%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Amanda Nunes"
-   },
-   "desc": "BP ITD no-vig Amanda Nunes",
-   "raw": 0.24866155792722333
-  },
-  {
-   "id": "v56",
-   "text": "-6.8",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v53",
-     "v55"
-    ]
-   },
-   "desc": "Edge v53-v55",
-   "raw": -0.06788703425262926
-  },
-  {
-   "id": "v57",
    "text": "+136",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
-   "desc": "Sean GTD fair ML",
+   "desc": "Model GTD",
    "raw": 0.42431782976089955
   },
   {
-   "id": "v58",
+   "id": "v24",
    "text": "42.4%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
-   "desc": "Sean GTD %",
+   "desc": "Model GTD %",
    "raw": 0.42431782976089955
   },
   {
-   "id": "v59",
+   "id": "v25",
+   "text": "+168",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD price",
+   "raw": 0.3737523834811416
+  },
+  {
+   "id": "v26",
+   "text": "37.4%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD %",
+   "raw": 0.3737523834811416
+  },
+  {
+   "id": "v27",
    "text": "+161",
    "fmt": "ml",
    "rule": "bp",
@@ -755,11 +343,61 @@
     "label": "Yes",
     "field": "cost"
    },
-   "desc": "BP GTD yes now",
+   "desc": "Market GTD yes",
    "raw": 161
   },
   {
-   "id": "v60",
+   "id": "v28",
+   "text": "38.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.3831417624521073
+  },
+  {
+   "id": "v29",
+   "text": "+5.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v24",
+     "v26"
+    ]
+   },
+   "desc": "Edge GTD vs listed",
+   "raw": 0.05056544627975795
+  },
+  {
+   "id": "v30",
+   "text": "-136",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.5756821702391004
+  },
+  {
+   "id": "v31",
+   "text": "57.6%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.5756821702391004
+  },
+  {
+   "id": "v32",
    "text": "-217",
    "fmt": "ml",
    "rule": "bp",
@@ -768,86 +406,608 @@
     "label": "No",
     "field": "cost"
    },
-   "desc": "BP GTD no now",
+   "desc": "Market ITD no",
    "raw": -217
   },
   {
-   "id": "v61",
-   "text": "35.9%",
+   "id": "v33",
+   "text": "68.5%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "fight_distance",
-    "label": "Yes",
-    "other": "No"
+    "label": "No"
    },
-   "desc": "BP GTD no-vig",
-   "raw": 0.3588530287422032
+   "desc": "Market ITD implied",
+   "raw": 0.6845425867507886
   },
   {
-   "id": "v62",
-   "text": "+6.5",
-   "fmt": "sp",
+   "id": "v34",
+   "text": "-10.9%",
+   "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v58",
-     "v61"
+     "v31",
+     "v33"
     ]
    },
-   "desc": "Edge GTD",
-   "raw": 0.06546480101869634
+   "desc": "Edge ITD vs market",
+   "raw": -0.10886041651168821
+  },
+  {
+   "id": "v35",
+   "text": "25.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Bar model dec % Kayla Harrison",
+   "raw": 0.25154425578997186
+  },
+  {
+   "id": "v36",
+   "text": "8.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Bar model ko % Kayla Harrison",
+   "raw": 0.08110804670082157
+  },
+  {
+   "id": "v37",
+   "text": "31.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Bar model sub % Kayla Harrison",
+   "raw": 0.31379959986368483
+  },
+  {
+   "id": "v38",
+   "text": "17.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Bar model dec % Amanda Nunes",
+   "raw": 0.17277357397092769
+  },
+  {
+   "id": "v39",
+   "text": "14.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Bar model ko % Amanda Nunes",
+   "raw": 0.1437776493505243
+  },
+  {
+   "id": "v40",
+   "text": "3.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Bar model sub % Amanda Nunes",
+   "raw": 0.03699687432406978
+  },
+  {
+   "id": "v41",
+   "text": "+298",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Kayla Harrison",
+   "raw": 0.25154425578997186
+  },
+  {
+   "id": "v42",
+   "text": "25.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Kayla Harrison",
+   "raw": 0.25154425578997186
+  },
+  {
+   "id": "v43",
+   "text": "+300",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Kayla Harrison",
+   "raw": 300
+  },
+  {
+   "id": "v44",
+   "text": "25.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison Points"
+   },
+   "desc": "Market dec implied Kayla Harrison",
+   "raw": 0.25
+  },
+  {
+   "id": "v45",
+   "text": "+0.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v42",
+     "v44"
+    ]
+   },
+   "desc": "Edge dec Kayla Harrison",
+   "raw": 0.00154425578997186
+  },
+  {
+   "id": "v46",
+   "text": "+1133",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Kayla Harrison",
+   "raw": 0.08110804670082157
+  },
+  {
+   "id": "v47",
+   "text": "8.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Kayla Harrison",
+   "raw": 0.08110804670082157
+  },
+  {
+   "id": "v48",
+   "text": "+718",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Kayla Harrison",
+   "raw": 718
+  },
+  {
+   "id": "v49",
+   "text": "12.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Kayla Harrison",
+   "raw": 0.12224938875305623
+  },
+  {
+   "id": "v50",
+   "text": "-4.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v47",
+     "v49"
+    ]
+   },
+   "desc": "Edge ko Kayla Harrison",
+   "raw": -0.04114134205223466
+  },
+  {
+   "id": "v51",
+   "text": "+219",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Kayla Harrison",
+   "raw": 0.31379959986368483
+  },
+  {
+   "id": "v52",
+   "text": "31.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Kayla Harrison",
+   "raw": 0.31379959986368483
+  },
+  {
+   "id": "v53",
+   "text": "+180",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Kayla Harrison",
+   "raw": 180
+  },
+  {
+   "id": "v54",
+   "text": "35.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kayla Harrison Submission"
+   },
+   "desc": "Market sub implied Kayla Harrison",
+   "raw": 0.35714285714285715
+  },
+  {
+   "id": "v55",
+   "text": "-4.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v52",
+     "v54"
+    ]
+   },
+   "desc": "Edge sub Kayla Harrison",
+   "raw": -0.04334325727917232
+  },
+  {
+   "id": "v56",
+   "text": "+153",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Kayla Harrison",
+   "raw": 0.3949076465645064
+  },
+  {
+   "id": "v57",
+   "text": "39.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Kayla Harrison",
+   "raw": 0.3949076465645064
+  },
+  {
+   "id": "v58",
+   "text": "47.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Kayla Harrison KO/TKO/DQ",
+     "Kayla Harrison Submission"
+    ]
+   },
+   "desc": "Market ITD implied Kayla Harrison",
+   "raw": 0.4793922458959134
+  },
+  {
+   "id": "v59",
+   "text": "-8.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v57",
+     "v58"
+    ]
+   },
+   "desc": "Edge itd Kayla Harrison",
+   "raw": -0.084484599331407
+  },
+  {
+   "id": "v60",
+   "text": "+479",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Amanda Nunes",
+   "raw": 0.17277357397092769
+  },
+  {
+   "id": "v61",
+   "text": "17.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Amanda Nunes",
+   "raw": 0.17277357397092769
+  },
+  {
+   "id": "v62",
+   "text": "+550",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Amanda Nunes",
+   "raw": 550
   },
   {
    "id": "v63",
-   "text": "64.6%",
+   "text": "15.4%",
    "fmt": "pct1",
-   "rule": "pub_win",
+   "rule": "bp_imp",
    "args": {
-    "side": "a"
+    "market": "method_of_victory",
+    "label": "Amanda Nunes Points"
    },
-   "desc": "Bar Sean % a",
-   "raw": 0.6464519023544782
+   "desc": "Market dec implied Amanda Nunes",
+   "raw": 0.15384615384615385
   },
   {
    "id": "v64",
-   "text": "35.4%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "text": "+1.9%",
+   "fmt": "spp",
+   "rule": "edge",
    "args": {
-    "side": "b"
+    "of": [
+     "v61",
+     "v63"
+    ]
    },
-   "desc": "Bar Sean % b",
-   "raw": 0.35354809764552175
+   "desc": "Edge dec Amanda Nunes",
+   "raw": 0.01892742012477383
   },
   {
    "id": "v65",
-   "text": "62.5%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
+   "text": "+596",
+   "fmt": "mlp",
+   "rule": "pub_meth",
    "args": {
-    "market": "moneyline",
-    "label": "Kayla Harrison",
-    "other": "Amanda Nunes"
+    "side": "b",
+    "k": "ko"
    },
-   "desc": "Bar BP no-vig a",
-   "raw": 0.6248728382502544
+   "desc": "Model ko ML Amanda Nunes",
+   "raw": 0.1437776493505243
   },
   {
    "id": "v66",
-   "text": "37.5%",
+   "text": "14.4%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "pub_meth",
    "args": {
-    "market": "moneyline",
-    "label": "Amanda Nunes",
-    "other": "Kayla Harrison"
+    "side": "b",
+    "k": "ko"
    },
-   "desc": "Bar BP no-vig b",
-   "raw": 0.3751271617497456
+   "desc": "Model ko % Amanda Nunes",
+   "raw": 0.1437776493505243
   },
   {
    "id": "v67",
+   "text": "+300",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Amanda Nunes",
+   "raw": 300
+  },
+  {
+   "id": "v68",
+   "text": "25.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Amanda Nunes",
+   "raw": 0.25
+  },
+  {
+   "id": "v69",
+   "text": "-10.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v66",
+     "v68"
+    ]
+   },
+   "desc": "Edge ko Amanda Nunes",
+   "raw": -0.10622235064947569
+  },
+  {
+   "id": "v70",
+   "text": "+2603",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Amanda Nunes",
+   "raw": 0.03699687432406978
+  },
+  {
+   "id": "v71",
+   "text": "3.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Amanda Nunes",
+   "raw": 0.03699687432406978
+  },
+  {
+   "id": "v72",
+   "text": "+1949",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Amanda Nunes",
+   "raw": 1949
+  },
+  {
+   "id": "v73",
+   "text": "4.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Amanda Nunes Submission"
+   },
+   "desc": "Market sub implied Amanda Nunes",
+   "raw": 0.04880429477794046
+  },
+  {
+   "id": "v74",
+   "text": "-1.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v71",
+     "v73"
+    ]
+   },
+   "desc": "Edge sub Amanda Nunes",
+   "raw": -0.011807420453870683
+  },
+  {
+   "id": "v75",
+   "text": "+453",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Amanda Nunes",
+   "raw": 0.18077452367459407
+  },
+  {
+   "id": "v76",
+   "text": "18.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Amanda Nunes",
+   "raw": 0.18077452367459407
+  },
+  {
+   "id": "v77",
+   "text": "29.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Amanda Nunes KO/TKO/DQ",
+     "Amanda Nunes Submission"
+    ]
+   },
+   "desc": "Market ITD implied Amanda Nunes",
+   "raw": 0.29880429477794046
+  },
+  {
+   "id": "v78",
+   "text": "-11.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v76",
+     "v77"
+    ]
+   },
+   "desc": "Edge itd Amanda Nunes",
+   "raw": -0.11802977110334639
+  },
+  {
+   "id": "v79",
+   "text": "0.2",
+   "fmt": "pts",
+   "rule": "oa_drift",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ]
+   },
+   "desc": "OA drift pts",
+   "raw": -0.0018000000000000238
+  },
+  {
+   "id": "v80",
    "text": "-192",
    "fmt": "ml",
    "rule": "oa_best",
@@ -863,7 +1023,7 @@
    "raw": -192
   },
   {
-   "id": "v68",
+   "id": "v81",
    "text": "+165",
    "fmt": "ml",
    "rule": "oa_best",
@@ -879,7 +1039,7 @@
    "raw": 165
   },
   {
-   "id": "v69",
+   "id": "v82",
    "text": "-205",
    "fmt": "ml",
    "rule": "bp",
@@ -892,7 +1052,7 @@
    "raw": -205
   },
   {
-   "id": "v70",
+   "id": "v83",
    "text": "-195",
    "fmt": "ml",
    "rule": "bp",
@@ -905,7 +1065,7 @@
    "raw": -195
   },
   {
-   "id": "v71",
+   "id": "v84",
    "text": "+163",
    "fmt": "ml",
    "rule": "bp",
@@ -918,7 +1078,7 @@
    "raw": 163
   },
   {
-   "id": "v72",
+   "id": "v85",
    "text": "+152",
    "fmt": "ml",
    "rule": "bp",
@@ -931,7 +1091,7 @@
    "raw": 152
   },
   {
-   "id": "v73",
+   "id": "v86",
    "text": "+210",
    "fmt": "ml",
    "rule": "bp",
@@ -944,7 +1104,7 @@
    "raw": 210
   },
   {
-   "id": "v74",
+   "id": "v87",
    "text": "+185",
    "fmt": "ml",
    "rule": "bp",
@@ -957,7 +1117,7 @@
    "raw": 185
   },
   {
-   "id": "v75",
+   "id": "v88",
    "text": "35%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -969,7 +1129,7 @@
    "raw": 0.3508771929824561
   },
   {
-   "id": "v76",
+   "id": "v89",
    "text": "+170",
    "fmt": "ml",
    "rule": "bp",
@@ -982,7 +1142,7 @@
    "raw": 170
   },
   {
-   "id": "v77",
+   "id": "v90",
    "text": "+143",
    "fmt": "ml",
    "rule": "bp",
@@ -995,7 +1155,7 @@
    "raw": 143
   },
   {
-   "id": "v78",
+   "id": "v91",
    "text": "41%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1007,7 +1167,7 @@
    "raw": 0.411522633744856
   },
   {
-   "id": "v79",
+   "id": "v92",
    "text": "+140",
    "fmt": "ml",
    "rule": "bp",
@@ -1020,7 +1180,7 @@
    "raw": 140
   },
   {
-   "id": "v80",
+   "id": "v93",
    "text": "+160",
    "fmt": "ml",
    "rule": "bp",
@@ -1033,7 +1193,7 @@
    "raw": 160
   },
   {
-   "id": "v81",
+   "id": "v94",
    "text": "38%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1045,7 +1205,7 @@
    "raw": 0.38461538461538464
   },
   {
-   "id": "v82",
+   "id": "v95",
    "text": "+148",
    "fmt": "ml",
    "rule": "bp",
@@ -1058,7 +1218,7 @@
    "raw": 148
   },
   {
-   "id": "v83",
+   "id": "v96",
    "text": "+161",
    "fmt": "ml",
    "rule": "bp",
@@ -1071,7 +1231,7 @@
    "raw": 161
   },
   {
-   "id": "v84",
+   "id": "v97",
    "text": "38%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1083,7 +1243,7 @@
    "raw": 0.3831417624521073
   },
   {
-   "id": "v85",
+   "id": "v98",
    "text": "-192",
    "fmt": "ml",
    "rule": "bp",
@@ -1096,7 +1256,7 @@
    "raw": -192
   },
   {
-   "id": "v86",
+   "id": "v99",
    "text": "-217",
    "fmt": "ml",
    "rule": "bp",
@@ -1109,7 +1269,7 @@
    "raw": -217
   },
   {
-   "id": "v87",
+   "id": "v100",
    "text": "68%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1121,7 +1281,7 @@
    "raw": 0.6845425867507886
   },
   {
-   "id": "v88",
+   "id": "v101",
    "text": "3.5",
    "fmt": "str",
    "rule": "bp",
@@ -1134,7 +1294,7 @@
    "raw": 3.5
   },
   {
-   "id": "v89",
+   "id": "v102",
    "text": "+100",
    "fmt": "ml",
    "rule": "bp",
@@ -1147,7 +1307,7 @@
    "raw": 100
   },
   {
-   "id": "v90",
+   "id": "v103",
    "text": "+105",
    "fmt": "ml",
    "rule": "bp",
@@ -1160,7 +1320,7 @@
    "raw": 105
   },
   {
-   "id": "v91",
+   "id": "v104",
    "text": "49%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1172,7 +1332,7 @@
    "raw": 0.4878048780487805
   },
   {
-   "id": "v92",
+   "id": "v105",
    "text": "3.5",
    "fmt": "str",
    "rule": "bp",
@@ -1185,7 +1345,7 @@
    "raw": 3.5
   },
   {
-   "id": "v93",
+   "id": "v106",
    "text": "-122",
    "fmt": "ml",
    "rule": "bp",
@@ -1198,7 +1358,7 @@
    "raw": -122
   },
   {
-   "id": "v94",
+   "id": "v107",
    "text": "-135",
    "fmt": "ml",
    "rule": "bp",
@@ -1211,7 +1371,7 @@
    "raw": -135
   },
   {
-   "id": "v95",
+   "id": "v108",
    "text": "57%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1223,7 +1383,7 @@
    "raw": 0.574468085106383
   },
   {
-   "id": "v96",
+   "id": "v109",
    "text": "36.4",
    "fmt": "n1",
    "rule": "age",
@@ -1234,7 +1394,7 @@
    "raw": 36.369609856262834
   },
   {
-   "id": "v97",
+   "id": "v110",
    "text": "38.5",
    "fmt": "n1",
    "rule": "age",
@@ -1245,7 +1405,7 @@
    "raw": 38.458590006844624
   },
   {
-   "id": "v98",
+   "id": "v111",
    "text": "66\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1256,7 +1416,7 @@
    "raw": 66
   },
   {
-   "id": "v99",
+   "id": "v112",
    "text": "69\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1267,7 +1427,7 @@
    "raw": 69
   },
   {
-   "id": "v100",
+   "id": "v113",
    "text": "5'8\"",
    "fmt": "str",
    "rule": "bio",
@@ -1279,7 +1439,7 @@
    "raw": "5'8\""
   },
   {
-   "id": "v101",
+   "id": "v114",
    "text": "5'8\"",
    "fmt": "str",
    "rule": "bio",
@@ -1291,7 +1451,7 @@
    "raw": "5'8\""
   },
   {
-   "id": "v102",
+   "id": "v115",
    "text": "Southpaw",
    "fmt": "str",
    "rule": "bio",
@@ -1303,7 +1463,7 @@
    "raw": "Southpaw"
   },
   {
-   "id": "v103",
+   "id": "v116",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1315,7 +1475,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v104",
+   "id": "v117",
    "text": "3",
    "fmt": "int",
    "rule": "nfights",
@@ -1326,7 +1486,7 @@
    "raw": 3
   },
   {
-   "id": "v105",
+   "id": "v118",
    "text": "18",
    "fmt": "int",
    "rule": "nfights",
@@ -1337,7 +1497,7 @@
    "raw": 18
   },
   {
-   "id": "v106",
+   "id": "v119",
    "text": "4.29",
    "fmt": "n2",
    "rule": "stat",
@@ -1349,7 +1509,7 @@
    "raw": 4.290220820189274
   },
   {
-   "id": "v107",
+   "id": "v120",
    "text": "4.54",
    "fmt": "n2",
    "rule": "stat",
@@ -1361,7 +1521,7 @@
    "raw": 4.540117416829745
   },
   {
-   "id": "v108",
+   "id": "v121",
    "text": "1.10",
    "fmt": "n2",
    "rule": "stat",
@@ -1373,7 +1533,7 @@
    "raw": 1.1041009463722398
   },
   {
-   "id": "v109",
+   "id": "v122",
    "text": "2.44",
    "fmt": "n2",
    "rule": "stat",
@@ -1385,7 +1545,7 @@
    "raw": 2.4412915851272015
   },
   {
-   "id": "v110",
+   "id": "v123",
    "text": "+3.19",
    "fmt": "s2",
    "rule": "stat",
@@ -1397,7 +1557,7 @@
    "raw": 3.186119873817035
   },
   {
-   "id": "v111",
+   "id": "v124",
    "text": "+2.10",
    "fmt": "s2",
    "rule": "stat",
@@ -1409,7 +1569,7 @@
    "raw": 2.098825831702544
   },
   {
-   "id": "v112",
+   "id": "v125",
    "text": "62%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1421,7 +1581,7 @@
    "raw": 0.6210045662100456
   },
   {
-   "id": "v113",
+   "id": "v126",
    "text": "52%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1433,7 +1593,7 @@
    "raw": 0.5201793721973094
   },
   {
-   "id": "v114",
+   "id": "v127",
    "text": "66%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1445,7 +1605,7 @@
    "raw": 0.6601941747572815
   },
   {
-   "id": "v115",
+   "id": "v128",
    "text": "59%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1457,7 +1617,7 @@
    "raw": 0.5929853181076672
   },
   {
-   "id": "v116",
+   "id": "v129",
    "text": "2.84",
    "fmt": "n2",
    "rule": "stat",
@@ -1469,7 +1629,7 @@
    "raw": 2.8391167192429023
   },
   {
-   "id": "v117",
+   "id": "v130",
    "text": "2.79",
    "fmt": "n2",
    "rule": "stat",
@@ -1481,7 +1641,7 @@
    "raw": 2.7886497064579254
   },
   {
-   "id": "v118",
+   "id": "v131",
    "text": "100%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1493,7 +1653,7 @@
    "raw": 1.0
   },
   {
-   "id": "v119",
+   "id": "v132",
    "text": "81%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1505,7 +1665,7 @@
    "raw": 0.8125
   },
   {
-   "id": "v120",
+   "id": "v133",
    "text": "59%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1517,7 +1677,7 @@
    "raw": 0.594111461619348
   },
   {
-   "id": "v121",
+   "id": "v134",
    "text": "34%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1529,7 +1689,7 @@
    "raw": 0.34230267449445534
   },
   {
-   "id": "v122",
+   "id": "v135",
    "text": "101",
    "fmt": "r0",
    "rule": "fight",
@@ -1542,7 +1702,7 @@
    "raw": 100.7
   },
   {
-   "id": "v123",
+   "id": "v136",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -1555,7 +1715,7 @@
    "raw": -714
   },
   {
-   "id": "v124",
+   "id": "v137",
    "text": "88",
    "fmt": "r0",
    "rule": "fight",
@@ -1568,7 +1728,7 @@
    "raw": 88.3
   },
   {
-   "id": "v125",
+   "id": "v138",
    "text": "-1111",
    "fmt": "ml",
    "rule": "fight",
@@ -1581,7 +1741,7 @@
    "raw": -1111
   },
   {
-   "id": "v126",
+   "id": "v139",
    "text": "102",
    "fmt": "r0",
    "rule": "fight",
@@ -1594,7 +1754,7 @@
    "raw": 102.2
   },
   {
-   "id": "v127",
+   "id": "v140",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1607,7 +1767,7 @@
    "raw": -455
   },
   {
-   "id": "v128",
+   "id": "v141",
    "text": "94",
    "fmt": "r0",
    "rule": "fight",
@@ -1620,7 +1780,7 @@
    "raw": 93.9
   },
   {
-   "id": "v129",
+   "id": "v142",
    "text": "-312",
    "fmt": "ml",
    "rule": "fight",
@@ -1633,7 +1793,7 @@
    "raw": -312
   },
   {
-   "id": "v130",
+   "id": "v143",
    "text": "96",
    "fmt": "r0",
    "rule": "fight",
@@ -1646,7 +1806,7 @@
    "raw": 96.0
   },
   {
-   "id": "v131",
+   "id": "v144",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",
@@ -1659,7 +1819,7 @@
    "raw": -263
   },
   {
-   "id": "v132",
+   "id": "v145",
    "text": "11",
    "fmt": "r0",
    "rule": "fight",
@@ -1672,7 +1832,7 @@
    "raw": 10.6
   },
   {
-   "id": "v133",
+   "id": "v146",
    "text": "104",
    "fmt": "r0",
    "rule": "fight",
@@ -1685,7 +1845,7 @@
    "raw": 103.8
   },
   {
-   "id": "v134",
+   "id": "v147",
    "text": "93",
    "fmt": "r0",
    "rule": "fight",

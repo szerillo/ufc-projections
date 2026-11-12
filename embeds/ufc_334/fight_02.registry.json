@@ -71,28 +71,72 @@
   },
   {
    "id": "v5",
-   "text": "+296",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Alatengheili",
-   "raw": 0.25242084756221156
-  },
-  {
-   "id": "v6",
    "text": "25.2%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "Sean win % Alatengheili",
+   "desc": "Bar model % a",
    "raw": 0.25242084756221156
   },
   {
+   "id": "v6",
+   "text": "74.8%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Bar model % b",
+   "raw": 0.7475791524377884
+  },
+  {
    "id": "v7",
+   "text": "+296",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Alatengheili",
+   "raw": 0.25242084756221156
+  },
+  {
+   "id": "v8",
+   "text": "25.2%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Alatengheili",
+   "raw": 0.25242084756221156
+  },
+  {
+   "id": "v9",
+   "text": "+275",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Alatengheili",
+   "raw": 275
+  },
+  {
+   "id": "v10",
+   "text": "26.7%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Alatengheili",
+   "raw": 0.26666666666666666
+  },
+  {
+   "id": "v11",
    "text": "+275",
    "fmt": "ml",
    "rule": "bp",
@@ -101,60 +145,81 @@
     "label": "Alateng Heili",
     "field": "cost"
    },
-   "desc": "BP ML now Alatengheili",
+   "desc": "Market ML Alatengheili",
    "raw": 275
   },
   {
-   "id": "v8",
-   "text": "25.3%",
+   "id": "v12",
+   "text": "26.7%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Alateng Heili",
-    "other": "Juan Diaz"
+    "label": "Alateng Heili"
    },
-   "desc": "BP ML no-vig Alatengheili",
-   "raw": 0.2530282637954239
+   "desc": "Market implied Alatengheili",
+   "raw": 0.26666666666666666
   },
   {
-   "id": "v9",
-   "text": "-0.1",
-   "fmt": "sp",
+   "id": "v13",
+   "text": "-1.4%",
+   "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v6",
-     "v8"
+     "v8",
+     "v10"
     ]
    },
-   "desc": "Edge v6-v8",
-   "raw": -0.0006074162332123656
+   "desc": "Edge ML Alatengheili",
+   "raw": -0.014245819104455104
   },
   {
-   "id": "v10",
+   "id": "v14",
    "text": "-296",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "Sean ML Juan Diaz",
+   "desc": "Model ML Juan Diaz",
    "raw": 0.7475791524377884
   },
   {
-   "id": "v11",
+   "id": "v15",
    "text": "74.8%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "Sean win % Juan Diaz",
+   "desc": "Model win % Juan Diaz",
    "raw": 0.7475791524377884
   },
   {
-   "id": "v12",
+   "id": "v16",
+   "text": "-350",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Juan Diaz",
+   "raw": -350
+  },
+  {
+   "id": "v17",
+   "text": "77.8%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Juan Diaz",
+   "raw": 0.7777777777777778
+  },
+  {
+   "id": "v18",
    "text": "-370",
    "fmt": "ml",
    "rule": "bp",
@@ -163,50 +228,83 @@
     "label": "Juan Diaz",
     "field": "cost"
    },
-   "desc": "BP ML now Juan Diaz",
+   "desc": "Market ML Juan Diaz",
    "raw": -370
   },
   {
-   "id": "v13",
-   "text": "74.7%",
+   "id": "v19",
+   "text": "78.7%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Juan Diaz",
-    "other": "Alateng Heili"
+    "label": "Juan Diaz"
    },
-   "desc": "BP ML no-vig Juan Diaz",
-   "raw": 0.746971736204576
+   "desc": "Market implied Juan Diaz",
+   "raw": 0.7872340425531915
   },
   {
-   "id": "v14",
-   "text": "+0.1",
-   "fmt": "sp",
+   "id": "v20",
+   "text": "-3.0%",
+   "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v11",
-     "v13"
+     "v15",
+     "v17"
     ]
    },
-   "desc": "Edge v11-v13",
-   "raw": 0.0006074162332123656
+   "desc": "Edge ML Juan Diaz",
+   "raw": -0.030198625339989404
   },
   {
-   "id": "v15",
-   "text": "+700",
+   "id": "v21",
+   "text": "-182",
    "fmt": "mlp",
-   "rule": "pub_meth",
+   "rule": "pub",
    "args": {
-    "side": "a",
-    "k": "dec"
+    "key": "gtd"
    },
-   "desc": "Sean dec ML Alatengheili",
-   "raw": 0.12507361408367895
+   "desc": "Model GTD",
+   "raw": 0.6452630756375823
   },
   {
-   "id": "v16",
+   "id": "v22",
+   "text": "64.5%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.6452630756375823
+  },
+  {
+   "id": "v23",
+   "text": "+182",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.35473692436241766
+  },
+  {
+   "id": "v24",
+   "text": "35.5%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.35473692436241766
+  },
+  {
+   "id": "v25",
    "text": "12.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -214,47 +312,11 @@
     "side": "a",
     "k": "dec"
    },
-   "desc": "Sean dec % Alatengheili",
+   "desc": "Bar model dec % Alatengheili",
    "raw": 0.12507361408367895
   },
   {
-   "id": "v17",
-   "text": "-108",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Juan Diaz",
-   "raw": 0.5201894615539034
-  },
-  {
-   "id": "v18",
-   "text": "52.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Juan Diaz",
-   "raw": 0.5201894615539034
-  },
-  {
-   "id": "v19",
-   "text": "+1132",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Alatengheili",
-   "raw": 0.08119246262409927
-  },
-  {
-   "id": "v20",
+   "id": "v26",
    "text": "8.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -262,47 +324,11 @@
     "side": "a",
     "k": "ko"
    },
-   "desc": "Sean ko % Alatengheili",
+   "desc": "Bar model ko % Alatengheili",
    "raw": 0.08119246262409927
   },
   {
-   "id": "v21",
-   "text": "+527",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Juan Diaz",
-   "raw": 0.15960441275333567
-  },
-  {
-   "id": "v22",
-   "text": "16.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Juan Diaz",
-   "raw": 0.15960441275333567
-  },
-  {
-   "id": "v23",
-   "text": "+2067",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Alatengheili",
-   "raw": 0.04615477085443335
-  },
-  {
-   "id": "v24",
+   "id": "v27",
    "text": "4.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -310,23 +336,35 @@
     "side": "a",
     "k": "sub"
    },
-   "desc": "Sean sub % Alatengheili",
+   "desc": "Bar model sub % Alatengheili",
    "raw": 0.04615477085443335
   },
   {
-   "id": "v25",
-   "text": "+1375",
-   "fmt": "mlp",
+   "id": "v28",
+   "text": "52.0%",
+   "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
     "side": "b",
-    "k": "sub"
+    "k": "dec"
    },
-   "desc": "Sean sub ML Juan Diaz",
-   "raw": 0.06778527813054921
+   "desc": "Bar model dec % Juan Diaz",
+   "raw": 0.5201894615539034
   },
   {
-   "id": "v26",
+   "id": "v29",
+   "text": "16.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Bar model ko % Juan Diaz",
+   "raw": 0.15960441275333567
+  },
+  {
+   "id": "v30",
    "text": "6.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -334,11 +372,83 @@
     "side": "b",
     "k": "sub"
    },
-   "desc": "Sean sub % Juan Diaz",
+   "desc": "Bar model sub % Juan Diaz",
    "raw": 0.06778527813054921
   },
   {
-   "id": "v27",
+   "id": "v31",
+   "text": "+700",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Alatengheili",
+   "raw": 0.12507361408367895
+  },
+  {
+   "id": "v32",
+   "text": "12.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Alatengheili",
+   "raw": 0.12507361408367895
+  },
+  {
+   "id": "v33",
+   "text": "+1132",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Alatengheili",
+   "raw": 0.08119246262409927
+  },
+  {
+   "id": "v34",
+   "text": "8.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Alatengheili",
+   "raw": 0.08119246262409927
+  },
+  {
+   "id": "v35",
+   "text": "+2067",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Alatengheili",
+   "raw": 0.04615477085443335
+  },
+  {
+   "id": "v36",
+   "text": "4.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Alatengheili",
+   "raw": 0.04615477085443335
+  },
+  {
+   "id": "v37",
    "text": "+685",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -346,11 +456,11 @@
     "side": "a",
     "k": "itd"
    },
-   "desc": "Sean itd ML Alatengheili",
+   "desc": "Model itd ML Alatengheili",
    "raw": 0.1273472334785326
   },
   {
-   "id": "v28",
+   "id": "v38",
    "text": "12.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -358,11 +468,83 @@
     "side": "a",
     "k": "itd"
    },
-   "desc": "Sean itd % Alatengheili",
+   "desc": "Model itd % Alatengheili",
    "raw": 0.1273472334785326
   },
   {
-   "id": "v29",
+   "id": "v39",
+   "text": "-108",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Juan Diaz",
+   "raw": 0.5201894615539034
+  },
+  {
+   "id": "v40",
+   "text": "52.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Juan Diaz",
+   "raw": 0.5201894615539034
+  },
+  {
+   "id": "v41",
+   "text": "+527",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Juan Diaz",
+   "raw": 0.15960441275333567
+  },
+  {
+   "id": "v42",
+   "text": "16.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Juan Diaz",
+   "raw": 0.15960441275333567
+  },
+  {
+   "id": "v43",
+   "text": "+1375",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Juan Diaz",
+   "raw": 0.06778527813054921
+  },
+  {
+   "id": "v44",
+   "text": "6.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Juan Diaz",
+   "raw": 0.06778527813054921
+  },
+  {
+   "id": "v45",
    "text": "+340",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -370,11 +552,11 @@
     "side": "b",
     "k": "itd"
    },
-   "desc": "Sean itd ML Juan Diaz",
+   "desc": "Model itd ML Juan Diaz",
    "raw": 0.22738969088388492
   },
   {
-   "id": "v30",
+   "id": "v46",
    "text": "22.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -382,81 +564,11 @@
     "side": "b",
     "k": "itd"
    },
-   "desc": "Sean itd % Juan Diaz",
+   "desc": "Model itd % Juan Diaz",
    "raw": 0.22738969088388492
   },
   {
-   "id": "v31",
-   "text": "-182",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD fair ML",
-   "raw": 0.6452630756375823
-  },
-  {
-   "id": "v32",
-   "text": "64.5%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD %",
-   "raw": 0.6452630756375823
-  },
-  {
-   "id": "v33",
-   "text": "25.2%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Bar Sean % a",
-   "raw": 0.25242084756221156
-  },
-  {
-   "id": "v34",
-   "text": "74.8%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Bar Sean % b",
-   "raw": 0.7475791524377884
-  },
-  {
-   "id": "v35",
-   "text": "25.3%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Alateng Heili",
-    "other": "Juan Diaz"
-   },
-   "desc": "Bar BP no-vig a",
-   "raw": 0.2530282637954239
-  },
-  {
-   "id": "v36",
-   "text": "74.7%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Juan Diaz",
-    "other": "Alateng Heili"
-   },
-   "desc": "Bar BP no-vig b",
-   "raw": 0.746971736204576
-  },
-  {
-   "id": "v37",
+   "id": "v47",
    "text": "+270",
    "fmt": "ml",
    "rule": "bp",
@@ -469,7 +581,7 @@
    "raw": 270
   },
   {
-   "id": "v38",
+   "id": "v48",
    "text": "+275",
    "fmt": "ml",
    "rule": "bp",
@@ -482,7 +594,7 @@
    "raw": 275
   },
   {
-   "id": "v39",
+   "id": "v49",
    "text": "-350",
    "fmt": "ml",
    "rule": "bp",
@@ -495,7 +607,7 @@
    "raw": -350
   },
   {
-   "id": "v40",
+   "id": "v50",
    "text": "-370",
    "fmt": "ml",
    "rule": "bp",
@@ -508,7 +620,7 @@
    "raw": -370
   },
   {
-   "id": "v41",
+   "id": "v51",
    "text": "-270",
    "fmt": "ml",
    "rule": "bp",
@@ -521,7 +633,7 @@
    "raw": -270
   },
   {
-   "id": "v42",
+   "id": "v52",
    "text": "-257",
    "fmt": "ml",
    "rule": "bp",
@@ -534,7 +646,7 @@
    "raw": -257
   },
   {
-   "id": "v43",
+   "id": "v53",
    "text": "72%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -546,7 +658,7 @@
    "raw": 0.7198879551820728
   },
   {
-   "id": "v44",
+   "id": "v54",
    "text": "-270",
    "fmt": "ml",
    "rule": "bp",
@@ -559,7 +671,7 @@
    "raw": -270
   },
   {
-   "id": "v45",
+   "id": "v55",
    "text": "-257",
    "fmt": "ml",
    "rule": "bp",
@@ -572,7 +684,7 @@
    "raw": -257
   },
   {
-   "id": "v46",
+   "id": "v56",
    "text": "72%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -584,7 +696,7 @@
    "raw": 0.7198879551820728
   },
   {
-   "id": "v47",
+   "id": "v57",
    "text": "-257",
    "fmt": "ml",
    "rule": "bp",
@@ -597,7 +709,7 @@
    "raw": -257
   },
   {
-   "id": "v48",
+   "id": "v58",
    "text": "-257",
    "fmt": "ml",
    "rule": "bp",
@@ -610,7 +722,7 @@
    "raw": -257
   },
   {
-   "id": "v49",
+   "id": "v59",
    "text": "72%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -622,7 +734,7 @@
    "raw": 0.7198879551820728
   },
   {
-   "id": "v50",
+   "id": "v60",
    "text": "-4900",
    "fmt": "ml",
    "rule": "bp",
@@ -635,7 +747,7 @@
    "raw": -4900
   },
   {
-   "id": "v51",
+   "id": "v61",
    "text": "-3233",
    "fmt": "ml",
    "rule": "bp",
@@ -648,7 +760,7 @@
    "raw": -3233
   },
   {
-   "id": "v52",
+   "id": "v62",
    "text": "97%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -660,7 +772,7 @@
    "raw": 0.96999699969997
   },
   {
-   "id": "v53",
+   "id": "v63",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -673,7 +785,7 @@
    "raw": 2.5
   },
   {
-   "id": "v54",
+   "id": "v64",
    "text": "-166",
    "fmt": "ml",
    "rule": "bp",
@@ -686,7 +798,7 @@
    "raw": -166
   },
   {
-   "id": "v55",
+   "id": "v65",
    "text": "-188",
    "fmt": "ml",
    "rule": "bp",
@@ -699,7 +811,7 @@
    "raw": -188
   },
   {
-   "id": "v56",
+   "id": "v66",
    "text": "65%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -711,7 +823,7 @@
    "raw": 0.6527777777777778
   },
   {
-   "id": "v57",
+   "id": "v67",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -724,7 +836,7 @@
    "raw": 2.5
   },
   {
-   "id": "v58",
+   "id": "v68",
    "text": "+130",
    "fmt": "ml",
    "rule": "bp",
@@ -737,7 +849,7 @@
    "raw": 130
   },
   {
-   "id": "v59",
+   "id": "v69",
    "text": "+145",
    "fmt": "ml",
    "rule": "bp",
@@ -750,7 +862,7 @@
    "raw": 145
   },
   {
-   "id": "v60",
+   "id": "v70",
    "text": "41%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -762,7 +874,7 @@
    "raw": 0.40816326530612246
   },
   {
-   "id": "v61",
+   "id": "v71",
    "text": "34.9",
    "fmt": "n1",
    "rule": "age",
@@ -773,7 +885,7 @@
    "raw": 34.91854893908282
   },
   {
-   "id": "v62",
+   "id": "v72",
    "text": "28.4",
    "fmt": "n1",
    "rule": "age",
@@ -784,7 +896,7 @@
    "raw": 28.449007529089666
   },
   {
-   "id": "v63",
+   "id": "v73",
    "text": "66\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -795,7 +907,7 @@
    "raw": 66
   },
   {
-   "id": "v64",
+   "id": "v74",
    "text": "5'5\"",
    "fmt": "str",
    "rule": "bio",
@@ -807,7 +919,7 @@
    "raw": "5'5\""
   },
   {
-   "id": "v65",
+   "id": "v75",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -819,7 +931,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v66",
+   "id": "v76",
    "text": "10",
    "fmt": "int",
    "rule": "nfights",
@@ -830,7 +942,7 @@
    "raw": 10
   },
   {
-   "id": "v67",
+   "id": "v77",
    "text": "1",
    "fmt": "int",
    "rule": "nfights",
@@ -841,7 +953,7 @@
    "raw": 1
   },
   {
-   "id": "v68",
+   "id": "v78",
    "text": "2.71",
    "fmt": "n2",
    "rule": "stat",
@@ -853,7 +965,7 @@
    "raw": 2.710200073646741
   },
   {
-   "id": "v69",
+   "id": "v79",
    "text": "1.42",
    "fmt": "n2",
    "rule": "stat",
@@ -865,7 +977,7 @@
    "raw": 1.4233576642335768
   },
   {
-   "id": "v70",
+   "id": "v80",
    "text": "4.96",
    "fmt": "n2",
    "rule": "stat",
@@ -877,7 +989,7 @@
    "raw": 4.963790352276912
   },
   {
-   "id": "v71",
+   "id": "v81",
    "text": "1.64",
    "fmt": "n2",
    "rule": "stat",
@@ -889,7 +1001,7 @@
    "raw": 1.6423357664233578
   },
   {
-   "id": "v72",
+   "id": "v82",
    "text": "-2.25",
    "fmt": "s2",
    "rule": "stat",
@@ -901,7 +1013,7 @@
    "raw": -2.2535902786301705
   },
   {
-   "id": "v73",
+   "id": "v83",
    "text": "-0.22",
    "fmt": "s2",
    "rule": "stat",
@@ -913,7 +1025,7 @@
    "raw": -0.21897810218978103
   },
   {
-   "id": "v74",
+   "id": "v84",
    "text": "32%",
    "fmt": "pct0",
    "rule": "stat",
@@ -925,7 +1037,7 @@
    "raw": 0.3188908145580589
   },
   {
-   "id": "v75",
+   "id": "v85",
    "text": "52%",
    "fmt": "pct0",
    "rule": "stat",
@@ -937,7 +1049,7 @@
    "raw": 0.52
   },
   {
-   "id": "v76",
+   "id": "v86",
    "text": "57%",
    "fmt": "pct0",
    "rule": "stat",
@@ -949,7 +1061,7 @@
    "raw": 0.5651612903225807
   },
   {
-   "id": "v77",
+   "id": "v87",
    "text": "55%",
    "fmt": "pct0",
    "rule": "stat",
@@ -961,7 +1073,7 @@
    "raw": 0.5454545454545454
   },
   {
-   "id": "v78",
+   "id": "v88",
    "text": "1.88",
    "fmt": "n2",
    "rule": "stat",
@@ -973,7 +1085,7 @@
    "raw": 1.8779918988584754
   },
   {
-   "id": "v79",
+   "id": "v89",
    "text": "8.21",
    "fmt": "n2",
    "rule": "stat",
@@ -985,7 +1097,7 @@
    "raw": 8.211678832116789
   },
   {
-   "id": "v80",
+   "id": "v90",
    "text": "75%",
    "fmt": "pct0",
    "rule": "stat",
@@ -997,7 +1109,7 @@
    "raw": 0.75
   },
   {
-   "id": "v81",
+   "id": "v91",
    "text": "16%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1009,7 +1121,7 @@
    "raw": 0.15564011292500307
   },
   {
-   "id": "v82",
+   "id": "v92",
    "text": "42%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1021,7 +1133,7 @@
    "raw": 0.41605839416058393
   },
   {
-   "id": "v83",
+   "id": "v93",
    "text": "38",
    "fmt": "r0",
    "rule": "fight",
@@ -1034,7 +1146,7 @@
    "raw": 37.6
   },
   {
-   "id": "v84",
+   "id": "v94",
    "text": "24",
    "fmt": "r0",
    "rule": "fight",
@@ -1047,7 +1159,7 @@
    "raw": 24.3
   },
   {
-   "id": "v85",
+   "id": "v95",
    "text": "63",
    "fmt": "r0",
    "rule": "fight",
@@ -1060,7 +1172,7 @@
    "raw": 63.1
   },
   {
-   "id": "v86",
+   "id": "v96",
    "text": "28",
    "fmt": "r0",
    "rule": "fight",
@@ -1073,7 +1185,7 @@
    "raw": 28.0
   },
   {
-   "id": "v87",
+   "id": "v97",
    "text": "77",
    "fmt": "r0",
    "rule": "fight",
@@ -1086,7 +1198,7 @@
    "raw": 77.1
   },
   {
-   "id": "v88",
+   "id": "v98",
    "text": "94",
    "fmt": "r0",
    "rule": "fight",
@@ -1099,7 +1211,7 @@
    "raw": 94.0
   },
   {
-   "id": "v89",
+   "id": "v99",
    "text": "+193",
    "fmt": "ml",
    "rule": "fight",
@@ -1113,7 +1225,6 @@
   }
  ],
  "gaps": [
-  "Fight 2: BettingPros method/distance markets suspect (draw priced +108; opening prices of exactly +100; distance market has only Yes); market cells shown as n/a.",
   "Fight 2: no Odds API line history (no odds block in the event file)."
  ]
 }

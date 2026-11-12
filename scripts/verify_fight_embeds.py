@@ -44,7 +44,7 @@ def sml(m): return f"+{m}" if m > 0 else str(m)
 def fmt(x, k):
     return {"pct1": lambda: f"{x*100:.1f}%", "pct0": lambda: f"{x*100:.0f}%", "ml": lambda: sml(x), "mlp": lambda: sml(p2ml(x)), "n1": lambda: f"{x:.1f}",
             "n2": lambda: f"{x:.2f}", "s2": lambda: f"{x:+.2f}", "int": lambda: str(x), "intc": lambda: f"{x:,}", "d3": lambda: f"{x:.3f}", "d4": lambda: f"{x:.4f}",
-            "str": lambda: str(x), "in": lambda: f'{x}"', "r0": lambda: str(int(round(x))), "pts": lambda: f"{abs(x)*100:.1f}", "sp": lambda: f"{x*100:+.1f}"}[k]()
+            "str": lambda: str(x), "in": lambda: f'{x}"', "r0": lambda: str(int(round(x))), "pts": lambda: f"{abs(x)*100:.1f}", "sp": lambda: f"{x*100:+.1f}", "spp": lambda: f"{x*100:+.1f}%"}[k]()
 
 def dig(o, path):
     for p in str(path).split("."):
@@ -126,7 +126,10 @@ def check(D, htmlfile, G):
                 v = pwin(a["side"])[0]; v = 1 - v if inv else v
             elif rule == "pub_meth":
                 p, role = pwin(a["side"]); m = pub["method"][role]; v = p * (m["ko"] + m["sub"] if a["k"] == "itd" else m[a["k"]])
-            elif rule == "pub": v = dig(pub, a["key"])
+            elif rule == "pub": v = dig(pub, a["key"]); v = 1 - v if inv else v
+            elif rule in ("pub_ml", "pub_ml_imp"):   # the sheet's listed price for this side (export inputs), and its straight implied %
+                role = pwin(a["side"])[1]; v = pub["inputs"][role + "_odds"]; v = implied(v) if rule == "pub_ml_imp" else v
+            elif rule == "bp_imp_sum": v = sum(implied(bp_cost(a["market"], lb)) for lb in a["labels"])
             elif rule == "pubp": v = PUB["params"][a["key"]]
             elif rule == "bp": v = bp_cost(a["market"], a["label"], a["field"])
             elif rule == "bp_nv": v = nv(a["market"], a["label"], a["other"]); v = 1 - v if inv else v
@@ -162,11 +165,30 @@ def check(D, htmlfile, G):
     # numbers outside spans: strip spans, scripts, styles, svg, tags; flag leftover digits that are not dates/labels
     body = re.sub(r"<style.*?</style>|<script.*?</script>|<svg.*?</svg>|<span data-id=\"v\d+\">[^<]*</span>", " ", page, flags=re.S)
     body = re.sub(r"<[^>]+>", " ", body)
-    # ---- v4 structural assertions ----
     text = re.sub(r"\s+", " ", H.unescape(body))
+    V6 = 'role="tablist"' in page
+    if V6:
+        # (a6) method stack: every number in a data-k cell belongs to that method (model rows by k, market rows by label)
+        for k_, chunk in re.findall(r'<td data-k="([a-z]+)">(.*?)</td>', page, re.S):
+            for sid in re.findall(r'data-id="(v\d+)"', chunk):
+                rr = next(r for r in reg["rows"] if r["id"] == sid); ar = rr["args"]
+                kk = ar.get("k") or ({"Points": "dec", "KO/TKO/DQ": "ko", "Submission": "sub"}.get(str(ar.get("label", "")).rsplit(" ", 1)[-1]))
+                if rr["rule"] == "bp_imp_sum": kk = "itd"
+                if rr["rule"] == "edge": continue
+                if kk != k_: bad.append((sid, rr["desc"], f"method {kk} shown in column {k_}"))
+        # (e6) model cells: only export rules, and all 24 present (ML, GTD, ITD price+% and DEC/KO/SUB/ITD x 2 fighters price+%)
+        mids = [sid for td in re.findall(r'<td class="model">(.*?)</td>', page, re.S) for sid in re.findall(r'data-id="(v\d+)"', td)]
+        mids += [sid for td in re.findall(r'<td data-k="[a-z]+"><span class="odds">(.*?)</div>', page, re.S) for sid in re.findall(r'data-id="(v\d+)"', td)]
+        mrules = {next(r["rule"] for r in reg["rows"] if r["id"] == sid) for sid in mids}
+        if pub is not None:
+            if len(mids) != 24: bad.append(("proj", "model cells", f"{len(mids)} model numbers, want 24"))
+            if not mrules <= {"pub_win", "pub_meth", "pub"}: bad.append(("proj", "model rules", f"non-export rules in model cells: {mrules}"))
+        if re.search(r"\bSean\b", re.sub(r"@SeanZerillo|twitter.com/SeanZerillo", "", page)): bad.append(("page", "label", "'Sean' used as the model name"))
+        if re.search(r'class="op"', page): bad.append(("page", "open price", "o-prefixed open price in the projection"))
+    # ---- v4 structural assertions ----
     # (a) method order DEC / KO / SUB in the merged table, and every method cell sits in the row of its own method
     rows_ = re.findall(r'<tr data-row="([a-z]+)"', page)
-    if rows_ != ["win", "dec", "ko", "sub", "itd", "gtd"]: bad.append(("table", "row order", f"{rows_}"))
+    if not V6 and rows_ != ["win", "dec", "ko", "sub", "itd", "gtd"]: bad.append(("table", "row order", f"{rows_}"))
     for rk, chunk in re.findall(r'<tr data-row="([a-z]+)"(.*?)</tr>', page, re.S):
         for sid in re.findall(r'data-id="(v\d+)"', chunk):
             rr = next(r for r in reg["rows"] if r["id"] == sid)
@@ -174,7 +196,7 @@ def check(D, htmlfile, G):
             if rr["rule"] == "bp_mitd": k_ = "itd"
             if k_ and rk in ("dec", "ko", "sub", "itd") and k_ != rk: bad.append((sid, rr["desc"], f"method {k_} shown in row {rk}"))
     hdr = re.search(r'<tr data-row="dec"><th class="rl">(\w+)<small>.*?<tr data-row="ko"><th class="rl">(\w+)<small>.*?<tr data-row="sub"><th class="rl">(\w+)<small>', page, re.S)
-    if not hdr or hdr.groups() != ("DEC", "KO", "SUB"): bad.append(("table", "method labels", str(hdr and hdr.groups())))
+    if not V6 and (not hdr or hdr.groups() != ("DEC", "KO", "SUB")): bad.append(("table", "method labels", str(hdr and hdr.groups())))
     # (b) no model comparison / alt-GTD block, no Markov numbers; any Markov mention carries THIN SAMPLE
     if re.search(r"Model comparison|Other GTD numbers|id=\"models\"", page): bad.append(("page", "model comparison", "still present"))
     if any(r["rule"].startswith("mk") for r in reg["rows"]): bad.append(("page", "Markov", "Markov number displayed"))
@@ -195,10 +217,11 @@ def check(D, htmlfile, G):
     sean_ids = [sid for td in re.findall(r'<td class="proj"[^>]*>(.*?)</td>', page, re.S) for sid in re.findall(r'data-id="(v\d+)"', td)]
     sean_rules = {next(r["rule"] for r in reg["rows"] if r["id"] == sid) for sid in sean_ids}
     src_attr = (re.search(r'data-proj-src="([a-z]+)"', page) or [None, None])[1]
+    if V6: src_attr = "publish" if pub is not None else None   # v6 has no merged table to carry the attribute; (e6) covers the cells
     if pub is not None:
         if reg.get("proj_src") != "publish" or src_attr != "publish": bad.append(("proj", "source", f"export has this bout but embed says {reg.get('proj_src')}/{src_attr}"))
         if reg.get("proj_file") != G["PUBF"]: bad.append(("proj", "file", f"{reg.get('proj_file')} != {G['PUBF']}"))
-        if len(sean_ids) != 22: bad.append(("proj", "Sean cells", f"{len(sean_ids)} Sean numbers shown, want 22 (Win/DEC/KO/SUB/ITD x 2 fighters x price+% and GTD price+%)"))
+        if not V6 and len(sean_ids) != 22: bad.append(("proj", "Sean cells", f"{len(sean_ids)} Sean numbers shown, want 22 (Win/DEC/KO/SUB/ITD x 2 fighters x price+% and GTD price+%)"))
         if not sean_rules <= {"pub_win", "pub_meth", "pub"}: bad.append(("proj", "Sean rules", f"non-export rules in Sean cells: {sean_rules}"))
     else:
         if reg.get("proj_src") == "publish" or src_attr == "publish": bad.append(("proj", "source", "embed claims the export but the export has no row for this bout"))
@@ -272,10 +295,12 @@ def negative(D, G, slug):
     plants = [
         ("embed: Sean win % text off by 0.1 (fight 13)", plant_text("fight_13.html", bump_first("pub_win", "pct1"))),
         ("embed: Sean KO % text off (fight 13)", plant_text("fight_13.html", bump_first("pub_meth", "pct1"))),
-        ("embed: KO / SUB row labels swapped (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace('<th class="rl">KO<small>', '<th class="rl">@@<small>').replace('<th class="rl">SUB<small>', '<th class="rl">KO<small>').replace('<th class="rl">@@<small>', '<th class="rl">SUB<small>'))),
+        ("embed: KO and SUB cells swapped in the method stack (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace('<td data-k="ko">', '<td data-k="@@">', 1).replace('<td data-k="sub">', '<td data-k="ko">', 1).replace('<td data-k="@@">', '<td data-k="sub">', 1))),
         ("embed: badge hidden by CSS (fight 02)", plant_text("fight_02.html", lambda s_: s_.replace("/* v4 embed layout */", "/* v4 embed layout */\n.ff-brand{display:none}"))),
         ("embed: wrong FIGHT number (fight 05)", plant_text("fight_05.html", lambda s_: s_.replace('fp-fight-num">FIGHT 5<', 'fp-fight-num">FIGHT 6<'))),
-        ("embed: a Sean cell blanked (fight 10)", plant_text("fight_10.html", lambda s_: re.sub(r'<td class="proj"><span class="odds">.*?</td>', '<td class="proj dim">—</td>', s_, count=1, flags=re.S))),
+        ("embed: a model cell blanked (fight 10)", plant_text("fight_10.html", lambda s_: re.sub(r'<td class="model"><span class="odds">.*?</td>', '<td class="model dim">n/a</td>', s_, count=1, flags=re.S))),
+        ("embed: an edge chip off by 0.1 (fight 13)", plant_text("fight_13.html", bump_first("edge", "spp"))),
+        ("embed: model renamed 'Sean' (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace("Moneyline · model vs market", "Moneyline · Sean vs market", 1))),
         ("card: one embed missing (fight 09)", lambda T, G_: (T / "fight_09.html").unlink()),
         ("export: Gane/Hokit true % moved 0.2 pts after the build", export_shift),
         ("export: one dog's KO/SUB split swapped after the build", export_method),

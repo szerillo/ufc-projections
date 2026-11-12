@@ -103,28 +103,72 @@
   },
   {
    "id": "v7",
-   "text": "+330",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Jared Gordon",
-   "raw": 0.23240177360963868
-  },
-  {
-   "id": "v8",
    "text": "23.2%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "Sean win % Jared Gordon",
+   "desc": "Bar model % a",
    "raw": 0.23240177360963868
   },
   {
+   "id": "v8",
+   "text": "76.8%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Bar model % b",
+   "raw": 0.7675982263903613
+  },
+  {
    "id": "v9",
+   "text": "+330",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Jared Gordon",
+   "raw": 0.23240177360963868
+  },
+  {
+   "id": "v10",
+   "text": "23.2%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Jared Gordon",
+   "raw": 0.23240177360963868
+  },
+  {
+   "id": "v11",
+   "text": "+420",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Jared Gordon",
+   "raw": 420
+  },
+  {
+   "id": "v12",
+   "text": "19.2%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Jared Gordon",
+   "raw": 0.19230769230769232
+  },
+  {
+   "id": "v13",
    "text": "+290",
    "fmt": "ml",
    "rule": "bp",
@@ -133,60 +177,81 @@
     "label": "Jared Gordon",
     "field": "cost"
    },
-   "desc": "BP ML now Jared Gordon",
+   "desc": "Market ML Jared Gordon",
    "raw": 290
   },
   {
-   "id": "v10",
-   "text": "24.4%",
+   "id": "v14",
+   "text": "25.6%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Jared Gordon",
-    "other": "Melquizael Costa"
+    "label": "Jared Gordon"
    },
-   "desc": "BP ML no-vig Jared Gordon",
-   "raw": 0.24414799899320414
+   "desc": "Market implied Jared Gordon",
+   "raw": 0.2564102564102564
   },
   {
-   "id": "v11",
-   "text": "-1.2",
-   "fmt": "sp",
+   "id": "v15",
+   "text": "+4.0%",
+   "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v8",
-     "v10"
+     "v10",
+     "v12"
     ]
    },
-   "desc": "Edge v8-v10",
-   "raw": -0.011746225383565456
+   "desc": "Edge ML Jared Gordon",
+   "raw": 0.04009408130194636
   },
   {
-   "id": "v12",
+   "id": "v16",
    "text": "-330",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "Sean ML Melquizael Costa",
+   "desc": "Model ML Melquizael Costa",
    "raw": 0.7675982263903613
   },
   {
-   "id": "v13",
+   "id": "v17",
    "text": "76.8%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "Sean win % Melquizael Costa",
+   "desc": "Model win % Melquizael Costa",
    "raw": 0.7675982263903613
   },
   {
-   "id": "v14",
+   "id": "v18",
+   "text": "-350",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Melquizael Costa",
+   "raw": -350
+  },
+  {
+   "id": "v19",
+   "text": "77.8%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Melquizael Costa",
+   "raw": 0.7777777777777778
+  },
+  {
+   "id": "v20",
    "text": "-385",
    "fmt": "ml",
    "rule": "bp",
@@ -195,558 +260,81 @@
     "label": "Melquizael Costa",
     "field": "cost"
    },
-   "desc": "BP ML now Melquizael Costa",
+   "desc": "Market ML Melquizael Costa",
    "raw": -385
   },
   {
-   "id": "v15",
-   "text": "75.6%",
+   "id": "v21",
+   "text": "79.4%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Melquizael Costa",
-    "other": "Jared Gordon"
+    "label": "Melquizael Costa"
    },
-   "desc": "BP ML no-vig Melquizael Costa",
-   "raw": 0.755852001006796
-  },
-  {
-   "id": "v16",
-   "text": "+1.2",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v13",
-     "v15"
-    ]
-   },
-   "desc": "Edge v13-v15",
-   "raw": 0.0117462253835654
-  },
-  {
-   "id": "v17",
-   "text": "+691",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Jared Gordon",
-   "raw": 0.12646512232555404
-  },
-  {
-   "id": "v18",
-   "text": "12.6%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Jared Gordon",
-   "raw": 0.12646512232555404
-  },
-  {
-   "id": "v19",
-   "text": "+550",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Jared Gordon Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Jared Gordon",
-   "raw": 550
-  },
-  {
-   "id": "v20",
-   "text": "12.7%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Jared Gordon",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Jared Gordon",
-   "raw": 0.12665954423146542
-  },
-  {
-   "id": "v21",
-   "text": "-0.0",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v18",
-     "v20"
-    ]
-   },
-   "desc": "Edge v18-v20",
-   "raw": -0.00019442190591137387
+   "desc": "Market implied Melquizael Costa",
+   "raw": 0.7938144329896907
   },
   {
    "id": "v22",
-   "text": "+277",
-   "fmt": "mlp",
-   "rule": "pub_meth",
+   "text": "-1.0%",
+   "fmt": "spp",
+   "rule": "edge",
    "args": {
-    "side": "b",
-    "k": "dec"
+    "of": [
+     "v17",
+     "v19"
+    ]
    },
-   "desc": "Sean dec ML Melquizael Costa",
-   "raw": 0.26508423020041666
+   "desc": "Edge ML Melquizael Costa",
+   "raw": -0.010179551387416441
   },
   {
    "id": "v23",
-   "text": "26.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Melquizael Costa",
-   "raw": 0.26508423020041666
-  },
-  {
-   "id": "v24",
-   "text": "+250",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Melquizael Costa Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Melquizael Costa",
-   "raw": 250
-  },
-  {
-   "id": "v25",
-   "text": "23.5%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Melquizael Costa",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Melquizael Costa",
-   "raw": 0.23522486785843572
-  },
-  {
-   "id": "v26",
-   "text": "+3.0",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v23",
-     "v25"
-    ]
-   },
-   "desc": "Edge v23-v25",
-   "raw": 0.029859362341980944
-  },
-  {
-   "id": "v27",
-   "text": "+1333",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Jared Gordon",
-   "raw": 0.0697657282845949
-  },
-  {
-   "id": "v28",
-   "text": "7.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Jared Gordon",
-   "raw": 0.0697657282845949
-  },
-  {
-   "id": "v29",
-   "text": "+900",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Jared Gordon KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Jared Gordon",
-   "raw": 900
-  },
-  {
-   "id": "v30",
-   "text": "8.2%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Jared Gordon",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Jared Gordon",
-   "raw": 0.08232870375045251
-  },
-  {
-   "id": "v31",
-   "text": "-1.3",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v28",
-     "v30"
-    ]
-   },
-   "desc": "Edge v28-v30",
-   "raw": -0.012562975465857606
-  },
-  {
-   "id": "v32",
-   "text": "+169",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Melquizael Costa",
-   "raw": 0.3722982894184612
-  },
-  {
-   "id": "v33",
-   "text": "37.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Melquizael Costa",
-   "raw": 0.3722982894184612
-  },
-  {
-   "id": "v34",
-   "text": "+144",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Melquizael Costa KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Melquizael Costa",
-   "raw": 144
-  },
-  {
-   "id": "v35",
-   "text": "33.7%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Melquizael Costa",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Melquizael Costa",
-   "raw": 0.3374127202887398
-  },
-  {
-   "id": "v36",
-   "text": "+3.5",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v33",
-     "v35"
-    ]
-   },
-   "desc": "Edge v33-v35",
-   "raw": 0.034885569129721405
-  },
-  {
-   "id": "v37",
-   "text": "+2665",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Jared Gordon",
-   "raw": 0.03617092299948973
-  },
-  {
-   "id": "v38",
-   "text": "3.6%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Jared Gordon",
-   "raw": 0.03617092299948973
-  },
-  {
-   "id": "v39",
-   "text": "+2000",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Jared Gordon Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Jared Gordon",
-   "raw": 2000
-  },
-  {
-   "id": "v40",
-   "text": "3.9%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Jared Gordon",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Jared Gordon",
-   "raw": 0.03920414464307262
-  },
-  {
-   "id": "v41",
-   "text": "-0.3",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v38",
-     "v40"
-    ]
-   },
-   "desc": "Edge v38-v40",
-   "raw": -0.003033221643582891
-  },
-  {
-   "id": "v42",
-   "text": "+668",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Melquizael Costa",
-   "raw": 0.1302157067714835
-  },
-  {
-   "id": "v43",
-   "text": "13.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Melquizael Costa",
-   "raw": 0.1302157067714835
-  },
-  {
-   "id": "v44",
-   "text": "+405",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Melquizael Costa Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Melquizael Costa",
-   "raw": 405
-  },
-  {
-   "id": "v45",
-   "text": "16.3%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Melquizael Costa",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Melquizael Costa",
-   "raw": 0.16302713613950992
-  },
-  {
-   "id": "v46",
-   "text": "-3.3",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v43",
-     "v45"
-    ]
-   },
-   "desc": "Edge v43-v45",
-   "raw": -0.03281142936802642
-  },
-  {
-   "id": "v47",
-   "text": "+844",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Jared Gordon",
-   "raw": 0.10593665128408464
-  },
-  {
-   "id": "v48",
-   "text": "10.6%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Jared Gordon",
-   "raw": 0.10593665128408464
-  },
-  {
-   "id": "v49",
-   "text": "+723",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Jared Gordon"
-   },
-   "desc": "BP ITD fair ML Jared Gordon",
-   "raw": 0.12153284839352513
-  },
-  {
-   "id": "v50",
-   "text": "12.2%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Jared Gordon"
-   },
-   "desc": "BP ITD no-vig Jared Gordon",
-   "raw": 0.12153284839352513
-  },
-  {
-   "id": "v51",
-   "text": "-1.6",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v48",
-     "v50"
-    ]
-   },
-   "desc": "Edge v48-v50",
-   "raw": -0.01559619710944049
-  },
-  {
-   "id": "v52",
-   "text": "-101",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Melquizael Costa",
-   "raw": 0.5025139961899447
-  },
-  {
-   "id": "v53",
-   "text": "50.3%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Melquizael Costa",
-   "raw": 0.5025139961899447
-  },
-  {
-   "id": "v54",
-   "text": "-100",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Melquizael Costa"
-   },
-   "desc": "BP ITD fair ML Melquizael Costa",
-   "raw": 0.5004398564282497
-  },
-  {
-   "id": "v55",
-   "text": "50.0%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Melquizael Costa"
-   },
-   "desc": "BP ITD no-vig Melquizael Costa",
-   "raw": 0.5004398564282497
-  },
-  {
-   "id": "v56",
-   "text": "+0.2",
-   "fmt": "sp",
-   "rule": "edge",
-   "args": {
-    "of": [
-     "v53",
-     "v55"
-    ]
-   },
-   "desc": "Edge v53-v55",
-   "raw": 0.0020741397616950152
-  },
-  {
-   "id": "v57",
    "text": "+155",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
-   "desc": "Sean GTD fair ML",
+   "desc": "Model GTD",
    "raw": 0.3915493525259707
   },
   {
-   "id": "v58",
+   "id": "v24",
    "text": "39.2%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
-   "desc": "Sean GTD %",
+   "desc": "Model GTD %",
    "raw": 0.3915493525259707
   },
   {
-   "id": "v59",
+   "id": "v25",
+   "text": "+155",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD price",
+   "raw": 0.3924905308228578
+  },
+  {
+   "id": "v26",
+   "text": "39.2%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD %",
+   "raw": 0.3924905308228578
+  },
+  {
+   "id": "v27",
    "text": "+148",
    "fmt": "ml",
    "rule": "bp",
@@ -755,11 +343,61 @@
     "label": "Yes",
     "field": "cost"
    },
-   "desc": "BP GTD yes now",
+   "desc": "Market GTD yes",
    "raw": 148
   },
   {
-   "id": "v60",
+   "id": "v28",
+   "text": "40.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.4032258064516129
+  },
+  {
+   "id": "v29",
+   "text": "-0.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v24",
+     "v26"
+    ]
+   },
+   "desc": "Edge GTD vs listed",
+   "raw": -0.000941178296887113
+  },
+  {
+   "id": "v30",
+   "text": "-155",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.6084506474740293
+  },
+  {
+   "id": "v31",
+   "text": "60.8%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.6084506474740293
+  },
+  {
+   "id": "v32",
    "text": "-194",
    "fmt": "ml",
    "rule": "bp",
@@ -768,86 +406,608 @@
     "label": "No",
     "field": "cost"
    },
-   "desc": "BP GTD no now",
+   "desc": "Market ITD no",
    "raw": -194
   },
   {
-   "id": "v61",
-   "text": "37.9%",
+   "id": "v33",
+   "text": "66.0%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "bp_imp",
    "args": {
     "market": "fight_distance",
-    "label": "Yes",
-    "other": "No"
+    "label": "No"
    },
-   "desc": "BP GTD no-vig",
-   "raw": 0.37929610898957583
+   "desc": "Market ITD implied",
+   "raw": 0.6598639455782312
   },
   {
-   "id": "v62",
-   "text": "+1.2",
-   "fmt": "sp",
+   "id": "v34",
+   "text": "-5.1%",
+   "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v58",
-     "v61"
+     "v31",
+     "v33"
     ]
    },
-   "desc": "Edge GTD",
-   "raw": 0.012253243536394842
+   "desc": "Edge ITD vs market",
+   "raw": -0.05141329810420192
+  },
+  {
+   "id": "v35",
+   "text": "12.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Bar model dec % Jared Gordon",
+   "raw": 0.12646512232555404
+  },
+  {
+   "id": "v36",
+   "text": "7.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Bar model ko % Jared Gordon",
+   "raw": 0.0697657282845949
+  },
+  {
+   "id": "v37",
+   "text": "3.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Bar model sub % Jared Gordon",
+   "raw": 0.03617092299948973
+  },
+  {
+   "id": "v38",
+   "text": "26.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Bar model dec % Melquizael Costa",
+   "raw": 0.26508423020041666
+  },
+  {
+   "id": "v39",
+   "text": "37.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Bar model ko % Melquizael Costa",
+   "raw": 0.3722982894184612
+  },
+  {
+   "id": "v40",
+   "text": "13.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Bar model sub % Melquizael Costa",
+   "raw": 0.1302157067714835
+  },
+  {
+   "id": "v41",
+   "text": "+691",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Jared Gordon",
+   "raw": 0.12646512232555404
+  },
+  {
+   "id": "v42",
+   "text": "12.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Jared Gordon",
+   "raw": 0.12646512232555404
+  },
+  {
+   "id": "v43",
+   "text": "+550",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Jared Gordon Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Jared Gordon",
+   "raw": 550
+  },
+  {
+   "id": "v44",
+   "text": "15.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Jared Gordon Points"
+   },
+   "desc": "Market dec implied Jared Gordon",
+   "raw": 0.15384615384615385
+  },
+  {
+   "id": "v45",
+   "text": "-2.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v42",
+     "v44"
+    ]
+   },
+   "desc": "Edge dec Jared Gordon",
+   "raw": -0.027381031520599813
+  },
+  {
+   "id": "v46",
+   "text": "+1333",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Jared Gordon",
+   "raw": 0.0697657282845949
+  },
+  {
+   "id": "v47",
+   "text": "7.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Jared Gordon",
+   "raw": 0.0697657282845949
+  },
+  {
+   "id": "v48",
+   "text": "+900",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Jared Gordon KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Jared Gordon",
+   "raw": 900
+  },
+  {
+   "id": "v49",
+   "text": "10.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Jared Gordon KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Jared Gordon",
+   "raw": 0.1
+  },
+  {
+   "id": "v50",
+   "text": "-3.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v47",
+     "v49"
+    ]
+   },
+   "desc": "Edge ko Jared Gordon",
+   "raw": -0.030234271715405103
+  },
+  {
+   "id": "v51",
+   "text": "+2665",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Jared Gordon",
+   "raw": 0.03617092299948973
+  },
+  {
+   "id": "v52",
+   "text": "3.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Jared Gordon",
+   "raw": 0.03617092299948973
+  },
+  {
+   "id": "v53",
+   "text": "+2000",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Jared Gordon Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Jared Gordon",
+   "raw": 2000
+  },
+  {
+   "id": "v54",
+   "text": "4.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Jared Gordon Submission"
+   },
+   "desc": "Market sub implied Jared Gordon",
+   "raw": 0.047619047619047616
+  },
+  {
+   "id": "v55",
+   "text": "-1.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v52",
+     "v54"
+    ]
+   },
+   "desc": "Edge sub Jared Gordon",
+   "raw": -0.011448124619557888
+  },
+  {
+   "id": "v56",
+   "text": "+844",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Jared Gordon",
+   "raw": 0.10593665128408464
+  },
+  {
+   "id": "v57",
+   "text": "10.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Jared Gordon",
+   "raw": 0.10593665128408464
+  },
+  {
+   "id": "v58",
+   "text": "14.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Jared Gordon KO/TKO/DQ",
+     "Jared Gordon Submission"
+    ]
+   },
+   "desc": "Market ITD implied Jared Gordon",
+   "raw": 0.14761904761904762
+  },
+  {
+   "id": "v59",
+   "text": "-4.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v57",
+     "v58"
+    ]
+   },
+   "desc": "Edge itd Jared Gordon",
+   "raw": -0.041682396334962984
+  },
+  {
+   "id": "v60",
+   "text": "+277",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Melquizael Costa",
+   "raw": 0.26508423020041666
+  },
+  {
+   "id": "v61",
+   "text": "26.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Melquizael Costa",
+   "raw": 0.26508423020041666
+  },
+  {
+   "id": "v62",
+   "text": "+250",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Melquizael Costa Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Melquizael Costa",
+   "raw": 250
   },
   {
    "id": "v63",
-   "text": "23.2%",
+   "text": "28.6%",
    "fmt": "pct1",
-   "rule": "pub_win",
+   "rule": "bp_imp",
    "args": {
-    "side": "a"
+    "market": "method_of_victory",
+    "label": "Melquizael Costa Points"
    },
-   "desc": "Bar Sean % a",
-   "raw": 0.23240177360963868
+   "desc": "Market dec implied Melquizael Costa",
+   "raw": 0.2857142857142857
   },
   {
    "id": "v64",
-   "text": "76.8%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "text": "-2.1%",
+   "fmt": "spp",
+   "rule": "edge",
    "args": {
-    "side": "b"
+    "of": [
+     "v61",
+     "v63"
+    ]
    },
-   "desc": "Bar Sean % b",
-   "raw": 0.7675982263903613
+   "desc": "Edge dec Melquizael Costa",
+   "raw": -0.02063005551386904
   },
   {
    "id": "v65",
-   "text": "24.4%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
+   "text": "+169",
+   "fmt": "mlp",
+   "rule": "pub_meth",
    "args": {
-    "market": "moneyline",
-    "label": "Jared Gordon",
-    "other": "Melquizael Costa"
+    "side": "b",
+    "k": "ko"
    },
-   "desc": "Bar BP no-vig a",
-   "raw": 0.24414799899320414
+   "desc": "Model ko ML Melquizael Costa",
+   "raw": 0.3722982894184612
   },
   {
    "id": "v66",
-   "text": "75.6%",
+   "text": "37.2%",
    "fmt": "pct1",
-   "rule": "bp_nv",
+   "rule": "pub_meth",
    "args": {
-    "market": "moneyline",
-    "label": "Melquizael Costa",
-    "other": "Jared Gordon"
+    "side": "b",
+    "k": "ko"
    },
-   "desc": "Bar BP no-vig b",
-   "raw": 0.7558520010067958
+   "desc": "Model ko % Melquizael Costa",
+   "raw": 0.3722982894184612
   },
   {
    "id": "v67",
+   "text": "+144",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Melquizael Costa KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Melquizael Costa",
+   "raw": 144
+  },
+  {
+   "id": "v68",
+   "text": "41.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Melquizael Costa KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Melquizael Costa",
+   "raw": 0.4098360655737705
+  },
+  {
+   "id": "v69",
+   "text": "-3.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v66",
+     "v68"
+    ]
+   },
+   "desc": "Edge ko Melquizael Costa",
+   "raw": -0.03753777615530929
+  },
+  {
+   "id": "v70",
+   "text": "+668",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Melquizael Costa",
+   "raw": 0.1302157067714835
+  },
+  {
+   "id": "v71",
+   "text": "13.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Melquizael Costa",
+   "raw": 0.1302157067714835
+  },
+  {
+   "id": "v72",
+   "text": "+405",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Melquizael Costa Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Melquizael Costa",
+   "raw": 405
+  },
+  {
+   "id": "v73",
+   "text": "19.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Melquizael Costa Submission"
+   },
+   "desc": "Market sub implied Melquizael Costa",
+   "raw": 0.19801980198019803
+  },
+  {
+   "id": "v74",
+   "text": "-6.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v71",
+     "v73"
+    ]
+   },
+   "desc": "Edge sub Melquizael Costa",
+   "raw": -0.06780409520871453
+  },
+  {
+   "id": "v75",
+   "text": "-101",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Melquizael Costa",
+   "raw": 0.5025139961899447
+  },
+  {
+   "id": "v76",
+   "text": "50.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Melquizael Costa",
+   "raw": 0.5025139961899447
+  },
+  {
+   "id": "v77",
+   "text": "60.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Melquizael Costa KO/TKO/DQ",
+     "Melquizael Costa Submission"
+    ]
+   },
+   "desc": "Market ITD implied Melquizael Costa",
+   "raw": 0.6078558675539685
+  },
+  {
+   "id": "v78",
+   "text": "-10.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v76",
+     "v77"
+    ]
+   },
+   "desc": "Edge itd Melquizael Costa",
+   "raw": -0.10534187136402373
+  },
+  {
+   "id": "v79",
+   "text": "0.3",
+   "fmt": "pts",
+   "rule": "oa_drift",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "pair": [
+     "Jared Gordon",
+     "Melquizael Costa"
+    ]
+   },
+   "desc": "OA drift pts",
+   "raw": 0.0031999999999999806
+  },
+  {
+   "id": "v80",
    "text": "+300",
    "fmt": "ml",
    "rule": "oa_best",
@@ -863,7 +1023,7 @@
    "raw": 300
   },
   {
-   "id": "v68",
+   "id": "v81",
    "text": "-370",
    "fmt": "ml",
    "rule": "oa_best",
@@ -879,7 +1039,7 @@
    "raw": -370
   },
   {
-   "id": "v69",
+   "id": "v82",
    "text": "+290",
    "fmt": "ml",
    "rule": "bp",
@@ -892,7 +1052,7 @@
    "raw": 290
   },
   {
-   "id": "v70",
+   "id": "v83",
    "text": "+290",
    "fmt": "ml",
    "rule": "bp",
@@ -905,7 +1065,7 @@
    "raw": 290
   },
   {
-   "id": "v71",
+   "id": "v84",
    "text": "-400",
    "fmt": "ml",
    "rule": "bp",
@@ -918,7 +1078,7 @@
    "raw": -400
   },
   {
-   "id": "v72",
+   "id": "v85",
    "text": "-385",
    "fmt": "ml",
    "rule": "bp",
@@ -931,7 +1091,7 @@
    "raw": -385
   },
   {
-   "id": "v73",
+   "id": "v86",
    "text": "+104",
    "fmt": "ml",
    "rule": "bp",
@@ -944,7 +1104,7 @@
    "raw": 104
   },
   {
-   "id": "v74",
+   "id": "v87",
    "text": "+109",
    "fmt": "ml",
    "rule": "bp",
@@ -957,7 +1117,7 @@
    "raw": 109
   },
   {
-   "id": "v75",
+   "id": "v88",
    "text": "48%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -969,7 +1129,7 @@
    "raw": 0.4784688995215311
   },
   {
-   "id": "v76",
+   "id": "v89",
    "text": "+295",
    "fmt": "ml",
    "rule": "bp",
@@ -982,7 +1142,7 @@
    "raw": 295
   },
   {
-   "id": "v77",
+   "id": "v90",
    "text": "+321",
    "fmt": "ml",
    "rule": "bp",
@@ -995,7 +1155,7 @@
    "raw": 321
   },
   {
-   "id": "v78",
+   "id": "v91",
    "text": "24%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1007,7 +1167,7 @@
    "raw": 0.2375296912114014
   },
   {
-   "id": "v79",
+   "id": "v92",
    "text": "+138",
    "fmt": "ml",
    "rule": "bp",
@@ -1020,7 +1180,7 @@
    "raw": 138
   },
   {
-   "id": "v80",
+   "id": "v93",
    "text": "+136",
    "fmt": "ml",
    "rule": "bp",
@@ -1033,7 +1193,7 @@
    "raw": 136
   },
   {
-   "id": "v81",
+   "id": "v94",
    "text": "42%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1045,7 +1205,7 @@
    "raw": 0.423728813559322
   },
   {
-   "id": "v82",
+   "id": "v95",
    "text": "+138",
    "fmt": "ml",
    "rule": "bp",
@@ -1058,7 +1218,7 @@
    "raw": 138
   },
   {
-   "id": "v83",
+   "id": "v96",
    "text": "+148",
    "fmt": "ml",
    "rule": "bp",
@@ -1071,7 +1231,7 @@
    "raw": 148
   },
   {
-   "id": "v84",
+   "id": "v97",
    "text": "40%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1083,7 +1243,7 @@
    "raw": 0.4032258064516129
   },
   {
-   "id": "v85",
+   "id": "v98",
    "text": "-186",
    "fmt": "ml",
    "rule": "bp",
@@ -1096,7 +1256,7 @@
    "raw": -186
   },
   {
-   "id": "v86",
+   "id": "v99",
    "text": "-194",
    "fmt": "ml",
    "rule": "bp",
@@ -1109,7 +1269,7 @@
    "raw": -194
   },
   {
-   "id": "v87",
+   "id": "v100",
    "text": "66%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1121,7 +1281,7 @@
    "raw": 0.6598639455782312
   },
   {
-   "id": "v88",
+   "id": "v101",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -1134,7 +1294,7 @@
    "raw": 2.5
   },
   {
-   "id": "v89",
+   "id": "v102",
    "text": "+110",
    "fmt": "ml",
    "rule": "bp",
@@ -1147,7 +1307,7 @@
    "raw": 110
   },
   {
-   "id": "v90",
+   "id": "v103",
    "text": "+112",
    "fmt": "ml",
    "rule": "bp",
@@ -1160,7 +1320,7 @@
    "raw": 112
   },
   {
-   "id": "v91",
+   "id": "v104",
    "text": "47%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1172,7 +1332,7 @@
    "raw": 0.4716981132075472
   },
   {
-   "id": "v92",
+   "id": "v105",
    "text": "2.5",
    "fmt": "str",
    "rule": "bp",
@@ -1185,7 +1345,7 @@
    "raw": 2.5
   },
   {
-   "id": "v93",
+   "id": "v106",
    "text": "-140",
    "fmt": "ml",
    "rule": "bp",
@@ -1198,7 +1358,7 @@
    "raw": -140
   },
   {
-   "id": "v94",
+   "id": "v107",
    "text": "-142",
    "fmt": "ml",
    "rule": "bp",
@@ -1211,7 +1371,7 @@
    "raw": -142
   },
   {
-   "id": "v95",
+   "id": "v108",
    "text": "59%",
    "fmt": "pct0",
    "rule": "bp_imp",
@@ -1223,7 +1383,7 @@
    "raw": 0.5867768595041323
   },
   {
-   "id": "v96",
+   "id": "v109",
    "text": "38.2",
    "fmt": "n1",
    "rule": "age",
@@ -1234,7 +1394,7 @@
    "raw": 38.18754277891855
   },
   {
-   "id": "v97",
+   "id": "v110",
    "text": "30.2",
    "fmt": "n1",
    "rule": "age",
@@ -1245,7 +1405,7 @@
    "raw": 30.16563997262149
   },
   {
-   "id": "v98",
+   "id": "v111",
    "text": "68\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1256,7 +1416,7 @@
    "raw": 68
   },
   {
-   "id": "v99",
+   "id": "v112",
    "text": "71\"",
    "fmt": "in",
    "rule": "bio_reach",
@@ -1267,7 +1427,7 @@
    "raw": 71
   },
   {
-   "id": "v100",
+   "id": "v113",
    "text": "5'9\"",
    "fmt": "str",
    "rule": "bio",
@@ -1279,7 +1439,7 @@
    "raw": "5'9\""
   },
   {
-   "id": "v101",
+   "id": "v114",
    "text": "5'10\"",
    "fmt": "str",
    "rule": "bio",
@@ -1291,7 +1451,7 @@
    "raw": "5'10\""
   },
   {
-   "id": "v102",
+   "id": "v115",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1303,7 +1463,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v103",
+   "id": "v116",
    "text": "Southpaw",
    "fmt": "str",
    "rule": "bio",
@@ -1315,7 +1475,7 @@
    "raw": "Southpaw"
   },
   {
-   "id": "v104",
+   "id": "v117",
    "text": "18",
    "fmt": "int",
    "rule": "nfights",
@@ -1326,7 +1486,7 @@
    "raw": 18
   },
   {
-   "id": "v105",
+   "id": "v118",
    "text": "10",
    "fmt": "int",
    "rule": "nfights",
@@ -1337,7 +1497,7 @@
    "raw": 10
   },
   {
-   "id": "v106",
+   "id": "v119",
    "text": "5.57",
    "fmt": "n2",
    "rule": "stat",
@@ -1349,7 +1509,7 @@
    "raw": 5.571276972055182
   },
   {
-   "id": "v107",
+   "id": "v120",
    "text": "4.29",
    "fmt": "n2",
    "rule": "stat",
@@ -1361,7 +1521,7 @@
    "raw": 4.29368029739777
   },
   {
-   "id": "v108",
+   "id": "v121",
    "text": "4.11",
    "fmt": "n2",
    "rule": "stat",
@@ -1373,7 +1533,7 @@
    "raw": 4.112133003183587
   },
   {
-   "id": "v109",
+   "id": "v122",
    "text": "3.19",
    "fmt": "n2",
    "rule": "stat",
@@ -1385,7 +1545,7 @@
    "raw": 3.1877323420074353
   },
   {
-   "id": "v110",
+   "id": "v123",
    "text": "+1.46",
    "fmt": "s2",
    "rule": "stat",
@@ -1397,7 +1557,7 @@
    "raw": 1.4591439688715953
   },
   {
-   "id": "v111",
+   "id": "v124",
    "text": "+1.11",
    "fmt": "s2",
    "rule": "stat",
@@ -1409,7 +1569,7 @@
    "raw": 1.1059479553903346
   },
   {
-   "id": "v112",
+   "id": "v125",
    "text": "54%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1421,7 +1581,7 @@
    "raw": 0.5373592630501536
   },
   {
-   "id": "v113",
+   "id": "v126",
    "text": "47%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1433,7 +1593,7 @@
    "raw": 0.46998982706002035
   },
   {
-   "id": "v114",
+   "id": "v127",
    "text": "55%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1445,7 +1605,7 @@
    "raw": 0.5548535324526134
   },
   {
-   "id": "v115",
+   "id": "v128",
    "text": "50%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1457,7 +1617,7 @@
    "raw": 0.5036179450072359
   },
   {
-   "id": "v116",
+   "id": "v129",
    "text": "1.91",
    "fmt": "n2",
    "rule": "stat",
@@ -1469,7 +1629,7 @@
    "raw": 1.910152104704634
   },
   {
-   "id": "v117",
+   "id": "v130",
    "text": "1.53",
    "fmt": "n2",
    "rule": "stat",
@@ -1481,7 +1641,7 @@
    "raw": 1.5334572490706322
   },
   {
-   "id": "v118",
+   "id": "v131",
    "text": "60%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1493,7 +1653,7 @@
    "raw": 0.6046511627906976
   },
   {
-   "id": "v119",
+   "id": "v132",
    "text": "51%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1505,7 +1665,7 @@
    "raw": 0.5094339622641509
   },
   {
-   "id": "v120",
+   "id": "v133",
    "text": "34%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1517,7 +1677,7 @@
    "raw": 0.3379908029713477
   },
   {
-   "id": "v121",
+   "id": "v134",
    "text": "17%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1529,7 +1689,7 @@
    "raw": 0.16759603469640644
   },
   {
-   "id": "v122",
+   "id": "v135",
    "text": "28",
    "fmt": "r0",
    "rule": "fight",
@@ -1542,7 +1702,7 @@
    "raw": 28.0
   },
   {
-   "id": "v123",
+   "id": "v136",
    "text": "-260",
    "fmt": "ml",
    "rule": "fight",
@@ -1555,7 +1715,7 @@
    "raw": -260
   },
   {
-   "id": "v124",
+   "id": "v137",
    "text": "9",
    "fmt": "r0",
    "rule": "fight",
@@ -1568,7 +1728,7 @@
    "raw": 9.4
   },
   {
-   "id": "v125",
+   "id": "v138",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -1581,7 +1741,7 @@
    "raw": -179
   },
   {
-   "id": "v126",
+   "id": "v139",
    "text": "101",
    "fmt": "r0",
    "rule": "fight",
@@ -1594,7 +1754,7 @@
    "raw": 100.9
   },
   {
-   "id": "v127",
+   "id": "v140",
    "text": "-122",
    "fmt": "ml",
    "rule": "fight",
@@ -1607,7 +1767,7 @@
    "raw": -122
   },
   {
-   "id": "v128",
+   "id": "v141",
    "text": "58",
    "fmt": "r0",
    "rule": "fight",
@@ -1620,7 +1780,7 @@
    "raw": 58.4
   },
   {
-   "id": "v129",
+   "id": "v142",
    "text": "+195",
    "fmt": "ml",
    "rule": "fight",
@@ -1633,7 +1793,7 @@
    "raw": 195
   },
   {
-   "id": "v130",
+   "id": "v143",
    "text": "90",
    "fmt": "r0",
    "rule": "fight",
@@ -1646,7 +1806,7 @@
    "raw": 89.8
   },
   {
-   "id": "v131",
+   "id": "v144",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -1659,7 +1819,7 @@
    "raw": -204
   },
   {
-   "id": "v132",
+   "id": "v145",
    "text": "23",
    "fmt": "r0",
    "rule": "fight",
@@ -1672,7 +1832,7 @@
    "raw": 22.8
   },
   {
-   "id": "v133",
+   "id": "v146",
    "text": "+102",
    "fmt": "ml",
    "rule": "fight",
@@ -1685,7 +1845,7 @@
    "raw": 102
   },
   {
-   "id": "v134",
+   "id": "v147",
    "text": "99",
    "fmt": "r0",
    "rule": "fight",
@@ -1698,7 +1858,7 @@
    "raw": 98.8
   },
   {
-   "id": "v135",
+   "id": "v148",
    "text": "-247",
    "fmt": "ml",
    "rule": "fight",
@@ -1711,7 +1871,7 @@
    "raw": -247
   },
   {
-   "id": "v136",
+   "id": "v149",
    "text": "104",
    "fmt": "r0",
    "rule": "fight",
@@ -1724,7 +1884,7 @@
    "raw": 103.6
   },
   {
-   "id": "v137",
+   "id": "v150",
    "text": "-153",
    "fmt": "ml",
    "rule": "fight",
@@ -1737,7 +1897,7 @@
    "raw": -153
   },
   {
-   "id": "v138",
+   "id": "v151",
    "text": "82",
    "fmt": "r0",
    "rule": "fight",
@@ -1750,7 +1910,7 @@
    "raw": 82.0
   },
   {
-   "id": "v139",
+   "id": "v152",
    "text": "-164",
    "fmt": "ml",
    "rule": "fight",
@@ -1763,7 +1923,7 @@
    "raw": -164
   },
   {
-   "id": "v140",
+   "id": "v153",
    "text": "60",
    "fmt": "r0",
    "rule": "fight",
@@ -1776,7 +1936,7 @@
    "raw": 59.8
   },
   {
-   "id": "v141",
+   "id": "v154",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
