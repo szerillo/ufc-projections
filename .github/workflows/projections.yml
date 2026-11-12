@@ -1,0 +1,91 @@
+name: Projections check
+
+# The sheet's "Publish to site" writes data/pending/<slug>_projections.json.
+# This job recomputes every published fight with scripts/sheet_v47.py and only copies a file
+# to data/<slug>_projections.json (what the card page reads) when every number is within 0.0001 pts.
+# On a mismatch the run fails and the live file is left exactly as it was.
+# It also runs when this workflow or the checker itself changes (the go-live merge brings all three to main, and a
+# merge does not touch a pending file that was published earlier); then it checks every pending file.
+on:
+  push:
+    paths:
+      - "data/pending/*_projections.json"
+      - ".github/workflows/projections.yml"
+      - "scripts/verify_projections.py"
+      - "scripts/sheet_v47.py"
+      - "scripts/fighter_names.py"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: projections-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The checker must fail on known bad cases before it is trusted on a real file (audit block 35).
+      - name: Self-test the sheet mirror
+        run: python3 -I scripts/test_sheet_v47.py
+
+      - name: Verify and promote pending files
+        id: verify
+        run: |
+          set +e
+          before="${{ github.event.before }}"
+          if [ "${{ github.event_name }}" = "push" ] && git cat-file -e "$before^{commit}" 2>/dev/null; then
+            changed=$(git diff --name-only "$before" HEAD)
+          elif [ "${{ github.event_name }}" = "push" ] && git rev-parse -q --verify HEAD~1 >/dev/null; then
+            changed=$(git diff --name-only HEAD~1 HEAD)
+          else
+            changed=""
+          fi
+          if [ "${{ github.event_name }}" = "push" ] && ! echo "$changed" | grep -qE '^(\.github/workflows/projections\.yml|scripts/verify_projections\.py|scripts/sheet_v47\.py|scripts/fighter_names\.py)$'; then
+            files=$(echo "$changed" | grep -E '^data/pending/.*_projections\.json$')
+          else
+            files=$(ls data/pending/*_projections.json 2>/dev/null)
+          fi
+          echo "files: $files"
+          rc=0
+          for f in $files; do
+            [ -f "$f" ] || continue
+            python3 -I scripts/verify_projections.py "$f" --promote --report report.md
+            r=$?
+            cat report.md >> "$GITHUB_STEP_SUMMARY"
+            [ $r -ne 0 ] && rc=1
+          done
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+
+      - name: Commit verified files
+        run: |
+          set -e
+          git config user.name  'projections-bot'
+          git config user.email 'projections-bot@users.noreply.github.com'
+          shopt -s nullglob; live=(data/*_projections.json)   # none yet is fine (no card published)
+          [ ${#live[@]} -gt 0 ] && git add "${live[@]}"
+          if git diff --cached --quiet; then
+            echo "Nothing verified to commit."
+          else
+            git commit -m "projections: verified from sheet at $(date -u +%Y-%m-%dT%H:%MZ)"
+            ok=0; for i in 1 2 3; do if git pull --rebase --quiet && git push; then ok=1; break; fi; sleep 5; done
+            [ "$ok" = 1 ] || { echo "push failed after 3 tries; nothing changed on the site"; exit 1; }
+          fi
+
+      - name: Fail when any file did not match
+        if: steps.verify.outputs.rc != '0'
+        run: |
+          echo "At least one published file did not match sheet_v47 within 0.0001 pts. The live file was not changed."
+          exit 1
