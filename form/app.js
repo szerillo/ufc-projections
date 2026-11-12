@@ -4,7 +4,14 @@
 const DATA = "form/data/";
 const $app = document.getElementById("app");
 const cache = {};
-const getJSON = (p) => cache[p] || (cache[p] = fetch(DATA + p).then(r => { if (!r.ok) throw new Error(p + " " + r.status); return r.json(); }));
+// Kirk round 12 call 2: a bout's clock time is shown only when the build that wrote it (the feed's scheduled time) is under 6 hours
+// old, labelled ET; otherwise nothing, since the card's date is already on the page.
+const startLabel = (f) => { if (!f.start || !window.__built) return ""; const age = Date.now() - Date.parse(window.__built.endsWith("Z") ? window.__built : window.__built + "Z");
+  if (!(age >= 0 && age < 6 * 3600e3)) return ""; return new Date(f.start.replace(" ", "T") + (f.start.endsWith("Z") ? "" : "Z")).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }) + " ET"; };
+// Kirk round 12 (Consensus_US_PREREG): a bout with no US-regulated price has an opener but no current line. Every view that
+// needs a current line treats it as having no odds; the fight page still shows the opener (f.odds_open).
+const usOnly = (d) => { if (d && Array.isArray(d.fights)) for (const f of d.fights) if (f.odds && !f.odds.close) { f.odds_open = f.odds.open; f.odds = null; } return d; };
+const getJSON = (p) => cache[p] || (cache[p] = fetch(DATA + p).then(r => { if (!r.ok) throw new Error(p + " " + r.status); return r.json(); }).then(d => p.startsWith("events/") ? usOnly(d) : d));
 const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const ml = (v) => v == null ? "—" : (v > 0 ? "+" + v : "" + v);
 const pct = (p, d = 1) => p == null ? "—" : (p * 100).toFixed(d) + "%";
@@ -21,7 +28,10 @@ const logit = (p) => Math.log(p / (1 - p)), sig = (z) => 1 / (1 + Math.exp(-z));
 const fair = (p) => p == null ? null : sig((window.__k || 1.2) * logit(Math.min(Math.max(p, 0.001), 0.999)));
 const ml2dec = (m) => m == null ? null : (m > 0 ? 1 + m / 100 : 1 + 100 / -m);
 const last = (n) => (n || "").split(" ").slice(-1)[0];
-function bestPrice(od, side) { let b = null; for (const [k, x] of Object.entries((od && od.books) || {})) { const m = x[side === "a" ? "ma" : "mb"]; if (m == null) continue; if (!b || ml2dec(m) > ml2dec(b.ml)) b = { ml: m, book: k }; } return b; }
+// Kirk round 11 call 3: per-book prices are not checked against an independent source, so they are not shown. Open, close and
+// moneyline only. Set to true to bring back the book table, best prices, the price board and the closing total.
+const SHOW_PER_BOOK = false;
+function bestPrice(od, side) { if (!SHOW_PER_BOOK) return null; let b = null; for (const [k, x] of Object.entries((od && od.books) || {})) { const m = x[side === "a" ? "ma" : "mb"]; if (m == null) continue; if (!b || ml2dec(m) > ml2dec(b.ml)) b = { ml: m, book: k }; } return b; }
 function methodRows(f) { // -> {a:{dec,ko,sub,itd,win}, b:{...}, gtd} using fair market win % when there is one, else the Form Line
   const fm = f.form; if (!fm || !fm.ms) return null;
   const o = oddsCells(f); const pa = o.pa != null ? fair(o.pa) : fm.p; if (pa == null) return null;
@@ -131,14 +141,14 @@ function lineChart(od, aName, bName) {
   const last = S[S.length - 1];
   return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Line history">
     ${grid}${ticks}
-    <path d="${path(3)}" fill="none" stroke="#0a8842" stroke-width="1" opacity=".75"/>
-    <path d="${path(4)}" fill="none" stroke="#1b4fb0" stroke-width="1" opacity=".75"/>
-    <path d="${path(2)}" fill="none" stroke="#d63636" stroke-width="1.4" stroke-dasharray="4 3"/>
+    ${SHOW_PER_BOOK ? `<path d="${path(3)}" fill="none" stroke="#0a8842" stroke-width="1" opacity=".75"/>` : ""}
+    ${SHOW_PER_BOOK ? `<path d="${path(4)}" fill="none" stroke="#1b4fb0" stroke-width="1" opacity=".75"/>` : ""}
+    ${SHOW_PER_BOOK ? `<path d="${path(2)}" fill="none" stroke="#d63636" stroke-width="1.4" stroke-dasharray="4 3"/>` : ""}
     <path d="${path(1)}" fill="none" stroke="#1a1a1a" stroke-width="2.2"/>
     <circle cx="${x(S[0][0]).toFixed(1)}" cy="${y(S[0][1]).toFixed(1)}" r="3.5" fill="#1a1a1a"/>
     <circle cx="${x(last[0]).toFixed(1)}" cy="${y(last[1]).toFixed(1)}" r="3.5" fill="#1a1a1a"/>
   </svg>
-  <div class="legend"><span><i style="border-color:#1a1a1a"></i>Consensus (no-vig) — ${esc(aName)} win %</span><span><i style="border-color:#d63636;border-top-style:dashed"></i>Pinnacle</span><span><i style="border-color:#0a8842"></i>DraftKings</span><span><i style="border-color:#1b4fb0"></i>FanDuel</span><span>right axis = ${esc(aName)} fair moneyline</span></div>`;
+  <div class="legend"><span><i style="border-color:#1a1a1a"></i>Consensus (no-vig) — ${esc(aName)} win %</span>${SHOW_PER_BOOK ? `<span><i style="border-color:#d63636;border-top-style:dashed"></i>Sharpest book</span><span><i style="border-color:#0a8842"></i>DraftKings</span><span><i style="border-color:#1b4fb0"></i>FanDuel</span><span>right axis = ${esc(aName)} fair moneyline</span>` : ""}</div>`;
 }
 
 /* ---------- shared bits ---------- */
@@ -162,6 +172,9 @@ function resultText(f) {
   const w = r.winner === "a" ? f.a.name : f.b.name;
   return `${esc(w)} · ${esc(shortMethod(r.method))} · R${r.round} ${esc(r.time)}`;
 }
+const heldLine = (f) => (f && f.form && f.form.held) || null;   // Kirk round 28 call 1: Form Line pulled, fact line in its place (form/data/form_holds.json)
+const bioHeld = (b, k) => (b && b[k + "_held"]) || null;          // Kirk round 28 A: a bio field pulled (sources differ)
+const reachNote = (ev, f) => { const R = window.__reach; return !heldLine(f) && R && ((R.events || {})[ev.slug] || []).some(x => x.n === f.n) ? R.text : null; };  // Kirk round 26 call 1
 function cardTable(ev) {
   const final = ev.status === "final";
   let html = "", group = null;
@@ -174,7 +187,10 @@ function cardTable(ev) {
     if (m && m.a && m.a.win != null) {
       model = `${m.a.win.toFixed(0)} / ${m.b.win.toFixed(0)}`;
       const mkp = f.sheet && f.sheet.listed != null && (m.src === "sheet" || m.src === "publish") ? f.sheet.listed : o.pa;
-      if (mkp != null) { const e = m.a.win - mkp * 100; const side = e >= 0 ? f.a.name : f.b.name; edge = `<span class="${Math.abs(e) >= 3 ? "pos b" : "dim"}" title="Model minus no-vig market">${esc(side.split(" ").slice(-1)[0])} ${signed(Math.abs(e))}</span>`; }
+      // Kirk round 15 (Thin_Market_Display_PREREG sha ab02a912): a close from fewer than 3 US-regulated books is a thin market:
+      // no colour and a note; the number is unchanged
+      const thinN = !f.live && mkp === o.pa && f.odds && f.odds.close && f.odds.close.nb < 3 ? f.odds.close.nb : null;
+      if (mkp != null) { const e = m.a.win - mkp * 100; const side = e >= 0 ? f.a.name : f.b.name; edge = `<span class="${Math.abs(e) >= 3 && thinN == null ? "pos b" : "dim"}" title="Model minus no-vig market">${esc(side.split(" ").slice(-1)[0])} ${signed(Math.abs(e))}</span>` + (thinN != null ? ` <span class="dim">thin market (${thinN} ${thinN === 1 ? "book" : "books"})</span>` : ""); }
     }
     const rec = m && m.rec ? `<span class="pill y" title="${esc(m.rec_text || "Model bet recommendation")}">BET ${esc((m.rec === "a" ? f.a.name : f.b.name).split(" ").slice(-1)[0])}</span>` : (m && m.rec_text && /^lean/i.test(m.rec_text) ? `<span class="pill" title="${esc(m.rec_text)}">${esc(m.rec_text.split("[")[0].trim())}</span>` : "");
     const wa = f.result && f.result.winner === "a", wb = f.result && f.result.winner === "b";
@@ -185,13 +201,15 @@ function cardTable(ev) {
       <td>${o.open}</td><td>${o.close}</td>
       <td class="${cls(o.mv)}" title="Move in ${esc(f.a.name)} implied win %">${o.mv == null ? "—" : signed(o.mv)}</td>
       <td title="Bias-adjusted fair win % for ${esc(f.a.name)}">${o.pa == null ? "—" : (fair(o.pa) * 100).toFixed(0) + "%"}</td>
-      <td class="dim" title="Form Line: stats-only win % for ${esc(f.a.name)}">${f.form && f.form.p != null ? (f.form.p * 100).toFixed(0) + "%" : "—"}</td>
+      ${heldLine(f) ? `<td class="dim" title="${esc(heldLine(f))}">held<sup>‡</sup></td>` : `<td class="dim" title="Form Line: stats-only win % for ${esc(f.a.name)}${reachNote(ev, f) ? ". " + esc(reachNote(ev, f)) : ""}">${f.form && f.form.p != null ? (f.form.p * 100).toFixed(0) + "%" : "—"}${reachNote(ev, f) ? "<sup>†</sup>" : ""}</td>`}
       <td class="dim" title="Form goes-the-distance %">${(() => { const M = methodRows(f); return M ? (M.gtd * 100).toFixed(0) + "%" : (f.form && f.form.g != null ? (f.form.g * 100).toFixed(0) + "%" : "—"); })()}</td>
       <td>${model}</td><td>${edge}</td>
-      <td class="l">${final ? resultText(f) : '<span class="dim">' + (f.start ? new Date(f.start.replace(" ", "T") + "Z").toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" }) : "") + "</span>"}</td>
+      <td class="l">${final ? resultText(f) : '<span class="dim">' + startLabel(f) + "</span>"}</td>
       <td class="c">›</td></tr>`;
   });
-  return `<div class="tw"><table><thead><tr><th class="c">#</th><th class="l">Bout</th><th>Open</th><th>${final ? "Close" : "Current"}</th><th title="Open→now move in first fighter's no-vig win %">Move</th><th title="Market win % for the first fighter after correcting the favorite-longshot bias">Fair</th><th title="Form Line: stats-only win % for the first fighter">Form</th><th title="Form Line: chance the fight goes the distance">GTD</th><th title="Model win % (first / second)">Model</th><th>Edge</th><th class="l">${final ? "Result" : "Local time"}</th><th></th></tr></thead><tbody>${html}</tbody></table></div>`;
+  const hl_ = (ev.fights || []).filter(f => heldLine(f));
+  const rn_ = ((ev.fights || []).some(f => reachNote(ev, f)) ? `<div class="note">† ${esc(window.__reach.text)}</div>` : "") + (hl_.length ? `<div class="note">‡ ${hl_.map(f => "Fight " + f.n).join(", ")}: ${esc(heldLine(hl_[0]))}.</div>` : "");
+  return `<div class="tw"><table><thead><tr><th class="c">#</th><th class="l">Bout</th><th>Open</th><th>${final ? "Close" : "Current"}</th><th title="Open→now move in first fighter's no-vig win %">Move</th><th title="Market win % for the first fighter after correcting the favorite-longshot bias">Fair</th><th title="Form Line: stats-only win % for the first fighter">Form</th><th title="Form Line: chance the fight goes the distance">GTD</th><th title="Model win % (first / second)">Model</th><th>Edge</th><th class="l">${final ? "Result" : "Start"}</th><th></th></tr></thead><tbody>${html}</tbody></table></div>${rn_}`;
 }
 async function overlayLive(ev) {
   if (ev.status !== "upcoming" || !ev.bp_file || ev.__live) return;
@@ -288,8 +306,8 @@ function propsBox(f) {
   const p = f.props; if (!p) return "";
   const order = [["ML a", last(f.a.name) + " ML"], ["ML b", last(f.b.name) + " ML"], ["a DEC", last(f.a.name) + " by DEC"], ["a KO", last(f.a.name) + " by KO"], ["a SUB", last(f.a.name) + " by SUB"], ["b DEC", last(f.b.name) + " by DEC"], ["b KO", last(f.b.name) + " by KO"], ["b SUB", last(f.b.name) + " by SUB"], ["GTD", "Goes the distance"], ["O1.5", "Over 1.5"], ["O2.5", "Over 2.5"], ["O3.5", "Over 3.5"], ["O4.5", "Over 4.5"]];
   const cell = (x) => x && x[0] != null ? `${(x[0] * 100).toFixed(1)}% <span class="dim">${ml(x[1])}</span>` : "—";
-  const rows = order.filter(([k]) => p[k]).map(([k, lab]) => `<tr><td class="l b">${esc(lab)}</td><td>${cell(p[k].books)}</td><td>${p[k]["best-book"] ? ml(p[k]["best-book"][1]) + ' <span class="dim">' + esc(p[k]["best-book"][2]) + "</span>" : "—"}</td><td>${cell(p[k].exch)}</td></tr>`).join("");
-  return rows ? `<h3>Prop market at the close</h3><div class="tw"><table><thead><tr><th class="l">Market</th><th title="No-vig book consensus">Books</th><th>Best price</th><th title="Exchange price (Kalshi / Polymarket / Novig)">Exchange</th></tr></thead><tbody>${rows}</tbody></table></div>` : "";
+  const rows = order.filter(([k]) => p[k]).map(([k, lab]) => `<tr><td class="l b">${esc(lab)}</td><td>${cell(p[k].books)}</td>${SHOW_PER_BOOK ? `<td>${p[k]["best-book"] ? ml(p[k]["best-book"][1]) + ' <span class="dim">' + esc(p[k]["best-book"][2]) + "</span>" : "—"}</td>` : ""}<td>${cell(p[k].exch)}</td></tr>`).join("");
+  return rows ? `<h3>Prop market at the close</h3><div class="tw"><table><thead><tr><th class="l">Market</th><th title="No-vig book consensus">Books</th>${SHOW_PER_BOOK ? "<th>Best price</th>" : ""}<th title="Exchange price (Kalshi / Polymarket / Novig)">Exchange</th></tr></thead><tbody>${rows}</tbody></table></div>` : "";
 }
 function priceBoard(ev) {
   const rows = [];
@@ -332,7 +350,7 @@ async function vCard(slug) {
     <div class="links" style="margin-top:8px">${ev.widget ? `<a href="${ev.widget.file}" target="_blank" rel="noopener">Projection tables (widget)</a>` : ""}${ev.url ? `<a href="${esc(ev.url)}" target="_blank" rel="noopener">UFCStats event</a>` : ""}<a href="#/sheet/${ev.slug}">Printable form sheet</a></div>
     ${cardTable(ev)}${ev.status === "upcoming" ? priceBoard(ev) : ""}${methodBoard(ev)}`;
   if (movers.length) html += `<h3>Biggest line moves (open → ${ev.status === "final" ? "close" : "now"})</h3><div class="tw"><table><thead><tr><th class="l">Bout</th><th>Open</th><th>${ev.status === "final" ? "Close" : "Now"}</th><th>Move</th><th class="l">Toward</th><th class="l">Result</th></tr></thead><tbody>` +
-    movers.map(({ f, mv }) => { const side = mv >= 0 ? "a" : "b"; const hit = f.result && f.result.winner ? (f.result.winner === side ? '<span class="W">steam won</span>' : '<span class="L">steam lost</span>') : ""; return `<tr class="click" data-href="#/fight/${ev.slug}/${f.n}"><td class="l">${esc(f.a.name)} vs ${esc(f.b.name)}</td><td>${ml(f.odds.open.ma)} / ${ml(f.odds.open.mb)}</td><td>${ml(f.odds.close.ma)} / ${ml(f.odds.close.mb)}</td><td class="b">${signed(Math.abs(mv))}</td><td class="l">${esc(f[side].name)}</td><td class="l">${hit}</td></tr>`; }).join("") + `</tbody></table></div>`;
+    movers.map(({ f, mv }) => { const side = mv >= 0 ? "a" : "b"; const thinN = f.odds.close.nb < 3 ? f.odds.close.nb : null; const hit = thinN != null && f.result && f.result.winner ? `<span class="dim">thin market (${thinN} ${thinN === 1 ? "book" : "books"})</span>` : f.result && f.result.winner ? (f.result.winner === side ? '<span class="W">steam won</span>' : '<span class="L">steam lost</span>') : ""; return `<tr class="click" data-href="#/fight/${ev.slug}/${f.n}"><td class="l">${esc(f.a.name)} vs ${esc(f.b.name)}</td><td>${ml(f.odds.open.ma)} / ${ml(f.odds.open.mb)}</td><td>${ml(f.odds.close.ma)} / ${ml(f.odds.close.mb)}</td><td class="b">${signed(Math.abs(mv))}</td><td class="l">${esc(f[side].name)}</td><td class="l">${hit}</td></tr>`; }).join("") + `</tbody></table></div>`;
   $app.innerHTML = html; wireRows();
 }
 
@@ -368,9 +386,9 @@ async function vFight(slug, n) {
   // tale of the tape (as of fight night)
   html += `<div class="grid2"><div><h3>Tale of the tape · entering this fight</h3><div class="tape">
     ${tapeRow("Age", agA ? agA.toFixed(1) : "—", agB ? agB.toFixed(1) : "—", "lo")}
-    ${tapeRow("Height", esc(ba.ht || "—"), esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
-    ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "—", bb.reach ? bb.reach + '"' : "—", "hi")}
-    ${tapeRow("Stance", esc(ba.stance || "—"), esc(bb.stance || "—"), null)}
+    ${tapeRow("Height", bioHeld(ba, "ht") ? "held · sources differ" : esc(ba.ht || "—"), bioHeld(bb, "ht") ? "held · sources differ" : esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
+    ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "not listed", bb.reach ? bb.reach + '"' : "not listed", "hi")}
+    ${tapeRow("Stance", esc(ba.stance || "not listed"), esc(bb.stance || "not listed"), null)}
     ${tapeRow("UFC record", ga.rec, gb.rec, null)}
     ${tapeRow("Form Figure rating", f.form ? f.form.ra.toFixed(1) : "—", f.form ? f.form.rb.toFixed(1) : "—", "hi")}
     ${tapeRow("Last 3 figures", pa.slice(0, 3).map(x => x.fg == null ? "–" : Math.round(x.fg)).join(" · ") || "—", pb.slice(0, 3).map(x => x.fg == null ? "–" : Math.round(x.fg)).join(" · ") || "—", null)}
@@ -398,16 +416,17 @@ async function vFight(slug, n) {
     const mv = (o.close.p - o.open.p) * 100;
     html += lineChart(o, f.a.name, f.b.name) + `<div style="height:8px"></div>
       <div class="kv"><span>First seen (${fdate(o.open.t.slice(0, 10))})</span><span>${esc(f.a.name)} ${ml(o.open.ma)} · ${esc(f.b.name)} ${ml(o.open.mb)} · ${pct(o.open.p)}</span></div>
-      <div class="kv"><span>${final ? "Close" : "Now"} (${o.close.nb} books)</span><span><b>${esc(f.a.name)} ${ml(o.close.ma)} · ${esc(f.b.name)} ${ml(o.close.mb)}</b> · ${pct(o.close.p)}</span></div>
+      <div class="kv"><span>${final ? "Close" : "Now"} (${o.close.nb} US-regulated books)</span><span><b>${esc(f.a.name)} ${ml(o.close.ma)} · ${esc(f.b.name)} ${ml(o.close.mb)}</b> · ${pct(o.close.p)}</span></div>
       <div class="kv"><span>Move</span><span class="${cls(Math.abs(mv) >= 1 ? 1 : 0)}">${signed(Math.abs(mv))} pts toward ${esc(mv >= 0 ? f.a.name : f.b.name)}</span></div>
-      ${o.total ? `<div class="kv"><span>Total rounds</span><span>${o.total.pt} · O ${ml(o.total.over)} / U ${ml(o.total.under)} · over ${pct(o.total.p_over)}</span></div>` : ""}
+      ${SHOW_PER_BOOK && o.total ? `<div class="kv"><span>Total rounds</span><span>${o.total.pt} · O ${ml(o.total.over)} / U ${ml(o.total.under)} · over ${pct(o.total.p_over)}</span></div>` : ""}
       <div class="kv"><span>Snapshots</span><span>${o.n}</span></div>`;
     const bk = Object.entries(o.books || {});
-    if (bk.length) html += `<div style="height:8px"></div><div class="tw"><table><thead><tr><th class="l">Book</th><th>${esc(f.a.name.split(" ").slice(-1)[0])}</th><th>${esc(f.b.name.split(" ").slice(-1)[0])}</th><th>No-vig</th></tr></thead><tbody>` +
+    if (SHOW_PER_BOOK && bk.length) html += `<div style="height:8px"></div><div class="tw"><table><thead><tr><th class="l">Book</th><th>${esc(f.a.name.split(" ").slice(-1)[0])}</th><th>${esc(f.b.name.split(" ").slice(-1)[0])}</th><th>No-vig</th></tr></thead><tbody>` +
       bk.map(([b, x]) => `<tr><td class="l">${esc((window.__books || {})[b] || b)}</td><td>${ml(x.ma)}</td><td>${ml(x.mb)}</td><td>${pct(x.p)}</td></tr>`).join("") + `</tbody></table></div>`;
   } else if (f.bp && f.bp.a && f.bp.a.cons != null) {
-    html += `<div class="kv"><span>Open</span><span>${esc(f.a.name)} ${ml(f.bp.a.open)} · ${esc(f.b.name)} ${ml(f.bp.b.open)}</span></div><div class="kv"><span>${final ? "Close" : "Now"} (consensus)</span><span><b>${esc(f.a.name)} ${ml(f.bp.a.cons)} · ${esc(f.b.name)} ${ml(f.bp.b.cons)}</b></span></div><div class="kv"><span>DraftKings</span><span>${ml(f.bp.a.dk)} / ${ml(f.bp.b.dk)}</span></div><div class="kv"><span>FanDuel</span><span>${ml(f.bp.a.fd)} / ${ml(f.bp.b.fd)}</span></div>`;
-  } else html += `<div class="note">No line history on file for this fight.</div>`;
+    html += `<div class="kv"><span>Open</span><span>${esc(f.a.name)} ${ml(f.bp.a.open)} · ${esc(f.b.name)} ${ml(f.bp.b.open)}</span></div><div class="kv"><span>${final ? "Close" : "Now"} (consensus)</span><span><b>${esc(f.a.name)} ${ml(f.bp.a.cons)} · ${esc(f.b.name)} ${ml(f.bp.b.cons)}</b></span></div>${SHOW_PER_BOOK ? `<div class="kv"><span>DraftKings</span><span>${ml(f.bp.a.dk)} / ${ml(f.bp.b.dk)}</span></div><div class="kv"><span>FanDuel</span><span>${ml(f.bp.a.fd)} / ${ml(f.bp.b.fd)}</span></div>` : ""}`;
+  } else if (f.odds_open) html += `<div class="kv"><span>First seen (${fdate(f.odds_open.t.slice(0, 10))})</span><span>${esc(f.a.name)} ${ml(f.odds_open.ma)} · ${esc(f.b.name)} ${ml(f.odds_open.mb)} · ${pct(f.odds_open.p)}</span></div><div class="note">No US-regulated price on file, so no current line.</div>`;
+  else html += `<div class="note">No line history on file for this fight.</div>`;
   html += `</div>`;
 
   // model
@@ -427,16 +446,16 @@ async function vFight(slug, n) {
     const eA = fa_ != null && bA ? fa_ * ml2dec(bA.ml) - 1 : null, eB = fa_ != null && bB ? (1 - fa_) * ml2dec(bB.ml) - 1 : null;
     html += `<h3>Form numbers</h3><div class="tw"><table><thead><tr><th class="l"></th><th>${esc(last(f.a.name))}</th><th>${esc(last(f.b.name))}</th><th class="l">What it is</th></tr></thead><tbody>
       <tr><td class="l b">Fair line</td><td>${fa_ == null ? "—" : (fa_ * 100).toFixed(1) + "% · " + ml(p2ml(fa_))}</td><td>${fa_ == null ? "—" : ((1 - fa_) * 100).toFixed(1) + "% · " + ml(p2ml(1 - fa_))}</td><td class="l dim">Market, corrected for favorite-longshot bias</td></tr>
-      <tr><td class="l b">Best price</td><td>${bA ? ml(bA.ml) + " " + esc(bookName(bA.book)) : "—"}</td><td>${bB ? ml(bB.ml) + " " + esc(bookName(bB.book)) : "—"}</td><td class="l dim">${final ? "At the close" : "Last snapshot"}</td></tr>
-      <tr><td class="l b">Edge at best price</td><td class="${cls(eA)}">${eA == null ? "—" : signed(eA * 100) + "%"}</td><td class="${cls(eB)}">${eB == null ? "—" : signed(eB * 100) + "%"}</td><td class="l dim">Fair % × payout − 1</td></tr>
-      <tr><td class="l b">Form Line</td><td>${fm.p == null ? "—" : (fm.p * 100).toFixed(1) + "%"}</td><td>${fm.p == null ? "—" : ((1 - fm.p) * 100).toFixed(1) + "%"}</td><td class="l dim">Stats-only model. Context, not a bet signal</td></tr>
+      ${SHOW_PER_BOOK ? "" : "<!--"}<tr><td class="l b">Best price</td><td>${bA ? ml(bA.ml) + " " + esc(bookName(bA.book)) : "—"}</td><td>${bB ? ml(bB.ml) + " " + esc(bookName(bB.book)) : "—"}</td><td class="l dim">${final ? "At the close" : "Last snapshot"}</td></tr>
+      <tr><td class="l b">Edge at best price</td><td class="${cls(eA)}">${eA == null ? "—" : signed(eA * 100) + "%"}</td><td class="${cls(eB)}">${eB == null ? "—" : signed(eB * 100) + "%"}</td><td class="l dim">Fair % × payout − 1</td></tr>${SHOW_PER_BOOK ? "" : "-->"}
+      ${heldLine(f) ? `<tr><td class="l b">Form Line</td><td colspan="2" class="c dim">held</td><td class="l dim">${esc(heldLine(f))}</td></tr>` : `<tr><td class="l b">Form Line</td><td>${fm.p == null ? "—" : (fm.p * 100).toFixed(1) + "%"}</td><td>${fm.p == null ? "—" : ((1 - fm.p) * 100).toFixed(1) + "%"}</td><td class="l dim">Stats-only model. Context, not a bet signal${reachNote(ev, f) ? ". " + esc(reachNote(ev, f)) : ""}</td></tr>`}
 ${(() => { const M = methodRows(f); if (!M) return `<tr><td class="l b">Goes the distance</td><td colspan="2" class="c">${fm.g == null ? "—" : (fm.g * 100).toFixed(0) + "%"}</td><td class="l dim">Form distance model</td></tr>`;
         const r_ = (lab, k) => `<tr><td class="l b">${lab}</td><td>${(M.a[k] * 100).toFixed(0)}% · ${ml(p2ml(M.a[k]))}</td><td>${(M.b[k] * 100).toFixed(0)}% · ${ml(p2ml(M.b[k]))}</td><td class="l dim">${k === "dec" ? "Form method model on the " + M.src : ""}</td></tr>`;
         return r_("By decision", "dec") + r_("By KO/TKO", "ko") + r_("By submission", "sub") + r_("Inside distance", "itd") + `<tr><td class="l b">Goes the distance</td><td colspan="2" class="c">${(M.gtd * 100).toFixed(0)}% · ${ml(p2ml(M.gtd))} <span class="dim">(division base ${fm.base == null ? "—" : (fm.base * 100).toFixed(0) + "%"})</span></td><td class="l dim">Both decision chances added</td></tr>`; })()}
-    </tbody></table></div>`;
+    </tbody></table></div>${reachNote(ev, f) ? `<div class="note">Form Line: ${esc(reachNote(ev, f))}</div>` : ""}${heldLine(f) ? `<div class="note">${esc(heldLine(f))}.</div>` : ""}`;   // Kirk round 26 call 1: visible on phones
     const A_ = window.__angles || {}, ang = Object.entries(fm.ang || {}).filter(([k]) => A_[k] && !/^(fav|dog)_all$/.test(k));
     if (ang.length) html += `<h3>Angles in play</h3><div class="tw"><table><thead><tr><th class="l">Angle</th><th class="l">Side</th><th title="Fights since 2022">N</th><th title="Actual win %">Won</th><th title="Win % the closing line implied">Mkt</th><th title="Flat bet at the consensus close">ROI</th></tr></thead><tbody>` +
-      ang.map(([k, s_]) => { const a = A_[k]; return `<tr><td class="l">${esc(a[0])}</td><td class="l b">${esc(last(f[s_].name))}</td><td>${a[1]}</td><td>${(a[2] * 100).toFixed(1)}%</td><td class="dim">${(a[3] * 100).toFixed(1)}%</td><td class="${cls(a[4])}">${signed(a[4] * 100)}%</td></tr>`; }).join("") + `</tbody></table></div>`;
+      ang.map(([k, s_]) => { const a = A_[k]; return `<tr><td class="l">${esc(a[0])}${(window.__review || {})[k] ? ' <span class="neg">· under review</span>' : ""}</td><td class="l b">${esc(last(f[s_].name))}</td><td>${a[1]}</td><td>${(a[2] * 100).toFixed(1)}%</td><td class="dim">${(a[3] * 100).toFixed(1)}%</td><td class="${cls(a[4])}">${signed(a[4] * 100)}%</td></tr>`; }).join("") + `</tbody></table></div>`;
   }
   html += `</div></div>`;
 
@@ -488,7 +507,7 @@ async function vFighter(slug) {
   $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › <a href="#/fighters">Fighters</a> › ${esc(F.name)}</div>
     <h2>${esc(F.name)}</h2>
     ${F.dup_name ? '<div class="banner">Two UFC fighters share this name. Their fights are combined on this page.</div>' : ""}
-    <div class="stats"><div><b>${g.rec}</b><span>UFC record</span></div><div><b>${F.fig == null ? "—" : F.fig.toFixed(1)}</b><span>Form Figure rating</span></div><div><b>${F.elo || "—"}</b><span>Elo</span></div><div><b>${streak(F.fights)}</b><span>Streak</span></div><div><b>${age ? age.toFixed(1) : "—"}</b><span>Age</span></div><div><b>${esc(b.ht || "—")}</b><span>Height</span></div><div><b>${b.reach ? b.reach + '"' : "—"}</b><span>Reach</span></div><div><b>${esc(b.stance || "—")}</b><span>Stance</span></div><div><b>${F.fights[0] ? esc(F.fights[0].wc.replace("Women's ", "W ")) : "—"}</b><span>Last weight</span></div></div>
+    <div class="stats"><div><b>${g.rec}</b><span>UFC record</span></div><div><b>${F.fig == null ? "—" : F.fig.toFixed(1)}</b><span>Form Figure rating</span></div><div><b>${F.elo || "—"}</b><span>Elo</span></div><div><b>${streak(F.fights)}</b><span>Streak</span></div><div><b>${age ? age.toFixed(1) : "—"}</b><span>Age</span></div><div><b>${bioHeld(b, "ht") ? "held · sources differ" : esc(b.ht || "—")}</b><span>Height</span></div><div><b>${b.reach ? b.reach + '"' : "not listed"}</b><span>Reach</span></div><div><b>${esc(b.stance || "not listed")}</b><span>Stance</span></div><div><b>${F.fights[0] ? esc(F.fights[0].wc.replace("Women's ", "W ")) : "—"}</b><span>Last weight</span></div></div>
     <div class="grid3" style="margin-top:14px">
       <div class="box"><h3 style="margin-top:0">Striking</h3><div class="kv"><span>SLpM</span><span>${v(g.slpm)}</span></div><div class="kv"><span>SApM</span><span>${v(g.sapm)}</span></div><div class="kv"><span>Diff / min</span><span class="${cls(g.diff)}">${g.diff == null ? "—" : signed(g.diff, 2)}</span></div><div class="kv"><span>Accuracy / defense</span><span>${pc(g.acc)} / ${pc(g.def)}</span></div><div class="kv"><span>R1 diff / min</span><span class="${cls(g.r1diff)}">${g.r1diff == null ? "—" : signed(g.r1diff, 2)}</span></div><div class="kv"><span>R3+ diff / min (${g.latemin.toFixed(0)} min)</span><span class="${cls(g.latediff)}">${g.latediff == null ? "—" : signed(g.latediff, 2)}</span></div><div class="kv"><span>KD per 15 (for-against)</span><span>${v(g.kd15)} - ${v(g.okd15)}</span></div></div>
       <div class="box"><h3 style="margin-top:0">Grappling</h3><div class="kv"><span>TD per 15</span><span>${v(g.td15)}</span></div><div class="kv"><span>TD acc / def</span><span>${pc(g.tdacc)} / ${pc(g.tdd)}</span></div><div class="kv"><span>Control %</span><span>${pc(g.ctrlp)}</span></div><div class="kv"><span>Controlled %</span><span>${pc(g.octrlp)}</span></div><div class="kv"><span>Sub att per 15</span><span>${v(g.sub15)}</span></div></div>
@@ -531,9 +550,9 @@ async function vCompare(sa, sb) {
   <div class="bout"><div class="f r"><a href="#/fighter/${A.slug}">${esc(A.name)}</a><small>UFC ${ga.rec} · Fig ${A.fig == null ? "—" : A.fig.toFixed(0)} · Elo ${A.elo || "—"} · ${streak(A.fights)}</small></div><div class="vs">vs</div><div class="f"><a href="#/fighter/${B.slug}">${esc(B.name)}</a><small>UFC ${gb.rec} · Fig ${B.fig == null ? "—" : B.fig.toFixed(0)} · Elo ${B.elo || "—"} · ${streak(B.fights)}</small></div></div>
   <h3>Tale of the tape · today</h3><div class="tape">
     ${tapeRow("Age", aA ? aA.toFixed(1) : "—", aB ? aB.toFixed(1) : "—", "lo")}
-    ${tapeRow("Height", esc(ba.ht || "—"), esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
-    ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "—", bb.reach ? bb.reach + '"' : "—", "hi")}
-    ${tapeRow("Stance", esc(ba.stance || "—"), esc(bb.stance || "—"), null)}
+    ${tapeRow("Height", bioHeld(ba, "ht") ? "held · sources differ" : esc(ba.ht || "—"), bioHeld(bb, "ht") ? "held · sources differ" : esc(bb.ht || "—"), null, inches(ba.ht) && inches(bb.ht) && inches(ba.ht) !== inches(bb.ht) ? (inches(ba.ht) > inches(bb.ht) ? "a" : "b") : null)}
+    ${tapeRow("Reach", ba.reach ? ba.reach + '"' : "not listed", bb.reach ? bb.reach + '"' : "not listed", "hi")}
+    ${tapeRow("Stance", esc(ba.stance || "not listed"), esc(bb.stance || "not listed"), null)}
     ${tapeRow("Form Figure rating", A.fig == null ? "—" : A.fig.toFixed(1), B.fig == null ? "—" : B.fig.toFixed(1), "hi")}
     ${tapeRow("Last 3 figures", A.fights.slice(0, 3).map(x => x.fg == null ? "–" : Math.round(x.fg)).join(" · "), B.fights.slice(0, 3).map(x => x.fg == null ? "–" : Math.round(x.fg)).join(" · "), null)}
     ${tapeRow("Elo", A.elo || "—", B.elo || "—", "hi")}
@@ -590,7 +609,7 @@ async function vModel() {
     </div>
     <h3>Flags · how the underdog did</h3><div class="tw"><table><thead><tr><th class="l">Flag</th><th>Fights</th><th>Dog won</th><th>Dog win %</th><th>Close implied</th></tr></thead><tbody>${SB.flags.map(x => `<tr><td class="l b">${esc(x.flag)}</td><td>${x.n}</td><td>${x.dog_w}</td><td class="b">${(x.dog_w / x.n * 100).toFixed(0)}%</td><td class="dim">${(x.dog_exp * 100).toFixed(0)}%</td></tr>`).join("")}${SB.public_dog.n ? `<tr><td class="l b">Public 10+ pts above the close on the dog</td><td>${SB.public_dog.n}</td><td>${SB.public_dog.dog_w}</td><td class="b">${(SB.public_dog.dog_w / SB.public_dog.n * 100).toFixed(0)}%</td><td class="dim">${(SB.public_dog.dog_exp * 100).toFixed(0)}%</td></tr>` : ""}</tbody></table></div>
     <p class="note">Fight pages for these cards show every input (public picks, opener, Markov, sheet model), the flags and the closing prop market.</p>` : "";
-  $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › Model</div>${sbHtml}<h2>Published projections · June to November</h2>
+  $app.innerHTML = `<div class="crumbs"><a href="#/">Home</a> › Model</div>${sbHtml}<p class="note"><a href="form/corrections.html" style="text-decoration:underline">Corrections</a> to past numbers on this site are listed with dates.</p><h2>Published projections · June to November</h2>
     <p class="sub">Every moneyline bet the projection widgets flagged, graded automatically against UFCStats results. Stakes: risk 1u on plus money, to win 1u on minus money, at the price listed when the projection was published.</p>
     <div class="stats"><div><b>${w}-${R.length - w}</b><span>Flagged bets</span></div><div><b class="${cls(pnl)}">${signed(pnl, 2)}u</b><span>Profit / loss</span></div><div><b class="${cls(pnl)}">${risk ? signed(pnl / risk * 100) + "%" : "—"}</b><span>ROI on ${risk.toFixed(1)}u risked</span></div><div><b>${withClose.length ? beat + "/" + withClose.length : "—"}</b><span>Beat the closing line</span></div><div><b>${M.brier_model ?? "—"}</b><span>Brier · model (${M.n_both} fights)</span></div><div><b>${M.brier_close ?? "—"}</b><span>Brier · closing line</span></div></div>
     <p class="note">Brier score: lower is better. Compared on fights with both a model win % and a no-vig closing line.</p>
@@ -608,7 +627,7 @@ async function vAbout() {
   <p><b>MMA Fight Form</b> is a past-performance sheet for fights: everything a handicapper wants on one page, in the same place every time.</p>
   <p><b>Past performances.</b> One line per UFC fight: opponent and their rating going in, result, method, round and time, the closing moneyline and how far it moved from the open, significant strikes for and against, knockdowns, takedowns, control time and the layoff since the previous fight.</p>
   <p><b>Tale of the tape.</b> Rates are rebuilt as of fight night from fights before that date, so a historical page shows what was knowable then.</p>
-  <p><b>Lines.</b> Consensus is the median no-vig price across the US books and Pinnacle in the odds archive. From 2022 through 2025 there are two snapshots a day; 2026 has fight-weekend snapshots plus the live feed, so "first seen" can be later than the true opener.</p>
+  <p><b>Lines.</b> The current and closing line is the median no-vig price across the US-regulated sportsbooks in the odds archive; "first seen" is the earliest price we recorded from any listed book. Research tables on this site keep using the full historical closing line. From 2022 through 2025 there are two snapshots a day; 2026 has fight-weekend snapshots plus the live feed, so "first seen" can be later than the true opener.</p>
   <p><b>Model.</b> Where a projection was published, the fight page shows win and method probabilities, the listed price at the time, and the edge against both that price and the close.</p>
   <p><b>Model.</b> The projection is market-anchored, not a prediction from scratch. Five years of UFC fights say the closing line is well calibrated and that fighter stats, Elo, fan and tipster consensus, sharp money, offshore books and line drift add nothing to it. So the model starts from the listed line and makes a few small, evidence-backed moves: a 15% pull toward an independent Markov-chain simulation of the fight, a 4-point cut for women's underdogs, context codes for debutant, regional decision-grinder and retiring fighters, and a fade when the public is heavier on the underdog than the price is. Each fight page shows that build-up line by line.</p>
   <p><b>Bet rules.</b> Underdogs need 8 points of edge and a clean flag (no debut code, no sharp or public pile-on, no 4-point drift). Favorites need 3 points. Favorites priced 80% or higher are a standing bet at the best price. Five-round fights with the distance priced at 40% or more are a standing GTD bet. Inside-the-distance, unders and method props are shown as information because they lose most years.</p>
@@ -633,6 +652,7 @@ async function vRankings() {
 
 async function vResearch() {
   const R = await getJSON("research.json");
+  const RV = await getJSON("labs_review.json").catch(() => null), RVs = new Set((RV && RV.angles) || []);  // Kirk round 21 call 3
   const P = (x, d = 1) => x == null ? "—" : (x * 100).toFixed(d) + "%";
   const sg = (x, d = 1) => x == null ? "—" : `<span class="${cls(x)}">${signed(x * 100, d)}%</span>`;
   const tbl = (head, rows) => `<div class="tw"><table><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
@@ -656,8 +676,8 @@ async function vResearch() {
   `</div><div><h3>Which book closes sharpest?</h3>` + (R.books ? tbl(`<th class="l">Book</th><th>Log loss</th><th>Brier</th>`, R.books.rows.map(x => `<tr><td class="l b">${esc(bookName(x.book))}</td><td>${x.ll}</td><td>${x.brier}</td></tr>`).join("")) + `<div class="note">${R.books.n.toLocaleString()} fights where all seven books had a closing price. The differences are tiny.</div>` : "") + `</div></div>
   <h3>Simple strategies</h3>` + tbl(`<th class="l">Strategy</th><th>Bets</th><th>Won</th><th>ROI</th><th>Units</th><th class="l">ROI by year</th>`, R.sims.map(x => `<tr><td class="l b">${esc(x.name)}</td><td>${x.n}</td><td>${P(x.win)}</td><td>${sg(x.roi)}</td><td class="${cls(x.pnl)}">${signed(x.pnl, 1)}</td><td class="l dim">${Object.entries(x.years).map(([y, v]) => `${y.slice(2)}: ${signed(v[1] * 100, 0)}%`).join(" · ")}</td></tr>`).join("")) +
   `<h3>Angles · every one graded against the closing line</h3>` + tbl(`<th class="l">Angle (bet the fighter described)</th><th>Fights</th><th>Won</th><th>Mkt</th><th title="Standard errors above or below the market's expectation">z</th><th>ROI at close</th><th title="Uses the first-seen price">ROI at open</th><th class="l">ROI by year (close)</th>`,
-    R.angles.map(a => `<tr><td class="l b">${esc(a.name)}</td><td>${a.n}</td><td>${P(a.act)}</td><td class="dim">${P(a.exp)}</td><td class="${Math.abs(a.z) >= 2 ? "b " + cls(a.z) : "dim"}">${signed(a.z, 2)}</td><td>${sg(a.roi_c)}</td><td>${sg(a.roi_o)}</td><td class="l dim">${Object.entries(a.years).map(([y, v]) => `${y.slice(2)}: ${signed(v[2] / v[0] * 100, 0)}%`).join(" · ")}</td></tr>`).join("")) +
-  `<div class="note">With ${R.angles.length} angles tested, one or two will clear z = 2 by luck. Steam angles at the "open" price use information you would not have had at the open. 2026 first-seen prices are often fight-week prices.</div>
+    R.angles.map(a => `<tr><td class="l b">${esc(a.name)}${RVs.has(a.id) ? ` <span class="neg">· ${esc(RV.short)}</span>` : ""}</td><td>${a.n}</td><td>${P(a.act)}</td><td class="dim">${P(a.exp)}</td><td class="${Math.abs(a.z) >= 2 ? "b " + cls(a.z) : "dim"}">${signed(a.z, 2)}</td><td>${sg(a.roi_c)}</td><td>${sg(a.roi_o)}</td><td class="l dim">${Object.entries(a.years).map(([y, v]) => `${y.slice(2)}: ${signed(v[2] / v[0] * 100, 0)}%`).join(" · ")}</td></tr>`).join("")) +
+  `<div class="note">With ${R.angles.length} angles tested, one or two will clear z = 2 by luck. Steam angles at the "open" price use information you would not have had at the open. 2026 first-seen prices are often fight-week prices.</div>${RV && RVs.size ? `<div class="note neg">${esc(RV.note)}</div>` : ""}
   <div class="grid2"><div><h3>Totals · is the over priced right?</h3>` + tbl(`<th class="l">Line</th><th>Fights</th><th>Mkt over</th><th>Went over</th><th>Gap</th><th>Over ROI</th><th>Under ROI</th>`, R.totals.map(x => `<tr><td class="l b">${x.pt}</td><td>${x.n}</td><td>${P(x.exp)}</td><td class="b">${P(x.act)}</td><td>${sg(x.act - x.exp)}</td><td>${sg(x.roi_over)}</td><td>${sg(x.roi_under)}</td></tr>`).join("")) +
   (R.gtd ? `<h3>Form distance model</h3>` + tbl(`<th class="l">Model said</th><th>Fights</th><th>Avg</th><th>Went distance</th>`, R.gtd_calib.map(x => `<tr><td class="l">${x.band}</td><td>${x.n}</td><td>${P(x.exp)}</td><td class="b">${P(x.act)}</td></tr>`).join("")) + `<div class="note">Log loss ${R.gtd.ll_model} against ${R.gtd.ll_base} for the division base rate alone, on ${R.gtd.n.toLocaleString()} fights since 2022.</div>` : "") +
   `</div><div><h3>Division base rates · last five years</h3>` + tbl(`<th class="l">Division</th><th>Rds</th><th>Fights</th><th>Decision</th><th>KO/TKO</th><th>Sub</th><th>R1 finish</th><th>Avg min</th>`, R.wc.filter(x => x.n >= 40).map(x => `<tr><td class="l b">${esc(x.wc)}</td><td>${x.sched}</td><td>${x.n}</td><td>${P(x.dec, 0)}</td><td>${P(x.ko, 0)}</td><td>${P(x.sub, 0)}</td><td>${P(x.r1, 0)}</td><td>${x.avg_min}</td></tr>`).join("")) + `</div></div>
@@ -674,8 +694,8 @@ async function vSheet(slug) {
     const [A, B] = await Promise.all([f.a.slug ? getJSON(`fighters/${f.a.slug}.json`).catch(() => null) : null, f.b.slug ? getJSON(`fighters/${f.b.slug}.json`).catch(() => null) : null]);
     const pa = A ? A.fights.filter(x => x.d < ev.date) : [], pb = B ? B.fights.filter(x => x.d < ev.date) : [], ga = agg(pa), gb = agg(pb), o = oddsCells(f), fm = f.form || {};
     const ba = (A && A.bio) || {}, bb = (B && B.bio) || {}, v = (x, d = 2) => x == null ? "—" : x.toFixed(d), ag = (b_) => { const a_ = ageAt(b_.dob, ev.date); return a_ ? a_.toFixed(1) : "—"; };
-    const side = (x, g, b_, fig, P) => `<b>${esc(x.name)}</b> · UFC ${g.rec} · Fig ${fig == null ? "—" : fig.toFixed(0)} · age ${ag(b_)} · ${esc(b_.ht || "—")} / ${b_.reach ? b_.reach + '"' : "—"} · ${esc(b_.stance || "—")} · SLpM ${v(g.slpm)} / SApM ${v(g.sapm)} · TD15 ${v(g.td15)} · TDD ${g.tdd == null ? "—" : (g.tdd * 100).toFixed(0) + "%"} · Ctrl ${g.ctrlp == null ? "—" : (g.ctrlp * 100).toFixed(0) + "%"} · layoff ${P[0] ? daysBetween(ev.date, P[0].d) + "d" : "debut"}`;
-    html += `<section class="sheet"><div class="pp-head"><div class="n"><span class="pill k">${f.n}</span> <a href="#/fight/${ev.slug}/${f.n}">${esc(f.a.name)} vs ${esc(f.b.name)}</a></div><div class="sub">${esc(f.wc || "")}${f.sched ? " · " + f.sched + "R" : ""} · ${o.close.replace(/<\/?b>/g, "")}${o.pa != null ? " · fair " + (fair(o.pa) * 100).toFixed(0) + "%" : ""}${fm.p != null ? " · Form " + (fm.p * 100).toFixed(0) + "%" : ""}${(() => { const M = methodRows(f); return M ? " · GTD " + (M.gtd * 100).toFixed(0) + "%" : ""; })()}${f.model && f.model.a.win != null ? " · model " + f.model.a.win.toFixed(0) + "/" + f.model.b.win.toFixed(0) : ""}</div></div>
+    const side = (x, g, b_, fig, P) => `<b>${esc(x.name)}</b> · UFC ${g.rec} · Fig ${fig == null ? "—" : fig.toFixed(0)} · age ${ag(b_)} · ${bioHeld(b_, "ht") ? "height held (sources differ)" : esc(b_.ht || "—")} / ${b_.reach ? b_.reach + '"' : "—"} · ${esc(b_.stance || "—")} · SLpM ${v(g.slpm)} / SApM ${v(g.sapm)} · TD15 ${v(g.td15)} · TDD ${g.tdd == null ? "—" : (g.tdd * 100).toFixed(0) + "%"} · Ctrl ${g.ctrlp == null ? "—" : (g.ctrlp * 100).toFixed(0) + "%"} · layoff ${P[0] ? daysBetween(ev.date, P[0].d) + "d" : "debut"}`;
+    html += `<section class="sheet"><div class="pp-head"><div class="n"><span class="pill k">${f.n}</span> <a href="#/fight/${ev.slug}/${f.n}">${esc(f.a.name)} vs ${esc(f.b.name)}</a></div><div class="sub">${esc(f.wc || "")}${f.sched ? " · " + f.sched + "R" : ""} · ${o.close.replace(/<\/?b>/g, "")}${o.pa != null ? " · fair " + (fair(o.pa) * 100).toFixed(0) + "%" : ""}${heldLine(f) ? " · " + esc(heldLine(f)) : ""}${fm.p != null ? " · Form " + (fm.p * 100).toFixed(0) + "%" + (reachNote(ev, f) ? " (" + esc(reachNote(ev, f)) + ")" : "") : ""}${(() => { const M = methodRows(f); return M ? " · GTD " + (M.gtd * 100).toFixed(0) + "%" : ""; })()}${f.model && f.model.a.win != null ? " · model " + f.model.a.win.toFixed(0) + "/" + f.model.b.win.toFixed(0) : ""}</div></div>
       <div class="box" style="font:12px/1.5 var(--mono)">${side(f.a, ga, ba, fm.ra, pa)}<br>${side(f.b, gb, bb, fm.rb, pb)}</div>
       <div style="height:4px"></div>${ppTable(pa, { name: f.a.name, limit: 6 }).replace("<thead>", `<caption>${esc(f.a.name)}</caption><thead>`)}<div style="height:4px"></div>${ppTable(pb, { name: f.b.name, limit: 6 }).replace("<thead>", `<caption>${esc(f.b.name)}</caption><thead>`)}</section>`;
   }
@@ -856,7 +876,7 @@ function multiLine(series, xs, { fmt = (v) => (v * 100).toFixed(0) + "%", h = 22
 const roiTd = (v) => `<td class="${cls(v)}">${v == null ? "—" : signed(v * 100) + "%"}</td>`;
 function studyTable(rows, who) {
   return `<div class="tw"><table><thead><tr><th class="l">Bucket</th><th title="All fights since 2010">Fights</th><th>${who} win %</th><th title="Fights with a closing line (2022 on)">With line</th><th>Win % (line era)</th><th title="No-vig closing probability">Market %</th><th title="Flat 1u at the closing consensus price">ROI at close</th></tr></thead><tbody>` +
-    rows.map(r => `<tr><td class="l b">${esc(r.label)}</td><td>${r.n}</td><td class="b">${pct(r.wp)}</td><td class="dim">${r.on}</td><td>${pct(r.owp)}</td><td>${pct(r.imp)}</td>${roiTd(r.roi)}</tr>`).join("") + `</tbody></table></div>`;
+    rows.map(r => r.held ? `<tr><td class="l b">${esc(r.label)}</td><td colspan="6" class="l dim">${esc(r.held)}</td></tr>` : `<tr><td class="l b">${esc(r.label)}</td><td>${r.n}</td><td class="b">${pct(r.wp)}</td><td class="dim">${r.on}</td><td>${pct(r.owp)}</td><td>${pct(r.imp)}</td>${roiTd(r.roi)}</tr>`).join("") + `</tbody></table></div>`;
 }
 function venueTable(rows) {
   return `<div class="tw"><table><thead><tr><th class="l">Venue</th><th>Cards</th><th>Fights</th><th>Finish</th><th title="Expected from the weight classes on the cards">Expected</th><th>KO/TKO</th><th>Sub</th><th title="Round 3 strike attempts as a share of round 1, fights reaching the end of round 3">R3 output kept</th><th>Favorite win %</th><th>Market %</th><th>Favorite ROI</th></tr></thead><tbody>${rows.map(r => `<tr><td class="l b">${esc(r.label)}</td><td class="dim">${r.ev}</td><td class="dim">${r.n}</td><td class="b">${pct(r.fin)}</td><td class="dim">${pct(r.exp)}</td><td>${pct(r.ko)}</td><td>${pct(r.sub)}</td><td>${pct(r.pace.kept, 0)}</td><td>${pct(r.fav.owp)} <span class="dim">(${r.fav.on})</span></td><td>${pct(r.fav.imp)}</td>${roiTd(r.fav.roi)}</tr>`).join("")}</tbody></table></div>`;
@@ -879,7 +899,7 @@ async function vLabs(tab) {
   } else if (tab === "spots") {
     h = `<h3>Situational spots</h3>${studyTable(L.situational, "Fighter")}${L.styles ? `<h3>Style matchups · using only what was known before each fight (both fighters with 4+ UFC fights, since 2012)</h3>${studyTable(L.styles, "Fighter")}${L.sd_edge ? (() => { const E = L.sd_edge, q = E.upcoming.filter(u => u.na >= 4 && u.nb >= 4 && u.da != null && Math.abs(u.da - u.db) >= 2);
         return `<div class="box" style="margin-top:8px;font-size:13.5px;line-height:1.55"><b>The one that beat the close: career strike differential 2+ per minute better than the opponent's.</b> By year (line era): ${E.years.map(y => `${y.yr} ${signed(y.roi * 100)}% (${y.on})`).join(" · ")}. As a favorite ${pct(E.fav.owp)} vs ${pct(E.fav.imp)} implied, ${signed(E.fav.roi * 100)}% (${E.fav.on}); as an underdog ${signed(E.dog.roi * 100)}% (${E.dog.on}). Found by testing many spots on the same data, so treat it as a lead to track going forward, not a proven edge.<br><b>Qualifiers on the next card:</b> ${q.length ? q.map(u => { const A = u.da > u.db; return `<a href="#/fight/${u.es}/${u.n}" style="text-decoration:underline">${esc(A ? u.a : u.b)}</a> (${signed(A ? u.da : u.db, 2)}) over ${esc(A ? u.b : u.a)} (${signed(A ? u.db : u.da, 2)})`; }).join(" · ") : "none (both fighters need 4+ UFC fights)"}</div>`; })() : ""}` : ""}
-      ${L.totals_style ? `<h3>Round totals by how long each fighter's fights usually go</h3><div class="tw"><table><thead><tr><th class="l">Matchup</th><th>Fights</th><th>Went over</th><th>Market over %</th><th>ROI over</th><th>ROI under</th></tr></thead><tbody>${L.totals_style.map(r => `<tr><td class="l b">${esc(r.label)}</td><td>${r.n}</td><td class="b">${pct(r.over)}</td><td>${pct(r.imp)}</td>${roiTd(r.roi_over)}${roiTd(r.roi_under)}</tr>`).join("")}</tbody></table></div><div class="note">Totals are Pinnacle closing lines. Unders lose in every group; overs are roughly break-even. Fighters' own distance histories add nothing the total does not already have.</div>` : ""}
+      ${L.totals_style ? `<h3>Round totals by how long each fighter's fights usually go</h3><div class="tw"><table><thead><tr><th class="l">Matchup</th><th>Fights</th><th>Went over</th><th>Market over %</th><th>ROI over</th><th>ROI under</th></tr></thead><tbody>${L.totals_style.map(r => `<tr><td class="l b">${esc(r.label)}</td><td>${r.n}</td><td class="b">${pct(r.over)}</td><td>${pct(r.imp)}</td>${roiTd(r.roi_over)}${roiTd(r.roi_under)}</tr>`).join("")}</tbody></table></div><div class="note">Totals are closing lines from the sharpest book in the archive. Unders lose in every group; overs are roughly break-even. Fighters' own distance histories add nothing the total does not already have.</div>` : ""}
       <h3>Favorites by card position</h3><div class="tw"><table><thead><tr><th class="l">Slot</th><th>Fights</th><th>Favorite win %</th><th>Market %</th><th>ROI at close</th><th>Goes the distance</th></tr></thead><tbody>${L.position.map(r => `<tr><td class="l b">${esc(r.label)}</td><td>${r.on}</td><td class="b">${pct(r.owp)}</td><td>${pct(r.imp)}</td>${roiTd(r.roi)}<td>${pct(r.dist)}</td></tr>`).join("")}</tbody></table></div><h3>Late-booked fights (proxy for short-notice replacements)</h3><div class="tw"><table><thead><tr><th class="l">Group</th><th>Fights</th><th>Favorite win %</th><th>Market %</th><th>ROI at close</th><th>Finish rate</th></tr></thead><tbody>${L.late.map(r => `<tr><td class="l b" style="white-space:normal">${esc(r.label)}</td><td>${r.on}</td><td class="b">${pct(r.owp)}</td><td>${pct(r.imp)}</td>${roiTd(r.roi)}<td>${pct(r.fin)}</td></tr>`).join("")}</tbody></table></div><div class="note">We have no record of who replaced whom. This flags fights whose line appeared late compared with the rest of the card, which catches most replacements but also some fights that books were simply slow to post, and it cannot say which fighter stepped in.</div>
       ${L.chin ? `<div class="note">Chin: fighters with 2+ prior UFC KO/TKO losses facing an opponent with none were knocked out again in ${pct(L.chin.ko_loss)} of ${L.chin.n} fights, against ${pct(L.chin.base)} for the average fighter.</div>` : ""}
       <div class="note">Card position comes from UFCStats bout order. The official main card / prelim split is not in the data, so slots are counted from the top of the card.</div>`;
@@ -1069,7 +1089,9 @@ async function route() {
   $app.innerHTML = `<div class="banner">Page not found.</div>`;
 }
 window.addEventListener("hashchange", route);
-const boot = getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__angles = i.angles; }).catch(() => {});
+const boot = Promise.all([getJSON("index.json").then(i => { window.__books = i.books; window.__k = i.k; window.__built = i.built; window.__angles = i.angles; }).catch(() => {}),
+  getJSON("labs_review.json").then(r => { window.__review = Object.fromEntries((r.angles || []).map(k => [k, 1])); }).catch(() => {}),  // Kirk round 21 call 3
+  getJSON("reach_notes.json").then(r => { window.__reach = r; }).catch(() => {})]);   // (holds travel inside the data files: form.held, bio.*_held, labs row.held)  // Kirk round 26 call 1
 const $q = document.getElementById("q"), $dd = document.getElementById("dd");
 if ($q) {
   let S = null;

@@ -1,0 +1,12 @@
+Challenge C: can the post-merge checks pass on a stale page?
+Plant (sandbox, local Jekyll builds served on two ports): the site still serves the OLD build; the expected commit is a newer one
+(fight 4's "Data as of" line changed, standing in for a Saturday refresh).
+Round-10 style checks on the OLD build: "Data as of" line found 1, Corrections link found 1, corrections.html HTTP 200, _audit 404
+  -> they all PASS on the stale page.
+New scripts/post_merge_check.py on the OLD build: 1 served file differs (fight_04.html served f7296b6fc41b, commit 95c7791adba3)
+  -> POST-MERGE CHECK FAIL. Control on the NEW build: 33 served files (embeds, app.js, corrections, labs_review, event, fighter,
+  odds) byte-identical to the commit, _audit 404 -> POST-MERGE CHECK PASS.
+The check compares sha256 of each served file with the commit, so a cached copy cannot pass; the _audit 404 is only read after
+every content file matches (a 404 from a stale deploy proves nothing). --wait 600 rechecks every 30 s.
+Live GitHub Pages: a unique query string does NOT bypass the edge cache (E_cache_query.txt): same object, x-cache HIT, same age.
+So the round-10 "?t=<now>" fetch was not a cache-bust either.

@@ -1,7 +1,10 @@
 {
  "fight": 5,
  "of": 13,
- "site_n": 5,
+ "site_pair": [
+  "Donte Johnson",
+  "Cesar Almeida"
+ ],
  "pair": [
   "Donte Johnson",
   "Cesar Almeida"
@@ -10,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -25,32 +28,6 @@
   },
   {
    "id": "v2",
-   "text": "1566",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "a.elo"
-   },
-   "desc": "Donte Johnson Elo",
-   "raw": 1566
-  },
-  {
-   "id": "v3",
-   "text": "64.8",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "form.ra"
-   },
-   "desc": "Donte Johnson Form Figure",
-   "raw": 64.8
-  },
-  {
-   "id": "v4",
    "text": "3-3-0",
    "fmt": "str",
    "rule": "record",
@@ -61,1178 +38,7 @@
    "raw": "3-3-0"
   },
   {
-   "id": "v5",
-   "text": "1511",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "b.elo"
-   },
-   "desc": "Cesar Almeida Elo",
-   "raw": 1511
-  },
-  {
-   "id": "v6",
-   "text": "47.4",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "form.rb"
-   },
-   "desc": "Cesar Almeida Form Figure",
-   "raw": 47.4
-  },
-  {
-   "id": "v7",
-   "text": "-160",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Donte Johnson",
-   "raw": 0.6154327271701792
-  },
-  {
-   "id": "v8",
-   "text": "61.5%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean win % Donte Johnson",
-   "raw": 0.6154327271701792
-  },
-  {
-   "id": "v9",
-   "text": "-165",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Donte Johnson",
-    "field": "cost"
-   },
-   "desc": "BP ML now Donte Johnson",
-   "raw": -165
-  },
-  {
-   "id": "v10",
-   "text": "59.5%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Donte Johnson",
-    "other": "Cesar Almeida"
-   },
-   "desc": "BP ML no-vig Donte Johnson",
-   "raw": 0.5950488997555012
-  },
-  {
-   "id": "v11",
-   "text": "-150",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Donte Johnson",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Donte Johnson",
-   "raw": -150
-  },
-  {
-   "id": "v12",
-   "text": "+160",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean ML Cesar Almeida",
-   "raw": 0.3845672728298209
-  },
-  {
-   "id": "v13",
-   "text": "38.5%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean win % Cesar Almeida",
-   "raw": 0.3845672728298209
-  },
-  {
-   "id": "v14",
-   "text": "+136",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Cesar Almeida",
-    "field": "cost"
-   },
-   "desc": "BP ML now Cesar Almeida",
-   "raw": 136
-  },
-  {
-   "id": "v15",
-   "text": "40.5%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Cesar Almeida",
-    "other": "Donte Johnson"
-   },
-   "desc": "BP ML no-vig Cesar Almeida",
-   "raw": 0.4049511002444988
-  },
-  {
-   "id": "v16",
-   "text": "+120",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Cesar Almeida",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Cesar Almeida",
-   "raw": 120
-  },
-  {
-   "id": "v17",
-   "text": "+366",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Donte Johnson",
-   "raw": 0.21440913998433472
-  },
-  {
-   "id": "v18",
-   "text": "21.4%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Donte Johnson",
-   "raw": 0.21440913998433472
-  },
-  {
-   "id": "v19",
-   "text": "+370",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Donte Johnson Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Donte Johnson",
-   "raw": 370
-  },
-  {
-   "id": "v20",
-   "text": "17.8%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Donte Johnson",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Donte Johnson",
-   "raw": 0.17829788981196426
-  },
-  {
-   "id": "v21",
-   "text": "+360",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Donte Johnson Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP dec open Donte Johnson",
-   "raw": 360
-  },
-  {
-   "id": "v22",
-   "text": "+708",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Cesar Almeida",
-   "raw": 0.1237257943232398
-  },
-  {
-   "id": "v23",
-   "text": "12.4%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Cesar Almeida",
-   "raw": 0.1237257943232398
-  },
-  {
-   "id": "v24",
-   "text": "+750",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Cesar Almeida Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Cesar Almeida",
-   "raw": 750
-  },
-  {
-   "id": "v25",
-   "text": "9.9%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Cesar Almeida",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Cesar Almeida",
-   "raw": 0.09858824495485083
-  },
-  {
-   "id": "v26",
-   "text": "+700",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Cesar Almeida Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP dec open Cesar Almeida",
-   "raw": 700
-  },
-  {
-   "id": "v27",
-   "text": "+187",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Donte Johnson",
-   "raw": 0.3484808275637615
-  },
-  {
-   "id": "v28",
-   "text": "34.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Donte Johnson",
-   "raw": 0.3484808275637615
-  },
-  {
-   "id": "v29",
-   "text": "+147",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Donte Johnson KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Donte Johnson",
-   "raw": 147
-  },
-  {
-   "id": "v30",
-   "text": "33.9%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Donte Johnson",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Donte Johnson",
-   "raw": 0.3392712883061668
-  },
-  {
-   "id": "v31",
-   "text": "+140",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Donte Johnson KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP ko open Donte Johnson",
-   "raw": 140
-  },
-  {
-   "id": "v32",
-   "text": "+340",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Cesar Almeida",
-   "raw": 0.22737498642772663
-  },
-  {
-   "id": "v33",
-   "text": "22.7%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Cesar Almeida",
-   "raw": 0.22737498642772663
-  },
-  {
-   "id": "v34",
-   "text": "+232",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Cesar Almeida KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Cesar Almeida",
-   "raw": 232
-  },
-  {
-   "id": "v35",
-   "text": "25.2%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Cesar Almeida",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Cesar Almeida",
-   "raw": 0.2524096632880217
-  },
-  {
-   "id": "v36",
-   "text": "+225",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Cesar Almeida KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP ko open Cesar Almeida",
-   "raw": 225
-  },
-  {
-   "id": "v37",
-   "text": "+1803",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Donte Johnson",
-   "raw": 0.05254275962208295
-  },
-  {
-   "id": "v38",
-   "text": "5.3%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Donte Johnson",
-   "raw": 0.05254275962208295
-  },
-  {
-   "id": "v39",
-   "text": "+1048",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Donte Johnson Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Donte Johnson",
-   "raw": 1048
-  },
-  {
-   "id": "v40",
-   "text": "7.3%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Donte Johnson",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Donte Johnson",
-   "raw": 0.0729965228324244
-  },
-  {
-   "id": "v41",
-   "text": "+1500",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Donte Johnson Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP sub open Donte Johnson",
-   "raw": 1500
-  },
-  {
-   "id": "v42",
-   "text": "+2888",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Cesar Almeida",
-   "raw": 0.033466492078854465
-  },
-  {
-   "id": "v43",
-   "text": "3.3%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Cesar Almeida",
-   "raw": 0.033466492078854465
-  },
-  {
-   "id": "v44",
-   "text": "+1895",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Cesar Almeida Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Cesar Almeida",
-   "raw": 1895
-  },
-  {
-   "id": "v45",
-   "text": "4.2%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Cesar Almeida",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Cesar Almeida",
-   "raw": 0.04200501664743018
-  },
-  {
-   "id": "v46",
-   "text": "+2000",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Cesar Almeida Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP sub open Cesar Almeida",
-   "raw": 2000
-  },
-  {
-   "id": "v47",
-   "text": "+149",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Donte Johnson",
-   "raw": 0.4010235871858444
-  },
-  {
-   "id": "v48",
-   "text": "40.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Donte Johnson",
-   "raw": 0.4010235871858444
-  },
-  {
-   "id": "v49",
-   "text": "+143",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Donte Johnson"
-   },
-   "desc": "BP ITD fair ML Donte Johnson",
-   "raw": 0.41226781113859123
-  },
-  {
-   "id": "v50",
-   "text": "41.2%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Donte Johnson"
-   },
-   "desc": "BP ITD no-vig Donte Johnson",
-   "raw": 0.41226781113859123
-  },
-  {
-   "id": "v51",
-   "text": "+283",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Cesar Almeida",
-   "raw": 0.2608414785065811
-  },
-  {
-   "id": "v52",
-   "text": "26.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Cesar Almeida",
-   "raw": 0.2608414785065811
-  },
-  {
-   "id": "v53",
-   "text": "+240",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Cesar Almeida"
-   },
-   "desc": "BP ITD fair ML Cesar Almeida",
-   "raw": 0.2944146799354519
-  },
-  {
-   "id": "v54",
-   "text": "29.4%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Cesar Almeida"
-   },
-   "desc": "BP ITD no-vig Cesar Almeida",
-   "raw": 0.2944146799354519
-  },
-  {
-   "id": "v55",
-   "text": "+196",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD fair ML",
-   "raw": 0.3381349343075745
-  },
-  {
-   "id": "v56",
-   "text": "33.8%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD %",
-   "raw": 0.3381349343075745
-  },
-  {
-   "id": "v57",
-   "text": "+215",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP GTD yes now",
-   "raw": 215
-  },
-  {
-   "id": "v58",
-   "text": "-297",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP GTD no now",
-   "raw": -297
-  },
-  {
-   "id": "v59",
-   "text": "29.8%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "other": "No"
-   },
-   "desc": "BP GTD no-vig",
-   "raw": 0.2979250309556865
-  },
-  {
-   "id": "v60",
-   "text": "+200",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP GTD yes open",
-   "raw": 200
-  },
-  {
-   "id": "v61",
-   "text": "-183",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "odds.open.ma"
-   },
-   "desc": "OA open ML a",
-   "raw": -183
-  },
-  {
-   "id": "v62",
-   "text": "+156",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "odds.open.mb"
-   },
-   "desc": "OA open ML b",
-   "raw": 156
-  },
-  {
-   "id": "v63",
-   "text": "62.4%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "odds.open.p"
-   },
-   "desc": "OA open p",
-   "raw": 0.6241
-  },
-  {
-   "id": "v64",
-   "text": "-172",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "odds.close.ma"
-   },
-   "desc": "OA close ML a",
-   "raw": -172
-  },
-  {
-   "id": "v65",
-   "text": "+143",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "odds.close.mb"
-   },
-   "desc": "OA close ML b",
-   "raw": 143
-  },
-  {
-   "id": "v66",
-   "text": "60.6%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "odds.close.p"
-   },
-   "desc": "OA close p",
-   "raw": 0.6064
-  },
-  {
-   "id": "v67",
-   "text": "1.8",
-   "fmt": "pts",
-   "rule": "oa_drift",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5
-   },
-   "desc": "OA drift pts",
-   "raw": -0.017699999999999938
-  },
-  {
-   "id": "v68",
-   "text": "-164",
-   "fmt": "ml",
-   "rule": "oa_best",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "side": "a"
-   },
-   "desc": "OA best a",
-   "raw": -164
-  },
-  {
-   "id": "v69",
-   "text": "+147",
-   "fmt": "ml",
-   "rule": "oa_best",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "side": "b"
-   },
-   "desc": "OA best b",
-   "raw": 147
-  },
-  {
-   "id": "v70",
-   "text": "-150",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Donte Johnson",
-    "field": "opening_cost"
-   },
-   "desc": "BP open a (move)",
-   "raw": -150
-  },
-  {
-   "id": "v71",
-   "text": "-165",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Donte Johnson",
-    "field": "cost"
-   },
-   "desc": "BP now a (move)",
-   "raw": -165
-  },
-  {
-   "id": "v72",
-   "text": "+120",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Cesar Almeida",
-    "field": "opening_cost"
-   },
-   "desc": "BP open b (move)",
-   "raw": 120
-  },
-  {
-   "id": "v73",
-   "text": "+136",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Cesar Almeida",
-    "field": "cost"
-   },
-   "desc": "BP now b (move)",
-   "raw": 136
-  },
-  {
-   "id": "v74",
-   "text": "140",
-   "fmt": "int",
-   "rule": "oa_len",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5
-   },
-   "desc": "Chart points",
-   "raw": 140
-  },
-  {
-   "id": "v75",
-   "text": "448",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 5,
-    "path": "odds.n"
-   },
-   "desc": "Snapshots",
-   "raw": 448
-  },
-  {
-   "id": "v76",
-   "text": "-286",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending KO/TKO/DQ",
-   "raw": -286
-  },
-  {
-   "id": "v77",
-   "text": "-210",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending KO/TKO/DQ",
-   "raw": -210
-  },
-  {
-   "id": "v78",
-   "text": "68%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ"
-   },
-   "desc": "BP implied fight_ending KO/TKO/DQ",
-   "raw": 0.6774193548387096
-  },
-  {
-   "id": "v79",
-   "text": "+900",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Submission",
-   "raw": 900
-  },
-  {
-   "id": "v80",
-   "text": "+800",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Submission",
-   "raw": 800
-  },
-  {
-   "id": "v81",
-   "text": "11%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission"
-   },
-   "desc": "BP implied fight_ending Submission",
-   "raw": 0.1111111111111111
-  },
-  {
-   "id": "v82",
-   "text": "+210",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Points",
-   "raw": 210
-  },
-  {
-   "id": "v83",
-   "text": "+215",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Points",
-   "raw": 215
-  },
-  {
-   "id": "v84",
-   "text": "32%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points"
-   },
-   "desc": "BP implied fight_ending Points",
-   "raw": 0.31746031746031744
-  },
-  {
-   "id": "v85",
-   "text": "+200",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance Yes",
-   "raw": 200
-  },
-  {
-   "id": "v86",
-   "text": "+215",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance Yes",
-   "raw": 215
-  },
-  {
-   "id": "v87",
-   "text": "32%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes"
-   },
-   "desc": "BP implied fight_distance Yes",
-   "raw": 0.31746031746031744
-  },
-  {
-   "id": "v88",
-   "text": "-286",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance No",
-   "raw": -286
-  },
-  {
-   "id": "v89",
-   "text": "-297",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance No",
-   "raw": -297
-  },
-  {
-   "id": "v90",
-   "text": "75%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No"
-   },
-   "desc": "BP implied fight_distance No",
-   "raw": 0.7481108312342569
-  },
-  {
-   "id": "v91",
-   "text": "1.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Over",
-   "raw": 1.5
-  },
-  {
-   "id": "v92",
-   "text": "-140",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Over",
-   "raw": -140
-  },
-  {
-   "id": "v93",
-   "text": "-145",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Over",
-   "raw": -145
-  },
-  {
-   "id": "v94",
-   "text": "59%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over"
-   },
-   "desc": "BP implied total_rounds Over",
-   "raw": 0.5918367346938775
-  },
-  {
-   "id": "v95",
-   "text": "1.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Under",
-   "raw": 1.5
-  },
-  {
-   "id": "v96",
-   "text": "+110",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Under",
-   "raw": 110
-  },
-  {
-   "id": "v97",
-   "text": "+111",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Under",
-   "raw": 111
-  },
-  {
-   "id": "v98",
-   "text": "47%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under"
-   },
-   "desc": "BP implied total_rounds Under",
-   "raw": 0.47393364928909953
-  },
-  {
-   "id": "v99",
+   "id": "v3",
    "text": "27.8",
    "fmt": "n1",
    "rule": "age",
@@ -1243,7 +49,7 @@
    "raw": 27.802874743326488
   },
   {
-   "id": "v100",
+   "id": "v4",
    "text": "38.6",
    "fmt": "n1",
    "rule": "age",
@@ -1254,29 +60,7 @@
    "raw": 38.63107460643395
   },
   {
-   "id": "v101",
-   "text": "74\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Reach a",
-   "raw": 74
-  },
-  {
-   "id": "v102",
-   "text": "74\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Reach b",
-   "raw": 74
-  },
-  {
-   "id": "v103",
+   "id": "v5",
    "text": "5'8\"",
    "fmt": "str",
    "rule": "bio",
@@ -1288,7 +72,7 @@
    "raw": "5'8\""
   },
   {
-   "id": "v104",
+   "id": "v6",
    "text": "6'1\"",
    "fmt": "str",
    "rule": "bio",
@@ -1300,7 +84,29 @@
    "raw": "6'1\""
   },
   {
-   "id": "v105",
+   "id": "v7",
+   "text": "74\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 74
+  },
+  {
+   "id": "v8",
+   "text": "74\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 74
+  },
+  {
+   "id": "v9",
    "text": "Southpaw",
    "fmt": "str",
    "rule": "bio",
@@ -1312,7 +118,7 @@
    "raw": "Southpaw"
   },
   {
-   "id": "v106",
+   "id": "v10",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1324,234 +130,2188 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v107",
-   "text": "3",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v11",
+   "text": "-168",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "UFC fights a",
-   "raw": 3
+   "desc": "Model ML Donte Johnson",
+   "raw": 0.6267127235422996
   },
   {
-   "id": "v108",
-   "text": "6",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v12",
+   "text": "62.7%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Donte Johnson",
+   "raw": 0.6267127235422996
+  },
+  {
+   "id": "v13",
+   "text": "-175",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Donte Johnson",
+   "raw": -175
+  },
+  {
+   "id": "v14",
+   "text": "63.6%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Donte Johnson",
+   "raw": 0.6363636363636364
+  },
+  {
+   "id": "v15",
+   "text": "-175",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Donte Johnson",
+    "field": "cost"
+   },
+   "desc": "Market ML Donte Johnson",
+   "raw": -175
+  },
+  {
+   "id": "v16",
+   "text": "63.6%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Donte Johnson"
+   },
+   "desc": "Market implied Donte Johnson",
+   "raw": 0.6363636363636364
+  },
+  {
+   "id": "v17",
+   "text": "-1.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v12",
+     "v14"
+    ]
+   },
+   "desc": "Edge ML Donte Johnson",
+   "raw": -0.009650912821336788
+  },
+  {
+   "id": "v18",
+   "text": "+168",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "UFC fights b",
+   "desc": "Model ML Cesar Almeida",
+   "raw": 0.37328727645770043
+  },
+  {
+   "id": "v19",
+   "text": "37.3%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Cesar Almeida",
+   "raw": 0.37328727645770043
+  },
+  {
+   "id": "v20",
+   "text": "+145",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Cesar Almeida",
+   "raw": 145
+  },
+  {
+   "id": "v21",
+   "text": "40.8%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Cesar Almeida",
+   "raw": 0.40816326530612246
+  },
+  {
+   "id": "v22",
+   "text": "+145",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Cesar Almeida",
+    "field": "cost"
+   },
+   "desc": "Market ML Cesar Almeida",
+   "raw": 145
+  },
+  {
+   "id": "v23",
+   "text": "40.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Cesar Almeida"
+   },
+   "desc": "Market implied Cesar Almeida",
+   "raw": 0.40816326530612246
+  },
+  {
+   "id": "v24",
+   "text": "-3.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v19",
+     "v21"
+    ]
+   },
+   "desc": "Edge ML Cesar Almeida",
+   "raw": -0.034875988848422024
+  },
+  {
+   "id": "v25",
+   "text": "+203",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.3303625725040225
+  },
+  {
+   "id": "v26",
+   "text": "33.0%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.3303625725040225
+  },
+  {
+   "id": "v27",
+   "text": "+235",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD price",
+   "raw": 0.29820121930696514
+  },
+  {
+   "id": "v28",
+   "text": "29.8%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD %",
+   "raw": 0.29820121930696514
+  },
+  {
+   "id": "v29",
+   "text": "+215",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": 215
+  },
+  {
+   "id": "v30",
+   "text": "31.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.31746031746031744
+  },
+  {
+   "id": "v31",
+   "text": "+3.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v26",
+     "v28"
+    ]
+   },
+   "desc": "Edge GTD vs listed",
+   "raw": 0.032161353197057374
+  },
+  {
+   "id": "v32",
+   "text": "-203",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.6696374274959775
+  },
+  {
+   "id": "v33",
+   "text": "67.0%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.6696374274959775
+  },
+  {
+   "id": "v34",
+   "text": "-297",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market ITD no",
+   "raw": -297
+  },
+  {
+   "id": "v35",
+   "text": "74.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market ITD implied",
+   "raw": 0.7481108312342569
+  },
+  {
+   "id": "v36",
+   "text": "-7.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v33",
+     "v35"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.07847340373827938
+  },
+  {
+   "id": "v37",
+   "text": "+369",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Donte Johnson",
+   "raw": 0.2133555533203574
+  },
+  {
+   "id": "v38",
+   "text": "21.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Donte Johnson",
+   "raw": 0.2133555533203574
+  },
+  {
+   "id": "v39",
+   "text": "+370",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Donte Johnson Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Donte Johnson",
+   "raw": 370
+  },
+  {
+   "id": "v40",
+   "text": "21.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Donte Johnson Points"
+   },
+   "desc": "Market dec implied Donte Johnson",
+   "raw": 0.2127659574468085
+  },
+  {
+   "id": "v41",
+   "text": "+0.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v38",
+     "v40"
+    ]
+   },
+   "desc": "Edge dec Donte Johnson",
+   "raw": 0.0005895958735488982
+  },
+  {
+   "id": "v42",
+   "text": "+182",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Donte Johnson",
+   "raw": 0.35484175874399176
+  },
+  {
+   "id": "v43",
+   "text": "35.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Donte Johnson",
+   "raw": 0.35484175874399176
+  },
+  {
+   "id": "v44",
+   "text": "+147",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Donte Johnson KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Donte Johnson",
+   "raw": 147
+  },
+  {
+   "id": "v45",
+   "text": "40.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Donte Johnson KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Donte Johnson",
+   "raw": 0.4048582995951417
+  },
+  {
+   "id": "v46",
+   "text": "-5.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v43",
+     "v45"
+    ]
+   },
+   "desc": "Edge ko Donte Johnson",
+   "raw": -0.05001654085114993
+  },
+  {
+   "id": "v47",
+   "text": "+1609",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Donte Johnson",
+   "raw": 0.0585154114779504
+  },
+  {
+   "id": "v48",
+   "text": "5.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Donte Johnson",
+   "raw": 0.0585154114779504
+  },
+  {
+   "id": "v49",
+   "text": "+1048",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Donte Johnson Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Donte Johnson",
+   "raw": 1048
+  },
+  {
+   "id": "v50",
+   "text": "8.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Donte Johnson Submission"
+   },
+   "desc": "Market sub implied Donte Johnson",
+   "raw": 0.08710801393728224
+  },
+  {
+   "id": "v51",
+   "text": "-2.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v48",
+     "v50"
+    ]
+   },
+   "desc": "Edge sub Donte Johnson",
+   "raw": -0.028592602459331838
+  },
+  {
+   "id": "v52",
+   "text": "+142",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Donte Johnson",
+   "raw": 0.4133571702219421
+  },
+  {
+   "id": "v53",
+   "text": "41.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Donte Johnson",
+   "raw": 0.4133571702219421
+  },
+  {
+   "id": "v54",
+   "text": "49.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Donte Johnson KO/TKO/DQ",
+     "Donte Johnson Submission"
+    ]
+   },
+   "desc": "Market ITD implied Donte Johnson",
+   "raw": 0.4919663135324239
+  },
+  {
+   "id": "v55",
+   "text": "-7.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v53",
+     "v54"
+    ]
+   },
+   "desc": "Edge itd Donte Johnson",
+   "raw": -0.0786091433104818
+  },
+  {
+   "id": "v56",
+   "text": "+755",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Cesar Almeida",
+   "raw": 0.1170070191836651
+  },
+  {
+   "id": "v57",
+   "text": "11.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Cesar Almeida",
+   "raw": 0.1170070191836651
+  },
+  {
+   "id": "v58",
+   "text": "+750",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Cesar Almeida Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Cesar Almeida",
+   "raw": 750
+  },
+  {
+   "id": "v59",
+   "text": "11.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Cesar Almeida Points"
+   },
+   "desc": "Market dec implied Cesar Almeida",
+   "raw": 0.11764705882352941
+  },
+  {
+   "id": "v60",
+   "text": "-0.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v57",
+     "v59"
+    ]
+   },
+   "desc": "Edge dec Cesar Almeida",
+   "raw": -0.0006400396398643093
+  },
+  {
+   "id": "v61",
+   "text": "+349",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Cesar Almeida",
+   "raw": 0.22270364676565385
+  },
+  {
+   "id": "v62",
+   "text": "22.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Cesar Almeida",
+   "raw": 0.22270364676565385
+  },
+  {
+   "id": "v63",
+   "text": "+232",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Cesar Almeida KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Cesar Almeida",
+   "raw": 232
+  },
+  {
+   "id": "v64",
+   "text": "30.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Cesar Almeida KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Cesar Almeida",
+   "raw": 0.30120481927710846
+  },
+  {
+   "id": "v65",
+   "text": "-7.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v62",
+     "v64"
+    ]
+   },
+   "desc": "Edge ko Cesar Almeida",
+   "raw": -0.07850117251145461
+  },
+  {
+   "id": "v66",
+   "text": "+2878",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Cesar Almeida",
+   "raw": 0.033576610508381496
+  },
+  {
+   "id": "v67",
+   "text": "3.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Cesar Almeida",
+   "raw": 0.033576610508381496
+  },
+  {
+   "id": "v68",
+   "text": "+1895",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Cesar Almeida Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Cesar Almeida",
+   "raw": 1895
+  },
+  {
+   "id": "v69",
+   "text": "5.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Cesar Almeida Submission"
+   },
+   "desc": "Market sub implied Cesar Almeida",
+   "raw": 0.05012531328320802
+  },
+  {
+   "id": "v70",
+   "text": "-1.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v67",
+     "v69"
+    ]
+   },
+   "desc": "Edge sub Cesar Almeida",
+   "raw": -0.01654870277482652
+  },
+  {
+   "id": "v71",
+   "text": "+290",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Cesar Almeida",
+   "raw": 0.25628025727403536
+  },
+  {
+   "id": "v72",
+   "text": "25.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Cesar Almeida",
+   "raw": 0.25628025727403536
+  },
+  {
+   "id": "v73",
+   "text": "35.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Cesar Almeida KO/TKO/DQ",
+     "Cesar Almeida Submission"
+    ]
+   },
+   "desc": "Market ITD implied Cesar Almeida",
+   "raw": 0.3513301325603165
+  },
+  {
+   "id": "v74",
+   "text": "-9.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v72",
+     "v73"
+    ]
+   },
+   "desc": "Edge itd Cesar Almeida",
+   "raw": -0.09504987528628112
+  },
+  {
+   "id": "v75",
+   "text": "+144",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Donte Johnson",
+     "Cesar Almeida"
+    ],
+    "side": "b"
+   },
+   "desc": "LH open ML Cesar Almeida",
+   "raw": 144
+  },
+  {
+   "id": "v76",
+   "text": "0.2",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Donte Johnson",
+     "Cesar Almeida"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.0020000000000000018
+  },
+  {
+   "id": "v77",
+   "text": "80%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "target.head"
+   },
+   "desc": "Target head Donte Johnson",
+   "raw": 0.803
+  },
+  {
+   "id": "v78",
+   "text": "8%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "target.body"
+   },
+   "desc": "Target body Donte Johnson",
+   "raw": 0.0758
+  },
+  {
+   "id": "v79",
+   "text": "12%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Donte Johnson",
+   "raw": 0.1212
+  },
+  {
+   "id": "v80",
+   "text": "39%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "target.head"
+   },
+   "desc": "Target head Cesar Almeida",
+   "raw": 0.3944
+  },
+  {
+   "id": "v81",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "target.body"
+   },
+   "desc": "Target body Cesar Almeida",
+   "raw": 0.3568
+  },
+  {
+   "id": "v82",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Cesar Almeida",
+   "raw": 0.2488
+  },
+  {
+   "id": "v83",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 3
+  },
+  {
+   "id": "v84",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
    "raw": 6
   },
   {
-   "id": "v109",
-   "text": "2.86",
-   "fmt": "n2",
-   "rule": "stat",
+   "id": "v85",
+   "text": "41%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "slpm"
+    "fighter": "Donte Johnson",
+    "path": "power_w"
    },
-   "desc": "SLpM a",
-   "raw": 2.863340563991323
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.4126
+  },
+  {
+   "id": "v86",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 1
+  },
+  {
+   "id": "v87",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 1
+  },
+  {
+   "id": "v88",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.2599
+  },
+  {
+   "id": "v89",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 1
+  },
+  {
+   "id": "v90",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 2
+  },
+  {
+   "id": "v91",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Middleweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2188
+  },
+  {
+   "id": "v92",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.0
+  },
+  {
+   "id": "v93",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v94",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 0
+  },
+  {
+   "id": "v95",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.5575
+  },
+  {
+   "id": "v96",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 3
+  },
+  {
+   "id": "v97",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 3
+  },
+  {
+   "id": "v98",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Middleweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.2541
+  },
+  {
+   "id": "v99",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Donte Johnson",
+   "raw": 1
+  },
+  {
+   "id": "v100",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Donte Johnson",
+   "raw": 1
+  },
+  {
+   "id": "v101",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Donte Johnson",
+   "raw": 1
+  },
+  {
+   "id": "v102",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Cesar Almeida",
+   "raw": 2
+  },
+  {
+   "id": "v103",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Cesar Almeida",
+   "raw": 1
+  },
+  {
+   "id": "v104",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Cesar Almeida",
+   "raw": 2
+  },
+  {
+   "id": "v105",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Cesar Almeida",
+   "raw": 1
+  },
+  {
+   "id": "v106",
+   "text": "67%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Donte Johnson",
+   "raw": 0.6667
+  },
+  {
+   "id": "v107",
+   "text": "+1.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Donte Johnson",
+   "raw": 1.375
+  },
+  {
+   "id": "v108",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Donte Johnson",
+   "raw": 3
+  },
+  {
+   "id": "v109",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Donte Johnson",
+   "raw": 1.0
   },
   {
    "id": "v110",
-   "text": "3.48",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "+0.9",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "slpm"
+    "fighter": "Donte Johnson",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "SLpM b",
-   "raw": 3.479444595698339
+   "desc": "R2 diff Donte Johnson",
+   "raw": 0.935
   },
   {
    "id": "v111",
-   "text": "1.82",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "sapm"
+    "fighter": "Donte Johnson",
+    "path": "rounds.1.fights"
    },
-   "desc": "SApM a",
-   "raw": 1.822125813449024
+   "desc": "R2 fights Donte Johnson",
+   "raw": 2
   },
   {
    "id": "v112",
-   "text": "2.32",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "sapm"
+    "fighter": "Donte Johnson",
+    "path": "rounds.2.won"
    },
-   "desc": "SApM b",
-   "raw": 2.3196297304655595
+   "desc": "R3 won Donte Johnson",
+   "raw": 1.0
   },
   {
    "id": "v113",
-   "text": "+1.04",
-   "fmt": "s2",
-   "rule": "stat",
+   "text": "+0.4",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "diff"
+    "fighter": "Donte Johnson",
+    "path": "rounds.2.diff_pm"
    },
-   "desc": "Strike diff /min a",
-   "raw": 1.0412147505422993
+   "desc": "R3 diff Donte Johnson",
+   "raw": 0.4
   },
   {
    "id": "v114",
-   "text": "+1.16",
-   "fmt": "s2",
-   "rule": "stat",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "diff"
+    "fighter": "Donte Johnson",
+    "path": "rounds.2.fights"
    },
-   "desc": "Strike diff /min b",
-   "raw": 1.1598148652327798
+   "desc": "R3 fights Donte Johnson",
+   "raw": 1
   },
   {
    "id": "v115",
-   "text": "43%",
+   "text": "33%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "acc"
+    "fighter": "Cesar Almeida",
+    "path": "rounds.0.won"
    },
-   "desc": "Strike accuracy a",
-   "raw": 0.4258064516129032
+   "desc": "R1 won Cesar Almeida",
+   "raw": 0.3333
   },
   {
    "id": "v116",
-   "text": "60%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "+0.9",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "acc"
+    "fighter": "Cesar Almeida",
+    "path": "rounds.0.diff_pm"
    },
-   "desc": "Strike accuracy b",
-   "raw": 0.6
+   "desc": "R1 diff Cesar Almeida",
+   "raw": 0.897
   },
   {
    "id": "v117",
-   "text": "63%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "dfn"
+    "fighter": "Cesar Almeida",
+    "path": "rounds.0.fights"
    },
-   "desc": "Strike defence a",
-   "raw": 0.631578947368421
+   "desc": "R1 fights Cesar Almeida",
+   "raw": 6
   },
   {
    "id": "v118",
-   "text": "43%",
+   "text": "50%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "dfn"
+    "fighter": "Cesar Almeida",
+    "path": "rounds.1.won"
    },
-   "desc": "Strike defence b",
-   "raw": 0.43200000000000005
+   "desc": "R2 won Cesar Almeida",
+   "raw": 0.5
   },
   {
    "id": "v119",
-   "text": "1.95",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "+3.0",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "td15"
+    "fighter": "Cesar Almeida",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "Takedowns /15 a",
-   "raw": 1.9522776572668112
+   "desc": "R2 diff Cesar Almeida",
+   "raw": 2.962
   },
   {
    "id": "v120",
-   "text": "0.25",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "td15"
+    "fighter": "Cesar Almeida",
+    "path": "rounds.1.fights"
    },
-   "desc": "Takedowns /15 b",
-   "raw": 0.24503130955622107
+   "desc": "R2 fights Cesar Almeida",
+   "raw": 4
   },
   {
    "id": "v121",
-   "text": "77%",
+   "text": "0%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "tdd"
+    "fighter": "Cesar Almeida",
+    "path": "rounds.2.won"
    },
-   "desc": "TD defence a",
-   "raw": 0.7692307692307692
+   "desc": "R3 won Cesar Almeida",
+   "raw": 0.0
   },
   {
    "id": "v122",
-   "text": "48%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "-0.4",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "tdd"
+    "fighter": "Cesar Almeida",
+    "path": "rounds.2.diff_pm"
    },
-   "desc": "TD defence b",
-   "raw": 0.48484848484848486
+   "desc": "R3 diff Cesar Almeida",
+   "raw": -0.4
   },
   {
    "id": "v123",
-   "text": "29%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "ctrlp"
+    "fighter": "Cesar Almeida",
+    "path": "rounds.2.fights"
    },
-   "desc": "Control time a",
-   "raw": 0.28633405639913234
+   "desc": "R3 fights Cesar Almeida",
+   "raw": 3
   },
   {
    "id": "v124",
-   "text": "6%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "ctrlp"
+    "fighter": "Donte Johnson",
+    "path": "fights.0.rw.0.2"
    },
-   "desc": "Control time b",
-   "raw": 0.05771848625102096
+   "desc": "R1 fight diff Donte Johnson 0",
+   "raw": 5
   },
   {
    "id": "v125",
-   "text": "91",
-   "fmt": "r0",
-   "rule": "fight",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "i": 0,
-    "key": "fg"
+    "fighter": "Donte Johnson",
+    "path": "fights.1.rw.0.2"
    },
-   "desc": "Fig Donte Johnson Eric McConico",
-   "raw": 90.9
+   "desc": "R1 fight diff Donte Johnson 1",
+   "raw": 5
   },
   {
    "id": "v126",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Donte Johnson 2",
+   "raw": 6
+  },
+  {
+   "id": "v127",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Donte Johnson 1",
+   "raw": 7
+  },
+  {
+   "id": "v128",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Donte Johnson 2",
+   "raw": -1
+  },
+  {
+   "id": "v129",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Donte Johnson 1",
+   "raw": 2
+  },
+  {
+   "id": "v130",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 0",
+   "raw": 12
+  },
+  {
+   "id": "v131",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 1",
+   "raw": -1
+  },
+  {
+   "id": "v132",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 2",
+   "raw": 3
+  },
+  {
+   "id": "v133",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 3",
+   "raw": 7
+  },
+  {
+   "id": "v134",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 4",
+   "raw": 5
+  },
+  {
+   "id": "v135",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Cesar Almeida 5",
+   "raw": 0
+  },
+  {
+   "id": "v136",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Cesar Almeida 1",
+   "raw": 0
+  },
+  {
+   "id": "v137",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Cesar Almeida 3",
+   "raw": 12
+  },
+  {
+   "id": "v138",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Cesar Almeida 4",
+   "raw": 11
+  },
+  {
+   "id": "v139",
+   "text": "+28",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Cesar Almeida 5",
+   "raw": 28
+  },
+  {
+   "id": "v140",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Cesar Almeida 1",
+   "raw": -1
+  },
+  {
+   "id": "v141",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Cesar Almeida 3",
+   "raw": -6
+  },
+  {
+   "id": "v142",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Cesar Almeida 4",
+   "raw": 1
+  },
+  {
+   "id": "v143",
+   "text": "12",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Donte Johnson",
+   "raw": 11.63
+  },
+  {
+   "id": "v144",
+   "text": "6",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Donte Johnson",
+   "raw": 6.42
+  },
+  {
+   "id": "v145",
+   "text": "5",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Donte Johnson",
+   "raw": 5.0
+  },
+  {
+   "id": "v146",
+   "text": "29",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Cesar Almeida",
+   "raw": 29.0
+  },
+  {
+   "id": "v147",
+   "text": "17",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Cesar Almeida",
+   "raw": 17.22
+  },
+  {
+   "id": "v148",
+   "text": "15",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Cesar Almeida",
+   "raw": 15.0
+  },
+  {
+   "id": "v149",
+   "text": "1.95",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 1.952
+  },
+  {
+   "id": "v150",
+   "text": "0.24",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 0.245
+  },
+  {
+   "id": "v151",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 1.0
+  },
+  {
+   "id": "v152",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.3333
+  },
+  {
+   "id": "v153",
+   "text": "77%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.7692
+  },
+  {
+   "id": "v154",
+   "text": "48%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.4848
+  },
+  {
+   "id": "v155",
+   "text": "29%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.2863
+  },
+  {
+   "id": "v156",
+   "text": "6%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.0577
+  },
+  {
+   "id": "v157",
+   "text": "-1.5%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": -0.0145
+  },
+  {
+   "id": "v158",
+   "text": "-46.0%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": -0.4602
+  },
+  {
+   "id": "v159",
+   "text": "28%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.2805
+  },
+  {
+   "id": "v160",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.5045
+  },
+  {
+   "id": "v161",
+   "text": "0.65",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.651
+  },
+  {
+   "id": "v162",
+   "text": "0.24",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.245
+  },
+  {
+   "id": "v163",
+   "text": "+1.04",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Donte Johnson",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Donte Johnson",
+   "raw": 1.0410000000000001
+  },
+  {
+   "id": "v164",
+   "text": "+1.16",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Cesar Almeida",
+   "raw": 1.1600000000000001
+  },
+  {
+   "id": "v165",
+   "text": "+0.87",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.868
+  },
+  {
+   "id": "v166",
+   "text": "+1.05",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 1.049
+  },
+  {
+   "id": "v167",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Donte Johnson",
+   "raw": 3
+  },
+  {
+   "id": "v168",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Donte Johnson",
+   "raw": 3
+  },
+  {
+   "id": "v169",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Cesar Almeida",
+   "raw": 5
+  },
+  {
+   "id": "v170",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Cesar Almeida",
+   "raw": 6
+  },
+  {
+   "id": "v171",
+   "text": "+1.30",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 1.302
+  },
+  {
+   "id": "v172",
+   "text": "-0.10",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": -0.098
+  },
+  {
+   "id": "v173",
+   "text": "-0.09",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": -0.087
+  },
+  {
+   "id": "v174",
+   "text": "+0.77",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.768
+  },
+  {
+   "id": "v175",
+   "text": "-0.17",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": -0.174
+  },
+  {
+   "id": "v176",
+   "text": "+0.49",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": 0.49
+  },
+  {
+   "id": "v177",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.7527
+  },
+  {
+   "id": "v178",
+   "text": "53%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.5337
+  },
+  {
+   "id": "v179",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Donte Johnson",
+   "raw": 3
+  },
+  {
+   "id": "v180",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Donte Johnson",
+   "raw": 1
+  },
+  {
+   "id": "v181",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Donte Johnson",
+   "raw": 2
+  },
+  {
+   "id": "v182",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Cesar Almeida",
+   "raw": 1
+  },
+  {
+   "id": "v183",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Cesar Almeida",
+   "raw": 6
+  },
+  {
+   "id": "v184",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs",
+   "args": {
+    "side": "b",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "cesar-almeida"
+   },
+   "desc": "Output kept R3 b",
+   "raw": 0.75
+  },
+  {
+   "id": "v185",
+   "text": "7.7",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 7.683
+  },
+  {
+   "id": "v186",
+   "text": "10.2",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 10.203
+  },
+  {
+   "id": "v187",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.3333
+  },
+  {
+   "id": "v188",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Cesar Almeida",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.3333
+  },
+  {
+   "id": "v189",
    "text": "-323",
    "fmt": "ml",
    "rule": "fight",
@@ -1564,20 +2324,7 @@
    "raw": -323
   },
   {
-   "id": "v127",
-   "text": "61",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Donte Johnson Cody Brundage",
-   "raw": 61.1
-  },
-  {
-   "id": "v128",
+   "id": "v190",
    "text": "-833",
    "fmt": "ml",
    "rule": "fight",
@@ -1590,20 +2337,7 @@
    "raw": -833
   },
   {
-   "id": "v129",
-   "text": "88",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Donte Johnson Sedriques Dumas",
-   "raw": 87.5
-  },
-  {
-   "id": "v130",
+   "id": "v191",
    "text": "-351",
    "fmt": "ml",
    "rule": "fight",
@@ -1616,20 +2350,7 @@
    "raw": -351
   },
   {
-   "id": "v131",
-   "text": "31",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 0,
-    "key": "fg"
-   },
-   "desc": "Fig Cesar Almeida Damian Pinas",
-   "raw": 31.4
-  },
-  {
-   "id": "v132",
+   "id": "v192",
    "text": "+215",
    "fmt": "ml",
    "rule": "fight",
@@ -1642,20 +2363,7 @@
    "raw": 215
   },
   {
-   "id": "v133",
-   "text": "19",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Cesar Almeida Cezary Oleksiejczuk",
-   "raw": 19.0
-  },
-  {
-   "id": "v134",
+   "id": "v193",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -1668,20 +2376,7 @@
    "raw": 180
   },
   {
-   "id": "v135",
-   "text": "61",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Cesar Almeida Abdul Razak Alhassan",
-   "raw": 60.7
-  },
-  {
-   "id": "v136",
+   "id": "v194",
    "text": "-256",
    "fmt": "ml",
    "rule": "fight",
@@ -1694,20 +2389,7 @@
    "raw": -256
   },
   {
-   "id": "v137",
-   "text": "70",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 3,
-    "key": "fg"
-   },
-   "desc": "Fig Cesar Almeida Ihor Potieria",
-   "raw": 69.7
-  },
-  {
-   "id": "v138",
+   "id": "v195",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1720,20 +2402,7 @@
    "raw": -455
   },
   {
-   "id": "v139",
-   "text": "31",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 4,
-    "key": "fg"
-   },
-   "desc": "Fig Cesar Almeida Roman Kopylov",
-   "raw": 31.2
-  },
-  {
-   "id": "v140",
+   "id": "v196",
    "text": "-120",
    "fmt": "ml",
    "rule": "fight",
@@ -1746,32 +2415,18 @@
    "raw": -120
   },
   {
-   "id": "v141",
-   "text": "61.5%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "id": "v197",
+   "text": "+125",
+   "fmt": "ml",
+   "rule": "fight",
    "args": {
-    "side": "a"
+    "side": "b",
+    "i": 5,
+    "key": "od.mc"
    },
-   "desc": "Sheet % (note)",
-   "raw": 0.6154327271701792
-  },
-  {
-   "id": "v142",
-   "text": "2.0",
-   "fmt": "pts",
-   "rule": "gap_pub_bp",
-   "args": {
-    "side": "a",
-    "market": "moneyline",
-    "label": "Donte Johnson",
-    "other": "Cesar Almeida"
-   },
-   "desc": "Sheet vs BP gap",
-   "raw": 0.020383827414677924
+   "desc": "Close Cesar Almeida Dylan Budka",
+   "raw": 125
   }
  ],
- "gaps": [
-  "Fight 5: BettingPros method_of_victory has unlabeled selections ['Cesar Almeida', 'Donte Johnson']; not displayed."
- ]
+ "gaps": []
 }

@@ -1,0 +1,11 @@
+branch copy updated_at 2026-11-12T18:34:04Z | newest book price 2026-11-12 18:33:47
+c1 main copy newer, written with a -05:00 offset
+   old text compare -> main; new rule -> main
+c2 PLANT main stamped newer, but its prices are older (stamp written before data)
+   old text compare -> main; new rule -> REFUSE (updated_at says A is newer (2026-11-13T05:00:00+00:00), but its newest book price (2026-11-11 09:00:00) is older than the other file's (2026-11-12 18:33:47))
+c3 PLANT main updated_at with no time zone
+   old text compare -> main; new rule -> REFUSE (updated_at has no time zone: 2026-11-13T05:00:00)
+control: main newer stamp and newer data
+   old text compare -> main; new rule -> main
+c1' PLANT main copy 56 min newer, stamped -05:00 (14:30-05:00 = 19:30Z) vs branch 2026-11-12T18:34:04Z:
+   old text compare -> branch (WRONG: would serve the older branch prices); new rule -> main

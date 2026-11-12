@@ -1,0 +1,17 @@
+  odds file: cannot tell which copy is newer: updated_at says A is newer (2026-11-12T19:36:55+00:00), but its newest book price (2026-11-11 09:00:00) is older than the other file's (2026-11-12 18:33:47)
+  (allow-publish-and-bot: not accepted; changed ['data/fn_prochazka_stirling_odds.json', 'data/ufc_334_odds.json'], conflicts ['data/ufc_334_odds.json'], newer copy UNKNOWN, problems in main's new files {})
+MAIN GUARD: origin/main is 5913fe75, expected 727cb19c. REFUSING: the round-18 served-set result no longer applies.
+  main's new commits:
+    5913fe75 2026-11-12T14:06:55-05:00 odds [SIM c2 stamp before data]
+    6ea5b184 2026-11-12T17:40:37+00:00 odds: refresh at 2026-11-12T17:40Z
+  files main changed since the check:
+    M	data/fn_prochazka_stirling_odds.json
+    M	data/ufc_334_odds.json
+  the merge would CONFLICT:
+    ba9420fbdc9e25128582113f42cd90ec893ef95b
+    100644 8a4f19bc01941b5150344be00ae5e064cb258488 1	data/ufc_334_odds.json
+    100644 9dad1a811f7ae591347ba67d22efdefe71a7e83b 2	data/ufc_334_odds.json
+    100644 8f82d0d9413829f2a4c26dd1f41cef39d3631a32 3	data/ufc_334_odds.json
+    
+    Auto-merging data/ufc_334_odds.json
+    CONFLICT (content): Merge conflict in data/ufc_334_odds.json

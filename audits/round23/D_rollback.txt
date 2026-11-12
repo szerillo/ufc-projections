@@ -1,0 +1,8 @@
+Challenge D: rollback rehearsal (sandbox origin; real main untouched)
+Case 1: bad merge 5cfa5a54 + rebuild 5887837e live; revert both, push: 1.27 s; tree IDENTICAL to pre-merge main 140472f6.
+Case 2: bad merge 0f34dc8b live, then the bot pushes; scripts/rollback_main.sh: revert conflicts only in data/ufc_334_odds.json,
+        keeps main's latest (bot) copy; 0.66 s; only that file differs from pre-merge main (the bot's newer prices).
+Served build (github-pages 233 / Jekyll 3.10.0 --safe, local, fake API): pre-merge 3,720 files (4 s); bad merge 3,804; rolled back
+3,720; rolled back vs pre-merge served output differs in data/ufc_334_odds.json only; fight_13.html byte-identical to pre-merge.
+GitHub's own Pages deploy after a push was timed at about 45 s (Block 41); browsers may hold a page for its cache life (up to 10 min).
+Note: re-merging later needs the revert reverted first (git revert <rollback commit>), or a fresh merge commit.

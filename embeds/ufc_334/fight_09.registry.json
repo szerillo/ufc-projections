@@ -1,7 +1,10 @@
 {
  "fight": 9,
  "of": 13,
- "site_n": 9,
+ "site_pair": [
+  "Bilal Hasan",
+  "Luis Gurule"
+ ],
  "pair": [
   "Bilal Hasan",
   "Luis Gurule"
@@ -10,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -25,32 +28,6 @@
   },
   {
    "id": "v2",
-   "text": "1524",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "a.elo"
-   },
-   "desc": "Bilal Hasan Elo",
-   "raw": 1524
-  },
-  {
-   "id": "v3",
-   "text": "62.1",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "form.ra"
-   },
-   "desc": "Bilal Hasan Form Figure",
-   "raw": 62.1
-  },
-  {
-   "id": "v4",
    "text": "1-4-0",
    "fmt": "str",
    "rule": "record",
@@ -61,1178 +38,7 @@
    "raw": "1-4-0"
   },
   {
-   "id": "v5",
-   "text": "1447",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "b.elo"
-   },
-   "desc": "Luis Gurule Elo",
-   "raw": 1447
-  },
-  {
-   "id": "v6",
-   "text": "39.1",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "form.rb"
-   },
-   "desc": "Luis Gurule Form Figure",
-   "raw": 39.1
-  },
-  {
-   "id": "v7",
-   "text": "-546",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Bilal Hasan",
-   "raw": 0.8451620728691496
-  },
-  {
-   "id": "v8",
-   "text": "84.5%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean win % Bilal Hasan",
-   "raw": 0.8451620728691496
-  },
-  {
-   "id": "v9",
-   "text": "-1000",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Bilal Hasan",
-    "field": "cost"
-   },
-   "desc": "BP ML now Bilal Hasan",
-   "raw": -1000
-  },
-  {
-   "id": "v10",
-   "text": "87.1%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Bilal Hasan",
-    "other": "Luis Gurule"
-   },
-   "desc": "BP ML no-vig Bilal Hasan",
-   "raw": 0.8705882352941176
-  },
-  {
-   "id": "v11",
-   "text": "-910",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Bilal Hasan",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Bilal Hasan",
-   "raw": -910
-  },
-  {
-   "id": "v12",
-   "text": "+546",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean ML Luis Gurule",
-   "raw": 0.15483792713085043
-  },
-  {
-   "id": "v13",
-   "text": "15.5%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean win % Luis Gurule",
-   "raw": 0.15483792713085043
-  },
-  {
-   "id": "v14",
-   "text": "+640",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Luis Gurule",
-    "field": "cost"
-   },
-   "desc": "BP ML now Luis Gurule",
-   "raw": 640
-  },
-  {
-   "id": "v15",
-   "text": "12.9%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Luis Gurule",
-    "other": "Bilal Hasan"
-   },
-   "desc": "BP ML no-vig Luis Gurule",
-   "raw": 0.12941176470588237
-  },
-  {
-   "id": "v16",
-   "text": "+575",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Luis Gurule",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Luis Gurule",
-   "raw": 575
-  },
-  {
-   "id": "v17",
-   "text": "+388",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Bilal Hasan",
-   "raw": 0.20505715649876638
-  },
-  {
-   "id": "v18",
-   "text": "20.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Bilal Hasan",
-   "raw": 0.20505715649876638
-  },
-  {
-   "id": "v19",
-   "text": "+600",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bilal Hasan Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Bilal Hasan",
-   "raw": 600
-  },
-  {
-   "id": "v20",
-   "text": "11.9%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Bilal Hasan",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Bilal Hasan",
-   "raw": 0.11887399272427916
-  },
-  {
-   "id": "v21",
-   "text": "+600",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bilal Hasan Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP dec open Bilal Hasan",
-   "raw": 600
-  },
-  {
-   "id": "v22",
-   "text": "+1537",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Luis Gurule",
-   "raw": 0.06109350619402379
-  },
-  {
-   "id": "v23",
-   "text": "6.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Luis Gurule",
-   "raw": 0.06109350619402379
-  },
-  {
-   "id": "v24",
-   "text": "+2000",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Luis Gurule Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Luis Gurule",
-   "raw": 2000
-  },
-  {
-   "id": "v25",
-   "text": "4.0%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Luis Gurule",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Luis Gurule",
-   "raw": 0.03962466424142639
-  },
-  {
-   "id": "v26",
-   "text": "+1500",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Luis Gurule Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP dec open Luis Gurule",
-   "raw": 1500
-  },
-  {
-   "id": "v27",
-   "text": "-119",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Bilal Hasan",
-   "raw": 0.5437514851932254
-  },
-  {
-   "id": "v28",
-   "text": "54.4%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Bilal Hasan",
-   "raw": 0.5437514851932254
-  },
-  {
-   "id": "v29",
-   "text": "-351",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bilal Hasan KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Bilal Hasan",
-   "raw": -351
-  },
-  {
-   "id": "v30",
-   "text": "64.8%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Bilal Hasan",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Bilal Hasan",
-   "raw": 0.6476128605843768
-  },
-  {
-   "id": "v31",
-   "text": "-310",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bilal Hasan KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP ko open Bilal Hasan",
-   "raw": -310
-  },
-  {
-   "id": "v32",
-   "text": "+1395",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Luis Gurule",
-   "raw": 0.06688671843879648
-  },
-  {
-   "id": "v33",
-   "text": "6.7%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Luis Gurule",
-   "raw": 0.06688671843879648
-  },
-  {
-   "id": "v34",
-   "text": "+1148",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Luis Gurule KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Luis Gurule",
-   "raw": 1148
-  },
-  {
-   "id": "v35",
-   "text": "6.7%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Luis Gurule",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Luis Gurule",
-   "raw": 0.06667611771393864
-  },
-  {
-   "id": "v36",
-   "text": "+1100",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Luis Gurule KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP ko open Luis Gurule",
-   "raw": 1100
-  },
-  {
-   "id": "v37",
-   "text": "+938",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Bilal Hasan",
-   "raw": 0.09635343117715787
-  },
-  {
-   "id": "v38",
-   "text": "9.6%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Bilal Hasan",
-   "raw": 0.09635343117715787
-  },
-  {
-   "id": "v39",
-   "text": "+948",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bilal Hasan Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Bilal Hasan",
-   "raw": 948
-  },
-  {
-   "id": "v40",
-   "text": "7.9%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Bilal Hasan",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Bilal Hasan",
-   "raw": 0.07940056765934678
-  },
-  {
-   "id": "v41",
-   "text": "+850",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bilal Hasan Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP sub open Bilal Hasan",
-   "raw": 850
-  },
-  {
-   "id": "v42",
-   "text": "+3623",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Luis Gurule",
-   "raw": 0.02685770249803016
-  },
-  {
-   "id": "v43",
-   "text": "2.7%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Luis Gurule",
-   "raw": 0.02685770249803016
-  },
-  {
-   "id": "v44",
-   "text": "+2542",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Luis Gurule Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Luis Gurule",
-   "raw": 2542
-  },
-  {
-   "id": "v45",
-   "text": "3.1%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Luis Gurule",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Luis Gurule",
-   "raw": 0.03149575885957435
-  },
-  {
-   "id": "v46",
-   "text": "+2200",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Luis Gurule Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP sub open Luis Gurule",
-   "raw": 2200
-  },
-  {
-   "id": "v47",
-   "text": "-178",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Bilal Hasan",
-   "raw": 0.6401049163703832
-  },
-  {
-   "id": "v48",
-   "text": "64.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Bilal Hasan",
-   "raw": 0.6401049163703832
-  },
-  {
-   "id": "v49",
-   "text": "-266",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Bilal Hasan"
-   },
-   "desc": "BP ITD fair ML Bilal Hasan",
-   "raw": 0.7270134282437236
-  },
-  {
-   "id": "v50",
-   "text": "72.7%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Bilal Hasan"
-   },
-   "desc": "BP ITD no-vig Bilal Hasan",
-   "raw": 0.7270134282437236
-  },
-  {
-   "id": "v51",
-   "text": "+967",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Luis Gurule",
-   "raw": 0.09374442093682664
-  },
-  {
-   "id": "v52",
-   "text": "9.4%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Luis Gurule",
-   "raw": 0.09374442093682664
-  },
-  {
-   "id": "v53",
-   "text": "+919",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Luis Gurule"
-   },
-   "desc": "BP ITD fair ML Luis Gurule",
-   "raw": 0.09817187657351298
-  },
-  {
-   "id": "v54",
-   "text": "9.8%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Luis Gurule"
-   },
-   "desc": "BP ITD no-vig Luis Gurule",
-   "raw": 0.09817187657351298
-  },
-  {
-   "id": "v55",
-   "text": "+276",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD fair ML",
-   "raw": 0.2661506626927902
-  },
-  {
-   "id": "v56",
-   "text": "26.6%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD %",
-   "raw": 0.2661506626927902
-  },
-  {
-   "id": "v57",
-   "text": "+455",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP GTD yes now",
-   "raw": 455
-  },
-  {
-   "id": "v58",
-   "text": "-760",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP GTD no now",
-   "raw": -760
-  },
-  {
-   "id": "v59",
-   "text": "16.9%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "other": "No"
-   },
-   "desc": "BP GTD no-vig",
-   "raw": 0.16935801496652225
-  },
-  {
-   "id": "v60",
-   "text": "+400",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP GTD yes open",
-   "raw": 400
-  },
-  {
-   "id": "v61",
-   "text": "-909",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "odds.open.ma"
-   },
-   "desc": "OA open ML a",
-   "raw": -909
-  },
-  {
-   "id": "v62",
-   "text": "+636",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "odds.open.mb"
-   },
-   "desc": "OA open ML b",
-   "raw": 636
-  },
-  {
-   "id": "v63",
-   "text": "86.9%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "odds.open.p"
-   },
-   "desc": "OA open p",
-   "raw": 0.869
-  },
-  {
-   "id": "v64",
-   "text": "-1111",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "odds.close.ma"
-   },
-   "desc": "OA close ML a",
-   "raw": -1111
-  },
-  {
-   "id": "v65",
-   "text": "+650",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "odds.close.mb"
-   },
-   "desc": "OA close ML b",
-   "raw": 650
-  },
-  {
-   "id": "v66",
-   "text": "87.2%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "odds.close.p"
-   },
-   "desc": "OA close p",
-   "raw": 0.8721
-  },
-  {
-   "id": "v67",
-   "text": "0.3",
-   "fmt": "pts",
-   "rule": "oa_drift",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9
-   },
-   "desc": "OA drift pts",
-   "raw": 0.0030999999999999917
-  },
-  {
-   "id": "v68",
-   "text": "-909",
-   "fmt": "ml",
-   "rule": "oa_best",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "side": "a"
-   },
-   "desc": "OA best a",
-   "raw": -909
-  },
-  {
-   "id": "v69",
-   "text": "+740",
-   "fmt": "ml",
-   "rule": "oa_best",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "side": "b"
-   },
-   "desc": "OA best b",
-   "raw": 740
-  },
-  {
-   "id": "v70",
-   "text": "-910",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Bilal Hasan",
-    "field": "opening_cost"
-   },
-   "desc": "BP open a (move)",
-   "raw": -910
-  },
-  {
-   "id": "v71",
-   "text": "-1000",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Bilal Hasan",
-    "field": "cost"
-   },
-   "desc": "BP now a (move)",
-   "raw": -1000
-  },
-  {
-   "id": "v72",
-   "text": "+575",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Luis Gurule",
-    "field": "opening_cost"
-   },
-   "desc": "BP open b (move)",
-   "raw": 575
-  },
-  {
-   "id": "v73",
-   "text": "+640",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Luis Gurule",
-    "field": "cost"
-   },
-   "desc": "BP now b (move)",
-   "raw": 640
-  },
-  {
-   "id": "v74",
-   "text": "140",
-   "fmt": "int",
-   "rule": "oa_len",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9
-   },
-   "desc": "Chart points",
-   "raw": 140
-  },
-  {
-   "id": "v75",
-   "text": "450",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 9,
-    "path": "odds.n"
-   },
-   "desc": "Snapshots",
-   "raw": 450
-  },
-  {
-   "id": "v76",
-   "text": "-590",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending KO/TKO/DQ",
-   "raw": -590
-  },
-  {
-   "id": "v77",
-   "text": "-550",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending KO/TKO/DQ",
-   "raw": -550
-  },
-  {
-   "id": "v78",
-   "text": "85%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ"
-   },
-   "desc": "BP implied fight_ending KO/TKO/DQ",
-   "raw": 0.8461538461538461
-  },
-  {
-   "id": "v79",
-   "text": "+750",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Submission",
-   "raw": 750
-  },
-  {
-   "id": "v80",
-   "text": "+750",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Submission",
-   "raw": 750
-  },
-  {
-   "id": "v81",
-   "text": "12%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission"
-   },
-   "desc": "BP implied fight_ending Submission",
-   "raw": 0.11764705882352941
-  },
-  {
-   "id": "v82",
-   "text": "+460",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Points",
-   "raw": 460
-  },
-  {
-   "id": "v83",
-   "text": "+460",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Points",
-   "raw": 460
-  },
-  {
-   "id": "v84",
-   "text": "18%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points"
-   },
-   "desc": "BP implied fight_ending Points",
-   "raw": 0.17857142857142858
-  },
-  {
-   "id": "v85",
-   "text": "+400",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance Yes",
-   "raw": 400
-  },
-  {
-   "id": "v86",
-   "text": "+455",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance Yes",
-   "raw": 455
-  },
-  {
-   "id": "v87",
-   "text": "18%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes"
-   },
-   "desc": "BP implied fight_distance Yes",
-   "raw": 0.18018018018018017
-  },
-  {
-   "id": "v88",
-   "text": "-670",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance No",
-   "raw": -670
-  },
-  {
-   "id": "v89",
-   "text": "-760",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance No",
-   "raw": -760
-  },
-  {
-   "id": "v90",
-   "text": "88%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No"
-   },
-   "desc": "BP implied fight_distance No",
-   "raw": 0.8837209302325582
-  },
-  {
-   "id": "v91",
-   "text": "1.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Over",
-   "raw": 1.5
-  },
-  {
-   "id": "v92",
-   "text": "+124",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Over",
-   "raw": 124
-  },
-  {
-   "id": "v93",
-   "text": "+134",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Over",
-   "raw": 134
-  },
-  {
-   "id": "v94",
-   "text": "43%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over"
-   },
-   "desc": "BP implied total_rounds Over",
-   "raw": 0.42735042735042733
-  },
-  {
-   "id": "v95",
-   "text": "1.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Under",
-   "raw": 1.5
-  },
-  {
-   "id": "v96",
-   "text": "-160",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Under",
-   "raw": -160
-  },
-  {
-   "id": "v97",
-   "text": "-175",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Under",
-   "raw": -175
-  },
-  {
-   "id": "v98",
-   "text": "64%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under"
-   },
-   "desc": "BP implied total_rounds Under",
-   "raw": 0.6363636363636364
-  },
-  {
-   "id": "v99",
+   "id": "v3",
    "text": "25.3",
    "fmt": "n1",
    "rule": "age",
@@ -1243,7 +49,7 @@
    "raw": 25.3305954825462
   },
   {
-   "id": "v100",
+   "id": "v4",
    "text": "33.0",
    "fmt": "n1",
    "rule": "age",
@@ -1254,18 +60,7 @@
    "raw": 32.993839835728956
   },
   {
-   "id": "v101",
-   "text": "64\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Reach b",
-   "raw": 64
-  },
-  {
-   "id": "v102",
+   "id": "v5",
    "text": "5'5\"",
    "fmt": "str",
    "rule": "bio",
@@ -1277,7 +72,29 @@
    "raw": "5'5\""
   },
   {
-   "id": "v103",
+   "id": "v6",
+   "text": "70\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 70
+  },
+  {
+   "id": "v7",
+   "text": "64\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 64
+  },
+  {
+   "id": "v8",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1289,222 +106,2080 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v104",
-   "text": "1",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v9",
+   "text": "-581",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "UFC fights a",
+   "desc": "Model ML Bilal Hasan",
+   "raw": 0.853140994020221
+  },
+  {
+   "id": "v10",
+   "text": "85.3%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Bilal Hasan",
+   "raw": 0.853140994020221
+  },
+  {
+   "id": "v11",
+   "text": "-1000",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Bilal Hasan",
+   "raw": -1000
+  },
+  {
+   "id": "v12",
+   "text": "90.9%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Bilal Hasan",
+   "raw": 0.9090909090909091
+  },
+  {
+   "id": "v13",
+   "text": "-1000",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Bilal Hasan",
+    "field": "cost"
+   },
+   "desc": "Market ML Bilal Hasan",
+   "raw": -1000
+  },
+  {
+   "id": "v14",
+   "text": "90.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Bilal Hasan"
+   },
+   "desc": "Market implied Bilal Hasan",
+   "raw": 0.9090909090909091
+  },
+  {
+   "id": "v15",
+   "text": "-5.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v10",
+     "v12"
+    ]
+   },
+   "desc": "Edge ML Bilal Hasan",
+   "raw": -0.05594991507068803
+  },
+  {
+   "id": "v16",
+   "text": "+581",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model ML Luis Gurule",
+   "raw": 0.14685900597977897
+  },
+  {
+   "id": "v17",
+   "text": "14.7%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Luis Gurule",
+   "raw": 0.14685900597977897
+  },
+  {
+   "id": "v18",
+   "text": "+650",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Luis Gurule",
+   "raw": 650
+  },
+  {
+   "id": "v19",
+   "text": "13.3%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Luis Gurule",
+   "raw": 0.13333333333333333
+  },
+  {
+   "id": "v20",
+   "text": "+630",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Luis Gurule",
+    "field": "cost"
+   },
+   "desc": "Market ML Luis Gurule",
+   "raw": 630
+  },
+  {
+   "id": "v21",
+   "text": "13.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Luis Gurule"
+   },
+   "desc": "Market implied Luis Gurule",
+   "raw": 0.136986301369863
+  },
+  {
+   "id": "v22",
+   "text": "+1.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v17",
+     "v19"
+    ]
+   },
+   "desc": "Edge ML Luis Gurule",
+   "raw": 0.013525672646445636
+  },
+  {
+   "id": "v23",
+   "text": "+276",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.2658712180771622
+  },
+  {
+   "id": "v24",
+   "text": "26.6%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.2658712180771622
+  },
+  {
+   "id": "v25",
+   "text": "+482",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD price",
+   "raw": 0.17190823157955523
+  },
+  {
+   "id": "v26",
+   "text": "17.2%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD %",
+   "raw": 0.17190823157955523
+  },
+  {
+   "id": "v27",
+   "text": "+455",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": 455
+  },
+  {
+   "id": "v28",
+   "text": "18.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.18018018018018017
+  },
+  {
+   "id": "v29",
+   "text": "+9.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v24",
+     "v26"
+    ]
+   },
+   "desc": "Edge GTD vs listed",
+   "raw": 0.09396298649760695
+  },
+  {
+   "id": "v30",
+   "text": "-276",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.7341287819228378
+  },
+  {
+   "id": "v31",
+   "text": "73.4%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.7341287819228378
+  },
+  {
+   "id": "v32",
+   "text": "-760",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market ITD no",
+   "raw": -760
+  },
+  {
+   "id": "v33",
+   "text": "88.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market ITD implied",
+   "raw": 0.8837209302325582
+  },
+  {
+   "id": "v34",
+   "text": "-15.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v31",
+     "v33"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.14959214830972034
+  },
+  {
+   "id": "v35",
+   "text": "+381",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Bilal Hasan",
+   "raw": 0.20781306802608832
+  },
+  {
+   "id": "v36",
+   "text": "20.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Bilal Hasan",
+   "raw": 0.20781306802608832
+  },
+  {
+   "id": "v37",
+   "text": "+600",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bilal Hasan Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Bilal Hasan",
+   "raw": 600
+  },
+  {
+   "id": "v38",
+   "text": "14.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bilal Hasan Points"
+   },
+   "desc": "Market dec implied Bilal Hasan",
+   "raw": 0.14285714285714285
+  },
+  {
+   "id": "v39",
+   "text": "+6.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v36",
+     "v38"
+    ]
+   },
+   "desc": "Edge dec Bilal Hasan",
+   "raw": 0.06495592516894547
+  },
+  {
+   "id": "v40",
+   "text": "-121",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Bilal Hasan",
+   "raw": 0.5481555028709701
+  },
+  {
+   "id": "v41",
+   "text": "54.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Bilal Hasan",
+   "raw": 0.5481555028709701
+  },
+  {
+   "id": "v42",
+   "text": "-370",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bilal Hasan KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Bilal Hasan",
+   "raw": -370
+  },
+  {
+   "id": "v43",
+   "text": "78.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bilal Hasan KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Bilal Hasan",
+   "raw": 0.7872340425531915
+  },
+  {
+   "id": "v44",
+   "text": "-23.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v41",
+     "v43"
+    ]
+   },
+   "desc": "Edge ko Bilal Hasan",
+   "raw": -0.23907853968222137
+  },
+  {
+   "id": "v45",
+   "text": "+929",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Bilal Hasan",
+   "raw": 0.0971724231231626
+  },
+  {
+   "id": "v46",
+   "text": "9.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Bilal Hasan",
+   "raw": 0.0971724231231626
+  },
+  {
+   "id": "v47",
+   "text": "+948",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bilal Hasan Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Bilal Hasan",
+   "raw": 948
+  },
+  {
+   "id": "v48",
+   "text": "9.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bilal Hasan Submission"
+   },
+   "desc": "Market sub implied Bilal Hasan",
+   "raw": 0.09541984732824428
+  },
+  {
+   "id": "v49",
+   "text": "+0.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v46",
+     "v48"
+    ]
+   },
+   "desc": "Edge sub Bilal Hasan",
+   "raw": 0.001752575794918318
+  },
+  {
+   "id": "v50",
+   "text": "-182",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Bilal Hasan",
+   "raw": 0.6453279259941327
+  },
+  {
+   "id": "v51",
+   "text": "64.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Bilal Hasan",
+   "raw": 0.6453279259941327
+  },
+  {
+   "id": "v52",
+   "text": "88.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Bilal Hasan KO/TKO/DQ",
+     "Bilal Hasan Submission"
+    ]
+   },
+   "desc": "Market ITD implied Bilal Hasan",
+   "raw": 0.8826538898814358
+  },
+  {
+   "id": "v53",
+   "text": "-23.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v51",
+     "v52"
+    ]
+   },
+   "desc": "Edge itd Bilal Hasan",
+   "raw": -0.2373259638873031
+  },
+  {
+   "id": "v54",
+   "text": "+1622",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Luis Gurule",
+   "raw": 0.058058150051073856
+  },
+  {
+   "id": "v55",
+   "text": "5.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Luis Gurule",
+   "raw": 0.058058150051073856
+  },
+  {
+   "id": "v56",
+   "text": "+2000",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Luis Gurule Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Luis Gurule",
+   "raw": 2000
+  },
+  {
+   "id": "v57",
+   "text": "4.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Luis Gurule Points"
+   },
+   "desc": "Market dec implied Luis Gurule",
+   "raw": 0.047619047619047616
+  },
+  {
+   "id": "v58",
+   "text": "+1.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v55",
+     "v57"
+    ]
+   },
+   "desc": "Edge dec Luis Gurule",
+   "raw": 0.01043910243202624
+  },
+  {
+   "id": "v59",
+   "text": "+1478",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Luis Gurule",
+   "raw": 0.06335678665129929
+  },
+  {
+   "id": "v60",
+   "text": "6.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Luis Gurule",
+   "raw": 0.06335678665129929
+  },
+  {
+   "id": "v61",
+   "text": "+1233",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Luis Gurule KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Luis Gurule",
+   "raw": 1233
+  },
+  {
+   "id": "v62",
+   "text": "7.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Luis Gurule KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Luis Gurule",
+   "raw": 0.07501875468867217
+  },
+  {
+   "id": "v63",
+   "text": "-1.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v60",
+     "v62"
+    ]
+   },
+   "desc": "Edge ko Luis Gurule",
+   "raw": -0.011661968037372877
+  },
+  {
+   "id": "v64",
+   "text": "+3830",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Luis Gurule",
+   "raw": 0.025444069277405824
+  },
+  {
+   "id": "v65",
+   "text": "2.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Luis Gurule",
+   "raw": 0.025444069277405824
+  },
+  {
+   "id": "v66",
+   "text": "+2542",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Luis Gurule Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Luis Gurule",
+   "raw": 2542
+  },
+  {
+   "id": "v67",
+   "text": "3.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Luis Gurule Submission"
+   },
+   "desc": "Market sub implied Luis Gurule",
+   "raw": 0.03785011355034065
+  },
+  {
+   "id": "v68",
+   "text": "-1.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v65",
+     "v67"
+    ]
+   },
+   "desc": "Edge sub Luis Gurule",
+   "raw": -0.012406044272934829
+  },
+  {
+   "id": "v69",
+   "text": "+1026",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Luis Gurule",
+   "raw": 0.08880085592870511
+  },
+  {
+   "id": "v70",
+   "text": "8.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Luis Gurule",
+   "raw": 0.08880085592870511
+  },
+  {
+   "id": "v71",
+   "text": "11.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Luis Gurule KO/TKO/DQ",
+     "Luis Gurule Submission"
+    ]
+   },
+   "desc": "Market ITD implied Luis Gurule",
+   "raw": 0.11286886823901282
+  },
+  {
+   "id": "v72",
+   "text": "-2.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v70",
+     "v71"
+    ]
+   },
+   "desc": "Edge itd Luis Gurule",
+   "raw": -0.02406801231030771
+  },
+  {
+   "id": "v73",
+   "text": "-909",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Bilal Hasan",
+     "Luis Gurule"
+    ],
+    "side": "a"
+   },
+   "desc": "LH open ML Bilal Hasan",
+   "raw": -909
+  },
+  {
+   "id": "v74",
+   "text": "0.6",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Bilal Hasan",
+     "Luis Gurule"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.006000000000000005
+  },
+  {
+   "id": "v75",
+   "text": "53%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "target.head"
+   },
+   "desc": "Target head Bilal Hasan",
+   "raw": 0.5283
+  },
+  {
+   "id": "v76",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "target.body"
+   },
+   "desc": "Target body Bilal Hasan",
+   "raw": 0.3774
+  },
+  {
+   "id": "v77",
+   "text": "9%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Bilal Hasan",
+   "raw": 0.0943
+  },
+  {
+   "id": "v78",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "target.head"
+   },
+   "desc": "Target head Luis Gurule",
+   "raw": 0.7473
+  },
+  {
+   "id": "v79",
+   "text": "10%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "target.body"
+   },
+   "desc": "Target body Luis Gurule",
+   "raw": 0.1011
+  },
+  {
+   "id": "v80",
+   "text": "15%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Luis Gurule",
+   "raw": 0.1516
+  },
+  {
+   "id": "v81",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 1
+  },
+  {
+   "id": "v82",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 5
+  },
+  {
+   "id": "v83",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 1.0
+  },
+  {
+   "id": "v84",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 1
+  },
+  {
+   "id": "v85",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 1
+  },
+  {
+   "id": "v86",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.0
+  },
+  {
+   "id": "v87",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v88",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 0
+  },
+  {
+   "id": "v89",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Flyweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.1923
+  },
+  {
+   "id": "v90",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.0
+  },
+  {
+   "id": "v91",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v92",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 0
+  },
+  {
+   "id": "v93",
+   "text": "12%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.1195
+  },
+  {
+   "id": "v94",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 1
+  },
+  {
+   "id": "v95",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 1
+  },
+  {
+   "id": "v96",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Flyweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.203
+  },
+  {
+   "id": "v97",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v98",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Luis Gurule",
+   "raw": 1
+  },
+  {
+   "id": "v99",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Luis Gurule",
+   "raw": 2
+  },
+  {
+   "id": "v100",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "outcomes.l.sub"
+   },
+   "desc": "Outcome lsub Luis Gurule",
+   "raw": 1
+  },
+  {
+   "id": "v101",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Luis Gurule",
+   "raw": 1
+  },
+  {
+   "id": "v102",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Bilal Hasan",
+   "raw": 1.0
+  },
+  {
+   "id": "v103",
+   "text": "+4.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Bilal Hasan",
+   "raw": 4.2
+  },
+  {
+   "id": "v104",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Bilal Hasan",
    "raw": 1
   },
   {
    "id": "v105",
-   "text": "5",
-   "fmt": "int",
-   "rule": "nfights",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b"
+    "fighter": "Bilal Hasan",
+    "path": "rounds.1.won"
    },
-   "desc": "UFC fights b",
-   "raw": 5
+   "desc": "R2 won Bilal Hasan",
+   "raw": 1.0
   },
   {
    "id": "v106",
-   "text": "7.10",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "-0.4",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "slpm"
+    "fighter": "Bilal Hasan",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "SLpM a",
-   "raw": 7.098214285714286
+   "desc": "R2 diff Bilal Hasan",
+   "raw": -0.405
   },
   {
    "id": "v107",
-   "text": "5.02",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "slpm"
+    "fighter": "Bilal Hasan",
+    "path": "rounds.1.fights"
    },
-   "desc": "SLpM b",
-   "raw": 5.016601267733172
+   "desc": "R2 fights Bilal Hasan",
+   "raw": 1
   },
   {
    "id": "v108",
-   "text": "4.42",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "40%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "sapm"
+    "fighter": "Luis Gurule",
+    "path": "rounds.0.won"
    },
-   "desc": "SApM a",
-   "raw": 4.419642857142857
+   "desc": "R1 won Luis Gurule",
+   "raw": 0.4
   },
   {
    "id": "v109",
-   "text": "5.65",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "-1.9",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "sapm"
+    "fighter": "Luis Gurule",
+    "path": "rounds.0.diff_pm"
    },
-   "desc": "SApM b",
-   "raw": 5.650467853908844
+   "desc": "R1 diff Luis Gurule",
+   "raw": -1.93
   },
   {
    "id": "v110",
-   "text": "+2.68",
-   "fmt": "s2",
-   "rule": "stat",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "diff"
+    "fighter": "Luis Gurule",
+    "path": "rounds.0.fights"
    },
-   "desc": "Strike diff /min a",
-   "raw": 2.6785714285714284
+   "desc": "R1 fights Luis Gurule",
+   "raw": 5
   },
   {
    "id": "v111",
-   "text": "-0.63",
-   "fmt": "s2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "diff"
-   },
-   "desc": "Strike diff /min b",
-   "raw": -0.6338665861756716
-  },
-  {
-   "id": "v112",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "acc"
-   },
-   "desc": "Strike accuracy a",
-   "raw": 0.4108527131782946
-  },
-  {
-   "id": "v113",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "acc"
-   },
-   "desc": "Strike accuracy b",
-   "raw": 0.4128166915052161
-  },
-  {
-   "id": "v114",
    "text": "50%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "dfn"
+    "fighter": "Luis Gurule",
+    "path": "rounds.1.won"
    },
-   "desc": "Strike defence a",
+   "desc": "R2 won Luis Gurule",
    "raw": 0.5
   },
   {
-   "id": "v115",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "id": "v112",
+   "text": "-0.5",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "dfn"
+    "fighter": "Luis Gurule",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "Strike defence b",
-   "raw": 0.5702479338842975
+   "desc": "R2 diff Luis Gurule",
+   "raw": -0.533
+  },
+  {
+   "id": "v113",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Luis Gurule",
+   "raw": 4
+  },
+  {
+   "id": "v114",
+   "text": "67%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Luis Gurule",
+   "raw": 0.6667
+  },
+  {
+   "id": "v115",
+   "text": "+1.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Luis Gurule",
+   "raw": 1.267
   },
   {
    "id": "v116",
-   "text": "2.01",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "td15"
+    "fighter": "Luis Gurule",
+    "path": "rounds.2.fights"
    },
-   "desc": "Takedowns /15 a",
-   "raw": 2.008928571428571
+   "desc": "R3 fights Luis Gurule",
+   "raw": 3
   },
   {
    "id": "v117",
-   "text": "0.81",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "td15"
+    "fighter": "Bilal Hasan",
+    "path": "fights.0.rw.0.2"
    },
-   "desc": "Takedowns /15 b",
-   "raw": 0.8149713250830063
+   "desc": "R1 fight diff Bilal Hasan 0",
+   "raw": 21
   },
   {
    "id": "v118",
-   "text": "73%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "tdd"
+    "fighter": "Bilal Hasan",
+    "path": "fights.0.rw.1.2"
    },
-   "desc": "TD defence b",
-   "raw": 0.7333333333333334
+   "desc": "R2 fight diff Bilal Hasan 0",
+   "raw": -1
   },
   {
    "id": "v119",
-   "text": "14%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "-16",
+   "fmt": "sint",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "ctrlp"
+    "fighter": "Luis Gurule",
+    "path": "fights.0.rw.0.2"
    },
-   "desc": "Control time a",
-   "raw": 0.140625
+   "desc": "R1 fight diff Luis Gurule 0",
+   "raw": -16
   },
   {
    "id": "v120",
-   "text": "12%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "ctrlp"
+    "fighter": "Luis Gurule",
+    "path": "fights.1.rw.0.2"
    },
-   "desc": "Control time b",
-   "raw": 0.11620887413220646
+   "desc": "R1 fight diff Luis Gurule 1",
+   "raw": 5
   },
   {
    "id": "v121",
-   "text": "95",
-   "fmt": "r0",
-   "rule": "fight",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "i": 0,
-    "key": "fg"
+    "fighter": "Luis Gurule",
+    "path": "fights.2.rw.0.2"
    },
-   "desc": "Fig Bilal Hasan Nilson Rojas",
-   "raw": 94.6
+   "desc": "R1 fight diff Luis Gurule 2",
+   "raw": -13
   },
   {
    "id": "v122",
+   "text": "-23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Luis Gurule 3",
+   "raw": -23
+  },
+  {
+   "id": "v123",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Luis Gurule 4",
+   "raw": 2
+  },
+  {
+   "id": "v124",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Luis Gurule 1",
+   "raw": 9
+  },
+  {
+   "id": "v125",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Luis Gurule 2",
+   "raw": -10
+  },
+  {
+   "id": "v126",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Luis Gurule 3",
+   "raw": 0
+  },
+  {
+   "id": "v127",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Luis Gurule 4",
+   "raw": -8
+  },
+  {
+   "id": "v128",
+   "text": "+22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Luis Gurule 1",
+   "raw": 22
+  },
+  {
+   "id": "v129",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Luis Gurule 2",
+   "raw": -6
+  },
+  {
+   "id": "v130",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Luis Gurule 3",
+   "raw": 3
+  },
+  {
+   "id": "v131",
+   "text": "5",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Bilal Hasan",
+   "raw": 5.0
+  },
+  {
+   "id": "v132",
+   "text": "2",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Bilal Hasan",
+   "raw": 2.47
+  },
+  {
+   "id": "v133",
+   "text": "0",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Bilal Hasan",
+   "raw": 0.0
+  },
+  {
+   "id": "v134",
+   "text": "23",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Luis Gurule",
+   "raw": 23.32
+  },
+  {
+   "id": "v135",
+   "text": "17",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Luis Gurule",
+   "raw": 16.9
+  },
+  {
+   "id": "v136",
+   "text": "15",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Luis Gurule",
+   "raw": 15.0
+  },
+  {
+   "id": "v137",
+   "text": "2.01",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 2.009
+  },
+  {
+   "id": "v138",
+   "text": "0.81",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 0.815
+  },
+  {
+   "id": "v139",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 1.0
+  },
+  {
+   "id": "v140",
+   "text": "18%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.1765
+  },
+  {
+   "id": "v141",
+   "text": "73%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.7333
+  },
+  {
+   "id": "v142",
+   "text": "14%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.1406
+  },
+  {
+   "id": "v143",
+   "text": "12%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.1162
+  },
+  {
+   "id": "v144",
+   "text": "+12.0%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.1204
+  },
+  {
+   "id": "v145",
+   "text": "+0.5%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.0046
+  },
+  {
+   "id": "v146",
+   "text": "1%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.0067
+  },
+  {
+   "id": "v147",
+   "text": "10%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.1002
+  },
+  {
+   "id": "v148",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v149",
+   "text": "0.27",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.272
+  },
+  {
+   "id": "v150",
+   "text": "+2.68",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Bilal Hasan",
+   "raw": 2.6790000000000003
+  },
+  {
+   "id": "v151",
+   "text": "-0.63",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Luis Gurule",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Luis Gurule",
+   "raw": -0.6339999999999999
+  },
+  {
+   "id": "v152",
+   "text": "+2.57",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 2.567
+  },
+  {
+   "id": "v153",
+   "text": "-0.73",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": -0.728
+  },
+  {
+   "id": "v154",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v155",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v156",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Luis Gurule",
+   "raw": 1
+  },
+  {
+   "id": "v157",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Luis Gurule",
+   "raw": 5
+  },
+  {
+   "id": "v158",
+   "text": "+1.47",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 1.473
+  },
+  {
+   "id": "v159",
+   "text": "+0.23",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 0.235
+  },
+  {
+   "id": "v160",
+   "text": "+0.94",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.938
+  },
+  {
+   "id": "v161",
+   "text": "-0.69",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": -0.688
+  },
+  {
+   "id": "v162",
+   "text": "+0.27",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.268
+  },
+  {
+   "id": "v163",
+   "text": "-0.18",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": -0.181
+  },
+  {
+   "id": "v164",
+   "text": "63%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.6304
+  },
+  {
+   "id": "v165",
+   "text": "66%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.6585
+  },
+  {
+   "id": "v166",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v167",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v168",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v169",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Luis Gurule",
+   "raw": 2
+  },
+  {
+   "id": "v170",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Luis Gurule",
+   "raw": 5
+  },
+  {
+   "id": "v171",
+   "text": "211%",
+   "fmt": "pct0",
+   "rule": "labs",
+   "args": {
+    "side": "b",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "luis-gurule"
+   },
+   "desc": "Output kept R3 b",
+   "raw": 2.109
+  },
+  {
+   "id": "v172",
+   "text": "7.5",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 7.467
+  },
+  {
+   "id": "v173",
+   "text": "11.0",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 11.043
+  },
+  {
+   "id": "v174",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "pace.n"
+   },
+   "desc": "Avg fight, min sample Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v175",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v176",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Luis Gurule",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.2
+  },
+  {
+   "id": "v177",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "pace.n"
+   },
+   "desc": "Finished in R1 sample Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v178",
    "text": "-526",
    "fmt": "ml",
    "rule": "fight",
@@ -1517,20 +2192,7 @@
    "raw": -526
   },
   {
-   "id": "v123",
-   "text": "2",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 0,
-    "key": "fg"
-   },
-   "desc": "Fig Luis Gurule Rei Tsuruya",
-   "raw": 1.9
-  },
-  {
-   "id": "v124",
+   "id": "v179",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -1543,20 +2205,7 @@
    "raw": 185
   },
   {
-   "id": "v125",
-   "text": "79",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Luis Gurule Daniel Barez",
-   "raw": 79.1
-  },
-  {
-   "id": "v126",
+   "id": "v180",
    "text": "-105",
    "fmt": "ml",
    "rule": "fight",
@@ -1569,20 +2218,7 @@
    "raw": -105
   },
   {
-   "id": "v127",
-   "text": "31",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Luis Gurule Alden Coria",
-   "raw": 31.3
-  },
-  {
-   "id": "v128",
+   "id": "v181",
    "text": "+308",
    "fmt": "ml",
    "rule": "fight",
@@ -1595,20 +2231,7 @@
    "raw": 308
   },
   {
-   "id": "v129",
-   "text": "33",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 3,
-    "key": "fg"
-   },
-   "desc": "Fig Luis Gurule Jesus Aguilar",
-   "raw": 33.0
-  },
-  {
-   "id": "v130",
+   "id": "v182",
    "text": "-206",
    "fmt": "ml",
    "rule": "fight",
@@ -1621,20 +2244,7 @@
    "raw": -206
   },
   {
-   "id": "v131",
-   "text": "6",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 4,
-    "key": "fg"
-   },
-   "desc": "Fig Luis Gurule Ode Osbourne",
-   "raw": 5.6
-  },
-  {
-   "id": "v132",
+   "id": "v183",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -1645,34 +2255,7 @@
    },
    "desc": "Close Luis Gurule Ode Osbourne",
    "raw": -250
-  },
-  {
-   "id": "v133",
-   "text": "84.5%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sheet % (note)",
-   "raw": 0.8451620728691496
-  },
-  {
-   "id": "v134",
-   "text": "2.5",
-   "fmt": "pts",
-   "rule": "gap_pub_bp",
-   "args": {
-    "side": "a",
-    "market": "moneyline",
-    "label": "Bilal Hasan",
-    "other": "Luis Gurule"
-   },
-   "desc": "Sheet vs BP gap",
-   "raw": -0.02542616242496798
   }
  ],
- "gaps": [
-  "Fight 9: BettingPros method_of_victory has unlabeled selections ['Luis Gurule', 'Bilal Hasan']; not displayed."
- ]
+ "gaps": []
 }

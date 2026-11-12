@@ -1,0 +1,10 @@
+check 2 (from the 605-row bet list): n 605 won 323 act 53.39%
+  no-vig implied 51.66%
+  pnl -27.40 u, ROI -4.53%
+  margin (ROI if no-vig were true) -3.99%
+  win 95%: 49.41 to 57.36
+  fav: n 321 won 234 ROI 4.13%
+  dog: n 284 won 89 ROI -14.32%
+check 1 (stats file): n 605 act 0.5339 exp 0.5166 roi -0.0453 margin -0.0399 win_ci [0.4941, 0.5736] split {'favorite': {'n': 321, 'won': 0.729, 'implied': 0.6752, 'roi': 0.0413}, 'underdog': {'n': 284, 'won': 0.3134, 'implied': 0.3372, 'roi': -0.1432}}
+added bouts: [['2026-10-03', 'Marcus McGhee', 'Anthony Romero', 'b'], ['2024-03-16', 'Natan Levy', 'Mike Davis', 'a']] | those 2 rows: [{'d': '2026-10-03', 'fighter': 'Anthony Romero', 'opp': 'Marcus McGhee', 'p': 0.1894, 'price': 5.05, 'won': False}, {'d': '2024-03-16', 'fighter': 'Natan Levy', 'opp': 'Mike Davis', 'p': 0.3049, 'price': 3.1, 'won': False}]
+check 3 (against Labs, independent build): main research.json southpaw pnl_c for 603 = -25.39 u (= -4.21% x 603); both added bouts lost: -25.39 - 2 = -27.39 u over 605 = -4.53%. Won 323 of 603 on Labs, 323 of 605 here. Matches.

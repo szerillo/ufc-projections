@@ -1,0 +1,14 @@
+Kirk round 30 B: is Caesars +420 on Jared Gordon real?
+1) BestFightOdds event page /events/ufc-334-4433, same-origin read in Sean's Chrome at 2026-11-12T20:52:54Z (book columns by the
+   page's own header, as the loader reads them): Gordon  Polymarket +295, Kalshi +285, FanDuel +310, Caesars +420, BetRivers +300,
+   BetWay +280 | Costa  -361, -400, -400, Caesars -625, -400, -385.
+2) Caesars' own US quote (The Odds API key williamhill_us, in the sharp-tracker archive data/mma/oddsapi_live.jsonl, 579 Gordon
+   snapshots Nov 5 to Nov 12), shown each time it changed:
+     2026-11-05T16:20:04Z Caesars +310
+     2026-11-06T08:19:49Z Caesars +300
+     2026-11-12T18:10:09Z Caesars +310   (FanDuel +285, DraftKings +300, BetRivers +280 at the same snapshot)
+     last 2026-11-12T20:32:46Z Caesars +310 / -400
+   Caesars never showed +420 in 579 snapshots; the loader's Feed has carried +420/-625 from BFO since at least Nov 11 02:19Z.
+3) Reading: the +420 is a stale or bad BFO line, not a price Caesars is dealing. The TRAP exclusion removes a bad quote; the real
+   best US price is +310 (FanDuel, and Caesars at +310 by its own feed), which is what v2.8/v2.9 put in D. The rec ("-") is the
+   same at +310 from either book. Caesars itself could not be checked directly (its site is blocked in this Chrome).

@@ -1,7 +1,10 @@
 {
  "fight": 3,
  "of": 13,
- "site_n": 3,
+ "site_pair": [
+  "Macy Chiasson",
+  "Bia Mesquita"
+ ],
  "pair": [
   "Macy Chiasson",
   "Bia Mesquita"
@@ -10,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -25,32 +28,6 @@
   },
   {
    "id": "v2",
-   "text": "1529",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "a.elo"
-   },
-   "desc": "Macy Chiasson Elo",
-   "raw": 1529
-  },
-  {
-   "id": "v3",
-   "text": "50.3",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "form.ra"
-   },
-   "desc": "Macy Chiasson Form Figure",
-   "raw": 50.3
-  },
-  {
-   "id": "v4",
    "text": "3-0-0",
    "fmt": "str",
    "rule": "record",
@@ -61,1178 +38,7 @@
    "raw": "3-0-0"
   },
   {
-   "id": "v5",
-   "text": "1567",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "b.elo"
-   },
-   "desc": "Bia Mesquita Elo",
-   "raw": 1567
-  },
-  {
-   "id": "v6",
-   "text": "64.8",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "form.rb"
-   },
-   "desc": "Bia Mesquita Form Figure",
-   "raw": 64.8
-  },
-  {
-   "id": "v7",
-   "text": "+270",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Macy Chiasson",
-   "raw": 0.2703440154109113
-  },
-  {
-   "id": "v8",
-   "text": "27.0%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean win % Macy Chiasson",
-   "raw": 0.2703440154109113
-  },
-  {
-   "id": "v9",
-   "text": "+210",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Macy Chiasson",
-    "field": "cost"
-   },
-   "desc": "BP ML now Macy Chiasson",
-   "raw": 210
-  },
-  {
-   "id": "v10",
-   "text": "30.5%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Macy Chiasson",
-    "other": "Bia Mesquita"
-   },
-   "desc": "BP ML no-vig Macy Chiasson",
-   "raw": 0.30488788514276494
-  },
-  {
-   "id": "v11",
-   "text": "+165",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Macy Chiasson",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Macy Chiasson",
-   "raw": 165
-  },
-  {
-   "id": "v12",
-   "text": "-270",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean ML Bia Mesquita",
-   "raw": 0.7296559845890886
-  },
-  {
-   "id": "v13",
-   "text": "73.0%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean win % Bia Mesquita",
-   "raw": 0.7296559845890886
-  },
-  {
-   "id": "v14",
-   "text": "-278",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Bia Mesquita",
-    "field": "cost"
-   },
-   "desc": "BP ML now Bia Mesquita",
-   "raw": -278
-  },
-  {
-   "id": "v15",
-   "text": "69.5%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Bia Mesquita",
-    "other": "Macy Chiasson"
-   },
-   "desc": "BP ML no-vig Bia Mesquita",
-   "raw": 0.695112114857235
-  },
-  {
-   "id": "v16",
-   "text": "-220",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Bia Mesquita",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Bia Mesquita",
-   "raw": -220
-  },
-  {
-   "id": "v17",
-   "text": "+717",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Macy Chiasson",
-   "raw": 0.12244884792214297
-  },
-  {
-   "id": "v18",
-   "text": "12.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Macy Chiasson",
-   "raw": 0.12244884792214297
-  },
-  {
-   "id": "v19",
-   "text": "+458",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Macy Chiasson Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Macy Chiasson",
-   "raw": 458
-  },
-  {
-   "id": "v20",
-   "text": "14.9%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Macy Chiasson",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Macy Chiasson",
-   "raw": 0.1490840876303843
-  },
-  {
-   "id": "v21",
-   "text": "+430",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Macy Chiasson Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP dec open Macy Chiasson",
-   "raw": 430
-  },
-  {
-   "id": "v22",
-   "text": "+245",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Bia Mesquita",
-   "raw": 0.28973294651268916
-  },
-  {
-   "id": "v23",
-   "text": "29.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Bia Mesquita",
-   "raw": 0.28973294651268916
-  },
-  {
-   "id": "v24",
-   "text": "+445",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bia Mesquita Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Bia Mesquita",
-   "raw": 445
-  },
-  {
-   "id": "v25",
-   "text": "15.3%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Bia Mesquita",
-   "raw": 0.1526402218307421
-  },
-  {
-   "id": "v26",
-   "text": "+430",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bia Mesquita Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP dec open Bia Mesquita",
-   "raw": 430
-  },
-  {
-   "id": "v27",
-   "text": "+810",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Macy Chiasson",
-   "raw": 0.10988779770958738
-  },
-  {
-   "id": "v28",
-   "text": "11.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Macy Chiasson",
-   "raw": 0.10988779770958738
-  },
-  {
-   "id": "v29",
-   "text": "+550",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Macy Chiasson KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Macy Chiasson",
-   "raw": 550
-  },
-  {
-   "id": "v30",
-   "text": "12.8%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Macy Chiasson",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Macy Chiasson",
-   "raw": 0.12798295522731454
-  },
-  {
-   "id": "v31",
-   "text": "+550",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Macy Chiasson KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP ko open Macy Chiasson",
-   "raw": 550
-  },
-  {
-   "id": "v32",
-   "text": "+1453",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Bia Mesquita",
-   "raw": 0.06440285963643072
-  },
-  {
-   "id": "v33",
-   "text": "6.4%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Bia Mesquita",
-   "raw": 0.06440285963643072
-  },
-  {
-   "id": "v34",
-   "text": "+1000",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bia Mesquita KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Bia Mesquita",
-   "raw": 1000
-  },
-  {
-   "id": "v35",
-   "text": "7.6%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Bia Mesquita",
-   "raw": 0.07562629172523132
-  },
-  {
-   "id": "v36",
-   "text": "+1000",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bia Mesquita KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP ko open Bia Mesquita",
-   "raw": 1000
-  },
-  {
-   "id": "v37",
-   "text": "+2531",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Macy Chiasson",
-   "raw": 0.038007369779180934
-  },
-  {
-   "id": "v38",
-   "text": "3.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Macy Chiasson",
-   "raw": 0.038007369779180934
-  },
-  {
-   "id": "v39",
-   "text": "+2425",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Macy Chiasson Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Macy Chiasson",
-   "raw": 2425
-  },
-  {
-   "id": "v40",
-   "text": "3.3%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Macy Chiasson",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Macy Chiasson",
-   "raw": 0.03294610728623938
-  },
-  {
-   "id": "v41",
-   "text": "+2200",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Macy Chiasson Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP sub open Macy Chiasson",
-   "raw": 2200
-  },
-  {
-   "id": "v42",
-   "text": "+166",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Bia Mesquita",
-   "raw": 0.37552017843996877
-  },
-  {
-   "id": "v43",
-   "text": "37.6%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Bia Mesquita",
-   "raw": 0.37552017843996877
-  },
-  {
-   "id": "v44",
-   "text": "-113",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bia Mesquita Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Bia Mesquita",
-   "raw": -113
-  },
-  {
-   "id": "v45",
-   "text": "44.1%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Bia Mesquita",
-   "raw": 0.4413308949035799
-  },
-  {
-   "id": "v46",
-   "text": "-117",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Bia Mesquita Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP sub open Bia Mesquita",
-   "raw": -117
-  },
-  {
-   "id": "v47",
-   "text": "+576",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Macy Chiasson",
-   "raw": 0.14789516748876833
-  },
-  {
-   "id": "v48",
-   "text": "14.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Macy Chiasson",
-   "raw": 0.14789516748876833
-  },
-  {
-   "id": "v49",
-   "text": "+521",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Macy Chiasson"
-   },
-   "desc": "BP ITD fair ML Macy Chiasson",
-   "raw": 0.16092906251355393
-  },
-  {
-   "id": "v50",
-   "text": "16.1%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Macy Chiasson"
-   },
-   "desc": "BP ITD no-vig Macy Chiasson",
-   "raw": 0.16092906251355393
-  },
-  {
-   "id": "v51",
-   "text": "+127",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Bia Mesquita",
-   "raw": 0.4399230380763995
-  },
-  {
-   "id": "v52",
-   "text": "44.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Bia Mesquita",
-   "raw": 0.4399230380763995
-  },
-  {
-   "id": "v53",
-   "text": "-107",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Bia Mesquita"
-   },
-   "desc": "BP ITD fair ML Bia Mesquita",
-   "raw": 0.5169571866288112
-  },
-  {
-   "id": "v54",
-   "text": "51.7%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Bia Mesquita"
-   },
-   "desc": "BP ITD no-vig Bia Mesquita",
-   "raw": 0.5169571866288112
-  },
-  {
-   "id": "v55",
-   "text": "+143",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD fair ML",
-   "raw": 0.41218179443483216
-  },
-  {
-   "id": "v56",
-   "text": "41.2%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD %",
-   "raw": 0.41218179443483216
-  },
-  {
-   "id": "v57",
-   "text": "+190",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP GTD yes now",
-   "raw": 190
-  },
-  {
-   "id": "v58",
-   "text": "-257",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP GTD no now",
-   "raw": -257
-  },
-  {
-   "id": "v59",
-   "text": "32.4%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "other": "No"
-   },
-   "desc": "BP GTD no-vig",
-   "raw": 0.3238682754241133
-  },
-  {
-   "id": "v60",
-   "text": "+180",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP GTD yes open",
-   "raw": 180
-  },
-  {
-   "id": "v61",
-   "text": "+178",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "odds.open.ma"
-   },
-   "desc": "OA open ML a",
-   "raw": 178
-  },
-  {
-   "id": "v62",
-   "text": "-215",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "odds.open.mb"
-   },
-   "desc": "OA open ML b",
-   "raw": -215
-  },
-  {
-   "id": "v63",
-   "text": "34.5%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "odds.open.p"
-   },
-   "desc": "OA open p",
-   "raw": 0.3447
-  },
-  {
-   "id": "v64",
-   "text": "+211",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "odds.close.ma"
-   },
-   "desc": "OA close ML a",
-   "raw": 211
-  },
-  {
-   "id": "v65",
-   "text": "-263",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "odds.close.mb"
-   },
-   "desc": "OA close ML b",
-   "raw": -263
-  },
-  {
-   "id": "v66",
-   "text": "30.9%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "odds.close.p"
-   },
-   "desc": "OA close p",
-   "raw": 0.3089
-  },
-  {
-   "id": "v67",
-   "text": "3.6",
-   "fmt": "pts",
-   "rule": "oa_drift",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3
-   },
-   "desc": "OA drift pts",
-   "raw": -0.0358
-  },
-  {
-   "id": "v68",
-   "text": "+222",
-   "fmt": "ml",
-   "rule": "oa_best",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "side": "a"
-   },
-   "desc": "OA best a",
-   "raw": 222
-  },
-  {
-   "id": "v69",
-   "text": "-244",
-   "fmt": "ml",
-   "rule": "oa_best",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "side": "b"
-   },
-   "desc": "OA best b",
-   "raw": -244
-  },
-  {
-   "id": "v70",
-   "text": "+165",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Macy Chiasson",
-    "field": "opening_cost"
-   },
-   "desc": "BP open a (move)",
-   "raw": 165
-  },
-  {
-   "id": "v71",
-   "text": "+210",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Macy Chiasson",
-    "field": "cost"
-   },
-   "desc": "BP now a (move)",
-   "raw": 210
-  },
-  {
-   "id": "v72",
-   "text": "-220",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Bia Mesquita",
-    "field": "opening_cost"
-   },
-   "desc": "BP open b (move)",
-   "raw": -220
-  },
-  {
-   "id": "v73",
-   "text": "-278",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Bia Mesquita",
-    "field": "cost"
-   },
-   "desc": "BP now b (move)",
-   "raw": -278
-  },
-  {
-   "id": "v74",
-   "text": "140",
-   "fmt": "int",
-   "rule": "oa_len",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3
-   },
-   "desc": "Chart points",
-   "raw": 140
-  },
-  {
-   "id": "v75",
-   "text": "448",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 3,
-    "path": "odds.n"
-   },
-   "desc": "Snapshots",
-   "raw": 448
-  },
-  {
-   "id": "v76",
-   "text": "+380",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending KO/TKO/DQ",
-   "raw": 380
-  },
-  {
-   "id": "v77",
-   "text": "+375",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending KO/TKO/DQ",
-   "raw": 375
-  },
-  {
-   "id": "v78",
-   "text": "21%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ"
-   },
-   "desc": "BP implied fight_ending KO/TKO/DQ",
-   "raw": 0.21052631578947367
-  },
-  {
-   "id": "v79",
-   "text": "-152",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Submission",
-   "raw": -152
-  },
-  {
-   "id": "v80",
-   "text": "-135",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Submission",
-   "raw": -135
-  },
-  {
-   "id": "v81",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission"
-   },
-   "desc": "BP implied fight_ending Submission",
-   "raw": 0.574468085106383
-  },
-  {
-   "id": "v82",
-   "text": "+180",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Points",
-   "raw": 180
-  },
-  {
-   "id": "v83",
-   "text": "+185",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Points",
-   "raw": 185
-  },
-  {
-   "id": "v84",
-   "text": "35%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points"
-   },
-   "desc": "BP implied fight_ending Points",
-   "raw": 0.3508771929824561
-  },
-  {
-   "id": "v85",
-   "text": "+180",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance Yes",
-   "raw": 180
-  },
-  {
-   "id": "v86",
-   "text": "+190",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance Yes",
-   "raw": 190
-  },
-  {
-   "id": "v87",
-   "text": "34%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes"
-   },
-   "desc": "BP implied fight_distance Yes",
-   "raw": 0.3448275862068966
-  },
-  {
-   "id": "v88",
-   "text": "-250",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance No",
-   "raw": -250
-  },
-  {
-   "id": "v89",
-   "text": "-257",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance No",
-   "raw": -257
-  },
-  {
-   "id": "v90",
-   "text": "72%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No"
-   },
-   "desc": "BP implied fight_distance No",
-   "raw": 0.7198879551820728
-  },
-  {
-   "id": "v91",
-   "text": "1.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Over",
-   "raw": 1.5
-  },
-  {
-   "id": "v92",
-   "text": "-141",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Over",
-   "raw": -141
-  },
-  {
-   "id": "v93",
-   "text": "-135",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Over",
-   "raw": -135
-  },
-  {
-   "id": "v94",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over"
-   },
-   "desc": "BP implied total_rounds Over",
-   "raw": 0.574468085106383
-  },
-  {
-   "id": "v95",
-   "text": "1.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Under",
-   "raw": 1.5
-  },
-  {
-   "id": "v96",
-   "text": "+104",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Under",
-   "raw": 104
-  },
-  {
-   "id": "v97",
-   "text": "+105",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Under",
-   "raw": 105
-  },
-  {
-   "id": "v98",
-   "text": "49%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under"
-   },
-   "desc": "BP implied total_rounds Under",
-   "raw": 0.4878048780487805
-  },
-  {
-   "id": "v99",
+   "id": "v3",
    "text": "35.3",
    "fmt": "n1",
    "rule": "age",
@@ -1243,7 +49,7 @@
    "raw": 35.30184804928131
   },
   {
-   "id": "v100",
+   "id": "v4",
    "text": "35.6",
    "fmt": "n1",
    "rule": "age",
@@ -1254,18 +60,7 @@
    "raw": 35.605749486652975
   },
   {
-   "id": "v101",
-   "text": "72\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Reach a",
-   "raw": 72
-  },
-  {
-   "id": "v102",
+   "id": "v5",
    "text": "5'11\"",
    "fmt": "str",
    "rule": "bio",
@@ -1277,7 +72,18 @@
    "raw": "5'11\""
   },
   {
-   "id": "v103",
+   "id": "v6",
+   "text": "72\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 72
+  },
+  {
+   "id": "v7",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1289,7 +95,7 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v104",
+   "id": "v8",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1301,234 +107,2390 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v105",
-   "text": "14",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v9",
+   "text": "+270",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "UFC fights a",
-   "raw": 14
+   "desc": "Model ML Macy Chiasson",
+   "raw": 0.27008252019166523
   },
   {
-   "id": "v106",
-   "text": "3",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v10",
+   "text": "27.0%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Macy Chiasson",
+   "raw": 0.27008252019166523
+  },
+  {
+   "id": "v11",
+   "text": "+210",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Macy Chiasson",
+   "raw": 210
+  },
+  {
+   "id": "v12",
+   "text": "32.3%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Macy Chiasson",
+   "raw": 0.3225806451612903
+  },
+  {
+   "id": "v13",
+   "text": "+207",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Macy Chiasson",
+    "field": "cost"
+   },
+   "desc": "Market ML Macy Chiasson",
+   "raw": 207
+  },
+  {
+   "id": "v14",
+   "text": "32.6%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Macy Chiasson"
+   },
+   "desc": "Market implied Macy Chiasson",
+   "raw": 0.3257328990228013
+  },
+  {
+   "id": "v15",
+   "text": "-5.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v10",
+     "v12"
+    ]
+   },
+   "desc": "Edge ML Macy Chiasson",
+   "raw": -0.05249812496962508
+  },
+  {
+   "id": "v16",
+   "text": "-270",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "UFC fights b",
-   "raw": 3
+   "desc": "Model ML Bia Mesquita",
+   "raw": 0.7299174798083348
   },
   {
-   "id": "v107",
-   "text": "3.21",
-   "fmt": "n2",
-   "rule": "stat",
+   "id": "v17",
+   "text": "73.0%",
+   "fmt": "pct1",
+   "rule": "pub_win",
    "args": {
-    "side": "a",
-    "key": "slpm"
+    "side": "b"
    },
-   "desc": "SLpM a",
-   "raw": 3.2089063523248202
+   "desc": "Model win % Bia Mesquita",
+   "raw": 0.7299174798083348
   },
   {
-   "id": "v108",
-   "text": "4.52",
-   "fmt": "n2",
-   "rule": "stat",
+   "id": "v18",
+   "text": "-250",
+   "fmt": "ml",
+   "rule": "pub_ml",
    "args": {
-    "side": "b",
-    "key": "slpm"
+    "side": "b"
    },
-   "desc": "SLpM b",
-   "raw": 4.51783355350066
+   "desc": "Listed ML Bia Mesquita",
+   "raw": -250
   },
   {
-   "id": "v109",
-   "text": "2.76",
-   "fmt": "n2",
-   "rule": "stat",
+   "id": "v19",
+   "text": "71.4%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
    "args": {
-    "side": "a",
-    "key": "sapm"
+    "side": "b"
    },
-   "desc": "SApM a",
-   "raw": 2.7570399476096923
-  },
-  {
-   "id": "v110",
-   "text": "1.27",
-   "fmt": "n2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "sapm"
-   },
-   "desc": "SApM b",
-   "raw": 1.2681638044914134
-  },
-  {
-   "id": "v111",
-   "text": "+0.45",
-   "fmt": "s2",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "diff"
-   },
-   "desc": "Strike diff /min a",
-   "raw": 0.45186640471512773
-  },
-  {
-   "id": "v112",
-   "text": "+3.25",
-   "fmt": "s2",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "diff"
-   },
-   "desc": "Strike diff /min b",
-   "raw": 3.249669749009247
-  },
-  {
-   "id": "v113",
-   "text": "46%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "acc"
-   },
-   "desc": "Strike accuracy a",
-   "raw": 0.4605263157894737
-  },
-  {
-   "id": "v114",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "acc"
-   },
-   "desc": "Strike accuracy b",
-   "raw": 0.57
-  },
-  {
-   "id": "v115",
-   "text": "45%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "a",
-    "key": "dfn"
-   },
-   "desc": "Strike defence a",
-   "raw": 0.4489528795811518
-  },
-  {
-   "id": "v116",
-   "text": "71%",
-   "fmt": "pct0",
-   "rule": "stat",
-   "args": {
-    "side": "b",
-    "key": "dfn"
-   },
-   "desc": "Strike defence b",
+   "desc": "Listed implied Bia Mesquita",
    "raw": 0.7142857142857143
   },
   {
-   "id": "v117",
-   "text": "1.87",
-   "fmt": "n2",
-   "rule": "stat",
+   "id": "v20",
+   "text": "-278",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Bia Mesquita",
+    "field": "cost"
+   },
+   "desc": "Market ML Bia Mesquita",
+   "raw": -278
+  },
+  {
+   "id": "v21",
+   "text": "73.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Bia Mesquita"
+   },
+   "desc": "Market implied Bia Mesquita",
+   "raw": 0.7354497354497355
+  },
+  {
+   "id": "v22",
+   "text": "+1.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v17",
+     "v19"
+    ]
+   },
+   "desc": "Edge ML Bia Mesquita",
+   "raw": 0.015631765522620467
+  },
+  {
+   "id": "v23",
+   "text": "+146",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.40657116176460373
+  },
+  {
+   "id": "v24",
+   "text": "40.7%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.40657116176460373
+  },
+  {
+   "id": "v25",
+   "text": "+209",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD price",
+   "raw": 0.3239942528735632
+  },
+  {
+   "id": "v26",
+   "text": "32.4%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD %",
+   "raw": 0.3239942528735632
+  },
+  {
+   "id": "v27",
+   "text": "+185",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": 185
+  },
+  {
+   "id": "v28",
+   "text": "35.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.3508771929824561
+  },
+  {
+   "id": "v29",
+   "text": "+8.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v24",
+     "v26"
+    ]
+   },
+   "desc": "Edge GTD vs listed",
+   "raw": 0.08257690889104052
+  },
+  {
+   "id": "v30",
+   "text": "-146",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.5934288382353963
+  },
+  {
+   "id": "v31",
+   "text": "59.3%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.5934288382353963
+  },
+  {
+   "id": "v32",
+   "text": "-250",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market ITD no",
+   "raw": -250
+  },
+  {
+   "id": "v33",
+   "text": "71.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market ITD implied",
+   "raw": 0.7142857142857143
+  },
+  {
+   "id": "v34",
+   "text": "-12.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v31",
+     "v33"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.12085687605031803
+  },
+  {
+   "id": "v35",
+   "text": "+727",
+   "fmt": "mlp",
+   "rule": "pub_meth",
    "args": {
     "side": "a",
-    "key": "td15"
+    "k": "dec"
    },
-   "desc": "Takedowns /15 a",
-   "raw": 1.8664047151277015
+   "desc": "Model dec ML Macy Chiasson",
+   "raw": 0.12092384251215008
+  },
+  {
+   "id": "v36",
+   "text": "12.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Macy Chiasson",
+   "raw": 0.12092384251215008
+  },
+  {
+   "id": "v37",
+   "text": "+458",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Macy Chiasson Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Macy Chiasson",
+   "raw": 458
+  },
+  {
+   "id": "v38",
+   "text": "17.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Macy Chiasson Points"
+   },
+   "desc": "Market dec implied Macy Chiasson",
+   "raw": 0.17921146953405018
+  },
+  {
+   "id": "v39",
+   "text": "-5.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v36",
+     "v38"
+    ]
+   },
+   "desc": "Edge dec Macy Chiasson",
+   "raw": -0.0582876270219001
+  },
+  {
+   "id": "v40",
+   "text": "+796",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Macy Chiasson",
+   "raw": 0.11160772138492346
+  },
+  {
+   "id": "v41",
+   "text": "11.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Macy Chiasson",
+   "raw": 0.11160772138492346
+  },
+  {
+   "id": "v42",
+   "text": "+550",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Macy Chiasson KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Macy Chiasson",
+   "raw": 550
+  },
+  {
+   "id": "v43",
+   "text": "15.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Macy Chiasson KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Macy Chiasson",
+   "raw": 0.15384615384615385
+  },
+  {
+   "id": "v44",
+   "text": "-4.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v41",
+     "v43"
+    ]
+   },
+   "desc": "Edge ko Macy Chiasson",
+   "raw": -0.042238432461230394
+  },
+  {
+   "id": "v45",
+   "text": "+2563",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Macy Chiasson",
+   "raw": 0.03755095629459171
+  },
+  {
+   "id": "v46",
+   "text": "3.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Macy Chiasson",
+   "raw": 0.03755095629459171
+  },
+  {
+   "id": "v47",
+   "text": "+2200",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Macy Chiasson Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Macy Chiasson",
+   "raw": 2200
+  },
+  {
+   "id": "v48",
+   "text": "4.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Macy Chiasson Submission"
+   },
+   "desc": "Market sub implied Macy Chiasson",
+   "raw": 0.043478260869565216
+  },
+  {
+   "id": "v49",
+   "text": "-0.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v46",
+     "v48"
+    ]
+   },
+   "desc": "Edge sub Macy Chiasson",
+   "raw": -0.005927304574973508
+  },
+  {
+   "id": "v50",
+   "text": "+570",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Macy Chiasson",
+   "raw": 0.14915867767951516
+  },
+  {
+   "id": "v51",
+   "text": "14.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Macy Chiasson",
+   "raw": 0.14915867767951516
+  },
+  {
+   "id": "v52",
+   "text": "19.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Macy Chiasson KO/TKO/DQ",
+     "Macy Chiasson Submission"
+    ]
+   },
+   "desc": "Market ITD implied Macy Chiasson",
+   "raw": 0.19732441471571907
+  },
+  {
+   "id": "v53",
+   "text": "-4.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v51",
+     "v52"
+    ]
+   },
+   "desc": "Edge itd Macy Chiasson",
+   "raw": -0.048165737036203915
+  },
+  {
+   "id": "v54",
+   "text": "+250",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Bia Mesquita",
+   "raw": 0.2856473192524537
+  },
+  {
+   "id": "v55",
+   "text": "28.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Bia Mesquita",
+   "raw": 0.2856473192524537
+  },
+  {
+   "id": "v56",
+   "text": "+445",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bia Mesquita Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Bia Mesquita",
+   "raw": 445
+  },
+  {
+   "id": "v57",
+   "text": "18.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bia Mesquita Points"
+   },
+   "desc": "Market dec implied Bia Mesquita",
+   "raw": 0.1834862385321101
+  },
+  {
+   "id": "v58",
+   "text": "+10.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v55",
+     "v57"
+    ]
+   },
+   "desc": "Edge dec Bia Mesquita",
+   "raw": 0.10216108072034358
+  },
+  {
+   "id": "v59",
+   "text": "+1383",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Bia Mesquita",
+   "raw": 0.06741476125621751
+  },
+  {
+   "id": "v60",
+   "text": "6.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Bia Mesquita",
+   "raw": 0.06741476125621751
+  },
+  {
+   "id": "v61",
+   "text": "+1000",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bia Mesquita KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Bia Mesquita",
+   "raw": 1000
+  },
+  {
+   "id": "v62",
+   "text": "9.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bia Mesquita KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Bia Mesquita",
+   "raw": 0.09090909090909091
+  },
+  {
+   "id": "v63",
+   "text": "-2.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v60",
+     "v62"
+    ]
+   },
+   "desc": "Edge ko Bia Mesquita",
+   "raw": -0.023494329652873402
+  },
+  {
+   "id": "v64",
+   "text": "+165",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Bia Mesquita",
+   "raw": 0.3768553992996636
+  },
+  {
+   "id": "v65",
+   "text": "37.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Bia Mesquita",
+   "raw": 0.3768553992996636
+  },
+  {
+   "id": "v66",
+   "text": "-117",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bia Mesquita Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Bia Mesquita",
+   "raw": -117
+  },
+  {
+   "id": "v67",
+   "text": "53.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Bia Mesquita Submission"
+   },
+   "desc": "Market sub implied Bia Mesquita",
+   "raw": 0.5391705069124424
+  },
+  {
+   "id": "v68",
+   "text": "-16.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v65",
+     "v67"
+    ]
+   },
+   "desc": "Edge sub Bia Mesquita",
+   "raw": -0.1623151076127788
+  },
+  {
+   "id": "v69",
+   "text": "+125",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Bia Mesquita",
+   "raw": 0.4442701605558811
+  },
+  {
+   "id": "v70",
+   "text": "44.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Bia Mesquita",
+   "raw": 0.4442701605558811
+  },
+  {
+   "id": "v71",
+   "text": "63.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Bia Mesquita KO/TKO/DQ",
+     "Bia Mesquita Submission"
+    ]
+   },
+   "desc": "Market ITD implied Bia Mesquita",
+   "raw": 0.6300795978215333
+  },
+  {
+   "id": "v72",
+   "text": "-18.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v70",
+     "v71"
+    ]
+   },
+   "desc": "Edge itd Bia Mesquita",
+   "raw": -0.18580943726565224
+  },
+  {
+   "id": "v73",
+   "text": "-213",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
+    "side": "b"
+   },
+   "desc": "LH open ML Bia Mesquita",
+   "raw": -213
+  },
+  {
+   "id": "v74",
+   "text": "3.4",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.033999999999999975
+  },
+  {
+   "id": "v75",
+   "text": "65.6%",
+   "fmt": "pct1",
+   "rule": "lh_p",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
+    "side": "b",
+    "at": "open"
+   },
+   "desc": "LH open p Bia Mesquita",
+   "raw": 0.656
+  },
+  {
+   "id": "v76",
+   "text": "69.0%",
+   "fmt": "pct1",
+   "rule": "lh_p",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Macy Chiasson",
+     "Bia Mesquita"
+    ],
+    "side": "b",
+    "at": "current"
+   },
+   "desc": "LH current p Bia Mesquita",
+   "raw": 0.69
+  },
+  {
+   "id": "v77",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "target.head"
+   },
+   "desc": "Target head Macy Chiasson",
+   "raw": 0.5469
+  },
+  {
+   "id": "v78",
+   "text": "35%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "target.body"
+   },
+   "desc": "Target body Macy Chiasson",
+   "raw": 0.3531
+  },
+  {
+   "id": "v79",
+   "text": "10%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Macy Chiasson",
+   "raw": 0.1
+  },
+  {
+   "id": "v80",
+   "text": "93%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "target.head"
+   },
+   "desc": "Target head Bia Mesquita",
+   "raw": 0.9298
+  },
+  {
+   "id": "v81",
+   "text": "4%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "target.body"
+   },
+   "desc": "Target body Bia Mesquita",
+   "raw": 0.0351
+  },
+  {
+   "id": "v82",
+   "text": "4%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Bia Mesquita",
+   "raw": 0.0351
+  },
+  {
+   "id": "v83",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 14
+  },
+  {
+   "id": "v84",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 3
+  },
+  {
+   "id": "v85",
+   "text": "2%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.0241
+  },
+  {
+   "id": "v86",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v87",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 2
+  },
+  {
+   "id": "v88",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.0
+  },
+  {
+   "id": "v89",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v90",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 0
+  },
+  {
+   "id": "v91",
+   "text": "9%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Women's Bantamweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.0885
+  },
+  {
+   "id": "v92",
+   "text": "7%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.0676
+  },
+  {
+   "id": "v93",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v94",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 1
+  },
+  {
+   "id": "v95",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.0
+  },
+  {
+   "id": "v96",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v97",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 0
+  },
+  {
+   "id": "v98",
+   "text": "12%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Women's Bantamweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.1154
+  },
+  {
+   "id": "v99",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Macy Chiasson",
+   "raw": 2
+  },
+  {
+   "id": "v100",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Macy Chiasson",
+   "raw": 2
+  },
+  {
+   "id": "v101",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Macy Chiasson",
+   "raw": 3
+  },
+  {
+   "id": "v102",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Macy Chiasson",
+   "raw": 4
+  },
+  {
+   "id": "v103",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Bia Mesquita",
+   "raw": 3
+  },
+  {
+   "id": "v104",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Macy Chiasson",
+   "raw": 0.5
+  },
+  {
+   "id": "v105",
+   "text": "+0.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Macy Chiasson",
+   "raw": 0.38
+  },
+  {
+   "id": "v106",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Macy Chiasson",
+   "raw": 14
+  },
+  {
+   "id": "v107",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Macy Chiasson",
+   "raw": 0.5833
+  },
+  {
+   "id": "v108",
+   "text": "+0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Macy Chiasson",
+   "raw": 0.685
+  },
+  {
+   "id": "v109",
+   "text": "12",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Macy Chiasson",
+   "raw": 12
+  },
+  {
+   "id": "v110",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Macy Chiasson",
+   "raw": 0.5
+  },
+  {
+   "id": "v111",
+   "text": "+0.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Macy Chiasson",
+   "raw": 0.268
+  },
+  {
+   "id": "v112",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Macy Chiasson",
+   "raw": 8
+  },
+  {
+   "id": "v113",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Bia Mesquita",
+   "raw": 1.0
+  },
+  {
+   "id": "v114",
+   "text": "+4.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Bia Mesquita",
+   "raw": 4.238
+  },
+  {
+   "id": "v115",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Bia Mesquita",
+   "raw": 3
+  },
+  {
+   "id": "v116",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Bia Mesquita",
+   "raw": 1.0
+  },
+  {
+   "id": "v117",
+   "text": "-1.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Bia Mesquita",
+   "raw": -1.343
   },
   {
    "id": "v118",
-   "text": "3.57",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "td15"
+    "fighter": "Bia Mesquita",
+    "path": "rounds.1.fights"
    },
-   "desc": "Takedowns /15 b",
-   "raw": 3.5667107001321003
+   "desc": "R2 fights Bia Mesquita",
+   "raw": 1
   },
   {
    "id": "v119",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 0",
+   "raw": -2
+  },
+  {
+   "id": "v120",
+   "text": "-17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 1",
+   "raw": -17
+  },
+  {
+   "id": "v121",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 2",
+   "raw": -1
+  },
+  {
+   "id": "v122",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 3",
+   "raw": -5
+  },
+  {
+   "id": "v123",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 4",
+   "raw": 2
+  },
+  {
+   "id": "v124",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 5",
+   "raw": -12
+  },
+  {
+   "id": "v125",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 6",
+   "raw": 3
+  },
+  {
+   "id": "v126",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 7",
+   "raw": -9
+  },
+  {
+   "id": "v127",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 8",
+   "raw": 2
+  },
+  {
+   "id": "v128",
+   "text": "+32",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 9",
+   "raw": 32
+  },
+  {
+   "id": "v129",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 10",
+   "raw": 12
+  },
+  {
+   "id": "v130",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 11",
+   "raw": 11
+  },
+  {
+   "id": "v131",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 12",
+   "raw": 11
+  },
+  {
+   "id": "v132",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Macy Chiasson 13",
+   "raw": -2
+  },
+  {
+   "id": "v133",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 0",
+   "raw": -12
+  },
+  {
+   "id": "v134",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 1",
+   "raw": -6
+  },
+  {
+   "id": "v135",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 2",
+   "raw": -2
+  },
+  {
+   "id": "v136",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 3",
+   "raw": 9
+  },
+  {
+   "id": "v137",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 5",
+   "raw": 8
+  },
+  {
+   "id": "v138",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 6",
+   "raw": 0
+  },
+  {
+   "id": "v139",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 7",
+   "raw": -10
+  },
+  {
+   "id": "v140",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 8",
+   "raw": 12
+  },
+  {
+   "id": "v141",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 9",
+   "raw": 4
+  },
+  {
+   "id": "v142",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 10",
+   "raw": 1
+  },
+  {
+   "id": "v143",
+   "text": "+23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 11",
+   "raw": 23
+  },
+  {
+   "id": "v144",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.13.rw.1.2"
+   },
+   "desc": "R2 fight diff Macy Chiasson 13",
+   "raw": 7
+  },
+  {
+   "id": "v145",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 0",
+   "raw": -5
+  },
+  {
+   "id": "v146",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 1",
+   "raw": 12
+  },
+  {
+   "id": "v147",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 2",
+   "raw": -3
+  },
+  {
+   "id": "v148",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 5",
+   "raw": 6
+  },
+  {
+   "id": "v149",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 6",
+   "raw": -9
+  },
+  {
+   "id": "v150",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 8",
+   "raw": 7
+  },
+  {
+   "id": "v151",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.9.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 9",
+   "raw": 10
+  },
+  {
+   "id": "v152",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "fights.10.rw.2.2"
+   },
+   "desc": "R3 fight diff Macy Chiasson 10",
+   "raw": -8
+  },
+  {
+   "id": "v153",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Bia Mesquita 0",
+   "raw": -7
+  },
+  {
+   "id": "v154",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Bia Mesquita 1",
+   "raw": 18
+  },
+  {
+   "id": "v155",
+   "text": "+33",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Bia Mesquita 2",
+   "raw": 33
+  },
+  {
+   "id": "v156",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Bia Mesquita 2",
+   "raw": -3
+  },
+  {
+   "id": "v157",
+   "text": "66",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Macy Chiasson",
+   "raw": 65.72
+  },
+  {
+   "id": "v158",
+   "text": "50",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Macy Chiasson",
+   "raw": 49.63
+  },
+  {
+   "id": "v159",
+   "text": "37",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Macy Chiasson",
+   "raw": 37.35
+  },
+  {
+   "id": "v160",
+   "text": "10",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Bia Mesquita",
+   "raw": 10.38
+  },
+  {
+   "id": "v161",
+   "text": "2",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Bia Mesquita",
+   "raw": 2.23
+  },
+  {
+   "id": "v162",
+   "text": "0",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Bia Mesquita",
+   "raw": 0.0
+  },
+  {
+   "id": "v163",
+   "text": "1.87",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 1.866
+  },
+  {
+   "id": "v164",
+   "text": "3.57",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 3.567
+  },
+  {
+   "id": "v165",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.3585
+  },
+  {
+   "id": "v166",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.75
+  },
+  {
+   "id": "v167",
    "text": "62%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "tdd"
+    "fighter": "Macy Chiasson",
+    "path": "grap.tdd"
    },
    "desc": "TD defence a",
    "raw": 0.625
   },
   {
-   "id": "v120",
+   "id": "v168",
    "text": "0%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "tdd"
+    "fighter": "Bia Mesquita",
+    "path": "grap.tdd"
    },
    "desc": "TD defence b",
    "raw": 0.0
   },
   {
-   "id": "v121",
+   "id": "v169",
    "text": "34%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "ctrlp"
+    "fighter": "Macy Chiasson",
+    "path": "grap.ctrl"
    },
-   "desc": "Control time a",
-   "raw": 0.3415193189259987
+   "desc": "Time in control a",
+   "raw": 0.3415
   },
   {
-   "id": "v122",
+   "id": "v170",
    "text": "54%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "ctrlp"
+    "fighter": "Bia Mesquita",
+    "path": "grap.ctrl"
    },
-   "desc": "Control time b",
-   "raw": 0.5429326287978864
+   "desc": "Time in control b",
+   "raw": 0.5429
   },
   {
-   "id": "v123",
-   "text": "27",
-   "fmt": "r0",
-   "rule": "fight",
+   "id": "v171",
+   "text": "+9.4%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.0941
+  },
+  {
+   "id": "v172",
+   "text": "+41.0%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.41
+  },
+  {
+   "id": "v173",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.2465
+  },
+  {
+   "id": "v174",
+   "text": "11%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.1149
+  },
+  {
+   "id": "v175",
+   "text": "0.39",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.393
+  },
+  {
+   "id": "v176",
+   "text": "3.57",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 3.567
+  },
+  {
+   "id": "v177",
+   "text": "+0.45",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Macy Chiasson",
+   "raw": 0.451
+  },
+  {
+   "id": "v178",
+   "text": "+3.25",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Bia Mesquita",
+   "raw": 3.25
+  },
+  {
+   "id": "v179",
+   "text": "+0.45",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.446
+  },
+  {
+   "id": "v180",
+   "text": "+3.08",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 3.078
+  },
+  {
+   "id": "v181",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Macy Chiasson",
+   "raw": 9
+  },
+  {
+   "id": "v182",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Macy Chiasson",
+   "raw": 14
+  },
+  {
+   "id": "v183",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Bia Mesquita",
+   "raw": 2
+  },
+  {
+   "id": "v184",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Bia Mesquita",
+   "raw": 3
+  },
+  {
+   "id": "v185",
+   "text": "+0.09",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 0.085
+  },
+  {
+   "id": "v186",
+   "text": "+3.33",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 3.329
+  },
+  {
+   "id": "v187",
+   "text": "+0.30",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.301
+  },
+  {
+   "id": "v188",
+   "text": "+0.00",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.0
+  },
+  {
+   "id": "v189",
+   "text": "+0.07",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.065
+  },
+  {
+   "id": "v190",
+   "text": "-0.08",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": -0.079
+  },
+  {
+   "id": "v191",
+   "text": "53%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.5312
+  },
+  {
+   "id": "v192",
+   "text": "73%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.7317
+  },
+  {
+   "id": "v193",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Bia Mesquita",
+   "raw": 3
+  },
+  {
+   "id": "v194",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Macy Chiasson",
+   "raw": 9
+  },
+  {
+   "id": "v195",
+   "text": "13",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Macy Chiasson",
+   "raw": 13
+  },
+  {
+   "id": "v196",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Bia Mesquita",
+   "raw": 2
+  },
+  {
+   "id": "v197",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Bia Mesquita",
+   "raw": 3
+  },
+  {
+   "id": "v198",
+   "text": "43%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
     "side": "a",
-    "i": 0,
-    "key": "fg"
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "macy-chiasson"
    },
-   "desc": "Fig Macy Chiasson Ailin Perez",
-   "raw": 27.4
+   "desc": "Output kept R3 a",
+   "raw": 0.433
   },
   {
-   "id": "v124",
+   "id": "v199",
+   "text": "10.9",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 10.907
+  },
+  {
+   "id": "v200",
+   "text": "4.2",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 4.206
+  },
+  {
+   "id": "v201",
+   "text": "14%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Macy Chiasson",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.1429
+  },
+  {
+   "id": "v202",
+   "text": "67%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.6667
+  },
+  {
+   "id": "v203",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -1541,20 +2503,7 @@
    "raw": 155
   },
   {
-   "id": "v125",
-   "text": "53",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Macy Chiasson Yana Santos",
-   "raw": 53.0
-  },
-  {
-   "id": "v126",
+   "id": "v204",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -1567,20 +2516,7 @@
    "raw": -204
   },
   {
-   "id": "v127",
-   "text": "21",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Macy Chiasson Ketlen Vieira",
-   "raw": 21.4
-  },
-  {
-   "id": "v128",
+   "id": "v205",
    "text": "-141",
    "fmt": "ml",
    "rule": "fight",
@@ -1593,20 +2529,7 @@
    "raw": -141
   },
   {
-   "id": "v129",
-   "text": "81",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 3,
-    "key": "fg"
-   },
-   "desc": "Fig Macy Chiasson Mayra Bueno Silva",
-   "raw": 80.7
-  },
-  {
-   "id": "v130",
+   "id": "v206",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -1619,20 +2542,7 @@
    "raw": -112
   },
   {
-   "id": "v131",
-   "text": "94",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 4,
-    "key": "fg"
-   },
-   "desc": "Fig Macy Chiasson Pannie Kianzad",
-   "raw": 93.8
-  },
-  {
-   "id": "v132",
+   "id": "v207",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -1645,20 +2555,33 @@
    "raw": -250
   },
   {
-   "id": "v133",
-   "text": "52",
-   "fmt": "r0",
+   "id": "v208",
+   "text": "+150",
+   "fmt": "ml",
    "rule": "fight",
    "args": {
-    "side": "b",
-    "i": 0,
-    "key": "fg"
+    "side": "a",
+    "i": 5,
+    "key": "od.mc"
    },
-   "desc": "Fig Bia Mesquita Melissa Mullins",
-   "raw": 51.6
+   "desc": "Close Macy Chiasson Irene Aldana",
+   "raw": 150
   },
   {
-   "id": "v134",
+   "id": "v209",
+   "text": "+185",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 6,
+    "key": "od.mc"
+   },
+   "desc": "Close Macy Chiasson Norma Dumont",
+   "raw": 185
+  },
+  {
+   "id": "v210",
    "text": "-667",
    "fmt": "ml",
    "rule": "fight",
@@ -1671,20 +2594,7 @@
    "raw": -667
   },
   {
-   "id": "v135",
-   "text": "101",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Bia Mesquita Montse Rendon",
-   "raw": 101.2
-  },
-  {
-   "id": "v136",
+   "id": "v211",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -1697,20 +2607,7 @@
    "raw": -714
   },
   {
-   "id": "v137",
-   "text": "94",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Bia Mesquita Irina Alekseeva",
-   "raw": 93.7
-  },
-  {
-   "id": "v138",
+   "id": "v212",
    "text": "-645",
    "fmt": "ml",
    "rule": "fight",
@@ -1721,34 +2618,7 @@
    },
    "desc": "Close Bia Mesquita Irina Alekseeva",
    "raw": -645
-  },
-  {
-   "id": "v139",
-   "text": "27.0%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sheet % (note)",
-   "raw": 0.2703440154109113
-  },
-  {
-   "id": "v140",
-   "text": "3.5",
-   "fmt": "pts",
-   "rule": "gap_pub_bp",
-   "args": {
-    "side": "a",
-    "market": "moneyline",
-    "label": "Macy Chiasson",
-    "other": "Bia Mesquita"
-   },
-   "desc": "Sheet vs BP gap",
-   "raw": -0.03454386973185364
   }
  ],
- "gaps": [
-  "Fight 3: BettingPros method_of_victory has unlabeled selections ['Macy Chiasson', 'Bia Mesquita']; not displayed."
- ]
+ "gaps": []
 }

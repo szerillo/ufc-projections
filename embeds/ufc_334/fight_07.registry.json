@@ -1,7 +1,10 @@
 {
  "fight": 7,
  "of": 13,
- "site_n": 7,
+ "site_pair": [
+  "Drew Dober",
+  "Chris Duncan"
+ ],
  "pair": [
   "Drew Dober",
   "Chris Duncan"
@@ -10,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -25,32 +28,6 @@
   },
   {
    "id": "v2",
-   "text": "1557",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "a.elo"
-   },
-   "desc": "Drew Dober Elo",
-   "raw": 1557
-  },
-  {
-   "id": "v3",
-   "text": "55.4",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "form.ra"
-   },
-   "desc": "Drew Dober Form Figure",
-   "raw": 55.4
-  },
-  {
-   "id": "v4",
    "text": "6-2-0",
    "fmt": "str",
    "rule": "record",
@@ -61,1178 +38,7 @@
    "raw": "6-2-0"
   },
   {
-   "id": "v5",
-   "text": "1576",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "b.elo"
-   },
-   "desc": "Chris Duncan Elo",
-   "raw": 1576
-  },
-  {
-   "id": "v6",
-   "text": "57.6",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "form.rb"
-   },
-   "desc": "Chris Duncan Form Figure",
-   "raw": 57.6
-  },
-  {
-   "id": "v7",
-   "text": "+170",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Drew Dober",
-   "raw": 0.3697886486555524
-  },
-  {
-   "id": "v8",
-   "text": "37.0%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean win % Drew Dober",
-   "raw": 0.3697886486555524
-  },
-  {
-   "id": "v9",
-   "text": "+142",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Drew Dober",
-    "field": "cost"
-   },
-   "desc": "BP ML now Drew Dober",
-   "raw": 142
-  },
-  {
-   "id": "v10",
-   "text": "39.5%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Drew Dober",
-    "other": "Christopher Duncan"
-   },
-   "desc": "BP ML no-vig Drew Dober",
-   "raw": 0.39521097291642454
-  },
-  {
-   "id": "v11",
-   "text": "+115",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Drew Dober",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Drew Dober",
-   "raw": 115
-  },
-  {
-   "id": "v12",
-   "text": "-170",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean ML Chris Duncan",
-   "raw": 0.6302113513444476
-  },
-  {
-   "id": "v13",
-   "text": "63.0%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean win % Chris Duncan",
-   "raw": 0.6302113513444476
-  },
-  {
-   "id": "v14",
-   "text": "-172",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Christopher Duncan",
-    "field": "cost"
-   },
-   "desc": "BP ML now Chris Duncan",
-   "raw": -172
-  },
-  {
-   "id": "v15",
-   "text": "60.5%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Christopher Duncan",
-    "other": "Drew Dober"
-   },
-   "desc": "BP ML no-vig Chris Duncan",
-   "raw": 0.6047890270835755
-  },
-  {
-   "id": "v16",
-   "text": "-145",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Christopher Duncan",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Chris Duncan",
-   "raw": -145
-  },
-  {
-   "id": "v17",
-   "text": "+1112",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Drew Dober",
-   "raw": 0.08252097893943151
-  },
-  {
-   "id": "v18",
-   "text": "8.3%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Drew Dober",
-   "raw": 0.08252097893943151
-  },
-  {
-   "id": "v19",
-   "text": "+1000",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Drew Dober Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Drew Dober",
-   "raw": 1000
-  },
-  {
-   "id": "v20",
-   "text": "7.5%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Drew Dober",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Drew Dober",
-   "raw": 0.07548711641313303
-  },
-  {
-   "id": "v21",
-   "text": "+950",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Drew Dober Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP dec open Drew Dober",
-   "raw": 950
-  },
-  {
-   "id": "v22",
-   "text": "+372",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Chris Duncan",
-   "raw": 0.21173879928129613
-  },
-  {
-   "id": "v23",
-   "text": "21.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Chris Duncan",
-   "raw": 0.21173879928129613
-  },
-  {
-   "id": "v24",
-   "text": "+440",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Christopher Duncan Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Chris Duncan",
-   "raw": 440
-  },
-  {
-   "id": "v25",
-   "text": "15.4%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Chris Duncan",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Chris Duncan",
-   "raw": 0.1537700519526784
-  },
-  {
-   "id": "v26",
-   "text": "+475",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Christopher Duncan Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP dec open Chris Duncan",
-   "raw": 475
-  },
-  {
-   "id": "v27",
-   "text": "+297",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Drew Dober",
-   "raw": 0.252201094372541
-  },
-  {
-   "id": "v28",
-   "text": "25.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Drew Dober",
-   "raw": 0.252201094372541
-  },
-  {
-   "id": "v29",
-   "text": "+192",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Drew Dober KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Drew Dober",
-   "raw": 192
-  },
-  {
-   "id": "v30",
-   "text": "28.4%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Drew Dober",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Drew Dober",
-   "raw": 0.28436927415906277
-  },
-  {
-   "id": "v31",
-   "text": "+185",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Drew Dober KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP ko open Drew Dober",
-   "raw": 185
-  },
-  {
-   "id": "v32",
-   "text": "+440",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Chris Duncan",
-   "raw": 0.18533636062266098
-  },
-  {
-   "id": "v33",
-   "text": "18.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Chris Duncan",
-   "raw": 0.18533636062266098
-  },
-  {
-   "id": "v34",
-   "text": "+292",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Christopher Duncan KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Chris Duncan",
-   "raw": 292
-  },
-  {
-   "id": "v35",
-   "text": "21.2%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Chris Duncan",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Chris Duncan",
-   "raw": 0.2118260919756284
-  },
-  {
-   "id": "v36",
-   "text": "+275",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Christopher Duncan KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP ko open Chris Duncan",
-   "raw": 275
-  },
-  {
-   "id": "v37",
-   "text": "+2752",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Drew Dober",
-   "raw": 0.03506657534357985
-  },
-  {
-   "id": "v38",
-   "text": "3.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Drew Dober",
-   "raw": 0.03506657534357985
-  },
-  {
-   "id": "v39",
-   "text": "+1800",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Drew Dober Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Drew Dober",
-   "raw": 1800
-  },
-  {
-   "id": "v40",
-   "text": "4.4%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Drew Dober",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Drew Dober",
-   "raw": 0.043703067397077015
-  },
-  {
-   "id": "v41",
-   "text": "+1800",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Drew Dober Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP sub open Drew Dober",
-   "raw": 1800
-  },
-  {
-   "id": "v42",
-   "text": "+329",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Chris Duncan",
-   "raw": 0.2331361914404905
-  },
-  {
-   "id": "v43",
-   "text": "23.3%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Chris Duncan",
-   "raw": 0.2331361914404905
-  },
-  {
-   "id": "v44",
-   "text": "+287",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Christopher Duncan Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Chris Duncan",
-   "raw": 287
-  },
-  {
-   "id": "v45",
-   "text": "21.5%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Chris Duncan",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Chris Duncan",
-   "raw": 0.2145628631897838
-  },
-  {
-   "id": "v46",
-   "text": "+300",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Christopher Duncan Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP sub open Chris Duncan",
-   "raw": 300
-  },
-  {
-   "id": "v47",
-   "text": "+248",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Drew Dober",
-   "raw": 0.2872676697161209
-  },
-  {
-   "id": "v48",
-   "text": "28.7%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Drew Dober",
-   "raw": 0.2872676697161209
-  },
-  {
-   "id": "v49",
-   "text": "+205",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Drew Dober"
-   },
-   "desc": "BP ITD fair ML Drew Dober",
-   "raw": 0.3280723415561398
-  },
-  {
-   "id": "v50",
-   "text": "32.8%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Drew Dober"
-   },
-   "desc": "BP ITD no-vig Drew Dober",
-   "raw": 0.3280723415561398
-  },
-  {
-   "id": "v51",
-   "text": "+139",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Chris Duncan",
-   "raw": 0.4184725520631515
-  },
-  {
-   "id": "v52",
-   "text": "41.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Chris Duncan",
-   "raw": 0.4184725520631515
-  },
-  {
-   "id": "v53",
-   "text": "+135",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Chris Duncan"
-   },
-   "desc": "BP ITD fair ML Chris Duncan",
-   "raw": 0.4263889551654122
-  },
-  {
-   "id": "v54",
-   "text": "42.6%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Chris Duncan"
-   },
-   "desc": "BP ITD no-vig Chris Duncan",
-   "raw": 0.4263889551654122
-  },
-  {
-   "id": "v55",
-   "text": "+240",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD fair ML",
-   "raw": 0.29425977822072763
-  },
-  {
-   "id": "v56",
-   "text": "29.4%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD %",
-   "raw": 0.29425977822072763
-  },
-  {
-   "id": "v57",
-   "text": "+277",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP GTD yes now",
-   "raw": 277
-  },
-  {
-   "id": "v58",
-   "text": "-400",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP GTD no now",
-   "raw": -400
-  },
-  {
-   "id": "v59",
-   "text": "24.9%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "other": "No"
-   },
-   "desc": "BP GTD no-vig",
-   "raw": 0.249003984063745
-  },
-  {
-   "id": "v60",
-   "text": "+280",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP GTD yes open",
-   "raw": 280
-  },
-  {
-   "id": "v61",
-   "text": "+138",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "odds.open.ma"
-   },
-   "desc": "OA open ML a",
-   "raw": 138
-  },
-  {
-   "id": "v62",
-   "text": "-163",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "odds.open.mb"
-   },
-   "desc": "OA open ML b",
-   "raw": -163
-  },
-  {
-   "id": "v63",
-   "text": "40.5%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "odds.open.p"
-   },
-   "desc": "OA open p",
-   "raw": 0.4048
-  },
-  {
-   "id": "v64",
-   "text": "+135",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "odds.close.ma"
-   },
-   "desc": "OA close ML a",
-   "raw": 135
-  },
-  {
-   "id": "v65",
-   "text": "-164",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "odds.close.mb"
-   },
-   "desc": "OA close ML b",
-   "raw": -164
-  },
-  {
-   "id": "v66",
-   "text": "40.7%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "odds.close.p"
-   },
-   "desc": "OA close p",
-   "raw": 0.407
-  },
-  {
-   "id": "v67",
-   "text": "0.2",
-   "fmt": "pts",
-   "rule": "oa_drift",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7
-   },
-   "desc": "OA drift pts",
-   "raw": 0.0021999999999999797
-  },
-  {
-   "id": "v68",
-   "text": "+139",
-   "fmt": "ml",
-   "rule": "oa_best",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "side": "a"
-   },
-   "desc": "OA best a",
-   "raw": 139
-  },
-  {
-   "id": "v69",
-   "text": "-154",
-   "fmt": "ml",
-   "rule": "oa_best",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "side": "b"
-   },
-   "desc": "OA best b",
-   "raw": -154
-  },
-  {
-   "id": "v70",
-   "text": "+115",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Drew Dober",
-    "field": "opening_cost"
-   },
-   "desc": "BP open a (move)",
-   "raw": 115
-  },
-  {
-   "id": "v71",
-   "text": "+142",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Drew Dober",
-    "field": "cost"
-   },
-   "desc": "BP now a (move)",
-   "raw": 142
-  },
-  {
-   "id": "v72",
-   "text": "-145",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Christopher Duncan",
-    "field": "opening_cost"
-   },
-   "desc": "BP open b (move)",
-   "raw": -145
-  },
-  {
-   "id": "v73",
-   "text": "-172",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Christopher Duncan",
-    "field": "cost"
-   },
-   "desc": "BP now b (move)",
-   "raw": -172
-  },
-  {
-   "id": "v74",
-   "text": "140",
-   "fmt": "int",
-   "rule": "oa_len",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7
-   },
-   "desc": "Chart points",
-   "raw": 140
-  },
-  {
-   "id": "v75",
-   "text": "448",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
-    "path": "odds.n"
-   },
-   "desc": "Snapshots",
-   "raw": 448
-  },
-  {
-   "id": "v76",
-   "text": "-159",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending KO/TKO/DQ",
-   "raw": -159
-  },
-  {
-   "id": "v77",
-   "text": "-130",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending KO/TKO/DQ",
-   "raw": -130
-  },
-  {
-   "id": "v78",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ"
-   },
-   "desc": "BP implied fight_ending KO/TKO/DQ",
-   "raw": 0.5652173913043478
-  },
-  {
-   "id": "v79",
-   "text": "+235",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Submission",
-   "raw": 235
-  },
-  {
-   "id": "v80",
-   "text": "+230",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Submission",
-   "raw": 230
-  },
-  {
-   "id": "v81",
-   "text": "30%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission"
-   },
-   "desc": "BP implied fight_ending Submission",
-   "raw": 0.30303030303030304
-  },
-  {
-   "id": "v82",
-   "text": "+300",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Points",
-   "raw": 300
-  },
-  {
-   "id": "v83",
-   "text": "+275",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Points",
-   "raw": 275
-  },
-  {
-   "id": "v84",
-   "text": "27%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points"
-   },
-   "desc": "BP implied fight_ending Points",
-   "raw": 0.26666666666666666
-  },
-  {
-   "id": "v85",
-   "text": "+280",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance Yes",
-   "raw": 280
-  },
-  {
-   "id": "v86",
-   "text": "+277",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance Yes",
-   "raw": 277
-  },
-  {
-   "id": "v87",
-   "text": "27%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes"
-   },
-   "desc": "BP implied fight_distance Yes",
-   "raw": 0.26525198938992045
-  },
-  {
-   "id": "v88",
-   "text": "-435",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance No",
-   "raw": -435
-  },
-  {
-   "id": "v89",
-   "text": "-400",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance No",
-   "raw": -400
-  },
-  {
-   "id": "v90",
-   "text": "80%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No"
-   },
-   "desc": "BP implied fight_distance No",
-   "raw": 0.8
-  },
-  {
-   "id": "v91",
-   "text": "1.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Over",
-   "raw": 1.5
-  },
-  {
-   "id": "v92",
-   "text": "-130",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Over",
-   "raw": -130
-  },
-  {
-   "id": "v93",
-   "text": "-124",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Over",
-   "raw": -124
-  },
-  {
-   "id": "v94",
-   "text": "55%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over"
-   },
-   "desc": "BP implied total_rounds Over",
-   "raw": 0.5535714285714286
-  },
-  {
-   "id": "v95",
-   "text": "1.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Under",
-   "raw": 1.5
-  },
-  {
-   "id": "v96",
-   "text": "+100",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Under",
-   "raw": 100
-  },
-  {
-   "id": "v97",
-   "text": "-103",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Under",
-   "raw": -103
-  },
-  {
-   "id": "v98",
-   "text": "51%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under"
-   },
-   "desc": "BP implied total_rounds Under",
-   "raw": 0.5073891625615764
-  },
-  {
-   "id": "v99",
+   "id": "v3",
    "text": "38.1",
    "fmt": "n1",
    "rule": "age",
@@ -1243,7 +49,7 @@
    "raw": 38.06981519507187
   },
   {
-   "id": "v100",
+   "id": "v4",
    "text": "33.5",
    "fmt": "n1",
    "rule": "age",
@@ -1254,29 +60,7 @@
    "raw": 33.51403148528405
   },
   {
-   "id": "v101",
-   "text": "70\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Reach a",
-   "raw": 70
-  },
-  {
-   "id": "v102",
-   "text": "71\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Reach b",
-   "raw": 71
-  },
-  {
-   "id": "v103",
+   "id": "v5",
    "text": "5'8\"",
    "fmt": "str",
    "rule": "bio",
@@ -1288,7 +72,7 @@
    "raw": "5'8\""
   },
   {
-   "id": "v104",
+   "id": "v6",
    "text": "5'10\"",
    "fmt": "str",
    "rule": "bio",
@@ -1300,7 +84,29 @@
    "raw": "5'10\""
   },
   {
-   "id": "v105",
+   "id": "v7",
+   "text": "70\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 70
+  },
+  {
+   "id": "v8",
+   "text": "71\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 71
+  },
+  {
+   "id": "v9",
    "text": "Southpaw",
    "fmt": "str",
    "rule": "bio",
@@ -1312,7 +118,7 @@
    "raw": "Southpaw"
   },
   {
-   "id": "v106",
+   "id": "v10",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1324,234 +130,2881 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v107",
-   "text": "27",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v11",
+   "text": "+197",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "UFC fights a",
-   "raw": 27
+   "desc": "Model ML Drew Dober",
+   "raw": 0.33674858119816237
   },
   {
-   "id": "v108",
-   "text": "8",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v12",
+   "text": "33.7%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Drew Dober",
+   "raw": 0.33674858119816237
+  },
+  {
+   "id": "v13",
+   "text": "+155",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Drew Dober",
+   "raw": 155
+  },
+  {
+   "id": "v14",
+   "text": "39.2%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Drew Dober",
+   "raw": 0.39215686274509803
+  },
+  {
+   "id": "v15",
+   "text": "+150",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Drew Dober",
+    "field": "cost"
+   },
+   "desc": "Market ML Drew Dober",
+   "raw": 150
+  },
+  {
+   "id": "v16",
+   "text": "40.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Drew Dober"
+   },
+   "desc": "Market implied Drew Dober",
+   "raw": 0.4
+  },
+  {
+   "id": "v17",
+   "text": "-5.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v12",
+     "v14"
+    ]
+   },
+   "desc": "Edge ML Drew Dober",
+   "raw": -0.05540828154693567
+  },
+  {
+   "id": "v18",
+   "text": "-197",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "UFC fights b",
+   "desc": "Model ML Chris Duncan",
+   "raw": 0.6632514188018377
+  },
+  {
+   "id": "v19",
+   "text": "66.3%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Chris Duncan",
+   "raw": 0.6632514188018377
+  },
+  {
+   "id": "v20",
+   "text": "-185",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Chris Duncan",
+   "raw": -185
+  },
+  {
+   "id": "v21",
+   "text": "64.9%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Chris Duncan",
+   "raw": 0.6491228070175439
+  },
+  {
+   "id": "v22",
+   "text": "-188",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Christopher Duncan",
+    "field": "cost"
+   },
+   "desc": "Market ML Chris Duncan",
+   "raw": -188
+  },
+  {
+   "id": "v23",
+   "text": "65.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Christopher Duncan"
+   },
+   "desc": "Market implied Chris Duncan",
+   "raw": 0.6527777777777778
+  },
+  {
+   "id": "v24",
+   "text": "+1.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v19",
+     "v21"
+    ]
+   },
+   "desc": "Edge ML Chris Duncan",
+   "raw": 0.01412861178429381
+  },
+  {
+   "id": "v25",
+   "text": "+238",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.2958276862382322
+  },
+  {
+   "id": "v26",
+   "text": "29.6%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.2958276862382322
+  },
+  {
+   "id": "v27",
+   "text": "+308",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD price",
+   "raw": 0.24480678926049396
+  },
+  {
+   "id": "v28",
+   "text": "24.5%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD %",
+   "raw": 0.24480678926049396
+  },
+  {
+   "id": "v29",
+   "text": "+277",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": 277
+  },
+  {
+   "id": "v30",
+   "text": "26.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.26525198938992045
+  },
+  {
+   "id": "v31",
+   "text": "+5.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v26",
+     "v28"
+    ]
+   },
+   "desc": "Edge GTD vs listed",
+   "raw": 0.051020896977738234
+  },
+  {
+   "id": "v32",
+   "text": "-238",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.7041723137617678
+  },
+  {
+   "id": "v33",
+   "text": "70.4%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.7041723137617678
+  },
+  {
+   "id": "v34",
+   "text": "-400",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market ITD no",
+   "raw": -400
+  },
+  {
+   "id": "v35",
+   "text": "80.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market ITD implied",
+   "raw": 0.8
+  },
+  {
+   "id": "v36",
+   "text": "-9.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v33",
+     "v35"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.09582768623823223
+  },
+  {
+   "id": "v37",
+   "text": "+1245",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Drew Dober",
+   "raw": 0.0743430201859801
+  },
+  {
+   "id": "v38",
+   "text": "7.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Drew Dober",
+   "raw": 0.0743430201859801
+  },
+  {
+   "id": "v39",
+   "text": "+1050",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Drew Dober",
+   "raw": 1050
+  },
+  {
+   "id": "v40",
+   "text": "8.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober Points"
+   },
+   "desc": "Market dec implied Drew Dober",
+   "raw": 0.08695652173913043
+  },
+  {
+   "id": "v41",
+   "text": "-1.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v38",
+     "v40"
+    ]
+   },
+   "desc": "Edge dec Drew Dober",
+   "raw": -0.01261350155315033
+  },
+  {
+   "id": "v42",
+   "text": "+334",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Drew Dober",
+   "raw": 0.23067223228213918
+  },
+  {
+   "id": "v43",
+   "text": "23.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Drew Dober",
+   "raw": 0.23067223228213918
+  },
+  {
+   "id": "v44",
+   "text": "+212",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Drew Dober",
+   "raw": 212
+  },
+  {
+   "id": "v45",
+   "text": "32.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Drew Dober",
+   "raw": 0.32051282051282054
+  },
+  {
+   "id": "v46",
+   "text": "-9.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v43",
+     "v45"
+    ]
+   },
+   "desc": "Edge ko Drew Dober",
+   "raw": -0.08984058823068136
+  },
+  {
+   "id": "v47",
+   "text": "+3051",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Drew Dober",
+   "raw": 0.03173332873004309
+  },
+  {
+   "id": "v48",
+   "text": "3.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Drew Dober",
+   "raw": 0.03173332873004309
+  },
+  {
+   "id": "v49",
+   "text": "+2000",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Drew Dober",
+   "raw": 2000
+  },
+  {
+   "id": "v50",
+   "text": "4.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Drew Dober Submission"
+   },
+   "desc": "Market sub implied Drew Dober",
+   "raw": 0.047619047619047616
+  },
+  {
+   "id": "v51",
+   "text": "-1.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v48",
+     "v50"
+    ]
+   },
+   "desc": "Edge sub Drew Dober",
+   "raw": -0.01588571888900453
+  },
+  {
+   "id": "v52",
+   "text": "+281",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Drew Dober",
+   "raw": 0.26240556101218226
+  },
+  {
+   "id": "v53",
+   "text": "26.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Drew Dober",
+   "raw": 0.26240556101218226
+  },
+  {
+   "id": "v54",
+   "text": "36.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Drew Dober KO/TKO/DQ",
+     "Drew Dober Submission"
+    ]
+   },
+   "desc": "Market ITD implied Drew Dober",
+   "raw": 0.36813186813186816
+  },
+  {
+   "id": "v55",
+   "text": "-10.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v53",
+     "v54"
+    ]
+   },
+   "desc": "Edge itd Drew Dober",
+   "raw": -0.10572630711968589
+  },
+  {
+   "id": "v56",
+   "text": "+351",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Chris Duncan",
+   "raw": 0.2214846660522521
+  },
+  {
+   "id": "v57",
+   "text": "22.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Chris Duncan",
+   "raw": 0.2214846660522521
+  },
+  {
+   "id": "v58",
+   "text": "+410",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Chris Duncan",
+   "raw": 410
+  },
+  {
+   "id": "v59",
+   "text": "19.6%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan Points"
+   },
+   "desc": "Market dec implied Chris Duncan",
+   "raw": 0.19607843137254902
+  },
+  {
+   "id": "v60",
+   "text": "+2.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v57",
+     "v59"
+    ]
+   },
+   "desc": "Edge dec Chris Duncan",
+   "raw": 0.02540623467970307
+  },
+  {
+   "id": "v61",
+   "text": "+414",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Chris Duncan",
+   "raw": 0.19463690562312125
+  },
+  {
+   "id": "v62",
+   "text": "19.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Chris Duncan",
+   "raw": 0.19463690562312125
+  },
+  {
+   "id": "v63",
+   "text": "+278",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Chris Duncan",
+   "raw": 278
+  },
+  {
+   "id": "v64",
+   "text": "26.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Chris Duncan",
+   "raw": 0.26455026455026454
+  },
+  {
+   "id": "v65",
+   "text": "-7.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v62",
+     "v64"
+    ]
+   },
+   "desc": "Edge ko Chris Duncan",
+   "raw": -0.06991335892714329
+  },
+  {
+   "id": "v66",
+   "text": "+305",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Chris Duncan",
+   "raw": 0.24712984712646435
+  },
+  {
+   "id": "v67",
+   "text": "24.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Chris Duncan",
+   "raw": 0.24712984712646435
+  },
+  {
+   "id": "v68",
+   "text": "+264",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Chris Duncan",
+   "raw": 264
+  },
+  {
+   "id": "v69",
+   "text": "27.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Christopher Duncan Submission"
+   },
+   "desc": "Market sub implied Chris Duncan",
+   "raw": 0.27472527472527475
+  },
+  {
+   "id": "v70",
+   "text": "-2.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v67",
+     "v69"
+    ]
+   },
+   "desc": "Edge sub Chris Duncan",
+   "raw": -0.027595427598810396
+  },
+  {
+   "id": "v71",
+   "text": "+126",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Chris Duncan",
+   "raw": 0.4417667527495856
+  },
+  {
+   "id": "v72",
+   "text": "44.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Chris Duncan",
+   "raw": 0.4417667527495856
+  },
+  {
+   "id": "v73",
+   "text": "53.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Christopher Duncan KO/TKO/DQ",
+     "Christopher Duncan Submission"
+    ]
+   },
+   "desc": "Market ITD implied Chris Duncan",
+   "raw": 0.5392755392755393
+  },
+  {
+   "id": "v74",
+   "text": "-9.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v72",
+     "v73"
+    ]
+   },
+   "desc": "Edge itd Chris Duncan",
+   "raw": -0.09750878652595368
+  },
+  {
+   "id": "v75",
+   "text": "-164",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
+    "side": "b"
+   },
+   "desc": "LH open ML Chris Duncan",
+   "raw": -164
+  },
+  {
+   "id": "v76",
+   "text": "2.5",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.024999999999999967
+  },
+  {
+   "id": "v77",
+   "text": "59.3%",
+   "fmt": "pct1",
+   "rule": "lh_p",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
+    "side": "b",
+    "at": "open"
+   },
+   "desc": "LH open p Chris Duncan",
+   "raw": 0.593
+  },
+  {
+   "id": "v78",
+   "text": "61.8%",
+   "fmt": "pct1",
+   "rule": "lh_p",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
+    "side": "b",
+    "at": "current"
+   },
+   "desc": "LH current p Chris Duncan",
+   "raw": 0.618
+  },
+  {
+   "id": "v79",
+   "text": "63%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "target.head"
+   },
+   "desc": "Target head Drew Dober",
+   "raw": 0.6318
+  },
+  {
+   "id": "v80",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "target.body"
+   },
+   "desc": "Target body Drew Dober",
+   "raw": 0.2264
+  },
+  {
+   "id": "v81",
+   "text": "14%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Drew Dober",
+   "raw": 0.1419
+  },
+  {
+   "id": "v82",
+   "text": "60%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "target.head"
+   },
+   "desc": "Target head Chris Duncan",
+   "raw": 0.6044
+  },
+  {
+   "id": "v83",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "target.body"
+   },
+   "desc": "Target body Chris Duncan",
+   "raw": 0.2274
+  },
+  {
+   "id": "v84",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Chris Duncan",
+   "raw": 0.1682
+  },
+  {
+   "id": "v85",
+   "text": "27",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 27
+  },
+  {
+   "id": "v86",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
    "raw": 8
   },
   {
-   "id": "v109",
-   "text": "4.48",
-   "fmt": "n2",
-   "rule": "stat",
+   "id": "v87",
+   "text": "57%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "slpm"
+    "fighter": "Drew Dober",
+    "path": "power_w"
    },
-   "desc": "SLpM a",
-   "raw": 4.479158843409689
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.5744
+  },
+  {
+   "id": "v88",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 2
+  },
+  {
+   "id": "v89",
+   "text": "12",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 12
+  },
+  {
+   "id": "v90",
+   "text": "32%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.3168
+  },
+  {
+   "id": "v91",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 2
+  },
+  {
+   "id": "v92",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 2
+  },
+  {
+   "id": "v93",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2309
+  },
+  {
+   "id": "v94",
+   "text": "21%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.2077
+  },
+  {
+   "id": "v95",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 1
+  },
+  {
+   "id": "v96",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 3
+  },
+  {
+   "id": "v97",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.0
+  },
+  {
+   "id": "v98",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v99",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 0
+  },
+  {
+   "id": "v100",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.2582
+  },
+  {
+   "id": "v101",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Drew Dober",
+   "raw": 11
+  },
+  {
+   "id": "v102",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Drew Dober",
+   "raw": 3
+  },
+  {
+   "id": "v103",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Drew Dober",
+   "raw": 4
+  },
+  {
+   "id": "v104",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "outcomes.l.sub"
+   },
+   "desc": "Outcome lsub Drew Dober",
+   "raw": 4
+  },
+  {
+   "id": "v105",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Chris Duncan",
+   "raw": 3
+  },
+  {
+   "id": "v106",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Chris Duncan",
+   "raw": 3
+  },
+  {
+   "id": "v107",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "outcomes.l.sub"
+   },
+   "desc": "Outcome lsub Chris Duncan",
+   "raw": 2
+  },
+  {
+   "id": "v108",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Drew Dober",
+   "raw": 0.5556
+  },
+  {
+   "id": "v109",
+   "text": "+0.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Drew Dober",
+   "raw": 0.066
   },
   {
    "id": "v110",
-   "text": "4.60",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "27",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "slpm"
+    "fighter": "Drew Dober",
+    "path": "rounds.0.fights"
    },
-   "desc": "SLpM b",
-   "raw": 4.6010511227902535
+   "desc": "R1 fights Drew Dober",
+   "raw": 27
   },
   {
    "id": "v111",
-   "text": "4.33",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "47%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "sapm"
+    "fighter": "Drew Dober",
+    "path": "rounds.1.won"
    },
-   "desc": "SApM a",
-   "raw": 4.325948178745776
+   "desc": "R2 won Drew Dober",
+   "raw": 0.4706
   },
   {
    "id": "v112",
-   "text": "4.23",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "+0.8",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "sapm"
+    "fighter": "Drew Dober",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "SApM b",
-   "raw": 4.228380315336837
+   "desc": "R2 diff Drew Dober",
+   "raw": 0.752
   },
   {
    "id": "v113",
-   "text": "+0.15",
-   "fmt": "s2",
-   "rule": "stat",
+   "text": "17",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "diff"
+    "fighter": "Drew Dober",
+    "path": "rounds.1.fights"
    },
-   "desc": "Strike diff /min a",
-   "raw": 0.1532106646639129
+   "desc": "R2 fights Drew Dober",
+   "raw": 17
   },
   {
    "id": "v114",
-   "text": "+0.37",
-   "fmt": "s2",
-   "rule": "stat",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "diff"
+    "fighter": "Drew Dober",
+    "path": "rounds.2.won"
    },
-   "desc": "Strike diff /min b",
-   "raw": 0.37267080745341613
+   "desc": "R3 won Drew Dober",
+   "raw": 0.3636
   },
   {
    "id": "v115",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "-0.7",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "acc"
+    "fighter": "Drew Dober",
+    "path": "rounds.2.diff_pm"
    },
-   "desc": "Strike accuracy a",
-   "raw": 0.4102352455633512
+   "desc": "R3 diff Drew Dober",
+   "raw": -0.71
   },
   {
    "id": "v116",
-   "text": "46%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "acc"
+    "fighter": "Drew Dober",
+    "path": "rounds.2.fights"
    },
-   "desc": "Strike accuracy b",
-   "raw": 0.4618705035971223
+   "desc": "R3 fights Drew Dober",
+   "raw": 11
   },
   {
    "id": "v117",
-   "text": "53%",
+   "text": "50%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "dfn"
+    "fighter": "Chris Duncan",
+    "path": "rounds.0.won"
    },
-   "desc": "Strike defence a",
-   "raw": 0.530791788856305
+   "desc": "R1 won Chris Duncan",
+   "raw": 0.5
   },
   {
    "id": "v118",
-   "text": "52%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "-0.2",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "dfn"
+    "fighter": "Chris Duncan",
+    "path": "rounds.0.diff_pm"
    },
-   "desc": "Strike defence b",
-   "raw": 0.5234248788368336
+   "desc": "R1 diff Chris Duncan",
+   "raw": -0.213
   },
   {
    "id": "v119",
-   "text": "0.61",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "td15"
+    "fighter": "Chris Duncan",
+    "path": "rounds.0.fights"
    },
-   "desc": "Takedowns /15 a",
-   "raw": 0.6083364626361246
+   "desc": "R1 fights Chris Duncan",
+   "raw": 8
   },
   {
    "id": "v120",
-   "text": "2.80",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "60%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "td15"
+    "fighter": "Chris Duncan",
+    "path": "rounds.1.won"
    },
-   "desc": "Takedowns /15 b",
-   "raw": 2.795031055900621
+   "desc": "R2 won Chris Duncan",
+   "raw": 0.6
   },
   {
    "id": "v121",
-   "text": "58%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "+0.0",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "tdd"
+    "fighter": "Chris Duncan",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "TD defence a",
-   "raw": 0.582089552238806
+   "desc": "R2 diff Chris Duncan",
+   "raw": 0.0
   },
   {
    "id": "v122",
-   "text": "56%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "tdd"
+    "fighter": "Chris Duncan",
+    "path": "rounds.1.fights"
    },
-   "desc": "TD defence b",
-   "raw": 0.5555555555555556
+   "desc": "R2 fights Chris Duncan",
+   "raw": 5
   },
   {
    "id": "v123",
-   "text": "13%",
+   "text": "100%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "ctrlp"
+    "fighter": "Chris Duncan",
+    "path": "rounds.2.won"
    },
-   "desc": "Control time a",
-   "raw": 0.1321066466391288
+   "desc": "R3 won Chris Duncan",
+   "raw": 1.0
   },
   {
    "id": "v124",
-   "text": "22%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "+2.2",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "ctrlp"
+    "fighter": "Chris Duncan",
+    "path": "rounds.2.diff_pm"
    },
-   "desc": "Control time b",
-   "raw": 0.21834687052078355
+   "desc": "R3 diff Chris Duncan",
+   "raw": 2.2
   },
   {
    "id": "v125",
-   "text": "87",
-   "fmt": "r0",
-   "rule": "fight",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "i": 0,
-    "key": "fg"
+    "fighter": "Chris Duncan",
+    "path": "rounds.2.fights"
    },
-   "desc": "Fig Drew Dober Michael Johnson",
-   "raw": 86.9
+   "desc": "R3 fights Chris Duncan",
+   "raw": 3
   },
   {
    "id": "v126",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 0",
+   "raw": -7
+  },
+  {
+   "id": "v127",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 1",
+   "raw": 11
+  },
+  {
+   "id": "v128",
+   "text": "-20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 2",
+   "raw": -20
+  },
+  {
+   "id": "v129",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 3",
+   "raw": 4
+  },
+  {
+   "id": "v130",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 4",
+   "raw": 0
+  },
+  {
+   "id": "v131",
+   "text": "+25",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 5",
+   "raw": 25
+  },
+  {
+   "id": "v132",
+   "text": "-15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 6",
+   "raw": -15
+  },
+  {
+   "id": "v133",
+   "text": "-22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 7",
+   "raw": -22
+  },
+  {
+   "id": "v134",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 8",
+   "raw": 0
+  },
+  {
+   "id": "v135",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 9",
+   "raw": -19
+  },
+  {
+   "id": "v136",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 10",
+   "raw": 4
+  },
+  {
+   "id": "v137",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 11",
+   "raw": 2
+  },
+  {
+   "id": "v138",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 12",
+   "raw": 8
+  },
+  {
+   "id": "v139",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 13",
+   "raw": 6
+  },
+  {
+   "id": "v140",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.14.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 14",
+   "raw": 11
+  },
+  {
+   "id": "v141",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.15.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 15",
+   "raw": 4
+  },
+  {
+   "id": "v142",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.16.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 16",
+   "raw": 7
+  },
+  {
+   "id": "v143",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.17.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 17",
+   "raw": 13
+  },
+  {
+   "id": "v144",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.18.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 18",
+   "raw": 4
+  },
+  {
+   "id": "v145",
+   "text": "-11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.19.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 19",
+   "raw": -11
+  },
+  {
+   "id": "v146",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.20.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 20",
+   "raw": 10
+  },
+  {
+   "id": "v147",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.21.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 21",
+   "raw": 1
+  },
+  {
+   "id": "v148",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.22.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 22",
+   "raw": -1
+  },
+  {
+   "id": "v149",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.23.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 23",
+   "raw": -4
+  },
+  {
+   "id": "v150",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.24.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 24",
+   "raw": 1
+  },
+  {
+   "id": "v151",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.25.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 25",
+   "raw": -2
+  },
+  {
+   "id": "v152",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.26.rw.0.2"
+   },
+   "desc": "R1 fight diff Drew Dober 26",
+   "raw": -3
+  },
+  {
+   "id": "v153",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 0",
+   "raw": 2
+  },
+  {
+   "id": "v154",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 1",
+   "raw": 8
+  },
+  {
+   "id": "v155",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 3",
+   "raw": -1
+  },
+  {
+   "id": "v156",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 4",
+   "raw": 4
+  },
+  {
+   "id": "v157",
+   "text": "-17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 7",
+   "raw": -17
+  },
+  {
+   "id": "v158",
+   "text": "+17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 8",
+   "raw": 17
+  },
+  {
+   "id": "v159",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 10",
+   "raw": -6
+  },
+  {
+   "id": "v160",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 11",
+   "raw": -7
+  },
+  {
+   "id": "v161",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.12.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 12",
+   "raw": 19
+  },
+  {
+   "id": "v162",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.15.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 15",
+   "raw": -10
+  },
+  {
+   "id": "v163",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.16.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 16",
+   "raw": 10
+  },
+  {
+   "id": "v164",
+   "text": "+30",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.17.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 17",
+   "raw": 30
+  },
+  {
+   "id": "v165",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.19.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 19",
+   "raw": 8
+  },
+  {
+   "id": "v166",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.21.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 21",
+   "raw": 1
+  },
+  {
+   "id": "v167",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.23.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 23",
+   "raw": 1
+  },
+  {
+   "id": "v168",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.25.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 25",
+   "raw": 11
+  },
+  {
+   "id": "v169",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.26.rw.1.2"
+   },
+   "desc": "R2 fight diff Drew Dober 26",
+   "raw": -14
+  },
+  {
+   "id": "v170",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 1",
+   "raw": 13
+  },
+  {
+   "id": "v171",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 3",
+   "raw": 3
+  },
+  {
+   "id": "v172",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 4",
+   "raw": -4
+  },
+  {
+   "id": "v173",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 8",
+   "raw": 8
+  },
+  {
+   "id": "v174",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.10.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 10",
+   "raw": -14
+  },
+  {
+   "id": "v175",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.11.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 11",
+   "raw": 0
+  },
+  {
+   "id": "v176",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.16.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 16",
+   "raw": 10
+  },
+  {
+   "id": "v177",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.17.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 17",
+   "raw": -4
+  },
+  {
+   "id": "v178",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.21.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 21",
+   "raw": -4
+  },
+  {
+   "id": "v179",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.25.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 25",
+   "raw": -10
+  },
+  {
+   "id": "v180",
+   "text": "-27",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "fights.26.rw.2.2"
+   },
+   "desc": "R3 fight diff Drew Dober 26",
+   "raw": -27
+  },
+  {
+   "id": "v181",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Chris Duncan 0",
+   "raw": 3
+  },
+  {
+   "id": "v182",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Chris Duncan 1",
+   "raw": 7
+  },
+  {
+   "id": "v183",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Chris Duncan 2",
+   "raw": -13
+  },
+  {
+   "id": "v184",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Chris Duncan 3",
+   "raw": 8
+  },
+  {
+   "id": "v185",
+   "text": "-18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Chris Duncan 4",
+   "raw": -18
+  },
+  {
+   "id": "v186",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Chris Duncan 5",
+   "raw": -2
+  },
+  {
+   "id": "v187",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Chris Duncan 6",
+   "raw": 10
+  },
+  {
+   "id": "v188",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Chris Duncan 7",
+   "raw": -2
+  },
+  {
+   "id": "v189",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Chris Duncan 0",
+   "raw": 3
+  },
+  {
+   "id": "v190",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Chris Duncan 2",
+   "raw": -13
+  },
+  {
+   "id": "v191",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Chris Duncan 3",
+   "raw": -9
+  },
+  {
+   "id": "v192",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Chris Duncan 6",
+   "raw": 12
+  },
+  {
+   "id": "v193",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Chris Duncan 7",
+   "raw": 7
+  },
+  {
+   "id": "v194",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Chris Duncan 2",
+   "raw": 4
+  },
+  {
+   "id": "v195",
+   "text": "+28",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Chris Duncan 6",
+   "raw": 28
+  },
+  {
+   "id": "v196",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Chris Duncan 7",
+   "raw": 1
+  },
+  {
+   "id": "v197",
+   "text": "+0.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "Trend R1 Drew Dober",
+   "raw": 0.066
+  },
+  {
+   "id": "v198",
+   "text": "+0.8",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "Trend R2 Drew Dober",
+   "raw": 0.752
+  },
+  {
+   "id": "v199",
+   "text": "-0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "Trend R3 Drew Dober",
+   "raw": -0.71
+  },
+  {
+   "id": "v200",
+   "text": "-0.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "Trend R1 Chris Duncan",
+   "raw": -0.213
+  },
+  {
+   "id": "v201",
+   "text": "+0.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "Trend R2 Chris Duncan",
+   "raw": 0.0
+  },
+  {
+   "id": "v202",
+   "text": "+2.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "Trend R3 Chris Duncan",
+   "raw": 2.2
+  },
+  {
+   "id": "v203",
+   "text": "0.61",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 0.608
+  },
+  {
+   "id": "v204",
+   "text": "2.79",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 2.795
+  },
+  {
+   "id": "v205",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.1698
+  },
+  {
+   "id": "v206",
+   "text": "41%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.4062
+  },
+  {
+   "id": "v207",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.5821
+  },
+  {
+   "id": "v208",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.5556
+  },
+  {
+   "id": "v209",
+   "text": "13%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.1321
+  },
+  {
+   "id": "v210",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.2183
+  },
+  {
+   "id": "v211",
+   "text": "-9.0%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": -0.0897
+  },
+  {
+   "id": "v212",
+   "text": "+12.2%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.1218
+  },
+  {
+   "id": "v213",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.2209
+  },
+  {
+   "id": "v214",
+   "text": "10%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.097
+  },
+  {
+   "id": "v215",
+   "text": "0.07",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.068
+  },
+  {
+   "id": "v216",
+   "text": "0.65",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.645
+  },
+  {
+   "id": "v217",
+   "text": "+0.15",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Drew Dober",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Drew Dober",
+   "raw": 0.15300000000000002
+  },
+  {
+   "id": "v218",
+   "text": "+0.37",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Chris Duncan",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Chris Duncan",
+   "raw": 0.372
+  },
+  {
+   "id": "v219",
+   "text": "+0.15",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.148
+  },
+  {
+   "id": "v220",
+   "text": "+0.37",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 0.373
+  },
+  {
+   "id": "v221",
+   "text": "12",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Drew Dober",
+   "raw": 12
+  },
+  {
+   "id": "v222",
+   "text": "27",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Drew Dober",
+   "raw": 27
+  },
+  {
+   "id": "v223",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Chris Duncan",
+   "raw": 4
+  },
+  {
+   "id": "v224",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Chris Duncan",
+   "raw": 8
+  },
+  {
+   "id": "v225",
+   "text": "-0.24",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": -0.239
+  },
+  {
+   "id": "v226",
+   "text": "-0.33",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": -0.33
+  },
+  {
+   "id": "v227",
+   "text": "+0.13",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.126
+  },
+  {
+   "id": "v228",
+   "text": "+0.56",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.559
+  },
+  {
+   "id": "v229",
+   "text": "+0.27",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.266
+  },
+  {
+   "id": "v230",
+   "text": "+0.14",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": 0.143
+  },
+  {
+   "id": "v231",
+   "text": "59%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.5917
+  },
+  {
+   "id": "v232",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.5827
+  },
+  {
+   "id": "v233",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Drew Dober",
+   "raw": 4
+  },
+  {
+   "id": "v234",
+   "text": "15",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Drew Dober",
+   "raw": 15
+  },
+  {
+   "id": "v235",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Chris Duncan",
+   "raw": 4
+  },
+  {
+   "id": "v236",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Chris Duncan",
+   "raw": 8
+  },
+  {
+   "id": "v237",
+   "text": "104%",
+   "fmt": "pct0",
+   "rule": "labs",
+   "args": {
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "drew-dober"
+   },
+   "desc": "Output kept R3 a",
+   "raw": 1.038
+  },
+  {
+   "id": "v238",
+   "text": "125%",
+   "fmt": "pct0",
+   "rule": "labs",
+   "args": {
+    "side": "b",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "chris-duncan"
+   },
+   "desc": "Output kept R3 b",
+   "raw": 1.253
+  },
+  {
+   "id": "v239",
+   "text": "8.2",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 8.237
+  },
+  {
+   "id": "v240",
+   "text": "8.7",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 8.721
+  },
+  {
+   "id": "v241",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.3846
+  },
+  {
+   "id": "v242",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.375
+  },
+  {
+   "id": "v243",
+   "text": "44%",
+   "fmt": "pct0",
+   "rule": "labs_wf",
+   "args": {
+    "key": "lost1_won3"
+   },
+   "desc": "Spot comeback won3",
+   "raw": 0.435
+  },
+  {
+   "id": "v244",
+   "text": "35%",
+   "fmt": "pct0",
+   "rule": "labs_wf",
+   "args": {
+    "key": "base_lost1_won3"
+   },
+   "desc": "Spot comeback base",
+   "raw": 0.347
+  },
+  {
+   "id": "v245",
+   "text": "432",
+   "fmt": "int",
+   "rule": "labs_wf",
+   "args": {
+    "key": "lost1_n"
+   },
+   "desc": "Spot comeback n",
+   "raw": 432
+  },
+  {
+   "id": "v246",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1564,20 +3017,7 @@
    "raw": -208
   },
   {
-   "id": "v127",
-   "text": "76",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Drew Dober Kyle Prepolec",
-   "raw": 76.1
-  },
-  {
-   "id": "v128",
+   "id": "v247",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -1590,20 +3030,7 @@
    "raw": -328
   },
   {
-   "id": "v129",
-   "text": "7",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Drew Dober Manuel Torres",
-   "raw": 7.2
-  },
-  {
-   "id": "v130",
+   "id": "v248",
    "text": "+105",
    "fmt": "ml",
    "rule": "fight",
@@ -1616,20 +3043,7 @@
    "raw": 105
   },
   {
-   "id": "v131",
-   "text": "46",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 3,
-    "key": "fg"
-   },
-   "desc": "Fig Drew Dober Jean Silva",
-   "raw": 45.5
-  },
-  {
-   "id": "v132",
+   "id": "v249",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -1642,20 +3056,7 @@
    "raw": 100
   },
   {
-   "id": "v133",
-   "text": "29",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 4,
-    "key": "fg"
-   },
-   "desc": "Fig Drew Dober Renato Moicano",
-   "raw": 29.2
-  },
-  {
-   "id": "v134",
+   "id": "v250",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -1668,20 +3069,72 @@
    "raw": 170
   },
   {
-   "id": "v135",
-   "text": "19",
-   "fmt": "r0",
+   "id": "v251",
+   "text": "-417",
+   "fmt": "ml",
    "rule": "fight",
    "args": {
-    "side": "b",
-    "i": 0,
-    "key": "fg"
+    "side": "a",
+    "i": 5,
+    "key": "od.mc"
    },
-   "desc": "Fig Chris Duncan Renato Moicano",
-   "raw": 19.2
+   "desc": "Close Drew Dober Ricky Glenn",
+   "raw": -417
   },
   {
-   "id": "v136",
+   "id": "v252",
+   "text": "-222",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 6,
+    "key": "od.mc"
+   },
+   "desc": "Close Drew Dober Matt Frevola",
+   "raw": -222
+  },
+  {
+   "id": "v253",
+   "text": "-156",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 7,
+    "key": "od.mc"
+   },
+   "desc": "Close Drew Dober King Green",
+   "raw": -156
+  },
+  {
+   "id": "v254",
+   "text": "-169",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 8,
+    "key": "od.mc"
+   },
+   "desc": "Close Drew Dober Rafael Alves",
+   "raw": -169
+  },
+  {
+   "id": "v255",
+   "text": "-161",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 9,
+    "key": "od.mc"
+   },
+   "desc": "Close Drew Dober Terrance McKinney",
+   "raw": -161
+  },
+  {
+   "id": "v256",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -1694,20 +3147,7 @@
    "raw": -132
   },
   {
-   "id": "v137",
-   "text": "108",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Chris Duncan Terrance McKinney",
-   "raw": 108.2
-  },
-  {
-   "id": "v138",
+   "id": "v257",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -1720,20 +3160,7 @@
    "raw": -112
   },
   {
-   "id": "v139",
-   "text": "57",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Chris Duncan Mateusz Rebecki",
-   "raw": 56.8
-  },
-  {
-   "id": "v140",
+   "id": "v258",
    "text": "+190",
    "fmt": "ml",
    "rule": "fight",
@@ -1746,20 +3173,7 @@
    "raw": 190
   },
   {
-   "id": "v141",
-   "text": "95",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 3,
-    "key": "fg"
-   },
-   "desc": "Fig Chris Duncan Jordan Vucenic",
-   "raw": 94.7
-  },
-  {
-   "id": "v142",
+   "id": "v259",
    "text": "+310",
    "fmt": "ml",
    "rule": "fight",
@@ -1772,20 +3186,7 @@
    "raw": 310
   },
   {
-   "id": "v143",
-   "text": "53",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 4,
-    "key": "fg"
-   },
-   "desc": "Fig Chris Duncan Bolaji Oki",
-   "raw": 52.6
-  },
-  {
-   "id": "v144",
+   "id": "v260",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -1798,32 +3199,31 @@
    "raw": 155
   },
   {
-   "id": "v145",
-   "text": "37.0%",
-   "fmt": "pct1",
-   "rule": "pub_win",
+   "id": "v261",
+   "text": "+145",
+   "fmt": "ml",
+   "rule": "fight",
    "args": {
-    "side": "a"
+    "side": "b",
+    "i": 5,
+    "key": "od.mc"
    },
-   "desc": "Sheet % (note)",
-   "raw": 0.3697886486555524
+   "desc": "Close Chris Duncan Manuel Torres",
+   "raw": 145
   },
   {
-   "id": "v146",
-   "text": "2.5",
-   "fmt": "pts",
-   "rule": "gap_pub_bp",
+   "id": "v262",
+   "text": "-110",
+   "fmt": "ml",
+   "rule": "fight",
    "args": {
-    "side": "a",
-    "market": "moneyline",
-    "label": "Drew Dober",
-    "other": "Christopher Duncan"
+    "side": "b",
+    "i": 7,
+    "key": "od.mc"
    },
-   "desc": "Sheet vs BP gap",
-   "raw": -0.025422324260872153
+   "desc": "Close Chris Duncan Omar Morales",
+   "raw": -110
   }
  ],
- "gaps": [
-  "Fight 7: BettingPros method_of_victory has unlabeled selections ['Christopher Duncan', 'Drew Dober']; not displayed."
- ]
+ "gaps": []
 }

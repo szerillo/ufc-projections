@@ -1,0 +1,9 @@
+both listed (72 vs 66)     reach term in _vec = +6.0; contribution to logit = +0.1577
+A missing                  reach term in _vec = +0.0; contribution to logit = +0.0000
+B missing                  reach term in _vec = +0.0; contribution to logit = +0.0000
+both missing               reach term in _vec = +0.0; contribution to logit = +0.0000
+equal reach (69 vs 69)     reach term in _vec = +0.0; contribution to logit = +0.0000
+=> a missing reach on either side zeroes the term: the model reads it as EQUAL reach (no default value, no imputation).
+Training uses the same _vec on every past fight (FormModel._fit_walk_forward -> _vec(f['_A'], f['_B'])), so missing reach
+was also read as equal in training; the fitted reach weight and its sd include those zero rows. Same rule both ways.
+all UFCStats bouts: 9015; bouts with at least one reach missing in the source: 1224 (13.6%) (all years; training uses 2010+)

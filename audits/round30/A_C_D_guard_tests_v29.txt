@@ -1,0 +1,26 @@
+PASS T0 control: 13 on ufc.com, prices moved, no warning | D 210
+PASS T1 Nov 12 case: dropped on ufc.com, BFO lists it -> row kept untouched | Jared Gordon / Melquizael Costa / 200
+PASS T1 count drop is the alert's first line | !!! ufc.com now lists 12 bouts for this card; the last load had 13. ufc.com may be mid-edit: check every row below before publishing.
+PASS T1 the other 12 rows refreshed
+PASS T2 only Novig lists it -> kept
+PASS T3 cancelled, BFO still lists it, no override -> refused
+PASS T3 override "Costa" -> removed | Prelims row 5: Jared Gordon vs Melquizael Costa is no longer on this tab (moved or cancelled) — names cleared.
+PASS T3 next refresh: no repeat warning
+PASS T4 cancelled, on no source -> cleared, count drop warned
+PASS T4 warned once
+PASS T5 override is per bout (Gordon-Costa removed, Almeida-Johnson still held)
+PASS A1 BFO down (HTTP 503) + bout dropped -> REFUSED, nothing written | !!! REFUSED, source unreachable: BestFightOdds failed or returned no page for this card. Nothing was written; every row and price is as it was. Refres
+PASS A2 BFO returns an empty page -> REFUSED, nothing written
+PASS A3 BFO down, nothing dropped -> still nothing written (no blank prices)
+PASS A4 Novig down (timeout), BFO no longer lists it -> REFUSED, row kept | !!! Prelims row 5: Jared Gordon vs Melquizael Costa is missing from ufc.com but still listed on an unreachable source (Novig: failed or empty, so not 
+PASS A5 Novig returns no events -> REFUSED, row kept
+PASS A6 both down -> REFUSED, nothing written
+PASS C1 override with a wrong name ("Costas") -> nothing removed | !!! ufc.com now lists 12 bouts for this card; the last load had 13. ufc.com may be mid-edit: check every row below before publishing.
+PASS C2 shared name ("Costa": Melquizael Costa and Cesar Costa) -> nothing removed | !!! ufc.com now lists 12 bouts for this card; the last load had 13. ufc.com may be mid-edit: check every row below before publishing.
+PASS C3 same card, full name "Melquizael Costa" -> exactly that bout removed
+PASS C4 override names a bout still on ufc.com -> nothing removed, said so
+PASS C5 a fragment ("ost") matches no whole name -> nothing removed
+PASS D1 BFO page id changes (BFO re-files the card as 4499) + count drop -> still warned | !!! ufc.com now lists 12 bouts for this card; the last load had 13. ufc.com may be mid-edit: check every row below before publishing.
+PASS D2 bout moved to another card (Novig lists it under the other event) -> refused + count warned; override clears it
+PASS D3 one bout added and one dropped (count stays 13) -> count line silent, row-level refusal still fires
+Code_v2.9_guard.gs: 25/25 pass

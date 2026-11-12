@@ -1,0 +1,9 @@
+Kirk round 27 D: a 390 px embed upgrade from a tool no 334 embed uses yet (Markov round/method, or props).
+Bar (stated here; the published Brier scores below were already public on the Model page when it was written): the tool's
+own graded record must be at least as good as the closing market on the same fights, at least 50 graded fights.
+Published grading (form/data/model.json "sheet", 8 cards):
+  Moneyline Brier: Markov 0.2432 (86) vs closing line 0.2216 (86)            -> worse
+  Goes the distance Brier: Markov P(dec) 0.2190 (76) vs closing GTD 0.1923 (76) -> worse
+  Markov round distribution: no graded record                                   -> cannot pass
+  Props (sig strikes, takedowns): no graded record against a market             -> cannot pass
+Result: nothing passes. No embed ships this round. (Markov also stays off embeds per Kirk round 9.)

@@ -34,6 +34,9 @@ BOOK_ORDER = ["pinnacle", "draftkings", "fanduel", "betmgm", "williamhill_us", "
 BOOK_LABEL = {"pinnacle": "Pinnacle", "draftkings": "DraftKings", "fanduel": "FanDuel", "betmgm": "BetMGM",
               "williamhill_us": "Caesars", "betrivers": "BetRivers", "betonlineag": "BetOnline", "lowvig": "LowVig",
               "bovada": "Bovada", "circasports": "Circa"}
+# Kirk round 17 call 1: neutral public keys and labels for the non-US books (index.json "books", research.json "books")
+PUBLIC_BOOK_KEY = {"pinnacle": "nonus_a", "betonlineag": "nonus_b", "lowvig": "nonus_c", "bovada": "nonus_d"}
+PUBLIC_BOOK_LABEL = {PUBLIC_BOOK_KEY.get(k, k): ("Non-US book " + PUBLIC_BOOK_KEY[k][-1].upper() if k in PUBLIC_BOOK_KEY else v) for k, v in BOOK_LABEL.items()}
 
 
 # ----------------------------------------------------------------- helpers
@@ -71,6 +74,11 @@ def name_match(a: str, b: str) -> int:
     if not ta or not tb:
         return 0
     if ta == tb:
+        return 2
+    # Block 59m: same name once spaces are removed, in either token order ("Heili Alateng" = "Alatengheili")
+    import itertools
+    ja, jb = na.replace(" ", ""), nb.replace(" ", "")
+    if ja == jb or any("".join(p) == jb for p in itertools.permutations(na.split())) or any("".join(p) == ja for p in itertools.permutations(nb.split())):
         return 2
     la, lb = na.split()[-1], nb.split()[-1]
     if la in tb or lb in ta:
@@ -294,8 +302,31 @@ def load_odds(cache: Path):
     return by_id
 
 
-def summarize_odds(snaps, flipped, max_points=140, a_name=None):
-    """Build open/close/series from snapshots. Probabilities are for fighter A (flipped => A is 'away')."""
+_CLOSE_FIXES = None
+
+
+def close_fix(a, b, date):
+    """Kirk round 14: hand-fixed bouts in data/odds_close_fixes.json -> 'before' time (str) or None. Two bouts only."""
+    global _CLOSE_FIXES
+    if _CLOSE_FIXES is None:
+        p_ = REPO / "data" / "odds_close_fixes.json"
+        _CLOSE_FIXES = json.load(open(p_)).get("fixes", []) if p_.exists() else []
+    for x in _CLOSE_FIXES:
+        if str(date) == x["date"] and pair_match(a, b, x["a"], x["b"])[0] >= 2:
+            x["_used"] = x.get("_used", 0) + 1
+            return x["before"]
+    return None
+
+
+def close_fixes_unused():
+    """Kirk round 15 B: every hand fix must match exactly one bout in the build, or the build stops (a renamed fighter or a
+    wrong date would otherwise drop the fix silently)."""
+    return [f'{x["a"]} vs {x["b"]} {x["date"]} (matched {x.get("_used", 0)})' for x in (_CLOSE_FIXES or []) if x.get("_used", 0) != 1]
+
+
+def summarize_odds(snaps, flipped, max_points=140, a_name=None, close_before=None):
+    """Build open/close/series from snapshots. Probabilities are for fighter A (flipped => A is 'away').
+    close_before: hand fix only (data/odds_close_fixes.json); the published close and chart use snapshots strictly before it."""
     start = snaps[-1]["start"]
     pre = [s for s in snaps if s["t"] <= start] or snaps
     pts = []
@@ -349,7 +380,39 @@ def summarize_odds(snaps, flipped, max_points=140, a_name=None):
                       r3(pts[i]["per"]["pinnacle"][0]) if "pinnacle" in pts[i]["per"] else None,
                       r3(pts[i]["per"]["draftkings"][0]) if "draftkings" in pts[i]["per"] else None,
                       r3(pts[i]["per"]["fanduel"][0]) if "fanduel" in pts[i]["per"] else None] for i in idx]
+    # Kirk round 12 (Consensus_US_PREREG sha cbb10eb9): the PUBLISHED current line and chart use US-regulated books only;
+    # the opener keeps every listed book. Research keeps the all-books close above. public_odds() builds the published block.
+    rp = []
+    for pt in pts:
+        rg = [v for b, v in pt["per"].items() if b in US_REGULATED]
+        if rg:
+            rp.append({"t": pt["t"], "p": statistics.median(v[0] for v in rg), "da": statistics.median(v[1] for v in rg),
+                       "db": statistics.median(v[2] for v in rg), "nb": len(rg), "per": {b: v for b, v in pt["per"].items() if b in US_REGULATED}})
+    rp = [x for x in rp if x["t"] >= o["t"]]
+    if close_before:
+        rp = [x for x in rp if x["t"][:19] < close_before[:19]]
+    ridx = list(range(len(rp)))
+    if len(ridx) > max_points:
+        st_ = (len(ridx) - 1) / (max_points - 1); ridx = sorted({round(i * st_) for i in range(max_points)})
+    out["_reg"] = {"close": pack(rp[-1]) if rp else None,
+                   "books": {b: {"p": r3(v[0]), "ma": dec_to_american(v[1]), "mb": dec_to_american(v[2])} for b, v in rp[-1]["per"].items()} if rp else {},
+                   "series": [[o["t"][:16], r3(o["p"]), None, None, None]] + [[rp[i]["t"][:16], r3(rp[i]["p"]),
+                              None, r3(rp[i]["per"]["draftkings"][0]) if "draftkings" in rp[i]["per"] else None,
+                              r3(rp[i]["per"]["fanduel"][0]) if "fanduel" in rp[i]["per"] else None] for i in ridx]}
     return out
+
+
+US_REGULATED = ("draftkings", "fanduel", "betmgm", "williamhill_us", "betrivers", "circasports")
+
+
+def public_odds(o):
+    """The odds block as published: opener (all books), current/close and chart from US-regulated books only (no close if none)."""
+    if not o or "_reg" not in o:
+        return o
+    r = o["_reg"]; pub = {"open": o["open"], "n": o.get("n"), "start": o.get("start"), "books": r["books"], "series": r["series"], "close_src": "us_regulated"}
+    if r["close"]:
+        pub["close"] = r["close"]
+    return pub
 
 
 def index_odds(by_id):
@@ -715,7 +778,7 @@ def write_model_compare(doc, pending=None, bp_fights=None):
         r.update({"bp_open_ml": [a_.get("open"), b_.get("open")], "bp_open_p": _nv(a_.get("open"), b_.get("open")),
                   "bp_now_ml": [a_.get("cons"), b_.get("cons")], "bp_now_p": _nv(a_.get("cons"), b_.get("cons"))})
         if od:
-            r.update({"oa_open_p": od["open"]["p"], "oa_open_t": od["open"]["t"], "oa_close_p": od["close"]["p"], "oa_close_t": od["close"]["t"],
+            r.update({"oa_open_p": od["open"]["p"], "oa_open_t": od["open"]["t"], "oa_close_p": (od.get("close") or {}).get("p"), "oa_close_t": (od.get("close") or {}).get("t"),
                       "oa_close_is_final": doc.get("status") == "final"})
         for bf in bp_fights or []:
             if pair_match_sq(bf["fighter_a"]["name"], bf["fighter_b"]["name"], an, bn)[0] >= 1:
@@ -788,11 +851,14 @@ def main():
             total22 += 1
             eid, fl = find_odds(oidx, by_id, f["a"], f["b"], e["date"])
             if eid:
-                o = summarize_odds(by_id[eid], fl, a_name=f["a"])
+                o = summarize_odds(by_id[eid], fl, a_name=f["a"], close_before=close_fix(f["a"], f["b"], e["date"]))
                 if o:
                     f["odds"] = o
                     matched += 1
     print(f"  odds matched to {matched}/{total22} UFC fights since 2022")
+    close_fix("", "", None)   # loads data/odds_close_fixes.json even when no 2022+ bout reached it
+    if close_fixes_unused():
+        sys.exit("odds_close_fixes.json: fix not applied to exactly one bout: " + "; ".join(close_fixes_unused()))
 
     print("loading model widgets…")
     widgets = load_widgets()
@@ -1005,7 +1071,7 @@ def main():
              "stats": {"a": f["sa"], "b": f["sb"]}, "url": f["url"]}
         for k in ("odds", "model", "bp", "sheet", "markov", "props"):
             if f.get(k):
-                o[k] = f[k]
+                o[k] = public_odds(f[k]) if k == "odds" else f[k]
         o["form"] = {"p": r3(f.get("fl")), "g": r3(f.get("gl")), "base": r3(f.get("_base")),
                      "ra": round(f["_A"]["fig"], 1), "rb": round(f["_B"]["fig"], 1), "ang": f.get("_angles") or {}}
         if f.get("ms"):
@@ -1084,7 +1150,15 @@ def main():
                 o = summarize_odds(by_id[eid], fl, a_name=fa["name"])
                 if o:
                     fobj["odds"] = o
-            sched_u = 5 if bf["n"] == max(x["n"] for x in d["fights"]) else 3
+            # Kirk round 12 (Form_Fix_PREREG sha d78b86a2): five rounds if the bout is a title fight (card_overrides title list,
+            # from UFC.com) or the main event; it used to be the main event only, so a title co-main was built as 3 rounds
+            ovr_t = (card_overrides.load(slug) or {}).get("title", [])
+            is_title = any(card_overrides.bout_is(an, bn, x_, y_) for x_, y_ in ovr_t)
+            # Kirk round 13 (call 2): UFCStats shows "Time format" only for completed bouts (past Form already reads it from
+            # ufc_fight_results.csv); upcoming fight-details pages have none, so a non-title five-round bout needs the card flag
+            # "five_rounds": [["A", "B"], ...] in data/card_overrides.json, sourced from UFC.com. Empty for UFC 334.
+            is_5r = any(card_overrides.bout_is(an, bn, x_, y_) for x_, y_ in (card_overrides.load(slug) or {}).get("five_rounds", []))
+            sched_u = 5 if (is_title or is_5r or bf["n"] == max(x["n"] for x in d["fights"])) else 3
             fobj["sched"] = sched_u
             try:
                 pw, pg, SA, SB, base = FM.predict(fa["name"], fb["name"], edate, wcl, sched_u, fa["elo"], fb["elo"])
@@ -1140,6 +1214,7 @@ def main():
                     fobj["markov"] = {"p": round((100 - m_["shrunk"]) / 100 if fl else m_["shrunk"] / 100, 4), "raw": round((100 - m_["raw"]) / 100 if fl else m_["raw"] / 100, 4),
                                       "dec": round(m_["pdec"] / 100, 4), "exp": m_["exp"], "r": m_["r"], "thin": thin, "thin_why": why, "flags": m_.get("flags")}
                     break
+            if fobj.get("odds"): fobj["odds"] = public_odds(fobj["odds"])   # Consensus_US_PREREG
             fo.append(fobj)
         name = d.get("card") or slug
         eslug = f"{edate.isoformat()}-{slugify(name)}"[:90]
@@ -1281,10 +1356,13 @@ def main():
         return {"n": len(rs), "w": w_, "pnl": round(pn, 2), "risk": round(rk, 2)}
     model["splits"] = {"Favorites": split([x for x in recs if (x["ml"] or 0) < 0]), "Underdogs": split([x for x in recs if (x["ml"] or 0) > 0])}
     json.dump(model, open(OUT / "model.json", "w"), separators=(",", ":"))
+    # Kirk round 17 call 1: public files never name a non-US book; internal keys stay in code, public keys are neutral
+    if R.get("books"):
+        R["books"]["rows"] = [dict(x, book=PUBLIC_BOOK_KEY.get(x["book"], x["book"])) for x in R["books"]["rows"]]
     json.dump(R, open(OUT / "research.json", "w"), separators=(",", ":"))
 
     json.dump({"built": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z", "upcoming": up_index, "events": index_events,
-               "books": BOOK_LABEL, "k": R["k"],
+               "books": PUBLIC_BOOK_LABEL, "k": R["k"],
                "angles": {a["id"]: [a["name"], a["n"], a["act"], a["exp"], a["roi_c"], a["z"]] for a in R["angles"]}, "counts": {"events": len(events), "fights": sum(len(e["fights"]) for e in events.values()),
                                               "fighters": len(fighters), "odds_fights": matched}},
               open(OUT / "index.json", "w"), separators=(",", ":"))

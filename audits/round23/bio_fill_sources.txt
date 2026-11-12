@@ -1,0 +1,11 @@
+UFC.com athlete pages read 2026-11-12 ~18:10Z in Sean's Chrome (same-origin fetch, bio fields):
+bilal-hasan  | Reach=70.00 | Height=67.00 | no stance field (only "Fighting style"); 0 stance words on the page
+bia-mesquita | Reach=67.50 | Height=66.00 | no stance field
+juan-diaz    | Reach=69.50 | Height=68.50 | no stance field
+UFCStats live (round 22 A): Hasan 70" Switch; Mesquita 67"; Diaz 69" Orthodox.
+Decision under Bio_Fill_PREREG (sha 0dfde4ba084a, written 18:05Z before these reads):
+  Hasan reach      70 vs 70.00 -> equal -> FILL 70
+  Hasan stance     UFC.com has none -> blank, "not listed"
+  Mesquita reach   67 vs 67.50 -> differ -> blank, "not listed"
+  Diaz reach       69 vs 69.50 -> differ -> blank, "not listed"
+  Diaz stance      UFC.com has none -> blank, "not listed"

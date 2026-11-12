@@ -1,0 +1,49 @@
+PASS T0 control: 13 on ufc.com, prices moved, no warning | D 210
+FAIL T1 Nov 12 case: dropped on ufc.com, BFO lists it -> row kept untouched |  /  / 
+FAIL T1 count drop is the alert's first line | UFC 334: Gane vs. Hokit (2026-11-14) loaded: 5 main / 7 prelim fights.
+PASS T1 the other 12 rows refreshed
+FAIL T2 only Novig lists it -> kept
+FAIL T3 cancelled, BFO still lists it, no override -> refused
+FAIL T3 override "Costa" -> removed
+PASS T3 next refresh: no repeat warning
+FAIL T4 cancelled, on no source -> cleared, count drop warned
+PASS T4 warned once
+FAIL T5 override is per bout (Gordon-Costa removed, Almeida-Johnson still held)
+FAIL A1 BFO down (HTTP 503) + bout dropped -> REFUSED, nothing written | UFC 334: Gane vs. Hokit (2026-11-14) loaded: 5 main / 7 prelim fights.
+FAIL A2 BFO returns an empty page -> REFUSED, nothing written
+FAIL A3 BFO down, nothing dropped -> still nothing written (no blank prices)
+FAIL A4 Novig down (timeout), BFO no longer lists it -> REFUSED, row kept | Prelims row 5: Jared Gordon vs Melquizael Costa is no longer on this tab (moved or cancelled) — names cleared.
+FAIL A5 Novig returns no events -> REFUSED, row kept
+FAIL A6 both down -> REFUSED, nothing written
+FAIL C1 override with a wrong name ("Costas") -> nothing removed | UFC 334: Gane vs. Hokit (2026-11-14) loaded: 5 main / 7 prelim fights.
+FAIL C2 shared name ("Costa": Melquizael Costa and Cesar Costa) -> nothing removed | UFC 334: Gane vs. Hokit (2026-11-14) loaded: 5 main / 7 prelim fights.
+PASS C3 same card, full name "Melquizael Costa" -> exactly that bout removed
+FAIL C4 override names a bout still on ufc.com -> nothing removed, said so
+FAIL C5 a fragment ("ost") matches no whole name -> nothing removed
+FAIL D1 BFO page id changes (BFO re-files the card as 4499) + count drop -> still warned | UFC 334: Gane vs. Hokit (2026-11-14) loaded: 5 main / 7 prelim fights.
+FAIL D2 bout moved to another card (Novig lists it under the other event) -> refused + count warned; override clears it
+FAIL D3 one bout added and one dropped (count stays 13) -> count line silent, row-level refusal still fires
+Code_v2.8_patched.gs: 5/25 pass
+IDENTICAL  bf25704be100 bf25704be100  imp_
+IDENTICAL  20fa72cc302a 20fa72cc302a  toAmer_
+IDENTICAL  529efc5eab38 529efc5eab38  median_
+IDENTICAL  606c654cdddc 606c654cdddc  validOdds_
+IDENTICAL  b336e31e3f0a b336e31e3f0a  payout_
+IDENTICAL  60b736debfc4 60b736debfc4  included_
+IDENTICAL  e861e7d2ba97 e861e7d2ba97  bettable_
+IDENTICAL  6e4e62f3dbc5 6e4e62f3dbc5  devig2_
+IDENTICAL  dcfcc4057d96 dcfcc4057d96  wmedian_
+IDENTICAL  473ed12e50f6 473ed12e50f6  exchFair_
+IDENTICAL  5380d96bd108 5380d96bd108  outliers_
+IDENTICAL  d489fa02e19d d489fa02e19d  fmtOutl_
+IDENTICAL  b8fa1588ee7b b8fa1588ee7b  writeCalculator_
+IDENTICAL  44eb6f597461 44eb6f597461  constants (EXCLUDE/EXCHANGE/OUTLIER/BETTABLE)
+IDENTICAL  ab2a6c28d471 ab2a6c28d471  buildCard_ D/I best-price block (exRef .. bestPrice)
+IDENTICAL  ba1e6e92981f ba1e6e92981f  buildCard_ consensus + props (inc .. propStat return)
+IDENTICAL  70973e5b987e 70973e5b987e  writeTab_ D/I/S/T writers
+price/TRAP code: byte-identical
+exch fair dog 0.2364 ( Polymarket+Kalshi+Novig ) | D 300 FanDuel | I -350 BetRivers
+PASS OUT-2 Gordon: D +300 FanDuel (Caesars +420 excluded), I -350 BetRivers
+PASS OUT-2 all books TRAP -> null (loader falls back to consensus)
+Code28.gs BFO down, all 13 on ufc.com: Prelims D rows 2-5 before 200,200,200,200 after "","","","" | main D "" | alert: UFC 334: Gane vs. Hokit (2026-11-14) loaded: 5 main / 8 prelim fights.
+Code_v2.9_guard.gs BFO down, all 13 on ufc.com: Prelims D rows 2-5 before 200,200,200,200 after 200,200,200,200 | main D 200 | alert: !!! REFUSED, source unreachable: BestFightOdds failed or returned no page for this card. N

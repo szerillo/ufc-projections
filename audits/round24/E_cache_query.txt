@@ -1,0 +1,5 @@
+Live GitHub Pages, 2026-11-12T18:30:11Z: does a unique query string bypass the edge cache?
+cache-control: max-age=600  age: 14  x-cache: HIT  x-cache-hits: 1   <- no query
+cache-control: max-age=600  age: 14  x-cache: HIT  x-cache-hits: 1   <- ?cb=1238916431
+cache-control: max-age=600  age: 15  x-cache: HIT  x-cache-hits: 2   <- ?t=1794508211195861517
+cache-control: max-age=600  age: 15  x-cache: HIT  x-cache-hits: 1   <- ?cb=1357418841

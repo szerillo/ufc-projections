@@ -1,0 +1,20 @@
+Challenge A: round 20's check 2 skipped shared names, so it could not catch a wrong namesake. All 30 bouts since 2022 with a
+shared UFCStats name were read from their UFCStats fight-details pages (fighter link IDs, Sean's Chrome): ns_ids.txt.
+Live fighter-details pages for the namesake IDs (read the same way):
+  4419acb81e6f0ea4 Anthony Romero  66" Southpaw, DOB --          (the one who fought McGhee 2026-10-03)
+  6f81399074fcdbba Anthony Romero  70" Orthodox, Feb 25 1997      (row the build used)
+  fb3e61720be4690c Mike Davis      72" Orthodox, Oct 07 1992      (the one in all 5 bouts)
+  c8661e204c66f325 Mike Davis      blank                          (row the build used)
+  12ebd7d157e91701 Bruno Silva     74" Orthodox, Jul 13 1989      (middleweight; 9 bouts)
+  294aa73dbf37d281 Bruno Silva     65" Orthodox, Mar 16 1990      (flyweight; 6 bouts; row the build used)
+  52ef95b5860fb28c Jean Silva      69" Orthodox, Dec 13 1996 live (Dec 27 1996 in the cache); all 8 bouts
+  9211aae062b799d6 Jean Silva      -- Orthodox, Oct 08 1977       (row the build used: Jean Silva aged ~47 in the build)
+Five hand-checked bouts (fight page ID -> right row -> what the build got wrong):
+  1. 2026-10-03 McGhee vs Anthony Romero: 4419acb8 (Southpaw). Build: Orthodox, born 1997 -> missed southpaw, wrongly in
+     younger5 and vs_36 for Romero.
+  2. 2024-03-16 Natan Levy vs Mike Davis: fb3e6172 (Orthodox). Build: blank stance -> missed Levy in southpaw.
+  3. 2025-04-12 Bryce Mitchell vs Jean Silva: 52ef95b5 (born 1996). Build: born 1977 -> Silva wrongly age37, Mitchell
+     wrongly younger5 and vs_36.
+  4. 2024-10-26 Naurdiev vs Bruno Silva: 12ebd7d1 (74"). Build: 65" -> Naurdiev wrongly in reach4.
+  5. 2024-07-20 Cody Durden vs Bruno Silva: 294aa73d (65"). Build used the right row here (no change).
+Totals: build used the wrong row in 23 of 30 bouts; 36 bio-angle memberships change (namesake_effect.txt); southpaw +2 bouts.

@@ -1,0 +1,30 @@
+Kirk round 28 C: the 15 record mismatches of round 27, bout by bout (UFCStats fight-details IDs).
+Live: each of the 26 fighters' UFCStats fighter-details page, fight table rows with a fight-details link (completed bouts),
+read 2026-11-12 ~19:50Z in Sean's Chrome (same-origin fetch, 300 ms apart). 311 rows. Rows per fighter ID:
+{"787bb1f087ccff8a":14,"955da1675ad58a50":5,"1af1170ed937cba7":3,"80fa8218c99f9c58":20,"4126a78111c0855a":11,"7674b836ce0698a0":5,"681399317dbf4701":12,"3a46b268013afede":30,"5182316da3c1d891":2,"29162be25ebef5f0":6,"4a28cb716c19157a":22,"feedf3053472fe56":7,"519e4fe37ce9ff75":28,"fd406a32a6fb3a29":10,"d1941565abf50b16":47,"809bd1a871491508":15,"ad5cb64af10fc946":4,"64d47ef881a437a4":7,"7026eca45f65377b":18,"20bccc9bb4ceb23e":10,"9cdd2da1a9104a0b":14,"eff9074bc066f0f2":3,"1897b7b913736a7c":10,"74939a16c7b56f33":2,"d9a56ecb6e94f02e":5,"438d497617ecb16e":1}
+Ours: fight-details IDs in each fighter file before 2026-11-14 (C_our_fight_ids.json, 25 files, 292 IDs; Samuel Sanches has no file).
+Set difference by fight-details ID, both directions:
+OURS_ONLY (in our file, not on UFCStats): 0
+LIVE_ONLY (on UFCStats, not in our file): 19
+  Josh Hokit        14e38ffd7086d350 win  DWCS 9.2                                Aug 19 2025
+  Amanda Nunes      d9f2f676ed000cd5 loss Strikeforce - Barnett vs. Kharitonov     Sep 10 2011
+  Amanda Nunes      9576b7596f944613 win  Strikeforce Challengers 13               Jan 07 2011
+  Caio Borralho     0038ba8c2f4f0ab1 win  DWCS 5.8                                Oct 19 2021
+  Caio Borralho     bb4afeeecf63ea38 win  DWCS 5.5                                Sep 28 2021
+  Yousri Belgaroui  216607cb1a08c3aa win  DWCS 8.5                                Sep 10 2024
+  Yousri Belgaroui  e22e05aee76cbc2d loss DWCS 7.4                                Aug 29 2023
+  Uros Medic        a4a6288767ff97ed win  DWCS 4.1                                Aug 04 2020
+  Kevin Holland     5f5b80aac7893eaf win  DWCS 2.1                                Jun 12 2018
+  Bilal Hasan       004db517a47f6b86 win  DWCS 10.1                               Aug 11 2026
+  Luis Gurule       45891d4b6afaced1 win  DWCS 8.10                               Oct 15 2024
+  Drew Dober        b361da093a16a614 win  Strikeforce - Payback                    Oct 03 2008
+  Chris Duncan      708db9149bf306b0 win  DWCS 6.2                                Aug 02 2022
+  Chris Duncan      2835da3459b24ee1 loss DWCS 5.7                                Oct 12 2021
+  Terrance McKinney 5bd071a38f37debb loss DWCS 3.5                                Jul 23 2019
+  Donte Johnson     8380f331f1102802 win  DWCS 9.3                                Aug 26 2025
+  Cesar Almeida     a758fb8a16ce7811 win  DWCS 7.1                                Aug 08 2023
+  Juan Diaz         2d575461c01e0099 win  DWCS 9.10                               Oct 14 2025
+  Samuel Sanches    5f528585905f441b win  DWCS 9.5                                Sep 09 2025
+19 bouts = 16 DWCS + 3 Strikeforce, 15 fighters, 0 other. Each fighter's record gap equals the W/L of these rows exactly
+(e.g. Duncan 6-2 -> 7-3 = DWCS W + DWCS L; Belgaroui 3-0 -> 4-1; McKinney 8-6 -> 8-7; Nunes 16-2 -> 17-3; Sanches none -> 1-0).
+The other 11 fighters: every live row is in our file and every file row is live. Unexplained differences: 0.

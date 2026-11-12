@@ -1,0 +1,7 @@
+PLANT newer file, the 'consensus' book dropped everywhere, nothing else changed: main
+PLANT newer file, one bout's total_rounds market dropped: main
+stale plant (round 26): newer stamp, all prices older: REFUSE (updated_at says A is newer, but 583 of 583 shared prices are older in it (e.g. Alateng Heili|Juan Diaz fight_distance No consensus: 2026-11-11 09:00:00 vs 2026-11-12 19:07:45))
+stale plant, single price: newer stamp, one shared price older: REFUSE (updated_at says A is newer, but 1 of 583 shared prices are older in it (e.g. Evan Elder|Samuel Sanches moneyline Evan Elder fanduel: 2026-11-10 01:00:00 vs 2026-11-12 19:07:45))
+offset plant (round 26): 19:30Z written as 14:30-05:00, prices newer: main
+no time zone plant (round 26): REFUSE (updated_at has no time zone: 2026-11-12T20:30:00)
+PLANT newer file with no prices at all: REFUSE (the two files share no price to compare)

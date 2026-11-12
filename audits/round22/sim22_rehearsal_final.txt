@@ -1,0 +1,37 @@
+MAIN GUARD: origin/main is 1cb78d94; since 727cb19c main changed only ['data/pending/ufc_334_projections.json', 'data/ufc_334_odds.json'] (allowlist: export, odds bot). Conflicts: ['data/ufc_334_odds.json']. odds file: main 2026-11-12T17:26:46Z, branch 2026-11-12T13:00:48Z -> take MAIN's copy and rebuild the embeds on it. Branch served set 3780 files, 0 offshore hits; main's new versions 0 hits. OK as a --no-ff merge via scripts/merge_main.sh (not a fast-forward).
+UNITS (report only, wide pattern \d+(\.\d+)?u): 26 figures in the scanned files; the blocking 'unit stake' pattern is below
+PUBLIC SCAN: 677 files (audits/ + added or modified vs origin/main), 0 hits
+== 0s  1 odds feed
+Wrote data/ufc_334_odds.json (167,393 bytes)
+== 17s  2 sheet export
+  data/pending/ufc_334_projections.json from origin/main (2026-11-12T17:26:47.000Z)
+== 17s  2b sheet export age
+  SHEET EXPORT IS 0.2 HOURS OLD (published 2026-11-12T17:26:47.000Z)
+== 17s  3 line history
+archive newest snapshot 2026-11-12T17:24:13Z
+  archive age 0.2 h
+OK: every bout priced within 4 h
+== 24s  3b embed line history + Listed check
+kalshi: 26 markets read at 2026-11-12T17:38:51Z
+wrote <sandbox>/data/embeds/line_history_ufc_334.json
+  Kalshi fallback used for: none
+== 50s  3c rounds
+ROUNDS PRE-FIGHT: ufc_334, card starts in 52 h, 0 failures
+== 50s  4 stats file
+form/data/embed_metrics/ufc_334.json 26 fighters; 25 with UFC rows
+== 51s  5 embeds
+13 embeds in <sandbox>/embeds/ufc_334; Sean's numbers from data/pending/ufc_334_projections.json
+== 52s  6 checks
+TOTAL: 2967/2967 numbers verified; 0 mismatches/assertion failures
+SIDE CHECK: not checkable (line within 4 pts of 50%): Evan Elder
+METRICS FILE: verify_embed_metrics: 2984 values recomputed from the CSVs, 0 mismatches
+== 58s  7 diff vs HEAD
+    Edge dec Ciryl Gane: -2.0% -> -0.6% [edge]
+    ... 8 more
+TOTAL {'changed': 165, 'added': 29, 'removed': 1, 'same': 2771}
+changed by source rule {'pub_ml': 4, 'pub_ml_imp': 4, 'edge': 43, 'lh_drift_abs': 12, 'lh_p': 6, 'bp': 43, 'bp_imp': 43, 'bp_imp_sum': 10}
+== 58s  done
+export 2026-11-12T17:26:47 UTC, 0.2 h old
+Listed prices still unverified: none
+negative test: 30/30 planted errors caught
+REHEARSAL PASS: ready for Kirk's merge go (nothing merged)

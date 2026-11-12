@@ -1,0 +1,28 @@
+PASS T0 control (13 on ufc.com, prices moved) | D 260
+PASS T1 mid-edit drop, still on BFO: row kept untouched | names Jared Gordon / Melquizael Costa, D 250, calc F 0.32
+PASS T1 refusal warned
+PASS T1 count drop is the first line | !!! ufc.com now lists 12 bouts for this card; the last load had 13. ufc.com may be mid-edi
+PASS T1 other rows still refreshed
+PASS T2 mid-edit drop, only Novig lists it: row kept
+PASS T3 cancelled, still on BFO, no override: refused
+PASS T3 with the override (Remove a cancelled bout: Costa): cleared | alert: Prelims row 5: Jared Gordon vs Melquizael Costa is no longer on this tab (moved or cancelled) — names cleared.
+PASS T3 next refresh after the override: no count warning
+PASS T4 cancelled, on no source: cleared
+PASS T4 count drop warned
+PASS T4 warned once, not every refresh
+PASS T5 override is per bout (Costa removed, Almeida-Johnson still held)
+Code_v2.9_guard.gs: 13/13 pass
+PASS T0 control (13 on ufc.com, prices moved) | D 260
+FAIL T1 mid-edit drop, still on BFO: row kept untouched | names  / , D , calc F 
+FAIL T1 refusal warned
+FAIL T1 count drop is the first line | UFC 334 (2026-11-14) loaded: 5 main / 7 prelim fights.
+PASS T1 other rows still refreshed
+FAIL T2 mid-edit drop, only Novig lists it: row kept
+FAIL T3 cancelled, still on BFO, no override: refused
+PASS T3 with the override (Remove a cancelled bout: Costa): cleared | alert: undefined
+PASS T3 next refresh after the override: no count warning
+PASS T4 cancelled, on no source: cleared
+FAIL T4 count drop warned
+PASS T4 warned once, not every refresh
+FAIL T5 override is per bout (Costa removed, Almeida-Johnson still held)
+Code28.gs: 6/13 pass

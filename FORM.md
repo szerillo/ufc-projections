@@ -30,6 +30,7 @@ To put a new card on the front page: add it to `cards.yml` (as before), run `scr
 - Fighters are keyed by name. Two UFC fighters with the same name share a page (flagged on the page).
 - UFC fights only; pre-UFC and regional fights are not in the past performances.
 - 2026 odds history is fight-weekend snapshots plus the live feed, so "first seen" can be later than the true opener.
+- The research closing line (Form fits, the bias slope k, Labs angles and backtests) is not cut at the bout start: it takes the last archive snapshot at or before the archive's commence time, which can include an in-fight price. Only the published close has hand fixes (`data/odds_close_fixes.json`, 2 bouts, Nov 12 2026).
 - Film links are searches (YouTube, UFC Fight Pass), not direct links.
 
 ## v2 additions

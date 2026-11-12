@@ -1,0 +1,20 @@
+Kirk round 26 A: was "reach missing" in round 25's test measured at fight time or today?
+TODAY. The fighter files (and the walk-forward Form Lines rebuilt from them) use the current UFCStats fighter CSV for every
+past fight. So the test cannot by itself rule out survivorship.
+
+Dating attempt: for every (missing-reach fighter, fight date) in the 269 bouts (235 distinct pairs, 161 fighters with a
+UFCStats ID; 1 fighter has no ID), the Wayback Machine's newest snapshot of that fighter's UFCStats page BEFORE the fight
+(CDX index, read in Sean's Chrome on web.archive.org; 1 fighter failed after 4 retries).
+  no archived page before the fight ............ 198 pairs  -> cannot be dated
+  page shows a reach before the fight .......... 20 pairs   -> reach WAS listed at fight time; our source file is missing it
+  page shows reach blank ("--") before the fight  11 pairs   -> 10 of them are wrong-namesake rows (Jean Silva 1977 row x8,
+                                                               blank Mike Davis row x1, wrong Victor Valenzuela row x1);
+                                                               1 genuinely blank at fight time (25af5e83, 2019-03-23)
+  newer page layout, no reach field to read .... 5 pairs    -> cannot tell
+  fetch failed ................................. 1 fighter
+
+Verdict: the test cannot tell survivorship apart from the other explanations. 198 of 235 pairs can't be dated at all; of the
+36 that can, 20 had a reach listed at fight time (a gap in our source file, not a fighter who was never measured) and 10 are
+the shared-name bug, which feeds the wrong fighter into the test. Only 1 confirmed genuinely blank at fight time.
+Examples of "listed at fight time": Bia Mesquita 67" (snapshot 2026-02-28, before her 2026-03-14 fight) and Juan Diaz 69"
+(2025-10-15, before 2026-05-16): both are blank in our source file today.

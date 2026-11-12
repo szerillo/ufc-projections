@@ -1,7 +1,10 @@
 {
  "fight": 2,
  "of": 13,
- "site_n": 2,
+ "site_pair": [
+  "Alatengheili",
+  "Juan Diaz"
+ ],
  "pair": [
   "Alatengheili",
   "Juan Diaz"
@@ -10,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -25,19 +28,6 @@
   },
   {
    "id": "v2",
-   "text": "1546",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 2,
-    "path": "a.elo"
-   },
-   "desc": "Alatengheili Elo",
-   "raw": 1546
-  },
-  {
-   "id": "v3",
    "text": "1-0-0",
    "fmt": "str",
    "rule": "record",
@@ -48,662 +38,7 @@
    "raw": "1-0-0"
   },
   {
-   "id": "v4",
-   "text": "1525",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 2,
-    "path": "b.elo"
-   },
-   "desc": "Juan Diaz Elo",
-   "raw": 1525
-  },
-  {
-   "id": "v5",
-   "text": "+296",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Alatengheili",
-   "raw": 0.25242084756221156
-  },
-  {
-   "id": "v6",
-   "text": "25.2%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean win % Alatengheili",
-   "raw": 0.25242084756221156
-  },
-  {
-   "id": "v7",
-   "text": "+275",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Alateng Heili",
-    "field": "cost"
-   },
-   "desc": "BP ML now Alatengheili",
-   "raw": 275
-  },
-  {
-   "id": "v8",
-   "text": "25.3%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Alateng Heili",
-    "other": "Juan Diaz"
-   },
-   "desc": "BP ML no-vig Alatengheili",
-   "raw": 0.2530282637954239
-  },
-  {
-   "id": "v9",
-   "text": "+270",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Alateng Heili",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Alatengheili",
-   "raw": 270
-  },
-  {
-   "id": "v10",
-   "text": "-296",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean ML Juan Diaz",
-   "raw": 0.7475791524377884
-  },
-  {
-   "id": "v11",
-   "text": "74.8%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean win % Juan Diaz",
-   "raw": 0.7475791524377884
-  },
-  {
-   "id": "v12",
-   "text": "-370",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Juan Diaz",
-    "field": "cost"
-   },
-   "desc": "BP ML now Juan Diaz",
-   "raw": -370
-  },
-  {
-   "id": "v13",
-   "text": "74.7%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Juan Diaz",
-    "other": "Alateng Heili"
-   },
-   "desc": "BP ML no-vig Juan Diaz",
-   "raw": 0.746971736204576
-  },
-  {
-   "id": "v14",
-   "text": "-350",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Juan Diaz",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Juan Diaz",
-   "raw": -350
-  },
-  {
-   "id": "v15",
-   "text": "+700",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Alatengheili",
-   "raw": 0.12507361408367895
-  },
-  {
-   "id": "v16",
-   "text": "12.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Alatengheili",
-   "raw": 0.12507361408367895
-  },
-  {
-   "id": "v17",
-   "text": "-108",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Juan Diaz",
-   "raw": 0.5201894615539034
-  },
-  {
-   "id": "v18",
-   "text": "52.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Juan Diaz",
-   "raw": 0.5201894615539034
-  },
-  {
-   "id": "v19",
-   "text": "+1132",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Alatengheili",
-   "raw": 0.08119246262409927
-  },
-  {
-   "id": "v20",
-   "text": "8.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Alatengheili",
-   "raw": 0.08119246262409927
-  },
-  {
-   "id": "v21",
-   "text": "+527",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Juan Diaz",
-   "raw": 0.15960441275333567
-  },
-  {
-   "id": "v22",
-   "text": "16.0%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Juan Diaz",
-   "raw": 0.15960441275333567
-  },
-  {
-   "id": "v23",
-   "text": "+2067",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Alatengheili",
-   "raw": 0.04615477085443335
-  },
-  {
-   "id": "v24",
-   "text": "4.6%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Alatengheili",
-   "raw": 0.04615477085443335
-  },
-  {
-   "id": "v25",
-   "text": "+1375",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Juan Diaz",
-   "raw": 0.06778527813054921
-  },
-  {
-   "id": "v26",
-   "text": "6.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Juan Diaz",
-   "raw": 0.06778527813054921
-  },
-  {
-   "id": "v27",
-   "text": "+685",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Alatengheili",
-   "raw": 0.1273472334785326
-  },
-  {
-   "id": "v28",
-   "text": "12.7%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Alatengheili",
-   "raw": 0.1273472334785326
-  },
-  {
-   "id": "v29",
-   "text": "+340",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Juan Diaz",
-   "raw": 0.22738969088388492
-  },
-  {
-   "id": "v30",
-   "text": "22.7%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Juan Diaz",
-   "raw": 0.22738969088388492
-  },
-  {
-   "id": "v31",
-   "text": "-182",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD fair ML",
-   "raw": 0.6452630756375823
-  },
-  {
-   "id": "v32",
-   "text": "64.5%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD %",
-   "raw": 0.6452630756375823
-  },
-  {
-   "id": "v33",
-   "text": "+270",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Alateng Heili",
-    "field": "opening_cost"
-   },
-   "desc": "BP open a (move)",
-   "raw": 270
-  },
-  {
-   "id": "v34",
-   "text": "+275",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Alateng Heili",
-    "field": "cost"
-   },
-   "desc": "BP now a (move)",
-   "raw": 275
-  },
-  {
-   "id": "v35",
-   "text": "-350",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Juan Diaz",
-    "field": "opening_cost"
-   },
-   "desc": "BP open b (move)",
-   "raw": -350
-  },
-  {
-   "id": "v36",
-   "text": "-370",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Juan Diaz",
-    "field": "cost"
-   },
-   "desc": "BP now b (move)",
-   "raw": -370
-  },
-  {
-   "id": "v37",
-   "text": "-270",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending KO/TKO/DQ",
-   "raw": -270
-  },
-  {
-   "id": "v38",
-   "text": "-257",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending KO/TKO/DQ",
-   "raw": -257
-  },
-  {
-   "id": "v39",
-   "text": "72%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ"
-   },
-   "desc": "BP implied fight_ending KO/TKO/DQ",
-   "raw": 0.7198879551820728
-  },
-  {
-   "id": "v40",
-   "text": "-270",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Submission",
-   "raw": -270
-  },
-  {
-   "id": "v41",
-   "text": "-257",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Submission",
-   "raw": -257
-  },
-  {
-   "id": "v42",
-   "text": "72%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission"
-   },
-   "desc": "BP implied fight_ending Submission",
-   "raw": 0.7198879551820728
-  },
-  {
-   "id": "v43",
-   "text": "-257",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Points",
-   "raw": -257
-  },
-  {
-   "id": "v44",
-   "text": "-257",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Points",
-   "raw": -257
-  },
-  {
-   "id": "v45",
-   "text": "72%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points"
-   },
-   "desc": "BP implied fight_ending Points",
-   "raw": 0.7198879551820728
-  },
-  {
-   "id": "v46",
-   "text": "-4900",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance Yes",
-   "raw": -4900
-  },
-  {
-   "id": "v47",
-   "text": "-3233",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance Yes",
-   "raw": -3233
-  },
-  {
-   "id": "v48",
-   "text": "97%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes"
-   },
-   "desc": "BP implied fight_distance Yes",
-   "raw": 0.96999699969997
-  },
-  {
-   "id": "v49",
-   "text": "2.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Over",
-   "raw": 2.5
-  },
-  {
-   "id": "v50",
-   "text": "-166",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Over",
-   "raw": -166
-  },
-  {
-   "id": "v51",
-   "text": "-188",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Over",
-   "raw": -188
-  },
-  {
-   "id": "v52",
-   "text": "65%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over"
-   },
-   "desc": "BP implied total_rounds Over",
-   "raw": 0.6527777777777778
-  },
-  {
-   "id": "v53",
-   "text": "2.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Under",
-   "raw": 2.5
-  },
-  {
-   "id": "v54",
-   "text": "+130",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Under",
-   "raw": 130
-  },
-  {
-   "id": "v55",
-   "text": "+145",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Under",
-   "raw": 145
-  },
-  {
-   "id": "v56",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under"
-   },
-   "desc": "BP implied total_rounds Under",
-   "raw": 0.40816326530612246
-  },
-  {
-   "id": "v57",
+   "id": "v3",
    "text": "34.9",
    "fmt": "n1",
    "rule": "age",
@@ -714,7 +49,7 @@
    "raw": 34.91854893908282
   },
   {
-   "id": "v58",
+   "id": "v4",
    "text": "28.4",
    "fmt": "n1",
    "rule": "age",
@@ -725,18 +60,7 @@
    "raw": 28.449007529089666
   },
   {
-   "id": "v59",
-   "text": "66\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Reach a",
-   "raw": 66
-  },
-  {
-   "id": "v60",
+   "id": "v5",
    "text": "5'5\"",
    "fmt": "str",
    "rule": "bio",
@@ -748,7 +72,18 @@
    "raw": "5'5\""
   },
   {
-   "id": "v61",
+   "id": "v6",
+   "text": "66\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 66
+  },
+  {
+   "id": "v7",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -760,287 +95,2280 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v62",
-   "text": "10",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v8",
+   "text": "+324",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "UFC fights a",
-   "raw": 10
+   "desc": "Model ML Alatengheili",
+   "raw": 0.2360826051204464
   },
   {
-   "id": "v63",
-   "text": "1",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v9",
+   "text": "23.6%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Alatengheili",
+   "raw": 0.2360826051204464
+  },
+  {
+   "id": "v10",
+   "text": "+320",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Alatengheili",
+   "raw": 320
+  },
+  {
+   "id": "v11",
+   "text": "23.8%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Alatengheili",
+   "raw": 0.23809523809523808
+  },
+  {
+   "id": "v12",
+   "text": "+320",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Alateng Heili",
+    "field": "cost"
+   },
+   "desc": "Market ML Alatengheili",
+   "raw": 320
+  },
+  {
+   "id": "v13",
+   "text": "23.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Alateng Heili"
+   },
+   "desc": "Market implied Alatengheili",
+   "raw": 0.23809523809523808
+  },
+  {
+   "id": "v14",
+   "text": "-0.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v9",
+     "v11"
+    ]
+   },
+   "desc": "Edge ML Alatengheili",
+   "raw": -0.0020126329747916782
+  },
+  {
+   "id": "v15",
+   "text": "-324",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "UFC fights b",
-   "raw": 1
+   "desc": "Model ML Juan Diaz",
+   "raw": 0.7639173948795536
+  },
+  {
+   "id": "v16",
+   "text": "76.4%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Juan Diaz",
+   "raw": 0.7639173948795536
+  },
+  {
+   "id": "v17",
+   "text": "-333",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Juan Diaz",
+   "raw": -333
+  },
+  {
+   "id": "v18",
+   "text": "76.9%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Juan Diaz",
+   "raw": 0.76905311778291
+  },
+  {
+   "id": "v19",
+   "text": "-425",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Juan Diaz",
+    "field": "cost"
+   },
+   "desc": "Market ML Juan Diaz",
+   "raw": -425
+  },
+  {
+   "id": "v20",
+   "text": "81.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Juan Diaz"
+   },
+   "desc": "Market implied Juan Diaz",
+   "raw": 0.8095238095238095
+  },
+  {
+   "id": "v21",
+   "text": "-0.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v16",
+     "v18"
+    ]
+   },
+   "desc": "Edge ML Juan Diaz",
+   "raw": -0.005135722903356399
+  },
+  {
+   "id": "v22",
+   "text": "-170",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.6302816893657409
+  },
+  {
+   "id": "v23",
+   "text": "63.0%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.6302816893657409
+  },
+  {
+   "id": "v24",
+   "text": "-163",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD price",
+   "raw": 0.6198708602374504
+  },
+  {
+   "id": "v25",
+   "text": "62.0%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD %",
+   "raw": 0.6198708602374504
+  },
+  {
+   "id": "v26",
+   "text": "-188",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": -188
+  },
+  {
+   "id": "v27",
+   "text": "65.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.6527777777777778
+  },
+  {
+   "id": "v28",
+   "text": "+1.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v23",
+     "v25"
+    ]
+   },
+   "desc": "Edge GTD vs listed",
+   "raw": 0.0104108291282905
+  },
+  {
+   "id": "v29",
+   "text": "+170",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.3697183106342591
+  },
+  {
+   "id": "v30",
+   "text": "37.0%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.3697183106342591
+  },
+  {
+   "id": "v31",
+   "text": "+144",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market ITD no",
+   "raw": 144
+  },
+  {
+   "id": "v32",
+   "text": "41.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market ITD implied",
+   "raw": 0.4098360655737705
+  },
+  {
+   "id": "v33",
+   "text": "-4.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v30",
+     "v32"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.04011775493951142
+  },
+  {
+   "id": "v34",
+   "text": "+803",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Alatengheili",
+   "raw": 0.11079195835559634
+  },
+  {
+   "id": "v35",
+   "text": "11.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Alatengheili",
+   "raw": 0.11079195835559634
+  },
+  {
+   "id": "v36",
+   "text": "+500",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Alatengheili",
+   "raw": 500
+  },
+  {
+   "id": "v37",
+   "text": "16.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili Points"
+   },
+   "desc": "Market dec implied Alatengheili",
+   "raw": 0.16666666666666666
+  },
+  {
+   "id": "v38",
+   "text": "-5.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v35",
+     "v37"
+    ]
+   },
+   "desc": "Edge dec Alatengheili",
+   "raw": -0.05587470831107032
+  },
+  {
+   "id": "v39",
+   "text": "+1072",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Alatengheili",
+   "raw": 0.08530650086474834
+  },
+  {
+   "id": "v40",
+   "text": "8.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Alatengheili",
+   "raw": 0.08530650086474834
+  },
+  {
+   "id": "v41",
+   "text": "+1200",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Alatengheili",
+   "raw": 1200
+  },
+  {
+   "id": "v42",
+   "text": "7.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Alatengheili",
+   "raw": 0.07692307692307693
+  },
+  {
+   "id": "v43",
+   "text": "+0.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v40",
+     "v42"
+    ]
+   },
+   "desc": "Edge ko Alatengheili",
+   "raw": 0.008383423941671408
+  },
+  {
+   "id": "v44",
+   "text": "+2401",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Alatengheili",
+   "raw": 0.03998414590010173
+  },
+  {
+   "id": "v45",
+   "text": "4.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Alatengheili",
+   "raw": 0.03998414590010173
+  },
+  {
+   "id": "v46",
+   "text": "+3500",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Alatengheili",
+   "raw": 3500
+  },
+  {
+   "id": "v47",
+   "text": "2.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Alateng Heili Submission"
+   },
+   "desc": "Market sub implied Alatengheili",
+   "raw": 0.027777777777777776
+  },
+  {
+   "id": "v48",
+   "text": "+1.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v45",
+     "v47"
+    ]
+   },
+   "desc": "Edge sub Alatengheili",
+   "raw": 0.012206368122323952
+  },
+  {
+   "id": "v49",
+   "text": "+698",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Alatengheili",
+   "raw": 0.12529064676485008
+  },
+  {
+   "id": "v50",
+   "text": "12.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Alatengheili",
+   "raw": 0.12529064676485008
+  },
+  {
+   "id": "v51",
+   "text": "10.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Alateng Heili KO/TKO/DQ",
+     "Alateng Heili Submission"
+    ]
+   },
+   "desc": "Market ITD implied Alatengheili",
+   "raw": 0.1047008547008547
+  },
+  {
+   "id": "v52",
+   "text": "+2.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v50",
+     "v51"
+    ]
+   },
+   "desc": "Edge itd Alatengheili",
+   "raw": 0.020589792063995374
+  },
+  {
+   "id": "v53",
+   "text": "-108",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Juan Diaz",
+   "raw": 0.5194897310101446
+  },
+  {
+   "id": "v54",
+   "text": "51.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Juan Diaz",
+   "raw": 0.5194897310101446
+  },
+  {
+   "id": "v55",
+   "text": "-110",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Juan Diaz Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Juan Diaz",
+   "raw": -110
+  },
+  {
+   "id": "v56",
+   "text": "52.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Juan Diaz Points"
+   },
+   "desc": "Market dec implied Juan Diaz",
+   "raw": 0.5238095238095238
+  },
+  {
+   "id": "v57",
+   "text": "-0.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v54",
+     "v56"
+    ]
+   },
+   "desc": "Edge dec Juan Diaz",
+   "raw": -0.0043197927993792185
+  },
+  {
+   "id": "v58",
+   "text": "+540",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Juan Diaz",
+   "raw": 0.1562014938360311
+  },
+  {
+   "id": "v59",
+   "text": "15.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Juan Diaz",
+   "raw": 0.1562014938360311
+  },
+  {
+   "id": "v60",
+   "text": "+354",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Juan Diaz KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Juan Diaz",
+   "raw": 354
+  },
+  {
+   "id": "v61",
+   "text": "22.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Juan Diaz KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Juan Diaz",
+   "raw": 0.22026431718061673
+  },
+  {
+   "id": "v62",
+   "text": "-6.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v59",
+     "v61"
+    ]
+   },
+   "desc": "Edge ko Juan Diaz",
+   "raw": -0.06406282334458563
+  },
+  {
+   "id": "v63",
+   "text": "+1033",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Juan Diaz",
+   "raw": 0.08822617003337781
   },
   {
    "id": "v64",
-   "text": "2.71",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "8.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
    "args": {
-    "side": "a",
-    "key": "slpm"
+    "side": "b",
+    "k": "sub"
    },
-   "desc": "SLpM a",
-   "raw": 2.710200073646741
+   "desc": "Model sub % Juan Diaz",
+   "raw": 0.08822617003337781
   },
   {
    "id": "v65",
-   "text": "1.42",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "+524",
+   "fmt": "ml",
+   "rule": "bp",
    "args": {
-    "side": "b",
-    "key": "slpm"
+    "market": "method_of_victory",
+    "label": "Juan Diaz Submission",
+    "field": "cost"
    },
-   "desc": "SLpM b",
-   "raw": 1.4233576642335768
+   "desc": "Market sub Juan Diaz",
+   "raw": 524
   },
   {
    "id": "v66",
-   "text": "4.96",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "16.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
    "args": {
-    "side": "a",
-    "key": "sapm"
+    "market": "method_of_victory",
+    "label": "Juan Diaz Submission"
    },
-   "desc": "SApM a",
-   "raw": 4.963790352276912
+   "desc": "Market sub implied Juan Diaz",
+   "raw": 0.16025641025641027
   },
   {
    "id": "v67",
-   "text": "1.64",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "-7.2%",
+   "fmt": "spp",
+   "rule": "edge",
    "args": {
-    "side": "b",
-    "key": "sapm"
+    "of": [
+     "v64",
+     "v66"
+    ]
    },
-   "desc": "SApM b",
-   "raw": 1.6423357664233578
+   "desc": "Edge sub Juan Diaz",
+   "raw": -0.07203024022303246
   },
   {
    "id": "v68",
-   "text": "-2.25",
-   "fmt": "s2",
-   "rule": "stat",
+   "text": "+309",
+   "fmt": "mlp",
+   "rule": "pub_meth",
    "args": {
-    "side": "a",
-    "key": "diff"
+    "side": "b",
+    "k": "itd"
    },
-   "desc": "Strike diff /min a",
-   "raw": -2.2535902786301705
+   "desc": "Model itd ML Juan Diaz",
+   "raw": 0.24442766386940892
   },
   {
    "id": "v69",
-   "text": "-0.22",
-   "fmt": "s2",
-   "rule": "stat",
+   "text": "24.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
    "args": {
     "side": "b",
-    "key": "diff"
+    "k": "itd"
    },
-   "desc": "Strike diff /min b",
-   "raw": -0.21897810218978103
+   "desc": "Model itd % Juan Diaz",
+   "raw": 0.24442766386940892
   },
   {
    "id": "v70",
-   "text": "32%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "38.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
    "args": {
-    "side": "a",
-    "key": "acc"
+    "market": "method_of_victory",
+    "labels": [
+     "Juan Diaz KO/TKO/DQ",
+     "Juan Diaz Submission"
+    ]
    },
-   "desc": "Strike accuracy a",
-   "raw": 0.3188908145580589
+   "desc": "Market ITD implied Juan Diaz",
+   "raw": 0.38052072743702703
   },
   {
    "id": "v71",
-   "text": "52%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "-13.6%",
+   "fmt": "spp",
+   "rule": "edge",
    "args": {
-    "side": "b",
-    "key": "acc"
+    "of": [
+     "v69",
+     "v70"
+    ]
    },
-   "desc": "Strike accuracy b",
-   "raw": 0.52
+   "desc": "Edge itd Juan Diaz",
+   "raw": -0.1360930635676181
   },
   {
    "id": "v72",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "-333",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
    "args": {
-    "side": "a",
-    "key": "dfn"
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Alatengheili",
+     "Juan Diaz"
+    ],
+    "side": "b"
    },
-   "desc": "Strike defence a",
-   "raw": 0.5651612903225807
+   "desc": "LH open ML Juan Diaz",
+   "raw": -333
   },
   {
    "id": "v73",
-   "text": "55%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "3.0",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
    "args": {
-    "side": "b",
-    "key": "dfn"
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Alatengheili",
+     "Juan Diaz"
+    ]
    },
-   "desc": "Strike defence b",
-   "raw": 0.5454545454545454
+   "desc": "LH drift pts",
+   "raw": 0.03
   },
   {
    "id": "v74",
-   "text": "1.88",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "74.0%",
+   "fmt": "pct1",
+   "rule": "lh_p",
    "args": {
-    "side": "a",
-    "key": "td15"
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Alatengheili",
+     "Juan Diaz"
+    ],
+    "side": "b",
+    "at": "open"
    },
-   "desc": "Takedowns /15 a",
-   "raw": 1.8779918988584754
+   "desc": "LH open p Juan Diaz",
+   "raw": 0.74
   },
   {
    "id": "v75",
-   "text": "8.21",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "77.0%",
+   "fmt": "pct1",
+   "rule": "lh_p",
    "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Alatengheili",
+     "Juan Diaz"
+    ],
     "side": "b",
-    "key": "td15"
+    "at": "current"
    },
-   "desc": "Takedowns /15 b",
-   "raw": 8.211678832116789
+   "desc": "LH current p Juan Diaz",
+   "raw": 0.77
   },
   {
    "id": "v76",
+   "text": "66%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "target.head"
+   },
+   "desc": "Target head Alatengheili",
+   "raw": 0.6576
+  },
+  {
+   "id": "v77",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "target.body"
+   },
+   "desc": "Target body Alatengheili",
+   "raw": 0.2038
+  },
+  {
+   "id": "v78",
+   "text": "14%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Alatengheili",
+   "raw": 0.1386
+  },
+  {
+   "id": "v79",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "target.head"
+   },
+   "desc": "Target head Juan Diaz",
+   "raw": 0.2308
+  },
+  {
+   "id": "v80",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "target.body"
+   },
+   "desc": "Target body Juan Diaz",
+   "raw": 0.2308
+  },
+  {
+   "id": "v81",
+   "text": "54%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Juan Diaz",
+   "raw": 0.5385
+  },
+  {
+   "id": "v82",
+   "text": "10",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 10
+  },
+  {
+   "id": "v83",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 1
+  },
+  {
+   "id": "v84",
+   "text": "7%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.0721
+  },
+  {
+   "id": "v85",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v86",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 1
+  },
+  {
+   "id": "v87",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.0
+  },
+  {
+   "id": "v88",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v89",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 0
+  },
+  {
+   "id": "v90",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Bantamweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.1983
+  },
+  {
+   "id": "v91",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.0
+  },
+  {
+   "id": "v92",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v93",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 0
+  },
+  {
+   "id": "v94",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.0
+  },
+  {
+   "id": "v95",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v96",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 0
+  },
+  {
+   "id": "v97",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Bantamweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.217
+  },
+  {
+   "id": "v98",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Alatengheili",
+   "raw": 1
+  },
+  {
+   "id": "v99",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Alatengheili",
+   "raw": 5
+  },
+  {
+   "id": "v100",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Alatengheili",
+   "raw": 3
+  },
+  {
+   "id": "v101",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v102",
+   "text": "40%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Alatengheili",
+   "raw": 0.4
+  },
+  {
+   "id": "v103",
+   "text": "-2.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Alatengheili",
+   "raw": -2.075
+  },
+  {
+   "id": "v104",
+   "text": "10",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Alatengheili",
+   "raw": 10
+  },
+  {
+   "id": "v105",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Alatengheili",
+   "raw": 0.2222
+  },
+  {
+   "id": "v106",
+   "text": "-1.8",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Alatengheili",
+   "raw": -1.756
+  },
+  {
+   "id": "v107",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Alatengheili",
+   "raw": 9
+  },
+  {
+   "id": "v108",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Alatengheili",
+   "raw": 0.2222
+  },
+  {
+   "id": "v109",
+   "text": "-2.9",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Alatengheili",
+   "raw": -2.933
+  },
+  {
+   "id": "v110",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Alatengheili",
+   "raw": 9
+  },
+  {
+   "id": "v111",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Juan Diaz",
+   "raw": 1.0
+  },
+  {
+   "id": "v112",
+   "text": "-0.8",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Juan Diaz",
+   "raw": -0.8
+  },
+  {
+   "id": "v113",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v114",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Juan Diaz",
+   "raw": 1.0
+  },
+  {
+   "id": "v115",
+   "text": "+0.5",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Juan Diaz",
+   "raw": 0.484
+  },
+  {
+   "id": "v116",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v117",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Alatengheili 0",
+   "raw": -19
+  },
+  {
+   "id": "v118",
+   "text": "-26",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Alatengheili 1",
+   "raw": -26
+  },
+  {
+   "id": "v119",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Alatengheili 2",
+   "raw": 1
+  },
+  {
+   "id": "v120",
+   "text": "-28",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Alatengheili 3",
+   "raw": -28
+  },
+  {
+   "id": "v121",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Alatengheili 4",
+   "raw": 4
+  },
+  {
+   "id": "v122",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Alatengheili 5",
+   "raw": 7
+  },
+  {
+   "id": "v123",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Alatengheili 6",
+   "raw": 1
+  },
+  {
+   "id": "v124",
+   "text": "-21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Alatengheili 7",
+   "raw": -21
+  },
+  {
+   "id": "v125",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Alatengheili 8",
+   "raw": -7
+  },
+  {
+   "id": "v126",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Alatengheili 9",
+   "raw": -7
+  },
+  {
+   "id": "v127",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Alatengheili 0",
+   "raw": -5
+  },
+  {
+   "id": "v128",
+   "text": "-15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Alatengheili 1",
+   "raw": -15
+  },
+  {
+   "id": "v129",
+   "text": "-11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Alatengheili 2",
+   "raw": -11
+  },
+  {
+   "id": "v130",
+   "text": "-21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Alatengheili 3",
+   "raw": -21
+  },
+  {
+   "id": "v131",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Alatengheili 4",
+   "raw": 2
+  },
+  {
+   "id": "v132",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Alatengheili 6",
+   "raw": 4
+  },
+  {
+   "id": "v133",
+   "text": "-15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Alatengheili 7",
+   "raw": -15
+  },
+  {
+   "id": "v134",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Alatengheili 8",
+   "raw": 2
+  },
+  {
+   "id": "v135",
+   "text": "-20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Alatengheili 9",
+   "raw": -20
+  },
+  {
+   "id": "v136",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Alatengheili 0",
+   "raw": -3
+  },
+  {
+   "id": "v137",
+   "text": "-23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Alatengheili 1",
+   "raw": -23
+  },
+  {
+   "id": "v138",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Alatengheili 2",
+   "raw": -9
+  },
+  {
+   "id": "v139",
+   "text": "-23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Alatengheili 3",
+   "raw": -23
+  },
+  {
+   "id": "v140",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Alatengheili 4",
+   "raw": 4
+  },
+  {
+   "id": "v141",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Alatengheili 6",
+   "raw": -13
+  },
+  {
+   "id": "v142",
+   "text": "-27",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Alatengheili 7",
+   "raw": -27
+  },
+  {
+   "id": "v143",
+   "text": "-16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Alatengheili 8",
+   "raw": -16
+  },
+  {
+   "id": "v144",
+   "text": "-22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "fights.9.rw.2.2"
+   },
+   "desc": "R3 fight diff Alatengheili 9",
+   "raw": -22
+  },
+  {
+   "id": "v145",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Juan Diaz 0",
+   "raw": -4
+  },
+  {
+   "id": "v146",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Juan Diaz 0",
+   "raw": 2
+  },
+  {
+   "id": "v147",
+   "text": "46",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Alatengheili",
+   "raw": 45.78
+  },
+  {
+   "id": "v148",
+   "text": "45",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Alatengheili",
+   "raw": 45.0
+  },
+  {
+   "id": "v149",
+   "text": "45",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Alatengheili",
+   "raw": 45.0
+  },
+  {
+   "id": "v150",
+   "text": "5",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Juan Diaz",
+   "raw": 5.0
+  },
+  {
+   "id": "v151",
+   "text": "4",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Juan Diaz",
+   "raw": 4.13
+  },
+  {
+   "id": "v152",
+   "text": "0",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Juan Diaz",
+   "raw": 0.0
+  },
+  {
+   "id": "v153",
+   "text": "1.88",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 1.878
+  },
+  {
+   "id": "v154",
+   "text": "8.21",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 8.212
+  },
+  {
+   "id": "v155",
+   "text": "42%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.425
+  },
+  {
+   "id": "v156",
+   "text": "62%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.625
+  },
+  {
+   "id": "v157",
    "text": "75%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "tdd"
+    "fighter": "Alatengheili",
+    "path": "grap.tdd"
    },
    "desc": "TD defence a",
    "raw": 0.75
   },
   {
-   "id": "v77",
+   "id": "v158",
    "text": "16%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "ctrlp"
+    "fighter": "Alatengheili",
+    "path": "grap.ctrl"
    },
-   "desc": "Control time a",
-   "raw": 0.15564011292500307
+   "desc": "Time in control a",
+   "raw": 0.1556
   },
   {
-   "id": "v78",
+   "id": "v159",
    "text": "42%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "ctrlp"
+    "fighter": "Juan Diaz",
+    "path": "grap.ctrl"
    },
-   "desc": "Control time b",
-   "raw": 0.41605839416058393
+   "desc": "Time in control b",
+   "raw": 0.4161
   },
   {
-   "id": "v79",
-   "text": "38",
-   "fmt": "r0",
-   "rule": "fight",
+   "id": "v160",
+   "text": "+12.6%",
+   "fmt": "spp",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "i": 0,
-    "key": "fg"
+    "fighter": "Alatengheili",
+    "path": "grap.adj_net_ctrl"
    },
-   "desc": "Fig Alatengheili John Castaneda",
-   "raw": 37.6
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.1262
   },
   {
-   "id": "v80",
-   "text": "24",
-   "fmt": "r0",
-   "rule": "fight",
+   "id": "v161",
+   "text": "+41.0%",
+   "fmt": "spp",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "i": 1,
-    "key": "fg"
+    "fighter": "Juan Diaz",
+    "path": "grap.adj_net_ctrl"
    },
-   "desc": "Fig Alatengheili Da'Mon Blackshear",
-   "raw": 24.3
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.4099
   },
   {
-   "id": "v81",
-   "text": "63",
-   "fmt": "r0",
-   "rule": "fight",
+   "id": "v162",
+   "text": "2%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "i": 2,
-    "key": "fg"
+    "fighter": "Alatengheili",
+    "path": "grap.ctrl_ag"
    },
-   "desc": "Fig Alatengheili Kleydson Rodrigues",
-   "raw": 63.1
+   "desc": "Time controlled a",
+   "raw": 0.0236
   },
   {
-   "id": "v82",
-   "text": "28",
-   "fmt": "r0",
-   "rule": "fight",
+   "id": "v163",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "i": 3,
-    "key": "fg"
+    "fighter": "Juan Diaz",
+    "path": "grap.ctrl_ag"
    },
-   "desc": "Fig Alatengheili Chris Gutierrez",
-   "raw": 28.0
+   "desc": "Time controlled b",
+   "raw": 0.0
   },
   {
-   "id": "v83",
-   "text": "77",
-   "fmt": "r0",
-   "rule": "fight",
+   "id": "v164",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "i": 4,
-    "key": "fg"
+    "fighter": "Alatengheili",
+    "path": "grap.sub15"
    },
-   "desc": "Fig Alatengheili Chad Anheliger",
-   "raw": 77.1
+   "desc": "Sub attempts /15 a",
+   "raw": 0.0
   },
   {
-   "id": "v84",
-   "text": "94",
-   "fmt": "r0",
-   "rule": "fight",
+   "id": "v165",
+   "text": "1.64",
+   "fmt": "n2",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "i": 0,
-    "key": "fg"
+    "fighter": "Juan Diaz",
+    "path": "grap.sub15"
    },
-   "desc": "Fig Juan Diaz Malcolm Wellmaker",
-   "raw": 94.0
+   "desc": "Sub attempts /15 b",
+   "raw": 1.642
   },
   {
-   "id": "v85",
+   "id": "v166",
+   "text": "-2.25",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Alatengheili",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Alatengheili",
+   "raw": -2.254
+  },
+  {
+   "id": "v167",
+   "text": "-0.22",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Juan Diaz",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Juan Diaz",
+   "raw": -0.21900000000000003
+  },
+  {
+   "id": "v168",
+   "text": "-2.30",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": -2.301
+  },
+  {
+   "id": "v169",
+   "text": "-0.27",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": -0.27
+  },
+  {
+   "id": "v170",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Alatengheili",
+   "raw": 2
+  },
+  {
+   "id": "v171",
+   "text": "10",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Alatengheili",
+   "raw": 10
+  },
+  {
+   "id": "v172",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Juan Diaz",
+   "raw": 0
+  },
+  {
+   "id": "v173",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v174",
+   "text": "-1.08",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": -1.083
+  },
+  {
+   "id": "v175",
+   "text": "+0.00",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 0.0
+  },
+  {
+   "id": "v176",
+   "text": "-0.50",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": -0.501
+  },
+  {
+   "id": "v177",
+   "text": "-0.66",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": -0.657
+  },
+  {
+   "id": "v178",
+   "text": "-0.67",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": -0.67
+  },
+  {
+   "id": "v179",
+   "text": "+0.44",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": 0.438
+  },
+  {
+   "id": "v180",
+   "text": "65%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.6533
+  },
+  {
+   "id": "v181",
+   "text": "73%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.7273
+  },
+  {
+   "id": "v182",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v183",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Alatengheili",
+   "raw": 6
+  },
+  {
+   "id": "v184",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Alatengheili",
+   "raw": 7
+  },
+  {
+   "id": "v185",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v186",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v187",
+   "text": "13.4",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 13.42
+  },
+  {
+   "id": "v188",
+   "text": "9.1",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 9.133
+  },
+  {
+   "id": "v189",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "pace.n"
+   },
+   "desc": "Avg fight, min sample Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v190",
+   "text": "11%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.1111
+  },
+  {
+   "id": "v191",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.0
+  },
+  {
+   "id": "v192",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "pace.n"
+   },
+   "desc": "Finished in R1 sample Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v193",
    "text": "+193",
    "fmt": "ml",
    "rule": "fight",
@@ -1051,35 +2379,7 @@
    },
    "desc": "Close Juan Diaz Malcolm Wellmaker",
    "raw": 193
-  },
-  {
-   "id": "v86",
-   "text": "25.2%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sheet % (note)",
-   "raw": 0.25242084756221156
-  },
-  {
-   "id": "v87",
-   "text": "0.1",
-   "fmt": "pts",
-   "rule": "gap_pub_bp",
-   "args": {
-    "side": "a",
-    "market": "moneyline",
-    "label": "Alateng Heili",
-    "other": "Juan Diaz"
-   },
-   "desc": "Sheet vs BP gap",
-   "raw": -0.0006074162332123656
   }
  ],
- "gaps": [
-  "Fight 2: BettingPros method/distance markets suspect (draw priced +108; opening prices of exactly +100; distance market has only Yes); market cells shown as n/a.",
-  "Fight 2: no Odds API line history (no odds block in the event file)."
- ]
+ "gaps": []
 }

@@ -1,0 +1,8 @@
+MAIN GUARD: origin/main is 45938403; since 727cb19c main changed only ['data/fn_prochazka_stirling_odds.json', 'data/ufc_334_odds.json'] (allowlist: export, odds bot). Conflicts: ['data/ufc_334_odds.json']. odds file: main 2026-11-12T14:36:35-05:00, branch 2026-11-12T18:34:04Z -> take MAIN's copy and rebuild the embeds on it. Branch served set 3827 files, 0 offshore hits; main's new versions pass the full scan and keep their key layout. OK as a --no-ff merge via scripts/merge_main.sh (not a fast-forward).
+  updated_at A 2026-11-12T14:36:35-05:00 B 2026-11-12T18:34:04+00:00; newest book price A 2026-11-12 19:35:35 B 2026-11-12 18:33:47
+  odds file resolved to MAIN's (bot) copy, the newer
+  served odds file differs from the one the embeds were built on: rebuilding the embeds on it
+13 embeds in <sandbox>/embeds/ufc_334; Sean's numbers from data/pending/ufc_334_projections.json
+TOTAL: 2964/2964 numbers verified; 26 mismatches/assertion failures
+SIDE CHECK: not checkable (line within 4 pts of 50%): Evan Elder
+METRICS FILE: verify_embed_metrics: 2984 values recomputed from the CSVs, 0 mismatches

@@ -52,7 +52,7 @@ Updated 2026-11-10. One row per test so nothing is run twice. Status: done, prox
 | Spots | Camps by 'fighting out of' city | done | Line-era samples too small to bet; Denver/Englewood, Auckland, London, Philadelphia positive, Rio, Sacramento, Albuquerque negative. | Labs > Round scoring | City is a proxy for gym; latest city only; 1,178 fighters |
 | Spots | Style matchups, walk-forward | done | Career strike differential 2+/min better than opponent: 70.6% vs 62.4% implied, +10.1% ROI (221). Wrestler vs weak TDD, power vs chin, volume edge, control edge: all priced. Positive 4 of 5 years (2022 +8.6%, 2023 +16.0%, 2024 +26.8%, 2025 -3.3%, 2026 +4.8%). UFC 334 qualifier: McKinney over Miller. | Labs > Spots | BEST PRE-FIGHT SIGNAL SO FAR; needs out-of-sample confirmation |
 | Spots | Aged 35+ and off a year or more | done | 34.8% vs 40.1% implied; -24.8% ROI (115). | Labs > Spots |   |
-| Market | Round totals vs fighters' distance histories | done | No edge. Unders lose in every group (-7.7% overall); overs about break-even. | Labs > Spots | Pinnacle totals, 1,059 fights |
+| Market | Round totals vs fighters' distance histories | done | No edge. Unders lose in every group (-7.7% overall); overs about break-even. | Labs > Spots | sharpest-book totals, 1,059 fights |
 | Blocked | Regional Elo by promotion | blocked | No regional fight data. | - | NEEDS Tapology/Sherdog export or Fight Matrix licence |
 | Blocked | Live-odds backtests | blocked | No in-fight price archive. | - | NEEDS live odds source |
 | Blocked | Tipster consensus vs close | blocked | betmma.tips returned nothing to the fetcher. | - | Try through the browser |

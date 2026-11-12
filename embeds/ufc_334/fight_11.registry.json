@@ -1,7 +1,10 @@
 {
  "fight": 11,
  "of": 13,
- "site_n": 11,
+ "site_pair": [
+  "Caio Borralho",
+  "Yousri Belgaroui"
+ ],
  "pair": [
   "Caio Borralho",
   "Yousri Belgaroui"
@@ -10,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -25,32 +28,6 @@
   },
   {
    "id": "v2",
-   "text": "1632",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "a.elo"
-   },
-   "desc": "Caio Borralho Elo",
-   "raw": 1632
-  },
-  {
-   "id": "v3",
-   "text": "65.6",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "form.ra"
-   },
-   "desc": "Caio Borralho Form Figure",
-   "raw": 65.6
-  },
-  {
-   "id": "v4",
    "text": "3-0-0",
    "fmt": "str",
    "rule": "record",
@@ -61,1178 +38,7 @@
    "raw": "3-0-0"
   },
   {
-   "id": "v5",
-   "text": "1573",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "b.elo"
-   },
-   "desc": "Yousri Belgaroui Elo",
-   "raw": 1573
-  },
-  {
-   "id": "v6",
-   "text": "75.1",
-   "fmt": "n1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "form.rb"
-   },
-   "desc": "Yousri Belgaroui Form Figure",
-   "raw": 75.1
-  },
-  {
-   "id": "v7",
-   "text": "-139",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean ML Caio Borralho",
-   "raw": 0.581196426430214
-  },
-  {
-   "id": "v8",
-   "text": "58.1%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sean win % Caio Borralho",
-   "raw": 0.581196426430214
-  },
-  {
-   "id": "v9",
-   "text": "-162",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Caio Borralho",
-    "field": "cost"
-   },
-   "desc": "BP ML now Caio Borralho",
-   "raw": -162
-  },
-  {
-   "id": "v10",
-   "text": "58.7%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Caio Borralho",
-    "other": "Yousri Belgaroui"
-   },
-   "desc": "BP ML no-vig Caio Borralho",
-   "raw": 0.5871415064607627
-  },
-  {
-   "id": "v11",
-   "text": "-125",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Caio Borralho",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Caio Borralho",
-   "raw": -125
-  },
-  {
-   "id": "v12",
-   "text": "+139",
-   "fmt": "mlp",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean ML Yousri Belgaroui",
-   "raw": 0.41880357356978604
-  },
-  {
-   "id": "v13",
-   "text": "41.9%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Sean win % Yousri Belgaroui",
-   "raw": 0.41880357356978604
-  },
-  {
-   "id": "v14",
-   "text": "+130",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Yousri Belgaroui",
-    "field": "cost"
-   },
-   "desc": "BP ML now Yousri Belgaroui",
-   "raw": 130
-  },
-  {
-   "id": "v15",
-   "text": "41.3%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "moneyline",
-    "label": "Yousri Belgaroui",
-    "other": "Caio Borralho"
-   },
-   "desc": "BP ML no-vig Yousri Belgaroui",
-   "raw": 0.4128584935392373
-  },
-  {
-   "id": "v16",
-   "text": "-105",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Yousri Belgaroui",
-    "field": "opening_cost"
-   },
-   "desc": "BP ML open Yousri Belgaroui",
-   "raw": -105
-  },
-  {
-   "id": "v17",
-   "text": "+171",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Caio Borralho",
-   "raw": 0.3689460542873628
-  },
-  {
-   "id": "v18",
-   "text": "36.9%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Caio Borralho",
-   "raw": 0.3689460542873628
-  },
-  {
-   "id": "v19",
-   "text": "+140",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Caio Borralho Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Caio Borralho",
-   "raw": 140
-  },
-  {
-   "id": "v20",
-   "text": "35.6%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Caio Borralho",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Caio Borralho",
-   "raw": 0.3555620591201163
-  },
-  {
-   "id": "v21",
-   "text": "+140",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Caio Borralho Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP dec open Caio Borralho",
-   "raw": 140
-  },
-  {
-   "id": "v22",
-   "text": "+359",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec ML Yousri Belgaroui",
-   "raw": 0.21768095482723593
-  },
-  {
-   "id": "v23",
-   "text": "21.8%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "dec"
-   },
-   "desc": "Sean dec % Yousri Belgaroui",
-   "raw": 0.21768095482723593
-  },
-  {
-   "id": "v24",
-   "text": "+280",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Yousri Belgaroui Points",
-    "field": "cost"
-   },
-   "desc": "BP dec now Yousri Belgaroui",
-   "raw": 280
-  },
-  {
-   "id": "v25",
-   "text": "22.5%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Yousri Belgaroui",
-    "k": "dec"
-   },
-   "desc": "BP dec no-vig Yousri Belgaroui",
-   "raw": 0.22456551102323133
-  },
-  {
-   "id": "v26",
-   "text": "+280",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Yousri Belgaroui Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP dec open Yousri Belgaroui",
-   "raw": 280
-  },
-  {
-   "id": "v27",
-   "text": "+886",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Caio Borralho",
-   "raw": 0.10139222188359799
-  },
-  {
-   "id": "v28",
-   "text": "10.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Caio Borralho",
-   "raw": 0.10139222188359799
-  },
-  {
-   "id": "v29",
-   "text": "+800",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Caio Borralho KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Caio Borralho",
-   "raw": 800
-  },
-  {
-   "id": "v30",
-   "text": "9.5%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Caio Borralho",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Caio Borralho",
-   "raw": 0.09481654909869768
-  },
-  {
-   "id": "v31",
-   "text": "+800",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Caio Borralho KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP ko open Caio Borralho",
-   "raw": 800
-  },
-  {
-   "id": "v32",
-   "text": "+471",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko ML Yousri Belgaroui",
-   "raw": 0.17511734950545532
-  },
-  {
-   "id": "v33",
-   "text": "17.5%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "ko"
-   },
-   "desc": "Sean ko % Yousri Belgaroui",
-   "raw": 0.17511734950545532
-  },
-  {
-   "id": "v34",
-   "text": "+433",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Yousri Belgaroui KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP ko now Yousri Belgaroui",
-   "raw": 433
-  },
-  {
-   "id": "v35",
-   "text": "16.0%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Yousri Belgaroui",
-    "k": "ko"
-   },
-   "desc": "BP ko no-vig Yousri Belgaroui",
-   "raw": 0.1601029909734107
-  },
-  {
-   "id": "v36",
-   "text": "+470",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Yousri Belgaroui KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP ko open Yousri Belgaroui",
-   "raw": 470
-  },
-  {
-   "id": "v37",
-   "text": "+802",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Caio Borralho",
-   "raw": 0.11085815025925314
-  },
-  {
-   "id": "v38",
-   "text": "11.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Caio Borralho",
-   "raw": 0.11085815025925314
-  },
-  {
-   "id": "v39",
-   "text": "+600",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Caio Borralho Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Caio Borralho",
-   "raw": 600
-  },
-  {
-   "id": "v40",
-   "text": "12.2%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Caio Borralho",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Caio Borralho",
-   "raw": 0.12190699169832558
-  },
-  {
-   "id": "v41",
-   "text": "+600",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Caio Borralho Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP sub open Caio Borralho",
-   "raw": 600
-  },
-  {
-   "id": "v42",
-   "text": "+3745",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub ML Yousri Belgaroui",
-   "raw": 0.02600526923709477
-  },
-  {
-   "id": "v43",
-   "text": "2.6%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "sub"
-   },
-   "desc": "Sean sub % Yousri Belgaroui",
-   "raw": 0.02600526923709477
-  },
-  {
-   "id": "v44",
-   "text": "+3143",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Yousri Belgaroui Submission",
-    "field": "cost"
-   },
-   "desc": "BP sub now Yousri Belgaroui",
-   "raw": 3143
-  },
-  {
-   "id": "v45",
-   "text": "2.6%",
-   "fmt": "pct1",
-   "rule": "bp_mnv",
-   "args": {
-    "fighter": "Yousri Belgaroui",
-    "k": "sub"
-   },
-   "desc": "BP sub no-vig Yousri Belgaroui",
-   "raw": 0.02631356589233053
-  },
-  {
-   "id": "v46",
-   "text": "+3300",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Yousri Belgaroui Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP sub open Yousri Belgaroui",
-   "raw": 3300
-  },
-  {
-   "id": "v47",
-   "text": "+371",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Caio Borralho",
-   "raw": 0.21225037214285114
-  },
-  {
-   "id": "v48",
-   "text": "21.2%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "a",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Caio Borralho",
-   "raw": 0.21225037214285114
-  },
-  {
-   "id": "v49",
-   "text": "+361",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Caio Borralho"
-   },
-   "desc": "BP ITD fair ML Caio Borralho",
-   "raw": 0.21672354079702327
-  },
-  {
-   "id": "v50",
-   "text": "21.7%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Caio Borralho"
-   },
-   "desc": "BP ITD no-vig Caio Borralho",
-   "raw": 0.21672354079702327
-  },
-  {
-   "id": "v51",
-   "text": "+397",
-   "fmt": "mlp",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd ML Yousri Belgaroui",
-   "raw": 0.2011226187425501
-  },
-  {
-   "id": "v52",
-   "text": "20.1%",
-   "fmt": "pct1",
-   "rule": "pub_meth",
-   "args": {
-    "side": "b",
-    "k": "itd"
-   },
-   "desc": "Sean itd % Yousri Belgaroui",
-   "raw": 0.2011226187425501
-  },
-  {
-   "id": "v53",
-   "text": "+436",
-   "fmt": "mlp",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Yousri Belgaroui"
-   },
-   "desc": "BP ITD fair ML Yousri Belgaroui",
-   "raw": 0.18641655686574124
-  },
-  {
-   "id": "v54",
-   "text": "18.6%",
-   "fmt": "pct1",
-   "rule": "bp_mitd",
-   "args": {
-    "fighter": "Yousri Belgaroui"
-   },
-   "desc": "BP ITD no-vig Yousri Belgaroui",
-   "raw": 0.18641655686574124
-  },
-  {
-   "id": "v55",
-   "text": "-142",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD fair ML",
-   "raw": 0.5866270091145988
-  },
-  {
-   "id": "v56",
-   "text": "58.7%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd"
-   },
-   "desc": "Sean GTD %",
-   "raw": 0.5866270091145988
-  },
-  {
-   "id": "v57",
-   "text": "-193",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP GTD yes now",
-   "raw": -193
-  },
-  {
-   "id": "v58",
-   "text": "+145",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP GTD no now",
-   "raw": 145
-  },
-  {
-   "id": "v59",
-   "text": "61.7%",
-   "fmt": "pct1",
-   "rule": "bp_nv",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "other": "No"
-   },
-   "desc": "BP GTD no-vig",
-   "raw": 0.6174185545472352
-  },
-  {
-   "id": "v60",
-   "text": "-195",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP GTD yes open",
-   "raw": -195
-  },
-  {
-   "id": "v61",
-   "text": "-148",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "odds.open.ma"
-   },
-   "desc": "OA open ML a",
-   "raw": -148
-  },
-  {
-   "id": "v62",
-   "text": "+126",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "odds.open.mb"
-   },
-   "desc": "OA open ML b",
-   "raw": 126
-  },
-  {
-   "id": "v63",
-   "text": "57.4%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "odds.open.p"
-   },
-   "desc": "OA open p",
-   "raw": 0.5743
-  },
-  {
-   "id": "v64",
-   "text": "-161",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "odds.close.ma"
-   },
-   "desc": "OA close ML a",
-   "raw": -161
-  },
-  {
-   "id": "v65",
-   "text": "+135",
-   "fmt": "ml",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "odds.close.mb"
-   },
-   "desc": "OA close ML b",
-   "raw": 135
-  },
-  {
-   "id": "v66",
-   "text": "59.2%",
-   "fmt": "pct1",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "odds.close.p"
-   },
-   "desc": "OA close p",
-   "raw": 0.5919
-  },
-  {
-   "id": "v67",
-   "text": "1.8",
-   "fmt": "pts",
-   "rule": "oa_drift",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11
-   },
-   "desc": "OA drift pts",
-   "raw": 0.01759999999999995
-  },
-  {
-   "id": "v68",
-   "text": "-152",
-   "fmt": "ml",
-   "rule": "oa_best",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "side": "a"
-   },
-   "desc": "OA best a",
-   "raw": -152
-  },
-  {
-   "id": "v69",
-   "text": "+136",
-   "fmt": "ml",
-   "rule": "oa_best",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "side": "b"
-   },
-   "desc": "OA best b",
-   "raw": 136
-  },
-  {
-   "id": "v70",
-   "text": "-125",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Caio Borralho",
-    "field": "opening_cost"
-   },
-   "desc": "BP open a (move)",
-   "raw": -125
-  },
-  {
-   "id": "v71",
-   "text": "-162",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Caio Borralho",
-    "field": "cost"
-   },
-   "desc": "BP now a (move)",
-   "raw": -162
-  },
-  {
-   "id": "v72",
-   "text": "-105",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Yousri Belgaroui",
-    "field": "opening_cost"
-   },
-   "desc": "BP open b (move)",
-   "raw": -105
-  },
-  {
-   "id": "v73",
-   "text": "+130",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "moneyline",
-    "label": "Yousri Belgaroui",
-    "field": "cost"
-   },
-   "desc": "BP now b (move)",
-   "raw": 130
-  },
-  {
-   "id": "v74",
-   "text": "140",
-   "fmt": "int",
-   "rule": "oa_len",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11
-   },
-   "desc": "Chart points",
-   "raw": 140
-  },
-  {
-   "id": "v75",
-   "text": "450",
-   "fmt": "int",
-   "rule": "ev",
-   "args": {
-    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 11,
-    "path": "odds.n"
-   },
-   "desc": "Snapshots",
-   "raw": 450
-  },
-  {
-   "id": "v76",
-   "text": "+205",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending KO/TKO/DQ",
-   "raw": 205
-  },
-  {
-   "id": "v77",
-   "text": "+220",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending KO/TKO/DQ",
-   "raw": 220
-  },
-  {
-   "id": "v78",
-   "text": "31%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "KO/TKO/DQ"
-   },
-   "desc": "BP implied fight_ending KO/TKO/DQ",
-   "raw": 0.3125
-  },
-  {
-   "id": "v79",
-   "text": "+460",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Submission",
-   "raw": 460
-  },
-  {
-   "id": "v80",
-   "text": "+500",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Submission",
-   "raw": 500
-  },
-  {
-   "id": "v81",
-   "text": "17%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Submission"
-   },
-   "desc": "BP implied fight_ending Submission",
-   "raw": 0.16666666666666666
-  },
-  {
-   "id": "v82",
-   "text": "-195",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_ending Points",
-   "raw": -195
-  },
-  {
-   "id": "v83",
-   "text": "-195",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points",
-    "field": "cost"
-   },
-   "desc": "BP now fight_ending Points",
-   "raw": -195
-  },
-  {
-   "id": "v84",
-   "text": "66%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_ending",
-    "label": "Points"
-   },
-   "desc": "BP implied fight_ending Points",
-   "raw": 0.6610169491525424
-  },
-  {
-   "id": "v85",
-   "text": "-195",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance Yes",
-   "raw": -195
-  },
-  {
-   "id": "v86",
-   "text": "-193",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance Yes",
-   "raw": -193
-  },
-  {
-   "id": "v87",
-   "text": "66%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes"
-   },
-   "desc": "BP implied fight_distance Yes",
-   "raw": 0.658703071672355
-  },
-  {
-   "id": "v88",
-   "text": "+145",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "opening_cost"
-   },
-   "desc": "BP open fight_distance No",
-   "raw": 145
-  },
-  {
-   "id": "v89",
-   "text": "+145",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "BP now fight_distance No",
-   "raw": 145
-  },
-  {
-   "id": "v90",
-   "text": "41%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No"
-   },
-   "desc": "BP implied fight_distance No",
-   "raw": 0.40816326530612246
-  },
-  {
-   "id": "v91",
-   "text": "2.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Over",
-   "raw": 2.5
-  },
-  {
-   "id": "v92",
-   "text": "-230",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Over",
-   "raw": -230
-  },
-  {
-   "id": "v93",
-   "text": "-239",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Over",
-   "raw": -239
-  },
-  {
-   "id": "v94",
-   "text": "71%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Over"
-   },
-   "desc": "BP implied total_rounds Over",
-   "raw": 0.7050147492625368
-  },
-  {
-   "id": "v95",
-   "text": "2.5",
-   "fmt": "str",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "line"
-   },
-   "desc": "BP line total_rounds Under",
-   "raw": 2.5
-  },
-  {
-   "id": "v96",
-   "text": "+175",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "opening_cost"
-   },
-   "desc": "BP open total_rounds Under",
-   "raw": 175
-  },
-  {
-   "id": "v97",
-   "text": "+180",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under",
-    "field": "cost"
-   },
-   "desc": "BP now total_rounds Under",
-   "raw": 180
-  },
-  {
-   "id": "v98",
-   "text": "36%",
-   "fmt": "pct0",
-   "rule": "bp_imp",
-   "args": {
-    "market": "total_rounds",
-    "label": "Under"
-   },
-   "desc": "BP implied total_rounds Under",
-   "raw": 0.35714285714285715
-  },
-  {
-   "id": "v99",
+   "id": "v3",
    "text": "33.8",
    "fmt": "n1",
    "rule": "age",
@@ -1243,7 +49,7 @@
    "raw": 33.82614647501711
   },
   {
-   "id": "v100",
+   "id": "v4",
    "text": "34.5",
    "fmt": "n1",
    "rule": "age",
@@ -1254,29 +60,7 @@
    "raw": 34.450376454483234
   },
   {
-   "id": "v101",
-   "text": "75\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Reach a",
-   "raw": 75
-  },
-  {
-   "id": "v102",
-   "text": "79\"",
-   "fmt": "in",
-   "rule": "bio_reach",
-   "args": {
-    "side": "b"
-   },
-   "desc": "Reach b",
-   "raw": 79
-  },
-  {
-   "id": "v103",
+   "id": "v5",
    "text": "6'1\"",
    "fmt": "str",
    "rule": "bio",
@@ -1288,19 +72,29 @@
    "raw": "6'1\""
   },
   {
-   "id": "v104",
-   "text": "6'5\"",
-   "fmt": "str",
-   "rule": "bio",
+   "id": "v6",
+   "text": "75\"",
+   "fmt": "in",
+   "rule": "bio_reach",
    "args": {
-    "side": "b",
-    "key": "ht"
+    "side": "a"
    },
-   "desc": "Height b",
-   "raw": "6'5\""
+   "desc": "Reach a",
+   "raw": 75
   },
   {
-   "id": "v105",
+   "id": "v7",
+   "text": "79\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 79
+  },
+  {
+   "id": "v8",
    "text": "Southpaw",
    "fmt": "str",
    "rule": "bio",
@@ -1312,7 +106,7 @@
    "raw": "Southpaw"
   },
   {
-   "id": "v106",
+   "id": "v9",
    "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
@@ -1324,234 +118,2320 @@
    "raw": "Orthodox"
   },
   {
-   "id": "v107",
-   "text": "9",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v10",
+   "text": "-139",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "a"
    },
-   "desc": "UFC fights a",
-   "raw": 9
+   "desc": "Model ML Caio Borralho",
+   "raw": 0.58145792164946
   },
   {
-   "id": "v108",
-   "text": "3",
-   "fmt": "int",
-   "rule": "nfights",
+   "id": "v11",
+   "text": "58.1%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Caio Borralho",
+   "raw": 0.58145792164946
+  },
+  {
+   "id": "v12",
+   "text": "-155",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Caio Borralho",
+   "raw": -155
+  },
+  {
+   "id": "v13",
+   "text": "60.8%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Caio Borralho",
+   "raw": 0.6078431372549019
+  },
+  {
+   "id": "v14",
+   "text": "-162",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Caio Borralho",
+    "field": "cost"
+   },
+   "desc": "Market ML Caio Borralho",
+   "raw": -162
+  },
+  {
+   "id": "v15",
+   "text": "61.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Caio Borralho"
+   },
+   "desc": "Market implied Caio Borralho",
+   "raw": 0.6183206106870229
+  },
+  {
+   "id": "v16",
+   "text": "-2.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v11",
+     "v13"
+    ]
+   },
+   "desc": "Edge ML Caio Borralho",
+   "raw": -0.026385215605441936
+  },
+  {
+   "id": "v17",
+   "text": "+139",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
     "side": "b"
    },
-   "desc": "UFC fights b",
+   "desc": "Model ML Yousri Belgaroui",
+   "raw": 0.41854207835054
+  },
+  {
+   "id": "v18",
+   "text": "41.9%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Yousri Belgaroui",
+   "raw": 0.41854207835054
+  },
+  {
+   "id": "v19",
+   "text": "+132",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Yousri Belgaroui",
+   "raw": 132
+  },
+  {
+   "id": "v20",
+   "text": "43.1%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Yousri Belgaroui",
+   "raw": 0.43103448275862066
+  },
+  {
+   "id": "v21",
+   "text": "+130",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Yousri Belgaroui",
+    "field": "cost"
+   },
+   "desc": "Market ML Yousri Belgaroui",
+   "raw": 130
+  },
+  {
+   "id": "v22",
+   "text": "43.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Yousri Belgaroui"
+   },
+   "desc": "Market implied Yousri Belgaroui",
+   "raw": 0.43478260869565216
+  },
+  {
+   "id": "v23",
+   "text": "-1.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v18",
+     "v20"
+    ]
+   },
+   "desc": "Edge ML Yousri Belgaroui",
+   "raw": -0.012492404408080637
+  },
+  {
+   "id": "v24",
+   "text": "-142",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.5866321777543895
+  },
+  {
+   "id": "v25",
+   "text": "58.7%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.5866321777543895
+  },
+  {
+   "id": "v26",
+   "text": "-166",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD price",
+   "raw": 0.6234796967241207
+  },
+  {
+   "id": "v27",
+   "text": "62.3%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd_listed"
+   },
+   "desc": "Listed GTD %",
+   "raw": 0.6234796967241207
+  },
+  {
+   "id": "v28",
+   "text": "-193",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": -193
+  },
+  {
+   "id": "v29",
+   "text": "65.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.658703071672355
+  },
+  {
+   "id": "v30",
+   "text": "-3.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v25",
+     "v27"
+    ]
+   },
+   "desc": "Edge GTD vs listed",
+   "raw": -0.03684751896973126
+  },
+  {
+   "id": "v31",
+   "text": "+142",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.41336782224561053
+  },
+  {
+   "id": "v32",
+   "text": "41.3%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.41336782224561053
+  },
+  {
+   "id": "v33",
+   "text": "+145",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market ITD no",
+   "raw": 145
+  },
+  {
+   "id": "v34",
+   "text": "40.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market ITD implied",
+   "raw": 0.40816326530612246
+  },
+  {
+   "id": "v35",
+   "text": "+0.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v32",
+     "v34"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": 0.00520455693948807
+  },
+  {
+   "id": "v36",
+   "text": "+171",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Caio Borralho",
+   "raw": 0.3690992542670881
+  },
+  {
+   "id": "v37",
+   "text": "36.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Caio Borralho",
+   "raw": 0.3690992542670881
+  },
+  {
+   "id": "v38",
+   "text": "+140",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Caio Borralho Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Caio Borralho",
+   "raw": 140
+  },
+  {
+   "id": "v39",
+   "text": "41.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Caio Borralho Points"
+   },
+   "desc": "Market dec implied Caio Borralho",
+   "raw": 0.4166666666666667
+  },
+  {
+   "id": "v40",
+   "text": "-4.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v37",
+     "v39"
+    ]
+   },
+   "desc": "Edge dec Caio Borralho",
+   "raw": -0.04756741239957857
+  },
+  {
+   "id": "v41",
+   "text": "+886",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Caio Borralho",
+   "raw": 0.10144382110443342
+  },
+  {
+   "id": "v42",
+   "text": "10.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Caio Borralho",
+   "raw": 0.10144382110443342
+  },
+  {
+   "id": "v43",
+   "text": "+774",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Caio Borralho KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Caio Borralho",
+   "raw": 774
+  },
+  {
+   "id": "v44",
+   "text": "11.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Caio Borralho KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Caio Borralho",
+   "raw": 0.11441647597254005
+  },
+  {
+   "id": "v45",
+   "text": "-1.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v42",
+     "v44"
+    ]
+   },
+   "desc": "Edge ko Caio Borralho",
+   "raw": -0.012972654868106628
+  },
+  {
+   "id": "v46",
+   "text": "+802",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Caio Borralho",
+   "raw": 0.11091484627793846
+  },
+  {
+   "id": "v47",
+   "text": "11.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Caio Borralho",
+   "raw": 0.11091484627793846
+  },
+  {
+   "id": "v48",
+   "text": "+574",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Caio Borralho Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Caio Borralho",
+   "raw": 574
+  },
+  {
+   "id": "v49",
+   "text": "14.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Caio Borralho Submission"
+   },
+   "desc": "Market sub implied Caio Borralho",
+   "raw": 0.14836795252225518
+  },
+  {
+   "id": "v50",
+   "text": "-3.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v47",
+     "v49"
+    ]
+   },
+   "desc": "Edge sub Caio Borralho",
+   "raw": -0.03745310624431672
+  },
+  {
+   "id": "v51",
+   "text": "+371",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Caio Borralho",
+   "raw": 0.21235866738237189
+  },
+  {
+   "id": "v52",
+   "text": "21.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Caio Borralho",
+   "raw": 0.21235866738237189
+  },
+  {
+   "id": "v53",
+   "text": "26.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Caio Borralho KO/TKO/DQ",
+     "Caio Borralho Submission"
+    ]
+   },
+   "desc": "Market ITD implied Caio Borralho",
+   "raw": 0.2627844284947952
+  },
+  {
+   "id": "v54",
+   "text": "-5.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v52",
+     "v53"
+    ]
+   },
+   "desc": "Edge itd Caio Borralho",
+   "raw": -0.050425761112423334
+  },
+  {
+   "id": "v55",
+   "text": "+360",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Yousri Belgaroui",
+   "raw": 0.21753292348730133
+  },
+  {
+   "id": "v56",
+   "text": "21.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Yousri Belgaroui",
+   "raw": 0.21753292348730133
+  },
+  {
+   "id": "v57",
+   "text": "+275",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Yousri Belgaroui Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Yousri Belgaroui",
+   "raw": 275
+  },
+  {
+   "id": "v58",
+   "text": "26.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Yousri Belgaroui Points"
+   },
+   "desc": "Market dec implied Yousri Belgaroui",
+   "raw": 0.26666666666666666
+  },
+  {
+   "id": "v59",
+   "text": "-4.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v56",
+     "v58"
+    ]
+   },
+   "desc": "Edge dec Yousri Belgaroui",
+   "raw": -0.049133743179365336
+  },
+  {
+   "id": "v60",
+   "text": "+471",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Yousri Belgaroui",
+   "raw": 0.17501888126364332
+  },
+  {
+   "id": "v61",
+   "text": "17.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Yousri Belgaroui",
+   "raw": 0.17501888126364332
+  },
+  {
+   "id": "v62",
+   "text": "+433",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Yousri Belgaroui KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Yousri Belgaroui",
+   "raw": 433
+  },
+  {
+   "id": "v63",
+   "text": "18.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Yousri Belgaroui KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Yousri Belgaroui",
+   "raw": 0.18761726078799248
+  },
+  {
+   "id": "v64",
+   "text": "-1.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v61",
+     "v63"
+    ]
+   },
+   "desc": "Edge ko Yousri Belgaroui",
+   "raw": -0.012598379524349168
+  },
+  {
+   "id": "v65",
+   "text": "+3748",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Yousri Belgaroui",
+   "raw": 0.025990273599595392
+  },
+  {
+   "id": "v66",
+   "text": "2.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Yousri Belgaroui",
+   "raw": 0.025990273599595392
+  },
+  {
+   "id": "v67",
+   "text": "+3143",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Yousri Belgaroui Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Yousri Belgaroui",
+   "raw": 3143
+  },
+  {
+   "id": "v68",
+   "text": "3.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Yousri Belgaroui Submission"
+   },
+   "desc": "Market sub implied Yousri Belgaroui",
+   "raw": 0.030835646006783842
+  },
+  {
+   "id": "v69",
+   "text": "-0.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v66",
+     "v68"
+    ]
+   },
+   "desc": "Edge sub Yousri Belgaroui",
+   "raw": -0.00484537240718845
+  },
+  {
+   "id": "v70",
+   "text": "+397",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Yousri Belgaroui",
+   "raw": 0.2010091548632387
+  },
+  {
+   "id": "v71",
+   "text": "20.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Yousri Belgaroui",
+   "raw": 0.2010091548632387
+  },
+  {
+   "id": "v72",
+   "text": "21.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Yousri Belgaroui KO/TKO/DQ",
+     "Yousri Belgaroui Submission"
+    ]
+   },
+   "desc": "Market ITD implied Yousri Belgaroui",
+   "raw": 0.21845290679477633
+  },
+  {
+   "id": "v73",
+   "text": "-1.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v71",
+     "v72"
+    ]
+   },
+   "desc": "Edge itd Yousri Belgaroui",
+   "raw": -0.017443751931537632
+  },
+  {
+   "id": "v74",
+   "text": "+130",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Caio Borralho",
+     "Yousri Belgaroui"
+    ],
+    "side": "b"
+   },
+   "desc": "LH open ML Yousri Belgaroui",
+   "raw": 130
+  },
+  {
+   "id": "v75",
+   "text": "0.4",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_ufc_334.json",
+    "pair": [
+     "Caio Borralho",
+     "Yousri Belgaroui"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.0040000000000000036
+  },
+  {
+   "id": "v76",
+   "text": "65%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "target.head"
+   },
+   "desc": "Target head Caio Borralho",
+   "raw": 0.6492
+  },
+  {
+   "id": "v77",
+   "text": "18%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "target.body"
+   },
+   "desc": "Target body Caio Borralho",
+   "raw": 0.183
+  },
+  {
+   "id": "v78",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Caio Borralho",
+   "raw": 0.1678
+  },
+  {
+   "id": "v79",
+   "text": "59%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "target.head"
+   },
+   "desc": "Target head Yousri Belgaroui",
+   "raw": 0.5909
+  },
+  {
+   "id": "v80",
+   "text": "24%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "target.body"
+   },
+   "desc": "Target body Yousri Belgaroui",
+   "raw": 0.2355
+  },
+  {
+   "id": "v81",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Yousri Belgaroui",
+   "raw": 0.1736
+  },
+  {
+   "id": "v82",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 9
+  },
+  {
+   "id": "v83",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
    "raw": 3
   },
   {
-   "id": "v109",
-   "text": "3.30",
-   "fmt": "n2",
-   "rule": "stat",
+   "id": "v84",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "slpm"
+    "fighter": "Caio Borralho",
+    "path": "power_w"
    },
-   "desc": "SLpM a",
-   "raw": 3.3041391721655673
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.36
+  },
+  {
+   "id": "v85",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 3
+  },
+  {
+   "id": "v86",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 3
+  },
+  {
+   "id": "v87",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 1.0
+  },
+  {
+   "id": "v88",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 3
+  },
+  {
+   "id": "v89",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 3
+  },
+  {
+   "id": "v90",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Middleweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2188
+  },
+  {
+   "id": "v91",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.0
+  },
+  {
+   "id": "v92",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v93",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 0
+  },
+  {
+   "id": "v94",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.0
+  },
+  {
+   "id": "v95",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v96",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 0
+  },
+  {
+   "id": "v97",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Middleweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.2541
+  },
+  {
+   "id": "v98",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Caio Borralho",
+   "raw": 1
+  },
+  {
+   "id": "v99",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Caio Borralho",
+   "raw": 1
+  },
+  {
+   "id": "v100",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Caio Borralho",
+   "raw": 6
+  },
+  {
+   "id": "v101",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Caio Borralho",
+   "raw": 1
+  },
+  {
+   "id": "v102",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Yousri Belgaroui",
+   "raw": 3
+  },
+  {
+   "id": "v103",
+   "text": "78%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Caio Borralho",
+   "raw": 0.7778
+  },
+  {
+   "id": "v104",
+   "text": "+0.8",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Caio Borralho",
+   "raw": 0.756
+  },
+  {
+   "id": "v105",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Caio Borralho",
+   "raw": 9
+  },
+  {
+   "id": "v106",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Caio Borralho",
+   "raw": 0.5556
+  },
+  {
+   "id": "v107",
+   "text": "-0.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Caio Borralho",
+   "raw": -0.075
+  },
+  {
+   "id": "v108",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Caio Borralho",
+   "raw": 9
+  },
+  {
+   "id": "v109",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Caio Borralho",
+   "raw": 1.0
   },
   {
    "id": "v110",
-   "text": "8.35",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "+0.6",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "slpm"
+    "fighter": "Caio Borralho",
+    "path": "rounds.2.diff_pm"
    },
-   "desc": "SLpM b",
-   "raw": 8.349626221966647
+   "desc": "R3 diff Caio Borralho",
+   "raw": 0.619
   },
   {
    "id": "v111",
-   "text": "2.63",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "sapm"
+    "fighter": "Caio Borralho",
+    "path": "rounds.2.fights"
    },
-   "desc": "SApM a",
-   "raw": 2.634673065386923
+   "desc": "R3 fights Caio Borralho",
+   "raw": 7
   },
   {
    "id": "v112",
-   "text": "1.93",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "sapm"
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.0.won"
    },
-   "desc": "SApM b",
-   "raw": 1.932144910868315
+   "desc": "R1 won Yousri Belgaroui",
+   "raw": 1.0
   },
   {
    "id": "v113",
-   "text": "+0.67",
-   "fmt": "s2",
-   "rule": "stat",
+   "text": "+5.0",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "diff"
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.0.diff_pm"
    },
-   "desc": "Strike diff /min a",
-   "raw": 0.6694661067786443
+   "desc": "R1 diff Yousri Belgaroui",
+   "raw": 4.994
   },
   {
    "id": "v114",
-   "text": "+6.42",
-   "fmt": "s2",
-   "rule": "stat",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "diff"
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.0.fights"
    },
-   "desc": "Strike diff /min b",
-   "raw": 6.417481311098332
+   "desc": "R1 fights Yousri Belgaroui",
+   "raw": 3
   },
   {
    "id": "v115",
-   "text": "55%",
+   "text": "100%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "acc"
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.1.won"
    },
-   "desc": "Strike accuracy a",
-   "raw": 0.5510204081632653
+   "desc": "R2 won Yousri Belgaroui",
+   "raw": 1.0
   },
   {
    "id": "v116",
-   "text": "65%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "+6.2",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "acc"
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "Strike accuracy b",
-   "raw": 0.6453333333333333
+   "desc": "R2 diff Yousri Belgaroui",
+   "raw": 6.2
   },
   {
    "id": "v117",
-   "text": "60%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "dfn"
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.1.fights"
    },
-   "desc": "Strike defence a",
-   "raw": 0.5982436882546652
+   "desc": "R2 fights Yousri Belgaroui",
+   "raw": 2
   },
   {
    "id": "v118",
-   "text": "70%",
+   "text": "100%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "dfn"
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.2.won"
    },
-   "desc": "Strike defence b",
-   "raw": 0.6972972972972973
+   "desc": "R3 won Yousri Belgaroui",
+   "raw": 1.0
   },
   {
    "id": "v119",
-   "text": "1.08",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "+11.4",
+   "fmt": "s1",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "td15"
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.2.diff_pm"
    },
-   "desc": "Takedowns /15 a",
-   "raw": 1.079784043191362
+   "desc": "R3 diff Yousri Belgaroui",
+   "raw": 11.387
   },
   {
    "id": "v120",
-   "text": "0.52",
-   "fmt": "n2",
-   "rule": "stat",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "td15"
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.2.fights"
    },
-   "desc": "Takedowns /15 b",
-   "raw": 0.5175388154111558
+   "desc": "R3 fights Yousri Belgaroui",
+   "raw": 2
   },
   {
    "id": "v121",
-   "text": "74%",
-   "fmt": "pct0",
-   "rule": "stat",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "tdd"
+    "fighter": "Caio Borralho",
+    "path": "fights.0.rw.0.2"
    },
-   "desc": "TD defence a",
-   "raw": 0.736842105263158
+   "desc": "R1 fight diff Caio Borralho 0",
+   "raw": 5
   },
   {
    "id": "v122",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 1",
+   "raw": -4
+  },
+  {
+   "id": "v123",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 2",
+   "raw": 3
+  },
+  {
+   "id": "v124",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 3",
+   "raw": 5
+  },
+  {
+   "id": "v125",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 4",
+   "raw": 4
+  },
+  {
+   "id": "v126",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 5",
+   "raw": -1
+  },
+  {
+   "id": "v127",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 6",
+   "raw": 6
+  },
+  {
+   "id": "v128",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 7",
+   "raw": 3
+  },
+  {
+   "id": "v129",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Caio Borralho 8",
+   "raw": 13
+  },
+  {
+   "id": "v130",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 0",
+   "raw": -3
+  },
+  {
+   "id": "v131",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 1",
+   "raw": -6
+  },
+  {
+   "id": "v132",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 2",
+   "raw": -5
+  },
+  {
+   "id": "v133",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 3",
+   "raw": 9
+  },
+  {
+   "id": "v134",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 4",
+   "raw": 1
+  },
+  {
+   "id": "v135",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 5",
+   "raw": 5
+  },
+  {
+   "id": "v136",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 6",
+   "raw": 0
+  },
+  {
+   "id": "v137",
+   "text": "-10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 7",
+   "raw": -10
+  },
+  {
+   "id": "v138",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Caio Borralho 8",
+   "raw": 6
+  },
+  {
+   "id": "v139",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 0",
+   "raw": 0
+  },
+  {
+   "id": "v140",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 1",
+   "raw": 4
+  },
+  {
+   "id": "v141",
+   "text": "+22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 2",
+   "raw": 22
+  },
+  {
+   "id": "v142",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 4",
+   "raw": 8
+  },
+  {
+   "id": "v143",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 6",
+   "raw": -1
+  },
+  {
+   "id": "v144",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 7",
+   "raw": -12
+  },
+  {
+   "id": "v145",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Caio Borralho 8",
+   "raw": 0
+  },
+  {
+   "id": "v146",
+   "text": "+30",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Yousri Belgaroui 0",
+   "raw": 30
+  },
+  {
+   "id": "v147",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Yousri Belgaroui 1",
+   "raw": 15
+  },
+  {
+   "id": "v148",
+   "text": "+27",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Yousri Belgaroui 2",
+   "raw": 27
+  },
+  {
+   "id": "v149",
+   "text": "+37",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Yousri Belgaroui 1",
+   "raw": 37
+  },
+  {
+   "id": "v150",
+   "text": "+25",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Yousri Belgaroui 2",
+   "raw": 25
+  },
+  {
+   "id": "v151",
+   "text": "+26",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Yousri Belgaroui 1",
+   "raw": 26
+  },
+  {
+   "id": "v152",
+   "text": "+26",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Yousri Belgaroui 2",
+   "raw": 26
+  },
+  {
+   "id": "v153",
+   "text": "45",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Caio Borralho",
+   "raw": 45.0
+  },
+  {
+   "id": "v154",
+   "text": "40",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Caio Borralho",
+   "raw": 39.98
+  },
+  {
+   "id": "v155",
+   "text": "34",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Caio Borralho",
+   "raw": 33.93
+  },
+  {
+   "id": "v156",
+   "text": "14",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.0.mins"
+   },
+   "desc": "Depth R1 mins Yousri Belgaroui",
+   "raw": 14.42
+  },
+  {
+   "id": "v157",
+   "text": "10",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.1.mins"
+   },
+   "desc": "Depth R2 mins Yousri Belgaroui",
+   "raw": 10.0
+  },
+  {
+   "id": "v158",
+   "text": "5",
+   "fmt": "r0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "rounds.2.mins"
+   },
+   "desc": "Depth R3 mins Yousri Belgaroui",
+   "raw": 4.57
+  },
+  {
+   "id": "v159",
+   "text": "1.08",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 1.08
+  },
+  {
+   "id": "v160",
+   "text": "0.52",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 0.518
+  },
+  {
+   "id": "v161",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.4545
+  },
+  {
+   "id": "v162",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 1.0
+  },
+  {
+   "id": "v163",
+   "text": "74%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.7368
+  },
+  {
+   "id": "v164",
    "text": "56%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "tdd"
+    "fighter": "Yousri Belgaroui",
+    "path": "grap.tdd"
    },
    "desc": "TD defence b",
    "raw": 0.5625
   },
   {
-   "id": "v123",
+   "id": "v165",
    "text": "27%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "key": "ctrlp"
+    "fighter": "Caio Borralho",
+    "path": "grap.ctrl"
    },
-   "desc": "Control time a",
-   "raw": 0.26850629874025195
+   "desc": "Time in control a",
+   "raw": 0.2685
   },
   {
-   "id": "v124",
+   "id": "v166",
    "text": "6%",
    "fmt": "pct0",
-   "rule": "stat",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "key": "ctrlp"
+    "fighter": "Yousri Belgaroui",
+    "path": "grap.ctrl"
    },
-   "desc": "Control time b",
-   "raw": 0.056929269695227144
+   "desc": "Time in control b",
+   "raw": 0.0569
   },
   {
-   "id": "v125",
-   "text": "69",
-   "fmt": "r0",
-   "rule": "fight",
+   "id": "v167",
+   "text": "+20.5%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.2055
+  },
+  {
+   "id": "v168",
+   "text": "-12.5%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": -0.1253
+  },
+  {
+   "id": "v169",
+   "text": "7%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.0747
+  },
+  {
+   "id": "v170",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.1869
+  },
+  {
+   "id": "v171",
+   "text": "0.43",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.432
+  },
+  {
+   "id": "v172",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.0
+  },
+  {
+   "id": "v173",
+   "text": "+0.67",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Caio Borralho",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Caio Borralho",
+   "raw": 0.6689999999999999
+  },
+  {
+   "id": "v174",
+   "text": "+6.42",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Yousri Belgaroui",
+   "raw": 6.417
+  },
+  {
+   "id": "v175",
+   "text": "+0.77",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.765
+  },
+  {
+   "id": "v176",
+   "text": "+6.46",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 6.455
+  },
+  {
+   "id": "v177",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Caio Borralho",
+   "raw": 7
+  },
+  {
+   "id": "v178",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Caio Borralho",
+   "raw": 9
+  },
+  {
+   "id": "v179",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "out_landed.k"
+   },
+   "desc": "Out-landed the opponent k Yousri Belgaroui",
+   "raw": 3
+  },
+  {
+   "id": "v180",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "out_landed.n"
+   },
+   "desc": "Out-landed the opponent n Yousri Belgaroui",
+   "raw": 3
+  },
+  {
+   "id": "v181",
+   "text": "+0.70",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 0.698
+  },
+  {
+   "id": "v182",
+   "text": "+3.52",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 3.519
+  },
+  {
+   "id": "v183",
+   "text": "-0.04",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": -0.036
+  },
+  {
+   "id": "v184",
+   "text": "+1.73",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 1.725
+  },
+  {
+   "id": "v185",
+   "text": "+0.01",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.007
+  },
+  {
+   "id": "v186",
+   "text": "+1.17",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": 1.173
+  },
+  {
+   "id": "v187",
+   "text": "69%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.6922
+  },
+  {
+   "id": "v188",
+   "text": "74%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.7438
+  },
+  {
+   "id": "v189",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Yousri Belgaroui",
+   "raw": 3
+  },
+  {
+   "id": "v190",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Caio Borralho",
+   "raw": 8
+  },
+  {
+   "id": "v191",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Caio Borralho",
+   "raw": 8
+  },
+  {
+   "id": "v192",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "grap_won.k"
+   },
+   "desc": "Won the grappling k Yousri Belgaroui",
+   "raw": 0
+  },
+  {
+   "id": "v193",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "grap_won.n"
+   },
+   "desc": "Won the grappling n Yousri Belgaroui",
+   "raw": 2
+  },
+  {
+   "id": "v194",
+   "text": "116%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
     "side": "a",
-    "i": 0,
-    "key": "fg"
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "caio-borralho"
    },
-   "desc": "Fig Caio Borralho Reinier de Ridder",
-   "raw": 69.2
+   "desc": "Output kept R3 a",
+   "raw": 1.165
   },
   {
-   "id": "v126",
+   "id": "v195",
+   "text": "15.4",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 15.435
+  },
+  {
+   "id": "v196",
+   "text": "9.7",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 9.661
+  },
+  {
+   "id": "v197",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Caio Borralho",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v198",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.3333
+  },
+  {
+   "id": "v199",
    "text": "-233",
    "fmt": "ml",
    "rule": "fight",
@@ -1564,20 +2444,7 @@
    "raw": -233
   },
   {
-   "id": "v127",
-   "text": "48",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Caio Borralho Nassourdine Imavov",
-   "raw": 47.8
-  },
-  {
-   "id": "v128",
+   "id": "v200",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -1590,20 +2457,7 @@
    "raw": -132
   },
   {
-   "id": "v129",
-   "text": "90",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Caio Borralho Jared Cannonier",
-   "raw": 90.0
-  },
-  {
-   "id": "v130",
+   "id": "v201",
    "text": "-244",
    "fmt": "ml",
    "rule": "fight",
@@ -1616,20 +2470,7 @@
    "raw": -244
   },
   {
-   "id": "v131",
-   "text": "95",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 3,
-    "key": "fg"
-   },
-   "desc": "Fig Caio Borralho Paul Craig",
-   "raw": 94.7
-  },
-  {
-   "id": "v132",
+   "id": "v202",
    "text": "-556",
    "fmt": "ml",
    "rule": "fight",
@@ -1642,20 +2483,7 @@
    "raw": -556
   },
   {
-   "id": "v133",
-   "text": "82",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 4,
-    "key": "fg"
-   },
-   "desc": "Fig Caio Borralho Abus Magomedov",
-   "raw": 82.2
-  },
-  {
-   "id": "v134",
+   "id": "v203",
    "text": "-282",
    "fmt": "ml",
    "rule": "fight",
@@ -1668,20 +2496,59 @@
    "raw": -282
   },
   {
-   "id": "v135",
-   "text": "94",
-   "fmt": "r0",
+   "id": "v204",
+   "text": "-370",
+   "fmt": "ml",
    "rule": "fight",
    "args": {
-    "side": "b",
-    "i": 0,
-    "key": "fg"
+    "side": "a",
+    "i": 5,
+    "key": "od.mc"
    },
-   "desc": "Fig Yousri Belgaroui Djorden Santos",
-   "raw": 94.2
+   "desc": "Close Caio Borralho Michal Oleksiejczuk",
+   "raw": -370
   },
   {
-   "id": "v136",
+   "id": "v205",
+   "text": "-208",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 6,
+    "key": "od.mc"
+   },
+   "desc": "Close Caio Borralho Makhmud Muradov",
+   "raw": -208
+  },
+  {
+   "id": "v206",
+   "text": "-250",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 7,
+    "key": "od.mc"
+   },
+   "desc": "Close Caio Borralho Armen Petrosyan",
+   "raw": -250
+  },
+  {
+   "id": "v207",
+   "text": "+100",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 8,
+    "key": "od.mc"
+   },
+   "desc": "Close Caio Borralho Gadzhi Omargadzhiev",
+   "raw": 100
+  },
+  {
+   "id": "v208",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -1694,20 +2561,7 @@
    "raw": -714
   },
   {
-   "id": "v137",
-   "text": "102",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 1,
-    "key": "fg"
-   },
-   "desc": "Fig Yousri Belgaroui Mansur Abdul-Malik",
-   "raw": 102.5
-  },
-  {
-   "id": "v138",
+   "id": "v209",
    "text": "+124",
    "fmt": "ml",
    "rule": "fight",
@@ -1720,20 +2574,7 @@
    "raw": 124
   },
   {
-   "id": "v139",
-   "text": "108",
-   "fmt": "r0",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 2,
-    "key": "fg"
-   },
-   "desc": "Fig Yousri Belgaroui Azamat Bekoev",
-   "raw": 107.9
-  },
-  {
-   "id": "v140",
+   "id": "v210",
    "text": "+240",
    "fmt": "ml",
    "rule": "fight",
@@ -1744,34 +2585,7 @@
    },
    "desc": "Close Yousri Belgaroui Azamat Bekoev",
    "raw": 240
-  },
-  {
-   "id": "v141",
-   "text": "58.1%",
-   "fmt": "pct1",
-   "rule": "pub_win",
-   "args": {
-    "side": "a"
-   },
-   "desc": "Sheet % (note)",
-   "raw": 0.581196426430214
-  },
-  {
-   "id": "v142",
-   "text": "0.6",
-   "fmt": "pts",
-   "rule": "gap_pub_bp",
-   "args": {
-    "side": "a",
-    "market": "moneyline",
-    "label": "Caio Borralho",
-    "other": "Yousri Belgaroui"
-   },
-   "desc": "Sheet vs BP gap",
-   "raw": -0.005945080030548722
   }
  ],
- "gaps": [
-  "Fight 11: BettingPros method_of_victory has unlabeled selections ['Caio Borralho', 'Yousri Belgaroui']; not displayed."
- ]
+ "gaps": []
 }

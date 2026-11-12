@@ -1,0 +1,6 @@
+{
+ "_note": "Opponent-strength adjustment for net control share. Fit on 2015-2021 UFC bouts; passed the pre-registered holdout test (claude/Grappling_Adjust_PREREG_2026-11-12.md, sha c2cf6ee2): holdout log loss 0.57798 vs 0.58122 raw, better in 5 of 5 years 2022-2026.",
+ "gamma_per100": -0.04115,
+ "strength_mean": 1532.9,
+ "prereg_sha": "c2cf6ee2"
+}

@@ -1,0 +1,21 @@
+{
+ "_doc": "Hand fixes to the published closing line, made after a pre-registered general rule (BoutStart_Cut_PREREG sha 3f27b7fe) failed. For each bout the published close and chart use only snapshots strictly before 'before' (its BettingPros scheduled start). Only these bouts; the general rule is unchanged. Source and reason on each entry.",
+ "fixes": [
+  {
+   "a": "Erin Blanchfield",
+   "b": "Jasmine Jasudavicius",
+   "date": "2026-10-17",
+   "before": "2026-10-18T01:20:00Z",
+   "why": "2026-10-18 01:55 snapshot was in-fight: DraftKings 0.37 and BetMGM 0.48 vs other books about 0.73",
+   "source": "data/fn_buckley_malott_odds.json scheduled_utc; archive snapshot 2026-10-18T01:55"
+  },
+  {
+   "a": "Farid Basharat",
+   "b": "John Garza",
+   "date": "2026-07-11",
+   "before": "2026-07-11T21:40:00Z",
+   "why": "2026-07-11 21:55 snapshot was in-fight: DraftKings 0.53, BetMGM 0.72, Caesars 0.87; no US price before the start, so opener only",
+   "source": "BettingPros scheduled_utc; archive snapshot 2026-07-11T21:55"
+  }
+ ]
+}
