@@ -43,6 +43,12 @@ ALLOW = {
     "scripts/scan_public.py": ({"offshore", "local path", "email", "secret", "sheet internals", "working note", "paper trade", "unit stake"}, "the patterns themselves"),
     "form/app.js": ({"sheet internals"}, "Model page says the tracker is read from the sheet's Snapshots tab (public on main since Nov 10)"),
     ".github/workflows/price_freshness.yml": ({"email"}, "git bot identity for the report commit (users.noreply.github.com), not a person"),
+    # Kirk round 32 B (publish-to-site merged into go-live-334): same bot-identity case, and code comments naming the sheet
+    # cell whose formula the mirror reproduces (no sheet ID, no values)
+    ".github/workflows/projections.yml": ({"email"}, "git bot identity for the verified-file commit (users.noreply.github.com), not a person"),
+    ".github/workflows/rollback.yml": ({"email"}, "git bot identity for the rollback commit (users.noreply.github.com), not a person"),
+    "scripts/sheet_v47.py": ({"sheet internals"}, "comments name the formula cell (Main Card!N2) the mirror reproduces; no sheet ID or values"),
+    "scripts/test_sheet_v47.py": ({"sheet internals"}, "test provenance note names the formula cells the expected values come from"),
 }
 SKIP_SUFFIX = (".png", ".jpg", ".gif", ".gz", ".ico", ".woff", ".woff2")
 
