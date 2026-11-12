@@ -35,5 +35,5 @@ The same holds on the full files (helpers = lines 171-190, grading = line 1093 t
 2. Replace Code.gs with `Code_v2.8_patched.gs`, Save. Proof: no red error; the UFC menu still loads after a reload.
 3. Live same-surname check: UFC > Grade last card, URL of the Oct 31 card, card id 4427 (Yana vs Luana Santos).
    Proof: the alert counts the card's rows, and a Snapshots/PropSnap export diffed against one taken just before shows
-   **zero changed values** (those rows were hand-corrected Nov 11 to what the fix computes). Anything else: restore the
-   previous Code.gs from version history.
+   no changed values except the "graded" timestamps (Snapshots AY, PropSnap Q): those rows were hand-corrected Nov 11
+   to what the fix computes. Anything else changing: restore the previous Code.gs from version history.
