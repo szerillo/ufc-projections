@@ -68,7 +68,7 @@ tr.click{cursor:pointer}
 .banner{margin:10px 0;padding:8px 12px;border:1px solid var(--rule);background:var(--hl);font:13px var(--serif)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}.bout .f{font-size:22px}.mast h1{font-size:30px}}
+@media(max-width:860px){.grid2,.grid3{grid-template-columns:1fr}.grid2>*,.grid3>*{min-width:0}.bout .f{font-size:22px}.mast h1{font-size:30px}}
 .tape{border:1px solid var(--rule);background:#ffffff}
 .tape .row{display:grid;grid-template-columns:1fr 132px 1fr;border-bottom:1px solid var(--hair);font:13px var(--mono)}
 .tape .row:last-child{border-bottom:0}

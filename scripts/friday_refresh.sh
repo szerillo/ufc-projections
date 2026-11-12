@@ -12,9 +12,10 @@ step "2 sheet export";     git fetch -q origin main && for p in "data/${SLUG}_pr
 step "2b sheet export age"
 # Block 59l (Kirk): model numbers only move when Sean's Publish to site export reaches origin/main. Loud warning at
 # 12 h; block go-live (exit 2) at 24 h, or when any bout on the card is missing from the export. --allow-stale overrides.
-python3 - "$SLUG" "$EVENT" "${ALLOW_STALE:-0}" <<'PY'
+python3 - "$SLUG" "$EVENT" "${ALLOW_STALE:-0}" "${ALLOW_MISSING_BOUT:-}" <<'PY'
 import json, sys, datetime as dt, re, unicodedata
 slug, evp, allow = sys.argv[1], sys.argv[2], sys.argv[3] == "1"
+allow_miss = [x.strip().lower() for x in (sys.argv[4] if len(sys.argv) > 4 else "").split(",") if x.strip()]   # Kirk round 28 C: a dropped bout needs its own named override; ALLOW_STALE no longer covers it
 p = next(x for x in (f"data/{slug}_projections.json", f"data/pending/{slug}_projections.json") if __import__("os").path.exists(x))
 X = json.load(open(p)); t = dt.datetime.fromisoformat(X["published_at"].replace("Z", "+00:00"))
 age = (dt.datetime.now(dt.timezone.utc) - t).total_seconds() / 3600
@@ -27,7 +28,11 @@ if age >= 12 or miss: print(bar); print(msg)
 else: print("  " + msg)
 if miss: print("BOUTS MISSING FROM THE EXPORT: " + "; ".join(miss))
 if age >= 12 or miss: print(bar)
-if (age >= 24 or miss) and not allow:
+miss_open = [m for m in miss if not any(k in m.lower() for k in allow_miss)]
+if miss_open:
+    print("GO-LIVE BLOCKED: a bout on the card is missing from the sheet export (Nov 12: ufc.com mid-edit dropped Gordon vs Costa from the sheet). "
+          "Republish once the sheet has every bout. Only for a really cancelled bout: ALLOW_MISSING_BOUT=<last name>."); sys.exit(2)
+if age >= 24 and not allow:
     print("GO-LIVE BLOCKED: republish the sheet (Publish to site) or rerun with ALLOW_STALE=1"); sys.exit(2)
 PY
 step "3 line history"

@@ -1,0 +1,24 @@
+== C plant: export missing Gordon vs Costa (fresh, 12 fights). Step 2b of friday_refresh.sh, extracted verbatim.
+-- before (v40 code) --
+export=full ALLOW_STALE=0
+  SHEET EXPORT IS 0.0 HOURS OLD (published 2026-11-12T20:34:26.000Z)
+  exit 0
+export=drop ALLOW_STALE=0
+GO-LIVE BLOCKED: republish the sheet (Publish to site) or rerun with ALLOW_STALE=1
+  exit 2
+export=drop ALLOW_STALE=1
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  exit 0
+-- after --
+export=full ALLOW_STALE=0 ALLOW_MISSING_BOUT=
+  SHEET EXPORT IS 0.0 HOURS OLD (published 2026-11-12T20:34:26.000Z)
+  exit 0
+export=drop ALLOW_STALE=0 ALLOW_MISSING_BOUT=
+GO-LIVE BLOCKED: a bout on the card is missing from the sheet export (Nov 12: ufc.com mid-edit dropped Gordon vs Costa from the sheet). Republish once the sheet has every bout. Only for a really cancelled bout: ALLOW_MISSING_BOUT=<last name>.
+  exit 2
+export=drop ALLOW_STALE=1 ALLOW_MISSING_BOUT=
+GO-LIVE BLOCKED: a bout on the card is missing from the sheet export (Nov 12: ufc.com mid-edit dropped Gordon vs Costa from the sheet). Republish once the sheet has every bout. Only for a really cancelled bout: ALLOW_MISSING_BOUT=<last name>.
+  exit 2
+export=drop ALLOW_STALE=0 ALLOW_MISSING_BOUT=Gordon
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  exit 0

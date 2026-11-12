@@ -49,3 +49,10 @@ Logged 2026-11-12 (Kirk round 18). Nothing here is done before the card; the pub
    Round 28 B: one rule for all changes, blanks included: UFCStats and UFC.com must agree exactly (stance: no change, no second
    source). Round 28 holds (form/data/form_holds.json: fight 3 Form Line, Belgaroui height, Labs height rows 3 in / 4 in) are
    released only by a build whose inputs pass that rule; run scripts/form_holds.py after any labs or form rebuild until then.
+11. **Corrections backlog: fight 11 Form Line (Kirk round 29 call 1).** Left as shown (Borralho 40.2%). It reads Yousri
+   Belgaroui's height from our file (6'5"); UFCStats (6'6") and UFC.com (78.00 in = 6'6") agree with each other, not with us.
+   Round 27's full rebuild moved it to 40.0% (height plus refit, 0.19 pts). Fix with the bio refresh (item 10); list it on the
+   corrections page then, naming the source conflict.
+12. **Loader guard v2.9 (Kirk round 29 A).** Candidate on branch `loader-guard` (refuse to clear a row still listed on
+   BestFightOdds/Polymarket/Novig; loud bout-count drop; named override "Remove a cancelled bout"). Not installed: the Thursday
+   loader is frozen at v2.8. Install only on Kirk's go.
