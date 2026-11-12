@@ -176,6 +176,13 @@ def check(D, htmlfile, G):
                 if "i" in a: v = v[a["i"]]
             elif rule == "rs_angle":   # Kirk round 17 D: Labs angle numbers from research.json
                 v = {x_["id"]: x_ for x_ in json.loads((FD / "research.json").read_text())["angles"]}[a["id"]][a["key"]]
+            elif rule == "dbstat":   # Kirk round 18: debut box CIs; the stats file must describe the published research.json set
+                ds_ = json.loads((REPO / "data/embeds/debut_angle_stats.json").read_text()); rs_ = {x_["id"]: x_ for x_ in json.loads((FD / "research.json").read_text())["angles"]}[ds_["angle"]]
+                if ds_["n"] != rs_["n"] or abs(ds_["act"] - rs_["act"]) > 1e-4 or abs(ds_["roi"] - rs_["roi_c"]) > 1e-4: raise ValueError("debut_angle_stats.json does not match research.json")
+                lo_, hi_ = ds_["win_ci"]; se_ = (rs_["act"] * (1 - rs_["act"]) / rs_["n"]) ** 0.5   # win CI recomputed here from act and n
+                if abs(lo_ - (rs_["act"] - 1.96 * se_)) > 2e-4 or abs(hi_ - (rs_["act"] + 1.96 * se_)) > 2e-4: raise ValueError("win CI does not follow from act and n")
+                if abs(ds_["roi_ci"][0] - (ds_["roi"] - 1.96 * ds_["roi_se"])) > 2e-4 or abs(ds_["roi_ci"][1] - (ds_["roi"] + 1.96 * ds_["roi_se"])) > 2e-4: raise ValueError("ROI CI does not follow from roi and se")
+                v = ds_[a["key"]]; v = v[a["i"]] if "i" in a else v
             elif rule == "ufc_n":   # UFC fights before the card, from the fighter file (0 if no file: a debut)
                 fx_ = next((json.loads(p_.read_text()) for p_ in (FD / "fighters").glob("*.json") if json.loads(p_.read_text()).get("name") == a["fighter"]), None)
                 v = len([x_ for x_ in (fx_ or {}).get("fights", []) if x_["d"] < a["date"]])

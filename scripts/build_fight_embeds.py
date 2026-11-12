@@ -763,6 +763,8 @@ def build(names, outname):
     debut_html = ""
     if (len(pa_) == 0 and len(pb_) >= 3) or (len(pb_) == 0 and len(pa_) >= 3):
         RS_ = json.load(open(FD / "research.json")); ang_ = {x_["id"]: x_ for x_ in RS_["angles"]}["debut_vs_vet"]
+        DS_ = json.load(open(REPO / "data/embeds/debut_angle_stats.json"))   # Kirk round 18: CIs and margin for the same 233 bouts
+        assert DS_["n"] == ang_["n"] and abs(DS_["act"] - ang_["act"]) < 1e-4 and abs(DS_["roi"] - ang_["roi_c"]) < 1e-4, "debut_angle_stats.json is not the published research.json set"
         deb_, vet_ = (an, bn) if len(pa_) == 0 else (bn, an)
         bw_ = lambda v_: f'{max(0.0, min(1.0, v_)) * 100:.1f}%'
         debut_html = (f'<div class="stk debut" data-part="debut"><div class="stk-h"><span class="bullet"></span>Debut vs UFC veteran</div>'
@@ -770,7 +772,10 @@ def build(names, outname):
                       f'Since {RS_["from"][:4]}, UFC debutants in this spot won {R(ang_["act"], "pct1", "rs_angle", "Debut angle won", id="debut_vs_vet", key="act")} '
                       f'of {R(ang_["n"], "intc", "rs_angle", "Debut angle n", id="debut_vs_vet", key="n")} fights; the closing line expected {R(ang_["exp"], "pct1", "rs_angle", "Debut angle expected", id="debut_vs_vet", key="exp")}.</div>'
                       f'<div class="dbar"><span>Won</span><i style="width:{bw_(ang_["act"])}"></i></div><div class="dbar exp"><span>Close expected</span><i style="width:{bw_(ang_["exp"])}"></i></div>'
-                      f'<div class="dim dbn">Backing every debutant at the closing price returned {R(ang_["roi_c"], "spp", "rs_angle", "Debut angle ROI close", id="debut_vs_vet", key="roi_c")} per bet. '
+                      f'<div class="dim dbn">95% range for the win rate: {R(DS_["win_ci"][0], "pct1", "dbstat", "Debut angle win CI lo", key="win_ci", i=0)} to {R(DS_["win_ci"][1], "pct1", "dbstat", "Debut angle win CI hi", key="win_ci", i=1)} (n {R(ang_["n"], "intc", "rs_angle", "Debut angle n 2", id="debut_vs_vet", key="n")}). '
+                      f'Backing every debutant at the closing price returned {R(ang_["roi_c"], "spp", "rs_angle", "Debut angle ROI close", id="debut_vs_vet", key="roi_c")} per bet '
+                      f'(95% range {R(DS_["roi_ci"][0], "spp", "dbstat", "Debut angle ROI CI lo", key="roi_ci", i=0)} to {R(DS_["roi_ci"][1], "spp", "dbstat", "Debut angle ROI CI hi", key="roi_ci", i=1)}). '
+                      f'That is not distinguishable from the bookmaker\'s margin alone at these prices ({R(DS_["margin_roi"], "spp", "dbstat", "Debut angle margin", key="margin_roi")}). '
                       f'From the site\'s Labs research ({RS_["from"]} to {RS_["to"]}). Context, not a pick.</div></div>')
     top = top.replace("@@ANGLES@@", "").replace("@@LIVE@@", spot_html + debut_html)
     small = [F["name"] for F, g_ in [(FA, ga), (FB, gb)] if g_["n"] <= 3]

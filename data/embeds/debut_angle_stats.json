@@ -1,0 +1,25 @@
+{
+ "_doc": "Kirk round 18 call 1: uncertainty for the embed 'Debut vs UFC veteran' box. Rebuilt the exact published research.json set (debut_vs_vet, 233 bouts: the fresh build's 234 minus 2025-02-08 Rongzhu vs Kody Steele, added by the round-7 matcher fix). Win-rate CI: normal approximation. ROI CI: per-bet returns, 1u flat at the all-books closing price. Margin: expected ROI if the no-vig close were the true chance.",
+ "angle": "debut_vs_vet",
+ "n": 233,
+ "w": 116,
+ "act": 0.4979,
+ "exp": 0.5044,
+ "roi": -0.119,
+ "pnl": -27.72,
+ "win_ci": [
+  0.4337,
+  0.5621
+ ],
+ "roi_sd": 1.036,
+ "roi_se": 0.0679,
+ "roi_ci": [
+  -0.252,
+  0.014
+ ],
+ "margin_roi": -0.0407,
+ "roi_minus_margin": -0.0783,
+ "z": -1.15,
+ "script_sha256": "3db2edf1814e",
+ "output_sha256": "f9f6c4b1b303"
+}

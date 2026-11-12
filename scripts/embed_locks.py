@@ -45,7 +45,12 @@ def main():
     if not a.reason or len(a.reason) < 10: sys.exit("a bless needs --reason (what changed and why it is legitimate)")
     for f, (o, n) in changed.items(): print(f"  bless {f}: {(o or '-')[:12]} -> {n[:12]}")
     L["locks"][a.slug] = cur
-    L["history"].append({"at": dt.datetime.now(dt.timezone.utc).isoformat()[:19] + "Z", "who": a.who, "slug": a.slug, "reason": a.reason,
-                         "changed": {f: [o, n] for f, (o, n) in changed.items()}})
+    at_ = dt.datetime.now(dt.timezone.utc).isoformat()[:19] + "Z"
+    # Kirk round 18 call 3 (Strip_Names_PREREG sha 74d582e1): who and why go to _audit/locks_history.json (not served by the
+    # site's Jekyll build); the served locks.json keeps only when, which card and what changed
+    L["history"].append({"at": at_, "slug": a.slug, "changed": {f: [o, n] for f, (o, n) in changed.items()}})
+    AUD = REPO / "_audit" / "locks_history.json"; AUD.parent.mkdir(exist_ok=True)
+    H = json.loads(AUD.read_text()) if AUD.exists() else {"history": []}
+    H["history"].append({"at": at_, "slug": a.slug, "who": a.who, "reason": a.reason}); AUD.write_text(json.dumps(H, indent=1))
     LOCKS.write_text(json.dumps(L, indent=1)); print(f"blessed {len(changed)} file(s); history entries: {len(L['history'])}")
 if __name__ == "__main__": main()

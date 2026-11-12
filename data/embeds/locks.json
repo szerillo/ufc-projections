@@ -37,9 +37,7 @@
  "history": [
   {
    "at": "2026-11-12T12:38:48Z",
-   "who": "Claude",
    "slug": "ufc_334",
-   "reason": "Initial pin, round 9: current branch state checked green (2877/2877)",
    "changed": {
     "data/card_overrides.json": [
      null,
@@ -169,9 +167,7 @@
   },
   {
    "at": "2026-11-12T12:58:55Z",
-   "who": "Claude",
    "slug": "ufc_334",
-   "reason": "Round 10 A: lock widened to the event file's Form and bp blocks (only odds left out); file content unchanged, Friday refresh shown to touch only odds",
    "changed": {
     "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json": [
      "f4e700a755777cd938b5ba376ade306fa1f557ff217217a9df721b16674cf010",
@@ -181,9 +177,7 @@
   },
   {
    "at": "2026-11-12T13:47:08Z",
-   "who": "Claude",
    "slug": "ufc_334",
-   "reason": "Kirk round 12 call 1, Form fix (Form_Fix_PREREG sha d78b86a2, pass bar met): UFC 334 Form blocks rebuilt; Harrison-Nunes now on the 5-round basis, Gane-Hokit base with interim heavyweight bouts counted",
    "changed": {
     "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json": [
      "2cb41112b7453dced88b990c57bdcefe3cfc2a8aefbb4c2fed448d4af6e7e9be",
@@ -193,9 +187,7 @@
   },
   {
    "at": "2026-11-12T14:54:39Z",
-   "who": "claude",
    "slug": "ufc_334",
-   "reason": "Kirk round 15 call 3: ufc_334 five_rounds key set to [] (UFC.com checked 2026-11-12), needed by check_rounds.py",
    "changed": {
     "data/card_overrides.json": [
      "b0de30ebbdb9a239cf31f65381f81cb3b749d26118720b0a45064721ae66daf4",
@@ -205,9 +197,7 @@
   },
   {
    "at": "2026-11-12T15:13:15Z",
-   "who": "claude",
    "slug": "ufc_334",
-   "reason": "Kirk round 16 A: ufc_334 five_rounds_sources (UFC.com + Tapology by eye), both list only the two title bouts",
    "changed": {
     "data/card_overrides.json": [
      "b9e94ebacc4f65ae890e301239ec1e24efe8260f3c46e33d123ddc6d4d6e21b7",
@@ -217,9 +207,7 @@
   },
   {
    "at": "2026-11-12T15:35:50Z",
-   "who": "claude",
    "slug": "ufc_334",
-   "reason": "Kirk round 17 call 1: index.json public book labels neutral (no non-US book named); numbers unchanged",
    "changed": {
     "form/data/index.json": [
      "da6e09523edd7a3fd7fbd5a6999dd0ca43af743d27cbfdb76c5101249a371f00",

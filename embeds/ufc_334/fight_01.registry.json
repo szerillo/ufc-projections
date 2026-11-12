@@ -1790,6 +1790,42 @@
   },
   {
    "id": "v145",
+   "text": "43.4%",
+   "fmt": "pct1",
+   "rule": "dbstat",
+   "args": {
+    "key": "win_ci",
+    "i": 0
+   },
+   "desc": "Debut angle win CI lo",
+   "raw": 0.4337
+  },
+  {
+   "id": "v146",
+   "text": "56.2%",
+   "fmt": "pct1",
+   "rule": "dbstat",
+   "args": {
+    "key": "win_ci",
+    "i": 1
+   },
+   "desc": "Debut angle win CI hi",
+   "raw": 0.5621
+  },
+  {
+   "id": "v147",
+   "text": "233",
+   "fmt": "intc",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "n"
+   },
+   "desc": "Debut angle n 2",
+   "raw": 233
+  },
+  {
+   "id": "v148",
    "text": "-11.9%",
    "fmt": "spp",
    "rule": "rs_angle",
@@ -1801,7 +1837,42 @@
    "raw": -0.119
   },
   {
-   "id": "v146",
+   "id": "v149",
+   "text": "-25.2%",
+   "fmt": "spp",
+   "rule": "dbstat",
+   "args": {
+    "key": "roi_ci",
+    "i": 0
+   },
+   "desc": "Debut angle ROI CI lo",
+   "raw": -0.252
+  },
+  {
+   "id": "v150",
+   "text": "+1.4%",
+   "fmt": "spp",
+   "rule": "dbstat",
+   "args": {
+    "key": "roi_ci",
+    "i": 1
+   },
+   "desc": "Debut angle ROI CI hi",
+   "raw": 0.014
+  },
+  {
+   "id": "v151",
+   "text": "-4.1%",
+   "fmt": "spp",
+   "rule": "dbstat",
+   "args": {
+    "key": "margin_roi"
+   },
+   "desc": "Debut angle margin",
+   "raw": -0.0407
+  },
+  {
+   "id": "v152",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1814,7 +1885,7 @@
    "raw": -208
   },
   {
-   "id": "v147",
+   "id": "v153",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1827,7 +1898,7 @@
    "raw": -455
   },
   {
-   "id": "v148",
+   "id": "v154",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1840,7 +1911,7 @@
    "raw": -303
   },
   {
-   "id": "v149",
+   "id": "v155",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -1853,7 +1924,7 @@
    "raw": 175
   },
   {
-   "id": "v150",
+   "id": "v156",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",

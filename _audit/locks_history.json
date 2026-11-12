@@ -1,0 +1,41 @@
+{
+ "_doc": "Full lock bless history (who and why). Not served: Jekyll skips paths starting with an underscore. data/embeds/locks.json keeps at, slug and changed.",
+ "history": [
+  {
+   "at": "2026-11-12T12:38:48Z",
+   "slug": "ufc_334",
+   "who": "Claude",
+   "reason": "Initial pin, round 9: current branch state checked green (2877/2877)"
+  },
+  {
+   "at": "2026-11-12T12:58:55Z",
+   "slug": "ufc_334",
+   "who": "Claude",
+   "reason": "Round 10 A: lock widened to the event file's Form and bp blocks (only odds left out); file content unchanged, Friday refresh shown to touch only odds"
+  },
+  {
+   "at": "2026-11-12T13:47:08Z",
+   "slug": "ufc_334",
+   "who": "Claude",
+   "reason": "Kirk round 12 call 1, Form fix (Form_Fix_PREREG sha d78b86a2, pass bar met): UFC 334 Form blocks rebuilt; Harrison-Nunes now on the 5-round basis, Gane-Hokit base with interim heavyweight bouts counted"
+  },
+  {
+   "at": "2026-11-12T14:54:39Z",
+   "slug": "ufc_334",
+   "who": "claude",
+   "reason": "Kirk round 15 call 3: ufc_334 five_rounds key set to [] (UFC.com checked 2026-11-12), needed by check_rounds.py"
+  },
+  {
+   "at": "2026-11-12T15:13:15Z",
+   "slug": "ufc_334",
+   "who": "claude",
+   "reason": "Kirk round 16 A: ufc_334 five_rounds_sources (UFC.com + Tapology by eye), both list only the two title bouts"
+  },
+  {
+   "at": "2026-11-12T15:35:50Z",
+   "slug": "ufc_334",
+   "who": "claude",
+   "reason": "Kirk round 17 call 1: index.json public book labels neutral (no non-US book named); numbers unchanged"
+  }
+ ]
+}
