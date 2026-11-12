@@ -52,6 +52,7 @@ svg text.muted { fill: var(--text-secondary); }
 .stat2 div { background: var(--surface-2); border-radius: 6px; padding: 7px 9px; }
 .stat2 b { font-size: 18px; font-weight: 650; display: block; font-variant-numeric: tabular-nums; }
 .stat2 span { color: var(--text-secondary); font-size: 11.5px; }
+.gap { background: var(--surface-2); border-left: 3px solid var(--dog); border-radius: 4px; padding: 6px 8px; margin: 6px 0 2px; font-size: 12px; color: var(--text-secondary); }
 .rec { background: var(--surface-2); border-radius: 6px; padding: 7px 9px; margin-top: 2px; font-size: 12.5px; }
 .foot { color: var(--text-muted); font-size: 11px; margin-top: 8px; }
 .tip { position: fixed; pointer-events: none; background: var(--text-primary); color: var(--surface-1); font-size: 11.5px;
@@ -102,6 +103,25 @@ function hbars(items, max) {
       <text x="${76 + w}" y="${y + 14}">${V(it.k, it.txt)}</text>`;
   }).join("") + `</svg>`;
 }
+const NOTE = (k, txt) => `<div class="foot" data-absent="${k}">${esc(txt)}</div>`;
+function spark(h, dog) {
+  // dog no-vig over time, DraftKings and FanDuel (Block 51 H1). One y-scale, 2px lines, end labels.
+  const P = h.dog_points, W = 300, H = 70, t0 = Date.parse(P[0][0] + "Z"), t1 = Date.parse(P[P.length - 1][0] + "Z");
+  const vals = P.flatMap(x => [x[1], x[2]]).filter(v => v != null), lo = Math.min(...vals) - 0.01, hi = Math.max(...vals) + 0.01;
+  const X = (t) => 4 + (W - 60) * (Date.parse(t + "Z") - t0) / Math.max(1, t1 - t0), Y = (v) => 6 + (H - 12) * (hi - v) / (hi - lo);
+  const line = (i, color, k, lab) => {
+    const pts = P.filter(x => x[i] != null); if (pts.length < 2) return "";
+    const a = pts[0], z = pts[pts.length - 1];
+    return `<polyline fill="none" stroke="${color}" stroke-width="2" points="${pts.map(x => X(x[0]).toFixed(1) + "," + Y(x[i]).toFixed(1)).join(" ")}"/>
+      <circle cx="${X(z[0])}" cy="${Y(z[i])}" r="4" fill="${color}" stroke="var(--surface-1)" stroke-width="2" data-tip="${lab} ${z[0]}Z ${pct(z[i])}"/>
+      <text x="${X(z[0]) + 8}" y="${Y(z[i]) + 4}">${V(k + "_last", pct(z[i]))}</text>
+      <text class="muted" x="0" y="0" display="none">${V(k + "_first", pct(a[i]))}</text>`;
+  };
+  return `<svg viewBox="0 0 ${W} ${H + 14}" role="img" aria-label="${esc(dog)} no-vig at DraftKings and FanDuel from ${esc(P[0][0])} to ${esc(h.through)}">
+    ${line(1, "var(--dog)", "hist_dk", "DraftKings")}${line(2, "var(--neutral)", "hist_fd", "FanDuel")}
+    <text class="muted" x="4" y="${H + 12}">${esc(P[0][0].slice(5, 10))}</text><text class="muted" x="${W - 56}" y="${H + 12}" text-anchor="end">${esc(h.through.slice(5, 10))}</text></svg>
+    <div class="key" style="margin:2px 0 0"><span><i style="background:var(--dog)"></i>DraftKings</span><span><i style="background:var(--neutral)"></i>FanDuel</span><span>${V("hist_n", String(P.length))} points</span></div>`;
+}
 function render(doc, f) {
   const s = f.sheet || {}, inp = f.inputs || {}, m = f.method || {};
   const favW = s.true_fav, dogW = s.true_dog;
@@ -113,6 +133,8 @@ function render(doc, f) {
     }
   }
   const out = (f.outliers || []).filter(o => o.excluded);
+  const gap = inp.markov == null ? null : Math.abs(inp.markov - dogW);
+  const hasRec = "rec" in s, hasFlag = "flag" in s;
   const root = document.getElementById("root");
   root.innerHTML = `
   <div class="hdr"><h1>${esc(f.fav)} vs ${esc(f.dog)}</h1><span class="sub">${esc(f.tag)}</span></div>
@@ -121,8 +143,9 @@ function render(doc, f) {
   <section><h2>Win probability</h2>
     <div class="row"><span class="lab">Sheet model</span>${splitBar("true", favW, dogW, f.fav, f.dog, "Sheet model")}</div>
     <div class="row"><span class="lab">Market no-vig</span>${splitBar("listed", 1 - s.listed, s.listed, f.fav, f.dog, "Market no-vig", true)}</div>
-    ${inp.markov == null ? "" : `<div class="row"><span class="lab">Markov</span>${splitBar("markov", 1 - inp.markov, inp.markov, f.fav, f.dog, "Markov", true)}</div>`}
-    <div class="foot">Market no-vig is at the best bettable prices. Markov is the sim's win % as entered in the sheet, before the sheet's card shift; it enters the model at weight 0.15.</div>
+    ${inp.markov == null ? NOTE("markov", "Markov: not run for this fight.") : `<div class="row"><span class="lab">Markov</span>${splitBar("markov", 1 - inp.markov, inp.markov, f.fav, f.dog, "Markov", true)}</div>`}
+    ${gap != null && gap >= 0.08 ? `<div class="gap" data-rule="markov_gap">Markov and the sheet model are <b>${V("markov_gap", (100 * gap).toFixed(1) + " pts")}</b> apart on ${esc(f.dog)}. Markov is a stats-only simulation that never sees the market; the sheet gives it 15% weight, so a gap this size moves the sheet model only a little. It is a disagreement between models, not a display error.</div>` : ""}
+    <div class="foot">Market no-vig is at the best bettable prices. Markov is the sim's win % as entered in the sheet, before the sheet's card shift.</div>
   </section>
 
   <section><h2>Edge at the price</h2>
@@ -130,19 +153,19 @@ function render(doc, f) {
       <div><b data-k="fav_edge">${sgn(s.fav_edge)}</b><span>${esc(f.fav)} at <span data-k="fav_odds">${ml(inp.fav_odds)}</span></span></div>
       <div><b data-k="dog_edge">${sgn(s.dog_edge)}</b><span>${esc(f.dog)} at <span data-k="dog_odds">${ml(inp.dog_odds)}</span></span></div>
     </div>
-    ${out.length ? out.map(o => `<div class="foot">Outlier excluded: ${esc(o.book)} ${ml(o.odds)}</div>`).join("") : ""}
+    ${out.map(o => `<div class="foot">Outlier excluded: ${esc(o.book)} ${ml(o.odds)}</div>`).join("")}
   </section>
 
-  <section><h2>How it ends · method (share of all outcomes)</h2>${hbars(meth, Math.max(...meth.map(x => x.v), 0.01))}</section>
+  <section><h2>How it ends · method (share of all outcomes)</h2>${meth.length ? hbars(meth, Math.max(...meth.map(x => x.v))) : NOTE("method", "Method split not published for this fight.")}</section>
 
-  <section><h2>Goes the distance</h2>
+  <section><h2>Goes the distance</h2>${f.gtd == null && f.gtd_listed == null ? NOTE("gtd", "Goes-the-distance numbers not published for this fight.") : `
     <div class="stat2">
-      <div><b data-k="gtd">${pct(f.gtd)}</b><span>Sheet model</span></div>
-      <div><b data-k="gtd_listed">${pct(f.gtd_listed)}</b><span>Market (best price, raw implied)</span></div>
-    </div>
+      <div>${f.gtd == null ? `<b>&nbsp;</b><span data-absent="gtd">Sheet model: not published</span>` : `<b data-k="gtd">${pct(f.gtd)}</b><span>Sheet model</span>`}</div>
+      <div>${f.gtd_listed == null ? `<b>&nbsp;</b><span data-absent="gtd_listed">Market: no price posted</span>` : `<b data-k="gtd_listed">${pct(f.gtd_listed)}</b><span>Market (best price, raw implied)</span>`}</div>
+    </div>`}
   </section>
 
-  <section><h2>Line movement · ${esc(f.dog)} (no-vig)</h2>${(() => {
+  <section><h2>Line movement · ${esc(f.dog)} (no-vig)</h2>${inp.open_dog == null ? NOTE("open_dog", "Opening price not recorded, so there is no movement to show.") : (() => {
     const a = inp.open_dog, b = s.listed, lo = Math.min(a, b) - 0.03, hi = Math.max(a, b) + 0.03, y = (v) => 58 - 46 * (v - lo) / (hi - lo);
     return `<svg viewBox="0 0 300 80" role="img" aria-label="Underdog no-vig: open ${pct(a)}, now ${pct(b)}, drift ${sgn(s.drift)}">
       <line x1="40" y1="${y(a)}" x2="260" y2="${y(b)}" stroke="var(--dog)" stroke-width="2"/>
@@ -152,15 +175,16 @@ function render(doc, f) {
       <text x="260" y="${y(b) - 10}" text-anchor="middle">${V("listed_dog", pct(b))}</text>
       <text class="muted" x="40" y="76" text-anchor="middle">Open</text><text class="muted" x="260" y="76" text-anchor="middle">Now</text>
       <text class="muted" x="150" y="76" text-anchor="middle">Drift ${V("drift", sgn(s.drift))}</text></svg>`; })()}
+    ${f.odds_history ? `<div class="foot" style="margin-top:6px">By book, through ${esc(f.odds_history.through)} UTC</div>${spark(f.odds_history, f.dog)}` : NOTE("odds_history", "Book-by-book price history not available for this fight.")}
   </section>
 
-  <div class="rec">Model rec: <b data-k="rec">${esc(s.rec || "-")}</b><br><span style="color:var(--text-secondary)">Flag: <span data-k="flag">${esc(s.flag || "")}</span></span></div>
+  ${hasRec || hasFlag ? `<div class="rec">${hasRec ? `Model rec: <b data-k="rec">${esc(s.rec)}</b>` : ""}${hasRec && hasFlag ? "<br>" : ""}${hasFlag ? `<span style="color:var(--text-secondary)">Flag: <span data-k="flag">${esc(s.flag)}</span></span>` : ""}</div>` : ""}
   <details><summary>Table view</summary><table>
     <tr><td>True % ${esc(f.fav)}</td><td>${pct(favW)}</td></tr><tr><td>True % ${esc(f.dog)}</td><td>${pct(dogW)}</td></tr>
-    <tr><td>Market no-vig ${esc(f.dog)}</td><td>${pct(s.listed)}</td></tr><tr><td>Markov ${esc(f.dog)}</td><td>${pct(inp.markov)}</td></tr>
+    <tr><td>Market no-vig ${esc(f.dog)}</td><td>${pct(s.listed)}</td></tr>${inp.markov == null ? "" : `<tr><td>Markov ${esc(f.dog)}</td><td>${pct(inp.markov)}</td></tr>`}
     ${meth.map(x => `<tr><td>${esc(x.label)}</td><td>${x.txt}</td></tr>`).join("")}
-    <tr><td>Goes the distance (model)</td><td>${pct(f.gtd)}</td></tr><tr><td>Goes the distance (market)</td><td>${pct(f.gtd_listed)}</td></tr>
-  </table></details>
+    ${f.gtd == null ? "" : `<tr><td>Goes the distance (model)</td><td>${pct(f.gtd)}</td></tr>`}${f.gtd_listed == null ? "" : `<tr><td>Goes the distance (market)</td><td>${pct(f.gtd_listed)}</td></tr>`}
+  </table><div class="foot">Each value is rounded on its own, so shown parts can differ from a shown total by 0.1.</div></details>
   <div class="foot">Sheet model v4.7 · checked against the sheet ${esc((doc.verified || {}).at || "")} · prices loaded ${esc(doc.prices_loaded || "")}. Not betting advice.</div>`;
   hover(root);
   if (window.parent !== window) window.parent.postMessage({ type: "ufc-iframe-height", height: document.body.scrollHeight }, "*");

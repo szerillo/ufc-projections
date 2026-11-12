@@ -103,6 +103,42 @@ def split_pending(doc: dict, errs: list[str]) -> tuple[list[str], list[dict]]:
     return hard, [{"dog": tags[t].get("dog"), "fav": tags[t].get("fav"), "reason": "; ".join(r)} for t, r in held.items()]
 
 
+US_SERIES = {"draftkings": 3, "fanduel": 4}   # columns of form/data/events/*.json odds.series (0 t, 1 all-book median, 2 offshore, 3 DK, 4 FD)
+
+
+def odds_history(f: dict, events_dir: Path | None = None) -> dict | None:
+    """Pre-registered Block 51 (H1): DraftKings / FanDuel no-vig history for the dog, copied from the site's event file.
+    Returns None (field omitted, never red) unless every rule holds."""
+    events_dir = events_dir or REPO / "form" / "data" / "events"
+    best = None
+    for fp in sorted(events_dir.glob("*.json"), reverse=True)[:40]:
+        try:
+            ev = json.loads(fp.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            continue
+        for g in ev.get("fights") or []:
+            an = g["a"]["name"] if isinstance(g.get("a"), dict) else g.get("a")
+            bn = g["b"]["name"] if isinstance(g.get("b"), dict) else g.get("b")
+            slot = FN.bout_slots(str(f.get("dog") or ""), str(f.get("fav") or ""), str(an or ""), str(bn or ""))
+            ser = ((g.get("odds") or {}).get("series")) or []
+            if slot and ser:
+                best = (fp.name, slot, ser); break
+        if best:
+            break
+    if not best:
+        return None
+    name, slot, ser = best
+    flip = (lambda v: v) if slot == "same" else (lambda v: None if v is None else round(1 - v, 3))   # 'same': the dog is fighter A
+    pts = [[r[0], flip(r[US_SERIES["draftkings"]]), flip(r[US_SERIES["fanduel"]])] for r in ser if len(r) >= 5]
+    pts = [x for x in pts if x[1] is not None or x[2] is not None]
+    ok = len(pts) >= 2 and all(pts[i][0] < pts[i + 1][0] for i in range(len(pts) - 1)) and \
+        all(v is None or 0 < v < 1 for x in pts for v in x[1:])
+    if not ok:
+        return None
+    return {"source": f"form/data/events/{name} odds.series", "books": ["draftkings", "fanduel"], "side": "dog",
+            "through": pts[-1][0], "dog_points": pts}
+
+
 def price_age_h(doc: dict, now: dt.datetime | None = None) -> float | None:
     s = doc.get("prices_loaded")
     if not s:
@@ -259,6 +295,10 @@ def main() -> int:
     if errs:
         return 1
     if a.promote:
+        for f in doc["fights"]:          # Block 51 H1: copied at promote time from the event file; omitted if any rule fails
+            h = odds_history(f)
+            if h:
+                f["odds_history"] = h
         if pending:
             held = {(x["dog"], x["fav"]) for x in pending}
             doc["fights"] = [f for f in doc["fights"] if (f.get("dog"), f.get("fav")) not in held]

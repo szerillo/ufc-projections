@@ -64,23 +64,69 @@ def shown(sec: list, p: dict) -> dict:
     return out
 
 
-def expected2(p: dict) -> dict:
-    """data-k -> text the v2 embed must show for this fight, formatted from the verified file only."""
+def expected2(p: dict) -> tuple[dict, set]:
+    """(data-k -> text the v2 embed must show, set of data-absent keys it must show instead) from the verified file only."""
     s, i, m = p.get("sheet") or {}, p.get("inputs") or {}, p.get("method") or {}
     pc = lambda x: "n/a" if x is None else f"{100 * x:.1f}%"           # the v2 embed prints n/a, not a dash, for a missing value
     sg = lambda x: "n/a" if x is None else f"{'+' if x > 0 else ''}{100 * x:.1f}%"
     ml = lambda v: "n/a" if v is None else (f"+{int(v)}" if v > 0 else str(int(v)))
     e = {"true_fav": pc(s["true_fav"]), "true_dog": pc(s["true_dog"]), "listed_fav": pc(1 - s["listed"]), "listed_dog": pc(s["listed"]),
-         "fav_edge": sg(s.get("fav_edge")), "dog_edge": sg(s.get("dog_edge")), "fav_odds": ml(i.get("fav_odds")),
-         "dog_odds": ml(i.get("dog_odds")), "gtd": pc(p.get("gtd")), "gtd_listed": pc(p.get("gtd_listed")),
-         "open_dog": pc(i.get("open_dog")), "drift": sg(s.get("drift")), "rec": str(s.get("rec") or "-"), "flag": str(s.get("flag") or "")}
-    if i.get("markov") is not None:
+         "fav_edge": sg(s.get("fav_edge")), "dog_edge": sg(s.get("dog_edge")), "fav_odds": ml(i.get("fav_odds")), "dog_odds": ml(i.get("dog_odds"))}
+    absent = set()
+    if "rec" in s: e["rec"] = str(s["rec"])
+    if "flag" in s: e["flag"] = str(s["flag"])
+    if p.get("gtd") is None and p.get("gtd_listed") is None: absent.add("gtd")
+    else:
+        if p.get("gtd") is not None: e["gtd"] = pc(p["gtd"])
+        else: absent.add("gtd")
+        if p.get("gtd_listed") is not None: e["gtd_listed"] = pc(p["gtd_listed"])
+        else: absent.add("gtd_listed")
+    if i.get("open_dog") is None: absent.add("open_dog")
+    else: e.update(open_dog=pc(i["open_dog"]), drift=sg(s.get("drift")))
+    if i.get("markov") is None: absent.add("markov")
+    else:
         e["markov_fav"], e["markov_dog"] = pc(1 - i["markov"]), pc(i["markov"])
+        gap = abs(i["markov"] - s["true_dog"])
+        if gap >= 0.08: e["markov_gap"] = f"{100 * gap:.1f} pts"       # pre-registered Block 51 GAP rule
+    any_m = False
     for side, w in (("fav", s["true_fav"]), ("dog", s["true_dog"])):
         for k in ("dec", "ko", "sub"):
             v = (m.get(side) or {}).get(k)
-            if v is not None: e[f"{side}_{k}"] = pc(w * v)
-    return e
+            if v is not None: e[f"{side}_{k}"] = pc(w * v); any_m = True
+    if not any_m: absent.add("method")
+    h = p.get("odds_history")
+    if h:
+        P = h["dog_points"]
+        for j, k in ((1, "hist_dk"), (2, "hist_fd")):
+            pts = [x for x in P if x[j] is not None]
+            if len(pts) >= 2: e[k + "_first"], e[k + "_last"] = pc(pts[0][j]), pc(pts[-1][j])
+        e["hist_n"] = str(len(P))
+    else: absent.add("odds_history")
+    return e, absent
+
+
+def consistency(p: dict, shown: dict) -> list[str]:
+    """Pre-registered Block 51 CONS: derived sums on the shown numbers (rounding-only gaps allowed) and exactly in the file."""
+    bad, num = [], lambda k: float(shown[k].rstrip("%")) if k in shown and shown[k].endswith("%") else None
+    tag = f"embed2: {p['fav']} vs {p['dog']}"
+    tf, td = num("true_fav"), num("true_dog")
+    if tf is not None and td is not None and abs(tf + td - 100) > 0.1 + 1e-9:
+        bad.append(f"{tag}: shown True % {tf} + {td} != 100.0 (C3)")
+    for side, t in (("fav", tf), ("dog", td)):
+        parts = [num(f"{side}_{k}") for k in ("dec", "ko", "sub")]
+        if t is not None and None not in parts and abs(sum(parts) - t) > 0.20 + 1e-9:
+            bad.append(f"{tag}: shown {side} DEC+KO+SUB {sum(parts):.1f} vs shown True % {t:.1f} (C2)")
+    g, dd, fd = num("gtd"), num("dog_dec"), num("fav_dec")
+    if None not in (g, dd, fd) and abs(dd + fd - g) > 0.15 + 1e-9:
+        bad.append(f"{tag}: shown DEC {fd:.1f} + {dd:.1f} = {fd + dd:.1f} vs shown GTD {g:.1f} (C1)")
+    s, m = p.get("sheet") or {}, p.get("method") or {}
+    try:
+        exact = s["true_fav"] * m["fav"]["dec"] + s["true_dog"] * m["dog"]["dec"]
+        if p.get("gtd") is not None and abs(p["gtd"] - exact) > 1e-6:
+            bad.append(f"{tag}: file gtd {p['gtd']:.6f} != true_fav x fav.dec + true_dog x dog.dec = {exact:.6f} (C4)")
+    except (KeyError, TypeError):
+        pass
+    return bad
 
 
 async def embed2(pg, base: str, slug: str, doc: dict) -> tuple[int, list[str]]:
@@ -89,13 +135,19 @@ async def embed2(pg, base: str, slug: str, doc: dict) -> tuple[int, list[str]]:
         last = p["fav"].strip().lower().split()[-1]
         await pg.goto(f"{base}/{slug}_fight_embed.html?fight={last}"); await pg.wait_for_timeout(900)
         got = await pg.evaluate("() => [...document.querySelectorAll('[data-k]')].map(e => [e.dataset.k, e.textContent.trim()])")
-        exp = expected2(p); seen = set()
+        gone = set(await pg.evaluate("() => [...document.querySelectorAll('[data-absent]')].map(e => e.dataset.absent)"))
+        exp, want_absent = expected2(p); seen = {}
+        tag = f"embed2: {p['fav']} vs {p['dog']}"
         for k, v in got:
-            n += 1; seen.add(k)
-            if k not in exp: bad.append(f"embed2: {p['fav']} vs {p['dog']}: shows {k} = {v!r}, which the verified file does not define")
-            elif v != exp[k]: bad.append(f"embed2: {p['fav']} vs {p['dog']}: {k} expected {exp[k]!r}, shown {v!r}")
-        for k in exp.keys() - seen:
-            bad.append(f"embed2: {p['fav']} vs {p['dog']}: {k} missing from the embed")
+            n += 1; seen[k] = v
+            if k not in exp: bad.append(f"{tag}: shows {k} = {v!r}, which the verified file does not define")
+            elif v != exp[k]: bad.append(f"{tag}: {k} expected {exp[k]!r}, shown {v!r}")
+        for k in exp.keys() - seen.keys():
+            bad.append(f"{tag}: {k} missing from the embed")
+        for k in want_absent ^ gone:
+            n += 1
+            bad.append(f"{tag}: {k} " + ("is absent from the file but the embed does not say so" if k in want_absent else "is marked absent but the file has it"))
+        cons = consistency(p, seen); n += 4; bad += cons
     return n, bad
 
 
