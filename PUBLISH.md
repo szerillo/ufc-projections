@@ -42,18 +42,25 @@ Sheet: Site > Publish to site
    didn't match and the site kept the last good file. Fix the sheet and publish again.
 5. Re-publish any time (price moves, new Markov run). Unticking a fight and re-publishing removes it from the page.
 
-## Thursday install (Kirk, Nov 12): loader v2.8 + publish script, with readback and rollback
+## Thursday install (Kirk, Nov 12, round 30): loader v2.9 + publish script, once, with readback and an abort line per step
 
-Both files come from the repo; nothing is typed by hand. Do this before the Thursday no-go checklist.
+Loader **v2.9** (sha256 starts `c8d938d7`) = v2.8 (`7200be8d`, TRAP prices never drive D/I) plus the refresh guard (round 29/30:
+a refresh never clears a bout still priced on BestFightOdds/Novig; a source outage writes nothing; bout-count drop warning;
+UFC > Remove a cancelled bout). Install v2.9 directly; do not install v2.8 first. Files are opened from fixed commits, so the
+text cannot change under you. Before T1: Prelims, Jared Gordon row shows D = **+420** and Calculator AH "(+4 TRAP)" (v2.7).
 
-| # | Do | Readback (red = stop and roll back) |
+| # | Do | Readback | Abort (stop, change nothing else, tell Claude) |
+|---|---|---|---|
+| T1 | Sheet > Extensions > Apps Script > gear (Project Settings) > Script Properties. If `BETTABLE_BOOKS` is listed, leave it. If not: Add script property, name `BETTABLE_BOOKS`, value `["DraftKings", "FanDuel", "BetMGM", "Caesars", "BetRivers", "HardRockBet", "Fanatics", "ESPNBet"]` (straight quotes) > Save script properties. | `BETTABLE_BOOKS` listed with that value. (v2.9's default is the same list, so this only pins it.) | Save shows an error, or the value has curly quotes: delete the property and stop. |
+| T2 | New tab: open https://raw.githubusercontent.com/szerillo/ufc-projections/1968dcfc/scripts/apps_script/loader/Code_v2.9_guard.gs > Ctrl+A > Ctrl+C. Apps Script > Editor > `Code.gs` > click in the code > Ctrl+A > Ctrl+V > Ctrl+S. | No red error bar. Line 2 reads `* PATCH loader-guard (Kirk rounds 29-30, v2.9 on top of v2.8)`. The last line starts `function FIGHTERNAME(name, range)`. Claude then reads the editor (read only) and confirms sha256 `c8d938d7`. | Red error, a different line 2 or last line, or a different hash: paste `Code_v2.7_installed.gs` back (rollback below) and stop. |
+| T3 | Only if Site > Preview publish does NOT already open with `Script build b47-out`: open https://raw.githubusercontent.com/szerillo/ufc-projections/fef6927b/scripts/apps_script/publish_to_site.gs > Ctrl+A > Ctrl+C > Apps Script > `publish_to_site` > Ctrl+A > Ctrl+V > Ctrl+S. | No red error; reload the sheet: menus **UFC** (now with "Remove a cancelled bout…") and **Site** both load. | A menu is missing or a red error: rollback T2 (and T3 if pasted), stop. |
+| T4 | Sheet > UFC > **Refresh prices (keep openers)**. Read the whole alert before closing it. | No alert line starts with `!!!`. Feed lists 13 fights. Prelims, Jared Gordon row: D = **+310** (not +420); Calculator AC "… \| +310 FanDuel"; AH ends "TRAP, excluded from D/I"; Bet Rec (N) = **-**. Every other row has both names. | `!!! REFUSED, source unreachable` = nothing was written: wait 5 min, repeat T4 once, then stop. Any other `!!!` line, D still +420, or a row with blank names: stop (do not publish). |
+| T5 | Site > **Preview publish** (no upload). | First line: `Script build b47-out · price row matches 13/13 · method inputs 13/13 · TRAP prices in D/I 0 · prices loaded ...` | Another build name, a count below 13/13, or `TRAP prices in D/I` 1 or more: stop; do not publish. |
+
+After T5 Claude reads Gordon's row back (read only) and posts before/after.
+
+| # | Do | Readback |
 |---|---|---|
-| T1 | Project Settings > Script Properties: add `BETTABLE_BOOKS` with the list from line 65 of the installed Code.gs (loader README). | Property listed. |
-| T2 | Code.gs: replace its contents with `scripts/apps_script/loader/Code_v2.8_patched.gs` from branch `loader-patch` (sha256 starts `7200be8d`) > Save. | No red error; after a reload the UFC menu still lists Load / Refresh / Snapshot / Grade. |
-| T3 | `publish_to_site` file: replace its contents with `scripts/apps_script/publish_to_site.gs` from `publish-to-site` (sha256 starts `de4c2be3`) > Save. | No red error; the Site menu still loads. |
-| T4 | UFC > **Refresh prices**. | Feed!F1 shows now. Prelims, Jared Gordon row: D = **+300** (not +420); Feed best dog "+300 FanDuel"; Calculator AH on his row ends "TRAP, excluded from D/I". (If Caesars has since moved off +420, the TRAP may be gone; then D is simply the best price.) |
-| T5 | Site > **Preview publish** (no upload). | First line: `Script build b47-out · price row matches 13/13 · method inputs 13/13 · TRAP prices in D/I 0 · prices loaded ...`. Red: any other build name, a count below 13/13, or **TRAP prices in D/I 1 or more**. |
-
 | T6 | Site > **Publish to site**, slug `ufc_334`, all 13 ticked (within 3 h of T4). This replaces the stale 01:18Z pending file (27 rejects). | Alert **Uploaded**; main's top commit "Publish ufc_334 projections from sheet (13 fights)". |
 | T7 | Merge `publish-to-site` into main (Claude, on Kirk's go), within 3 h of T4. | Projections check runs on the merge push, green, "Values compared: 286, mismatched: 0"; bot commit "projections: verified ...". |
 | T7b | Right after T7: Actions > Projections check > **Run workflow** (branch main). GitHub only shows this button once the workflow is on main, so it cannot be tested before the merge (Block 52); this is Friday step 4's fallback. | A run starts and is green with "Already live" (no new commit). |
@@ -61,10 +68,11 @@ Both files come from the repo; nothing is typed by hand. Do this before the Thur
 | T8b | Merge branch `open-label` into main (Claude, on Kirk's go; label only: 3 labels on fight pages, no numbers). Then `python3 -I scripts/open_label_check.py https://szerillo.github.io/ufc-projections` after the Pages deploy. | "O1: 110 fight pages read, 97 show 2+ different open values, 0 without source labels". **Rollback:** `git revert -m 1 <merge>` (one commit; the page returns to the old labels). |
 | T9 | Kirk: Site > **Publish to site** once more (any time after T8). First real test of a Sheet publish starting the check on its own (the Apps Script commits through the contents API; never exercised with the workflow on main). | A Projections check run starts within 2 min and is green. No run in 2 min: Friday's manual Run workflow becomes a required step, not a fallback. |
 
-**Rollback to v2.7 (one step):** Code.gs > replace its contents with `scripts/apps_script/loader/Code_v2.7_installed.gs`
-(sha256 starts `e5233b99`; the installed file with two settings read from Script Properties, which T1 set to the same values)
-> Save, then UFC > Refresh prices. Proof: Preview shows `TRAP prices in D/I 1` again while Caesars is still +420, and Gordon's
-D is +420. The publish script needs no rollback: it works with either loader (it only reports the TRAP count).
+**Rollback (one step each).** Code.gs > replace its contents with, then Ctrl+S, then UFC > Refresh prices:
+- guard misbehaves, TRAP rule fine: `scripts/apps_script/loader/Code_v2.8_patched.gs` (sha256 `7200be8d`, branch `loader-guard`);
+- full revert to what ran before Thursday: `scripts/apps_script/loader/Code_v2.7_installed.gs` (sha256 `e5233b99`). Proof:
+  Preview shows `TRAP prices in D/I 1` again while BFO's Caesars is still +420, and Gordon's D is +420.
+The publish script needs no rollback: it works with any of the three loaders (it only reports the TRAP count).
 
 ## Friday script (UFC 334 go-live, in this order)
 
@@ -74,7 +82,7 @@ merges into main with no conflicts; the merge was rehearsed twice (13 s from mer
 
 | # | Who | Do | Proof it worked | Time (ET) |
 |---|---|---|---|---|
-| 0 | Kirk | Apps Script > `publish_to_site` > replace its contents with `scripts/apps_script/publish_to_site.gs` from the branch (sha256 starts `de4c2be3`) > Save. (It exports the method inputs, the price-load stamp, each fight's Feed price row and the flagged outliers; without them the check goes red.) | Saves with no red error; Site > Preview publish opens with **Script build b47-out · price row matches 13/13 · method inputs 13/13 · TRAP prices in D/I 0 · prices loaded ...**. Another build name, a count below 13/13, or no such line = old file or partial paste: paste again. **TRAP prices in D/I 1** means loader v2.7 is still installed (Gordon +420 drives the rec): install loader v2.8 first. | |
+| 0 | Kirk | Apps Script > `publish_to_site` > replace its contents with `scripts/apps_script/publish_to_site.gs` from the branch (sha256 starts `de4c2be3`) > Save. (It exports the method inputs, the price-load stamp, each fight's Feed price row and the flagged outliers; without them the check goes red.) | Saves with no red error; Site > Preview publish opens with **Script build b47-out · price row matches 13/13 · method inputs 13/13 · TRAP prices in D/I 0 · prices loaded ...**. Another build name, a count below 13/13, or no such line = old file or partial paste: paste again. **TRAP prices in D/I 1** means loader v2.7 is still installed (Gordon +420 drives the rec): install loader v2.9 first (Thursday install T2). | |
 | 1 | Kirk | UFC > **Refresh prices**. | Feed!F1 ("Loaded") shows the current time. | |
 | 2 | Kirk | Site > **Publish to site**, slug `ufc_334`, every Main Card and Prelims fight ticked. Do steps 3-4 within 3 hours of step 1. | Alert says **Uploaded**; main's top commit is "Publish ufc_334 projections from sheet (13 fights)". | |
 | 3 | Kirk, on Sean's go | https://github.com/szerillo/ufc-projections/compare/main...publish-to-site > Create pull request > **Merge pull request** > Confirm. | "Able to merge" before the click; main's top commit is the merge. | |
@@ -94,7 +102,7 @@ recomputed from the file's own inputs within 0.0001 pts, plus a price-load stamp
 check (pre-registered Nov 11), plus an opponent-match guard (pre-registered Nov 11, Block 46): each price must be the price on
 the Feed row for that same bout, and the bout must exist in `data/<slug>_odds.json`. A bout that fails only that guard is
 held back as **Line pending** (no numbers on the page) and the rest go live; any other failure keeps the whole file off (Block 47).
-With loader v2.8 a TRAP price (4+ pts better than the exchange fair) never drives the price; the page says "Outlier excluded". The step 6 spot check stays as a second look, not as the only check.
+With loader v2.8 or v2.9 a TRAP price (4+ pts better than the exchange fair) never drives the price; the page says "Outlier excluded". The step 6 spot check stays as a second look, not as the only check.
 
 ## Saturday odds (the card-night loop)
 
