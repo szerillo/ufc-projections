@@ -1026,20 +1026,556 @@
   },
   {
    "id": "v82",
-   "text": "-8.1",
-   "fmt": "s1",
-   "rule": "labs",
+   "text": "71%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "cardio.upcoming",
-    "key": "sw",
-    "slug": "amanda-nunes"
+    "fighter": "Kayla Harrison",
+    "path": "target.head"
    },
-   "desc": "R1 to R3 swing b",
-   "raw": -8.1
+   "desc": "Target head Kayla Harrison",
+   "raw": 0.7132
   },
   {
    "id": "v83",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "target.body"
+   },
+   "desc": "Target body Kayla Harrison",
+   "raw": 0.1985
+  },
+  {
+   "id": "v84",
+   "text": "9%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Kayla Harrison",
+   "raw": 0.0882
+  },
+  {
+   "id": "v85",
+   "text": "68%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "target.head"
+   },
+   "desc": "Target head Amanda Nunes",
+   "raw": 0.6778
+  },
+  {
+   "id": "v86",
+   "text": "13%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "target.body"
+   },
+   "desc": "Target body Amanda Nunes",
+   "raw": 0.1336
+  },
+  {
+   "id": "v87",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Amanda Nunes",
+   "raw": 0.1886
+  },
+  {
+   "id": "v88",
+   "text": "30%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in a",
+   "raw": 0.3
+  },
+  {
+   "id": "v89",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in count a",
+   "raw": 6
+  },
+  {
+   "id": "v90",
+   "text": "20",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "key": "fights"
+   },
+   "desc": "Power: KO'd opponents in fights a",
+   "raw": 20
+  },
+  {
+   "id": "v91",
+   "text": "46%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in b",
+   "raw": 0.4642857142857143
+  },
+  {
+   "id": "v92",
+   "text": "13",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in count b",
+   "raw": 13
+  },
+  {
+   "id": "v93",
+   "text": "28",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "key": "fights"
+   },
+   "desc": "Power: KO'd opponents in fights b",
+   "raw": 28
+  },
+  {
+   "id": "v94",
+   "text": "8%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Women's Bantamweight"
+   },
+   "desc": "Division KO share",
+   "raw": 0.0769
+  },
+  {
+   "id": "v95",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in a",
+   "raw": 0.0
+  },
+  {
+   "id": "v96",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in count a",
+   "raw": 0
+  },
+  {
+   "id": "v97",
+   "text": "20",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "key": "fights"
+   },
+   "desc": "Chin: been KO'd in fights a",
+   "raw": 20
+  },
+  {
+   "id": "v98",
+   "text": "7%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in b",
+   "raw": 0.07142857142857142
+  },
+  {
+   "id": "v99",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in count b",
+   "raw": 2
+  },
+  {
+   "id": "v100",
+   "text": "28",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "key": "fights"
+   },
+   "desc": "Chin: been KO'd in fights b",
+   "raw": 28
+  },
+  {
+   "id": "v101",
+   "text": "8%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Women's Bantamweight"
+   },
+   "desc": "Division KO share",
+   "raw": 0.0769
+  },
+  {
+   "id": "v102",
+   "text": "+3.9",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Kayla Harrison",
+   "raw": 3.933
+  },
+  {
+   "id": "v103",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Kayla Harrison",
+   "raw": 3
+  },
+  {
+   "id": "v104",
+   "text": "+2.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Kayla Harrison",
+   "raw": 2.051
+  },
+  {
+   "id": "v105",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Kayla Harrison",
+   "raw": 3
+  },
+  {
+   "id": "v106",
+   "text": "+3.6",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Kayla Harrison",
+   "raw": 3.6
+  },
+  {
+   "id": "v107",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Kayla Harrison",
+   "raw": 1
+  },
+  {
+   "id": "v108",
+   "text": "+4.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Amanda Nunes",
+   "raw": 4.059
+  },
+  {
+   "id": "v109",
+   "text": "18",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Amanda Nunes",
+   "raw": 18
+  },
+  {
+   "id": "v110",
+   "text": "-0.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Amanda Nunes",
+   "raw": -0.138
+  },
+  {
+   "id": "v111",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Amanda Nunes",
+   "raw": 9
+  },
+  {
+   "id": "v112",
+   "text": "+0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Amanda Nunes",
+   "raw": 0.743
+  },
+  {
+   "id": "v113",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Amanda Nunes",
+   "raw": 8
+  },
+  {
+   "id": "v114",
+   "text": "+3.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "rounds.3.diff_pm"
+   },
+   "desc": "R4 diff Amanda Nunes",
+   "raw": 3.3
+  },
+  {
+   "id": "v115",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "rounds.3.fights"
+   },
+   "desc": "R4 fights Amanda Nunes",
+   "raw": 6
+  },
+  {
+   "id": "v116",
+   "text": "+1.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "rounds.4.diff_pm"
+   },
+   "desc": "R5 diff Amanda Nunes",
+   "raw": 1.341
+  },
+  {
+   "id": "v117",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "rounds.4.fights"
+   },
+   "desc": "R5 fights Amanda Nunes",
+   "raw": 6
+  },
+  {
+   "id": "v118",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "r45.fights"
+   },
+   "desc": "Fights to R4+ b",
+   "raw": 6
+  },
+  {
+   "id": "v119",
+   "text": "4.7",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "r45.landed_pm_13"
+   },
+   "desc": "Output R1-3 /min b",
+   "raw": 4.748
+  },
+  {
+   "id": "v120",
+   "text": "4.0",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "r45.landed_pm_45"
+   },
+   "desc": "Output R4-5 /min b",
+   "raw": 4.01
+  },
+  {
+   "id": "v121",
+   "text": "+2.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "r45.diff_pm_45"
+   },
+   "desc": "Diff R4-5 /min b",
+   "raw": 2.361
+  },
+  {
+   "id": "v122",
+   "text": "+2.40",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 2.397
+  },
+  {
+   "id": "v123",
+   "text": "+1.42",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 1.424
+  },
+  {
+   "id": "v124",
+   "text": "+0.66",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.662
+  },
+  {
+   "id": "v125",
+   "text": "+0.25",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.25
+  },
+  {
+   "id": "v126",
+   "text": "+0.13",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.126
+  },
+  {
+   "id": "v127",
+   "text": "+0.43",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Amanda Nunes",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": 0.426
+  },
+  {
+   "id": "v128",
    "text": "71%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1053,21 +1589,7 @@
    "raw": 0.712
   },
   {
-   "id": "v84",
-   "text": "+6.3",
-   "fmt": "s1",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "cardio.upcoming",
-    "key": "d3",
-    "slug": "amanda-nunes"
-   },
-   "desc": "R3 strike diff b",
-   "raw": 6.3
-  },
-  {
-   "id": "v85",
+   "id": "v129",
    "text": "10.6",
    "fmt": "n1",
    "rule": "labs",
@@ -1081,7 +1603,7 @@
    "raw": 10.6
   },
   {
-   "id": "v86",
+   "id": "v130",
    "text": "11.4",
    "fmt": "n1",
    "rule": "labs",
@@ -1095,7 +1617,7 @@
    "raw": 11.4
   },
   {
-   "id": "v87",
+   "id": "v131",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1109,7 +1631,7 @@
    "raw": 0.0
   },
   {
-   "id": "v88",
+   "id": "v132",
    "text": "50%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1123,7 +1645,7 @@
    "raw": 0.5
   },
   {
-   "id": "v89",
+   "id": "v133",
    "text": "33%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1137,7 +1659,7 @@
    "raw": 0.333
   },
   {
-   "id": "v90",
+   "id": "v134",
    "text": "33%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1151,7 +1673,7 @@
    "raw": 0.333
   },
   {
-   "id": "v91",
+   "id": "v135",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1165,7 +1687,7 @@
    "raw": 0.0
   },
   {
-   "id": "v92",
+   "id": "v136",
    "text": "39%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1179,7 +1701,7 @@
    "raw": 0.389
   },
   {
-   "id": "v93",
+   "id": "v137",
    "text": "67%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1193,7 +1715,7 @@
    "raw": 0.667
   },
   {
-   "id": "v94",
+   "id": "v138",
    "text": "17%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1207,7 +1729,7 @@
    "raw": 0.167
   },
   {
-   "id": "v95",
+   "id": "v139",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1221,7 +1743,7 @@
    "raw": 0.0
   },
   {
-   "id": "v96",
+   "id": "v140",
    "text": "6%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1235,7 +1757,7 @@
    "raw": 0.056
   },
   {
-   "id": "v97",
+   "id": "v141",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1249,7 +1771,7 @@
    "raw": 0.0
   },
   {
-   "id": "v98",
+   "id": "v142",
    "text": "6%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1263,7 +1785,7 @@
    "raw": 0.056
   },
   {
-   "id": "v99",
+   "id": "v143",
    "text": "2.84",
    "fmt": "n2",
    "rule": "stat",
@@ -1276,7 +1798,7 @@
    "raw": 2.8391167192429023
   },
   {
-   "id": "v100",
+   "id": "v144",
    "text": "2.79",
    "fmt": "n2",
    "rule": "stat",
@@ -1289,7 +1811,7 @@
    "raw": 2.7886497064579254
   },
   {
-   "id": "v101",
+   "id": "v145",
    "text": "100%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1302,7 +1824,7 @@
    "raw": 1.0
   },
   {
-   "id": "v102",
+   "id": "v146",
    "text": "81%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1315,7 +1837,7 @@
    "raw": 0.8125
   },
   {
-   "id": "v103",
+   "id": "v147",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -1328,7 +1850,7 @@
    "raw": -714
   },
   {
-   "id": "v104",
+   "id": "v148",
    "text": "-1111",
    "fmt": "ml",
    "rule": "fight",
@@ -1341,7 +1863,7 @@
    "raw": -1111
   },
   {
-   "id": "v105",
+   "id": "v149",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1354,7 +1876,7 @@
    "raw": -455
   },
   {
-   "id": "v106",
+   "id": "v150",
    "text": "-312",
    "fmt": "ml",
    "rule": "fight",
@@ -1367,7 +1889,7 @@
    "raw": -312
   },
   {
-   "id": "v107",
+   "id": "v151",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",

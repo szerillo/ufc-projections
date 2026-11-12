@@ -980,62 +980,316 @@
   },
   {
    "id": "v78",
-   "text": "+0.72",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "46%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "sd",
-    "slug": "evan-elder"
+    "fighter": "Evan Elder",
+    "path": "target.head"
    },
-   "desc": "Strike diff /min a",
-   "raw": 0.72
+   "desc": "Target head Evan Elder",
+   "raw": 0.4589
   },
   {
    "id": "v79",
-   "text": "-0.51",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "hd",
-    "slug": "evan-elder"
+    "fighter": "Evan Elder",
+    "path": "target.body"
    },
-   "desc": "Head diff /min a",
-   "raw": -0.51
+   "desc": "Target body Evan Elder",
+   "raw": 0.3796
   },
   {
    "id": "v80",
-   "text": "+1.03",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "16%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "bd",
-    "slug": "evan-elder"
+    "fighter": "Evan Elder",
+    "path": "target.leg"
    },
-   "desc": "Body diff /min a",
-   "raw": 1.03
+   "desc": "Target leg Evan Elder",
+   "raw": 0.1615
   },
   {
    "id": "v81",
-   "text": "+0.21",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em_car",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "ld",
-    "slug": "evan-elder"
+    "fighter": "Evan Elder",
+    "key": "ko_wins"
    },
-   "desc": "Leg diff /min a",
-   "raw": 0.21
+   "desc": "Power: KO'd opponents in a",
+   "raw": 0.3333333333333333
   },
   {
    "id": "v82",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Evan Elder",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in count a",
+   "raw": 4
+  },
+  {
+   "id": "v83",
+   "text": "12",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Evan Elder",
+    "key": "fights"
+   },
+   "desc": "Power: KO'd opponents in fights a",
+   "raw": 12
+  },
+  {
+   "id": "v84",
+   "text": "67%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Samuel Sanches",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in b",
+   "raw": 0.6666666666666666
+  },
+  {
+   "id": "v85",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Samuel Sanches",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in count b",
+   "raw": 8
+  },
+  {
+   "id": "v86",
+   "text": "12",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Samuel Sanches",
+    "key": "fights"
+   },
+   "desc": "Power: KO'd opponents in fights b",
+   "raw": 12
+  },
+  {
+   "id": "v87",
+   "text": "18%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight"
+   },
+   "desc": "Division KO share",
+   "raw": 0.1786
+  },
+  {
+   "id": "v88",
+   "text": "8%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Evan Elder",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in a",
+   "raw": 0.08333333333333333
+  },
+  {
+   "id": "v89",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Evan Elder",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in count a",
+   "raw": 1
+  },
+  {
+   "id": "v90",
+   "text": "12",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Evan Elder",
+    "key": "fights"
+   },
+   "desc": "Chin: been KO'd in fights a",
+   "raw": 12
+  },
+  {
+   "id": "v91",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Samuel Sanches",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in b",
+   "raw": 0.0
+  },
+  {
+   "id": "v92",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Samuel Sanches",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in count b",
+   "raw": 0
+  },
+  {
+   "id": "v93",
+   "text": "12",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Samuel Sanches",
+    "key": "fights"
+   },
+   "desc": "Chin: been KO'd in fights b",
+   "raw": 12
+  },
+  {
+   "id": "v94",
+   "text": "18%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight"
+   },
+   "desc": "Division KO share",
+   "raw": 0.1786
+  },
+  {
+   "id": "v95",
+   "text": "+1.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Evan Elder",
+   "raw": 1.24
+  },
+  {
+   "id": "v96",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Evan Elder",
+   "raw": 5
+  },
+  {
+   "id": "v97",
+   "text": "+1.5",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Evan Elder",
+   "raw": 1.516
+  },
+  {
+   "id": "v98",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Evan Elder",
+   "raw": 5
+  },
+  {
+   "id": "v99",
+   "text": "-1.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Evan Elder",
+   "raw": -1.215
+  },
+  {
+   "id": "v100",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Evan Elder",
+   "raw": 4
+  },
+  {
+   "id": "v101",
+   "text": "-0.51",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": -0.513
+  },
+  {
+   "id": "v102",
+   "text": "+1.03",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 1.026
+  },
+  {
+   "id": "v103",
+   "text": "+0.21",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Evan Elder",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.208
+  },
+  {
+   "id": "v104",
    "text": "65%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1049,49 +1303,7 @@
    "raw": 0.648
   },
   {
-   "id": "v83",
-   "text": "0.48",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "kd15",
-    "slug": "evan-elder"
-   },
-   "desc": "Knockdowns /15 a",
-   "raw": 0.48
-  },
-  {
-   "id": "v84",
-   "text": "0.52",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "chin",
-    "slug": "evan-elder"
-   },
-   "desc": "KD taken /100 head a",
-   "raw": 0.52
-  },
-  {
-   "id": "v85",
-   "text": "-8.7",
-   "fmt": "s1",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "cardio.upcoming",
-    "key": "sw",
-    "slug": "evan-elder"
-   },
-   "desc": "R1 to R3 swing a",
-   "raw": -8.7
-  },
-  {
-   "id": "v86",
+   "id": "v105",
    "text": "138%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1105,21 +1317,7 @@
    "raw": 1.38
   },
   {
-   "id": "v87",
-   "text": "-5.0",
-   "fmt": "s1",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "cardio.upcoming",
-    "key": "d3",
-    "slug": "evan-elder"
-   },
-   "desc": "R3 strike diff a",
-   "raw": -5.0
-  },
-  {
-   "id": "v88",
+   "id": "v106",
    "text": "12.5",
    "fmt": "n1",
    "rule": "labs",
@@ -1133,7 +1331,7 @@
    "raw": 12.5
   },
   {
-   "id": "v89",
+   "id": "v107",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1147,7 +1345,7 @@
    "raw": 0.0
   },
   {
-   "id": "v90",
+   "id": "v108",
    "text": "60%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1161,7 +1359,7 @@
    "raw": 0.6
   },
   {
-   "id": "v91",
+   "id": "v109",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1175,7 +1373,7 @@
    "raw": 0.0
   },
   {
-   "id": "v92",
+   "id": "v110",
    "text": "20%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1189,7 +1387,7 @@
    "raw": 0.2
   },
   {
-   "id": "v93",
+   "id": "v111",
    "text": "20%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1203,7 +1401,7 @@
    "raw": 0.2
   },
   {
-   "id": "v94",
+   "id": "v112",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1217,7 +1415,7 @@
    "raw": 0.0
   },
   {
-   "id": "v95",
+   "id": "v113",
    "text": "0.48",
    "fmt": "n2",
    "rule": "stat",
@@ -1230,7 +1428,7 @@
    "raw": 0.48076923076923084
   },
   {
-   "id": "v96",
+   "id": "v114",
    "text": "40%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1243,7 +1441,7 @@
    "raw": 0.4
   },
   {
-   "id": "v97",
+   "id": "v115",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1256,7 +1454,7 @@
    "raw": -208
   },
   {
-   "id": "v98",
+   "id": "v116",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1269,7 +1467,7 @@
    "raw": -455
   },
   {
-   "id": "v99",
+   "id": "v117",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1282,7 +1480,7 @@
    "raw": -303
   },
   {
-   "id": "v100",
+   "id": "v118",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -1295,7 +1493,7 @@
    "raw": 175
   },
   {
-   "id": "v101",
+   "id": "v119",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",

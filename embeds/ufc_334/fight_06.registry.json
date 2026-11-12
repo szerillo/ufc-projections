@@ -880,118 +880,436 @@
   },
   {
    "id": "v71",
-   "text": "-0.51",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "59%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "sd",
-    "slug": "jim-miller"
+    "fighter": "Jim Miller",
+    "path": "target.head"
    },
-   "desc": "Strike diff /min a",
-   "raw": -0.51
+   "desc": "Target head Jim Miller",
+   "raw": 0.5862
   },
   {
    "id": "v72",
-   "text": "+3.19",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "sd",
-    "slug": "terrance-mckinney"
+    "fighter": "Jim Miller",
+    "path": "target.body"
    },
-   "desc": "Strike diff /min b",
-   "raw": 3.19
+   "desc": "Target body Jim Miller",
+   "raw": 0.2012
   },
   {
    "id": "v73",
-   "text": "-0.62",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "21%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "hd",
-    "slug": "jim-miller"
+    "fighter": "Jim Miller",
+    "path": "target.leg"
    },
-   "desc": "Head diff /min a",
-   "raw": -0.62
+   "desc": "Target leg Jim Miller",
+   "raw": 0.2126
   },
   {
    "id": "v74",
-   "text": "+3.98",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "87%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "hd",
-    "slug": "terrance-mckinney"
+    "fighter": "Terrance McKinney",
+    "path": "target.head"
    },
-   "desc": "Head diff /min b",
-   "raw": 3.98
+   "desc": "Target head Terrance McKinney",
+   "raw": 0.8723
   },
   {
    "id": "v75",
-   "text": "-0.19",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "13%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "bd",
-    "slug": "jim-miller"
+    "fighter": "Terrance McKinney",
+    "path": "target.body"
    },
-   "desc": "Body diff /min a",
-   "raw": -0.19
+   "desc": "Target body Terrance McKinney",
+   "raw": 0.1277
   },
   {
    "id": "v76",
-   "text": "-0.26",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "bd",
-    "slug": "terrance-mckinney"
+    "fighter": "Terrance McKinney",
+    "path": "target.leg"
    },
-   "desc": "Body diff /min b",
-   "raw": -0.26
+   "desc": "Target leg Terrance McKinney",
+   "raw": 0.0
   },
   {
    "id": "v77",
-   "text": "+0.29",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "12%",
+   "fmt": "pct0",
+   "rule": "em_car",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "ld",
-    "slug": "jim-miller"
+    "fighter": "Jim Miller",
+    "key": "ko_wins"
    },
-   "desc": "Leg diff /min a",
-   "raw": 0.29
+   "desc": "Power: KO'd opponents in a",
+   "raw": 0.11864406779661017
   },
   {
    "id": "v78",
-   "text": "-0.52",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em_car_n",
    "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "ld",
-    "slug": "terrance-mckinney"
+    "fighter": "Jim Miller",
+    "key": "ko_wins"
    },
-   "desc": "Leg diff /min b",
-   "raw": -0.52
+   "desc": "Power: KO'd opponents in count a",
+   "raw": 7
   },
   {
    "id": "v79",
+   "text": "59",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Jim Miller",
+    "key": "fights"
+   },
+   "desc": "Power: KO'd opponents in fights a",
+   "raw": 59
+  },
+  {
+   "id": "v80",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in b",
+   "raw": 0.3333333333333333
+  },
+  {
+   "id": "v81",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in count b",
+   "raw": 9
+  },
+  {
+   "id": "v82",
+   "text": "27",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "key": "fights"
+   },
+   "desc": "Power: KO'd opponents in fights b",
+   "raw": 27
+  },
+  {
+   "id": "v83",
+   "text": "18%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight"
+   },
+   "desc": "Division KO share",
+   "raw": 0.1786
+  },
+  {
+   "id": "v84",
+   "text": "3%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Jim Miller",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in a",
+   "raw": 0.03389830508474576
+  },
+  {
+   "id": "v85",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Jim Miller",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in count a",
+   "raw": 2
+  },
+  {
+   "id": "v86",
+   "text": "59",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Jim Miller",
+    "key": "fights"
+   },
+   "desc": "Chin: been KO'd in fights a",
+   "raw": 59
+  },
+  {
+   "id": "v87",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in b",
+   "raw": 0.2222222222222222
+  },
+  {
+   "id": "v88",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in count b",
+   "raw": 6
+  },
+  {
+   "id": "v89",
+   "text": "27",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "key": "fights"
+   },
+   "desc": "Chin: been KO'd in fights b",
+   "raw": 27
+  },
+  {
+   "id": "v90",
+   "text": "18%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight"
+   },
+   "desc": "Division KO share",
+   "raw": 0.1786
+  },
+  {
+   "id": "v91",
+   "text": "+0.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Jim Miller",
+   "raw": 0.216
+  },
+  {
+   "id": "v92",
+   "text": "47",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Jim Miller",
+   "raw": 47
+  },
+  {
+   "id": "v93",
+   "text": "-0.9",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Jim Miller",
+   "raw": -0.949
+  },
+  {
+   "id": "v94",
+   "text": "32",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Jim Miller",
+   "raw": 32
+  },
+  {
+   "id": "v95",
+   "text": "-1.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Jim Miller",
+   "raw": -1.195
+  },
+  {
+   "id": "v96",
+   "text": "25",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Jim Miller",
+   "raw": 25
+  },
+  {
+   "id": "v97",
+   "text": "+3.9",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Terrance McKinney",
+   "raw": 3.929
+  },
+  {
+   "id": "v98",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Terrance McKinney",
+   "raw": 14
+  },
+  {
+   "id": "v99",
+   "text": "-3.5",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Terrance McKinney",
+   "raw": -3.529
+  },
+  {
+   "id": "v100",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Terrance McKinney",
+   "raw": 2
+  },
+  {
+   "id": "v101",
+   "text": "-0.62",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": -0.618
+  },
+  {
+   "id": "v102",
+   "text": "+3.98",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 3.977
+  },
+  {
+   "id": "v103",
+   "text": "-0.19",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": -0.188
+  },
+  {
+   "id": "v104",
+   "text": "-0.26",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": -0.261
+  },
+  {
+   "id": "v105",
+   "text": "+0.29",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jim Miller",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.294
+  },
+  {
+   "id": "v106",
+   "text": "-0.52",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Terrance McKinney",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": -0.522
+  },
+  {
+   "id": "v107",
    "text": "64%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1005,7 +1323,7 @@
    "raw": 0.636
   },
   {
-   "id": "v80",
+   "id": "v108",
    "text": "50%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1019,77 +1337,7 @@
    "raw": 0.498
   },
   {
-   "id": "v81",
-   "text": "0.20",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "kd15",
-    "slug": "jim-miller"
-   },
-   "desc": "Knockdowns /15 a",
-   "raw": 0.2
-  },
-  {
-   "id": "v82",
-   "text": "1.31",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "kd15",
-    "slug": "terrance-mckinney"
-   },
-   "desc": "Knockdowns /15 b",
-   "raw": 1.31
-  },
-  {
-   "id": "v83",
-   "text": "0.28",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "chin",
-    "slug": "jim-miller"
-   },
-   "desc": "KD taken /100 head a",
-   "raw": 0.28
-  },
-  {
-   "id": "v84",
-   "text": "4.90",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "chin",
-    "slug": "terrance-mckinney"
-   },
-   "desc": "KD taken /100 head b",
-   "raw": 4.9
-  },
-  {
-   "id": "v85",
-   "text": "-6.7",
-   "fmt": "s1",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "cardio.upcoming",
-    "key": "sw",
-    "slug": "jim-miller"
-   },
-   "desc": "R1 to R3 swing a",
-   "raw": -6.7
-  },
-  {
-   "id": "v86",
+   "id": "v109",
    "text": "84%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1103,21 +1351,7 @@
    "raw": 0.843
   },
   {
-   "id": "v87",
-   "text": "-6.6",
-   "fmt": "s1",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "cardio.upcoming",
-    "key": "d3",
-    "slug": "jim-miller"
-   },
-   "desc": "R3 strike diff a",
-   "raw": -6.6
-  },
-  {
-   "id": "v88",
+   "id": "v110",
    "text": "9.5",
    "fmt": "n1",
    "rule": "labs",
@@ -1131,7 +1365,7 @@
    "raw": 9.5
   },
   {
-   "id": "v89",
+   "id": "v111",
    "text": "2.5",
    "fmt": "n1",
    "rule": "labs",
@@ -1145,7 +1379,7 @@
    "raw": 2.5
   },
   {
-   "id": "v90",
+   "id": "v112",
    "text": "33%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1159,7 +1393,7 @@
    "raw": 0.326
   },
   {
-   "id": "v91",
+   "id": "v113",
    "text": "86%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1173,7 +1407,7 @@
    "raw": 0.857
   },
   {
-   "id": "v92",
+   "id": "v114",
    "text": "46%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1187,7 +1421,7 @@
    "raw": 0.457
   },
   {
-   "id": "v93",
+   "id": "v115",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1201,7 +1435,7 @@
    "raw": 0.0
   },
   {
-   "id": "v94",
+   "id": "v116",
    "text": "13%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1215,7 +1449,7 @@
    "raw": 0.13
   },
   {
-   "id": "v95",
+   "id": "v117",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1229,7 +1463,7 @@
    "raw": 0.357
   },
   {
-   "id": "v96",
+   "id": "v118",
    "text": "30%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1243,7 +1477,7 @@
    "raw": 0.304
   },
   {
-   "id": "v97",
+   "id": "v119",
    "text": "21%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1257,7 +1491,7 @@
    "raw": 0.214
   },
   {
-   "id": "v98",
+   "id": "v120",
    "text": "4%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1271,7 +1505,7 @@
    "raw": 0.043
   },
   {
-   "id": "v99",
+   "id": "v121",
    "text": "29%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1285,7 +1519,7 @@
    "raw": 0.286
   },
   {
-   "id": "v100",
+   "id": "v122",
    "text": "6%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1299,7 +1533,7 @@
    "raw": 0.065
   },
   {
-   "id": "v101",
+   "id": "v123",
    "text": "14%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1313,7 +1547,7 @@
    "raw": 0.143
   },
   {
-   "id": "v102",
+   "id": "v124",
    "text": "1.49",
    "fmt": "n2",
    "rule": "stat",
@@ -1326,7 +1560,7 @@
    "raw": 1.4902307097913678
   },
   {
-   "id": "v103",
+   "id": "v125",
    "text": "3.05",
    "fmt": "n2",
    "rule": "stat",
@@ -1339,7 +1573,7 @@
    "raw": 3.047895500725689
   },
   {
-   "id": "v104",
+   "id": "v126",
    "text": "48%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1352,7 +1586,7 @@
    "raw": 0.47619047619047616
   },
   {
-   "id": "v105",
+   "id": "v127",
    "text": "73%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1365,7 +1599,7 @@
    "raw": 0.7272727272727273
   },
   {
-   "id": "v106",
+   "id": "v128",
    "text": "2:06",
    "fmt": "mmss",
    "rule": "labs",
@@ -1379,7 +1613,7 @@
    "raw": 126.0
   },
   {
-   "id": "v107",
+   "id": "v129",
    "text": "2:13",
    "fmt": "mmss",
    "rule": "labs",
@@ -1393,7 +1627,7 @@
    "raw": 133.0
   },
   {
-   "id": "v108",
+   "id": "v130",
    "text": "+219",
    "fmt": "ml",
    "rule": "fight",
@@ -1406,7 +1640,7 @@
    "raw": 219
   },
   {
-   "id": "v109",
+   "id": "v131",
    "text": "+550",
    "fmt": "ml",
    "rule": "fight",
@@ -1419,7 +1653,7 @@
    "raw": 550
   },
   {
-   "id": "v110",
+   "id": "v132",
    "text": "+195",
    "fmt": "ml",
    "rule": "fight",
@@ -1432,7 +1666,7 @@
    "raw": 195
   },
   {
-   "id": "v111",
+   "id": "v133",
    "text": "+154",
    "fmt": "ml",
    "rule": "fight",
@@ -1445,7 +1679,7 @@
    "raw": 154
   },
   {
-   "id": "v112",
+   "id": "v134",
    "text": "-149",
    "fmt": "ml",
    "rule": "fight",
@@ -1458,7 +1692,7 @@
    "raw": -149
   },
   {
-   "id": "v113",
+   "id": "v135",
    "text": "-109",
    "fmt": "ml",
    "rule": "fight",
@@ -1471,7 +1705,7 @@
    "raw": -109
   },
   {
-   "id": "v114",
+   "id": "v136",
    "text": "-185",
    "fmt": "ml",
    "rule": "fight",
@@ -1484,7 +1718,7 @@
    "raw": -185
   },
   {
-   "id": "v115",
+   "id": "v137",
    "text": "-106",
    "fmt": "ml",
    "rule": "fight",
@@ -1497,7 +1731,7 @@
    "raw": -106
   },
   {
-   "id": "v116",
+   "id": "v138",
    "text": "-167",
    "fmt": "ml",
    "rule": "fight",
@@ -1510,7 +1744,7 @@
    "raw": -167
   },
   {
-   "id": "v117",
+   "id": "v139",
    "text": "-588",
    "fmt": "ml",
    "rule": "fight",

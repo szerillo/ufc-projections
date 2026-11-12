@@ -1026,62 +1026,556 @@
   },
   {
    "id": "v82",
-   "text": "+3.09",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "sd",
-    "slug": "ciryl-gane"
+    "fighter": "Ciryl Gane",
+    "path": "target.head"
    },
-   "desc": "Strike diff /min a",
-   "raw": 3.09
+   "desc": "Target head Ciryl Gane",
+   "raw": 0.4456
   },
   {
    "id": "v83",
-   "text": "+1.46",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "27%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "hd",
-    "slug": "ciryl-gane"
+    "fighter": "Ciryl Gane",
+    "path": "target.body"
    },
-   "desc": "Head diff /min a",
-   "raw": 1.46
+   "desc": "Target body Ciryl Gane",
+   "raw": 0.2655
   },
   {
    "id": "v84",
-   "text": "+0.91",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "29%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "bd",
-    "slug": "ciryl-gane"
+    "fighter": "Ciryl Gane",
+    "path": "target.leg"
    },
-   "desc": "Body diff /min a",
-   "raw": 0.91
+   "desc": "Target leg Ciryl Gane",
+   "raw": 0.2889
   },
   {
    "id": "v85",
+   "text": "90%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "target.head"
+   },
+   "desc": "Target head Josh Hokit",
+   "raw": 0.8997
+  },
+  {
+   "id": "v86",
+   "text": "8%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "target.body"
+   },
+   "desc": "Target body Josh Hokit",
+   "raw": 0.0841
+  },
+  {
+   "id": "v87",
+   "text": "2%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Josh Hokit",
+   "raw": 0.0162
+  },
+  {
+   "id": "v88",
+   "text": "41%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in a",
+   "raw": 0.4117647058823529
+  },
+  {
+   "id": "v89",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in count a",
+   "raw": 7
+  },
+  {
+   "id": "v90",
+   "text": "17",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "key": "fights"
+   },
+   "desc": "Power: KO'd opponents in fights a",
+   "raw": 17
+  },
+  {
+   "id": "v91",
+   "text": "60%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Josh Hokit",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in b",
+   "raw": 0.6
+  },
+  {
+   "id": "v92",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Josh Hokit",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in count b",
+   "raw": 6
+  },
+  {
+   "id": "v93",
+   "text": "10",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Josh Hokit",
+    "key": "fights"
+   },
+   "desc": "Power: KO'd opponents in fights b",
+   "raw": 10
+  },
+  {
+   "id": "v94",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Heavyweight"
+   },
+   "desc": "Division KO share",
+   "raw": 0.2264
+  },
+  {
+   "id": "v95",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in a",
+   "raw": 0.0
+  },
+  {
+   "id": "v96",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in count a",
+   "raw": 0
+  },
+  {
+   "id": "v97",
+   "text": "17",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "key": "fights"
+   },
+   "desc": "Chin: been KO'd in fights a",
+   "raw": 17
+  },
+  {
+   "id": "v98",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Josh Hokit",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in b",
+   "raw": 0.0
+  },
+  {
+   "id": "v99",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Josh Hokit",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in count b",
+   "raw": 0
+  },
+  {
+   "id": "v100",
+   "text": "10",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Josh Hokit",
+    "key": "fights"
+   },
+   "desc": "Chin: been KO'd in fights b",
+   "raw": 10
+  },
+  {
+   "id": "v101",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Heavyweight"
+   },
+   "desc": "Division KO share",
+   "raw": 0.2264
+  },
+  {
+   "id": "v102",
+   "text": "+2.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Ciryl Gane",
+   "raw": 2.293
+  },
+  {
+   "id": "v103",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Ciryl Gane",
+   "raw": 14
+  },
+  {
+   "id": "v104",
+   "text": "+4.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Ciryl Gane",
+   "raw": 4.084
+  },
+  {
+   "id": "v105",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Ciryl Gane",
+   "raw": 11
+  },
+  {
+   "id": "v106",
+   "text": "+4.5",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Ciryl Gane",
+   "raw": 4.513
+  },
+  {
+   "id": "v107",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Ciryl Gane",
+   "raw": 8
+  },
+  {
+   "id": "v108",
+   "text": "+2.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "rounds.3.diff_pm"
+   },
+   "desc": "R4 diff Ciryl Gane",
+   "raw": 2.4
+  },
+  {
+   "id": "v109",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "rounds.3.fights"
+   },
+   "desc": "R4 fights Ciryl Gane",
+   "raw": 3
+  },
+  {
+   "id": "v110",
+   "text": "+0.5",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "rounds.4.diff_pm"
+   },
+   "desc": "R5 diff Ciryl Gane",
+   "raw": 0.533
+  },
+  {
+   "id": "v111",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "rounds.4.fights"
+   },
+   "desc": "R5 fights Ciryl Gane",
+   "raw": 3
+  },
+  {
+   "id": "v112",
+   "text": "+4.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Josh Hokit",
+   "raw": 4.147
+  },
+  {
+   "id": "v113",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Josh Hokit",
+   "raw": 4
+  },
+  {
+   "id": "v114",
+   "text": "+4.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Josh Hokit",
+   "raw": 4.044
+  },
+  {
+   "id": "v115",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Josh Hokit",
+   "raw": 2
+  },
+  {
+   "id": "v116",
+   "text": "+4.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Josh Hokit",
+   "raw": 4.4
+  },
+  {
+   "id": "v117",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Josh Hokit",
+   "raw": 1
+  },
+  {
+   "id": "v118",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "r45.fights"
+   },
+   "desc": "Fights to R4+ a",
+   "raw": 3
+  },
+  {
+   "id": "v119",
+   "text": "5.7",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "r45.landed_pm_13"
+   },
+   "desc": "Output R1-3 /min a",
+   "raw": 5.706
+  },
+  {
+   "id": "v120",
+   "text": "3.9",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "r45.landed_pm_45"
+   },
+   "desc": "Output R4-5 /min a",
+   "raw": 3.867
+  },
+  {
+   "id": "v121",
+   "text": "+1.5",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "r45.diff_pm_45"
+   },
+   "desc": "Diff R4-5 /min a",
+   "raw": 1.467
+  },
+  {
+   "id": "v122",
+   "text": "+1.46",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 1.462
+  },
+  {
+   "id": "v123",
+   "text": "+4.06",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 4.058
+  },
+  {
+   "id": "v124",
+   "text": "+0.91",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Ciryl Gane",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.912
+  },
+  {
+   "id": "v125",
+   "text": "+0.20",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.2
+  },
+  {
+   "id": "v126",
    "text": "+0.72",
    "fmt": "s2",
-   "rule": "labs",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "ld",
-    "slug": "ciryl-gane"
+    "fighter": "Ciryl Gane",
+    "path": "target_diff.leg"
    },
    "desc": "Leg diff /min a",
    "raw": 0.72
   },
   {
-   "id": "v86",
+   "id": "v127",
+   "text": "-0.10",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": -0.1
+  },
+  {
+   "id": "v128",
    "text": "76%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1095,49 +1589,7 @@
    "raw": 0.763
   },
   {
-   "id": "v87",
-   "text": "0.33",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "kd15",
-    "slug": "ciryl-gane"
-   },
-   "desc": "Knockdowns /15 a",
-   "raw": 0.33
-  },
-  {
-   "id": "v88",
-   "text": "0.58",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "chin",
-    "slug": "ciryl-gane"
-   },
-   "desc": "KD taken /100 head a",
-   "raw": 0.58
-  },
-  {
-   "id": "v89",
-   "text": "+11.8",
-   "fmt": "s1",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "cardio.upcoming",
-    "key": "sw",
-    "slug": "ciryl-gane"
-   },
-   "desc": "R1 to R3 swing a",
-   "raw": 11.8
-  },
-  {
-   "id": "v90",
+   "id": "v129",
    "text": "163%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1151,21 +1603,7 @@
    "raw": 1.626
   },
   {
-   "id": "v91",
-   "text": "+11.4",
-   "fmt": "s1",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "cardio.upcoming",
-    "key": "d3",
-    "slug": "ciryl-gane"
-   },
-   "desc": "R3 strike diff a",
-   "raw": 11.4
-  },
-  {
-   "id": "v92",
+   "id": "v130",
    "text": "13.6",
    "fmt": "n1",
    "rule": "labs",
@@ -1179,7 +1617,7 @@
    "raw": 13.6
   },
   {
-   "id": "v93",
+   "id": "v131",
    "text": "7.5",
    "fmt": "n1",
    "rule": "labs",
@@ -1193,7 +1631,7 @@
    "raw": 7.5
   },
   {
-   "id": "v94",
+   "id": "v132",
    "text": "15%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1207,7 +1645,7 @@
    "raw": 0.154
   },
   {
-   "id": "v95",
+   "id": "v133",
    "text": "50%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1221,7 +1659,7 @@
    "raw": 0.5
   },
   {
-   "id": "v96",
+   "id": "v134",
    "text": "38%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1235,7 +1673,7 @@
    "raw": 0.385
   },
   {
-   "id": "v97",
+   "id": "v135",
    "text": "25%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1249,7 +1687,7 @@
    "raw": 0.25
   },
   {
-   "id": "v98",
+   "id": "v136",
    "text": "38%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1263,7 +1701,7 @@
    "raw": 0.385
   },
   {
-   "id": "v99",
+   "id": "v137",
    "text": "75%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1277,7 +1715,7 @@
    "raw": 0.75
   },
   {
-   "id": "v100",
+   "id": "v138",
    "text": "15%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1291,7 +1729,7 @@
    "raw": 0.154
   },
   {
-   "id": "v101",
+   "id": "v139",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1305,7 +1743,7 @@
    "raw": 0.0
   },
   {
-   "id": "v102",
+   "id": "v140",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1319,7 +1757,7 @@
    "raw": 0.0
   },
   {
-   "id": "v103",
+   "id": "v141",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1333,7 +1771,7 @@
    "raw": 0.0
   },
   {
-   "id": "v104",
+   "id": "v142",
    "text": "8%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1347,7 +1785,7 @@
    "raw": 0.077
   },
   {
-   "id": "v105",
+   "id": "v143",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1361,7 +1799,7 @@
    "raw": 0.0
   },
   {
-   "id": "v106",
+   "id": "v144",
    "text": "0.66",
    "fmt": "n2",
    "rule": "stat",
@@ -1374,7 +1812,7 @@
    "raw": 0.659582264565775
   },
   {
-   "id": "v107",
+   "id": "v145",
    "text": "1.50",
    "fmt": "n2",
    "rule": "stat",
@@ -1387,7 +1825,7 @@
    "raw": 1.4966740576496673
   },
   {
-   "id": "v108",
+   "id": "v146",
    "text": "47%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1400,7 +1838,7 @@
    "raw": 0.47058823529411764
   },
   {
-   "id": "v109",
+   "id": "v147",
    "text": "78%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1413,7 +1851,7 @@
    "raw": 0.7777777777777778
   },
   {
-   "id": "v110",
+   "id": "v148",
    "text": "2:02",
    "fmt": "mmss",
    "rule": "labs",
@@ -1427,7 +1865,7 @@
    "raw": 122.0
   },
   {
-   "id": "v111",
+   "id": "v149",
    "text": "-110",
    "fmt": "ml",
    "rule": "fight",
@@ -1440,7 +1878,7 @@
    "raw": -110
   },
   {
-   "id": "v112",
+   "id": "v150",
    "text": "+298",
    "fmt": "ml",
    "rule": "fight",
@@ -1453,7 +1891,7 @@
    "raw": 298
   },
   {
-   "id": "v113",
+   "id": "v151",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -1466,7 +1904,7 @@
    "raw": -370
   },
   {
-   "id": "v114",
+   "id": "v152",
    "text": "+145",
    "fmt": "ml",
    "rule": "fight",
@@ -1479,7 +1917,7 @@
    "raw": 145
   },
   {
-   "id": "v115",
+   "id": "v153",
    "text": "-435",
    "fmt": "ml",
    "rule": "fight",
@@ -1492,7 +1930,7 @@
    "raw": -435
   },
   {
-   "id": "v116",
+   "id": "v154",
    "text": "-118",
    "fmt": "ml",
    "rule": "fight",
@@ -1505,7 +1943,7 @@
    "raw": -118
   },
   {
-   "id": "v117",
+   "id": "v155",
    "text": "-270",
    "fmt": "ml",
    "rule": "fight",
@@ -1518,7 +1956,7 @@
    "raw": -270
   },
   {
-   "id": "v118",
+   "id": "v156",
    "text": "-417",
    "fmt": "ml",
    "rule": "fight",

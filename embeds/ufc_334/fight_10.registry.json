@@ -1026,118 +1026,460 @@
   },
   {
    "id": "v82",
-   "text": "+1.78",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "68%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "sd",
-    "slug": "uros-medic"
+    "fighter": "Uros Medic",
+    "path": "target.head"
    },
-   "desc": "Strike diff /min a",
-   "raw": 1.78
+   "desc": "Target head Uros Medic",
+   "raw": 0.683
   },
   {
    "id": "v83",
-   "text": "+0.88",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "21%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "sd",
-    "slug": "kevin-holland"
+    "fighter": "Uros Medic",
+    "path": "target.body"
    },
-   "desc": "Strike diff /min b",
-   "raw": 0.88
+   "desc": "Target body Uros Medic",
+   "raw": 0.2143
   },
   {
    "id": "v84",
-   "text": "+1.54",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "10%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "hd",
-    "slug": "uros-medic"
+    "fighter": "Uros Medic",
+    "path": "target.leg"
    },
-   "desc": "Head diff /min a",
-   "raw": 1.54
+   "desc": "Target leg Uros Medic",
+   "raw": 0.1027
   },
   {
    "id": "v85",
-   "text": "+0.42",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "hd",
-    "slug": "kevin-holland"
+    "fighter": "Kevin Holland",
+    "path": "target.head"
    },
-   "desc": "Head diff /min b",
-   "raw": 0.42
+   "desc": "Target head Kevin Holland",
+   "raw": 0.5466
   },
   {
    "id": "v86",
-   "text": "+0.40",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "bd",
-    "slug": "uros-medic"
+    "fighter": "Kevin Holland",
+    "path": "target.body"
    },
-   "desc": "Body diff /min a",
-   "raw": 0.4
+   "desc": "Target body Kevin Holland",
+   "raw": 0.1879
   },
   {
    "id": "v87",
-   "text": "-0.03",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "27%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "bd",
-    "slug": "kevin-holland"
+    "fighter": "Kevin Holland",
+    "path": "target.leg"
    },
-   "desc": "Body diff /min b",
-   "raw": -0.03
+   "desc": "Target leg Kevin Holland",
+   "raw": 0.2655
   },
   {
    "id": "v88",
-   "text": "-0.17",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "71%",
+   "fmt": "pct0",
+   "rule": "em_car",
    "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "ld",
-    "slug": "uros-medic"
+    "fighter": "Uros Medic",
+    "key": "ko_wins"
    },
-   "desc": "Leg diff /min a",
-   "raw": -0.17
+   "desc": "Power: KO'd opponents in a",
+   "raw": 0.7058823529411765
   },
   {
    "id": "v89",
-   "text": "+0.48",
-   "fmt": "s2",
-   "rule": "labs",
+   "text": "12",
+   "fmt": "int",
+   "rule": "em_car_n",
    "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "ld",
-    "slug": "kevin-holland"
+    "fighter": "Uros Medic",
+    "key": "ko_wins"
    },
-   "desc": "Leg diff /min b",
-   "raw": 0.48
+   "desc": "Power: KO'd opponents in count a",
+   "raw": 12
   },
   {
    "id": "v90",
+   "text": "17",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Uros Medic",
+    "key": "fights"
+   },
+   "desc": "Power: KO'd opponents in fights a",
+   "raw": 17
+  },
+  {
+   "id": "v91",
+   "text": "31%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Kevin Holland",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in b",
+   "raw": 0.3111111111111111
+  },
+  {
+   "id": "v92",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Kevin Holland",
+    "key": "ko_wins"
+   },
+   "desc": "Power: KO'd opponents in count b",
+   "raw": 14
+  },
+  {
+   "id": "v93",
+   "text": "45",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Kevin Holland",
+    "key": "fights"
+   },
+   "desc": "Power: KO'd opponents in fights b",
+   "raw": 45
+  },
+  {
+   "id": "v94",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Welterweight"
+   },
+   "desc": "Division KO share",
+   "raw": 0.1671
+  },
+  {
+   "id": "v95",
+   "text": "6%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Uros Medic",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in a",
+   "raw": 0.058823529411764705
+  },
+  {
+   "id": "v96",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Uros Medic",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in count a",
+   "raw": 1
+  },
+  {
+   "id": "v97",
+   "text": "17",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Uros Medic",
+    "key": "fights"
+   },
+   "desc": "Chin: been KO'd in fights a",
+   "raw": 17
+  },
+  {
+   "id": "v98",
+   "text": "4%",
+   "fmt": "pct0",
+   "rule": "em_car",
+   "args": {
+    "fighter": "Kevin Holland",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in b",
+   "raw": 0.044444444444444446
+  },
+  {
+   "id": "v99",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Kevin Holland",
+    "key": "ko_losses"
+   },
+   "desc": "Chin: been KO'd in count b",
+   "raw": 2
+  },
+  {
+   "id": "v100",
+   "text": "45",
+   "fmt": "int",
+   "rule": "em_car_n",
+   "args": {
+    "fighter": "Kevin Holland",
+    "key": "fights"
+   },
+   "desc": "Chin: been KO'd in fights b",
+   "raw": 45
+  },
+  {
+   "id": "v101",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Welterweight"
+   },
+   "desc": "Division KO share",
+   "raw": 0.1671
+  },
+  {
+   "id": "v102",
+   "text": "+2.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Uros Medic",
+   "raw": 2.017
+  },
+  {
+   "id": "v103",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Uros Medic",
+   "raw": 11
+  },
+  {
+   "id": "v104",
+   "text": "+0.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Uros Medic",
+   "raw": 0.407
+  },
+  {
+   "id": "v105",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Uros Medic",
+   "raw": 3
+  },
+  {
+   "id": "v106",
+   "text": "+5.8",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Uros Medic",
+   "raw": 5.769
+  },
+  {
+   "id": "v107",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Uros Medic",
+   "raw": 1
+  },
+  {
+   "id": "v108",
+   "text": "+1.5",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Kevin Holland",
+   "raw": 1.536
+  },
+  {
+   "id": "v109",
+   "text": "29",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Kevin Holland",
+   "raw": 29
+  },
+  {
+   "id": "v110",
+   "text": "+1.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Kevin Holland",
+   "raw": 1.049
+  },
+  {
+   "id": "v111",
+   "text": "20",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Kevin Holland",
+   "raw": 20
+  },
+  {
+   "id": "v112",
+   "text": "+0.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Kevin Holland",
+   "raw": 0.261
+  },
+  {
+   "id": "v113",
+   "text": "16",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Kevin Holland",
+   "raw": 16
+  },
+  {
+   "id": "v114",
+   "text": "+1.54",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 1.542
+  },
+  {
+   "id": "v115",
+   "text": "+0.42",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 0.422
+  },
+  {
+   "id": "v116",
+   "text": "+0.40",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.403
+  },
+  {
+   "id": "v117",
+   "text": "-0.03",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": -0.026
+  },
+  {
+   "id": "v118",
+   "text": "-0.17",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Uros Medic",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": -0.166
+  },
+  {
+   "id": "v119",
+   "text": "+0.48",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Holland",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": 0.483
+  },
+  {
+   "id": "v120",
    "text": "65%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1151,7 +1493,7 @@
    "raw": 0.649
   },
   {
-   "id": "v91",
+   "id": "v121",
    "text": "60%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1165,77 +1507,7 @@
    "raw": 0.602
   },
   {
-   "id": "v92",
-   "text": "3.20",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "kd15",
-    "slug": "uros-medic"
-   },
-   "desc": "Knockdowns /15 a",
-   "raw": 3.2
-  },
-  {
-   "id": "v93",
-   "text": "0.34",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "kd15",
-    "slug": "kevin-holland"
-   },
-   "desc": "Knockdowns /15 b",
-   "raw": 0.34
-  },
-  {
-   "id": "v94",
-   "text": "3.41",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "metrics",
-    "key": "chin",
-    "slug": "uros-medic"
-   },
-   "desc": "KD taken /100 head a",
-   "raw": 3.41
-  },
-  {
-   "id": "v95",
-   "text": "0.35",
-   "fmt": "n2",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "metrics",
-    "key": "chin",
-    "slug": "kevin-holland"
-   },
-   "desc": "KD taken /100 head b",
-   "raw": 0.35
-  },
-  {
-   "id": "v96",
-   "text": "-2.0",
-   "fmt": "s1",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "cardio.upcoming",
-    "key": "sw",
-    "slug": "kevin-holland"
-   },
-   "desc": "R1 to R3 swing b",
-   "raw": -2.0
-  },
-  {
-   "id": "v97",
+   "id": "v122",
    "text": "76%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1249,21 +1521,7 @@
    "raw": 0.763
   },
   {
-   "id": "v98",
-   "text": "+0.4",
-   "fmt": "s1",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "cardio.upcoming",
-    "key": "d3",
-    "slug": "kevin-holland"
-   },
-   "desc": "R3 strike diff b",
-   "raw": 0.4
-  },
-  {
-   "id": "v99",
+   "id": "v123",
    "text": "3.8",
    "fmt": "n1",
    "rule": "labs",
@@ -1277,7 +1535,7 @@
    "raw": 3.8
   },
   {
-   "id": "v100",
+   "id": "v124",
    "text": "10.9",
    "fmt": "n1",
    "rule": "labs",
@@ -1291,7 +1549,7 @@
    "raw": 10.9
   },
   {
-   "id": "v101",
+   "id": "v125",
    "text": "73%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1305,7 +1563,7 @@
    "raw": 0.727
   },
   {
-   "id": "v102",
+   "id": "v126",
    "text": "29%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1319,7 +1577,7 @@
    "raw": 0.286
   },
   {
-   "id": "v103",
+   "id": "v127",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1333,7 +1591,7 @@
    "raw": 0.0
   },
   {
-   "id": "v104",
+   "id": "v128",
    "text": "43%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1347,7 +1605,7 @@
    "raw": 0.429
   },
   {
-   "id": "v105",
+   "id": "v129",
    "text": "73%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1361,7 +1619,7 @@
    "raw": 0.727
   },
   {
-   "id": "v106",
+   "id": "v130",
    "text": "18%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1375,7 +1633,7 @@
    "raw": 0.179
   },
   {
-   "id": "v107",
+   "id": "v131",
    "text": "0%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1389,7 +1647,7 @@
    "raw": 0.0
   },
   {
-   "id": "v108",
+   "id": "v132",
    "text": "21%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1403,7 +1661,7 @@
    "raw": 0.214
   },
   {
-   "id": "v109",
+   "id": "v133",
    "text": "9%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1417,7 +1675,7 @@
    "raw": 0.091
   },
   {
-   "id": "v110",
+   "id": "v134",
    "text": "7%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1431,7 +1689,7 @@
    "raw": 0.071
   },
   {
-   "id": "v111",
+   "id": "v135",
    "text": "18%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1445,7 +1703,7 @@
    "raw": 0.182
   },
   {
-   "id": "v112",
+   "id": "v136",
    "text": "11%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1459,7 +1717,7 @@
    "raw": 0.107
   },
   {
-   "id": "v113",
+   "id": "v137",
    "text": "0.36",
    "fmt": "n2",
    "rule": "stat",
@@ -1472,7 +1730,7 @@
    "raw": 0.35587188612099646
   },
   {
-   "id": "v114",
+   "id": "v138",
    "text": "0.83",
    "fmt": "n2",
    "rule": "stat",
@@ -1485,7 +1743,7 @@
    "raw": 0.8268929362806031
   },
   {
-   "id": "v115",
+   "id": "v139",
    "text": "56%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1498,7 +1756,7 @@
    "raw": 0.5555555555555556
   },
   {
-   "id": "v116",
+   "id": "v140",
    "text": "58%",
    "fmt": "pct0",
    "rule": "stat",
@@ -1511,7 +1769,7 @@
    "raw": 0.5775862068965517
   },
   {
-   "id": "v117",
+   "id": "v141",
    "text": "2:24",
    "fmt": "mmss",
    "rule": "labs",
@@ -1525,7 +1783,7 @@
    "raw": 144.0
   },
   {
-   "id": "v118",
+   "id": "v142",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -1538,7 +1796,7 @@
    "raw": -328
   },
   {
-   "id": "v119",
+   "id": "v143",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -1551,7 +1809,7 @@
    "raw": 170
   },
   {
-   "id": "v120",
+   "id": "v144",
    "text": "-131",
    "fmt": "ml",
    "rule": "fight",
@@ -1564,7 +1822,7 @@
    "raw": -131
   },
   {
-   "id": "v121",
+   "id": "v145",
    "text": "-357",
    "fmt": "ml",
    "rule": "fight",
@@ -1577,7 +1835,7 @@
    "raw": -357
   },
   {
-   "id": "v122",
+   "id": "v146",
    "text": "-206",
    "fmt": "ml",
    "rule": "fight",
@@ -1590,7 +1848,7 @@
    "raw": -206
   },
   {
-   "id": "v123",
+   "id": "v147",
    "text": "-123",
    "fmt": "ml",
    "rule": "fight",
@@ -1603,7 +1861,7 @@
    "raw": -123
   },
   {
-   "id": "v124",
+   "id": "v148",
    "text": "-109",
    "fmt": "ml",
    "rule": "fight",
@@ -1616,7 +1874,7 @@
    "raw": -109
   },
   {
-   "id": "v125",
+   "id": "v149",
    "text": "-625",
    "fmt": "ml",
    "rule": "fight",
@@ -1629,7 +1887,7 @@
    "raw": -625
   },
   {
-   "id": "v126",
+   "id": "v150",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -1642,7 +1900,7 @@
    "raw": -179
   },
   {
-   "id": "v127",
+   "id": "v151",
    "text": "-102",
    "fmt": "ml",
    "rule": "fight",

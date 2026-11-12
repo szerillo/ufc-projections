@@ -385,15 +385,83 @@ def build(names, outname):
         return srow(lab, key, labv(section, A_.get("slug"), key), labv(section, B_.get("slug"), key), fmt, "labs", better, tip, section=section, key=key)
     def grp(title, rows_):
         if not rows_: return ""
-        return f'<div class="sg"><div class="sg-h">{title}</div><div class="tape">{rows_}</div></div>'
+        inner = rows_ if rows_.lstrip().startswith("<div class=\"t") or rows_.lstrip().startswith("<div class=\"sc") or rows_.lstrip().startswith("<table") else f'<div class="tape">{rows_}</div>'
+        return f'<div class="sg"><div class="sg-h">{title}</div><div class="sg-b">{inner}</div></div>'
+    # ---------- Block 59d: our database (UFCStats rows, every UFC fight, no minimum) + career KO record ----------
+    EMX = json.load(open(L / "embed_metrics" / f"{SLUG}.json"))
+    ema, emb = EMX["fighters"].get(an, {}), EMX["fighters"].get(bn, {})
+    def emv(rec, path):
+        x = rec
+        for k_ in path.split("."):
+            x = x[int(k_)] if isinstance(x, list) else (x or {}).get(k_)
+            if x is None: return None
+        return x
+    def E(path, lab, fmt, better, tip=""):
+        va, vb = emv(ema, path), emv(emb, path)
+        if va is None and vb is None: return ""
+        ca = R(va, fmt, "em", lab + " a", fighter=an, path=path) if va is not None else '<span class="dim">n/a</span>'
+        cb = R(vb, fmt, "em", lab + " b", fighter=bn, path=path) if vb is not None else '<span class="dim">n/a</span>'
+        ea = eb = ""
+        if better and va is not None and vb is not None and va != vb:
+            aw = va > vb if better == "hi" else va < vb; big = abs(va - vb) >= BIG.get(path.split(".")[-1], 1e9)
+            cls_ = " adv big" if big else " adv"; ea, eb = (cls_, "") if aw else ("", cls_)
+        return f'<div class="row"><div class="a{ea}">{ca}</div><div class="k" title="{esc(tip)}">{lab}</div><div class="b{eb}">{cb}</div></div>'
+    BIG.update({"head": 0.8, "body": 0.3, "leg": 0.3, "diff_pm": 1.0, "landed_pm": 1.5, "diff_pm_45": 1.5})
+    # where they land: one stacked bar per fighter (share of significant strikes landed to head / body / legs)
+    def tbar(rec, F, sd):
+        t_ = rec.get("target") or {}
+        if t_.get("head") is None: return f'<div class="tb-row"><span class="tb-n">{esc(last(F))}</span><span class="dim">n/a</span></div>'
+        seg = "".join(f'<i class="tb-{k_}" style="width:{t_[k_]*100:.1f}%"><b>{R(t_[k_], "pct0", "em", f"Target {k_} {F}", fighter=F, path=f"target.{k_}")}</b></i>' for k_ in ("head", "body", "leg"))
+        return f'<div class="tb-row"><span class="tb-n">{esc(last(F))}</span><div class="tb-bar" role="img" aria-label="{esc(F)} lands {t_["head"]*100:.0f}% head, {t_["body"]*100:.0f}% body, {t_["leg"]*100:.0f}% legs">{seg}</div></div>'
+    target_html = (f'<div class="tb"><div class="tb-key"><span><i class="tb-head"></i>Head</span><span><i class="tb-body"></i>Body</span><span><i class="tb-leg"></i>Legs</span><span class="dim">where they land</span></div>'
+                   f'{tbar(ema, an, "a")}{tbar(emb, bn, "b")}</div>')
+    # power and chin on a scale against the division: career KO wins / KO losses as a share of all pro fights
+    car = {an: (ema.get("career") or {}), bn: (emb.get("career") or {})}
+    wc_ = re.sub(r"^(UFC )?(Interim )?", "", f.get("wc") or "")
+    davg = EMX["division_ko_share"].get(wc_)
+    def scale(title, key, tip):
+        vals = {}
+        for F, sd in ((an, "a"), (bn, "b")):
+            c_ = car[F]
+            if c_.get("fights"): vals[sd] = (c_[key] / c_["fights"], c_[key], c_["fights"])
+        if not vals: return ""
+        top = max([0.5] + [v[0] for v in vals.values()] + ([davg] if davg else []))
+        marks = ""
+        pos = {sd: v[0] / top * 100 for sd, v in vals.items()}
+        close = len(pos) == 2 and abs(pos["a"] - pos["b"]) < 4
+        for sd, (v, k_, n_) in vals.items():
+            F = an if sd == "a" else bn
+            dy = (";top:-2px" if sd == "a" else ";top:10px") if close else ""
+            marks += f'<i class="sc-dot {side_cls[sd]}" style="left:{max(pos[sd], 1.5):.1f}%{dy}" title="{esc(F)}"></i>'
+        avg = f'<i class="sc-avg" style="left:{davg / top * 100:.1f}%"></i>' if davg else ""
+        lab = "".join(f'<div class="sc-l"><i class="dot {side_cls[sd]}"></i>{esc(last(an if sd == "a" else bn))} <b>{R(v, "pct0", "em_car", f"{title} {sd}", fighter=(an if sd == "a" else bn), key=key)}</b> <span class="dim">({R(k_, "int", "em_car_n", f"{title} count {sd}", fighter=(an if sd == "a" else bn), key=key)} of {R(n_, "int", "em_car_n", f"{title} fights {sd}", fighter=(an if sd == "a" else bn), key="fights")})</span></div>' for sd, (v, k_, n_) in vals.items())
+        avgl = f'<div class="sc-l dim">Division average {R(davg, "pct0", "em_div", "Division KO share", wc=wc_)}</div>' if davg else ""
+        return f'<div class="sc"><div class="sc-h" title="{esc(tip)}">{title}</div><div class="sc-track" role="img" aria-label="{esc(title)}">{avg}{marks}</div>{lab}{avgl}</div>'
+    power_html = (scale("Power: KO'd opponents in", "ko_wins", "KO/TKO wins as a share of all pro fights, all promotions")
+                  + scale("Chin: been KO'd in", "ko_losses", "KO/TKO losses as a share of all pro fights, all promotions"))
+    # cardio by round (UFC rounds, every fight): strike differential per minute, rounds 1-3, plus 4-5 when the fight is scheduled for 5
+    nrd = 5 if (f.get("sched") or 3) == 5 else 3
+    def rcells(rec, F, sd):
+        out_ = ""
+        for rd in range(nrd):
+            v = emv(rec, f"rounds.{rd}.diff_pm"); nfr = emv(rec, f"rounds.{rd}.fights")
+            if v is None or not nfr: out_ += '<td class="dim">n/a</td>'; continue
+            cl = "pos" if v >= 1 else "neg" if v <= -1 else ""
+            out_ += f'<td class="{cl}">{R(v, "s1", "em", f"R{rd+1} diff {F}", fighter=F, path=f"rounds.{rd}.diff_pm")}<small>{R(nfr, "int", "em", f"R{rd+1} fights {F}", fighter=F, path=f"rounds.{rd}.fights")}</small></td>'
+        return f'<tr><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(last(F))}</td>{out_}</tr>'
+    rounds_html = ('<table class="rt"><thead><tr><th class="l">Strike diff /min</th>' + "".join(f"<th>R{r_+1}</th>" for r_ in range(nrd)) + '</tr></thead><tbody>'
+                   + rcells(ema, an, "a") + rcells(emb, bn, "b") + '</tbody></table><div class="rt-n">small number = UFC fights that reached the round</div>')
+    champ = ""
+    if nrd == 5:
+        champ = (E("r45.fights", "Fights to R4+", "int", None) + E("r45.landed_pm_13", "Output R1-3 /min", "n1", "hi") + E("r45.landed_pm_45", "Output R4-5 /min", "n1", "hi")
+                 + E("r45.diff_pm_45", "Diff R4-5 /min", "s1", "hi"))
+        if not champ: champ = '<div class="note">Neither fighter has been past round 3 in the UFC.</div>'
     stats_html = (f'<div class="tape"><div class="row hdr"><div class="a">{esc(last(an))}</div><div class="k vs">VS</div><div class="b">{esc(last(bn))}</div></div></div>'
-        + grp("Striking", L3("metrics", "sd", "Strike diff /min", "s2", "hi", "Sig. strikes landed minus absorbed per minute")
-              + L3("metrics", "hd", "Head diff /min", "s2", "hi") + L3("metrics", "bd", "Body diff /min", "s2", "hi") + L3("metrics", "ld", "Leg diff /min", "s2", "hi")
-              + L3("metrics", "hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed")
-              + L3("metrics", "kd15", "Knockdowns /15", "n2", "hi") + L3("metrics", "chin", "KD taken /100 head", "n2", "lo", "Knockdowns suffered per 100 head strikes absorbed"))
-        + grp("Cardio", L3("cardio.upcoming", "sw", "R1 to R3 swing", "s1", "hi", "Strike differential in round 3 minus round 1")
-              + L3("cardio.upcoming", "out", "Output kept R3", "pct0", "hi", "Round 3 strikes as a share of round 1")
-              + L3("cardio.upcoming", "d3", "R3 strike diff", "s1", "hi"))
+        + grp("Striking", target_html + '<div class="tape">' + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
+              + E("target_diff.leg", "Leg diff /min", "s2", "hi") + L3("metrics", "hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed") + '</div>')
+        + grp("Power and chin", power_html)
+        + grp("Cardio" + (" · 5 rounds" if nrd == 5 else ""), rounds_html + ('<div class="tape">' + champ + '</div>' if nrd == 5 else "")
+              + '<div class="tape">' + L3("cardio.upcoming", "out", "Output kept R3", "pct0", "hi", "Round 3 strikes as a share of round 1") + '</div>')
         + grp("Pace and finishes", L3("props.upcoming", "min", "Avg fight, min", "n1", None) + L3("props.upcoming", "r1", "Finished in R1", "pct0", None)
               + L3("props.upcoming", "dec", "Goes to decision", "pct0", None) + L3("props.upcoming", "wko", "Wins by KO", "pct0", "hi")
               + L3("props.upcoming", "wsub", "Wins by SUB", "pct0", "hi") + L3("props.upcoming", "lko", "Losses by KO", "pct0", "lo") + L3("props.upcoming", "lsub", "Losses by SUB", "pct0", "lo"))
@@ -516,6 +584,20 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .sg .tape{{border:1px solid var(--border);border-top:0;border-radius:0 0 6px 6px}}
 .tape .adv{{background:var(--pos-soft);color:var(--pos-strong);font-weight:800}}.tape .adv.big{{background:#9fe3bb;color:#063d1e}}
 @media (max-width:440px){{.mt-r{{grid-template-columns:1fr 86px 1fr}}.mt-r>div{{padding:4px 6px;font-size:12px}}.mt-k{{font-size:8.5px}}}}
+/* Block 59d: target bars, power and chin scales, rounds table */
+.sg-b{{border:1px solid var(--border);border-top:0;border-radius:0 0 6px 6px;overflow:hidden}}.sg .sg-b .tape{{border:0;border-radius:0}}
+.tb{{padding:8px 10px 6px;border-bottom:1px solid var(--border)}}.tb-key{{display:flex;gap:12px;font-size:10.5px;margin-bottom:6px;flex-wrap:wrap}}.tb-key i{{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}}
+.tb-row{{display:grid;grid-template-columns:70px 1fr;align-items:center;gap:8px;margin:5px 0}}.tb-n{{font-weight:800;font-size:12px}}
+.tb-bar{{display:flex;height:20px;border-radius:4px;overflow:hidden;gap:2px}}.tb-bar i{{display:flex;align-items:center;justify-content:center;font-style:normal;min-width:30px}}.tb-bar b{{font:800 10.5px/1 "SF Mono",Menlo,monospace;color:#fff}}
+.tb-head{{background:#0e1116}}.tb-body{{background:#2a78d6}}.tb-leg{{background:#7fb3ea}}.tb-bar .tb-leg b{{color:#0e1116}}
+.sc{{padding:9px 12px;border-bottom:1px solid var(--border)}}.sc:last-child{{border-bottom:0}}.sc-h{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}}
+.sc-track{{position:relative;height:8px;background:linear-gradient(90deg,var(--bg-muted),#d9d4c8);border-radius:4px;margin:4px 6px 8px}}
+.sc-dot{{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}}.sc-dot.fav{{background:#2a78d6}}.sc-dot.dog{{background:#eb6834}}
+.sc-avg{{position:absolute;top:-5px;width:2px;height:18px;background:#0e1116;transform:translateX(-1px)}}.sc-l{{font-size:12px;margin:2px 0}}.sc-l b{{font-family:"SF Mono",Menlo,monospace}}
+.rt{{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}}.rt th{{background:var(--bg-muted);font-size:9.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);padding:6px 4px;text-align:center}}
+.rt td{{padding:7px 4px;text-align:center;border-top:1px solid var(--border);font:700 12px/1.2 "SF Mono",Menlo,monospace}}.rt td small{{display:block;font:600 9px/1 inherit;font-family:inherit;color:var(--text-muted);margin-top:2px}}
+.rt td.pos{{background:var(--pos-soft);color:var(--pos-strong)}}.rt td.neg{{background:var(--neg-soft);color:var(--neg-strong)}}.rt td.nm{{font-family:inherit;font-size:12px;text-align:left}}
+.rt-n{{font-size:10px;color:var(--text-muted);padding:4px 10px 6px}}
 /* Action Network badge stays visible at every width (the site widget hides it under 440 px; the embed keeps it) */
 @media (max-width:600px){{.ff-brand{{position:static;display:flex;justify-content:center;margin-bottom:6px}}.ff-header{{padding:12px 12px 10px}}.ff-title{{font-size:17px}}}}
 @media (max-width:440px){{.ff-header{{padding:9px 8px 8px}}.ff-brand{{display:flex!important;margin-bottom:5px}}.ff-title{{font-size:14px}}.ff-subtitle{{font-size:10px}}

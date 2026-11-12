@@ -53,6 +53,7 @@ def dig(o, path):
 
 def load_sources(slug):
     G = {}
+    G["SLUG"] = slug
     G["ODDS"] = json.load(open(REPO / "data" / f"{slug}_odds.json"))
     G["OV"] = json.load(open(REPO / "data" / "card_overrides.json"))[slug]
     G["KK"] = json.load(open(FD / "index.json"))["k"]
@@ -129,6 +130,16 @@ def check(D, htmlfile, G):
             elif rule == "pub": v = dig(pub, a["key"]); v = 1 - v if inv else v
             elif rule in ("pub_ml", "pub_ml_imp"):   # the sheet's listed price for this side (export inputs), and its straight implied %
                 role = pwin(a["side"])[1]; v = pub["inputs"][role + "_odds"]; v = implied(v) if rule == "pub_ml_imp" else v
+            elif rule in ("em", "em_car", "em_car_n", "em_div"):
+                # Block 59d: form/data/embed_metrics/<card>.json (our UFCStats rows) and data/embeds/<card>_career.json (career record)
+                EM_ = G.setdefault("EMX", json.loads((FD / "embed_metrics" / f"{G['SLUG']}.json").read_text()))
+                CA_ = G.setdefault("CAR", json.loads((REPO / "data" / "embeds" / f"{G['SLUG']}_career.json").read_text())["fighters"])
+                if rule == "em":
+                    v = EM_["fighters"][a["fighter"]]
+                    for k_ in a["path"].split("."): v = v[int(k_)] if isinstance(v, list) else v[k_]
+                elif rule == "em_car": c_ = CA_[a["fighter"]]; v = c_[a["key"]] / c_["fights"]
+                elif rule == "em_car_n": v = CA_[a["fighter"]][a["key"]]
+                else: v = EM_["division_ko_share"][a["wc"]]
             elif rule == "labs":
                 # the site's own metrics in form/data/labs.json, looked up here by the fighter's slug
                 LJ = G.setdefault("LABS", json.loads((FD / "labs.json").read_text()))
