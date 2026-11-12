@@ -1,0 +1,999 @@
+{
+ "schema": 1,
+ "slug": "ufc_334",
+ "event": "Polymarket UFC 334: Gane vs Hokit",
+ "published_at": "2026-11-12T03:47:42.654Z",
+ "source": "UFC Model sheet, rules v4.7, Publish to site",
+ "prices_loaded": "2026-11-12T02:19:21.204Z",
+ "params": {
+  "shift": 0.1469319955,
+  "b43": 0.15,
+  "b44": 0.075,
+  "b45": 0.15,
+  "b41": 0.5
+ },
+ "fights": [
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 2,
+   "calc_row": 2,
+   "tag": "265-5",
+   "dog": "Josh Hokit",
+   "fav": "Ciryl Gane",
+   "inputs": {
+    "dog_odds": 165,
+    "fav_odds": -195,
+    "open_dog": 0.4201680672268908,
+    "markov": 0.66,
+    "shift": 0.1469319955,
+    "tap": 0.33,
+    "junk": 0.41,
+    "tip": 0.39,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.3634123807,
+    "markov_shifted": 0.5130680045,
+    "q": 0.3788725813,
+    "true_dog": 0.3788725813,
+    "true_fav": 0.6211274187,
+    "dog_edge": 0.001514090762,
+    "fav_edge": -0.03988953048,
+    "drift": -0.05675568657,
+    "flag": "no dog bet (drifting)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.2899860487,
+     "ko": 0.50048027,
+     "sub": 0.2095336813
+    },
+    "fav": {
+     "dec": 0.3229378291,
+     "ko": 0.5942060504,
+     "sub": 0.08285612051
+    }
+   },
+   "gtd": 0.310453303,
+   "gtd_listed": 0.3189102564102564,
+   "markov_dec": {
+    "dog": 0.55,
+    "fav": 0.31
+   },
+   "method_inputs": {
+    "ap": 0.55,
+    "aq": 0.31,
+    "ad": 0.22,
+    "ae": 0.6,
+    "ah": 0.11,
+    "ai": 0.88,
+    "al": 0.3105,
+    "am": 0.5315,
+    "an": 0.158,
+    "s": 0.3189102564102564,
+    "cx": 0.7326,
+    "cy": 0.6986,
+    "ko_dog": 434,
+    "sub_dog": 850,
+    "ko_fav": 141,
+    "sub_fav": 1000
+   },
+   "price_source": {
+    "order": 1,
+    "dog": "Josh Hokit",
+    "fav": "Ciryl Gane",
+    "cons_dog": "174",
+    "cons_fav": "-174",
+    "best_dog": "+165 FanDuel",
+    "best_fav": "-195 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 3,
+   "calc_row": 3,
+   "tag": "w135-5",
+   "dog": "Amanda Nunes",
+   "fav": "Kayla Harrison",
+   "inputs": {
+    "dog_odds": 165,
+    "fav_odds": -195,
+    "open_dog": 0.3476505551194349,
+    "markov": 0.7,
+    "shift": 0.1469319955,
+    "tap": 0.31,
+    "junk": 0.41,
+    "tip": 0.37,
+    "ctx": null,
+    "manual": null,
+    "women": true
+   },
+   "sheet": {
+    "listed": 0.3634123807,
+    "markov_shifted": 0.5530680045,
+    "q": 0.3448725813,
+    "true_dog": 0.3448725813,
+    "true_fav": 0.6551274187,
+    "dog_edge": -0.03248590924,
+    "fav_edge": -0.00588953048,
+    "drift": 0.01576182554,
+    "flag": "public lean (dog)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.484762184,
+     "ko": 0.4096507285,
+     "sub": 0.1055870875
+    },
+    "fav": {
+     "dec": 0.3844287405,
+     "ko": 0.1271963926,
+     "sub": 0.4883748669
+    }
+   },
+   "gtd": 0.4190309942,
+   "gtd_listed": 0.3653256880021846,
+   "markov_dec": {
+    "dog": 0.53,
+    "fav": 0.28
+   },
+   "method_inputs": {
+    "ap": 0.53,
+    "aq": 0.28,
+    "ad": 0.37,
+    "ae": 0.59,
+    "ah": 0.55,
+    "ai": 0.05,
+    "al": 0.6845,
+    "am": 0.0895,
+    "an": 0.226,
+    "s": 0.3653256880021846,
+    "cx": 0.4632,
+    "cy": 0.5534,
+    "ko_dog": 310,
+    "sub_dog": 2161,
+    "ko_fav": 747,
+    "sub_fav": 192
+   },
+   "price_source": {
+    "order": 2,
+    "dog": "Amanda Nunes",
+    "fav": "Kayla Harrison",
+    "cons_dog": "172",
+    "cons_fav": "-172",
+    "best_dog": "+165 FanDuel",
+    "best_fav": "-195 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 4,
+   "calc_row": 4,
+   "tag": "185",
+   "dog": "Yousri Belgaroui",
+   "fav": "Caio Borralho",
+   "inputs": {
+    "dog_odds": 132,
+    "fav_odds": -155,
+    "open_dog": 0.5777027027027026,
+    "markov": 0.61,
+    "shift": 0.1469319955,
+    "tap": 0.44,
+    "junk": 0.26,
+    "tip": 0.36,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.4149040026,
+    "markov_shifted": 0.4630680045,
+    "q": 0.4183642033,
+    "true_dog": 0.4183642033,
+    "true_fav": 0.5816357967,
+    "dog_edge": -0.01267027949,
+    "fav_edge": -0.02620734053,
+    "drift": -0.1627987001,
+    "flag": "no dog bet (drifting)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.5197199834,
+     "ko": 0.4181808403,
+     "sub": 0.0620991763
+    },
+    "fav": {
+     "dec": 0.6347674247,
+     "ko": 0.1744715924,
+     "sub": 0.1907609829
+    }
+   },
+   "gtd": 0.5866356936,
+   "gtd_listed": 0.6234796967241207,
+   "markov_dec": {
+    "dog": 0.77,
+    "fav": 0.5
+   },
+   "method_inputs": {
+    "ap": 0.77,
+    "aq": 0.5,
+    "ad": 0.51,
+    "ae": 0.49,
+    "ah": 0.84,
+    "ai": 0.07,
+    "al": 0.407,
+    "am": 0.373,
+    "an": 0.221,
+    "s": 0.6234796967241207,
+    "cx": 0.5857,
+    "cy": 0.4454,
+    "ko_dog": 449,
+    "sub_dog": 3143,
+    "ko_fav": 774,
+    "sub_fav": 624
+   },
+   "price_source": {
+    "order": 3,
+    "dog": "Yousri Belgaroui",
+    "fav": "Caio Borralho",
+    "cons_dog": "143",
+    "cons_fav": "-143",
+    "best_dog": "+132 Caesars",
+    "best_fav": "-155 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 5,
+   "calc_row": 5,
+   "tag": "170",
+   "dog": "Kevin Holland",
+   "fav": "Uros Medic",
+   "inputs": {
+    "dog_odds": 140,
+    "fav_odds": -150,
+    "open_dog": 0.5850959973966807,
+    "markov": 0.44,
+    "shift": 0.1469319955,
+    "tap": 0.23,
+    "junk": 0.34,
+    "tip": 0.47,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.4098360656,
+    "markov_shifted": 0.2930680045,
+    "q": 0.3923208564,
+    "true_dog": 0.3923208564,
+    "true_fav": 0.6076791436,
+    "dog_edge": -0.02434581026,
+    "fav_edge": 0.007679143594,
+    "drift": -0.1752599318,
+    "flag": "no dog bet (drifting)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.1630783764,
+     "ko": 0.4638488518,
+     "sub": 0.3730727717
+    },
+    "fav": {
+     "dec": 0.3070821794,
+     "ko": 0.6160948487,
+     "sub": 0.07682297193
+    }
+   },
+   "gtd": 0.2505864841,
+   "gtd_listed": 0.20011538887103317,
+   "markov_dec": {
+    "dog": 0.09,
+    "fav": 0.35
+   },
+   "method_inputs": {
+    "ap": 0.09,
+    "aq": 0.35,
+    "ad": 0.25,
+    "ae": 0.37,
+    "ah": 0.1,
+    "ai": 0.89,
+    "al": 0.474,
+    "am": 0.333,
+    "an": 0.193,
+    "s": 0.20011538887103317,
+    "cx": 0.7288,
+    "cy": 0.6034,
+    "ko_dog": 330,
+    "sub_dog": 512,
+    "ko_fav": 108,
+    "sub_fav": 1363
+   },
+   "price_source": {
+    "order": 4,
+    "dog": "Kevin Holland",
+    "fav": "Uros Medic",
+    "cons_dog": "137",
+    "cons_fav": "-137",
+    "best_dog": "+140 FanDuel",
+    "best_fav": "-150 BetRivers"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 6,
+   "calc_row": 6,
+   "tag": "125",
+   "dog": "Luis Gurule",
+   "fav": "Bilal Hasan",
+   "inputs": {
+    "dog_odds": 650,
+    "fav_odds": -1000,
+    "open_dog": 0.18518518518518523,
+    "markov": 0.4,
+    "shift": 0.1469319955,
+    "tap": 0.03,
+    "junk": 0.09,
+    "tip": 0.05,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.1279069767,
+    "markov_shifted": 0.2530680045,
+    "q": 0.1466811309,
+    "true_dog": 0.1466811309,
+    "true_fav": 0.8533188691,
+    "dog_edge": 0.01334779757,
+    "fav_edge": -0.05577203999,
+    "drift": -0.05727820844,
+    "flag": "no dog bet (drifting)",
+    "rec": "BET Bilal Hasan (80%+ rule, shop) [late: fav moved 6% from open]"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.3953496825,
+     "ko": 0.4313997259,
+     "sub": 0.1732505916
+    },
+    "fav": {
+     "dec": 0.2436072345,
+     "ko": 0.6424955253,
+     "sub": 0.1138972401
+    }
+   },
+   "gtd": 0.2658649884,
+   "gtd_listed": 0.17190823157955523,
+   "markov_dec": {
+    "dog": 0.4,
+    "fav": 0.52
+   },
+   "method_inputs": {
+    "ap": 0.4,
+    "aq": 0.52,
+    "ad": 0.46,
+    "ae": 0.43,
+    "ah": 0.04,
+    "ai": 0.85,
+    "al": 0.531,
+    "am": 0.25,
+    "an": 0.219,
+    "s": 0.17190823157955523,
+    "cx": 0.4953,
+    "cy": 0.6196,
+    "ko_dog": 1048,
+    "sub_dog": 2596,
+    "ko_fav": -312,
+    "sub_fav": 991
+   },
+   "price_source": {
+    "order": 5,
+    "dog": "Luis Gurule",
+    "fav": "Bilal Hasan",
+    "cons_dog": "636",
+    "cons_fav": "-636",
+    "best_dog": "+650 FanDuel",
+    "best_fav": "-1000 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 2,
+   "calc_row": 8,
+   "tag": "170",
+   "dog": "Charles Radtke",
+   "fav": "Stephen Thompson",
+   "inputs": {
+    "dog_odds": 140,
+    "fav_odds": -163,
+    "open_dog": 0.4560777315090224,
+    "markov": 0.51,
+    "shift": 0.1469319955,
+    "tap": 0.22,
+    "junk": 0.29,
+    "tip": 0.21,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.4020177316,
+    "markov_shifted": 0.3630680045,
+    "q": 0.3961752725,
+    "true_dog": 0.3961752725,
+    "true_fav": 0.6038247275,
+    "dog_edge": -0.02049139415,
+    "fav_edge": -0.01594713563,
+    "drift": -0.05405999993,
+    "flag": "no dog bet (drifting)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.5318534261,
+     "ko": 0.3064433947,
+     "sub": 0.1617031792
+    },
+    "fav": {
+     "dec": 0.548166106,
+     "ko": 0.3881152285,
+     "sub": 0.06371866551
+    }
+   },
+   "gtd": 0.5417034256,
+   "gtd_listed": 0.565958726278291,
+   "markov_dec": {
+    "dog": 0.34,
+    "fav": 0.4
+   },
+   "method_inputs": {
+    "ap": 0.34,
+    "aq": 0.4,
+    "ad": 0.68,
+    "ae": 0.25,
+    "ah": 0.83,
+    "ai": 0.17,
+    "al": 0.474,
+    "am": 0.333,
+    "an": 0.193,
+    "s": 0.565958726278291,
+    "cx": 0.5137,
+    "cy": 0.4958,
+    "ko_dog": 492,
+    "sub_dog": 697,
+    "ko_fav": 405,
+    "sub_fav": 2425
+   },
+   "price_source": {
+    "order": 6,
+    "dog": "Charles Radtke",
+    "fav": "Stephen Thompson",
+    "cons_dog": "146",
+    "cons_fav": "-146",
+    "best_dog": "+140 FanDuel",
+    "best_fav": "-163 BetRivers"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 3,
+   "calc_row": 9,
+   "tag": "155",
+   "dog": "Drew Dober",
+   "fav": "Chris Duncan",
+   "inputs": {
+    "dog_odds": 145,
+    "fav_odds": -163,
+    "open_dog": 0.46511627906976744,
+    "markov": 0.37,
+    "shift": 0.1469319955,
+    "tap": 0.34,
+    "junk": 0.49,
+    "tip": 0.25,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.397071035,
+    "markov_shifted": 0.2230680045,
+    "q": 0.3570312356,
+    "true_dog": 0.3570312356,
+    "true_fav": 0.6429687644,
+    "dog_edge": -0.05113202969,
+    "fav_edge": 0.02319690126,
+    "drift": -0.06804524412,
+    "flag": "no dog bet (drifting)",
+    "rec": "lean Chris Duncan"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.2223556394,
+     "ko": 0.6828273941,
+     "sub": 0.09481696652
+    },
+    "fav": {
+     "dec": 0.3352955181,
+     "ko": 0.2943723852,
+     "sub": 0.3703320968
+    }
+   },
+   "gtd": 0.2949724536,
+   "gtd_listed": 0.24480678926049396,
+   "markov_dec": {
+    "dog": 0.11,
+    "fav": 0.3
+   },
+   "method_inputs": {
+    "ap": 0.11,
+    "aq": 0.3,
+    "ad": 0.18,
+    "ae": 0.8,
+    "ah": 0.35,
+    "ai": 0.21,
+    "al": 0.48,
+    "am": 0.298,
+    "an": 0.222,
+    "s": 0.24480678926049396,
+    "cx": 0.6493,
+    "cy": 0.555,
+    "ko_dog": 197,
+    "sub_dog": 1849,
+    "ko_fav": 305,
+    "sub_fav": 305
+   },
+   "price_source": {
+    "order": 7,
+    "dog": "Drew Dober",
+    "fav": "Chris Duncan",
+    "cons_dog": "146",
+    "cons_fav": "-146",
+    "best_dog": "+145 FanDuel",
+    "best_fav": "-163 BetRivers"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 4,
+   "calc_row": 10,
+   "tag": "155",
+   "dog": "Jim Miller",
+   "fav": "Terrance McKinney",
+   "inputs": {
+    "dog_odds": 180,
+    "fav_odds": -200,
+    "open_dog": 0.35799522673031026,
+    "markov": 0.47,
+    "shift": 0.1469319955,
+    "tap": 0.27,
+    "junk": 0.5,
+    "tip": 0.47,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.3488372093,
+    "markov_shifted": 0.3230680045,
+    "q": 0.32229741,
+    "true_dog": 0.32229741,
+    "true_fav": 0.67770259,
+    "dog_edge": -0.03484544717,
+    "fav_edge": 0.01103592336,
+    "drift": -0.009158017428,
+    "flag": "public lean (dog)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.1103809148,
+     "ko": 0.2365008837,
+     "sub": 0.6531182015
+    },
+    "fav": {
+     "dec": 0.2316753249,
+     "ko": 0.575297873,
+     "sub": 0.1930268021
+    }
+   },
+   "gtd": 0.1925824507,
+   "gtd_listed": 0.10559976086908543,
+   "markov_dec": {
+    "dog": 0.07,
+    "fav": 0.37
+   },
+   "method_inputs": {
+    "ap": 0.07,
+    "aq": 0.37,
+    "ad": 0.09,
+    "ae": 0.1,
+    "ah": 0.02,
+    "ai": 0.95,
+    "al": 0.48,
+    "am": 0.298,
+    "an": 0.222,
+    "s": 0.10559976086908543,
+    "cx": 0.7019,
+    "cy": 0.6062,
+    "ko_dog": 687,
+    "sub_dog": 300,
+    "ko_fav": 144,
+    "sub_fav": 290
+   },
+   "price_source": {
+    "order": 8,
+    "dog": "Jim Miller",
+    "fav": "Terrance McKinney",
+    "cons_dog": "174",
+    "cons_fav": "-174",
+    "best_dog": "+180 FanDuel",
+    "best_fav": "-200 Caesars"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 5,
+   "calc_row": 11,
+   "tag": "185",
+   "dog": "Cesar Almeida",
+   "fav": "Donte Johnson",
+   "inputs": {
+    "dog_odds": 140,
+    "fav_odds": -160,
+    "open_dog": 0.3124999999999999,
+    "markov": 0.42,
+    "shift": 0.1469319955,
+    "tap": 0.19,
+    "junk": 0.25,
+    "tip": 0.47,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.4037267081,
+    "markov_shifted": 0.2730680045,
+    "q": 0.3841279025,
+    "true_dog": 0.3841279025,
+    "true_fav": 0.6158720975,
+    "dog_edge": -0.03253876413,
+    "fav_edge": 0.0004874820834,
+    "drift": 0.09122670807,
+    "flag": "ok",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.3142617377,
+     "ko": 0.5958678999,
+     "sub": 0.0898703624
+    },
+    "fav": {
+     "dec": 0.3412154854,
+     "ko": 0.5655010783,
+     "sub": 0.09328343627
+    }
+   },
+   "gtd": 0.3308617988,
+   "gtd_listed": 0.29820121930696514,
+   "markov_dec": {
+    "dog": 0.68,
+    "fav": 0.26
+   },
+   "method_inputs": {
+    "ap": 0.68,
+    "aq": 0.26,
+    "ad": 0.41,
+    "ae": 0.57,
+    "ah": 0.16,
+    "ai": 0.8,
+    "al": 0.407,
+    "am": 0.373,
+    "an": 0.221,
+    "s": 0.29820121930696514,
+    "cx": 0.6284,
+    "cy": 0.6037,
+    "ko_dog": 240,
+    "sub_dog": 1895,
+    "ko_fav": 149,
+    "sub_fav": 1271
+   },
+   "price_source": {
+    "order": 9,
+    "dog": "Cesar Almeida",
+    "fav": "Donte Johnson",
+    "cons_dog": "151",
+    "cons_fav": "-151",
+    "best_dog": "+140 BetRivers",
+    "best_fav": "-160 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 6,
+   "calc_row": 12,
+   "tag": "155",
+   "dog": "Jared Gordon",
+   "fav": "Melquizael Costa",
+   "inputs": {
+    "dog_odds": 420,
+    "fav_odds": -350,
+    "open_dog": 0.3427079366806289,
+    "markov": 0.57,
+    "shift": 0.1469319955,
+    "tap": 0.03,
+    "junk": 0.15,
+    "tip": 0.19,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.1982378855,
+    "markov_shifted": 0.4230680045,
+    "q": 0.2319624033,
+    "true_dog": 0.2319624033,
+    "true_fav": 0.7680375967,
+    "dog_edge": 0.039654711,
+    "fav_edge": -0.00974018109,
+    "drift": -0.1444700512,
+    "flag": "no dog bet (drifting)",
+    "rec": "BET Melquizael Costa (80%+ rule, shop) [late: fav moved 14% from open]"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.5422349188,
+     "ko": 0.3066854866,
+     "sub": 0.1510795946
+    },
+    "fav": {
+     "dec": 0.3425691818,
+     "ko": 0.4887113568,
+     "sub": 0.1687194614
+    }
+   },
+   "gtd": 0.388884126,
+   "gtd_listed": 0.38812246400432937,
+   "markov_dec": {
+    "dog": 0.7,
+    "fav": 0.2
+   },
+   "method_inputs": {
+    "ap": 0.7,
+    "aq": 0.2,
+    "ad": 0.62,
+    "ae": 0.28,
+    "ah": 0.17,
+    "ai": 0.75,
+    "al": 0.48,
+    "am": 0.298,
+    "an": 0.222,
+    "s": 0.38812246400432937,
+    "cx": 0.434,
+    "cy": 0.6233,
+    "ko_dog": 924,
+    "sub_dog": 1838,
+    "ko_fav": 161,
+    "sub_fav": 422
+   },
+   "price_source": {
+    "order": 10,
+    "dog": "Jared Gordon",
+    "fav": "Melquizael Costa",
+    "cons_dog": "309",
+    "cons_fav": "-309",
+    "best_dog": "+420 Caesars",
+    "best_fav": "-350 BetRivers"
+   },
+   "outliers": [
+    {
+     "side": "dog",
+     "odds": 420,
+     "book": "Caesars",
+     "excluded": false
+    }
+   ]
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 7,
+   "calc_row": 13,
+   "tag": "w135",
+   "dog": "Macy Chiasson",
+   "fav": "Bia Mesquita",
+   "inputs": {
+    "dog_odds": 210,
+    "fav_odds": -250,
+    "open_dog": 0.35799522673031026,
+    "markov": 0.45,
+    "shift": 0.1469319955,
+    "tap": 0.07,
+    "junk": 0.16,
+    "tip": 0.28,
+    "ctx": null,
+    "manual": null,
+    "women": true
+   },
+   "sheet": {
+    "listed": 0.3111111111,
+    "markov_shifted": 0.3030680045,
+    "q": 0.2699046451,
+    "true_dog": 0.2699046451,
+    "true_fav": 0.7300953549,
+    "dog_edge": -0.05267600005,
+    "fav_edge": 0.0158096406,
+    "drift": -0.04688411562,
+    "flag": "no dog bet (drifting)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.4477340299,
+     "ko": 0.4159376954,
+     "sub": 0.1363282747
+    },
+    "fav": {
+     "dec": 0.3913472102,
+     "ko": 0.09169491727,
+     "sub": 0.5169578725
+    }
+   },
+   "gtd": 0.4065662748,
+   "gtd_listed": 0.3239942528735632,
+   "markov_dec": {
+    "dog": 0.56,
+    "fav": 0.65
+   },
+   "method_inputs": {
+    "ap": 0.56,
+    "aq": 0.65,
+    "ad": 0.74,
+    "ae": 0.2,
+    "ah": 0.27,
+    "ai": 0.01,
+    "al": 0.608,
+    "am": 0.224,
+    "an": 0.169,
+    "s": 0.3239942528735632,
+    "cx": 0.476,
+    "cy": 0.5246,
+    "ko_dog": 596,
+    "sub_dog": 2578,
+    "ko_fav": 1069,
+    "sub_fav": -113
+   },
+   "price_source": {
+    "order": 11,
+    "dog": "Macy Chiasson",
+    "fav": "Bia Mesquita",
+    "cons_dog": "223",
+    "cons_fav": "-223",
+    "best_dog": "+210 Caesars",
+    "best_fav": "-250 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 9,
+   "calc_row": 15,
+   "tag": "155",
+   "dog": "Evan Elder",
+   "fav": "Samuel Sanches",
+   "inputs": {
+    "dog_odds": 105,
+    "fav_odds": -110,
+    "open_dog": 0.5439222684909776,
+    "markov": 0.41,
+    "shift": 0.1469319955,
+    "tap": 0.32,
+    "junk": 0.45,
+    "tip": 0.6,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.4822043628,
+    "markov_shifted": 0.2630680045,
+    "q": 0.449333909,
+    "true_dog": 0.449333909,
+    "true_fav": 0.550666091,
+    "dog_edge": -0.038470969,
+    "fav_edge": 0.02685656714,
+    "drift": -0.06171790569,
+    "flag": "SHARPS ON DOG - no dog bet (fav +5% 6/6y)",
+    "rec": "BET Samuel Sanches (fade sharp dog) [late: fav moved 6% from open]"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.4461241429,
+     "ko": 0.3213391243,
+     "sub": 0.2325367328
+    },
+    "fav": {
+     "dec": 0.4310474506,
+     "ko": 0.4921568092,
+     "sub": 0.07679574027
+    }
+   },
+   "gtd": 0.4378219197,
+   "gtd_listed": 0.4241672278672951,
+   "markov_dec": {
+    "dog": 0.17,
+    "fav": 0.54
+   },
+   "method_inputs": {
+    "ap": 0.17,
+    "aq": 0.54,
+    "ad": 0.84,
+    "ae": 0.1,
+    "ah": 0.15,
+    "ai": 0.83,
+    "al": 0.48,
+    "am": 0.298,
+    "an": 0.222,
+    "s": 0.4241672278672951,
+    "cx": 0.5033,
+    "cy": 0.517,
+    "ko_dog": 574,
+    "sub_dog": 724,
+    "ko_fav": 177,
+    "sub_fav": 1694
+   },
+   "price_source": {
+    "order": 13,
+    "dog": "Evan Elder",
+    "fav": "Samuel Sanches",
+    "cons_dog": "112",
+    "cons_fav": "-112",
+    "best_dog": "+105 FanDuel",
+    "best_fav": "-110 BetRivers"
+   },
+   "outliers": []
+  }
+ ],
+ "line_pending": [
+  {
+   "dog": "Alatengheili",
+   "fav": "Juan Diaz",
+   "reason": "price taken from Feed row 12 'Adrian Yanez vs Juan Diaz', whose dog is not Alatengheili (OPP-1)"
+  }
+ ],
+ "verified": {
+  "at": "2026-11-12T03:48:04Z",
+  "by": "scripts/verify_projections.py",
+  "tolerance_pts": 9.999999999999999e-05,
+  "fights": 12,
+  "line_pending": 1,
+  "source_sha256": "c6af126c82488e80d1841e6d6077d32bd90573c3865e708d7ab1c0f4df465804"
+ }
+}
