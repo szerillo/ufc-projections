@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "-195",
+   "text": "-190",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Ciryl Gane",
-   "raw": -195
+   "raw": -190
   },
   {
    "id": "v16",
-   "text": "66.1%",
+   "text": "65.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Ciryl Gane"
    },
    "desc": "Market implied Ciryl Gane",
-   "raw": 0.6610169491525424
+   "raw": 0.6551724137931034
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "+160",
+   "text": "+155",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Josh Hokit",
-   "raw": 160
+   "raw": 155
   },
   {
    "id": "v23",
-   "text": "38.5%",
+   "text": "39.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Josh Hokit"
    },
    "desc": "Market implied Josh Hokit",
-   "raw": 0.38461538461538464
+   "raw": 0.39215686274509803
   },
   {
    "id": "v24",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "5.5",
+   "text": "6.6",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.05479999999999996
+   "raw": 0.06559999999999999
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "36.1%",
+   "text": "37.2%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "close"
    },
    "desc": "OA close p Josh Hokit",
-   "raw": 0.36119999999999997
+   "raw": 0.372
   },
   {
    "id": "v79",
@@ -2572,6 +2572,18 @@
   },
   {
    "id": "v210",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Josh Hokit",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Josh Hokit",
+   "raw": 4
+  },
+  {
+   "id": "v211",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2583,7 +2595,7 @@
    "raw": 3
   },
   {
-   "id": "v211",
+   "id": "v212",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -2595,7 +2607,7 @@
    "raw": 6
   },
   {
-   "id": "v212",
+   "id": "v213",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2607,7 +2619,7 @@
    "raw": 2
   },
   {
-   "id": "v213",
+   "id": "v214",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2619,7 +2631,7 @@
    "raw": 3
   },
   {
-   "id": "v214",
+   "id": "v215",
    "text": "163%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2633,7 +2645,7 @@
    "raw": 1.626
   },
   {
-   "id": "v215",
+   "id": "v216",
    "text": "13.6",
    "fmt": "n1",
    "rule": "em",
@@ -2645,7 +2657,7 @@
    "raw": 13.642
   },
   {
-   "id": "v216",
+   "id": "v217",
    "text": "7.5",
    "fmt": "n1",
    "rule": "em",
@@ -2657,7 +2669,7 @@
    "raw": 7.517
   },
   {
-   "id": "v217",
+   "id": "v218",
    "text": "15%",
    "fmt": "pct0",
    "rule": "em",
@@ -2669,7 +2681,7 @@
    "raw": 0.1538
   },
   {
-   "id": "v218",
+   "id": "v219",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -2681,7 +2693,7 @@
    "raw": 0.5
   },
   {
-   "id": "v219",
+   "id": "v220",
    "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2693,7 +2705,7 @@
    "raw": 0.745
   },
   {
-   "id": "v220",
+   "id": "v221",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2705,7 +2717,7 @@
    "raw": 0.576
   },
   {
-   "id": "v221",
+   "id": "v222",
    "text": "627",
    "fmt": "int",
    "rule": "labs_live",
@@ -2717,7 +2729,7 @@
    "raw": 627
   },
   {
-   "id": "v222",
+   "id": "v223",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2729,7 +2741,7 @@
    "raw": 0.551
   },
   {
-   "id": "v223",
+   "id": "v224",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2741,7 +2753,7 @@
    "raw": 0.359
   },
   {
-   "id": "v224",
+   "id": "v225",
    "text": "198",
    "fmt": "int",
    "rule": "labs_live",
@@ -2753,7 +2765,7 @@
    "raw": 198
   },
   {
-   "id": "v225",
+   "id": "v226",
    "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2765,7 +2777,7 @@
    "raw": 0.412
   },
   {
-   "id": "v226",
+   "id": "v227",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2777,7 +2789,7 @@
    "raw": 0.485
   },
   {
-   "id": "v227",
+   "id": "v228",
    "text": "194",
    "fmt": "int",
    "rule": "labs_live",
@@ -2789,7 +2801,7 @@
    "raw": 194
   },
   {
-   "id": "v228",
+   "id": "v229",
    "text": "-110",
    "fmt": "ml",
    "rule": "fight",
@@ -2802,7 +2814,7 @@
    "raw": -110
   },
   {
-   "id": "v229",
+   "id": "v230",
    "text": "+298",
    "fmt": "ml",
    "rule": "fight",
@@ -2815,7 +2827,7 @@
    "raw": 298
   },
   {
-   "id": "v230",
+   "id": "v231",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -2828,7 +2840,7 @@
    "raw": -370
   },
   {
-   "id": "v231",
+   "id": "v232",
    "text": "+145",
    "fmt": "ml",
    "rule": "fight",
@@ -2841,7 +2853,7 @@
    "raw": 145
   },
   {
-   "id": "v232",
+   "id": "v233",
    "text": "-500",
    "fmt": "ml",
    "rule": "fight",
@@ -2854,7 +2866,7 @@
    "raw": -500
   },
   {
-   "id": "v233",
+   "id": "v234",
    "text": "-147",
    "fmt": "ml",
    "rule": "fight",
@@ -2867,7 +2879,7 @@
    "raw": -147
   },
   {
-   "id": "v234",
+   "id": "v235",
    "text": "-435",
    "fmt": "ml",
    "rule": "fight",
@@ -2880,7 +2892,7 @@
    "raw": -435
   },
   {
-   "id": "v235",
+   "id": "v236",
    "text": "-118",
    "fmt": "ml",
    "rule": "fight",
@@ -2893,7 +2905,7 @@
    "raw": -118
   },
   {
-   "id": "v236",
+   "id": "v237",
    "text": "-270",
    "fmt": "ml",
    "rule": "fight",
@@ -2906,7 +2918,7 @@
    "raw": -270
   },
   {
-   "id": "v237",
+   "id": "v238",
    "text": "-417",
    "fmt": "ml",
    "rule": "fight",

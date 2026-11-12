@@ -140,7 +140,7 @@
   },
   {
    "id": "v12",
-   "text": "+275",
+   "text": "+310",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -149,11 +149,11 @@
     "field": "cost"
    },
    "desc": "Market ML Alatengheili",
-   "raw": 275
+   "raw": 310
   },
   {
    "id": "v13",
-   "text": "26.7%",
+   "text": "24.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -161,7 +161,7 @@
     "label": "Alateng Heili"
    },
    "desc": "Market implied Alatengheili",
-   "raw": 0.26666666666666666
+   "raw": 0.24390243902439024
   },
   {
    "id": "v14",
@@ -223,7 +223,7 @@
   },
   {
    "id": "v19",
-   "text": "-370",
+   "text": "-400",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -232,11 +232,11 @@
     "field": "cost"
    },
    "desc": "Market ML Juan Diaz",
-   "raw": -370
+   "raw": -400
   },
   {
    "id": "v20",
-   "text": "78.7%",
+   "text": "80.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -244,7 +244,7 @@
     "label": "Juan Diaz"
    },
    "desc": "Market implied Juan Diaz",
-   "raw": 0.7872340425531915
+   "raw": 0.8
   },
   {
    "id": "v21",
@@ -1708,6 +1708,18 @@
   },
   {
    "id": "v142",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v143",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -1719,7 +1731,7 @@
    "raw": 6
   },
   {
-   "id": "v143",
+   "id": "v144",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -1731,7 +1743,7 @@
    "raw": 7
   },
   {
-   "id": "v144",
+   "id": "v145",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1743,7 +1755,7 @@
    "raw": 1
   },
   {
-   "id": "v145",
+   "id": "v146",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1755,7 +1767,7 @@
    "raw": 1
   },
   {
-   "id": "v146",
+   "id": "v147",
    "text": "13.4",
    "fmt": "n1",
    "rule": "em",
@@ -1767,7 +1779,7 @@
    "raw": 13.42
   },
   {
-   "id": "v147",
+   "id": "v148",
    "text": "9.1",
    "fmt": "n1",
    "rule": "em",
@@ -1779,7 +1791,19 @@
    "raw": 9.133
   },
   {
-   "id": "v148",
+   "id": "v149",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "pace.n"
+   },
+   "desc": "Avg fight, min sample Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v150",
    "text": "11%",
    "fmt": "pct0",
    "rule": "em",
@@ -1791,7 +1815,7 @@
    "raw": 0.1111
   },
   {
-   "id": "v149",
+   "id": "v151",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1803,7 +1827,19 @@
    "raw": 0.0
   },
   {
-   "id": "v150",
+   "id": "v152",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "pace.n"
+   },
+   "desc": "Finished in R1 sample Juan Diaz",
+   "raw": 1
+  },
+  {
+   "id": "v153",
    "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1815,7 +1851,7 @@
    "raw": 0.745
   },
   {
-   "id": "v151",
+   "id": "v154",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1827,7 +1863,7 @@
    "raw": 0.576
   },
   {
-   "id": "v152",
+   "id": "v155",
    "text": "627",
    "fmt": "int",
    "rule": "labs_live",
@@ -1839,7 +1875,7 @@
    "raw": 627
   },
   {
-   "id": "v153",
+   "id": "v156",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1851,7 +1887,7 @@
    "raw": 0.551
   },
   {
-   "id": "v154",
+   "id": "v157",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1863,7 +1899,7 @@
    "raw": 0.359
   },
   {
-   "id": "v155",
+   "id": "v158",
    "text": "198",
    "fmt": "int",
    "rule": "labs_live",
@@ -1875,7 +1911,7 @@
    "raw": 198
   },
   {
-   "id": "v156",
+   "id": "v159",
    "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1887,7 +1923,7 @@
    "raw": 0.412
   },
   {
-   "id": "v157",
+   "id": "v160",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -1899,7 +1935,7 @@
    "raw": 0.485
   },
   {
-   "id": "v158",
+   "id": "v161",
    "text": "194",
    "fmt": "int",
    "rule": "labs_live",
@@ -1911,7 +1947,7 @@
    "raw": 194
   },
   {
-   "id": "v159",
+   "id": "v162",
    "text": "+193",
    "fmt": "ml",
    "rule": "fight",

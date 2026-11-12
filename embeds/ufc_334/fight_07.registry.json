@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "+142",
+   "text": "+145",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Drew Dober",
-   "raw": 142
+   "raw": 145
   },
   {
    "id": "v16",
-   "text": "41.3%",
+   "text": "40.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Drew Dober"
    },
    "desc": "Market implied Drew Dober",
-   "raw": 0.4132231404958678
+   "raw": 0.40816326530612246
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "-172",
+   "text": "-175",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Chris Duncan",
-   "raw": -172
+   "raw": -175
   },
   {
    "id": "v23",
-   "text": "63.2%",
+   "text": "63.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Christopher Duncan"
    },
    "desc": "Market implied Chris Duncan",
-   "raw": 0.6323529411764706
+   "raw": 0.6363636363636364
   },
   {
    "id": "v24",
@@ -927,7 +927,7 @@
   },
   {
    "id": "v75",
-   "text": "+138",
+   "text": "-163",
    "fmt": "ml",
    "rule": "oa_open_ml",
    "args": {
@@ -936,14 +936,14 @@
      "Drew Dober",
      "Chris Duncan"
     ],
-    "side": "a"
+    "side": "b"
    },
-   "desc": "OA open ML Drew Dober",
-   "raw": 138
+   "desc": "OA open ML Chris Duncan",
+   "raw": -163
   },
   {
    "id": "v76",
-   "text": "0.2",
+   "text": "1.5",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -954,11 +954,11 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.0021999999999999797
+   "raw": 0.014500000000000013
   },
   {
    "id": "v77",
-   "text": "40.5%",
+   "text": "59.5%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -967,15 +967,15 @@
      "Drew Dober",
      "Chris Duncan"
     ],
-    "side": "a",
+    "side": "b",
     "at": "open"
    },
-   "desc": "OA open p Drew Dober",
-   "raw": 0.4048
+   "desc": "OA open p Chris Duncan",
+   "raw": 0.5952
   },
   {
    "id": "v78",
-   "text": "40.7%",
+   "text": "61.0%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -984,11 +984,11 @@
      "Drew Dober",
      "Chris Duncan"
     ],
-    "side": "a",
+    "side": "b",
     "at": "close"
    },
-   "desc": "OA close p Drew Dober",
-   "raw": 0.407
+   "desc": "OA close p Chris Duncan",
+   "raw": 0.6097
   },
   {
    "id": "v79",

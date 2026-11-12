@@ -927,7 +927,7 @@
   },
   {
    "id": "v75",
-   "text": "+300",
+   "text": "-377",
    "fmt": "ml",
    "rule": "oa_open_ml",
    "args": {
@@ -936,14 +936,14 @@
      "Jared Gordon",
      "Melquizael Costa"
     ],
-    "side": "a"
+    "side": "b"
    },
-   "desc": "OA open ML Jared Gordon",
-   "raw": 300
+   "desc": "OA open ML Melquizael Costa",
+   "raw": -377
   },
   {
    "id": "v76",
-   "text": "0.3",
+   "text": "0.6",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -954,11 +954,11 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.0031999999999999806
+   "raw": 0.005700000000000011
   },
   {
    "id": "v77",
-   "text": "24.0%",
+   "text": "76.0%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -967,15 +967,15 @@
      "Jared Gordon",
      "Melquizael Costa"
     ],
-    "side": "a",
+    "side": "b",
     "at": "open"
    },
-   "desc": "OA open p Jared Gordon",
-   "raw": 0.2401
+   "desc": "OA open p Melquizael Costa",
+   "raw": 0.7599
   },
   {
    "id": "v78",
-   "text": "24.3%",
+   "text": "76.6%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -984,11 +984,11 @@
      "Jared Gordon",
      "Melquizael Costa"
     ],
-    "side": "a",
+    "side": "b",
     "at": "close"
    },
-   "desc": "OA close p Jared Gordon",
-   "raw": 0.2433
+   "desc": "OA close p Melquizael Costa",
+   "raw": 0.7656000000000001
   },
   {
    "id": "v79",

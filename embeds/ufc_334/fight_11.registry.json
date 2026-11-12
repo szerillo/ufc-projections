@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "1.8",
+   "text": "1.2",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.01759999999999995
+   "raw": 0.0121
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "59.2%",
+   "text": "58.6%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "close"
    },
    "desc": "OA close p Caio Borralho",
-   "raw": 0.5919
+   "raw": 0.5864
   },
   {
    "id": "v79",
@@ -2284,6 +2284,18 @@
   },
   {
    "id": "v186",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Yousri Belgaroui",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Yousri Belgaroui",
+   "raw": 3
+  },
+  {
+   "id": "v187",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -2295,7 +2307,7 @@
    "raw": 8
   },
   {
-   "id": "v187",
+   "id": "v188",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -2307,7 +2319,7 @@
    "raw": 8
   },
   {
-   "id": "v188",
+   "id": "v189",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -2319,7 +2331,7 @@
    "raw": 0
   },
   {
-   "id": "v189",
+   "id": "v190",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2331,7 +2343,7 @@
    "raw": 2
   },
   {
-   "id": "v190",
+   "id": "v191",
    "text": "116%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2345,7 +2357,7 @@
    "raw": 1.165
   },
   {
-   "id": "v191",
+   "id": "v192",
    "text": "15.4",
    "fmt": "n1",
    "rule": "em",
@@ -2357,7 +2369,7 @@
    "raw": 15.435
   },
   {
-   "id": "v192",
+   "id": "v193",
    "text": "9.7",
    "fmt": "n1",
    "rule": "em",
@@ -2369,7 +2381,7 @@
    "raw": 9.661
   },
   {
-   "id": "v193",
+   "id": "v194",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -2381,7 +2393,7 @@
    "raw": 0.0
   },
   {
-   "id": "v194",
+   "id": "v195",
    "text": "33%",
    "fmt": "pct0",
    "rule": "em",
@@ -2393,7 +2405,7 @@
    "raw": 0.3333
   },
   {
-   "id": "v195",
+   "id": "v196",
    "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2405,7 +2417,7 @@
    "raw": 0.745
   },
   {
-   "id": "v196",
+   "id": "v197",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2417,7 +2429,7 @@
    "raw": 0.576
   },
   {
-   "id": "v197",
+   "id": "v198",
    "text": "627",
    "fmt": "int",
    "rule": "labs_live",
@@ -2429,7 +2441,7 @@
    "raw": 627
   },
   {
-   "id": "v198",
+   "id": "v199",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2441,7 +2453,7 @@
    "raw": 0.551
   },
   {
-   "id": "v199",
+   "id": "v200",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2453,7 +2465,7 @@
    "raw": 0.359
   },
   {
-   "id": "v200",
+   "id": "v201",
    "text": "198",
    "fmt": "int",
    "rule": "labs_live",
@@ -2465,7 +2477,7 @@
    "raw": 198
   },
   {
-   "id": "v201",
+   "id": "v202",
    "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2477,7 +2489,7 @@
    "raw": 0.412
   },
   {
-   "id": "v202",
+   "id": "v203",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2489,7 +2501,7 @@
    "raw": 0.485
   },
   {
-   "id": "v203",
+   "id": "v204",
    "text": "194",
    "fmt": "int",
    "rule": "labs_live",
@@ -2501,7 +2513,7 @@
    "raw": 194
   },
   {
-   "id": "v204",
+   "id": "v205",
    "text": "-233",
    "fmt": "ml",
    "rule": "fight",
@@ -2514,7 +2526,7 @@
    "raw": -233
   },
   {
-   "id": "v205",
+   "id": "v206",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -2527,7 +2539,7 @@
    "raw": -132
   },
   {
-   "id": "v206",
+   "id": "v207",
    "text": "-244",
    "fmt": "ml",
    "rule": "fight",
@@ -2540,7 +2552,7 @@
    "raw": -244
   },
   {
-   "id": "v207",
+   "id": "v208",
    "text": "-556",
    "fmt": "ml",
    "rule": "fight",
@@ -2553,7 +2565,7 @@
    "raw": -556
   },
   {
-   "id": "v208",
+   "id": "v209",
    "text": "-282",
    "fmt": "ml",
    "rule": "fight",
@@ -2566,7 +2578,7 @@
    "raw": -282
   },
   {
-   "id": "v209",
+   "id": "v210",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -2579,7 +2591,7 @@
    "raw": -370
   },
   {
-   "id": "v210",
+   "id": "v211",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -2592,7 +2604,7 @@
    "raw": -208
   },
   {
-   "id": "v211",
+   "id": "v212",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2605,7 +2617,7 @@
    "raw": -250
   },
   {
-   "id": "v212",
+   "id": "v213",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -2618,7 +2630,7 @@
    "raw": 100
   },
   {
-   "id": "v213",
+   "id": "v214",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2631,7 +2643,7 @@
    "raw": -714
   },
   {
-   "id": "v214",
+   "id": "v215",
    "text": "+124",
    "fmt": "ml",
    "rule": "fight",
@@ -2644,7 +2656,7 @@
    "raw": 124
   },
   {
-   "id": "v215",
+   "id": "v216",
    "text": "+240",
    "fmt": "ml",
    "rule": "fight",

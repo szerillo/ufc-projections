@@ -268,6 +268,24 @@ def check(D, htmlfile, G):
             if dbad and "fight_distance" in used: bad.append(("feed", "distance", "number shown from a market that fails the sanity rule"))
             npu = page.count(">price unavailable<"); want_pu = (8 if mbad else 0) + (2 if dbad else 0)
             if npu != want_pu: bad.append(("feed", "label", f"{npu} 'price unavailable' cells, want {want_pu}"))
+        # Block 59k: the line move must carry its own "as of" time, equal to the event file's last snapshot
+        f_ev = next((x for x in EV[reg["event"]]["fights"] if {sq(ALIAS.get(sq(x["a"]["name"]), x["a"]["name"])), sq(ALIAS.get(sq(x["b"]["name"]), x["b"]["name"]))} == {sq(ALIAS.get(sq(p_), p_)) for p_ in reg["pair"]}), None) if reg.get("event") in EV else None
+        if f_ev and f_ev.get("odds"):
+            want_as = f_ev["odds"]["close"]["t"][5:16].replace("-", "/").replace("T", " ")
+            if f"line data as of {want_as} UTC" not in page: bad.append(("move", "as-of", f"line move missing 'as of {want_as} UTC'"))
+        # Block 59k (Kirk check 5): cross-source side check. The bp rule trusts the builder's choice of feed row for each
+        # fighter; a wrong-side match would pass it. The shown moneyline split must agree with the line-history close
+        # (a different feed, matched by different code) within 8 points; a swap shows as about 20+.
+        if f_ev and f_ev.get("odds"):
+            mk_ = {r_["args"].get("label"): r_ for r_ in reg["rows"] if r_["desc"].startswith("Market ML ")}
+            shown = {r_["desc"].replace("Market ML ", ""): float(re.sub(r"[^0-9+-]", "", r_["text"])) for r_ in reg["rows"] if r_["desc"].startswith("Market ML ")}
+            if len(shown) == 2:
+                ia = {k: (100 / (v + 100) if v > 0 else -v / (-v + 100)) for k, v in shown.items()}
+                first = reg["pair"][0]
+                if first in ia:
+                    nv = ia[first] / sum(ia.values())
+                    lh = f_ev["odds"]["close"]["p"] if sq(ALIAS.get(sq(f_ev["a"]["name"]), f_ev["a"]["name"])) == sq(ALIAS.get(sq(first), first)) else 1 - f_ev["odds"]["close"]["p"]
+                    if abs(nv - lh) > 0.08: bad.append(("market", "side", f"{first}: market split {nv:.3f} vs line history {lh:.3f}, possible side swap"))
         # Block 59j: footer timestamps must be the sources' own
         st_ = re.search(r'<div class="stamps">(.*?)</div>', page)
         if not st_: bad.append(("footer", "stamps", "no source timestamps"))

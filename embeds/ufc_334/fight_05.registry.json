@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "-165",
+   "text": "-175",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Donte Johnson",
-   "raw": -165
+   "raw": -175
   },
   {
    "id": "v16",
-   "text": "62.3%",
+   "text": "63.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Donte Johnson"
    },
    "desc": "Market implied Donte Johnson",
-   "raw": 0.6226415094339622
+   "raw": 0.6363636363636364
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "+136",
+   "text": "+145",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Cesar Almeida",
-   "raw": 136
+   "raw": 145
   },
   {
    "id": "v23",
-   "text": "42.4%",
+   "text": "40.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Cesar Almeida"
    },
    "desc": "Market implied Cesar Almeida",
-   "raw": 0.423728813559322
+   "raw": 0.40816326530612246
   },
   {
    "id": "v24",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "1.8",
+   "text": "1.5",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.017699999999999938
+   "raw": 0.014599999999999946
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "39.4%",
+   "text": "39.0%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "close"
    },
    "desc": "OA close p Cesar Almeida",
-   "raw": 0.39359999999999995
+   "raw": 0.39049999999999996
   },
   {
    "id": "v79",
@@ -2152,6 +2152,18 @@
   },
   {
    "id": "v175",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Donte Johnson",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Donte Johnson",
+   "raw": 3
+  },
+  {
+   "id": "v176",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -2163,7 +2175,7 @@
    "raw": 1
   },
   {
-   "id": "v176",
+   "id": "v177",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2175,7 +2187,7 @@
    "raw": 2
   },
   {
-   "id": "v177",
+   "id": "v178",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -2187,7 +2199,7 @@
    "raw": 1
   },
   {
-   "id": "v178",
+   "id": "v179",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -2199,7 +2211,7 @@
    "raw": 6
   },
   {
-   "id": "v179",
+   "id": "v180",
    "text": "75%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2213,7 +2225,7 @@
    "raw": 0.75
   },
   {
-   "id": "v180",
+   "id": "v181",
    "text": "7.7",
    "fmt": "n1",
    "rule": "em",
@@ -2225,7 +2237,7 @@
    "raw": 7.683
   },
   {
-   "id": "v181",
+   "id": "v182",
    "text": "10.2",
    "fmt": "n1",
    "rule": "em",
@@ -2237,7 +2249,7 @@
    "raw": 10.203
   },
   {
-   "id": "v182",
+   "id": "v183",
    "text": "33%",
    "fmt": "pct0",
    "rule": "em",
@@ -2249,7 +2261,7 @@
    "raw": 0.3333
   },
   {
-   "id": "v183",
+   "id": "v184",
    "text": "33%",
    "fmt": "pct0",
    "rule": "em",
@@ -2261,7 +2273,7 @@
    "raw": 0.3333
   },
   {
-   "id": "v184",
+   "id": "v185",
    "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2273,7 +2285,7 @@
    "raw": 0.745
   },
   {
-   "id": "v185",
+   "id": "v186",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2285,7 +2297,7 @@
    "raw": 0.576
   },
   {
-   "id": "v186",
+   "id": "v187",
    "text": "627",
    "fmt": "int",
    "rule": "labs_live",
@@ -2297,7 +2309,7 @@
    "raw": 627
   },
   {
-   "id": "v187",
+   "id": "v188",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2309,7 +2321,7 @@
    "raw": 0.551
   },
   {
-   "id": "v188",
+   "id": "v189",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2321,7 +2333,7 @@
    "raw": 0.359
   },
   {
-   "id": "v189",
+   "id": "v190",
    "text": "198",
    "fmt": "int",
    "rule": "labs_live",
@@ -2333,7 +2345,7 @@
    "raw": 198
   },
   {
-   "id": "v190",
+   "id": "v191",
    "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2345,7 +2357,7 @@
    "raw": 0.412
   },
   {
-   "id": "v191",
+   "id": "v192",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2357,7 +2369,7 @@
    "raw": 0.485
   },
   {
-   "id": "v192",
+   "id": "v193",
    "text": "194",
    "fmt": "int",
    "rule": "labs_live",
@@ -2369,7 +2381,7 @@
    "raw": 194
   },
   {
-   "id": "v193",
+   "id": "v194",
    "text": "-323",
    "fmt": "ml",
    "rule": "fight",
@@ -2382,7 +2394,7 @@
    "raw": -323
   },
   {
-   "id": "v194",
+   "id": "v195",
    "text": "-833",
    "fmt": "ml",
    "rule": "fight",
@@ -2395,7 +2407,7 @@
    "raw": -833
   },
   {
-   "id": "v195",
+   "id": "v196",
    "text": "-351",
    "fmt": "ml",
    "rule": "fight",
@@ -2408,7 +2420,7 @@
    "raw": -351
   },
   {
-   "id": "v196",
+   "id": "v197",
    "text": "+215",
    "fmt": "ml",
    "rule": "fight",
@@ -2421,7 +2433,7 @@
    "raw": 215
   },
   {
-   "id": "v197",
+   "id": "v198",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -2434,7 +2446,7 @@
    "raw": 180
   },
   {
-   "id": "v198",
+   "id": "v199",
    "text": "-256",
    "fmt": "ml",
    "rule": "fight",
@@ -2447,7 +2459,7 @@
    "raw": -256
   },
   {
-   "id": "v199",
+   "id": "v200",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -2460,7 +2472,7 @@
    "raw": -455
   },
   {
-   "id": "v200",
+   "id": "v201",
    "text": "-120",
    "fmt": "ml",
    "rule": "fight",
@@ -2473,7 +2485,7 @@
    "raw": -120
   },
   {
-   "id": "v201",
+   "id": "v202",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",

@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "+160",
+   "text": "+165",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Jim Miller",
-   "raw": 160
+   "raw": 165
   },
   {
    "id": "v16",
-   "text": "38.5%",
+   "text": "37.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Jim Miller"
    },
    "desc": "Market implied Jim Miller",
-   "raw": 0.38461538461538464
+   "raw": 0.37735849056603776
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "-200",
+   "text": "-205",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Terrance McKinney",
-   "raw": -200
+   "raw": -205
   },
   {
    "id": "v23",
-   "text": "66.7%",
+   "text": "67.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Terrance Mckinney"
    },
    "desc": "Market implied Terrance McKinney",
-   "raw": 0.6666666666666666
+   "raw": 0.6721311475409836
   },
   {
    "id": "v24",
@@ -797,7 +797,7 @@
   },
   {
    "id": "v65",
-   "text": "1.9",
+   "text": "0.4",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -808,7 +808,7 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.018699999999999994
+   "raw": 0.003599999999999992
   },
   {
    "id": "v66",
@@ -829,7 +829,7 @@
   },
   {
    "id": "v67",
-   "text": "36.1%",
+   "text": "34.6%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -842,7 +842,7 @@
     "at": "close"
    },
    "desc": "OA close p Jim Miller",
-   "raw": 0.361
+   "raw": 0.3459
   },
   {
    "id": "v68",

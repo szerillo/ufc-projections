@@ -165,7 +165,7 @@ XPL = {
     "en": [("Bar", "UFC results by method: wins by KO, submission and decision, then losses."),
            ("Avg fight, Finished in R1", "Average fight length in minutes, and share of their fights that ended in round 1.")],
 }
-GEN = "All stats use UFC fights before this card only. Green = the better side; darker green = a bigger gap."   # the public Fight Form site the embeds link into
+GEN = "All stats use UFC fights before this card only. Green = the better side; darker green = a bigger gap. A small fight count beside a number means it is below the sample Labs requires (5 UFC fights for head defence, 3 for pace)."   # the public Fight Form site the embeds link into
 
 
 def minispark(series, who):
@@ -411,7 +411,8 @@ def build(names, outname):
         tsd = "a" if mv >= 0 else "b"
         po, pc = (o["open"]["p"], o["close"]["p"]) if tsd == "a" else (1 - o["open"]["p"], 1 - o["close"]["p"])
         body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(tow))} opened <b class="mvo">{R(o["open"]["m" + tsd], "ml", "oa_open_ml", "OA open ML " + tow, ev=EVF, pair=PAIR, side=tsd)}</b> on {o["open"]["t"][5:10].replace("-", "/")}, '
-                f'moved <b>{R(abs(mv), "pts", "oa_drift_abs", "OA drift pts", ev=EVF, pair=PAIR)}&nbsp;pts</b></div>'
+                f'moved <b>{R(abs(mv), "pts", "oa_drift_abs", "OA drift pts", ev=EVF, pair=PAIR)}&nbsp;pts</b>'
+                f'<span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div>'
                 f'<div class="mvtr" role="img" aria-label="{esc(last(tow))} market win chance from {po*100:.1f}% to {pc*100:.1f}%"><span class="mvp">{R(po, "pct1", "oa_p", "OA open p " + tow, ev=EVF, pair=PAIR, side=tsd, at="open")}</span>'
                 f'<div class="mvbar"><i class="mvfrom" style="left:{po*100:.1f}%"></i><i class="mvspan" style="left:{min(po,pc)*100:.1f}%;width:{abs(pc-po)*100:.1f}%"></i><i class="mvto" style="left:{pc*100:.1f}%"></i></div>'
                 f'<span class="mvp mve">{R(pc, "pct1", "oa_p", "OA close p " + tow, ev=EVF, pair=PAIR, side=tsd, at="close")}</span></div>'
@@ -462,11 +463,19 @@ def build(names, outname):
             x = x[int(k_)] if isinstance(x, list) else (x or {}).get(k_)
             if x is None: return None
         return x
-    def E(path, lab, fmt, better, tip=""):
+    def E(path, lab, fmt, better, tip="", floor=None):
         va, vb = emv(ema, path), emv(emb, path)
         if va is None and vb is None: return ""
         ca = R(va, fmt, "em", lab + " a", fighter=an, path=path) if va is not None else '<span class="dim">n/a</span>'
         cb = R(vb, fmt, "em", lab + " b", fighter=bn, path=path) if vb is not None else '<span class="dim">n/a</span>'
+        if floor:   # Block 59k (Kirk): below the Labs sample floor the number stays, with its sample size beside it
+            fp_, fmin, fword = floor
+            for sd_, F_, rec_ in (("a", an, ema), ("b", bn, emb)):
+                nn = emv(rec_, fp_)
+                if (va if sd_ == "a" else vb) is not None and nn is not None and nn < fmin:
+                    note = f' <small class="ssm">{R(nn, "int", "em", f"{lab} sample {F_}", fighter=F_, path=fp_)} {"fight" if nn == 1 else fword}</small>'
+                    if sd_ == "a": ca += note
+                    else: cb += note
         ea = eb = ""
         if better and va is not None and vb is not None and va != vb:
             aw = va > vb if better == "hi" else va < vb; big = abs(va - vb) >= BIG.get(path.split(".")[-1], 1e9)
@@ -605,12 +614,12 @@ def build(names, outname):
         tot_row = f'<div class="row"><div class="a{ea}">{totcell(ta_, an)}</div><div class="k">Strike diff /min</div><div class="b{eb}">{totcell(tb_, bn)}</div></div>'
     tot_row += E("sos.adj_sd", "Opp-adjusted diff", "s2", "hi", "Strike differential corrected for the quality of opponents faced")
     groups = [("st", "Striking", "Striking", target_html + strip("Out-landed the opponent", "out_landed", _ol, "UFC fights where they landed more significant strikes") + '<div class="tape">' + tot_row + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
-               + E("target_diff.leg", "Leg diff /min", "s2", "hi") + E("hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed") + '</div>'),
+               + E("target_diff.leg", "Leg diff /min", "s2", "hi") + E("hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed", floor=("ufc_fights", 5, "fights")) + '</div>'),
               ("gr", "Grappling", "Grappling", strip("Won the grappling", "grap_won", _gw, "Fights with real grappling (a minute of control or a takedown): more control time, or more takedowns when control is level") + '<div class="tape">' + grap_html + '</div>'),
               ("pw", "Power", "Power and durability", power_html),
               ("ca", "Cardio", "Cardio" + (" · 5 rounds" if nrd == 5 else ""), rounds_html + ('<div class="tape">' + champ + '</div>' if nrd == 5 else "")
                + '<div class="tape">' + L3("cardio.upcoming", "out", "Output kept R3", "pct0", "hi", "Round 3 significant strike attempts as a share of round 1, in fights that got through round 3") + '</div>'),
-              ("en", "Endings", "How their fights end", outcome_html + '<div class="tape">' + E("pace.min", "Avg fight, min", "n1", None) + E("pace.r1", "Finished in R1", "pct0", None) + '</div>')]
+              ("en", "Endings", "How their fights end", outcome_html + '<div class="tape">' + E("pace.min", "Avg fight, min", "n1", None, floor=("pace.n", 3, "fights")) + E("pace.r1", "Finished in R1", "pct0", None, floor=("pace.n", 3, "fights")) + '</div>')]
     groups = [(k, t, h, grp(h, b)) for k, t, h, b in groups if b]
     stats_html = ('<div class="sgt" role="group" aria-label="Stat groups">' + "".join(f'<button type="button" data-g="{k}" aria-pressed="{"true" if i_ == 0 else "false"}">{t}</button>' for i_, (k, t, _, _) in enumerate(groups)) + '</div>'
                   + f'<div class="tape"><div class="row hdr"><div class="a">{esc(last(an))}</div><div class="k vs">VS</div><div class="b">{esc(last(bn))}</div></div></div>'
@@ -814,6 +823,8 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .part .ff-subtitle,.part .ff-odds-status,.part .tabs,.part .tp{{display:none}}.part .partw{{margin-top:8px}}.part .xpl{{display:none}}
 .sc-n{{padding:6px 12px 0;font-size:11px;color:var(--text-muted)}}
 .stamps{{display:flex;flex-direction:column;gap:1px;margin-top:4px;font-size:10px;color:var(--text-muted);font-family:"SF Mono",Menlo,monospace}}
+.ssm{{font-size:9.5px;font-weight:600;color:var(--text-muted);font-family:inherit}}
+.mvasof{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}
 .pu{{font-size:10.5px;font-style:italic}}
 .mvo{{background:#fff3c4;padding:0 3px;border-radius:3px}}
 .rt .rw{{display:block;font:800 14px/1.2 "SF Mono",Menlo,monospace}}

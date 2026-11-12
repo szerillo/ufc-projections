@@ -318,7 +318,7 @@
   },
   {
    "id": "v27",
-   "text": "+190",
+   "text": "+185",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -327,11 +327,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 190
+   "raw": 185
   },
   {
    "id": "v28",
-   "text": "34.5%",
+   "text": "35.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -339,7 +339,7 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.3448275862068966
+   "raw": 0.3508771929824561
   },
   {
    "id": "v29",
@@ -381,7 +381,7 @@
   },
   {
    "id": "v32",
-   "text": "-257",
+   "text": "-250",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -390,11 +390,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": -257
+   "raw": -250
   },
   {
    "id": "v33",
-   "text": "72.0%",
+   "text": "71.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -402,11 +402,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.7198879551820728
+   "raw": 0.7142857142857143
   },
   {
    "id": "v34",
-   "text": "-13.2%",
+   "text": "-12.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -416,7 +416,7 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.13206974961690499
+   "raw": -0.12646750872054646
   },
   {
    "id": "v35",
@@ -570,7 +570,7 @@
   },
   {
    "id": "v47",
-   "text": "+2425",
+   "text": "+2200",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -579,11 +579,11 @@
     "field": "cost"
    },
    "desc": "Market sub Macy Chiasson",
-   "raw": 2425
+   "raw": 2200
   },
   {
    "id": "v48",
-   "text": "4.0%",
+   "text": "4.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -591,11 +591,11 @@
     "label": "Macy Chiasson Submission"
    },
    "desc": "Market sub implied Macy Chiasson",
-   "raw": 0.039603960396039604
+   "raw": 0.043478260869565216
   },
   {
    "id": "v49",
-   "text": "-0.2%",
+   "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -605,7 +605,7 @@
     ]
    },
    "desc": "Edge sub Macy Chiasson",
-   "raw": -0.0015965906168586702
+   "raw": -0.005470891090384282
   },
   {
    "id": "v50",
@@ -633,7 +633,7 @@
   },
   {
    "id": "v52",
-   "text": "19.3%",
+   "text": "19.7%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -644,11 +644,11 @@
     ]
    },
    "desc": "Market ITD implied Macy Chiasson",
-   "raw": 0.19345011424219347
+   "raw": 0.19732441471571907
   },
   {
    "id": "v53",
-   "text": "-4.6%",
+   "text": "-4.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -658,7 +658,7 @@
     ]
    },
    "desc": "Edge itd Macy Chiasson",
-   "raw": -0.04555494675342514
+   "raw": -0.049429247226950745
   },
   {
    "id": "v54",
@@ -812,7 +812,7 @@
   },
   {
    "id": "v66",
-   "text": "-113",
+   "text": "-117",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -821,11 +821,11 @@
     "field": "cost"
    },
    "desc": "Market sub Bia Mesquita",
-   "raw": -113
+   "raw": -117
   },
   {
    "id": "v67",
-   "text": "53.1%",
+   "text": "53.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -833,11 +833,11 @@
     "label": "Bia Mesquita Submission"
    },
    "desc": "Market sub implied Bia Mesquita",
-   "raw": 0.5305164319248826
+   "raw": 0.5391705069124424
   },
   {
    "id": "v68",
-   "text": "-15.5%",
+   "text": "-16.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -847,7 +847,7 @@
     ]
    },
    "desc": "Edge sub Bia Mesquita",
-   "raw": -0.15499625348491386
+   "raw": -0.16365032847247363
   },
   {
    "id": "v69",
@@ -875,7 +875,7 @@
   },
   {
    "id": "v71",
-   "text": "62.1%",
+   "text": "63.0%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -886,11 +886,11 @@
     ]
    },
    "desc": "Market ITD implied Bia Mesquita",
-   "raw": 0.6214255228339736
+   "raw": 0.6300795978215333
   },
   {
    "id": "v72",
-   "text": "-18.2%",
+   "text": "-19.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -900,7 +900,7 @@
     ]
    },
    "desc": "Edge itd Bia Mesquita",
-   "raw": -0.18150248475757408
+   "raw": -0.19015655974513385
   },
   {
    "id": "v73",
@@ -920,7 +920,7 @@
   },
   {
    "id": "v74",
-   "text": "3.6",
+   "text": "3.8",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -931,7 +931,7 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.0358
+   "raw": 0.03760000000000002
   },
   {
    "id": "v75",
@@ -952,7 +952,7 @@
   },
   {
    "id": "v76",
-   "text": "69.1%",
+   "text": "69.3%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -965,7 +965,7 @@
     "at": "close"
    },
    "desc": "OA close p Bia Mesquita",
-   "raw": 0.6911
+   "raw": 0.6929000000000001
   },
   {
    "id": "v77",
@@ -2297,6 +2297,18 @@
   },
   {
    "id": "v187",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bia Mesquita",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Bia Mesquita",
+   "raw": 3
+  },
+  {
+   "id": "v188",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -2308,7 +2320,7 @@
    "raw": 9
   },
   {
-   "id": "v188",
+   "id": "v189",
    "text": "13",
    "fmt": "int",
    "rule": "em",
@@ -2320,7 +2332,7 @@
    "raw": 13
   },
   {
-   "id": "v189",
+   "id": "v190",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2332,7 +2344,7 @@
    "raw": 2
   },
   {
-   "id": "v190",
+   "id": "v191",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2344,7 +2356,7 @@
    "raw": 3
   },
   {
-   "id": "v191",
+   "id": "v192",
    "text": "43%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2358,7 +2370,7 @@
    "raw": 0.433
   },
   {
-   "id": "v192",
+   "id": "v193",
    "text": "10.9",
    "fmt": "n1",
    "rule": "em",
@@ -2370,7 +2382,7 @@
    "raw": 10.907
   },
   {
-   "id": "v193",
+   "id": "v194",
    "text": "4.2",
    "fmt": "n1",
    "rule": "em",
@@ -2382,7 +2394,7 @@
    "raw": 4.206
   },
   {
-   "id": "v194",
+   "id": "v195",
    "text": "14%",
    "fmt": "pct0",
    "rule": "em",
@@ -2394,7 +2406,7 @@
    "raw": 0.1429
   },
   {
-   "id": "v195",
+   "id": "v196",
    "text": "67%",
    "fmt": "pct0",
    "rule": "em",
@@ -2406,7 +2418,7 @@
    "raw": 0.6667
   },
   {
-   "id": "v196",
+   "id": "v197",
    "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2418,7 +2430,7 @@
    "raw": 0.745
   },
   {
-   "id": "v197",
+   "id": "v198",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2430,7 +2442,7 @@
    "raw": 0.576
   },
   {
-   "id": "v198",
+   "id": "v199",
    "text": "627",
    "fmt": "int",
    "rule": "labs_live",
@@ -2442,7 +2454,7 @@
    "raw": 627
   },
   {
-   "id": "v199",
+   "id": "v200",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2454,7 +2466,7 @@
    "raw": 0.551
   },
   {
-   "id": "v200",
+   "id": "v201",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2466,7 +2478,7 @@
    "raw": 0.359
   },
   {
-   "id": "v201",
+   "id": "v202",
    "text": "198",
    "fmt": "int",
    "rule": "labs_live",
@@ -2478,7 +2490,7 @@
    "raw": 198
   },
   {
-   "id": "v202",
+   "id": "v203",
    "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2490,7 +2502,7 @@
    "raw": 0.412
   },
   {
-   "id": "v203",
+   "id": "v204",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2502,7 +2514,7 @@
    "raw": 0.485
   },
   {
-   "id": "v204",
+   "id": "v205",
    "text": "194",
    "fmt": "int",
    "rule": "labs_live",
@@ -2514,7 +2526,7 @@
    "raw": 194
   },
   {
-   "id": "v205",
+   "id": "v206",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -2527,7 +2539,7 @@
    "raw": 155
   },
   {
-   "id": "v206",
+   "id": "v207",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -2540,7 +2552,7 @@
    "raw": -204
   },
   {
-   "id": "v207",
+   "id": "v208",
    "text": "-141",
    "fmt": "ml",
    "rule": "fight",
@@ -2553,7 +2565,7 @@
    "raw": -141
   },
   {
-   "id": "v208",
+   "id": "v209",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -2566,7 +2578,7 @@
    "raw": -112
   },
   {
-   "id": "v209",
+   "id": "v210",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2579,7 +2591,7 @@
    "raw": -250
   },
   {
-   "id": "v210",
+   "id": "v211",
    "text": "+150",
    "fmt": "ml",
    "rule": "fight",
@@ -2592,7 +2604,7 @@
    "raw": 150
   },
   {
-   "id": "v211",
+   "id": "v212",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -2605,7 +2617,7 @@
    "raw": 185
   },
   {
-   "id": "v212",
+   "id": "v213",
    "text": "-667",
    "fmt": "ml",
    "rule": "fight",
@@ -2618,7 +2630,7 @@
    "raw": -667
   },
   {
-   "id": "v213",
+   "id": "v214",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2631,7 +2643,7 @@
    "raw": -714
   },
   {
-   "id": "v214",
+   "id": "v215",
    "text": "-645",
    "fmt": "ml",
    "rule": "fight",

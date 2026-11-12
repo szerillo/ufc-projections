@@ -908,7 +908,7 @@
   },
   {
    "id": "v73",
-   "text": "0.3",
+   "text": "0.8",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -919,7 +919,7 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.0030999999999999917
+   "raw": 0.007900000000000018
   },
   {
    "id": "v74",
@@ -940,7 +940,7 @@
   },
   {
    "id": "v75",
-   "text": "87.2%",
+   "text": "87.7%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -953,7 +953,7 @@
     "at": "close"
    },
    "desc": "OA close p Bilal Hasan",
-   "raw": 0.8721
+   "raw": 0.8769
   },
   {
    "id": "v76",
@@ -1990,13 +1990,25 @@
    "rule": "em",
    "args": {
     "fighter": "Bilal Hasan",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v162",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
     "path": "grap_won.k"
    },
    "desc": "Won the grappling k Bilal Hasan",
    "raw": 1
   },
   {
-   "id": "v162",
+   "id": "v163",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -2008,7 +2020,7 @@
    "raw": 1
   },
   {
-   "id": "v163",
+   "id": "v164",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -2020,7 +2032,7 @@
    "raw": 2
   },
   {
-   "id": "v164",
+   "id": "v165",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -2032,7 +2044,7 @@
    "raw": 5
   },
   {
-   "id": "v165",
+   "id": "v166",
    "text": "211%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2046,7 +2058,7 @@
    "raw": 2.109
   },
   {
-   "id": "v166",
+   "id": "v167",
    "text": "7.5",
    "fmt": "n1",
    "rule": "em",
@@ -2058,7 +2070,7 @@
    "raw": 7.467
   },
   {
-   "id": "v167",
+   "id": "v168",
    "text": "11.0",
    "fmt": "n1",
    "rule": "em",
@@ -2070,7 +2082,19 @@
    "raw": 11.043
   },
   {
-   "id": "v168",
+   "id": "v169",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "pace.n"
+   },
+   "desc": "Avg fight, min sample Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v170",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -2082,7 +2106,7 @@
    "raw": 0.0
   },
   {
-   "id": "v169",
+   "id": "v171",
    "text": "20%",
    "fmt": "pct0",
    "rule": "em",
@@ -2094,7 +2118,19 @@
    "raw": 0.2
   },
   {
-   "id": "v170",
+   "id": "v172",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Bilal Hasan",
+    "path": "pace.n"
+   },
+   "desc": "Finished in R1 sample Bilal Hasan",
+   "raw": 1
+  },
+  {
+   "id": "v173",
    "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2106,7 +2142,7 @@
    "raw": 0.745
   },
   {
-   "id": "v171",
+   "id": "v174",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2118,7 +2154,7 @@
    "raw": 0.576
   },
   {
-   "id": "v172",
+   "id": "v175",
    "text": "627",
    "fmt": "int",
    "rule": "labs_live",
@@ -2130,7 +2166,7 @@
    "raw": 627
   },
   {
-   "id": "v173",
+   "id": "v176",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2142,7 +2178,7 @@
    "raw": 0.551
   },
   {
-   "id": "v174",
+   "id": "v177",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2154,7 +2190,7 @@
    "raw": 0.359
   },
   {
-   "id": "v175",
+   "id": "v178",
    "text": "198",
    "fmt": "int",
    "rule": "labs_live",
@@ -2166,7 +2202,7 @@
    "raw": 198
   },
   {
-   "id": "v176",
+   "id": "v179",
    "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2178,7 +2214,7 @@
    "raw": 0.412
   },
   {
-   "id": "v177",
+   "id": "v180",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2190,7 +2226,7 @@
    "raw": 0.485
   },
   {
-   "id": "v178",
+   "id": "v181",
    "text": "194",
    "fmt": "int",
    "rule": "labs_live",
@@ -2202,7 +2238,7 @@
    "raw": 194
   },
   {
-   "id": "v179",
+   "id": "v182",
    "text": "-526",
    "fmt": "ml",
    "rule": "fight",
@@ -2215,7 +2251,7 @@
    "raw": -526
   },
   {
-   "id": "v180",
+   "id": "v183",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -2228,7 +2264,7 @@
    "raw": 185
   },
   {
-   "id": "v181",
+   "id": "v184",
    "text": "-105",
    "fmt": "ml",
    "rule": "fight",
@@ -2241,7 +2277,7 @@
    "raw": -105
   },
   {
-   "id": "v182",
+   "id": "v185",
    "text": "+308",
    "fmt": "ml",
    "rule": "fight",
@@ -2254,7 +2290,7 @@
    "raw": 308
   },
   {
-   "id": "v183",
+   "id": "v186",
    "text": "-206",
    "fmt": "ml",
    "rule": "fight",
@@ -2267,7 +2303,7 @@
    "raw": -206
   },
   {
-   "id": "v184",
+   "id": "v187",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",

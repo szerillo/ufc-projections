@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "-155",
+   "text": "-156",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Uros Medic",
-   "raw": -155
+   "raw": -156
   },
   {
    "id": "v16",
-   "text": "60.8%",
+   "text": "60.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Uros Medic"
    },
    "desc": "Market implied Uros Medic",
-   "raw": 0.6078431372549019
+   "raw": 0.609375
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "+125",
+   "text": "+130",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Kevin Holland",
-   "raw": 125
+   "raw": 130
   },
   {
    "id": "v23",
-   "text": "44.4%",
+   "text": "43.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Kevin Holland"
    },
    "desc": "Market implied Kevin Holland",
-   "raw": 0.4444444444444444
+   "raw": 0.43478260869565216
   },
   {
    "id": "v24",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "1.7",
+   "text": "0.5",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.016799999999999926
+   "raw": 0.005499999999999949
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "42.4%",
+   "text": "41.2%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "close"
    },
    "desc": "OA close p Kevin Holland",
-   "raw": 0.42379999999999995
+   "raw": 0.4125
   },
   {
    "id": "v79",

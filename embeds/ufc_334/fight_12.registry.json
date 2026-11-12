@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "-195",
+   "text": "-185",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Kayla Harrison",
-   "raw": -195
+   "raw": -185
   },
   {
    "id": "v16",
-   "text": "66.1%",
+   "text": "64.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Kayla Harrison"
    },
    "desc": "Market implied Kayla Harrison",
-   "raw": 0.6610169491525424
+   "raw": 0.6491228070175439
   },
   {
    "id": "v17",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "0.2",
+   "text": "1.0",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.0018000000000000238
+   "raw": 0.010299999999999976
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "37.2%",
+   "text": "38.0%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "close"
    },
    "desc": "OA close p Amanda Nunes",
-   "raw": 0.3719
+   "raw": 0.38039999999999996
   },
   {
    "id": "v79",
@@ -2673,13 +2673,25 @@
    "rule": "em",
    "args": {
     "fighter": "Kayla Harrison",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Kayla Harrison",
+   "raw": 3
+  },
+  {
+   "id": "v219",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kayla Harrison",
     "path": "grap_won.k"
    },
    "desc": "Won the grappling k Kayla Harrison",
    "raw": 3
   },
   {
-   "id": "v219",
+   "id": "v220",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2691,7 +2703,7 @@
    "raw": 3
   },
   {
-   "id": "v220",
+   "id": "v221",
    "text": "10",
    "fmt": "int",
    "rule": "em",
@@ -2703,7 +2715,7 @@
    "raw": 10
   },
   {
-   "id": "v221",
+   "id": "v222",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -2715,7 +2727,7 @@
    "raw": 11
   },
   {
-   "id": "v222",
+   "id": "v223",
    "text": "71%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2729,7 +2741,7 @@
    "raw": 0.712
   },
   {
-   "id": "v223",
+   "id": "v224",
    "text": "10.6",
    "fmt": "n1",
    "rule": "em",
@@ -2741,7 +2753,7 @@
    "raw": 10.567
   },
   {
-   "id": "v224",
+   "id": "v225",
    "text": "11.4",
    "fmt": "n1",
    "rule": "em",
@@ -2753,7 +2765,7 @@
    "raw": 11.356
   },
   {
-   "id": "v225",
+   "id": "v226",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -2765,7 +2777,7 @@
    "raw": 0.0
   },
   {
-   "id": "v226",
+   "id": "v227",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -2777,7 +2789,7 @@
    "raw": 0.5
   },
   {
-   "id": "v227",
+   "id": "v228",
    "text": "74%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2789,7 +2801,7 @@
    "raw": 0.745
   },
   {
-   "id": "v228",
+   "id": "v229",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2801,7 +2813,7 @@
    "raw": 0.576
   },
   {
-   "id": "v229",
+   "id": "v230",
    "text": "627",
    "fmt": "int",
    "rule": "labs_live",
@@ -2813,7 +2825,7 @@
    "raw": 627
   },
   {
-   "id": "v230",
+   "id": "v231",
    "text": "55%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2825,7 +2837,7 @@
    "raw": 0.551
   },
   {
-   "id": "v231",
+   "id": "v232",
    "text": "36%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2837,7 +2849,7 @@
    "raw": 0.359
   },
   {
-   "id": "v232",
+   "id": "v233",
    "text": "198",
    "fmt": "int",
    "rule": "labs_live",
@@ -2849,7 +2861,7 @@
    "raw": 198
   },
   {
-   "id": "v233",
+   "id": "v234",
    "text": "41%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2861,7 +2873,7 @@
    "raw": 0.412
   },
   {
-   "id": "v234",
+   "id": "v235",
    "text": "48%",
    "fmt": "pct0",
    "rule": "labs_live",
@@ -2873,7 +2885,7 @@
    "raw": 0.485
   },
   {
-   "id": "v235",
+   "id": "v236",
    "text": "194",
    "fmt": "int",
    "rule": "labs_live",
@@ -2885,7 +2897,7 @@
    "raw": 194
   },
   {
-   "id": "v236",
+   "id": "v237",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2898,7 +2910,7 @@
    "raw": -714
   },
   {
-   "id": "v237",
+   "id": "v238",
    "text": "-1111",
    "fmt": "ml",
    "rule": "fight",
@@ -2911,7 +2923,7 @@
    "raw": -1111
   },
   {
-   "id": "v238",
+   "id": "v239",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -2924,7 +2936,7 @@
    "raw": -455
   },
   {
-   "id": "v239",
+   "id": "v240",
    "text": "-312",
    "fmt": "ml",
    "rule": "fight",
@@ -2937,7 +2949,7 @@
    "raw": -312
   },
   {
-   "id": "v240",
+   "id": "v241",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",

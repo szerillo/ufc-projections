@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "+102",
+   "text": "+100",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Evan Elder",
-   "raw": 102
+   "raw": 100
   },
   {
    "id": "v16",
-   "text": "49.5%",
+   "text": "50.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Evan Elder"
    },
    "desc": "Market implied Evan Elder",
-   "raw": 0.49504950495049505
+   "raw": 0.5
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "-125",
+   "text": "-120",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Samuel Sanches",
-   "raw": -125
+   "raw": -120
   },
   {
    "id": "v23",
-   "text": "55.6%",
+   "text": "54.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Samuel Sanches"
    },
    "desc": "Market implied Samuel Sanches",
-   "raw": 0.5555555555555556
+   "raw": 0.5454545454545454
   },
   {
    "id": "v24",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "4.1",
+   "text": "4.6",
    "fmt": "pts",
    "rule": "oa_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "OA drift pts",
-   "raw": 0.041000000000000036
+   "raw": 0.04550000000000004
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "51.7%",
+   "text": "52.2%",
    "fmt": "pct1",
    "rule": "oa_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "close"
    },
    "desc": "OA close p Samuel Sanches",
-   "raw": 0.517
+   "raw": 0.5215000000000001
   },
   {
    "id": "v79",
