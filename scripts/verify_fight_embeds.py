@@ -274,6 +274,10 @@ def check(D, htmlfile, G):
         if want_tr:
             nthin_ = sum(1 for t_, o_ in zip(tp_, okm_) for i_, _ in t_ if i_ not in o_)
             if page.split('data-part="trend"')[1].split("</svg>")[0].count('class="thin"') != nthin_: bad.append(("trend", "floor", f"hollow dots != {nthin_} rounds under {TF_} min"))
+        if want_tr:   # Kirk round 9 call 1: a joined round within 1 minute of the floor carries the thin-sample note
+            want_near = sorted(f'{n_.split()[-1]}: R{i_ + 1}' for n_, x_ in zip(reg["pair"], (pa_, pb_)) for i_, rr_ in enumerate((x_.get("rounds") or [])[:3]) if (rr_ or {}).get("fights", 0) >= 1 and TF_ <= (rr_.get("mins") or 0) < TF_ + 1)
+            got_near = sorted(re.findall(r'([A-Za-z\-\']+): (R\d) sits right at the 15-minute floor', page))
+            if [f"{a_}: {b_}" for a_, b_ in got_near] != want_near: bad.append(("trend", "near floor", f"note {got_near} vs {want_near}"))
         if (bool(re.search(r'data-spot="', page)) and want_tr) != ("See round trend" in page): bad.append(("spot", "pointer", "'See round trend' pointer must show exactly when both Spot to watch and the chart show"))
         if want_tr != ('data-part="trend"' in page): bad.append(("trend", "presence", f"page {'data-part=\"trend\"' in page} vs recomputed {want_tr}"))
         if want_tr:
@@ -347,6 +351,8 @@ def check(D, htmlfile, G):
             exp_pub = json.loads(Path(REPO / reg["proj_file"]).read_text()).get("published_at") if reg.get("proj_file", "").endswith("projections.json") else None
             lm_ = sh_(lrec["current"]["t"]) if lrec.get("current") and lrec.get("open") else (sh_(lrec["open"]["t"]) + " (opener only)" if lrec.get("open") else "n/a")
             want_line = f'Data as of: sheet {sh_(exp_pub) if exp_pub else "n/a"} · odds {sh_(G["ODDS"]["updated_at"])} · line move {lm_}'
+            want_line += ' · <a href="https://szerillo.github.io/ufc-projections/form/corrections.html" target="_blank" rel="noopener">Corrections</a>'
+            if not (REPO / "form/corrections.html").exists(): bad.append(("footer", "corrections", "form/corrections.html missing"))
             if H.unescape(st_.group(1)) != want_line: bad.append(("footer", "stamps", f"{H.unescape(st_.group(1))!r} != {want_line!r}"))
         # the decision-model accuracy quoted in the Cardio key must match labs.json
         acc_ = re.search(r"decisions (\d+)% of the time", page)
@@ -438,6 +444,9 @@ def run(D, G, slug, quiet=False):
     tot_bad += card_check(D, G, slug)
     tot_bad += lh_recheck(G, slug, quiet)
     tot_bad += spot_pin(G)
+    lk_ = subprocess.run([sys.executable, "-I", str(REPO / "scripts/embed_locks.py"), "check", "--slug", slug], capture_output=True, text=True)
+    if lk_.returncode != 0: print(lk_.stdout.strip()); tot_bad += 1
+    elif not quiet: print(lk_.stdout.strip().splitlines()[-1])
     return tot_ok, n_rows, tot_bad
 
 # Kirk round 8 D: the builder and this checker both read data/embeds/spot_tests.json, so an edit there moved the page and the
@@ -542,6 +551,8 @@ def negative(D, G, slug):
             t = r["text"]; t2 = re.sub(r"(\d)(?!.*\d)", lambda m: str((int(m.group(1)) + 1) % 10), t)
             return s_.replace(f'<span data-id="{r["id"]}">{H.escape(t)}</span>', f'<span data-id="{r["id"]}">{H.escape(t2)}</span>')
         return fn
+    def lock_edit(T, G_):   # a shared, locked file changed after the bless (card_overrides.json, one byte), restored right after the check
+        p_ = REPO / "data/card_overrides.json"; G_["RESTORE"] = (p_, p_.read_bytes()); p_.write_bytes(p_.read_bytes() + b"\n")
     def st_edit(T, G_):
         d_ = json.loads((REPO / "data/embeds/spot_tests.json").read_text()); d_["T1"]["win"] = 0.718; G_["ST_OVERRIDE"] = json.dumps(d_, indent=1).encode()
     def lh_shift(T, G_):
@@ -568,7 +579,10 @@ def negative(D, G, slug):
         ("embed: an offshore book named on the page (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace("Line move</span>", "Line move</span> Pinnacle", 1))),
         ("line history: a current line moved 1 pt in the file (fight 12)", lh_shift),
         ("shared input: a backtest number edited in spot_tests.json (builder and checker both read it)", st_edit),
+        ("shared input: a locked file changed without a bless (card_overrides.json)", lock_edit),
         ("embed: one round-trend point moved (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(<circle cx="[\d.]+" cy=")([\d.]+)(" r="4")', lambda m: m.group(1) + f"{float(m.group(2)) + 9:.1f}" + m.group(3), s_, count=1))),
+        ("embed: Duncan's at-the-floor note removed (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace("Duncan: R3 sits right at the 15-minute floor; thin sample.", "", 1))),
+        ("embed: Corrections link dropped from the footer (fight 03)", plant_text("fight_03.html", lambda s_: s_.replace('>Corrections</a>', '></a>', 1))),
         ("embed: a below-floor round drawn as a full dot (fight 08)", plant_text("fight_08.html", lambda s_: s_.replace('<circle class="thin" ', '<circle ', 1))),
         ("embed: T1 'never confirmed' line removed (fight 06)", plant_text("fight_06.html", lambda s_: s_.replace("Never confirmed on new cards", "Confirmed", 1))),
         ("embed: past-fight link to a bout that is not on the site (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(#/fight/[^/"]+/)\d+"', r'\g<1>999"', s_, count=1))),
@@ -582,8 +596,11 @@ def negative(D, G, slug):
     for label, fn in plants:
         with tempfile.TemporaryDirectory() as td:
             T = Path(td) / "e"; shutil.copytree(D, T); G_ = copy.deepcopy(G); fn(T, G_)
-            with contextlib.redirect_stdout(io.StringIO()):
-                _, _, nb = run(T, G_, slug)
+            try:
+                with contextlib.redirect_stdout(io.StringIO()):
+                    _, _, nb = run(T, G_, slug)
+            finally:
+                if G_.get("RESTORE"): G_["RESTORE"][0].write_bytes(G_["RESTORE"][1])
         print(f"  NEGATIVE {'CAUGHT ' if nb else 'MISSED '} {nb:>3} failures · {label}"); caught += bool(nb)
     # Block 59i (Kirk check 4): a bug UPSTREAM of the metrics file. The page check trusts that file, so the plant goes into
     # a copy of build_embed_metrics.py (control seconds dropped); the independent CSV recompute must flag the result.

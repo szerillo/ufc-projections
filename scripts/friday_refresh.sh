@@ -3,7 +3,7 @@
 #   scripts/friday_refresh.sh <card-name> <bp-slug> <event-file> <sharp-tracker-checkout> [compare-ref]
 # 1 fresh odds feed  2 newest sheet export from origin/main  3 line history from the sharp-tracker archive
 # 4 stats file  5 all embeds  6 page check + independent CSV recompute  7 number diff vs compare-ref (default HEAD)
-set -euo pipefail   # ALLOW_STALE=1 overrides the sheet-export age block (step 2b)
+set -euo pipefail; export EMBED_PIPELINE=1   # (no lock bless inside a pipeline run) ALLOW_STALE=1 overrides the sheet-export age block (step 2b)
 CARD="$1"; SLUG="$2"; EVENT="$3"; ST="$4"; REF="${5:-HEAD}"; cd "$(dirname "$0")/.."
 t0=$(date +%s); step(){ echo "== $(( $(date +%s) - t0 ))s  $*"; }
 step "1 odds feed";        python3 scripts/fetch_odds.py --card "$CARD" --out "data/${SLUG}_odds.json" 2>&1 | tail -1
@@ -43,6 +43,7 @@ t = re.search(r"newest snapshot (\S+)", open("/tmp/_refresh_odds.txt").read()).g
 age = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(t.replace("Z", "+00:00"))).total_seconds() / 3600
 print(f"  archive age {age:.1f} h"); sys.exit(0 if age < 3 else "line-history archive is more than 3 hours old")
 PY
+python3 -I scripts/check_price_freshness.py --event "$EVENT" | tail -1   # Kirk round 9 A: every unstarted bout priced in the last 3 h, else stop
 step "3b embed line history + Listed check"
 python3 -I scripts/fetch_kalshi_ufc.py --out "data/embeds/kalshi_${SLUG}.json"   # dormant fallback input only
 python3 -I scripts/build_line_history.py --slug "$SLUG" --event "$EVENT" --kalshi "data/embeds/kalshi_${SLUG}.json" | tail -1
