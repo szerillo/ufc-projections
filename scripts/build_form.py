@@ -1123,7 +1123,11 @@ def main():
             # from UFC.com) or the main event; it used to be the main event only, so a title co-main was built as 3 rounds
             ovr_t = (card_overrides.load(slug) or {}).get("title", [])
             is_title = any(card_overrides.bout_is(an, bn, x_, y_) for x_, y_ in ovr_t)
-            sched_u = 5 if (is_title or bf["n"] == max(x["n"] for x in d["fights"])) else 3
+            # Kirk round 13 (call 2): UFCStats shows "Time format" only for completed bouts (past Form already reads it from
+            # ufc_fight_results.csv); upcoming fight-details pages have none, so a non-title five-round bout needs the card flag
+            # "five_rounds": [["A", "B"], ...] in data/card_overrides.json, sourced from UFC.com. Empty for UFC 334.
+            is_5r = any(card_overrides.bout_is(an, bn, x_, y_) for x_, y_ in (card_overrides.load(slug) or {}).get("five_rounds", []))
+            sched_u = 5 if (is_title or is_5r or bf["n"] == max(x["n"] for x in d["fights"])) else 3
             fobj["sched"] = sched_u
             try:
                 pw, pg, SA, SB, base = FM.predict(fa["name"], fb["name"], edate, wcl, sched_u, fa["elo"], fb["elo"])
