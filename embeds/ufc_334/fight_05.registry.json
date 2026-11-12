@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -131,47 +131,47 @@
   },
   {
    "id": "v11",
-   "text": "-160",
+   "text": "-168",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Donte Johnson",
-   "raw": 0.6154327271701792
+   "raw": 0.6267127235422996
   },
   {
    "id": "v12",
-   "text": "61.5%",
+   "text": "62.7%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Donte Johnson",
-   "raw": 0.6154327271701792
+   "raw": 0.6267127235422996
   },
   {
    "id": "v13",
-   "text": "-160",
+   "text": "-175",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Donte Johnson",
-   "raw": -160
+   "raw": -175
   },
   {
    "id": "v14",
-   "text": "61.5%",
+   "text": "63.6%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Donte Johnson",
-   "raw": 0.6153846153846154
+   "raw": 0.6363636363636364
   },
   {
    "id": "v15",
@@ -200,7 +200,7 @@
   },
   {
    "id": "v17",
-   "text": "+0.0%",
+   "text": "-1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,55 +210,55 @@
     ]
    },
    "desc": "Edge ML Donte Johnson",
-   "raw": 4.8111785563742515e-05
+   "raw": -0.009650912821336788
   },
   {
    "id": "v18",
-   "text": "+160",
+   "text": "+168",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Cesar Almeida",
-   "raw": 0.3845672728298209
+   "raw": 0.37328727645770043
   },
   {
    "id": "v19",
-   "text": "38.5%",
+   "text": "37.3%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Cesar Almeida",
-   "raw": 0.3845672728298209
+   "raw": 0.37328727645770043
   },
   {
    "id": "v20",
-   "text": "+140",
+   "text": "+145",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Cesar Almeida",
-   "raw": 140
+   "raw": 145
   },
   {
    "id": "v21",
-   "text": "41.7%",
+   "text": "40.8%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Cesar Almeida",
-   "raw": 0.4166666666666667
+   "raw": 0.40816326530612246
   },
   {
    "id": "v22",
-   "text": "+142",
+   "text": "+145",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Cesar Almeida",
-   "raw": 142
+   "raw": 145
   },
   {
    "id": "v23",
-   "text": "41.3%",
+   "text": "40.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,11 +279,11 @@
     "label": "Cesar Almeida"
    },
    "desc": "Market implied Cesar Almeida",
-   "raw": 0.4132231404958678
+   "raw": 0.40816326530612246
   },
   {
    "id": "v24",
-   "text": "-3.2%",
+   "text": "-3.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,51 +293,51 @@
     ]
    },
    "desc": "Edge ML Cesar Almeida",
-   "raw": -0.03209939383684579
+   "raw": -0.034875988848422024
   },
   {
    "id": "v25",
-   "text": "+196",
+   "text": "+203",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.3381349343075745
+   "raw": 0.3303625725040225
   },
   {
    "id": "v26",
-   "text": "33.8%",
+   "text": "33.0%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.3381349343075745
+   "raw": 0.3303625725040225
   },
   {
    "id": "v27",
-   "text": "+222",
+   "text": "+235",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD price",
-   "raw": 0.3102893890675241
+   "raw": 0.29820121930696514
   },
   {
    "id": "v28",
-   "text": "31.0%",
+   "text": "29.8%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD %",
-   "raw": 0.3102893890675241
+   "raw": 0.29820121930696514
   },
   {
    "id": "v29",
@@ -366,7 +366,7 @@
   },
   {
    "id": "v31",
-   "text": "+2.8%",
+   "text": "+3.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -376,11 +376,11 @@
     ]
    },
    "desc": "Edge GTD vs listed",
-   "raw": 0.027845545240050396
+   "raw": 0.032161353197057374
   },
   {
    "id": "v32",
-   "text": "-196",
+   "text": "-203",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -388,11 +388,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.6618650656924254
+   "raw": 0.6696374274959775
   },
   {
    "id": "v33",
-   "text": "66.2%",
+   "text": "67.0%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -400,7 +400,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.6618650656924254
+   "raw": 0.6696374274959775
   },
   {
    "id": "v34",
@@ -429,7 +429,7 @@
   },
   {
    "id": "v36",
-   "text": "-8.6%",
+   "text": "-7.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -439,11 +439,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.0862457655418315
+   "raw": -0.07847340373827938
   },
   {
    "id": "v37",
-   "text": "+366",
+   "text": "+369",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -451,11 +451,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Donte Johnson",
-   "raw": 0.21440913998433472
+   "raw": 0.2133555533203574
   },
   {
    "id": "v38",
-   "text": "21.4%",
+   "text": "21.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -463,7 +463,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Donte Johnson",
-   "raw": 0.21440913998433472
+   "raw": 0.2133555533203574
   },
   {
    "id": "v39",
@@ -492,7 +492,7 @@
   },
   {
    "id": "v41",
-   "text": "+0.2%",
+   "text": "+0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -502,11 +502,11 @@
     ]
    },
    "desc": "Edge dec Donte Johnson",
-   "raw": 0.001643182537526211
+   "raw": 0.0005895958735488982
   },
   {
    "id": "v42",
-   "text": "+187",
+   "text": "+182",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -514,11 +514,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Donte Johnson",
-   "raw": 0.3484808275637615
+   "raw": 0.35484175874399176
   },
   {
    "id": "v43",
-   "text": "34.8%",
+   "text": "35.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -526,7 +526,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Donte Johnson",
-   "raw": 0.3484808275637615
+   "raw": 0.35484175874399176
   },
   {
    "id": "v44",
@@ -555,7 +555,7 @@
   },
   {
    "id": "v46",
-   "text": "-5.6%",
+   "text": "-5.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -565,11 +565,11 @@
     ]
    },
    "desc": "Edge ko Donte Johnson",
-   "raw": -0.056377472031380216
+   "raw": -0.05001654085114993
   },
   {
    "id": "v47",
-   "text": "+1803",
+   "text": "+1609",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -577,11 +577,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Donte Johnson",
-   "raw": 0.05254275962208295
+   "raw": 0.0585154114779504
   },
   {
    "id": "v48",
-   "text": "5.3%",
+   "text": "5.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -589,7 +589,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Donte Johnson",
-   "raw": 0.05254275962208295
+   "raw": 0.0585154114779504
   },
   {
    "id": "v49",
@@ -618,7 +618,7 @@
   },
   {
    "id": "v51",
-   "text": "-3.5%",
+   "text": "-2.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -628,11 +628,11 @@
     ]
    },
    "desc": "Edge sub Donte Johnson",
-   "raw": -0.03456525431519929
+   "raw": -0.028592602459331838
   },
   {
    "id": "v52",
-   "text": "+149",
+   "text": "+142",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -640,11 +640,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Donte Johnson",
-   "raw": 0.4010235871858444
+   "raw": 0.4133571702219421
   },
   {
    "id": "v53",
-   "text": "40.1%",
+   "text": "41.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -652,7 +652,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Donte Johnson",
-   "raw": 0.4010235871858444
+   "raw": 0.4133571702219421
   },
   {
    "id": "v54",
@@ -671,7 +671,7 @@
   },
   {
    "id": "v55",
-   "text": "-9.1%",
+   "text": "-7.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -681,11 +681,11 @@
     ]
    },
    "desc": "Edge itd Donte Johnson",
-   "raw": -0.09094272634657952
+   "raw": -0.0786091433104818
   },
   {
    "id": "v56",
-   "text": "+708",
+   "text": "+755",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -693,11 +693,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Cesar Almeida",
-   "raw": 0.1237257943232398
+   "raw": 0.1170070191836651
   },
   {
    "id": "v57",
-   "text": "12.4%",
+   "text": "11.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -705,7 +705,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Cesar Almeida",
-   "raw": 0.1237257943232398
+   "raw": 0.1170070191836651
   },
   {
    "id": "v58",
@@ -734,7 +734,7 @@
   },
   {
    "id": "v60",
-   "text": "+0.6%",
+   "text": "-0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -744,11 +744,11 @@
     ]
    },
    "desc": "Edge dec Cesar Almeida",
-   "raw": 0.006078735499710386
+   "raw": -0.0006400396398643093
   },
   {
    "id": "v61",
-   "text": "+340",
+   "text": "+349",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -756,11 +756,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Cesar Almeida",
-   "raw": 0.22737498642772663
+   "raw": 0.22270364676565385
   },
   {
    "id": "v62",
-   "text": "22.7%",
+   "text": "22.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -768,7 +768,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Cesar Almeida",
-   "raw": 0.22737498642772663
+   "raw": 0.22270364676565385
   },
   {
    "id": "v63",
@@ -797,7 +797,7 @@
   },
   {
    "id": "v65",
-   "text": "-7.4%",
+   "text": "-7.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -807,11 +807,11 @@
     ]
    },
    "desc": "Edge ko Cesar Almeida",
-   "raw": -0.07382983284938183
+   "raw": -0.07850117251145461
   },
   {
    "id": "v66",
-   "text": "+2888",
+   "text": "+2878",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -819,11 +819,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Cesar Almeida",
-   "raw": 0.033466492078854465
+   "raw": 0.033576610508381496
   },
   {
    "id": "v67",
-   "text": "3.3%",
+   "text": "3.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -831,7 +831,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Cesar Almeida",
-   "raw": 0.033466492078854465
+   "raw": 0.033576610508381496
   },
   {
    "id": "v68",
@@ -870,11 +870,11 @@
     ]
    },
    "desc": "Edge sub Cesar Almeida",
-   "raw": -0.016658821204353552
+   "raw": -0.01654870277482652
   },
   {
    "id": "v71",
-   "text": "+283",
+   "text": "+290",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -882,11 +882,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Cesar Almeida",
-   "raw": 0.2608414785065811
+   "raw": 0.25628025727403536
   },
   {
    "id": "v72",
-   "text": "26.1%",
+   "text": "25.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -894,7 +894,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Cesar Almeida",
-   "raw": 0.2608414785065811
+   "raw": 0.25628025727403536
   },
   {
    "id": "v73",
@@ -913,7 +913,7 @@
   },
   {
    "id": "v74",
-   "text": "-9.0%",
+   "text": "-9.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -923,7 +923,7 @@
     ]
    },
    "desc": "Edge itd Cesar Almeida",
-   "raw": -0.09048865405373535
+   "raw": -0.09504987528628112
   },
   {
    "id": "v75",

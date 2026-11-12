@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -131,47 +131,47 @@
   },
   {
    "id": "v11",
-   "text": "-168",
+   "text": "-158",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Ciryl Gane",
-   "raw": 0.626957571890676
+   "raw": 0.6127133975737242
   },
   {
    "id": "v12",
-   "text": "62.7%",
+   "text": "61.3%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Ciryl Gane",
-   "raw": 0.626957571890676
+   "raw": 0.6127133975737242
   },
   {
    "id": "v13",
-   "text": "-200",
+   "text": "-180",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Ciryl Gane",
-   "raw": -200
+   "raw": -180
   },
   {
    "id": "v14",
-   "text": "66.7%",
+   "text": "64.3%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Ciryl Gane",
-   "raw": 0.6666666666666666
+   "raw": 0.6428571428571429
   },
   {
    "id": "v15",
@@ -200,7 +200,7 @@
   },
   {
    "id": "v17",
-   "text": "-4.0%",
+   "text": "-3.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,51 +210,51 @@
     ]
    },
    "desc": "Edge ML Ciryl Gane",
-   "raw": -0.039709094775990605
+   "raw": -0.030143745283418677
   },
   {
    "id": "v18",
-   "text": "+168",
+   "text": "+158",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Josh Hokit",
-   "raw": 0.373042428109324
+   "raw": 0.3872866024262757
   },
   {
    "id": "v19",
-   "text": "37.3%",
+   "text": "38.7%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Josh Hokit",
-   "raw": 0.373042428109324
+   "raw": 0.3872866024262757
   },
   {
    "id": "v20",
-   "text": "+170",
+   "text": "+163",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Josh Hokit",
-   "raw": 170
+   "raw": 163
   },
   {
    "id": "v21",
-   "text": "37.0%",
+   "text": "38.0%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Josh Hokit",
-   "raw": 0.37037037037037035
+   "raw": 0.38022813688212925
   },
   {
    "id": "v22",
@@ -283,7 +283,7 @@
   },
   {
    "id": "v24",
-   "text": "+0.3%",
+   "text": "+0.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,51 +293,51 @@
     ]
    },
    "desc": "Edge ML Josh Hokit",
-   "raw": 0.002672057738953626
+   "raw": 0.007058465544146464
   },
   {
    "id": "v25",
-   "text": "+222",
+   "text": "+225",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.31074289226828444
+   "raw": 0.307233678499093
   },
   {
    "id": "v26",
-   "text": "31.1%",
+   "text": "30.7%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.31074289226828444
+   "raw": 0.307233678499093
   },
   {
    "id": "v27",
-   "text": "+213",
+   "text": "+219",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD price",
-   "raw": 0.3195972382048331
+   "raw": 0.31324932419440576
   },
   {
    "id": "v28",
-   "text": "32.0%",
+   "text": "31.3%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD %",
-   "raw": 0.3195972382048331
+   "raw": 0.31324932419440576
   },
   {
    "id": "v29",
@@ -366,7 +366,7 @@
   },
   {
    "id": "v31",
-   "text": "-0.9%",
+   "text": "-0.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -376,11 +376,11 @@
     ]
    },
    "desc": "Edge GTD vs listed",
-   "raw": -0.008854345936548658
+   "raw": -0.006015645695312766
   },
   {
    "id": "v32",
-   "text": "-222",
+   "text": "-225",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -388,11 +388,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.6892571077317156
+   "raw": 0.692766321500907
   },
   {
    "id": "v33",
-   "text": "68.9%",
+   "text": "69.3%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -400,7 +400,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.6892571077317156
+   "raw": 0.692766321500907
   },
   {
    "id": "v34",
@@ -429,7 +429,7 @@
   },
   {
    "id": "v36",
-   "text": "-4.5%",
+   "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -439,11 +439,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.04549090287836399
+   "raw": -0.04198168910917255
   },
   {
    "id": "v37",
-   "text": "+394",
+   "text": "+410",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -451,11 +451,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Ciryl Gane",
-   "raw": 0.20252834036260206
+   "raw": 0.19609885889941148
   },
   {
    "id": "v38",
-   "text": "20.3%",
+   "text": "19.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -463,7 +463,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Ciryl Gane",
-   "raw": 0.20252834036260206
+   "raw": 0.19609885889941148
   },
   {
    "id": "v39",
@@ -492,7 +492,7 @@
   },
   {
    "id": "v41",
-   "text": "-0.6%",
+   "text": "-1.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -502,11 +502,11 @@
     ]
    },
    "desc": "Edge dec Ciryl Gane",
-   "raw": -0.005804992970731282
+   "raw": -0.012234474433921866
   },
   {
    "id": "v42",
-   "text": "+168",
+   "text": "+173",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -514,11 +514,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Ciryl Gane",
-   "raw": 0.3726614719653125
+   "raw": 0.3656702702701442
   },
   {
    "id": "v43",
-   "text": "37.3%",
+   "text": "36.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -526,7 +526,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Ciryl Gane",
-   "raw": 0.3726614719653125
+   "raw": 0.3656702702701442
   },
   {
    "id": "v44",
@@ -555,7 +555,7 @@
   },
   {
    "id": "v46",
-   "text": "-5.8%",
+   "text": "-6.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -565,11 +565,11 @@
     ]
    },
    "desc": "Edge ko Ciryl Gane",
-   "raw": -0.058373010793308144
+   "raw": -0.06536421248847646
   },
   {
    "id": "v47",
-   "text": "+1832",
+   "text": "+1863",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -577,11 +577,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Ciryl Gane",
-   "raw": 0.05176775956276144
+   "raw": 0.050944268404168554
   },
   {
    "id": "v48",
-   "text": "5.2%",
+   "text": "5.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -589,7 +589,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Ciryl Gane",
-   "raw": 0.05176775956276144
+   "raw": 0.050944268404168554
   },
   {
    "id": "v49",
@@ -618,7 +618,7 @@
   },
   {
    "id": "v51",
-   "text": "-3.9%",
+   "text": "-4.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -628,11 +628,11 @@
     ]
    },
    "desc": "Edge sub Ciryl Gane",
-   "raw": -0.039141331346329473
+   "raw": -0.03996482250492236
   },
   {
    "id": "v52",
-   "text": "+136",
+   "text": "+140",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -640,11 +640,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Ciryl Gane",
-   "raw": 0.424429231528074
+   "raw": 0.41661453867431275
   },
   {
    "id": "v53",
-   "text": "42.4%",
+   "text": "41.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -652,7 +652,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Ciryl Gane",
-   "raw": 0.424429231528074
+   "raw": 0.41661453867431275
   },
   {
    "id": "v54",
@@ -671,7 +671,7 @@
   },
   {
    "id": "v55",
-   "text": "-9.8%",
+   "text": "-10.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -681,11 +681,11 @@
     ]
    },
    "desc": "Edge itd Ciryl Gane",
-   "raw": -0.09751434213963761
+   "raw": -0.10532903499339885
   },
   {
    "id": "v56",
-   "text": "+824",
+   "text": "+800",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -693,11 +693,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Josh Hokit",
-   "raw": 0.10821455190568241
+   "raw": 0.11113481959968155
   },
   {
    "id": "v57",
-   "text": "10.8%",
+   "text": "11.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -705,7 +705,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Josh Hokit",
-   "raw": 0.10821455190568241
+   "raw": 0.11113481959968155
   },
   {
    "id": "v58",
@@ -734,7 +734,7 @@
   },
   {
    "id": "v60",
-   "text": "-3.5%",
+   "text": "-3.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -744,11 +744,11 @@
     ]
    },
    "desc": "Edge dec Josh Hokit",
-   "raw": -0.03464259095146044
+   "raw": -0.0317223232574613
   },
   {
    "id": "v61",
-   "text": "+439",
+   "text": "+415",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -756,11 +756,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Josh Hokit",
-   "raw": 0.18543820117450546
+   "raw": 0.19407096086002226
   },
   {
    "id": "v62",
-   "text": "18.5%",
+   "text": "19.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -768,7 +768,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Josh Hokit",
-   "raw": 0.18543820117450546
+   "raw": 0.19407096086002226
   },
   {
    "id": "v63",
@@ -797,7 +797,7 @@
   },
   {
    "id": "v65",
-   "text": "-1.3%",
+   "text": "-0.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -807,11 +807,11 @@
     ]
    },
    "desc": "Edge ko Josh Hokit",
-   "raw": -0.012581600805692567
+   "raw": -0.003948841120175767
   },
   {
    "id": "v66",
-   "text": "+1160",
+   "text": "+1118",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -819,11 +819,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Josh Hokit",
-   "raw": 0.0793896750291361
+   "raw": 0.08208082196657192
   },
   {
    "id": "v67",
-   "text": "7.9%",
+   "text": "8.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -831,7 +831,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Josh Hokit",
-   "raw": 0.0793896750291361
+   "raw": 0.08208082196657192
   },
   {
    "id": "v68",
@@ -860,7 +860,7 @@
   },
   {
    "id": "v70",
-   "text": "-2.9%",
+   "text": "-2.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -870,11 +870,11 @@
     ]
    },
    "desc": "Edge sub Josh Hokit",
-   "raw": -0.02883543319597212
+   "raw": -0.026144286258536306
   },
   {
    "id": "v71",
-   "text": "+278",
+   "text": "+262",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -882,11 +882,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Josh Hokit",
-   "raw": 0.26482787620364157
+   "raw": 0.27615178282659414
   },
   {
    "id": "v72",
-   "text": "26.5%",
+   "text": "27.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -894,7 +894,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Josh Hokit",
-   "raw": 0.26482787620364157
+   "raw": 0.27615178282659414
   },
   {
    "id": "v73",
@@ -913,7 +913,7 @@
   },
   {
    "id": "v74",
-   "text": "-4.1%",
+   "text": "-3.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -923,7 +923,7 @@
     ]
    },
    "desc": "Edge itd Josh Hokit",
-   "raw": -0.04141703400166469
+   "raw": -0.030093127378712115
   },
   {
    "id": "v75",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "7.1",
+   "text": "7.4",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.07099999999999995
+   "raw": 0.07399999999999995
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "37.7%",
+   "text": "38.0%",
    "fmt": "pct1",
    "rule": "lh_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "current"
    },
    "desc": "LH current p Josh Hokit",
-   "raw": 0.377
+   "raw": 0.38
   },
   {
    "id": "v79",

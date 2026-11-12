@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -126,7 +126,7 @@
     "side": "a"
    },
    "desc": "Model ML Caio Borralho",
-   "raw": 0.581196426430214
+   "raw": 0.58145792164946
   },
   {
    "id": "v11",
@@ -137,7 +137,7 @@
     "side": "a"
    },
    "desc": "Model win % Caio Borralho",
-   "raw": 0.581196426430214
+   "raw": 0.58145792164946
   },
   {
    "id": "v12",
@@ -188,7 +188,7 @@
   },
   {
    "id": "v16",
-   "text": "-2.7%",
+   "text": "-2.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -198,7 +198,7 @@
     ]
    },
    "desc": "Edge ML Caio Borralho",
-   "raw": -0.026646710824687947
+   "raw": -0.026385215605441936
   },
   {
    "id": "v17",
@@ -209,7 +209,7 @@
     "side": "b"
    },
    "desc": "Model ML Yousri Belgaroui",
-   "raw": 0.41880357356978604
+   "raw": 0.41854207835054
   },
   {
    "id": "v18",
@@ -220,7 +220,7 @@
     "side": "b"
    },
    "desc": "Model win % Yousri Belgaroui",
-   "raw": 0.41880357356978604
+   "raw": 0.41854207835054
   },
   {
    "id": "v19",
@@ -281,7 +281,7 @@
     ]
    },
    "desc": "Edge ML Yousri Belgaroui",
-   "raw": -0.012230909188834627
+   "raw": -0.012492404408080637
   },
   {
    "id": "v24",
@@ -292,7 +292,7 @@
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.5866270091145988
+   "raw": 0.5866321777543895
   },
   {
    "id": "v25",
@@ -303,7 +303,7 @@
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.5866270091145988
+   "raw": 0.5866321777543895
   },
   {
    "id": "v26",
@@ -364,7 +364,7 @@
     ]
    },
    "desc": "Edge GTD vs listed",
-   "raw": -0.036852687609521984
+   "raw": -0.03684751896973126
   },
   {
    "id": "v31",
@@ -376,7 +376,7 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.41337299088540125
+   "raw": 0.41336782224561053
   },
   {
    "id": "v32",
@@ -388,7 +388,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.41337299088540125
+   "raw": 0.41336782224561053
   },
   {
    "id": "v33",
@@ -427,7 +427,7 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": 0.00520972557927879
+   "raw": 0.00520455693948807
   },
   {
    "id": "v36",
@@ -439,7 +439,7 @@
     "k": "dec"
    },
    "desc": "Model dec ML Caio Borralho",
-   "raw": 0.3689460542873628
+   "raw": 0.3690992542670881
   },
   {
    "id": "v37",
@@ -451,7 +451,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Caio Borralho",
-   "raw": 0.3689460542873628
+   "raw": 0.3690992542670881
   },
   {
    "id": "v38",
@@ -490,7 +490,7 @@
     ]
    },
    "desc": "Edge dec Caio Borralho",
-   "raw": -0.04772061237930386
+   "raw": -0.04756741239957857
   },
   {
    "id": "v41",
@@ -502,7 +502,7 @@
     "k": "ko"
    },
    "desc": "Model ko ML Caio Borralho",
-   "raw": 0.10139222188359799
+   "raw": 0.10144382110443342
   },
   {
    "id": "v42",
@@ -514,7 +514,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Caio Borralho",
-   "raw": 0.10139222188359799
+   "raw": 0.10144382110443342
   },
   {
    "id": "v43",
@@ -553,7 +553,7 @@
     ]
    },
    "desc": "Edge ko Caio Borralho",
-   "raw": -0.013024254088942061
+   "raw": -0.012972654868106628
   },
   {
    "id": "v46",
@@ -565,7 +565,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Caio Borralho",
-   "raw": 0.11085815025925314
+   "raw": 0.11091484627793846
   },
   {
    "id": "v47",
@@ -577,7 +577,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Caio Borralho",
-   "raw": 0.11085815025925314
+   "raw": 0.11091484627793846
   },
   {
    "id": "v48",
@@ -606,7 +606,7 @@
   },
   {
    "id": "v50",
-   "text": "-3.8%",
+   "text": "-3.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -616,7 +616,7 @@
     ]
    },
    "desc": "Edge sub Caio Borralho",
-   "raw": -0.037509802263002046
+   "raw": -0.03745310624431672
   },
   {
    "id": "v51",
@@ -628,7 +628,7 @@
     "k": "itd"
    },
    "desc": "Model itd ML Caio Borralho",
-   "raw": 0.21225037214285114
+   "raw": 0.21235866738237189
   },
   {
    "id": "v52",
@@ -640,7 +640,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Caio Borralho",
-   "raw": 0.21225037214285114
+   "raw": 0.21235866738237189
   },
   {
    "id": "v53",
@@ -659,7 +659,7 @@
   },
   {
    "id": "v54",
-   "text": "-5.1%",
+   "text": "-5.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -669,11 +669,11 @@
     ]
    },
    "desc": "Edge itd Caio Borralho",
-   "raw": -0.05053405635194408
+   "raw": -0.050425761112423334
   },
   {
    "id": "v55",
-   "text": "+359",
+   "text": "+360",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -681,7 +681,7 @@
     "k": "dec"
    },
    "desc": "Model dec ML Yousri Belgaroui",
-   "raw": 0.21768095482723593
+   "raw": 0.21753292348730133
   },
   {
    "id": "v56",
@@ -693,7 +693,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Yousri Belgaroui",
-   "raw": 0.21768095482723593
+   "raw": 0.21753292348730133
   },
   {
    "id": "v57",
@@ -732,7 +732,7 @@
     ]
    },
    "desc": "Edge dec Yousri Belgaroui",
-   "raw": -0.048985711839430734
+   "raw": -0.049133743179365336
   },
   {
    "id": "v60",
@@ -744,7 +744,7 @@
     "k": "ko"
    },
    "desc": "Model ko ML Yousri Belgaroui",
-   "raw": 0.17511734950545532
+   "raw": 0.17501888126364332
   },
   {
    "id": "v61",
@@ -756,7 +756,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Yousri Belgaroui",
-   "raw": 0.17511734950545532
+   "raw": 0.17501888126364332
   },
   {
    "id": "v62",
@@ -785,7 +785,7 @@
   },
   {
    "id": "v64",
-   "text": "-1.2%",
+   "text": "-1.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -795,11 +795,11 @@
     ]
    },
    "desc": "Edge ko Yousri Belgaroui",
-   "raw": -0.012499911282537163
+   "raw": -0.012598379524349168
   },
   {
    "id": "v65",
-   "text": "+3745",
+   "text": "+3748",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -807,7 +807,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Yousri Belgaroui",
-   "raw": 0.02600526923709477
+   "raw": 0.025990273599595392
   },
   {
    "id": "v66",
@@ -819,7 +819,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Yousri Belgaroui",
-   "raw": 0.02600526923709477
+   "raw": 0.025990273599595392
   },
   {
    "id": "v67",
@@ -858,7 +858,7 @@
     ]
    },
    "desc": "Edge sub Yousri Belgaroui",
-   "raw": -0.004830376769689074
+   "raw": -0.00484537240718845
   },
   {
    "id": "v70",
@@ -870,7 +870,7 @@
     "k": "itd"
    },
    "desc": "Model itd ML Yousri Belgaroui",
-   "raw": 0.2011226187425501
+   "raw": 0.2010091548632387
   },
   {
    "id": "v71",
@@ -882,7 +882,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Yousri Belgaroui",
-   "raw": 0.2011226187425501
+   "raw": 0.2010091548632387
   },
   {
    "id": "v72",
@@ -911,7 +911,7 @@
     ]
    },
    "desc": "Edge itd Yousri Belgaroui",
-   "raw": -0.017330288052226223
+   "raw": -0.017443751931537632
   },
   {
    "id": "v74",

@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -115,7 +115,7 @@
     "side": "a"
    },
    "desc": "Model ML Macy Chiasson",
-   "raw": 0.2703440154109113
+   "raw": 0.27008252019166523
   },
   {
    "id": "v10",
@@ -126,7 +126,7 @@
     "side": "a"
    },
    "desc": "Model win % Macy Chiasson",
-   "raw": 0.2703440154109113
+   "raw": 0.27008252019166523
   },
   {
    "id": "v11",
@@ -187,7 +187,7 @@
     ]
    },
    "desc": "Edge ML Macy Chiasson",
-   "raw": -0.052236629750379016
+   "raw": -0.05249812496962508
   },
   {
    "id": "v16",
@@ -198,7 +198,7 @@
     "side": "b"
    },
    "desc": "Model ML Bia Mesquita",
-   "raw": 0.7296559845890886
+   "raw": 0.7299174798083348
   },
   {
    "id": "v17",
@@ -209,7 +209,7 @@
     "side": "b"
    },
    "desc": "Model win % Bia Mesquita",
-   "raw": 0.7296559845890886
+   "raw": 0.7299174798083348
   },
   {
    "id": "v18",
@@ -260,7 +260,7 @@
   },
   {
    "id": "v22",
-   "text": "+1.5%",
+   "text": "+1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -270,51 +270,51 @@
     ]
    },
    "desc": "Edge ML Bia Mesquita",
-   "raw": 0.015370270303374345
+   "raw": 0.015631765522620467
   },
   {
    "id": "v23",
-   "text": "+143",
+   "text": "+146",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.41218179443483216
+   "raw": 0.40657116176460373
   },
   {
    "id": "v24",
-   "text": "41.2%",
+   "text": "40.7%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.41218179443483216
+   "raw": 0.40657116176460373
   },
   {
    "id": "v25",
-   "text": "+200",
+   "text": "+209",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD price",
-   "raw": 0.33333333333333337
+   "raw": 0.3239942528735632
   },
   {
    "id": "v26",
-   "text": "33.3%",
+   "text": "32.4%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD %",
-   "raw": 0.33333333333333337
+   "raw": 0.3239942528735632
   },
   {
    "id": "v27",
@@ -343,7 +343,7 @@
   },
   {
    "id": "v29",
-   "text": "+7.9%",
+   "text": "+8.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -353,11 +353,11 @@
     ]
    },
    "desc": "Edge GTD vs listed",
-   "raw": 0.07884846110149879
+   "raw": 0.08257690889104052
   },
   {
    "id": "v30",
-   "text": "-143",
+   "text": "-146",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -365,11 +365,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.5878182055651678
+   "raw": 0.5934288382353963
   },
   {
    "id": "v31",
-   "text": "58.8%",
+   "text": "59.3%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -377,7 +377,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.5878182055651678
+   "raw": 0.5934288382353963
   },
   {
    "id": "v32",
@@ -406,7 +406,7 @@
   },
   {
    "id": "v34",
-   "text": "-12.6%",
+   "text": "-12.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -416,11 +416,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.12646750872054646
+   "raw": -0.12085687605031803
   },
   {
    "id": "v35",
-   "text": "+717",
+   "text": "+727",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -428,11 +428,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Macy Chiasson",
-   "raw": 0.12244884792214297
+   "raw": 0.12092384251215008
   },
   {
    "id": "v36",
-   "text": "12.2%",
+   "text": "12.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -440,7 +440,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Macy Chiasson",
-   "raw": 0.12244884792214297
+   "raw": 0.12092384251215008
   },
   {
    "id": "v37",
@@ -469,7 +469,7 @@
   },
   {
    "id": "v39",
-   "text": "-5.7%",
+   "text": "-5.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -479,11 +479,11 @@
     ]
    },
    "desc": "Edge dec Macy Chiasson",
-   "raw": -0.056762621611907205
+   "raw": -0.0582876270219001
   },
   {
    "id": "v40",
-   "text": "+810",
+   "text": "+796",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -491,11 +491,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Macy Chiasson",
-   "raw": 0.10988779770958738
+   "raw": 0.11160772138492346
   },
   {
    "id": "v41",
-   "text": "11.0%",
+   "text": "11.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -503,7 +503,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Macy Chiasson",
-   "raw": 0.10988779770958738
+   "raw": 0.11160772138492346
   },
   {
    "id": "v42",
@@ -532,7 +532,7 @@
   },
   {
    "id": "v44",
-   "text": "-4.4%",
+   "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -542,11 +542,11 @@
     ]
    },
    "desc": "Edge ko Macy Chiasson",
-   "raw": -0.04395835613656647
+   "raw": -0.042238432461230394
   },
   {
    "id": "v45",
-   "text": "+2531",
+   "text": "+2563",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -554,7 +554,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Macy Chiasson",
-   "raw": 0.038007369779180934
+   "raw": 0.03755095629459171
   },
   {
    "id": "v46",
@@ -566,7 +566,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Macy Chiasson",
-   "raw": 0.038007369779180934
+   "raw": 0.03755095629459171
   },
   {
    "id": "v47",
@@ -595,7 +595,7 @@
   },
   {
    "id": "v49",
-   "text": "-0.5%",
+   "text": "-0.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -605,11 +605,11 @@
     ]
    },
    "desc": "Edge sub Macy Chiasson",
-   "raw": -0.005470891090384282
+   "raw": -0.005927304574973508
   },
   {
    "id": "v50",
-   "text": "+576",
+   "text": "+570",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -617,11 +617,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Macy Chiasson",
-   "raw": 0.14789516748876833
+   "raw": 0.14915867767951516
   },
   {
    "id": "v51",
-   "text": "14.8%",
+   "text": "14.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -629,7 +629,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Macy Chiasson",
-   "raw": 0.14789516748876833
+   "raw": 0.14915867767951516
   },
   {
    "id": "v52",
@@ -648,7 +648,7 @@
   },
   {
    "id": "v53",
-   "text": "-4.9%",
+   "text": "-4.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -658,11 +658,11 @@
     ]
    },
    "desc": "Edge itd Macy Chiasson",
-   "raw": -0.049429247226950745
+   "raw": -0.048165737036203915
   },
   {
    "id": "v54",
-   "text": "+245",
+   "text": "+250",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -670,11 +670,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Bia Mesquita",
-   "raw": 0.28973294651268916
+   "raw": 0.2856473192524537
   },
   {
    "id": "v55",
-   "text": "29.0%",
+   "text": "28.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -682,7 +682,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Bia Mesquita",
-   "raw": 0.28973294651268916
+   "raw": 0.2856473192524537
   },
   {
    "id": "v56",
@@ -711,7 +711,7 @@
   },
   {
    "id": "v58",
-   "text": "+10.6%",
+   "text": "+10.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -721,11 +721,11 @@
     ]
    },
    "desc": "Edge dec Bia Mesquita",
-   "raw": 0.10624670798057906
+   "raw": 0.10216108072034358
   },
   {
    "id": "v59",
-   "text": "+1453",
+   "text": "+1383",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -733,11 +733,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Bia Mesquita",
-   "raw": 0.06440285963643072
+   "raw": 0.06741476125621751
   },
   {
    "id": "v60",
-   "text": "6.4%",
+   "text": "6.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -745,7 +745,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Bia Mesquita",
-   "raw": 0.06440285963643072
+   "raw": 0.06741476125621751
   },
   {
    "id": "v61",
@@ -774,7 +774,7 @@
   },
   {
    "id": "v63",
-   "text": "-2.7%",
+   "text": "-2.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -784,11 +784,11 @@
     ]
    },
    "desc": "Edge ko Bia Mesquita",
-   "raw": -0.02650623127266019
+   "raw": -0.023494329652873402
   },
   {
    "id": "v64",
-   "text": "+166",
+   "text": "+165",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -796,11 +796,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Bia Mesquita",
-   "raw": 0.37552017843996877
+   "raw": 0.3768553992996636
   },
   {
    "id": "v65",
-   "text": "37.6%",
+   "text": "37.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -808,7 +808,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Bia Mesquita",
-   "raw": 0.37552017843996877
+   "raw": 0.3768553992996636
   },
   {
    "id": "v66",
@@ -837,7 +837,7 @@
   },
   {
    "id": "v68",
-   "text": "-16.4%",
+   "text": "-16.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -847,11 +847,11 @@
     ]
    },
    "desc": "Edge sub Bia Mesquita",
-   "raw": -0.16365032847247363
+   "raw": -0.1623151076127788
   },
   {
    "id": "v69",
-   "text": "+127",
+   "text": "+125",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -859,11 +859,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Bia Mesquita",
-   "raw": 0.4399230380763995
+   "raw": 0.4442701605558811
   },
   {
    "id": "v70",
-   "text": "44.0%",
+   "text": "44.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -871,7 +871,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Bia Mesquita",
-   "raw": 0.4399230380763995
+   "raw": 0.4442701605558811
   },
   {
    "id": "v71",
@@ -890,7 +890,7 @@
   },
   {
    "id": "v72",
-   "text": "-19.0%",
+   "text": "-18.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -900,7 +900,7 @@
     ]
    },
    "desc": "Edge itd Bia Mesquita",
-   "raw": -0.19015655974513385
+   "raw": -0.18580943726565224
   },
   {
    "id": "v73",

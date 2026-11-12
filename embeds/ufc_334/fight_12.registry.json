@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -131,47 +131,47 @@
   },
   {
    "id": "v11",
-   "text": "-183",
+   "text": "-179",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Kayla Harrison",
-   "raw": 0.6464519023544782
+   "raw": 0.6417514188018376
   },
   {
    "id": "v12",
-   "text": "64.6%",
+   "text": "64.2%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Kayla Harrison",
-   "raw": 0.6464519023544782
+   "raw": 0.6417514188018376
   },
   {
    "id": "v13",
-   "text": "-180",
+   "text": "-185",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Kayla Harrison",
-   "raw": -180
+   "raw": -185
   },
   {
    "id": "v14",
-   "text": "64.3%",
+   "text": "64.9%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Kayla Harrison",
-   "raw": 0.6428571428571429
+   "raw": 0.6491228070175439
   },
   {
    "id": "v15",
@@ -200,7 +200,7 @@
   },
   {
    "id": "v17",
-   "text": "+0.4%",
+   "text": "-0.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,51 +210,51 @@
     ]
    },
    "desc": "Edge ML Kayla Harrison",
-   "raw": 0.0035947594973353425
+   "raw": -0.007371388215706265
   },
   {
    "id": "v18",
-   "text": "+183",
+   "text": "+179",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Amanda Nunes",
-   "raw": 0.35354809764552175
+   "raw": 0.3582485811981624
   },
   {
    "id": "v19",
-   "text": "35.4%",
+   "text": "35.8%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Amanda Nunes",
-   "raw": 0.35354809764552175
+   "raw": 0.3582485811981624
   },
   {
    "id": "v20",
-   "text": "+163",
+   "text": "+155",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Amanda Nunes",
-   "raw": 163
+   "raw": 155
   },
   {
    "id": "v21",
-   "text": "38.0%",
+   "text": "39.2%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Amanda Nunes",
-   "raw": 0.38022813688212925
+   "raw": 0.39215686274509803
   },
   {
    "id": "v22",
@@ -283,7 +283,7 @@
   },
   {
    "id": "v24",
-   "text": "-2.7%",
+   "text": "-3.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,51 +293,51 @@
     ]
    },
    "desc": "Edge ML Amanda Nunes",
-   "raw": -0.0266800392366075
+   "raw": -0.03390828154693565
   },
   {
    "id": "v25",
-   "text": "+136",
+   "text": "+139",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.42431782976089955
+   "raw": 0.4177758774607728
   },
   {
    "id": "v26",
-   "text": "42.4%",
+   "text": "41.8%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.42431782976089955
+   "raw": 0.4177758774607728
   },
   {
    "id": "v27",
-   "text": "+168",
+   "text": "+176",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD price",
-   "raw": 0.3737523834811416
+   "raw": 0.3626406967769199
   },
   {
    "id": "v28",
-   "text": "37.4%",
+   "text": "36.3%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD %",
-   "raw": 0.3737523834811416
+   "raw": 0.3626406967769199
   },
   {
    "id": "v29",
@@ -366,7 +366,7 @@
   },
   {
    "id": "v31",
-   "text": "+5.1%",
+   "text": "+5.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -376,11 +376,11 @@
     ]
    },
    "desc": "Edge GTD vs listed",
-   "raw": 0.05056544627975795
+   "raw": 0.055135180683852925
   },
   {
    "id": "v32",
-   "text": "-136",
+   "text": "-139",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -388,11 +388,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.5756821702391004
+   "raw": 0.5822241225392272
   },
   {
    "id": "v33",
-   "text": "57.6%",
+   "text": "58.2%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -400,7 +400,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.5756821702391004
+   "raw": 0.5822241225392272
   },
   {
    "id": "v34",
@@ -429,7 +429,7 @@
   },
   {
    "id": "v36",
-   "text": "-10.9%",
+   "text": "-10.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -439,11 +439,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.10886041651168821
+   "raw": -0.10231846421156143
   },
   {
    "id": "v37",
-   "text": "+298",
+   "text": "+308",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -451,11 +451,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Kayla Harrison",
-   "raw": 0.25154425578997186
+   "raw": 0.24493758834515647
   },
   {
    "id": "v38",
-   "text": "25.2%",
+   "text": "24.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -463,7 +463,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Kayla Harrison",
-   "raw": 0.25154425578997186
+   "raw": 0.24493758834515647
   },
   {
    "id": "v39",
@@ -492,7 +492,7 @@
   },
   {
    "id": "v41",
-   "text": "+0.2%",
+   "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -502,11 +502,11 @@
     ]
    },
    "desc": "Edge dec Kayla Harrison",
-   "raw": 0.00154425578997186
+   "raw": -0.005062411654843529
   },
   {
    "id": "v42",
-   "text": "+1133",
+   "text": "+1099",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -514,11 +514,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Kayla Harrison",
-   "raw": 0.08110804670082157
+   "raw": 0.08340692372076923
   },
   {
    "id": "v43",
-   "text": "8.1%",
+   "text": "8.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -526,7 +526,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Kayla Harrison",
-   "raw": 0.08110804670082157
+   "raw": 0.08340692372076923
   },
   {
    "id": "v44",
@@ -555,7 +555,7 @@
   },
   {
    "id": "v46",
-   "text": "-4.0%",
+   "text": "-3.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -565,7 +565,7 @@
     ]
    },
    "desc": "Edge ko Kayla Harrison",
-   "raw": -0.040251176600149305
+   "raw": -0.037952299580201646
   },
   {
    "id": "v47",
@@ -577,11 +577,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Kayla Harrison",
-   "raw": 0.31379959986368483
+   "raw": 0.3134069067359119
   },
   {
    "id": "v48",
-   "text": "31.4%",
+   "text": "31.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -589,7 +589,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Kayla Harrison",
-   "raw": 0.31379959986368483
+   "raw": 0.3134069067359119
   },
   {
    "id": "v49",
@@ -628,11 +628,11 @@
     ]
    },
    "desc": "Edge sub Kayla Harrison",
-   "raw": -0.03707759311877129
+   "raw": -0.03747028624654419
   },
   {
    "id": "v52",
-   "text": "+153",
+   "text": "+152",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -640,11 +640,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Kayla Harrison",
-   "raw": 0.3949076465645064
+   "raw": 0.39681383045668117
   },
   {
    "id": "v53",
-   "text": "39.5%",
+   "text": "39.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -652,7 +652,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Kayla Harrison",
-   "raw": 0.3949076465645064
+   "raw": 0.39681383045668117
   },
   {
    "id": "v54",
@@ -671,7 +671,7 @@
   },
   {
    "id": "v55",
-   "text": "-7.7%",
+   "text": "-7.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -681,7 +681,7 @@
     ]
    },
    "desc": "Edge itd Kayla Harrison",
-   "raw": -0.07732876971892061
+   "raw": -0.07542258582674582
   },
   {
    "id": "v56",
@@ -693,7 +693,7 @@
     "k": "dec"
    },
    "desc": "Model dec ML Amanda Nunes",
-   "raw": 0.17277357397092769
+   "raw": 0.17283828911561638
   },
   {
    "id": "v57",
@@ -705,7 +705,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Amanda Nunes",
-   "raw": 0.17277357397092769
+   "raw": 0.17283828911561638
   },
   {
    "id": "v58",
@@ -744,11 +744,11 @@
     ]
    },
    "desc": "Edge dec Amanda Nunes",
-   "raw": 0.01892742012477383
+   "raw": 0.01899213526946253
   },
   {
    "id": "v61",
-   "text": "+596",
+   "text": "+581",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -756,11 +756,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Amanda Nunes",
-   "raw": 0.1437776493505243
+   "raw": 0.14693389948203736
   },
   {
    "id": "v62",
-   "text": "14.4%",
+   "text": "14.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -768,7 +768,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Amanda Nunes",
-   "raw": 0.1437776493505243
+   "raw": 0.14693389948203736
   },
   {
    "id": "v63",
@@ -797,7 +797,7 @@
   },
   {
    "id": "v65",
-   "text": "-11.5%",
+   "text": "-11.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -807,11 +807,11 @@
     ]
    },
    "desc": "Edge ko Amanda Nunes",
-   "raw": -0.11462028346601313
+   "raw": -0.11146403333450008
   },
   {
    "id": "v66",
-   "text": "+2603",
+   "text": "+2499",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -819,11 +819,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Amanda Nunes",
-   "raw": 0.03699687432406978
+   "raw": 0.03847639260050866
   },
   {
    "id": "v67",
-   "text": "3.7%",
+   "text": "3.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -831,7 +831,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Amanda Nunes",
-   "raw": 0.03699687432406978
+   "raw": 0.03847639260050866
   },
   {
    "id": "v68",
@@ -860,7 +860,7 @@
   },
   {
    "id": "v70",
-   "text": "-1.2%",
+   "text": "-1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -870,11 +870,11 @@
     ]
    },
    "desc": "Edge sub Amanda Nunes",
-   "raw": -0.011807420453870683
+   "raw": -0.010327902177431798
   },
   {
    "id": "v71",
-   "text": "+453",
+   "text": "+439",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -882,11 +882,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Amanda Nunes",
-   "raw": 0.18077452367459407
+   "raw": 0.185410292082546
   },
   {
    "id": "v72",
-   "text": "18.1%",
+   "text": "18.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -894,7 +894,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Amanda Nunes",
-   "raw": 0.18077452367459407
+   "raw": 0.185410292082546
   },
   {
    "id": "v73",
@@ -913,7 +913,7 @@
   },
   {
    "id": "v74",
-   "text": "-12.6%",
+   "text": "-12.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -923,7 +923,7 @@
     ]
    },
    "desc": "Edge itd Amanda Nunes",
-   "raw": -0.12642770391988384
+   "raw": -0.1217919355119319
   },
   {
    "id": "v75",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "1.1",
+   "text": "1.0",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.01100000000000001
+   "raw": 0.010000000000000009
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "38.1%",
+   "text": "38.0%",
    "fmt": "pct1",
    "rule": "lh_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "current"
    },
    "desc": "LH current p Amanda Nunes",
-   "raw": 0.381
+   "raw": 0.38
   },
   {
    "id": "v79",

@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -131,47 +131,47 @@
   },
   {
    "id": "v11",
-   "text": "-148",
+   "text": "-143",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Stephen Thompson",
-   "raw": 0.5967397732958282
+   "raw": 0.5893113923378857
   },
   {
    "id": "v12",
-   "text": "59.7%",
+   "text": "58.9%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Stephen Thompson",
-   "raw": 0.5967397732958282
+   "raw": 0.5893113923378857
   },
   {
    "id": "v13",
-   "text": "-150",
+   "text": "-152",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Stephen Thompson",
-   "raw": -150
+   "raw": -152
   },
   {
    "id": "v14",
-   "text": "60.0%",
+   "text": "60.3%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Stephen Thompson",
-   "raw": 0.6
+   "raw": 0.6031746031746031
   },
   {
    "id": "v15",
@@ -200,7 +200,7 @@
   },
   {
    "id": "v17",
-   "text": "-0.3%",
+   "text": "-1.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,51 +210,51 @@
     ]
    },
    "desc": "Edge ML Stephen Thompson",
-   "raw": -0.003260226704171809
+   "raw": -0.013863210836717488
   },
   {
    "id": "v18",
-   "text": "+148",
+   "text": "+143",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Charles Radtke",
-   "raw": 0.40326022670417183
+   "raw": 0.4106886076621144
   },
   {
    "id": "v19",
-   "text": "40.3%",
+   "text": "41.1%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Charles Radtke",
-   "raw": 0.40326022670417183
+   "raw": 0.4106886076621144
   },
   {
    "id": "v20",
-   "text": "+140",
+   "text": "+130",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Charles Radtke",
-   "raw": 140
+   "raw": 130
   },
   {
    "id": "v21",
-   "text": "41.7%",
+   "text": "43.5%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Charles Radtke",
-   "raw": 0.4166666666666667
+   "raw": 0.43478260869565216
   },
   {
    "id": "v22",
@@ -283,7 +283,7 @@
   },
   {
    "id": "v24",
-   "text": "-1.3%",
+   "text": "-2.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,51 +293,51 @@
     ]
    },
    "desc": "Edge ML Charles Radtke",
-   "raw": -0.013406439962494854
+   "raw": -0.02409400103353776
   },
   {
    "id": "v25",
-   "text": "-119",
+   "text": "-118",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.5432792595608047
+   "raw": 0.5403657451909128
   },
   {
    "id": "v26",
-   "text": "54.3%",
+   "text": "54.0%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.5432792595608047
+   "raw": 0.5403657451909128
   },
   {
    "id": "v27",
-   "text": "-132",
+   "text": "-129",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD price",
-   "raw": 0.5687832924663905
+   "raw": 0.5641352176106037
   },
   {
    "id": "v28",
-   "text": "56.9%",
+   "text": "56.4%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD %",
-   "raw": 0.5687832924663905
+   "raw": 0.5641352176106037
   },
   {
    "id": "v29",
@@ -366,7 +366,7 @@
   },
   {
    "id": "v31",
-   "text": "-2.6%",
+   "text": "-2.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -376,11 +376,11 @@
     ]
    },
    "desc": "Edge GTD vs listed",
-   "raw": -0.025504032905585783
+   "raw": -0.02376947241969085
   },
   {
    "id": "v32",
-   "text": "+119",
+   "text": "+118",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -388,11 +388,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.4567207404391953
+   "raw": 0.45963425480908715
   },
   {
    "id": "v33",
-   "text": "45.7%",
+   "text": "46.0%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -400,7 +400,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.4567207404391953
+   "raw": 0.45963425480908715
   },
   {
    "id": "v34",
@@ -429,7 +429,7 @@
   },
   {
    "id": "v36",
-   "text": "-1.5%",
+   "text": "-1.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -439,11 +439,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.014977372768351871
+   "raw": -0.012063858398460026
   },
   {
    "id": "v37",
-   "text": "+205",
+   "text": "+210",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -451,11 +451,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Stephen Thompson",
-   "raw": 0.3281073645988208
+   "raw": 0.3224012203430935
   },
   {
    "id": "v38",
-   "text": "32.8%",
+   "text": "32.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -463,7 +463,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Stephen Thompson",
-   "raw": 0.3281073645988208
+   "raw": 0.3224012203430935
   },
   {
    "id": "v39",
@@ -492,7 +492,7 @@
   },
   {
    "id": "v41",
-   "text": "-9.2%",
+   "text": "-9.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -502,11 +502,11 @@
     ]
    },
    "desc": "Edge dec Stephen Thompson",
-   "raw": -0.09206070262806998
+   "raw": -0.09776684688379728
   },
   {
    "id": "v42",
-   "text": "+336",
+   "text": "+335",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -514,7 +514,7 @@
     "k": "ko"
    },
    "desc": "Model ko ML Stephen Thompson",
-   "raw": 0.22952104345659888
+   "raw": 0.2299350264293153
   },
   {
    "id": "v43",
@@ -526,7 +526,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Stephen Thompson",
-   "raw": 0.22952104345659888
+   "raw": 0.2299350264293153
   },
   {
    "id": "v44",
@@ -565,11 +565,11 @@
     ]
    },
    "desc": "Edge ko Stephen Thompson",
-   "raw": 0.02750084143639686
+   "raw": 0.027914824409113276
   },
   {
    "id": "v47",
-   "text": "+2457",
+   "text": "+2605",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -577,11 +577,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Stephen Thompson",
-   "raw": 0.03911136524040851
+   "raw": 0.036975145565476854
   },
   {
    "id": "v48",
-   "text": "3.9%",
+   "text": "3.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -589,7 +589,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Stephen Thompson",
-   "raw": 0.03911136524040851
+   "raw": 0.036975145565476854
   },
   {
    "id": "v49",
@@ -618,7 +618,7 @@
   },
   {
    "id": "v51",
-   "text": "+0.1%",
+   "text": "-0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -628,11 +628,11 @@
     ]
    },
    "desc": "Edge sub Stephen Thompson",
-   "raw": 0.001261251690067855
+   "raw": -0.000874967984863799
   },
   {
    "id": "v52",
-   "text": "+272",
+   "text": "+275",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -640,11 +640,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Stephen Thompson",
-   "raw": 0.2686324086970074
+   "raw": 0.26691017199479217
   },
   {
    "id": "v53",
-   "text": "26.9%",
+   "text": "26.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -652,7 +652,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Stephen Thompson",
-   "raw": 0.2686324086970074
+   "raw": 0.26691017199479217
   },
   {
    "id": "v54",
@@ -671,7 +671,7 @@
   },
   {
    "id": "v55",
-   "text": "+2.9%",
+   "text": "+2.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -681,11 +681,11 @@
     ]
    },
    "desc": "Edge itd Stephen Thompson",
-   "raw": 0.028762093126464716
+   "raw": 0.027039856424249498
   },
   {
    "id": "v56",
-   "text": "+365",
+   "text": "+359",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -693,11 +693,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Charles Radtke",
-   "raw": 0.2151718949619839
+   "raw": 0.21796452484781936
   },
   {
    "id": "v57",
-   "text": "21.5%",
+   "text": "21.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -705,11 +705,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Charles Radtke",
-   "raw": 0.2151718949619839
+   "raw": 0.21796452484781936
   },
   {
    "id": "v58",
-   "text": "+706",
+   "text": "+690",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -717,11 +717,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Charles Radtke",
-   "raw": 0.12409115411123015
+   "raw": 0.12664164289060117
   },
   {
    "id": "v59",
-   "text": "12.4%",
+   "text": "12.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -729,11 +729,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Charles Radtke",
-   "raw": 0.12409115411123015
+   "raw": 0.12664164289060117
   },
   {
    "id": "v60",
-   "text": "+1463",
+   "text": "+1413",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -741,11 +741,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Charles Radtke",
-   "raw": 0.06399717763095777
+   "raw": 0.06608243992369386
   },
   {
    "id": "v61",
-   "text": "6.4%",
+   "text": "6.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -753,11 +753,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Charles Radtke",
-   "raw": 0.06399717763095777
+   "raw": 0.06608243992369386
   },
   {
    "id": "v62",
-   "text": "+432",
+   "text": "+419",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -765,11 +765,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Charles Radtke",
-   "raw": 0.18808833174218792
+   "raw": 0.19272408281429504
   },
   {
    "id": "v63",
-   "text": "18.8%",
+   "text": "19.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -777,7 +777,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Charles Radtke",
-   "raw": 0.18808833174218792
+   "raw": 0.19272408281429504
   },
   {
    "id": "v64",

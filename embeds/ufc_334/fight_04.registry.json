@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -131,47 +131,47 @@
   },
   {
    "id": "v11",
-   "text": "+330",
+   "text": "+281",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Jared Gordon",
-   "raw": 0.23240177360963868
+   "raw": 0.2622362065883423
   },
   {
    "id": "v12",
-   "text": "23.2%",
+   "text": "26.2%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Jared Gordon",
-   "raw": 0.23240177360963868
+   "raw": 0.2622362065883423
   },
   {
    "id": "v13",
-   "text": "+420",
+   "text": "+310",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Jared Gordon",
-   "raw": 420
+   "raw": 310
   },
   {
    "id": "v14",
-   "text": "19.2%",
+   "text": "24.4%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Jared Gordon",
-   "raw": 0.19230769230769232
+   "raw": 0.24390243902439024
   },
   {
    "id": "v15",
@@ -200,7 +200,7 @@
   },
   {
    "id": "v17",
-   "text": "+4.0%",
+   "text": "+1.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,51 +210,51 @@
     ]
    },
    "desc": "Edge ML Jared Gordon",
-   "raw": 0.04009408130194636
+   "raw": 0.018333767563952053
   },
   {
    "id": "v18",
-   "text": "-330",
+   "text": "-281",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Melquizael Costa",
-   "raw": 0.7675982263903613
+   "raw": 0.7377637934116577
   },
   {
    "id": "v19",
-   "text": "76.8%",
+   "text": "73.8%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Melquizael Costa",
-   "raw": 0.7675982263903613
+   "raw": 0.7377637934116577
   },
   {
    "id": "v20",
-   "text": "-350",
+   "text": "-400",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Melquizael Costa",
-   "raw": -350
+   "raw": -400
   },
   {
    "id": "v21",
-   "text": "77.8%",
+   "text": "80.0%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Melquizael Costa",
-   "raw": 0.7777777777777778
+   "raw": 0.8
   },
   {
    "id": "v22",
@@ -283,7 +283,7 @@
   },
   {
    "id": "v24",
-   "text": "-1.0%",
+   "text": "-6.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,7 +293,7 @@
     ]
    },
    "desc": "Edge ML Melquizael Costa",
-   "raw": -0.010179551387416441
+   "raw": -0.06223620658834239
   },
   {
    "id": "v25",
@@ -304,7 +304,7 @@
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.3915493525259707
+   "raw": 0.3919424720955993
   },
   {
    "id": "v26",
@@ -315,29 +315,29 @@
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.3915493525259707
+   "raw": 0.3919424720955993
   },
   {
    "id": "v27",
-   "text": "+155",
+   "text": "+158",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD price",
-   "raw": 0.3924905308228578
+   "raw": 0.38812246400432937
   },
   {
    "id": "v28",
-   "text": "39.2%",
+   "text": "38.8%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD %",
-   "raw": 0.3924905308228578
+   "raw": 0.38812246400432937
   },
   {
    "id": "v29",
@@ -366,7 +366,7 @@
   },
   {
    "id": "v31",
-   "text": "-0.1%",
+   "text": "+0.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -376,7 +376,7 @@
     ]
    },
    "desc": "Edge GTD vs listed",
-   "raw": -0.000941178296887113
+   "raw": 0.003820008091269922
   },
   {
    "id": "v32",
@@ -388,7 +388,7 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.6084506474740293
+   "raw": 0.6080575279044007
   },
   {
    "id": "v33",
@@ -400,7 +400,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.6084506474740293
+   "raw": 0.6080575279044007
   },
   {
    "id": "v34",
@@ -429,7 +429,7 @@
   },
   {
    "id": "v36",
-   "text": "-5.1%",
+   "text": "-5.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -439,11 +439,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.05141329810420192
+   "raw": -0.05180641767383054
   },
   {
    "id": "v37",
-   "text": "+691",
+   "text": "+606",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -451,11 +451,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Jared Gordon",
-   "raw": 0.12646512232555404
+   "raw": 0.14160116477180387
   },
   {
    "id": "v38",
-   "text": "12.6%",
+   "text": "14.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -463,7 +463,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Jared Gordon",
-   "raw": 0.12646512232555404
+   "raw": 0.14160116477180387
   },
   {
    "id": "v39",
@@ -492,7 +492,7 @@
   },
   {
    "id": "v41",
-   "text": "-2.7%",
+   "text": "-1.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -502,11 +502,11 @@
     ]
    },
    "desc": "Edge dec Jared Gordon",
-   "raw": -0.027381031520599813
+   "raw": -0.012244989074349982
   },
   {
    "id": "v42",
-   "text": "+1333",
+   "text": "+1137",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -514,11 +514,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Jared Gordon",
-   "raw": 0.0697657282845949
+   "raw": 0.08082766202161266
   },
   {
    "id": "v43",
-   "text": "7.0%",
+   "text": "8.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -526,7 +526,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Jared Gordon",
-   "raw": 0.0697657282845949
+   "raw": 0.08082766202161266
   },
   {
    "id": "v44",
@@ -555,7 +555,7 @@
   },
   {
    "id": "v46",
-   "text": "-2.6%",
+   "text": "-1.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -565,11 +565,11 @@
     ]
    },
    "desc": "Edge ko Jared Gordon",
-   "raw": -0.02565411904364938
+   "raw": -0.014592185306631617
   },
   {
    "id": "v47",
-   "text": "+2665",
+   "text": "+2412",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -577,11 +577,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Jared Gordon",
-   "raw": 0.03617092299948973
+   "raw": 0.039807379794925754
   },
   {
    "id": "v48",
-   "text": "3.6%",
+   "text": "4.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -589,7 +589,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Jared Gordon",
-   "raw": 0.03617092299948973
+   "raw": 0.039807379794925754
   },
   {
    "id": "v49",
@@ -618,7 +618,7 @@
   },
   {
    "id": "v51",
-   "text": "-1.1%",
+   "text": "-0.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -628,11 +628,11 @@
     ]
    },
    "desc": "Edge sub Jared Gordon",
-   "raw": -0.011448124619557888
+   "raw": -0.007811667824121862
   },
   {
    "id": "v52",
-   "text": "+844",
+   "text": "+729",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -640,11 +640,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Jared Gordon",
-   "raw": 0.10593665128408464
+   "raw": 0.12063504181653842
   },
   {
    "id": "v53",
-   "text": "10.6%",
+   "text": "12.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -652,7 +652,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Jared Gordon",
-   "raw": 0.10593665128408464
+   "raw": 0.12063504181653842
   },
   {
    "id": "v54",
@@ -671,7 +671,7 @@
   },
   {
    "id": "v55",
-   "text": "-3.7%",
+   "text": "-2.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -681,11 +681,11 @@
     ]
    },
    "desc": "Edge itd Jared Gordon",
-   "raw": -0.037102243663207246
+   "raw": -0.022403853130753465
   },
   {
    "id": "v56",
-   "text": "+277",
+   "text": "+299",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -693,11 +693,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Melquizael Costa",
-   "raw": 0.26508423020041666
+   "raw": 0.25034130732379545
   },
   {
    "id": "v57",
-   "text": "26.5%",
+   "text": "25.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -705,7 +705,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Melquizael Costa",
-   "raw": 0.26508423020041666
+   "raw": 0.25034130732379545
   },
   {
    "id": "v58",
@@ -734,7 +734,7 @@
   },
   {
    "id": "v60",
-   "text": "-2.1%",
+   "text": "-3.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -744,11 +744,11 @@
     ]
    },
    "desc": "Edge dec Melquizael Costa",
-   "raw": -0.02063005551386904
+   "raw": -0.03537297839049025
   },
   {
    "id": "v61",
-   "text": "+169",
+   "text": "+176",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -756,11 +756,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Melquizael Costa",
-   "raw": 0.3722982894184612
+   "raw": 0.36220341685639007
   },
   {
    "id": "v62",
-   "text": "37.2%",
+   "text": "36.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -768,7 +768,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Melquizael Costa",
-   "raw": 0.3722982894184612
+   "raw": 0.36220341685639007
   },
   {
    "id": "v63",
@@ -797,7 +797,7 @@
   },
   {
    "id": "v65",
-   "text": "-4.3%",
+   "text": "-5.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -807,11 +807,11 @@
     ]
    },
    "desc": "Edge ko Melquizael Costa",
-   "raw": -0.042639469917638395
+   "raw": -0.05273434247970954
   },
   {
    "id": "v66",
-   "text": "+668",
+   "text": "+699",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -819,11 +819,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Melquizael Costa",
-   "raw": 0.1302157067714835
+   "raw": 0.12521906923147216
   },
   {
    "id": "v67",
-   "text": "13.0%",
+   "text": "12.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -831,7 +831,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Melquizael Costa",
-   "raw": 0.1302157067714835
+   "raw": 0.12521906923147216
   },
   {
    "id": "v68",
@@ -860,7 +860,7 @@
   },
   {
    "id": "v70",
-   "text": "-6.8%",
+   "text": "-7.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -870,11 +870,11 @@
     ]
    },
    "desc": "Edge sub Melquizael Costa",
-   "raw": -0.06780409520871453
+   "raw": -0.07280073274872587
   },
   {
    "id": "v71",
-   "text": "-101",
+   "text": "+105",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -882,11 +882,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Melquizael Costa",
-   "raw": 0.5025139961899447
+   "raw": 0.4874224860878622
   },
   {
    "id": "v72",
-   "text": "50.3%",
+   "text": "48.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -894,7 +894,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Melquizael Costa",
-   "raw": 0.5025139961899447
+   "raw": 0.4874224860878622
   },
   {
    "id": "v73",
@@ -913,7 +913,7 @@
   },
   {
    "id": "v74",
-   "text": "-11.0%",
+   "text": "-12.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -923,11 +923,11 @@
     ]
    },
    "desc": "Edge itd Melquizael Costa",
-   "raw": -0.1104435651263529
+   "raw": -0.12553507522843543
   },
   {
    "id": "v75",
-   "text": "-370",
+   "text": "+300",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -936,10 +936,10 @@
      "Jared Gordon",
      "Melquizael Costa"
     ],
-    "side": "b"
+    "side": "a"
    },
-   "desc": "LH open ML Melquizael Costa",
-   "raw": -370
+   "desc": "LH open ML Jared Gordon",
+   "raw": 300
   },
   {
    "id": "v76",

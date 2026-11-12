@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T01:18:40.423Z",
+ "published_at": "2026-11-12T21:41:39.598Z",
  "rows": [
   {
    "id": "v1",
@@ -131,47 +131,47 @@
   },
   {
    "id": "v11",
-   "text": "+170",
+   "text": "+197",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Drew Dober",
-   "raw": 0.3697886486555524
+   "raw": 0.33674858119816237
   },
   {
    "id": "v12",
-   "text": "37.0%",
+   "text": "33.7%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Drew Dober",
-   "raw": 0.3697886486555524
+   "raw": 0.33674858119816237
   },
   {
    "id": "v13",
-   "text": "+135",
+   "text": "+155",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Drew Dober",
-   "raw": 135
+   "raw": 155
   },
   {
    "id": "v14",
-   "text": "42.6%",
+   "text": "39.2%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Drew Dober",
-   "raw": 0.425531914893617
+   "raw": 0.39215686274509803
   },
   {
    "id": "v15",
@@ -200,7 +200,7 @@
   },
   {
    "id": "v17",
-   "text": "-5.6%",
+   "text": "-5.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,51 +210,51 @@
     ]
    },
    "desc": "Edge ML Drew Dober",
-   "raw": -0.05574326623806464
+   "raw": -0.05540828154693567
   },
   {
    "id": "v18",
-   "text": "-170",
+   "text": "-197",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Chris Duncan",
-   "raw": 0.6302113513444476
+   "raw": 0.6632514188018377
   },
   {
    "id": "v19",
-   "text": "63.0%",
+   "text": "66.3%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Chris Duncan",
-   "raw": 0.6302113513444476
+   "raw": 0.6632514188018377
   },
   {
    "id": "v20",
-   "text": "-159",
+   "text": "-185",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Chris Duncan",
-   "raw": -159
+   "raw": -185
   },
   {
    "id": "v21",
-   "text": "61.4%",
+   "text": "64.9%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Chris Duncan",
-   "raw": 0.6138996138996139
+   "raw": 0.6491228070175439
   },
   {
    "id": "v22",
@@ -283,7 +283,7 @@
   },
   {
    "id": "v24",
-   "text": "+1.6%",
+   "text": "+1.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,40 +293,40 @@
     ]
    },
    "desc": "Edge ML Chris Duncan",
-   "raw": 0.016311737444833718
+   "raw": 0.01412861178429381
   },
   {
    "id": "v25",
-   "text": "+240",
+   "text": "+238",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.29425977822072763
+   "raw": 0.2958276862382322
   },
   {
    "id": "v26",
-   "text": "29.4%",
+   "text": "29.6%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.29425977822072763
+   "raw": 0.2958276862382322
   },
   {
    "id": "v27",
-   "text": "+309",
+   "text": "+308",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd_listed"
    },
    "desc": "Listed GTD price",
-   "raw": 0.24451553930530165
+   "raw": 0.24480678926049396
   },
   {
    "id": "v28",
@@ -337,7 +337,7 @@
     "key": "gtd_listed"
    },
    "desc": "Listed GTD %",
-   "raw": 0.24451553930530165
+   "raw": 0.24480678926049396
   },
   {
    "id": "v29",
@@ -366,7 +366,7 @@
   },
   {
    "id": "v31",
-   "text": "+5.0%",
+   "text": "+5.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -376,11 +376,11 @@
     ]
    },
    "desc": "Edge GTD vs listed",
-   "raw": 0.04974423891542598
+   "raw": 0.051020896977738234
   },
   {
    "id": "v32",
-   "text": "-240",
+   "text": "-238",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -388,11 +388,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.7057402217792723
+   "raw": 0.7041723137617678
   },
   {
    "id": "v33",
-   "text": "70.6%",
+   "text": "70.4%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -400,7 +400,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.7057402217792723
+   "raw": 0.7041723137617678
   },
   {
    "id": "v34",
@@ -429,7 +429,7 @@
   },
   {
    "id": "v36",
-   "text": "-9.4%",
+   "text": "-9.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -439,11 +439,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.09425977822072773
+   "raw": -0.09582768623823223
   },
   {
    "id": "v37",
-   "text": "+1112",
+   "text": "+1245",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -451,11 +451,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Drew Dober",
-   "raw": 0.08252097893943151
+   "raw": 0.0743430201859801
   },
   {
    "id": "v38",
-   "text": "8.3%",
+   "text": "7.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -463,7 +463,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Drew Dober",
-   "raw": 0.08252097893943151
+   "raw": 0.0743430201859801
   },
   {
    "id": "v39",
@@ -492,7 +492,7 @@
   },
   {
    "id": "v41",
-   "text": "-0.4%",
+   "text": "-1.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -502,11 +502,11 @@
     ]
    },
    "desc": "Edge dec Drew Dober",
-   "raw": -0.004435542799698919
+   "raw": -0.01261350155315033
   },
   {
    "id": "v42",
-   "text": "+297",
+   "text": "+334",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -514,11 +514,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Drew Dober",
-   "raw": 0.252201094372541
+   "raw": 0.23067223228213918
   },
   {
    "id": "v43",
-   "text": "25.2%",
+   "text": "23.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -526,7 +526,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Drew Dober",
-   "raw": 0.252201094372541
+   "raw": 0.23067223228213918
   },
   {
    "id": "v44",
@@ -555,7 +555,7 @@
   },
   {
    "id": "v46",
-   "text": "-6.8%",
+   "text": "-9.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -565,11 +565,11 @@
     ]
    },
    "desc": "Edge ko Drew Dober",
-   "raw": -0.06831172614027953
+   "raw": -0.08984058823068136
   },
   {
    "id": "v47",
-   "text": "+2752",
+   "text": "+3051",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -577,11 +577,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Drew Dober",
-   "raw": 0.03506657534357985
+   "raw": 0.03173332873004309
   },
   {
    "id": "v48",
-   "text": "3.5%",
+   "text": "3.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -589,7 +589,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Drew Dober",
-   "raw": 0.03506657534357985
+   "raw": 0.03173332873004309
   },
   {
    "id": "v49",
@@ -618,7 +618,7 @@
   },
   {
    "id": "v51",
-   "text": "-1.3%",
+   "text": "-1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -628,11 +628,11 @@
     ]
    },
    "desc": "Edge sub Drew Dober",
-   "raw": -0.012552472275467769
+   "raw": -0.01588571888900453
   },
   {
    "id": "v52",
-   "text": "+248",
+   "text": "+281",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -640,11 +640,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Drew Dober",
-   "raw": 0.2872676697161209
+   "raw": 0.26240556101218226
   },
   {
    "id": "v53",
-   "text": "28.7%",
+   "text": "26.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -652,7 +652,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Drew Dober",
-   "raw": 0.2872676697161209
+   "raw": 0.26240556101218226
   },
   {
    "id": "v54",
@@ -671,7 +671,7 @@
   },
   {
    "id": "v55",
-   "text": "-8.1%",
+   "text": "-10.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -681,11 +681,11 @@
     ]
    },
    "desc": "Edge itd Drew Dober",
-   "raw": -0.08086419841574727
+   "raw": -0.10572630711968589
   },
   {
    "id": "v56",
-   "text": "+372",
+   "text": "+351",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -693,11 +693,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Chris Duncan",
-   "raw": 0.21173879928129613
+   "raw": 0.2214846660522521
   },
   {
    "id": "v57",
-   "text": "21.2%",
+   "text": "22.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -705,7 +705,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Chris Duncan",
-   "raw": 0.21173879928129613
+   "raw": 0.2214846660522521
   },
   {
    "id": "v58",
@@ -734,7 +734,7 @@
   },
   {
    "id": "v60",
-   "text": "+1.6%",
+   "text": "+2.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -744,11 +744,11 @@
     ]
    },
    "desc": "Edge dec Chris Duncan",
-   "raw": 0.015660367908747114
+   "raw": 0.02540623467970307
   },
   {
    "id": "v61",
-   "text": "+440",
+   "text": "+414",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -756,11 +756,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Chris Duncan",
-   "raw": 0.18533636062266098
+   "raw": 0.19463690562312125
   },
   {
    "id": "v62",
-   "text": "18.5%",
+   "text": "19.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -768,7 +768,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Chris Duncan",
-   "raw": 0.18533636062266098
+   "raw": 0.19463690562312125
   },
   {
    "id": "v63",
@@ -797,7 +797,7 @@
   },
   {
    "id": "v65",
-   "text": "-7.9%",
+   "text": "-7.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -807,11 +807,11 @@
     ]
    },
    "desc": "Edge ko Chris Duncan",
-   "raw": -0.07921390392760355
+   "raw": -0.06991335892714329
   },
   {
    "id": "v66",
-   "text": "+329",
+   "text": "+305",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -819,11 +819,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Chris Duncan",
-   "raw": 0.2331361914404905
+   "raw": 0.24712984712646435
   },
   {
    "id": "v67",
-   "text": "23.3%",
+   "text": "24.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -831,7 +831,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Chris Duncan",
-   "raw": 0.2331361914404905
+   "raw": 0.24712984712646435
   },
   {
    "id": "v68",
@@ -860,7 +860,7 @@
   },
   {
    "id": "v70",
-   "text": "-4.2%",
+   "text": "-2.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -870,11 +870,11 @@
     ]
    },
    "desc": "Edge sub Chris Duncan",
-   "raw": -0.04158908328478425
+   "raw": -0.027595427598810396
   },
   {
    "id": "v71",
-   "text": "+139",
+   "text": "+126",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -882,11 +882,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Chris Duncan",
-   "raw": 0.4184725520631515
+   "raw": 0.4417667527495856
   },
   {
    "id": "v72",
-   "text": "41.8%",
+   "text": "44.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -894,7 +894,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Chris Duncan",
-   "raw": 0.4184725520631515
+   "raw": 0.4417667527495856
   },
   {
    "id": "v73",
@@ -913,7 +913,7 @@
   },
   {
    "id": "v74",
-   "text": "-12.1%",
+   "text": "-9.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -923,7 +923,7 @@
     ]
    },
    "desc": "Edge itd Chris Duncan",
-   "raw": -0.1208029872123878
+   "raw": -0.09750878652595368
   },
   {
    "id": "v75",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "2.7",
+   "text": "2.5",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.02699999999999997
+   "raw": 0.024999999999999967
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "62.0%",
+   "text": "61.8%",
    "fmt": "pct1",
    "rule": "lh_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "current"
    },
    "desc": "LH current p Chris Duncan",
-   "raw": 0.62
+   "raw": 0.618
   },
   {
    "id": "v79",
