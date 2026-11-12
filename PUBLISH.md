@@ -57,11 +57,17 @@ so after the merge the page says "Projections coming" until you publish; the nam
 | 6 | 1 | Triggers (clock) > Add Trigger: `publishMenu`, From spreadsheet, On open > Save > approve the Google prompt. Reload the sheet. | A **Site** menu sits next to **UFC**. |
 | 7 | 1 | Main Card and Prelims: `Publish` in AR1, AR2:AR11 > Insert > Checkbox. Tick one fight > Site > **Preview publish**. | The preview lists exactly that one fight. |
 | 8 | 1 | UFC > Refresh prices. Tick every fight you've checked > Site > **Publish to site** > slug `ufc_334` > OK. | Alert says **Uploaded**. Within a minute Actions > Projections check is green and main has a commit "projections: verified from sheet at ...". This is the first real use of your token. |
-| 9 | 1 | Reload the card page (step 2 link) and open one fight embed. | Status reads "Projections · N of 13 fights · updated X min ago" in green, no amber text. Pick one fight: the dog's True % equals Calculator column L for that fight's row. |
+| 9 | 1 | Reload the card page (step 2 link) and open one fight embed. | Status reads "Projections · N of 13 fights · updated X min ago" in green, no amber text. Pick one fight: the dog's True % equals Calculator column L for that row, and "Goes the distance" equals column Q on its Main Card / Prelims row. |
 
-**Published before merging?** (UFC 334: Kirk's publish e9c17ad7 is on main ahead of the merge.) A merge doesn't change the
-pending file, so the push trigger finds nothing to check. Right after the merge, run Actions > **Projections check** >
-Run workflow (branch main) once. Proof: the run is green and main gets "projections: verified from sheet at ...".
+**After the merge** the Projections check starts by itself (the merge brings `projections.yml` to main, and that
+change now triggers it); it checks every pending file, including one published before the merge. Rehearsed Nov 11 on
+branch `merge-sim`: merge pushed 01:40:36Z, check started 01:40:40Z, verified file committed 01:40:47Z, run green at
+01:40:52Z; the site then needs one Pages deploy (median 46 s, max 68 s). If no green run shows within 2 minutes, run
+Actions > Projections check > Run workflow on main once.
+
+The check recomputes every True %, edge, flag and rec, but not the method split or the fight GTD (it has no copy of
+those sheet formulas). Step 9 checks one of each by hand: the dog's True % = Calculator column L, and the page's
+"Goes the distance" = that fight's Main Card / Prelims column Q.
 
 **No-go:** stop and don't share the page if any of these happen: step 1 shows a conflict; step 8's alert shows an error
 (401, 403 or 404 means the token or its repository access is wrong: redo step 3); the Projections check is red twice
