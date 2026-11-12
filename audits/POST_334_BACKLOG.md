@@ -29,3 +29,8 @@ Logged 2026-11-12 (Kirk round 18). Nothing here is done before the card; the pub
      (fighter pages already show the shared-name banner).
    - Together: 111 displayed Labs numbers in 12 of 46 angles change; no angle's ROI at the close changes sign
      (`audits/round21/labs_fix_effect.txt`). Fix: key bios and histories by UFCStats fighter ID, count every qualifying side.
+7. **Bio values where UFCStats and UFC.com disagree (Kirk round 24 call 2).** Bia Mesquita reach (UFCStats 67", UFC.com 67.50)
+   and Juan Diaz reach (69" vs 69.50) stay "not listed" for UFC 334: Bio_Fill_PREREG said the two must agree, and no rounding
+   tolerance is added after the fact. Hasan and Diaz stance stay "not listed" (UFC.com has no stance field). After 334,
+   pre-register a rule for half-inch differences and for a second stance source before using either. Note: a missing reach
+   zeroes the Form model's reach term (read as equal reach), in training and prediction alike (audits/round24/B_missing_reach.txt).

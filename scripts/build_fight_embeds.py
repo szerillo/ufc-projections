@@ -453,6 +453,33 @@ def build(names, outname):
         gaps.append(f"Fight {n}: opener only; no US-regulated current line.")
     else:
         gaps.append(f"Fight {n}: no line history.")
+    # Kirk round 24 E (Drift_Box_PREREG sha f7cad6344ab0): how unusual is this line move? The Labs "drift" reference set
+    # (data/embeds/drift_stats.json, reproduces research.json drift exactly) against this fight's opening-favorite move, open
+    # to now from the line history file. Fight 13 only. Histogram of past moves in 2-pt bins, this fight's bin marked.
+    DRIFT_EMBEDS = {13}
+    if n in DRIFT_EMBEDS and o and o.get("open") and o.get("close"):
+        DS2_ = json.load(open(REPO / "data/embeds/drift_stats.json")); mvs_ = DS2_["moves"]
+        po_a, pc_a = o["open"]["p"], o["close"]["p"]; fsd_ = "a" if po_a >= 0.5 else "b"; FV_ = an if fsd_ == "a" else bn
+        pf_o, pf_c = (po_a, pc_a) if fsd_ == "a" else (1 - po_a, 1 - pc_a); mvf_ = pf_c - pf_o
+        k_ = sum(1 for m_ in mvs_ if (m_ <= mvf_ + 1e-9 if mvf_ < 0 else m_ >= mvf_ - 1e-9))
+        D_ = lambda v_, fmt_, key_, desc_: R(v_, fmt_, "drift", desc_, key=key_, lh=LHF, pair=PAIR)
+        edges_ = list(range(-16, 17, 2)); cnt_ = [0] * (len(edges_) - 1)
+        b_ = lambda x_: min(len(cnt_) - 1, max(0, int((x_ * 100 + 16) // 2)))
+        for m_ in mvs_: cnt_[b_(m_)] += 1
+        mx_ = max(cnt_); W_, Hh_ = 340, 54; bw_ = W_ / len(cnt_)
+        bars_ = "".join(f'<rect x="{i_ * bw_ + 1:.1f}" y="{Hh_ - c_ / mx_ * (Hh_ - 4):.1f}" width="{bw_ - 2:.1f}" height="{c_ / mx_ * (Hh_ - 4):.1f}" rx="2" fill="{"#d9534f" if i_ == b_(mvf_) else "#c9c4b8"}"/>' for i_, c_ in enumerate(cnt_))
+        svg_ = (f'<svg class="dhist" viewBox="0 0 {W_} {Hh_ + 14}" role="img" aria-label="Past opening-favorite moves, open to close; this fight marked">{bars_}'
+                f'<line x1="{W_/2}" y1="0" x2="{W_/2}" y2="{Hh_}" stroke="#888" stroke-dasharray="2 2"/>'
+                f'<text x="2" y="{Hh_ + 12}" font-size="10" fill="#777">16+ pts longer</text><text x="{W_/2}" y="{Hh_ + 12}" font-size="10" fill="#777" text-anchor="middle">0</text>'
+                f'<text x="{W_ - 2}" y="{Hh_ + 12}" font-size="10" fill="#777" text-anchor="end">16+ shorter</text></svg>')
+        way_ = "longer" if mvf_ < 0 else "shorter"
+        body += (f'<div class="stk debut drift" data-part="drift"><div class="stk-h"><span class="bullet"></span>How unusual is this move?</div>'
+                 f'<div class="dbt"><b>{esc(last(FV_))}</b> opened as the favorite at {D_(pf_o, "pct1", "po", "Drift fav open p")} and is '
+                 f'<b>{D_(abs(mvf_) * 100, "n1", "mv_abs", "Drift fav move pts")} pts {way_}</b> now ({D_(pf_c, "pct1", "pc", "Drift fav now p")}). '
+                 f'In {D_(DS2_["n"], "intc", "n", "Drift reference n")} UFC fights from 2022 to 2025, the opening favorite closed at least that much {way_} in '
+                 f'{D_(k_, "intc", "k", "Drift count as far")} ({D_(k_ / DS2_["n"], "pct1", "share", "Drift share as far")}).</div>{svg_}'
+                 f'<div class="dim dbn">Most favorites get shorter: {D_(DS2_["shorter"], "pct1", "shorter", "Drift share shorter")} did and {D_(DS2_["longer"], "pct1", "longer", "Drift share longer")} got longer. '
+                 f'Past fights are open to close; this one is open to now and can still move. From the site\'s Labs research. Context, not a pick.</div></div>')
     proj = proj.replace("@@MOVE@@", body)   # @@ANGLES@@ is filled once the stats are built
     top = proj
 
@@ -943,7 +970,7 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .sc-track{{position:relative;height:8px;background:linear-gradient(90deg,var(--bg-muted),#d9d4c8);border-radius:4px;margin:4px 6px 8px}}
 .sc-dot{{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}}.sc-dot.fav{{background:#2a78d6}}.sc-dot.dog{{background:#eb6834}}
 .sc-avg{{position:absolute;top:-5px;width:2px;height:18px;background:#0e1116;transform:translateX(-1px)}}.sc-l{{font-size:12px;margin:2px 0}}.oc i b{{color:#fff}}.oc-wko{{background:#0a7a3a}}.oc-wsub{{background:#22a85a}}.oc-wdec{{background:#8fd6aa}}.oc-ldec{{background:#f2b8b0}}.oc-lsub{{background:#e0675a}}.oc-lko{{background:#b3261e}}.oc .oc-wdec b,.oc .oc-ldec b{{color:#0e1116}}.tb-bar.oc i{{min-width:0}}
-.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
+.dhist{{width:100%;height:auto;display:block;margin:6px 0 2px}}.drift{{margin:8px 12px}}.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
 .sgt{{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}}.sgt button{{flex:1 1 0;min-width:0;border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 2px;font:700 11px/1 inherit;letter-spacing:-.1px;white-space:nowrap;font-family:inherit;color:var(--text-muted);cursor:pointer}}.sgt button[aria-pressed=true]{{background:#0e1116;border-color:#0e1116;color:#fff}}.js .sgw{{display:none}}.js .sgw.on{{display:block}}
 .fmore{{margin:4px 0 12px}}.fmore>summary{{cursor:pointer;font-size:12px;font-weight:700;color:var(--action-green-dark);padding:6px 2px;list-style:none}}.fmore>summary::-webkit-details-marker{{display:none}}.fmore>summary::before{{content:"▸ "}}.fmore[open]>summary::before{{content:"▾ "}}.fmore[open]>summary{{font-size:0}}.fmore[open]>summary::before{{font-size:12px}}.fmore[open]>summary::after{{content:"Hide older fights";font-size:12px}}
 .fl{{color:inherit;text-decoration:none;border-bottom:1px dotted #9a9a9a}}a.fl{{display:inline-block;padding:5px 0 4px;line-height:15px}}.stamps a{{display:inline-block;padding:6px 4px;margin:-6px 0;color:inherit}}.fl:hover{{color:var(--action-green-dark);border-bottom-color:currentColor}}.cn-s{{font-size:10.5px;font-weight:600;color:var(--text-muted);margin-left:8px}}

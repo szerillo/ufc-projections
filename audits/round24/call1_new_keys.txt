@@ -1,0 +1,9 @@
+Kirk round 24 call 1: new odds-file keys (sandbox, real main 6ea5b184 plus one planted bot commit each)
+1a .fights[].markets.total_rounds[].alt_line: samples [3.5, 4.5, 4.5]; readers naming 'alt_line': 0 hits (13 files); inside markets: yes
+   -> refused with "approvable: GUARD_APPROVE_KEYS=..."; with that exact approval -> OK.
+1b PLANT .fights[].markets.total_rounds[].cost: samples [-110]; readers naming 'cost': build_fight_embeds 12, verify_fight_embeds 6,
+   build_form 4, markov_blocks 1, form/app.js 1 -> NO MERGE TONIGHT (approval cannot unlock); approved anyway -> still refused.
+1c PLANT .fights[].odds_note (outside markets): samples ['late']; readers 0 hits; inside markets: NO -> NO MERGE TONIGHT;
+   approved anyway -> still refused.
+Readers searched: build_fight_embeds, verify_fight_embeds, build_form, check_site_projections, markov_blocks, inputs_to_blocks,
+odds_tick, odds_live_window, build_line_history, refresh_event_odds, listed_price_report, form/app.js, embed.html.

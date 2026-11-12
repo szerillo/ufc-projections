@@ -195,6 +195,15 @@ def check(D, htmlfile, G):
                 if sp_["favorite"]["n"] + sp_["underdog"]["n"] != as_["n"] or abs((sp_["favorite"]["roi"] * sp_["favorite"]["n"] + sp_["underdog"]["roi"] * sp_["underdog"]["n"]) / as_["n"] - as_["roi"]) > 2e-4: raise ValueError("favorite/underdog split does not add up")
                 src_ = as_["split"][a["sub"]] if a.get("sub") else as_
                 v = src_[a["key"]]; v = v[a["i"]] if "i" in a else v
+            elif rule == "drift":   # Kirk round 24 E: drift box, recomputed from drift_stats.json and the line history file
+                ds3_ = json.loads((REPO / "data/embeds/drift_stats.json").read_text()); mv3_ = ds3_["moves"]
+                if len(mv3_) != ds3_["n"] or abs(sum(mv3_) / len(mv3_) * 100 - ds3_["mean_pts"]) > 0.006 or abs(sum(m_ > 0.005 for m_ in mv3_) / len(mv3_) - ds3_["shorter"]) > 3 / len(mv3_) or abs(sum(m_ < -0.005 for m_ in mv3_) / len(mv3_) - ds3_["longer"]) > 3 / len(mv3_): raise ValueError("drift_stats.json not self-consistent")   # stored moves are rounded; moves sitting on the 0.5-pt edge may flip
+                rs3_ = json.loads((FD / "research.json").read_text())["drift"]
+                if (ds3_["n"], ds3_["shorter"], ds3_["longer"]) != (rs3_["n"], rs3_["shorter"], rs3_["longer"]): raise ValueError("drift_stats.json is not Labs' drift set")
+                LH3_ = json.loads((REPO / a["lh"]).read_text())["fights"]; lr3_ = LH3_[next(k_ for k_ in LH3_ if bout(*k_.split("|"), *a["pair"]))]; po3_, pc3_ = lr3_["open"]["p"], lr3_["current"]["p"]
+                fo3_, fc3_ = (po3_, pc3_) if po3_ >= 0.5 else (1 - po3_, 1 - pc3_); m3_ = fc3_ - fo3_
+                k3_ = sum(1 for x_ in mv3_ if (x_ <= m3_ + 1e-9 if m3_ < 0 else x_ >= m3_ - 1e-9))
+                v = {"po": fo3_, "pc": fc3_, "mv_abs": abs(m3_) * 100, "n": ds3_["n"], "k": k3_, "share": k3_ / ds3_["n"], "shorter": ds3_["shorter"], "longer": ds3_["longer"]}[a["key"]]
             elif rule == "ufc_n":   # UFC fights before the card, from the fighter file (0 if no file: a debut)
                 fx_ = next((json.loads(p_.read_text()) for p_ in (FD / "fighters").glob("*.json") if json.loads(p_.read_text()).get("name") == a["fighter"]), None)
                 v = len([x_ for x_ in (fx_ or {}).get("fights", []) if x_["d"] < a["date"]])

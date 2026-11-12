@@ -1,0 +1,32 @@
+== 0s  1 odds feed
+Wrote data/ufc_334_odds.json (167,371 bytes)
+== 17s  2 sheet export
+  data/pending/ufc_334_projections.json from origin/main (2026-11-12T01:18:40.423Z)
+== 17s  2b sheet export age
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+SHEET EXPORT IS 17.3 HOURS OLD (published 2026-11-12T01:18:40.423Z)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+== 17s  3 line history
+archive newest snapshot 2026-11-12T18:22:23Z
+  archive age 0.2 h
+OK: every bout priced within 4 h
+== 24s  3b embed line history + Listed check
+kalshi: 26 markets read at 2026-11-12T18:34:11Z
+wrote <branch>/data/embeds/line_history_ufc_334.json
+  Kalshi fallback used for: none
+== 59s  3c rounds
+ROUNDS PRE-FIGHT: ufc_334, card starts in 51 h, 0 failures
+== 60s  4 stats file
+form/data/embed_metrics/ufc_334.json 26 fighters; 25 with UFC rows
+== 61s  5 embeds
+13 embeds in <branch>/embeds/ufc_334; Sean's numbers from data/pending/ufc_334_projections.json
+== 61s  6 checks
+TOTAL: 2972/2972 numbers verified; 0 mismatches/assertion failures
+SIDE CHECK: not checkable (line within 4 pts of 50%): Evan Elder
+METRICS FILE: verify_embed_metrics: 2984 values recomputed from the CSVs, 0 mismatches
+== 67s  7 diff vs HEAD
+fight_12: 0 changed, 0 added, 0 removed
+fight_13: 0 changed, 8 added, 0 removed
+TOTAL {'changed': 14, 'added': 8, 'removed': 0, 'same': 2948}
+changed by source rule {'lh_drift_abs': 2, 'lh_p': 2, 'bp': 2, 'bp_imp': 2, 'edge': 4, 'bp_imp_sum': 2}
+== 67s  done

@@ -1,0 +1,8 @@
+Fight 9 Form Line, Bilal Hasan vs Luis Gurule: p = sigmoid( sum_k vec_k / sd_k * b_k ), FEATS from form_model._vec
+reach inputs: base A=None B=64.0 | fill A=70.0 B=64.0
+features that differ between builds: ['reach']
+model weights identical in both builds: yes (reach does not enter training for upcoming fights)
+base (reach blank): logit sum 1.2992 -> p 0.7857 (build said 0.7857); reach term +0.0000
+fill (reach 70): logit sum 1.4568 -> p 0.8110 (build said 0.8110); reach term +0.1577
+by hand: reach term = (70 - 64) / sd 3.1531 * b +0.0829 = +0.1577
+logit(0.7857)=1.2992; + 0.1577 = 1.4568; sigmoid = 0.8110

@@ -22,6 +22,28 @@ def git(*a, check=True):
     return r.stdout.strip()
 
 
+# Kirk round 24 call 1: every code file that reads the odds files (writer fetch_odds.py and this guard excluded)
+READERS = ["scripts/build_fight_embeds.py", "scripts/verify_fight_embeds.py", "scripts/build_form.py", "scripts/check_site_projections.py",
+           "scripts/markov_blocks.py", "scripts/inputs_to_blocks.py", "scripts/odds_tick.py", "scripts/odds_live_window.py",
+           "scripts/build_line_history.py", "scripts/refresh_event_odds.py", "scripts/listed_price_report.py", "form/app.js", "embed.html"]
+
+
+def samples_(o, path):
+    """values at a collapsed key path (list positions as [])"""
+    parts = [p for p in re.split(r"\.", path.lstrip(".")) if p]
+    cur = [o]
+    for p in parts:
+        k, lst = p[:-2] if p.endswith("[]") else p, p.endswith("[]")
+        nxt = []
+        for c in cur:
+            if isinstance(c, list):
+                for x in c:
+                    if isinstance(x, dict) and k in x: nxt.append(x[k])
+            elif isinstance(c, dict) and k in c: nxt.append(c[k])
+        cur = [y for x in nxt for y in (x if lst and isinstance(x, list) else [x])]
+    return cur
+
+
 def served_scan(tree):
     files = [l.split("\t", 1)[1] for l in git("ls-tree", "-r", tree).splitlines()]
     served = [f for f in files if not any(p.startswith(("_", ".")) for p in f.split("/"))]
@@ -88,15 +110,36 @@ def main():
             h_ = sorted(c for c, rx in scan_public.PAT.items() if c not in scan_public.REPORT_ONLY and rx.search(txt_)) if hasattr(scan_public, "REPORT_ONLY") else sorted(c for c, rx in scan_public.PAT.items() if rx.search(txt_))
             try:
                 old_ = git("show", f"{exp}:{f}", check=False)
-                ko_, kn_ = keys_(_j.loads(old_), odds=f == ODDS) if old_ else None, keys_(_j.loads(txt_), odds=f == ODDS)
-                # Kirk round 23 B: Kirk may approve NEW odds-file keys by exact path (GUARD_APPROVE_KEYS, space-separated), only
-                # under .fights[].markets, only additions; a dropped key or any other new key still refuses.
+                ko_, kn_ = keys_(_j.loads(old_), odds=f in (ODDS, NEXT_CARD_ODDS)) if old_ else None, keys_(_j.loads(txt_), odds=f in (ODDS, NEXT_CARD_ODDS))
+                # Kirk round 23 B / round 24 call 1: Kirk may approve NEW odds-file keys by exact path (GUARD_APPROVE_KEYS). Before he
+                # can, the refusal prints each key's path, 3 sample values and a grep of every code file that reads the odds files
+                # for the key's field name. A key any reader names, or a key outside .fights[].markets, is NO MERGE TONIGHT:
+                # approval cannot unlock it. Additions only; a dropped key always refuses.
                 appr_ = set(__import__("os").environ.get("GUARD_APPROVE_KEYS", "").split())
                 add_, rem_ = kn_ - ko_ if ko_ is not None else set(), ko_ - kn_ if ko_ is not None else set()
-                ok_appr_ = f == ODDS or f == NEXT_CARD_ODDS
-                if add_ and not rem_ and ok_appr_ and add_ <= appr_ and all(k.startswith(".fights[].markets.") for k in add_):
-                    print(f"  {f}: new keys approved by GUARD_APPROVE_KEYS: {sorted(add_)}")
-                elif ko_ is not None and ko_ != kn_: h_.append(f"key layout changed: +{sorted(add_)} -{sorted(rem_)}")
+                if ko_ is not None and ko_ != kn_:
+                    is_odds_ = f in (ODDS, NEXT_CARD_ODDS); hard_ = list(rem_ and [f"dropped keys {sorted(rem_)}"] or [])
+                    for k_ in sorted(add_):
+                        fld_ = k_.rstrip("[]").split(".")[-1].rstrip("[]")
+                        readers_ = {}
+                        for c_ in READERS:
+                            t_ = (REPO / c_).read_text(errors="ignore") if (REPO / c_).exists() else ""
+                            n_ = len(re.findall(r"""(["'])%s\1|\.%s\b""" % (re.escape(fld_), re.escape(fld_)), t_))
+                            if n_: readers_[c_] = n_
+                        samp_ = samples_(_j.loads(txt_), k_)[:3]
+                        inside_ = k_.startswith(".fights[].markets.")
+                        print(f"  NEW KEY {f}: {k_}\n    samples: {samp_}\n    readers naming '{fld_}': {readers_ or '0 hits'} (searched {len(READERS)} files)\n"
+                              f"    inside .fights[].markets: {'yes' if inside_ else 'NO'}")
+                        if not is_odds_: hard_.append(f"{k_}: new key in a non-odds file")
+                        elif readers_: hard_.append(f"{k_}: a reader names '{fld_}'")
+                        elif not inside_: hard_.append(f"{k_}: outside .fights[].markets")
+                    if hard_:
+                        print("  NO MERGE TONIGHT (approval cannot unlock): " + "; ".join(hard_)); h_.append("key layout changed: " + "; ".join(hard_))
+                    elif add_ <= appr_:
+                        print(f"  {f}: new keys approved by GUARD_APPROVE_KEYS: {sorted(add_)}")
+                    else:
+                        print(f"  approvable: GUARD_APPROVE_KEYS=\"{' '.join(sorted(add_))}\"")
+                        h_.append(f"key layout changed: +{sorted(add_)} (not yet approved)")
             except ValueError: h_.append("not valid JSON")
             if h_: main_hits_[f] = h_
         newer_ = ""
