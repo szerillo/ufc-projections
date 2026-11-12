@@ -93,6 +93,12 @@ def check(doc: dict, path: Path) -> list[str]:
         g = f.get("gtd")
         if g is not None and not 0 <= float(g) <= 1:
             errs.append(f"{tag}: GTD {g} outside [0,1]")
+    # the params block must agree with the per-fight inputs the numbers were checked against (Block 43 seed test)
+    ps = (doc.get("params") or {}).get("shift")
+    for f in fights:
+        fs = (f.get("inputs") or {}).get("shift")
+        if ps is not None and fs is not None and abs(float(ps) - float(fs)) > 1e-9:
+            errs.append(f"{f.get('dog')} vs {f.get('fav')}: inputs shift {fs} differs from params shift {ps}")
     return errs
 
 
