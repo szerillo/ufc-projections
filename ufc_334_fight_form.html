@@ -2516,14 +2516,20 @@ function projNameMatch(x, y) {
   const a = t(x), b = t(y);
   if (!a.length || !b.length) return false;
   if (a.join(" ") === b.join(" ") || a.join("") === b.join("")) return true;
-  return a[a.length - 1] === b[b.length - 1] && a[0][0] === b[0][0];
+  // same surname: the first names must agree (one may be a prefix of the other, Chris / Christopher). The first initial alone
+  // let a late replacement with the same surname and initial (Josh vs Jake Hokit) inherit the old bout's numbers.
+  const fa = a[0], fb = b[0];
+  return a[a.length - 1] === b[b.length - 1] && a.length > 1 && b.length > 1 && fa.length >= 3 && fb.length >= 3 && (fa.startsWith(fb) || fb.startsWith(fa));
 }
 
+let PROJ_UNMATCHED = [];
 function applySheetProjections(doc) {
+  PROJ_UNMATCHED = [];
   (doc.fights || []).forEach(p => {
     const f = FIGHTS.find(x => (projNameMatch(x.a.name, p.dog) && projNameMatch(x.b.name, p.fav)) ||
                                (projNameMatch(x.a.name, p.fav) && projNameMatch(x.b.name, p.dog)));
-    if (!f || !p.sheet || p.sheet.true_dog == null) return;
+    if (!f) { PROJ_UNMATCHED.push(p.fav + " vs " + p.dog); return; }   // published but not on this page: a late change the page has not caught up with
+    if (!p.sheet || p.sheet.true_dog == null) return;
     const aIsDog = projNameMatch(f.a.name, p.dog);
     const dogW = 100 * p.sheet.true_dog, favW = 100 - dogW;
     const sh = (side, w) => {
@@ -2559,7 +2565,12 @@ async function loadSheetProjections() {
     const n = FIGHTS.filter(f => !f.noProj).length;
     if (el) {
       el.className = "ff-odds-status fresh";
-      el.innerHTML = `<span class="dot"></span>Projections · ${n} of ${FIGHTS.length} fights · updated ${fmtAgo(SHEET_PROJ.published_at)}`;
+      el.innerHTML = `<span class="dot"></span>Projections · ${n} of ${FIGHTS.length} fights · updated ${fmtAgo(SHEET_PROJ.published_at)}` +
+        (PROJ_UNMATCHED.length ? ` · <b>${PROJ_UNMATCHED.length} published fight${PROJ_UNMATCHED.length > 1 ? "s" : ""} not on this card: ${PROJ_UNMATCHED.join("; ")}</b>` : "");
+      if (PROJ_UNMATCHED.length) el.className = "ff-odds-status stale";
+      // freshness guard: numbers older than 12h stay up but are labelled (prices and news move; Sean re-publishes before the card)
+      const ageH = (Date.now() - Date.parse(SHEET_PROJ.published_at)) / 36e5;
+      if (!(ageH <= 12)) { el.className = "ff-odds-status stale"; el.innerHTML += ` · <b>over 12h old, check before using</b>`; }
     }
   } catch (e) {
     if (el) { el.className = "ff-odds-status stale"; el.innerHTML = `<span class="dot"></span>Projections coming`; }
