@@ -5,7 +5,10 @@ verify_projections.py proves the file matches the sheet; it never reads the page
 single-fight embed (?embed=fight&n=N) in headless Chrome, reads the numbers a visitor sees from the DOM, and compares each
 one with the value the verified file says it should show, at display precision.
 
-    python3 -I scripts/render_check.py <base_url> <slug>      # e.g. https://szerillo.github.io/ufc-projections ufc_334
+    python3 -I scripts/render_check.py <base_url> <slug> [--embed2]   # e.g. https://szerillo.github.io/ufc-projections ufc_334
+
+--embed2 also checks the per-fight embed v2 (<slug>_fight_embed.html?fight=<last name>): every element with data-k must
+show exactly the value formatted from the verified file (Block 50).
 
 Per published fight, 16 shown values on each surface (page, embed): listed no-vig, True % and edge at price for both sides,
 Markov (dog), flag, rec, GTD, and the six method % (True % x share). Line-pending bouts must show "Line pending" and no
@@ -61,6 +64,39 @@ def shown(sec: list, p: dict) -> dict:
     return out
 
 
+def expected2(p: dict) -> dict:
+    """data-k -> text the v2 embed must show for this fight, formatted from the verified file only."""
+    s, i, m = p.get("sheet") or {}, p.get("inputs") or {}, p.get("method") or {}
+    ml = lambda v: "—" if v is None else (f"+{int(v)}" if v > 0 else str(int(v)))
+    e = {"true_fav": pc(s["true_fav"]), "true_dog": pc(s["true_dog"]), "listed_fav": pc(1 - s["listed"]), "listed_dog": pc(s["listed"]),
+         "fav_edge": sg(s.get("fav_edge")), "dog_edge": sg(s.get("dog_edge")), "fav_odds": ml(i.get("fav_odds")),
+         "dog_odds": ml(i.get("dog_odds")), "gtd": pc(p.get("gtd")), "gtd_listed": pc(p.get("gtd_listed")),
+         "open_dog": pc(i.get("open_dog")), "drift": sg(s.get("drift")), "rec": str(s.get("rec") or "-"), "flag": str(s.get("flag") or "")}
+    if i.get("markov") is not None:
+        e["markov_fav"], e["markov_dog"] = pc(1 - i["markov"]), pc(i["markov"])
+    for side, w in (("fav", s["true_fav"]), ("dog", s["true_dog"])):
+        for k in ("dec", "ko", "sub"):
+            v = (m.get(side) or {}).get(k)
+            if v is not None: e[f"{side}_{k}"] = pc(w * v)
+    return e
+
+
+async def embed2(pg, base: str, slug: str, doc: dict) -> tuple[int, list[str]]:
+    bad, n = [], 0
+    for p in doc.get("fights") or []:
+        last = p["fav"].strip().lower().split()[-1]
+        await pg.goto(f"{base}/{slug}_fight_embed.html?fight={last}"); await pg.wait_for_timeout(900)
+        got = await pg.evaluate("() => [...document.querySelectorAll('[data-k]')].map(e => [e.dataset.k, e.textContent.trim()])")
+        exp = expected2(p); seen = set()
+        for k, v in got:
+            n += 1; seen.add(k)
+            if k not in exp: bad.append(f"embed2: {p['fav']} vs {p['dog']}: shows {k} = {v!r}, which the verified file does not define")
+            elif v != exp[k]: bad.append(f"embed2: {p['fav']} vs {p['dog']}: {k} expected {exp[k]!r}, shown {v!r}")
+        for k in exp.keys() - seen:
+            bad.append(f"embed2: {p['fav']} vs {p['dog']}: {k} missing from the embed")
+    return n, bad
+
+
 async def main() -> int:
     base, slug = sys.argv[1].rstrip("/"), sys.argv[2]
     page = f"{base}/{slug}_fight_form.html"
@@ -99,6 +135,9 @@ async def main() -> int:
                 n_cmp += 1
                 if "line pending" not in txt or "sheet model" in txt:
                     bad.append(f"{surface}: {lp['fav']} vs {lp['dog']}: line pending bout does not show 'Line pending' alone")
+        if "--embed2" in sys.argv:
+            n2, bad2 = await embed2(pg, base, slug, doc)
+            n_cmp += n2; bad += bad2
         await b.close()
     print(f"Rendered vs verified file ({doc.get('verified', {}).get('at')}): {n_cmp} shown values compared, {len(bad)} mismatched; page errors {len(errs)}")
     for x in bad + [f"page error: {e}" for e in errs]:

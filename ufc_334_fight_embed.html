@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UFC 334 fight embed (mockup)</title>
+<!--
+  Per-fight embed, v2 MOCKUP (branch fight-embed-v2, not merged). Every number on this page is read from the verified
+  projections file data/<slug>_projections.json (written only by the Projections check after verify_projections.py passes).
+  Nothing is computed here except unit conversion (probability -> percent, method share x True %), and every shown number
+  carries data-k="<field>" so scripts/render_check.py can compare it with the file.
+  Usage: ufc_334_fight_embed.html?fight=<last name of either fighter>   (default: hokit)
+-->
+<style>
+.viz-root {
+  color-scheme: light;
+  --surface-1: #fcfcfb; --surface-2: #f3f2ef; --rule: #e4e2dc;
+  --text-primary: #0b0b0b; --text-secondary: #52514e; --text-muted: #7a7974;
+  --fav: #2a78d6; --dog: #eb6834; --neutral: #a9a8a2;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .viz-root {
+    color-scheme: dark;
+    --surface-1: #1a1a19; --surface-2: #242423; --rule: #3a3a38;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #9a998f;
+    --fav: #3987e5; --dog: #d95926; --neutral: #6c6b66;
+  }
+}
+:root[data-theme="dark"] .viz-root {
+  color-scheme: dark;
+  --surface-1: #1a1a19; --surface-2: #242423; --rule: #3a3a38;
+  --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #9a998f;
+  --fav: #3987e5; --dog: #d95926; --neutral: #6c6b66;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-1); }
+.viz-root { font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--text-primary);
+  background: var(--surface-1); max-width: 420px; margin: 0 auto; padding: 14px 14px 10px; }
+.hdr { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.hdr h1 { font-size: 16px; margin: 0; font-weight: 650; }
+.hdr .sub { color: var(--text-secondary); font-size: 11.5px; }
+.key { display: flex; gap: 14px; margin: 8px 0 2px; font-size: 12px; color: var(--text-secondary); }
+.key i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+section { border-top: 1px solid var(--rule); padding: 10px 0 8px; }
+section h2 { font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 6px; font-weight: 600; }
+.row { display: grid; grid-template-columns: 88px 1fr; align-items: center; gap: 8px; margin: 5px 0; }
+.row .lab { color: var(--text-secondary); font-size: 12px; }
+svg { display: block; width: 100%; overflow: visible; }
+svg text { fill: var(--text-primary); font-size: 11.5px; }
+svg text.muted { fill: var(--text-secondary); }
+.stat2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.stat2 div { background: var(--surface-2); border-radius: 6px; padding: 7px 9px; }
+.stat2 b { font-size: 18px; font-weight: 650; display: block; font-variant-numeric: tabular-nums; }
+.stat2 span { color: var(--text-secondary); font-size: 11.5px; }
+.rec { background: var(--surface-2); border-radius: 6px; padding: 7px 9px; margin-top: 2px; font-size: 12.5px; }
+.foot { color: var(--text-muted); font-size: 11px; margin-top: 8px; }
+.tip { position: fixed; pointer-events: none; background: var(--text-primary); color: var(--surface-1); font-size: 11.5px;
+  padding: 4px 7px; border-radius: 4px; opacity: 0; transition: opacity .08s; max-width: 220px; }
+details { margin-top: 6px; color: var(--text-secondary); font-size: 12px; }
+details table { border-collapse: collapse; width: 100%; margin-top: 4px; }
+details td { padding: 2px 4px; border-bottom: 1px solid var(--rule); }
+details td:last-child { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-primary); }
+.msg { padding: 30px 10px; color: var(--text-secondary); text-align: center; }
+</style>
+</head>
+<body>
+<div class="viz-root" id="root"><div class="msg">Loading projections…</div></div>
+<div class="tip" id="tip"></div>
+<script>
+const SLUG = "ufc_334";
+const PROJ_URL = `data/${SLUG}_projections.json`;
+const pct = (x) => x == null ? "—" : (100 * x).toFixed(1) + "%";
+const sgn = (x) => x == null ? "—" : (x > 0 ? "+" : "") + (100 * x).toFixed(1) + "%";
+const ml = (v) => v == null ? "—" : (v > 0 ? "+" + v : "" + v);
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const last = (n) => String(n || "").trim().toLowerCase().split(/\s+/).pop();
+const V = (k, txt) => `<tspan data-k="${k}">${esc(txt)}</tspan>`;
+const tip = document.getElementById("tip");
+function hover(root) {
+  root.querySelectorAll("[data-tip]").forEach(el => {
+    el.addEventListener("mousemove", e => { tip.textContent = el.dataset.tip; tip.style.opacity = 1; tip.style.left = (e.clientX + 12) + "px"; tip.style.top = (e.clientY + 12) + "px"; });
+    el.addEventListener("mouseleave", () => { tip.style.opacity = 0; });
+  });
+}
+// one whole split into two parts (fav | dog), 2px surface gap, rounded outer ends
+function splitBar(k, favP, dogP, favName, dogName, title, muted) {
+  const W = 300, H = 18, gap = 2, fw = Math.max(0, W * favP - gap / 2), dw = Math.max(0, W * dogP - gap / 2);
+  const op = muted ? 0.45 : 1;
+  return `<svg viewBox="0 0 ${W} ${H + 16}" role="img" aria-label="${esc(title)}: ${esc(favName)} ${pct(favP)}, ${esc(dogName)} ${pct(dogP)}">
+    <rect x="0" y="0" width="${fw}" height="${H}" rx="4" fill="var(--fav)" opacity="${op}" data-tip="${esc(title)} · ${esc(favName)} ${pct(favP)}"/>
+    <rect x="${W - dw}" y="0" width="${dw}" height="${H}" rx="4" fill="var(--dog)" opacity="${op}" data-tip="${esc(title)} · ${esc(dogName)} ${pct(dogP)}"/>
+    <text x="0" y="${H + 13}">${V(k + "_fav", pct(favP))}</text>
+    <text x="${W}" y="${H + 13}" text-anchor="end">${V(k + "_dog", pct(dogP))}</text></svg>`;
+}
+// horizontal bars on one 0..max scale, 4px rounded data end anchored at 0
+function hbars(items, max) {
+  const W = 300, rowH = 22, H = items.length * rowH;
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(items.map(i => i.label + " " + i.txt).join(", "))}">` + items.map((it, i) => {
+    const y = i * rowH, w = Math.max(2, (W - 120) * it.v / max);
+    return `<text class="muted" x="0" y="${y + 14}">${esc(it.label)}</text>
+      <rect x="70" y="${y + 4}" width="${w}" height="12" rx="4" fill="${it.color}" data-tip="${esc(it.label)} ${esc(it.txt)}"/>
+      <text x="${76 + w}" y="${y + 14}">${V(it.k, it.txt)}</text>`;
+  }).join("") + `</svg>`;
+}
+function render(doc, f) {
+  const s = f.sheet || {}, inp = f.inputs || {}, m = f.method || {};
+  const favW = s.true_fav, dogW = s.true_dog;
+  const meth = [];
+  for (const [side, w, name, color] of [["fav", favW, f.fav, "var(--fav)"], ["dog", dogW, f.dog, "var(--dog)"]]) {
+    for (const [k, lab] of [["dec", "DEC"], ["ko", "KO"], ["sub", "SUB"]]) {
+      const v = (m[side] || {})[k];
+      if (v != null) meth.push({ k: `${side}_${k}`, label: `${last(name).replace(/^./, c => c.toUpperCase())} ${lab}`, v: w * v, txt: pct(w * v), color });
+    }
+  }
+  const out = (f.outliers || []).filter(o => o.excluded);
+  const root = document.getElementById("root");
+  root.innerHTML = `
+  <div class="hdr"><h1>${esc(f.fav)} vs ${esc(f.dog)}</h1><span class="sub">${esc(f.tag)}</span></div>
+  <div class="key"><span><i style="background:var(--fav)"></i>${esc(f.fav)} (fav)</span><span><i style="background:var(--dog)"></i>${esc(f.dog)} (dog)</span></div>
+
+  <section><h2>Win probability</h2>
+    <div class="row"><span class="lab">Sheet model</span>${splitBar("true", favW, dogW, f.fav, f.dog, "Sheet model")}</div>
+    <div class="row"><span class="lab">Market no-vig</span>${splitBar("listed", 1 - s.listed, s.listed, f.fav, f.dog, "Market no-vig", true)}</div>
+    ${inp.markov == null ? "" : `<div class="row"><span class="lab">Markov</span>${splitBar("markov", 1 - inp.markov, inp.markov, f.fav, f.dog, "Markov", true)}</div>`}
+    <div class="foot">Market no-vig is at the best bettable prices. Markov is the sim's win % as entered in the sheet, before the sheet's card shift; it enters the model at weight 0.15.</div>
+  </section>
+
+  <section><h2>Edge at the price</h2>
+    <div class="stat2">
+      <div><b data-k="fav_edge">${sgn(s.fav_edge)}</b><span>${esc(f.fav)} at <span data-k="fav_odds">${ml(inp.fav_odds)}</span></span></div>
+      <div><b data-k="dog_edge">${sgn(s.dog_edge)}</b><span>${esc(f.dog)} at <span data-k="dog_odds">${ml(inp.dog_odds)}</span></span></div>
+    </div>
+    ${out.length ? out.map(o => `<div class="foot">Outlier excluded: ${esc(o.book)} ${ml(o.odds)}</div>`).join("") : ""}
+  </section>
+
+  <section><h2>How it ends · method (share of all outcomes)</h2>${hbars(meth, Math.max(...meth.map(x => x.v), 0.01))}</section>
+
+  <section><h2>Goes the distance</h2>
+    <div class="stat2">
+      <div><b data-k="gtd">${pct(f.gtd)}</b><span>Sheet model</span></div>
+      <div><b data-k="gtd_listed">${pct(f.gtd_listed)}</b><span>Market (best price, raw implied)</span></div>
+    </div>
+  </section>
+
+  <section><h2>Line movement · ${esc(f.dog)} (no-vig)</h2>${(() => {
+    const a = inp.open_dog, b = s.listed, lo = Math.min(a, b) - 0.03, hi = Math.max(a, b) + 0.03, y = (v) => 58 - 46 * (v - lo) / (hi - lo);
+    return `<svg viewBox="0 0 300 80" role="img" aria-label="Underdog no-vig: open ${pct(a)}, now ${pct(b)}, drift ${sgn(s.drift)}">
+      <line x1="40" y1="${y(a)}" x2="260" y2="${y(b)}" stroke="var(--dog)" stroke-width="2"/>
+      <circle cx="40" cy="${y(a)}" r="5" fill="var(--dog)" stroke="var(--surface-1)" stroke-width="2" data-tip="Open (consensus no-vig) ${pct(a)}"/>
+      <circle cx="260" cy="${y(b)}" r="5" fill="var(--dog)" stroke="var(--surface-1)" stroke-width="2" data-tip="Now (no-vig at best price) ${pct(b)}"/>
+      <text x="40" y="${y(a) - 10}" text-anchor="middle">${V("open_dog", pct(a))}</text>
+      <text x="260" y="${y(b) - 10}" text-anchor="middle">${V("listed_dog", pct(b))}</text>
+      <text class="muted" x="40" y="76" text-anchor="middle">Open</text><text class="muted" x="260" y="76" text-anchor="middle">Now</text>
+      <text class="muted" x="150" y="76" text-anchor="middle">Drift ${V("drift", sgn(s.drift))}</text></svg>`; })()}
+  </section>
+
+  <div class="rec">Model rec: <b data-k="rec">${esc(s.rec || "-")}</b><br><span style="color:var(--text-secondary)">Flag: <span data-k="flag">${esc(s.flag || "")}</span></span></div>
+  <details><summary>Table view</summary><table>
+    <tr><td>True % ${esc(f.fav)}</td><td>${pct(favW)}</td></tr><tr><td>True % ${esc(f.dog)}</td><td>${pct(dogW)}</td></tr>
+    <tr><td>Market no-vig ${esc(f.dog)}</td><td>${pct(s.listed)}</td></tr><tr><td>Markov ${esc(f.dog)}</td><td>${pct(inp.markov)}</td></tr>
+    ${meth.map(x => `<tr><td>${esc(x.label)}</td><td>${x.txt}</td></tr>`).join("")}
+    <tr><td>Goes the distance (model)</td><td>${pct(f.gtd)}</td></tr><tr><td>Goes the distance (market)</td><td>${pct(f.gtd_listed)}</td></tr>
+  </table></details>
+  <div class="foot">Sheet model v4.7 · checked against the sheet ${esc((doc.verified || {}).at || "")} · prices loaded ${esc(doc.prices_loaded || "")}. Not betting advice.</div>`;
+  hover(root);
+  if (window.parent !== window) window.parent.postMessage({ type: "ufc-iframe-height", height: document.body.scrollHeight }, "*");
+}
+(async () => {
+  const want = (new URLSearchParams(location.search).get("fight") || "hokit").toLowerCase();
+  const root = document.getElementById("root");
+  try {
+    const r = await fetch(PROJ_URL, { cache: "no-store" });
+    if (!r.ok) throw new Error("http " + r.status);
+    const doc = await r.json();
+    const hits = (doc.fights || []).filter(f => last(f.dog) === want || last(f.fav) === want);
+    const lp = (doc.line_pending || []).find(f => last(f.dog) === want || last(f.fav) === want);
+    if (hits.length === 1) return render(doc, hits[0]);
+    root.innerHTML = `<div class="msg">${lp ? "Line pending: " + esc(lp.fav) + " vs " + esc(lp.dog) : hits.length > 1 ? "More than one fight matches “" + esc(want) + "”." : "Projections coming."}</div>`;
+  } catch (e) {
+    root.innerHTML = `<div class="msg">Projections coming.</div>`;
+  }
+})();
+</script>
+</body>
+</html>
