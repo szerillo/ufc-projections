@@ -130,6 +130,13 @@ def check(D, htmlfile, G):
             elif rule == "pub": v = dig(pub, a["key"]); v = 1 - v if inv else v
             elif rule in ("pub_ml", "pub_ml_imp"):   # the sheet's listed price for this side (export inputs), and its straight implied %
                 role = pwin(a["side"])[1]; v = pub["inputs"][role + "_odds"]; v = implied(v) if rule == "pub_ml_imp" else v
+            elif rule == "em_sum":   # Block 59g: total strike diff = head + body + leg diff
+                EM_ = G.setdefault("EMX", json.loads((FD / "embed_metrics" / f"{G['SLUG']}.json").read_text()))
+                v = 0.0
+                for pth in a["paths"]:
+                    x_ = EM_["fighters"][a["fighter"]]
+                    for k_ in pth.split("."): x_ = x_[k_]
+                    v += x_
             elif rule in ("em", "em_share", "em_div"):
                 # Block 59d/e: form/data/embed_metrics/<card>.json (our UFCStats rows, every UFC fight)
                 EM_ = G.setdefault("EMX", json.loads((FD / "embed_metrics" / f"{G['SLUG']}.json").read_text()))
@@ -162,6 +169,10 @@ def check(D, htmlfile, G):
             elif rule in ("oa_drift", "oa_drift_abs"):
                 f_ = by_name(EV[a["ev"]], a); v = f_["odds"]["close"]["p"] - f_["odds"]["open"]["p"]
                 if rule == "oa_drift_abs": v = abs(v)
+            elif rule == "oa_open_ml":
+                f_ = by_name(EV[a["ev"]], a); v = f_["odds"]["open"]["m" + a["side"]]
+                c_ = lambda s_: sq(ALIAS.get(sq(s_), s_))   # side a must be the first name of the pair in the event file too
+                if c_(f_["a"]["name"]) != c_(a["pair"][0]): v = f_["odds"]["open"]["m" + ("b" if a["side"] == "a" else "a")]
             elif rule in ("oa_open", "oa_close"):
                 f_ = by_name(EV[a["ev"]], a); v = f_["odds"]["open" if rule == "oa_open" else "close"]["p"]
             elif rule == "oa_len":
@@ -208,6 +219,27 @@ def check(D, htmlfile, G):
         if re.search(r'class="op"', page): bad.append(("page", "open price", "o-prefixed open price in the projection"))
         if re.search(r"BettingPros", text): bad.append(("page", "source name", "BettingPros named on the page"))
         if re.search(r"\bElo\b|\bFig\b|Form Figure", text): bad.append(("page", "rating", "Elo or Form Figure shown"))
+        # Block 59g: every link into the site must land on a real fight or fighter
+        for es_, n_ in re.findall(r'#/fight/([^/"]+)/(\d+)"', page):
+            ef = FD / "events" / f"{es_}.json"
+            if not ef.exists() or not any(str(x["n"]) == n_ for x in json.loads(ef.read_text())["fights"]): bad.append(("link", "fight", f"{es_}/{n_} not on the site"))
+        for sl_ in re.findall(r'#/fighter/([^/"]+)"', page):
+            if not (FD / "fighters" / f"{sl_}.json").exists(): bad.append(("link", "fighter", f"{sl_} not on the site"))
+        # Block 59g: striking angles recomputed from the metrics file; the page must show exactly these
+        EMv = json.loads((FD / "embed_metrics" / f"{G['SLUG']}.json").read_text())["fighters"]
+        pa_, pb_ = (EMv.get(x_, {}) for x_ in reg["pair"]); want = []
+        def td_(r): t = r.get("target_diff") or {}; return None if t.get("head") is None else t["head"] + t["body"] + t["leg"]
+        ok4 = pa_.get("ufc_fights", 0) >= 4 and pb_.get("ufc_fights", 0) >= 4
+        if ok4 and td_(pa_) is not None and td_(pb_) is not None and abs(td_(pa_) - td_(pb_)) >= 2.0: want.append(reg["pair"][0] if td_(pa_) > td_(pb_) else reg["pair"][1])
+        ra_, rb_ = pa_.get("rounds", [{}] * 3)[2], pb_.get("rounds", [{}] * 3)[2]
+        if ok4 and ra_.get("diff_pm") is not None and rb_.get("diff_pm") is not None and ra_.get("fights", 0) >= 3 and rb_.get("fights", 0) >= 3 and abs(ra_["diff_pm"] - rb_["diff_pm"]) >= 2.9231:
+            want.append(reg["pair"][0] if ra_["diff_pm"] > rb_["diff_pm"] else reg["pair"][1])
+        m_ = re.search(r'<div class="ang">(.*?)</div>', page)
+        got = re.findall(r"<li><b>([^<]+)</b>", m_.group(1)) if m_ else []
+        if [g.split()[-1] for g in got] != [w.split()[-1] for w in want]: bad.append(("angle", "striking", f"page {got} vs recomputed {want}"))
+        # the decision-model accuracy quoted in the Cardio key must match labs.json
+        acc_ = re.search(r"decisions (\d+)% of the time", page)
+        if acc_ and int(acc_.group(1)) != round(json.loads((FD / "labs.json").read_text())["scoring"]["acc"] * 100): bad.append(("text", "key", "judging-model accuracy in the key"))
     # ---- v4 structural assertions ----
     # (a) method order DEC / KO / SUB in the merged table, and every method cell sits in the row of its own method
     rows_ = re.findall(r'<tr data-row="([a-z]+)"', page)
@@ -323,6 +355,8 @@ def negative(D, G, slug):
         ("embed: wrong FIGHT number (fight 05)", plant_text("fight_05.html", lambda s_: s_.replace('fp-fight-num">FIGHT 5<', 'fp-fight-num">FIGHT 6<'))),
         ("embed: a model cell blanked (fight 10)", plant_text("fight_10.html", lambda s_: re.sub(r'<td class="model"><span class="odds">.*?</td>', '<td class="model dim">n/a</td>', s_, count=1, flags=re.S))),
         ("embed: an edge chip off by 0.1 (fight 13)", plant_text("fight_13.html", bump_first("edge", "spp"))),
+        ("embed: striking angle dropped (fight 06)", plant_text("fight_06.html", lambda s_: re.sub(r'<div class="ang">.*?</ul></div>', "", s_, count=1))),
+        ("embed: past-fight link to a bout that is not on the site (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(#/fight/[^/"]+/)\d+"', r'\g<1>999"', s_, count=1))),
         ("embed: model renamed 'Sean' (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace("Moneyline · model vs market", "Moneyline · Sean vs market", 1))),
         ("card: one embed missing (fight 09)", lambda T, G_: (T / "fight_09.html").unlink()),
         ("export: Gane/Hokit true % moved 0.2 pts after the build", export_shift),

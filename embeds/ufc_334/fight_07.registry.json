@@ -927,6 +927,22 @@
   },
   {
    "id": "v75",
+   "text": "+138",
+   "fmt": "ml",
+   "rule": "oa_open_ml",
+   "args": {
+    "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
+    "side": "a"
+   },
+   "desc": "OA open ML Drew Dober",
+   "raw": 138
+  },
+  {
+   "id": "v76",
    "text": "0.2",
    "fmt": "pts",
    "rule": "oa_drift_abs",
@@ -941,7 +957,7 @@
    "raw": 0.0021999999999999797
   },
   {
-   "id": "v76",
+   "id": "v77",
    "text": "40.5%",
    "fmt": "pct1",
    "rule": "oa_open",
@@ -956,7 +972,7 @@
    "raw": 0.4048
   },
   {
-   "id": "v77",
+   "id": "v78",
    "text": "40.7%",
    "fmt": "pct1",
    "rule": "oa_close",
@@ -971,7 +987,7 @@
    "raw": 0.407
   },
   {
-   "id": "v78",
+   "id": "v79",
    "text": "63%",
    "fmt": "pct0",
    "rule": "em",
@@ -983,7 +999,7 @@
    "raw": 0.6318
   },
   {
-   "id": "v79",
+   "id": "v80",
    "text": "23%",
    "fmt": "pct0",
    "rule": "em",
@@ -995,7 +1011,7 @@
    "raw": 0.2264
   },
   {
-   "id": "v80",
+   "id": "v81",
    "text": "14%",
    "fmt": "pct0",
    "rule": "em",
@@ -1007,7 +1023,7 @@
    "raw": 0.1419
   },
   {
-   "id": "v81",
+   "id": "v82",
    "text": "60%",
    "fmt": "pct0",
    "rule": "em",
@@ -1019,7 +1035,7 @@
    "raw": 0.6044
   },
   {
-   "id": "v82",
+   "id": "v83",
    "text": "23%",
    "fmt": "pct0",
    "rule": "em",
@@ -1031,7 +1047,7 @@
    "raw": 0.2274
   },
   {
-   "id": "v83",
+   "id": "v84",
    "text": "17%",
    "fmt": "pct0",
    "rule": "em",
@@ -1043,7 +1059,7 @@
    "raw": 0.1682
   },
   {
-   "id": "v84",
+   "id": "v85",
    "text": "57%",
    "fmt": "pct0",
    "rule": "em",
@@ -1055,7 +1071,7 @@
    "raw": 0.5744
   },
   {
-   "id": "v85",
+   "id": "v86",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1067,7 +1083,7 @@
    "raw": 2
   },
   {
-   "id": "v86",
+   "id": "v87",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1079,7 +1095,7 @@
    "raw": 5
   },
   {
-   "id": "v87",
+   "id": "v88",
    "text": "12",
    "fmt": "int",
    "rule": "em",
@@ -1091,7 +1107,7 @@
    "raw": 12
   },
   {
-   "id": "v88",
+   "id": "v89",
    "text": "27",
    "fmt": "int",
    "rule": "em",
@@ -1103,7 +1119,7 @@
    "raw": 27
   },
   {
-   "id": "v89",
+   "id": "v90",
    "text": "32%",
    "fmt": "pct0",
    "rule": "em",
@@ -1115,7 +1131,7 @@
    "raw": 0.3168
   },
   {
-   "id": "v90",
+   "id": "v91",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1127,7 +1143,7 @@
    "raw": 2
   },
   {
-   "id": "v91",
+   "id": "v92",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1139,7 +1155,7 @@
    "raw": 5
   },
   {
-   "id": "v92",
+   "id": "v93",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1151,7 +1167,7 @@
    "raw": 2
   },
   {
-   "id": "v93",
+   "id": "v94",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -1163,7 +1179,7 @@
    "raw": 8
   },
   {
-   "id": "v94",
+   "id": "v95",
    "text": "23%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -1175,7 +1191,7 @@
    "raw": 0.2309
   },
   {
-   "id": "v95",
+   "id": "v96",
    "text": "21%",
    "fmt": "pct0",
    "rule": "em",
@@ -1187,7 +1203,7 @@
    "raw": 0.2077
   },
   {
-   "id": "v96",
+   "id": "v97",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1199,7 +1215,7 @@
    "raw": 1
   },
   {
-   "id": "v97",
+   "id": "v98",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1211,7 +1227,7 @@
    "raw": 5
   },
   {
-   "id": "v98",
+   "id": "v99",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1223,7 +1239,7 @@
    "raw": 3
   },
   {
-   "id": "v99",
+   "id": "v100",
    "text": "27",
    "fmt": "int",
    "rule": "em",
@@ -1235,7 +1251,7 @@
    "raw": 27
   },
   {
-   "id": "v100",
+   "id": "v101",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1247,7 +1263,7 @@
    "raw": 0.0
   },
   {
-   "id": "v101",
+   "id": "v102",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1259,7 +1275,7 @@
    "raw": 0
   },
   {
-   "id": "v102",
+   "id": "v103",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1271,7 +1287,7 @@
    "raw": 5
   },
   {
-   "id": "v103",
+   "id": "v104",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -1283,7 +1299,7 @@
    "raw": 0
   },
   {
-   "id": "v104",
+   "id": "v105",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -1295,7 +1311,7 @@
    "raw": 8
   },
   {
-   "id": "v105",
+   "id": "v106",
    "text": "26%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -1307,7 +1323,7 @@
    "raw": 0.2582
   },
   {
-   "id": "v106",
+   "id": "v107",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -1319,7 +1335,7 @@
    "raw": 11
   },
   {
-   "id": "v107",
+   "id": "v108",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1331,7 +1347,7 @@
    "raw": 3
   },
   {
-   "id": "v108",
+   "id": "v109",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1343,7 +1359,7 @@
    "raw": 4
   },
   {
-   "id": "v109",
+   "id": "v110",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1355,7 +1371,7 @@
    "raw": 4
   },
   {
-   "id": "v110",
+   "id": "v111",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1367,7 +1383,7 @@
    "raw": 3
   },
   {
-   "id": "v111",
+   "id": "v112",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1379,7 +1395,7 @@
    "raw": 3
   },
   {
-   "id": "v112",
+   "id": "v113",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1391,7 +1407,19 @@
    "raw": 2
   },
   {
-   "id": "v113",
+   "id": "v114",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Drew Dober",
+   "raw": 0.5556
+  },
+  {
+   "id": "v115",
    "text": "+0.1",
    "fmt": "s1",
    "rule": "em",
@@ -1403,7 +1431,7 @@
    "raw": 0.066
   },
   {
-   "id": "v114",
+   "id": "v116",
    "text": "27",
    "fmt": "int",
    "rule": "em",
@@ -1415,7 +1443,19 @@
    "raw": 27
   },
   {
-   "id": "v115",
+   "id": "v117",
+   "text": "47%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Drew Dober",
+   "raw": 0.4706
+  },
+  {
+   "id": "v118",
    "text": "+0.8",
    "fmt": "s1",
    "rule": "em",
@@ -1427,7 +1467,7 @@
    "raw": 0.752
   },
   {
-   "id": "v116",
+   "id": "v119",
    "text": "17",
    "fmt": "int",
    "rule": "em",
@@ -1439,7 +1479,19 @@
    "raw": 17
   },
   {
-   "id": "v117",
+   "id": "v120",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Drew Dober",
+   "raw": 0.3636
+  },
+  {
+   "id": "v121",
    "text": "-0.7",
    "fmt": "s1",
    "rule": "em",
@@ -1451,7 +1503,7 @@
    "raw": -0.71
   },
   {
-   "id": "v118",
+   "id": "v122",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -1463,7 +1515,19 @@
    "raw": 11
   },
   {
-   "id": "v119",
+   "id": "v123",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Chris Duncan",
+   "raw": 0.5
+  },
+  {
+   "id": "v124",
    "text": "-0.2",
    "fmt": "s1",
    "rule": "em",
@@ -1475,7 +1539,7 @@
    "raw": -0.213
   },
   {
-   "id": "v120",
+   "id": "v125",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -1487,7 +1551,19 @@
    "raw": 8
   },
   {
-   "id": "v121",
+   "id": "v126",
+   "text": "60%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Chris Duncan",
+   "raw": 0.6
+  },
+  {
+   "id": "v127",
    "text": "+0.0",
    "fmt": "s1",
    "rule": "em",
@@ -1499,7 +1575,7 @@
    "raw": 0.0
   },
   {
-   "id": "v122",
+   "id": "v128",
    "text": "5",
    "fmt": "int",
    "rule": "em",
@@ -1511,7 +1587,19 @@
    "raw": 5
   },
   {
-   "id": "v123",
+   "id": "v129",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Chris Duncan",
+   "raw": 1.0
+  },
+  {
+   "id": "v130",
    "text": "+2.2",
    "fmt": "s1",
    "rule": "em",
@@ -1523,7 +1611,7 @@
    "raw": 2.2
   },
   {
-   "id": "v124",
+   "id": "v131",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -1535,7 +1623,7 @@
    "raw": 3
   },
   {
-   "id": "v125",
+   "id": "v132",
    "text": "0.61",
    "fmt": "n2",
    "rule": "em",
@@ -1547,7 +1635,7 @@
    "raw": 0.608
   },
   {
-   "id": "v126",
+   "id": "v133",
    "text": "2.79",
    "fmt": "n2",
    "rule": "em",
@@ -1559,7 +1647,7 @@
    "raw": 2.795
   },
   {
-   "id": "v127",
+   "id": "v134",
    "text": "17%",
    "fmt": "pct0",
    "rule": "em",
@@ -1571,7 +1659,7 @@
    "raw": 0.1698
   },
   {
-   "id": "v128",
+   "id": "v135",
    "text": "41%",
    "fmt": "pct0",
    "rule": "em",
@@ -1583,7 +1671,7 @@
    "raw": 0.4062
   },
   {
-   "id": "v129",
+   "id": "v136",
    "text": "58%",
    "fmt": "pct0",
    "rule": "em",
@@ -1595,7 +1683,7 @@
    "raw": 0.5821
   },
   {
-   "id": "v130",
+   "id": "v137",
    "text": "56%",
    "fmt": "pct0",
    "rule": "em",
@@ -1607,7 +1695,7 @@
    "raw": 0.5556
   },
   {
-   "id": "v131",
+   "id": "v138",
    "text": "13%",
    "fmt": "pct0",
    "rule": "em",
@@ -1619,7 +1707,7 @@
    "raw": 0.1321
   },
   {
-   "id": "v132",
+   "id": "v139",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em",
@@ -1631,7 +1719,7 @@
    "raw": 0.2183
   },
   {
-   "id": "v133",
+   "id": "v140",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em",
@@ -1643,7 +1731,7 @@
    "raw": 0.2209
   },
   {
-   "id": "v134",
+   "id": "v141",
    "text": "10%",
    "fmt": "pct0",
    "rule": "em",
@@ -1655,7 +1743,7 @@
    "raw": 0.097
   },
   {
-   "id": "v135",
+   "id": "v142",
    "text": "0.07",
    "fmt": "n2",
    "rule": "em",
@@ -1667,7 +1755,7 @@
    "raw": 0.068
   },
   {
-   "id": "v136",
+   "id": "v143",
    "text": "0.65",
    "fmt": "n2",
    "rule": "em",
@@ -1679,7 +1767,39 @@
    "raw": 0.645
   },
   {
-   "id": "v137",
+   "id": "v144",
+   "text": "+0.15",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Drew Dober",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Drew Dober",
+   "raw": 0.15300000000000002
+  },
+  {
+   "id": "v145",
+   "text": "+0.37",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Chris Duncan",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Chris Duncan",
+   "raw": 0.372
+  },
+  {
+   "id": "v146",
    "text": "-0.24",
    "fmt": "s2",
    "rule": "em",
@@ -1691,7 +1811,7 @@
    "raw": -0.239
   },
   {
-   "id": "v138",
+   "id": "v147",
    "text": "-0.33",
    "fmt": "s2",
    "rule": "em",
@@ -1703,7 +1823,7 @@
    "raw": -0.33
   },
   {
-   "id": "v139",
+   "id": "v148",
    "text": "+0.13",
    "fmt": "s2",
    "rule": "em",
@@ -1715,7 +1835,7 @@
    "raw": 0.126
   },
   {
-   "id": "v140",
+   "id": "v149",
    "text": "+0.56",
    "fmt": "s2",
    "rule": "em",
@@ -1727,7 +1847,7 @@
    "raw": 0.559
   },
   {
-   "id": "v141",
+   "id": "v150",
    "text": "+0.27",
    "fmt": "s2",
    "rule": "em",
@@ -1739,7 +1859,7 @@
    "raw": 0.266
   },
   {
-   "id": "v142",
+   "id": "v151",
    "text": "+0.14",
    "fmt": "s2",
    "rule": "em",
@@ -1751,7 +1871,7 @@
    "raw": 0.143
   },
   {
-   "id": "v143",
+   "id": "v152",
    "text": "59%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1765,7 +1885,7 @@
    "raw": 0.592
   },
   {
-   "id": "v144",
+   "id": "v153",
    "text": "58%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1779,7 +1899,7 @@
    "raw": 0.583
   },
   {
-   "id": "v145",
+   "id": "v154",
    "text": "104%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1793,7 +1913,7 @@
    "raw": 1.038
   },
   {
-   "id": "v146",
+   "id": "v155",
    "text": "125%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1807,7 +1927,7 @@
    "raw": 1.253
   },
   {
-   "id": "v147",
+   "id": "v156",
    "text": "8.2",
    "fmt": "n1",
    "rule": "labs",
@@ -1821,7 +1941,7 @@
    "raw": 8.2
   },
   {
-   "id": "v148",
+   "id": "v157",
    "text": "8.7",
    "fmt": "n1",
    "rule": "labs",
@@ -1835,7 +1955,7 @@
    "raw": 8.7
   },
   {
-   "id": "v149",
+   "id": "v158",
    "text": "38%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1849,7 +1969,7 @@
    "raw": 0.385
   },
   {
-   "id": "v150",
+   "id": "v159",
    "text": "38%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1863,7 +1983,7 @@
    "raw": 0.375
   },
   {
-   "id": "v151",
+   "id": "v160",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1876,7 +1996,7 @@
    "raw": -208
   },
   {
-   "id": "v152",
+   "id": "v161",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -1889,7 +2009,7 @@
    "raw": -328
   },
   {
-   "id": "v153",
+   "id": "v162",
    "text": "+105",
    "fmt": "ml",
    "rule": "fight",
@@ -1902,7 +2022,7 @@
    "raw": 105
   },
   {
-   "id": "v154",
+   "id": "v163",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -1915,7 +2035,7 @@
    "raw": 100
   },
   {
-   "id": "v155",
+   "id": "v164",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -1928,7 +2048,7 @@
    "raw": 170
   },
   {
-   "id": "v156",
+   "id": "v165",
    "text": "-417",
    "fmt": "ml",
    "rule": "fight",
@@ -1941,7 +2061,7 @@
    "raw": -417
   },
   {
-   "id": "v157",
+   "id": "v166",
    "text": "-222",
    "fmt": "ml",
    "rule": "fight",
@@ -1954,7 +2074,7 @@
    "raw": -222
   },
   {
-   "id": "v158",
+   "id": "v167",
    "text": "-156",
    "fmt": "ml",
    "rule": "fight",
@@ -1967,7 +2087,7 @@
    "raw": -156
   },
   {
-   "id": "v159",
+   "id": "v168",
    "text": "-169",
    "fmt": "ml",
    "rule": "fight",
@@ -1980,7 +2100,7 @@
    "raw": -169
   },
   {
-   "id": "v160",
+   "id": "v169",
    "text": "-161",
    "fmt": "ml",
    "rule": "fight",
@@ -1993,7 +2113,7 @@
    "raw": -161
   },
   {
-   "id": "v161",
+   "id": "v170",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -2006,7 +2126,7 @@
    "raw": -132
   },
   {
-   "id": "v162",
+   "id": "v171",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -2019,7 +2139,7 @@
    "raw": -112
   },
   {
-   "id": "v163",
+   "id": "v172",
    "text": "+190",
    "fmt": "ml",
    "rule": "fight",
@@ -2032,7 +2152,7 @@
    "raw": 190
   },
   {
-   "id": "v164",
+   "id": "v173",
    "text": "+310",
    "fmt": "ml",
    "rule": "fight",
@@ -2045,7 +2165,7 @@
    "raw": 310
   },
   {
-   "id": "v165",
+   "id": "v174",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -2058,7 +2178,7 @@
    "raw": 155
   },
   {
-   "id": "v166",
+   "id": "v175",
    "text": "+145",
    "fmt": "ml",
    "rule": "fight",
@@ -2071,7 +2191,7 @@
    "raw": 145
   },
   {
-   "id": "v167",
+   "id": "v176",
    "text": "-110",
    "fmt": "ml",
    "rule": "fight",

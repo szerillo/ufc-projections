@@ -884,6 +884,18 @@
   },
   {
    "id": "v74",
+   "text": "40%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Alatengheili",
+   "raw": 0.4
+  },
+  {
+   "id": "v75",
    "text": "-2.1",
    "fmt": "s1",
    "rule": "em",
@@ -895,7 +907,7 @@
    "raw": -2.075
   },
   {
-   "id": "v75",
+   "id": "v76",
    "text": "10",
    "fmt": "int",
    "rule": "em",
@@ -907,7 +919,19 @@
    "raw": 10
   },
   {
-   "id": "v76",
+   "id": "v77",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Alatengheili",
+   "raw": 0.2222
+  },
+  {
+   "id": "v78",
    "text": "-1.8",
    "fmt": "s1",
    "rule": "em",
@@ -919,7 +943,7 @@
    "raw": -1.756
   },
   {
-   "id": "v77",
+   "id": "v79",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -931,7 +955,19 @@
    "raw": 9
   },
   {
-   "id": "v78",
+   "id": "v80",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Alatengheili",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Alatengheili",
+   "raw": 0.2222
+  },
+  {
+   "id": "v81",
    "text": "-2.9",
    "fmt": "s1",
    "rule": "em",
@@ -943,7 +979,7 @@
    "raw": -2.933
   },
   {
-   "id": "v79",
+   "id": "v82",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -955,7 +991,19 @@
    "raw": 9
   },
   {
-   "id": "v80",
+   "id": "v83",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Juan Diaz",
+   "raw": 1.0
+  },
+  {
+   "id": "v84",
    "text": "-0.8",
    "fmt": "s1",
    "rule": "em",
@@ -967,7 +1015,7 @@
    "raw": -0.8
   },
   {
-   "id": "v81",
+   "id": "v85",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -979,7 +1027,19 @@
    "raw": 1
   },
   {
-   "id": "v82",
+   "id": "v86",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Juan Diaz",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Juan Diaz",
+   "raw": 1.0
+  },
+  {
+   "id": "v87",
    "text": "+0.5",
    "fmt": "s1",
    "rule": "em",
@@ -991,7 +1051,7 @@
    "raw": 0.484
   },
   {
-   "id": "v83",
+   "id": "v88",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1003,7 +1063,7 @@
    "raw": 1
   },
   {
-   "id": "v84",
+   "id": "v89",
    "text": "1.88",
    "fmt": "n2",
    "rule": "em",
@@ -1015,7 +1075,7 @@
    "raw": 1.878
   },
   {
-   "id": "v85",
+   "id": "v90",
    "text": "8.21",
    "fmt": "n2",
    "rule": "em",
@@ -1027,7 +1087,7 @@
    "raw": 8.212
   },
   {
-   "id": "v86",
+   "id": "v91",
    "text": "42%",
    "fmt": "pct0",
    "rule": "em",
@@ -1039,7 +1099,7 @@
    "raw": 0.425
   },
   {
-   "id": "v87",
+   "id": "v92",
    "text": "62%",
    "fmt": "pct0",
    "rule": "em",
@@ -1051,7 +1111,7 @@
    "raw": 0.625
   },
   {
-   "id": "v88",
+   "id": "v93",
    "text": "75%",
    "fmt": "pct0",
    "rule": "em",
@@ -1063,7 +1123,7 @@
    "raw": 0.75
   },
   {
-   "id": "v89",
+   "id": "v94",
    "text": "16%",
    "fmt": "pct0",
    "rule": "em",
@@ -1075,7 +1135,7 @@
    "raw": 0.1556
   },
   {
-   "id": "v90",
+   "id": "v95",
    "text": "42%",
    "fmt": "pct0",
    "rule": "em",
@@ -1087,7 +1147,7 @@
    "raw": 0.4161
   },
   {
-   "id": "v91",
+   "id": "v96",
    "text": "2%",
    "fmt": "pct0",
    "rule": "em",
@@ -1099,7 +1159,7 @@
    "raw": 0.0236
   },
   {
-   "id": "v92",
+   "id": "v97",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1111,7 +1171,7 @@
    "raw": 0.0
   },
   {
-   "id": "v93",
+   "id": "v98",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1123,7 +1183,7 @@
    "raw": 0.0
   },
   {
-   "id": "v94",
+   "id": "v99",
    "text": "1.64",
    "fmt": "n2",
    "rule": "em",
@@ -1135,7 +1195,39 @@
    "raw": 1.642
   },
   {
-   "id": "v95",
+   "id": "v100",
+   "text": "-2.25",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Alatengheili",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Alatengheili",
+   "raw": -2.254
+  },
+  {
+   "id": "v101",
+   "text": "-0.22",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Juan Diaz",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Juan Diaz",
+   "raw": -0.21900000000000003
+  },
+  {
+   "id": "v102",
    "text": "-1.08",
    "fmt": "s2",
    "rule": "em",
@@ -1147,7 +1239,7 @@
    "raw": -1.083
   },
   {
-   "id": "v96",
+   "id": "v103",
    "text": "+0.00",
    "fmt": "s2",
    "rule": "em",
@@ -1159,7 +1251,7 @@
    "raw": 0.0
   },
   {
-   "id": "v97",
+   "id": "v104",
    "text": "-0.50",
    "fmt": "s2",
    "rule": "em",
@@ -1171,7 +1263,7 @@
    "raw": -0.501
   },
   {
-   "id": "v98",
+   "id": "v105",
    "text": "-0.66",
    "fmt": "s2",
    "rule": "em",
@@ -1183,7 +1275,7 @@
    "raw": -0.657
   },
   {
-   "id": "v99",
+   "id": "v106",
    "text": "-0.67",
    "fmt": "s2",
    "rule": "em",
@@ -1195,7 +1287,7 @@
    "raw": -0.67
   },
   {
-   "id": "v100",
+   "id": "v107",
    "text": "+0.44",
    "fmt": "s2",
    "rule": "em",
@@ -1207,7 +1299,7 @@
    "raw": 0.438
   },
   {
-   "id": "v101",
+   "id": "v108",
    "text": "65%",
    "fmt": "pct0",
    "rule": "labs",
@@ -1221,7 +1313,7 @@
    "raw": 0.653
   },
   {
-   "id": "v102",
+   "id": "v109",
    "text": "+193",
    "fmt": "ml",
    "rule": "fight",

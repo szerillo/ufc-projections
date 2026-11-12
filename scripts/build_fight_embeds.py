@@ -122,6 +122,45 @@ def sparkline(series):
             f'<circle cx="{X(ta):.1f}" cy="{Y(pa):.1f}" r="3.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/><circle cx="{X(tb):.1f}" cy="{Y(pb):.1f}" r="4" fill="#0a8842"/>'
             f'<text x="{X(tb)+7:.1f}" y="{Y(pb)+4:.1f}" font-size="11" font-weight="700" fill="#0a8842">{pb*100:.1f}%</text></svg>')
 
+SITE = "https://szerillo.github.io/ufc-projections/"
+
+
+LABS_ACC = json.loads((REPO / "form/data/labs.json").read_text())["scoring"]["acc"]   # decision-model accuracy, quoted in the key
+
+
+def explain(items):
+    """Block 59g: plain-English key for a section, closed by default."""
+    return ('<details class="xpl"><summary>What these numbers mean</summary><dl>'
+            + "".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in items) + "</dl></details>")
+
+
+XPL = {
+    "proj": [("Model", "Our projection: the fair price and win chance for each side."),
+             ("Listed", "The price on our sheet when the projection was published."),
+             ("Market", "The current consensus price. The % is the straight conversion of that price, so it still includes the book's margin."),
+             ("Edge", "Model % minus the listed % (moneyline, goes the distance) or minus the market % (inside the distance, method). Positive means the model likes that side more than the price does."),
+             ("Line move", "How far the consensus win chance has moved since the line opened, with the opening price of the side it moved toward."),
+             ("Striking angle", "Shows when one fighter clears a striking gap we track: career strike differential 2+ per minute better, or round-3 differential about 3+ per minute better (both fighters with 4+ UFC fights). Tracked on paper, not a bet signal yet.")],
+    "st": [("Where they land", "Share of each fighter's landed significant strikes that hit the head, body and legs."),
+           ("Diff /min", "Strikes landed minus strikes absorbed to that target, per minute of fight time."),
+           ("Head defence", "Share of opponents' head strikes that missed.")],
+    "gr": [("Takedowns /15", "Takedowns landed per 15 minutes."),
+           ("TD accuracy / defence", "Share of their takedown attempts that land; share of opponents' attempts they stop."),
+           ("Time in control / controlled", "Share of fight time spent controlling the opponent, or being controlled."),
+           ("Sub attempts /15", "Submission attempts per 15 minutes.")],
+    "pw": [("Power", "Share of UFC fights where they knocked the opponent down or stopped them on the feet. Ground-and-pound finishes without a knockdown do not count."),
+           ("Durability", "Share of UFC fights where they were knocked down or stopped by strikes (doctor and injury stoppages left out). Lower is better, so the scale runs backwards: right is better on both."),
+           ("Recent fights count more", "The latest fight counts fully and a fight three back counts half. Last 5 and all-time counts are shown next to the %."),
+           ("Black tick", "The division average in UFC fights since 2020.")],
+    "ca": [("Rounds won", "Share of rounds they won. A round that ends in a finish goes to the fighter who finished it. Other rounds are scored by our judging model (strikes by target, knockdowns, takedowns, control time, submission attempts), which picks the winner of UFC decisions " + f"{LABS_ACC*100:.0f}% of the time."),
+           ("Small numbers", "Strike differential per minute in that round, and how many UFC fights reached it."),
+           ("Five-round rows", "Output and differential in rounds 4-5 compared with rounds 1-3, for fighters who have been there.")],
+    "en": [("Bar", "UFC results by method: wins by KO, submission and decision, then losses."),
+           ("Avg fight, Finished in R1", "Average fight length in minutes, and share of their fights that ended in round 1.")],
+}
+GEN = "All stats use UFC fights before this card only. Green = the better side; darker green = a bigger gap."   # the public Fight Form site the embeds link into
+
+
 def minispark(series, who):
     """Block 59f: small line under the moneyline stack (market win % of the first-named fighter)."""
     W, H, Lm, Rm, T, B = 300, 46, 4, 44, 6, 6
@@ -284,7 +323,7 @@ def build(names, outname):
                 mk = '<td class="dim">n/a</td>'
             nmcell = f'<td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}<div class="nb"><i class="{side_cls[sd]}" style="width:{p_*100:.1f}%"></i></div></td>'
             body += f'<tr>{nmcell}{mdl}{lst}{mk}<td>{chip(m_id, l_id, "Edge ML " + F)}</td></tr>'
-        proj += stack("Moneyline · model vs market", ["Fighter", "Model", "Listed", "Market", "Edge"], body).replace("</table></div>", "</table>@@MOVE@@</div>", 1)
+        proj += stack("Moneyline · model vs market", ["Fighter", "Model", "Listed", "Market", "Edge"], body).replace("</table></div>", "</table>@@MOVE@@@@ANGLES@@</div>", 1)
         # fight length: GTD (listed from the sheet) and ITD; edge vs listed for GTD, vs market for ITD
         body = ""
         g = pf["gtd"]
@@ -333,7 +372,7 @@ def build(names, outname):
                 tds += f'<td data-k="{k}"><span class="odds">{mp}</span><div class="pct">{mpc}</div><div class="cb"><i class="{side_cls[sd]}" style="width:{v / mx * 100:.1f}%"></i></div>{live}{ed}</td>'
             body += f'<tr class="{side_cls[sd]}"><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}</td>{tds}</tr>'
         proj += stack("Method · model vs market", ["Fighter", "DEC", "KO", "SUB", "ITD"], body)
-        proj += '<div class="legend">Market % is the straight conversion of the price, vig included.</div>'
+        proj += '<div class="legend">Market % is the straight conversion of the price, vig included.</div>' + explain(XPL["proj"])
     else:
         proj += '<div class="note">No model projection published for this bout yet.</div>'
         gaps.append(f"Fight {n}: no row in the Publish to site export; no model numbers shown.")
@@ -350,12 +389,14 @@ def build(names, outname):
     if o:
         mv = o["close"]["p"] - o["open"]["p"]
         tow = an if mv >= 0 else bn
-        body = (f'<div class="mvrow"><div class="mvt"><span class="mvl">Line move</span> <b>{R(abs(mv), "pts", "oa_drift_abs", "OA drift pts", ev=EVF, pair=PAIR)} pts</b> toward {esc(last(tow))} since {o["open"]["t"][5:10].replace("-", "/")}</div>'
+        tsd = "a" if mv >= 0 else "b"
+        body = (f'<div class="mvrow"><div class="mvt"><span class="mvl">Line move</span> {esc(last(tow))} opened <b class="mvo">{R(o["open"]["m" + tsd], "ml", "oa_open_ml", "OA open ML " + tow, ev=EVF, pair=PAIR, side=tsd)}</b> on {o["open"]["t"][5:10].replace("-", "/")}, '
+                f'moved <b>{R(abs(mv), "pts", "oa_drift_abs", "OA drift pts", ev=EVF, pair=PAIR)} pts</b> toward {esc(last(tow))}</div>'
                 f'<div class="mvs"><span>{R(o["open"]["p"], "pct1", "oa_open", "OA open p", ev=EVF, pair=PAIR)}</span>{minispark(o["series"], an)}<span class="mve">{R(o["close"]["p"], "pct1", "oa_close", "OA close p", ev=EVF, pair=PAIR)}</span></div>'
                 f'<div class="mvc">{esc(last(an))} market win %</div></div>')
     else:
         gaps.append(f"Fight {n}: no Odds API line history (no odds block in the event file).")
-    proj = proj.replace("@@MOVE@@", body)
+    proj = proj.replace("@@MOVE@@", body)   # @@ANGLES@@ is filled once the stats are built
     top = proj
 
 
@@ -469,13 +510,14 @@ def build(names, outname):
     def rcells(rec, F, sd):
         out_ = ""
         for rd in range(nrd):
-            v = emv(rec, f"rounds.{rd}.diff_pm"); nfr = emv(rec, f"rounds.{rd}.fights")
-            if v is None or not nfr: out_ += '<td class="dim">n/a</td>'; continue
-            cl = "pos" if v >= 1 else "neg" if v <= -1 else ""
-            out_ += f'<td class="{cl}">{R(v, "s1", "em", f"R{rd+1} diff {F}", fighter=F, path=f"rounds.{rd}.diff_pm")}<small>{R(nfr, "int", "em", f"R{rd+1} fights {F}", fighter=F, path=f"rounds.{rd}.fights")}</small></td>'
+            w_ = emv(rec, f"rounds.{rd}.won"); v = emv(rec, f"rounds.{rd}.diff_pm"); nfr = emv(rec, f"rounds.{rd}.fights")
+            if w_ is None or not nfr: out_ += '<td class="dim">n/a</td>'; continue
+            cl = "pos" if w_ >= 0.6 else "neg" if w_ <= 0.4 else ""
+            out_ += (f'<td class="{cl}"><span class="rw">{R(w_, "pct0", "em", f"R{rd+1} won {F}", fighter=F, path=f"rounds.{rd}.won")}</span>'
+                     f'<small>{R(v, "s1", "em", f"R{rd+1} diff {F}", fighter=F, path=f"rounds.{rd}.diff_pm")} · {R(nfr, "int", "em", f"R{rd+1} fights {F}", fighter=F, path=f"rounds.{rd}.fights")}</small></td>')
         return f'<tr><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(last(F))}</td>{out_}</tr>'
-    rounds_html = ('<table class="rt"><thead><tr><th class="l">Strike diff /min</th>' + "".join(f"<th>R{r_+1}</th>" for r_ in range(nrd)) + '</tr></thead><tbody>'
-                   + rcells(ema, an, "a") + rcells(emb, bn, "b") + '</tbody></table><div class="rt-n">small number = UFC fights that reached the round</div>')
+    rounds_html = ('<table class="rt"><thead><tr><th class="l">Rounds won</th>' + "".join(f"<th>R{r_+1}</th>" for r_ in range(nrd)) + '</tr></thead><tbody>'
+                   + rcells(ema, an, "a") + rcells(emb, bn, "b") + '</tbody></table><div class="rt-n">big = rounds won (a finish counts as winning or losing the round) · small = strike diff per min · UFC fights that reached the round</div>')
     champ = ""
     if nrd == 5:
         champ = (E("r45.fights", "Fights to R4+", "int", None) + E("r45.landed_pm_13", "Output R1-3 /min", "n1", "hi") + E("r45.landed_pm_45", "Output R4-5 /min", "n1", "hi")
@@ -488,7 +530,19 @@ def build(names, outname):
                  + E("grap.ctrl_ag", "Time controlled", "pct0", "lo", "Share of fight time spent being controlled")
                  + E("grap.sub15", "Sub attempts /15", "n2", "hi"))
     # Block 59f: Stats sub-toggles, in Sean's order. Without JS every group shows.
-    groups = [("st", "Striking", "Striking", target_html + '<div class="tape">' + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
+    def tot(rec):
+        t_ = rec.get("target_diff") or {}
+        return None if t_.get("head") is None else t_["head"] + t_["body"] + t_["leg"]
+    ta_, tb_ = tot(ema), tot(emb)
+    def totcell(v, F):
+        return R(v, "s2", "em_sum", "Total diff " + F, fighter=F, paths=["target_diff.head", "target_diff.body", "target_diff.leg"]) if v is not None else '<span class="dim">n/a</span>'
+    tot_row = ""
+    if ta_ is not None or tb_ is not None:
+        ea = eb = ""
+        if ta_ is not None and tb_ is not None and ta_ != tb_:
+            c_ = " adv big" if abs(ta_ - tb_) >= 2.0 else " adv"; ea, eb = (c_, "") if ta_ > tb_ else ("", c_)
+        tot_row = f'<div class="row"><div class="a{ea}">{totcell(ta_, an)}</div><div class="k">Strike diff /min</div><div class="b{eb}">{totcell(tb_, bn)}</div></div>'
+    groups = [("st", "Striking", "Striking", target_html + '<div class="tape">' + tot_row + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
                + E("target_diff.leg", "Leg diff /min", "s2", "hi") + L3("metrics", "hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed") + '</div>'),
               ("gr", "Grappling", "Grappling", grap_html),
               ("pw", "Power", "Power and durability", power_html),
@@ -498,7 +552,22 @@ def build(names, outname):
     groups = [(k, t, h, grp(h, b)) for k, t, h, b in groups if b]
     stats_html = ('<div class="sgt" role="group" aria-label="Stat groups">' + "".join(f'<button type="button" data-g="{k}" aria-pressed="{"true" if i_ == 0 else "false"}">{t}</button>' for i_, (k, t, _, _) in enumerate(groups)) + '</div>'
                   + f'<div class="tape"><div class="row hdr"><div class="a">{esc(last(an))}</div><div class="k vs">VS</div><div class="b">{esc(last(bn))}</div></div></div>'
-                  + "".join(f'<div class="sgw" data-g="{k}">{h}</div>' for k, _, _, h in groups))
+                  + "".join(f'<div class="sgw" data-g="{k}">{h}{explain(XPL[k] + [("Note", GEN)])}</div>' for k, _, _, h in groups))
+    # Block 59g: the two striking angles from the UFC backtesting thread (paper only, LOG status, not confirmed):
+    #   2+ system: career strike differential gap 2.0+ per min, both 4+ UFC fights (labs sd_edge)
+    #   R3 angle: round-3 differential gap 2.92+ per min (2015-21 80th pct), both 4+ UFC fights and 3+ fights reaching R3
+    R3CUT = 2.9231
+    ang = []
+    if ta_ is not None and tb_ is not None and ema.get("ufc_fights", 0) >= 4 and emb.get("ufc_fights", 0) >= 4 and abs(ta_ - tb_) >= 2.0:
+        w_ = an if ta_ > tb_ else bn
+        ang.append(f'<li><b>{esc(last(w_))}</b> · career strike diff {totcell(ta_ if w_ == an else tb_, w_)} vs {totcell(tb_ if w_ == an else ta_, bn if w_ == an else an)} per min</li>')
+    r3a, r3b = emv(ema, "rounds.2.diff_pm"), emv(emb, "rounds.2.diff_pm")
+    if (r3a is not None and r3b is not None and (emv(ema, "rounds.2.fights") or 0) >= 3 and (emv(emb, "rounds.2.fights") or 0) >= 3
+            and ema.get("ufc_fights", 0) >= 4 and emb.get("ufc_fights", 0) >= 4 and abs(r3a - r3b) >= R3CUT):
+        w_ = an if r3a > r3b else bn; F2 = bn if w_ == an else an
+        ang.append(f'<li><b>{esc(last(w_))}</b> · round 3 strike diff {R(r3a if w_ == an else r3b, "s1", "em", "Angle R3 " + w_, fighter=w_, path="rounds.2.diff_pm")} vs {R(r3b if w_ == an else r3a, "s1", "em", "Angle R3 " + F2, fighter=F2, path="rounds.2.diff_pm")} per min</li>')
+    angles_html = (f'<div class="ang"><span class="mvl">Striking angle</span><ul>{"".join(ang)}</ul></div>' if ang else "")
+    top = top.replace("@@ANGLES@@", angles_html)
     small = [F["name"] for F, g_ in [(FA, ga), (FB, gb)] if g_["n"] <= 3]
     secs.append(sec("ourstats", "Stats", "", stats_html))
 
@@ -509,14 +578,17 @@ def build(names, outname):
             m_ = (x.get("m") or "").replace("Decision - ", "").replace("Unanimous", "UD").replace("Split", "SD").replace("Majority", "MD").replace("Submission", "SUB").replace("TKO - Doctor's Stoppage", "TKO (Dr)").replace("Could Not Continue", "CNC")
             fin = m_ if m_ in ("UD", "SD", "MD") else f'{m_} R{x["rd"]}'
             mc = (x.get("od") or {}).get("mc")
-            return f'<tr><td class="l dim">{dt.date.fromisoformat(x["d"]).strftime("%b %y")}</td><td class="l"><b class="r-{x["r"].lower()}">{x["r"]}</b> {esc(x["o"])}</td><td class="l">{esc(fin)}</td><td class="dim">{R(mc, "ml", "fight", "Close "+F["name"]+" "+x["o"], side=sd, i=i, key="od.mc") if mc is not None else "—"}</td></tr>'
+            opp = esc(x["o"])
+            if x.get("es") and x.get("n") is not None:   # Block 59g: each past fight opens its full breakdown on the site
+                opp = f'<a class="fl" href="{SITE}#/fight/{x["es"]}/{x["n"]}" target="_blank" rel="noopener">{opp}</a>'
+            return f'<tr><td class="l dim">{dt.date.fromisoformat(x["d"]).strftime("%b %y")}</td><td class="l"><b class="r-{x["r"].lower()}">{x["r"]}</b> {opp}</td><td class="l">{esc(fin)}</td><td class="dim">{R(mc, "ml", "fight", "Close "+F["name"]+" "+x["o"], side=sd, i=i, key="od.mc") if mc is not None else "—"}</td></tr>'
         head = '<thead><tr><th class="l">When</th><th class="l">Result</th><th class="l">How</th><th>Close</th></tr></thead>'
         rows5 = "".join(row(i, x) for i, x in enumerate(Lf[:5]))
         more = ""
         if len(Lf) > 5:   # Block 59f: full UFC history behind a toggle
             more = (f'<details class="fmore"><summary>All {len(Lf)} UFC fights</summary><table class="t ft">{head}<tbody>'
                     + "".join(row(i, x) for i, x in enumerate(Lf) if i >= 5) + '</tbody></table></details>')
-        return f'<div class="col"><div class="cn">{esc(F["name"])}</div><table class="t ft">{head}<tbody>{rows5}</tbody></table>{more}</div>'
+        return f'<div class="col"><div class="cn"><a class="fl" href="{SITE}#/fighter/{F["slug"]}" target="_blank" rel="noopener">{esc(F["name"])}</a><span class="cn-s">fighter page ↗</span></div><table class="t ft">{head}<tbody>{rows5}</tbody></table>{more}</div>'
     secs.append(sec("form", "Recent form", "last 5 UFC", f'<div class="ftw">{t5(FA, pa_, "a")}{t5(FB, pb_, "b")}</div>'))
 
     # ---------- notes: dropped (Block 59) ----------
@@ -634,10 +706,15 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
 .sgt{{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}}.sgt button{{flex:1 1 0;min-width:0;border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 2px;font:700 11px/1 inherit;letter-spacing:-.1px;white-space:nowrap;font-family:inherit;color:var(--text-muted);cursor:pointer}}.sgt button[aria-pressed=true]{{background:#0e1116;border-color:#0e1116;color:#fff}}.js .sgw{{display:none}}.js .sgw.on{{display:block}}
 .fmore{{margin:4px 0 12px}}.fmore>summary{{cursor:pointer;font-size:12px;font-weight:700;color:var(--action-green-dark);padding:6px 2px;list-style:none}}.fmore>summary::-webkit-details-marker{{display:none}}.fmore>summary::before{{content:"▸ "}}.fmore[open]>summary::before{{content:"▾ "}}.fmore[open]>summary{{font-size:0}}.fmore[open]>summary::before{{font-size:12px}}.fmore[open]>summary::after{{content:"Hide older fights";font-size:12px}}
+.fl{{color:inherit;text-decoration:none;border-bottom:1px dotted #9a9a9a}}.fl:hover{{color:var(--action-green-dark);border-bottom-color:currentColor}}.cn-s{{font-size:10.5px;font-weight:600;color:var(--text-muted);margin-left:8px}}
+.xpl{{margin:8px 0 4px;border:1px solid var(--border);border-radius:8px;background:#fff}}.xpl>summary{{cursor:pointer;padding:8px 12px;font-size:12px;font-weight:700;color:var(--text-muted);list-style:none}}.xpl>summary::-webkit-details-marker{{display:none}}.xpl>summary::before{{content:"ⓘ  "}}.xpl dl{{margin:0;padding:0 12px 10px}}.xpl dt{{font-size:11.5px;font-weight:800;margin-top:6px}}.xpl dd{{margin:1px 0 0;font-size:11.5px;line-height:1.4;color:var(--text-muted)}}
+.ang{{padding:8px 12px;border-top:1px solid var(--border);background:#fffbea}}.ang ul{{margin:3px 0 0;padding-left:16px;font-size:12.5px}}.ang li{{margin:2px 0}}.ang b{{font-weight:800}}
+.mvo{{background:#fff3c4;padding:0 3px;border-radius:3px}}
+.rt .rw{{display:block;font:800 14px/1.2 "SF Mono",Menlo,monospace}}
 .mvb{{margin:10px 0 0;border:1px solid var(--border);border-radius:8px;overflow:hidden}}.mvb-h{{background:#0e1116;color:#fff;font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:7px 12px}}
 .sc-e{{display:flex;justify-content:space-between;font-size:10px;color:var(--text-muted);margin:-4px 6px 6px;text-transform:uppercase;letter-spacing:.4px}}.sc-t{{font-size:10px;font-weight:700;padding:1px 5px;border-radius:3px;background:var(--bg-muted);color:var(--text-muted)}}.sc-t.up{{background:#d9f5e4;color:#0a7a3a}}.sc-t.dn{{background:#fde3e0;color:#b3261e}}.sc-l b{{font-family:"SF Mono",Menlo,monospace}}
 .rt{{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}}.rt th{{background:var(--bg-muted);font-size:9.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);padding:6px 4px;text-align:center}}
-.rt td{{padding:7px 4px;text-align:center;border-top:1px solid var(--border);font:700 12px/1.2 "SF Mono",Menlo,monospace}}.rt td small{{display:block;font:600 9px/1 inherit;font-family:inherit;color:var(--text-muted);margin-top:2px}}
+.rt td{{padding:7px 4px;text-align:center;border-top:1px solid var(--border);font:700 12px/1.2 "SF Mono",Menlo,monospace}}.rt td small{{display:block;white-space:nowrap;letter-spacing:-.3px;font:600 8.5px/1 inherit;font-family:inherit;color:var(--text-muted);margin-top:2px}}
 .rt td.pos{{background:var(--pos-soft);color:var(--pos-strong)}}.rt td.neg{{background:var(--neg-soft);color:var(--neg-strong)}}.rt td.nm{{font-family:inherit;font-size:12px;text-align:left}}
 .rt-n{{font-size:10px;color:var(--text-muted);padding:4px 10px 6px}}
 /* Action Network badge stays visible at every width (the site widget hides it under 440 px; the embed keeps it) */

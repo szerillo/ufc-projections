@@ -7,7 +7,9 @@ Source: UFCStats CSVs only (Greco1899/scrape_ufc_stats: ufc_fight_stats, ufc_fig
 same data as the site's fighter database.
 Per fighter:
   target   share of significant strikes landed to head / body / legs; head, body, leg landed minus absorbed per minute
-  rounds   per round 1..5: sig. strikes landed per minute and landed minus absorbed per minute, and fights reaching it
+  rounds   per round 1..5: sig. strikes landed per minute and landed minus absorbed per minute, fights reaching it, and
+           share of those rounds won: a round that ends in a finish goes to the finisher; any other round is scored with the
+           site's decision-scoring model (labs.json scoring.coef), ties count half
   r45      rounds 4-5 vs rounds 1-3 (only fighters who have been to round 4): output kept and differential change
   ko       UFC KO/TKO wins and losses, knockdowns scored and absorbed
   power    fights where the fighter scored a knockdown or won by KO/TKO on the feet (ground-and-pound finishes with no
@@ -59,6 +61,17 @@ def ctrl(t):
     m = re.match(r"(\d+):(\d+)", str(t or "")); return int(m.group(1)) * 60 + int(m.group(2)) if m else 0
 
 
+COEF = {c["k"]: c["b"] for c in json.loads((REPO / "form/data/labs.json").read_text())["scoring"]["coef"]}
+
+
+def rscore(x):
+    """Round score from the site's decision-scoring model (labs.json scoring.coef): head, body, leg strikes, knockdowns,
+    takedowns, control minutes, submission attempts."""
+    return (COEF["head"] * of(x["HEAD"])[0] + COEF["body"] * of(x["BODY"])[0] + COEF["leg"] * of(x["LEG"])[0]
+            + COEF["kd"] * int(float(x["KD"] or 0)) + COEF["td"] * of(x["TD"])[0] + COEF["ctrl"] * ctrl(x["CTRL"]) / 60
+            + COEF["sub"] * int(float(x["SUB.ATT"] or 0)))
+
+
 def of(x):   # "20 of 47" -> (20, 47)
     m = re.match(r"(\d+) of (\d+)", str(x or "")); return (int(m.group(1)), int(m.group(2))) if m else (0, 0)
 
@@ -104,6 +117,7 @@ def main():
         for sd in ("a", "b"):
             name = f[sd]["name"]; me = canon(name)
             R = [0.0] * 6; L = [0] * 6; A = [0] * 6; N = [0] * 6        # per round: seconds, landed, absorbed, fights reaching
+            WON = [0.0] * 6                                               # per round: rounds won (finish = won/lost; else scoring model)
             tgt = {"head": [0, 0], "body": [0, 0], "leg": [0, 0]}         # landed, absorbed
             kd_for = kd_ag = ko_w = ko_l = nf = 0; secs_tot = 0
             gp = dict(tdl=0, tda=0, otdl=0, otda=0, cf=0, ca=0, sa=0); hist = []
@@ -135,6 +149,9 @@ def main():
                     x, y = byr.get((rd, mi)), byr.get((rd, op))
                     if not x or not y: continue
                     s_ = last_s if rd == last_r else 300
+                    if rd == last_r and decided and "Decision" not in r_["METHOD"]: WON[rd] += 1.0 if win else 0.0
+                    else:
+                        sc = rscore(x) - rscore(y); WON[rd] += 1.0 if sc > 0 else 0.0 if sc < 0 else 0.5
                     R[rd] += s_; N[rd] += 1; L[rd] += of(x["SIG.STR."])[0]; A[rd] += of(y["SIG.STR."])[0]; secs_tot += s_
                     kd_for += int(float(x["KD"] or 0)); kd_ag += int(float(y["KD"] or 0))
                     a_, b_ = of(x["TD"]), of(y["TD"])
@@ -148,7 +165,8 @@ def main():
                    "target": {k_: (round(v[0] / land, 4) if land else None) for k_, v in tgt.items()},
                    "target_diff": {k_: (round((v[0] - v[1]) / mins, 3) if mins else None) for k_, v in tgt.items()},
                    "rounds": [{"r": rd, "fights": N[rd], "landed_pm": round(L[rd] / (R[rd] / 60), 3) if R[rd] else None,
-                               "diff_pm": round((L[rd] - A[rd]) / (R[rd] / 60), 3) if R[rd] else None} for rd in range(1, 6)],
+                               "diff_pm": round((L[rd] - A[rd]) / (R[rd] / 60), 3) if R[rd] else None,
+                               "won": round(WON[rd] / N[rd], 4) if N[rd] else None} for rd in range(1, 6)],
                    "ufc_ko_wins": ko_w, "ufc_ko_losses": ko_l, "power_fights": pw, "dropped_fights": dr, "outcomes": oc, "kd_for": kd_for, "kd_against": kd_ag}
             # recency weighting: most recent UFC fight counts 1, each fight further back counts less (half weight 3 fights back)
             hist.sort(reverse=True); wts = [HALF ** i for i in range(len(hist))]; ws = sum(wts)
