@@ -40,6 +40,22 @@ Sheet: Site > Publish to site
    didn't match and the site kept the last good file. Fix the sheet and publish again.
 5. Re-publish any time (price moves, new Markov run). Unticking a fight and re-publishing removes it from the page.
 
+## Go-live checklist (UFC 334, in order; each step has its proof)
+
+| # | Do | Proof it worked |
+|---|---|---|
+| 0 | Merge `publish-to-site` into `main` (Sean's call). The script writes to main and the check runs from main, so nothing goes live before this. | Repo > Actions lists "Projections check"; `ufc_334_fight_form.html` opens on the live site and says "Projections coming". |
+| 1 | Fine-grained token: `ufc-projections` only, Contents read/write, nothing else. | GitHub token page shows exactly that one repo and one permission. |
+| 2 | Apps Script > Project Settings > Script Properties: `GITHUB_TOKEN` = the token. Nowhere else. | The property is listed (value hidden). |
+| 3 | Apps Script: new file `publish_to_site`, paste `scripts/apps_script/publish_to_site.gs`, Save. | Saves with no error; `publishMenu_` is in the function list. |
+| 4 | Triggers > Add: `publishMenu_`, From spreadsheet, On open. Approve the prompt. | Reload the sheet: a **Site** menu sits next to **UFC**. |
+| 5 | Main Card and Prelims: `Publish` in AR1, checkboxes in AR2:AR11. | Tick one fight > Site > Preview publish lists exactly that fight. |
+| 6 | Tick the checked fights > Site > Publish to site > slug `ufc_334`. | "Uploaded" alert; Actions > Projections check is green (self-test + verify). |
+| 7 | Open the card page and one embed. | Status reads "Projections · N of 13 fights · updated X min ago" with no amber text; the embed shows the Sheet model block. |
+| 8 | Fight day: re-publish within 12h of the first walkout. | Status stays green (amber means over 12h old or a published fight not on the card). |
+
+A red check never touches the live file: fix the sheet and publish again.
+
 ## What the file contains
 
 Per ticked fight: names, the inputs the check needs (best dog/fav price, open %, Markov %, Markov shift B42, Tapology / Junkie /
