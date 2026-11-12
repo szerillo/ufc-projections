@@ -44,3 +44,5 @@ Logged 2026-11-12 (Kirk round 18). Nothing here is done before the card; the pub
    fight time from archived UFCStats pages, (b) compares against bouts matched on UFC fight count, and (c) removes the shared-name
    rows (Jean Silva 1977 row, blank Mike Davis row, wrong Victor Valenzuela row). No public claim about direction until then;
    the site says only "Reach not listed; Form treats it as equal."
+10. **Fighter bio refresh from UFCStats pages (Kirk round 27 call 1).** Pre-registered in audits/round27/Bio_Refresh_PREREG_post334.md.
+   Round 27 A found the upstream bio file stale on the 334 card; the list of numbers it would move is in audits/round27/A_moves.txt.

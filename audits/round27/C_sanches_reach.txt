@@ -1,0 +1,7 @@
+Fight 1 Evan Elder (a) vs Samuel Sanches (b), Form model inputs from a build of the branch code:
+  reach a 72.0, reach b 74.0; reach slot in _vec = -2.0
+  form_model.fighter_state:  b = self.bio.get(norm(name)) or {} ;  s['reach'] = float(b['reach']) if b.get('reach') else None
+  form_model._vec:           if a is None or b is None: v.append(0.0); continue   <- the dropped term
+  Form p (Elder) = 0.4505 (build 0.4505); reach term contribution -0.0526
+  if Sanches' reach were missing (term dropped):        p = 0.4635
+  if Sanches' reach equalled Elder's (72.0): a - b = 0 -> p = 0.4635  (identical to the dropped term)

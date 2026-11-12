@@ -7,13 +7,19 @@ import argparse, json
 from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]; FD = REPO / "form/data"
 ap = argparse.ArgumentParser(); ap.add_argument("--event", required=True); a = ap.parse_args()
+# Kirk round 27 C: use what the Form model reads. A fighter file's bio is the Form input (it carries the round-23 Hasan fill);
+# a debut has no file, but the Form model still reads its UFCStats bio row (build_form.load_ufcstats: first row per name), so
+# a debut is "not listed" only if that row has no reach too. (Round 26 read only the files and wrongly noted Sanches.)
+import csv, sys; sys.path.insert(0, str(REPO / "scripts")); from form_model import norm
+TOTT = {}
+for r in csv.DictReader(open(REPO / ".form_cache/ufc_fighter_tott.csv", encoding="utf-8")): TOTT.setdefault(norm(r["FIGHTER"]), r)
+def has_reach(side):
+    p = FD / "fighters" / f"{side.get('slug')}.json"
+    if side.get("slug") and p.exists(): return bool((json.loads(p.read_text()).get("bio") or {}).get("reach"))
+    r = TOTT.get(norm(side["name"])); return bool(r and r["REACH"].strip() not in ("", "--"))
 ev = json.loads((REPO / a.event).read_text()); out = []
 for f in ev["fights"]:
-    miss = []
-    for s in "ab":
-        p = FD / "fighters" / f"{f[s].get('slug')}.json"
-        b = (json.loads(p.read_text()).get("bio") or {}) if f[s].get("slug") and p.exists() else {}
-        if not b.get("reach"): miss.append(f[s]["name"])
+    miss = [f[s]["name"] for s in "ab" if not has_reach(f[s])]
     if miss: out.append({"n": f["n"], "missing": miss})
 slug = Path(a.event).stem
 J = {"text": "Reach not listed; Form treats it as equal.", "events": {slug: sorted(out, key=lambda x: x["n"])}}
