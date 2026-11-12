@@ -40,27 +40,49 @@ Sheet: Site > Publish to site
    didn't match and the site kept the last good file. Fix the sheet and publish again.
 5. Re-publish any time (price moves, new Markov run). Unticking a fight and re-publishing removes it from the page.
 
-## Go-live checklist (UFC 334, in order; each step has its proof)
+## Go-live checklist (Friday morning, about 10 minutes, in order)
 
-| # | Do | Proof it worked |
-|---|---|---|
-| 0 | Merge `publish-to-site` into `main` (Sean's call). The script writes to main and the check runs from main, so nothing goes live before this. | Repo > Actions lists "Projections check"; `ufc_334_fight_form.html` opens on the live site and says "Projections coming". |
-| 1 | Fine-grained token: `ufc-projections` only, Contents read/write, nothing else. | GitHub token page shows exactly that one repo and one permission. |
-| 2 | Apps Script > Project Settings > Script Properties: `GITHUB_TOKEN` = the token. Nowhere else. | The property is listed (value hidden). |
-| 3 | Apps Script: new file `publish_to_site`, paste `scripts/apps_script/publish_to_site.gs`, Save. | Saves with no error; `publishMenu_` is in the function list. |
-| 4 | Triggers > Add: `publishMenu_`, From spreadsheet, On open. Approve the prompt. | Reload the sheet: a **Site** menu sits next to **UFC**. |
-| 5 | Main Card and Prelims: `Publish` in AR1, checkboxes in AR2:AR11. | Tick one fight > Site > Preview publish lists exactly that fight. |
-| 6 | Tick the checked fights > Site > Publish to site > slug `ufc_334`. | "Uploaded" alert; Actions > Projections check is green (self-test + verify). |
-| 7 | Open the card page and one embed. | Status reads "Projections · N of 13 fights · updated X min ago" with no amber text; the embed shows the Sheet model block. |
-| 8 | Fight day: re-publish within 12h of the first walkout. | Status stays green (amber means over 12h old or a published fight not on the card). |
+Already done on the branch (Nov 11): it merges into main with no conflicts; the dry-run projections are off the live path,
+so after the merge the page says "Projections coming" until you publish; the name, crash and sheet-mirror tests pass.
 
-A red check never touches the live file: fix the sheet and publish again.
+| # | Min | Do | Proof it worked (check exactly this) |
+|---|---|---|---|
+| 1 | 1 | Open https://github.com/szerillo/ufc-projections/compare/main...publish-to-site > Create pull request > Merge pull request > Confirm. | Green "Able to merge" before you click. After: main's top commit is "Merge pull request ... publish-to-site". |
+| 2 | 1 | Wait one minute, open https://szerillo.github.io/ufc-projections/ufc_334_fight_form.html | Page loads; the status line under the title says **Projections coming**. Actions tab lists **Projections check** and **Roll back projections**. |
+| 3 | 2 | github.com > Settings > Developer settings > Fine-grained tokens > Generate. Repository access: Only select > `ufc-projections`. Permissions: Contents **Read and write**, nothing else. Copy it. | The token's page shows 1 repository and "Contents: Read and write" (GitHub adds "Metadata: Read" on its own; that's expected). |
+| 4 | 1 | UFC Model sheet > Extensions > Apps Script > Project Settings > Script Properties > Add: `GITHUB_TOKEN` = the token > Save. Nowhere else. | `GITHUB_TOKEN` is listed with its value hidden. |
+| 5 | 1 | Apps Script: Files + > Script > `publish_to_site` > paste `scripts/apps_script/publish_to_site.gs` > Save. Your call first: the `include` line at the top sets which sheet fields go public (rec, flag, method, markov, gtd; all on as shipped). | Saves with no red error; `publishMenu_` is in the function dropdown. |
+| 6 | 1 | Triggers (clock) > Add Trigger: `publishMenu_`, From spreadsheet, On open > Save > approve the Google prompt. Reload the sheet. | A **Site** menu sits next to **UFC**. |
+| 7 | 1 | Main Card and Prelims: `Publish` in AR1, AR2:AR11 > Insert > Checkbox. Tick one fight > Site > **Preview publish**. | The preview lists exactly that one fight. |
+| 8 | 1 | UFC > Refresh prices. Tick every fight you've checked > Site > **Publish to site** > slug `ufc_334` > OK. | Alert says **Uploaded**. Within a minute Actions > Projections check is green and main has a commit "projections: verified from sheet at ...". This is the first real use of your token. |
+| 9 | 1 | Reload the card page (step 2 link) and open one fight embed. | Status reads "Projections · N of 13 fights · updated X min ago" in green, no amber text. Pick one fight: the dog's True % equals Calculator column L for that fight's row. |
+
+**No-go:** stop and don't share the page if any of these happen: step 1 shows a conflict; step 8's alert shows an error
+(401, 403 or 404 means the token or its repository access is wrong: redo step 3); the Projections check is red twice
+after a fresh publish; or step 9 shows amber ("could not be read", "not on this card", "over 12h old") or a True % that
+doesn't match the sheet. If a bad file already went live, run **Roll back projections** (below) and the page returns to
+"Projections coming". Nothing else on the site depends on this page.
+
+## Saturday odds (the card-night loop)
+
+GitHub throttles the schedule (the odds bot ran 3.5 to 10.9 h apart this week), so the card-night loop is started by hand.
+Actions > **Pull UFC odds (card-night loop)** > Run workflow, defaults, branch main:
+
+- **Sat 12:00 pm ET**: run it twice. The first runs about 5h40m; the second waits and starts when the first ends (~5:40 pm).
+- **Sat 6:00 pm ET**: run it once more. It waits behind the second and covers ~11:20 pm to the end of the window
+  (main event + 35 min, ~1:05 am ET Sun). A scheduled tick that queues in the meantime replaces a waiting run; that's fine.
+- Inside the window the bot pulls hourly before the first bell and every 30 min during the card.
+- What the page shows: "Live odds · BettingPros · updated X ago", green under 90 min old, amber after. If nothing runs,
+  the page keeps the last pull and shows its age in amber; projections are unaffected (their own 12 h guard).
+- Tested Nov 11 (run 43131039515, 2 min, 3 ticks): one pull of 13 UFC 334 fights and 9 for the next card, pushed to main
+  and live on the site 45 s later. The loop always writes main, whichever branch starts it.
 
 ## Undo a bad publish (one step)
 
 GitHub > Actions > **Roll back projections** > Run workflow (slug `ufc_334`). Or, from any browser: in the repo,
 Add file > Create new file, name it `data/rollback/ufc_334.txt`, leave it empty, Commit. Either way the card page goes back
-to the version from the publish before the latest one (or to "Projections coming" if there was none), and the bad
+to the version from the publish before the latest one (or to "Projections coming" if there was none; dry runs from
+before go-live never count), and the bad
 pending file is deleted so it can't come back. Running it twice changes nothing more. Tested on the branch Nov 11:
 13 s from the request to the restored file; the site then needs one Pages deploy (median 46 s, max 68 s over the last 20).
 
