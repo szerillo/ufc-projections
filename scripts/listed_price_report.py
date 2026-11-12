@@ -34,6 +34,12 @@ def main():
     now = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")
     newest = max(s["t"] for v in by_id.values() for s in v)
     print(f"LISTED PRICE REPORT {a.slug} at {now} UTC (report only). Archive newest snapshot {newest[:16]} UTC; export published {exp.get('published_at', '?')[:16]}")
+    # Kirk round 19 C: never show an old price as "now". A bout whose newest US-regulated snapshot is older than STALE_H shows
+    # UNKNOWN; a US-regulated book that priced the bout in the last 24 h but is missing from the newest snapshot is named.
+    STALE_H = 4.0
+    tnow = dt.datetime.now(dt.timezone.utc); age_h = lambda t: (tnow - BL.ts(t if t.endswith("Z") else t + "Z")).total_seconds() / 3600
+    if age_h(newest) > STALE_H:
+        print(f"!!! ARCHIVE STALE: newest snapshot is {age_h(newest):.1f} h old (limit {STALE_H:.0f} h). Every price below is UNKNOWN until the odds archive updates.")
     print(f"{'Fighter':26} {'Listed':>7} {'Best US now':>12} {'Book':10} {'US median':>9} {'Snapshot':>11}  Passes if republished now?")
     fails = []
     for pf in exp["fights"]:
@@ -46,6 +52,13 @@ def main():
         last = next((s for s in reversed(snaps) if set(BL.side_prices(s, fav, fl)) & set(BL.REG)), None)
         for sd, nm, key in (("a", fav, "fav_odds"), ("b", dog, "dog_odds")):
             L = pf["inputs"].get(key)
+            stale = last is None or age_h(last["t"]) > STALE_H
+            recent = {b for s_ in snaps if age_h(s_["t"]) <= 24 for b in BL.side_prices(s_, fav, fl) if b in BL.REG}
+            missing = sorted(NAME.get(b, b) for b in recent - set(BL.side_prices(last, fav, fl) if last else {}))
+            if stale:
+                ago = f"{age_h(last['t']):.1f} h ago" if last else "never"
+                print(f"{nm:26} {(f'{L:+d}' if L is not None else '-'):>7} {'UNKNOWN':>12} {'-':10} {'-':>9} {'stale':>11}  UNKNOWN: last US-regulated price {ago}")
+                fails.append(f"{nm} (unknown)"); continue
             if last:
                 pr = {b: v for b, v in BL.side_prices(last, fav, fl).items() if b in BL.REG}
                 ams = {b: BL.am(v[0] if sd == "a" else v[1]) for b, v in pr.items()}
@@ -56,8 +69,9 @@ def main():
                 best = book = medt = snap = "-"
             ok = res[sd]["ok"]
             if not ok: fails.append(f"{nm} {L:+d}" if L is not None else nm)
-            print(f"{nm:26} {(f'{L:+d}' if L is not None else '-'):>7} {best:>12} {book:10} {medt:>9} {snap:>11}  {'yes' if ok else 'NO: paste a current US-regulated price'}")
-    print(f"\n{len(fails)} Listed cell(s) would fail the gate if republished now: {', '.join(fails) or 'none'}")
+            note = f"  [missing now, priced in last 24 h: {', '.join(missing)}]" if missing else ""
+            print(f"{nm:26} {(f'{L:+d}' if L is not None else '-'):>7} {best:>12} {book:10} {medt:>9} {snap:>11}  {'yes' if ok else 'NO: paste a current US-regulated price'}{note}")
+    print(f"\n{len(fails)} Listed cell(s) would fail the gate or are UNKNOWN: {', '.join(fails) or 'none'}")
 
 
 if __name__ == "__main__":

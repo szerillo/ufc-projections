@@ -21,5 +21,13 @@
  "roi_minus_margin": -0.0783,
  "z": -1.15,
  "script_sha256": "3db2edf1814e",
- "output_sha256": "f9f6c4b1b303"
+ "output_sha256": "f9f6c4b1b303",
+ "roi_ci_method": "normal approximation: roi +/- 1.96 x SD/sqrt(n) of the 233 per-bet returns (this is what the box shows)",
+ "roi_ci_bootstrap": [
+  -0.2495,
+  0.0123
+ ],
+ "bootstrap": "10,000 resamples of the 233 per-bet returns, percentiles 2.5/97.5, seed 20261112 (round 19 check)",
+ "bootstrap_share_above_margin": 0.121,
+ "bootstrap_script_sha256": "0f826814e112"
 }

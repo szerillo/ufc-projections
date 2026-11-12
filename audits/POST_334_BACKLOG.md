@@ -12,3 +12,8 @@ Logged 2026-11-12 (Kirk round 18). Nothing here is done before the card; the pub
    (the added bout: 2025-02-08 Rongzhu vs Kody Steele). Rebuild `data/embeds/debut_angle_stats.json` with it.
 3. **`scripts/check_rounds.py --post`** for the first real post-card five-round comparison (UFC 334's pre-fight version is
    committed).
+4. **TUF sensitivity for the debut angle** (Kirk round 19). Pre-register, then run the debut_vs_vet angle with TUF tournament
+   bouts counted both ways (as prior UFC fights, as now; and not counted). Report both with the research.json refresh in
+   item 2. The embed box does not change before that.
+5. **Merge guard.** If main moved before the merge, `scripts/main_guard.py` refuses; redo the round-18 served-set check on the
+   real merge result and record the new main SHA in `audits/MAIN_AT_CHECK.txt` on purpose.
