@@ -97,6 +97,17 @@ function ffPanelStub(f, isFirst) {
 function ffErrRow(f, cols) {
   return `<tr><td colspan="${cols}" style="padding:8px;text-align:center;color:var(--text-muted);font-size:11px;">Fight ${ffEsc(f && f.n)}: numbers could not be shown</td></tr>`;
 }
+// Names matched with a spelling difference (a loose match confirmed by the opponent). Shown, never hidden: a debut or
+// replacement with a near name (Daniel Roberts -> Daniel Robert) cannot be told from a feed typo by the rule alone.
+const FF_FUZZY = { proj: [], odds: [] };
+function ffNoteFuzzy(kind, pageA, pageB, slots, otherA, otherB) {
+  const pairs = slots === "same" ? [[pageA, otherA], [pageB, otherB]] : [[pageA, otherB], [pageB, otherA]];
+  pairs.forEach(([x, y]) => { if (!fighterStrictMatch(x, y)) FF_FUZZY[kind].push(x + " = " + y); });
+}
+function ffFuzzyText(kind) {
+  const l = FF_FUZZY[kind];
+  return l.length ? ` · <span class="ff-fuzzy">spelled differently: ${ffEsc(l.join("; "))}</span>` : "";
+}
 function ffReportErrors() {
   if (!FF_ERRORS.length) return;
   const el = document.getElementById("ff-proj-status");
@@ -209,6 +220,9 @@ def build_fights(slug: str, event: dict, stats_rows: list[dict], odds: dict | No
             if not slots:
                 continue
             fx, fy = (fa, fb) if slots == "same" else (fb, fa)
+            for pn, fn in ((x, fx), (y, fy)):
+                if not strict_match(pn, fn):
+                    print(f"note: odds feed spells {pn!r} as {fn!r} (matched through the bout)", file=sys.stderr)
             def cost(feed_name):
                 for m in fo["markets"].get("moneyline", []):
                     if strict_match(m["label"], feed_name):
@@ -288,10 +302,11 @@ function projRecordOk(p) {
   return true;
 }
 function applySheetProjections(doc) {
-  PROJ_UNMATCHED = []; PROJ_BAD = [];
+  PROJ_UNMATCHED = []; PROJ_BAD = []; FF_FUZZY.proj = [];
   (Array.isArray(doc && doc.fights) ? doc.fights : []).forEach((p, i) => { try {
     if (!projRecordOk(p)) { PROJ_BAD.push(p && p.fav && p.dog ? p.fav + " vs " + p.dog : "record " + (i + 1)); return; }
     const f = FIGHTS.find(x => fighterBoutSlots(x.a.name, x.b.name, p.dog, p.fav) != null);
+    if (f) ffNoteFuzzy("proj", f.a.name, f.b.name, fighterBoutSlots(f.a.name, f.b.name, p.dog, p.fav), p.dog, p.fav);
     if (!f) { PROJ_UNMATCHED.push(p.fav + " vs " + p.dog); return; }   // published but not on this page: a late change the page has not caught up with
     if (!p.sheet || p.sheet.true_dog == null) return;
     const aIsDog = fighterBoutSlots(f.a.name, f.b.name, p.dog, p.fav) === "same";
@@ -331,8 +346,10 @@ async function loadSheetProjections() {
       el.className = "ff-odds-status fresh";
       el.innerHTML = `<span class="dot"></span>Projections · ${n} of ${FIGHTS.length} fights · updated ${fmtAgo(SHEET_PROJ.published_at)}` +
         (PROJ_UNMATCHED.length ? ` · <b>${PROJ_UNMATCHED.length} published fight${PROJ_UNMATCHED.length > 1 ? "s" : ""} not on this card: ${ffEsc(PROJ_UNMATCHED.join("; "))}</b>` : "") +
-        (PROJ_BAD.length ? ` · <b>${PROJ_BAD.length} published fight${PROJ_BAD.length > 1 ? "s" : ""} could not be read: ${ffEsc(PROJ_BAD.join("; "))}</b>` : "");
-      if (PROJ_UNMATCHED.length || PROJ_BAD.length) el.className = "ff-odds-status stale";
+        (PROJ_BAD.length ? ` · <b>${PROJ_BAD.length} published fight${PROJ_BAD.length > 1 ? "s" : ""} could not be read: ${ffEsc(PROJ_BAD.join("; "))}</b>` : "") +
+        ffFuzzyText("proj");
+      // a sheet name that differs from the page's is unusual (both come from the same card), so it turns the line amber
+      if (PROJ_UNMATCHED.length || PROJ_BAD.length || FF_FUZZY.proj.length) el.className = "ff-odds-status stale";
       // freshness guard: numbers older than 12h stay up but are labelled (prices and news move; Sean re-publishes before the card)
       const ageH = (Date.now() - Date.parse(SHEET_PROJ.published_at)) / 36e5;
       if (!(ageH <= 12)) { el.className = "ff-odds-status stale"; el.innerHTML += ` · <b>over 12h old, check before using</b>`; }
@@ -408,6 +425,11 @@ def patch(template: str, slug: str, fights_js: str, title: str, subtitle: str) -
         assert t.count(x) == 1, x
         t = t.replace(x, y)
     t = guard_loops(t)
+    rep_ = lambda x, y: (t.count(x) == 1 or (_ for _ in ()).throw(AssertionError(x[:60]))) and t.replace(x, y)
+    t = rep_("    const lf = findLiveFight(live, f.a, f.b);\n    if (!lf) return;",
+             "    const lf = findLiveFight(live, f.a, f.b);\n    if (!lf) return;\n    ffNoteFuzzy(\"odds\", f.a.name, f.b.name, fighterBoutSlots(f.a.name, f.b.name, lf.fighter_a?.name, lf.fighter_b?.name), lf.fighter_a?.name, lf.fighter_b?.name);")
+    t = rep_("  el.innerHTML = `<span class=\"dot\"></span>Live odds · BettingPros · updated ${ago}`;",
+             "  el.innerHTML = `<span class=\"dot\"></span>Live odds · BettingPros · updated ${ago}` + ffFuzzyText(\"odds\");")
     for bad in ("USER_PROJECTIONS_BY_FIGHT", "Cortes", "cortes_acosta"):
         assert bad not in t, bad
     return t

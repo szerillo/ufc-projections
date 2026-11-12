@@ -36,10 +36,11 @@ SUFFIXES = {"jr", "sr", "ii", "iii", "iv"}
 # Different UFCStats fighters whose names still match loosely (pairwise run over all 4,628 fighters, Block 41/42).
 # Loose matching never joins these, so one of them replacing the other against the same opponent, or a stats file that
 # only has the other one, gives no match instead of the wrong fighter. Strict matches are unaffected.
-# Regenerate after a UFCStats refresh: work/private/b41/false_merge.py, the "merges" list.
+# Check after each card: python3 -I scripts/known_distinct.py (exit 1 lists pairs to add).
 KNOWN_DISTINCT = [("Alex Crispin", "Alexander Crispim"), ("Anthony Johnson", "Tony Johnson"), ("Bobby Sanchez", "Robert Sanchez"),
                   ("Carlo Prater", "Carlos Prates"), ("Chris Mickle", "Chris Tickle"), ("Daniel Roberts", "Danny Roberts"),
-                  ("Greg Scott", "Greg Stott"), ("Thomas Petersen", "Tommy Petersen")]
+                  ("Greg Scott", "Greg Stott"), ("Thomas Petersen", "Tommy Petersen"),
+                  ("Lance Gibson", "Lance Gibson Jr.")]   # father and son (scripts/known_distinct.py, Block 43)
 
 
 def raw_tokens(name: str) -> list[str]:

@@ -2509,7 +2509,7 @@ ${(f.a.ctrl || f.b.ctrl) ? `
 // ============== FIGHTER NAME RULE (scripts/fighter_names.py; tested by scripts/test_fighter_names.py) ==============
 const NAME_NICKS = {"alex": "alexander", "andy": "andrew", "beth": "elizabeth", "bill": "william", "bob": "robert", "bobby": "robert", "charlie": "charles", "chuck": "charles", "dan": "daniel", "danny": "daniel", "dick": "richard", "drew": "andrew", "ed": "edward", "eddie": "edward", "jim": "james", "jimmy": "james", "joe": "joseph", "kate": "katherine", "liz": "elizabeth", "manny": "manuel", "mick": "michael", "mike": "michael", "pete": "peter", "rick": "richard", "rob": "robert", "sasha": "alexander", "steve": "stephen", "tim": "timothy", "timmy": "timothy", "tom": "thomas", "tommy": "thomas", "tony": "anthony", "will": "william", "zach": "zachary", "zack": "zachary"};
 const NAME_SUFFIX_SET = new Set(["jr", "sr", "ii", "iii", "iv"]);
-const NAME_DISTINCT = new Set(["alex crispin|alexander crispim", "anthony johnson|tony johnson", "bobby sanchez|robert sanchez", "carlo prater|carlos prates", "chris mickle|chris tickle", "daniel roberts|danny roberts", "greg scott|greg stott", "thomas petersen|tommy petersen"]);
+const NAME_DISTINCT = new Set(["alex crispin|alexander crispim", "anthony johnson|tony johnson", "bobby sanchez|robert sanchez", "carlo prater|carlos prates", "chris mickle|chris tickle", "daniel roberts|danny roberts", "greg scott|greg stott", "lance gibson|lance gibson jr", "thomas petersen|tommy petersen"]);
 function nameRawTokens(s) {
   return String(s == null ? "" : s).normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z]/g, " ").split(/\s+/).filter(Boolean);
 }
@@ -2576,6 +2576,17 @@ function ffPanelStub(f, isFirst) {
 function ffErrRow(f, cols) {
   return `<tr><td colspan="${cols}" style="padding:8px;text-align:center;color:var(--text-muted);font-size:11px;">Fight ${ffEsc(f && f.n)}: numbers could not be shown</td></tr>`;
 }
+// Names matched with a spelling difference (a loose match confirmed by the opponent). Shown, never hidden: a debut or
+// replacement with a near name (Daniel Roberts -> Daniel Robert) cannot be told from a feed typo by the rule alone.
+const FF_FUZZY = { proj: [], odds: [] };
+function ffNoteFuzzy(kind, pageA, pageB, slots, otherA, otherB) {
+  const pairs = slots === "same" ? [[pageA, otherA], [pageB, otherB]] : [[pageA, otherB], [pageB, otherA]];
+  pairs.forEach(([x, y]) => { if (!fighterStrictMatch(x, y)) FF_FUZZY[kind].push(x + " = " + y); });
+}
+function ffFuzzyText(kind) {
+  const l = FF_FUZZY[kind];
+  return l.length ? ` · <span class="ff-fuzzy">spelled differently: ${ffEsc(l.join("; "))}</span>` : "";
+}
 function ffReportErrors() {
   if (!FF_ERRORS.length) return;
   const el = document.getElementById("ff-proj-status");
@@ -2616,10 +2627,11 @@ function projRecordOk(p) {
   return true;
 }
 function applySheetProjections(doc) {
-  PROJ_UNMATCHED = []; PROJ_BAD = [];
+  PROJ_UNMATCHED = []; PROJ_BAD = []; FF_FUZZY.proj = [];
   (Array.isArray(doc && doc.fights) ? doc.fights : []).forEach((p, i) => { try {
     if (!projRecordOk(p)) { PROJ_BAD.push(p && p.fav && p.dog ? p.fav + " vs " + p.dog : "record " + (i + 1)); return; }
     const f = FIGHTS.find(x => fighterBoutSlots(x.a.name, x.b.name, p.dog, p.fav) != null);
+    if (f) ffNoteFuzzy("proj", f.a.name, f.b.name, fighterBoutSlots(f.a.name, f.b.name, p.dog, p.fav), p.dog, p.fav);
     if (!f) { PROJ_UNMATCHED.push(p.fav + " vs " + p.dog); return; }   // published but not on this page: a late change the page has not caught up with
     if (!p.sheet || p.sheet.true_dog == null) return;
     const aIsDog = fighterBoutSlots(f.a.name, f.b.name, p.dog, p.fav) === "same";
@@ -2659,8 +2671,10 @@ async function loadSheetProjections() {
       el.className = "ff-odds-status fresh";
       el.innerHTML = `<span class="dot"></span>Projections · ${n} of ${FIGHTS.length} fights · updated ${fmtAgo(SHEET_PROJ.published_at)}` +
         (PROJ_UNMATCHED.length ? ` · <b>${PROJ_UNMATCHED.length} published fight${PROJ_UNMATCHED.length > 1 ? "s" : ""} not on this card: ${ffEsc(PROJ_UNMATCHED.join("; "))}</b>` : "") +
-        (PROJ_BAD.length ? ` · <b>${PROJ_BAD.length} published fight${PROJ_BAD.length > 1 ? "s" : ""} could not be read: ${ffEsc(PROJ_BAD.join("; "))}</b>` : "");
-      if (PROJ_UNMATCHED.length || PROJ_BAD.length) el.className = "ff-odds-status stale";
+        (PROJ_BAD.length ? ` · <b>${PROJ_BAD.length} published fight${PROJ_BAD.length > 1 ? "s" : ""} could not be read: ${ffEsc(PROJ_BAD.join("; "))}</b>` : "") +
+        ffFuzzyText("proj");
+      // a sheet name that differs from the page's is unusual (both come from the same card), so it turns the line amber
+      if (PROJ_UNMATCHED.length || PROJ_BAD.length || FF_FUZZY.proj.length) el.className = "ff-odds-status stale";
       // freshness guard: numbers older than 12h stay up but are labelled (prices and news move; Sean re-publishes before the card)
       const ageH = (Date.now() - Date.parse(SHEET_PROJ.published_at)) / 36e5;
       if (!(ageH <= 12)) { el.className = "ff-odds-status stale"; el.innerHTML += ` · <b>over 12h old, check before using</b>`; }
@@ -2774,6 +2788,7 @@ function mergeLiveOdds(live) {
   FIGHTS.forEach(f => { try {
     const lf = findLiveFight(live, f.a, f.b);
     if (!lf) return;
+    ffNoteFuzzy("odds", f.a.name, f.b.name, fighterBoutSlots(f.a.name, f.b.name, lf.fighter_a?.name, lf.fighter_b?.name), lf.fighter_a?.name, lf.fighter_b?.name);
     f._live = { event_id: lf.event_id, scheduled: lf.scheduled_utc, status: lf.status };
 
     const m = lf.markets || {};
@@ -2851,7 +2866,7 @@ function updateOddsStatus(live, err) {
   const ageMin = (Date.now() - new Date(live.updated_at).getTime()) / 60000;
   const fresh = ageMin < 90;
   el.className = "ff-odds-status " + (fresh ? "fresh" : "stale");
-  el.innerHTML = `<span class="dot"></span>Live odds · BettingPros · updated ${ago}`;
+  el.innerHTML = `<span class="dot"></span>Live odds · BettingPros · updated ${ago}` + ffFuzzyText("odds");
 }
 
 (async function bootstrap() {
