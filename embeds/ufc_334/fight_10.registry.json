@@ -1,7 +1,10 @@
 {
  "fight": 10,
  "of": 13,
- "site_n": 10,
+ "site_pair": [
+  "Uros Medic",
+  "Kevin Holland"
+ ],
  "pair": [
   "Uros Medic",
   "Kevin Holland"
@@ -30,7 +33,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "a.elo"
    },
    "desc": "Uros Medic Elo",
@@ -43,7 +49,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "form.ra"
    },
    "desc": "Uros Medic Form Figure",
@@ -67,7 +76,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "b.elo"
    },
    "desc": "Kevin Holland Elo",
@@ -80,7 +92,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "form.rb"
    },
    "desc": "Kevin Holland Form Figure",
@@ -753,7 +768,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "odds.open.ma"
    },
    "desc": "OA open ML a",
@@ -766,7 +784,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "odds.open.mb"
    },
    "desc": "OA open ML b",
@@ -779,7 +800,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "odds.open.p"
    },
    "desc": "OA open p",
@@ -792,7 +816,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "odds.close.ma"
    },
    "desc": "OA close ML a",
@@ -805,7 +832,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "odds.close.mb"
    },
    "desc": "OA close ML b",
@@ -818,7 +848,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "odds.close.p"
    },
    "desc": "OA close p",
@@ -831,7 +864,10 @@
    "rule": "oa_drift",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ]
    },
    "desc": "OA drift pts",
    "raw": -0.016799999999999926
@@ -843,7 +879,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "side": "a"
    },
    "desc": "OA best a",
@@ -856,7 +895,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "side": "b"
    },
    "desc": "OA best b",
@@ -921,7 +963,10 @@
    "rule": "oa_len",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ]
    },
    "desc": "Chart points",
    "raw": 140
@@ -933,7 +978,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 10,
+    "pair": [
+     "Uros Medic",
+     "Kevin Holland"
+    ],
     "path": "odds.n"
    },
    "desc": "Snapshots",

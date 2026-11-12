@@ -1,7 +1,10 @@
 {
  "fight": 6,
  "of": 13,
- "site_n": 6,
+ "site_pair": [
+  "Jim Miller",
+  "Terrance McKinney"
+ ],
  "pair": [
   "Jim Miller",
   "Terrance McKinney"
@@ -30,7 +33,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "a.elo"
    },
    "desc": "Jim Miller Elo",
@@ -43,7 +49,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "form.ra"
    },
    "desc": "Jim Miller Form Figure",
@@ -67,7 +76,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "b.elo"
    },
    "desc": "Terrance McKinney Elo",
@@ -80,7 +92,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "form.rb"
    },
    "desc": "Terrance McKinney Form Figure",
@@ -481,7 +496,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "odds.open.ma"
    },
    "desc": "OA open ML a",
@@ -494,7 +512,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "odds.open.mb"
    },
    "desc": "OA open ML b",
@@ -507,7 +528,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "odds.open.p"
    },
    "desc": "OA open p",
@@ -520,7 +544,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "odds.close.ma"
    },
    "desc": "OA close ML a",
@@ -533,7 +560,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "odds.close.mb"
    },
    "desc": "OA close ML b",
@@ -546,7 +576,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "odds.close.p"
    },
    "desc": "OA close p",
@@ -559,7 +592,10 @@
    "rule": "oa_drift",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ]
    },
    "desc": "OA drift pts",
    "raw": 0.018699999999999994
@@ -571,7 +607,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "side": "a"
    },
    "desc": "OA best a",
@@ -584,7 +623,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "side": "b"
    },
    "desc": "OA best b",
@@ -649,7 +691,10 @@
    "rule": "oa_len",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ]
    },
    "desc": "Chart points",
    "raw": 140
@@ -661,7 +706,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 6,
+    "pair": [
+     "Jim Miller",
+     "Terrance McKinney"
+    ],
     "path": "odds.n"
    },
    "desc": "Snapshots",

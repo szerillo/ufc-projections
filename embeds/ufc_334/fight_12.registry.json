@@ -1,7 +1,10 @@
 {
  "fight": 12,
  "of": 13,
- "site_n": 12,
+ "site_pair": [
+  "Kayla Harrison",
+  "Amanda Nunes"
+ ],
  "pair": [
   "Kayla Harrison",
   "Amanda Nunes"
@@ -30,7 +33,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "a.elo"
    },
    "desc": "Kayla Harrison Elo",
@@ -43,7 +49,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "form.ra"
    },
    "desc": "Kayla Harrison Form Figure",
@@ -67,7 +76,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "b.elo"
    },
    "desc": "Amanda Nunes Elo",
@@ -80,7 +92,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "form.rb"
    },
    "desc": "Amanda Nunes Form Figure",
@@ -753,7 +768,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "odds.open.ma"
    },
    "desc": "OA open ML a",
@@ -766,7 +784,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "odds.open.mb"
    },
    "desc": "OA open ML b",
@@ -779,7 +800,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "odds.open.p"
    },
    "desc": "OA open p",
@@ -792,7 +816,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "odds.close.ma"
    },
    "desc": "OA close ML a",
@@ -805,7 +832,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "odds.close.mb"
    },
    "desc": "OA close ML b",
@@ -818,7 +848,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "odds.close.p"
    },
    "desc": "OA close p",
@@ -831,7 +864,10 @@
    "rule": "oa_drift",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ]
    },
    "desc": "OA drift pts",
    "raw": -0.0018000000000000238
@@ -843,7 +879,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "side": "a"
    },
    "desc": "OA best a",
@@ -856,7 +895,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "side": "b"
    },
    "desc": "OA best b",
@@ -921,7 +963,10 @@
    "rule": "oa_len",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ]
    },
    "desc": "Chart points",
    "raw": 140
@@ -933,7 +978,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 12,
+    "pair": [
+     "Kayla Harrison",
+     "Amanda Nunes"
+    ],
     "path": "odds.n"
    },
    "desc": "Snapshots",

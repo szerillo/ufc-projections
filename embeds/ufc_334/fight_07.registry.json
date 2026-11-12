@@ -1,7 +1,10 @@
 {
  "fight": 7,
  "of": 13,
- "site_n": 7,
+ "site_pair": [
+  "Drew Dober",
+  "Chris Duncan"
+ ],
  "pair": [
   "Drew Dober",
   "Chris Duncan"
@@ -30,7 +33,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "a.elo"
    },
    "desc": "Drew Dober Elo",
@@ -43,7 +49,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "form.ra"
    },
    "desc": "Drew Dober Form Figure",
@@ -67,7 +76,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "b.elo"
    },
    "desc": "Chris Duncan Elo",
@@ -80,7 +92,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "form.rb"
    },
    "desc": "Chris Duncan Form Figure",
@@ -753,7 +768,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "odds.open.ma"
    },
    "desc": "OA open ML a",
@@ -766,7 +784,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "odds.open.mb"
    },
    "desc": "OA open ML b",
@@ -779,7 +800,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "odds.open.p"
    },
    "desc": "OA open p",
@@ -792,7 +816,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "odds.close.ma"
    },
    "desc": "OA close ML a",
@@ -805,7 +832,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "odds.close.mb"
    },
    "desc": "OA close ML b",
@@ -818,7 +848,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "odds.close.p"
    },
    "desc": "OA close p",
@@ -831,7 +864,10 @@
    "rule": "oa_drift",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ]
    },
    "desc": "OA drift pts",
    "raw": 0.0021999999999999797
@@ -843,7 +879,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "side": "a"
    },
    "desc": "OA best a",
@@ -856,7 +895,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "side": "b"
    },
    "desc": "OA best b",
@@ -921,7 +963,10 @@
    "rule": "oa_len",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ]
    },
    "desc": "Chart points",
    "raw": 140
@@ -933,7 +978,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 7,
+    "pair": [
+     "Drew Dober",
+     "Chris Duncan"
+    ],
     "path": "odds.n"
    },
    "desc": "Snapshots",

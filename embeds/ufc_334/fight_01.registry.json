@@ -1,7 +1,10 @@
 {
  "fight": 1,
  "of": 13,
- "site_n": 1,
+ "site_pair": [
+  "Evan Elder",
+  "Samuel Sanches"
+ ],
  "pair": [
   "Evan Elder",
   "Samuel Sanches"
@@ -30,7 +33,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "a.elo"
    },
    "desc": "Evan Elder Elo",
@@ -43,7 +49,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "form.ra"
    },
    "desc": "Evan Elder Form Figure",
@@ -67,7 +76,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "b.elo"
    },
    "desc": "Samuel Sanches Elo",
@@ -80,7 +92,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "form.rb"
    },
    "desc": "Samuel Sanches Form Figure",
@@ -753,7 +768,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "odds.open.ma"
    },
    "desc": "OA open ML a",
@@ -766,7 +784,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "odds.open.mb"
    },
    "desc": "OA open ML b",
@@ -779,7 +800,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "odds.open.p"
    },
    "desc": "OA open p",
@@ -792,7 +816,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "odds.close.ma"
    },
    "desc": "OA close ML a",
@@ -805,7 +832,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "odds.close.mb"
    },
    "desc": "OA close ML b",
@@ -818,7 +848,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "odds.close.p"
    },
    "desc": "OA close p",
@@ -831,7 +864,10 @@
    "rule": "oa_drift",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ]
    },
    "desc": "OA drift pts",
    "raw": -0.041000000000000036
@@ -843,7 +879,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "side": "a"
    },
    "desc": "OA best a",
@@ -856,7 +895,10 @@
    "rule": "oa_best",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "side": "b"
    },
    "desc": "OA best b",
@@ -921,7 +963,10 @@
    "rule": "oa_len",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ]
    },
    "desc": "Chart points",
    "raw": 140
@@ -933,7 +978,10 @@
    "rule": "ev",
    "args": {
     "ev": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
-    "n": 1,
+    "pair": [
+     "Evan Elder",
+     "Samuel Sanches"
+    ],
     "path": "odds.n"
    },
    "desc": "Snapshots",

@@ -170,7 +170,8 @@ def mov_ok(bf, an, bn):
 def build(names, outname):
     R = Reg(); gaps = []
     f = next(x for x in EVL["fights"] if pair(x["a"]["name"], x["b"]["name"], *names))
-    SN = f["n"]        # the event file's n (= bout order once card_overrides has run), used to locate the source row
+    SN = f["n"]        # the event file's n (= bout order once card_overrides has run); shown, never used to find a row
+    PAIR = [f["a"]["name"], f["b"]["name"]]   # Block 58: registry rows locate their source bout by both fighters' names
     A_, B_ = f["a"], f["b"]; an, bn = A_["name"], B_["name"]
     n, pos = bout_no(an, bn)
     def ffile(X):   # UFC debutants have no fighter file (no UFC fights yet)
@@ -202,8 +203,8 @@ def build(names, outname):
     status = f'<div class="ff-odds-status"><span class="dot"></span>BettingPros snapshot {esc(bp_t)}</div>'
     def meta(F, g, side, key):
         fig = fm[key] if fm else None
-        return (f'{esc(last(F["name"]))} <span class="num">{R(g["rec"], "str", "record", F["name"]+" UFC record", side=side)}</span> · Elo <span class="num">{R(f[side]["elo"], "int", "ev", F["name"]+" Elo", ev=EVF, n=SN, path=f"{side}.elo")}</span>'
-                f' · Fig <span class="num">{R(fig, "n1", "ev", F["name"]+" Form Figure", ev=EVF, n=SN, path=f"form.{key}") if fig is not None else "—"}</span>')
+        return (f'{esc(last(F["name"]))} <span class="num">{R(g["rec"], "str", "record", F["name"]+" UFC record", side=side)}</span> · Elo <span class="num">{R(f[side]["elo"], "int", "ev", F["name"]+" Elo", ev=EVF, pair=PAIR, path=f"{side}.elo")}</span>'
+                f' · Fig <span class="num">{R(fig, "n1", "ev", F["name"]+" Form Figure", ev=EVF, pair=PAIR, path=f"form.{key}") if fig is not None else "—"}</span>')
     head = f'''<div class="ff-header"><div class="ff-brand" aria-label="Action Network"><span class="ff-brand-text">ACTION</span><span class="ff-brand-check">{CHECK_SVG}</span></div>
 <div class="ff-title">{esc(EVL["name"])} · Fight Form</div><div class="ff-subtitle">{day} · {esc(EVL["location"])}</div>
 <div class="ff-byline-header">By <a href="https://twitter.com/SeanZerillo" target="_blank" rel="noopener">@SeanZerillo</a></div>{status}</div>
@@ -223,7 +224,7 @@ def build(names, outname):
         if not pf:
             ks = ("ko", "sub") if k == "itd" else (k,)
             if any(EM[sd].get(x) is None for x in ks): return '<td class="proj dim">—</td>'
-            v = sum(EM[sd][x] for x in ks) / 100; rule = "evp_sum"; a_ = dict(ev=EVF, n=SN, paths=[f"model.{sd}.{x}" for x in ks])
+            v = sum(EM[sd][x] for x in ks) / 100; rule = "evp_sum"; a_ = dict(ev=EVF, pair=PAIR, paths=[f"model.{sd}.{x}" for x in ks])
             return f'<td class="proj"><span class="odds">{R(v, "mlp", rule, f"Sean {k} ML {F} (build)", **a_)}</span><div class="pct">{R(v, "pct1", rule, f"Sean {k} % {F} (build)", **a_)}</div></td>'
         if k == "win":
             p = pwin(sd); return f'<td class="proj"><span class="odds">{R(p, "mlp", "pub_win", "Sean ML "+F, side=sd)}</span><div class="pct">{R(p, "pct1", "pub_win", "Sean win % "+F, side=sd)}</div></td>'
@@ -251,7 +252,7 @@ def build(names, outname):
     if pf:
         g = pf["gtd"]; gs = f'<td class="proj" colspan="2"><span class="odds">{R(g, "mlp", "pub", "Sean GTD fair ML", key="gtd")}</span><div class="pct">{R(g, "pct1", "pub", "Sean GTD %", key="gtd")}</div></td>'
     elif EM and EM.get("gtd") is not None:
-        g = EM["gtd"] / 100; a_ = dict(ev=EVF, n=SN, paths=["model.gtd"])
+        g = EM["gtd"] / 100; a_ = dict(ev=EVF, pair=PAIR, paths=["model.gtd"])
         gs = f'<td class="proj" colspan="2"><span class="odds">{R(g, "mlp", "evp_sum", "Sean GTD fair ML (build)", **a_)}</span><div class="pct">{R(g, "pct1", "evp_sum", "Sean GTD % (build)", **a_)}</div></td>'
     else:
         gs = '<td class="proj dim" colspan="2">—</td>'
@@ -290,17 +291,17 @@ def build(names, outname):
                 if m is not None and (b is None or dec_odds(m) > dec_odds(b[0])): b = (m, k)
             return b
         ba, bb = best("a"), best("b")
-        body += sparkline(o["series"]) + f'''<div class="kv"><span>Odds API open {o["open"]["t"][:10]}</span><span>{esc(last(an))} {R(o["open"]["ma"], "ml", "ev", "OA open ML a", ev=EVF, n=SN, path="odds.open.ma")} · {esc(last(bn))} {R(o["open"]["mb"], "ml", "ev", "OA open ML b", ev=EVF, n=SN, path="odds.open.mb")} · {R(o["open"]["p"], "pct1", "ev", "OA open p", ev=EVF, n=SN, path="odds.open.p")}</span></div>
-<div class="kv"><span>Odds API latest {o["close"]["t"][:10]}</span><span>{esc(last(an))} {R(o["close"]["ma"], "ml", "ev", "OA close ML a", ev=EVF, n=SN, path="odds.close.ma")} · {esc(last(bn))} {R(o["close"]["mb"], "ml", "ev", "OA close ML b", ev=EVF, n=SN, path="odds.close.mb")} · {R(o["close"]["p"], "pct1", "ev", "OA close p", ev=EVF, n=SN, path="odds.close.p")}</span></div>
-<div class="kv"><span>Drift</span><span>{R(mv, "pts", "oa_drift", "OA drift pts", ev=EVF, n=SN)} pts toward {esc(an if mv >= 0 else bn)}</span></div>
-<div class="kv"><span>Best price (Odds API latest)</span><span>{esc(last(an))} {R(ba[0], "ml", "oa_best", "OA best a", ev=EVF, n=SN, side="a")} {esc(BOOKS.get(ba[1], ba[1]))} · {esc(last(bn))} {R(bb[0], "ml", "oa_best", "OA best b", ev=EVF, n=SN, side="b")} {esc(BOOKS.get(bb[1], bb[1]))}</span></div>'''
+        body += sparkline(o["series"]) + f'''<div class="kv"><span>Odds API open {o["open"]["t"][:10]}</span><span>{esc(last(an))} {R(o["open"]["ma"], "ml", "ev", "OA open ML a", ev=EVF, pair=PAIR, path="odds.open.ma")} · {esc(last(bn))} {R(o["open"]["mb"], "ml", "ev", "OA open ML b", ev=EVF, pair=PAIR, path="odds.open.mb")} · {R(o["open"]["p"], "pct1", "ev", "OA open p", ev=EVF, pair=PAIR, path="odds.open.p")}</span></div>
+<div class="kv"><span>Odds API latest {o["close"]["t"][:10]}</span><span>{esc(last(an))} {R(o["close"]["ma"], "ml", "ev", "OA close ML a", ev=EVF, pair=PAIR, path="odds.close.ma")} · {esc(last(bn))} {R(o["close"]["mb"], "ml", "ev", "OA close ML b", ev=EVF, pair=PAIR, path="odds.close.mb")} · {R(o["close"]["p"], "pct1", "ev", "OA close p", ev=EVF, pair=PAIR, path="odds.close.p")}</span></div>
+<div class="kv"><span>Drift</span><span>{R(mv, "pts", "oa_drift", "OA drift pts", ev=EVF, pair=PAIR)} pts toward {esc(an if mv >= 0 else bn)}</span></div>
+<div class="kv"><span>Best price (Odds API latest)</span><span>{esc(last(an))} {R(ba[0], "ml", "oa_best", "OA best a", ev=EVF, pair=PAIR, side="a")} {esc(BOOKS.get(ba[1], ba[1]))} · {esc(last(bn))} {R(bb[0], "ml", "oa_best", "OA best b", ev=EVF, pair=PAIR, side="b")} {esc(BOOKS.get(bb[1], bb[1]))}</span></div>'''
     else:
         gaps.append(f"Fight {n}: no Odds API line history (no odds block in the event file).")
     if bf:
         la, lb = bp_name(bf, an), bp_name(bf, bn); sa, sb = bp_sel(bf, "moneyline", la), bp_sel(bf, "moneyline", lb)
         body += f'<div class="kv"><span>BettingPros open → now</span><span>{esc(last(an))} {R(sa["opening_cost"], "ml", "bp", "BP open a (move)", market="moneyline", label=la, field="opening_cost")} → {R(sa["books"]["consensus"]["cost"], "ml", "bp", "BP now a (move)", market="moneyline", label=la, field="cost")} · {esc(last(bn))} {R(sb["opening_cost"], "ml", "bp", "BP open b (move)", market="moneyline", label=lb, field="opening_cost")} → {R(sb["books"]["consensus"]["cost"], "ml", "bp", "BP now b (move)", market="moneyline", label=lb, field="cost")}</span></div>'
     if o:
-        body += f'<div class="note">Chart: Odds API no-vig consensus for {esc(an)}, {R(len(o["series"]), "int", "oa_len", "Chart points", ev=EVF, n=SN)} points from {R(o["n"], "int", "ev", "Snapshots", ev=EVF, n=SN, path="odds.n")} snapshots, last {o["close"]["t"][:16].replace("T"," ")} UTC. BettingPros row is newer ({esc(bp_t)}).</div>'
+        body += f'<div class="note">Chart: Odds API no-vig consensus for {esc(an)}, {R(len(o["series"]), "int", "oa_len", "Chart points", ev=EVF, pair=PAIR)} points from {R(o["n"], "int", "ev", "Snapshots", ev=EVF, pair=PAIR, path="odds.n")} snapshots, last {o["close"]["t"][:16].replace("T"," ")} UTC. BettingPros row is newer ({esc(bp_t)}).</div>'
     else:
         body += '<div class="note">No Odds API history for this bout, so no chart; BettingPros open → now only.</div>'
     secs.append(sec("move", "Line movement", "open → now", body, True))
@@ -427,7 +428,7 @@ table.t{{font-size:11.5px}}table.t td,table.t th{{padding:5px 3px}}.kv{{font-siz
 <script>/* open a collapsed section when its nav chip is used */document.querySelectorAll('.ffnav a').forEach(function(a){{a.addEventListener('click',function(){{var d=document.querySelector(a.getAttribute('href'));if(d&&d.tagName==='DETAILS')d.open=true;}});}});</script>
 </body></html>'''
     (OUT / outname).write_text(page)
-    reg = dict(fight=n, of=NB, site_n=SN, pair=[an, bn], file=outname, event=EVF, proj_src=proj_src, proj_file=PUBF if pf else (EVF if EM else None),
+    reg = dict(fight=n, of=NB, site_pair=PAIR, pair=[an, bn], file=outname, event=EVF, proj_src=proj_src, proj_file=PUBF if pf else (EVF if EM else None),
                published_at=PUB.get("published_at") if pf else None, rows=R.rows, gaps=gaps)
     (OUT / outname.replace(".html", ".registry.json")).write_text(json.dumps(reg, indent=1, default=str))
     print(outname, len(page), "bytes,", len(R.rows), "numbers,", len(gaps), "gaps")

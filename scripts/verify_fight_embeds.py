@@ -16,6 +16,19 @@ FD = REPO / "form" / "data"
 US = {"draftkings", "fanduel", "betmgm", "williamhill_us", "caesars", "betrivers", "fanatics", "espnbet", "hardrockbet", "circasports"}   # written here, not imported
 sq = lambda s: re.sub(r"[^a-z]", "", (s or "").lower())
 sur = lambda s: sq(s.split()[-1])
+# Block 58: a registry row finds its bout by both fighters' names (feed spellings through form/data/name_aliases.json,
+# exact keys), and must find exactly one. A row still keyed by number is an error, not a fallback.
+ALIAS = {sq(k): v for k, v in json.loads((REPO / "form" / "data" / "name_aliases.json").read_text()).items() if not k.startswith("_")}
+def by_name(ev, a):
+    if "pair" not in a:
+        raise KeyError(f"registry row keyed by number (n={a.get('n')}), not by name")
+    c = lambda s: sq(ALIAS.get(sq(s), s))
+    want = {c(a["pair"][0]), c(a["pair"][1])}
+    hits = [x for x in ev["fights"] if {c(x["a"]["name"]), c(x["b"]["name"])} == want]
+    if len(hits) != 1:
+        raise KeyError(f"{a['pair']} matches {len(hits)} bouts")
+    return hits[0]
+
 def is_(x, y):
     """same fighter: squashed names equal (Alateng Heili = Alatengheili), or close surname with a matching first initial (Charlie Radke = Charles Radtke)"""
     if sq(x) == sq(y): return True
@@ -84,7 +97,7 @@ def check(D, htmlfile, G):
         return {"slpm": lambda: col(0) / mins, "sapm": lambda: col(2) / mins, "diff": lambda: (col(0) - col(2)) / mins, "acc": lambda: col(0) / col(1),
                 "dfn": lambda: 1 - col(2) / col(3), "td15": lambda: col(6) / mins * 15, "tdd": lambda: 1 - col(8) / col(9), "ctrlp": lambda: col(10) / secs}[key]()
     def form_win(a, sd):
-        ff = EV[a["ev"]]["fights"]; f_ = next(x for x in ff if x["n"] == a["n"])
+        ff = EV[a["ev"]]["fights"]; f_ = by_name(EV[a["ev"]], a)
         p = fairp(f_["odds"]["close"]["p"]) if a["base"] == "fair(odds.close.p)" else f_["form"]["p"]
         return (p if sd == "a" else 1 - p), f_
 
@@ -98,11 +111,11 @@ def check(D, htmlfile, G):
                 L_ = prior[a["side"]]; c = lambda t: sum(1 for x in L_ if x["r"] == t); nc = len(L_) - c("W") - c("L") - c("D")
                 v = f'{c("W")}-{c("L")}-{c("D")}' + (f" ({nc} NC)" if nc else "")
             elif rule in ("ev", "ev_p"):
-                f_ = next(x for x in EV[a["ev"]]["fights"] if x["n"] == a["n"]); v = dig(f_, a["path"]); v = 1 - v if inv else v
+                f_ = by_name(EV[a["ev"]], a); v = dig(f_, a["path"]); v = 1 - v if inv else v
             elif rule == "fair":
-                f_ = next(x for x in EV[a["ev"]]["fights"] if x["n"] == a["n"]); v = fairp(dig(f_, a["path"])); v = 1 - v if inv else v
+                f_ = by_name(EV[a["ev"]], a); v = fairp(dig(f_, a["path"])); v = 1 - v if inv else v
             elif rule == "evp_sum":
-                f_ = next(x for x in EV[a["ev"]]["fights"] if x["n"] == a["n"]); v = sum(dig(f_, p_) for p_ in a["paths"]) / 100
+                f_ = by_name(EV[a["ev"]], a); v = sum(dig(f_, p_) for p_ in a["paths"]) / 100
             elif rule == "pub_win":
                 v = pwin(a["side"])[0]; v = 1 - v if inv else v
             elif rule == "pub_meth":
@@ -121,11 +134,11 @@ def check(D, htmlfile, G):
             elif rule == "form_gtd":
                 p, f_ = form_win(a, "a"); v = p * f_["form"]["ms"]["a"][2] + (1 - p) * f_["form"]["ms"]["b"][2]
             elif rule == "oa_drift":
-                f_ = next(x for x in EV[a["ev"]]["fights"] if x["n"] == a["n"]); v = f_["odds"]["close"]["p"] - f_["odds"]["open"]["p"]
+                f_ = by_name(EV[a["ev"]], a); v = f_["odds"]["close"]["p"] - f_["odds"]["open"]["p"]
             elif rule == "oa_len":
-                f_ = next(x for x in EV[a["ev"]]["fights"] if x["n"] == a["n"]); v = len(f_["odds"]["series"])
+                f_ = by_name(EV[a["ev"]], a); v = len(f_["odds"]["series"])
             elif rule == "oa_best":
-                f_ = next(x for x in EV[a["ev"]]["fights"] if x["n"] == a["n"]); k = "ma" if a["side"] == "a" else "mb"
+                f_ = by_name(EV[a["ev"]], a); k = "ma" if a["side"] == "a" else "mb"
                 v = max((b[k] for bk, b in f_["odds"]["books"].items() if bk in US and b.get(k) is not None), key=lambda m: m / 100 if m > 0 else 100 / -m)   # US books only (Block 57)
             elif rule == "age": v = (date.fromisoformat(DATE) - date.fromisoformat(FT[a["side"]]["bio"]["dob"])).days / 365.25
             elif rule == "bio_reach": v = int(FT[a["side"]]["bio"]["reach"])
