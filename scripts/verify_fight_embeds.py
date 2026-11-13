@@ -805,7 +805,7 @@ def negative(D, G, slug):
         ("embed: a model cell blanked (fight 10)", plant_text("fight_10.html", lambda s_: re.sub(r'<td class="model"><span class="odds">.*?</td>', '<td class="model dim">n/a</td>', s_, count=1, flags=re.S))),
         ("embed: an edge chip off by 0.1 (fight 13)", plant_text("fight_13.html", bump_first("edge", "spp"))),
         ("embed: Spot to watch dropped (fight 06)", plant_text("fight_06.html", lambda s_: re.sub(r'<div class="stk spot".*?</ul></div>', "", s_, count=1, flags=re.S))),
-        ("embed: Spot to watch added where no test fires (fight 05)", plant_text("fight_05.html", lambda s_: s_.replace('<div class="legend">', '<div class="stk spot" data-part="spot"><ul class="lvl"><li data-spot="T1"><b>Johnson</b> x</li></ul></div><div class="legend">', 1))),
+        ("embed: Spot to watch added where no test fires (fight 05)", plant_text("fight_05.html", lambda s_: s_.replace('<details class="xpl">', '<div class="stk spot" data-part="spot"><ul class="lvl"><li data-spot="T1"><b>Johnson</b> x</li></ul></div><details class="xpl">', 1))),
         ("embed: an edge under 2.0 coloured (first fight with one)", plant_any(lambda s_: re.sub(r'<span class="ech flat">(<span data-id="v\d+">[+-][01]\.\d%</span>)', r'<span class="ech pos">\1', s_, count=1))),
         ("embed: 'price unverified' removed where due, or added where not due (first fight it applies to)", plant_any(unv_flip)),
         ("embed: an offshore book named on the page (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace('<span class="mvl">Line', 'Pinnacle <span class="mvl">Line', 1))),
