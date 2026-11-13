@@ -96,16 +96,16 @@ def length_row(f):
     nm = (f'<td class="l lfn" rowspan="1"><b class="cg-n">{f["n"]}</b><a href="{f["file"]}" target="_blank" rel="noopener">{f["a"].split()[-1]} <span class="vs">vs</span> {f["b"].split()[-1]}</a>'
           f'{"<span class=cg-belt>★</span>" if f["title"] else ""}<div class="opp">{f["weight"]}</div></td>')
     if len(r) != 2:
-        return f'<tr class="lrow">{nm}<td class="l dim" colspan="5">No fight length numbers for this bout.</td></tr>'
+        return f'<tr class="lrow">{nm}<td class="l dim" colspan="4">No fight length numbers for this bout.</td></tr>'
     g, i = [tr.find_all("td", recursive=False) for tr in r]
     def two(c1, c2):
         def one(c):
             o, pc, e = c.select_one(".odds"), c.select_one(".pct"), c.select_one(".ech")
             if e is not None: return str(e)
             if o is None: return '<span class="dim">–</span>'
-            return f'<span class="odds">{o.decode_contents()}</span>' + (f' <span class="pct">{pc.decode_contents()}</span>' if pc else "")
+            return f'<span class="odds">{o.decode_contents()}</span>' + (f'<span class="sr">{pc.decode_contents()}</span>' if pc else "")
         return f'<div class="l2">{one(c1)}</div><div class="l2 lb">{one(c2)}</div>'
-    cells = "".join(f'<td class="{"model" if k == 1 else ""}">{two(g[k], i[k])}</td>' for k in range(1, 5))
+    cells = "".join(f'<td class="{"model" if k == 1 else ""}">{two(g[k], i[k])}</td>' for k in range(1, 4))
     return f'<tr class="lrow">{nm}<td class="lab"><div class="l2">GTD</div><div class="l2 lb">ITD</div></td>{cells}</tr>'
 
 
@@ -132,16 +132,16 @@ def method_rows(f):
 
 def props_tables(F, seg):
     fs = [f for f in F if f["seg"] == seg]
-    L = ['<thead><tr><th class=l>Fight</th><th></th><th>Model</th><th>Listed</th><th>Market</th><th>Edge</th></tr></thead><tbody>']
-    M = ['<thead><tr><th class=l>Fighter</th><th>DEC</th><th>KO</th><th>SUB</th><th>ITD</th></tr></thead><tbody>']   # each cell: model, then market (price · %), then edge
+    L = ['<thead><tr><th class=l>Fight</th><th></th><th>Projection</th><th>Listed</th><th>Edge</th></tr></thead><tbody>']
+    M = ['<thead><tr><th class=l>Fighter</th><th></th><th>DEC</th><th>KO</th><th>SUB</th><th>ITD</th></tr></thead><tbody>']   # each cell: model, then market (price · %), then edge
     for f in fs:
         if f["pending"]:
-            L.append(pend(f, 6, "fight length numbers")); M.append(pend(f, 5, "method numbers")); continue
+            L.append(pend(f, 5, "fight length numbers")); M.append(pend(f, 6, "method numbers")); continue
         L.append(length_row(f))
-        M.append(grp(f, 5) + method_rows(f))
+        M.append(grp(f, 6) + ("".join(map(str, f["rows"]["method"])) or '<tr><td class="l dim" colspan="6">No method numbers for this bout.</td></tr>'))
     L.append("</tbody>"); M.append("</tbody>")
-    return (f'<div class="stk" data-part="length"><div class="stk-h"><span class="bullet"></span>Fight length · goes the distance / inside the distance</div><table class="stk-t ct ct-len">{"".join(L)}</table></div>'
-            f'<div class="stk" data-part="method"><div class="stk-h"><span class="bullet"></span>Method of victory · model vs market</div><table class="stk-t ct ct-mth">{"".join(M)}</table></div>')
+    return (f'<div class="stk" data-part="length"><div class="stk-h"><span class="bullet"></span>Fight length · projection vs listed</div><table class="stk-t ct ct-len">{"".join(L)}</table></div>'
+            f'<div class="stk" data-part="method"><div class="stk-h"><span class="bullet"></span>Method of victory · projection vs listed</div><table class="stk-t ct ct-mth">{"".join(M)}</table></div>')
 
 
 def tabs(group, items, sel=0):
@@ -220,8 +220,8 @@ EXTRA_CSS = """
 .ct-len td.lfn a{color:inherit;text-decoration:none}
 .ct-len td.lfn .cg-n{min-width:0;margin-right:4px}
 .ct-len td.lfn .cg-belt{margin-left:4px;padding:0 3px}
-.ct-len .l2{white-space:nowrap;line-height:1.25;padding:2px 0}
-.ct-len .l2.lb{border-top:1px dashed var(--border);margin-top:2px;padding-top:4px}
+.ct-len .l2{white-space:nowrap;height:22px;line-height:22px;padding:0}
+.ct-len .l2.lb{border-top:1px dashed var(--border);margin-top:3px;padding-top:3px}
 .ct-len .l2 .odds{font-size:11.5px}
 .ct-len .l2 .pct{font-size:9.5px;display:inline}
 .ct-len td.lab{font-size:9px;font-weight:800;letter-spacing:.4px;color:var(--text-muted);padding-left:0;padding-right:0;width:24px}

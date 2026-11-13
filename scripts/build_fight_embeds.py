@@ -180,13 +180,15 @@ XPL = {
            ("Durability", "Share of UFC fights where they were knocked down or stopped by strikes (doctor and injury stoppages left out). Lower is better, so the scale runs backwards: right is better on both."),
            ("Recent fights count more", "The latest fight counts fully and a fight three back counts half. Last 5 and all-time counts are shown next to the %."),
            ("Black tick", "The division average in UFC fights since 2020.")],
-    "ca": [("Rounds won", "Share of rounds they won. A round that ends in a finish goes to the fighter who finished it. Other rounds are scored by our judging model (strikes by target, knockdowns, takedowns, control time, submission attempts), which picks the winner of UFC decisions " + f"{LABS_ACC*100:.0f}% of the time."),
+    "st_ca": [("Rounds won", "Share of rounds they won. A round that ends in a finish goes to the fighter who finished it. Other rounds are scored by our judging model (strikes by target, knockdowns, takedowns, control time, submission attempts), which picks the winner of UFC decisions " + f"{LABS_ACC*100:.0f}% of the time."),
            ("Small numbers", "Strike differential per minute in that round, and how many UFC fights reached it."),
            ("Five-round rows", "Output and differential in rounds 4-5 compared with rounds 1-3, for fighters who have been there."),
-           ("Output kept R3", "Round-3 significant strike attempts as a share of round-1 attempts, in fights that got through round 3 (Labs; needs 3 such fights). Over 100% means they throw more late.")],
+           ("Output kept, R3 vs R1", "Round-3 significant strike attempts as a share of round-1 attempts, in fights that got through round 3 (Labs; needs 3 such fights). Over 100% means they throw more late.")],
     "en": [("Bar", "UFC results by method: wins by KO, submission and decision, then losses."),
            ("Avg fight, Finished in R1", "Average fight length in minutes, and share of their fights that ended in round 1.")],
 }
+XPL["st"] = XPL["st"] + XPL.pop("st_ca")   # Sean, Nov 13: cardio sits under striking
+XPL["pw"] = [(("Drops or stops them" if t == "Power" else "Gets dropped or stopped" if t == "Durability" else t), d) for t, d in XPL["pw"]]
 GEN = "All stats use UFC fights before this card only. Green = the better side; darker green = a bigger gap. A small fight count beside a number means it is below the sample Labs requires (5 UFC fights for head defence, 3 for pace)."   # the public Fight Form site the embeds link into
 
 
@@ -389,6 +391,8 @@ def build(names, outname):
     def lid(): return R.rows[-1]["id"]
     def cell(price_html, pct_html, cls=""):
         return f'<td class="{cls}"><span class="odds">{price_html}</span><div class="pct">{pct_html}</div></td>'
+    def cell1(price_html, pct_html, cls=""):   # Sean, Nov 13: props show odds only; the % stays in the page for the checker and screen readers
+        return f'<td class="{cls}"><span class="odds">{price_html}</span><div class="pct sr">{pct_html}</div></td>'
     def stack(title, heads, body):
         return (f'<div class="stk" data-part="{PARTS.get(title.split(" ")[0], "")}"><div class="stk-h"><span class="bullet"></span>{title}</div><table class="stk-t"><thead><tr>'
                 + "".join(f'<th{" class=l" if k == 0 else ""}>{h}</th>' for k, h in enumerate(heads)) + f'</tr></thead><tbody>{body}</tbody></table></div>')
@@ -413,36 +417,36 @@ def build(names, outname):
             nmcell = f'<td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}<div class="nb op-{opp_cls[sd]}"><i class="{side_cls[sd]}" style="width:{p_*100:.1f}%"></i></div></td>'
             body += f'<tr>{nmcell}{mdl}{lst}{mk}<td>{chip(m_id, l_id, "Edge ML " + F, unver=not listed_ok(sd))}</td></tr>'
         proj += stack("Moneyline · model vs market", ["Fighter", "Model", "Listed", "Market", "Edge"], body).replace("</table></div>", "</table>@@MOVE@@@@ANGLES@@</div>", 1)
-        # fight length: GTD (listed from the sheet) and ITD; edge vs listed for GTD, vs market for ITD
+        # fight length (Sean, Nov 13): Projection | Listed | Edge, odds only. Listed = the market price (US-regulated consensus);
+        # the sheet's listed GTD is used only when the market has no fight-distance price. Edge = model % minus listed implied %.
         body = ""
         g = pf["gtd"]
-        mdl = cell(R(g, "mlp", "pub", "Model GTD", key="gtd"), R(g, "pct1", "pub", "Model GTD %", key="gtd"), "model"); m_id = lid()
+        mdl = cell1(R(g, "mlp", "pub", "Model GTD", key="gtd"), R(g, "pct1", "pub", "Model GTD %", key="gtd"), "model"); m_id = lid()
         gl = pf.get("gtd_listed")
-        if gl is not None:
-            lst = cell(R(gl, "mlp", "pub", "Listed GTD price", key="gtd_listed"), R(gl, "pct1", "pub", "Listed GTD %", key="gtd_listed")); l_id = lid()
-        else:
-            lst, l_id = '<td class="dim">n/a</td>', None
         if bf and d_ok:
             y = bp_sel(bf, "fight_distance", "Yes")["books"]["consensus"]["cost"]
-            mk = cell(R(y, "ml", "bp", "Market GTD yes", market="fight_distance", label="Yes", field="cost"), R(imp(y), "pct1", "bp_imp", "Market GTD implied", market="fight_distance", label="Yes")); y_id = lid()
+            lst = cell1(R(y, "ml", "bp", "Market GTD yes", market="fight_distance", label="Yes", field="cost"), R(imp(y), "pct1", "bp_imp", "Market GTD implied", market="fight_distance", label="Yes")); y_id = lid()
+            ed = chip(m_id, y_id, "Edge GTD vs market")
+        elif gl is not None:
+            lst = cell1(R(gl, "mlp", "pub", "Listed GTD price", key="gtd_listed"), R(gl, "pct1", "pub", "Listed GTD %", key="gtd_listed")); l_id = lid()
+            ed = chip(m_id, l_id, "Edge GTD vs listed")
         else:
-            mk, y_id = ('<td class="dim pu">price unavailable</td>' if bf and not d_ok else '<td class="dim">n/a</td>'), None
-        ed = chip(m_id, l_id, "Edge GTD vs listed") if l_id else (chip(m_id, y_id, "Edge GTD vs market") if y_id else '<span class="dim">n/a</span>')
-        body += f'<tr><td class="l nm">Goes the distance</td>{mdl}{lst}{mk}<td>{ed}</td></tr>'
-        mdl = cell(R(1 - g, "mlp", "pub", "Model ITD", key="gtd", inv=True), R(1 - g, "pct1", "pub", "Model ITD %", key="gtd", inv=True), "model"); m_id = lid()
+            lst, ed = ('<td class="dim pu">price unavailable</td>' if bf and not d_ok else '<td class="dim">n/a</td>'), '<span class="dim">n/a</span>'
+        body += f'<tr><td class="l nm">Goes the distance</td>{mdl}{lst}<td>{ed}</td></tr>'
+        mdl = cell1(R(1 - g, "mlp", "pub", "Model ITD", key="gtd", inv=True), R(1 - g, "pct1", "pub", "Model ITD %", key="gtd", inv=True), "model"); m_id = lid()
         if bf and d_ok:
             no = bp_sel(bf, "fight_distance", "No")["books"]["consensus"]["cost"]
-            mk = cell(R(no, "ml", "bp", "Market ITD no", market="fight_distance", label="No", field="cost"), R(imp(no), "pct1", "bp_imp", "Market ITD implied", market="fight_distance", label="No")); n_id = lid()
+            lst = cell1(R(no, "ml", "bp", "Market ITD no", market="fight_distance", label="No", field="cost"), R(imp(no), "pct1", "bp_imp", "Market ITD implied", market="fight_distance", label="No")); n_id = lid()
             ed = chip(m_id, n_id, "Edge ITD vs market")
         else:
-            mk, ed = ('<td class="dim pu">price unavailable</td>' if bf and not d_ok else '<td class="dim">n/a</td>'), '<span class="dim">n/a</span>'
-        body += f'<tr><td class="l nm">Inside the distance</td>{mdl}<td class="dim">n/a</td>{mk}<td>{ed}</td></tr>'
-        proj += stack("Fight length · GTD and ITD", ["Outcome", "Model", "Listed", "Market", "Edge"], body)
+            lst, ed = ('<td class="dim pu">price unavailable</td>' if bf and not d_ok else '<td class="dim">n/a</td>'), '<span class="dim">n/a</span>'
+        body += f'<tr><td class="l nm">Inside the distance</td>{mdl}{lst}<td>{ed}</td></tr>'
+        proj += stack("Fight length · GTD and ITD", ["Outcome", "Projection", "Listed", "Edge"], body)
         mx = max(pwin(sd) * (pf["method"][role(sd)]["ko"] + pf["method"][role(sd)]["sub"]) for sd in "ab")
         mx = max([mx] + [pwin(sd) * pf["method"][role(sd)][k] for sd in "ab" for k in ("dec", "ko", "sub")]) or 1
         body = ""
         for sd in ("a", "b"):
-            F = nm_of[sd]; tds = ""; tdm = ""
+            F = nm_of[sd]; tds = ""; tdm = ""; tde = ""
             for k in ("dec", "ko", "sub", "itd"):
                 m = pf["method"][role(sd)]; v = pwin(sd) * (m["ko"] + m["sub"] if k == "itd" else m[k])
                 mp = R(v, "mlp", "pub_meth", f"Model {k} ML {F}", side=sd, k=k); mpc = R(v, "pct1", "pub_meth", f"Model {k} % {F}", side=sd, k=k); m_id = lid()
@@ -452,20 +456,24 @@ def build(names, outname):
                     if k == "itd":
                         labs_ = [f"{bp_name(bf, F)} {MOVL[x]}" for x in ("ko", "sub")]
                         iv = sum(imp(bp_sel(bf, "method_of_victory", lb)["books"]["consensus"]["cost"]) for lb in labs_)
-                        live = f'<div class="live">&nbsp;</div><div class="live">{R(iv, "pct1", "bp_imp_sum", f"Market ITD implied {F}", market="method_of_victory", labels=labs_)}</div>'
+                        live = (f'<span class="odds">{R(iv, "mlp", "bp_imp_sum", f"Market ITD price {F}", market="method_of_victory", labels=labs_)}</span>'
+                                f'<span class="sr">{R(iv, "pct1", "bp_imp_sum", f"Market ITD implied {F}", market="method_of_victory", labels=labs_)}</span><div class="kos">KO+Sub</div>')
                     else:
                         lb = f"{bp_name(bf, F)} {MOVL[k]}"; c_ = bp_sel(bf, "method_of_victory", lb)["books"]["consensus"]["cost"]
-                        live = f'<div class="live">{R(c_, "ml", "bp", f"Market {k} {F}", market="method_of_victory", label=lb, field="cost")}</div><div class="live">{R(imp(c_), "pct1", "bp_imp", f"Market {k} implied {F}", market="method_of_victory", label=lb)}</div>'
+                        live = f'<span class="odds">{R(c_, "ml", "bp", f"Market {k} {F}", market="method_of_victory", label=lb, field="cost")}</span><span class="sr">{R(imp(c_), "pct1", "bp_imp", f"Market {k} implied {F}", market="method_of_victory", label=lb)}</span>'
                     x_id = lid(); ed = chip(m_id, x_id, f"Edge {k} {F}")
                 else:
-                    live, ed = ('<div class="live dim pu">price unavailable</div>' if broken else '<div class="live dim">not offered</div>'), ""
-                tds += f'<td data-k="{k}"><span class="odds">{mp}</span><div class="pct">{mpc}</div><div class="cb"><i class="{side_cls[sd]}" style="width:{v / mx * 100:.1f}%"></i></div></td>'
-                tdm += f'<td data-k="{k}" class="mkc">{live}{ed}</td>'
+                    live, ed = ('<span class="dim pu">unavailable</span>' if broken else '<span class="dim">not offered</span>'), ""
+                tds += f'<td data-k="{k}"><span class="odds">{mp}</span><div class="pct sr">{mpc}</div></td>'
+                tdm += f'<td data-k="{k}" class="mkc">{live}</td>'
+                tde += f'<td data-k="{k}" class="edc">{ed}</td>'
             # Block 59n (Kirk round 6, 4c): no "mkt" tag; a labelled Market row under each fighter's Model row
-            body += (f'<tr class="{side_cls[sd]}"><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}<div class="rl">Model</div></td>{tds}</tr>'
-                     f'<tr class="{side_cls[sd]} mkr"><td class="l rl">Market</td>{tdm}</tr>')
-        proj += stack("Method · model vs market", ["Fighter", "DEC", "KO", "SUB", "ITD"], body)
-        proj += "@@LIVE@@" + '<div class="legend">Market % is the straight conversion of the price, vig included.</div>' + explain(XPL["proj"])
+            # Sean, Nov 13: the old prop table's layout, odds only: Projection, Listed and Edge rows under each fighter
+            body += (f'<tr class="{side_cls[sd]} mp"><td class="l nm" rowspan="3"><i class="dot {side_cls[sd]}"></i>{esc(F)}</td><td class="rl2">Proj</td>{tds}</tr>'
+                     f'<tr class="{side_cls[sd]} mkr"><td class="rl2">Listed</td>{tdm}</tr>'
+                     f'<tr class="{side_cls[sd]} med"><td class="rl2">Edge</td>{tde}</tr>')
+        proj += stack("Method of victory · projection vs listed", ["Fighter", "", "DEC", "KO", "SUB", "ITD"], body)
+        proj += "@@LIVE@@" + '<div class="legend">Listed = US-regulated market consensus price. Edge = projection % minus the listed price\'s implied % (vig included). ITD listed = the fighter\'s KO and Sub prices combined.</div>' + explain(XPL["proj"])
     elif lp:   # Kirk round 34: the card page's "Line pending" state; market, line move and stats sections still build
         proj += (f'<div class="stk" data-part="ml"><div class="stk-h"><span class="bullet"></span>Line pending</div>'
                  f'<div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}</div>@@MOVE@@@@ANGLES@@</div>@@LIVE@@')
@@ -623,7 +631,7 @@ def build(names, outname):
     # power and durability on the feet, against the division: share of UFC fights with a knockdown or a standing KO/TKO,
     # for (power) and against (durability). Ground-and-pound finishes with no knockdown are left out.
     wc_ = re.sub(r"^(UFC )?(Interim )?", "", f.get("wc") or "")
-    def scale(title, key, flip, ends):
+    def scale(title, key, flip, ends, shown=None):
         davg = EMX["division_power_share" if key == "power" else "division_dropped_share"].get(wc_)
         vals = {}
         for F, sd, rec in ((an, "a", ema), (bn, "b", emb)):
@@ -651,13 +659,13 @@ def build(names, outname):
                     f' <span class="dim">· {R(k5, "int", "em", f"{title} last5 {sd}", fighter=F, path="last5." + key)} in last {n5} · {R(k_, "int", "em", f"{title} count {sd}", fighter=F, path=key + "_fights")} all-time</span>{tag}</div>')
         labs_ = "".join(lab(sd, *vals[sd]) for sd in vals)
         avgl = f'<div class="sc-l dim">Division average {R(davg, "pct0", "em_div", "Division share " + title, wc=wc_, key=key)}</div>' if davg else ""
-        return (f'<div class="sc"><div class="sc-h">{title}</div><div class="sc-track" role="img" aria-label="{esc(title)}">{avg}{marks}</div>'
+        return (f'<div class="sc"><div class="sc-h">{shown or title}</div><div class="sc-track" role="img" aria-label="{esc(title)}">{avg}{marks}</div>'
                 f'<div class="sc-e"><span>{ends[0]}</span><span>{ends[1]}</span></div>{labs_}{avgl}</div>')
     nfa, nfb = ema.get("ufc_fights", 0), emb.get("ufc_fights", 0)
     pw_n = (f'<div class="sc-n">UFC fights: {esc(last(an))} {R(nfa, "int", "em", "Power section fights a", fighter=an, path="ufc_fights")}, '
             f'{esc(last(bn))} {R(nfb, "int", "em", "Power section fights b", fighter=bn, path="ufc_fights")}</div>') if (nfa or nfb) else ""
-    power_html = pw_n + (scale("Power: drops or stops them on the feet", "power", False, ("rarely", "often"))
-                  + scale("Durability: gets dropped or stopped", "dropped", True, ("often", "rarely")))
+    power_html = pw_n + (scale("Power: drops or stops them on the feet", "power", False, ("rarely", "often"), shown="Drops or stops them on the feet")
+                  + scale("Durability: gets dropped or stopped", "dropped", True, ("often", "rarely"), shown="Gets dropped or stopped"))
     # how their fights end: one bar per fighter, UFC wins (KO, SUB, DEC) then losses (DEC, SUB, KO), counts in the segments
     OC = (("w", "ko", "W KO"), ("w", "sub", "W SUB"), ("w", "dec", "W DEC"), ("l", "dec", "L DEC"), ("l", "sub", "L SUB"), ("l", "ko", "L KO"))
     def obar(rec, F):
@@ -680,7 +688,9 @@ def build(names, outname):
             cl = "pos" if w_ >= 0.6 else "neg" if w_ <= 0.4 else ""
             out_ += (f'<td class="{cl}"><button type="button" class="ddb" data-dd="{sd}{rd + 1}" aria-expanded="false" aria-label="{esc(last(F))} round {rd + 1} fights">'
                      f'<span class="rw">{R(w_, "pct0", "em", f"R{rd+1} won {F}", fighter=F, path=f"rounds.{rd}.won")}</span>'
-                     f'<small>{R(v, "s1", "em", f"R{rd+1} diff {F}", fighter=F, path=f"rounds.{rd}.diff_pm")} · {R(nfr, "int", "em", f"R{rd+1} fights {F}", fighter=F, path=f"rounds.{rd}.fights")}</small></button></td>')
+                     f'<span class="rwb"><i class="{side_cls[sd]}" style="width:{w_ * 100:.0f}%"></i></span>'   # Sean, Nov 13: rounds-won bar in the corner colour
+                     f'<small class="rd">{R(v, "s1", "em", f"R{rd+1} diff {F}", fighter=F, path=f"rounds.{rd}.diff_pm")}/min</small>'
+                     f'<small class="rn">{R(nfr, "int", "em", f"R{rd+1} fights {F}", fighter=F, path=f"rounds.{rd}.fights")} {"fight" if nfr == 1 else "fights"}</small></button></td>')
         return f'<tr><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(last(F))}</td>{out_}</tr>'
     def ddpanels(rec, F, sd):   # Block 59h: tap a round cell to see the fights behind it
         out_ = ""
@@ -690,8 +700,6 @@ def build(names, outname):
                 for j_, (r_n, r_w, r_d) in enumerate(e_["rw"]):
                     if r_n != rd: continue
                     opp = esc(e_["o"])
-                    if e_.get("es") and e_.get("n") is not None:
-                        opp = f'<a class="fl" href="{SITE}#/fight/{e_["es"]}/{e_["n"]}" target="_blank" rel="noopener">{opp}</a>'
                     res = "Won" if r_w == 1 else "Lost" if r_w == 0 else "Even"
                     rows_ += (f'<tr><td class="l dim">{dt.date.fromisoformat(e_["d"]).strftime("%b %y")}</td><td class="l">{opp}</td>'
                               f'<td class="l"><b class="r-{"w" if r_w == 1 else "l" if r_w == 0 else "d"}">{res}</b></td><td>{R(r_d, "sint", "em", f"R{rd} fight diff {F} {i_}", fighter=F, path=f"fights.{i_}.rw.{j_}.2")}</td></tr>')
@@ -699,8 +707,8 @@ def build(names, outname):
                 out_ += (f'<div class="dd" data-dd="{sd}{rd}" hidden><div class="dd-h">{esc(last(F))} · round {rd} <button type="button" class="ddx" aria-label="Close">×</button></div>'
                          f'<table class="t ft"><thead><tr><th class="l">When</th><th class="l">Opponent</th><th class="l">Round</th><th>Strikes +/-</th></tr></thead><tbody>{rows_}</tbody></table></div>')
         return out_
-    rounds_html = ('<table class="rt"><thead><tr><th class="l">Rounds won</th>' + "".join(f"<th>R{r_+1}</th>" for r_ in range(nrd)) + '</tr></thead><tbody>'
-                   + rcells(ema, an, "a") + rcells(emb, bn, "b") + '</tbody></table><div class="rt-n">big = rounds won · small = strike diff per min · fights reaching the round · tap a cell for the fights</div>'
+    rounds_html = ('<table class="rt"><thead><tr><th class="l">Rounds won<span class="thn">judging model</span></th>' + "".join(f"<th>R{r_+1}</th>" for r_ in range(nrd)) + '</tr></thead><tbody>'
+                   + rcells(ema, an, "a") + rcells(emb, bn, "b") + '</tbody></table><div class="rt-n">Big number and bar = share of rounds won (scored by our judging model; a finish wins the round). /min = significant strike differential per minute in that round. Fights = UFC fights that reached the round. Tap a cell for the fights.</div>'
                    + ddpanels(ema, an, "a") + ddpanels(emb, bn, "b"))
     # Block 59o (Kirk round 7): round trend. Strike differential per minute in R1, R2, R3 for both fighters (the same
     # rounds.N.diff_pm numbers as the table), drawn as two lines on one axis with a zero line; a round needs 1+ fight.
@@ -799,13 +807,15 @@ def build(names, outname):
             c_ = " adv big" if abs(ta_ - tb_) >= 2.0 else " adv"; ea, eb = (c_, "") if ta_ > tb_ else ("", c_)
         tot_row = f'<div class="row"><div class="a{ea}">{totcell(ta_, an)}</div><div class="k">Strike diff /min</div><div class="b{eb}">{totcell(tb_, bn)}</div></div>'
     tot_row += E("sos.adj_sd", "Opp-adjusted diff", "s2", "hi", "Strike differential corrected for the quality of opponents faced")
-    groups = [("st", "Striking", "Striking", target_html + strip("Out-landed the opponent", "out_landed", _ol, "UFC fights where they landed more significant strikes") + '<div class="tape">' + tot_row + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
-               + E("target_diff.leg", "Leg diff /min", "s2", "hi") + E("hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed", floor=("ufc_fights", 5, "fights")) + '</div>'),
+    groups = [("st", "Striking & cardio", "Striking and cardio",
+               '<div class="subh first">Round by round (judging model)' + (" · 5 rounds" if nrd == 5 else "") + '</div>' + rounds_html + ('<div class="tape">' + champ + '</div>' if nrd == 5 else "")
+               + '<div class="tape">' + L3("cardio.upcoming", "out", "Output kept, R3 vs R1", "pct0", "hi", "Round 3 significant strike attempts as a share of round 1, in fights that got through round 3") + '</div>'
+               + '<div class="subh">Striking</div>' + target_html + '<div class="tape">' + tot_row + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
+               + E("target_diff.leg", "Leg diff /min", "s2", "hi") + E("hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed", floor=("ufc_fights", 5, "fights")) + '</div>'
+               ),
               ("gr", "Grappling", "Grappling", strip("Won the grappling", "grap_won", _gw, "Fights with real grappling (a minute of control or a takedown): more control time, or more takedowns when control is level") + '<div class="tape">' + grap_html + '</div>'),
-              ("pw", "Power", "Power and durability", power_html),
-              ("ca", "Cardio", "Cardio" + (" · 5 rounds" if nrd == 5 else ""), rounds_html + ('<div class="tape">' + champ + '</div>' if nrd == 5 else "")
-               + '<div class="tape">' + L3("cardio.upcoming", "out", "Output kept R3", "pct0", "hi", "Round 3 significant strike attempts as a share of round 1, in fights that got through round 3") + '</div>'),
-              ("en", "Endings", "How their fights end", outcome_html + '<div class="tape">' + E("pace.min", "Avg fight, min", "n1", None, floor=("pace.n", 3, "fights")) + E("pace.r1", "Finished in R1", "pct0", None, floor=("pace.n", 3, "fights")) + '</div>')]
+              ("pw", "Dropped or stopped", "Dropped or stopped", power_html),
+              ("en", "Results", "Wins and losses by method", outcome_html + '<div class="tape">' + E("pace.min", "Avg fight, min", "n1", None, floor=("pace.n", 3, "fights")) + E("pace.r1", "Finished in R1", "pct0", None, floor=("pace.n", 3, "fights")) + '</div>')]
     groups = [(k, t, h, grp(h, b)) for k, t, h, b in groups if b]
     stats_html = ('<div class="sgt" role="group" aria-label="Stat groups">' + "".join(f'<button type="button" data-g="{k}" aria-pressed="{"true" if i_ == 0 else "false"}">{t}</button>' for i_, (k, t, _, _) in enumerate(groups)) + '</div>'
                   + (f'<div class="tape"><div class="row hdr"><div class="a">{esc(last(an))}</div><div class="k vs">VS</div><div class="b">{esc(last(bn))}</div></div></div>' if not ARGS.no_vs_bar else "")
@@ -837,7 +847,7 @@ def build(names, outname):
                      f'won R3 on strikes {R(CW["wf"]["lost1_won3"], "pct0", "labs_wf", "Spot comeback won3", key="lost1_won3")} of the time vs {R(CW["base_lost1_won3"], "pct0", "labs_wf", "Spot comeback base", key="base_lost1_won3")} for all R1 losers. '
                      f'<span class="dim">Based on {R(CW["wf"]["lost1_n"], "int", "labs_wf", "Spot comeback n", key="lost1_n")} fights. Tested on round results, not live prices.</span></li>'))
     spot_html = (f'<div class="stk spot" data-part="spot"><div class="stk-h"><span class="bullet"></span>Spot to watch</div><ul class="lvl">{"".join(x[2] for x in spots)}</ul>'
-                 + ('<div class="see">See round trend: Stats › Cardio</div>' if 'data-part="trend"' in rounds_html else "") + '</div>') if spots else ""
+                 + ('<div class="see">See round trend: Stats › Striking &amp; cardio</div>' if 'data-part="trend"' in rounds_html else "") + '</div>') if spots else ""
     SPOTS[n] = [(k_, w_) for k_, w_, _ in spots]
     # Kirk round 17 D: weakest embed at 390 px (Elder vs Sanches: a UFC debut, fewest numbers). Adds a tool it did not use: the
     # Labs angle "UFC debut vs 3+ UFC fights" (form/data/research.json, graded against the closing line). Shown only when one
@@ -901,8 +911,7 @@ def build(names, outname):
             fin = m_ if m_ in ("UD", "SD", "MD") else f'{m_} R{x["rd"]}'
             mc = (x.get("od") or {}).get("mc")
             opp = esc(x["o"])
-            if x.get("es") and x.get("n") is not None:   # Block 59g: each past fight opens its full breakdown on the site
-                opp = f'<a class="fl" href="{SITE}#/fight/{x["es"]}/{x["n"]}" target="_blank" rel="noopener">{opp}</a>'
+            # Sean, Nov 13: no links from the embeds to the Fight Form site for now
             return f'<tr><td class="l dim">{dt.date.fromisoformat(x["d"]).strftime("%b %y")}</td><td class="l"><b class="r-{x["r"].lower()}">{x["r"]}</b> {opp}</td><td class="l">{esc(fin)}</td><td class="dim">{R(mc, "ml", "fight", "Close "+F["name"]+" "+x["o"], side=sd, i=i, key="od.mc") if mc is not None else "—"}</td></tr>'
         head = '<thead><tr><th class="l">When</th><th class="l">Result</th><th class="l">How</th><th>Close</th></tr></thead>'
         rows5 = "".join(row(i, x) for i, x in enumerate(Lf[:5]))
@@ -910,7 +919,7 @@ def build(names, outname):
         if len(Lf) > 5:   # Block 59f: full UFC history behind a toggle
             more = (f'<details class="fmore"><summary>All {len(Lf)} UFC fights</summary><table class="t ft">{head}<tbody>'
                     + "".join(row(i, x) for i, x in enumerate(Lf) if i >= 5) + '</tbody></table></details>')
-        return f'<div class="col"><div class="cn"><a class="fl" href="{SITE}#/fighter/{F["slug"]}" target="_blank" rel="noopener">{esc(F["name"])}</a><span class="cn-s">fighter page ↗</span></div><table class="t ft">{head}<tbody>{rows5}</tbody></table>{more}</div>'
+        return f'<div class="col"><div class="cn">{esc(F["name"])}</div><table class="t ft">{head}<tbody>{rows5}</tbody></table>{more}</div>'
     secs.append(sec("form", "Recent form", "last 5 UFC", f'<div class="ftw" data-part="form">{t5(FA, pa_, "a")}{t5(FB, pb_, "b")}</div>'))
 
     # ---------- notes: dropped (Block 59) ----------
@@ -1025,8 +1034,8 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .sc-track{{position:relative;height:8px;background:linear-gradient(90deg,var(--bg-muted),#d9d4c8);border-radius:4px;margin:4px 6px 8px}}
 .sc-dot{{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}}.sc-dot.rc{{background:#d6312b}}.sc-dot.bc{{background:#2a78d6}}
 .sc-avg{{position:absolute;top:-5px;width:2px;height:18px;background:#0e1116;transform:translateX(-1px)}}.sc-l{{font-size:12px;margin:2px 0}}.oc i b{{color:#fff}}.oc-wko{{background:#0a7a3a}}.oc-wsub{{background:#22a85a}}.oc-wdec{{background:#8fd6aa}}.oc-ldec{{background:#f2b8b0}}.oc-lsub{{background:#e0675a}}.oc-lko{{background:#b3261e}}.oc .oc-wdec b,.oc .oc-ldec b{{color:#0e1116}}.tb-bar.oc i{{min-width:0}}
-.dhist{{width:100%;height:auto;display:block;margin:6px 0 2px}}.drift{{margin:8px 12px}}.ppath{{display:block;width:100%;height:auto;margin:8px 0 2px}}.mvends{{display:flex;justify-content:space-between;font-size:10.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}}.mvends .mvp{{font:800 12px/1 "SF Mono",Menlo,monospace;color:var(--text);margin-left:4px;text-transform:none}}.mvends .mve{{color:var(--action-green-dark,#0a8842)}}.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
-.sgt{{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}}.sgt button{{flex:1 1 0;min-width:0;border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 2px;font:700 11px/1 inherit;letter-spacing:-.1px;white-space:nowrap;font-family:inherit;color:var(--text-muted);cursor:pointer}}.sgt button[aria-pressed=true]{{background:#0e1116;border-color:#0e1116;color:#fff}}.js .sgw{{display:none}}.js .sgw.on{{display:block}}
+.dhist{{width:100%;height:auto;display:block;margin:6px 0 2px}}.drift{{margin:8px 12px}}.sr{{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}.stk-t td.rl2{{font-size:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--text-muted);text-align:left;padding-left:2px;padding-right:2px;width:34px}}.stk-t tr.mp td{{border-bottom:0;padding-bottom:2px}}.stk-t tr.mkr td{{border-bottom:0;padding-top:2px;padding-bottom:2px}}.stk-t tr.med td{{padding-top:2px}}.stk-t tr.mkr .odds{{font-weight:600;color:var(--text-muted)}}.stk-t td.edc .ech{{margin-top:0}}.stk-t .kos{{font-size:8.5px;font-weight:700;color:var(--text-muted);letter-spacing:.3px}}.stk-t td.nm[rowspan]{{vertical-align:middle;border-bottom:1px solid var(--border)}}.subh{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);padding:12px 12px 4px}}.rt .rwb{{display:block;height:4px;background:var(--bg-muted);border-radius:2px;margin:3px auto 3px;max-width:56px;overflow:hidden}}.rt .rwb i{{display:block;height:100%}}.rt .rwb i.rc{{background:#d6312b}}.rt .rwb i.bc{{background:#2a78d6}}.rt td small.rd{{font-weight:700}}.rt td small.rn{{font-weight:500;color:var(--text-muted);font-family:inherit;font-size:9.5px}}.rt th .thn{{display:block;font-weight:600;letter-spacing:.2px;text-transform:none;font-size:9px}}.subh.first{{padding-top:8px;color:var(--text);font-size:11px}}.ppath{{display:block;width:100%;height:auto;margin:8px 0 2px}}.mvends{{display:flex;justify-content:space-between;font-size:10.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}}.mvends .mvp{{font:800 12px/1 "SF Mono",Menlo,monospace;color:var(--text);margin-left:4px;text-transform:none}}.mvends .mve{{color:var(--action-green-dark,#0a8842)}}.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
+.sgt{{display:flex;flex-wrap:wrap;gap:6px;padding:2px 0 10px}}.sgt button{{flex:1 1 auto;min-width:0;border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 10px;font:700 11px/1 inherit;letter-spacing:-.1px;white-space:nowrap;font-family:inherit;color:var(--text-muted);cursor:pointer}}.sgt button[aria-pressed=true]{{background:#0e1116;border-color:#0e1116;color:#fff}}.js .sgw{{display:none}}.js .sgw.on{{display:block}}
 .fmore{{margin:4px 0 12px}}.fmore>summary{{cursor:pointer;font-size:12px;font-weight:700;color:var(--action-green-dark);padding:6px 2px;list-style:none}}.fmore>summary::-webkit-details-marker{{display:none}}.fmore>summary::before{{content:"▸ "}}.fmore[open]>summary::before{{content:"▾ "}}.fmore[open]>summary{{font-size:0}}.fmore[open]>summary::before{{font-size:12px}}.fmore[open]>summary::after{{content:"Hide older fights";font-size:12px}}
 .fl{{color:inherit;text-decoration:none;border-bottom:1px dotted #9a9a9a}}a.fl{{display:inline-block;padding:5px 0 4px;line-height:15px}}.stamps a{{display:inline-block;padding:6px 4px;margin:-6px 0;color:inherit}}.fl:hover{{color:var(--action-green-dark);border-bottom-color:currentColor}}.cn-s{{font-size:10.5px;font-weight:600;color:var(--text-muted);margin-left:8px}}
 .xpl{{margin:8px 0 4px;border:1px solid var(--border);border-radius:8px;background:#fff}}.xpl>summary{{cursor:pointer;padding:8px 12px;font-size:12px;font-weight:700;color:var(--text-muted);list-style:none}}.xpl>summary::-webkit-details-marker{{display:none}}.xpl>summary::before{{content:"ⓘ  "}}.xpl dl{{margin:0;padding:0 12px 10px}}.xpl dt{{font-size:11.5px;font-weight:800;margin-top:6px}}.xpl dd{{margin:1px 0 0;font-size:11.5px;line-height:1.4;color:var(--text-muted)}}

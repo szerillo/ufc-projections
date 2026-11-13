@@ -14,7 +14,11 @@ REPO = Path(__file__).resolve().parents[1]
 NUM = re.compile(r"[+-]?\d[\d.,]*%?|n/a")
 
 
-def toks(node): return NUM.findall(node.get_text(" ", strip=True))
+def toks(node):
+    """Shown numbers: the screen-reader-only % (class sr) are left out on both sides."""
+    n = BeautifulSoup(str(node), "html.parser")
+    for x in n.select(".sr"): x.decompose()
+    return NUM.findall(n.get_text(" ", strip=True))
 
 
 def main():
@@ -49,12 +53,12 @@ def main():
                 if part == "length" and "lrow" in cls:   # compact row: GTD over ITD in each cell = the preview's two fight length rows
                     cur = int(tr.select_one(".cg-n").get_text()); seen.add(cur)
                     if tr.select_one(".cg-pend"): continue
-                    cells = tr.find_all("td", recursive=False)[2:]
+                    cells = tr.find_all("td", recursive=False)[2:]   # Projection, Listed, Edge
                     t = toks(tr.select_one(".lab")) and []   # labels carry no numbers
                     got = [[x for x in toks(BeautifulSoup(str(c.select(".l2")[k]), "html.parser")) if x != "n/a"] for k in (0, 1) for c in cells]
                     want = [[x for x in row if x != "n/a"] for row in prev[cur]["length"]]
                     flat = lambda rows: [x for r in rows for x in r]
-                    g_ = [x for x in flat(got[:4])], [x for x in flat(got[4:])]
+                    nc = len(cells); g_ = [x for x in flat(got[:nc])], [x for x in flat(got[nc:])]
                     checked += 1; nums += sum(len(x) for x in g_)
                     if cur in pend: fails.append(f"{fn} length fight {cur}: numbers shown for a Line pending fight")
                     elif list(g_) != want: fails.append(f"{fn} length fight {cur}: {list(g_)} differs from fight_{cur:02d}.html {want}")
