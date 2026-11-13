@@ -433,6 +433,11 @@ def check(D, htmlfile, G):
         if reg.get("proj_file") != G["PUBF"]: bad.append(("proj", "file", f"{reg.get('proj_file')} != {G['PUBF']}"))
         if not V6 and len(sean_ids) != 22: bad.append(("proj", "Sean cells", f"{len(sean_ids)} Sean numbers shown, want 22 (Win/DEC/KO/SUB/ITD x 2 fighters x price+% and GTD price+%)"))
         if not sean_rules <= {"pub_win", "pub_meth", "pub"}: bad.append(("proj", "Sean rules", f"non-export rules in Sean cells: {sean_rules}"))
+        # Kirk round 35: an MP-1 price carries the export's "manual price" label on that fighter's listed price, and nowhere else
+        mp_want = [m[m["side"]] for m in (G["PUB"].get("manual_prices") or []) if bout(m.get("dog", ""), m.get("fav", ""), A, B)]
+        mp_got = [re.sub(r"<[^>]+>", "", r_).split("manual price")[0] for r_ in re.findall(r'<tr[^>]*>(?:(?!</tr>).)*class="mpl"(?:(?!</tr>).)*</tr>', page, re.S)]
+        if len(mp_got) != len(mp_want) or not all(any(is_(re.sub(r"\s+", " ", g_).strip(), w_) or w_ in g_ for g_ in mp_got) for w_ in mp_want):
+            bad.append(("manual", "label", f"manual-price label on {len(mp_got)} row(s), want {mp_want or 'none'}"))
     else:
         lp_ = next((x for x in (G["PUB"].get("line_pending") or []) if bout(x.get("dog", ""), x.get("fav", ""), A, B)), None)
         if reg.get("proj_src") == "publish" or src_attr == "publish": bad.append(("proj", "source", "embed claims the export but the export has no row for this bout"))
@@ -815,6 +820,8 @@ def negative(D, G, slug):
         ("embed: Corrections link dropped from the footer (fight 03)", plant_text("fight_03.html", lambda s_: s_.replace('>Corrections</a>', '></a>', 1))),
         ("embed: a below-floor round drawn as a full dot (fight 08)", plant_text("fight_08.html", lambda s_: s_.replace('<circle class="thin" ', '<circle ', 1))),
         ("embed: T1 'never confirmed' line removed (fight 06)", plant_text("fight_06.html", lambda s_: s_.replace("Never confirmed on new cards", "Confirmed", 1))),
+        ("embed: manual-price label removed (fight 10, Medic)", plant_text("fight_10.html", lambda s_: re.sub(r'<div class="mpl"[^>]*>[^<]*</div>', "", s_, count=1))),
+        ("embed: manual-price label on a bout without one (fight 13)", plant_text("fight_13.html", lambda s_: s_.replace('</span><div class="pct">', '</span><div class="pct">', 1).replace('<td class="l nm"><i class="dot rc"></i>', '<td class="l nm"><i class="dot rc"></i><div class="mpl">manual price</div>', 1))),
         ("embed: a link to the Fight Form site put back (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace('<div class="cn">', '<div class="cn"><a href="https://szerillo.github.io/ufc-projections/#/fighter/x">site</a>', 1))),
         ("embed: model renamed 'Sean' (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace("Moneyline · model vs market", "Moneyline · Sean vs market", 1))),
         ("card: one embed missing (fight 09)", lambda T, G_: (T / "fight_09.html").unlink()),
