@@ -174,10 +174,9 @@ XPL = {
            ("TD accuracy / defence", "Share of their takedown attempts that land; share of opponents' attempts they stop."),
            ("Time in control / controlled", "Share of fight time spent controlling the opponent, or being controlled."),
            ("Net control, opp-adjusted", "Control time minus time controlled, as a share of fight time, corrected for how strong the opponents were. Controlling good opponents counts for more. In testing it predicted who wins the grappling better than the raw number in each of the last five years."),
-           ("Won the grappling", "Fights with real grappling (a minute of control or a takedown): who had more control time, or more takedowns when control was level."),
            ("Sub attempts /15", "Submission attempts per 15 minutes.")],
     "pw": [("Power", "Share of UFC fights where they knocked the opponent down or stopped them on the feet. Ground-and-pound finishes without a knockdown do not count."),
-           ("Durability", "Share of UFC fights where they were knocked down or stopped by strikes (doctor and injury stoppages left out). Lower is better, so the scale runs backwards: right is better on both."),
+           ("Gets dropped or stopped", "Share of UFC fights where they were knocked down or stopped by strikes (doctor and injury stoppages left out). Lower is better: left = rarely, same direction as the power scale."),
            ("Recent fights count more", "The latest fight counts fully and a fight three back counts half. Last 5 and all-time counts are shown next to the %."),
            ("Black tick", "The division average in UFC fights since 2020.")],
     "st_ca": [("Rounds won", "Share of rounds they won. A round that ends in a finish goes to the fighter who finished it. Other rounds are scored by our judging model (strikes by target, knockdowns, takedowns, control time, submission attempts), which picks the winner of UFC decisions " + f"{LABS_ACC*100:.0f}% of the time."),
@@ -188,7 +187,7 @@ XPL = {
            ("Avg fight, Finished in R1", "Average fight length in minutes, and share of their fights that ended in round 1.")],
 }
 XPL["st"] = XPL["st"] + XPL.pop("st_ca")   # Sean, Nov 13: cardio sits under striking
-XPL["pw"] = [(("Drops or stops them" if t == "Power" else "Gets dropped or stopped" if t == "Durability" else t), d) for t, d in XPL["pw"]]
+XPL["pw"] = [(("Drops or stops them" if t == "Power" else t), d) for t, d in XPL["pw"]]
 GEN = "All stats use UFC fights before this card only. Green = the better side; darker green = a bigger gap. A small fight count beside a number means it is below the sample Labs requires (5 UFC fights for head defence, 3 for pace)."   # the public Fight Form site the embeds link into
 
 
@@ -631,7 +630,8 @@ def build(names, outname):
     # power and durability on the feet, against the division: share of UFC fights with a knockdown or a standing KO/TKO,
     # for (power) and against (durability). Ground-and-pound finishes with no knockdown are left out.
     wc_ = re.sub(r"^(UFC )?(Interim )?", "", f.get("wc") or "")
-    def scale(title, key, flip, ends, shown=None):
+    def scale(title, key, flip, ends, shown=None, low_good=None):
+        low_good = flip if low_good is None else low_good   # Sean, Nov 13: durability runs the same way as power (rarely left) but low is still good
         davg = EMX["division_power_share" if key == "power" else "division_dropped_share"].get(wc_)
         vals = {}
         for F, sd, rec in ((an, "a", ema), (bn, "b", emb)):
@@ -651,7 +651,7 @@ def build(names, outname):
             F = an if sd == "a" else bn
             tag = ""
             if davg and n_ >= 5 and abs(v - davg) >= 0.05:
-                good = (v < davg) if flip else (v > davg)
+                good = (v < davg) if low_good else (v > davg)
                 tag = f' <span class="sc-t {"up" if good else "dn"}">{"better" if good else "worse"} than avg</span>'
             elif davg and n_ < 5: tag = ' <span class="sc-t">small sample</span>'
             # Block 59j declutter: fight counts are printed once, under the section title; here only the events
@@ -665,7 +665,7 @@ def build(names, outname):
     pw_n = (f'<div class="sc-n">UFC fights: {esc(last(an))} {R(nfa, "int", "em", "Power section fights a", fighter=an, path="ufc_fights")}, '
             f'{esc(last(bn))} {R(nfb, "int", "em", "Power section fights b", fighter=bn, path="ufc_fights")}</div>') if (nfa or nfb) else ""
     power_html = pw_n + (scale("Power: drops or stops them on the feet", "power", False, ("rarely", "often"), shown="Drops or stops them on the feet")
-                  + scale("Durability: gets dropped or stopped", "dropped", True, ("often", "rarely"), shown="Gets dropped or stopped"))
+                  + scale("Durability: gets dropped or stopped", "dropped", False, ("rarely", "often"), shown="Gets dropped or stopped", low_good=True))
     # how their fights end: one bar per fighter, UFC wins (KO, SUB, DEC) then losses (DEC, SUB, KO), counts in the segments
     OC = (("w", "ko", "W KO"), ("w", "sub", "W SUB"), ("w", "dec", "W DEC"), ("l", "dec", "L DEC"), ("l", "sub", "L SUB"), ("l", "ko", "L KO"))
     def obar(rec, F):
@@ -813,7 +813,7 @@ def build(names, outname):
                + '<div class="subh">Striking</div>' + target_html + '<div class="tape">' + tot_row + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
                + E("target_diff.leg", "Leg diff /min", "s2", "hi") + E("hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed", floor=("ufc_fights", 5, "fights")) + '</div>'
                ),
-              ("gr", "Grappling", "Grappling", strip("Won the grappling", "grap_won", _gw, "Fights with real grappling (a minute of control or a takedown): more control time, or more takedowns when control is level") + '<div class="tape">' + grap_html + '</div>'),
+              ("gr", "Grappling", "Grappling", '<div class="tape">' + grap_html + '</div>'),   # Sean, Nov 13: no dot strips
               ("pw", "Dropped or stopped", "Dropped or stopped", power_html),
               ("en", "Results", "Wins and losses by method", outcome_html + '<div class="tape">' + E("pace.min", "Avg fight, min", "n1", None, floor=("pace.n", 3, "fights")) + E("pace.r1", "Finished in R1", "pct0", None, floor=("pace.n", 3, "fights")) + '</div>')]
     groups = [(k, t, h, grp(h, b)) for k, t, h, b in groups if b]
