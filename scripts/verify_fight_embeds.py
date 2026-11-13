@@ -809,7 +809,7 @@ def negative(D, G, slug):
         ("shared input: a locked file changed without a bless (card_overrides.json)", lock_edit),
         ("event file: one fighter's Form line swapped (main event)", ev_edit("form")),
         ("event file: odds close moved 2 pts (main event)", ev_edit("odds")),
-        ("embed: one round-trend point moved (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(<circle cx="[\d.]+" cy=")([\d.]+)(" r="4")', lambda m: m.group(1) + f"{float(m.group(2)) + 9:.1f}" + m.group(3), s_, count=1))),
+        ("embed: one round-trend point moved (fight 07)", plant_text("fight_07.html", lambda s_: s_[:s_.index('data-part="trend"')] + re.sub(r'(<circle cx="[\d.]+" cy=")([\d.]+)(" r="4")', lambda m: m.group(1) + f"{float(m.group(2)) + 9:.1f}" + m.group(3), s_[s_.index('data-part="trend"'):], count=1))),   # scoped to the trend chart (the price path also draws r=4 circles)
         ("embed: a steady line drawn as 'Steady' where it moved 7 pts (fight 13)", plant_text("fight_13.html", lambda s_: s_.replace('class="mvrow"', 'class="mvrow mvq"', 1))),
         ("embed: Duncan's at-the-floor note removed (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace("Duncan: R3 sits right at the 15-minute floor; thin sample.", "", 1))),
         ("embed: Corrections link dropped from the footer (fight 03)", plant_text("fight_03.html", lambda s_: s_.replace('>Corrections</a>', '></a>', 1))),
