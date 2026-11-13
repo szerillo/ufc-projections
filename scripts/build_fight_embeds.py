@@ -204,6 +204,37 @@ def minispark(series, who):
             f'<path d="{d}" fill="none" stroke="#1a1a1a" stroke-width="1.6" vector-effect="non-scaling-stroke"/>'
             f'<circle cx="{X(ta):.1f}" cy="{Y(pa):.1f}" r="2.5" fill="#fff" stroke="#1a1a1a"/><circle cx="{X(tb):.1f}" cy="{Y(pb):.1f}" r="3" fill="#0a8842"/></svg>')
 
+CORNER = {"a": "#d6312b", "b": "#2a78d6"}   # red corner (first named on UFC.com), blue corner
+def pricepath(series, tsd, color, who):
+    """Sean, Nov 13: the dated price path, open by default, in place of the opener-to-now bar. Win % of the side the line
+    moved toward (series holds the first-named fighter's market win %), dashed opener level, drift shaded."""
+    W, H, Lm, Rm, T, B = 340, 132, 34, 10, 10, 22
+    pts = [(dt.datetime.fromisoformat(r[0].replace("Z", "+00:00")), r[1] if tsd == "a" else 1 - r[1]) for r in series if r[1] is not None]
+    if len(pts) < 2: return ""
+    t0, t1 = pts[0][0], pts[-1][0]; ps = [q for _, q in pts]; lo, hi = min(ps), max(ps)
+    pad = max(.015, (hi - lo) * .18); lo, hi = max(0, lo - pad), min(1, hi + pad)
+    X = lambda t: Lm + (W - Lm - Rm) * ((t - t0).total_seconds() / max(1, (t1 - t0).total_seconds()))
+    Y = lambda q: T + (H - T - B) * (1 - (q - lo) / (hi - lo))
+    g = []
+    step = next(st for st in (.01, .02, .05, .1, .2) if (hi - lo) / st <= 5)
+    k = math.ceil(lo / step)
+    while k * step <= hi + 1e-9:
+        y = Y(k * step); g.append(f'<line x1="{Lm}" x2="{W - Rm}" y1="{y:.1f}" y2="{y:.1f}" stroke="#ece8e1" stroke-width="1"/>'
+                                 f'<text x="{Lm - 5}" y="{y + 3:.1f}" text-anchor="end" font-size="9.5" fill="#8a857c">{k * step * 100:.0f}%</text>'); k += 1
+    n_t = 4
+    for i in range(n_t + 1):
+        t = t0 + (t1 - t0) * i / n_t; x = X(t)
+        g.append(f'<text x="{x:.1f}" y="{H - 6}" text-anchor="{"start" if i == 0 else "end" if i == n_t else "middle"}" font-size="9.5" fill="#8a857c">{t.strftime("%m/%d")}</text>')
+    yo = Y(pts[0][1]); line = "".join(("M" if i == 0 else "L") + f"{X(t):.1f} {Y(q):.1f}" for i, (t, q) in enumerate(pts))
+    area = line + f"L{X(t1):.1f} {yo:.1f}L{X(t0):.1f} {yo:.1f}Z"
+    (ta, pa), (tb, pb) = pts[0], pts[-1]
+    return (f'<svg class="ppath" viewBox="0 0 {W} {H}" role="img" aria-label="{esc(who)} market win % from {pa*100:.1f}% on {ta.strftime("%m/%d")} to {pb*100:.1f}% on {tb.strftime("%m/%d")}">'
+            + "".join(g) + f'<path d="{area}" fill="{color}" fill-opacity=".12" stroke="none"/>'
+            f'<line x1="{Lm}" x2="{W - Rm}" y1="{yo:.1f}" y2="{yo:.1f}" stroke="#8a857c" stroke-width="1" stroke-dasharray="3 3"/>'
+            f'<path d="{line}" fill="none" stroke="{color}" stroke-width="2" stroke-linejoin="round"/>'
+            f'<circle cx="{X(ta):.1f}" cy="{Y(pa):.1f}" r="3.5" fill="#fff" stroke="{color}" stroke-width="2"/>'
+            f'<circle cx="{X(tb):.1f}" cy="{Y(pb):.1f}" r="4" fill="{color}" stroke="#fff" stroke-width="1.5"/></svg>')
+
 # ---------------------------------------------------------------- CSS: copied verbatim from the site's fight-form widget
 def css_rules(src, selectors):
     out = []
@@ -361,8 +392,10 @@ def build(names, outname):
     def stack(title, heads, body):
         return (f'<div class="stk" data-part="{PARTS.get(title.split(" ")[0], "")}"><div class="stk-h"><span class="bullet"></span>{title}</div><table class="stk-t"><thead><tr>'
                 + "".join(f'<th{" class=l" if k == 0 else ""}>{h}</th>' for k, h in enumerate(heads)) + f'</tr></thead><tbody>{body}</tbody></table></div>')
-    side_cls = {"a": "fav" if (pwin("a") or .5) >= .5 else "dog"} if lp is None else {"a": "fav" if same(lp["fav"], an) else "dog"}
-    side_cls["b"] = "dog" if side_cls["a"] == "fav" else "fav"
+    # Sean, Nov 13: colours follow the corner, not the price. UFC.com lists the red corner first (champion or higher ranked);
+    # the event file keeps that order, so fighter a = red corner, fighter b = blue corner.
+    side_cls = {"a": "rc", "b": "bc"}
+    opp_cls = {"a": "bc", "b": "rc"}
     proj = ""
     if pf:
         # moneyline: Model | Listed | Market | Edge (edge = model minus listed implied, as the old embed did)
@@ -377,7 +410,7 @@ def build(names, outname):
                 mk = cell(R(c_, "ml", "bp", "Market ML " + F, market="moneyline", label=lab_, field="cost"), R(imp(c_), "pct1", "bp_imp", "Market implied " + F, market="moneyline", label=lab_))
             else:
                 mk = '<td class="dim">n/a</td>'
-            nmcell = f'<td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}<div class="nb"><i class="{side_cls[sd]}" style="width:{p_*100:.1f}%"></i></div></td>'
+            nmcell = f'<td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}<div class="nb op-{opp_cls[sd]}"><i class="{side_cls[sd]}" style="width:{p_*100:.1f}%"></i></div></td>'
             body += f'<tr>{nmcell}{mdl}{lst}{mk}<td>{chip(m_id, l_id, "Edge ML " + F, unver=not listed_ok(sd))}</td></tr>'
         proj += stack("Moneyline · model vs market", ["Fighter", "Model", "Listed", "Market", "Edge"], body).replace("</table></div>", "</table>@@MOVE@@@@ANGLES@@</div>", 1)
         # fight length: GTD (listed from the sheet) and ITD; edge vs listed for GTD, vs market for ITD
@@ -459,16 +492,12 @@ def build(names, outname):
             body = (f'<div class="mvrow mvq" data-part="move"><div class="mvt"><span class="mvl">Line</span> Steady · {esc(last(tow))} opened <b class="mvo">{R(o["open"]["m" + tsd], "ml", "lh_open_ml", "LH open ML " + tow, lh=LHF, pair=PAIR, side=tsd)}</b> {o["open"]["t"][5:10].replace("-", "/")} · '
                     f'<b>{R(abs(mv), "pts", "lh_drift_abs", "LH drift pts", lh=LHF, pair=PAIR)}&nbsp;pts</b>'
                     f'<span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div>'
-                    + (f'<details class="mvx"><summary>Price path</summary>{minispark(o["series"], an)}<div class="mvc">{esc(last(an))} win %, US-regulated books</div></details>' if len(o.get("series") or []) >= 2 else "") + '</div>')
+                    + (f'<div class="mvpp">{pricepath(o["series"], tsd, CORNER[tsd], last(tow))}<div class="mvc">{esc(last(tow))} win chance, US-regulated books; dashed line = opener</div></div>' if len(o.get("series") or []) >= 2 else "") + '</div>')
         else:
                 body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(tow))} opener <b class="mvo">{R(o["open"]["m" + tsd], "ml", "lh_open_ml", "LH open ML " + tow, lh=LHF, pair=PAIR, side=tsd)}</b> on {o["open"]["t"][5:10].replace("-", "/")}, '
                     f'moved <b>{R(abs(mv), "pts", "lh_drift_abs", "LH drift pts", lh=LHF, pair=PAIR)}&nbsp;pts</b>'
                     f'<span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div>'
-                    f'<div class="mvtr" role="img" aria-label="{esc(last(tow))} win chance from {po*100:.1f}% at the opener to {pc*100:.1f}% now"><span class="mvp">{R(po, "pct1", "lh_p", "LH open p " + tow, lh=LHF, pair=PAIR, side=tsd, at="open")}</span>'
-                    f'<div class="mvbar"><i class="mvfrom" style="left:{po*100:.1f}%"></i><i class="mvspan" style="left:{min(po,pc)*100:.1f}%;width:{abs(pc-po)*100:.1f}%"></i><i class="mvto" style="left:{pc*100:.1f}%"></i></div>'
-                    f'<span class="mvp mve">{R(pc, "pct1", "lh_p", "LH current p " + tow, lh=LHF, pair=PAIR, side=tsd, at="current")}</span></div>'
-                    f'<div class="mvc">{esc(last(tow))} win chance, opener to now</div>'
-                    + (f'<details class="mvx"><summary>Price path</summary>{minispark(o["series"], an)}<div class="mvc">{esc(last(an))} win %, US-regulated books</div></details>' if len(o.get("series") or []) >= 2 else "") + '</div>')
+                    f'<div class="mvpp">{pricepath(o.get("series") or [], tsd, CORNER[tsd], last(tow))}<div class="mvends"><span>Opener <span class="mvp">{R(po, "pct1", "lh_p", "LH open p " + tow, lh=LHF, pair=PAIR, side=tsd, at="open")}</span></span><span>Now <span class="mvp mve">{R(pc, "pct1", "lh_p", "LH current p " + tow, lh=LHF, pair=PAIR, side=tsd, at="current")}</span></span></div><div class="mvc">{esc(last(tow))} win chance, US-regulated books; dashed line = opener</div></div></div>')
     elif o_open:   # Kirk round 6: opener only; no regulated current line
         fav_sd = "a" if o_open["p"] >= 0.5 else "b"; F_ = an if fav_sd == "a" else bn
         body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(F_))} opener <b class="mvo">{R(o_open["m" + fav_sd], "ml", "lh_open_ml", "LH open ML " + F_, lh=LHF, pair=PAIR, side=fav_sd)}</b> on {o_open["t"][5:10].replace("-", "/")}; '
@@ -688,7 +717,7 @@ def build(names, outname):
         vals_ = [v_ for *_, pts_ in S_ for _, v_ in pts_]; lo_, hi_ = min(vals_ + [0]), max(vals_ + [0]); pad_ = max(0.5, (hi_ - lo_) * 0.12); lo_ -= pad_; hi_ += pad_
         W_, H_, L_, Rm_, T_, B_ = 340, 150, 34, 92, 12, 24
         X_ = lambda i_: L_ + i_ * (W_ - L_ - Rm_) / 2; Y_ = lambda v_: T_ + (hi_ - v_) / (hi_ - lo_) * (H_ - T_ - B_)
-        col_ = {"fav": "#2a78d6", "dog": "#eb6834"}
+        col_ = {"rc": "#d6312b", "bc": "#2a78d6"}
         g_ = [f'<line x1="{L_}" x2="{W_ - Rm_}" y1="{Y_(0):.1f}" y2="{Y_(0):.1f}" stroke="#b9b4aa" stroke-width="1" stroke-dasharray="3 3"/>',
               f'<text x="{L_ - 6}" y="{Y_(0) + 3:.1f}" text-anchor="end" font-size="10" fill="#6b665e">0</text>']
         g_ += [f'<text x="{X_(i_):.1f}" y="{H_ - 6}" text-anchor="middle" font-size="10.5" fill="#6b665e">R{i_ + 1}</text>' for i_ in range(3)]
@@ -722,7 +751,7 @@ def build(names, outname):
         mx_ = max([TF * 1.25] + [v_ or 0 for *_, ms_ in rows_ for v_ in ms_])
         W_, L_, Rm_, T_, rh_ = 340, 30, 14, 16, 26; H_ = T_ + 3 * rh_ + 18
         X_ = lambda v_: L_ + (v_ / mx_) * (W_ - L_ - Rm_)
-        col_ = {"fav": "#2a78d6", "dog": "#eb6834"}
+        col_ = {"rc": "#d6312b", "bc": "#2a78d6"}
         g_ = [f'<line x1="{X_(TF):.1f}" x2="{X_(TF):.1f}" y1="{T_ - 6}" y2="{T_ + 3 * rh_}" stroke="#8a857c" stroke-width="1" stroke-dasharray="3 3"/>',
               f'<text x="{X_(TF):.1f}" y="{T_ - 8}" text-anchor="middle" font-size="10" fill="#6b665e">15 min floor</text>']
         for i_ in range(3):
@@ -966,11 +995,11 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .stk-t td.nm{{font-weight:800;font-size:12.5px;line-height:1.25}}.stk-t .odds{{font:700 12.5px/1.2 "SF Mono",Menlo,monospace}}.stk-t .pct{{font-size:11px;color:var(--text-muted)}}.stk-t td.model{{background:var(--fav-b-soft)}}
 .stk-t .live{{font:600 10.5px/1.3 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.stk-t .live:first-of-type{{margin-top:3px}}.stk-t .rl{{font:700 9px/1.2 inherit;font-family:inherit;letter-spacing:.4px;text-transform:uppercase;color:var(--text-muted);margin-top:2px}}.stk-t tr.mkr td{{padding-top:0;border-top:0}}.stk-t td.l.rl{{vertical-align:top;padding-top:4px;font-size:9px}}.unv{{display:block;font-size:9.5px;color:var(--text-muted);margin-top:2px}}
 .stk-t td[data-k]{{border-left:1px solid var(--border)}}
-.dot{{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}}.dot.fav{{background:#2a78d6}}.dot.dog{{background:#eb6834}}
+.dot{{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}}.dot.rc{{background:#d6312b}}.dot.bc{{background:#2a78d6}}
 .ech{{display:inline-block;margin-top:3px;font:800 11px/1 "SF Mono",Menlo,monospace;padding:3px 5px;border-radius:4px;color:var(--text-muted)}}.ech.pos{{background:var(--pos-soft);color:var(--pos-strong)}}.ech.neg{{background:var(--neg-soft);color:var(--neg-strong)}}
-.wb-bar{{display:flex;height:24px;border-radius:4px;overflow:hidden;gap:2px}}.wb-bar i{{display:flex;align-items:center;font-style:normal;min-width:46px}}.wb-bar i.r{{justify-content:flex-end}}.wb-bar i.fav{{background:#2a78d6}}.wb-bar i.dog{{background:#eb6834}}
+.wb-bar{{display:flex;height:24px;border-radius:4px;overflow:hidden;gap:2px}}.wb-bar i{{display:flex;align-items:center;font-style:normal;min-width:46px}}.wb-bar i.r{{justify-content:flex-end}}.wb-bar i.rc{{background:#d6312b}}.wb-bar i.bc{{background:#2a78d6}}
 .mb{{padding:10px 12px}}.mb-row{{display:grid;grid-template-columns:96px 1fr 48px;align-items:center;gap:8px;margin:5px 0}}.mb-l{{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
-.mb-track{{height:14px;background:var(--bg-muted);border-radius:3px;overflow:hidden}}.mb-track i{{display:block;height:100%;border-radius:3px}}.mb-track i.fav{{background:#2a78d6}}.mb-track i.dog{{background:#eb6834}}.mb-v{{font:700 12px/1 "SF Mono",Menlo,monospace;text-align:right}}
+.mb-track{{height:14px;background:var(--bg-muted);border-radius:3px;overflow:hidden}}.mb-track i{{display:block;height:100%;border-radius:3px}}.mb-track i.rc{{background:#d6312b}}.mb-track i.bc{{background:#2a78d6}}.mb-v{{font:700 12px/1 "SF Mono",Menlo,monospace;text-align:right}}
 .drift{{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:2px 0 6px}}.drift .dl{{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--text-muted)}}.drift .dv{{font:800 20px/1 "SF Mono",Menlo,monospace}}.drift .dt{{font-size:12px;color:var(--text-muted)}}
 @media (max-width:440px){{.tabs{{padding:8px 10px 0}}.tabs [role=tab]{{font-size:11px;padding:8px 7px 9px}}.tp{{padding:10px 10px 4px}}.stk-t td,.stk-t th{{padding:7px 3px}}.stk-t td.nm{{font-size:11.5px}}.stk-t .odds{{font-size:11.5px}}.stk-t .pct{{font-size:10px}}.stk-t .live{{font-size:9.5px}}.ech{{font-size:10px;padding:2px 4px}}.mb-row{{grid-template-columns:84px 1fr 44px}}}}
 /* Block 59c: tape under the names, bars inside the stacks, stats groups */
@@ -980,7 +1009,7 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .mt-k{{text-align:center;font-size:9.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);background:var(--bg-muted);flex-direction:column;justify-content:center;gap:1px}}
 .mt .adv{{background:var(--pos-soft);color:var(--pos-strong)}}.arw{{color:var(--action-green-dark);font-size:10px;letter-spacing:1px}}
 .nb{{height:5px;background:var(--bg-muted);border-radius:3px;margin-top:5px;max-width:120px;overflow:hidden}}.nb i,.cb i{{display:block;height:100%;border-radius:3px}}
-.nb i.fav,.cb i.fav{{background:#2a78d6}}.nb i.dog,.cb i.dog{{background:#eb6834}}
+.nb i.rc,.cb i.rc{{background:#d6312b}}.nb i.bc,.cb i.bc{{background:#2a78d6}}.nb.op-rc{{background:#d6312b}}.nb.op-bc{{background:#2a78d6}}.nb.op-rc i,.nb.op-bc i{{border-radius:3px 0 0 3px;box-shadow:2px 0 0 #fff}}
 .cb{{height:5px;background:var(--bg-muted);border-radius:3px;margin:4px auto 2px;width:80%;overflow:hidden}}
 .sg{{margin:0 0 12px}}.sg-h{{background:var(--header-bg);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:7px 10px;border-radius:6px 6px 0 0}}
 .sg .tape{{border:1px solid var(--border);border-top:0;border-radius:0 0 6px 6px}}
@@ -994,9 +1023,9 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .tb-head{{background:#0e1116}}.tb-body{{background:#2a78d6}}.tb-leg{{background:#7fb3ea}}.tb-bar .tb-leg b{{color:#0e1116}}
 .sc{{padding:9px 12px;border-bottom:1px solid var(--border)}}.sc:last-child{{border-bottom:0}}.sc-h{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}}
 .sc-track{{position:relative;height:8px;background:linear-gradient(90deg,var(--bg-muted),#d9d4c8);border-radius:4px;margin:4px 6px 8px}}
-.sc-dot{{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}}.sc-dot.fav{{background:#2a78d6}}.sc-dot.dog{{background:#eb6834}}
+.sc-dot{{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}}.sc-dot.rc{{background:#d6312b}}.sc-dot.bc{{background:#2a78d6}}
 .sc-avg{{position:absolute;top:-5px;width:2px;height:18px;background:#0e1116;transform:translateX(-1px)}}.sc-l{{font-size:12px;margin:2px 0}}.oc i b{{color:#fff}}.oc-wko{{background:#0a7a3a}}.oc-wsub{{background:#22a85a}}.oc-wdec{{background:#8fd6aa}}.oc-ldec{{background:#f2b8b0}}.oc-lsub{{background:#e0675a}}.oc-lko{{background:#b3261e}}.oc .oc-wdec b,.oc .oc-ldec b{{color:#0e1116}}.tb-bar.oc i{{min-width:0}}
-.dhist{{width:100%;height:auto;display:block;margin:6px 0 2px}}.drift{{margin:8px 12px}}.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
+.dhist{{width:100%;height:auto;display:block;margin:6px 0 2px}}.drift{{margin:8px 12px}}.ppath{{display:block;width:100%;height:auto;margin:8px 0 2px}}.mvends{{display:flex;justify-content:space-between;font-size:10.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}}.mvends .mvp{{font:800 12px/1 "SF Mono",Menlo,monospace;color:var(--text);margin-left:4px;text-transform:none}}.mvends .mve{{color:var(--action-green-dark,#0a8842)}}.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
 .sgt{{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}}.sgt button{{flex:1 1 0;min-width:0;border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 2px;font:700 11px/1 inherit;letter-spacing:-.1px;white-space:nowrap;font-family:inherit;color:var(--text-muted);cursor:pointer}}.sgt button[aria-pressed=true]{{background:#0e1116;border-color:#0e1116;color:#fff}}.js .sgw{{display:none}}.js .sgw.on{{display:block}}
 .fmore{{margin:4px 0 12px}}.fmore>summary{{cursor:pointer;font-size:12px;font-weight:700;color:var(--action-green-dark);padding:6px 2px;list-style:none}}.fmore>summary::-webkit-details-marker{{display:none}}.fmore>summary::before{{content:"▸ "}}.fmore[open]>summary::before{{content:"▾ "}}.fmore[open]>summary{{font-size:0}}.fmore[open]>summary::before{{font-size:12px}}.fmore[open]>summary::after{{content:"Hide older fights";font-size:12px}}
 .fl{{color:inherit;text-decoration:none;border-bottom:1px dotted #9a9a9a}}a.fl{{display:inline-block;padding:5px 0 4px;line-height:15px}}.stamps a{{display:inline-block;padding:6px 4px;margin:-6px 0;color:inherit}}.fl:hover{{color:var(--action-green-dark);border-bottom-color:currentColor}}.cn-s{{font-size:10.5px;font-weight:600;color:var(--text-muted);margin-left:8px}}

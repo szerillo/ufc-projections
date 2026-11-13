@@ -38,9 +38,10 @@ def load(slug):
         part = {k: S.select_one(f'div.stk[data-part="{k}"]') for k in ("ml", "length", "method")}
         rows = {k: ([clean(tr) for tr in v.select("tbody > tr")] if v and v.select_one("table") else []) for k, v in part.items()}
         side = {}
-        for tr in rows["ml"]:
-            dot = tr.select_one("i.dot"); nm = tr.select_one("td.nm").get_text(" ", strip=True)
-            side["fav" if "fav" in dot["class"] else "dog"] = (nm, tr)
+        if len(rows["ml"]) == 2:   # favorite = higher model win % (row colours follow the corner, not the price); a 50/50 goes to the first named
+            pw = [float(tr.select_one("td.model .pct").get_text(strip=True).rstrip("%")) for tr in rows["ml"]]
+            fi = 0 if pw[0] >= pw[1] else 1
+            for i, tr in enumerate(rows["ml"]): side["fav" if i == fi else "dog"] = (tr.select_one("td.nm").get_text(" ", strip=True), tr)
         wt = S.select_one(".fp-weight"); belt = S.select_one(".fp-title-belt")
         F.append(dict(n=n, a=a, b=b, seg=SEG.get(c["segment"], "Prelims"), main=c["segment"] == "Main event", title=bool(belt),
                       weight=wt.get_text(strip=True) if wt else "", pending=R.get("proj_src") == "line_pending", rows=rows, side=side,
@@ -88,18 +89,59 @@ def ml_table(F, which):
             f'<table class="stk-t ct ct-ml">{head}<tbody>{"".join(body)}</tbody></table></div>')
 
 
+def length_row(f):
+    """Sean, Nov 13: one row per fight. Each cell holds the GTD value on top and the ITD value under it, lifted from the
+    preview's two fight length rows (same text, same edge colours)."""
+    r = f["rows"]["length"]
+    nm = (f'<td class="l lfn" rowspan="1"><b class="cg-n">{f["n"]}</b><a href="{f["file"]}" target="_blank" rel="noopener">{f["a"].split()[-1]} <span class="vs">vs</span> {f["b"].split()[-1]}</a>'
+          f'{"<span class=cg-belt>★</span>" if f["title"] else ""}<div class="opp">{f["weight"]}</div></td>')
+    if len(r) != 2:
+        return f'<tr class="lrow">{nm}<td class="l dim" colspan="5">No fight length numbers for this bout.</td></tr>'
+    g, i = [tr.find_all("td", recursive=False) for tr in r]
+    def two(c1, c2):
+        def one(c):
+            o, pc, e = c.select_one(".odds"), c.select_one(".pct"), c.select_one(".ech")
+            if e is not None: return str(e)
+            if o is None: return '<span class="dim">–</span>'
+            return f'<span class="odds">{o.decode_contents()}</span>' + (f' <span class="pct">{pc.decode_contents()}</span>' if pc else "")
+        return f'<div class="l2">{one(c1)}</div><div class="l2 lb">{one(c2)}</div>'
+    cells = "".join(f'<td class="{"model" if k == 1 else ""}">{two(g[k], i[k])}</td>' for k in range(1, 5))
+    return f'<tr class="lrow">{nm}<td class="lab"><div class="l2">GTD</div><div class="l2 lb">ITD</div></td>{cells}</tr>'
+
+
+def method_rows(f):
+    """Sean, Nov 13: one row per fighter. Each cell: model price and %, market price and % under it, then the edge chip;
+    the preview's model and market rows merged, bars dropped (same text, same edge colours)."""
+    r = f["rows"]["method"]
+    if len(r) % 2: return '<tr><td class="l dim" colspan="5">No method numbers for this bout.</td></tr>'
+    out = []
+    for mrow, krow in zip(r[0::2], r[1::2]):
+        nmtd = mrow.select_one("td.nm"); dot = nmtd.select_one("i.dot"); name = nmtd.find(string=True, recursive=False) or nmtd.get_text(" ", strip=True)
+        for x in nmtd.select(".rl"): x.decompose()
+        cells = []
+        for mc, kc in zip(mrow.find_all("td", recursive=False)[1:], krow.find_all("td", recursive=False)[1:]):
+            o, pc = mc.select_one(".odds"), mc.select_one(".pct")
+            lv = [x.decode_contents() for x in kc.select(".live")]; e = kc.select_one(".ech")
+            mk = " · ".join(v for v in lv if v.strip() and v.strip() != "&nbsp;" and v != "\xa0")
+            cells.append(f'<td data-k="{mc.get("data-k", "")}"><div class="m1"><span class="odds">{o.decode_contents() if o else "–"}</span>'
+                         f' <span class="pct">{pc.decode_contents() if pc else ""}</span></div>'
+                         f'<div class="m2">{mk or "&nbsp;"}</div>{str(e) if e else ""}</td>')
+        out.append(f'<tr class="mrow"><td class="l nm">{str(dot) if dot else ""}{name.strip()}</td>{"".join(cells)}</tr>')
+    return "".join(out)
+
+
 def props_tables(F, seg):
     fs = [f for f in F if f["seg"] == seg]
-    L = ['<thead><tr><th class=l>Outcome</th><th>Model</th><th>Listed</th><th>Market</th><th>Edge</th></tr></thead><tbody>']
-    M = ['<thead><tr><th class=l>Fighter</th><th>DEC</th><th>KO</th><th>SUB</th><th>ITD</th></tr></thead><tbody>']
+    L = ['<thead><tr><th class=l>Fight</th><th></th><th>Model</th><th>Listed</th><th>Market</th><th>Edge</th></tr></thead><tbody>']
+    M = ['<thead><tr><th class=l>Fighter</th><th>DEC</th><th>KO</th><th>SUB</th><th>ITD</th></tr></thead><tbody>']   # each cell: model, then market (price · %), then edge
     for f in fs:
         if f["pending"]:
-            L.append(pend(f, 5, "fight length numbers")); M.append(pend(f, 5, "method numbers")); continue
-        L.append(grp(f, 5) + "".join(map(str, f["rows"]["length"]))) if f["rows"]["length"] else L.append(grp(f, 5) + '<tr><td class="l dim" colspan="5">No fight length numbers for this bout.</td></tr>')
-        M.append(grp(f, 5) + "".join(map(str, f["rows"]["method"]))) if f["rows"]["method"] else M.append(grp(f, 5) + '<tr><td class="l dim" colspan="5">No method numbers for this bout.</td></tr>')
+            L.append(pend(f, 6, "fight length numbers")); M.append(pend(f, 5, "method numbers")); continue
+        L.append(length_row(f))
+        M.append(grp(f, 5) + method_rows(f))
     L.append("</tbody>"); M.append("</tbody>")
-    return (f'<div class="stk" data-part="length"><div class="stk-h"><span class="bullet"></span>Fight length · GTD and ITD</div><table class="stk-t ct">{"".join(L)}</table></div>'
-            f'<div class="stk" data-part="method"><div class="stk-h"><span class="bullet"></span>Method of victory · model vs market</div><table class="stk-t ct">{"".join(M)}</table></div>')
+    return (f'<div class="stk" data-part="length"><div class="stk-h"><span class="bullet"></span>Fight length · goes the distance / inside the distance</div><table class="stk-t ct ct-len">{"".join(L)}</table></div>'
+            f'<div class="stk" data-part="method"><div class="stk-h"><span class="bullet"></span>Method of victory · model vs market</div><table class="stk-t ct ct-mth">{"".join(M)}</table></div>')
 
 
 def tabs(group, items, sel=0):
@@ -155,6 +197,35 @@ EXTRA_CSS = """
 .fchip.on b{color:var(--action-green)}
 .fprev{display:block;width:100%;border:0;min-height:600px}
 .cardpage .panel{padding-top:4px}
+.ct-mth{table-layout:fixed}
+.ct-mth th:first-child,.ct-mth td.nm{width:21%}
+.ct-mth td.nm{font-size:11px;word-break:break-word}
+.stk-t.ct.ct-mth tr.mrow .m1 .odds{font-size:11px}
+.stk-t.ct.ct-mth tr.mrow .m1 .pct{font-size:9px}
+.stk-t.ct.ct-mth tr.mrow .m2{font-size:9px}
+@media (max-width:480px){.stk-t.ct tr.cg .cg-w{display:none}.stk-t.ct.ct-mth tr.mrow .m1 .pct{display:block}}
+.ct-len td,.ct-len th{padding-left:2px;padding-right:2px}
+.ct-len .l2 .odds{font-size:11px}
+.ct-len .l2 .pct{font-size:9px}
+.ct-len .ech{font-size:9.5px;padding:2px 3px}
+.ct-len td.lfn .opp{display:none}
+.stk-t.ct tr.mrow td{vertical-align:top;padding-top:8px;padding-bottom:8px}
+.stk-t.ct tr.mrow td.nm{vertical-align:middle}
+.stk-t.ct tr.mrow .m1 .odds{font-size:11.5px}
+.stk-t.ct tr.mrow .m1 .pct{font-size:9.5px;display:inline}
+.stk-t.ct tr.mrow .m2{font:600 9.5px/1.3 "SF Mono",Menlo,monospace;color:var(--text-muted);margin-top:2px;white-space:nowrap}
+.stk-t.ct tr.mrow .ech{margin-top:3px;font-size:9.5px;padding:1px 3px}
+.stk-t.ct tr.cg .cg-w{float:none;margin-left:6px}
+.ct-len td.lfn{font-weight:800;font-size:11.5px;line-height:1.25;min-width:84px}
+.ct-len td.lfn a{color:inherit;text-decoration:none}
+.ct-len td.lfn .cg-n{min-width:0;margin-right:4px}
+.ct-len td.lfn .cg-belt{margin-left:4px;padding:0 3px}
+.ct-len .l2{white-space:nowrap;line-height:1.25;padding:2px 0}
+.ct-len .l2.lb{border-top:1px dashed var(--border);margin-top:2px;padding-top:4px}
+.ct-len .l2 .odds{font-size:11.5px}
+.ct-len .l2 .pct{font-size:9.5px;display:inline}
+.ct-len td.lab{font-size:9px;font-weight:800;letter-spacing:.4px;color:var(--text-muted);padding-left:0;padding-right:0;width:24px}
+.ct-len .ech{margin-top:0}
 """
 
 JS = """<script>(function(){

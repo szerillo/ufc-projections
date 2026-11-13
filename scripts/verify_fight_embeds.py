@@ -359,7 +359,8 @@ def check(D, htmlfile, G):
             want_as = lrec["current"]["t"][5:16].replace("-", "/").replace("T", " ")
             if f"line data as of {want_as} UTC" not in page: bad.append(("move", "as-of", f"line move missing 'as of {want_as} UTC'"))
             want_q = abs(lrec["current"]["p"] - lrec["open"]["p"]) < 0.01   # Kirk round 11 D: one-line "Steady" under 1 pt, bar otherwise
-            if want_q != ('class="mvrow mvq"' in page) or want_q == ('class="mvtr"' in page): bad.append(("move", "steady", f"one-line form {'expected' if want_q else 'not expected'}"))
+            # Sean Nov 13: the dated price path (its opener / now row) replaced the opener-to-now bar
+            if want_q != ('class="mvrow mvq"' in page) or want_q == ('class="mvends"' in page): bad.append(("move", "steady", f"one-line form {'expected' if want_q else 'not expected'}"))
         elif lrec.get("open"):
             if "current line not available" not in page: bad.append(("move", "opener only", "opener-only bout must say 'current line not available'"))
         # Block 59k (Kirk check 5): cross-source side check. The bp rule trusts the builder's choice of feed row for each

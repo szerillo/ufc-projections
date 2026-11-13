@@ -46,6 +46,30 @@ def main():
                 if tr.select_one(".cg-pend"):
                     if cur not in pend: fails.append(f"{fn} {part} fight {cur}: shows Line pending but its preview has numbers")
                     continue
+                if part == "length" and "lrow" in cls:   # compact row: GTD over ITD in each cell = the preview's two fight length rows
+                    cur = int(tr.select_one(".cg-n").get_text()); seen.add(cur)
+                    if tr.select_one(".cg-pend"): continue
+                    cells = tr.find_all("td", recursive=False)[2:]
+                    t = toks(tr.select_one(".lab")) and []   # labels carry no numbers
+                    got = [[x for x in toks(BeautifulSoup(str(c.select(".l2")[k]), "html.parser")) if x != "n/a"] for k in (0, 1) for c in cells]
+                    want = [[x for x in row if x != "n/a"] for row in prev[cur]["length"]]
+                    flat = lambda rows: [x for r in rows for x in r]
+                    g_ = [x for x in flat(got[:4])], [x for x in flat(got[4:])]
+                    checked += 1; nums += sum(len(x) for x in g_)
+                    if cur in pend: fails.append(f"{fn} length fight {cur}: numbers shown for a Line pending fight")
+                    elif list(g_) != want: fails.append(f"{fn} length fight {cur}: {list(g_)} differs from fight_{cur:02d}.html {want}")
+                    continue
+                if part == "method" and "mrow" in cls:   # merged row = the preview's model row then its market row, cell by cell
+                    cells = tr.find_all("td", recursive=False)[1:]
+                    m_ = [x for c in cells for x in toks(c.select_one(".m1"))]
+                    k_ = [x for c in cells for x in toks(c.select_one(".m2")) + (toks(c.select_one(".ech")) if c.select_one(".ech") else [])]
+                    checked += 1; nums += len(m_) + len(k_)
+                    if cur in pend: fails.append(f"{fn} method fight {cur}: numbers shown for a Line pending fight")
+                    else:
+                        rows_ = prev[cur]["method"]
+                        if not any(m_ == rows_[i] and k_ == rows_[i + 1] for i in range(0, len(rows_) - 1, 2)):
+                            fails.append(f"{fn} method fight {cur}: {m_} / {k_} is not a model + market row pair of fight_{cur:02d}.html")
+                    continue
                 t = toks(tr); checked += 1; nums += len(t)
                 if cur in pend: fails.append(f"{fn} {part} fight {cur}: numbers shown for a Line pending fight")
                 elif t not in prev[cur][part]: fails.append(f"{fn} {part} fight {cur}: row {t} is not a row of fight_{cur:02d}.html")
