@@ -499,12 +499,12 @@ def build(names, outname):
             body = (f'<div class="mvrow mvq" data-part="move"><div class="mvt"><span class="mvl">Line</span> Steady · {esc(last(tow))} opened <b class="mvo">{R(o["open"]["m" + tsd], "ml", "lh_open_ml", "LH open ML " + tow, lh=LHF, pair=PAIR, side=tsd)}</b> {o["open"]["t"][5:10].replace("-", "/")} · '
                     f'<b>{R(abs(mv), "pts", "lh_drift_abs", "LH drift pts", lh=LHF, pair=PAIR)}&nbsp;pts</b>'
                     f'<span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div>'
-                    + (f'<div class="mvpp">{pricepath(o["series"], tsd, CORNER[tsd], last(tow))}<div class="mvc">{esc(last(tow))} win chance, US-regulated books; dashed line = opener</div></div>' if len(o.get("series") or []) >= 2 else "") + '</div>')
+                    + '</div>')
         else:
                 body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(tow))} opener <b class="mvo">{R(o["open"]["m" + tsd], "ml", "lh_open_ml", "LH open ML " + tow, lh=LHF, pair=PAIR, side=tsd)}</b> on {o["open"]["t"][5:10].replace("-", "/")}, '
                     f'moved <b>{R(abs(mv), "pts", "lh_drift_abs", "LH drift pts", lh=LHF, pair=PAIR)}&nbsp;pts</b>'
                     f'<span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div>'
-                    f'<div class="mvpp">{pricepath(o.get("series") or [], tsd, CORNER[tsd], last(tow))}<div class="mvends"><span>Opener <span class="mvp">{R(po, "pct1", "lh_p", "LH open p " + tow, lh=LHF, pair=PAIR, side=tsd, at="open")}</span></span><span>Now <span class="mvp mve">{R(pc, "pct1", "lh_p", "LH current p " + tow, lh=LHF, pair=PAIR, side=tsd, at="current")}</span></span></div><div class="mvc">{esc(last(tow))} win chance, US-regulated books; dashed line = opener</div></div></div>')
+                    f'<div class="mvpp"><div class="mvends"><span>Opener <span class="mvp">{R(po, "pct1", "lh_p", "LH open p " + tow, lh=LHF, pair=PAIR, side=tsd, at="open")}</span></span><span>Now <span class="mvp mve">{R(pc, "pct1", "lh_p", "LH current p " + tow, lh=LHF, pair=PAIR, side=tsd, at="current")}</span></span></div><div class="mvc">{esc(last(tow))} win chance, US-regulated books</div></div></div>')
     elif o_open:   # Kirk round 6: opener only; no regulated current line
         fav_sd = "a" if o_open["p"] >= 0.5 else "b"; F_ = an if fav_sd == "a" else bn
         body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(F_))} opener <b class="mvo">{R(o_open["m" + fav_sd], "ml", "lh_open_ml", "LH open ML " + F_, lh=LHF, pair=PAIR, side=fav_sd)}</b> on {o_open["t"][5:10].replace("-", "/")}; '
@@ -808,11 +808,11 @@ def build(names, outname):
         tot_row = f'<div class="row"><div class="a{ea}">{totcell(ta_, an)}</div><div class="k">Strike diff /min</div><div class="b{eb}">{totcell(tb_, bn)}</div></div>'
     tot_row += E("sos.adj_sd", "Opp-adjusted diff", "s2", "hi", "Strike differential corrected for the quality of opponents faced")
     groups = [("st", "Striking & cardio", "Striking and cardio",
-               '<div class="subh first">Round by round (judging model)' + (" · 5 rounds" if nrd == 5 else "") + '</div>' + rounds_html + ('<div class="tape">' + champ + '</div>' if nrd == 5 else "")
-               + '<div class="tape">' + L3("cardio.upcoming", "out", "Output kept, R3 vs R1", "pct0", "hi", "Round 3 significant strike attempts as a share of round 1, in fights that got through round 3") + '</div>'
-               + '<div class="subh">Striking</div>' + target_html + '<div class="tape">' + tot_row + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
+               # Sean, Nov 13 02:54: striking numbers first, round by round and output under them
+               '<div class="subh first">Striking</div>' + target_html + '<div class="tape">' + tot_row + E("target_diff.head", "Head diff /min", "s2", "hi") + E("target_diff.body", "Body diff /min", "s2", "hi")
                + E("target_diff.leg", "Leg diff /min", "s2", "hi") + E("hdef", "Head defence", "pct0", "hi", "Share of opponents' head strike attempts that missed", floor=("ufc_fights", 5, "fights")) + '</div>'
-               ),
+               + '<div class="subh">Round by round (judging model)' + (" · 5 rounds" if nrd == 5 else "") + '</div>' + rounds_html + ('<div class="tape">' + champ + '</div>' if nrd == 5 else "")
+               + '<div class="tape">' + L3("cardio.upcoming", "out", "Output kept, R3 vs R1", "pct0", "hi", "Round 3 significant strike attempts as a share of round 1, in fights that got through round 3") + '</div>'),
               ("gr", "Grappling", "Grappling", '<div class="tape">' + grap_html + '</div>'),   # Sean, Nov 13: no dot strips
               ("pw", "Dropped or stopped", "Dropped or stopped", power_html),
               ("en", "Results", "Wins and losses by method", outcome_html + '<div class="tape">' + E("pace.min", "Avg fight, min", "n1", None, floor=("pace.n", 3, "fights")) + E("pace.r1", "Finished in R1", "pct0", None, floor=("pace.n", 3, "fights")) + '</div>')]
