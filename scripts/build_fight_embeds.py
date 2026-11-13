@@ -495,16 +495,16 @@ def build(names, outname):
         tow = an if mv >= 0 else bn
         tsd = "a" if mv >= 0 else "b"
         po, pc = (o["open"]["p"], o["close"]["p"]) if tsd == "a" else (1 - o["open"]["p"], 1 - o["close"]["p"])
-        if abs(mv) < 0.01:   # Kirk round 11 D: under 1 pt the bar shows nothing; one line instead (the site marks moves from 1 pt)
-            body = (f'<div class="mvrow mvq" data-part="move"><div class="mvt"><span class="mvl">Line</span> Steady · {esc(last(tow))} opened <b class="mvo">{R(o["open"]["m" + tsd], "ml", "lh_open_ml", "LH open ML " + tow, lh=LHF, pair=PAIR, side=tsd)}</b> {o["open"]["t"][5:10].replace("-", "/")} · '
-                    f'<b>{R(abs(mv), "pts", "lh_drift_abs", "LH drift pts", lh=LHF, pair=PAIR)}&nbsp;pts</b>'
-                    f'<span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div>'
-                    + '</div>')
+        # Sean, Nov 13 03:08: one line. "Line move: Hokit opener +213 → +164 (+5.7%)"; under 1 pt it says Steady (Kirk round 11 D).
+        op_ = R(o["open"]["m" + tsd], "ml", "lh_open_ml", "LH open ML " + tow, lh=LHF, pair=PAIR, side=tsd)
+        cu_ = R(o["close"]["m" + tsd], "ml", "lh_open_ml", "LH current ML " + tow, lh=LHF, pair=PAIR, side=tsd, at="current")
+        dv_ = R(abs(mv), "pts", "lh_drift_abs", "LH drift pts", lh=LHF, pair=PAIR)
+        if abs(mv) < 0.01:
+            body = (f'<div class="mvrow mvq" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(tow))} opener <b class="mvo">{op_}</b> → <b>{cu_}</b> '
+                    f'<span class="dim">(steady, {dv_}%)</span><span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div></div>')
         else:
-                body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(tow))} opener <b class="mvo">{R(o["open"]["m" + tsd], "ml", "lh_open_ml", "LH open ML " + tow, lh=LHF, pair=PAIR, side=tsd)}</b> on {o["open"]["t"][5:10].replace("-", "/")}, '
-                    f'moved <b>{R(abs(mv), "pts", "lh_drift_abs", "LH drift pts", lh=LHF, pair=PAIR)}&nbsp;pts</b>'
-                    f'<span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div>'
-                    f'<div class="mvpp"><div class="mvends"><span>Opener <span class="mvp">{R(po, "pct1", "lh_p", "LH open p " + tow, lh=LHF, pair=PAIR, side=tsd, at="open")}</span></span><span>Now <span class="mvp mve">{R(pc, "pct1", "lh_p", "LH current p " + tow, lh=LHF, pair=PAIR, side=tsd, at="current")}</span></span></div><div class="mvc">{esc(last(tow))} win chance, US-regulated books</div></div></div>')
+            body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(tow))} opener <b class="mvo">{op_}</b> → <b>{cu_}</b> '
+                    f'<b class="mvarr mve">(+{dv_}%)</b><span class="mvasof">line data as of {esc(o["close"]["t"][5:16].replace("-", "/").replace("T", " "))} UTC</span></div></div>')
     elif o_open:   # Kirk round 6: opener only; no regulated current line
         fav_sd = "a" if o_open["p"] >= 0.5 else "b"; F_ = an if fav_sd == "a" else bn
         body = (f'<div class="mvrow" data-part="move"><div class="mvt"><span class="mvl">Line move</span> {esc(last(F_))} opener <b class="mvo">{R(o_open["m" + fav_sd], "ml", "lh_open_ml", "LH open ML " + F_, lh=LHF, pair=PAIR, side=fav_sd)}</b> on {o_open["t"][5:10].replace("-", "/")}; '
@@ -776,11 +776,11 @@ def build(names, outname):
                 legend_.append(f'<b style="color:{col_[side_cls[sd_]]}">{esc(last(F_))}</b> no UFC rounds on record'); continue
             legend_.append(f'<b style="color:{col_[side_cls[sd_]]}">{esc(last(F_))}</b> ' + " · ".join(
                 f'R{i_ + 1} ' + (R(v_, "r0", "em", f"Depth R{i_ + 1} mins {F_}", fighter=F_, path=f"rounds.{i_}.mins") if v_ is not None else "0") for i_, v_ in enumerate(ms_)) + " min")
-        return (f'<div class="trend depth" data-part="depth"><div class="mvl">UFC minutes on record, by round</div>'
+        return (f'<div class="trend depth" data-part="depth"><div class="mvl">Sample size: UFC minutes fought in each round</div>'
                 f'<svg viewBox="0 0 {W_} {H_}" role="img" aria-label="UFC minutes on record in rounds 1 to 3 for both fighters, against the 15-minute floor">{"".join(g_)}</svg>'
                 f'<div class="rt-n">{"<br>".join(legend_)}<br>UFC fights only; pre-UFC fights are not counted. The round-by-round trend chart needs 15+ UFC minutes in at least two rounds for both fighters. Faded bars are under the floor.</div></div>')
     tr_ = trend_svg()
-    rounds_html = (tr_ or depth_svg()) + rounds_html
+    rounds_html = rounds_html + (tr_ or depth_svg())   # Sean, Nov 13 03:08: rounds won first, the chart under it
     champ = ""
     if nrd == 5:
         champ = (E("r45.fights", "Fights to R4+", "int", None) + E("r45.landed_pm_13", "Output R1-3 /min", "n1", "hi") + E("r45.landed_pm_45", "Output R4-5 /min", "n1", "hi")
@@ -1048,7 +1048,7 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .sc-n{{padding:6px 12px 0;font-size:11px;color:var(--text-muted)}}
 .stamps{{margin-top:4px;font-size:10px;color:var(--text-muted)}}
 .ssm{{font-size:9.5px;font-weight:600;color:var(--text-muted);font-family:inherit}}
-.mvasof{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}
+.mvasof{{display:block;font-size:9.5px;color:var(--text-muted);margin-top:1px}}.mvt b.mve{{color:#0a8842}}
 .pu{{font-size:10.5px;font-style:italic}}
 .mvo{{background:#fff3c4;padding:0 3px;border-radius:3px}}
 .rt .rw{{display:block;font:800 14px/1.2 "SF Mono",Menlo,monospace}}

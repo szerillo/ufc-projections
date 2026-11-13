@@ -215,7 +215,7 @@ def check(D, htmlfile, G):
                 if rule == "lh_p":
                     v = rec_[a["at"]]["p"]; v = v if (a["side"] == "a") == first_ else 1 - v
                 elif rule == "lh_open_ml":
-                    v = rec_["open"]["m" + (a["side"] if first_ else ("b" if a["side"] == "a" else "a"))]
+                    v = rec_[a.get("at", "open")]["m" + (a["side"] if first_ else ("b" if a["side"] == "a" else "a"))]   # at=current: the current consensus price (Sean, Nov 13)
                 else: v = abs(rec_["current"]["p"] - rec_["open"]["p"])
             elif rule == "labs_live":
                 LV_ = G.setdefault("LIVE", {r_["label"]: r_ for r_ in json.loads((FD / "labs.json").read_text())["live"]["rows"]})
@@ -362,7 +362,7 @@ def check(D, htmlfile, G):
             if f"line data as of {want_as} UTC" not in page: bad.append(("move", "as-of", f"line move missing 'as of {want_as} UTC'"))
             want_q = abs(lrec["current"]["p"] - lrec["open"]["p"]) < 0.01   # Kirk round 11 D: one-line "Steady" under 1 pt, bar otherwise
             # Sean Nov 13: the dated price path (its opener / now row) replaced the opener-to-now bar
-            if want_q != ('class="mvrow mvq"' in page) or want_q == ('class="mvends"' in page): bad.append(("move", "steady", f"one-line form {'expected' if want_q else 'not expected'}"))
+            if want_q != ('class="mvrow mvq"' in page) or want_q == ('class="mvarr' in page): bad.append(("move", "steady", f"one-line form {'expected' if want_q else 'not expected'}"))
         elif lrec.get("open"):
             if "current line not available" not in page: bad.append(("move", "opener only", "opener-only bout must say 'current line not available'"))
         # Block 59k (Kirk check 5): cross-source side check. The bp rule trusts the builder's choice of feed row for each
