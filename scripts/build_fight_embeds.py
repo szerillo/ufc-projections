@@ -747,9 +747,11 @@ def build(names, outname):
         # Kirk round 9 call 1: a joined round within 1 minute of the floor gets a plain thin-sample note
         near_ = [f'{esc(last(F_))}: R{i_ + 1} sits right at the 15-minute floor; thin sample.' for F_, sd_, rec_, pts_ in S_ for i_, _ in pts_ if TF <= (emv(rec_, f"rounds.{i_}.mins") or 0) < TF + 1]
         note_ = f'<div class="trn">{" ".join(near_)}</div>' if near_ else ""
-        return (f'<div class="trend" data-part="trend"><div class="mvl">Strike diff per minute, by round</div>'
+        return (f'<div class="trend" data-part="trend"><div class="mvl">Strike differential per minute, by round</div>'
                 f'<svg viewBox="0 0 {W_} {H_}" role="img" aria-label="Strike differential per minute in rounds 1 to 3 for both fighters">{"".join(g_)}</svg>'
-                f'<div class="rt-n">{legend_}<br>Above the dashed line = out-landing opponents in that round. Lines join rounds with 15+ UFC minutes; hollow grey dots have less (minutes shown). Fight counts are in the table above.</div>{note_}</div>')
+                f'<div class="rt-n">{legend_}</div>'   # Sean, Nov 13 04:41: plainer note, bullets
+                f'<ul class="rt-n"><li>Above 0 = landed more significant strikes per minute than the opponent in that round; below 0 = landed fewer.</li>'
+                f'<li>Hollow grey dot = under 15 UFC minutes in that round (minutes shown), so a thin sample.</li></ul>{note_}</div>')
     def depth_svg():
         """Kirk round 15 C: where the round-trend chart is hidden (coverage gap: under the 15-minute floor), show the UFC
         minutes on record in each of rounds 1 to 3 for both fighters against that floor, so the gap is visible, not blank."""
