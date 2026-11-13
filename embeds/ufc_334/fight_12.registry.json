@@ -319,28 +319,6 @@
   },
   {
    "id": "v27",
-   "text": "+176",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD price",
-   "raw": 0.3626406967769199
-  },
-  {
-   "id": "v28",
-   "text": "36.3%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD %",
-   "raw": 0.3626406967769199
-  },
-  {
-   "id": "v29",
    "text": "+164",
    "fmt": "ml",
    "rule": "bp",
@@ -353,7 +331,7 @@
    "raw": 164
   },
   {
-   "id": "v30",
+   "id": "v28",
    "text": "37.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -365,8 +343,8 @@
    "raw": 0.3787878787878788
   },
   {
-   "id": "v31",
-   "text": "+5.5%",
+   "id": "v29",
+   "text": "+3.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -375,11 +353,11 @@
      "v28"
     ]
    },
-   "desc": "Edge GTD vs listed",
-   "raw": 0.055135180683852925
+   "desc": "Edge GTD vs market",
+   "raw": 0.03898799867289404
   },
   {
-   "id": "v32",
+   "id": "v30",
    "text": "-139",
    "fmt": "mlp",
    "rule": "pub",
@@ -391,7 +369,7 @@
    "raw": 0.5822241225392272
   },
   {
-   "id": "v33",
+   "id": "v31",
    "text": "58.2%",
    "fmt": "pct1",
    "rule": "pub",
@@ -403,7 +381,7 @@
    "raw": 0.5822241225392272
   },
   {
-   "id": "v34",
+   "id": "v32",
    "text": "-217",
    "fmt": "ml",
    "rule": "bp",
@@ -416,7 +394,7 @@
    "raw": -217
   },
   {
-   "id": "v35",
+   "id": "v33",
    "text": "68.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -428,21 +406,21 @@
    "raw": 0.6845425867507886
   },
   {
-   "id": "v36",
+   "id": "v34",
    "text": "-10.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v33",
-     "v35"
+     "v31",
+     "v33"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": -0.10231846421156143
   },
   {
-   "id": "v37",
+   "id": "v35",
    "text": "+308",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -454,7 +432,7 @@
    "raw": 0.24493758834515647
   },
   {
-   "id": "v38",
+   "id": "v36",
    "text": "24.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -466,7 +444,7 @@
    "raw": 0.24493758834515647
   },
   {
-   "id": "v39",
+   "id": "v37",
    "text": "+300",
    "fmt": "ml",
    "rule": "bp",
@@ -479,7 +457,7 @@
    "raw": 300
   },
   {
-   "id": "v40",
+   "id": "v38",
    "text": "25.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -491,21 +469,21 @@
    "raw": 0.25
   },
   {
-   "id": "v41",
+   "id": "v39",
    "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v38",
-     "v40"
+     "v36",
+     "v38"
     ]
    },
    "desc": "Edge dec Kayla Harrison",
    "raw": -0.005062411654843529
   },
   {
-   "id": "v42",
+   "id": "v40",
    "text": "+1099",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -517,7 +495,7 @@
    "raw": 0.08340692372076923
   },
   {
-   "id": "v43",
+   "id": "v41",
    "text": "8.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -529,7 +507,7 @@
    "raw": 0.08340692372076923
   },
   {
-   "id": "v44",
+   "id": "v42",
    "text": "+747",
    "fmt": "ml",
    "rule": "bp",
@@ -542,7 +520,7 @@
    "raw": 747
   },
   {
-   "id": "v45",
+   "id": "v43",
    "text": "11.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -554,21 +532,21 @@
    "raw": 0.1180637544273908
   },
   {
-   "id": "v46",
+   "id": "v44",
    "text": "-3.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v43",
-     "v45"
+     "v41",
+     "v43"
     ]
    },
    "desc": "Edge ko Kayla Harrison",
    "raw": -0.034656830706621566
   },
   {
-   "id": "v47",
+   "id": "v45",
    "text": "+219",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -580,7 +558,7 @@
    "raw": 0.3134069067359119
   },
   {
-   "id": "v48",
+   "id": "v46",
    "text": "31.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -592,7 +570,7 @@
    "raw": 0.3134069067359119
   },
   {
-   "id": "v49",
+   "id": "v47",
    "text": "+185",
    "fmt": "ml",
    "rule": "bp",
@@ -605,7 +583,7 @@
    "raw": 185
   },
   {
-   "id": "v50",
+   "id": "v48",
    "text": "35.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -617,21 +595,21 @@
    "raw": 0.3508771929824561
   },
   {
-   "id": "v51",
+   "id": "v49",
    "text": "-3.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v48",
-     "v50"
+     "v46",
+     "v48"
     ]
    },
    "desc": "Edge sub Kayla Harrison",
    "raw": -0.03747028624654419
   },
   {
-   "id": "v52",
+   "id": "v50",
    "text": "+152",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -643,7 +621,7 @@
    "raw": 0.39681383045668117
   },
   {
-   "id": "v53",
+   "id": "v51",
    "text": "39.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -655,7 +633,22 @@
    "raw": 0.39681383045668117
   },
   {
-   "id": "v54",
+   "id": "v52",
+   "text": "+113",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Kayla Harrison KO/TKO/DQ",
+     "Kayla Harrison Submission"
+    ]
+   },
+   "desc": "Market ITD price Kayla Harrison",
+   "raw": 0.46894094740984693
+  },
+  {
+   "id": "v53",
    "text": "46.9%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -670,21 +663,21 @@
    "raw": 0.46894094740984693
   },
   {
-   "id": "v55",
+   "id": "v54",
    "text": "-7.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v53",
-     "v54"
+     "v51",
+     "v53"
     ]
    },
    "desc": "Edge itd Kayla Harrison",
    "raw": -0.07212711695316576
   },
   {
-   "id": "v56",
+   "id": "v55",
    "text": "+479",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -696,7 +689,7 @@
    "raw": 0.17283828911561638
   },
   {
-   "id": "v57",
+   "id": "v56",
    "text": "17.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -708,7 +701,7 @@
    "raw": 0.17283828911561638
   },
   {
-   "id": "v58",
+   "id": "v57",
    "text": "+550",
    "fmt": "ml",
    "rule": "bp",
@@ -721,7 +714,7 @@
    "raw": 550
   },
   {
-   "id": "v59",
+   "id": "v58",
    "text": "15.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -733,21 +726,21 @@
    "raw": 0.15384615384615385
   },
   {
-   "id": "v60",
+   "id": "v59",
    "text": "+1.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v57",
-     "v59"
+     "v56",
+     "v58"
     ]
    },
    "desc": "Edge dec Amanda Nunes",
    "raw": 0.01899213526946253
   },
   {
-   "id": "v61",
+   "id": "v60",
    "text": "+581",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -759,7 +752,7 @@
    "raw": 0.14693389948203736
   },
   {
-   "id": "v62",
+   "id": "v61",
    "text": "14.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -771,7 +764,7 @@
    "raw": 0.14693389948203736
   },
   {
-   "id": "v63",
+   "id": "v62",
    "text": "+287",
    "fmt": "ml",
    "rule": "bp",
@@ -784,7 +777,7 @@
    "raw": 287
   },
   {
-   "id": "v64",
+   "id": "v63",
    "text": "25.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -796,21 +789,21 @@
    "raw": 0.25839793281653745
   },
   {
-   "id": "v65",
+   "id": "v64",
    "text": "-11.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v62",
-     "v64"
+     "v61",
+     "v63"
     ]
    },
    "desc": "Edge ko Amanda Nunes",
    "raw": -0.11146403333450008
   },
   {
-   "id": "v66",
+   "id": "v65",
    "text": "+2499",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -822,7 +815,7 @@
    "raw": 0.03847639260050866
   },
   {
-   "id": "v67",
+   "id": "v66",
    "text": "3.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -834,7 +827,7 @@
    "raw": 0.03847639260050866
   },
   {
-   "id": "v68",
+   "id": "v67",
    "text": "+1949",
    "fmt": "ml",
    "rule": "bp",
@@ -847,7 +840,7 @@
    "raw": 1949
   },
   {
-   "id": "v69",
+   "id": "v68",
    "text": "4.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -859,21 +852,21 @@
    "raw": 0.04880429477794046
   },
   {
-   "id": "v70",
+   "id": "v69",
    "text": "-1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v67",
-     "v69"
+     "v66",
+     "v68"
     ]
    },
    "desc": "Edge sub Amanda Nunes",
    "raw": -0.010327902177431798
   },
   {
-   "id": "v71",
+   "id": "v70",
    "text": "+439",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -885,7 +878,7 @@
    "raw": 0.185410292082546
   },
   {
-   "id": "v72",
+   "id": "v71",
    "text": "18.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -895,6 +888,21 @@
    },
    "desc": "Model itd % Amanda Nunes",
    "raw": 0.185410292082546
+  },
+  {
+   "id": "v72",
+   "text": "+226",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Amanda Nunes KO/TKO/DQ",
+     "Amanda Nunes Submission"
+    ]
+   },
+   "desc": "Market ITD price Amanda Nunes",
+   "raw": 0.3072022275944779
   },
   {
    "id": "v73",
@@ -918,7 +926,7 @@
    "rule": "edge",
    "args": {
     "of": [
-     "v72",
+     "v71",
      "v73"
     ]
    },
@@ -2596,54 +2604,20 @@
   },
   {
    "id": "v212",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
+   "text": "71%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "fighter": "Kayla Harrison",
-    "path": "out_landed.k"
+    "side": "b",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "amanda-nunes"
    },
-   "desc": "Out-landed the opponent k Kayla Harrison",
-   "raw": 3
+   "desc": "Output kept, R3 vs R1 b",
+   "raw": 0.712
   },
   {
    "id": "v213",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kayla Harrison",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Kayla Harrison",
-   "raw": 3
-  },
-  {
-   "id": "v214",
-   "text": "16",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amanda Nunes",
-    "path": "out_landed.k"
-   },
-   "desc": "Out-landed the opponent k Amanda Nunes",
-   "raw": 16
-  },
-  {
-   "id": "v215",
-   "text": "18",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amanda Nunes",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Amanda Nunes",
-   "raw": 18
-  },
-  {
-   "id": "v216",
    "text": "+2.40",
    "fmt": "s2",
    "rule": "em",
@@ -2655,7 +2629,7 @@
    "raw": 2.397
   },
   {
-   "id": "v217",
+   "id": "v214",
    "text": "+1.42",
    "fmt": "s2",
    "rule": "em",
@@ -2667,7 +2641,7 @@
    "raw": 1.424
   },
   {
-   "id": "v218",
+   "id": "v215",
    "text": "+0.66",
    "fmt": "s2",
    "rule": "em",
@@ -2679,7 +2653,7 @@
    "raw": 0.662
   },
   {
-   "id": "v219",
+   "id": "v216",
    "text": "+0.25",
    "fmt": "s2",
    "rule": "em",
@@ -2691,7 +2665,7 @@
    "raw": 0.25
   },
   {
-   "id": "v220",
+   "id": "v217",
    "text": "+0.13",
    "fmt": "s2",
    "rule": "em",
@@ -2703,7 +2677,7 @@
    "raw": 0.126
   },
   {
-   "id": "v221",
+   "id": "v218",
    "text": "+0.43",
    "fmt": "s2",
    "rule": "em",
@@ -2715,7 +2689,7 @@
    "raw": 0.426
   },
   {
-   "id": "v222",
+   "id": "v219",
    "text": "72%",
    "fmt": "pct0",
    "rule": "em",
@@ -2727,7 +2701,7 @@
    "raw": 0.7237
   },
   {
-   "id": "v223",
+   "id": "v220",
    "text": "66%",
    "fmt": "pct0",
    "rule": "em",
@@ -2739,7 +2713,7 @@
    "raw": 0.6623
   },
   {
-   "id": "v224",
+   "id": "v221",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2751,69 +2725,7 @@
    "raw": 3
   },
   {
-   "id": "v225",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kayla Harrison",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Kayla Harrison",
-   "raw": 3
-  },
-  {
-   "id": "v226",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kayla Harrison",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Kayla Harrison",
-   "raw": 3
-  },
-  {
-   "id": "v227",
-   "text": "10",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amanda Nunes",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Amanda Nunes",
-   "raw": 10
-  },
-  {
-   "id": "v228",
-   "text": "11",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amanda Nunes",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Amanda Nunes",
-   "raw": 11
-  },
-  {
-   "id": "v229",
-   "text": "71%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "cardio.upcoming",
-    "key": "out",
-    "slug": "amanda-nunes"
-   },
-   "desc": "Output kept R3 b",
-   "raw": 0.712
-  },
-  {
-   "id": "v230",
+   "id": "v222",
    "text": "10.6",
    "fmt": "n1",
    "rule": "em",
@@ -2825,7 +2737,7 @@
    "raw": 10.567
   },
   {
-   "id": "v231",
+   "id": "v223",
    "text": "11.4",
    "fmt": "n1",
    "rule": "em",
@@ -2837,7 +2749,7 @@
    "raw": 11.356
   },
   {
-   "id": "v232",
+   "id": "v224",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -2849,7 +2761,7 @@
    "raw": 0.0
   },
   {
-   "id": "v233",
+   "id": "v225",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -2861,7 +2773,7 @@
    "raw": 0.5
   },
   {
-   "id": "v234",
+   "id": "v226",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2874,7 +2786,7 @@
    "raw": -714
   },
   {
-   "id": "v235",
+   "id": "v227",
    "text": "-1111",
    "fmt": "ml",
    "rule": "fight",
@@ -2887,7 +2799,7 @@
    "raw": -1111
   },
   {
-   "id": "v236",
+   "id": "v228",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -2900,7 +2812,7 @@
    "raw": -455
   },
   {
-   "id": "v237",
+   "id": "v229",
    "text": "-312",
    "fmt": "ml",
    "rule": "fight",
@@ -2913,7 +2825,7 @@
    "raw": -312
   },
   {
-   "id": "v238",
+   "id": "v230",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",

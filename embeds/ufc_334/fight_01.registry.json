@@ -319,28 +319,6 @@
   },
   {
    "id": "v27",
-   "text": "+136",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD price",
-   "raw": 0.4241672278672951
-  },
-  {
-   "id": "v28",
-   "text": "42.4%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD %",
-   "raw": 0.4241672278672951
-  },
-  {
-   "id": "v29",
    "text": "+118",
    "fmt": "ml",
    "rule": "bp",
@@ -353,7 +331,7 @@
    "raw": 118
   },
   {
-   "id": "v30",
+   "id": "v28",
    "text": "45.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -365,8 +343,8 @@
    "raw": 0.45871559633027525
   },
   {
-   "id": "v31",
-   "text": "+1.4%",
+   "id": "v29",
+   "text": "-2.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -375,11 +353,11 @@
      "v28"
     ]
    },
-   "desc": "Edge GTD vs listed",
-   "raw": 0.013643287077567123
+   "desc": "Edge GTD vs market",
+   "raw": -0.020905081385413027
   },
   {
-   "id": "v32",
+   "id": "v30",
    "text": "-128",
    "fmt": "mlp",
    "rule": "pub",
@@ -391,7 +369,7 @@
    "raw": 0.5621894850551378
   },
   {
-   "id": "v33",
+   "id": "v31",
    "text": "56.2%",
    "fmt": "pct1",
    "rule": "pub",
@@ -403,7 +381,7 @@
    "raw": 0.5621894850551378
   },
   {
-   "id": "v34",
+   "id": "v32",
    "text": "-152",
    "fmt": "ml",
    "rule": "bp",
@@ -416,7 +394,7 @@
    "raw": -152
   },
   {
-   "id": "v35",
+   "id": "v33",
    "text": "60.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -428,21 +406,21 @@
    "raw": 0.6031746031746031
   },
   {
-   "id": "v36",
+   "id": "v34",
    "text": "-4.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v33",
-     "v35"
+     "v31",
+     "v33"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": -0.04098511811946537
   },
   {
-   "id": "v37",
+   "id": "v35",
    "text": "+400",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -454,7 +432,7 @@
    "raw": 0.19995560063337162
   },
   {
-   "id": "v38",
+   "id": "v36",
    "text": "20.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -466,7 +444,7 @@
    "raw": 0.19995560063337162
   },
   {
-   "id": "v39",
+   "id": "v37",
    "text": "+255",
    "fmt": "ml",
    "rule": "bp",
@@ -479,7 +457,7 @@
    "raw": 255
   },
   {
-   "id": "v40",
+   "id": "v38",
    "text": "28.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -491,21 +469,21 @@
    "raw": 0.28169014084507044
   },
   {
-   "id": "v41",
+   "id": "v39",
    "text": "-8.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v38",
-     "v40"
+     "v36",
+     "v38"
     ]
    },
    "desc": "Edge dec Evan Elder",
    "raw": -0.08173454021169882
   },
   {
-   "id": "v42",
+   "id": "v40",
    "text": "+594",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -517,7 +495,7 @@
    "raw": 0.1440229094725886
   },
   {
-   "id": "v43",
+   "id": "v41",
    "text": "14.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -529,7 +507,7 @@
    "raw": 0.1440229094725886
   },
   {
-   "id": "v44",
+   "id": "v42",
    "text": "+524",
    "fmt": "ml",
    "rule": "bp",
@@ -542,7 +520,7 @@
    "raw": 524
   },
   {
-   "id": "v45",
+   "id": "v43",
    "text": "16.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -554,21 +532,21 @@
    "raw": 0.16025641025641027
   },
   {
-   "id": "v46",
+   "id": "v44",
    "text": "-1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v43",
-     "v45"
+     "v41",
+     "v43"
     ]
    },
    "desc": "Edge ko Evan Elder",
    "raw": -0.01623350078382166
   },
   {
-   "id": "v47",
+   "id": "v45",
    "text": "+859",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -580,7 +558,7 @@
    "raw": 0.10422205166853535
   },
   {
-   "id": "v48",
+   "id": "v46",
    "text": "10.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -592,7 +570,7 @@
    "raw": 0.10422205166853535
   },
   {
-   "id": "v49",
+   "id": "v47",
    "text": "+700",
    "fmt": "ml",
    "rule": "bp",
@@ -605,7 +583,7 @@
    "raw": 700
   },
   {
-   "id": "v50",
+   "id": "v48",
    "text": "12.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -617,21 +595,21 @@
    "raw": 0.125
   },
   {
-   "id": "v51",
+   "id": "v49",
    "text": "-2.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v48",
-     "v50"
+     "v46",
+     "v48"
     ]
    },
    "desc": "Edge sub Evan Elder",
    "raw": -0.020777948331464652
   },
   {
-   "id": "v52",
+   "id": "v50",
    "text": "+303",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -643,7 +621,7 @@
    "raw": 0.24824496114112396
   },
   {
-   "id": "v53",
+   "id": "v51",
    "text": "24.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -655,7 +633,22 @@
    "raw": 0.24824496114112396
   },
   {
-   "id": "v54",
+   "id": "v52",
+   "text": "+251",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Evan Elder KO/TKO/DQ",
+     "Evan Elder Submission"
+    ]
+   },
+   "desc": "Market ITD price Evan Elder",
+   "raw": 0.28525641025641024
+  },
+  {
+   "id": "v53",
    "text": "28.5%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -670,21 +663,21 @@
    "raw": 0.28525641025641024
   },
   {
-   "id": "v55",
+   "id": "v54",
    "text": "-3.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v53",
-     "v54"
+     "v51",
+     "v53"
     ]
    },
    "desc": "Edge itd Evan Elder",
    "raw": -0.03701144911528628
   },
   {
-   "id": "v56",
+   "id": "v55",
    "text": "+320",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -696,7 +689,7 @@
    "raw": 0.23785491431149058
   },
   {
-   "id": "v57",
+   "id": "v56",
    "text": "23.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -708,7 +701,7 @@
    "raw": 0.23785491431149058
   },
   {
-   "id": "v58",
+   "id": "v57",
    "text": "+400",
    "fmt": "ml",
    "rule": "bp",
@@ -721,7 +714,7 @@
    "raw": 400
   },
   {
-   "id": "v59",
+   "id": "v58",
    "text": "20.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -733,21 +726,21 @@
    "raw": 0.2
   },
   {
-   "id": "v60",
+   "id": "v59",
    "text": "+3.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v57",
-     "v59"
+     "v56",
+     "v58"
     ]
    },
    "desc": "Edge dec Samuel Sanches",
    "raw": 0.03785491431149057
   },
   {
-   "id": "v61",
+   "id": "v60",
    "text": "+268",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -759,7 +752,7 @@
    "raw": 0.2715689966491322
   },
   {
-   "id": "v62",
+   "id": "v61",
    "text": "27.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -771,7 +764,7 @@
    "raw": 0.2715689966491322
   },
   {
-   "id": "v63",
+   "id": "v62",
    "text": "+179",
    "fmt": "ml",
    "rule": "bp",
@@ -784,7 +777,7 @@
    "raw": 179
   },
   {
-   "id": "v64",
+   "id": "v63",
    "text": "35.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -796,21 +789,21 @@
    "raw": 0.35842293906810035
   },
   {
-   "id": "v65",
+   "id": "v64",
    "text": "-8.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v62",
-     "v64"
+     "v61",
+     "v63"
     ]
    },
    "desc": "Edge ko Samuel Sanches",
    "raw": -0.08685394241896816
   },
   {
-   "id": "v66",
+   "id": "v65",
    "text": "+2260",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -822,7 +815,7 @@
    "raw": 0.0423755272648817
   },
   {
-   "id": "v67",
+   "id": "v66",
    "text": "4.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -834,7 +827,7 @@
    "raw": 0.0423755272648817
   },
   {
-   "id": "v68",
+   "id": "v67",
    "text": "+1800",
    "fmt": "ml",
    "rule": "bp",
@@ -847,7 +840,7 @@
    "raw": 1800
   },
   {
-   "id": "v69",
+   "id": "v68",
    "text": "5.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -859,21 +852,21 @@
    "raw": 0.05263157894736842
   },
   {
-   "id": "v70",
+   "id": "v69",
    "text": "-1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v67",
-     "v69"
+     "v66",
+     "v68"
     ]
    },
    "desc": "Edge sub Samuel Sanches",
    "raw": -0.010256051682486715
   },
   {
-   "id": "v71",
+   "id": "v70",
    "text": "+219",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -885,7 +878,7 @@
    "raw": 0.3139445239140139
   },
   {
-   "id": "v72",
+   "id": "v71",
    "text": "31.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -895,6 +888,21 @@
    },
    "desc": "Model itd % Samuel Sanches",
    "raw": 0.3139445239140139
+  },
+  {
+   "id": "v72",
+   "text": "+143",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Samuel Sanches KO/TKO/DQ",
+     "Samuel Sanches Submission"
+    ]
+   },
+   "desc": "Market ITD price Samuel Sanches",
+   "raw": 0.4110545180154688
   },
   {
    "id": "v73",
@@ -918,7 +926,7 @@
    "rule": "edge",
    "args": {
     "of": [
-     "v72",
+     "v71",
      "v73"
     ]
    },
@@ -1608,30 +1616,20 @@
   },
   {
    "id": "v130",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em",
+   "text": "138%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "fighter": "Evan Elder",
-    "path": "out_landed.k"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "evan-elder"
    },
-   "desc": "Out-landed the opponent k Evan Elder",
-   "raw": 4
+   "desc": "Output kept, R3 vs R1 a",
+   "raw": 1.38
   },
   {
    "id": "v131",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Evan Elder",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Evan Elder",
-   "raw": 5
-  },
-  {
-   "id": "v132",
    "text": "-0.51",
    "fmt": "s2",
    "rule": "em",
@@ -1643,7 +1641,7 @@
    "raw": -0.513
   },
   {
-   "id": "v133",
+   "id": "v132",
    "text": "+1.03",
    "fmt": "s2",
    "rule": "em",
@@ -1655,7 +1653,7 @@
    "raw": 1.026
   },
   {
-   "id": "v134",
+   "id": "v133",
    "text": "+0.21",
    "fmt": "s2",
    "rule": "em",
@@ -1667,7 +1665,7 @@
    "raw": 0.208
   },
   {
-   "id": "v135",
+   "id": "v134",
    "text": "65%",
    "fmt": "pct0",
    "rule": "em",
@@ -1679,45 +1677,7 @@
    "raw": 0.6479
   },
   {
-   "id": "v136",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Evan Elder",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Evan Elder",
-   "raw": 3
-  },
-  {
-   "id": "v137",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Evan Elder",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Evan Elder",
-   "raw": 4
-  },
-  {
-   "id": "v138",
-   "text": "138%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "cardio.upcoming",
-    "key": "out",
-    "slug": "evan-elder"
-   },
-   "desc": "Output kept R3 a",
-   "raw": 1.38
-  },
-  {
-   "id": "v139",
+   "id": "v135",
    "text": "12.5",
    "fmt": "n1",
    "rule": "em",
@@ -1729,7 +1689,7 @@
    "raw": 12.48
   },
   {
-   "id": "v140",
+   "id": "v136",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1741,7 +1701,7 @@
    "raw": 0.0
   },
   {
-   "id": "v141",
+   "id": "v137",
    "text": "5",
    "fmt": "int",
    "rule": "ufc_n",
@@ -1753,7 +1713,7 @@
    "raw": 5
   },
   {
-   "id": "v142",
+   "id": "v138",
    "text": "49.8%",
    "fmt": "pct1",
    "rule": "rs_angle",
@@ -1765,7 +1725,7 @@
    "raw": 0.4979
   },
   {
-   "id": "v143",
+   "id": "v139",
    "text": "233",
    "fmt": "intc",
    "rule": "rs_angle",
@@ -1777,7 +1737,7 @@
    "raw": 233
   },
   {
-   "id": "v144",
+   "id": "v140",
    "text": "50.4%",
    "fmt": "pct1",
    "rule": "rs_angle",
@@ -1789,7 +1749,7 @@
    "raw": 0.5044
   },
   {
-   "id": "v145",
+   "id": "v141",
    "text": "43.4%",
    "fmt": "pct1",
    "rule": "dbstat",
@@ -1801,7 +1761,7 @@
    "raw": 0.4337
   },
   {
-   "id": "v146",
+   "id": "v142",
    "text": "56.2%",
    "fmt": "pct1",
    "rule": "dbstat",
@@ -1813,7 +1773,7 @@
    "raw": 0.5621
   },
   {
-   "id": "v147",
+   "id": "v143",
    "text": "233",
    "fmt": "intc",
    "rule": "rs_angle",
@@ -1825,7 +1785,7 @@
    "raw": 233
   },
   {
-   "id": "v148",
+   "id": "v144",
    "text": "-11.9%",
    "fmt": "spp",
    "rule": "rs_angle",
@@ -1837,7 +1797,7 @@
    "raw": -0.119
   },
   {
-   "id": "v149",
+   "id": "v145",
    "text": "-23.7%",
    "fmt": "spp",
    "rule": "dbstat",
@@ -1849,7 +1809,7 @@
    "raw": -0.2374
   },
   {
-   "id": "v150",
+   "id": "v146",
    "text": "+0.7%",
    "fmt": "spp",
    "rule": "dbstat",
@@ -1861,7 +1821,7 @@
    "raw": 0.0069
   },
   {
-   "id": "v151",
+   "id": "v147",
    "text": "-4.1%",
    "fmt": "spp",
    "rule": "dbstat",
@@ -1872,7 +1832,7 @@
    "raw": -0.0407
   },
   {
-   "id": "v152",
+   "id": "v148",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -1885,7 +1845,7 @@
    "raw": -208
   },
   {
-   "id": "v153",
+   "id": "v149",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -1898,7 +1858,7 @@
    "raw": -455
   },
   {
-   "id": "v154",
+   "id": "v150",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1911,7 +1871,7 @@
    "raw": -303
   },
   {
-   "id": "v155",
+   "id": "v151",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -1924,7 +1884,7 @@
    "raw": 175
   },
   {
-   "id": "v156",
+   "id": "v152",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",

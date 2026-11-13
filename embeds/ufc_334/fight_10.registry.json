@@ -319,28 +319,6 @@
   },
   {
    "id": "v27",
-   "text": "+400",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD price",
-   "raw": 0.20011538887103317
-  },
-  {
-   "id": "v28",
-   "text": "20.0%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD %",
-   "raw": 0.20011538887103317
-  },
-  {
-   "id": "v29",
    "text": "+385",
    "fmt": "ml",
    "rule": "bp",
@@ -353,7 +331,7 @@
    "raw": 385
   },
   {
-   "id": "v30",
+   "id": "v28",
    "text": "20.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -365,8 +343,8 @@
    "raw": 0.20618556701030927
   },
   {
-   "id": "v31",
-   "text": "+5.1%",
+   "id": "v29",
+   "text": "+4.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -375,11 +353,11 @@
      "v28"
     ]
    },
-   "desc": "Edge GTD vs listed",
-   "raw": 0.05054036517119062
+   "desc": "Edge GTD vs market",
+   "raw": 0.04447018703191452
   },
   {
-   "id": "v32",
+   "id": "v30",
    "text": "-299",
    "fmt": "mlp",
    "rule": "pub",
@@ -391,7 +369,7 @@
    "raw": 0.7493442459577762
   },
   {
-   "id": "v33",
+   "id": "v31",
    "text": "74.9%",
    "fmt": "pct1",
    "rule": "pub",
@@ -403,7 +381,7 @@
    "raw": 0.7493442459577762
   },
   {
-   "id": "v34",
+   "id": "v32",
    "text": "-595",
    "fmt": "ml",
    "rule": "bp",
@@ -416,7 +394,7 @@
    "raw": -595
   },
   {
-   "id": "v35",
+   "id": "v33",
    "text": "85.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -428,21 +406,21 @@
    "raw": 0.8561151079136691
   },
   {
-   "id": "v36",
+   "id": "v34",
    "text": "-10.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v33",
-     "v35"
+     "v31",
+     "v33"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": -0.10677086195589292
   },
   {
-   "id": "v37",
+   "id": "v35",
    "text": "+434",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -454,7 +432,7 @@
    "raw": 0.18709085815233908
   },
   {
-   "id": "v38",
+   "id": "v36",
    "text": "18.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -466,7 +444,7 @@
    "raw": 0.18709085815233908
   },
   {
-   "id": "v39",
+   "id": "v37",
    "text": "+724",
    "fmt": "ml",
    "rule": "bp",
@@ -479,7 +457,7 @@
    "raw": 724
   },
   {
-   "id": "v40",
+   "id": "v38",
    "text": "12.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -491,21 +469,21 @@
    "raw": 0.12135922330097088
   },
   {
-   "id": "v41",
+   "id": "v39",
    "text": "+6.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v38",
-     "v40"
+     "v36",
+     "v38"
     ]
    },
    "desc": "Edge dec Uros Medic",
    "raw": 0.06573163485136821
   },
   {
-   "id": "v42",
+   "id": "v40",
    "text": "+166",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -517,7 +495,7 @@
    "raw": 0.37571177900166647
   },
   {
-   "id": "v43",
+   "id": "v41",
    "text": "37.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -529,7 +507,7 @@
    "raw": 0.37571177900166647
   },
   {
-   "id": "v44",
+   "id": "v42",
    "text": "+107",
    "fmt": "ml",
    "rule": "bp",
@@ -542,7 +520,7 @@
    "raw": 107
   },
   {
-   "id": "v45",
+   "id": "v43",
    "text": "48.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -554,21 +532,21 @@
    "raw": 0.4830917874396135
   },
   {
-   "id": "v46",
+   "id": "v44",
    "text": "-10.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v43",
-     "v45"
+     "v41",
+     "v43"
     ]
    },
    "desc": "Edge ko Uros Medic",
    "raw": -0.10738000843794704
   },
   {
-   "id": "v47",
+   "id": "v45",
    "text": "+2035",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -580,7 +558,7 @@
    "raw": 0.04684376432776663
   },
   {
-   "id": "v48",
+   "id": "v46",
    "text": "4.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -592,7 +570,7 @@
    "raw": 0.04684376432776663
   },
   {
-   "id": "v49",
+   "id": "v47",
    "text": "+1200",
    "fmt": "ml",
    "rule": "bp",
@@ -605,7 +583,7 @@
    "raw": 1200
   },
   {
-   "id": "v50",
+   "id": "v48",
    "text": "7.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -617,21 +595,21 @@
    "raw": 0.07692307692307693
   },
   {
-   "id": "v51",
+   "id": "v49",
    "text": "-3.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v48",
-     "v50"
+     "v46",
+     "v48"
     ]
    },
    "desc": "Edge sub Uros Medic",
    "raw": -0.030079312595310298
   },
   {
-   "id": "v52",
+   "id": "v50",
    "text": "+137",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -643,7 +621,7 @@
    "raw": 0.42255554332943307
   },
   {
-   "id": "v53",
+   "id": "v51",
    "text": "42.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -655,7 +633,22 @@
    "raw": 0.42255554332943307
   },
   {
-   "id": "v54",
+   "id": "v52",
+   "text": "-127",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Uros Medic KO/TKO/DQ",
+     "Uros Medic Submission"
+    ]
+   },
+   "desc": "Market ITD price Uros Medic",
+   "raw": 0.5600148643626904
+  },
+  {
+   "id": "v53",
    "text": "56.0%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -670,21 +663,21 @@
    "raw": 0.5600148643626904
   },
   {
-   "id": "v55",
+   "id": "v54",
    "text": "-13.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v53",
-     "v54"
+     "v51",
+     "v53"
     ]
    },
    "desc": "Edge itd Uros Medic",
    "raw": -0.13745932103325736
   },
   {
-   "id": "v56",
+   "id": "v55",
    "text": "+1473",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -696,7 +689,7 @@
    "raw": 0.06356489588988469
   },
   {
-   "id": "v57",
+   "id": "v56",
    "text": "6.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -708,7 +701,7 @@
    "raw": 0.06356489588988469
   },
   {
-   "id": "v58",
+   "id": "v57",
    "text": "+900",
    "fmt": "ml",
    "rule": "bp",
@@ -721,7 +714,7 @@
    "raw": 900
   },
   {
-   "id": "v59",
+   "id": "v58",
    "text": "10.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -733,21 +726,21 @@
    "raw": 0.1
   },
   {
-   "id": "v60",
+   "id": "v59",
    "text": "-3.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v57",
-     "v59"
+     "v56",
+     "v58"
     ]
    },
    "desc": "Edge dec Kevin Holland",
    "raw": -0.036435104110115316
   },
   {
-   "id": "v61",
+   "id": "v60",
    "text": "+452",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -759,7 +752,7 @@
    "raw": 0.18111515995088115
   },
   {
-   "id": "v62",
+   "id": "v61",
    "text": "18.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -771,7 +764,7 @@
    "raw": 0.18111515995088115
   },
   {
-   "id": "v63",
+   "id": "v62",
    "text": "+330",
    "fmt": "ml",
    "rule": "bp",
@@ -784,7 +777,7 @@
    "raw": 330
   },
   {
-   "id": "v64",
+   "id": "v63",
    "text": "23.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -796,21 +789,21 @@
    "raw": 0.23255813953488372
   },
   {
-   "id": "v65",
+   "id": "v64",
    "text": "-5.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v62",
-     "v64"
+     "v61",
+     "v63"
     ]
    },
    "desc": "Edge ko Kevin Holland",
    "raw": -0.05144297958400257
   },
   {
-   "id": "v66",
+   "id": "v65",
    "text": "+586",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -822,7 +815,7 @@
    "raw": 0.14567354267746202
   },
   {
-   "id": "v67",
+   "id": "v66",
    "text": "14.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -834,7 +827,7 @@
    "raw": 0.14567354267746202
   },
   {
-   "id": "v68",
+   "id": "v67",
    "text": "+474",
    "fmt": "ml",
    "rule": "bp",
@@ -847,7 +840,7 @@
    "raw": 474
   },
   {
-   "id": "v69",
+   "id": "v68",
    "text": "17.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -859,21 +852,21 @@
    "raw": 0.17421602787456447
   },
   {
-   "id": "v70",
+   "id": "v69",
    "text": "-2.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v67",
-     "v69"
+     "v66",
+     "v68"
     ]
    },
    "desc": "Edge sub Kevin Holland",
    "raw": -0.028542485197102452
   },
   {
-   "id": "v71",
+   "id": "v70",
    "text": "+206",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -885,7 +878,7 @@
    "raw": 0.3267887026283432
   },
   {
-   "id": "v72",
+   "id": "v71",
    "text": "32.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -895,6 +888,21 @@
    },
    "desc": "Model itd % Kevin Holland",
    "raw": 0.3267887026283432
+  },
+  {
+   "id": "v72",
+   "text": "+146",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Kevin Holland KO/TKO/DQ",
+     "Kevin Holland Submission"
+    ]
+   },
+   "desc": "Market ITD price Kevin Holland",
+   "raw": 0.40677416740944816
   },
   {
    "id": "v73",
@@ -918,7 +926,7 @@
    "rule": "edge",
    "args": {
     "of": [
-     "v72",
+     "v71",
      "v73"
     ]
    },
@@ -2824,54 +2832,20 @@
   },
   {
    "id": "v231",
-   "text": "7",
-   "fmt": "int",
-   "rule": "em",
+   "text": "76%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "fighter": "Uros Medic",
-    "path": "out_landed.k"
+    "side": "b",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "kevin-holland"
    },
-   "desc": "Out-landed the opponent k Uros Medic",
-   "raw": 7
+   "desc": "Output kept, R3 vs R1 b",
+   "raw": 0.763
   },
   {
    "id": "v232",
-   "text": "11",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Uros Medic",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Uros Medic",
-   "raw": 11
-  },
-  {
-   "id": "v233",
-   "text": "20",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kevin Holland",
-    "path": "out_landed.k"
-   },
-   "desc": "Out-landed the opponent k Kevin Holland",
-   "raw": 20
-  },
-  {
-   "id": "v234",
-   "text": "29",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kevin Holland",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Kevin Holland",
-   "raw": 29
-  },
-  {
-   "id": "v235",
    "text": "+1.54",
    "fmt": "s2",
    "rule": "em",
@@ -2883,7 +2857,7 @@
    "raw": 1.542
   },
   {
-   "id": "v236",
+   "id": "v233",
    "text": "+0.42",
    "fmt": "s2",
    "rule": "em",
@@ -2895,7 +2869,7 @@
    "raw": 0.422
   },
   {
-   "id": "v237",
+   "id": "v234",
    "text": "+0.40",
    "fmt": "s2",
    "rule": "em",
@@ -2907,7 +2881,7 @@
    "raw": 0.403
   },
   {
-   "id": "v238",
+   "id": "v235",
    "text": "-0.03",
    "fmt": "s2",
    "rule": "em",
@@ -2919,7 +2893,7 @@
    "raw": -0.026
   },
   {
-   "id": "v239",
+   "id": "v236",
    "text": "-0.17",
    "fmt": "s2",
    "rule": "em",
@@ -2931,7 +2905,7 @@
    "raw": -0.166
   },
   {
-   "id": "v240",
+   "id": "v237",
    "text": "+0.48",
    "fmt": "s2",
    "rule": "em",
@@ -2943,7 +2917,7 @@
    "raw": 0.483
   },
   {
-   "id": "v241",
+   "id": "v238",
    "text": "65%",
    "fmt": "pct0",
    "rule": "em",
@@ -2955,7 +2929,7 @@
    "raw": 0.6494
   },
   {
-   "id": "v242",
+   "id": "v239",
    "text": "60%",
    "fmt": "pct0",
    "rule": "em",
@@ -2967,69 +2941,7 @@
    "raw": 0.6019
   },
   {
-   "id": "v243",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Uros Medic",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Uros Medic",
-   "raw": 1
-  },
-  {
-   "id": "v244",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Uros Medic",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Uros Medic",
-   "raw": 5
-  },
-  {
-   "id": "v245",
-   "text": "8",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kevin Holland",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Kevin Holland",
-   "raw": 8
-  },
-  {
-   "id": "v246",
-   "text": "23",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kevin Holland",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Kevin Holland",
-   "raw": 23
-  },
-  {
-   "id": "v247",
-   "text": "76%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "cardio.upcoming",
-    "key": "out",
-    "slug": "kevin-holland"
-   },
-   "desc": "Output kept R3 b",
-   "raw": 0.763
-  },
-  {
-   "id": "v248",
+   "id": "v240",
    "text": "3.8",
    "fmt": "n1",
    "rule": "em",
@@ -3041,7 +2953,7 @@
    "raw": 3.832
   },
   {
-   "id": "v249",
+   "id": "v241",
    "text": "10.9",
    "fmt": "n1",
    "rule": "em",
@@ -3053,7 +2965,7 @@
    "raw": 10.881
   },
   {
-   "id": "v250",
+   "id": "v242",
    "text": "73%",
    "fmt": "pct0",
    "rule": "em",
@@ -3065,7 +2977,7 @@
    "raw": 0.7273
   },
   {
-   "id": "v251",
+   "id": "v243",
    "text": "29%",
    "fmt": "pct0",
    "rule": "em",
@@ -3077,7 +2989,7 @@
    "raw": 0.2857
   },
   {
-   "id": "v252",
+   "id": "v244",
    "text": "-328",
    "fmt": "ml",
    "rule": "fight",
@@ -3090,7 +3002,7 @@
    "raw": -328
   },
   {
-   "id": "v253",
+   "id": "v245",
    "text": "+170",
    "fmt": "ml",
    "rule": "fight",
@@ -3103,7 +3015,7 @@
    "raw": 170
   },
   {
-   "id": "v254",
+   "id": "v246",
    "text": "-131",
    "fmt": "ml",
    "rule": "fight",
@@ -3116,7 +3028,7 @@
    "raw": -131
   },
   {
-   "id": "v255",
+   "id": "v247",
    "text": "-357",
    "fmt": "ml",
    "rule": "fight",
@@ -3129,7 +3041,7 @@
    "raw": -357
   },
   {
-   "id": "v256",
+   "id": "v248",
    "text": "-206",
    "fmt": "ml",
    "rule": "fight",
@@ -3142,7 +3054,7 @@
    "raw": -206
   },
   {
-   "id": "v257",
+   "id": "v249",
    "text": "-270",
    "fmt": "ml",
    "rule": "fight",
@@ -3155,7 +3067,7 @@
    "raw": -270
   },
   {
-   "id": "v258",
+   "id": "v250",
    "text": "-104",
    "fmt": "ml",
    "rule": "fight",
@@ -3168,7 +3080,7 @@
    "raw": -104
   },
   {
-   "id": "v259",
+   "id": "v251",
    "text": "+175",
    "fmt": "ml",
    "rule": "fight",
@@ -3181,7 +3093,7 @@
    "raw": 175
   },
   {
-   "id": "v260",
+   "id": "v252",
    "text": "+130",
    "fmt": "ml",
    "rule": "fight",
@@ -3194,7 +3106,7 @@
    "raw": 130
   },
   {
-   "id": "v261",
+   "id": "v253",
    "text": "-123",
    "fmt": "ml",
    "rule": "fight",
@@ -3207,7 +3119,7 @@
    "raw": -123
   },
   {
-   "id": "v262",
+   "id": "v254",
    "text": "-109",
    "fmt": "ml",
    "rule": "fight",
@@ -3220,7 +3132,7 @@
    "raw": -109
   },
   {
-   "id": "v263",
+   "id": "v255",
    "text": "-625",
    "fmt": "ml",
    "rule": "fight",
@@ -3233,7 +3145,7 @@
    "raw": -625
   },
   {
-   "id": "v264",
+   "id": "v256",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -3246,7 +3158,7 @@
    "raw": -179
   },
   {
-   "id": "v265",
+   "id": "v257",
    "text": "-102",
    "fmt": "ml",
    "rule": "fight",
@@ -3259,7 +3171,7 @@
    "raw": -102
   },
   {
-   "id": "v266",
+   "id": "v258",
    "text": "+114",
    "fmt": "ml",
    "rule": "fight",
@@ -3272,7 +3184,7 @@
    "raw": 114
   },
   {
-   "id": "v267",
+   "id": "v259",
    "text": "-147",
    "fmt": "ml",
    "rule": "fight",
@@ -3285,7 +3197,7 @@
    "raw": -147
   },
   {
-   "id": "v268",
+   "id": "v260",
    "text": "-294",
    "fmt": "ml",
    "rule": "fight",
@@ -3298,7 +3210,7 @@
    "raw": -294
   },
   {
-   "id": "v269",
+   "id": "v261",
    "text": "-135",
    "fmt": "ml",
    "rule": "fight",
@@ -3311,7 +3223,7 @@
    "raw": -135
   },
   {
-   "id": "v270",
+   "id": "v262",
    "text": "+101",
    "fmt": "ml",
    "rule": "fight",
@@ -3324,7 +3236,7 @@
    "raw": 101
   },
   {
-   "id": "v271",
+   "id": "v263",
    "text": "-145",
    "fmt": "ml",
    "rule": "fight",
@@ -3337,7 +3249,7 @@
    "raw": -145
   },
   {
-   "id": "v272",
+   "id": "v264",
    "text": "-244",
    "fmt": "ml",
    "rule": "fight",
@@ -3350,7 +3262,7 @@
    "raw": -244
   },
   {
-   "id": "v273",
+   "id": "v265",
    "text": "-185",
    "fmt": "ml",
    "rule": "fight",
@@ -3363,7 +3275,7 @@
    "raw": -185
   },
   {
-   "id": "v274",
+   "id": "v266",
    "text": "+460",
    "fmt": "ml",
    "rule": "fight",
@@ -3376,7 +3288,7 @@
    "raw": 460
   },
   {
-   "id": "v275",
+   "id": "v267",
    "text": "-333",
    "fmt": "ml",
    "rule": "fight",
@@ -3389,7 +3301,7 @@
    "raw": -333
   },
   {
-   "id": "v276",
+   "id": "v268",
    "text": "-400",
    "fmt": "ml",
    "rule": "fight",

@@ -319,28 +319,6 @@
   },
   {
    "id": "v27",
-   "text": "+235",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD price",
-   "raw": 0.29820121930696514
-  },
-  {
-   "id": "v28",
-   "text": "29.8%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD %",
-   "raw": 0.29820121930696514
-  },
-  {
-   "id": "v29",
    "text": "+215",
    "fmt": "ml",
    "rule": "bp",
@@ -353,7 +331,7 @@
    "raw": 215
   },
   {
-   "id": "v30",
+   "id": "v28",
    "text": "31.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -365,8 +343,8 @@
    "raw": 0.31746031746031744
   },
   {
-   "id": "v31",
-   "text": "+3.2%",
+   "id": "v29",
+   "text": "+1.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -375,11 +353,11 @@
      "v28"
     ]
    },
-   "desc": "Edge GTD vs listed",
-   "raw": 0.032161353197057374
+   "desc": "Edge GTD vs market",
+   "raw": 0.012902255043705069
   },
   {
-   "id": "v32",
+   "id": "v30",
    "text": "-203",
    "fmt": "mlp",
    "rule": "pub",
@@ -391,7 +369,7 @@
    "raw": 0.6696374274959775
   },
   {
-   "id": "v33",
+   "id": "v31",
    "text": "67.0%",
    "fmt": "pct1",
    "rule": "pub",
@@ -403,7 +381,7 @@
    "raw": 0.6696374274959775
   },
   {
-   "id": "v34",
+   "id": "v32",
    "text": "-297",
    "fmt": "ml",
    "rule": "bp",
@@ -416,7 +394,7 @@
    "raw": -297
   },
   {
-   "id": "v35",
+   "id": "v33",
    "text": "74.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -428,21 +406,21 @@
    "raw": 0.7481108312342569
   },
   {
-   "id": "v36",
+   "id": "v34",
    "text": "-7.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v33",
-     "v35"
+     "v31",
+     "v33"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": -0.07847340373827938
   },
   {
-   "id": "v37",
+   "id": "v35",
    "text": "+369",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -454,7 +432,7 @@
    "raw": 0.2133555533203574
   },
   {
-   "id": "v38",
+   "id": "v36",
    "text": "21.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -466,7 +444,7 @@
    "raw": 0.2133555533203574
   },
   {
-   "id": "v39",
+   "id": "v37",
    "text": "+370",
    "fmt": "ml",
    "rule": "bp",
@@ -479,7 +457,7 @@
    "raw": 370
   },
   {
-   "id": "v40",
+   "id": "v38",
    "text": "21.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -491,21 +469,21 @@
    "raw": 0.2127659574468085
   },
   {
-   "id": "v41",
+   "id": "v39",
    "text": "+0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v38",
-     "v40"
+     "v36",
+     "v38"
     ]
    },
    "desc": "Edge dec Donte Johnson",
    "raw": 0.0005895958735488982
   },
   {
-   "id": "v42",
+   "id": "v40",
    "text": "+182",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -517,7 +495,7 @@
    "raw": 0.35484175874399176
   },
   {
-   "id": "v43",
+   "id": "v41",
    "text": "35.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -529,7 +507,7 @@
    "raw": 0.35484175874399176
   },
   {
-   "id": "v44",
+   "id": "v42",
    "text": "+147",
    "fmt": "ml",
    "rule": "bp",
@@ -542,7 +520,7 @@
    "raw": 147
   },
   {
-   "id": "v45",
+   "id": "v43",
    "text": "40.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -554,21 +532,21 @@
    "raw": 0.4048582995951417
   },
   {
-   "id": "v46",
+   "id": "v44",
    "text": "-5.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v43",
-     "v45"
+     "v41",
+     "v43"
     ]
    },
    "desc": "Edge ko Donte Johnson",
    "raw": -0.05001654085114993
   },
   {
-   "id": "v47",
+   "id": "v45",
    "text": "+1609",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -580,7 +558,7 @@
    "raw": 0.0585154114779504
   },
   {
-   "id": "v48",
+   "id": "v46",
    "text": "5.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -592,7 +570,7 @@
    "raw": 0.0585154114779504
   },
   {
-   "id": "v49",
+   "id": "v47",
    "text": "+1048",
    "fmt": "ml",
    "rule": "bp",
@@ -605,7 +583,7 @@
    "raw": 1048
   },
   {
-   "id": "v50",
+   "id": "v48",
    "text": "8.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -617,21 +595,21 @@
    "raw": 0.08710801393728224
   },
   {
-   "id": "v51",
+   "id": "v49",
    "text": "-2.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v48",
-     "v50"
+     "v46",
+     "v48"
     ]
    },
    "desc": "Edge sub Donte Johnson",
    "raw": -0.028592602459331838
   },
   {
-   "id": "v52",
+   "id": "v50",
    "text": "+142",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -643,7 +621,7 @@
    "raw": 0.4133571702219421
   },
   {
-   "id": "v53",
+   "id": "v51",
    "text": "41.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -655,7 +633,22 @@
    "raw": 0.4133571702219421
   },
   {
-   "id": "v54",
+   "id": "v52",
+   "text": "+103",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Donte Johnson KO/TKO/DQ",
+     "Donte Johnson Submission"
+    ]
+   },
+   "desc": "Market ITD price Donte Johnson",
+   "raw": 0.4919663135324239
+  },
+  {
+   "id": "v53",
    "text": "49.2%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -670,21 +663,21 @@
    "raw": 0.4919663135324239
   },
   {
-   "id": "v55",
+   "id": "v54",
    "text": "-7.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v53",
-     "v54"
+     "v51",
+     "v53"
     ]
    },
    "desc": "Edge itd Donte Johnson",
    "raw": -0.0786091433104818
   },
   {
-   "id": "v56",
+   "id": "v55",
    "text": "+755",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -696,7 +689,7 @@
    "raw": 0.1170070191836651
   },
   {
-   "id": "v57",
+   "id": "v56",
    "text": "11.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -708,7 +701,7 @@
    "raw": 0.1170070191836651
   },
   {
-   "id": "v58",
+   "id": "v57",
    "text": "+750",
    "fmt": "ml",
    "rule": "bp",
@@ -721,7 +714,7 @@
    "raw": 750
   },
   {
-   "id": "v59",
+   "id": "v58",
    "text": "11.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -733,21 +726,21 @@
    "raw": 0.11764705882352941
   },
   {
-   "id": "v60",
+   "id": "v59",
    "text": "-0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v57",
-     "v59"
+     "v56",
+     "v58"
     ]
    },
    "desc": "Edge dec Cesar Almeida",
    "raw": -0.0006400396398643093
   },
   {
-   "id": "v61",
+   "id": "v60",
    "text": "+349",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -759,7 +752,7 @@
    "raw": 0.22270364676565385
   },
   {
-   "id": "v62",
+   "id": "v61",
    "text": "22.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -771,7 +764,7 @@
    "raw": 0.22270364676565385
   },
   {
-   "id": "v63",
+   "id": "v62",
    "text": "+232",
    "fmt": "ml",
    "rule": "bp",
@@ -784,7 +777,7 @@
    "raw": 232
   },
   {
-   "id": "v64",
+   "id": "v63",
    "text": "30.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -796,21 +789,21 @@
    "raw": 0.30120481927710846
   },
   {
-   "id": "v65",
+   "id": "v64",
    "text": "-7.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v62",
-     "v64"
+     "v61",
+     "v63"
     ]
    },
    "desc": "Edge ko Cesar Almeida",
    "raw": -0.07850117251145461
   },
   {
-   "id": "v66",
+   "id": "v65",
    "text": "+2878",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -822,7 +815,7 @@
    "raw": 0.033576610508381496
   },
   {
-   "id": "v67",
+   "id": "v66",
    "text": "3.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -834,7 +827,7 @@
    "raw": 0.033576610508381496
   },
   {
-   "id": "v68",
+   "id": "v67",
    "text": "+1895",
    "fmt": "ml",
    "rule": "bp",
@@ -847,7 +840,7 @@
    "raw": 1895
   },
   {
-   "id": "v69",
+   "id": "v68",
    "text": "5.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -859,21 +852,21 @@
    "raw": 0.05012531328320802
   },
   {
-   "id": "v70",
+   "id": "v69",
    "text": "-1.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v67",
-     "v69"
+     "v66",
+     "v68"
     ]
    },
    "desc": "Edge sub Cesar Almeida",
    "raw": -0.01654870277482652
   },
   {
-   "id": "v71",
+   "id": "v70",
    "text": "+290",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -885,7 +878,7 @@
    "raw": 0.25628025727403536
   },
   {
-   "id": "v72",
+   "id": "v71",
    "text": "25.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -895,6 +888,21 @@
    },
    "desc": "Model itd % Cesar Almeida",
    "raw": 0.25628025727403536
+  },
+  {
+   "id": "v72",
+   "text": "+185",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Cesar Almeida KO/TKO/DQ",
+     "Cesar Almeida Submission"
+    ]
+   },
+   "desc": "Market ITD price Cesar Almeida",
+   "raw": 0.3513301325603165
   },
   {
    "id": "v73",
@@ -918,7 +926,7 @@
    "rule": "edge",
    "args": {
     "of": [
-     "v72",
+     "v71",
      "v73"
     ]
    },
@@ -2046,54 +2054,20 @@
   },
   {
    "id": "v167",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "fighter": "Donte Johnson",
-    "path": "out_landed.k"
+    "side": "b",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "cesar-almeida"
    },
-   "desc": "Out-landed the opponent k Donte Johnson",
-   "raw": 3
+   "desc": "Output kept, R3 vs R1 b",
+   "raw": 0.75
   },
   {
    "id": "v168",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Donte Johnson",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Donte Johnson",
-   "raw": 3
-  },
-  {
-   "id": "v169",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Cesar Almeida",
-    "path": "out_landed.k"
-   },
-   "desc": "Out-landed the opponent k Cesar Almeida",
-   "raw": 5
-  },
-  {
-   "id": "v170",
-   "text": "6",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Cesar Almeida",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Cesar Almeida",
-   "raw": 6
-  },
-  {
-   "id": "v171",
    "text": "+1.30",
    "fmt": "s2",
    "rule": "em",
@@ -2105,7 +2079,7 @@
    "raw": 1.302
   },
   {
-   "id": "v172",
+   "id": "v169",
    "text": "-0.10",
    "fmt": "s2",
    "rule": "em",
@@ -2117,7 +2091,7 @@
    "raw": -0.098
   },
   {
-   "id": "v173",
+   "id": "v170",
    "text": "-0.09",
    "fmt": "s2",
    "rule": "em",
@@ -2129,7 +2103,7 @@
    "raw": -0.087
   },
   {
-   "id": "v174",
+   "id": "v171",
    "text": "+0.77",
    "fmt": "s2",
    "rule": "em",
@@ -2141,7 +2115,7 @@
    "raw": 0.768
   },
   {
-   "id": "v175",
+   "id": "v172",
    "text": "-0.17",
    "fmt": "s2",
    "rule": "em",
@@ -2153,7 +2127,7 @@
    "raw": -0.174
   },
   {
-   "id": "v176",
+   "id": "v173",
    "text": "+0.49",
    "fmt": "s2",
    "rule": "em",
@@ -2165,7 +2139,7 @@
    "raw": 0.49
   },
   {
-   "id": "v177",
+   "id": "v174",
    "text": "75%",
    "fmt": "pct0",
    "rule": "em",
@@ -2177,7 +2151,7 @@
    "raw": 0.7527
   },
   {
-   "id": "v178",
+   "id": "v175",
    "text": "53%",
    "fmt": "pct0",
    "rule": "em",
@@ -2189,7 +2163,7 @@
    "raw": 0.5337
   },
   {
-   "id": "v179",
+   "id": "v176",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2201,69 +2175,7 @@
    "raw": 3
   },
   {
-   "id": "v180",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Donte Johnson",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Donte Johnson",
-   "raw": 1
-  },
-  {
-   "id": "v181",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Donte Johnson",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Donte Johnson",
-   "raw": 2
-  },
-  {
-   "id": "v182",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Cesar Almeida",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Cesar Almeida",
-   "raw": 1
-  },
-  {
-   "id": "v183",
-   "text": "6",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Cesar Almeida",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Cesar Almeida",
-   "raw": 6
-  },
-  {
-   "id": "v184",
-   "text": "75%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "cardio.upcoming",
-    "key": "out",
-    "slug": "cesar-almeida"
-   },
-   "desc": "Output kept R3 b",
-   "raw": 0.75
-  },
-  {
-   "id": "v185",
+   "id": "v177",
    "text": "7.7",
    "fmt": "n1",
    "rule": "em",
@@ -2275,7 +2187,7 @@
    "raw": 7.683
   },
   {
-   "id": "v186",
+   "id": "v178",
    "text": "10.2",
    "fmt": "n1",
    "rule": "em",
@@ -2287,7 +2199,7 @@
    "raw": 10.203
   },
   {
-   "id": "v187",
+   "id": "v179",
    "text": "33%",
    "fmt": "pct0",
    "rule": "em",
@@ -2299,7 +2211,7 @@
    "raw": 0.3333
   },
   {
-   "id": "v188",
+   "id": "v180",
    "text": "33%",
    "fmt": "pct0",
    "rule": "em",
@@ -2311,7 +2223,7 @@
    "raw": 0.3333
   },
   {
-   "id": "v189",
+   "id": "v181",
    "text": "-323",
    "fmt": "ml",
    "rule": "fight",
@@ -2324,7 +2236,7 @@
    "raw": -323
   },
   {
-   "id": "v190",
+   "id": "v182",
    "text": "-833",
    "fmt": "ml",
    "rule": "fight",
@@ -2337,7 +2249,7 @@
    "raw": -833
   },
   {
-   "id": "v191",
+   "id": "v183",
    "text": "-351",
    "fmt": "ml",
    "rule": "fight",
@@ -2350,7 +2262,7 @@
    "raw": -351
   },
   {
-   "id": "v192",
+   "id": "v184",
    "text": "+215",
    "fmt": "ml",
    "rule": "fight",
@@ -2363,7 +2275,7 @@
    "raw": 215
   },
   {
-   "id": "v193",
+   "id": "v185",
    "text": "+180",
    "fmt": "ml",
    "rule": "fight",
@@ -2376,7 +2288,7 @@
    "raw": 180
   },
   {
-   "id": "v194",
+   "id": "v186",
    "text": "-256",
    "fmt": "ml",
    "rule": "fight",
@@ -2389,7 +2301,7 @@
    "raw": -256
   },
   {
-   "id": "v195",
+   "id": "v187",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -2402,7 +2314,7 @@
    "raw": -455
   },
   {
-   "id": "v196",
+   "id": "v188",
    "text": "-120",
    "fmt": "ml",
    "rule": "fight",
@@ -2415,7 +2327,7 @@
    "raw": -120
   },
   {
-   "id": "v197",
+   "id": "v189",
    "text": "+125",
    "fmt": "ml",
    "rule": "fight",

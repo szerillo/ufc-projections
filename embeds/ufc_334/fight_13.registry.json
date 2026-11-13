@@ -319,28 +319,6 @@
   },
   {
    "id": "v27",
-   "text": "+219",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD price",
-   "raw": 0.31324932419440576
-  },
-  {
-   "id": "v28",
-   "text": "31.3%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD %",
-   "raw": 0.31324932419440576
-  },
-  {
-   "id": "v29",
    "text": "+205",
    "fmt": "ml",
    "rule": "bp",
@@ -353,7 +331,7 @@
    "raw": 205
   },
   {
-   "id": "v30",
+   "id": "v28",
    "text": "32.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -365,8 +343,8 @@
    "raw": 0.32786885245901637
   },
   {
-   "id": "v31",
-   "text": "-0.6%",
+   "id": "v29",
+   "text": "-2.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -375,11 +353,11 @@
      "v28"
     ]
    },
-   "desc": "Edge GTD vs listed",
-   "raw": -0.006015645695312766
+   "desc": "Edge GTD vs market",
+   "raw": -0.02063517395992337
   },
   {
-   "id": "v32",
+   "id": "v30",
    "text": "-225",
    "fmt": "mlp",
    "rule": "pub",
@@ -391,7 +369,7 @@
    "raw": 0.692766321500907
   },
   {
-   "id": "v33",
+   "id": "v31",
    "text": "69.3%",
    "fmt": "pct1",
    "rule": "pub",
@@ -403,7 +381,7 @@
    "raw": 0.692766321500907
   },
   {
-   "id": "v34",
+   "id": "v32",
    "text": "-277",
    "fmt": "ml",
    "rule": "bp",
@@ -416,7 +394,7 @@
    "raw": -277
   },
   {
-   "id": "v35",
+   "id": "v33",
    "text": "73.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -428,21 +406,21 @@
    "raw": 0.7347480106100795
   },
   {
-   "id": "v36",
+   "id": "v34",
    "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v33",
-     "v35"
+     "v31",
+     "v33"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": -0.04198168910917255
   },
   {
-   "id": "v37",
+   "id": "v35",
    "text": "+410",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -454,7 +432,7 @@
    "raw": 0.19609885889941148
   },
   {
-   "id": "v38",
+   "id": "v36",
    "text": "19.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -466,7 +444,7 @@
    "raw": 0.19609885889941148
   },
   {
-   "id": "v39",
+   "id": "v37",
    "text": "+380",
    "fmt": "ml",
    "rule": "bp",
@@ -479,7 +457,7 @@
    "raw": 380
   },
   {
-   "id": "v40",
+   "id": "v38",
    "text": "20.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -491,21 +469,21 @@
    "raw": 0.20833333333333334
   },
   {
-   "id": "v41",
+   "id": "v39",
    "text": "-1.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v38",
-     "v40"
+     "v36",
+     "v38"
     ]
    },
    "desc": "Edge dec Ciryl Gane",
    "raw": -0.012234474433921866
   },
   {
-   "id": "v42",
+   "id": "v40",
    "text": "+173",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -517,7 +495,7 @@
    "raw": 0.3656702702701442
   },
   {
-   "id": "v43",
+   "id": "v41",
    "text": "36.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -529,7 +507,7 @@
    "raw": 0.3656702702701442
   },
   {
-   "id": "v44",
+   "id": "v42",
    "text": "+127",
    "fmt": "ml",
    "rule": "bp",
@@ -542,7 +520,7 @@
    "raw": 127
   },
   {
-   "id": "v45",
+   "id": "v43",
    "text": "44.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -554,21 +532,21 @@
    "raw": 0.44052863436123346
   },
   {
-   "id": "v46",
+   "id": "v44",
    "text": "-7.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v43",
-     "v45"
+     "v41",
+     "v43"
     ]
    },
    "desc": "Edge ko Ciryl Gane",
    "raw": -0.07485836409108926
   },
   {
-   "id": "v47",
+   "id": "v45",
    "text": "+1863",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -580,7 +558,7 @@
    "raw": 0.050944268404168554
   },
   {
-   "id": "v48",
+   "id": "v46",
    "text": "5.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -592,7 +570,7 @@
    "raw": 0.050944268404168554
   },
   {
-   "id": "v49",
+   "id": "v47",
    "text": "+974",
    "fmt": "ml",
    "rule": "bp",
@@ -605,7 +583,7 @@
    "raw": 974
   },
   {
-   "id": "v50",
+   "id": "v48",
    "text": "9.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -617,21 +595,21 @@
    "raw": 0.0931098696461825
   },
   {
-   "id": "v51",
+   "id": "v49",
    "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v48",
-     "v50"
+     "v46",
+     "v48"
     ]
    },
    "desc": "Edge sub Ciryl Gane",
    "raw": -0.04216560124201394
   },
   {
-   "id": "v52",
+   "id": "v50",
    "text": "+140",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -643,7 +621,7 @@
    "raw": 0.41661453867431275
   },
   {
-   "id": "v53",
+   "id": "v51",
    "text": "41.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -655,7 +633,22 @@
    "raw": 0.41661453867431275
   },
   {
-   "id": "v54",
+   "id": "v52",
+   "text": "-114",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Ciryl Gane KO/TKO/DQ",
+     "Ciryl Gane Submission"
+    ]
+   },
+   "desc": "Market ITD price Ciryl Gane",
+   "raw": 0.533638504007416
+  },
+  {
+   "id": "v53",
    "text": "53.4%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -670,21 +663,21 @@
    "raw": 0.533638504007416
   },
   {
-   "id": "v55",
+   "id": "v54",
    "text": "-11.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v53",
-     "v54"
+     "v51",
+     "v53"
     ]
    },
    "desc": "Edge itd Ciryl Gane",
    "raw": -0.11702396533310322
   },
   {
-   "id": "v56",
+   "id": "v55",
    "text": "+800",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -696,7 +689,7 @@
    "raw": 0.11113481959968155
   },
   {
-   "id": "v57",
+   "id": "v56",
    "text": "11.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -708,7 +701,7 @@
    "raw": 0.11113481959968155
   },
   {
-   "id": "v58",
+   "id": "v57",
    "text": "+600",
    "fmt": "ml",
    "rule": "bp",
@@ -721,7 +714,7 @@
    "raw": 600
   },
   {
-   "id": "v59",
+   "id": "v58",
    "text": "14.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -733,21 +726,21 @@
    "raw": 0.14285714285714285
   },
   {
-   "id": "v60",
+   "id": "v59",
    "text": "-3.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v57",
-     "v59"
+     "v56",
+     "v58"
     ]
    },
    "desc": "Edge dec Josh Hokit",
    "raw": -0.0317223232574613
   },
   {
-   "id": "v61",
+   "id": "v60",
    "text": "+415",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -759,7 +752,7 @@
    "raw": 0.19407096086002226
   },
   {
-   "id": "v62",
+   "id": "v61",
    "text": "19.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -771,7 +764,7 @@
    "raw": 0.19407096086002226
   },
   {
-   "id": "v63",
+   "id": "v62",
    "text": "+424",
    "fmt": "ml",
    "rule": "bp",
@@ -784,7 +777,7 @@
    "raw": 424
   },
   {
-   "id": "v64",
+   "id": "v63",
    "text": "19.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -796,21 +789,21 @@
    "raw": 0.19083969465648856
   },
   {
-   "id": "v65",
+   "id": "v64",
    "text": "+0.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v62",
-     "v64"
+     "v61",
+     "v63"
     ]
    },
    "desc": "Edge ko Josh Hokit",
    "raw": 0.0032312662035337003
   },
   {
-   "id": "v66",
+   "id": "v65",
    "text": "+1118",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -822,7 +815,7 @@
    "raw": 0.08208082196657192
   },
   {
-   "id": "v67",
+   "id": "v66",
    "text": "8.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -834,7 +827,7 @@
    "raw": 0.08208082196657192
   },
   {
-   "id": "v68",
+   "id": "v67",
    "text": "+824",
    "fmt": "ml",
    "rule": "bp",
@@ -847,7 +840,7 @@
    "raw": 824
   },
   {
-   "id": "v69",
+   "id": "v68",
    "text": "10.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -859,21 +852,21 @@
    "raw": 0.10822510822510822
   },
   {
-   "id": "v70",
+   "id": "v69",
    "text": "-2.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v67",
-     "v69"
+     "v66",
+     "v68"
     ]
    },
    "desc": "Edge sub Josh Hokit",
    "raw": -0.026144286258536306
   },
   {
-   "id": "v71",
+   "id": "v70",
    "text": "+262",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -885,7 +878,7 @@
    "raw": 0.27615178282659414
   },
   {
-   "id": "v72",
+   "id": "v71",
    "text": "27.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -895,6 +888,21 @@
    },
    "desc": "Model itd % Josh Hokit",
    "raw": 0.27615178282659414
+  },
+  {
+   "id": "v72",
+   "text": "+234",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Josh Hokit KO/TKO/DQ",
+     "Josh Hokit Submission"
+    ]
+   },
+   "desc": "Market ITD price Josh Hokit",
+   "raw": 0.29906480288159676
   },
   {
    "id": "v73",
@@ -918,7 +926,7 @@
    "rule": "edge",
    "args": {
     "of": [
-     "v72",
+     "v71",
      "v73"
     ]
    },
@@ -2500,54 +2508,20 @@
   },
   {
    "id": "v204",
-   "text": "14",
-   "fmt": "int",
-   "rule": "em",
+   "text": "163%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "fighter": "Ciryl Gane",
-    "path": "out_landed.k"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "ciryl-gane"
    },
-   "desc": "Out-landed the opponent k Ciryl Gane",
-   "raw": 14
+   "desc": "Output kept, R3 vs R1 a",
+   "raw": 1.626
   },
   {
    "id": "v205",
-   "text": "14",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Ciryl Gane",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Ciryl Gane",
-   "raw": 14
-  },
-  {
-   "id": "v206",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Josh Hokit",
-    "path": "out_landed.k"
-   },
-   "desc": "Out-landed the opponent k Josh Hokit",
-   "raw": 4
-  },
-  {
-   "id": "v207",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Josh Hokit",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Josh Hokit",
-   "raw": 4
-  },
-  {
-   "id": "v208",
    "text": "+1.46",
    "fmt": "s2",
    "rule": "em",
@@ -2559,7 +2533,7 @@
    "raw": 1.462
   },
   {
-   "id": "v209",
+   "id": "v206",
    "text": "+4.06",
    "fmt": "s2",
    "rule": "em",
@@ -2571,7 +2545,7 @@
    "raw": 4.058
   },
   {
-   "id": "v210",
+   "id": "v207",
    "text": "+0.91",
    "fmt": "s2",
    "rule": "em",
@@ -2583,7 +2557,7 @@
    "raw": 0.912
   },
   {
-   "id": "v211",
+   "id": "v208",
    "text": "+0.20",
    "fmt": "s2",
    "rule": "em",
@@ -2595,7 +2569,7 @@
    "raw": 0.2
   },
   {
-   "id": "v212",
+   "id": "v209",
    "text": "+0.72",
    "fmt": "s2",
    "rule": "em",
@@ -2607,7 +2581,7 @@
    "raw": 0.72
   },
   {
-   "id": "v213",
+   "id": "v210",
    "text": "-0.10",
    "fmt": "s2",
    "rule": "em",
@@ -2619,7 +2593,7 @@
    "raw": -0.1
   },
   {
-   "id": "v214",
+   "id": "v211",
    "text": "76%",
    "fmt": "pct0",
    "rule": "em",
@@ -2631,7 +2605,7 @@
    "raw": 0.7634
   },
   {
-   "id": "v215",
+   "id": "v212",
    "text": "52%",
    "fmt": "pct0",
    "rule": "em",
@@ -2643,7 +2617,7 @@
    "raw": 0.5185
   },
   {
-   "id": "v216",
+   "id": "v213",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -2655,69 +2629,7 @@
    "raw": 4
   },
   {
-   "id": "v217",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Ciryl Gane",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Ciryl Gane",
-   "raw": 3
-  },
-  {
-   "id": "v218",
-   "text": "6",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Ciryl Gane",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Ciryl Gane",
-   "raw": 6
-  },
-  {
-   "id": "v219",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Josh Hokit",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Josh Hokit",
-   "raw": 2
-  },
-  {
-   "id": "v220",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Josh Hokit",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Josh Hokit",
-   "raw": 3
-  },
-  {
-   "id": "v221",
-   "text": "163%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "cardio.upcoming",
-    "key": "out",
-    "slug": "ciryl-gane"
-   },
-   "desc": "Output kept R3 a",
-   "raw": 1.626
-  },
-  {
-   "id": "v222",
+   "id": "v214",
    "text": "13.6",
    "fmt": "n1",
    "rule": "em",
@@ -2729,7 +2641,7 @@
    "raw": 13.642
   },
   {
-   "id": "v223",
+   "id": "v215",
    "text": "7.5",
    "fmt": "n1",
    "rule": "em",
@@ -2741,7 +2653,7 @@
    "raw": 7.517
   },
   {
-   "id": "v224",
+   "id": "v216",
    "text": "15%",
    "fmt": "pct0",
    "rule": "em",
@@ -2753,7 +2665,7 @@
    "raw": 0.1538
   },
   {
-   "id": "v225",
+   "id": "v217",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -2765,7 +2677,7 @@
    "raw": 0.5
   },
   {
-   "id": "v226",
+   "id": "v218",
    "text": "-110",
    "fmt": "ml",
    "rule": "fight",
@@ -2778,7 +2690,7 @@
    "raw": -110
   },
   {
-   "id": "v227",
+   "id": "v219",
    "text": "+298",
    "fmt": "ml",
    "rule": "fight",
@@ -2791,7 +2703,7 @@
    "raw": 298
   },
   {
-   "id": "v228",
+   "id": "v220",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -2804,7 +2716,7 @@
    "raw": -370
   },
   {
-   "id": "v229",
+   "id": "v221",
    "text": "+145",
    "fmt": "ml",
    "rule": "fight",
@@ -2817,7 +2729,7 @@
    "raw": 145
   },
   {
-   "id": "v230",
+   "id": "v222",
    "text": "-500",
    "fmt": "ml",
    "rule": "fight",
@@ -2830,7 +2742,7 @@
    "raw": -500
   },
   {
-   "id": "v231",
+   "id": "v223",
    "text": "-147",
    "fmt": "ml",
    "rule": "fight",
@@ -2843,7 +2755,7 @@
    "raw": -147
   },
   {
-   "id": "v232",
+   "id": "v224",
    "text": "-435",
    "fmt": "ml",
    "rule": "fight",
@@ -2856,7 +2768,7 @@
    "raw": -435
   },
   {
-   "id": "v233",
+   "id": "v225",
    "text": "-118",
    "fmt": "ml",
    "rule": "fight",
@@ -2869,7 +2781,7 @@
    "raw": -118
   },
   {
-   "id": "v234",
+   "id": "v226",
    "text": "-270",
    "fmt": "ml",
    "rule": "fight",
@@ -2882,7 +2794,7 @@
    "raw": -270
   },
   {
-   "id": "v235",
+   "id": "v227",
    "text": "-417",
    "fmt": "ml",
    "rule": "fight",

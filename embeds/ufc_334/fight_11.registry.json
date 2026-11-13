@@ -307,28 +307,6 @@
   },
   {
    "id": "v26",
-   "text": "-166",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD price",
-   "raw": 0.6234796967241207
-  },
-  {
-   "id": "v27",
-   "text": "62.3%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD %",
-   "raw": 0.6234796967241207
-  },
-  {
-   "id": "v28",
    "text": "-193",
    "fmt": "ml",
    "rule": "bp",
@@ -341,7 +319,7 @@
    "raw": -193
   },
   {
-   "id": "v29",
+   "id": "v27",
    "text": "65.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -353,8 +331,8 @@
    "raw": 0.658703071672355
   },
   {
-   "id": "v30",
-   "text": "-3.7%",
+   "id": "v28",
+   "text": "-7.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -363,11 +341,11 @@
      "v27"
     ]
    },
-   "desc": "Edge GTD vs listed",
-   "raw": -0.03684751896973126
+   "desc": "Edge GTD vs market",
+   "raw": -0.0720708939179655
   },
   {
-   "id": "v31",
+   "id": "v29",
    "text": "+142",
    "fmt": "mlp",
    "rule": "pub",
@@ -379,7 +357,7 @@
    "raw": 0.41336782224561053
   },
   {
-   "id": "v32",
+   "id": "v30",
    "text": "41.3%",
    "fmt": "pct1",
    "rule": "pub",
@@ -391,7 +369,7 @@
    "raw": 0.41336782224561053
   },
   {
-   "id": "v33",
+   "id": "v31",
    "text": "+145",
    "fmt": "ml",
    "rule": "bp",
@@ -404,7 +382,7 @@
    "raw": 145
   },
   {
-   "id": "v34",
+   "id": "v32",
    "text": "40.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -416,21 +394,21 @@
    "raw": 0.40816326530612246
   },
   {
-   "id": "v35",
+   "id": "v33",
    "text": "+0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v32",
-     "v34"
+     "v30",
+     "v32"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": 0.00520455693948807
   },
   {
-   "id": "v36",
+   "id": "v34",
    "text": "+171",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -442,7 +420,7 @@
    "raw": 0.3690992542670881
   },
   {
-   "id": "v37",
+   "id": "v35",
    "text": "36.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -454,7 +432,7 @@
    "raw": 0.3690992542670881
   },
   {
-   "id": "v38",
+   "id": "v36",
    "text": "+140",
    "fmt": "ml",
    "rule": "bp",
@@ -467,7 +445,7 @@
    "raw": 140
   },
   {
-   "id": "v39",
+   "id": "v37",
    "text": "41.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -479,21 +457,21 @@
    "raw": 0.4166666666666667
   },
   {
-   "id": "v40",
+   "id": "v38",
    "text": "-4.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v37",
-     "v39"
+     "v35",
+     "v37"
     ]
    },
    "desc": "Edge dec Caio Borralho",
    "raw": -0.04756741239957857
   },
   {
-   "id": "v41",
+   "id": "v39",
    "text": "+886",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -505,7 +483,7 @@
    "raw": 0.10144382110443342
   },
   {
-   "id": "v42",
+   "id": "v40",
    "text": "10.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -517,7 +495,7 @@
    "raw": 0.10144382110443342
   },
   {
-   "id": "v43",
+   "id": "v41",
    "text": "+774",
    "fmt": "ml",
    "rule": "bp",
@@ -530,7 +508,7 @@
    "raw": 774
   },
   {
-   "id": "v44",
+   "id": "v42",
    "text": "11.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -542,21 +520,21 @@
    "raw": 0.11441647597254005
   },
   {
-   "id": "v45",
+   "id": "v43",
    "text": "-1.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v42",
-     "v44"
+     "v40",
+     "v42"
     ]
    },
    "desc": "Edge ko Caio Borralho",
    "raw": -0.012972654868106628
   },
   {
-   "id": "v46",
+   "id": "v44",
    "text": "+802",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -568,7 +546,7 @@
    "raw": 0.11091484627793846
   },
   {
-   "id": "v47",
+   "id": "v45",
    "text": "11.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -580,7 +558,7 @@
    "raw": 0.11091484627793846
   },
   {
-   "id": "v48",
+   "id": "v46",
    "text": "+574",
    "fmt": "ml",
    "rule": "bp",
@@ -593,7 +571,7 @@
    "raw": 574
   },
   {
-   "id": "v49",
+   "id": "v47",
    "text": "14.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -605,21 +583,21 @@
    "raw": 0.14836795252225518
   },
   {
-   "id": "v50",
+   "id": "v48",
    "text": "-3.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v47",
-     "v49"
+     "v45",
+     "v47"
     ]
    },
    "desc": "Edge sub Caio Borralho",
    "raw": -0.03745310624431672
   },
   {
-   "id": "v51",
+   "id": "v49",
    "text": "+371",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -631,7 +609,7 @@
    "raw": 0.21235866738237189
   },
   {
-   "id": "v52",
+   "id": "v50",
    "text": "21.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -643,7 +621,22 @@
    "raw": 0.21235866738237189
   },
   {
-   "id": "v53",
+   "id": "v51",
+   "text": "+281",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Caio Borralho KO/TKO/DQ",
+     "Caio Borralho Submission"
+    ]
+   },
+   "desc": "Market ITD price Caio Borralho",
+   "raw": 0.2627844284947952
+  },
+  {
+   "id": "v52",
    "text": "26.3%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -658,21 +651,21 @@
    "raw": 0.2627844284947952
   },
   {
-   "id": "v54",
+   "id": "v53",
    "text": "-5.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v52",
-     "v53"
+     "v50",
+     "v52"
     ]
    },
    "desc": "Edge itd Caio Borralho",
    "raw": -0.050425761112423334
   },
   {
-   "id": "v55",
+   "id": "v54",
    "text": "+360",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -684,7 +677,7 @@
    "raw": 0.21753292348730133
   },
   {
-   "id": "v56",
+   "id": "v55",
    "text": "21.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -696,7 +689,7 @@
    "raw": 0.21753292348730133
   },
   {
-   "id": "v57",
+   "id": "v56",
    "text": "+275",
    "fmt": "ml",
    "rule": "bp",
@@ -709,7 +702,7 @@
    "raw": 275
   },
   {
-   "id": "v58",
+   "id": "v57",
    "text": "26.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -721,21 +714,21 @@
    "raw": 0.26666666666666666
   },
   {
-   "id": "v59",
+   "id": "v58",
    "text": "-4.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v56",
-     "v58"
+     "v55",
+     "v57"
     ]
    },
    "desc": "Edge dec Yousri Belgaroui",
    "raw": -0.049133743179365336
   },
   {
-   "id": "v60",
+   "id": "v59",
    "text": "+471",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -747,7 +740,7 @@
    "raw": 0.17501888126364332
   },
   {
-   "id": "v61",
+   "id": "v60",
    "text": "17.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -759,7 +752,7 @@
    "raw": 0.17501888126364332
   },
   {
-   "id": "v62",
+   "id": "v61",
    "text": "+433",
    "fmt": "ml",
    "rule": "bp",
@@ -772,7 +765,7 @@
    "raw": 433
   },
   {
-   "id": "v63",
+   "id": "v62",
    "text": "18.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -784,21 +777,21 @@
    "raw": 0.18761726078799248
   },
   {
-   "id": "v64",
+   "id": "v63",
    "text": "-1.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v61",
-     "v63"
+     "v60",
+     "v62"
     ]
    },
    "desc": "Edge ko Yousri Belgaroui",
    "raw": -0.012598379524349168
   },
   {
-   "id": "v65",
+   "id": "v64",
    "text": "+3748",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -810,7 +803,7 @@
    "raw": 0.025990273599595392
   },
   {
-   "id": "v66",
+   "id": "v65",
    "text": "2.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -822,7 +815,7 @@
    "raw": 0.025990273599595392
   },
   {
-   "id": "v67",
+   "id": "v66",
    "text": "+3143",
    "fmt": "ml",
    "rule": "bp",
@@ -835,7 +828,7 @@
    "raw": 3143
   },
   {
-   "id": "v68",
+   "id": "v67",
    "text": "3.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -847,21 +840,21 @@
    "raw": 0.030835646006783842
   },
   {
-   "id": "v69",
+   "id": "v68",
    "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v66",
-     "v68"
+     "v65",
+     "v67"
     ]
    },
    "desc": "Edge sub Yousri Belgaroui",
    "raw": -0.00484537240718845
   },
   {
-   "id": "v70",
+   "id": "v69",
    "text": "+397",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -873,7 +866,7 @@
    "raw": 0.2010091548632387
   },
   {
-   "id": "v71",
+   "id": "v70",
    "text": "20.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -883,6 +876,21 @@
    },
    "desc": "Model itd % Yousri Belgaroui",
    "raw": 0.2010091548632387
+  },
+  {
+   "id": "v71",
+   "text": "+358",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Yousri Belgaroui KO/TKO/DQ",
+     "Yousri Belgaroui Submission"
+    ]
+   },
+   "desc": "Market ITD price Yousri Belgaroui",
+   "raw": 0.21845290679477633
   },
   {
    "id": "v72",
@@ -906,7 +914,7 @@
    "rule": "edge",
    "args": {
     "of": [
-     "v71",
+     "v70",
      "v72"
     ]
    },
@@ -2166,54 +2174,20 @@
   },
   {
    "id": "v177",
-   "text": "7",
-   "fmt": "int",
-   "rule": "em",
+   "text": "116%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "fighter": "Caio Borralho",
-    "path": "out_landed.k"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "caio-borralho"
    },
-   "desc": "Out-landed the opponent k Caio Borralho",
-   "raw": 7
+   "desc": "Output kept, R3 vs R1 a",
+   "raw": 1.165
   },
   {
    "id": "v178",
-   "text": "9",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Caio Borralho",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Caio Borralho",
-   "raw": 9
-  },
-  {
-   "id": "v179",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Yousri Belgaroui",
-    "path": "out_landed.k"
-   },
-   "desc": "Out-landed the opponent k Yousri Belgaroui",
-   "raw": 3
-  },
-  {
-   "id": "v180",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Yousri Belgaroui",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Yousri Belgaroui",
-   "raw": 3
-  },
-  {
-   "id": "v181",
    "text": "+0.70",
    "fmt": "s2",
    "rule": "em",
@@ -2225,7 +2199,7 @@
    "raw": 0.698
   },
   {
-   "id": "v182",
+   "id": "v179",
    "text": "+3.52",
    "fmt": "s2",
    "rule": "em",
@@ -2237,7 +2211,7 @@
    "raw": 3.519
   },
   {
-   "id": "v183",
+   "id": "v180",
    "text": "-0.04",
    "fmt": "s2",
    "rule": "em",
@@ -2249,7 +2223,7 @@
    "raw": -0.036
   },
   {
-   "id": "v184",
+   "id": "v181",
    "text": "+1.73",
    "fmt": "s2",
    "rule": "em",
@@ -2261,7 +2235,7 @@
    "raw": 1.725
   },
   {
-   "id": "v185",
+   "id": "v182",
    "text": "+0.01",
    "fmt": "s2",
    "rule": "em",
@@ -2273,7 +2247,7 @@
    "raw": 0.007
   },
   {
-   "id": "v186",
+   "id": "v183",
    "text": "+1.17",
    "fmt": "s2",
    "rule": "em",
@@ -2285,7 +2259,7 @@
    "raw": 1.173
   },
   {
-   "id": "v187",
+   "id": "v184",
    "text": "69%",
    "fmt": "pct0",
    "rule": "em",
@@ -2297,7 +2271,7 @@
    "raw": 0.6922
   },
   {
-   "id": "v188",
+   "id": "v185",
    "text": "74%",
    "fmt": "pct0",
    "rule": "em",
@@ -2309,7 +2283,7 @@
    "raw": 0.7438
   },
   {
-   "id": "v189",
+   "id": "v186",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2321,69 +2295,7 @@
    "raw": 3
   },
   {
-   "id": "v190",
-   "text": "8",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Caio Borralho",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Caio Borralho",
-   "raw": 8
-  },
-  {
-   "id": "v191",
-   "text": "8",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Caio Borralho",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Caio Borralho",
-   "raw": 8
-  },
-  {
-   "id": "v192",
-   "text": "0",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Yousri Belgaroui",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Yousri Belgaroui",
-   "raw": 0
-  },
-  {
-   "id": "v193",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Yousri Belgaroui",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Yousri Belgaroui",
-   "raw": 2
-  },
-  {
-   "id": "v194",
-   "text": "116%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "cardio.upcoming",
-    "key": "out",
-    "slug": "caio-borralho"
-   },
-   "desc": "Output kept R3 a",
-   "raw": 1.165
-  },
-  {
-   "id": "v195",
+   "id": "v187",
    "text": "15.4",
    "fmt": "n1",
    "rule": "em",
@@ -2395,7 +2307,7 @@
    "raw": 15.435
   },
   {
-   "id": "v196",
+   "id": "v188",
    "text": "9.7",
    "fmt": "n1",
    "rule": "em",
@@ -2407,7 +2319,7 @@
    "raw": 9.661
   },
   {
-   "id": "v197",
+   "id": "v189",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -2419,7 +2331,7 @@
    "raw": 0.0
   },
   {
-   "id": "v198",
+   "id": "v190",
    "text": "33%",
    "fmt": "pct0",
    "rule": "em",
@@ -2431,7 +2343,7 @@
    "raw": 0.3333
   },
   {
-   "id": "v199",
+   "id": "v191",
    "text": "-233",
    "fmt": "ml",
    "rule": "fight",
@@ -2444,7 +2356,7 @@
    "raw": -233
   },
   {
-   "id": "v200",
+   "id": "v192",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -2457,7 +2369,7 @@
    "raw": -132
   },
   {
-   "id": "v201",
+   "id": "v193",
    "text": "-244",
    "fmt": "ml",
    "rule": "fight",
@@ -2470,7 +2382,7 @@
    "raw": -244
   },
   {
-   "id": "v202",
+   "id": "v194",
    "text": "-556",
    "fmt": "ml",
    "rule": "fight",
@@ -2483,7 +2395,7 @@
    "raw": -556
   },
   {
-   "id": "v203",
+   "id": "v195",
    "text": "-282",
    "fmt": "ml",
    "rule": "fight",
@@ -2496,7 +2408,7 @@
    "raw": -282
   },
   {
-   "id": "v204",
+   "id": "v196",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -2509,7 +2421,7 @@
    "raw": -370
   },
   {
-   "id": "v205",
+   "id": "v197",
    "text": "-208",
    "fmt": "ml",
    "rule": "fight",
@@ -2522,7 +2434,7 @@
    "raw": -208
   },
   {
-   "id": "v206",
+   "id": "v198",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2535,7 +2447,7 @@
    "raw": -250
   },
   {
-   "id": "v207",
+   "id": "v199",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -2548,7 +2460,7 @@
    "raw": 100
   },
   {
-   "id": "v208",
+   "id": "v200",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2561,7 +2473,7 @@
    "raw": -714
   },
   {
-   "id": "v209",
+   "id": "v201",
    "text": "+124",
    "fmt": "ml",
    "rule": "fight",
@@ -2574,7 +2486,7 @@
    "raw": 124
   },
   {
-   "id": "v210",
+   "id": "v202",
    "text": "+240",
    "fmt": "ml",
    "rule": "fight",

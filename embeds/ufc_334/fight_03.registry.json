@@ -296,28 +296,6 @@
   },
   {
    "id": "v25",
-   "text": "+209",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD price",
-   "raw": 0.3239942528735632
-  },
-  {
-   "id": "v26",
-   "text": "32.4%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD %",
-   "raw": 0.3239942528735632
-  },
-  {
-   "id": "v27",
    "text": "+185",
    "fmt": "ml",
    "rule": "bp",
@@ -330,7 +308,7 @@
    "raw": 185
   },
   {
-   "id": "v28",
+   "id": "v26",
    "text": "35.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -342,8 +320,8 @@
    "raw": 0.3508771929824561
   },
   {
-   "id": "v29",
-   "text": "+8.3%",
+   "id": "v27",
+   "text": "+5.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -352,11 +330,11 @@
      "v26"
     ]
    },
-   "desc": "Edge GTD vs listed",
-   "raw": 0.08257690889104052
+   "desc": "Edge GTD vs market",
+   "raw": 0.05569396878214761
   },
   {
-   "id": "v30",
+   "id": "v28",
    "text": "-146",
    "fmt": "mlp",
    "rule": "pub",
@@ -368,7 +346,7 @@
    "raw": 0.5934288382353963
   },
   {
-   "id": "v31",
+   "id": "v29",
    "text": "59.3%",
    "fmt": "pct1",
    "rule": "pub",
@@ -380,7 +358,7 @@
    "raw": 0.5934288382353963
   },
   {
-   "id": "v32",
+   "id": "v30",
    "text": "-250",
    "fmt": "ml",
    "rule": "bp",
@@ -393,7 +371,7 @@
    "raw": -250
   },
   {
-   "id": "v33",
+   "id": "v31",
    "text": "71.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -405,21 +383,21 @@
    "raw": 0.7142857142857143
   },
   {
-   "id": "v34",
+   "id": "v32",
    "text": "-12.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v31",
-     "v33"
+     "v29",
+     "v31"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": -0.12085687605031803
   },
   {
-   "id": "v35",
+   "id": "v33",
    "text": "+727",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -431,7 +409,7 @@
    "raw": 0.12092384251215008
   },
   {
-   "id": "v36",
+   "id": "v34",
    "text": "12.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -443,7 +421,7 @@
    "raw": 0.12092384251215008
   },
   {
-   "id": "v37",
+   "id": "v35",
    "text": "+458",
    "fmt": "ml",
    "rule": "bp",
@@ -456,7 +434,7 @@
    "raw": 458
   },
   {
-   "id": "v38",
+   "id": "v36",
    "text": "17.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -468,21 +446,21 @@
    "raw": 0.17921146953405018
   },
   {
-   "id": "v39",
+   "id": "v37",
    "text": "-5.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v36",
-     "v38"
+     "v34",
+     "v36"
     ]
    },
    "desc": "Edge dec Macy Chiasson",
    "raw": -0.0582876270219001
   },
   {
-   "id": "v40",
+   "id": "v38",
    "text": "+796",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -494,7 +472,7 @@
    "raw": 0.11160772138492346
   },
   {
-   "id": "v41",
+   "id": "v39",
    "text": "11.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -506,7 +484,7 @@
    "raw": 0.11160772138492346
   },
   {
-   "id": "v42",
+   "id": "v40",
    "text": "+550",
    "fmt": "ml",
    "rule": "bp",
@@ -519,7 +497,7 @@
    "raw": 550
   },
   {
-   "id": "v43",
+   "id": "v41",
    "text": "15.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -531,21 +509,21 @@
    "raw": 0.15384615384615385
   },
   {
-   "id": "v44",
+   "id": "v42",
    "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v41",
-     "v43"
+     "v39",
+     "v41"
     ]
    },
    "desc": "Edge ko Macy Chiasson",
    "raw": -0.042238432461230394
   },
   {
-   "id": "v45",
+   "id": "v43",
    "text": "+2563",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -557,7 +535,7 @@
    "raw": 0.03755095629459171
   },
   {
-   "id": "v46",
+   "id": "v44",
    "text": "3.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -569,7 +547,7 @@
    "raw": 0.03755095629459171
   },
   {
-   "id": "v47",
+   "id": "v45",
    "text": "+2200",
    "fmt": "ml",
    "rule": "bp",
@@ -582,7 +560,7 @@
    "raw": 2200
   },
   {
-   "id": "v48",
+   "id": "v46",
    "text": "4.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -594,21 +572,21 @@
    "raw": 0.043478260869565216
   },
   {
-   "id": "v49",
+   "id": "v47",
    "text": "-0.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v46",
-     "v48"
+     "v44",
+     "v46"
     ]
    },
    "desc": "Edge sub Macy Chiasson",
    "raw": -0.005927304574973508
   },
   {
-   "id": "v50",
+   "id": "v48",
    "text": "+570",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -620,7 +598,7 @@
    "raw": 0.14915867767951516
   },
   {
-   "id": "v51",
+   "id": "v49",
    "text": "14.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -632,7 +610,22 @@
    "raw": 0.14915867767951516
   },
   {
-   "id": "v52",
+   "id": "v50",
+   "text": "+407",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Macy Chiasson KO/TKO/DQ",
+     "Macy Chiasson Submission"
+    ]
+   },
+   "desc": "Market ITD price Macy Chiasson",
+   "raw": 0.19732441471571907
+  },
+  {
+   "id": "v51",
    "text": "19.7%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -647,21 +640,21 @@
    "raw": 0.19732441471571907
   },
   {
-   "id": "v53",
+   "id": "v52",
    "text": "-4.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v51",
-     "v52"
+     "v49",
+     "v51"
     ]
    },
    "desc": "Edge itd Macy Chiasson",
    "raw": -0.048165737036203915
   },
   {
-   "id": "v54",
+   "id": "v53",
    "text": "+250",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -673,7 +666,7 @@
    "raw": 0.2856473192524537
   },
   {
-   "id": "v55",
+   "id": "v54",
    "text": "28.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -685,7 +678,7 @@
    "raw": 0.2856473192524537
   },
   {
-   "id": "v56",
+   "id": "v55",
    "text": "+445",
    "fmt": "ml",
    "rule": "bp",
@@ -698,7 +691,7 @@
    "raw": 445
   },
   {
-   "id": "v57",
+   "id": "v56",
    "text": "18.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -710,21 +703,21 @@
    "raw": 0.1834862385321101
   },
   {
-   "id": "v58",
+   "id": "v57",
    "text": "+10.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v55",
-     "v57"
+     "v54",
+     "v56"
     ]
    },
    "desc": "Edge dec Bia Mesquita",
    "raw": 0.10216108072034358
   },
   {
-   "id": "v59",
+   "id": "v58",
    "text": "+1383",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -736,7 +729,7 @@
    "raw": 0.06741476125621751
   },
   {
-   "id": "v60",
+   "id": "v59",
    "text": "6.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -748,7 +741,7 @@
    "raw": 0.06741476125621751
   },
   {
-   "id": "v61",
+   "id": "v60",
    "text": "+1000",
    "fmt": "ml",
    "rule": "bp",
@@ -761,7 +754,7 @@
    "raw": 1000
   },
   {
-   "id": "v62",
+   "id": "v61",
    "text": "9.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -773,21 +766,21 @@
    "raw": 0.09090909090909091
   },
   {
-   "id": "v63",
+   "id": "v62",
    "text": "-2.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v60",
-     "v62"
+     "v59",
+     "v61"
     ]
    },
    "desc": "Edge ko Bia Mesquita",
    "raw": -0.023494329652873402
   },
   {
-   "id": "v64",
+   "id": "v63",
    "text": "+165",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -799,7 +792,7 @@
    "raw": 0.3768553992996636
   },
   {
-   "id": "v65",
+   "id": "v64",
    "text": "37.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -811,7 +804,7 @@
    "raw": 0.3768553992996636
   },
   {
-   "id": "v66",
+   "id": "v65",
    "text": "-117",
    "fmt": "ml",
    "rule": "bp",
@@ -824,7 +817,7 @@
    "raw": -117
   },
   {
-   "id": "v67",
+   "id": "v66",
    "text": "53.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -836,21 +829,21 @@
    "raw": 0.5391705069124424
   },
   {
-   "id": "v68",
+   "id": "v67",
    "text": "-16.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v65",
-     "v67"
+     "v64",
+     "v66"
     ]
    },
    "desc": "Edge sub Bia Mesquita",
    "raw": -0.1623151076127788
   },
   {
-   "id": "v69",
+   "id": "v68",
    "text": "+125",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -862,7 +855,7 @@
    "raw": 0.4442701605558811
   },
   {
-   "id": "v70",
+   "id": "v69",
    "text": "44.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -872,6 +865,21 @@
    },
    "desc": "Model itd % Bia Mesquita",
    "raw": 0.4442701605558811
+  },
+  {
+   "id": "v70",
+   "text": "-170",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Bia Mesquita KO/TKO/DQ",
+     "Bia Mesquita Submission"
+    ]
+   },
+   "desc": "Market ITD price Bia Mesquita",
+   "raw": 0.6300795978215333
   },
   {
    "id": "v71",
@@ -895,7 +903,7 @@
    "rule": "edge",
    "args": {
     "of": [
-     "v70",
+     "v69",
      "v71"
     ]
    },
@@ -2225,54 +2233,20 @@
   },
   {
    "id": "v181",
-   "text": "9",
-   "fmt": "int",
-   "rule": "em",
+   "text": "43%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "fighter": "Macy Chiasson",
-    "path": "out_landed.k"
+    "side": "a",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "macy-chiasson"
    },
-   "desc": "Out-landed the opponent k Macy Chiasson",
-   "raw": 9
+   "desc": "Output kept, R3 vs R1 a",
+   "raw": 0.433
   },
   {
    "id": "v182",
-   "text": "14",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Macy Chiasson",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Macy Chiasson",
-   "raw": 14
-  },
-  {
-   "id": "v183",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "path": "out_landed.k"
-   },
-   "desc": "Out-landed the opponent k Bia Mesquita",
-   "raw": 2
-  },
-  {
-   "id": "v184",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Bia Mesquita",
-   "raw": 3
-  },
-  {
-   "id": "v185",
    "text": "+0.09",
    "fmt": "s2",
    "rule": "em",
@@ -2284,7 +2258,7 @@
    "raw": 0.085
   },
   {
-   "id": "v186",
+   "id": "v183",
    "text": "+3.33",
    "fmt": "s2",
    "rule": "em",
@@ -2296,7 +2270,7 @@
    "raw": 3.329
   },
   {
-   "id": "v187",
+   "id": "v184",
    "text": "+0.30",
    "fmt": "s2",
    "rule": "em",
@@ -2308,7 +2282,7 @@
    "raw": 0.301
   },
   {
-   "id": "v188",
+   "id": "v185",
    "text": "+0.00",
    "fmt": "s2",
    "rule": "em",
@@ -2320,7 +2294,7 @@
    "raw": 0.0
   },
   {
-   "id": "v189",
+   "id": "v186",
    "text": "+0.07",
    "fmt": "s2",
    "rule": "em",
@@ -2332,7 +2306,7 @@
    "raw": 0.065
   },
   {
-   "id": "v190",
+   "id": "v187",
    "text": "-0.08",
    "fmt": "s2",
    "rule": "em",
@@ -2344,7 +2318,7 @@
    "raw": -0.079
   },
   {
-   "id": "v191",
+   "id": "v188",
    "text": "53%",
    "fmt": "pct0",
    "rule": "em",
@@ -2356,7 +2330,7 @@
    "raw": 0.5312
   },
   {
-   "id": "v192",
+   "id": "v189",
    "text": "73%",
    "fmt": "pct0",
    "rule": "em",
@@ -2368,7 +2342,7 @@
    "raw": 0.7317
   },
   {
-   "id": "v193",
+   "id": "v190",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -2380,69 +2354,7 @@
    "raw": 3
   },
   {
-   "id": "v194",
-   "text": "9",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Macy Chiasson",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Macy Chiasson",
-   "raw": 9
-  },
-  {
-   "id": "v195",
-   "text": "13",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Macy Chiasson",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Macy Chiasson",
-   "raw": 13
-  },
-  {
-   "id": "v196",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Bia Mesquita",
-   "raw": 2
-  },
-  {
-   "id": "v197",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bia Mesquita",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Bia Mesquita",
-   "raw": 3
-  },
-  {
-   "id": "v198",
-   "text": "43%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "a",
-    "section": "cardio.upcoming",
-    "key": "out",
-    "slug": "macy-chiasson"
-   },
-   "desc": "Output kept R3 a",
-   "raw": 0.433
-  },
-  {
-   "id": "v199",
+   "id": "v191",
    "text": "10.9",
    "fmt": "n1",
    "rule": "em",
@@ -2454,7 +2366,7 @@
    "raw": 10.907
   },
   {
-   "id": "v200",
+   "id": "v192",
    "text": "4.2",
    "fmt": "n1",
    "rule": "em",
@@ -2466,7 +2378,7 @@
    "raw": 4.206
   },
   {
-   "id": "v201",
+   "id": "v193",
    "text": "14%",
    "fmt": "pct0",
    "rule": "em",
@@ -2478,7 +2390,7 @@
    "raw": 0.1429
   },
   {
-   "id": "v202",
+   "id": "v194",
    "text": "67%",
    "fmt": "pct0",
    "rule": "em",
@@ -2490,7 +2402,7 @@
    "raw": 0.6667
   },
   {
-   "id": "v203",
+   "id": "v195",
    "text": "+155",
    "fmt": "ml",
    "rule": "fight",
@@ -2503,7 +2415,7 @@
    "raw": 155
   },
   {
-   "id": "v204",
+   "id": "v196",
    "text": "-204",
    "fmt": "ml",
    "rule": "fight",
@@ -2516,7 +2428,7 @@
    "raw": -204
   },
   {
-   "id": "v205",
+   "id": "v197",
    "text": "-141",
    "fmt": "ml",
    "rule": "fight",
@@ -2529,7 +2441,7 @@
    "raw": -141
   },
   {
-   "id": "v206",
+   "id": "v198",
    "text": "-112",
    "fmt": "ml",
    "rule": "fight",
@@ -2542,7 +2454,7 @@
    "raw": -112
   },
   {
-   "id": "v207",
+   "id": "v199",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2555,7 +2467,7 @@
    "raw": -250
   },
   {
-   "id": "v208",
+   "id": "v200",
    "text": "+150",
    "fmt": "ml",
    "rule": "fight",
@@ -2568,7 +2480,7 @@
    "raw": 150
   },
   {
-   "id": "v209",
+   "id": "v201",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -2581,7 +2493,7 @@
    "raw": 185
   },
   {
-   "id": "v210",
+   "id": "v202",
    "text": "-667",
    "fmt": "ml",
    "rule": "fight",
@@ -2594,7 +2506,7 @@
    "raw": -667
   },
   {
-   "id": "v211",
+   "id": "v203",
    "text": "-714",
    "fmt": "ml",
    "rule": "fight",
@@ -2607,7 +2519,7 @@
    "raw": -714
   },
   {
-   "id": "v212",
+   "id": "v204",
    "text": "-645",
    "fmt": "ml",
    "rule": "fight",

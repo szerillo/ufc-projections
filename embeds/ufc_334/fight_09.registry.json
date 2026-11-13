@@ -295,28 +295,6 @@
   },
   {
    "id": "v25",
-   "text": "+482",
-   "fmt": "mlp",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD price",
-   "raw": 0.17190823157955523
-  },
-  {
-   "id": "v26",
-   "text": "17.2%",
-   "fmt": "pct1",
-   "rule": "pub",
-   "args": {
-    "key": "gtd_listed"
-   },
-   "desc": "Listed GTD %",
-   "raw": 0.17190823157955523
-  },
-  {
-   "id": "v27",
    "text": "+455",
    "fmt": "ml",
    "rule": "bp",
@@ -329,7 +307,7 @@
    "raw": 455
   },
   {
-   "id": "v28",
+   "id": "v26",
    "text": "18.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -341,8 +319,8 @@
    "raw": 0.18018018018018017
   },
   {
-   "id": "v29",
-   "text": "+9.4%",
+   "id": "v27",
+   "text": "+8.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -351,11 +329,11 @@
      "v26"
     ]
    },
-   "desc": "Edge GTD vs listed",
-   "raw": 0.09396298649760695
+   "desc": "Edge GTD vs market",
+   "raw": 0.08569103789698201
   },
   {
-   "id": "v30",
+   "id": "v28",
    "text": "-276",
    "fmt": "mlp",
    "rule": "pub",
@@ -367,7 +345,7 @@
    "raw": 0.7341287819228378
   },
   {
-   "id": "v31",
+   "id": "v29",
    "text": "73.4%",
    "fmt": "pct1",
    "rule": "pub",
@@ -379,7 +357,7 @@
    "raw": 0.7341287819228378
   },
   {
-   "id": "v32",
+   "id": "v30",
    "text": "-760",
    "fmt": "ml",
    "rule": "bp",
@@ -392,7 +370,7 @@
    "raw": -760
   },
   {
-   "id": "v33",
+   "id": "v31",
    "text": "88.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -404,21 +382,21 @@
    "raw": 0.8837209302325582
   },
   {
-   "id": "v34",
+   "id": "v32",
    "text": "-15.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v31",
-     "v33"
+     "v29",
+     "v31"
     ]
    },
    "desc": "Edge ITD vs market",
    "raw": -0.14959214830972034
   },
   {
-   "id": "v35",
+   "id": "v33",
    "text": "+381",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -430,7 +408,7 @@
    "raw": 0.20781306802608832
   },
   {
-   "id": "v36",
+   "id": "v34",
    "text": "20.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -442,7 +420,7 @@
    "raw": 0.20781306802608832
   },
   {
-   "id": "v37",
+   "id": "v35",
    "text": "+600",
    "fmt": "ml",
    "rule": "bp",
@@ -455,7 +433,7 @@
    "raw": 600
   },
   {
-   "id": "v38",
+   "id": "v36",
    "text": "14.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -467,21 +445,21 @@
    "raw": 0.14285714285714285
   },
   {
-   "id": "v39",
+   "id": "v37",
    "text": "+6.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v36",
-     "v38"
+     "v34",
+     "v36"
     ]
    },
    "desc": "Edge dec Bilal Hasan",
    "raw": 0.06495592516894547
   },
   {
-   "id": "v40",
+   "id": "v38",
    "text": "-121",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -493,7 +471,7 @@
    "raw": 0.5481555028709701
   },
   {
-   "id": "v41",
+   "id": "v39",
    "text": "54.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -505,7 +483,7 @@
    "raw": 0.5481555028709701
   },
   {
-   "id": "v42",
+   "id": "v40",
    "text": "-370",
    "fmt": "ml",
    "rule": "bp",
@@ -518,7 +496,7 @@
    "raw": -370
   },
   {
-   "id": "v43",
+   "id": "v41",
    "text": "78.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -530,21 +508,21 @@
    "raw": 0.7872340425531915
   },
   {
-   "id": "v44",
+   "id": "v42",
    "text": "-23.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v41",
-     "v43"
+     "v39",
+     "v41"
     ]
    },
    "desc": "Edge ko Bilal Hasan",
    "raw": -0.23907853968222137
   },
   {
-   "id": "v45",
+   "id": "v43",
    "text": "+929",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -556,7 +534,7 @@
    "raw": 0.0971724231231626
   },
   {
-   "id": "v46",
+   "id": "v44",
    "text": "9.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -568,7 +546,7 @@
    "raw": 0.0971724231231626
   },
   {
-   "id": "v47",
+   "id": "v45",
    "text": "+948",
    "fmt": "ml",
    "rule": "bp",
@@ -581,7 +559,7 @@
    "raw": 948
   },
   {
-   "id": "v48",
+   "id": "v46",
    "text": "9.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -593,21 +571,21 @@
    "raw": 0.09541984732824428
   },
   {
-   "id": "v49",
+   "id": "v47",
    "text": "+0.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v46",
-     "v48"
+     "v44",
+     "v46"
     ]
    },
    "desc": "Edge sub Bilal Hasan",
    "raw": 0.001752575794918318
   },
   {
-   "id": "v50",
+   "id": "v48",
    "text": "-182",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -619,7 +597,7 @@
    "raw": 0.6453279259941327
   },
   {
-   "id": "v51",
+   "id": "v49",
    "text": "64.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -631,7 +609,22 @@
    "raw": 0.6453279259941327
   },
   {
-   "id": "v52",
+   "id": "v50",
+   "text": "-752",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Bilal Hasan KO/TKO/DQ",
+     "Bilal Hasan Submission"
+    ]
+   },
+   "desc": "Market ITD price Bilal Hasan",
+   "raw": 0.8826538898814358
+  },
+  {
+   "id": "v51",
    "text": "88.3%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
@@ -646,21 +639,21 @@
    "raw": 0.8826538898814358
   },
   {
-   "id": "v53",
+   "id": "v52",
    "text": "-23.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v51",
-     "v52"
+     "v49",
+     "v51"
     ]
    },
    "desc": "Edge itd Bilal Hasan",
    "raw": -0.2373259638873031
   },
   {
-   "id": "v54",
+   "id": "v53",
    "text": "+1622",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -672,7 +665,7 @@
    "raw": 0.058058150051073856
   },
   {
-   "id": "v55",
+   "id": "v54",
    "text": "5.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -684,7 +677,7 @@
    "raw": 0.058058150051073856
   },
   {
-   "id": "v56",
+   "id": "v55",
    "text": "+2000",
    "fmt": "ml",
    "rule": "bp",
@@ -697,7 +690,7 @@
    "raw": 2000
   },
   {
-   "id": "v57",
+   "id": "v56",
    "text": "4.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -709,21 +702,21 @@
    "raw": 0.047619047619047616
   },
   {
-   "id": "v58",
+   "id": "v57",
    "text": "+1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v55",
-     "v57"
+     "v54",
+     "v56"
     ]
    },
    "desc": "Edge dec Luis Gurule",
    "raw": 0.01043910243202624
   },
   {
-   "id": "v59",
+   "id": "v58",
    "text": "+1478",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -735,7 +728,7 @@
    "raw": 0.06335678665129929
   },
   {
-   "id": "v60",
+   "id": "v59",
    "text": "6.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -747,7 +740,7 @@
    "raw": 0.06335678665129929
   },
   {
-   "id": "v61",
+   "id": "v60",
    "text": "+1233",
    "fmt": "ml",
    "rule": "bp",
@@ -760,7 +753,7 @@
    "raw": 1233
   },
   {
-   "id": "v62",
+   "id": "v61",
    "text": "7.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -772,21 +765,21 @@
    "raw": 0.07501875468867217
   },
   {
-   "id": "v63",
+   "id": "v62",
    "text": "-1.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v60",
-     "v62"
+     "v59",
+     "v61"
     ]
    },
    "desc": "Edge ko Luis Gurule",
    "raw": -0.011661968037372877
   },
   {
-   "id": "v64",
+   "id": "v63",
    "text": "+3830",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -798,7 +791,7 @@
    "raw": 0.025444069277405824
   },
   {
-   "id": "v65",
+   "id": "v64",
    "text": "2.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -810,7 +803,7 @@
    "raw": 0.025444069277405824
   },
   {
-   "id": "v66",
+   "id": "v65",
    "text": "+2542",
    "fmt": "ml",
    "rule": "bp",
@@ -823,7 +816,7 @@
    "raw": 2542
   },
   {
-   "id": "v67",
+   "id": "v66",
    "text": "3.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -835,21 +828,21 @@
    "raw": 0.03785011355034065
   },
   {
-   "id": "v68",
+   "id": "v67",
    "text": "-1.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
     "of": [
-     "v65",
-     "v67"
+     "v64",
+     "v66"
     ]
    },
    "desc": "Edge sub Luis Gurule",
    "raw": -0.012406044272934829
   },
   {
-   "id": "v69",
+   "id": "v68",
    "text": "+1026",
    "fmt": "mlp",
    "rule": "pub_meth",
@@ -861,7 +854,7 @@
    "raw": 0.08880085592870511
   },
   {
-   "id": "v70",
+   "id": "v69",
    "text": "8.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
@@ -871,6 +864,21 @@
    },
    "desc": "Model itd % Luis Gurule",
    "raw": 0.08880085592870511
+  },
+  {
+   "id": "v70",
+   "text": "+786",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Luis Gurule KO/TKO/DQ",
+     "Luis Gurule Submission"
+    ]
+   },
+   "desc": "Market ITD price Luis Gurule",
+   "raw": 0.11286886823901282
   },
   {
    "id": "v71",
@@ -894,7 +902,7 @@
    "rule": "edge",
    "args": {
     "of": [
-     "v70",
+     "v69",
      "v71"
     ]
    },
@@ -1890,54 +1898,20 @@
   },
   {
    "id": "v154",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
+   "text": "211%",
+   "fmt": "pct0",
+   "rule": "labs",
    "args": {
-    "fighter": "Bilal Hasan",
-    "path": "out_landed.k"
+    "side": "b",
+    "section": "cardio.upcoming",
+    "key": "out",
+    "slug": "luis-gurule"
    },
-   "desc": "Out-landed the opponent k Bilal Hasan",
-   "raw": 1
+   "desc": "Output kept, R3 vs R1 b",
+   "raw": 2.109
   },
   {
    "id": "v155",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bilal Hasan",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Bilal Hasan",
-   "raw": 1
-  },
-  {
-   "id": "v156",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Luis Gurule",
-    "path": "out_landed.k"
-   },
-   "desc": "Out-landed the opponent k Luis Gurule",
-   "raw": 1
-  },
-  {
-   "id": "v157",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Luis Gurule",
-    "path": "out_landed.n"
-   },
-   "desc": "Out-landed the opponent n Luis Gurule",
-   "raw": 5
-  },
-  {
-   "id": "v158",
    "text": "+1.47",
    "fmt": "s2",
    "rule": "em",
@@ -1949,7 +1923,7 @@
    "raw": 1.473
   },
   {
-   "id": "v159",
+   "id": "v156",
    "text": "+0.23",
    "fmt": "s2",
    "rule": "em",
@@ -1961,7 +1935,7 @@
    "raw": 0.235
   },
   {
-   "id": "v160",
+   "id": "v157",
    "text": "+0.94",
    "fmt": "s2",
    "rule": "em",
@@ -1973,7 +1947,7 @@
    "raw": 0.938
   },
   {
-   "id": "v161",
+   "id": "v158",
    "text": "-0.69",
    "fmt": "s2",
    "rule": "em",
@@ -1985,7 +1959,7 @@
    "raw": -0.688
   },
   {
-   "id": "v162",
+   "id": "v159",
    "text": "+0.27",
    "fmt": "s2",
    "rule": "em",
@@ -1997,7 +1971,7 @@
    "raw": 0.268
   },
   {
-   "id": "v163",
+   "id": "v160",
    "text": "-0.18",
    "fmt": "s2",
    "rule": "em",
@@ -2009,7 +1983,7 @@
    "raw": -0.181
   },
   {
-   "id": "v164",
+   "id": "v161",
    "text": "63%",
    "fmt": "pct0",
    "rule": "em",
@@ -2021,7 +1995,7 @@
    "raw": 0.6304
   },
   {
-   "id": "v165",
+   "id": "v162",
    "text": "66%",
    "fmt": "pct0",
    "rule": "em",
@@ -2033,7 +2007,7 @@
    "raw": 0.6585
   },
   {
-   "id": "v166",
+   "id": "v163",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -2045,69 +2019,7 @@
    "raw": 1
   },
   {
-   "id": "v167",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bilal Hasan",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Bilal Hasan",
-   "raw": 1
-  },
-  {
-   "id": "v168",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Bilal Hasan",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Bilal Hasan",
-   "raw": 1
-  },
-  {
-   "id": "v169",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Luis Gurule",
-    "path": "grap_won.k"
-   },
-   "desc": "Won the grappling k Luis Gurule",
-   "raw": 2
-  },
-  {
-   "id": "v170",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Luis Gurule",
-    "path": "grap_won.n"
-   },
-   "desc": "Won the grappling n Luis Gurule",
-   "raw": 5
-  },
-  {
-   "id": "v171",
-   "text": "211%",
-   "fmt": "pct0",
-   "rule": "labs",
-   "args": {
-    "side": "b",
-    "section": "cardio.upcoming",
-    "key": "out",
-    "slug": "luis-gurule"
-   },
-   "desc": "Output kept R3 b",
-   "raw": 2.109
-  },
-  {
-   "id": "v172",
+   "id": "v164",
    "text": "7.5",
    "fmt": "n1",
    "rule": "em",
@@ -2119,7 +2031,7 @@
    "raw": 7.467
   },
   {
-   "id": "v173",
+   "id": "v165",
    "text": "11.0",
    "fmt": "n1",
    "rule": "em",
@@ -2131,7 +2043,7 @@
    "raw": 11.043
   },
   {
-   "id": "v174",
+   "id": "v166",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -2143,7 +2055,7 @@
    "raw": 1
   },
   {
-   "id": "v175",
+   "id": "v167",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -2155,7 +2067,7 @@
    "raw": 0.0
   },
   {
-   "id": "v176",
+   "id": "v168",
    "text": "20%",
    "fmt": "pct0",
    "rule": "em",
@@ -2167,7 +2079,7 @@
    "raw": 0.2
   },
   {
-   "id": "v177",
+   "id": "v169",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -2179,7 +2091,7 @@
    "raw": 1
   },
   {
-   "id": "v178",
+   "id": "v170",
    "text": "-526",
    "fmt": "ml",
    "rule": "fight",
@@ -2192,7 +2104,7 @@
    "raw": -526
   },
   {
-   "id": "v179",
+   "id": "v171",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -2205,7 +2117,7 @@
    "raw": 185
   },
   {
-   "id": "v180",
+   "id": "v172",
    "text": "-105",
    "fmt": "ml",
    "rule": "fight",
@@ -2218,7 +2130,7 @@
    "raw": -105
   },
   {
-   "id": "v181",
+   "id": "v173",
    "text": "+308",
    "fmt": "ml",
    "rule": "fight",
@@ -2231,7 +2143,7 @@
    "raw": 308
   },
   {
-   "id": "v182",
+   "id": "v174",
    "text": "-206",
    "fmt": "ml",
    "rule": "fight",
@@ -2244,7 +2156,7 @@
    "raw": -206
   },
   {
-   "id": "v183",
+   "id": "v175",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
