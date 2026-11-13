@@ -1,0 +1,497 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light only"><title>UFC 334: Gane vs. Hokit · Moneylines</title><style>
+/* copied verbatim from ufc_333_fight_form.html (szerillo/ufc-projections) */
+:root {
+  color-scheme: light only;
+  --bg: #ffffff;
+  --bg-muted: #f4f1ec;
+  --bg-card: #fafaf7;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --border: #e5e1d8;
+  --border-strong: #c8c2b3;
+  --header-bg: #0e1116;
+  --header-bg-2: #1a1f28;
+  --action-green: #11c75c;
+  --action-green-dark: #0a8842;
+  --pos: #11c75c;
+  --pos-soft: #d4f5e2;
+  --pos-strong: #0a6b35;
+  --neg: #d63636;
+  --neg-soft: #fbdada;
+  --neg-strong: #8a1818;
+  --neutral: #6b6b6b;
+  --fav-a: #d63636;
+  --fav-b: #1b4fb0;
+  --fav-b-soft: #e7eef9;
+  --fav-a-soft: #fbdada;
+}
+.ff-header {
+  position: relative;
+  background: linear-gradient(135deg, var(--header-bg) 0%, var(--header-bg-2) 100%);
+  color: #fff;
+  padding: 18px 20px 14px;
+  text-align: center;
+  border-bottom: 3px solid var(--action-green);
+}
+.ff-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 3px;
+  letter-spacing: -0.3px;
+}
+.ff-subtitle {
+  font-size: 12px;
+  opacity: 0.78;
+  margin: 0;
+  font-weight: 500;
+}
+.ff-byline-header {
+  font-size: 11px;
+  margin-top: 4px;
+  opacity: 0.88;
+}
+.ff-byline-header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+.ff-odds-status {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.85);
+  font-family: "SF Mono", Menlo, monospace;
+}
+.ff-odds-status .dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--action-green);
+  margin-right: 5px;
+  vertical-align: 1px;
+  animation: pulse 2s ease-in-out infinite;
+}
+.ff-brand {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.ff-brand-text {
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: -0.2px;
+  color: #fff;
+}
+.ff-brand-check {
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: var(--action-green);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ff-brand-check svg { width: 10px; height: 10px; }
+@media (max-width: 600px) {
+  .ff-brand { position: static; justify-content: center; margin-bottom: 8px; }
+  .ff-header { padding: 14px 12px; }
+  .ff-title { font-size: 17px; }
+}
+.fp-title-belt {
+  background: #c8a951;
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 10.5px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.7px;
+}
+.fp-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.fp-fight-num {
+  background: var(--action-green);
+  color: #fff;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+.fp-card-tag {
+  background: var(--text);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.8px;
+}
+.fp-weight {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-left: auto;
+}
+.fp-headline {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 8px 0 4px;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+.fp-headline .vs {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0 6px;
+  font-size: 18px;
+}
+.fp-odds {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.fp-odds .num {
+  color: var(--text);
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 700;
+}
+.fp-proj {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 16px;
+}
+.fp-proj-header {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 7px 12px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.fp-proj-header .bullet {
+  width: 6px; height: 6px;
+  background: var(--action-green);
+  border-radius: 50%;
+  display: inline-block;
+}
+.fp-proj-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  table-layout: fixed;
+}
+.fp-proj-table th {
+  background: var(--bg-muted);
+  padding: 6px 6px;
+  text-align: center;
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+.fp-proj-table th.tleft { text-align: left; padding-left: 12px; }
+.fp-proj-table td {
+  padding: 7px 6px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+}
+.fp-proj-table td {
+  padding: 7px 6px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 12.5px;
+}
+.fp-proj-table td.tleft {
+  text-align: left;
+  padding-left: 12px;
+  font-weight: 800;
+}
+.fp-proj-table tr:last-child td { border-bottom: none; }
+.fp-proj-table .odds {
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 800;
+  font-size: 12px;
+}
+.fp-proj-table .odds {
+  font-family: "SF Mono", Menlo, monospace;
+  font-weight: 800;
+  font-size: 12px;
+}
+.fp-proj-table .pct {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 11.5px;
+}
+.fp-proj-table tr.fav td:first-child { border-left: 3px solid var(--action-green); }
+.fp-proj-table tr.dog td:first-child { border-left: 3px solid var(--text-muted); }
+.fp-proj-table td.itd-col {
+  background: #fafaf7;
+  font-weight: 800;
+}
+.fp-proj-table tr.dog td:first-child { border-left: 3px solid var(--text-muted); }
+.fp-proj-table td.itd-col {
+  background: #fafaf7;
+  font-weight: 800;
+}
+.fp-proj-table td.itd-col {
+  background: #fafaf7;
+  font-weight: 800;
+}
+details.collapsible {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+details.collapsible > summary {
+  background: var(--bg-muted);
+  padding: 9px 14px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+details.collapsible > summary::-webkit-details-marker { display: none; }
+details.collapsible > summary::before {
+  content: "▶";
+  font-size: 9px;
+  color: var(--action-green-dark);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+details.collapsible > summary::before {
+  content: "▶";
+  font-size: 9px;
+  color: var(--action-green-dark);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+details.collapsible[open] > summary::before { transform: rotate(90deg); }
+details.collapsible > summary .bullet {
+  width: 6px; height: 6px; background: var(--action-green); border-radius: 50%; display: inline-block;
+}
+details.collapsible > summary .bullet {
+  width: 6px; height: 6px; background: var(--action-green); border-radius: 50%; display: inline-block;
+}
+details.collapsible > summary .meta {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: none;
+  letter-spacing: 0;
+}
+details.collapsible > .body {
+  padding: 12px 14px;
+}
+/* v4 embed layout */
+*{box-sizing:border-box}html,body{margin:0;background:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);font-size:13px;line-height:1.4}
+html{scroll-behavior:smooth;scroll-padding-top:44px}
+.ff{max-width:720px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:8px;overflow:clip}
+.panel{padding:12px 16px 2px}.fp-odds{margin-bottom:6px;line-height:1.6}
+.ffnav{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;padding:8px 16px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.ffnav::-webkit-scrollbar{display:none}
+.ffnav a{flex:0 0 auto;font:800 10.5px/1 inherit;font-family:inherit;text-transform:uppercase;letter-spacing:.6px;color:var(--text);text-decoration:none;background:var(--bg-muted);border:1px solid var(--border);border-radius:12px;padding:6px 10px}
+.ffnav a:first-child{background:var(--header-bg);color:#fff;border-color:var(--header-bg)}
+section.top{padding:12px 16px 2px}.secs{padding:2px 16px 12px}
+.fp-proj{margin-bottom:4px}
+.pvm{table-layout:fixed}.pvm col.c0{width:17%}
+.pvm thead tr.who th{font-size:12px;letter-spacing:.3px;text-transform:none;color:var(--text);border-bottom:1px solid var(--border)}
+.pvm thead tr.who th.fav{box-shadow:inset 0 -3px 0 var(--action-green)}
+.pvm thead tr.src th{font-size:9.5px}.pvm th.proj,.pvm td.proj{background:var(--fav-b-soft)}
+.pvm th.rl{text-align:left;font-size:12px;font-weight:800;color:var(--text);background:var(--bg-muted);padding-left:10px;text-transform:none;letter-spacing:0}
+.pvm th.rl small{display:block;font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}
+.pvm td{vertical-align:top}.pvm .op{font-size:10px;color:var(--text-muted);font-family:"SF Mono",Menlo,monospace;margin-top:1px}.pvm .drv{font-style:italic}
+.pvm tr[data-row="win"] td,.pvm tr[data-row="win"] th{border-bottom:2px solid var(--border)}.pvm tr.gtd td,.pvm tr.gtd th{border-top:2px solid var(--border)}
+.fp-proj-table .dim,.dim{color:var(--text-muted)}
+.cap{font-size:11px;color:var(--text-muted);padding:6px 12px;border-top:1px solid var(--border);background:var(--bg-card)}
+.asof{font-size:10.5px;color:var(--text-muted);margin:2px 0 6px}
+table.t{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+table.t th{background:var(--bg-muted);font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);padding:6px;text-align:right;border-bottom:2px solid var(--border)}
+table.t td{padding:6px;text-align:right;border-bottom:1px solid var(--border);vertical-align:top}
+.l{text-align:left!important}.b{font-weight:800}
+.spark{width:100%;height:auto;display:block}
+.kv{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;padding:5px 0;border-bottom:1px dotted var(--border)}.kv span:first-child{color:var(--text-muted)}.kv span:last-child{text-align:right}
+.note{font-size:11.5px;color:var(--text-muted);font-style:italic;margin:6px 0}
+.tape .row{display:grid;grid-template-columns:1fr 1.2fr 1fr;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}.tape .row>div{padding:5px 6px}
+.tape .a{text-align:right}.tape .k{text-align:center;color:var(--text-muted);font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;align-self:center}
+.tape .hdr{font-weight:800}.tape .edge{color:var(--pos-strong);font-weight:800}
+.ftw{display:grid;gap:12px}.cn{font-weight:800;display:flex;justify-content:space-between;margin-bottom:3px}
+.chips i{display:inline-block;width:20px;height:18px;line-height:18px;text-align:center;font:800 10px/18px inherit;font-family:inherit;color:#fff;margin-left:2px;font-style:normal;border-radius:3px}
+.chips .w{background:var(--action-green-dark)}.chips .l{background:var(--neg)}.chips .d,.chips .nc{background:var(--neutral)}
+.r-w{color:var(--action-green-dark)}.r-l{color:var(--neg)}
+.ft td,.ft th{font-size:11.5px;padding:4px 5px}
+#notes p{font-size:12.5px;margin:4px 0 8px}#notes li{font-size:12px;margin:3px 0;color:var(--text-muted)}
+.foot{padding:10px 16px;background:var(--bg-muted);font-size:10.5px;color:var(--text-muted);border-top:1px solid var(--border)}
+/* Block 59: middle-ground layout (dark header kept; old embed's tape and dark section bars; edge chips; win bar) */
+.legend{font-size:10.5px;color:var(--text-muted);margin:6px 2px 10px}
+.pvm .edge{display:inline-block;margin-top:3px;font:800 10.5px/1 "SF Mono",Menlo,monospace;padding:3px 5px;border-radius:4px}
+.pvm .edge.pos{background:var(--pos-soft);color:var(--pos-strong)}.pvm .edge.neg{background:var(--neg-soft);color:var(--neg-strong)}.pvm .edge.flat{color:var(--text-muted)}
+.wb{margin:2px 0 12px}.wb-head{display:flex;justify-content:space-between;font-weight:800;font-size:12px;margin-bottom:4px}.wb-t{font-size:9.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--text-muted);align-self:center}
+.wb-row{display:grid;grid-template-columns:54px 1fr;align-items:center;gap:8px;margin:4px 0}.wb-l{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--text-muted)}
+.wb-bar{display:flex;height:22px;border-radius:4px;overflow:hidden;gap:2px}.wb-bar i{display:flex;align-items:center;font-style:normal;min-width:44px}
+.wb-bar b{font:800 11px/1 "SF Mono",Menlo,monospace;color:#fff;padding:0 7px}.wb-bar .wbb{justify-content:flex-end}
+.wb-bar.s .wa{background:#0e1116}.wb-bar.s .wbb{background:#6b6b6b}.wb-bar.m .wa{background:var(--action-green-dark)}.wb-bar.m .wbb{background:#9bd8b4}.wb-bar.m .wbb b{color:#0a3d20}
+.tape .row.hdr{background:var(--header-bg);color:#fff;font-size:13px}.tape .row.hdr .vs{background:var(--action-green);color:#fff;font-weight:900;letter-spacing:1px}
+.tape .edge{background:var(--pos-soft)}
+.fp-thin{font-size:10px;font-weight:800;line-height:1;letter-spacing:.6px;padding:4px 6px;border-radius:3px;background:#fff3cd;color:#7a5a00;margin-left:6px}
+/* Block 59b: tabs, old-style stacks, method bars, drift */
+.tabs{display:flex;gap:6px;padding:10px 16px 0;border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs [role=tab]{flex:0 0 auto;font:inherit;font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);background:none;border:0;border-bottom:3px solid transparent;padding:8px 10px 9px;cursor:pointer}
+.tabs [role=tab][aria-selected=true]{color:var(--text);border-bottom-color:var(--action-green)}.tabs [role=tab]:focus-visible{outline:2px solid var(--action-green-dark);outline-offset:2px}
+.tp{padding:12px 16px 4px}.tp:focus-visible{outline:2px solid var(--action-green-dark)}
+.tp-h{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+details.taped{margin:0 0 12px;border:1px solid var(--border);border-radius:6px;background:var(--bg-card)}details.taped>summary{display:flex;align-items:center;gap:8px;padding:10px 12px;font-weight:800;font-size:12px;letter-spacing:.6px;text-transform:uppercase;cursor:pointer;list-style:none}
+details.taped>summary::-webkit-details-marker{display:none}details.taped>summary .meta{margin-left:auto;font-size:10px;font-weight:600;letter-spacing:.3px;text-transform:none;color:var(--text-muted)}
+details.taped .chev{width:0;height:0;border-left:6px solid var(--action-green-dark);border-top:5px solid transparent;border-bottom:5px solid transparent;transition:transform .15s}details.taped[open] .chev{transform:rotate(90deg)}
+details.taped[open]>summary .meta{visibility:hidden}details.taped>.body{padding:0 10px 10px}
+.stk{margin:0 0 12px;border:1px solid var(--border);border-radius:6px;overflow:hidden}.stk-h{background:var(--header-bg);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:8px 12px;display:flex;align-items:center;gap:8px}
+.stk-t{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}.stk-t th{background:var(--bg-muted);font-size:9.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);padding:7px 6px;text-align:center;border-bottom:1px solid var(--border)}
+.stk-t th.l,.stk-t td.l{text-align:left}.stk-t td{padding:9px 6px;text-align:center;border-bottom:1px solid var(--border);vertical-align:middle}.stk-t tr:last-child td{border-bottom:0}
+.stk-t td.nm{font-weight:800;font-size:12.5px;line-height:1.25}.stk-t .odds{font:700 12.5px/1.2 "SF Mono",Menlo,monospace}.stk-t .pct{font-size:11px;color:var(--text-muted)}.stk-t td.model{background:var(--fav-b-soft)}
+.stk-t .live{font:600 10.5px/1.3 "SF Mono",Menlo,monospace;color:var(--text-muted)}.stk-t .live:first-of-type{margin-top:3px}.stk-t .rl{font:700 9px/1.2 inherit;font-family:inherit;letter-spacing:.4px;text-transform:uppercase;color:var(--text-muted);margin-top:2px}.stk-t tr.mkr td{padding-top:0;border-top:0}.stk-t td.l.rl{vertical-align:top;padding-top:4px;font-size:9px}.unv{display:block;font-size:9.5px;color:var(--text-muted);margin-top:2px}
+.stk-t td[data-k]{border-left:1px solid var(--border)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}.dot.fav{background:#2a78d6}.dot.dog{background:#eb6834}
+.ech{display:inline-block;margin-top:3px;font:800 11px/1 "SF Mono",Menlo,monospace;padding:3px 5px;border-radius:4px;color:var(--text-muted)}.ech.pos{background:var(--pos-soft);color:var(--pos-strong)}.ech.neg{background:var(--neg-soft);color:var(--neg-strong)}
+.wb-bar{display:flex;height:24px;border-radius:4px;overflow:hidden;gap:2px}.wb-bar i{display:flex;align-items:center;font-style:normal;min-width:46px}.wb-bar i.r{justify-content:flex-end}.wb-bar i.fav{background:#2a78d6}.wb-bar i.dog{background:#eb6834}
+.mb{padding:10px 12px}.mb-row{display:grid;grid-template-columns:96px 1fr 48px;align-items:center;gap:8px;margin:5px 0}.mb-l{font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mb-track{height:14px;background:var(--bg-muted);border-radius:3px;overflow:hidden}.mb-track i{display:block;height:100%;border-radius:3px}.mb-track i.fav{background:#2a78d6}.mb-track i.dog{background:#eb6834}.mb-v{font:700 12px/1 "SF Mono",Menlo,monospace;text-align:right}
+.drift{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:2px 0 6px}.drift .dl{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--text-muted)}.drift .dv{font:800 20px/1 "SF Mono",Menlo,monospace}.drift .dt{font-size:12px;color:var(--text-muted)}
+@media (max-width:440px){.tabs{padding:8px 10px 0}.tabs [role=tab]{font-size:11px;padding:8px 7px 9px}.tp{padding:10px 10px 4px}.stk-t td,.stk-t th{padding:7px 3px}.stk-t td.nm{font-size:11.5px}.stk-t .odds{font-size:11.5px}.stk-t .pct{font-size:10px}.stk-t .live{font-size:9.5px}.ech{font-size:10px;padding:2px 4px}.mb-row{grid-template-columns:84px 1fr 44px}}
+/* Block 59c: tape under the names, bars inside the stacks, stats groups */
+.mt{margin:8px 0 2px;border:1px solid var(--border);border-radius:6px;overflow:hidden;font-variant-numeric:tabular-nums}
+.mt-r{display:grid;grid-template-columns:1fr 104px 1fr;border-bottom:1px solid var(--border)}.mt-r:last-child{border-bottom:0}
+.mt-r>div{padding:5px 8px;font-size:12.5px;display:flex;align-items:center}.mt-a{justify-content:flex-end}.mt-a{text-align:right;font-weight:700}.mt-b{font-weight:700}
+.mt-k{text-align:center;font-size:9.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);background:var(--bg-muted);flex-direction:column;justify-content:center;gap:1px}
+.mt .adv{background:var(--pos-soft);color:var(--pos-strong)}.arw{color:var(--action-green-dark);font-size:10px;letter-spacing:1px}
+.nb{height:5px;background:var(--bg-muted);border-radius:3px;margin-top:5px;max-width:120px;overflow:hidden}.nb i,.cb i{display:block;height:100%;border-radius:3px}
+.nb i.fav,.cb i.fav{background:#2a78d6}.nb i.dog,.cb i.dog{background:#eb6834}
+.cb{height:5px;background:var(--bg-muted);border-radius:3px;margin:4px auto 2px;width:80%;overflow:hidden}
+.sg{margin:0 0 12px}.sg-h{background:var(--header-bg);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:7px 10px;border-radius:6px 6px 0 0}
+.sg .tape{border:1px solid var(--border);border-top:0;border-radius:0 0 6px 6px}
+.tape .adv{background:var(--pos-soft);color:var(--pos-strong);font-weight:800}.tape .adv.big{background:#9fe3bb;color:#063d1e}
+@media (max-width:440px){.mt-r{grid-template-columns:1fr 86px 1fr}.mt-r>div{padding:4px 6px;font-size:12px}.mt-k{font-size:8.5px}}
+/* Block 59d: target bars, power and chin scales, rounds table */
+.sg-b{border:1px solid var(--border);border-top:0;border-radius:0 0 6px 6px;overflow:hidden}.sg .sg-b .tape{border:0;border-radius:0}
+.tb{padding:8px 10px 6px;border-bottom:1px solid var(--border)}.tb-key{display:flex;gap:12px;font-size:10.5px;margin-bottom:6px;flex-wrap:wrap}.tb-key i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.tb-row{display:grid;grid-template-columns:70px 1fr;align-items:center;gap:8px;margin:5px 0}.tb-n{font-weight:800;font-size:12px}
+.tb-bar{display:flex;height:20px;border-radius:4px;overflow:hidden;gap:2px}.tb-bar i{display:flex;align-items:center;justify-content:center;font-style:normal;min-width:30px}.tb-bar b{font:800 10.5px/1 "SF Mono",Menlo,monospace;color:#fff}
+.tb-head{background:#0e1116}.tb-body{background:#2a78d6}.tb-leg{background:#7fb3ea}.tb-bar .tb-leg b{color:#0e1116}
+.sc{padding:9px 12px;border-bottom:1px solid var(--border)}.sc:last-child{border-bottom:0}.sc-h{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.sc-track{position:relative;height:8px;background:linear-gradient(90deg,var(--bg-muted),#d9d4c8);border-radius:4px;margin:4px 6px 8px}
+.sc-dot{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}.sc-dot.fav{background:#2a78d6}.sc-dot.dog{background:#eb6834}
+.sc-avg{position:absolute;top:-5px;width:2px;height:18px;background:#0e1116;transform:translateX(-1px)}.sc-l{font-size:12px;margin:2px 0}.oc i b{color:#fff}.oc-wko{background:#0a7a3a}.oc-wsub{background:#22a85a}.oc-wdec{background:#8fd6aa}.oc-ldec{background:#f2b8b0}.oc-lsub{background:#e0675a}.oc-lko{background:#b3261e}.oc .oc-wdec b,.oc .oc-ldec b{color:#0e1116}.tb-bar.oc i{min-width:0}
+.dhist{width:100%;height:auto;display:block;margin:6px 0 2px}.drift{margin:8px 12px}.mvrow{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}.mvt{font-size:12.5px}.mvt b{font-family:"SF Mono",Menlo,monospace}.mvl{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}.mvt small{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}.mspark{width:100%;height:34px;display:block}.mvs{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}.mvs .mve{color:#0a8842}.mvc{font-size:10px;color:var(--text-muted);text-align:center}
+.sgt{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none}.sgt button{flex:1 1 0;min-width:0;border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 2px;font:700 11px/1 inherit;letter-spacing:-.1px;white-space:nowrap;font-family:inherit;color:var(--text-muted);cursor:pointer}.sgt button[aria-pressed=true]{background:#0e1116;border-color:#0e1116;color:#fff}.js .sgw{display:none}.js .sgw.on{display:block}
+.fmore{margin:4px 0 12px}.fmore>summary{cursor:pointer;font-size:12px;font-weight:700;color:var(--action-green-dark);padding:6px 2px;list-style:none}.fmore>summary::-webkit-details-marker{display:none}.fmore>summary::before{content:"▸ "}.fmore[open]>summary::before{content:"▾ "}.fmore[open]>summary{font-size:0}.fmore[open]>summary::before{font-size:12px}.fmore[open]>summary::after{content:"Hide older fights";font-size:12px}
+.fl{color:inherit;text-decoration:none;border-bottom:1px dotted #9a9a9a}a.fl{display:inline-block;padding:5px 0 4px;line-height:15px}.stamps a{display:inline-block;padding:6px 4px;margin:-6px 0;color:inherit}.fl:hover{color:var(--action-green-dark);border-bottom-color:currentColor}.cn-s{font-size:10.5px;font-weight:600;color:var(--text-muted);margin-left:8px}
+.xpl{margin:8px 0 4px;border:1px solid var(--border);border-radius:8px;background:#fff}.xpl>summary{cursor:pointer;padding:8px 12px;font-size:12px;font-weight:700;color:var(--text-muted);list-style:none}.xpl>summary::-webkit-details-marker{display:none}.xpl>summary::before{content:"ⓘ  "}.xpl dl{margin:0;padding:0 12px 10px}.xpl dt{font-size:11.5px;font-weight:800;margin-top:6px}.xpl dd{margin:1px 0 0;font-size:11.5px;line-height:1.4;color:var(--text-muted)}
+.ang{padding:8px 12px;border-top:1px solid var(--border);background:#fffbea}.ang ul{margin:3px 0 0;padding-left:16px;font-size:12.5px}.ang li{margin:2px 0}.ang b{font-weight:800}
+.mvtr{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:6px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}.mvtr .mve{color:#0a8842}.mvbar{position:relative;height:8px;border-radius:4px;background:linear-gradient(90deg,#e9e5dc,#d9d4c8)}.mvbar i{position:absolute;top:50%;transform:translate(-50%,-50%)}.mvfrom{width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid #1a1a1a}.mvto{width:12px;height:12px;border-radius:50%;background:#0a8842;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}.mvspan{height:4px;background:#0a8842;opacity:.5;transform:translateY(-50%)!important}.mvx>summary{cursor:pointer;font-size:10.5px;color:var(--text-muted);margin-top:6px;list-style:none}.mvx>summary::-webkit-details-marker{display:none}.mvx>summary::before{content:"▸ "}.mvx[open]>summary::before{content:"▾ "}
+.ds{padding:8px 10px;border-bottom:1px solid var(--border)}.ds-h{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}.ds-r{display:grid;grid-template-columns:70px 1fr auto;gap:8px;align-items:center;margin:4px 0}.ds-d{display:flex;flex-wrap:wrap;gap:3px}.ds-d i{width:9px;height:9px;border-radius:50%;display:inline-block}.ds-d i.on{background:#0a8842}.ds-d i.off{background:#fff;border:1.5px solid #c9c3b6;box-sizing:border-box}.ds-k{font:800 12px/1 "SF Mono",Menlo,monospace;white-space:nowrap}
+.ddb{all:unset;cursor:pointer;display:block;width:100%}.ddb:focus-visible{outline:2px solid #2a78d6;outline-offset:2px}.dd{margin:6px 8px 10px;border:1px solid var(--border);border-radius:8px;overflow:hidden}.dd-h{display:flex;justify-content:space-between;align-items:center;background:#0e1116;color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:6px 10px}.ddx{all:unset;cursor:pointer;font-size:16px;line-height:1;padding:0 4px}.r-d{color:var(--text-muted)}
+.spot .lvl{margin:0;padding:8px 12px 10px 28px;font-size:12.5px}.spot .lvl li{margin:4px 0}.spot b{font-weight:800}.spot .dim{display:block;font-size:11px}.debut .dbt{padding:8px 12px 4px;font-size:12.5px}.debut .dbar{position:relative;margin:4px 12px;height:16px;background:var(--bg-muted);border-radius:4px;font:700 10.5px/16px "SF Mono",Menlo,monospace}.debut .dbar i{position:absolute;left:0;top:0;bottom:0;background:#2a78d6;border-radius:4px;opacity:.85}.debut .dbar.exp i{background:#8a857c}.debut .dbar span{position:relative;z-index:1;padding-left:6px;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.debut .dbn{display:block;padding:4px 12px 10px;font-size:11px}.trend{padding:8px 4px 6px}.trend .trn{margin:4px 4px 0;font-size:11px;font-weight:700;color:#8a5a00}.trend svg{width:100%;height:auto;display:block}.trend .mvl{display:block;margin:0 0 2px 4px}.spot .see{padding:0 12px 10px 28px;font-size:11.5px;font-weight:700;color:var(--text-muted)}.spot .unconf{display:block;font-size:11px;font-weight:700;color:#8a5a00}.flip{padding:8px 12px;background:#eef5ff;border-bottom:1px solid var(--border);font-size:12.5px}
+.part .ff-subtitle,.part .ff-odds-status,.part .tabs,.part .tp{display:none}.part .partw{margin-top:8px}.part .xpl{display:none}
+.sc-n{padding:6px 12px 0;font-size:11px;color:var(--text-muted)}
+.stamps{margin-top:4px;font-size:10px;color:var(--text-muted)}
+.ssm{font-size:9.5px;font-weight:600;color:var(--text-muted);font-family:inherit}
+.mvasof{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}
+.pu{font-size:10.5px;font-style:italic}
+.mvo{background:#fff3c4;padding:0 3px;border-radius:3px}
+.rt .rw{display:block;font:800 14px/1.2 "SF Mono",Menlo,monospace}
+.mvb{margin:10px 0 0;border:1px solid var(--border);border-radius:8px;overflow:hidden}.mvb-h{background:#0e1116;color:#fff;font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:7px 12px}
+.sc-e{display:flex;justify-content:space-between;font-size:10px;color:var(--text-muted);margin:-4px 6px 6px;text-transform:uppercase;letter-spacing:.4px}.sc-t{font-size:10px;font-weight:700;padding:1px 5px;border-radius:3px;background:var(--bg-muted);color:var(--text-muted)}.sc-t.up{background:#d9f5e4;color:#0a7a3a}.sc-t.dn{background:#fde3e0;color:#b3261e}.sc-l b{font-family:"SF Mono",Menlo,monospace}
+.rt{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}.rt th{background:var(--bg-muted);font-size:9.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--text-muted);padding:6px 4px;text-align:center}
+.rt td{padding:7px 4px;text-align:center;border-top:1px solid var(--border);font:700 12px/1.2 "SF Mono",Menlo,monospace}.rt td small{display:block;white-space:nowrap;letter-spacing:-.3px;font:600 8.5px/1 inherit;font-family:inherit;color:var(--text-muted);margin-top:2px}
+.rt td.pos{background:var(--pos-soft);color:var(--pos-strong)}.rt td.neg{background:var(--neg-soft);color:var(--neg-strong)}.rt td.nm{font-family:inherit;font-size:12px;text-align:left}
+.rt-n{font-size:10px;color:var(--text-muted);padding:4px 10px 6px}
+/* Action Network badge stays visible at every width (the site widget hides it under 440 px; the embed keeps it) */
+@media (max-width:600px){.ff-brand{position:static;display:flex;justify-content:center;margin-bottom:6px}.ff-header{padding:12px 12px 10px}.ff-title{font-size:17px}}
+@media (max-width:440px){.ff-header{padding:9px 8px 8px}.ff-brand{display:flex!important;margin-bottom:5px}.ff-title{font-size:14px}.ff-subtitle{font-size:10px}
+.panel,section.top,.secs{padding-left:10px;padding-right:10px}.ffnav{padding:7px 10px}.fp-headline{font-size:17px}.fp-odds{font-size:10.5px}
+.fp-proj-table th,.fp-proj-table td{padding:5px 3px;font-size:11px}.fp-proj-table .odds{font-size:11.5px}.fp-proj-table .pct{font-size:10px}.pvm .op{font-size:9px}
+.pvm col.c0{width:16%}.pvm th.rl{padding-left:6px;font-size:11px}.pvm th.rl small{font-size:7.5px}.fp-proj-header{font-size:9px;padding:6px 9px}.cap{font-size:10px;padding:5px 8px}
+details.collapsible>summary{padding:8px 10px;font-size:10px}details.collapsible>summary .meta{display:none}details.collapsible>.body{padding:10px}
+table.t{font-size:11.5px}table.t td,table.t th{padding:5px 3px}.kv{font-size:11.5px;flex-wrap:wrap}.tape .row{font-size:12px}.tape .k{font-size:9.5px}}
+
+/* Card-level tables (build_card_tables.py): fight-preview look, old moneyline / prop table layout */
+.ct-h{border-radius:6px 6px 0 0;margin:12px 0 0}
+.ct-h + .tabs{margin-top:0}
+.tp > .stk:first-child{margin-top:10px}
+.stk-t.ct td.n,.stk-t.ct th.n{width:22px;color:var(--text-muted);font:700 11px/1 "SF Mono",Menlo,monospace;text-align:center}
+.stk-t.ct .opp{font-weight:500;font-size:10.5px;color:var(--text-muted);margin-top:1px}
+.stk-t.ct tr.sec td{background:var(--header-bg);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:7px 10px;text-align:left}
+.stk-t.ct tr.sec .bullet{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--action-green);margin-right:7px;vertical-align:1px}
+.stk-t.ct tr.cg td{background:var(--bg-muted);text-align:left;font-size:11.5px;font-weight:800;padding:7px 8px;border-top:2px solid var(--border)}
+.stk-t.ct tr.cg a{color:inherit;text-decoration:none}
+.stk-t.ct tr.cg a:hover{text-decoration:underline}
+.stk-t.ct tr.cg .vs{color:var(--text-muted);font-weight:600;margin:0 2px}
+.cg-n{display:inline-block;min-width:18px;font:800 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted);margin-right:6px}
+.cg-w{float:right;font-size:10px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--text-muted)}
+.cg-belt{display:inline-block;margin-left:6px;font-size:9.5px;font-weight:800;padding:1px 5px;border-radius:3px;background:#c9a54a;color:#1a1a1a;vertical-align:1px}
+.cg-pend{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;padding:2px 6px;border-radius:3px;background:var(--bg-muted);color:var(--text-muted);border:1px solid var(--border)}
+.cg-pend-row{font-weight:500;font-size:10.5px;color:var(--text-muted);margin-top:4px}
+.stk-t.ct .vs{color:var(--text-muted);font-weight:600}
+.top-tabs{margin-top:0}
+.fchips{display:flex;gap:6px;overflow-x:auto;padding:10px 0 8px;scrollbar-width:none}
+.fchips::-webkit-scrollbar{display:none}
+.fchip{flex:0 0 auto;font:inherit;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:var(--text);background:#fff;border:1px solid var(--border);border-radius:5px;padding:6px 9px;cursor:pointer;white-space:nowrap}
+.fchip b{color:var(--text-muted);margin-right:5px;font-family:"SF Mono",Menlo,monospace}
+.fchip.on{background:var(--header-bg);color:#fff;border-color:var(--header-bg)}
+.fchip.on b{color:var(--action-green)}
+.fprev{display:block;width:100%;border:0;min-height:600px}
+.cardpage .panel{padding-top:4px}
+</style></head><body class="cardpage" data-kind="moneylines"><div class="ff-header"><div aria-label="Action Network" class="ff-brand"><span class="ff-brand-text">ACTION</span><span class="ff-brand-check"><svg fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" viewbox="0 0 24 24"><polyline points="5 13 10 18 19 7"></polyline></svg></span></div>
+<div class="ff-title">UFC 334: Gane vs. Hokit · Moneylines</div><div class="ff-subtitle">Saturday, November 14, 2026 · Madison Square Garden</div>
+<div class="ff-byline-header">By <a href="https://twitter.com/SeanZerillo" rel="noopener" target="_blank">@SeanZerillo</a></div><div class="ff-odds-status"><span class="dot"></span>Odds updated 2026-11-12 21:51 UTC</div></div><div class="panel"><div class="tabs" role="tablist" data-group="ml" aria-label="ml"><button type="button" role="tab" id="tb-ml-fav" aria-controls="tp-ml-fav" aria-selected="true" tabindex="0">Favorites</button><button type="button" role="tab" id="tb-ml-dog" aria-controls="tp-ml-dog" aria-selected="false" tabindex="-1">Underdogs</button></div><section class="tp" id="tp-ml-fav" role="tabpanel" aria-labelledby="tb-ml-fav" tabindex="0"><div class="stk" data-part="ml"><div class="stk-h"><span class="bullet"></span>Moneyline · model vs market · Favorites</div><table class="stk-t ct ct-ml"><thead><tr><th class="n">#</th><th class=l>Fighter</th><th>Model</th><th>Listed</th><th>Market</th><th>Edge</th></tr></thead><tbody><tr class="sec"><td colspan="6"><span class="bullet"></span>Main card</td></tr><tr><td class="n">13</td><td class="l nm"><i class="dot fav"></i>Ciryl Gane<div class="opp">vs Josh Hokit</div><div class="nb"><i class="fav" style="width:61.3%"></i></div></td><td class="model"><span class="odds">-158</span><div class="pct">61.3%</div></td><td class=""><span class="odds">-180</span><div class="pct">64.3%</div></td><td class=""><span class="odds">-188</span><div class="pct">65.3%</div></td><td><span class="ech neg">-3.0%</span></td></tr><tr><td class="n">12</td><td class="l nm"><i class="dot fav"></i>Kayla Harrison<div class="opp">vs Amanda Nunes</div><div class="nb"><i class="fav" style="width:64.2%"></i></div></td><td class="model"><span class="odds">-179</span><div class="pct">64.2%</div></td><td class=""><span class="odds">-185</span><div class="pct">64.9%</div></td><td class=""><span class="odds">-185</span><div class="pct">64.9%</div></td><td><span class="ech flat">-0.7%</span></td></tr><tr><td class="n">11</td><td class="l nm"><i class="dot fav"></i>Caio Borralho<div class="opp">vs Yousri Belgaroui</div><div class="nb"><i class="fav" style="width:58.1%"></i></div></td><td class="model"><span class="odds">-139</span><div class="pct">58.1%</div></td><td class=""><span class="odds">-155</span><div class="pct">60.8%</div></td><td class=""><span class="odds">-162</span><div class="pct">61.8%</div></td><td><span class="ech neg">-2.6%</span></td></tr><tr><td class="n">10</td><td class="l nm"><i class="dot fav"></i>Uros Medic<div class="opp">vs Kevin Holland</div><div class="nb"><i class="fav" style="width:61.0%"></i></div></td><td class="model"><span class="odds">-156</span><div class="pct">61.0%</div></td><td class=""><span class="odds">-154</span><div class="pct">60.6%</div></td><td class=""><span class="odds">-156</span><div class="pct">60.9%</div></td><td><span class="ech flat">+0.3%</span></td></tr><tr><td class="n">9</td><td class="l nm"><i class="dot fav"></i>Bilal Hasan<div class="opp">vs Luis Gurule</div><div class="nb"><i class="fav" style="width:85.3%"></i></div></td><td class="model"><span class="odds">-581</span><div class="pct">85.3%</div></td><td class=""><span class="odds">-1000</span><div class="pct">90.9%</div></td><td class=""><span class="odds">-1000</span><div class="pct">90.9%</div></td><td><span class="ech neg">-5.6%</span></td></tr><tr class="sec"><td colspan="6"><span class="bullet"></span>Prelims</td></tr><tr><td class="n">8</td><td class="l nm"><i class="dot fav"></i>Stephen Thompson<div class="opp">vs Charles Radtke</div><div class="nb"><i class="fav" style="width:58.9%"></i></div></td><td class="model"><span class="odds">-143</span><div class="pct">58.9%</div></td><td class=""><span class="odds">-152</span><div class="pct">60.3%</div></td><td class=""><span class="odds">-155</span><div class="pct">60.8%</div></td><td><span class="ech flat">-1.4%</span></td></tr><tr><td class="n">7</td><td class="l nm"><i class="dot fav"></i>Chris Duncan<div class="opp">vs Drew Dober</div><div class="nb"><i class="fav" style="width:66.3%"></i></div></td><td class="model"><span class="odds">-197</span><div class="pct">66.3%</div></td><td class=""><span class="odds">-185</span><div class="pct">64.9%</div></td><td class=""><span class="odds">-188</span><div class="pct">65.3%</div></td><td><span class="ech flat">+1.4%</span></td></tr><tr><td class="n">6</td><td class="l nm"><i class="dot fav"></i>Terrance McKinney<div class="opp">vs Jim Miller</div><div class="nb"><i class="fav" style="width:67.8%"></i></div></td><td class="model"><span class="odds">-210</span><div class="pct">67.8%</div></td><td class=""><span class="odds">-200</span><div class="pct">66.7%</div></td><td class=""><span class="odds">-205</span><div class="pct">67.2%</div></td><td><span class="ech flat">+1.1%</span></td></tr><tr><td class="n">5</td><td class="l nm"><i class="dot fav"></i>Donte Johnson<div class="opp">vs Cesar Almeida</div><div class="nb"><i class="fav" style="width:62.7%"></i></div></td><td class="model"><span class="odds">-168</span><div class="pct">62.7%</div></td><td class=""><span class="odds">-175</span><div class="pct">63.6%</div></td><td class=""><span class="odds">-175</span><div class="pct">63.6%</div></td><td><span class="ech flat">-1.0%</span></td></tr><tr class="sec"><td colspan="6"><span class="bullet"></span>Early prelims</td></tr><tr><td class="n">4</td><td class="l nm"><i class="dot fav"></i>Melquizael Costa<div class="opp">vs Jared Gordon</div><div class="nb"><i class="fav" style="width:73.8%"></i></div></td><td class="model"><span class="odds">-281</span><div class="pct">73.8%</div></td><td class=""><span class="odds">-400</span><div class="pct">80.0%</div></td><td class=""><span class="odds">-385</span><div class="pct">79.4%</div></td><td><span class="ech neg">-6.2%</span></td></tr><tr><td class="n">3</td><td class="l nm"><i class="dot fav"></i>Bia Mesquita<div class="opp">vs Macy Chiasson</div><div class="nb"><i class="fav" style="width:73.0%"></i></div></td><td class="model"><span class="odds">-270</span><div class="pct">73.0%</div></td><td class=""><span class="odds">-250</span><div class="pct">71.4%</div></td><td class=""><span class="odds">-278</span><div class="pct">73.5%</div></td><td><span class="ech flat">+1.6%</span></td></tr><tr><td class="n">2</td><td class="l nm"><i class="dot fav"></i>Juan Diaz<div class="opp">vs Alatengheili</div><div class="nb"><i class="fav" style="width:76.4%"></i></div></td><td class="model"><span class="odds">-324</span><div class="pct">76.4%</div></td><td class=""><span class="odds">-333</span><div class="pct">76.9%</div></td><td class=""><span class="odds">-425</span><div class="pct">81.0%</div></td><td><span class="ech flat">-0.5%</span></td></tr><tr><td class="n">1</td><td class="l nm"><i class="dot fav"></i>Samuel Sanches<div class="opp">vs Evan Elder</div><div class="nb"><i class="fav" style="width:55.2%"></i></div></td><td class="model"><span class="odds">-123</span><div class="pct">55.2%</div></td><td class=""><span class="odds">-115</span><div class="pct">53.5%</div></td><td class=""><span class="odds">-120</span><div class="pct">54.5%</div></td><td><span class="ech flat">+1.7%</span></td></tr></tbody></table></div></section><section class="tp" id="tp-ml-dog" role="tabpanel" aria-labelledby="tb-ml-dog" tabindex="0" hidden><div class="stk" data-part="ml"><div class="stk-h"><span class="bullet"></span>Moneyline · model vs market · Underdogs</div><table class="stk-t ct ct-ml"><thead><tr><th class="n">#</th><th class=l>Fighter</th><th>Model</th><th>Listed</th><th>Market</th><th>Edge</th></tr></thead><tbody><tr class="sec"><td colspan="6"><span class="bullet"></span>Main card</td></tr><tr><td class="n">13</td><td class="l nm"><i class="dot dog"></i>Josh Hokit<div class="opp">vs Ciryl Gane</div><div class="nb"><i class="dog" style="width:38.7%"></i></div></td><td class="model"><span class="odds">+158</span><div class="pct">38.7%</div></td><td class=""><span class="odds">+163</span><div class="pct">38.0%</div></td><td class=""><span class="odds">+150</span><div class="pct">40.0%</div></td><td><span class="ech flat">+0.7%</span></td></tr><tr><td class="n">12</td><td class="l nm"><i class="dot dog"></i>Amanda Nunes<div class="opp">vs Kayla Harrison</div><div class="nb"><i class="dog" style="width:35.8%"></i></div></td><td class="model"><span class="odds">+179</span><div class="pct">35.8%</div></td><td class=""><span class="odds">+155</span><div class="pct">39.2%</div></td><td class=""><span class="odds">+150</span><div class="pct">40.0%</div></td><td><span class="ech neg">-3.4%</span></td></tr><tr><td class="n">11</td><td class="l nm"><i class="dot dog"></i>Yousri Belgaroui<div class="opp">vs Caio Borralho</div><div class="nb"><i class="dog" style="width:41.9%"></i></div></td><td class="model"><span class="odds">+139</span><div class="pct">41.9%</div></td><td class=""><span class="odds">+132</span><div class="pct">43.1%</div></td><td class=""><span class="odds">+130</span><div class="pct">43.5%</div></td><td><span class="ech flat">-1.2%</span></td></tr><tr><td class="n">10</td><td class="l nm"><i class="dot dog"></i>Kevin Holland<div class="opp">vs Uros Medic</div><div class="nb"><i class="dog" style="width:39.0%"></i></div></td><td class="model"><span class="odds">+156</span><div class="pct">39.0%</div></td><td class=""><span class="odds">+140</span><div class="pct">41.7%</div></td><td class=""><span class="odds">+130</span><div class="pct">43.5%</div></td><td><span class="ech neg">-2.6%</span></td></tr><tr><td class="n">9</td><td class="l nm"><i class="dot dog"></i>Luis Gurule<div class="opp">vs Bilal Hasan</div><div class="nb"><i class="dog" style="width:14.7%"></i></div></td><td class="model"><span class="odds">+581</span><div class="pct">14.7%</div></td><td class=""><span class="odds">+650</span><div class="pct">13.3%</div></td><td class=""><span class="odds">+630</span><div class="pct">13.7%</div></td><td><span class="ech flat">+1.4%</span></td></tr><tr class="sec"><td colspan="6"><span class="bullet"></span>Prelims</td></tr><tr><td class="n">8</td><td class="l nm"><i class="dot dog"></i>Charles Radtke<div class="opp">vs Stephen Thompson</div><div class="nb"><i class="dog" style="width:41.1%"></i></div></td><td class="model"><span class="odds">+143</span><div class="pct">41.1%</div></td><td class=""><span class="odds">+130</span><div class="pct">43.5%</div></td><td class=""><span class="odds">+130</span><div class="pct">43.5%</div></td><td><span class="ech neg">-2.4%</span></td></tr><tr><td class="n">7</td><td class="l nm"><i class="dot dog"></i>Drew Dober<div class="opp">vs Chris Duncan</div><div class="nb"><i class="dog" style="width:33.7%"></i></div></td><td class="model"><span class="odds">+197</span><div class="pct">33.7%</div></td><td class=""><span class="odds">+155</span><div class="pct">39.2%</div></td><td class=""><span class="odds">+150</span><div class="pct">40.0%</div></td><td><span class="ech neg">-5.5%</span></td></tr><tr><td class="n">6</td><td class="l nm"><i class="dot dog"></i>Jim Miller<div class="opp">vs Terrance McKinney</div><div class="nb"><i class="dog" style="width:32.2%"></i></div></td><td class="model"><span class="odds">+210</span><div class="pct">32.2%</div></td><td class=""><span class="odds">+180</span><div class="pct">35.7%</div></td><td class=""><span class="odds">+165</span><div class="pct">37.7%</div></td><td><span class="ech neg">-3.5%</span></td></tr><tr><td class="n">5</td><td class="l nm"><i class="dot dog"></i>Cesar Almeida<div class="opp">vs Donte Johnson</div><div class="nb"><i class="dog" style="width:37.3%"></i></div></td><td class="model"><span class="odds">+168</span><div class="pct">37.3%</div></td><td class=""><span class="odds">+145</span><div class="pct">40.8%</div></td><td class=""><span class="odds">+145</span><div class="pct">40.8%</div></td><td><span class="ech neg">-3.5%</span></td></tr><tr class="sec"><td colspan="6"><span class="bullet"></span>Early prelims</td></tr><tr><td class="n">4</td><td class="l nm"><i class="dot dog"></i>Jared Gordon<div class="opp">vs Melquizael Costa</div><div class="nb"><i class="dog" style="width:26.2%"></i></div></td><td class="model"><span class="odds">+281</span><div class="pct">26.2%</div></td><td class=""><span class="odds">+310</span><div class="pct">24.4%</div></td><td class=""><span class="odds">+290</span><div class="pct">25.6%</div></td><td><span class="ech flat">+1.8%</span></td></tr><tr><td class="n">3</td><td class="l nm"><i class="dot dog"></i>Macy Chiasson<div class="opp">vs Bia Mesquita</div><div class="nb"><i class="dog" style="width:27.0%"></i></div></td><td class="model"><span class="odds">+270</span><div class="pct">27.0%</div></td><td class=""><span class="odds">+210</span><div class="pct">32.3%</div></td><td class=""><span class="odds">+207</span><div class="pct">32.6%</div></td><td><span class="ech neg">-5.2%</span></td></tr><tr><td class="n">2</td><td class="l nm"><i class="dot dog"></i>Alatengheili<div class="opp">vs Juan Diaz</div><div class="nb"><i class="dog" style="width:23.6%"></i></div></td><td class="model"><span class="odds">+324</span><div class="pct">23.6%</div></td><td class=""><span class="odds">+320</span><div class="pct">23.8%</div></td><td class=""><span class="odds">+320</span><div class="pct">23.8%</div></td><td><span class="ech flat">-0.2%</span></td></tr><tr><td class="n">1</td><td class="l nm"><i class="dot dog"></i>Evan Elder<div class="opp">vs Samuel Sanches</div><div class="nb"><i class="dog" style="width:44.8%"></i></div></td><td class="model"><span class="odds">+123</span><div class="pct">44.8%</div></td><td class=""><span class="odds">+102</span><div class="pct">49.5%</div></td><td class=""><span class="odds">+100</span><div class="pct">50.0%</div></td><td><span class="ech neg">-4.7%</span></td></tr></tbody></table></div></section><div class="legend">Every number here is the same as on that fight's preview. Market % is the straight conversion of the price, vig included.</div><details class="xpl"><summary>What these numbers mean</summary><dl><dt>Model</dt><dd>Our projection: the fair price and win chance for each side.</dd><dt>Listed</dt><dd>The price on our sheet when the projection was published.</dd><dt>Market</dt><dd>The current consensus price. The % is the straight conversion of that price, so it still includes the book's margin.</dd><dt>Edge</dt><dd>Model % minus the listed % (moneyline, goes the distance) or minus the market % (inside the distance, method). Positive means the model likes that side more than the price does. Coloured only at 2.0 points or more either way.</dd><dt>Price unavailable</dt><dd>The odds feed has a price, but it fails our sanity rule (rule v3: a one-sided distance market; this bout's method prices adding up to over 140% or, when complete, under 100%; a draw shorter than +1000; or two of them opening at exactly +100), so we do not show it. Not offered = no price in the feed.</dd><dt>Line move</dt><dd>How far the win chance has moved from the opener to the current line, with the opener of the side it moved toward. The current line uses US-regulated books only.</dd><dt>Spot to watch</dt><dd>Shows only when a tested angle applies to this fight: the striking-edge rule (career strike differential gap 1.9+ per minute, both fighters with 4+ UFC fights), the round-3 rule (R3 differential gap about 2.9+ per minute), or the comeback spot (one fighter much better in round 3 than round 1 relative to the other). Each line gives the test it comes from. None has been tested on live prices.</dd><dt>Price unverified</dt><dd>The listed price was not seen at a US-regulated book in the 24 hours before our projection was published, so we do not colour its edge until the sheet is checked.</dd></dl></details></div><div class="foot ff-foot"><div class="stamps">Data as of: sheet 11/12 21:41 UTC · odds 11/12 21:51 UTC · line move 11/12 21:35 UTC · <a href="https://szerillo.github.io/ufc-projections/form/corrections.html" rel="noopener" target="_blank">Corrections</a></div></div><script>(function(){
+[].slice.call(document.querySelectorAll('[role=tablist]')).forEach(function(tl){
+  var tabs=[].slice.call(tl.querySelectorAll('[role=tab]'));
+  function show(i,f){tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;var p=document.getElementById(t.getAttribute('aria-controls'));if(p)p.hidden=!on;});if(f)tabs[i].focus();post();}
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i);});t.addEventListener('keydown',function(e){var k=e.key;if(k==='ArrowRight'||k==='ArrowLeft'){e.preventDefault();show((i+(k==='ArrowRight'?1:tabs.length-1))%tabs.length,true);}});});
+});
+var fr=document.getElementById('fprev');
+function fit(){try{var d=fr.contentDocument;if(!d||!d.body)return;var h=Math.ceil(d.body.getBoundingClientRect().height);if(h&&Math.abs(fr.offsetHeight-h)>2){fr.style.height=h+'px';post();}}catch(e){}}
+if(fr){fr.addEventListener('load',function(){try{var d=fr.contentDocument,s=d.createElement('style');s.textContent='.ff-header{display:none!important}';d.head.appendChild(s);
+  if(window.ResizeObserver)new ResizeObserver(fit).observe(d.body);}catch(e){}fit();setTimeout(fit,400);});
+  [].slice.call(document.querySelectorAll('.fchip')).forEach(function(c){c.addEventListener('click',function(){
+    [].slice.call(document.querySelectorAll('.fchip')).forEach(function(x){x.classList.toggle('on',x===c);});fr.src=c.getAttribute('data-src');});});}
+var last=0;function post(){var h=Math.ceil(document.body.getBoundingClientRect().height);if(h!==last){last=h;try{window.parent.postMessage({type:"ufc-iframe-height",height:h},"*");}catch(e){}}}
+window.addEventListener('load',post);window.addEventListener('resize',post);if(window.ResizeObserver)new ResizeObserver(post).observe(document.body);setInterval(post,1500);
+})();</script></body></html>

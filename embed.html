@@ -468,7 +468,7 @@ body {
         </button>
         <button class="preset" data-preset="main_event">
           <span class="preset-title">Main Event Only</span>
-          <span class="preset-sub">Topuria vs Gaethje panel</span>
+          <span class="preset-sub">Main event preview</span>
         </button>
         <button class="preset" data-preset="moneylines">
           <span class="preset-title">Moneylines Table</span>
@@ -929,7 +929,7 @@ function build() {
   if (mode === "fight") params.set("n", fight);
 
   // Use absolute URL if served, relative for the preview
-  const src = V4_EMBEDS[card] ? (mode === "fight" ? v4Src(card, fight) : `${file}?embed=${mode}${V4_EMBEDS[card].card}`) : `${file}?${params.toString()}`;
+  const src = V4_EMBEDS[card] ? (mode === "fight" ? v4Src(card, fight) : V4_EMBEDS[card].dir + ({ full: "card", moneylines: "moneylines", props: "props" }[mode] || "card") + ".html") : `${file}?${params.toString()}`;
   const title = `${CARD_LABELS[card]}`;
 
   // Recommended min-height for embed iframe
@@ -957,7 +957,7 @@ document.querySelectorAll(".preset").forEach(btn => {
   btn.addEventListener("click", () => {
     const p = btn.dataset.preset;
     if (p === "full") { $mode.value = "full"; $height.value = 1800; }
-    else if (p === "main_event") { $mode.value = "fight"; $fight.value = "7"; $height.value = 1500; }
+    else if (p === "main_event") { $mode.value = "fight"; $fight.selectedIndex = 0; $height.value = 1500; }   // roster lists the main event first
     else if (p === "moneylines") { $mode.value = "moneylines"; $height.value = 700; }
     else if (p === "props") { $mode.value = "props"; $height.value = 1100; }
     build();

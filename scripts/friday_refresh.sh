@@ -57,6 +57,8 @@ step "3a holds";          python3 -I scripts/form_holds.py check | tail -1   # K
 step "3c rounds";          python3 -I scripts/check_rounds.py --slug "$SLUG" --event "$EVENT"   # Kirk round 15: fails on a main/title bout built as 3 rounds, or no five_rounds key within 72 h
 step "4 stats file";       python3 -I scripts/build_embed_metrics.py --event "$EVENT" --cache .form_cache --out "form/data/embed_metrics/${SLUG}.json"
 step "5 embeds";           python3 scripts/build_fight_embeds.py | tail -1
+step "5b card tables";     python3 -I scripts/build_card_tables.py --slug "$SLUG"   # full widget, moneylines, props: rows lifted from the fight previews
 step "6 checks";           python3 scripts/verify_fight_embeds.py --slug "$SLUG" | tail -3
+python3 -I scripts/verify_card_tables.py --slug "$SLUG" | tail -3
 step "7 diff vs $REF";     rm -rf /tmp/_cmp && mkdir -p /tmp/_cmp && git archive "$REF" "embeds/${SLUG}" | tar -x -C /tmp/_cmp && python3 -I scripts/diff_embed_numbers.py "/tmp/_cmp/embeds/${SLUG}" "embeds/${SLUG}" | tail -4
 step "done"

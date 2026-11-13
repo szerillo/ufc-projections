@@ -323,13 +323,22 @@ function priceBoard(ev) {
 }
 function wireRows() { $app.querySelectorAll("tr.click").forEach(tr => tr.addEventListener("click", e => { if (e.target.closest("a")) return; location.hash = tr.dataset.href; })); }
 
+/* Sean's card-level pages in the fight-preview format (scripts/build_card_tables.py): full widget inline, plus direct links */
+function v4Block(ev) {
+  const d = (window.__V4 || {})[ev.slug]; if (!d) return "";
+  return `<h3>Sean's projections · moneylines, props, fight previews</h3><div class="links" style="margin:4px 0 8px"><a href="${d}moneylines.html" target="_blank" rel="noopener">Moneylines table</a><a href="${d}props.html" target="_blank" rel="noopener">Props tables</a><a href="${d}card.html" target="_blank" rel="noopener">Full widget</a></div>` +
+    `<iframe class="v4f" src="${d}card.html" title="${esc(ev.name)} · Sean's projections" scrolling="no" style="display:block;width:100%;border:1px solid var(--hair);border-radius:6px;min-height:900px;height:1700px"></iframe>`;
+}
+window.addEventListener("message", (e) => { if (!e.data || e.data.type !== "ufc-iframe-height") return;
+  document.querySelectorAll("iframe.v4f").forEach(f => { if (f.contentWindow === e.source) f.style.height = (e.data.height + 2) + "px"; }); });
+
 /* ---------- views ---------- */
 async function vHome() {
   const idx = await getJSON("index.json");
   let html = "";
   for (const u of idx.upcoming) {
     const ev = await getJSON(`events/${u.slug}.json`); await Promise.all([overlayLive(ev), overlaySheet(ev)]);
-    html += `<h2>Next up · ${esc(ev.name)}</h2><div class="sub">${fdate(ev.date)} · ${esc(ev.location)} · <a href="#/card/${ev.slug}" style="text-decoration:underline">full card page</a></div><div style="height:8px"></div>${cardTable(ev)}${priceBoard(ev)}${methodBoard(ev)}<p><a class="btn" href="#/sheet/${ev.slug}">Printable form sheet →</a></p>`;
+    html += `<h2>Next up · ${esc(ev.name)}</h2><div class="sub">${fdate(ev.date)} · ${esc(ev.location)} · <a href="#/card/${ev.slug}" style="text-decoration:underline">full card page</a></div><div style="height:8px"></div>${cardTable(ev)}${v4Block(ev)}${priceBoard(ev)}${methodBoard(ev)}<p><a class="btn" href="#/sheet/${ev.slug}">Printable form sheet →</a></p>`;
   }
   if (!idx.upcoming.length) html += `<div class="banner">No upcoming card loaded yet.</div>`;
   html += `<h2>Recent cards</h2><div class="cards">` + idx.events.slice(0, 12).map(e => `<a href="#/card/${e.slug}"><b>${esc(e.name)}</b><span>${fdate(e.date)} · ${e.nf} fights${e.model ? " · model" : ""}</span><br><span>${esc(e.main)}</span></a>`).join("") + `</div>
@@ -348,7 +357,7 @@ async function vCard(slug) {
     <h2>${esc(ev.name)} ${ev.status === "upcoming" ? '<span class="pill y">Upcoming</span>' : ""}</h2>
     <div class="sub">${fdate(ev.date)} · ${esc(ev.location)}${ev.odds_updated ? " · odds as of " + new Date(ev.odds_updated).toLocaleString() : ""}</div>
     <div class="links" style="margin-top:8px">${ev.widget ? `<a href="${ev.widget.file}" target="_blank" rel="noopener">Projection tables (widget)</a>` : ""}${ev.url ? `<a href="${esc(ev.url)}" target="_blank" rel="noopener">UFCStats event</a>` : ""}<a href="#/sheet/${ev.slug}">Printable form sheet</a></div>
-    ${cardTable(ev)}${ev.status === "upcoming" ? priceBoard(ev) : ""}${methodBoard(ev)}`;
+    ${cardTable(ev)}${v4Block(ev)}${ev.status === "upcoming" ? priceBoard(ev) : ""}${methodBoard(ev)}`;
   if (movers.length) html += `<h3>Biggest line moves (open → ${ev.status === "final" ? "close" : "now"})</h3><div class="tw"><table><thead><tr><th class="l">Bout</th><th>Open</th><th>${ev.status === "final" ? "Close" : "Now"}</th><th>Move</th><th class="l">Toward</th><th class="l">Result</th></tr></thead><tbody>` +
     movers.map(({ f, mv }) => { const side = mv >= 0 ? "a" : "b"; const thinN = f.odds.close.nb < 3 ? f.odds.close.nb : null; const hit = thinN != null && f.result && f.result.winner ? `<span class="dim">thin market (${thinN} ${thinN === 1 ? "book" : "books"})</span>` : f.result && f.result.winner ? (f.result.winner === side ? '<span class="W">steam won</span>' : '<span class="L">steam lost</span>') : ""; return `<tr class="click" data-href="#/fight/${ev.slug}/${f.n}"><td class="l">${esc(f.a.name)} vs ${esc(f.b.name)}</td><td>${ml(f.odds.open.ma)} / ${ml(f.odds.open.mb)}</td><td>${ml(f.odds.close.ma)} / ${ml(f.odds.close.mb)}</td><td class="b">${signed(Math.abs(mv))}</td><td class="l">${esc(f[side].name)}</td><td class="l">${hit}</td></tr>`; }).join("") + `</tbody></table></div>`;
   $app.innerHTML = html; wireRows();

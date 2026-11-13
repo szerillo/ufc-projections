@@ -20,7 +20,7 @@ slug, event = sys.argv[1:3]
 # list: on Saturday it reaches main through Sean's publish, so the refresh copies it unchanged. card.json was not written.
 # Kirk round 34: card.json IS written whenever the export changes (its proj_file, published_at and line_pending), so it is listed.
 ALLOWED = {f"data/{slug}_odds.json", f"data/embeds/line_history_{slug}.json", f"data/embeds/kalshi_{slug}.json",
-           f"form/data/embed_metrics/{slug}.json", event, f"embeds/{slug}/card.json"} | {f"embeds/{slug}/fight_{i:02d}.{x}" for i in range(1, 14) for x in ("html", "registry.json")}
+           f"form/data/embed_metrics/{slug}.json", event, f"embeds/{slug}/card.json"} | {f"embeds/{slug}/{x}.html" for x in ("card", "moneylines", "props")} | {f"embeds/{slug}/fight_{i:02d}.{x}" for i in range(1, 14) for x in ("html", "registry.json")}
 st = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"], capture_output=True, text=True, check=True).stdout.splitlines()
 paths = [l[3:].split(" -> ")[-1] for l in st if l.strip()]
 bad = [p for p in paths if p not in ALLOWED]
@@ -35,5 +35,7 @@ grep -E "PUBLIC SCAN|HIT" /tmp/_sat_scan.txt | head -5
 grep -q ", 0 hits" /tmp/_sat_scan.txt || { echo "SATURDAY CHECK FAIL: public scan"; exit 1; }
 python3 scripts/verify_fight_embeds.py --slug "$SLUG" > /tmp/_sat_verify.txt 2>&1 || true; grep -E "TOTAL|MISMATCH|^  v" /tmp/_sat_verify.txt | head -4
 grep -qE "^TOTAL: [0-9]+/[0-9]+ numbers verified; 0 mismatches/assertion failures" /tmp/_sat_verify.txt || { echo "SATURDAY CHECK FAIL: verifier"; exit 1; }
+python3 -I scripts/verify_card_tables.py --slug "$SLUG" > /tmp/_sat_tables.txt 2>&1 || true; tail -1 /tmp/_sat_tables.txt
+grep -qE "^CARD TABLES: .* 0 failures$" /tmp/_sat_tables.txt || { echo "SATURDAY CHECK FAIL: card tables"; exit 1; }
 python3 -I scripts/listed_price_report.py --slug "$SLUG" --event "$EVENT" | tail -1
 echo "SATURDAY CHECK PASS at origin/main ${R:0:8}. On Kirk's go: git add -A data embeds form/data && git commit -m 'Saturday refresh <time>' && git push origin HEAD:main"
