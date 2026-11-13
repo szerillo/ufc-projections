@@ -2712,6 +2712,102 @@
   },
   {
    "id": "v221",
+   "text": "-0.24",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": -0.239
+  },
+  {
+   "id": "v222",
+   "text": "-0.33",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": -0.33
+  },
+  {
+   "id": "v223",
+   "text": "+0.13",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.126
+  },
+  {
+   "id": "v224",
+   "text": "+0.56",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.559
+  },
+  {
+   "id": "v225",
+   "text": "+0.27",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.266
+  },
+  {
+   "id": "v226",
+   "text": "+0.14",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": 0.143
+  },
+  {
+   "id": "v227",
+   "text": "59%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Drew Dober",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.5917
+  },
+  {
+   "id": "v228",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Chris Duncan",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.5827
+  },
+  {
+   "id": "v229",
    "text": "104%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2725,7 +2821,7 @@
    "raw": 1.038
   },
   {
-   "id": "v222",
+   "id": "v230",
    "text": "125%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2737,102 +2833,6 @@
    },
    "desc": "Output kept, R3 vs R1 b",
    "raw": 1.253
-  },
-  {
-   "id": "v223",
-   "text": "-0.24",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Drew Dober",
-    "path": "target_diff.head"
-   },
-   "desc": "Head diff /min a",
-   "raw": -0.239
-  },
-  {
-   "id": "v224",
-   "text": "-0.33",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Chris Duncan",
-    "path": "target_diff.head"
-   },
-   "desc": "Head diff /min b",
-   "raw": -0.33
-  },
-  {
-   "id": "v225",
-   "text": "+0.13",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Drew Dober",
-    "path": "target_diff.body"
-   },
-   "desc": "Body diff /min a",
-   "raw": 0.126
-  },
-  {
-   "id": "v226",
-   "text": "+0.56",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Chris Duncan",
-    "path": "target_diff.body"
-   },
-   "desc": "Body diff /min b",
-   "raw": 0.559
-  },
-  {
-   "id": "v227",
-   "text": "+0.27",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Drew Dober",
-    "path": "target_diff.leg"
-   },
-   "desc": "Leg diff /min a",
-   "raw": 0.266
-  },
-  {
-   "id": "v228",
-   "text": "+0.14",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Chris Duncan",
-    "path": "target_diff.leg"
-   },
-   "desc": "Leg diff /min b",
-   "raw": 0.143
-  },
-  {
-   "id": "v229",
-   "text": "59%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Drew Dober",
-    "path": "hdef"
-   },
-   "desc": "Head defence a",
-   "raw": 0.5917
-  },
-  {
-   "id": "v230",
-   "text": "58%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Chris Duncan",
-    "path": "hdef"
-   },
-   "desc": "Head defence b",
-   "raw": 0.5827
   },
   {
    "id": "v231",

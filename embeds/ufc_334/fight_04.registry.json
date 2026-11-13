@@ -2630,6 +2630,102 @@
   },
   {
    "id": "v215",
+   "text": "+1.30",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 1.3
+  },
+  {
+   "id": "v216",
+   "text": "-0.16",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": -0.158
+  },
+  {
+   "id": "v217",
+   "text": "+0.07",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.074
+  },
+  {
+   "id": "v218",
+   "text": "+0.60",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.604
+  },
+  {
+   "id": "v219",
+   "text": "+0.09",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.085
+  },
+  {
+   "id": "v220",
+   "text": "+0.66",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": 0.66
+  },
+  {
+   "id": "v221",
+   "text": "63%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Gordon",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.6273
+  },
+  {
+   "id": "v222",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Melquizael Costa",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.5839
+  },
+  {
+   "id": "v223",
    "text": "130%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2643,7 +2739,7 @@
    "raw": 1.298
   },
   {
-   "id": "v216",
+   "id": "v224",
    "text": "103%",
    "fmt": "pct0",
    "rule": "labs",
@@ -2655,102 +2751,6 @@
    },
    "desc": "Output kept, R3 vs R1 b",
    "raw": 1.028
-  },
-  {
-   "id": "v217",
-   "text": "+1.30",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Jared Gordon",
-    "path": "target_diff.head"
-   },
-   "desc": "Head diff /min a",
-   "raw": 1.3
-  },
-  {
-   "id": "v218",
-   "text": "-0.16",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Melquizael Costa",
-    "path": "target_diff.head"
-   },
-   "desc": "Head diff /min b",
-   "raw": -0.158
-  },
-  {
-   "id": "v219",
-   "text": "+0.07",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Jared Gordon",
-    "path": "target_diff.body"
-   },
-   "desc": "Body diff /min a",
-   "raw": 0.074
-  },
-  {
-   "id": "v220",
-   "text": "+0.60",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Melquizael Costa",
-    "path": "target_diff.body"
-   },
-   "desc": "Body diff /min b",
-   "raw": 0.604
-  },
-  {
-   "id": "v221",
-   "text": "+0.09",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Jared Gordon",
-    "path": "target_diff.leg"
-   },
-   "desc": "Leg diff /min a",
-   "raw": 0.085
-  },
-  {
-   "id": "v222",
-   "text": "+0.66",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Melquizael Costa",
-    "path": "target_diff.leg"
-   },
-   "desc": "Leg diff /min b",
-   "raw": 0.66
-  },
-  {
-   "id": "v223",
-   "text": "63%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jared Gordon",
-    "path": "hdef"
-   },
-   "desc": "Head defence a",
-   "raw": 0.6273
-  },
-  {
-   "id": "v224",
-   "text": "58%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Melquizael Costa",
-    "path": "hdef"
-   },
-   "desc": "Head defence b",
-   "raw": 0.5839
   },
   {
    "id": "v225",
