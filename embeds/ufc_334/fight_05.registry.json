@@ -12,8 +12,8 @@
  "file": "fight_05.html",
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
- "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T21:41:39.598Z",
+ "proj_file": "data/ufc_334_projections.json",
+ "published_at": "2026-11-12T22:47:18.373Z",
  "rows": [
   {
    "id": "v1",
@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "-175",
+   "text": "-180",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Donte Johnson",
-   "raw": -175
+   "raw": -180
   },
   {
    "id": "v16",
-   "text": "63.6%",
+   "text": "64.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Donte Johnson"
    },
    "desc": "Market implied Donte Johnson",
-   "raw": 0.6363636363636364
+   "raw": 0.6428571428571429
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "+145",
+   "text": "+150",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Cesar Almeida",
-   "raw": 145
+   "raw": 150
   },
   {
    "id": "v23",
-   "text": "40.8%",
+   "text": "40.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Cesar Almeida"
    },
    "desc": "Market implied Cesar Almeida",
-   "raw": 0.40816326530612246
+   "raw": 0.4
   },
   {
    "id": "v24",
@@ -927,7 +927,7 @@
   },
   {
    "id": "v75",
-   "text": "+144",
+   "text": "-169",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -936,14 +936,14 @@
      "Donte Johnson",
      "Cesar Almeida"
     ],
-    "side": "b"
+    "side": "a"
    },
-   "desc": "LH open ML Cesar Almeida",
-   "raw": 144
+   "desc": "LH open ML Donte Johnson",
+   "raw": -169
   },
   {
    "id": "v76",
-   "text": "0.2",
+   "text": "0.4",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0020000000000000018
+   "raw": 0.0040000000000000036
   },
   {
    "id": "v77",

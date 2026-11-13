@@ -12,8 +12,8 @@
  "file": "fight_03.html",
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
- "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T21:41:39.598Z",
+ "proj_file": "data/ufc_334_projections.json",
+ "published_at": "2026-11-12T22:47:18.373Z",
  "rows": [
   {
    "id": "v1",
@@ -920,7 +920,7 @@
   },
   {
    "id": "v74",
-   "text": "3.4",
+   "text": "2.9",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -931,7 +931,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.033999999999999975
+   "raw": 0.02899999999999997
   },
   {
    "id": "v75",
@@ -952,7 +952,7 @@
   },
   {
    "id": "v76",
-   "text": "69.0%",
+   "text": "68.5%",
    "fmt": "pct1",
    "rule": "lh_p",
    "args": {
@@ -965,7 +965,7 @@
     "at": "current"
    },
    "desc": "LH current p Bia Mesquita",
-   "raw": 0.69
+   "raw": 0.685
   },
   {
    "id": "v77",

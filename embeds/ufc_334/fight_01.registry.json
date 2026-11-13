@@ -12,8 +12,8 @@
  "file": "fight_01.html",
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
- "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T21:41:39.598Z",
+ "proj_file": "data/ufc_334_projections.json",
+ "published_at": "2026-11-12T22:47:18.373Z",
  "rows": [
   {
    "id": "v1",
@@ -530,7 +530,7 @@
   },
   {
    "id": "v44",
-   "text": "+574",
+   "text": "+524",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -539,11 +539,11 @@
     "field": "cost"
    },
    "desc": "Market ko Evan Elder",
-   "raw": 574
+   "raw": 524
   },
   {
    "id": "v45",
-   "text": "14.8%",
+   "text": "16.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -551,11 +551,11 @@
     "label": "Evan Elder KO/TKO/DQ"
    },
    "desc": "Market ko implied Evan Elder",
-   "raw": 0.14836795252225518
+   "raw": 0.16025641025641027
   },
   {
    "id": "v46",
-   "text": "-0.4%",
+   "text": "-1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -565,7 +565,7 @@
     ]
    },
    "desc": "Edge ko Evan Elder",
-   "raw": -0.004345043049666569
+   "raw": -0.01623350078382166
   },
   {
    "id": "v47",
@@ -656,7 +656,7 @@
   },
   {
    "id": "v54",
-   "text": "27.3%",
+   "text": "28.5%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -667,11 +667,11 @@
     ]
    },
    "desc": "Market ITD implied Evan Elder",
-   "raw": 0.2733679525222552
+   "raw": 0.28525641025641024
   },
   {
    "id": "v55",
-   "text": "-2.5%",
+   "text": "-3.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -681,7 +681,7 @@
     ]
    },
    "desc": "Edge itd Evan Elder",
-   "raw": -0.02512299138113125
+   "raw": -0.03701144911528628
   },
   {
    "id": "v56",
@@ -772,7 +772,7 @@
   },
   {
    "id": "v63",
-   "text": "+172",
+   "text": "+179",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -781,11 +781,11 @@
     "field": "cost"
    },
    "desc": "Market ko Samuel Sanches",
-   "raw": 172
+   "raw": 179
   },
   {
    "id": "v64",
-   "text": "36.8%",
+   "text": "35.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -793,11 +793,11 @@
     "label": "Samuel Sanches KO/TKO/DQ"
    },
    "desc": "Market ko implied Samuel Sanches",
-   "raw": 0.36764705882352944
+   "raw": 0.35842293906810035
   },
   {
    "id": "v65",
-   "text": "-9.6%",
+   "text": "-8.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -807,7 +807,7 @@
     ]
    },
    "desc": "Edge ko Samuel Sanches",
-   "raw": -0.09607806217439724
+   "raw": -0.08685394241896816
   },
   {
    "id": "v66",
@@ -898,7 +898,7 @@
   },
   {
    "id": "v73",
-   "text": "42.0%",
+   "text": "41.1%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -909,11 +909,11 @@
     ]
    },
    "desc": "Market ITD implied Samuel Sanches",
-   "raw": 0.42027863777089786
+   "raw": 0.4110545180154688
   },
   {
    "id": "v74",
-   "text": "-10.6%",
+   "text": "-9.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -923,7 +923,7 @@
     ]
    },
    "desc": "Edge itd Samuel Sanches",
-   "raw": -0.10633411385688396
+   "raw": -0.09710999410145488
   },
   {
    "id": "v75",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "4.1",
+   "text": "3.4",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.041000000000000036
+   "raw": 0.03400000000000003
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "52.5%",
+   "text": "51.8%",
    "fmt": "pct1",
    "rule": "lh_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "current"
    },
    "desc": "LH current p Samuel Sanches",
-   "raw": 0.525
+   "raw": 0.518
   },
   {
    "id": "v79",

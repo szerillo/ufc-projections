@@ -12,8 +12,8 @@
  "file": "fight_02.html",
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
- "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T21:41:39.598Z",
+ "proj_file": "data/ufc_334_projections.json",
+ "published_at": "2026-11-12T22:47:18.373Z",
  "rows": [
   {
    "id": "v1",
@@ -223,7 +223,7 @@
   },
   {
    "id": "v19",
-   "text": "-425",
+   "text": "-420",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -232,11 +232,11 @@
     "field": "cost"
    },
    "desc": "Market ML Juan Diaz",
-   "raw": -425
+   "raw": -420
   },
   {
    "id": "v20",
-   "text": "81.0%",
+   "text": "80.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -244,7 +244,7 @@
     "label": "Juan Diaz"
    },
    "desc": "Market implied Juan Diaz",
-   "raw": 0.8095238095238095
+   "raw": 0.8076923076923077
   },
   {
    "id": "v21",

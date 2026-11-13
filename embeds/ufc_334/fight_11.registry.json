@@ -12,8 +12,8 @@
  "file": "fight_11.html",
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
- "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T21:41:39.598Z",
+ "proj_file": "data/ufc_334_projections.json",
+ "published_at": "2026-11-12T22:47:18.373Z",
  "rows": [
   {
    "id": "v1",
@@ -246,7 +246,7 @@
   },
   {
    "id": "v21",
-   "text": "+130",
+   "text": "+132",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -255,11 +255,11 @@
     "field": "cost"
    },
    "desc": "Market ML Yousri Belgaroui",
-   "raw": 130
+   "raw": 132
   },
   {
    "id": "v22",
-   "text": "43.5%",
+   "text": "43.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -267,7 +267,7 @@
     "label": "Yousri Belgaroui"
    },
    "desc": "Market implied Yousri Belgaroui",
-   "raw": 0.43478260869565216
+   "raw": 0.43103448275862066
   },
   {
    "id": "v23",
@@ -915,7 +915,7 @@
   },
   {
    "id": "v74",
-   "text": "+130",
+   "text": "-161",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -924,14 +924,14 @@
      "Caio Borralho",
      "Yousri Belgaroui"
     ],
-    "side": "b"
+    "side": "a"
    },
-   "desc": "LH open ML Yousri Belgaroui",
-   "raw": 130
+   "desc": "LH open ML Caio Borralho",
+   "raw": -161
   },
   {
    "id": "v75",
-   "text": "0.4",
+   "text": "0.1",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -942,7 +942,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0040000000000000036
+   "raw": 0.0010000000000000009
   },
   {
    "id": "v76",

@@ -12,8 +12,8 @@
  "file": "fight_13.html",
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
- "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T21:41:39.598Z",
+ "proj_file": "data/ufc_334_projections.json",
+ "published_at": "2026-11-12T22:47:18.373Z",
  "rows": [
   {
    "id": "v1",
@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "-188",
+   "text": "-200",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Ciryl Gane",
-   "raw": -188
+   "raw": -200
   },
   {
    "id": "v16",
-   "text": "65.3%",
+   "text": "66.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Ciryl Gane"
    },
    "desc": "Market implied Ciryl Gane",
-   "raw": 0.6527777777777778
+   "raw": 0.6666666666666666
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "+150",
+   "text": "+160",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Josh Hokit",
-   "raw": 150
+   "raw": 160
   },
   {
    "id": "v23",
-   "text": "40.0%",
+   "text": "38.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Josh Hokit"
    },
    "desc": "Market implied Josh Hokit",
-   "raw": 0.4
+   "raw": 0.38461538461538464
   },
   {
    "id": "v24",
@@ -530,7 +530,7 @@
   },
   {
    "id": "v44",
-   "text": "+132",
+   "text": "+127",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -539,11 +539,11 @@
     "field": "cost"
    },
    "desc": "Market ko Ciryl Gane",
-   "raw": 132
+   "raw": 127
   },
   {
    "id": "v45",
-   "text": "43.1%",
+   "text": "44.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -551,11 +551,11 @@
     "label": "Ciryl Gane KO/TKO/DQ"
    },
    "desc": "Market ko implied Ciryl Gane",
-   "raw": 0.43103448275862066
+   "raw": 0.44052863436123346
   },
   {
    "id": "v46",
-   "text": "-6.5%",
+   "text": "-7.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -565,7 +565,7 @@
     ]
    },
    "desc": "Edge ko Ciryl Gane",
-   "raw": -0.06536421248847646
+   "raw": -0.07485836409108926
   },
   {
    "id": "v47",
@@ -593,7 +593,7 @@
   },
   {
    "id": "v49",
-   "text": "+1000",
+   "text": "+974",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -602,11 +602,11 @@
     "field": "cost"
    },
    "desc": "Market sub Ciryl Gane",
-   "raw": 1000
+   "raw": 974
   },
   {
    "id": "v50",
-   "text": "9.1%",
+   "text": "9.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -614,11 +614,11 @@
     "label": "Ciryl Gane Submission"
    },
    "desc": "Market sub implied Ciryl Gane",
-   "raw": 0.09090909090909091
+   "raw": 0.0931098696461825
   },
   {
    "id": "v51",
-   "text": "-4.0%",
+   "text": "-4.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -628,7 +628,7 @@
     ]
    },
    "desc": "Edge sub Ciryl Gane",
-   "raw": -0.03996482250492236
+   "raw": -0.04216560124201394
   },
   {
    "id": "v52",
@@ -656,7 +656,7 @@
   },
   {
    "id": "v54",
-   "text": "52.2%",
+   "text": "53.4%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -667,11 +667,11 @@
     ]
    },
    "desc": "Market ITD implied Ciryl Gane",
-   "raw": 0.5219435736677116
+   "raw": 0.533638504007416
   },
   {
    "id": "v55",
-   "text": "-10.5%",
+   "text": "-11.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -681,7 +681,7 @@
     ]
    },
    "desc": "Edge itd Ciryl Gane",
-   "raw": -0.10532903499339885
+   "raw": -0.11702396533310322
   },
   {
    "id": "v56",
@@ -772,7 +772,7 @@
   },
   {
    "id": "v63",
-   "text": "+405",
+   "text": "+424",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -781,11 +781,11 @@
     "field": "cost"
    },
    "desc": "Market ko Josh Hokit",
-   "raw": 405
+   "raw": 424
   },
   {
    "id": "v64",
-   "text": "19.8%",
+   "text": "19.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -793,11 +793,11 @@
     "label": "Josh Hokit KO/TKO/DQ"
    },
    "desc": "Market ko implied Josh Hokit",
-   "raw": 0.19801980198019803
+   "raw": 0.19083969465648856
   },
   {
    "id": "v65",
-   "text": "-0.4%",
+   "text": "+0.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -807,7 +807,7 @@
     ]
    },
    "desc": "Edge ko Josh Hokit",
-   "raw": -0.003948841120175767
+   "raw": 0.0032312662035337003
   },
   {
    "id": "v66",
@@ -898,7 +898,7 @@
   },
   {
    "id": "v73",
-   "text": "30.6%",
+   "text": "29.9%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -909,11 +909,11 @@
     ]
    },
    "desc": "Market ITD implied Josh Hokit",
-   "raw": 0.30624491020530625
+   "raw": 0.29906480288159676
   },
   {
    "id": "v74",
-   "text": "-3.0%",
+   "text": "-2.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -923,7 +923,7 @@
     ]
    },
    "desc": "Edge itd Josh Hokit",
-   "raw": -0.030093127378712115
+   "raw": -0.02291302005500262
   },
   {
    "id": "v75",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "7.4",
+   "text": "5.7",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.07399999999999995
+   "raw": 0.05699999999999994
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "38.0%",
+   "text": "36.3%",
    "fmt": "pct1",
    "rule": "lh_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "current"
    },
    "desc": "LH current p Josh Hokit",
-   "raw": 0.38
+   "raw": 0.363
   },
   {
    "id": "v79",

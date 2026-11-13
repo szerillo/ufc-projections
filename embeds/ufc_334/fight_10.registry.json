@@ -12,8 +12,8 @@
  "file": "fight_10.html",
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
- "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T21:41:39.598Z",
+ "proj_file": "data/ufc_334_projections.json",
+ "published_at": "2026-11-12T22:47:18.373Z",
  "rows": [
   {
    "id": "v1",
@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "-156",
+   "text": "-155",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Uros Medic",
-   "raw": -156
+   "raw": -155
   },
   {
    "id": "v16",
-   "text": "60.9%",
+   "text": "60.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Uros Medic"
    },
    "desc": "Market implied Uros Medic",
-   "raw": 0.609375
+   "raw": 0.6078431372549019
   },
   {
    "id": "v17",

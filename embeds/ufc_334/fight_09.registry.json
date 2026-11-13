@@ -12,8 +12,8 @@
  "file": "fight_09.html",
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
- "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T21:41:39.598Z",
+ "proj_file": "data/ufc_334_projections.json",
+ "published_at": "2026-11-12T22:47:18.373Z",
  "rows": [
   {
    "id": "v1",
@@ -234,7 +234,7 @@
   },
   {
    "id": "v20",
-   "text": "+630",
+   "text": "+650",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -243,11 +243,11 @@
     "field": "cost"
    },
    "desc": "Market ML Luis Gurule",
-   "raw": 630
+   "raw": 650
   },
   {
    "id": "v21",
-   "text": "13.7%",
+   "text": "13.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -255,7 +255,7 @@
     "label": "Luis Gurule"
    },
    "desc": "Market implied Luis Gurule",
-   "raw": 0.136986301369863
+   "raw": 0.13333333333333333
   },
   {
    "id": "v22",
@@ -919,7 +919,7 @@
   },
   {
    "id": "v74",
-   "text": "0.6",
+   "text": "0.7",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -930,7 +930,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.006000000000000005
+   "raw": 0.007000000000000006
   },
   {
    "id": "v75",

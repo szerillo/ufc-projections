@@ -12,8 +12,8 @@
  "file": "fight_12.html",
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
- "proj_file": "data/pending/ufc_334_projections.json",
- "published_at": "2026-11-12T21:41:39.598Z",
+ "proj_file": "data/ufc_334_projections.json",
+ "published_at": "2026-11-12T22:47:18.373Z",
  "rows": [
   {
    "id": "v1",
@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "-185",
+   "text": "-180",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Kayla Harrison",
-   "raw": -185
+   "raw": -180
   },
   {
    "id": "v16",
-   "text": "64.9%",
+   "text": "64.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Kayla Harrison"
    },
    "desc": "Market implied Kayla Harrison",
-   "raw": 0.6491228070175439
+   "raw": 0.6428571428571429
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "+150",
+   "text": "+146",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Amanda Nunes",
-   "raw": 150
+   "raw": 146
   },
   {
    "id": "v23",
-   "text": "40.0%",
+   "text": "40.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Amanda Nunes"
    },
    "desc": "Market implied Amanda Nunes",
-   "raw": 0.4
+   "raw": 0.4065040650406504
   },
   {
    "id": "v24",
@@ -341,7 +341,7 @@
   },
   {
    "id": "v29",
-   "text": "+163",
+   "text": "+164",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -350,11 +350,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 163
+   "raw": 164
   },
   {
    "id": "v30",
-   "text": "38.0%",
+   "text": "37.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -362,7 +362,7 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.38022813688212925
+   "raw": 0.3787878787878788
   },
   {
    "id": "v31",
@@ -530,7 +530,7 @@
   },
   {
    "id": "v44",
-   "text": "+724",
+   "text": "+747",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -539,11 +539,11 @@
     "field": "cost"
    },
    "desc": "Market ko Kayla Harrison",
-   "raw": 724
+   "raw": 747
   },
   {
    "id": "v45",
-   "text": "12.1%",
+   "text": "11.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -551,11 +551,11 @@
     "label": "Kayla Harrison KO/TKO/DQ"
    },
    "desc": "Market ko implied Kayla Harrison",
-   "raw": 0.12135922330097088
+   "raw": 0.1180637544273908
   },
   {
    "id": "v46",
-   "text": "-3.8%",
+   "text": "-3.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -565,7 +565,7 @@
     ]
    },
    "desc": "Edge ko Kayla Harrison",
-   "raw": -0.037952299580201646
+   "raw": -0.034656830706621566
   },
   {
    "id": "v47",
@@ -656,7 +656,7 @@
   },
   {
    "id": "v54",
-   "text": "47.2%",
+   "text": "46.9%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -667,11 +667,11 @@
     ]
    },
    "desc": "Market ITD implied Kayla Harrison",
-   "raw": 0.472236416283427
+   "raw": 0.46894094740984693
   },
   {
    "id": "v55",
-   "text": "-7.5%",
+   "text": "-7.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -681,7 +681,7 @@
     ]
    },
    "desc": "Edge itd Kayla Harrison",
-   "raw": -0.07542258582674582
+   "raw": -0.07212711695316576
   },
   {
    "id": "v56",
@@ -943,7 +943,7 @@
   },
   {
    "id": "v76",
-   "text": "1.0",
+   "text": "1.5",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -954,7 +954,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.010000000000000009
+   "raw": 0.015000000000000013
   },
   {
    "id": "v77",
@@ -975,7 +975,7 @@
   },
   {
    "id": "v78",
-   "text": "38.0%",
+   "text": "38.5%",
    "fmt": "pct1",
    "rule": "lh_p",
    "args": {
@@ -988,7 +988,7 @@
     "at": "current"
    },
    "desc": "LH current p Amanda Nunes",
-   "raw": 0.38
+   "raw": 0.385
   },
   {
    "id": "v79",
