@@ -1,0 +1,19 @@
+== PLANT A: one number changed in moneylines.html (Gane model -158 -> -160)
+  FAIL moneylines.html ml fight 13: row ['-160', '61.3%', '-180', '64.3%', '-188', '65.3%', '-3.0%'] is not a row of fight_13.html
+CARD TABLES: 208 rows / 1646 numbers checked against the fight previews; line pending: none; 1 failures
+exit=0
+== PLANT B: fight 7 dropped from props.html
+  FAIL props.html length: fights missing [7]
+CARD TABLES: 206 rows / 1633 numbers checked against the fight previews; line pending: none; 1 failures
+== PLANT C: fight 10 Line pending in the live file, embeds and card tables rebuilt
+13 embeds in /tmp/r35/plant/embeds/ufc_334; Sean's numbers from data/ufc_334_projections.json
+LINE PENDING in data/ufc_334_projections.json: 1 bout(s), sheet-number checks excluded: Kevin Holland vs Uros Medic
+TOTAL: 2903/2903 numbers verified; 26 mismatches/assertion failures
+card tables: card.html, moneylines.html, props.html in embeds/ufc_334 from 13 fight previews; line pending: Uros Medic vs Kevin Holland
+CARD TABLES: 192 rows / 1516 numbers checked against the fight previews; line pending: [10]; 0 failures
+embeds/ufc_334/moneylines.html:3
+embeds/ufc_334/props.html:3
+embeds/ufc_334/card.html:3
+== PLANT D: a number shown for the pending fight (Medic row pasted back)
+  FAIL moneylines.html ml fight 10: numbers shown for a Line pending fight
+CARD TABLES: 193 rows / 1518 numbers checked against the fight previews; line pending: [10]; 1 failures
