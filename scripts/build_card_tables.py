@@ -259,7 +259,7 @@ def page(kind, C, F, me):
     ev = hdr.select_one(".ff-title").get_text()
     return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
             f'<meta name="color-scheme" content="light only"><title>{ev}</title><style>{css}{EXTRA_CSS}</style></head>'
-            f'<body class="cardpage" data-kind="{kind}">{hdr}<div class="panel">{body}{note}{explain}</div>{foot}{JS}</body></html>\n')
+            f'<body class="cardpage" data-kind="{kind}">{hdr}<div class="panel">{body}</div>{JS}</body></html>\n')   # Sean, Nov 13 13:00: footnote, explainer and footer removed
 
 
 def main():
