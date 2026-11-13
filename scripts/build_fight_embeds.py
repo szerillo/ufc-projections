@@ -50,6 +50,7 @@ PUB, PUB_P = publish_source.load_export(SLUG, REPO)
 # no sheet numbers, never an older export's or the event file's numbers; every market and stats section still builds.
 PENDING = [lp for lp in (PUB or {}).get("line_pending") or [] if lp.get("dog") and lp.get("fav")]
 # Kirk round 35: MP-1 prices (Sean typed a US book's price that differs from the Feed row) carry the export's "manual price" label
+SHOW_MANUAL_LABEL = False   # Sean, Nov 13 13:00: "delete the manual price tag"
 MANUAL = [m for m in (PUB or {}).get("manual_prices") or [] if m.get("dog") and m.get("fav") and m.get("side") in ("dog", "fav")]
 PENDING_TEXT = "The sheet's price for {a} vs {b} did not match this bout, so no numbers are shown until it does."   # = the card page (build_card_page.py)
 PUBF = str(PUB_P.relative_to(REPO)) if PUB_P else None
@@ -411,7 +412,7 @@ def build(names, outname):
             lst_ml = pf["inputs"]["dog_odds" if role(sd) == "dog" else "fav_odds"]
             lst = cell(R(lst_ml, "ml", "pub_ml", "Listed ML " + F, side=sd), R(imp(lst_ml), "pct1", "pub_ml_imp", "Listed implied " + F, side=sd)); l_id = lid()
             mp_ = next((m for m in MANUAL if pair(m["dog"], m["fav"], an, bn) and same(m[m["side"]], F)), None)
-            if mp_:   # Kirk round 35: the manual-price label, under the listed price it applies to
+            if mp_ and SHOW_MANUAL_LABEL:   # Kirk round 35 label; off since Sean, Nov 13 13:00 (the price check still runs)
                 lst = lst[:-5] + f'<div class="mpl" title="{esc(mp_.get("seen", ""))}">{esc(mp_.get("label") or "manual price")}</div></td>'
             if bf:
                 lab_ = bp_name(bf, F); c_ = bp_sel(bf, "moneyline", lab_)["books"]["consensus"]["cost"]
@@ -477,7 +478,7 @@ def build(names, outname):
                      f'<tr class="{side_cls[sd]} mkr"><td class="rl2">Listed</td>{tdm}</tr>'
                      f'<tr class="{side_cls[sd]} med"><td class="rl2">Edge</td>{tde}</tr>')
         proj += stack("Method of victory · projection vs listed", ["Fighter", "", "DEC", "KO", "SUB", "ITD"], body)
-        proj += "@@LIVE@@" + '<div class="legend">Listed = US-regulated market consensus price. Edge = projection % minus the listed price\'s implied % (vig included). ITD listed = the fighter\'s KO and Sub prices combined.</div>' + explain(XPL["proj"])
+        proj += "@@LIVE@@" + explain(XPL["proj"])   # Sean, Nov 13 13:00: the Listed / Edge footnote line removed
     elif lp:   # Kirk round 34: the card page's "Line pending" state; market, line move and stats sections still build
         proj += (f'<div class="stk" data-part="ml"><div class="stk-h"><span class="bullet"></span>Line pending</div>'
                  f'<div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}</div>@@MOVE@@@@ANGLES@@</div>@@LIVE@@')

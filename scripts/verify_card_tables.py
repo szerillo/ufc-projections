@@ -36,7 +36,7 @@ def main():
         S = BeautifulSoup((d / fn).read_text(), "html.parser")
         h = S.select_one(".ff-header").get_text(" ", strip=True)
         if re.sub(r"· (Fight Form|Moneylines|Props)", "", h) != re.sub(r"· Fight Form", "", hdr_me): fails.append(f"{fn}: header differs from the main event preview")
-        if S.select_one(".ff-foot").get_text(" ", strip=True) != me.select_one(".ff-foot").get_text(" ", strip=True): fails.append(f"{fn}: footer stamps differ")
+        if S.select_one(".ff-foot") or S.select_one("details.xpl") or "Every number here" in S.get_text(): fails.append(f"{fn}: footnote, explainer or footer is back (removed Nov 13)")
         for st in S.select("div.stk[data-part]"):
             part = st["data-part"]; seen = set(); cur = None
             for tr in st.select("tbody > tr"):
