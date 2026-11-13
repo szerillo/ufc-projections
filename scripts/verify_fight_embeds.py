@@ -274,6 +274,8 @@ def check(D, htmlfile, G):
         if re.search(r'class="op"', page): bad.append(("page", "open price", "o-prefixed open price in the projection"))
         if re.search(r"BettingPros", text): bad.append(("page", "source name", "BettingPros named on the page"))
         if re.search(r"\bElo\b|\bFig\b|Form Figure", text): bad.append(("page", "rating", "Elo or Form Figure shown"))
+        # Sean, Nov 13: embeds do not link to the Fight Form site for now
+        if re.search(r'href="[^"]*#/(fight|fighter|card|sheet|compare)/', page): bad.append(("link", "site", "links to the Fight Form site are off"))
         # Block 59g: every link into the site must land on a real fight or fighter
         for es_, n_ in re.findall(r'#/fight/([^/"]+)/(\d+)"', page):
             ef = FD / "events" / f"{es_}.json"
@@ -813,7 +815,7 @@ def negative(D, G, slug):
         ("embed: Corrections link dropped from the footer (fight 03)", plant_text("fight_03.html", lambda s_: s_.replace('>Corrections</a>', '></a>', 1))),
         ("embed: a below-floor round drawn as a full dot (fight 08)", plant_text("fight_08.html", lambda s_: s_.replace('<circle class="thin" ', '<circle ', 1))),
         ("embed: T1 'never confirmed' line removed (fight 06)", plant_text("fight_06.html", lambda s_: s_.replace("Never confirmed on new cards", "Confirmed", 1))),
-        ("embed: past-fight link to a bout that is not on the site (fight 07)", plant_text("fight_07.html", lambda s_: re.sub(r'(#/fight/[^/"]+/)\d+"', r'\g<1>999"', s_, count=1))),
+        ("embed: a link to the Fight Form site put back (fight 07)", plant_text("fight_07.html", lambda s_: s_.replace('<div class="cn">', '<div class="cn"><a href="https://szerillo.github.io/ufc-projections/#/fighter/x">site</a>', 1))),
         ("embed: model renamed 'Sean' (fight 04)", plant_text("fight_04.html", lambda s_: s_.replace("Moneyline · model vs market", "Moneyline · Sean vs market", 1))),
         ("card: one embed missing (fight 09)", lambda T, G_: (T / "fight_09.html").unlink()),
         ("export: Gane/Hokit true % moved 0.2 pts after the build", export_shift),
