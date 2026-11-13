@@ -46,6 +46,10 @@ EV_PATH = Path(ARGS.event) if ARGS.event else find_event(SLUG)
 EVL = json.load(open(EV_PATH))
 EVF = str(EV_PATH.resolve().relative_to(REPO)) if EV_PATH.resolve().is_relative_to(REPO) else str(EV_PATH.resolve())
 PUB, PUB_P = publish_source.load_export(SLUG, REPO)
+# Kirk round 34: bouts the projections check held back ("Line pending" on the card page). Their embeds show the same state:
+# no sheet numbers, never an older export's or the event file's numbers; every market and stats section still builds.
+PENDING = [lp for lp in (PUB or {}).get("line_pending") or [] if lp.get("dog") and lp.get("fav")]
+PENDING_TEXT = "The sheet's price for {a} vs {b} did not match this bout, so no numbers are shown until it does."   # = the card page (build_card_page.py)
 PUBF = str(PUB_P.relative_to(REPO)) if PUB_P else None
 BPO = json.load(open(REPO / "data" / f"{SLUG}_odds.json"))
 OVR = json.load(open(REPO / "data" / "card_overrides.json"))[SLUG]
@@ -87,6 +91,19 @@ class Reg:
 def pub_fight(an, bn):
     for pf in (PUB or {}).get("fights", []):
         if pf.get("publish") is not False and pair(pf["dog"], pf["fav"], an, bn): return pf
+# Kirk round 34: an embed built while its bout had numbers must not keep showing them after a later publish holds the bout back.
+# The page reads the live verified file; if this bout is in its line_pending list, the sheet-number block is replaced by the
+# card page's "Line pending" note. Same last-name match as the card page. Any fetch error leaves the page as built.
+PENDING_GUARD = ("<script>(function(){var P=@@PAIR@@,N=@@NOTE@@,el=document.getElementById('sean-proj');"
+                 "if(!el||el.getAttribute('data-state')!=='numbers'||!window.fetch)return;"
+                 "var nm=function(x){x=(x||'').toLowerCase().normalize('NFD').replace(/[^a-z ]/g,'').trim().split(' ');return x[x.length-1];};"
+                 "var k=[nm(P[0]),nm(P[1])].sort().join('|');"
+                 "fetch('../../data/" + SLUG + "_projections.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(d){"
+                 "if(!d||!Array.isArray(d.line_pending))return;"
+                 "if(d.line_pending.some(function(lp){return [nm(lp.dog),nm(lp.fav)].sort().join('|')===k;})){el.innerHTML=N;el.setAttribute('data-state','pending-live');}"
+                 "}).catch(function(){});})();</script>")
+def pending_of(an, bn):
+    return next((lp for lp in PENDING if pair(lp["dog"], lp["fav"], an, bn)), None)
 def bp_fight(an, bn):
     for bf in BPO["fights"]:
         if pair(bf["fighter_a"]["name"], bf["fighter_b"]["name"], an, bn): return bf
@@ -264,12 +281,13 @@ def build(names, outname):
         c_ = (lh.get("listed") or {}).get(sd)
         return True if c_ is None else c_["ok"]
     pf, bf = pub_fight(an, bn), bp_fight(an, bn)
+    lp = pending_of(an, bn) if pf is None else None   # Kirk round 34
     a_is_dog = pf is not None and same(pf["dog"], an)
     role = lambda sd: None if pf is None else (("dog" if a_is_dog else "fav") if sd == "a" else ("fav" if a_is_dog else "dog"))
     # Sean's projection: the Publish to site export; else the event file's model block (older sheet pull / widget)
-    EM = f.get("model") if pf is None else None
+    EM = f.get("model") if (pf is None and lp is None) else None   # a pending bout never falls back to older sheet numbers
     if EM and (EM.get("a") or {}).get("win") is None: EM = None
-    proj_src = "publish" if pf else ({"sheet": "sheet", "publish": "event_publish"}.get(EM.get("src"), "widget") if EM else None)
+    proj_src = "publish" if pf else ("line_pending" if lp else ({"sheet": "sheet", "publish": "event_publish"}.get(EM.get("src"), "widget") if EM else None))
     def pwin(sd):
         if pf is not None: return pf["sheet"]["true_dog" if role(sd) == "dog" else "true_fav"]
         return EM[sd]["win"] / 100 if EM else None
@@ -283,11 +301,11 @@ def build(names, outname):
     # ---------- header (site .ff-header + .fp-title-row, as in ufc_333_fight_form.html); text only ----------
     bp_t = BPO["updated_at"].replace("T", " ")[:16] + " UTC"
     # Block 59j (Kirk): source timestamps on every embed, so a stale price is visible to the reader
-    pub_t = (PUB.get("published_at") or "").replace("T", " ")[:16] + " UTC" if pf else "not published"
+    pub_t = (PUB.get("published_at") or "").replace("T", " ")[:16] + " UTC" if (pf or lp) else "not published"
     # Block 59n (Kirk round 6, 4a): one small muted "Data as of" line; no source, book or method names
     sh_ = lambda t_: t_[5:16].replace("-", "/").replace("T", " ") + " UTC"
     lm_t = sh_(o["close"]["t"]) if o else (sh_(o_open["t"]) + " (opener only)" if o_open else "n/a")
-    stamps = f'Data as of: sheet {esc(sh_(PUB["published_at"]) if pf else "n/a")} · odds {esc(sh_(BPO["updated_at"]))} · line move {esc(lm_t)}'
+    stamps = f'Data as of: sheet {esc(sh_(PUB["published_at"]) if (pf or lp) else "n/a")} · odds {esc(sh_(BPO["updated_at"]))} · line move {esc(lm_t)}'
     status = f'<div class="ff-odds-status"><span class="dot"></span>Odds updated {esc(bp_t)}</div>'
     def meta(F, g, side, key):
         fig = fm[key] if fm else None
@@ -343,7 +361,8 @@ def build(names, outname):
     def stack(title, heads, body):
         return (f'<div class="stk" data-part="{PARTS.get(title.split(" ")[0], "")}"><div class="stk-h"><span class="bullet"></span>{title}</div><table class="stk-t"><thead><tr>'
                 + "".join(f'<th{" class=l" if k == 0 else ""}>{h}</th>' for k, h in enumerate(heads)) + f'</tr></thead><tbody>{body}</tbody></table></div>')
-    side_cls = {"a": "fav" if (pwin("a") or .5) >= .5 else "dog"}; side_cls["b"] = "dog" if side_cls["a"] == "fav" else "fav"
+    side_cls = {"a": "fav" if (pwin("a") or .5) >= .5 else "dog"} if lp is None else {"a": "fav" if same(lp["fav"], an) else "dog"}
+    side_cls["b"] = "dog" if side_cls["a"] == "fav" else "fav"
     proj = ""
     if pf:
         # moneyline: Model | Listed | Market | Edge (edge = model minus listed implied, as the old embed did)
@@ -414,6 +433,10 @@ def build(names, outname):
                      f'<tr class="{side_cls[sd]} mkr"><td class="l rl">Market</td>{tdm}</tr>')
         proj += stack("Method · model vs market", ["Fighter", "DEC", "KO", "SUB", "ITD"], body)
         proj += "@@LIVE@@" + '<div class="legend">Market % is the straight conversion of the price, vig included.</div>' + explain(XPL["proj"])
+    elif lp:   # Kirk round 34: the card page's "Line pending" state; market, line move and stats sections still build
+        proj += (f'<div class="stk" data-part="ml"><div class="stk-h"><span class="bullet"></span>Line pending</div>'
+                 f'<div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}</div>@@MOVE@@@@ANGLES@@</div>@@LIVE@@')
+        gaps.append(f"Fight {n}: Line pending in {PUBF} ({lp.get('reason', '')}); no model numbers shown.")
     else:
         proj += '<div class="note">No model projection published for this bout yet.</div>'
         gaps.append(f"Fight {n}: no row in the Publish to site export; no model numbers shown.")
@@ -484,7 +507,7 @@ def build(names, outname):
                  f'<div class="dim dbn">Most favorites get shorter: {D_(DS2_["shorter"], "pct1", "shorter", "Drift share shorter")} did and {D_(DS2_["longer"], "pct1", "longer", "Drift share longer")} got longer. '
                  f'Past fights are open to close; this one is open to now and can still move. From the site\'s Labs research. Context, not a pick.</div></div>')
     proj = proj.replace("@@MOVE@@", body)   # @@ANGLES@@ is filled once the stats are built
-    top = proj
+    top = f'<div id="sean-proj" data-state="{"numbers" if pf else ("pending" if lp else "none")}">' + proj + '</div>'   # Kirk round 34: target of the pending guard
 
 
     # ---------- props detail: dropped (Block 59c, Sean: our projections and stats are the star) ----------
@@ -1028,9 +1051,11 @@ pn.innerHTML='';keep.forEach(function(k){{if(k)pn.appendChild(k);}});var w=docum
 document.documentElement.classList.add('part');}}}}
 }})();</script>
 </body></html>'''
+    page = page.replace("</body></html>", PENDING_GUARD.replace("@@PAIR@@", json.dumps([an, bn])).replace("@@NOTE@@", json.dumps(
+        f'<div class="stk"><div class="stk-h"><span class="bullet"></span>Line pending</div><div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}</div></div>')) + "</body></html>")
     (OUT / outname).write_text(page)
-    reg = dict(fight=n, of=NB, site_pair=PAIR, pair=[an, bn], file=outname, event=EVF, proj_src=proj_src, proj_file=PUBF if pf else (EVF if EM else None),
-               published_at=PUB.get("published_at") if pf else None, rows=R.rows, gaps=gaps)
+    reg = dict(fight=n, of=NB, site_pair=PAIR, pair=[an, bn], file=outname, event=EVF, proj_src=proj_src, proj_file=PUBF if (pf or lp) else (EVF if EM else None),
+               published_at=PUB.get("published_at") if (pf or lp) else None, rows=R.rows, gaps=gaps, **({"line_pending": lp} if lp else {}))
     (OUT / outname.replace(".html", ".registry.json")).write_text(json.dumps(reg, indent=1, default=str))
     print(outname, len(page), "bytes,", len(R.rows), "numbers,", len(gaps), "gaps")
 
@@ -1049,7 +1074,7 @@ def card():
         assert sn == n, f"{EVF}: n={sn} for {a} vs {b}, bout order says {n}; run scripts/card_overrides.py on the event file"
         assert bpi == n, (s, bpi, n)
     json.dump(dict(slug=SLUG, event=EVF, rule="fight number = bout order on the card; 1 = opener, %d = main event" % NB, cancelled=OVR.get("cancel", []),
-                   proj_file=PUBF, published_at=(PUB or {}).get("published_at"), card=out), open(OUT / "card.json", "w"), indent=1)
+                   proj_file=PUBF, published_at=(PUB or {}).get("published_at"), card=out, **({"line_pending": PENDING} if PENDING else {})), open(OUT / "card.json", "w"), indent=1)
     return out
     for r in out: print(f'  {r["fight"]:>2}  {r["segment"]:<13} {r["bout"]:<36} BP#{r["bp_sched_rank"]:<3} site n={r["site_n"]}')
 

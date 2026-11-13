@@ -431,8 +431,21 @@ def check(D, htmlfile, G):
         if not V6 and len(sean_ids) != 22: bad.append(("proj", "Sean cells", f"{len(sean_ids)} Sean numbers shown, want 22 (Win/DEC/KO/SUB/ITD x 2 fighters x price+% and GTD price+%)"))
         if not sean_rules <= {"pub_win", "pub_meth", "pub"}: bad.append(("proj", "Sean rules", f"non-export rules in Sean cells: {sean_rules}"))
     else:
+        lp_ = next((x for x in (G["PUB"].get("line_pending") or []) if bout(x.get("dog", ""), x.get("fav", ""), A, B)), None)
         if reg.get("proj_src") == "publish" or src_attr == "publish": bad.append(("proj", "source", "embed claims the export but the export has no row for this bout"))
-        if not sean_rules <= {"evp_sum"}: bad.append(("proj", "Sean rules", f"fallback cells not from the event file: {sean_rules}"))
+        if lp_:   # Kirk round 34: Line pending in the live file -> the card page's state, no sheet numbers of any vintage
+            if reg.get("proj_src") != "line_pending": bad.append(("pending", "source", f"bout is Line pending in {G['PUBF']} but the embed says {reg.get('proj_src')}"))
+            if reg.get("proj_file") != G["PUBF"]: bad.append(("pending", "file", f"{reg.get('proj_file')} != {G['PUBF']}"))
+            sheet_rows = [r["id"] for r in reg["rows"] if r["rule"] in ("pub_win", "pub_meth", "pub", "pub_ml", "pub_ml_imp", "evp_sum")]
+            if sean_ids or sheet_rows: bad.append(("pending", "numbers", f"Line pending bout shows sheet numbers: {sean_ids or sheet_rows}"))
+            if 'data-state="pending"' not in page or "did not match this bout, so no numbers are shown until it does." not in page:
+                bad.append(("pending", "state", "embed does not show the card page's Line pending note"))
+        else:
+            if reg.get("proj_src") == "line_pending" or 'data-state="pending"' in page: bad.append(("pending", "source", "embed shows Line pending but the live file does not hold this bout back"))
+            if not sean_rules <= {"evp_sum"}: bad.append(("proj", "Sean rules", f"fallback cells not from the event file: {sean_rules}"))
+    # Kirk round 34: every embed carries the pending guard (a later publish that holds this bout back hides the built numbers)
+    if 'id="sean-proj"' not in page or "getElementById('sean-proj')" not in page or "line_pending" not in page.split("getElementById('sean-proj')", 1)[-1]:
+        bad.append(("pending", "guard", "pending guard script or #sean-proj block missing"))
     # (f) market method cells only when BettingPros has all six fighter/method prices
     if bpf:
         sel = {(x["selection"], j) for x in bpf["markets"].get("method_of_victory", []) for j, nm_ in enumerate((A, B))
@@ -562,6 +575,9 @@ def run(D, G, slug, quiet=False):
     for f in sorted(p.name for p in D.glob("fight_*.html")):
         ok, nb = check(D, f, G); tot_ok += ok; tot_bad += nb
         n_rows += len(json.load(open(D / f.replace(".html", ".registry.json")))["rows"])
+    lp_all = G["PUB"].get("line_pending") or []
+    if lp_all or not quiet:
+        print(f"LINE PENDING in {G['PUBF']}: {len(lp_all)} bout(s), sheet-number checks excluded" + (": " + "; ".join(f"{x['dog']} vs {x['fav']}" for x in lp_all) if lp_all else ""))
     tot_bad += card_check(D, G, slug)
     tot_bad += lh_recheck(G, slug, quiet)
     tot_bad += spot_pin(G)
