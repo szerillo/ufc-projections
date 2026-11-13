@@ -1,0 +1,37 @@
+== 0s  1 odds feed
+Wrote data/ufc_334_odds.json (167,311 bytes)
+== 22s  2 sheet export
+  data/ufc_334_projections.json from origin/main (2026-11-12T22:47:18.373Z)
+  data/pending/ufc_334_projections.json from origin/main (2026-11-12T22:47:18.373Z)
+== 23s  2b sheet export age
+  SHEET EXPORT IS 5.4 HOURS OLD (published 2026-11-12T22:47:18.373Z)
+== 23s  3 line history
+archive newest snapshot 2026-11-13T03:54:30Z
+  archive age 0.3 h
+OK: every bout priced within 4 h
+== 29s  3b embed line history + Listed check
+kalshi: 26 markets read at 2026-11-13T04:13:36Z
+wrote /tmp/r34/main/data/embeds/line_history_ufc_334.json
+  Kalshi fallback used for: none
+== 85s  3a holds
+holds: 0 problems
+== 85s  3c rounds
+ROUNDS PRE-FIGHT: ufc_334, card starts in 42 h, 0 failures
+== 85s  4 stats file
+form/data/embed_metrics/ufc_334.json 26 fighters; 25 with UFC rows
+== 86s  5 embeds
+13 embeds in /tmp/r34/main/embeds/ufc_334; Sean's numbers from data/ufc_334_projections.json
+== 87s  6 checks
+TOTAL: 2965/2965 numbers verified; 0 mismatches/assertion failures
+SIDE CHECK: not checkable (line within 4 pts of 50%): Evan Elder
+METRICS FILE: verify_embed_metrics: 2984 values recomputed from the CSVs, 0 mismatches
+== 94s  7 diff vs HEAD
+    Edge itd Ciryl Gane: -10.5% -> -11.7% [edge]
+    ... 7 more
+TOTAL {'changed': 106, 'added': 1, 'removed': 3, 'same': 2856}
+changed by source rule {'bp': 32, 'bp_imp': 32, 'edge': 21, 'bp_imp_sum': 7, 'lh_drift_abs': 9, 'lh_p': 5}
+== 94s  done
+
+real	1m33.681s
+user	0m16.355s
+sys	0m1.097s

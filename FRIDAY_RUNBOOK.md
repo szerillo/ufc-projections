@@ -11,7 +11,7 @@ go-live-334 = embeds-v5 + publish-to-site, merged into main on Kirk's go. Friday
 5. Limits: the checks refuse by themselves if your export is over 2 hours old; if Claude tells you so, redo steps 1 to 4. The embed refresh blocks 24 hours after your last publish.
 
 ## Claude, then Kirk (after each "published")
-6. In a main checkout: `bash scripts/friday_refresh.sh "UFC 334: Gane vs. Hokit" ufc_334 form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json /tmp/st`, then `bash scripts/saturday_check.sh` must end in SATURDAY CHECK PASS (this is the rehearsal once the merge is on main: checkout on origin/main, only the refresh's own files changed, scan clean, verifier 0 mismatches).
+6. In a main checkout: `bash scripts/friday_refresh.sh "UFC 334: Gane vs. Hokit" ufc_334 form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json /tmp/st`, then `bash scripts/saturday_check.sh` must end in SATURDAY CHECK PASS (this is the rehearsal once the merge is on main: checkout on origin/main, only the refresh's own files changed, scan clean, verifier 0 mismatches). A fight that is Line pending in the live file builds as "Line pending" with no numbers, and the verifier names it on its LINE PENDING line; that is a pass, not a failure. The other fights rebuild normally.
 7. Kirk's go: push the refreshed embeds to main.
 8. `python3 scripts/post_merge_check.py --wait 600` must end in POST-MERGE CHECK PASS. **Rollback trigger:** any other ending, or a wrong number on the live page: `bash scripts/rollback_main.sh`, push on Kirk's go.
 

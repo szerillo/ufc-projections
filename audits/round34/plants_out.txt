@@ -1,0 +1,39 @@
+== PLANT 1 pending (fight 10): line_pending = Medic
+fight_10.html 102202 bytes, 212 numbers, 1 gaps
+13 embeds in /tmp/r34/new/embeds/ufc_334; Sean's numbers from data/ufc_334_projections.json
+LINE PENDING in data/ufc_334_projections.json: 1 bout(s), sheet-number checks excluded: Kevin Holland vs Uros Medic
+LOCKS: 32 files, 0 changed
+TOTAL: 2903/2903 numbers verified; 0 mismatches/assertion failures
+fight_13: 0 changed, 0 added, 0 removed
+TOTAL {'changed': 0, 'added': 0, 'removed': 64, 'same': 2901}
+changed by source rule {}
+   fight 10 embed: state=data-state="pending" note=2 sheet-cells=0 numbers=212
+== PLANT 3 pending (fights 10, 1, 3): line_pending = Medic Sanches Mesquita
+fight_10.html 102202 bytes, 212 numbers, 1 gaps
+fight_03.html 79309 bytes, 148 numbers, 1 gaps
+fight_01.html 65047 bytes, 92 numbers, 1 gaps
+13 embeds in /tmp/r34/new/embeds/ufc_334; Sean's numbers from data/ufc_334_projections.json
+LINE PENDING in data/ufc_334_projections.json: 3 bout(s), sheet-number checks excluded: Kevin Holland vs Uros Medic; Macy Chiasson vs Bia Mesquita; Evan Elder vs Samuel Sanches
+LOCKS: 32 files, 0 changed
+TOTAL: 2775/2775 numbers verified; 0 mismatches/assertion failures
+fight_13: 0 changed, 0 added, 0 removed
+TOTAL {'changed': 0, 'added': 0, 'removed': 192, 'same': 2773}
+changed by source rule {}
+   fight 10 embed: state=data-state="pending" note=2 sheet-cells=0 numbers=212
+   fight 3 embed: state=data-state="pending" note=2 sheet-cells=0 numbers=148
+   fight 1 embed: state=data-state="pending" note=2 sheet-cells=0 numbers=92
+== PLANT main event pending (fight 13): line_pending = Gane
+fight_13.html 84236 bytes, 171 numbers, 1 gaps
+13 embeds in /tmp/r34/new/embeds/ufc_334; Sean's numbers from data/ufc_334_projections.json
+LINE PENDING in data/ufc_334_projections.json: 1 bout(s), sheet-number checks excluded: Josh Hokit vs Ciryl Gane
+LOCKS: 32 files, 0 changed
+TOTAL: 2903/2903 numbers verified; 0 mismatches/assertion failures
+fight_13: 0 changed, 0 added, 64 removed
+TOTAL {'changed': 0, 'added': 0, 'removed': 64, 'same': 2901}
+changed by source rule {}
+   fight 13 embed: state=data-state="pending" note=2 sheet-cells=0 numbers=171
+== CONTROL: 0 pending, rebuilt with the new code
+13 embeds in /tmp/r34/new/embeds/ufc_334; Sean's numbers from data/ufc_334_projections.json
+LINE PENDING in data/ufc_334_projections.json: 0 bout(s), sheet-number checks excluded
+LOCKS: 32 files, 0 changed
+TOTAL: 2967/2967 numbers verified; 0 mismatches/assertion failures
