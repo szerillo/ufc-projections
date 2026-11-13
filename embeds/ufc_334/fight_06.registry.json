@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "+180",
+   "text": "+175",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Jim Miller",
-   "raw": 180
+   "raw": 175
   },
   {
    "id": "v16",
-   "text": "35.7%",
+   "text": "36.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Jim Miller"
    },
    "desc": "Market implied Jim Miller",
-   "raw": 0.35714285714285715
+   "raw": 0.36363636363636365
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "-220",
+   "text": "-215",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Terrance McKinney",
-   "raw": -220
+   "raw": -215
   },
   {
    "id": "v23",
-   "text": "68.8%",
+   "text": "68.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Terrance Mckinney"
    },
    "desc": "Market implied Terrance McKinney",
-   "raw": 0.6875
+   "raw": 0.6825396825396826
   },
   {
    "id": "v24",
@@ -571,7 +571,7 @@
   },
   {
    "id": "v47",
-   "text": "+325",
+   "text": "+310",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -580,11 +580,11 @@
     "field": "cost"
    },
    "desc": "Market sub Jim Miller",
-   "raw": 325
+   "raw": 310
   },
   {
    "id": "v48",
-   "text": "23.5%",
+   "text": "24.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -592,11 +592,11 @@
     "label": "Jim Miller Submission"
    },
    "desc": "Market sub implied Jim Miller",
-   "raw": 0.23529411764705882
+   "raw": 0.24390243902439024
   },
   {
    "id": "v49",
-   "text": "-2.6%",
+   "text": "-3.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -606,7 +606,7 @@
     ]
    },
    "desc": "Edge sub Jim Miller",
-   "raw": -0.02554016889329591
+   "raw": -0.03414849027062733
   },
   {
    "id": "v50",
@@ -634,7 +634,7 @@
   },
   {
    "id": "v52",
-   "text": "+183",
+   "text": "+176",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -645,11 +645,11 @@
     ]
    },
    "desc": "Market ITD price Jim Miller",
-   "raw": 0.35335787207444963
+   "raw": 0.36196619345178105
   },
   {
    "id": "v53",
-   "text": "35.3%",
+   "text": "36.2%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -660,11 +660,11 @@
     ]
    },
    "desc": "Market ITD implied Jim Miller",
-   "raw": 0.35335787207444963
+   "raw": 0.36196619345178105
   },
   {
    "id": "v54",
-   "text": "-6.6%",
+   "text": "-7.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -674,7 +674,7 @@
     ]
    },
    "desc": "Edge itd Jim Miller",
-   "raw": -0.06648296047465424
+   "raw": -0.07509128185198566
   },
   {
    "id": "v55",
@@ -790,7 +790,7 @@
   },
   {
    "id": "v64",
-   "text": "+180",
+   "text": "+175",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -803,11 +803,11 @@
     "at": "current"
    },
    "desc": "LH current ML Jim Miller",
-   "raw": 180
+   "raw": 175
   },
   {
    "id": "v65",
-   "text": "0.1",
+   "text": "0.6",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -818,7 +818,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0010000000000000009
+   "raw": 0.00599999999999995
   },
   {
    "id": "v66",

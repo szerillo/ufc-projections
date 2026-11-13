@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "+290",
+   "text": "+300",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Jared Gordon",
-   "raw": 290
+   "raw": 300
   },
   {
    "id": "v16",
-   "text": "25.6%",
+   "text": "25.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Jared Gordon"
    },
    "desc": "Market implied Jared Gordon",
-   "raw": 0.2564102564102564
+   "raw": 0.25
   },
   {
    "id": "v17",
@@ -935,7 +935,7 @@
   },
   {
    "id": "v75",
-   "text": "+300",
+   "text": "-370",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -944,14 +944,14 @@
      "Jared Gordon",
      "Melquizael Costa"
     ],
-    "side": "a"
+    "side": "b"
    },
-   "desc": "LH open ML Jared Gordon",
-   "raw": 300
+   "desc": "LH open ML Melquizael Costa",
+   "raw": -370
   },
   {
    "id": "v76",
-   "text": "+295",
+   "text": "-392",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -960,15 +960,15 @@
      "Jared Gordon",
      "Melquizael Costa"
     ],
-    "side": "a",
+    "side": "b",
     "at": "current"
    },
-   "desc": "LH current ML Jared Gordon",
-   "raw": 295
+   "desc": "LH current ML Melquizael Costa",
+   "raw": -392
   },
   {
    "id": "v77",
-   "text": "0.1",
+   "text": "0.4",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -979,7 +979,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0010000000000000009
+   "raw": 0.0040000000000000036
   },
   {
    "id": "v78",

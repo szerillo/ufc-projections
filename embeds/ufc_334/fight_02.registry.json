@@ -284,7 +284,7 @@
   },
   {
    "id": "v24",
-   "text": "-188",
+   "text": "-186",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -293,11 +293,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": -188
+   "raw": -186
   },
   {
    "id": "v25",
-   "text": "65.3%",
+   "text": "65.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -305,11 +305,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.6527777777777778
+   "raw": 0.6503496503496503
   },
   {
    "id": "v26",
-   "text": "-2.2%",
+   "text": "-2.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -319,7 +319,7 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.022496088412036874
+   "raw": -0.020067960983909394
   },
   {
    "id": "v27",
@@ -347,7 +347,7 @@
   },
   {
    "id": "v29",
-   "text": "+144",
+   "text": "+140",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -356,11 +356,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": 144
+   "raw": 140
   },
   {
    "id": "v30",
-   "text": "41.0%",
+   "text": "41.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -368,11 +368,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.4098360655737705
+   "raw": 0.4166666666666667
   },
   {
    "id": "v31",
-   "text": "-4.0%",
+   "text": "-4.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -382,7 +382,7 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.04011775493951142
+   "raw": -0.0469483560324076
   },
   {
    "id": "v32",
@@ -667,7 +667,7 @@
   },
   {
    "id": "v54",
-   "text": "-110",
+   "text": "-113",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -676,11 +676,11 @@
     "field": "cost"
    },
    "desc": "Market dec Juan Diaz",
-   "raw": -110
+   "raw": -113
   },
   {
    "id": "v55",
-   "text": "52.4%",
+   "text": "53.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -688,11 +688,11 @@
     "label": "Juan Diaz Points"
    },
    "desc": "Market dec implied Juan Diaz",
-   "raw": 0.5238095238095238
+   "raw": 0.5305164319248826
   },
   {
    "id": "v56",
-   "text": "-0.4%",
+   "text": "-1.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -702,7 +702,7 @@
     ]
    },
    "desc": "Edge dec Juan Diaz",
-   "raw": -0.0043197927993792185
+   "raw": -0.011026700914738008
   },
   {
    "id": "v57",
@@ -793,7 +793,7 @@
   },
   {
    "id": "v64",
-   "text": "+524",
+   "text": "+525",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -802,7 +802,7 @@
     "field": "cost"
    },
    "desc": "Market sub Juan Diaz",
-   "raw": 524
+   "raw": 525
   },
   {
    "id": "v65",
@@ -814,7 +814,7 @@
     "label": "Juan Diaz Submission"
    },
    "desc": "Market sub implied Juan Diaz",
-   "raw": 0.16025641025641027
+   "raw": 0.16
   },
   {
    "id": "v66",
@@ -828,7 +828,7 @@
     ]
    },
    "desc": "Edge sub Juan Diaz",
-   "raw": -0.07203024022303246
+   "raw": -0.0717738299666222
   },
   {
    "id": "v67",
@@ -867,11 +867,11 @@
     ]
    },
    "desc": "Market ITD price Juan Diaz",
-   "raw": 0.38052072743702703
+   "raw": 0.3802643171806167
   },
   {
    "id": "v70",
-   "text": "38.1%",
+   "text": "38.0%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -882,7 +882,7 @@
     ]
    },
    "desc": "Market ITD implied Juan Diaz",
-   "raw": 0.38052072743702703
+   "raw": 0.3802643171806167
   },
   {
    "id": "v71",
@@ -896,7 +896,7 @@
     ]
    },
    "desc": "Edge itd Juan Diaz",
-   "raw": -0.1360930635676181
+   "raw": -0.13583665331120778
   },
   {
    "id": "v72",

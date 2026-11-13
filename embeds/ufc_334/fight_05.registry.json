@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "-180",
+   "text": "-185",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Donte Johnson",
-   "raw": -180
+   "raw": -185
   },
   {
    "id": "v16",
-   "text": "64.3%",
+   "text": "64.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Donte Johnson"
    },
    "desc": "Market implied Donte Johnson",
-   "raw": 0.6428571428571429
+   "raw": 0.6491228070175439
   },
   {
    "id": "v17",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "+150",
+   "text": "+152",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Cesar Almeida",
-   "raw": 150
+   "raw": 152
   },
   {
    "id": "v23",
-   "text": "40.0%",
+   "text": "39.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Cesar Almeida"
    },
    "desc": "Market implied Cesar Almeida",
-   "raw": 0.4
+   "raw": 0.3968253968253968
   },
   {
    "id": "v24",
@@ -445,7 +445,7 @@
   },
   {
    "id": "v37",
-   "text": "+370",
+   "text": "+360",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -454,11 +454,11 @@
     "field": "cost"
    },
    "desc": "Market dec Donte Johnson",
-   "raw": 370
+   "raw": 360
   },
   {
    "id": "v38",
-   "text": "21.3%",
+   "text": "21.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -466,11 +466,11 @@
     "label": "Donte Johnson Points"
    },
    "desc": "Market dec implied Donte Johnson",
-   "raw": 0.2127659574468085
+   "raw": 0.21739130434782608
   },
   {
    "id": "v39",
-   "text": "+0.1%",
+   "text": "-0.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -480,7 +480,7 @@
     ]
    },
    "desc": "Edge dec Donte Johnson",
-   "raw": 0.0005895958735488982
+   "raw": -0.00403575102746867
   },
   {
    "id": "v40",
@@ -508,7 +508,7 @@
   },
   {
    "id": "v42",
-   "text": "+147",
+   "text": "+140",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -517,11 +517,11 @@
     "field": "cost"
    },
    "desc": "Market ko Donte Johnson",
-   "raw": 147
+   "raw": 140
   },
   {
    "id": "v43",
-   "text": "40.5%",
+   "text": "41.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -529,11 +529,11 @@
     "label": "Donte Johnson KO/TKO/DQ"
    },
    "desc": "Market ko implied Donte Johnson",
-   "raw": 0.4048582995951417
+   "raw": 0.4166666666666667
   },
   {
    "id": "v44",
-   "text": "-5.0%",
+   "text": "-6.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -543,7 +543,7 @@
     ]
    },
    "desc": "Edge ko Donte Johnson",
-   "raw": -0.05001654085114993
+   "raw": -0.06182490792267492
   },
   {
    "id": "v45",
@@ -634,7 +634,7 @@
   },
   {
    "id": "v52",
-   "text": "+103",
+   "text": "-102",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -645,11 +645,11 @@
     ]
    },
    "desc": "Market ITD price Donte Johnson",
-   "raw": 0.4919663135324239
+   "raw": 0.5037746806039489
   },
   {
    "id": "v53",
-   "text": "49.2%",
+   "text": "50.4%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -660,11 +660,11 @@
     ]
    },
    "desc": "Market ITD implied Donte Johnson",
-   "raw": 0.4919663135324239
+   "raw": 0.5037746806039489
   },
   {
    "id": "v54",
-   "text": "-7.9%",
+   "text": "-9.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -674,7 +674,7 @@
     ]
    },
    "desc": "Edge itd Donte Johnson",
-   "raw": -0.0786091433104818
+   "raw": -0.0904175103820068
   },
   {
    "id": "v55",
@@ -702,7 +702,7 @@
   },
   {
    "id": "v57",
-   "text": "+750",
+   "text": "+800",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -711,11 +711,11 @@
     "field": "cost"
    },
    "desc": "Market dec Cesar Almeida",
-   "raw": 750
+   "raw": 800
   },
   {
    "id": "v58",
-   "text": "11.8%",
+   "text": "11.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -723,11 +723,11 @@
     "label": "Cesar Almeida Points"
    },
    "desc": "Market dec implied Cesar Almeida",
-   "raw": 0.11764705882352941
+   "raw": 0.1111111111111111
   },
   {
    "id": "v59",
-   "text": "-0.1%",
+   "text": "+0.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -737,7 +737,7 @@
     ]
    },
    "desc": "Edge dec Cesar Almeida",
-   "raw": -0.0006400396398643093
+   "raw": 0.005895908072553996
   },
   {
    "id": "v60",
@@ -765,7 +765,7 @@
   },
   {
    "id": "v62",
-   "text": "+232",
+   "text": "+250",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -774,11 +774,11 @@
     "field": "cost"
    },
    "desc": "Market ko Cesar Almeida",
-   "raw": 232
+   "raw": 250
   },
   {
    "id": "v63",
-   "text": "30.1%",
+   "text": "28.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -786,11 +786,11 @@
     "label": "Cesar Almeida KO/TKO/DQ"
    },
    "desc": "Market ko implied Cesar Almeida",
-   "raw": 0.30120481927710846
+   "raw": 0.2857142857142857
   },
   {
    "id": "v64",
-   "text": "-7.9%",
+   "text": "-6.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -800,7 +800,7 @@
     ]
    },
    "desc": "Edge ko Cesar Almeida",
-   "raw": -0.07850117251145461
+   "raw": -0.06301063894863185
   },
   {
    "id": "v65",
@@ -828,7 +828,7 @@
   },
   {
    "id": "v67",
-   "text": "+1895",
+   "text": "+1949",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -837,11 +837,11 @@
     "field": "cost"
    },
    "desc": "Market sub Cesar Almeida",
-   "raw": 1895
+   "raw": 1949
   },
   {
    "id": "v68",
-   "text": "5.0%",
+   "text": "4.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -849,11 +849,11 @@
     "label": "Cesar Almeida Submission"
    },
    "desc": "Market sub implied Cesar Almeida",
-   "raw": 0.05012531328320802
+   "raw": 0.04880429477794046
   },
   {
    "id": "v69",
-   "text": "-1.7%",
+   "text": "-1.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -863,7 +863,7 @@
     ]
    },
    "desc": "Edge sub Cesar Almeida",
-   "raw": -0.01654870277482652
+   "raw": -0.015227684269558964
   },
   {
    "id": "v70",
@@ -891,7 +891,7 @@
   },
   {
    "id": "v72",
-   "text": "+185",
+   "text": "+199",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -902,11 +902,11 @@
     ]
    },
    "desc": "Market ITD price Cesar Almeida",
-   "raw": 0.3513301325603165
+   "raw": 0.33451858049222616
   },
   {
    "id": "v73",
-   "text": "35.1%",
+   "text": "33.5%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -917,11 +917,11 @@
     ]
    },
    "desc": "Market ITD implied Cesar Almeida",
-   "raw": 0.3513301325603165
+   "raw": 0.33451858049222616
   },
   {
    "id": "v74",
-   "text": "-9.5%",
+   "text": "-7.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -931,7 +931,7 @@
     ]
    },
    "desc": "Edge itd Cesar Almeida",
-   "raw": -0.09504987528628112
+   "raw": -0.0782383232181908
   },
   {
    "id": "v75",
@@ -951,7 +951,7 @@
   },
   {
    "id": "v76",
-   "text": "-177",
+   "text": "-185",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -964,11 +964,11 @@
     "at": "current"
    },
    "desc": "LH current ML Donte Johnson",
-   "raw": -177
+   "raw": -185
   },
   {
    "id": "v77",
-   "text": "0.4",
+   "text": "1.7",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -979,7 +979,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0040000000000000036
+   "raw": 0.017000000000000015
   },
   {
    "id": "v78",
