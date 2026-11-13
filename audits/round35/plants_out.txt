@@ -1,0 +1,45 @@
+== PLANT 1 pending (fight 10): line_pending = Medic
+fight_10.html 77353 bytes, 197 numbers, 1 gaps
+13 embeds in /tmp/r36/plant/embeds/ufc_334; Sean's numbers from data/ufc_334_projections.json
+LINE PENDING in data/ufc_334_projections.json: 1 bout(s), sheet-number checks excluded: Kevin Holland vs Uros Medic
+LOCKS: 32 files, 0 changed
+TOTAL: 2739/2739 numbers verified; 0 mismatches/assertion failures
+card tables: card.html, moneylines.html, props.html in embeds/ufc_334 from 13 fight previews; line pending: Uros Medic vs Kevin Holland
+CARD TABLES: 216 rows / 1024 numbers checked against the fight previews; line pending: [10]; 0 failures
+fight_13: 0 changed, 0 added, 0 removed
+TOTAL {'changed': 0, 'added': 0, 'removed': 64, 'same': 2737}
+changed by source rule {}
+   fight 10 embed: state=data-state="pending" note=2 sheet-cells=0 numbers=197
+== PLANT 3 pending (fights 10, 1, 3): line_pending = Medic Sanches Mesquita
+fight_10.html 77353 bytes, 197 numbers, 1 gaps
+fight_03.html 66205 bytes, 133 numbers, 1 gaps
+fight_01.html 58866 bytes, 84 numbers, 1 gaps
+13 embeds in /tmp/r36/plant/embeds/ufc_334; Sean's numbers from data/ufc_334_projections.json
+LINE PENDING in data/ufc_334_projections.json: 3 bout(s), sheet-number checks excluded: Kevin Holland vs Uros Medic; Macy Chiasson vs Bia Mesquita; Evan Elder vs Samuel Sanches
+LOCKS: 32 files, 0 changed
+TOTAL: 2611/2611 numbers verified; 0 mismatches/assertion failures
+card tables: card.html, moneylines.html, props.html in embeds/ufc_334 from 13 fight previews; line pending: Uros Medic vs Kevin Holland, Macy Chiasson vs Bia Mesquita, Evan Elder vs Samuel Sanches
+CARD TABLES: 180 rows / 848 numbers checked against the fight previews; line pending: [1, 3, 10]; 0 failures
+fight_13: 0 changed, 0 added, 0 removed
+TOTAL {'changed': 0, 'added': 0, 'removed': 192, 'same': 2609}
+changed by source rule {}
+   fight 10 embed: state=data-state="pending" note=2 sheet-cells=0 numbers=197
+   fight 3 embed: state=data-state="pending" note=2 sheet-cells=0 numbers=133
+   fight 1 embed: state=data-state="pending" note=2 sheet-cells=0 numbers=84
+== PLANT main event pending (fight 13): line_pending = Gane
+fight_13.html 70521 bytes, 156 numbers, 1 gaps
+13 embeds in /tmp/r36/plant/embeds/ufc_334; Sean's numbers from data/ufc_334_projections.json
+LINE PENDING in data/ufc_334_projections.json: 1 bout(s), sheet-number checks excluded: Josh Hokit vs Ciryl Gane
+LOCKS: 32 files, 0 changed
+TOTAL: 2739/2739 numbers verified; 0 mismatches/assertion failures
+card tables: card.html, moneylines.html, props.html in embeds/ufc_334 from 13 fight previews; line pending: Ciryl Gane vs Josh Hokit
+CARD TABLES: 216 rows / 1024 numbers checked against the fight previews; line pending: [13]; 0 failures
+fight_13: 0 changed, 0 added, 64 removed
+TOTAL {'changed': 0, 'added': 0, 'removed': 64, 'same': 2737}
+changed by source rule {}
+   fight 13 embed: state=data-state="pending" note=2 sheet-cells=0 numbers=156
+== CONTROL: 0 pending, rebuilt with the new code
+13 embeds in /tmp/r36/plant/embeds/ufc_334; Sean's numbers from data/ufc_334_projections.json
+LINE PENDING in data/ufc_334_projections.json: 0 bout(s), sheet-number checks excluded
+LOCKS: 32 files, 0 changed
+TOTAL: 2803/2803 numbers verified; 0 mismatches/assertion failures

@@ -59,3 +59,12 @@ named.
 14. **Merge-guard record.** After the merge, record the new main SHA in `audits/MAIN_AT_CHECK.txt` on purpose (round 18 served-set check on the real merge result).
 15. **publish-to-site branch.** It carries PUBLISH.md (v2.9 install, T6-T9).
     Next: merge it into main on Kirk's go per PUBLISH.md T7 when the projections path goes live, or fold PUBLISH.md into main after 334.
+16. **Website on the approved embed design** (Kirk round 35, Priority 2: skipped as not cheap).
+    - The site's This week and card pages already show the full widget (card.html) inline, from the card-pages work on Nov 13.
+    - Not done: the site's own card table and fight pages (form/app.js, built from the event file) still use the old site components. Porting means rewriting those views in app.js against the event file's locked `model`/`sheet` blocks, which are older than the live export (Nov 12 01:18Z vs 22:47Z), so the numbers would not match the embeds without a data change too.
+    - Also open: Sean said on Nov 13 to keep the Fight Form site separate from the embeds for now. Confirm with him before linking the two further.
+    - Next: after 334, decide with Sean whether site fight pages embed the fight preview (iframe, same files) or get a native port; either way the event file's Sean numbers must come from the live export first.
+17. **"Listed" means two things on the embeds** (round 35).
+    - Moneyline table: Listed = the sheet's price (Sean's), Market = US consensus.
+    - Props tables: Listed = US consensus market price (Sean's Nov 13 call: Projection / Listed / Edge).
+    - Next: pick one word per meaning, e.g. "Market" on the props too, or "Sheet" on the moneyline. Needs Sean's call.
