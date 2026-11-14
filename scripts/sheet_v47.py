@@ -164,19 +164,25 @@ def _ko_share(dec, fp, bp, ko, su, b41):
     return p * (a * mk + (1 - a) * own)
 
 
-def method_gtd(L, mi):
-    """Returns dict with dog/fav dec, ko, sub and gtd, as the tab computes them."""
+def method_gtd(L, mi, pin=None):
+    """Returns dict with dog/fav dec, ko, sub and gtd, as the tab computes them.
+    pin (MM-1, Kirk round 36): {"dog": {"dec": v[, "ko": v]}, "fav": {...}} takes those cells as Sean's typed values;
+    every other cell is the tab formula recomputed from them."""
+    pin = pin or {}
     ap, aq, ad, ae, ah, ai = (mi.get(k) for k in ("ap", "aq", "ad", "ae", "ah", "ai"))
     al, am, an, S = mi.get("al"), _n(mi.get("am")), _n(mi.get("an")), mi.get("s")
     X, Y = _n(mi.get("cx")), _n(mi.get("cy"))
     V = _dec_share(L, ap, aq, ad, ah, mi, X, _avg(ad, ap, al, S))
     Z = _dec_share(L, ap, aq, ad, ah, mi, Y, _avg(ah, aq, al, S))
+    V = pin.get("dog", {}).get("dec", V); Z = pin.get("fav", {}).get("dec", Z)
     af = 1 - _n(ae) - _n(ad)                      # AF = SUM(1-AE-AD)
     aj = 1 - _n(ai) - _n(ah)
     bpw = 0.5 if am + an == 0 else am / (am + an)
     fpw = bpw if _n(ae) + af == 0 else _n(ae) / (_n(ae) + af)
-    W = _ko_share(V, fpw, bpw, _n(mi.get("ko_dog")), _n(mi.get("sub_dog")), mi.get("b41"))
+    W = pin.get("dog", {}).get("ko", None)
+    W = _ko_share(V, fpw, bpw, _n(mi.get("ko_dog")), _n(mi.get("sub_dog")), mi.get("b41")) if W is None else W
     fpa = _n(ai) / (_n(ai) + aj) if (_n(ai) + aj) != 0 else 0.0   # IFERROR(..., 0)
     bpa = am / (am + an) if (am + an) != 0 else 0.0
-    AA = _ko_share(Z, fpa, bpa, _n(mi.get("ko_fav")), _n(mi.get("sub_fav")), mi.get("b41"))
+    AA = pin.get("fav", {}).get("ko", None)
+    AA = _ko_share(Z, fpa, bpa, _n(mi.get("ko_fav")), _n(mi.get("sub_fav")), mi.get("b41")) if AA is None else AA
     return {"dog": {"dec": V, "ko": W, "sub": 1 - V - W}, "fav": {"dec": Z, "ko": AA, "sub": 1 - Z - AA}, "gtd": L * V + (1 - L) * Z}

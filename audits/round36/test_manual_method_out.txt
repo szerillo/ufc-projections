@@ -1,0 +1,8 @@
+PASS M1 Nov 14 export (Sean's typed DEC on 9 fights, DEC + KO on Hasan) -> passes, 10 manual sides recorded | method errors 0 | manual 10
+PASS M2 Nov 12 export (nothing typed) -> passes, no manual method | method errors 0 | manual 0
+PASS M3 a DEC changed on an untyped fight, KO/SUB/GTD not following -> fails | method errors 2: ['Josh Hokit vs Ciryl Gane: dog method shares [0.31528401670230866, 0.5022800723985097, 0.21243591089918168] not in [0,1] or not summing to 1', 'Josh Hokit vs Ciryl Gane: dog dec sheet 31.53 vs recomputed 28.53'] | manual 10
+PASS M4 Holland's typed DEC changed (0.27 -> 0.31) without KO/SUB/GTD following -> fails | method errors 5: ['Kevin Holland vs Uros Medic: dog method shares [0.31, 0.40622559365921534, 0.32377440634078464] not in [0,1] or not summing to 1', 'Kevin Holland vs Uros Medic: dog dec sheet 31.00 vs recomputed 16.65'] | manual 8
+PASS M5 Hasan typed DEC + KO, SUB not 1 - DEC - KO -> fails | method errors 5: ['Luis Gurule vs Bilal Hasan: fav method shares [0.15, 0.78, 0.07999999999999995] not in [0,1] or not summing to 1', 'Luis Gurule vs Bilal Hasan: fav dec sheet 15.00 vs recomputed 24.72'] | manual 8
+PASS M6 GTD off by 0.5 pts on a typed fight -> fails | method errors 1: ['Kevin Holland vs Uros Medic: GTD sheet 24.02 vs recomputed 23.52'] | manual 8
+PASS M7 control: Holland DEC retyped to 0.31 with the sheet's own KO/SUB/GTD following -> passes as manual | method errors 0 | manual 10
+manual method (MM-1): 7/7 as expected

@@ -1,0 +1,22 @@
+PASS D-coded sharps dog, fav edge 2-3 pts, fav drift 6 pts
+PASS control: same fight, no code (sheet-observed)
+PASS method/GTD mirror reproduces the sheet (Radtke vs Thompson), worst diff 4.9e-11
+PASS check on method/GTD unchanged: green
+PASS check on KO +3 / DEC -3 (sums to 1): red
+PASS check on GTD +3: red
+PASS stamp 2026-11-13T04:30:00.000Z     (written 11:30 pm ET, exported as UTC Z): age 0.5 h -> green
+PASS stamp 2026-11-12T23:30:00-05:00    (same moment with an explicit -05:00 offset): age 0.5 h -> green
+PASS stamp 2026-11-12T23:30:00          (same wall-clock time with no offset): age None h -> red
+PASS stamp 2026-11-12T04:30:00.000Z     (written 11:30 pm ET the night before (Nov 11)): age 24.5 h -> red
+PASS stamp 2026-11-12T23:30:00Z         (11:30 pm ET read as if it were UTC (the mistake to avoid)): age 5.5 h -> red
+PASS opponent guard, Diaz priced from his own bout: green
+PASS opponent guard, Diaz priced from a Yanez vs Diaz row: red
+PASS opponent guard, names right, Feed price +300 vs input +275: red
+PASS opponent guard, blank best price falls back to consensus 275: green
+PASS opponent guard, fight listed as Yanez vs Diaz (not in odds file): red
+PASS opponent guard, no price_source (old script): red
+PASS opponent guard, no odds file: red
+PASS line pending, only Diaz fails the guard: green, 1 pending
+PASS line pending, Diaz guard + a number off on Elder: red, 1 pending
+PASS line pending, odds file missing: red, 0 pending
+PASS line pending, both fights fail the guard: red, 2 pending

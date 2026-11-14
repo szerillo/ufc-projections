@@ -37,6 +37,7 @@ SLUG_RE = re.compile(r"^[a-z0-9_]+$")
 # Values the last check() compared against a recomputation or a source (replaces the hand-picked "48/48" render count, Block 48)
 COMPARED = {"n": 0}
 MANUAL = []          # MP-1 accepted typed prices, written to the live file as "manual_prices"
+MANUAL_METHOD = []   # MM-1 (Kirk round 36, audits/round36/MM1_PREREG.md): Sean's typed method cells, written as "manual_method"
 
 # MP-1 (Kirk round 33, Nov 12; written before running it): a typed D/I price that differs from the Feed row passes OPP-1
 # only if a US-regulated book showed it (or better for the bettor, or within 2 American cents) for THIS bout in the 24 h
@@ -202,6 +203,7 @@ def check(doc: dict, path: Path, now: dt.datetime | None = None, odds_doc: dict 
     errs: list[str] = []
     COMPARED["n"] = 0
     MANUAL.clear()
+    MANUAL_METHOD.clear()
     try:
         age = price_age_h(doc, now)
     except ValueError as ex:
@@ -271,16 +273,37 @@ def check(doc: dict, path: Path, now: dt.datetime | None = None, odds_doc: dict 
         if not isinstance(mi, dict) or not isinstance(L, (int, float)):
             errs.append(f"{tag}: method_inputs missing, so the method split and GTD cannot be checked (publish with the current script)")
             continue
-        r = S.method_gtd(float(L), {**mi, "b41": params.get("b41"), "b45": params.get("b45")})
+        mi_ = {**mi, "b41": params.get("b41"), "b45": params.get("b45")}
+        meth = f.get("method") or {}
+        r0 = S.method_gtd(float(L), mi_)
+        # MM-1: per side, the smallest pin set (none, DEC, DEC + KO) under which every unpinned cell matches the tab formula
+        pins = {}
+        for side in ("dog", "fav"):
+            got = meth.get(side) or {}
+            if any(got.get(k) is None for k in ("dec", "ko", "sub")):
+                continue
+            for ks in ((), ("dec",), ("dec", "ko")):
+                pn = {side: {k: float(got[k]) for k in ks}}
+                rr = S.method_gtd(float(L), mi_, pin=pn)
+                if all(abs(float(got[k]) - rr[side][k]) <= TOL for k in ("dec", "ko", "sub")):
+                    if ks:
+                        pins[side] = pn[side]
+                    break
+        r = S.method_gtd(float(L), mi_, pin=pins)
         for side in ("dog", "fav"):
             for k in ("dec", "ko", "sub"):
-                v = ((f.get("method") or {}).get(side) or {}).get(k)
+                v = (meth.get(side) or {}).get(k)
                 COMPARED["n"] += v is not None
                 if v is not None and abs(float(v) - r[side][k]) > TOL:
                     errs.append(f"{tag}: {side} {k} sheet {float(v)*100:.2f} vs recomputed {r[side][k]*100:.2f}")
         COMPARED["n"] += f.get("gtd") is not None
         if f.get("gtd") is not None and abs(float(f["gtd"]) - r["gtd"]) > TOL:
             errs.append(f"{tag}: GTD sheet {float(f['gtd'])*100:.2f} vs recomputed {r['gtd']*100:.2f}")
+        elif pins and not any(e.startswith(tag + ": ") and (" dec " in e or " ko " in e or " sub " in e) for e in errs):
+            for side, pn in pins.items():
+                MANUAL_METHOD.append({"dog": f.get("dog"), "fav": f.get("fav"), "side": side, "fighter": f.get(side),
+                                      "typed": {k: round(v, 6) for k, v in pn.items()}, "formula": {k: round(r0[side][k], 6) for k in pn},
+                                      "label": "manual method"})
     # opponent-match guard (Block 46): the price must come from this bout, and the bout must exist in the odds feed
     errs += opponent_errs(doc, fights, load_odds(str(doc.get("slug"))) if odds_doc == "auto" else odds_doc)
     # the params block must agree with the per-fight inputs the numbers were checked against (Block 43 seed test)
@@ -328,6 +351,9 @@ def main() -> int:
         lines += ["**FAIL. Not promoted; the live file is unchanged.**", ""] + [f"- {e}" for e in errs]
     else:
         lines += [f"**PASS.** Every number matches scripts/sheet_v47.py within {TOL_PTS:g} pts; flags and recs identical; every price ties to its own bout (Feed row and odds feed). **Values compared: {COMPARED['n']}, mismatched: 0.**"]
+        if MANUAL_METHOD:
+            lines += ["", f"**Manual method ({len(MANUAL_METHOD)}):** Sean's typed method cells, accepted by MM-1 (every other cell recomputed from them, tolerance unchanged):"] + \
+                     [f"- {x['dog']} vs {x['fav']}: {x['fighter']} " + ", ".join(f"{k.upper()} {x['typed'][k]*100:.2f} (formula {x['formula'][k]*100:.2f})" for k in x["typed"]) for x in MANUAL_METHOD]
         if MANUAL:
             lines += ["", f"**Manual prices ({len(MANUAL)}):** typed into D/I, accepted by MP-1 (seen at a US-regulated book in the {MP_WINDOW_H} h before the export):"] + \
                      [f"- {x['dog']} vs {x['fav']}: {x['side']} {x['price']:+d} (Feed row {x['feed_price']:+d}); seen {x['seen']}" for x in MANUAL]
@@ -347,6 +373,8 @@ def main() -> int:
             doc["line_pending"] = pending
         if MANUAL:
             doc["manual_prices"] = list(MANUAL)
+        if MANUAL_METHOD:
+            doc["manual_method"] = list(MANUAL_METHOD)
         doc["verified"] = {"at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
                            "by": "scripts/verify_projections.py", "tolerance_pts": TOL_PTS, "fights": len(doc["fights"]),
                            "line_pending": len(pending), "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest()}

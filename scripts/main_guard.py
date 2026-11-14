@@ -34,6 +34,8 @@ KNOWN_EXPORT_KEYS = {
     # Kirk round 33: the projections check writes these into the live file (data/<slug>_projections.json)
     ".line_pending", *(".line_pending[]." + k for k in ("dog", "fav", "reason")),
     ".manual_prices", *(".manual_prices[]." + k for k in ("dog", "fav", "side", "price", "feed_price", "seen", "label")),
+    # Kirk round 36 (MM-1): Sean's typed method cells
+    ".manual_method", *(".manual_method[]." + k for k in ("dog", "fav", "side", "fighter", "typed", "typed.dec", "typed.ko", "formula", "formula.dec", "formula.ko", "label")),
     ".verified", *(".verified." + k for k in ("at", "by", "tolerance_pts", "fights", "line_pending", "source_sha256"))}
 READERS = ["scripts/build_fight_embeds.py", "scripts/verify_fight_embeds.py", "scripts/build_form.py", "scripts/check_site_projections.py",
            "scripts/markov_blocks.py", "scripts/inputs_to_blocks.py", "scripts/odds_tick.py", "scripts/odds_live_window.py",
