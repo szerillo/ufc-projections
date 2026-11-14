@@ -1,0 +1,66 @@
+fight_01.html: fight 1/13; 148/148 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_02.html: fight 2/13; 178/178 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_03.html: fight 3/13; 197/197 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_04.html: fight 4/13; 251/251 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_05.html: fight 5/13; 184/184 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_06.html: fight 6/13; 291/291 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_07.html: fight 7/13; 253/253 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_08.html: fight 8/13; 230/230 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_09.html: fight 9/13; 170/170 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_10.html: fight 10/13; 261/261 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_11.html: fight 11/13; 197/197 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_12.html: fight 12/13; 223/223 verified, 0 mismatches/assertion failures, 0 unregistered spans
+fight_13.html: fight 13/13; 220/220 verified, 0 mismatches/assertion failures, 0 unregistered spans
+LINE PENDING in data/ufc_334_projections.json: 0 bout(s), sheet-number checks excluded
+card ufc_334: 13 embeds, 0 card-level failures
+EVENT ODDS RECHECK: 13 bouts, 0 mismatches
+LINE HISTORY RECHECK: 13 bouts, 0 mismatches
+holds: 0 failures (8 Form Line tokens, 4 height tokens, 7 pages rendered)
+LOCKS: 32 files, 0 changed
+TOTAL: 2803/2803 numbers verified; 0 mismatches/assertion failures
+SIDE CHECK: not checkable (line within 4 pts of 50%): Evan Elder
+METRICS FILE: verify_embed_metrics: 2984 values recomputed from the CSVs, 0 mismatches
+  NEGATIVE CAUGHT   12 failures (11 from the hold check) · hold: Form Line written back by a rebuild, hold flag dropped (card, fight page, sheet)
+        data 2026-11-14-ufc-334-gane-vs-hokit fight 3: form.p still 0.3666 | data 2026-11-14-ufc-334-gane-vs-hokit fight 3: held text missing | form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json held Form Line value 0.3666 still present | #/sheet/2026-11-14-ufc-334-gane-vs-hokit held Form Line value 37% shown | card page fight 3 Form cell not held | sheet fight 3 Form Line not held | fight page Form numbers fight 3: held value 36.7% shown | fight page Form numbers fight 3: held value 63.3% shown | c
+  NEGATIVE CAUGHT    1 failures (1 from the hold check) · hold: leftover Form Line copy in the embed JSON (card.json)
+        card.json held Form Line value 0.3666 still present
+  NEGATIVE CAUGHT    1 failures (1 from the hold check) · hold: leftover Form Line copy in page head text (OG description)
+        index.html held Form Line value 36.7% still present
+  NEGATIVE CAUGHT    1 failures (1 from the hold check) · hold: Belgaroui's held height back on the fight 11 embed
+        fight_11.html held height of yousri-belgaroui still shown
+  NEGATIVE CAUGHT    2 failures (1 from the hold check) · hold: a held Labs row gets its number back (labs.json)
+        data labs height_gap 3 in: numbers still present
+  NEGATIVE CAUGHT    1 failures · embed: Sean win % text off by 0.1 (fight 13)
+  NEGATIVE CAUGHT    1 failures · embed: Sean KO % text off (fight 13)
+  NEGATIVE CAUGHT    4 failures · embed: KO and SUB cells swapped in the method stack (fight 07)
+  NEGATIVE CAUGHT    1 failures · embed: badge hidden by CSS (fight 02)
+  NEGATIVE CAUGHT    1 failures · embed: wrong FIGHT number (fight 05)
+  NEGATIVE CAUGHT    4 failures · embed: a model cell blanked (fight 10)
+  NEGATIVE CAUGHT    1 failures · embed: an edge chip off by 0.1 (fight 13)
+  NEGATIVE CAUGHT   10 failures · embed: Spot to watch dropped (fight 06)
+  NEGATIVE CAUGHT    1 failures · embed: Spot to watch added where no test fires (fight 05)
+  NEGATIVE CAUGHT    1 failures · embed: an edge under 2.0 coloured (first fight with one)
+  NEGATIVE CAUGHT    1 failures · embed: 'price unverified' removed where due, or added where not due (first fight it applies to)
+  NEGATIVE CAUGHT    1 failures · embed: an offshore book named on the page (fight 07)
+  NEGATIVE CAUGHT    1 failures · line history: a current line moved 1 pt in the file (fight 12)
+  NEGATIVE CAUGHT    1 failures · shared input: a backtest number edited in spot_tests.json (builder and checker both read it)
+  NEGATIVE CAUGHT    1 failures · shared input: a locked file changed without a bless (card_overrides.json)
+  NEGATIVE CAUGHT    1 failures · event file: one fighter's Form line swapped (main event)
+  NEGATIVE CAUGHT    1 failures · event file: odds close moved 2 pts (main event)
+  NEGATIVE CAUGHT    1 failures · embed: one round-trend point moved (fight 07)
+  NEGATIVE CAUGHT    1 failures · embed: a steady line drawn as 'Steady' where it moved 7 pts (fight 13)
+  NEGATIVE CAUGHT    1 failures · embed: Duncan's at-the-floor note removed (fight 07)
+  NEGATIVE CAUGHT    1 failures · embed: Corrections link dropped from the footer (fight 03)
+  NEGATIVE CAUGHT    1 failures · embed: a below-floor round drawn as a full dot (fight 08)
+  NEGATIVE CAUGHT    1 failures · embed: T1 'never confirmed' line removed (fight 06)
+  NEGATIVE CAUGHT    1 failures · embed: manual-price tag put back on Sanches (fight 01)
+  NEGATIVE CAUGHT    1 failures · embed: manual-price label on a bout without one (fight 13)
+  NEGATIVE CAUGHT    2 failures · embed: a link to the Fight Form site put back (fight 07)
+  NEGATIVE CAUGHT    1 failures · embed: model renamed 'Sean' (fight 04)
+  NEGATIVE CAUGHT    1 failures · card: one embed missing (fight 09)
+  NEGATIVE CAUGHT   23 failures · export: Gane/Hokit true % moved 0.2 pts after the build
+  NEGATIVE CAUGHT    6 failures · export: one dog's KO/SUB split swapped after the build
+  NEGATIVE CAUGHT    6 failures · export: one GTD moved 1 pt after the build
+  NEGATIVE CAUGHT  upstream · metrics builder drops control seconds (page check alone cannot see this)
+negative test: 37/37 planted errors caught
+exit 0
