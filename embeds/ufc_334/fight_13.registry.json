@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/ufc_334_projections.json",
- "published_at": "2026-11-12T22:47:18.373Z",
+ "published_at": "2026-11-14T07:19:22.608Z",
  "rows": [
   {
    "id": "v1",
@@ -131,51 +131,51 @@
   },
   {
    "id": "v11",
-   "text": "-158",
+   "text": "-188",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Ciryl Gane",
-   "raw": 0.6127133975737242
+   "raw": 0.652546914488293
   },
   {
    "id": "v12",
-   "text": "61.3%",
+   "text": "65.3%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Ciryl Gane",
-   "raw": 0.6127133975737242
+   "raw": 0.652546914488293
   },
   {
    "id": "v13",
-   "text": "-180",
+   "text": "-188",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Ciryl Gane",
-   "raw": -180
+   "raw": -188
   },
   {
    "id": "v14",
-   "text": "64.3%",
+   "text": "65.3%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Ciryl Gane",
-   "raw": 0.6428571428571429
+   "raw": 0.6527777777777778
   },
   {
    "id": "v15",
-   "text": "-200",
+   "text": "-205",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Ciryl Gane",
-   "raw": -200
+   "raw": -205
   },
   {
    "id": "v16",
-   "text": "66.7%",
+   "text": "67.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,11 +196,11 @@
     "label": "Ciryl Gane"
    },
    "desc": "Market implied Ciryl Gane",
-   "raw": 0.6666666666666666
+   "raw": 0.6721311475409836
   },
   {
    "id": "v17",
-   "text": "-3.0%",
+   "text": "-0.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,55 +210,55 @@
     ]
    },
    "desc": "Edge ML Ciryl Gane",
-   "raw": -0.030143745283418677
+   "raw": -0.00023086328948473955
   },
   {
    "id": "v18",
-   "text": "+158",
+   "text": "+188",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Josh Hokit",
-   "raw": 0.3872866024262757
+   "raw": 0.34745308551170695
   },
   {
    "id": "v19",
-   "text": "38.7%",
+   "text": "34.7%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Josh Hokit",
-   "raw": 0.3872866024262757
+   "raw": 0.34745308551170695
   },
   {
    "id": "v20",
-   "text": "+163",
+   "text": "+170",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Josh Hokit",
-   "raw": 163
+   "raw": 170
   },
   {
    "id": "v21",
-   "text": "38.0%",
+   "text": "37.0%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Josh Hokit",
-   "raw": 0.38022813688212925
+   "raw": 0.37037037037037035
   },
   {
    "id": "v22",
-   "text": "+160",
+   "text": "+168",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Josh Hokit",
-   "raw": 160
+   "raw": 168
   },
   {
    "id": "v23",
-   "text": "38.5%",
+   "text": "37.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,11 +279,11 @@
     "label": "Josh Hokit"
    },
    "desc": "Market implied Josh Hokit",
-   "raw": 0.38461538461538464
+   "raw": 0.373134328358209
   },
   {
    "id": "v24",
-   "text": "+0.7%",
+   "text": "-2.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,33 +293,33 @@
     ]
    },
    "desc": "Edge ML Josh Hokit",
-   "raw": 0.007058465544146464
+   "raw": -0.0229172848586634
   },
   {
    "id": "v25",
-   "text": "+225",
+   "text": "+232",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.307233678499093
+   "raw": 0.30129160166991753
   },
   {
    "id": "v26",
-   "text": "30.7%",
+   "text": "30.1%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.307233678499093
+   "raw": 0.30129160166991753
   },
   {
    "id": "v27",
-   "text": "+205",
+   "text": "+212",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -328,11 +328,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 205
+   "raw": 212
   },
   {
    "id": "v28",
-   "text": "32.8%",
+   "text": "32.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -340,11 +340,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.32786885245901637
+   "raw": 0.32051282051282054
   },
   {
    "id": "v29",
-   "text": "-2.1%",
+   "text": "-1.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -354,11 +354,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.02063517395992337
+   "raw": -0.01922121884290301
   },
   {
    "id": "v30",
-   "text": "-225",
+   "text": "-232",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -366,11 +366,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.692766321500907
+   "raw": 0.6987083983300825
   },
   {
    "id": "v31",
-   "text": "69.3%",
+   "text": "69.9%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -378,11 +378,11 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.692766321500907
+   "raw": 0.6987083983300825
   },
   {
    "id": "v32",
-   "text": "-277",
+   "text": "-290",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -391,11 +391,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": -277
+   "raw": -290
   },
   {
    "id": "v33",
-   "text": "73.5%",
+   "text": "74.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -403,11 +403,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.7347480106100795
+   "raw": 0.7435897435897436
   },
   {
    "id": "v34",
-   "text": "-4.2%",
+   "text": "-4.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -417,11 +417,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.04198168910917255
+   "raw": -0.04488134525966114
   },
   {
    "id": "v35",
-   "text": "+410",
+   "text": "+390",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -429,11 +429,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Ciryl Gane",
-   "raw": 0.19609885889941148
+   "raw": 0.20418869319540325
   },
   {
    "id": "v36",
-   "text": "19.6%",
+   "text": "20.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -441,11 +441,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Ciryl Gane",
-   "raw": 0.19609885889941148
+   "raw": 0.20418869319540325
   },
   {
    "id": "v37",
-   "text": "+380",
+   "text": "+390",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -454,11 +454,11 @@
     "field": "cost"
    },
    "desc": "Market dec Ciryl Gane",
-   "raw": 380
+   "raw": 390
   },
   {
    "id": "v38",
-   "text": "20.8%",
+   "text": "20.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -466,11 +466,11 @@
     "label": "Ciryl Gane Points"
    },
    "desc": "Market dec implied Ciryl Gane",
-   "raw": 0.20833333333333334
+   "raw": 0.20408163265306123
   },
   {
    "id": "v39",
-   "text": "-1.2%",
+   "text": "+0.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -480,11 +480,11 @@
     ]
    },
    "desc": "Edge dec Ciryl Gane",
-   "raw": -0.012234474433921866
+   "raw": 0.00010706054234202456
   },
   {
    "id": "v40",
-   "text": "+173",
+   "text": "+153",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -492,11 +492,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Ciryl Gane",
-   "raw": 0.3656702702701442
+   "raw": 0.39571712889420035
   },
   {
    "id": "v41",
-   "text": "36.6%",
+   "text": "39.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -504,11 +504,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Ciryl Gane",
-   "raw": 0.3656702702701442
+   "raw": 0.39571712889420035
   },
   {
    "id": "v42",
-   "text": "+127",
+   "text": "+120",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -517,11 +517,11 @@
     "field": "cost"
    },
    "desc": "Market ko Ciryl Gane",
-   "raw": 127
+   "raw": 120
   },
   {
    "id": "v43",
-   "text": "44.1%",
+   "text": "45.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -529,11 +529,11 @@
     "label": "Ciryl Gane KO/TKO/DQ"
    },
    "desc": "Market ko implied Ciryl Gane",
-   "raw": 0.44052863436123346
+   "raw": 0.45454545454545453
   },
   {
    "id": "v44",
-   "text": "-7.5%",
+   "text": "-5.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -543,11 +543,11 @@
     ]
    },
    "desc": "Edge ko Ciryl Gane",
-   "raw": -0.07485836409108926
+   "raw": -0.058828325651254176
   },
   {
    "id": "v45",
-   "text": "+1863",
+   "text": "+1800",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -555,11 +555,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Ciryl Gane",
-   "raw": 0.050944268404168554
+   "raw": 0.052641092398689436
   },
   {
    "id": "v46",
-   "text": "5.1%",
+   "text": "5.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -567,11 +567,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Ciryl Gane",
-   "raw": 0.050944268404168554
+   "raw": 0.052641092398689436
   },
   {
    "id": "v47",
-   "text": "+974",
+   "text": "+1000",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -580,11 +580,11 @@
     "field": "cost"
    },
    "desc": "Market sub Ciryl Gane",
-   "raw": 974
+   "raw": 1000
   },
   {
    "id": "v48",
-   "text": "9.3%",
+   "text": "9.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -592,11 +592,11 @@
     "label": "Ciryl Gane Submission"
    },
    "desc": "Market sub implied Ciryl Gane",
-   "raw": 0.0931098696461825
+   "raw": 0.09090909090909091
   },
   {
    "id": "v49",
-   "text": "-4.2%",
+   "text": "-3.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -606,11 +606,11 @@
     ]
    },
    "desc": "Edge sub Ciryl Gane",
-   "raw": -0.04216560124201394
+   "raw": -0.038267998510401476
   },
   {
    "id": "v50",
-   "text": "+140",
+   "text": "+123",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -618,11 +618,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Ciryl Gane",
-   "raw": 0.41661453867431275
+   "raw": 0.4483582212928898
   },
   {
    "id": "v51",
-   "text": "41.7%",
+   "text": "44.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -630,11 +630,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Ciryl Gane",
-   "raw": 0.41661453867431275
+   "raw": 0.4483582212928898
   },
   {
    "id": "v52",
-   "text": "-114",
+   "text": "-120",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -645,11 +645,11 @@
     ]
    },
    "desc": "Market ITD price Ciryl Gane",
-   "raw": 0.533638504007416
+   "raw": 0.5454545454545454
   },
   {
    "id": "v53",
-   "text": "53.4%",
+   "text": "54.5%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -660,11 +660,11 @@
     ]
    },
    "desc": "Market ITD implied Ciryl Gane",
-   "raw": 0.533638504007416
+   "raw": 0.5454545454545454
   },
   {
    "id": "v54",
-   "text": "-11.7%",
+   "text": "-9.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -674,11 +674,11 @@
     ]
    },
    "desc": "Edge itd Ciryl Gane",
-   "raw": -0.11702396533310322
+   "raw": -0.09709632416165559
   },
   {
    "id": "v55",
-   "text": "+800",
+   "text": "+930",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -686,11 +686,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Josh Hokit",
-   "raw": 0.11113481959968155
+   "raw": 0.09710290847451425
   },
   {
    "id": "v56",
-   "text": "11.1%",
+   "text": "9.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -698,7 +698,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Josh Hokit",
-   "raw": 0.11113481959968155
+   "raw": 0.09710290847451425
   },
   {
    "id": "v57",
@@ -727,7 +727,7 @@
   },
   {
    "id": "v59",
-   "text": "-3.2%",
+   "text": "-4.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -737,11 +737,11 @@
     ]
    },
    "desc": "Edge dec Josh Hokit",
-   "raw": -0.0317223232574613
+   "raw": -0.0457542343826286
   },
   {
    "id": "v60",
-   "text": "+415",
+   "text": "+471",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -749,11 +749,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Josh Hokit",
-   "raw": 0.19407096086002226
+   "raw": 0.17525785722355974
   },
   {
    "id": "v61",
-   "text": "19.4%",
+   "text": "17.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -761,11 +761,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Josh Hokit",
-   "raw": 0.19407096086002226
+   "raw": 0.17525785722355974
   },
   {
    "id": "v62",
-   "text": "+424",
+   "text": "+450",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -774,11 +774,11 @@
     "field": "cost"
    },
    "desc": "Market ko Josh Hokit",
-   "raw": 424
+   "raw": 450
   },
   {
    "id": "v63",
-   "text": "19.1%",
+   "text": "18.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -786,11 +786,11 @@
     "label": "Josh Hokit KO/TKO/DQ"
    },
    "desc": "Market ko implied Josh Hokit",
-   "raw": 0.19083969465648856
+   "raw": 0.18181818181818182
   },
   {
    "id": "v64",
-   "text": "+0.3%",
+   "text": "-0.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -800,11 +800,11 @@
     ]
    },
    "desc": "Edge ko Josh Hokit",
-   "raw": 0.0032312662035337003
+   "raw": -0.00656032459462208
   },
   {
    "id": "v65",
-   "text": "+1118",
+   "text": "+1232",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -812,11 +812,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Josh Hokit",
-   "raw": 0.08208082196657192
+   "raw": 0.07509231981363296
   },
   {
    "id": "v66",
-   "text": "8.2%",
+   "text": "7.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -824,11 +824,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Josh Hokit",
-   "raw": 0.08208082196657192
+   "raw": 0.07509231981363296
   },
   {
    "id": "v67",
-   "text": "+824",
+   "text": "+847",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -837,11 +837,11 @@
     "field": "cost"
    },
    "desc": "Market sub Josh Hokit",
-   "raw": 824
+   "raw": 847
   },
   {
    "id": "v68",
-   "text": "10.8%",
+   "text": "10.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -849,11 +849,11 @@
     "label": "Josh Hokit Submission"
    },
    "desc": "Market sub implied Josh Hokit",
-   "raw": 0.10822510822510822
+   "raw": 0.10559662090813093
   },
   {
    "id": "v69",
-   "text": "-2.6%",
+   "text": "-3.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -863,11 +863,11 @@
     ]
    },
    "desc": "Edge sub Josh Hokit",
-   "raw": -0.026144286258536306
+   "raw": -0.030504301094497976
   },
   {
    "id": "v70",
-   "text": "+262",
+   "text": "+299",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -875,11 +875,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Josh Hokit",
-   "raw": 0.27615178282659414
+   "raw": 0.2503501770371927
   },
   {
    "id": "v71",
-   "text": "27.6%",
+   "text": "25.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -887,11 +887,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Josh Hokit",
-   "raw": 0.27615178282659414
+   "raw": 0.2503501770371927
   },
   {
    "id": "v72",
-   "text": "+234",
+   "text": "+248",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -902,11 +902,11 @@
     ]
    },
    "desc": "Market ITD price Josh Hokit",
-   "raw": 0.29906480288159676
+   "raw": 0.28741480272631276
   },
   {
    "id": "v73",
-   "text": "29.9%",
+   "text": "28.7%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -917,11 +917,11 @@
     ]
    },
    "desc": "Market ITD implied Josh Hokit",
-   "raw": 0.29906480288159676
+   "raw": 0.28741480272631276
   },
   {
    "id": "v74",
-   "text": "-2.3%",
+   "text": "-3.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -931,7 +931,7 @@
     ]
    },
    "desc": "Edge itd Josh Hokit",
-   "raw": -0.02291302005500262
+   "raw": -0.037064625689120057
   },
   {
    "id": "v75",
@@ -951,7 +951,7 @@
   },
   {
    "id": "v76",
-   "text": "+164",
+   "text": "+168",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -964,11 +964,11 @@
     "at": "current"
    },
    "desc": "LH current ML Josh Hokit",
-   "raw": 164
+   "raw": 168
   },
   {
    "id": "v77",
-   "text": "5.7",
+   "text": "5.2",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -979,7 +979,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.05699999999999994
+   "raw": 0.051999999999999935
   },
   {
    "id": "v78",

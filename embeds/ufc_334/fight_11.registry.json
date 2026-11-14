@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/ufc_334_projections.json",
- "published_at": "2026-11-12T22:47:18.373Z",
+ "published_at": "2026-11-14T07:19:22.608Z",
  "rows": [
   {
    "id": "v1",
@@ -119,47 +119,47 @@
   },
   {
    "id": "v10",
-   "text": "-139",
+   "text": "-137",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Caio Borralho",
-   "raw": 0.58145792164946
+   "raw": 0.578477664045641
   },
   {
    "id": "v11",
-   "text": "58.1%",
+   "text": "57.8%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Caio Borralho",
-   "raw": 0.58145792164946
+   "raw": 0.578477664045641
   },
   {
    "id": "v12",
-   "text": "-155",
+   "text": "-150",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Caio Borralho",
-   "raw": -155
+   "raw": -150
   },
   {
    "id": "v13",
-   "text": "60.8%",
+   "text": "60.0%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Caio Borralho",
-   "raw": 0.6078431372549019
+   "raw": 0.6
   },
   {
    "id": "v14",
@@ -188,7 +188,7 @@
   },
   {
    "id": "v16",
-   "text": "-2.6%",
+   "text": "-2.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -198,29 +198,29 @@
     ]
    },
    "desc": "Edge ML Caio Borralho",
-   "raw": -0.026385215605441936
+   "raw": -0.02152233595435893
   },
   {
    "id": "v17",
-   "text": "+139",
+   "text": "+137",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Yousri Belgaroui",
-   "raw": 0.41854207835054
+   "raw": 0.4215223359543589
   },
   {
    "id": "v18",
-   "text": "41.9%",
+   "text": "42.2%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Yousri Belgaroui",
-   "raw": 0.41854207835054
+   "raw": 0.4215223359543589
   },
   {
    "id": "v19",
@@ -271,7 +271,7 @@
   },
   {
    "id": "v23",
-   "text": "-1.2%",
+   "text": "-1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -281,29 +281,29 @@
     ]
    },
    "desc": "Edge ML Yousri Belgaroui",
-   "raw": -0.012492404408080637
+   "raw": -0.009512146804261767
   },
   {
    "id": "v24",
-   "text": "-142",
+   "text": "-140",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.5866321777543895
+   "raw": 0.5833477284766351
   },
   {
    "id": "v25",
-   "text": "58.7%",
+   "text": "58.3%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.5866321777543895
+   "raw": 0.5833477284766351
   },
   {
    "id": "v26",
@@ -332,7 +332,7 @@
   },
   {
    "id": "v28",
-   "text": "-7.2%",
+   "text": "-7.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -342,11 +342,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.0720708939179655
+   "raw": -0.0753553431957199
   },
   {
    "id": "v29",
-   "text": "+142",
+   "text": "+140",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -354,11 +354,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.41336782224561053
+   "raw": 0.4166522715233649
   },
   {
    "id": "v30",
-   "text": "41.3%",
+   "text": "41.7%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -366,7 +366,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.41336782224561053
+   "raw": 0.4166522715233649
   },
   {
    "id": "v31",
@@ -395,7 +395,7 @@
   },
   {
    "id": "v33",
-   "text": "+0.5%",
+   "text": "+0.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -405,11 +405,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": 0.00520455693948807
+   "raw": 0.008489006217242467
   },
   {
    "id": "v34",
-   "text": "+171",
+   "text": "+173",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -417,11 +417,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Caio Borralho",
-   "raw": 0.3690992542670881
+   "raw": 0.3657052520332106
   },
   {
    "id": "v35",
-   "text": "36.9%",
+   "text": "36.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -429,11 +429,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Caio Borralho",
-   "raw": 0.3690992542670881
+   "raw": 0.3657052520332106
   },
   {
    "id": "v36",
-   "text": "+140",
+   "text": "+130",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -442,11 +442,11 @@
     "field": "cost"
    },
    "desc": "Market dec Caio Borralho",
-   "raw": 140
+   "raw": 130
   },
   {
    "id": "v37",
-   "text": "41.7%",
+   "text": "43.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -454,11 +454,11 @@
     "label": "Caio Borralho Points"
    },
    "desc": "Market dec implied Caio Borralho",
-   "raw": 0.4166666666666667
+   "raw": 0.43478260869565216
   },
   {
    "id": "v38",
-   "text": "-4.8%",
+   "text": "-6.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -468,11 +468,11 @@
     ]
    },
    "desc": "Edge dec Caio Borralho",
-   "raw": -0.04756741239957857
+   "raw": -0.06907735666244158
   },
   {
    "id": "v39",
-   "text": "+886",
+   "text": "+901",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -480,11 +480,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Caio Borralho",
-   "raw": 0.10144382110443342
+   "raw": 0.09990703042890169
   },
   {
    "id": "v40",
-   "text": "10.1%",
+   "text": "10.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -492,11 +492,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Caio Borralho",
-   "raw": 0.10144382110443342
+   "raw": 0.09990703042890169
   },
   {
    "id": "v41",
-   "text": "+774",
+   "text": "+824",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -505,11 +505,11 @@
     "field": "cost"
    },
    "desc": "Market ko Caio Borralho",
-   "raw": 774
+   "raw": 824
   },
   {
    "id": "v42",
-   "text": "11.4%",
+   "text": "10.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -517,11 +517,11 @@
     "label": "Caio Borralho KO/TKO/DQ"
    },
    "desc": "Market ko implied Caio Borralho",
-   "raw": 0.11441647597254005
+   "raw": 0.10822510822510822
   },
   {
    "id": "v43",
-   "text": "-1.3%",
+   "text": "-0.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -531,11 +531,11 @@
     ]
    },
    "desc": "Edge ko Caio Borralho",
-   "raw": -0.012972654868106628
+   "raw": -0.008318077796206538
   },
   {
    "id": "v44",
-   "text": "+802",
+   "text": "+786",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -543,11 +543,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Caio Borralho",
-   "raw": 0.11091484627793846
+   "raw": 0.11286538158352878
   },
   {
    "id": "v45",
-   "text": "11.1%",
+   "text": "11.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -555,11 +555,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Caio Borralho",
-   "raw": 0.11091484627793846
+   "raw": 0.11286538158352878
   },
   {
    "id": "v46",
-   "text": "+574",
+   "text": "+600",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -568,11 +568,11 @@
     "field": "cost"
    },
    "desc": "Market sub Caio Borralho",
-   "raw": 574
+   "raw": 600
   },
   {
    "id": "v47",
-   "text": "14.8%",
+   "text": "14.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -580,11 +580,11 @@
     "label": "Caio Borralho Submission"
    },
    "desc": "Market sub implied Caio Borralho",
-   "raw": 0.14836795252225518
+   "raw": 0.14285714285714285
   },
   {
    "id": "v48",
-   "text": "-3.7%",
+   "text": "-3.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -594,11 +594,11 @@
     ]
    },
    "desc": "Edge sub Caio Borralho",
-   "raw": -0.03745310624431672
+   "raw": -0.029991761273614068
   },
   {
    "id": "v49",
-   "text": "+371",
+   "text": "+370",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -606,11 +606,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Caio Borralho",
-   "raw": 0.21235866738237189
+   "raw": 0.21277241201243047
   },
   {
    "id": "v50",
-   "text": "21.2%",
+   "text": "21.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -618,11 +618,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Caio Borralho",
-   "raw": 0.21235866738237189
+   "raw": 0.21277241201243047
   },
   {
    "id": "v51",
-   "text": "+281",
+   "text": "+298",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -633,11 +633,11 @@
     ]
    },
    "desc": "Market ITD price Caio Borralho",
-   "raw": 0.2627844284947952
+   "raw": 0.2510822510822511
   },
   {
    "id": "v52",
-   "text": "26.3%",
+   "text": "25.1%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -648,11 +648,11 @@
     ]
    },
    "desc": "Market ITD implied Caio Borralho",
-   "raw": 0.2627844284947952
+   "raw": 0.2510822510822511
   },
   {
    "id": "v53",
-   "text": "-5.0%",
+   "text": "-3.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -662,11 +662,11 @@
     ]
    },
    "desc": "Edge itd Caio Borralho",
-   "raw": -0.050425761112423334
+   "raw": -0.038309839069820606
   },
   {
    "id": "v54",
-   "text": "+360",
+   "text": "+359",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -674,7 +674,7 @@
     "k": "dec"
    },
    "desc": "Model dec ML Yousri Belgaroui",
-   "raw": 0.21753292348730133
+   "raw": 0.21764247644342447
   },
   {
    "id": "v55",
@@ -686,11 +686,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Yousri Belgaroui",
-   "raw": 0.21753292348730133
+   "raw": 0.21764247644342447
   },
   {
    "id": "v56",
-   "text": "+275",
+   "text": "+300",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -699,11 +699,11 @@
     "field": "cost"
    },
    "desc": "Market dec Yousri Belgaroui",
-   "raw": 275
+   "raw": 300
   },
   {
    "id": "v57",
-   "text": "26.7%",
+   "text": "25.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -711,11 +711,11 @@
     "label": "Yousri Belgaroui Points"
    },
    "desc": "Market dec implied Yousri Belgaroui",
-   "raw": 0.26666666666666666
+   "raw": 0.25
   },
   {
    "id": "v58",
-   "text": "-4.9%",
+   "text": "-3.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -725,11 +725,11 @@
     ]
    },
    "desc": "Edge dec Yousri Belgaroui",
-   "raw": -0.049133743179365336
+   "raw": -0.032357523556575535
   },
   {
    "id": "v59",
-   "text": "+471",
+   "text": "+463",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -737,11 +737,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Yousri Belgaroui",
-   "raw": 0.17501888126364332
+   "raw": 0.17750418415412894
   },
   {
    "id": "v60",
-   "text": "17.5%",
+   "text": "17.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -749,7 +749,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Yousri Belgaroui",
-   "raw": 0.17501888126364332
+   "raw": 0.17750418415412894
   },
   {
    "id": "v61",
@@ -778,7 +778,7 @@
   },
   {
    "id": "v63",
-   "text": "-1.3%",
+   "text": "-1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -788,11 +788,11 @@
     ]
    },
    "desc": "Edge ko Yousri Belgaroui",
-   "raw": -0.012598379524349168
+   "raw": -0.010113076633863544
   },
   {
    "id": "v64",
-   "text": "+3748",
+   "text": "+3691",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -800,7 +800,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Yousri Belgaroui",
-   "raw": 0.025990273599595392
+   "raw": 0.02637567535680551
   },
   {
    "id": "v65",
@@ -812,11 +812,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Yousri Belgaroui",
-   "raw": 0.025990273599595392
+   "raw": 0.02637567535680551
   },
   {
    "id": "v66",
-   "text": "+3143",
+   "text": "+3000",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -825,11 +825,11 @@
     "field": "cost"
    },
    "desc": "Market sub Yousri Belgaroui",
-   "raw": 3143
+   "raw": 3000
   },
   {
    "id": "v67",
-   "text": "3.1%",
+   "text": "3.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -837,11 +837,11 @@
     "label": "Yousri Belgaroui Submission"
    },
    "desc": "Market sub implied Yousri Belgaroui",
-   "raw": 0.030835646006783842
+   "raw": 0.03225806451612903
   },
   {
    "id": "v68",
-   "text": "-0.5%",
+   "text": "-0.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -851,11 +851,11 @@
     ]
    },
    "desc": "Edge sub Yousri Belgaroui",
-   "raw": -0.00484537240718845
+   "raw": -0.005882389159323521
   },
   {
    "id": "v69",
-   "text": "+397",
+   "text": "+390",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -863,11 +863,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Yousri Belgaroui",
-   "raw": 0.2010091548632387
+   "raw": 0.20387985951093443
   },
   {
    "id": "v70",
-   "text": "20.1%",
+   "text": "20.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -875,11 +875,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Yousri Belgaroui",
-   "raw": 0.2010091548632387
+   "raw": 0.20387985951093443
   },
   {
    "id": "v71",
-   "text": "+358",
+   "text": "+355",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -890,11 +890,11 @@
     ]
    },
    "desc": "Market ITD price Yousri Belgaroui",
-   "raw": 0.21845290679477633
+   "raw": 0.21987532530412152
   },
   {
    "id": "v72",
-   "text": "21.8%",
+   "text": "22.0%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -905,11 +905,11 @@
     ]
    },
    "desc": "Market ITD implied Yousri Belgaroui",
-   "raw": 0.21845290679477633
+   "raw": 0.21987532530412152
   },
   {
    "id": "v73",
-   "text": "-1.7%",
+   "text": "-1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -919,7 +919,7 @@
     ]
    },
    "desc": "Edge itd Yousri Belgaroui",
-   "raw": -0.017443751931537632
+   "raw": -0.015995465793187086
   },
   {
    "id": "v74",
@@ -939,7 +939,7 @@
   },
   {
    "id": "v75",
-   "text": "-160",
+   "text": "-161",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -952,11 +952,11 @@
     "at": "current"
    },
    "desc": "LH current ML Caio Borralho",
-   "raw": -160
+   "raw": -161
   },
   {
    "id": "v76",
-   "text": "0.1",
+   "text": "0.4",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -967,7 +967,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0010000000000000009
+   "raw": 0.0040000000000000036
   },
   {
    "id": "v77",

@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/ufc_334_projections.json",
- "published_at": "2026-11-12T22:47:18.373Z",
+ "published_at": "2026-11-14T07:19:22.608Z",
  "rows": [
   {
    "id": "v1",
@@ -131,51 +131,51 @@
   },
   {
    "id": "v11",
-   "text": "-179",
+   "text": "-146",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Kayla Harrison",
-   "raw": 0.6417514188018376
+   "raw": 0.59328094771849
   },
   {
    "id": "v12",
-   "text": "64.2%",
+   "text": "59.3%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Kayla Harrison",
-   "raw": 0.6417514188018376
+   "raw": 0.59328094771849
   },
   {
    "id": "v13",
-   "text": "-185",
+   "text": "-170",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Kayla Harrison",
-   "raw": -185
+   "raw": -170
   },
   {
    "id": "v14",
-   "text": "64.9%",
+   "text": "63.0%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Kayla Harrison",
-   "raw": 0.6491228070175439
+   "raw": 0.6296296296296297
   },
   {
    "id": "v15",
-   "text": "-180",
+   "text": "-170",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Kayla Harrison",
-   "raw": -180
+   "raw": -170
   },
   {
    "id": "v16",
-   "text": "64.3%",
+   "text": "63.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,11 +196,11 @@
     "label": "Kayla Harrison"
    },
    "desc": "Market implied Kayla Harrison",
-   "raw": 0.6428571428571429
+   "raw": 0.6296296296296297
   },
   {
    "id": "v17",
-   "text": "-0.7%",
+   "text": "-3.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,55 +210,55 @@
     ]
    },
    "desc": "Edge ML Kayla Harrison",
-   "raw": -0.007371388215706265
+   "raw": -0.0363486819111396
   },
   {
    "id": "v18",
-   "text": "+179",
+   "text": "+146",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Amanda Nunes",
-   "raw": 0.3582485811981624
+   "raw": 0.40671905228150995
   },
   {
    "id": "v19",
-   "text": "35.8%",
+   "text": "40.7%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Amanda Nunes",
-   "raw": 0.3582485811981624
+   "raw": 0.40671905228150995
   },
   {
    "id": "v20",
-   "text": "+155",
+   "text": "+143",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Amanda Nunes",
-   "raw": 155
+   "raw": 143
   },
   {
    "id": "v21",
-   "text": "39.2%",
+   "text": "41.2%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Amanda Nunes",
-   "raw": 0.39215686274509803
+   "raw": 0.411522633744856
   },
   {
    "id": "v22",
-   "text": "+146",
+   "text": "+140",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Amanda Nunes",
-   "raw": 146
+   "raw": 140
   },
   {
    "id": "v23",
-   "text": "40.7%",
+   "text": "41.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,11 +279,11 @@
     "label": "Amanda Nunes"
    },
    "desc": "Market implied Amanda Nunes",
-   "raw": 0.4065040650406504
+   "raw": 0.4166666666666667
   },
   {
    "id": "v24",
-   "text": "-3.4%",
+   "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,7 +293,7 @@
     ]
    },
    "desc": "Edge ML Amanda Nunes",
-   "raw": -0.03390828154693565
+   "raw": -0.004803581463346029
   },
   {
    "id": "v25",
@@ -304,7 +304,7 @@
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.4177758774607728
+   "raw": 0.4180210973581398
   },
   {
    "id": "v26",
@@ -315,11 +315,11 @@
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.4177758774607728
+   "raw": 0.4180210973581398
   },
   {
    "id": "v27",
-   "text": "+164",
+   "text": "+157",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -328,11 +328,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 164
+   "raw": 157
   },
   {
    "id": "v28",
-   "text": "37.9%",
+   "text": "38.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -340,11 +340,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.3787878787878788
+   "raw": 0.38910505836575876
   },
   {
    "id": "v29",
-   "text": "+3.9%",
+   "text": "+2.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -354,7 +354,7 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": 0.03898799867289404
+   "raw": 0.028916038992381043
   },
   {
    "id": "v30",
@@ -366,7 +366,7 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.5822241225392272
+   "raw": 0.5819789026418603
   },
   {
    "id": "v31",
@@ -378,11 +378,11 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.5822241225392272
+   "raw": 0.5819789026418603
   },
   {
    "id": "v32",
-   "text": "-217",
+   "text": "-212",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -391,11 +391,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": -217
+   "raw": -212
   },
   {
    "id": "v33",
-   "text": "68.5%",
+   "text": "67.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -403,11 +403,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.6845425867507886
+   "raw": 0.6794871794871795
   },
   {
    "id": "v34",
-   "text": "-10.2%",
+   "text": "-9.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -417,11 +417,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.10231846421156143
+   "raw": -0.09750827684531926
   },
   {
    "id": "v35",
-   "text": "+308",
+   "text": "+347",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -429,11 +429,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Kayla Harrison",
-   "raw": 0.24493758834515647
+   "raw": 0.22348970803334922
   },
   {
    "id": "v36",
-   "text": "24.5%",
+   "text": "22.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -441,7 +441,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Kayla Harrison",
-   "raw": 0.24493758834515647
+   "raw": 0.22348970803334922
   },
   {
    "id": "v37",
@@ -470,7 +470,7 @@
   },
   {
    "id": "v39",
-   "text": "-0.5%",
+   "text": "-2.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -480,11 +480,11 @@
     ]
    },
    "desc": "Edge dec Kayla Harrison",
-   "raw": -0.005062411654843529
+   "raw": -0.02651029196665078
   },
   {
    "id": "v40",
-   "text": "+1099",
+   "text": "+1228",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -492,11 +492,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Kayla Harrison",
-   "raw": 0.08340692372076923
+   "raw": 0.07527548531460375
   },
   {
    "id": "v41",
-   "text": "8.3%",
+   "text": "7.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -504,11 +504,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Kayla Harrison",
-   "raw": 0.08340692372076923
+   "raw": 0.07527548531460375
   },
   {
    "id": "v42",
-   "text": "+747",
+   "text": "+797",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -517,11 +517,11 @@
     "field": "cost"
    },
    "desc": "Market ko Kayla Harrison",
-   "raw": 747
+   "raw": 797
   },
   {
    "id": "v43",
-   "text": "11.8%",
+   "text": "11.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -529,11 +529,11 @@
     "label": "Kayla Harrison KO/TKO/DQ"
    },
    "desc": "Market ko implied Kayla Harrison",
-   "raw": 0.1180637544273908
+   "raw": 0.11148272017837235
   },
   {
    "id": "v44",
-   "text": "-3.5%",
+   "text": "-3.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -543,11 +543,11 @@
     ]
    },
    "desc": "Edge ko Kayla Harrison",
-   "raw": -0.034656830706621566
+   "raw": -0.0362072348637686
   },
   {
    "id": "v45",
-   "text": "+219",
+   "text": "+240",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -555,11 +555,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Kayla Harrison",
-   "raw": 0.3134069067359119
+   "raw": 0.2945157543705371
   },
   {
    "id": "v46",
-   "text": "31.3%",
+   "text": "29.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -567,11 +567,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Kayla Harrison",
-   "raw": 0.3134069067359119
+   "raw": 0.2945157543705371
   },
   {
    "id": "v47",
-   "text": "+185",
+   "text": "+192",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -580,11 +580,11 @@
     "field": "cost"
    },
    "desc": "Market sub Kayla Harrison",
-   "raw": 185
+   "raw": 192
   },
   {
    "id": "v48",
-   "text": "35.1%",
+   "text": "34.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -592,11 +592,11 @@
     "label": "Kayla Harrison Submission"
    },
    "desc": "Market sub implied Kayla Harrison",
-   "raw": 0.3508771929824561
+   "raw": 0.3424657534246575
   },
   {
    "id": "v49",
-   "text": "-3.7%",
+   "text": "-4.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -606,11 +606,11 @@
     ]
    },
    "desc": "Edge sub Kayla Harrison",
-   "raw": -0.03747028624654419
+   "raw": -0.047949999054120396
   },
   {
    "id": "v50",
-   "text": "+152",
+   "text": "+170",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -618,11 +618,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Kayla Harrison",
-   "raw": 0.39681383045668117
+   "raw": 0.3697912396851408
   },
   {
    "id": "v51",
-   "text": "39.7%",
+   "text": "37.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -630,11 +630,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Kayla Harrison",
-   "raw": 0.39681383045668117
+   "raw": 0.3697912396851408
   },
   {
    "id": "v52",
-   "text": "+113",
+   "text": "+120",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -645,11 +645,11 @@
     ]
    },
    "desc": "Market ITD price Kayla Harrison",
-   "raw": 0.46894094740984693
+   "raw": 0.45394847360302987
   },
   {
    "id": "v53",
-   "text": "46.9%",
+   "text": "45.4%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -660,11 +660,11 @@
     ]
    },
    "desc": "Market ITD implied Kayla Harrison",
-   "raw": 0.46894094740984693
+   "raw": 0.45394847360302987
   },
   {
    "id": "v54",
-   "text": "-7.2%",
+   "text": "-8.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -674,11 +674,11 @@
     ]
    },
    "desc": "Edge itd Kayla Harrison",
-   "raw": -0.07212711695316576
+   "raw": -0.08415723391788904
   },
   {
    "id": "v55",
-   "text": "+479",
+   "text": "+414",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -686,11 +686,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Amanda Nunes",
-   "raw": 0.17283828911561638
+   "raw": 0.19453138932479058
   },
   {
    "id": "v56",
-   "text": "17.3%",
+   "text": "19.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -698,11 +698,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Amanda Nunes",
-   "raw": 0.17283828911561638
+   "raw": 0.19453138932479058
   },
   {
    "id": "v57",
-   "text": "+550",
+   "text": "+500",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -711,11 +711,11 @@
     "field": "cost"
    },
    "desc": "Market dec Amanda Nunes",
-   "raw": 550
+   "raw": 500
   },
   {
    "id": "v58",
-   "text": "15.4%",
+   "text": "16.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -723,11 +723,11 @@
     "label": "Amanda Nunes Points"
    },
    "desc": "Market dec implied Amanda Nunes",
-   "raw": 0.15384615384615385
+   "raw": 0.16666666666666666
   },
   {
    "id": "v59",
-   "text": "+1.9%",
+   "text": "+2.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -737,11 +737,11 @@
     ]
    },
    "desc": "Edge dec Amanda Nunes",
-   "raw": 0.01899213526946253
+   "raw": 0.027864722658123925
   },
   {
    "id": "v60",
-   "text": "+581",
+   "text": "+494",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -749,11 +749,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Amanda Nunes",
-   "raw": 0.14693389948203736
+   "raw": 0.16834266618677704
   },
   {
    "id": "v61",
-   "text": "14.7%",
+   "text": "16.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -761,11 +761,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Amanda Nunes",
-   "raw": 0.14693389948203736
+   "raw": 0.16834266618677704
   },
   {
    "id": "v62",
-   "text": "+287",
+   "text": "+277",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -774,11 +774,11 @@
     "field": "cost"
    },
    "desc": "Market ko Amanda Nunes",
-   "raw": 287
+   "raw": 277
   },
   {
    "id": "v63",
-   "text": "25.8%",
+   "text": "26.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -786,11 +786,11 @@
     "label": "Amanda Nunes KO/TKO/DQ"
    },
    "desc": "Market ko implied Amanda Nunes",
-   "raw": 0.25839793281653745
+   "raw": 0.26525198938992045
   },
   {
    "id": "v64",
-   "text": "-11.1%",
+   "text": "-9.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -800,11 +800,11 @@
     ]
    },
    "desc": "Edge ko Amanda Nunes",
-   "raw": -0.11146403333450008
+   "raw": -0.09690932320314341
   },
   {
    "id": "v65",
-   "text": "+2499",
+   "text": "+2181",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -812,11 +812,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Amanda Nunes",
-   "raw": 0.03847639260050866
+   "raw": 0.043844996769942336
   },
   {
    "id": "v66",
-   "text": "3.8%",
+   "text": "4.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -824,7 +824,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Amanda Nunes",
-   "raw": 0.03847639260050866
+   "raw": 0.043844996769942336
   },
   {
    "id": "v67",
@@ -853,7 +853,7 @@
   },
   {
    "id": "v69",
-   "text": "-1.0%",
+   "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -863,11 +863,11 @@
     ]
    },
    "desc": "Edge sub Amanda Nunes",
-   "raw": -0.010327902177431798
+   "raw": -0.004959298007998124
   },
   {
    "id": "v70",
-   "text": "+439",
+   "text": "+371",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -875,11 +875,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Amanda Nunes",
-   "raw": 0.185410292082546
+   "raw": 0.21218766295671937
   },
   {
    "id": "v71",
-   "text": "18.5%",
+   "text": "21.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -887,11 +887,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Amanda Nunes",
-   "raw": 0.185410292082546
+   "raw": 0.21218766295671937
   },
   {
    "id": "v72",
-   "text": "+226",
+   "text": "+218",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -902,11 +902,11 @@
     ]
    },
    "desc": "Market ITD price Amanda Nunes",
-   "raw": 0.3072022275944779
+   "raw": 0.3140562841678609
   },
   {
    "id": "v73",
-   "text": "30.7%",
+   "text": "31.4%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -917,11 +917,11 @@
     ]
    },
    "desc": "Market ITD implied Amanda Nunes",
-   "raw": 0.3072022275944779
+   "raw": 0.3140562841678609
   },
   {
    "id": "v74",
-   "text": "-12.2%",
+   "text": "-10.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -931,7 +931,7 @@
     ]
    },
    "desc": "Edge itd Amanda Nunes",
-   "raw": -0.1217919355119319
+   "raw": -0.10186862121114154
   },
   {
    "id": "v75",
@@ -951,7 +951,7 @@
   },
   {
    "id": "v76",
-   "text": "+148",
+   "text": "+140",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -964,11 +964,11 @@
     "at": "current"
    },
    "desc": "LH current ML Amanda Nunes",
-   "raw": 148
+   "raw": 140
   },
   {
    "id": "v77",
-   "text": "1.5",
+   "text": "2.8",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -979,7 +979,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.015000000000000013
+   "raw": 0.028000000000000025
   },
   {
    "id": "v78",

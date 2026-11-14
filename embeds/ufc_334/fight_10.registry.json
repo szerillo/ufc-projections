@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/ufc_334_projections.json",
- "published_at": "2026-11-12T22:47:18.373Z",
+ "published_at": "2026-11-14T07:19:22.608Z",
  "rows": [
   {
    "id": "v1",
@@ -131,51 +131,51 @@
   },
   {
    "id": "v11",
-   "text": "-156",
+   "text": "-141",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Uros Medic",
-   "raw": 0.6096464014817722
+   "raw": 0.5843227928710645
   },
   {
    "id": "v12",
-   "text": "61.0%",
+   "text": "58.4%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Uros Medic",
-   "raw": 0.6096464014817722
+   "raw": 0.5843227928710645
   },
   {
    "id": "v13",
-   "text": "-154",
+   "text": "-163",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Uros Medic",
-   "raw": -154
+   "raw": -163
   },
   {
    "id": "v14",
-   "text": "60.6%",
+   "text": "62.0%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Uros Medic",
-   "raw": 0.6062992125984252
+   "raw": 0.6197718631178707
   },
   {
    "id": "v15",
-   "text": "-155",
+   "text": "-160",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Uros Medic",
-   "raw": -155
+   "raw": -160
   },
   {
    "id": "v16",
-   "text": "60.8%",
+   "text": "61.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,11 +196,11 @@
     "label": "Uros Medic"
    },
    "desc": "Market implied Uros Medic",
-   "raw": 0.6078431372549019
+   "raw": 0.6153846153846154
   },
   {
    "id": "v17",
-   "text": "+0.3%",
+   "text": "-3.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,29 +210,29 @@
     ]
    },
    "desc": "Edge ML Uros Medic",
-   "raw": 0.003347188883346952
+   "raw": -0.035449070246806214
   },
   {
    "id": "v18",
-   "text": "+156",
+   "text": "+141",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Kevin Holland",
-   "raw": 0.3903535985182279
+   "raw": 0.4156772071289355
   },
   {
    "id": "v19",
-   "text": "39.0%",
+   "text": "41.6%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Kevin Holland",
-   "raw": 0.3903535985182279
+   "raw": 0.4156772071289355
   },
   {
    "id": "v20",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "+130",
+   "text": "+132",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Kevin Holland",
-   "raw": 130
+   "raw": 132
   },
   {
    "id": "v23",
-   "text": "43.5%",
+   "text": "43.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,11 +279,11 @@
     "label": "Kevin Holland"
    },
    "desc": "Market implied Kevin Holland",
-   "raw": 0.43478260869565216
+   "raw": 0.43103448275862066
   },
   {
    "id": "v24",
-   "text": "-2.6%",
+   "text": "-0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,33 +293,33 @@
     ]
    },
    "desc": "Edge ML Kevin Holland",
-   "raw": -0.026313068148438812
+   "raw": -0.0009894595377311632
   },
   {
    "id": "v25",
-   "text": "+299",
+   "text": "+326",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.2506557540422238
+   "raw": 0.23494063242773613
   },
   {
    "id": "v26",
-   "text": "25.1%",
+   "text": "23.5%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.2506557540422238
+   "raw": 0.23494063242773613
   },
   {
    "id": "v27",
-   "text": "+385",
+   "text": "+390",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -328,11 +328,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 385
+   "raw": 390
   },
   {
    "id": "v28",
-   "text": "20.6%",
+   "text": "20.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -340,11 +340,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.20618556701030927
+   "raw": 0.20408163265306123
   },
   {
    "id": "v29",
-   "text": "+4.4%",
+   "text": "+3.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -354,11 +354,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": 0.04447018703191452
+   "raw": 0.030858999774674906
   },
   {
    "id": "v30",
-   "text": "-299",
+   "text": "-326",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -366,11 +366,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.7493442459577762
+   "raw": 0.7650593675722639
   },
   {
    "id": "v31",
-   "text": "74.9%",
+   "text": "76.5%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -378,11 +378,11 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.7493442459577762
+   "raw": 0.7650593675722639
   },
   {
    "id": "v32",
-   "text": "-595",
+   "text": "-610",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -391,11 +391,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": -595
+   "raw": -610
   },
   {
    "id": "v33",
-   "text": "85.6%",
+   "text": "85.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -403,11 +403,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.8561151079136691
+   "raw": 0.8591549295774648
   },
   {
    "id": "v34",
-   "text": "-10.7%",
+   "text": "-9.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -417,11 +417,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.10677086195589292
+   "raw": -0.09409556200520086
   },
   {
    "id": "v35",
-   "text": "+434",
+   "text": "+715",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -429,11 +429,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Uros Medic",
-   "raw": 0.18709085815233908
+   "raw": 0.12270778650292354
   },
   {
    "id": "v36",
-   "text": "18.7%",
+   "text": "12.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -441,7 +441,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Uros Medic",
-   "raw": 0.18709085815233908
+   "raw": 0.12270778650292354
   },
   {
    "id": "v37",
@@ -470,7 +470,7 @@
   },
   {
    "id": "v39",
-   "text": "+6.6%",
+   "text": "+0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -480,11 +480,11 @@
     ]
    },
    "desc": "Edge dec Uros Medic",
-   "raw": 0.06573163485136821
+   "raw": 0.00134856320195266
   },
   {
    "id": "v40",
-   "text": "+166",
+   "text": "+142",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -492,11 +492,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Uros Medic",
-   "raw": 0.37571177900166647
+   "raw": 0.4124409408826926
   },
   {
    "id": "v41",
-   "text": "37.6%",
+   "text": "41.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -504,11 +504,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Uros Medic",
-   "raw": 0.37571177900166647
+   "raw": 0.4124409408826926
   },
   {
    "id": "v42",
-   "text": "+107",
+   "text": "+105",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -517,11 +517,11 @@
     "field": "cost"
    },
    "desc": "Market ko Uros Medic",
-   "raw": 107
+   "raw": 105
   },
   {
    "id": "v43",
-   "text": "48.3%",
+   "text": "48.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -529,11 +529,11 @@
     "label": "Uros Medic KO/TKO/DQ"
    },
    "desc": "Market ko implied Uros Medic",
-   "raw": 0.4830917874396135
+   "raw": 0.4878048780487805
   },
   {
    "id": "v44",
-   "text": "-10.7%",
+   "text": "-7.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -543,11 +543,11 @@
     ]
    },
    "desc": "Edge ko Uros Medic",
-   "raw": -0.10738000843794704
+   "raw": -0.07536393716608786
   },
   {
    "id": "v45",
-   "text": "+2035",
+   "text": "+1934",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -555,11 +555,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Uros Medic",
-   "raw": 0.04684376432776663
+   "raw": 0.049174065485448316
   },
   {
    "id": "v46",
-   "text": "4.7%",
+   "text": "4.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -567,7 +567,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Uros Medic",
-   "raw": 0.04684376432776663
+   "raw": 0.049174065485448316
   },
   {
    "id": "v47",
@@ -596,7 +596,7 @@
   },
   {
    "id": "v49",
-   "text": "-3.0%",
+   "text": "-2.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -606,11 +606,11 @@
     ]
    },
    "desc": "Edge sub Uros Medic",
-   "raw": -0.030079312595310298
+   "raw": -0.02774901143762861
   },
   {
    "id": "v50",
-   "text": "+137",
+   "text": "+117",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -618,11 +618,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Uros Medic",
-   "raw": 0.42255554332943307
+   "raw": 0.46161500636814096
   },
   {
    "id": "v51",
-   "text": "42.3%",
+   "text": "46.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -630,11 +630,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Uros Medic",
-   "raw": 0.42255554332943307
+   "raw": 0.46161500636814096
   },
   {
    "id": "v52",
-   "text": "-127",
+   "text": "-130",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -645,11 +645,11 @@
     ]
    },
    "desc": "Market ITD price Uros Medic",
-   "raw": 0.5600148643626904
+   "raw": 0.5647279549718573
   },
   {
    "id": "v53",
-   "text": "56.0%",
+   "text": "56.5%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -660,11 +660,11 @@
     ]
    },
    "desc": "Market ITD implied Uros Medic",
-   "raw": 0.5600148643626904
+   "raw": 0.5647279549718573
   },
   {
    "id": "v54",
-   "text": "-13.7%",
+   "text": "-10.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -674,11 +674,11 @@
     ]
    },
    "desc": "Edge itd Uros Medic",
-   "raw": -0.13745932103325736
+   "raw": -0.10311294860371639
   },
   {
    "id": "v55",
-   "text": "+1473",
+   "text": "+791",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -686,11 +686,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Kevin Holland",
-   "raw": 0.06356489588988469
+   "raw": 0.1122328459248126
   },
   {
    "id": "v56",
-   "text": "6.4%",
+   "text": "11.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -698,7 +698,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Kevin Holland",
-   "raw": 0.06356489588988469
+   "raw": 0.1122328459248126
   },
   {
    "id": "v57",
@@ -727,7 +727,7 @@
   },
   {
    "id": "v59",
-   "text": "-3.6%",
+   "text": "+1.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -737,11 +737,11 @@
     ]
    },
    "desc": "Edge dec Kevin Holland",
-   "raw": -0.036435104110115316
+   "raw": 0.012232845924812594
   },
   {
    "id": "v60",
-   "text": "+452",
+   "text": "+500",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -749,11 +749,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Kevin Holland",
-   "raw": 0.18111515995088115
+   "raw": 0.16678729963113909
   },
   {
    "id": "v61",
-   "text": "18.1%",
+   "text": "16.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -761,11 +761,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Kevin Holland",
-   "raw": 0.18111515995088115
+   "raw": 0.16678729963113909
   },
   {
    "id": "v62",
-   "text": "+330",
+   "text": "+344",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -774,11 +774,11 @@
     "field": "cost"
    },
    "desc": "Market ko Kevin Holland",
-   "raw": 330
+   "raw": 344
   },
   {
    "id": "v63",
-   "text": "23.3%",
+   "text": "22.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -786,11 +786,11 @@
     "label": "Kevin Holland KO/TKO/DQ"
    },
    "desc": "Market ko implied Kevin Holland",
-   "raw": 0.23255813953488372
+   "raw": 0.22522522522522523
   },
   {
    "id": "v64",
-   "text": "-5.1%",
+   "text": "-5.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -800,11 +800,11 @@
     ]
    },
    "desc": "Edge ko Kevin Holland",
-   "raw": -0.05144297958400257
+   "raw": -0.05843792559408614
   },
   {
    "id": "v65",
-   "text": "+586",
+   "text": "+632",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -812,11 +812,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Kevin Holland",
-   "raw": 0.14567354267746202
+   "raw": 0.13665706157298382
   },
   {
    "id": "v66",
-   "text": "14.6%",
+   "text": "13.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -824,11 +824,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Kevin Holland",
-   "raw": 0.14567354267746202
+   "raw": 0.13665706157298382
   },
   {
    "id": "v67",
-   "text": "+474",
+   "text": "+469",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -837,11 +837,11 @@
     "field": "cost"
    },
    "desc": "Market sub Kevin Holland",
-   "raw": 474
+   "raw": 469
   },
   {
    "id": "v68",
-   "text": "17.4%",
+   "text": "17.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -849,11 +849,11 @@
     "label": "Kevin Holland Submission"
    },
    "desc": "Market sub implied Kevin Holland",
-   "raw": 0.17421602787456447
+   "raw": 0.1757469244288225
   },
   {
    "id": "v69",
-   "text": "-2.9%",
+   "text": "-3.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -863,11 +863,11 @@
     ]
    },
    "desc": "Edge sub Kevin Holland",
-   "raw": -0.028542485197102452
+   "raw": -0.03908986285583868
   },
   {
    "id": "v70",
-   "text": "+206",
+   "text": "+230",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -875,11 +875,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Kevin Holland",
-   "raw": 0.3267887026283432
+   "raw": 0.30344436120412294
   },
   {
    "id": "v71",
-   "text": "32.7%",
+   "text": "30.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -887,11 +887,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Kevin Holland",
-   "raw": 0.3267887026283432
+   "raw": 0.30344436120412294
   },
   {
    "id": "v72",
-   "text": "+146",
+   "text": "+149",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -902,11 +902,11 @@
     ]
    },
    "desc": "Market ITD price Kevin Holland",
-   "raw": 0.40677416740944816
+   "raw": 0.4009721496540477
   },
   {
    "id": "v73",
-   "text": "40.7%",
+   "text": "40.1%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -917,11 +917,11 @@
     ]
    },
    "desc": "Market ITD implied Kevin Holland",
-   "raw": 0.40677416740944816
+   "raw": 0.4009721496540477
   },
   {
    "id": "v74",
-   "text": "-8.0%",
+   "text": "-9.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -931,7 +931,7 @@
     ]
    },
    "desc": "Edge itd Kevin Holland",
-   "raw": -0.07998546478110496
+   "raw": -0.09752778844992477
   },
   {
    "id": "v75",
@@ -951,7 +951,7 @@
   },
   {
    "id": "v76",
-   "text": "+130",
+   "text": "+136",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -964,11 +964,11 @@
     "at": "current"
    },
    "desc": "LH current ML Kevin Holland",
-   "raw": 130
+   "raw": 136
   },
   {
    "id": "v77",
-   "text": "2.5",
+   "text": "1.5",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -979,7 +979,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.025000000000000022
+   "raw": 0.015000000000000013
   },
   {
    "id": "v78",

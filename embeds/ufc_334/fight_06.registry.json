@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/ufc_334_projections.json",
- "published_at": "2026-11-12T22:47:18.373Z",
+ "published_at": "2026-11-14T07:19:22.608Z",
  "rows": [
   {
    "id": "v1",
@@ -131,25 +131,25 @@
   },
   {
    "id": "v11",
-   "text": "+210",
+   "text": "+242",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Jim Miller",
-   "raw": 0.3224752850495464
+   "raw": 0.29229934458778817
   },
   {
    "id": "v12",
-   "text": "32.2%",
+   "text": "29.2%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Jim Miller",
-   "raw": 0.3224752850495464
+   "raw": 0.29229934458778817
   },
   {
    "id": "v13",
@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "+180",
+   "text": "+175",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Jim Miller",
-   "raw": 180
+   "raw": 175
   },
   {
    "id": "v16",
-   "text": "35.7%",
+   "text": "36.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,11 +196,11 @@
     "label": "Jim Miller"
    },
    "desc": "Market implied Jim Miller",
-   "raw": 0.35714285714285715
+   "raw": 0.36363636363636365
   },
   {
    "id": "v17",
-   "text": "-3.5%",
+   "text": "-6.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,29 +210,29 @@
     ]
    },
    "desc": "Edge ML Jim Miller",
-   "raw": -0.03466757209331073
+   "raw": -0.06484351255506898
   },
   {
    "id": "v18",
-   "text": "-210",
+   "text": "-242",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Terrance McKinney",
-   "raw": 0.6775247149504535
+   "raw": 0.7077006554122118
   },
   {
    "id": "v19",
-   "text": "67.8%",
+   "text": "70.8%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Terrance McKinney",
-   "raw": 0.6775247149504535
+   "raw": 0.7077006554122118
   },
   {
    "id": "v20",
@@ -283,7 +283,7 @@
   },
   {
    "id": "v24",
-   "text": "+1.1%",
+   "text": "+4.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,29 +293,29 @@
     ]
    },
    "desc": "Edge ML Terrance McKinney",
-   "raw": 0.010858048283786892
+   "raw": 0.0410339887455452
   },
   {
    "id": "v25",
-   "text": "+419",
+   "text": "+1044",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.192575670083934
+   "raw": 0.08738899028077023
   },
   {
    "id": "v26",
-   "text": "19.3%",
+   "text": "8.7%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.192575670083934
+   "raw": 0.08738899028077023
   },
   {
    "id": "v27",
@@ -344,7 +344,7 @@
   },
   {
    "id": "v29",
-   "text": "+8.7%",
+   "text": "-1.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -354,11 +354,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": 0.08697904917580307
+   "raw": -0.018207630627360707
   },
   {
    "id": "v30",
-   "text": "-419",
+   "text": "-1044",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -366,11 +366,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.8074243299160659
+   "raw": 0.9126110097192298
   },
   {
    "id": "v31",
-   "text": "80.7%",
+   "text": "91.3%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -378,7 +378,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.8074243299160659
+   "raw": 0.9126110097192298
   },
   {
    "id": "v32",
@@ -407,7 +407,7 @@
   },
   {
    "id": "v34",
-   "text": "-14.5%",
+   "text": "-4.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -417,11 +417,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.1449566224648864
+   "raw": -0.03976994266172251
   },
   {
    "id": "v35",
-   "text": "+2709",
+   "text": "+3150",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -429,11 +429,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Jim Miller",
-   "raw": 0.035600373449751026
+   "raw": 0.030772937847793284
   },
   {
    "id": "v36",
-   "text": "3.6%",
+   "text": "3.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -441,7 +441,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Jim Miller",
-   "raw": 0.035600373449751026
+   "raw": 0.030772937847793284
   },
   {
    "id": "v37",
@@ -470,7 +470,7 @@
   },
   {
    "id": "v39",
-   "text": "-3.1%",
+   "text": "-3.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -480,11 +480,11 @@
     ]
    },
    "desc": "Edge dec Jim Miller",
-   "raw": -0.03106629321691564
+   "raw": -0.035893728818873386
   },
   {
    "id": "v40",
-   "text": "+1197",
+   "text": "+1341",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -492,11 +492,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Jim Miller",
-   "raw": 0.07712096284603251
+   "raw": 0.06939916604436734
   },
   {
    "id": "v41",
-   "text": "7.7%",
+   "text": "6.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -504,7 +504,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Jim Miller",
-   "raw": 0.07712096284603251
+   "raw": 0.06939916604436734
   },
   {
    "id": "v42",
@@ -533,7 +533,7 @@
   },
   {
    "id": "v44",
-   "text": "-4.1%",
+   "text": "-4.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -543,11 +543,11 @@
     ]
    },
    "desc": "Edge ko Jim Miller",
-   "raw": -0.04094279158135829
+   "raw": -0.048664588383023455
   },
   {
    "id": "v45",
-   "text": "+377",
+   "text": "+420",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -555,11 +555,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Jim Miller",
-   "raw": 0.2097539487537629
+   "raw": 0.19212724069562753
   },
   {
    "id": "v46",
-   "text": "21.0%",
+   "text": "19.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -567,11 +567,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Jim Miller",
-   "raw": 0.2097539487537629
+   "raw": 0.19212724069562753
   },
   {
    "id": "v47",
-   "text": "+325",
+   "text": "+310",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -580,11 +580,11 @@
     "field": "cost"
    },
    "desc": "Market sub Jim Miller",
-   "raw": 325
+   "raw": 310
   },
   {
    "id": "v48",
-   "text": "23.5%",
+   "text": "24.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -592,11 +592,11 @@
     "label": "Jim Miller Submission"
    },
    "desc": "Market sub implied Jim Miller",
-   "raw": 0.23529411764705882
+   "raw": 0.24390243902439024
   },
   {
    "id": "v49",
-   "text": "-2.6%",
+   "text": "-5.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -606,11 +606,11 @@
     ]
    },
    "desc": "Edge sub Jim Miller",
-   "raw": -0.02554016889329591
+   "raw": -0.051775198328762706
   },
   {
    "id": "v50",
-   "text": "+249",
+   "text": "+282",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -618,11 +618,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Jim Miller",
-   "raw": 0.2868749115997954
+   "raw": 0.2615264067399949
   },
   {
    "id": "v51",
-   "text": "28.7%",
+   "text": "26.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -630,11 +630,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Jim Miller",
-   "raw": 0.2868749115997954
+   "raw": 0.2615264067399949
   },
   {
    "id": "v52",
-   "text": "+183",
+   "text": "+176",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -645,11 +645,11 @@
     ]
    },
    "desc": "Market ITD price Jim Miller",
-   "raw": 0.35335787207444963
+   "raw": 0.36196619345178105
   },
   {
    "id": "v53",
-   "text": "35.3%",
+   "text": "36.2%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -660,11 +660,11 @@
     ]
    },
    "desc": "Market ITD implied Jim Miller",
-   "raw": 0.35335787207444963
+   "raw": 0.36196619345178105
   },
   {
    "id": "v54",
-   "text": "-6.6%",
+   "text": "-10.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -674,11 +674,11 @@
     ]
    },
    "desc": "Edge itd Jim Miller",
-   "raw": -0.06648296047465424
+   "raw": -0.10043978671178616
   },
   {
    "id": "v55",
-   "text": "+537",
+   "text": "+1666",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -686,11 +686,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Terrance McKinney",
-   "raw": 0.15697529663418297
+   "raw": 0.056616052432976946
   },
   {
    "id": "v56",
-   "text": "15.7%",
+   "text": "5.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -698,11 +698,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Terrance McKinney",
-   "raw": 0.15697529663418297
+   "raw": 0.056616052432976946
   },
   {
    "id": "v57",
-   "text": "+157",
+   "text": "+100",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -710,11 +710,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Terrance McKinney",
-   "raw": 0.3897709499013748
+   "raw": 0.49923427445046165
   },
   {
    "id": "v58",
-   "text": "39.0%",
+   "text": "49.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -722,11 +722,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Terrance McKinney",
-   "raw": 0.3897709499013748
+   "raw": 0.49923427445046165
   },
   {
    "id": "v59",
-   "text": "+665",
+   "text": "+559",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -734,11 +734,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Terrance McKinney",
-   "raw": 0.13077846841489577
+   "raw": 0.15185032852877328
   },
   {
    "id": "v60",
-   "text": "13.1%",
+   "text": "15.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -746,11 +746,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Terrance McKinney",
-   "raw": 0.13077846841489577
+   "raw": 0.15185032852877328
   },
   {
    "id": "v61",
-   "text": "-109",
+   "text": "-187",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -758,11 +758,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Terrance McKinney",
-   "raw": 0.5205494183162706
+   "raw": 0.6510846029792349
   },
   {
    "id": "v62",
-   "text": "52.1%",
+   "text": "65.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -770,7 +770,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Terrance McKinney",
-   "raw": 0.5205494183162706
+   "raw": 0.6510846029792349
   },
   {
    "id": "v63",
@@ -790,7 +790,7 @@
   },
   {
    "id": "v64",
-   "text": "+180",
+   "text": "+175",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -803,11 +803,11 @@
     "at": "current"
    },
    "desc": "LH current ML Jim Miller",
-   "raw": 180
+   "raw": 175
   },
   {
    "id": "v65",
-   "text": "0.1",
+   "text": "0.3",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -818,7 +818,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0010000000000000009
+   "raw": 0.002999999999999947
   },
   {
    "id": "v66",

@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/ufc_334_projections.json",
- "published_at": "2026-11-12T22:47:18.373Z",
+ "published_at": "2026-11-14T07:19:22.608Z",
  "rows": [
   {
    "id": "v1",
@@ -131,51 +131,51 @@
   },
   {
    "id": "v11",
-   "text": "+123",
+   "text": "+136",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Evan Elder",
-   "raw": 0.4482005617744956
+   "raw": 0.42457841435523
   },
   {
    "id": "v12",
-   "text": "44.8%",
+   "text": "42.5%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Evan Elder",
-   "raw": 0.4482005617744956
+   "raw": 0.42457841435523
   },
   {
    "id": "v13",
-   "text": "+102",
+   "text": "+100",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Evan Elder",
-   "raw": 102
+   "raw": 100
   },
   {
    "id": "v14",
-   "text": "49.5%",
+   "text": "50.0%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Evan Elder",
-   "raw": 0.49504950495049505
+   "raw": 0.5
   },
   {
    "id": "v15",
-   "text": "+100",
+   "text": "-102",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Evan Elder",
-   "raw": 100
+   "raw": -102
   },
   {
    "id": "v16",
-   "text": "50.0%",
+   "text": "50.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,11 +196,11 @@
     "label": "Evan Elder"
    },
    "desc": "Market implied Evan Elder",
-   "raw": 0.5
+   "raw": 0.504950495049505
   },
   {
    "id": "v17",
-   "text": "-4.7%",
+   "text": "-7.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,55 +210,55 @@
     ]
    },
    "desc": "Edge ML Evan Elder",
-   "raw": -0.04684894317599947
+   "raw": -0.07542158564476997
   },
   {
    "id": "v18",
-   "text": "-123",
+   "text": "-136",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Samuel Sanches",
-   "raw": 0.5517994382255045
+   "raw": 0.57542158564477
   },
   {
    "id": "v19",
-   "text": "55.2%",
+   "text": "57.5%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Samuel Sanches",
-   "raw": 0.5517994382255045
+   "raw": 0.57542158564477
   },
   {
    "id": "v20",
-   "text": "-115",
+   "text": "-110",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Samuel Sanches",
-   "raw": -115
+   "raw": -110
   },
   {
    "id": "v21",
-   "text": "53.5%",
+   "text": "52.4%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Samuel Sanches",
-   "raw": 0.5348837209302325
+   "raw": 0.5238095238095238
   },
   {
    "id": "v22",
-   "text": "-120",
+   "text": "-118",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Samuel Sanches",
-   "raw": -120
+   "raw": -118
   },
   {
    "id": "v23",
-   "text": "54.5%",
+   "text": "54.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,11 +279,11 @@
     "label": "Samuel Sanches"
    },
    "desc": "Market implied Samuel Sanches",
-   "raw": 0.5454545454545454
+   "raw": 0.5412844036697247
   },
   {
    "id": "v24",
-   "text": "+1.7%",
+   "text": "+5.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -293,33 +293,33 @@
     ]
    },
    "desc": "Edge ML Samuel Sanches",
-   "raw": 0.01691571729527197
+   "raw": 0.05161206183524614
   },
   {
    "id": "v25",
-   "text": "+128",
+   "text": "+163",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.43781051494486223
+   "raw": 0.3804748595213848
   },
   {
    "id": "v26",
-   "text": "43.8%",
+   "text": "38.0%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.43781051494486223
+   "raw": 0.3804748595213848
   },
   {
    "id": "v27",
-   "text": "+118",
+   "text": "+117",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -328,11 +328,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 118
+   "raw": 117
   },
   {
    "id": "v28",
-   "text": "45.9%",
+   "text": "46.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -340,11 +340,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.45871559633027525
+   "raw": 0.4608294930875576
   },
   {
    "id": "v29",
-   "text": "-2.1%",
+   "text": "-8.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -354,11 +354,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.020905081385413027
+   "raw": -0.08035463356617278
   },
   {
    "id": "v30",
-   "text": "-128",
+   "text": "-163",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -366,11 +366,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.5621894850551378
+   "raw": 0.6195251404786152
   },
   {
    "id": "v31",
-   "text": "56.2%",
+   "text": "62.0%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -378,11 +378,11 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.5621894850551378
+   "raw": 0.6195251404786152
   },
   {
    "id": "v32",
-   "text": "-152",
+   "text": "-150",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -391,11 +391,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": -152
+   "raw": -150
   },
   {
    "id": "v33",
-   "text": "60.3%",
+   "text": "60.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -403,11 +403,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.6031746031746031
+   "raw": 0.6
   },
   {
    "id": "v34",
-   "text": "-4.1%",
+   "text": "+2.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -417,11 +417,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.04098511811946537
+   "raw": 0.0195251404786152
   },
   {
    "id": "v35",
-   "text": "+400",
+   "text": "+425",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -429,11 +429,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Evan Elder",
-   "raw": 0.19995560063337162
+   "raw": 0.19058573625861075
   },
   {
    "id": "v36",
-   "text": "20.0%",
+   "text": "19.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -441,11 +441,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Evan Elder",
-   "raw": 0.19995560063337162
+   "raw": 0.19058573625861075
   },
   {
    "id": "v37",
-   "text": "+255",
+   "text": "+240",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -454,11 +454,11 @@
     "field": "cost"
    },
    "desc": "Market dec Evan Elder",
-   "raw": 255
+   "raw": 240
   },
   {
    "id": "v38",
-   "text": "28.2%",
+   "text": "29.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -466,11 +466,11 @@
     "label": "Evan Elder Points"
    },
    "desc": "Market dec implied Evan Elder",
-   "raw": 0.28169014084507044
+   "raw": 0.29411764705882354
   },
   {
    "id": "v39",
-   "text": "-8.2%",
+   "text": "-10.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -480,11 +480,11 @@
     ]
    },
    "desc": "Edge dec Evan Elder",
-   "raw": -0.08173454021169882
+   "raw": -0.10353191080021279
   },
   {
    "id": "v40",
-   "text": "+594",
+   "text": "+625",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -492,11 +492,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Evan Elder",
-   "raw": 0.1440229094725886
+   "raw": 0.1379714552132975
   },
   {
    "id": "v41",
-   "text": "14.4%",
+   "text": "13.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -504,7 +504,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Evan Elder",
-   "raw": 0.1440229094725886
+   "raw": 0.1379714552132975
   },
   {
    "id": "v42",
@@ -533,7 +533,7 @@
   },
   {
    "id": "v44",
-   "text": "-1.6%",
+   "text": "-2.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -543,11 +543,11 @@
     ]
    },
    "desc": "Edge ko Evan Elder",
-   "raw": -0.01623350078382166
+   "raw": -0.02228495504311276
   },
   {
    "id": "v45",
-   "text": "+859",
+   "text": "+941",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -555,11 +555,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Evan Elder",
-   "raw": 0.10422205166853535
+   "raw": 0.09602122288332178
   },
   {
    "id": "v46",
-   "text": "10.4%",
+   "text": "9.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -567,7 +567,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Evan Elder",
-   "raw": 0.10422205166853535
+   "raw": 0.09602122288332178
   },
   {
    "id": "v47",
@@ -596,7 +596,7 @@
   },
   {
    "id": "v49",
-   "text": "-2.1%",
+   "text": "-2.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -606,11 +606,11 @@
     ]
    },
    "desc": "Edge sub Evan Elder",
-   "raw": -0.020777948331464652
+   "raw": -0.02897877711667822
   },
   {
    "id": "v50",
-   "text": "+303",
+   "text": "+327",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -618,11 +618,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Evan Elder",
-   "raw": 0.24824496114112396
+   "raw": 0.23399267809661928
   },
   {
    "id": "v51",
-   "text": "24.8%",
+   "text": "23.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -630,7 +630,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Evan Elder",
-   "raw": 0.24824496114112396
+   "raw": 0.23399267809661928
   },
   {
    "id": "v52",
@@ -664,7 +664,7 @@
   },
   {
    "id": "v54",
-   "text": "-3.7%",
+   "text": "-5.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -674,11 +674,11 @@
     ]
    },
    "desc": "Edge itd Evan Elder",
-   "raw": -0.03701144911528628
+   "raw": -0.051263732159790965
   },
   {
    "id": "v55",
-   "text": "+320",
+   "text": "+427",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -686,11 +686,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Samuel Sanches",
-   "raw": 0.23785491431149058
+   "raw": 0.1898891232627741
   },
   {
    "id": "v56",
-   "text": "23.8%",
+   "text": "19.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -698,7 +698,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Samuel Sanches",
-   "raw": 0.23785491431149058
+   "raw": 0.1898891232627741
   },
   {
    "id": "v57",
@@ -727,7 +727,7 @@
   },
   {
    "id": "v59",
-   "text": "+3.8%",
+   "text": "-1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -737,11 +737,11 @@
     ]
    },
    "desc": "Edge dec Samuel Sanches",
-   "raw": 0.03785491431149057
+   "raw": -0.01011087673722591
   },
   {
    "id": "v60",
-   "text": "+268",
+   "text": "+196",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -749,11 +749,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Samuel Sanches",
-   "raw": 0.2715689966491322
+   "raw": 0.33821619504820016
   },
   {
    "id": "v61",
-   "text": "27.2%",
+   "text": "33.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -761,7 +761,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Samuel Sanches",
-   "raw": 0.2715689966491322
+   "raw": 0.33821619504820016
   },
   {
    "id": "v62",
@@ -790,7 +790,7 @@
   },
   {
    "id": "v64",
-   "text": "-8.7%",
+   "text": "-2.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -800,11 +800,11 @@
     ]
    },
    "desc": "Edge ko Samuel Sanches",
-   "raw": -0.08685394241896816
+   "raw": -0.02020674401990019
   },
   {
    "id": "v65",
-   "text": "+2260",
+   "text": "+2013",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -812,11 +812,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Samuel Sanches",
-   "raw": 0.0423755272648817
+   "raw": 0.04731626733379565
   },
   {
    "id": "v66",
-   "text": "4.2%",
+   "text": "4.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -824,7 +824,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Samuel Sanches",
-   "raw": 0.0423755272648817
+   "raw": 0.04731626733379565
   },
   {
    "id": "v67",
@@ -853,7 +853,7 @@
   },
   {
    "id": "v69",
-   "text": "-1.0%",
+   "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -863,11 +863,11 @@
     ]
    },
    "desc": "Edge sub Samuel Sanches",
-   "raw": -0.010256051682486715
+   "raw": -0.005315311613572765
   },
   {
    "id": "v70",
-   "text": "+219",
+   "text": "+159",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -875,11 +875,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Samuel Sanches",
-   "raw": 0.3139445239140139
+   "raw": 0.38553246238199584
   },
   {
    "id": "v71",
-   "text": "31.4%",
+   "text": "38.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -887,7 +887,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Samuel Sanches",
-   "raw": 0.3139445239140139
+   "raw": 0.38553246238199584
   },
   {
    "id": "v72",
@@ -921,7 +921,7 @@
   },
   {
    "id": "v74",
-   "text": "-9.7%",
+   "text": "-2.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -931,7 +931,7 @@
     ]
    },
    "desc": "Edge itd Samuel Sanches",
-   "raw": -0.09710999410145488
+   "raw": -0.02552205563347293
   },
   {
    "id": "v75",
@@ -951,7 +951,7 @@
   },
   {
    "id": "v76",
-   "text": "-119",
+   "text": "-120",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -964,11 +964,11 @@
     "at": "current"
    },
    "desc": "LH current ML Samuel Sanches",
-   "raw": -119
+   "raw": -120
   },
   {
    "id": "v77",
-   "text": "3.4",
+   "text": "3.5",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -979,7 +979,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.03400000000000003
+   "raw": 0.03500000000000003
   },
   {
    "id": "v78",

@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/ufc_334_projections.json",
- "published_at": "2026-11-12T22:47:18.373Z",
+ "published_at": "2026-11-14T07:19:22.608Z",
  "rows": [
   {
    "id": "v1",
@@ -131,14 +131,14 @@
   },
   {
    "id": "v11",
-   "text": "+281",
+   "text": "+282",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Jared Gordon",
-   "raw": 0.2622362065883423
+   "raw": 0.26206026612658406
   },
   {
    "id": "v12",
@@ -149,7 +149,7 @@
     "side": "a"
    },
    "desc": "Model win % Jared Gordon",
-   "raw": 0.2622362065883423
+   "raw": 0.26206026612658406
   },
   {
    "id": "v13",
@@ -175,7 +175,7 @@
   },
   {
    "id": "v15",
-   "text": "+290",
+   "text": "+310",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Jared Gordon",
-   "raw": 290
+   "raw": 310
   },
   {
    "id": "v16",
-   "text": "25.6%",
+   "text": "24.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,7 +196,7 @@
     "label": "Jared Gordon"
    },
    "desc": "Market implied Jared Gordon",
-   "raw": 0.2564102564102564
+   "raw": 0.24390243902439024
   },
   {
    "id": "v17",
@@ -210,18 +210,18 @@
     ]
    },
    "desc": "Edge ML Jared Gordon",
-   "raw": 0.018333767563952053
+   "raw": 0.018157827102193824
   },
   {
    "id": "v18",
-   "text": "-281",
+   "text": "-282",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Melquizael Costa",
-   "raw": 0.7377637934116577
+   "raw": 0.7379397338734159
   },
   {
    "id": "v19",
@@ -232,7 +232,7 @@
     "side": "b"
    },
    "desc": "Model win % Melquizael Costa",
-   "raw": 0.7377637934116577
+   "raw": 0.7379397338734159
   },
   {
    "id": "v20",
@@ -258,7 +258,7 @@
   },
   {
    "id": "v22",
-   "text": "-385",
+   "text": "-400",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Melquizael Costa",
-   "raw": -385
+   "raw": -400
   },
   {
    "id": "v23",
-   "text": "79.4%",
+   "text": "80.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Melquizael Costa"
    },
    "desc": "Market implied Melquizael Costa",
-   "raw": 0.7938144329896907
+   "raw": 0.8
   },
   {
    "id": "v24",
@@ -293,33 +293,33 @@
     ]
    },
    "desc": "Edge ML Melquizael Costa",
-   "raw": -0.06223620658834239
+   "raw": -0.06206026612658411
   },
   {
    "id": "v25",
-   "text": "+155",
+   "text": "+156",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.3919424720955993
+   "raw": 0.3900204585209422
   },
   {
    "id": "v26",
-   "text": "39.2%",
+   "text": "39.0%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.3919424720955993
+   "raw": 0.3900204585209422
   },
   {
    "id": "v27",
-   "text": "+148",
+   "text": "+150",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -328,11 +328,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 148
+   "raw": 150
   },
   {
    "id": "v28",
-   "text": "40.3%",
+   "text": "40.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -340,11 +340,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.4032258064516129
+   "raw": 0.4
   },
   {
    "id": "v29",
-   "text": "-1.1%",
+   "text": "-1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -354,11 +354,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.011283334356013586
+   "raw": -0.00997954147905783
   },
   {
    "id": "v30",
-   "text": "-155",
+   "text": "-156",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -366,11 +366,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.6080575279044007
+   "raw": 0.6099795414790579
   },
   {
    "id": "v31",
-   "text": "60.8%",
+   "text": "61.0%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -378,11 +378,11 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.6080575279044007
+   "raw": 0.6099795414790579
   },
   {
    "id": "v32",
-   "text": "-194",
+   "text": "-197",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -391,11 +391,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": -194
+   "raw": -197
   },
   {
    "id": "v33",
-   "text": "66.0%",
+   "text": "66.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -403,11 +403,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.6598639455782312
+   "raw": 0.6632996632996633
   },
   {
    "id": "v34",
-   "text": "-5.2%",
+   "text": "-5.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -417,11 +417,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.05180641767383054
+   "raw": -0.053320121820605415
   },
   {
    "id": "v35",
-   "text": "+606",
+   "text": "+609",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -429,11 +429,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Jared Gordon",
-   "raw": 0.14160116477180387
+   "raw": 0.1411321216956751
   },
   {
    "id": "v36",
-   "text": "14.2%",
+   "text": "14.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -441,7 +441,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Jared Gordon",
-   "raw": 0.14160116477180387
+   "raw": 0.1411321216956751
   },
   {
    "id": "v37",
@@ -470,7 +470,7 @@
   },
   {
    "id": "v39",
-   "text": "-1.2%",
+   "text": "-1.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -480,11 +480,11 @@
     ]
    },
    "desc": "Edge dec Jared Gordon",
-   "raw": -0.012244989074349982
+   "raw": -0.012714032150478755
   },
   {
    "id": "v40",
-   "text": "+1137",
+   "text": "+1139",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -492,7 +492,7 @@
     "k": "ko"
    },
    "desc": "Model ko ML Jared Gordon",
-   "raw": 0.08082766202161266
+   "raw": 0.08071031496113293
   },
   {
    "id": "v41",
@@ -504,7 +504,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Jared Gordon",
-   "raw": 0.08082766202161266
+   "raw": 0.08071031496113293
   },
   {
    "id": "v42",
@@ -543,11 +543,11 @@
     ]
    },
    "desc": "Edge ko Jared Gordon",
-   "raw": -0.014592185306631617
+   "raw": -0.014709532367111353
   },
   {
    "id": "v45",
-   "text": "+2412",
+   "text": "+2386",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -555,7 +555,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Jared Gordon",
-   "raw": 0.039807379794925754
+   "raw": 0.04021782946977603
   },
   {
    "id": "v46",
@@ -567,7 +567,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Jared Gordon",
-   "raw": 0.039807379794925754
+   "raw": 0.04021782946977603
   },
   {
    "id": "v47",
@@ -596,7 +596,7 @@
   },
   {
    "id": "v49",
-   "text": "-0.8%",
+   "text": "-0.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -606,11 +606,11 @@
     ]
    },
    "desc": "Edge sub Jared Gordon",
-   "raw": -0.007811667824121862
+   "raw": -0.007401218149271589
   },
   {
    "id": "v50",
-   "text": "+729",
+   "text": "+727",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -618,7 +618,7 @@
     "k": "itd"
    },
    "desc": "Model itd ML Jared Gordon",
-   "raw": 0.12063504181653842
+   "raw": 0.12092814443090896
   },
   {
    "id": "v51",
@@ -630,7 +630,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Jared Gordon",
-   "raw": 0.12063504181653842
+   "raw": 0.12092814443090896
   },
   {
    "id": "v52",
@@ -674,11 +674,11 @@
     ]
    },
    "desc": "Edge itd Jared Gordon",
-   "raw": -0.022403853130753465
+   "raw": -0.02211075051638292
   },
   {
    "id": "v55",
-   "text": "+299",
+   "text": "+302",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -686,11 +686,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Melquizael Costa",
-   "raw": 0.25034130732379545
+   "raw": 0.2488883368252671
   },
   {
    "id": "v56",
-   "text": "25.0%",
+   "text": "24.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -698,7 +698,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Melquizael Costa",
-   "raw": 0.25034130732379545
+   "raw": 0.2488883368252671
   },
   {
    "id": "v57",
@@ -727,7 +727,7 @@
   },
   {
    "id": "v59",
-   "text": "-3.5%",
+   "text": "-3.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -737,7 +737,7 @@
     ]
    },
    "desc": "Edge dec Melquizael Costa",
-   "raw": -0.03537297839049025
+   "raw": -0.036825948889018606
   },
   {
    "id": "v60",
@@ -749,7 +749,7 @@
     "k": "ko"
    },
    "desc": "Model ko ML Melquizael Costa",
-   "raw": 0.36220341685639007
+   "raw": 0.3621941577915827
   },
   {
    "id": "v61",
@@ -761,11 +761,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Melquizael Costa",
-   "raw": 0.36220341685639007
+   "raw": 0.3621941577915827
   },
   {
    "id": "v62",
-   "text": "+141",
+   "text": "+143",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -774,11 +774,11 @@
     "field": "cost"
    },
    "desc": "Market ko Melquizael Costa",
-   "raw": 141
+   "raw": 143
   },
   {
    "id": "v63",
-   "text": "41.5%",
+   "text": "41.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -786,11 +786,11 @@
     "label": "Melquizael Costa KO/TKO/DQ"
    },
    "desc": "Market ko implied Melquizael Costa",
-   "raw": 0.4149377593360996
+   "raw": 0.411522633744856
   },
   {
    "id": "v64",
-   "text": "-5.3%",
+   "text": "-4.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -800,11 +800,11 @@
     ]
    },
    "desc": "Edge ko Melquizael Costa",
-   "raw": -0.05273434247970954
+   "raw": -0.049328475953273276
   },
   {
    "id": "v65",
-   "text": "+699",
+   "text": "+688",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -812,11 +812,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Melquizael Costa",
-   "raw": 0.12521906923147216
+   "raw": 0.12685723925656617
   },
   {
    "id": "v66",
-   "text": "12.5%",
+   "text": "12.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -824,7 +824,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Melquizael Costa",
-   "raw": 0.12521906923147216
+   "raw": 0.12685723925656617
   },
   {
    "id": "v67",
@@ -853,7 +853,7 @@
   },
   {
    "id": "v69",
-   "text": "-7.3%",
+   "text": "-7.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -863,11 +863,11 @@
     ]
    },
    "desc": "Edge sub Melquizael Costa",
-   "raw": -0.07280073274872587
+   "raw": -0.07116256272363186
   },
   {
    "id": "v70",
-   "text": "+105",
+   "text": "+104",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -875,11 +875,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Melquizael Costa",
-   "raw": 0.4874224860878622
+   "raw": 0.4890513970481489
   },
   {
    "id": "v71",
-   "text": "48.7%",
+   "text": "48.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -887,11 +887,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Melquizael Costa",
-   "raw": 0.4874224860878622
+   "raw": 0.4890513970481489
   },
   {
    "id": "v72",
-   "text": "-158",
+   "text": "-156",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -902,11 +902,11 @@
     ]
    },
    "desc": "Market ITD price Melquizael Costa",
-   "raw": 0.6129575613162976
+   "raw": 0.6095424357250541
   },
   {
    "id": "v73",
-   "text": "61.3%",
+   "text": "61.0%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -917,11 +917,11 @@
     ]
    },
    "desc": "Market ITD implied Melquizael Costa",
-   "raw": 0.6129575613162976
+   "raw": 0.6095424357250541
   },
   {
    "id": "v74",
-   "text": "-12.6%",
+   "text": "-12.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -931,11 +931,11 @@
     ]
    },
    "desc": "Edge itd Melquizael Costa",
-   "raw": -0.12553507522843543
+   "raw": -0.1204910386769052
   },
   {
    "id": "v75",
-   "text": "+300",
+   "text": "-370",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -944,14 +944,14 @@
      "Jared Gordon",
      "Melquizael Costa"
     ],
-    "side": "a"
+    "side": "b"
    },
-   "desc": "LH open ML Jared Gordon",
-   "raw": 300
+   "desc": "LH open ML Melquizael Costa",
+   "raw": -370
   },
   {
    "id": "v76",
-   "text": "+295",
+   "text": "-400",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -960,15 +960,15 @@
      "Jared Gordon",
      "Melquizael Costa"
     ],
-    "side": "a",
+    "side": "b",
     "at": "current"
    },
-   "desc": "LH current ML Jared Gordon",
-   "raw": 295
+   "desc": "LH current ML Melquizael Costa",
+   "raw": -400
   },
   {
    "id": "v77",
-   "text": "0.1",
+   "text": "0.7",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -979,7 +979,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0010000000000000009
+   "raw": 0.0069999999999999785
   },
   {
    "id": "v78",

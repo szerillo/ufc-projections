@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/ufc_334_projections.json",
- "published_at": "2026-11-12T22:47:18.373Z",
+ "published_at": "2026-11-14T07:19:22.608Z",
  "rows": [
   {
    "id": "v1",
@@ -131,51 +131,51 @@
   },
   {
    "id": "v11",
-   "text": "-143",
+   "text": "-135",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Stephen Thompson",
-   "raw": 0.5893113923378857
+   "raw": 0.5739087957160804
   },
   {
    "id": "v12",
-   "text": "58.9%",
+   "text": "57.4%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Stephen Thompson",
-   "raw": 0.5893113923378857
+   "raw": 0.5739087957160804
   },
   {
    "id": "v13",
-   "text": "-152",
+   "text": "-138",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Stephen Thompson",
-   "raw": -152
+   "raw": -138
   },
   {
    "id": "v14",
-   "text": "60.3%",
+   "text": "58.0%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Stephen Thompson",
-   "raw": 0.6031746031746031
+   "raw": 0.5798319327731093
   },
   {
    "id": "v15",
-   "text": "-160",
+   "text": "-142",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -184,11 +184,11 @@
     "field": "cost"
    },
    "desc": "Market ML Stephen Thompson",
-   "raw": -160
+   "raw": -142
   },
   {
    "id": "v16",
-   "text": "61.5%",
+   "text": "58.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -196,11 +196,11 @@
     "label": "Stephen Thompson"
    },
    "desc": "Market implied Stephen Thompson",
-   "raw": 0.6153846153846154
+   "raw": 0.5867768595041323
   },
   {
    "id": "v17",
-   "text": "-1.4%",
+   "text": "-0.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -210,55 +210,55 @@
     ]
    },
    "desc": "Edge ML Stephen Thompson",
-   "raw": -0.013863210836717488
+   "raw": -0.005923137057028849
   },
   {
    "id": "v18",
-   "text": "+143",
+   "text": "+135",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Charles Radtke",
-   "raw": 0.4106886076621144
+   "raw": 0.4260912042839195
   },
   {
    "id": "v19",
-   "text": "41.1%",
+   "text": "42.6%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Charles Radtke",
-   "raw": 0.4106886076621144
+   "raw": 0.4260912042839195
   },
   {
    "id": "v20",
-   "text": "+130",
+   "text": "+122",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Charles Radtke",
-   "raw": 130
+   "raw": 122
   },
   {
    "id": "v21",
-   "text": "43.5%",
+   "text": "45.0%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Charles Radtke",
-   "raw": 0.43478260869565216
+   "raw": 0.45045045045045046
   },
   {
    "id": "v22",
-   "text": "+130",
+   "text": "+120",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +267,11 @@
     "field": "cost"
    },
    "desc": "Market ML Charles Radtke",
-   "raw": 130
+   "raw": 120
   },
   {
    "id": "v23",
-   "text": "43.5%",
+   "text": "45.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,7 +279,7 @@
     "label": "Charlie Radke"
    },
    "desc": "Market implied Charles Radtke",
-   "raw": 0.43478260869565216
+   "raw": 0.45454545454545453
   },
   {
    "id": "v24",
@@ -293,33 +293,33 @@
     ]
    },
    "desc": "Edge ML Charles Radtke",
-   "raw": -0.02409400103353776
+   "raw": -0.024359246166530957
   },
   {
    "id": "v25",
-   "text": "-118",
+   "text": "-151",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.5403657451909128
+   "raw": 0.6022285268880572
   },
   {
    "id": "v26",
-   "text": "54.0%",
+   "text": "60.2%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.5403657451909128
+   "raw": 0.6022285268880572
   },
   {
    "id": "v27",
-   "text": "-152",
+   "text": "-158",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -328,11 +328,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": -152
+   "raw": -158
   },
   {
    "id": "v28",
-   "text": "60.3%",
+   "text": "61.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -340,11 +340,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.6031746031746031
+   "raw": 0.6124031007751938
   },
   {
    "id": "v29",
-   "text": "-6.3%",
+   "text": "-1.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -354,11 +354,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.06280885798369029
+   "raw": -0.010174573887136606
   },
   {
    "id": "v30",
-   "text": "+118",
+   "text": "+151",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -366,11 +366,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.45963425480908715
+   "raw": 0.39777147311194283
   },
   {
    "id": "v31",
-   "text": "46.0%",
+   "text": "39.8%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -378,11 +378,11 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.45963425480908715
+   "raw": 0.39777147311194283
   },
   {
    "id": "v32",
-   "text": "+113",
+   "text": "+121",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -391,11 +391,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": 113
+   "raw": 121
   },
   {
    "id": "v33",
-   "text": "46.9%",
+   "text": "45.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -403,11 +403,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.4694835680751174
+   "raw": 0.45248868778280543
   },
   {
    "id": "v34",
-   "text": "-1.0%",
+   "text": "-5.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -417,11 +417,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.009849313266030224
+   "raw": -0.0547172146708626
   },
   {
    "id": "v35",
-   "text": "+210",
+   "text": "+168",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -429,11 +429,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Stephen Thompson",
-   "raw": 0.3224012203430935
+   "raw": 0.3730407172154523
   },
   {
    "id": "v36",
-   "text": "32.2%",
+   "text": "37.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -441,11 +441,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Stephen Thompson",
-   "raw": 0.3224012203430935
+   "raw": 0.3730407172154523
   },
   {
    "id": "v37",
-   "text": "+125",
+   "text": "+135",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -454,11 +454,11 @@
     "field": "cost"
    },
    "desc": "Market dec Stephen Thompson",
-   "raw": 125
+   "raw": 135
   },
   {
    "id": "v38",
-   "text": "44.4%",
+   "text": "42.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -466,11 +466,11 @@
     "label": "Stephen Thompson Points"
    },
    "desc": "Market dec implied Stephen Thompson",
-   "raw": 0.4444444444444444
+   "raw": 0.425531914893617
   },
   {
    "id": "v39",
-   "text": "-12.2%",
+   "text": "-5.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -480,11 +480,11 @@
     ]
    },
    "desc": "Edge dec Stephen Thompson",
-   "raw": -0.12204322410135093
+   "raw": -0.052491197678164736
   },
   {
    "id": "v40",
-   "text": "+335",
+   "text": "+480",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -492,11 +492,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Stephen Thompson",
-   "raw": 0.2299350264293153
+   "raw": 0.1723010186216033
   },
   {
    "id": "v41",
-   "text": "23.0%",
+   "text": "17.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -504,11 +504,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Stephen Thompson",
-   "raw": 0.2299350264293153
+   "raw": 0.1723010186216033
   },
   {
    "id": "v42",
-   "text": "+408",
+   "text": "+424",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -517,11 +517,11 @@
     "field": "cost"
    },
    "desc": "Market ko Stephen Thompson",
-   "raw": 408
+   "raw": 424
   },
   {
    "id": "v43",
-   "text": "19.7%",
+   "text": "19.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -529,11 +529,11 @@
     "label": "Stephen Thompson KO/TKO/DQ"
    },
    "desc": "Market ko implied Stephen Thompson",
-   "raw": 0.1968503937007874
+   "raw": 0.19083969465648856
   },
   {
    "id": "v44",
-   "text": "+3.3%",
+   "text": "-1.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -543,11 +543,11 @@
     ]
    },
    "desc": "Edge ko Stephen Thompson",
-   "raw": 0.03308463272852788
+   "raw": -0.018538676034885265
   },
   {
    "id": "v45",
-   "text": "+2605",
+   "text": "+3401",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -555,11 +555,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Stephen Thompson",
-   "raw": 0.036975145565476854
+   "raw": 0.028567059879024855
   },
   {
    "id": "v46",
-   "text": "3.7%",
+   "text": "2.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -567,7 +567,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Stephen Thompson",
-   "raw": 0.036975145565476854
+   "raw": 0.028567059879024855
   },
   {
    "id": "v47",
@@ -596,7 +596,7 @@
   },
   {
    "id": "v49",
-   "text": "+0.1%",
+   "text": "-0.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -606,11 +606,11 @@
     ]
    },
    "desc": "Edge sub Stephen Thompson",
-   "raw": 0.0008479779354190475
+   "raw": -0.007560107751032951
   },
   {
    "id": "v50",
-   "text": "+275",
+   "text": "+398",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -618,11 +618,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Stephen Thompson",
-   "raw": 0.26691017199479217
+   "raw": 0.20086807850062816
   },
   {
    "id": "v51",
-   "text": "26.7%",
+   "text": "20.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -630,11 +630,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Stephen Thompson",
-   "raw": 0.26691017199479217
+   "raw": 0.20086807850062816
   },
   {
    "id": "v52",
-   "text": "+329",
+   "text": "+341",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -645,11 +645,11 @@
     ]
    },
    "desc": "Market ITD price Stephen Thompson",
-   "raw": 0.2329775613308452
+   "raw": 0.22696686228654636
   },
   {
    "id": "v53",
-   "text": "23.3%",
+   "text": "22.7%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -660,11 +660,11 @@
     ]
    },
    "desc": "Market ITD implied Stephen Thompson",
-   "raw": 0.2329775613308452
+   "raw": 0.22696686228654636
   },
   {
    "id": "v54",
-   "text": "+3.4%",
+   "text": "-2.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -674,11 +674,11 @@
     ]
    },
    "desc": "Edge itd Stephen Thompson",
-   "raw": 0.033932610663946955
+   "raw": -0.026098783785918206
   },
   {
    "id": "v55",
-   "text": "+359",
+   "text": "+336",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -686,11 +686,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Charles Radtke",
-   "raw": 0.21796452484781936
+   "raw": 0.2291878096726049
   },
   {
    "id": "v56",
-   "text": "21.8%",
+   "text": "22.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -698,11 +698,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Charles Radtke",
-   "raw": 0.21796452484781936
+   "raw": 0.2291878096726049
   },
   {
    "id": "v57",
-   "text": "+690",
+   "text": "+663",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -710,11 +710,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Charles Radtke",
-   "raw": 0.12664164289060117
+   "raw": 0.13098906529573617
   },
   {
    "id": "v58",
-   "text": "12.7%",
+   "text": "13.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -722,11 +722,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Charles Radtke",
-   "raw": 0.12664164289060117
+   "raw": 0.13098906529573617
   },
   {
    "id": "v59",
-   "text": "+1413",
+   "text": "+1417",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -734,7 +734,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Charles Radtke",
-   "raw": 0.06608243992369386
+   "raw": 0.06591432931557842
   },
   {
    "id": "v60",
@@ -746,11 +746,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Charles Radtke",
-   "raw": 0.06608243992369386
+   "raw": 0.06591432931557842
   },
   {
    "id": "v61",
-   "text": "+419",
+   "text": "+408",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -758,11 +758,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Charles Radtke",
-   "raw": 0.19272408281429504
+   "raw": 0.1969033946113146
   },
   {
    "id": "v62",
-   "text": "19.3%",
+   "text": "19.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -770,7 +770,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Charles Radtke",
-   "raw": 0.19272408281429504
+   "raw": 0.1969033946113146
   },
   {
    "id": "v63",
@@ -790,7 +790,7 @@
   },
   {
    "id": "v64",
-   "text": "-157",
+   "text": "-143",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -803,11 +803,11 @@
     "at": "current"
    },
    "desc": "LH current ML Stephen Thompson",
-   "raw": -157
+   "raw": -143
   },
   {
    "id": "v65",
-   "text": "2.7",
+   "text": "0.4",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -818,7 +818,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.026999999999999913
+   "raw": 0.0039999999999998925
   },
   {
    "id": "v66",

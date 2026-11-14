@@ -13,7 +13,7 @@
  "event": "form/data/events/2026-11-14-ufc-334-gane-vs-hokit.json",
  "proj_src": "publish",
  "proj_file": "data/ufc_334_projections.json",
- "published_at": "2026-11-12T22:47:18.373Z",
+ "published_at": "2026-11-14T07:19:22.608Z",
  "rows": [
   {
    "id": "v1",
@@ -108,47 +108,47 @@
   },
   {
    "id": "v9",
-   "text": "+270",
+   "text": "+266",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Macy Chiasson",
-   "raw": 0.27008252019166523
+   "raw": 0.2728778656225412
   },
   {
    "id": "v10",
-   "text": "27.0%",
+   "text": "27.3%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Macy Chiasson",
-   "raw": 0.27008252019166523
+   "raw": 0.2728778656225412
   },
   {
    "id": "v11",
-   "text": "+210",
+   "text": "+205",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Macy Chiasson",
-   "raw": 210
+   "raw": 205
   },
   {
    "id": "v12",
-   "text": "32.3%",
+   "text": "32.8%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Macy Chiasson",
-   "raw": 0.3225806451612903
+   "raw": 0.32786885245901637
   },
   {
    "id": "v13",
@@ -177,7 +177,7 @@
   },
   {
    "id": "v15",
-   "text": "-5.2%",
+   "text": "-5.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -187,29 +187,29 @@
     ]
    },
    "desc": "Edge ML Macy Chiasson",
-   "raw": -0.05249812496962508
+   "raw": -0.054990986836475186
   },
   {
    "id": "v16",
-   "text": "-270",
+   "text": "-266",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Bia Mesquita",
-   "raw": 0.7299174798083348
+   "raw": 0.7271221343774588
   },
   {
    "id": "v17",
-   "text": "73.0%",
+   "text": "72.7%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Bia Mesquita",
-   "raw": 0.7299174798083348
+   "raw": 0.7271221343774588
   },
   {
    "id": "v18",
@@ -235,7 +235,7 @@
   },
   {
    "id": "v20",
-   "text": "-278",
+   "text": "-265",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -244,11 +244,11 @@
     "field": "cost"
    },
    "desc": "Market ML Bia Mesquita",
-   "raw": -278
+   "raw": -265
   },
   {
    "id": "v21",
-   "text": "73.5%",
+   "text": "72.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -256,11 +256,11 @@
     "label": "Bia Mesquita"
    },
    "desc": "Market implied Bia Mesquita",
-   "raw": 0.7354497354497355
+   "raw": 0.726027397260274
   },
   {
    "id": "v22",
-   "text": "+1.6%",
+   "text": "+1.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -270,29 +270,29 @@
     ]
    },
    "desc": "Edge ML Bia Mesquita",
-   "raw": 0.015631765522620467
+   "raw": 0.01283642009174446
   },
   {
    "id": "v23",
-   "text": "+146",
+   "text": "+199",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.40657116176460373
+   "raw": 0.3345023567542413
   },
   {
    "id": "v24",
-   "text": "40.7%",
+   "text": "33.5%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.40657116176460373
+   "raw": 0.3345023567542413
   },
   {
    "id": "v25",
@@ -321,7 +321,7 @@
   },
   {
    "id": "v27",
-   "text": "+5.6%",
+   "text": "-1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -331,11 +331,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": 0.05569396878214761
+   "raw": -0.01637483622821484
   },
   {
    "id": "v28",
-   "text": "-146",
+   "text": "-199",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -343,11 +343,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.5934288382353963
+   "raw": 0.6654976432457587
   },
   {
    "id": "v29",
-   "text": "59.3%",
+   "text": "66.5%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -355,7 +355,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.5934288382353963
+   "raw": 0.6654976432457587
   },
   {
    "id": "v30",
@@ -384,7 +384,7 @@
   },
   {
    "id": "v32",
-   "text": "-12.1%",
+   "text": "-4.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -394,11 +394,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.12085687605031803
+   "raw": -0.04878807103995564
   },
   {
    "id": "v33",
-   "text": "+727",
+   "text": "+709",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -406,11 +406,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Macy Chiasson",
-   "raw": 0.12092384251215008
+   "raw": 0.12363693778477826
   },
   {
    "id": "v34",
-   "text": "12.1%",
+   "text": "12.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -418,11 +418,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Macy Chiasson",
-   "raw": 0.12092384251215008
+   "raw": 0.12363693778477826
   },
   {
    "id": "v35",
-   "text": "+458",
+   "text": "+428",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -431,11 +431,11 @@
     "field": "cost"
    },
    "desc": "Market dec Macy Chiasson",
-   "raw": 458
+   "raw": 428
   },
   {
    "id": "v36",
-   "text": "17.9%",
+   "text": "18.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -443,11 +443,11 @@
     "label": "Macy Chiasson Points"
    },
    "desc": "Market dec implied Macy Chiasson",
-   "raw": 0.17921146953405018
+   "raw": 0.1893939393939394
   },
   {
    "id": "v37",
-   "text": "-5.8%",
+   "text": "-6.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -457,11 +457,11 @@
     ]
    },
    "desc": "Edge dec Macy Chiasson",
-   "raw": -0.0582876270219001
+   "raw": -0.06575700160916113
   },
   {
    "id": "v38",
-   "text": "+796",
+   "text": "+800",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -469,11 +469,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Macy Chiasson",
-   "raw": 0.11160772138492346
+   "raw": 0.11114125053664184
   },
   {
    "id": "v39",
-   "text": "11.2%",
+   "text": "11.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -481,11 +481,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Macy Chiasson",
-   "raw": 0.11160772138492346
+   "raw": 0.11114125053664184
   },
   {
    "id": "v40",
-   "text": "+550",
+   "text": "+600",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -494,11 +494,11 @@
     "field": "cost"
    },
    "desc": "Market ko Macy Chiasson",
-   "raw": 550
+   "raw": 600
   },
   {
    "id": "v41",
-   "text": "15.4%",
+   "text": "14.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -506,11 +506,11 @@
     "label": "Macy Chiasson KO/TKO/DQ"
    },
    "desc": "Market ko implied Macy Chiasson",
-   "raw": 0.15384615384615385
+   "raw": 0.14285714285714285
   },
   {
    "id": "v42",
-   "text": "-4.2%",
+   "text": "-3.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -520,11 +520,11 @@
     ]
    },
    "desc": "Edge ko Macy Chiasson",
-   "raw": -0.042238432461230394
+   "raw": -0.03171589232050101
   },
   {
    "id": "v43",
-   "text": "+2563",
+   "text": "+2525",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -532,7 +532,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Macy Chiasson",
-   "raw": 0.03755095629459171
+   "raw": 0.038099677301121085
   },
   {
    "id": "v44",
@@ -544,7 +544,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Macy Chiasson",
-   "raw": 0.03755095629459171
+   "raw": 0.038099677301121085
   },
   {
    "id": "v45",
@@ -573,7 +573,7 @@
   },
   {
    "id": "v47",
-   "text": "-0.6%",
+   "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -583,7 +583,7 @@
     ]
    },
    "desc": "Edge sub Macy Chiasson",
-   "raw": -0.005927304574973508
+   "raw": -0.005378583568444131
   },
   {
    "id": "v48",
@@ -595,7 +595,7 @@
     "k": "itd"
    },
    "desc": "Model itd ML Macy Chiasson",
-   "raw": 0.14915867767951516
+   "raw": 0.1492409278377629
   },
   {
    "id": "v49",
@@ -607,11 +607,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Macy Chiasson",
-   "raw": 0.14915867767951516
+   "raw": 0.1492409278377629
   },
   {
    "id": "v50",
-   "text": "+407",
+   "text": "+437",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -622,11 +622,11 @@
     ]
    },
    "desc": "Market ITD price Macy Chiasson",
-   "raw": 0.19732441471571907
+   "raw": 0.18633540372670807
   },
   {
    "id": "v51",
-   "text": "19.7%",
+   "text": "18.6%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -637,11 +637,11 @@
     ]
    },
    "desc": "Market ITD implied Macy Chiasson",
-   "raw": 0.19732441471571907
+   "raw": 0.18633540372670807
   },
   {
    "id": "v52",
-   "text": "-4.8%",
+   "text": "-3.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -651,11 +651,11 @@
     ]
    },
    "desc": "Edge itd Macy Chiasson",
-   "raw": -0.048165737036203915
+   "raw": -0.037094475888945155
   },
   {
    "id": "v53",
-   "text": "+250",
+   "text": "+374",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -663,11 +663,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Bia Mesquita",
-   "raw": 0.2856473192524537
+   "raw": 0.21086541896946304
   },
   {
    "id": "v54",
-   "text": "28.6%",
+   "text": "21.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -675,11 +675,11 @@
     "k": "dec"
    },
    "desc": "Model dec % Bia Mesquita",
-   "raw": 0.2856473192524537
+   "raw": 0.21086541896946304
   },
   {
    "id": "v55",
-   "text": "+445",
+   "text": "+443",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -688,11 +688,11 @@
     "field": "cost"
    },
    "desc": "Market dec Bia Mesquita",
-   "raw": 445
+   "raw": 443
   },
   {
    "id": "v56",
-   "text": "18.3%",
+   "text": "18.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -700,11 +700,11 @@
     "label": "Bia Mesquita Points"
    },
    "desc": "Market dec implied Bia Mesquita",
-   "raw": 0.1834862385321101
+   "raw": 0.1841620626151013
   },
   {
    "id": "v57",
-   "text": "+10.2%",
+   "text": "+2.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -714,11 +714,11 @@
     ]
    },
    "desc": "Edge dec Bia Mesquita",
-   "raw": 0.10216108072034358
+   "raw": 0.026703356354361746
   },
   {
    "id": "v58",
-   "text": "+1383",
+   "text": "+1242",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -726,11 +726,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Bia Mesquita",
-   "raw": 0.06741476125621751
+   "raw": 0.07451012900495857
   },
   {
    "id": "v59",
-   "text": "6.7%",
+   "text": "7.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -738,7 +738,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Bia Mesquita",
-   "raw": 0.06741476125621751
+   "raw": 0.07451012900495857
   },
   {
    "id": "v60",
@@ -767,7 +767,7 @@
   },
   {
    "id": "v62",
-   "text": "-2.3%",
+   "text": "-1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -777,11 +777,11 @@
     ]
    },
    "desc": "Edge ko Bia Mesquita",
-   "raw": -0.023494329652873402
+   "raw": -0.016398961904132342
   },
   {
    "id": "v63",
-   "text": "+165",
+   "text": "+126",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -789,11 +789,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Bia Mesquita",
-   "raw": 0.3768553992996636
+   "raw": 0.44174658640303716
   },
   {
    "id": "v64",
-   "text": "37.7%",
+   "text": "44.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -801,11 +801,11 @@
     "k": "sub"
    },
    "desc": "Model sub % Bia Mesquita",
-   "raw": 0.3768553992996636
+   "raw": 0.44174658640303716
   },
   {
    "id": "v65",
-   "text": "-117",
+   "text": "-110",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -814,11 +814,11 @@
     "field": "cost"
    },
    "desc": "Market sub Bia Mesquita",
-   "raw": -117
+   "raw": -110
   },
   {
    "id": "v66",
-   "text": "53.9%",
+   "text": "52.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -826,11 +826,11 @@
     "label": "Bia Mesquita Submission"
    },
    "desc": "Market sub implied Bia Mesquita",
-   "raw": 0.5391705069124424
+   "raw": 0.5238095238095238
   },
   {
    "id": "v67",
-   "text": "-16.2%",
+   "text": "-8.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -840,11 +840,11 @@
     ]
    },
    "desc": "Edge sub Bia Mesquita",
-   "raw": -0.1623151076127788
+   "raw": -0.08206293740648668
   },
   {
    "id": "v68",
-   "text": "+125",
+   "text": "-107",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -852,11 +852,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Bia Mesquita",
-   "raw": 0.4442701605558811
+   "raw": 0.5162567154079957
   },
   {
    "id": "v69",
-   "text": "44.4%",
+   "text": "51.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -864,11 +864,11 @@
     "k": "itd"
    },
    "desc": "Model itd % Bia Mesquita",
-   "raw": 0.4442701605558811
+   "raw": 0.5162567154079957
   },
   {
    "id": "v70",
-   "text": "-170",
+   "text": "-160",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -879,11 +879,11 @@
     ]
    },
    "desc": "Market ITD price Bia Mesquita",
-   "raw": 0.6300795978215333
+   "raw": 0.6147186147186148
   },
   {
    "id": "v71",
-   "text": "63.0%",
+   "text": "61.5%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -894,11 +894,11 @@
     ]
    },
    "desc": "Market ITD implied Bia Mesquita",
-   "raw": 0.6300795978215333
+   "raw": 0.6147186147186148
   },
   {
    "id": "v72",
-   "text": "-18.6%",
+   "text": "-9.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -908,7 +908,7 @@
     ]
    },
    "desc": "Edge itd Bia Mesquita",
-   "raw": -0.18580943726565224
+   "raw": -0.0984618993106191
   },
   {
    "id": "v73",
@@ -928,7 +928,7 @@
   },
   {
    "id": "v74",
-   "text": "-250",
+   "text": "-263",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -941,11 +941,11 @@
     "at": "current"
    },
    "desc": "LH current ML Bia Mesquita",
-   "raw": -250
+   "raw": -263
   },
   {
    "id": "v75",
-   "text": "2.9",
+   "text": "3.9",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -956,7 +956,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.02899999999999997
+   "raw": 0.03899999999999998
   },
   {
    "id": "v76",
