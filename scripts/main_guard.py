@@ -17,7 +17,7 @@ OFF = scan_public.PAT["offshore"]
 
 
 def git(*a, check=True):
-    r = subprocess.run(["git", "-C", str(REPO), *a], capture_output=True, text=True)
+    r = subprocess.run(["git", "-C", str(REPO), *a], capture_output=True, text=True, errors="replace")   # Nov 19: a PNG on main crashed the decode
     if check and r.returncode != 0: sys.exit(f"git {' '.join(a)} failed: {r.stderr.strip()}")
     return r.stdout.strip()
 
