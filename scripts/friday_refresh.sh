@@ -12,11 +12,14 @@ step "2 sheet export";     git fetch -q origin main && for p in "data/${SLUG}_pr
 step "2b sheet export age"
 # Block 59l (Kirk): model numbers only move when Sean's Publish to site export reaches origin/main. Loud warning at
 # 12 h; block go-live (exit 2) at 24 h, or when any bout on the card is missing from the export. --allow-stale overrides.
-python3 - "$SLUG" "$EVENT" "${ALLOW_STALE:-0}" "${ALLOW_MISSING_BOUT:-}" <<'PY'
+python3 - "$SLUG" "$EVENT" "${ALLOW_STALE:-0}" "${ALLOW_MISSING_BOUT:-}" "${ALLOW_NO_EXPORT:-0}" <<'PY'
 import json, sys, datetime as dt, re, unicodedata
 slug, evp, allow = sys.argv[1], sys.argv[2], sys.argv[3] == "1"
 allow_miss = [x.strip().lower() for x in (sys.argv[4] if len(sys.argv) > 4 else "").split(",") if x.strip()]   # Kirk round 28 C: a dropped bout needs its own named override; ALLOW_STALE no longer covers it
-p = next(x for x in (f"data/{slug}_projections.json", f"data/pending/{slug}_projections.json") if __import__("os").path.exists(x))
+p = next((x for x in (f"data/{slug}_projections.json", f"data/pending/{slug}_projections.json") if __import__("os").path.exists(x)), None)
+if p is None:   # Nov 18 (new card, sheet not published yet): the embeds build with no model numbers, never with stand-ins
+    print("!" * 70); print(f"NO SHEET EXPORT FOR {slug} YET: every embed shows 'No model projection published for this bout yet'"); print("!" * 70)
+    sys.exit(0 if sys.argv[5] == "1" else "GO-LIVE BLOCKED: Sean has not published this card from the sheet (Site > Publish to site). Staging build only: ALLOW_NO_EXPORT=1")
 X = json.load(open(p)); t = dt.datetime.fromisoformat(X["published_at"].replace("Z", "+00:00"))
 age = (dt.datetime.now(dt.timezone.utc) - t).total_seconds() / 3600
 fold = lambda s: re.sub(r"[^a-z]", "", unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower().split()[-1]) if s else ""
@@ -50,13 +53,13 @@ print(f"  archive age {age:.1f} h"); sys.exit(0 if age < 3 else "line-history ar
 PY
 python3 -I scripts/check_price_freshness.py --event "$EVENT" | tail -1   # Kirk round 9 A: every unstarted bout priced in the last 4 h (Staleness_Threshold_PREREG), else stop
 step "3b embed line history + Listed check"
-python3 -I scripts/fetch_kalshi_ufc.py --out "data/embeds/kalshi_${SLUG}.json"   # dormant fallback input only
+python3 -I scripts/fetch_kalshi_ufc.py --out "data/embeds/kalshi_${SLUG}.json" || { echo "  Kalshi unreadable this run (rate limit or network): the dormant fallback is off for this build"; echo '{"read_at": null, "markets": []}' > "data/embeds/kalshi_${SLUG}.json"; }   # dormant fallback input only; Nov 18: a 429 no longer stops the refresh
 python3 -I scripts/build_line_history.py --slug "$SLUG" --event "$EVENT" --kalshi "data/embeds/kalshi_${SLUG}.json" | tail -1
 python3 -c "import json,sys; d=json.load(open('data/embeds/line_history_${SLUG}.json')); k=[x for x,v in d['fights'].items() if v.get('current_source')=='kalshi_fallback']; print('  Kalshi fallback used for:', k or 'none')"
 step "3a holds";          python3 -I scripts/form_holds.py check | tail -1   # Kirk round 28: held numbers stay held (fails if a rebuild brought one back)
 step "3c rounds";          python3 -I scripts/check_rounds.py --slug "$SLUG" --event "$EVENT"   # Kirk round 15: fails on a main/title bout built as 3 rounds, or no five_rounds key within 72 h
 step "4 stats file";       python3 -I scripts/build_embed_metrics.py --event "$EVENT" --cache .form_cache --out "form/data/embed_metrics/${SLUG}.json"
-step "5 embeds";           python3 scripts/build_fight_embeds.py | tail -1
+step "5 embeds";           python3 scripts/build_fight_embeds.py --slug "$SLUG" | tail -1   # Nov 18: --slug was missing (it built UFC 334 whatever the card)
 step "5b card tables";     python3 -I scripts/build_card_tables.py --slug "$SLUG"   # full widget, moneylines, props: rows lifted from the fight previews
 step "6 checks";           python3 scripts/verify_fight_embeds.py --slug "$SLUG" | tail -3
 python3 -I scripts/verify_card_tables.py --slug "$SLUG" | tail -3

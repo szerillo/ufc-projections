@@ -109,7 +109,9 @@ def main():
     ap.add_argument("--kalshi", default=None, help="data/embeds/kalshi_<slug>.json; used only by the dormant fallback (Kalshi_Fallback_PREREG sha 4b6d292e)")
     a = ap.parse_args()
     ev = json.loads(Path(a.event).read_text()); d = dt.date.fromisoformat(ev["date"])
-    exp = json.loads(Path(a.export or REPO / "data/pending" / f"{a.slug}_projections.json").read_text())
+    ep = Path(a.export or REPO / "data/pending" / f"{a.slug}_projections.json")
+    # Nov 18: a new card before Sean's first publish has no export; the history still builds, with no Listed check rows
+    exp = json.loads(ep.read_text()) if ep.exists() else {"published_at": None, "fights": []}
     by_id = BF.load_odds(Path(a.cache)); idx = BF.index_odds(by_id)
     out = {"slug": a.slug, "rules": "Round6_PREREG.md sha 5e450467", "archive_newest": max(s["t"] for v in by_id.values() for s in v),
            "export_published_at": exp.get("published_at"), "fights": {}}
