@@ -1,4 +1,5 @@
 {
+ "markov_card": "ufc-fight-night-prochazka-vs-stirling",
  "fight": 3,
  "of": 11,
  "site_pair": [
@@ -2215,6 +2216,20 @@
   },
   {
    "id": "v181",
+   "text": "+198",
+   "fmt": "ml",
+   "rule": "mk",
+   "args": {
+    "kind": "vetoes",
+    "i": 1,
+    "key": "market_odds",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov veto price",
+   "raw": 198
+  },
+  {
+   "id": "v182",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -2227,7 +2242,7 @@
    "raw": -303
   },
   {
-   "id": "v182",
+   "id": "v183",
    "text": "-333",
    "fmt": "ml",
    "rule": "fight",
@@ -2240,7 +2255,7 @@
    "raw": -333
   },
   {
-   "id": "v183",
+   "id": "v184",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -2253,7 +2268,7 @@
    "raw": 100
   },
   {
-   "id": "v184",
+   "id": "v185",
    "text": "-235",
    "fmt": "ml",
    "rule": "fight",
@@ -2266,7 +2281,7 @@
    "raw": -235
   },
   {
-   "id": "v185",
+   "id": "v186",
    "text": "-169",
    "fmt": "ml",
    "rule": "fight",
@@ -2279,7 +2294,7 @@
    "raw": -169
   },
   {
-   "id": "v186",
+   "id": "v187",
    "text": "+260",
    "fmt": "ml",
    "rule": "fight",
@@ -2292,7 +2307,7 @@
    "raw": 260
   },
   {
-   "id": "v187",
+   "id": "v188",
    "text": "-278",
    "fmt": "ml",
    "rule": "fight",
@@ -2305,7 +2320,7 @@
    "raw": -278
   },
   {
-   "id": "v188",
+   "id": "v189",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -2318,7 +2333,7 @@
    "raw": -303
   },
   {
-   "id": "v189",
+   "id": "v190",
    "text": "-115",
    "fmt": "ml",
    "rule": "fight",
@@ -2331,7 +2346,7 @@
    "raw": -115
   },
   {
-   "id": "v190",
+   "id": "v191",
    "text": "+105",
    "fmt": "ml",
    "rule": "fight",

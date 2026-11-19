@@ -34,7 +34,7 @@
     "segments": {"main": 5, "prelims": 4, "early": 4}
   },
   "fn_prochazka_stirling": {
-    "source": "ESPN fight center 600061665 (UFC Fight Night: Prochazka vs. Stirling, ABHA Arena, Doha), checked 2026-11-19; matches the odds feed's 11 bouts",
+    "source": "Bout order: ESPN fight center 600061665, checked 2026-11-19; matches the odds feed's 11 bouts and the C4 Markov run (UFC.com order). Split 5 main / 6 prelims per UFC.com via Kirk (sheet loaded 11/17) and the UFC announcement (Topuria vs Luna on the prelims); ESPN showed 6/5, changed 2026-11-19",
     "cancel": [],
     "replace": [],
     "five_rounds": [],
@@ -57,6 +57,7 @@
       "Nikolas Motta|Dom Mar Fan",
       "Diyar Nurgozhay|Alik Lorenz"
     ],
-    "segments": {"main": 6, "prelims": 5, "early": 0}
+    "segments": {"main": 5, "prelims": 6, "early": 0},
+    "markov": "ufc-fight-night-prochazka-vs-stirling"
   }
 }

@@ -1,4 +1,5 @@
 {
+ "markov_card": "ufc-fight-night-prochazka-vs-stirling",
  "fight": 1,
  "of": 11,
  "site_pair": [
@@ -966,6 +967,76 @@
   },
   {
    "id": "v79",
+   "text": "+205",
+   "fmt": "ml",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 5,
+    "key": "market_odds",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag price",
+   "raw": 205
+  },
+  {
+   "id": "v80",
+   "text": "46.6",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 5,
+    "key": "model_shrunk",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win shrunk",
+   "raw": 46.6
+  },
+  {
+   "id": "v81",
+   "text": "38.8",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 5,
+    "key": "model_raw",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win raw",
+   "raw": 38.8
+  },
+  {
+   "id": "v82",
+   "text": "31.1",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 5,
+    "key": "market_implied",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag market",
+   "raw": 31.1
+  },
+  {
+   "id": "v83",
+   "text": "+15.5",
+   "fmt": "s1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 5,
+    "key": "edge_pts",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag gap",
+   "raw": 15.5
+  },
+  {
+   "id": "v84",
    "text": "-156",
    "fmt": "ml",
    "rule": "fight",
@@ -978,7 +1049,7 @@
    "raw": -156
   },
   {
-   "id": "v80",
+   "id": "v85",
    "text": "+148",
    "fmt": "ml",
    "rule": "fight",
@@ -991,7 +1062,7 @@
    "raw": 148
   },
   {
-   "id": "v81",
+   "id": "v86",
    "text": "-106",
    "fmt": "ml",
    "rule": "fight",
@@ -1004,7 +1075,7 @@
    "raw": -106
   },
   {
-   "id": "v82",
+   "id": "v87",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",

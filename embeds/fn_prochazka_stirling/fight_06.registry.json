@@ -1,4 +1,5 @@
 {
+ "markov_card": "ufc-fight-night-prochazka-vs-stirling",
  "fight": 6,
  "of": 11,
  "site_pair": [
@@ -1615,6 +1616,76 @@
   },
   {
    "id": "v131",
+   "text": "+225",
+   "fmt": "ml",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 4,
+    "key": "market_odds",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag price",
+   "raw": 225
+  },
+  {
+   "id": "v132",
+   "text": "57.3",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 4,
+    "key": "model_shrunk",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win shrunk",
+   "raw": 57.3
+  },
+  {
+   "id": "v133",
+   "text": "74.2",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 4,
+    "key": "model_raw",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win raw",
+   "raw": 74.2
+  },
+  {
+   "id": "v134",
+   "text": "29.2",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 4,
+    "key": "market_implied",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag market",
+   "raw": 29.2
+  },
+  {
+   "id": "v135",
+   "text": "+28.1",
+   "fmt": "s1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 4,
+    "key": "edge_pts",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag gap",
+   "raw": 28.1
+  },
+  {
+   "id": "v136",
    "text": "-141",
    "fmt": "ml",
    "rule": "fight",
@@ -1627,7 +1698,7 @@
    "raw": -141
   },
   {
-   "id": "v132",
+   "id": "v137",
    "text": "-333",
    "fmt": "ml",
    "rule": "fight",
@@ -1640,7 +1711,7 @@
    "raw": -333
   },
   {
-   "id": "v133",
+   "id": "v138",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -1653,7 +1724,7 @@
    "raw": 100
   },
   {
-   "id": "v134",
+   "id": "v139",
    "text": "-769",
    "fmt": "ml",
    "rule": "fight",
@@ -1666,7 +1737,7 @@
    "raw": -769
   },
   {
-   "id": "v135",
+   "id": "v140",
    "text": "-156",
    "fmt": "ml",
    "rule": "fight",

@@ -2,7 +2,7 @@
 
 Built Wed Nov 18 night on branch `fn-prochazka-stirling`. Every bout shows **market prices only** until Sean publishes this
 card from the sheet: a "No model projection published" note, market and best US moneyline (DK, FD, MGM, CZR), line move,
-fight length and method market prices. No model numbers are invented. Card pages show "Projection pending" per bout.
+fight length and method market prices. No model numbers are invented. Card pages show "Projection pending" per bout. Each fight preview also carries the Markov read (C4's V4.1b run, files in markov/, card data/cards/ufc-fight-night-prochazka-vs-stirling.json): flags, artifacts and vetoes with their data-quality badges, numbers rechecked against C4's flags file.
 
 Card variables used below:
 
@@ -16,8 +16,8 @@ Card variables used below:
 3. Kirk's go: `git push origin main`, then `python3 scripts/post_merge_check.py --wait 600` must end in POST-MERGE CHECK PASS.
 
 ## Sean, by Friday 12:00 pm ET
-4. In the sheet: **UFC > Load next UFC card** (Prochazka vs Stirling, 11 bouts, 6 main card / 5 prelims), then **UFC > Refresh prices**. Stop on any `!!!` line.
-5. Fill the weekly inputs as usual (Markov win % and decision shares if a Markov run exists; context codes; Tapology / Junkie if collected). Check the 6th main-card row has its bet-rec, GTD and method formulas (known gap for a 6-fight main card).
+4. In the sheet: **UFC > Load next UFC card** (Prochazka vs Stirling, 11 bouts, 5 main card / 6 prelims, per UFC.com), then **UFC > Refresh prices**. Stop on any `!!!` line.
+5. Fill the weekly inputs as usual (Markov win % and decision shares if a Markov run exists; context codes; Tapology / Junkie if collected).
 6. **Site > Publish to site**, then tell Claude or Kirk "published" with the time.
 
 ## Claude, then Kirk (after each "published")

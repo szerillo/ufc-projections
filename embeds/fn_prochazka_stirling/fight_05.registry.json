@@ -1,4 +1,5 @@
 {
+ "markov_card": "ufc-fight-night-prochazka-vs-stirling",
  "fight": 5,
  "of": 11,
  "site_pair": [
@@ -1664,6 +1665,76 @@
   },
   {
    "id": "v135",
+   "text": "+163",
+   "fmt": "ml",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 3,
+    "key": "market_odds",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag price",
+   "raw": 163
+  },
+  {
+   "id": "v136",
+   "text": "51.8",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 3,
+    "key": "model_shrunk",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win shrunk",
+   "raw": 51.8
+  },
+  {
+   "id": "v137",
+   "text": "55.9",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 3,
+    "key": "model_raw",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win raw",
+   "raw": 55.9
+  },
+  {
+   "id": "v138",
+   "text": "36.1",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 3,
+    "key": "market_implied",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag market",
+   "raw": 36.1
+  },
+  {
+   "id": "v139",
+   "text": "+15.6",
+   "fmt": "s1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 3,
+    "key": "edge_pts",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag gap",
+   "raw": 15.6
+  },
+  {
+   "id": "v140",
    "text": "-124",
    "fmt": "ml",
    "rule": "fight",
@@ -1676,7 +1747,7 @@
    "raw": -124
   },
   {
-   "id": "v136",
+   "id": "v141",
    "text": "+127",
    "fmt": "ml",
    "rule": "fight",
@@ -1689,7 +1760,7 @@
    "raw": 127
   },
   {
-   "id": "v137",
+   "id": "v142",
    "text": "+119",
    "fmt": "ml",
    "rule": "fight",
@@ -1702,7 +1773,7 @@
    "raw": 119
   },
   {
-   "id": "v138",
+   "id": "v143",
    "text": "-339",
    "fmt": "ml",
    "rule": "fight",
@@ -1715,7 +1786,7 @@
    "raw": -339
   },
   {
-   "id": "v139",
+   "id": "v144",
    "text": "-294",
    "fmt": "ml",
    "rule": "fight",
@@ -1728,7 +1799,7 @@
    "raw": -294
   },
   {
-   "id": "v140",
+   "id": "v145",
    "text": "-196",
    "fmt": "ml",
    "rule": "fight",
@@ -1741,7 +1812,7 @@
    "raw": -196
   },
   {
-   "id": "v141",
+   "id": "v146",
    "text": "-102",
    "fmt": "ml",
    "rule": "fight",
@@ -1754,7 +1825,7 @@
    "raw": -102
   },
   {
-   "id": "v142",
+   "id": "v147",
    "text": "+400",
    "fmt": "ml",
    "rule": "fight",
@@ -1767,7 +1838,7 @@
    "raw": 400
   },
   {
-   "id": "v143",
+   "id": "v148",
    "text": "-308",
    "fmt": "ml",
    "rule": "fight",
@@ -1780,7 +1851,7 @@
    "raw": -308
   },
   {
-   "id": "v144",
+   "id": "v149",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1793,7 +1864,7 @@
    "raw": -303
   },
   {
-   "id": "v145",
+   "id": "v150",
    "text": "-154",
    "fmt": "ml",
    "rule": "fight",
