@@ -25,6 +25,7 @@ var GUARD = {
   TAB_FORMULA_COLS: [22, 23, 24, 26, 27, 28],  // V W X Z AA AB
   TABS: ['Main Card', 'Prelims']
 };
+var GUARD_NEWCARD_DONE = false;  // set by guardNewCard_ for the rest of this load, so rows are not reset twice
 
 // Calculator row <-> [tab, tab row], read from the Calculator column A formulas (='Main Card'!B2, =Prelims!B2, ...)
 function guardMap_(ss) {
@@ -117,6 +118,7 @@ function guardResetRow_(ss, calcRow, canon) {
 // Loader hook: new card, after clearCardInputs_ (the "Clear last card's hand inputs" = Yes branch).
 function guardNewCard_(ss) {
   try {
+    GUARD_NEWCARD_DONE = true;
     var canon = guardCanon_(ss), m = guardMap_(ss), restored = 0;
     Object.keys(m.calc).forEach(function (cr) {
       var t = m.calc[cr], sh = ss.getSheetByName(t[0]);
@@ -130,6 +132,7 @@ function guardNewCard_(ss) {
 // Loader hook: a booking change on a row (writeTab_ found a different fighter on that row).
 function guardBookingChange_(sh, tabRow, oldPair, newPair) {
   try {
+    if (GUARD_NEWCARD_DONE) return;  // new card: inputs already wiped and formulas restored
     var ss = SpreadsheetApp.getActive(), m = guardMap_(ss), cr = m.tab[sh.getName() + '#' + tabRow];
     if (!cr) return;
     guardResetRow_(ss, cr, guardCanon_(ss));
