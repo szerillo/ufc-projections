@@ -1,14 +1,14 @@
 {
  "markov_card": "ufc-fight-night-prochazka-vs-stirling",
  "fight": 9,
- "of": 11,
+ "of": 12,
  "site_pair": [
-  "Dan Hooker",
-  "Brian Ortega"
+  "Kyoji Horiguchi",
+  "Asu Almabayev"
  ],
  "pair": [
-  "Dan Hooker",
-  "Brian Ortega"
+  "Kyoji Horiguchi",
+  "Asu Almabayev"
  ],
  "file": "fight_09.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
@@ -18,51 +18,51 @@
  "rows": [
   {
    "id": "v1",
-   "text": "14-11-0",
+   "text": "9-2-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "a"
    },
-   "desc": "Dan Hooker UFC record",
-   "raw": "14-11-0"
+   "desc": "Kyoji Horiguchi UFC record",
+   "raw": "9-2-0"
   },
   {
    "id": "v2",
-   "text": "8-5-0 (1 NC)",
+   "text": "7-1-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "b"
    },
-   "desc": "Brian Ortega UFC record",
-   "raw": "8-5-0 (1 NC)"
+   "desc": "Asu Almabayev UFC record",
+   "raw": "7-1-0"
   },
   {
    "id": "v3",
-   "text": "36.8",
+   "text": "36.1",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "a"
    },
    "desc": "Age a",
-   "raw": 36.76933607118412
+   "raw": 36.10951403148528
   },
   {
    "id": "v4",
-   "text": "35.7",
+   "text": "32.8",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "b"
    },
    "desc": "Age b",
-   "raw": 35.748117727583846
+   "raw": 32.82135523613963
   },
   {
    "id": "v5",
-   "text": "6'0\"",
+   "text": "5'5\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -70,11 +70,11 @@
     "key": "ht"
    },
    "desc": "Height a",
-   "raw": "6'0\""
+   "raw": "5'5\""
   },
   {
    "id": "v6",
-   "text": "5'8\"",
+   "text": "5'4\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -82,33 +82,33 @@
     "key": "ht"
    },
    "desc": "Height b",
-   "raw": "5'8\""
+   "raw": "5'4\""
   },
   {
    "id": "v7",
-   "text": "75\"",
+   "text": "66\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "a"
    },
    "desc": "Reach a",
-   "raw": 75
+   "raw": 66
   },
   {
    "id": "v8",
-   "text": "69\"",
+   "text": "65\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "b"
    },
    "desc": "Reach b",
-   "raw": 69
+   "raw": 65
   },
   {
    "id": "v9",
-   "text": "Switch",
+   "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -116,11 +116,11 @@
     "key": "stance"
    },
    "desc": "Stance a",
-   "raw": "Switch"
+   "raw": "Orthodox"
   },
   {
    "id": "v10",
-   "text": "Switch",
+   "text": "Orthodox",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -128,87 +128,87 @@
     "key": "stance"
    },
    "desc": "Stance b",
-   "raw": "Switch"
+   "raw": "Orthodox"
   },
   {
    "id": "v11",
-   "text": "-194",
+   "text": "-212",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Daniel Hooker",
+    "label": "Kyoji Horiguchi",
     "field": "cost"
    },
-   "desc": "Market ML Dan Hooker",
-   "raw": -194
+   "desc": "Market ML Kyoji Horiguchi",
+   "raw": -212
   },
   {
    "id": "v12",
-   "text": "66.0%",
+   "text": "67.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Daniel Hooker"
+    "label": "Kyoji Horiguchi"
    },
-   "desc": "Market implied Dan Hooker",
-   "raw": 0.6598639455782312
+   "desc": "Market implied Kyoji Horiguchi",
+   "raw": 0.6794871794871795
   },
   {
    "id": "v13",
-   "text": "-192",
+   "text": "-210",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Daniel Hooker",
-    "book": "draftkings"
+    "label": "Kyoji Horiguchi",
+    "book": "betmgm"
    },
-   "desc": "Best US ML Dan Hooker",
-   "raw": -192
+   "desc": "Best US ML Kyoji Horiguchi",
+   "raw": -210
   },
   {
    "id": "v14",
-   "text": "+157",
+   "text": "+167",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Brian Ortega",
+    "label": "Assu Almabayev",
     "field": "cost"
    },
-   "desc": "Market ML Brian Ortega",
-   "raw": 157
+   "desc": "Market ML Asu Almabayev",
+   "raw": 167
   },
   {
    "id": "v15",
-   "text": "38.9%",
+   "text": "37.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Brian Ortega"
+    "label": "Assu Almabayev"
    },
-   "desc": "Market implied Brian Ortega",
-   "raw": 0.38910505836575876
+   "desc": "Market implied Asu Almabayev",
+   "raw": 0.37453183520599254
   },
   {
    "id": "v16",
-   "text": "+165",
+   "text": "+170",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Brian Ortega",
+    "label": "Assu Almabayev",
     "book": "betmgm"
    },
-   "desc": "Best US ML Brian Ortega",
-   "raw": 165
+   "desc": "Best US ML Asu Almabayev",
+   "raw": 170
   },
   {
    "id": "v17",
-   "text": "-105",
+   "text": "-225",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -217,11 +217,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": -105
+   "raw": -225
   },
   {
    "id": "v18",
-   "text": "51.2%",
+   "text": "69.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -229,11 +229,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD yes implied",
-   "raw": 0.5121951219512195
+   "raw": 0.6923076923076923
   },
   {
    "id": "v19",
-   "text": "-123",
+   "text": "+166",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -242,11 +242,11 @@
     "field": "cost"
    },
    "desc": "Market GTD no",
-   "raw": -123
+   "raw": 166
   },
   {
    "id": "v20",
-   "text": "55.2%",
+   "text": "37.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -254,373 +254,364 @@
     "label": "No"
    },
    "desc": "Market GTD no implied",
-   "raw": 0.5515695067264574
+   "raw": 0.37593984962406013
   },
   {
    "id": "v21",
-   "text": "+185",
+   "text": "+112",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Daniel Hooker Points",
+    "label": "Kyoji Horiguchi Points",
     "field": "cost"
    },
-   "desc": "Market dec Dan Hooker",
-   "raw": 185
+   "desc": "Market dec Kyoji Horiguchi",
+   "raw": 112
   },
   {
    "id": "v22",
-   "text": "35.1%",
+   "text": "47.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Daniel Hooker Points"
+    "label": "Kyoji Horiguchi Points"
    },
-   "desc": "Market dec implied Dan Hooker",
-   "raw": 0.3508771929824561
+   "desc": "Market dec implied Kyoji Horiguchi",
+   "raw": 0.4716981132075472
   },
   {
    "id": "v23",
-   "text": "+200",
+   "text": "+469",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Daniel Hooker KO/TKO/DQ",
+    "label": "Kyoji Horiguchi KO/TKO/DQ",
     "field": "cost"
    },
-   "desc": "Market ko Dan Hooker",
-   "raw": 200
+   "desc": "Market ko Kyoji Horiguchi",
+   "raw": 469
   },
   {
    "id": "v24",
-   "text": "33.3%",
+   "text": "17.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Daniel Hooker KO/TKO/DQ"
+    "label": "Kyoji Horiguchi KO/TKO/DQ"
    },
-   "desc": "Market ko implied Dan Hooker",
-   "raw": 0.3333333333333333
+   "desc": "Market ko implied Kyoji Horiguchi",
+   "raw": 0.1757469244288225
   },
   {
    "id": "v25",
-   "text": "+1600",
+   "text": "+724",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Daniel Hooker Submission",
+    "label": "Kyoji Horiguchi Submission",
     "field": "cost"
    },
-   "desc": "Market sub Dan Hooker",
-   "raw": 1600
+   "desc": "Market sub Kyoji Horiguchi",
+   "raw": 724
   },
   {
    "id": "v26",
-   "text": "5.9%",
+   "text": "12.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Daniel Hooker Submission"
+    "label": "Kyoji Horiguchi Submission"
    },
-   "desc": "Market sub implied Dan Hooker",
-   "raw": 0.058823529411764705
+   "desc": "Market sub implied Kyoji Horiguchi",
+   "raw": 0.12135922330097088
   },
   {
    "id": "v27",
-   "text": "+155",
+   "text": "+237",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Daniel Hooker KO/TKO/DQ",
-     "Daniel Hooker Submission"
+     "Kyoji Horiguchi KO/TKO/DQ",
+     "Kyoji Horiguchi Submission"
     ]
    },
-   "desc": "Market ITD price Dan Hooker",
-   "raw": 0.39215686274509803
+   "desc": "Market ITD price Kyoji Horiguchi",
+   "raw": 0.2971061477297934
   },
   {
    "id": "v28",
-   "text": "39.2%",
+   "text": "29.7%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Daniel Hooker KO/TKO/DQ",
-     "Daniel Hooker Submission"
+     "Kyoji Horiguchi KO/TKO/DQ",
+     "Kyoji Horiguchi Submission"
     ]
    },
-   "desc": "Market ITD implied Dan Hooker",
-   "raw": 0.39215686274509803
+   "desc": "Market ITD implied Kyoji Horiguchi",
+   "raw": 0.2971061477297934
   },
   {
    "id": "v29",
-   "text": "+400",
+   "text": "+170",
    "fmt": "ml",
-   "rule": "bp",
+   "rule": "lh_open_ml",
    "args": {
-    "market": "method_of_victory",
-    "label": "Brian Ortega Points",
-    "field": "cost"
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Kyoji Horiguchi",
+     "Asu Almabayev"
+    ],
+    "side": "b"
    },
-   "desc": "Market dec Brian Ortega",
-   "raw": 400
+   "desc": "LH open ML Asu Almabayev",
+   "raw": 170
   },
   {
    "id": "v30",
-   "text": "20.0%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
+   "text": "+162",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
    "args": {
-    "market": "method_of_victory",
-    "label": "Brian Ortega Points"
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Kyoji Horiguchi",
+     "Asu Almabayev"
+    ],
+    "side": "b",
+    "at": "current"
    },
-   "desc": "Market dec implied Brian Ortega",
-   "raw": 0.2
+   "desc": "LH current ML Asu Almabayev",
+   "raw": 162
   },
   {
    "id": "v31",
-   "text": "+1000",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Brian Ortega KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "Market ko Brian Ortega",
-   "raw": 1000
-  },
-  {
-   "id": "v32",
-   "text": "9.1%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Brian Ortega KO/TKO/DQ"
-   },
-   "desc": "Market ko implied Brian Ortega",
-   "raw": 0.09090909090909091
-  },
-  {
-   "id": "v33",
-   "text": "+490",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Brian Ortega Submission",
-    "field": "cost"
-   },
-   "desc": "Market sub Brian Ortega",
-   "raw": 490
-  },
-  {
-   "id": "v34",
-   "text": "16.9%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Brian Ortega Submission"
-   },
-   "desc": "Market sub implied Brian Ortega",
-   "raw": 0.1694915254237288
-  },
-  {
-   "id": "v35",
-   "text": "+284",
-   "fmt": "mlp",
-   "rule": "bp_imp_sum",
-   "args": {
-    "market": "method_of_victory",
-    "labels": [
-     "Brian Ortega KO/TKO/DQ",
-     "Brian Ortega Submission"
-    ]
-   },
-   "desc": "Market ITD price Brian Ortega",
-   "raw": 0.26040061633281975
-  },
-  {
-   "id": "v36",
-   "text": "26.0%",
-   "fmt": "pct1",
-   "rule": "bp_imp_sum",
-   "args": {
-    "market": "method_of_victory",
-    "labels": [
-     "Brian Ortega KO/TKO/DQ",
-     "Brian Ortega Submission"
-    ]
-   },
-   "desc": "Market ITD implied Brian Ortega",
-   "raw": 0.26040061633281975
-  },
-  {
-   "id": "v37",
-   "text": "-161",
-   "fmt": "ml",
-   "rule": "lh_open_ml",
-   "args": {
-    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
-    "pair": [
-     "Dan Hooker",
-     "Brian Ortega"
-    ],
-    "side": "a"
-   },
-   "desc": "LH open ML Dan Hooker",
-   "raw": -161
-  },
-  {
-   "id": "v38",
-   "text": "-190",
-   "fmt": "ml",
-   "rule": "lh_open_ml",
-   "args": {
-    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
-    "pair": [
-     "Dan Hooker",
-     "Brian Ortega"
-    ],
-    "side": "a",
-    "at": "current"
-   },
-   "desc": "LH current ML Dan Hooker",
-   "raw": -190
-  },
-  {
-   "id": "v39",
-   "text": "3.3",
+   "text": "1.1",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Dan Hooker",
-     "Brian Ortega"
+     "Kyoji Horiguchi",
+     "Asu Almabayev"
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.03300000000000003
+   "raw": 0.01100000000000001
   },
   {
-   "id": "v40",
-   "text": "62%",
+   "id": "v32",
+   "text": "75%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "target.head"
    },
-   "desc": "Target head Dan Hooker",
-   "raw": 0.6152
+   "desc": "Target head Kyoji Horiguchi",
+   "raw": 0.7514
   },
   {
-   "id": "v41",
-   "text": "18%",
+   "id": "v33",
+   "text": "16%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "target.body"
    },
-   "desc": "Target body Dan Hooker",
-   "raw": 0.1823
+   "desc": "Target body Kyoji Horiguchi",
+   "raw": 0.1622
   },
   {
-   "id": "v42",
-   "text": "20%",
+   "id": "v34",
+   "text": "9%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "target.leg"
    },
-   "desc": "Target leg Dan Hooker",
-   "raw": 0.2025
+   "desc": "Target leg Kyoji Horiguchi",
+   "raw": 0.0865
   },
   {
-   "id": "v43",
-   "text": "71%",
+   "id": "v35",
+   "text": "54%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "target.head"
    },
-   "desc": "Target head Brian Ortega",
-   "raw": 0.7116
+   "desc": "Target head Asu Almabayev",
+   "raw": 0.5378
   },
   {
-   "id": "v44",
-   "text": "18%",
+   "id": "v36",
+   "text": "24%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "target.body"
    },
-   "desc": "Target body Brian Ortega",
-   "raw": 0.1833
+   "desc": "Target body Asu Almabayev",
+   "raw": 0.2437
   },
   {
-   "id": "v45",
-   "text": "11%",
+   "id": "v37",
+   "text": "22%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "target.leg"
    },
-   "desc": "Target leg Brian Ortega",
-   "raw": 0.1051
+   "desc": "Target leg Asu Almabayev",
+   "raw": 0.2185
   },
   {
-   "id": "v46",
-   "text": "25",
+   "id": "v38",
+   "text": "11",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "ufc_fights"
    },
    "desc": "Power section fights a",
-   "raw": 25
+   "raw": 11
   },
   {
-   "id": "v47",
-   "text": "14",
+   "id": "v39",
+   "text": "8",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "ufc_fights"
    },
    "desc": "Power section fights b",
-   "raw": 14
+   "raw": 8
   },
   {
-   "id": "v48",
-   "text": "19%",
+   "id": "v40",
+   "text": "28%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "power_w"
    },
    "desc": "Power: drops or stops them on the feet a",
-   "raw": 0.1866
+   "raw": 0.2801
+  },
+  {
+   "id": "v41",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 2
+  },
+  {
+   "id": "v42",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 4
+  },
+  {
+   "id": "v43",
+   "text": "10%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.0972
+  },
+  {
+   "id": "v44",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 1
+  },
+  {
+   "id": "v45",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 1
+  },
+  {
+   "id": "v46",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Flyweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.1923
+  },
+  {
+   "id": "v47",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.2239
+  },
+  {
+   "id": "v48",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 1
   },
   {
    "id": "v49",
@@ -628,815 +619,815 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "last5.power"
+    "fighter": "Kyoji Horiguchi",
+    "path": "dropped_fights"
    },
-   "desc": "Power: drops or stops them on the feet last5 a",
+   "desc": "Durability: gets dropped or stopped count a",
    "raw": 1
   },
   {
    "id": "v50",
-   "text": "8",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "power_fights"
-   },
-   "desc": "Power: drops or stops them on the feet count a",
-   "raw": 8
-  },
-  {
-   "id": "v51",
-   "text": "14%",
+   "text": "12%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
-    "path": "power_w"
-   },
-   "desc": "Power: drops or stops them on the feet b",
-   "raw": 0.145
-  },
-  {
-   "id": "v52",
-   "text": "0",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "last5.power"
-   },
-   "desc": "Power: drops or stops them on the feet last5 b",
-   "raw": 0
-  },
-  {
-   "id": "v53",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "power_fights"
-   },
-   "desc": "Power: drops or stops them on the feet count b",
-   "raw": 4
-  },
-  {
-   "id": "v54",
-   "text": "23%",
-   "fmt": "pct0",
-   "rule": "em_div",
-   "args": {
-    "wc": "Lightweight",
-    "key": "power"
-   },
-   "desc": "Division share Power: drops or stops them on the feet",
-   "raw": 0.2309
-  },
-  {
-   "id": "v55",
-   "text": "46%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "dropped_w"
-   },
-   "desc": "Durability: gets dropped or stopped a",
-   "raw": 0.4569
-  },
-  {
-   "id": "v56",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "last5.dropped"
-   },
-   "desc": "Durability: gets dropped or stopped last5 a",
-   "raw": 2
-  },
-  {
-   "id": "v57",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "dropped_fights"
-   },
-   "desc": "Durability: gets dropped or stopped count a",
-   "raw": 5
-  },
-  {
-   "id": "v58",
-   "text": "16%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "dropped_w"
    },
    "desc": "Durability: gets dropped or stopped b",
-   "raw": 0.1566
+   "raw": 0.1224
   },
   {
-   "id": "v59",
+   "id": "v51",
    "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "last5.dropped"
    },
    "desc": "Durability: gets dropped or stopped last5 b",
    "raw": 1
   },
   {
-   "id": "v60",
+   "id": "v52",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 1
+  },
+  {
+   "id": "v53",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Flyweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.203
+  },
+  {
+   "id": "v54",
    "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
-    "path": "dropped_fights"
+    "fighter": "Kyoji Horiguchi",
+    "path": "outcomes.w.ko"
    },
-   "desc": "Durability: gets dropped or stopped count b",
+   "desc": "Outcome wko Kyoji Horiguchi",
    "raw": 2
   },
   {
-   "id": "v61",
-   "text": "26%",
-   "fmt": "pct0",
-   "rule": "em_div",
+   "id": "v55",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
    "args": {
-    "wc": "Lightweight",
-    "key": "dropped"
+    "fighter": "Kyoji Horiguchi",
+    "path": "outcomes.w.sub"
    },
-   "desc": "Division share Durability: gets dropped or stopped",
-   "raw": 0.2582
+   "desc": "Outcome wsub Kyoji Horiguchi",
+   "raw": 1
+  },
+  {
+   "id": "v56",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Kyoji Horiguchi",
+   "raw": 6
+  },
+  {
+   "id": "v57",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "outcomes.l.sub"
+   },
+   "desc": "Outcome lsub Kyoji Horiguchi",
+   "raw": 1
+  },
+  {
+   "id": "v58",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Kyoji Horiguchi",
+   "raw": 1
+  },
+  {
+   "id": "v59",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Asu Almabayev",
+   "raw": 3
+  },
+  {
+   "id": "v60",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Asu Almabayev",
+   "raw": 4
+  },
+  {
+   "id": "v61",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Asu Almabayev",
+   "raw": 1
   },
   {
    "id": "v62",
-   "text": "7",
-   "fmt": "int",
+   "text": "73%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "outcomes.w.ko"
+    "fighter": "Kyoji Horiguchi",
+    "path": "rounds.0.won"
    },
-   "desc": "Outcome wko Dan Hooker",
-   "raw": 7
+   "desc": "R1 won Kyoji Horiguchi",
+   "raw": 0.7273
   },
   {
    "id": "v63",
-   "text": "5",
-   "fmt": "int",
+   "text": "+1.4",
+   "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "outcomes.w.dec"
+    "fighter": "Kyoji Horiguchi",
+    "path": "rounds.0.diff_pm"
    },
-   "desc": "Outcome wdec Dan Hooker",
-   "raw": 5
+   "desc": "R1 diff Kyoji Horiguchi",
+   "raw": 1.357
   },
   {
    "id": "v64",
-   "text": "4",
+   "text": "11",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "outcomes.l.dec"
+    "fighter": "Kyoji Horiguchi",
+    "path": "rounds.0.fights"
    },
-   "desc": "Outcome ldec Dan Hooker",
-   "raw": 4
+   "desc": "R1 fights Kyoji Horiguchi",
+   "raw": 11
   },
   {
    "id": "v65",
-   "text": "5",
-   "fmt": "int",
+   "text": "90%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "outcomes.l.ko"
+    "fighter": "Kyoji Horiguchi",
+    "path": "rounds.1.won"
    },
-   "desc": "Outcome lko Dan Hooker",
-   "raw": 5
+   "desc": "R2 won Kyoji Horiguchi",
+   "raw": 0.9
   },
   {
    "id": "v66",
-   "text": "3",
-   "fmt": "int",
+   "text": "+2.5",
+   "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
-    "path": "outcomes.w.ko"
+    "fighter": "Kyoji Horiguchi",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "Outcome wko Brian Ortega",
-   "raw": 3
+   "desc": "R2 diff Kyoji Horiguchi",
+   "raw": 2.456
   },
   {
    "id": "v67",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "outcomes.w.sub"
-   },
-   "desc": "Outcome wsub Brian Ortega",
-   "raw": 4
-  },
-  {
-   "id": "v68",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "outcomes.l.dec"
-   },
-   "desc": "Outcome ldec Brian Ortega",
-   "raw": 3
-  },
-  {
-   "id": "v69",
-   "text": "52%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "rounds.0.won"
-   },
-   "desc": "R1 won Dan Hooker",
-   "raw": 0.52
-  },
-  {
-   "id": "v70",
-   "text": "+0.4",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "R1 diff Dan Hooker",
-   "raw": 0.437
-  },
-  {
-   "id": "v71",
-   "text": "25",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "rounds.0.fights"
-   },
-   "desc": "R1 fights Dan Hooker",
-   "raw": 25
-  },
-  {
-   "id": "v72",
-   "text": "56%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "rounds.1.won"
-   },
-   "desc": "R2 won Dan Hooker",
-   "raw": 0.5625
-  },
-  {
-   "id": "v73",
-   "text": "-0.7",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "R2 diff Dan Hooker",
-   "raw": -0.683
-  },
-  {
-   "id": "v74",
-   "text": "16",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "rounds.1.fights"
-   },
-   "desc": "R2 fights Dan Hooker",
-   "raw": 16
-  },
-  {
-   "id": "v75",
-   "text": "55%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "rounds.2.won"
-   },
-   "desc": "R3 won Dan Hooker",
-   "raw": 0.5455
-  },
-  {
-   "id": "v76",
-   "text": "+0.1",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "rounds.2.diff_pm"
-   },
-   "desc": "R3 diff Dan Hooker",
-   "raw": 0.125
-  },
-  {
-   "id": "v77",
-   "text": "11",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "rounds.2.fights"
-   },
-   "desc": "R3 fights Dan Hooker",
-   "raw": 11
-  },
-  {
-   "id": "v78",
-   "text": "21%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "rounds.0.won"
-   },
-   "desc": "R1 won Brian Ortega",
-   "raw": 0.2143
-  },
-  {
-   "id": "v79",
-   "text": "-2.7",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "R1 diff Brian Ortega",
-   "raw": -2.654
-  },
-  {
-   "id": "v80",
-   "text": "14",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "rounds.0.fights"
-   },
-   "desc": "R1 fights Brian Ortega",
-   "raw": 14
-  },
-  {
-   "id": "v81",
-   "text": "36%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "rounds.1.won"
-   },
-   "desc": "R2 won Brian Ortega",
-   "raw": 0.3636
-  },
-  {
-   "id": "v82",
-   "text": "-1.6",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "R2 diff Brian Ortega",
-   "raw": -1.593
-  },
-  {
-   "id": "v83",
-   "text": "11",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "rounds.1.fights"
-   },
-   "desc": "R2 fights Brian Ortega",
-   "raw": 11
-  },
-  {
-   "id": "v84",
-   "text": "60%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "rounds.2.won"
-   },
-   "desc": "R3 won Brian Ortega",
-   "raw": 0.6
-  },
-  {
-   "id": "v85",
-   "text": "-1.8",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "rounds.2.diff_pm"
-   },
-   "desc": "R3 diff Brian Ortega",
-   "raw": -1.827
-  },
-  {
-   "id": "v86",
    "text": "10",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Kyoji Horiguchi",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Kyoji Horiguchi",
+   "raw": 10
+  },
+  {
+   "id": "v68",
+   "text": "67%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Kyoji Horiguchi",
+   "raw": 0.6667
+  },
+  {
+   "id": "v69",
+   "text": "+1.6",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Kyoji Horiguchi",
+   "raw": 1.625
+  },
+  {
+   "id": "v70",
+   "text": "9",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
     "path": "rounds.2.fights"
    },
-   "desc": "R3 fights Brian Ortega",
-   "raw": 10
-  },
-  {
-   "id": "v87",
-   "text": "+2",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.0.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 0",
-   "raw": 2
-  },
-  {
-   "id": "v88",
-   "text": "-9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.1.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 1",
-   "raw": -9
-  },
-  {
-   "id": "v89",
-   "text": "-14",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.2.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 2",
-   "raw": -14
-  },
-  {
-   "id": "v90",
-   "text": "-6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.3.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 3",
-   "raw": -6
-  },
-  {
-   "id": "v91",
-   "text": "+4",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.4.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 4",
-   "raw": 4
-  },
-  {
-   "id": "v92",
-   "text": "+10",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.5.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 5",
-   "raw": 10
-  },
-  {
-   "id": "v93",
-   "text": "-35",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.6.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 6",
-   "raw": -35
-  },
-  {
-   "id": "v94",
-   "text": "+2",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.7.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 7",
-   "raw": 2
-  },
-  {
-   "id": "v95",
-   "text": "+19",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.8.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 8",
-   "raw": 19
-  },
-  {
-   "id": "v96",
-   "text": "-9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.9.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 9",
-   "raw": -9
-  },
-  {
-   "id": "v97",
-   "text": "+13",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.10.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 10",
-   "raw": 13
-  },
-  {
-   "id": "v98",
-   "text": "+8",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.11.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 11",
-   "raw": 8
-  },
-  {
-   "id": "v99",
-   "text": "+33",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.12.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 12",
-   "raw": 33
-  },
-  {
-   "id": "v100",
-   "text": "+15",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.13.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 13",
-   "raw": 15
-  },
-  {
-   "id": "v101",
-   "text": "-8",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.14.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 14",
-   "raw": -8
-  },
-  {
-   "id": "v102",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.15.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 15",
+   "desc": "R3 fights Kyoji Horiguchi",
    "raw": 9
   },
   {
-   "id": "v103",
-   "text": "+14",
-   "fmt": "sint",
+   "id": "v71",
+   "text": "88%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.16.rw.0.2"
+    "fighter": "Asu Almabayev",
+    "path": "rounds.0.won"
    },
-   "desc": "R1 fight diff Dan Hooker 16",
-   "raw": 14
+   "desc": "R1 won Asu Almabayev",
+   "raw": 0.875
   },
   {
-   "id": "v104",
-   "text": "+1",
-   "fmt": "sint",
+   "id": "v72",
+   "text": "+0.7",
+   "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.17.rw.0.2"
+    "fighter": "Asu Almabayev",
+    "path": "rounds.0.diff_pm"
    },
-   "desc": "R1 fight diff Dan Hooker 17",
-   "raw": 1
+   "desc": "R1 diff Asu Almabayev",
+   "raw": 0.7
   },
   {
-   "id": "v105",
-   "text": "+12",
-   "fmt": "sint",
+   "id": "v73",
+   "text": "8",
+   "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.18.rw.0.2"
+    "fighter": "Asu Almabayev",
+    "path": "rounds.0.fights"
    },
-   "desc": "R1 fight diff Dan Hooker 18",
-   "raw": 12
+   "desc": "R1 fights Asu Almabayev",
+   "raw": 8
   },
   {
-   "id": "v106",
+   "id": "v74",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Asu Almabayev",
+   "raw": 0.75
+  },
+  {
+   "id": "v75",
+   "text": "+0.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Asu Almabayev",
+   "raw": 0.288
+  },
+  {
+   "id": "v76",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Asu Almabayev",
+   "raw": 8
+  },
+  {
+   "id": "v77",
+   "text": "86%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Asu Almabayev",
+   "raw": 0.8571
+  },
+  {
+   "id": "v78",
+   "text": "-0.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Asu Almabayev",
+   "raw": -0.115
+  },
+  {
+   "id": "v79",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Asu Almabayev",
+   "raw": 7
+  },
+  {
+   "id": "v80",
    "text": "+3",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.19.rw.0.2"
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.0.rw.0.2"
    },
-   "desc": "R1 fight diff Dan Hooker 19",
+   "desc": "R1 fight diff Kyoji Horiguchi 0",
    "raw": 3
   },
   {
-   "id": "v107",
-   "text": "+1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.20.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 20",
-   "raw": 1
-  },
-  {
-   "id": "v108",
-   "text": "-11",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.21.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 21",
-   "raw": -11
-  },
-  {
-   "id": "v109",
-   "text": "-8",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.22.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 22",
-   "raw": -8
-  },
-  {
-   "id": "v110",
-   "text": "-12",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.23.rw.0.2"
-   },
-   "desc": "R1 fight diff Dan Hooker 23",
-   "raw": -12
-  },
-  {
-   "id": "v111",
+   "id": "v81",
    "text": "+11",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.24.rw.0.2"
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.1.rw.0.2"
    },
-   "desc": "R1 fight diff Dan Hooker 24",
+   "desc": "R1 fight diff Kyoji Horiguchi 1",
    "raw": 11
   },
   {
-   "id": "v112",
-   "text": "-58",
+   "id": "v82",
+   "text": "+11",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Kyoji Horiguchi 2",
+   "raw": 11
+  },
+  {
+   "id": "v83",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Kyoji Horiguchi 3",
+   "raw": -4
+  },
+  {
+   "id": "v84",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Kyoji Horiguchi 4",
+   "raw": 15
+  },
+  {
+   "id": "v85",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Kyoji Horiguchi 5",
+   "raw": 15
+  },
+  {
+   "id": "v86",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Kyoji Horiguchi 6",
+   "raw": -6
+  },
+  {
+   "id": "v87",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Kyoji Horiguchi 7",
+   "raw": 3
+  },
+  {
+   "id": "v88",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Kyoji Horiguchi 8",
+   "raw": 18
+  },
+  {
+   "id": "v89",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Kyoji Horiguchi 9",
+   "raw": 5
+  },
+  {
+   "id": "v90",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Kyoji Horiguchi 10",
+   "raw": 2
+  },
+  {
+   "id": "v91",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Kyoji Horiguchi 0",
+   "raw": 9
+  },
+  {
+   "id": "v92",
+   "text": "+26",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
     "path": "fights.1.rw.1.2"
    },
-   "desc": "R2 fight diff Dan Hooker 1",
-   "raw": -58
+   "desc": "R2 fight diff Kyoji Horiguchi 1",
+   "raw": 26
+  },
+  {
+   "id": "v93",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Kyoji Horiguchi 2",
+   "raw": 12
+  },
+  {
+   "id": "v94",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Kyoji Horiguchi 3",
+   "raw": 1
+  },
+  {
+   "id": "v95",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Kyoji Horiguchi 4",
+   "raw": 12
+  },
+  {
+   "id": "v96",
+   "text": "+20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Kyoji Horiguchi 5",
+   "raw": 20
+  },
+  {
+   "id": "v97",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Kyoji Horiguchi 6",
+   "raw": -6
+  },
+  {
+   "id": "v98",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Kyoji Horiguchi 7",
+   "raw": 9
+  },
+  {
+   "id": "v99",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Kyoji Horiguchi 9",
+   "raw": 18
+  },
+  {
+   "id": "v100",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Kyoji Horiguchi 10",
+   "raw": 19
+  },
+  {
+   "id": "v101",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Kyoji Horiguchi 0",
+   "raw": -4
+  },
+  {
+   "id": "v102",
+   "text": "+20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Kyoji Horiguchi 1",
+   "raw": 20
+  },
+  {
+   "id": "v103",
+   "text": "+20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Kyoji Horiguchi 2",
+   "raw": 20
+  },
+  {
+   "id": "v104",
+   "text": "+22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Kyoji Horiguchi 3",
+   "raw": 22
+  },
+  {
+   "id": "v105",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Kyoji Horiguchi 4",
+   "raw": 5
+  },
+  {
+   "id": "v106",
+   "text": "-20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Kyoji Horiguchi 5",
+   "raw": -20
+  },
+  {
+   "id": "v107",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Kyoji Horiguchi 6",
+   "raw": -3
+  },
+  {
+   "id": "v108",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Kyoji Horiguchi 7",
+   "raw": 9
+  },
+  {
+   "id": "v109",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kyoji Horiguchi",
+    "path": "fights.9.rw.2.2"
+   },
+   "desc": "R3 fight diff Kyoji Horiguchi 9",
+   "raw": 16
+  },
+  {
+   "id": "v110",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Asu Almabayev 0",
+   "raw": 4
+  },
+  {
+   "id": "v111",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Asu Almabayev 1",
+   "raw": 2
+  },
+  {
+   "id": "v112",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Asu Almabayev",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Asu Almabayev 2",
+   "raw": -5
   },
   {
    "id": "v113",
-   "text": "-18",
+   "text": "-5",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.2.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.3.rw.0.2"
    },
-   "desc": "R2 fight diff Dan Hooker 2",
-   "raw": -18
+   "desc": "R1 fight diff Asu Almabayev 3",
+   "raw": -5
   },
   {
    "id": "v114",
-   "text": "+6",
+   "text": "+4",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.3.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.4.rw.0.2"
    },
-   "desc": "R2 fight diff Dan Hooker 3",
-   "raw": 6
+   "desc": "R1 fight diff Asu Almabayev 4",
+   "raw": 4
   },
   {
    "id": "v115",
-   "text": "+10",
+   "text": "+1",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.4.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.5.rw.0.2"
    },
-   "desc": "R2 fight diff Dan Hooker 4",
-   "raw": 10
+   "desc": "R1 fight diff Asu Almabayev 5",
+   "raw": 1
   },
   {
    "id": "v116",
-   "text": "+14",
+   "text": "+9",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.5.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.6.rw.0.2"
    },
-   "desc": "R2 fight diff Dan Hooker 5",
-   "raw": 14
+   "desc": "R1 fight diff Asu Almabayev 6",
+   "raw": 9
   },
   {
    "id": "v117",
@@ -1444,59 +1435,59 @@
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.8.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.7.rw.0.2"
    },
-   "desc": "R2 fight diff Dan Hooker 8",
+   "desc": "R1 fight diff Asu Almabayev 7",
    "raw": 18
   },
   {
    "id": "v118",
-   "text": "+18",
+   "text": "-1",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.10.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.0.rw.1.2"
    },
-   "desc": "R2 fight diff Dan Hooker 10",
-   "raw": 18
+   "desc": "R2 fight diff Asu Almabayev 0",
+   "raw": -1
   },
   {
    "id": "v119",
-   "text": "+0",
+   "text": "-8",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.11.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.1.rw.1.2"
    },
-   "desc": "R2 fight diff Dan Hooker 11",
-   "raw": 0
+   "desc": "R2 fight diff Asu Almabayev 1",
+   "raw": -8
   },
   {
    "id": "v120",
-   "text": "+12",
+   "text": "+6",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.12.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.2.rw.1.2"
    },
-   "desc": "R2 fight diff Dan Hooker 12",
-   "raw": 12
+   "desc": "R2 fight diff Asu Almabayev 2",
+   "raw": 6
   },
   {
    "id": "v121",
-   "text": "-23",
+   "text": "+4",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.14.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.3.rw.1.2"
    },
-   "desc": "R2 fight diff Dan Hooker 14",
-   "raw": -23
+   "desc": "R2 fight diff Asu Almabayev 3",
+   "raw": 4
   },
   {
    "id": "v122",
@@ -1504,1173 +1495,645 @@
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.17.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.4.rw.1.2"
    },
-   "desc": "R2 fight diff Dan Hooker 17",
+   "desc": "R2 fight diff Asu Almabayev 4",
    "raw": -4
   },
   {
    "id": "v123",
-   "text": "+19",
+   "text": "+6",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.18.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.5.rw.1.2"
    },
-   "desc": "R2 fight diff Dan Hooker 18",
-   "raw": 19
+   "desc": "R2 fight diff Asu Almabayev 5",
+   "raw": 6
   },
   {
    "id": "v124",
-   "text": "-1",
+   "text": "+4",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.19.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.6.rw.1.2"
    },
-   "desc": "R2 fight diff Dan Hooker 19",
-   "raw": -1
+   "desc": "R2 fight diff Asu Almabayev 6",
+   "raw": 4
   },
   {
    "id": "v125",
-   "text": "-11",
+   "text": "+4",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.21.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.7.rw.1.2"
    },
-   "desc": "R2 fight diff Dan Hooker 21",
-   "raw": -11
+   "desc": "R2 fight diff Asu Almabayev 7",
+   "raw": 4
   },
   {
    "id": "v126",
-   "text": "-3",
+   "text": "+4",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.22.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.0.rw.2.2"
    },
-   "desc": "R2 fight diff Dan Hooker 22",
-   "raw": -3
+   "desc": "R3 fight diff Asu Almabayev 0",
+   "raw": 4
   },
   {
    "id": "v127",
-   "text": "-30",
+   "text": "+2",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.23.rw.1.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.1.rw.2.2"
    },
-   "desc": "R2 fight diff Dan Hooker 23",
-   "raw": -30
+   "desc": "R3 fight diff Asu Almabayev 1",
+   "raw": 2
   },
   {
    "id": "v128",
-   "text": "+1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.3.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 3",
-   "raw": 1
-  },
-  {
-   "id": "v129",
-   "text": "+11",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.4.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 4",
-   "raw": 11
-  },
-  {
-   "id": "v130",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.8.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 8",
-   "raw": 9
-  },
-  {
-   "id": "v131",
-   "text": "-8",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.10.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 10",
-   "raw": -8
-  },
-  {
-   "id": "v132",
-   "text": "+11",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.11.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 11",
-   "raw": 11
-  },
-  {
-   "id": "v133",
-   "text": "+16",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.12.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 12",
-   "raw": 16
-  },
-  {
-   "id": "v134",
-   "text": "-14",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.14.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 14",
-   "raw": -14
-  },
-  {
-   "id": "v135",
-   "text": "-4",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.17.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 17",
-   "raw": -4
-  },
-  {
-   "id": "v136",
-   "text": "-14",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.19.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 19",
-   "raw": -14
-  },
-  {
-   "id": "v137",
-   "text": "-11",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.21.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 21",
-   "raw": -11
-  },
-  {
-   "id": "v138",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dan Hooker",
-    "path": "fights.23.rw.2.2"
-   },
-   "desc": "R3 fight diff Dan Hooker 23",
-   "raw": 9
-  },
-  {
-   "id": "v139",
-   "text": "-25",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.0.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 0",
-   "raw": -25
-  },
-  {
-   "id": "v140",
-   "text": "-14",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.1.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 1",
-   "raw": -14
-  },
-  {
-   "id": "v141",
-   "text": "-39",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.2.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 2",
-   "raw": -39
-  },
-  {
-   "id": "v142",
-   "text": "-1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.3.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 3",
-   "raw": -1
-  },
-  {
-   "id": "v143",
-   "text": "-14",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.4.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 4",
-   "raw": -14
-  },
-  {
-   "id": "v144",
-   "text": "+10",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.5.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 5",
-   "raw": 10
-  },
-  {
-   "id": "v145",
-   "text": "-21",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.6.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 6",
-   "raw": -21
-  },
-  {
-   "id": "v146",
-   "text": "-2",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.7.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 7",
-   "raw": -2
-  },
-  {
-   "id": "v147",
-   "text": "-14",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.8.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 8",
-   "raw": -14
-  },
-  {
-   "id": "v148",
-   "text": "-20",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.9.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 9",
-   "raw": -20
-  },
-  {
-   "id": "v149",
-   "text": "-12",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.10.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 10",
-   "raw": -12
-  },
-  {
-   "id": "v150",
-   "text": "-14",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.11.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 11",
-   "raw": -14
-  },
-  {
-   "id": "v151",
    "text": "-5",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.12.rw.0.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.2.rw.2.2"
    },
-   "desc": "R1 fight diff Brian Ortega 12",
+   "desc": "R3 fight diff Asu Almabayev 2",
    "raw": -5
   },
   {
-   "id": "v152",
-   "text": "-3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.13.rw.0.2"
-   },
-   "desc": "R1 fight diff Brian Ortega 13",
-   "raw": -3
-  },
-  {
-   "id": "v153",
-   "text": "-4",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.0.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 0",
-   "raw": -4
-  },
-  {
-   "id": "v154",
-   "text": "-6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.1.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 1",
-   "raw": -6
-  },
-  {
-   "id": "v155",
-   "text": "+13",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.2.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 2",
-   "raw": 13
-  },
-  {
-   "id": "v156",
-   "text": "-15",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.4.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 4",
-   "raw": -15
-  },
-  {
-   "id": "v157",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.5.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 5",
-   "raw": 9
-  },
-  {
-   "id": "v158",
-   "text": "-33",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.6.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 6",
-   "raw": -33
-  },
-  {
-   "id": "v159",
-   "text": "-22",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.8.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 8",
-   "raw": -22
-  },
-  {
-   "id": "v160",
-   "text": "-16",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.9.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 9",
-   "raw": -16
-  },
-  {
-   "id": "v161",
-   "text": "+0",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.10.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 10",
-   "raw": 0
-  },
-  {
-   "id": "v162",
-   "text": "-7",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.11.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 11",
-   "raw": -7
-  },
-  {
-   "id": "v163",
-   "text": "-4",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.12.rw.1.2"
-   },
-   "desc": "R2 fight diff Brian Ortega 12",
-   "raw": -4
-  },
-  {
-   "id": "v164",
-   "text": "-14",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.0.rw.2.2"
-   },
-   "desc": "R3 fight diff Brian Ortega 0",
-   "raw": -14
-  },
-  {
-   "id": "v165",
-   "text": "-23",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.1.rw.2.2"
-   },
-   "desc": "R3 fight diff Brian Ortega 1",
-   "raw": -23
-  },
-  {
-   "id": "v166",
-   "text": "-1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.2.rw.2.2"
-   },
-   "desc": "R3 fight diff Brian Ortega 2",
-   "raw": -1
-  },
-  {
-   "id": "v167",
-   "text": "-44",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.4.rw.2.2"
-   },
-   "desc": "R3 fight diff Brian Ortega 4",
-   "raw": -44
-  },
-  {
-   "id": "v168",
-   "text": "+21",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.5.rw.2.2"
-   },
-   "desc": "R3 fight diff Brian Ortega 5",
-   "raw": 21
-  },
-  {
-   "id": "v169",
+   "id": "v129",
    "text": "-20",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.6.rw.2.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.3.rw.2.2"
    },
-   "desc": "R3 fight diff Brian Ortega 6",
+   "desc": "R3 fight diff Asu Almabayev 3",
    "raw": -20
   },
   {
-   "id": "v170",
-   "text": "-8",
+   "id": "v130",
+   "text": "+6",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.9.rw.2.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.4.rw.2.2"
    },
-   "desc": "R3 fight diff Brian Ortega 9",
-   "raw": -8
+   "desc": "R3 fight diff Asu Almabayev 4",
+   "raw": 6
   },
   {
-   "id": "v171",
-   "text": "+12",
+   "id": "v131",
+   "text": "+8",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.10.rw.2.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.5.rw.2.2"
    },
-   "desc": "R3 fight diff Brian Ortega 10",
-   "raw": 12
+   "desc": "R3 fight diff Asu Almabayev 5",
+   "raw": 8
   },
   {
-   "id": "v172",
-   "text": "-6",
+   "id": "v132",
+   "text": "+2",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.11.rw.2.2"
+    "fighter": "Asu Almabayev",
+    "path": "fights.6.rw.2.2"
    },
-   "desc": "R3 fight diff Brian Ortega 11",
-   "raw": -6
+   "desc": "R3 fight diff Asu Almabayev 6",
+   "raw": 2
   },
   {
-   "id": "v173",
-   "text": "+11",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Brian Ortega",
-    "path": "fights.12.rw.2.2"
-   },
-   "desc": "R3 fight diff Brian Ortega 12",
-   "raw": 11
-  },
-  {
-   "id": "v174",
-   "text": "+0.4",
+   "id": "v133",
+   "text": "+1.4",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "rounds.0.diff_pm"
    },
-   "desc": "Trend R1 Dan Hooker",
-   "raw": 0.437
+   "desc": "Trend R1 Kyoji Horiguchi",
+   "raw": 1.357
   },
   {
-   "id": "v175",
-   "text": "-0.7",
+   "id": "v134",
+   "text": "+2.5",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "rounds.1.diff_pm"
    },
-   "desc": "Trend R2 Dan Hooker",
-   "raw": -0.683
+   "desc": "Trend R2 Kyoji Horiguchi",
+   "raw": 2.456
   },
   {
-   "id": "v176",
-   "text": "+0.1",
+   "id": "v135",
+   "text": "+1.6",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "rounds.2.diff_pm"
    },
-   "desc": "Trend R3 Dan Hooker",
-   "raw": 0.125
+   "desc": "Trend R3 Kyoji Horiguchi",
+   "raw": 1.625
   },
   {
-   "id": "v177",
-   "text": "-2.7",
+   "id": "v136",
+   "text": "+0.7",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "rounds.0.diff_pm"
    },
-   "desc": "Trend R1 Brian Ortega",
-   "raw": -2.654
+   "desc": "Trend R1 Asu Almabayev",
+   "raw": 0.7
   },
   {
-   "id": "v178",
-   "text": "-1.6",
+   "id": "v137",
+   "text": "+0.3",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "rounds.1.diff_pm"
    },
-   "desc": "Trend R2 Brian Ortega",
-   "raw": -1.593
+   "desc": "Trend R2 Asu Almabayev",
+   "raw": 0.288
   },
   {
-   "id": "v179",
-   "text": "-1.8",
+   "id": "v138",
+   "text": "-0.1",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "rounds.2.diff_pm"
    },
-   "desc": "Trend R3 Brian Ortega",
-   "raw": -1.827
+   "desc": "Trend R3 Asu Almabayev",
+   "raw": -0.115
   },
   {
-   "id": "v180",
-   "text": "0.67",
+   "id": "v139",
+   "text": "1.67",
    "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "grap.td15"
    },
    "desc": "Takedowns /15 a",
-   "raw": 0.672
+   "raw": 1.671
   },
   {
-   "id": "v181",
-   "text": "0.93",
+   "id": "v140",
+   "text": "4.74",
    "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "grap.td15"
    },
    "desc": "Takedowns /15 b",
-   "raw": 0.931
+   "raw": 4.743
   },
   {
-   "id": "v182",
-   "text": "33%",
+   "id": "v141",
+   "text": "40%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "grap.td_acc"
    },
    "desc": "TD accuracy a",
-   "raw": 0.3333
+   "raw": 0.4048
   },
   {
-   "id": "v183",
-   "text": "25%",
+   "id": "v142",
+   "text": "46%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "grap.td_acc"
    },
    "desc": "TD accuracy b",
-   "raw": 0.25
+   "raw": 0.4583
   },
   {
-   "id": "v184",
-   "text": "77%",
+   "id": "v143",
+   "text": "61%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "grap.tdd"
    },
    "desc": "TD defence a",
-   "raw": 0.7714
+   "raw": 0.6122
   },
   {
-   "id": "v185",
-   "text": "55%",
+   "id": "v144",
+   "text": "44%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "grap.tdd"
    },
    "desc": "TD defence b",
-   "raw": 0.5455
+   "raw": 0.4444
   },
   {
-   "id": "v186",
-   "text": "17%",
+   "id": "v145",
+   "text": "22%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "grap.ctrl"
    },
    "desc": "Time in control a",
-   "raw": 0.1736
+   "raw": 0.2173
   },
   {
-   "id": "v187",
-   "text": "9%",
+   "id": "v146",
+   "text": "49%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "grap.ctrl"
    },
    "desc": "Time in control b",
-   "raw": 0.086
+   "raw": 0.4891
   },
   {
-   "id": "v188",
+   "id": "v147",
    "text": "+4.3%",
    "fmt": "spp",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "grap.adj_net_ctrl"
    },
    "desc": "Net control, opp-adjusted a",
-   "raw": 0.0432
+   "raw": 0.0427
   },
   {
-   "id": "v189",
-   "text": "+0.8%",
+   "id": "v148",
+   "text": "+43.6%",
    "fmt": "spp",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "grap.adj_net_ctrl"
    },
    "desc": "Net control, opp-adjusted b",
-   "raw": 0.0081
+   "raw": 0.4358
   },
   {
-   "id": "v190",
-   "text": "15%",
+   "id": "v149",
+   "text": "18%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "grap.ctrl_ag"
    },
    "desc": "Time controlled a",
-   "raw": 0.1472
+   "raw": 0.1782
   },
   {
-   "id": "v191",
-   "text": "11%",
+   "id": "v150",
+   "text": "5%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "grap.ctrl_ag"
    },
    "desc": "Time controlled b",
-   "raw": 0.1143
+   "raw": 0.0513
   },
   {
-   "id": "v192",
-   "text": "0.55",
+   "id": "v151",
+   "text": "0.10",
    "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "grap.sub15"
    },
    "desc": "Sub attempts /15 a",
-   "raw": 0.549
+   "raw": 0.098
   },
   {
-   "id": "v193",
-   "text": "0.93",
+   "id": "v152",
+   "text": "1.44",
    "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "grap.sub15"
    },
    "desc": "Sub attempts /15 b",
-   "raw": 0.931
+   "raw": 1.437
   },
   {
-   "id": "v194",
-   "text": "-0.11",
+   "id": "v153",
+   "text": "+1.56",
    "fmt": "s2",
    "rule": "em_sum",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "paths": [
      "target_diff.head",
      "target_diff.body",
      "target_diff.leg"
     ]
    },
-   "desc": "Total diff Dan Hooker",
-   "raw": -0.11399999999999993
+   "desc": "Total diff Kyoji Horiguchi",
+   "raw": 1.56
   },
   {
-   "id": "v195",
-   "text": "-2.54",
+   "id": "v154",
+   "text": "+0.34",
    "fmt": "s2",
    "rule": "em_sum",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "paths": [
      "target_diff.head",
      "target_diff.body",
      "target_diff.leg"
     ]
    },
-   "desc": "Total diff Brian Ortega",
-   "raw": -2.539
+   "desc": "Total diff Asu Almabayev",
+   "raw": 0.345
   },
   {
-   "id": "v196",
-   "text": "+0.03",
+   "id": "v155",
+   "text": "+1.59",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "sos.adj_sd"
    },
    "desc": "Opp-adjusted diff a",
-   "raw": 0.025
+   "raw": 1.588
   },
   {
-   "id": "v197",
-   "text": "-2.24",
+   "id": "v156",
+   "text": "+0.33",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "sos.adj_sd"
    },
    "desc": "Opp-adjusted diff b",
-   "raw": -2.237
+   "raw": 0.328
   },
   {
-   "id": "v198",
-   "text": "-0.57",
+   "id": "v157",
+   "text": "+1.58",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "target_diff.head"
    },
    "desc": "Head diff /min a",
-   "raw": -0.574
+   "raw": 1.579
   },
   {
-   "id": "v199",
-   "text": "-1.79",
+   "id": "v158",
+   "text": "+0.25",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "target_diff.head"
    },
    "desc": "Head diff /min b",
-   "raw": -1.795
+   "raw": 0.249
   },
   {
-   "id": "v200",
-   "text": "+0.02",
+   "id": "v159",
+   "text": "+0.07",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "target_diff.body"
    },
    "desc": "Body diff /min a",
-   "raw": 0.02
+   "raw": 0.066
   },
   {
-   "id": "v201",
-   "text": "-0.25",
+   "id": "v160",
+   "text": "-0.09",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "target_diff.body"
    },
    "desc": "Body diff /min b",
-   "raw": -0.253
+   "raw": -0.086
   },
   {
-   "id": "v202",
-   "text": "+0.44",
+   "id": "v161",
+   "text": "-0.09",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "target_diff.leg"
    },
    "desc": "Leg diff /min a",
-   "raw": 0.44
+   "raw": -0.085
   },
   {
-   "id": "v203",
-   "text": "-0.49",
+   "id": "v162",
+   "text": "+0.18",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "target_diff.leg"
    },
    "desc": "Leg diff /min b",
-   "raw": -0.491
+   "raw": 0.182
   },
   {
-   "id": "v204",
-   "text": "55%",
+   "id": "v163",
+   "text": "73%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "hdef"
    },
    "desc": "Head defence a",
-   "raw": 0.5455
+   "raw": 0.7333
   },
   {
-   "id": "v205",
-   "text": "56%",
+   "id": "v164",
+   "text": "64%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "hdef"
    },
    "desc": "Head defence b",
-   "raw": 0.5621
+   "raw": 0.6357
   },
   {
-   "id": "v206",
-   "text": "9.8",
+   "id": "v165",
+   "text": "13.9",
    "fmt": "n1",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "pace.min"
    },
    "desc": "Avg fight, min a",
-   "raw": 9.829
+   "raw": 13.876
   },
   {
-   "id": "v207",
-   "text": "14.7",
+   "id": "v166",
+   "text": "13.0",
    "fmt": "n1",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "pace.min"
    },
    "desc": "Avg fight, min b",
-   "raw": 14.745
+   "raw": 13.046
   },
   {
-   "id": "v208",
-   "text": "36%",
+   "id": "v167",
+   "text": "9%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dan Hooker",
+    "fighter": "Kyoji Horiguchi",
     "path": "pace.r1"
    },
    "desc": "Finished in R1 a",
-   "raw": 0.36
+   "raw": 0.0909
   },
   {
-   "id": "v209",
-   "text": "15%",
+   "id": "v168",
+   "text": "0%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Brian Ortega",
+    "fighter": "Asu Almabayev",
     "path": "pace.r1"
    },
    "desc": "Finished in R1 b",
-   "raw": 0.1538
+   "raw": 0.0
   },
   {
-   "id": "v210",
-   "text": "-0.11",
-   "fmt": "s2",
-   "rule": "em_sum",
+   "id": "v169",
+   "text": "+162",
+   "fmt": "ml",
+   "rule": "mk",
    "args": {
-    "fighter": "Dan Hooker",
-    "paths": [
-     "target_diff.head",
-     "target_diff.body",
-     "target_diff.leg"
-    ]
+    "kind": "ml_flags",
+    "i": 0,
+    "key": "market_odds",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
    },
-   "desc": "Total diff Dan Hooker",
-   "raw": -0.11399999999999993
+   "desc": "Markov flag price",
+   "raw": 162
   },
   {
-   "id": "v211",
-   "text": "-2.54",
-   "fmt": "s2",
-   "rule": "em_sum",
+   "id": "v170",
+   "text": "56.9",
+   "fmt": "n1",
+   "rule": "mk",
    "args": {
-    "fighter": "Brian Ortega",
-    "paths": [
-     "target_diff.head",
-     "target_diff.body",
-     "target_diff.leg"
-    ]
+    "kind": "ml_flags",
+    "i": 0,
+    "key": "model_shrunk",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
    },
-   "desc": "Total diff Brian Ortega",
-   "raw": -2.539
+   "desc": "Markov win shrunk",
+   "raw": 56.9
   },
   {
-   "id": "v212",
-   "text": "70.8%",
-   "fmt": "pct1",
-   "rule": "bt",
+   "id": "v171",
+   "text": "58.1",
+   "fmt": "n1",
+   "rule": "mk",
    "args": {
-    "test": "T1",
-    "key": "win"
+    "kind": "ml_flags",
+    "i": 0,
+    "key": "model_raw",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
    },
-   "desc": "Backtest T1 win",
-   "raw": 0.708
+   "desc": "Markov win raw",
+   "raw": 58.1
   },
   {
-   "id": "v213",
-   "text": "62.1%",
-   "fmt": "pct1",
-   "rule": "bt",
+   "id": "v172",
+   "text": "36.4",
+   "fmt": "n1",
+   "rule": "mk",
    "args": {
-    "test": "T1",
-    "key": "imp"
+    "kind": "ml_flags",
+    "i": 0,
+    "key": "market_implied",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
    },
-   "desc": "Backtest T1 imp",
-   "raw": 0.6209
+   "desc": "Markov flag market",
+   "raw": 36.4
   },
   {
-   "id": "v214",
-   "text": "+11.0%",
-   "fmt": "spp",
-   "rule": "bt",
+   "id": "v173",
+   "text": "+20.5",
+   "fmt": "s1",
+   "rule": "mk",
    "args": {
-    "test": "T1",
-    "key": "roi"
+    "kind": "ml_flags",
+    "i": 0,
+    "key": "edge_pts",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
    },
-   "desc": "Backtest T1 roi",
-   "raw": 0.1099
+   "desc": "Markov flag gap",
+   "raw": 20.5
   },
   {
-   "id": "v215",
-   "text": "+1.1%",
-   "fmt": "spp",
-   "rule": "bt",
-   "args": {
-    "test": "T1",
-    "key": "ci",
-    "i": 0
-   },
-   "desc": "Backtest T1 ci lo",
-   "raw": 0.0114
-  },
-  {
-   "id": "v216",
-   "text": "+20.9%",
-   "fmt": "spp",
-   "rule": "bt",
-   "args": {
-    "test": "T1",
-    "key": "ci",
-    "i": 1
-   },
-   "desc": "Backtest T1 ci hi",
-   "raw": 0.2092
-  },
-  {
-   "id": "v217",
-   "text": "250",
-   "fmt": "int",
-   "rule": "bt",
-   "args": {
-    "test": "T1",
-    "key": "n"
-   },
-   "desc": "Backtest T1 n",
-   "raw": 250
-  },
-  {
-   "id": "v218",
-   "text": "+381",
+   "id": "v174",
+   "text": "+152",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2678,12 +2141,12 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Dan Hooker Salahdine Parnasse",
-   "raw": 381
+   "desc": "Close Kyoji Horiguchi Manel Kape",
+   "raw": 152
   },
   {
-   "id": "v219",
-   "text": "+310",
+   "id": "v175",
+   "text": "-370",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2691,12 +2154,12 @@
     "i": 1,
     "key": "od.mc"
    },
-   "desc": "Close Dan Hooker Benoit Saint Denis",
-   "raw": 310
+   "desc": "Close Kyoji Horiguchi Amir Albazi",
+   "raw": -370
   },
   {
-   "id": "v220",
-   "text": "+462",
+   "id": "v176",
+   "text": "+178",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2704,64 +2167,12 @@
     "i": 2,
     "key": "od.mc"
    },
-   "desc": "Close Dan Hooker Arman Tsarukyan",
-   "raw": 462
+   "desc": "Close Kyoji Horiguchi Tagir Ulanbekov",
+   "raw": 178
   },
   {
-   "id": "v221",
-   "text": "+320",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 3,
-    "key": "od.mc"
-   },
-   "desc": "Close Dan Hooker Mateusz Gamrot",
-   "raw": 320
-  },
-  {
-   "id": "v222",
-   "text": "+242",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 4,
-    "key": "od.mc"
-   },
-   "desc": "Close Dan Hooker Jalin Turner",
-   "raw": 242
-  },
-  {
-   "id": "v223",
-   "text": "-153",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 5,
-    "key": "od.mc"
-   },
-   "desc": "Close Dan Hooker Claudio Puelles",
-   "raw": -153
-  },
-  {
-   "id": "v224",
-   "text": "-109",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 6,
-    "key": "od.mc"
-   },
-   "desc": "Close Dan Hooker Arnold Allen",
-   "raw": -109
-  },
-  {
-   "id": "v225",
-   "text": "+350",
+   "id": "v177",
+   "text": "-270",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2769,47 +2180,8 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Brian Ortega Aljamain Sterling",
-   "raw": 350
-  },
-  {
-   "id": "v226",
-   "text": "+154",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 1,
-    "key": "od.mc"
-   },
-   "desc": "Close Brian Ortega Diego Lopes",
-   "raw": 154
-  },
-  {
-   "id": "v227",
-   "text": "+128",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 2,
-    "key": "od.mc"
-   },
-   "desc": "Close Brian Ortega Yair Rodriguez",
-   "raw": 128
-  },
-  {
-   "id": "v228",
-   "text": "-169",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 3,
-    "key": "od.mc"
-   },
-   "desc": "Close Brian Ortega Yair Rodriguez",
-   "raw": -169
+   "desc": "Close Asu Almabayev Charles Johnson",
+   "raw": -270
   }
  ],
  "gaps": [

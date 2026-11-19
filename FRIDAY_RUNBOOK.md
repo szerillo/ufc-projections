@@ -40,3 +40,12 @@ checkout at /tmp/st.
 - merge_main.sh refuses if main moved with anything other than the odds bot or Sean's export since the served-set check
   (audits/MAIN_AT_CHECK.txt, re-pinned Nov 19 to 97522f68). If it refuses, re-run `python3 audits/fn_prochazka_stirling/served_set_check.py` and re-pin.
 - Staging only, before the publish: `ALLOW_NO_EXPORT=1 bash scripts/friday_refresh.sh "$CARD" $SLUG $EVENT /tmp/st` refreshes the market-only pages. It never adds model numbers.
+- Nov 19 (Kirk): fight 12 **John Mitchell vs Shoaib Yousaf is official** (Sean), the prelim opener. It is in card_overrides `add`
+  (the odds feed does not carry it yet), so it is fight 1 and every other bout moved up one (main event = fight 12, files fight_01..fight_12).
+  Split 5 main / 7 prelims; the event file now carries `n_main` and form/app.js reads it (12 bouts would otherwise guess 6 main).
+  - Its embed shows the Markov read and "No odds feed price for this bout yet" until BettingPros lists it; the next refresh picks it up with no change.
+  - Step 3 of friday_refresh (`check_price_freshness`) needs an archive price for it within 4 h; the archive had one at 04:41Z Nov 19.
+  - Step 2b blocks go-live until Sean's export has the bout (Prelims row 8, entered Nov 19 01:40 ET).
+  - Section A: land only C4's **relabelled** files (flags.json with `fight_12_status`). Landing the earlier provisional copies again drops
+    fight 12 from the Markov card. The flags.json on the branch is a label-only relabel of C4's file (numbers unchanged), done on the branch
+    because the relabelled copies were not in "C - UFC Markov/outputs/"; C4's own copy replaces it.

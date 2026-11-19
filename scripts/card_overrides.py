@@ -100,6 +100,14 @@ def apply_doc(slug, doc, fighters_dir=None, path=OVR_PATH):
         return doc
     fights = [f for f in doc["fights"]
               if not any(bout_is(f["a"]["name"], f["b"]["name"], x, y) for x, y in o.get("cancel", []))]
+    # Nov 19 (Kirk): a bout on the official card that the odds feed does not carry yet (late add). Names, weight class and
+    # rounds only; no odds, model or sheet block is invented. Skipped once the feed has the bout, so it is never doubled.
+    for ad in o.get("add", []):
+        if any(bout_is(f["a"]["name"], f["b"]["name"], ad["a"], ad["b"]) for f in fights):
+            continue
+        fights.append({"n": 0, "a": _fighter_ref(ad["a"], fighters_dir), "b": _fighter_ref(ad["b"], fighters_dir),
+                       "wc": ad["wc"], "title": False, "sched": ad.get("sched", 3), "result": None, "stats": None,
+                       "url": None, "start": ad.get("start"), "added": ad.get("source")})
     for f in fights:
         for r in o.get("replace", []):
             for me, opp in (("a", "b"), ("b", "a")):
@@ -127,6 +135,9 @@ def apply_doc(slug, doc, fighters_dir=None, path=OVR_PATH):
         fights[0]["sched"] = 5
     doc["fights"] = fights
     doc["overrides"] = o.get("source")
+    seg = o.get("segments")
+    if seg and seg.get("main"):   # Nov 19: the real main card count; app.js reads it instead of the 5-or-6 guess
+        doc["n_main"] = seg["main"]
     return doc
 
 
@@ -139,7 +150,9 @@ def apply_index(index, doc):
     return index
 
 
-def n_main(fights):
+def n_main(fights, doc=None):
+    if doc and doc.get("n_main"):   # explicit count from card_overrides "segments" (form/app.js uses the same field)
+        return min(len(fights), doc["n_main"])
     n = len(fights)
     return min(n, (5 if any(f.get("title") for f in fights) else 6) if n >= 12 else 5)
 
@@ -154,6 +167,9 @@ def check(slug, doc, index=None, path=OVR_PATH):
         u = next((u for u in index.get("upcoming", []) if u.get("slug") == doc["slug"]), None)
         if not u or u["nf"] != len(doc["fights"]):
             errs.append("index nf mismatch")
+    for ad in o.get("add", []):
+        if not any(bout_is(f["a"]["name"], f["b"]["name"], ad["a"], ad["b"]) for f in doc["fights"]):
+            errs.append(f"added bout missing: {ad['a']} vs {ad['b']}")
     for x, y in o.get("cancel", []):
         if any(bout_is(f["a"]["name"], f["b"]["name"], x, y) for f in doc["fights"]):
             errs.append(f"cancelled bout still listed: {x} vs {y}")
@@ -168,8 +184,8 @@ def check(slug, doc, index=None, path=OVR_PATH):
         if [f["n"] for f in doc["fights"]] != list(range(len(doc["fights"]), 0, -1)):
             errs.append("fight numbers are not bout order (main event = %d ... opener = 1)" % len(doc["fights"]))
     seg = o.get("segments")
-    if seg and n_main(doc["fights"]) != seg.get("main"):
-        errs.append(f"site will show {n_main(doc['fights'])} main card bouts, real card has {seg.get('main')} (app.js heuristic)")
+    if seg and n_main(doc["fights"], doc) != seg.get("main"):
+        errs.append(f"site will show {n_main(doc['fights'], doc)} main card bouts, real card has {seg.get('main')} (app.js heuristic)")
     return errs
 
 
@@ -188,7 +204,7 @@ def main():
         idx = apply_index(json.load(open(a.index)), doc)
         json.dump(idx, open(a.index, "w"), separators=(",", ":"))
     for i, f in enumerate(doc["fights"]):
-        seg = "main" if i < n_main(doc["fights"]) else "prelim"
+        seg = "main" if i < n_main(doc["fights"], doc) else "prelim"
         print(f"{i+1:2d} n={f['n']:<2} {seg:6s} {f['a']['name']} vs {f['b']['name']}  {f['wc']}  {f['sched']}R{'  TITLE' if f['title'] else ''}")
     if a.check:
         errs = check(a.slug, doc, idx)

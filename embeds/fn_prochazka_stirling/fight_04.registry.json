@@ -1,14 +1,14 @@
 {
  "markov_card": "ufc-fight-night-prochazka-vs-stirling",
  "fight": 4,
- "of": 11,
+ "of": 12,
  "site_pair": [
-  "Amir Albazi",
-  "Alessandro Costa"
+  "Jake Matthews",
+  "Tahir Abdullayev"
  ],
  "pair": [
-  "Amir Albazi",
-  "Alessandro Costa"
+  "Jake Matthews",
+  "Tahir Abdullayev"
  ],
  "file": "fight_04.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
@@ -18,51 +18,51 @@
  "rows": [
   {
    "id": "v1",
-   "text": "5-2-0",
+   "text": "16-8-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "a"
    },
-   "desc": "Amir Albazi UFC record",
-   "raw": "5-2-0"
+   "desc": "Jake Matthews UFC record",
+   "raw": "16-8-0"
   },
   {
    "id": "v2",
-   "text": "5-3-0",
+   "text": "1-0-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "b"
    },
-   "desc": "Alessandro Costa UFC record",
-   "raw": "5-3-0"
+   "desc": "Tahir Abdullayev UFC record",
+   "raw": "1-0-0"
   },
   {
    "id": "v3",
-   "text": "33.1",
+   "text": "32.3",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "a"
    },
    "desc": "Age a",
-   "raw": 33.06776180698152
+   "raw": 32.257357973990416
   },
   {
    "id": "v4",
-   "text": "30.8",
+   "text": "29.8",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "b"
    },
    "desc": "Age b",
-   "raw": 30.8145106091718
+   "raw": 29.79876796714579
   },
   {
    "id": "v5",
-   "text": "5'5\"",
+   "text": "5'11\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -70,11 +70,11 @@
     "key": "ht"
    },
    "desc": "Height a",
-   "raw": "5'5\""
+   "raw": "5'11\""
   },
   {
    "id": "v6",
-   "text": "5'4\"",
+   "text": "5'8\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -82,29 +82,29 @@
     "key": "ht"
    },
    "desc": "Height b",
-   "raw": "5'4\""
+   "raw": "5'8\""
   },
   {
    "id": "v7",
-   "text": "68\"",
+   "text": "73\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "a"
    },
    "desc": "Reach a",
-   "raw": 68
+   "raw": 73
   },
   {
    "id": "v8",
-   "text": "67\"",
+   "text": "73\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "b"
    },
    "desc": "Reach b",
-   "raw": 67
+   "raw": 73
   },
   {
    "id": "v9",
@@ -132,83 +132,83 @@
   },
   {
    "id": "v11",
-   "text": "-116",
+   "text": "-257",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Amir Albazi",
+    "label": "Jake Matthews",
     "field": "cost"
    },
-   "desc": "Market ML Amir Albazi",
-   "raw": -116
+   "desc": "Market ML Jake Matthews",
+   "raw": -257
   },
   {
    "id": "v12",
-   "text": "53.7%",
+   "text": "72.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Amir Albazi"
+    "label": "Jake Matthews"
    },
-   "desc": "Market implied Amir Albazi",
-   "raw": 0.5370370370370371
+   "desc": "Market implied Jake Matthews",
+   "raw": 0.7198879551820728
   },
   {
    "id": "v13",
-   "text": "-108",
+   "text": "-238",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Amir Albazi",
+    "label": "Jake Matthews",
     "book": "draftkings"
    },
-   "desc": "Best US ML Amir Albazi",
-   "raw": -108
+   "desc": "Best US ML Jake Matthews",
+   "raw": -238
   },
   {
    "id": "v14",
-   "text": "-107",
+   "text": "+197",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Alessandro Costa",
+    "label": "Tahir Abdullayev",
     "field": "cost"
    },
-   "desc": "Market ML Alessandro Costa",
-   "raw": -107
+   "desc": "Market ML Tahir Abdullayev",
+   "raw": 197
   },
   {
    "id": "v15",
-   "text": "51.7%",
+   "text": "33.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Alessandro Costa"
+    "label": "Tahir Abdullayev"
    },
-   "desc": "Market implied Alessandro Costa",
-   "raw": 0.5169082125603864
+   "desc": "Market implied Tahir Abdullayev",
+   "raw": 0.3367003367003367
   },
   {
    "id": "v16",
-   "text": "+100",
+   "text": "+220",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Alessandro Costa",
+    "label": "Tahir Abdullayev",
     "book": "betmgm"
    },
-   "desc": "Best US ML Alessandro Costa",
-   "raw": 100
+   "desc": "Best US ML Tahir Abdullayev",
+   "raw": 220
   },
   {
    "id": "v17",
-   "text": "-150",
+   "text": "-125",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -217,11 +217,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": -150
+   "raw": -125
   },
   {
    "id": "v18",
-   "text": "60.0%",
+   "text": "55.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -229,11 +229,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD yes implied",
-   "raw": 0.6
+   "raw": 0.5555555555555556
   },
   {
    "id": "v19",
-   "text": "+112",
+   "text": "-105",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -242,11 +242,11 @@
     "field": "cost"
    },
    "desc": "Market GTD no",
-   "raw": 112
+   "raw": -105
   },
   {
    "id": "v20",
-   "text": "47.2%",
+   "text": "51.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -254,373 +254,373 @@
     "label": "No"
    },
    "desc": "Market GTD no implied",
-   "raw": 0.4716981132075472
+   "raw": 0.5121951219512195
   },
   {
    "id": "v21",
-   "text": "+180",
+   "text": "+145",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Amir Albazi Points",
+    "label": "Jake Matthews Points",
     "field": "cost"
    },
-   "desc": "Market dec Amir Albazi",
-   "raw": 180
+   "desc": "Market dec Jake Matthews",
+   "raw": 145
   },
   {
    "id": "v22",
-   "text": "35.7%",
+   "text": "40.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Amir Albazi Points"
+    "label": "Jake Matthews Points"
    },
-   "desc": "Market dec implied Amir Albazi",
-   "raw": 0.35714285714285715
+   "desc": "Market dec implied Jake Matthews",
+   "raw": 0.40816326530612246
   },
   {
    "id": "v23",
-   "text": "+800",
+   "text": "+424",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Amir Albazi KO/TKO/DQ",
+    "label": "Jake Matthews KO/TKO/DQ",
     "field": "cost"
    },
-   "desc": "Market ko Amir Albazi",
-   "raw": 800
+   "desc": "Market ko Jake Matthews",
+   "raw": 424
   },
   {
    "id": "v24",
-   "text": "11.1%",
+   "text": "19.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Amir Albazi KO/TKO/DQ"
+    "label": "Jake Matthews KO/TKO/DQ"
    },
-   "desc": "Market ko implied Amir Albazi",
-   "raw": 0.1111111111111111
+   "desc": "Market ko implied Jake Matthews",
+   "raw": 0.19083969465648856
   },
   {
    "id": "v25",
-   "text": "+700",
+   "text": "+440",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Amir Albazi Submission",
+    "label": "Jake Matthews Submission",
     "field": "cost"
    },
-   "desc": "Market sub Amir Albazi",
-   "raw": 700
+   "desc": "Market sub Jake Matthews",
+   "raw": 440
   },
   {
    "id": "v26",
-   "text": "12.5%",
+   "text": "18.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Amir Albazi Submission"
+    "label": "Jake Matthews Submission"
    },
-   "desc": "Market sub implied Amir Albazi",
-   "raw": 0.125
+   "desc": "Market sub implied Jake Matthews",
+   "raw": 0.18518518518518517
   },
   {
    "id": "v27",
-   "text": "+324",
+   "text": "+166",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Amir Albazi KO/TKO/DQ",
-     "Amir Albazi Submission"
+     "Jake Matthews KO/TKO/DQ",
+     "Jake Matthews Submission"
     ]
    },
-   "desc": "Market ITD price Amir Albazi",
-   "raw": 0.2361111111111111
+   "desc": "Market ITD price Jake Matthews",
+   "raw": 0.37602487984167376
   },
   {
    "id": "v28",
-   "text": "23.6%",
+   "text": "37.6%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Amir Albazi KO/TKO/DQ",
-     "Amir Albazi Submission"
+     "Jake Matthews KO/TKO/DQ",
+     "Jake Matthews Submission"
     ]
    },
-   "desc": "Market ITD implied Amir Albazi",
-   "raw": 0.2361111111111111
+   "desc": "Market ITD implied Jake Matthews",
+   "raw": 0.37602487984167376
   },
   {
    "id": "v29",
-   "text": "+275",
+   "text": "+500",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Alessandro Costa Points",
+    "label": "Tahir Abdullayev Points",
     "field": "cost"
    },
-   "desc": "Market dec Alessandro Costa",
-   "raw": 275
+   "desc": "Market dec Tahir Abdullayev",
+   "raw": 500
   },
   {
    "id": "v30",
-   "text": "26.7%",
+   "text": "16.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Alessandro Costa Points"
+    "label": "Tahir Abdullayev Points"
    },
-   "desc": "Market dec implied Alessandro Costa",
-   "raw": 0.26666666666666666
+   "desc": "Market dec implied Tahir Abdullayev",
+   "raw": 0.16666666666666666
   },
   {
    "id": "v31",
-   "text": "+314",
+   "text": "+750",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Alessandro Costa KO/TKO/DQ",
+    "label": "Tahir Abdullayev KO/TKO/DQ",
     "field": "cost"
    },
-   "desc": "Market ko Alessandro Costa",
-   "raw": 314
+   "desc": "Market ko Tahir Abdullayev",
+   "raw": 750
   },
   {
    "id": "v32",
-   "text": "24.2%",
+   "text": "11.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Alessandro Costa KO/TKO/DQ"
+    "label": "Tahir Abdullayev KO/TKO/DQ"
    },
-   "desc": "Market ko implied Alessandro Costa",
-   "raw": 0.24154589371980675
+   "desc": "Market ko implied Tahir Abdullayev",
+   "raw": 0.11764705882352941
   },
   {
    "id": "v33",
-   "text": "+1400",
+   "text": "+950",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Alessandro Costa Submission",
+    "label": "Tahir Abdullayev Submission",
     "field": "cost"
    },
-   "desc": "Market sub Alessandro Costa",
-   "raw": 1400
+   "desc": "Market sub Tahir Abdullayev",
+   "raw": 950
   },
   {
    "id": "v34",
-   "text": "6.7%",
+   "text": "9.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Alessandro Costa Submission"
+    "label": "Tahir Abdullayev Submission"
    },
-   "desc": "Market sub implied Alessandro Costa",
-   "raw": 0.06666666666666667
+   "desc": "Market sub implied Tahir Abdullayev",
+   "raw": 0.09523809523809523
   },
   {
    "id": "v35",
-   "text": "+224",
+   "text": "+370",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Alessandro Costa KO/TKO/DQ",
-     "Alessandro Costa Submission"
+     "Tahir Abdullayev KO/TKO/DQ",
+     "Tahir Abdullayev Submission"
     ]
    },
-   "desc": "Market ITD price Alessandro Costa",
-   "raw": 0.30821256038647343
+   "desc": "Market ITD price Tahir Abdullayev",
+   "raw": 0.21288515406162464
   },
   {
    "id": "v36",
-   "text": "30.8%",
+   "text": "21.3%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Alessandro Costa KO/TKO/DQ",
-     "Alessandro Costa Submission"
+     "Tahir Abdullayev KO/TKO/DQ",
+     "Tahir Abdullayev Submission"
     ]
    },
-   "desc": "Market ITD implied Alessandro Costa",
-   "raw": 0.30821256038647343
+   "desc": "Market ITD implied Tahir Abdullayev",
+   "raw": 0.21288515406162464
   },
   {
    "id": "v37",
-   "text": "+115",
+   "text": "-169",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Amir Albazi",
-     "Alessandro Costa"
+     "Jake Matthews",
+     "Tahir Abdullayev"
     ],
     "side": "a"
    },
-   "desc": "LH open ML Amir Albazi",
-   "raw": 115
+   "desc": "LH open ML Jake Matthews",
+   "raw": -169
   },
   {
    "id": "v38",
-   "text": "-116",
+   "text": "-250",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Amir Albazi",
-     "Alessandro Costa"
+     "Jake Matthews",
+     "Tahir Abdullayev"
     ],
     "side": "a",
     "at": "current"
    },
-   "desc": "LH current ML Amir Albazi",
-   "raw": -116
+   "desc": "LH current ML Jake Matthews",
+   "raw": -250
   },
   {
    "id": "v39",
-   "text": "6.2",
+   "text": "8.0",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Amir Albazi",
-     "Alessandro Costa"
+     "Jake Matthews",
+     "Tahir Abdullayev"
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.062
+   "raw": 0.08000000000000007
   },
   {
    "id": "v40",
-   "text": "69%",
+   "text": "72%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "target.head"
    },
-   "desc": "Target head Amir Albazi",
-   "raw": 0.6932
+   "desc": "Target head Jake Matthews",
+   "raw": 0.7189
   },
   {
    "id": "v41",
-   "text": "18%",
+   "text": "17%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "target.body"
    },
-   "desc": "Target body Amir Albazi",
-   "raw": 0.1753
+   "desc": "Target body Jake Matthews",
+   "raw": 0.1741
   },
   {
    "id": "v42",
-   "text": "13%",
+   "text": "11%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "target.leg"
    },
-   "desc": "Target leg Amir Albazi",
-   "raw": 0.1315
+   "desc": "Target leg Jake Matthews",
+   "raw": 0.107
   },
   {
    "id": "v43",
-   "text": "61%",
+   "text": "70%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Tahir Abdullayev",
     "path": "target.head"
    },
-   "desc": "Target head Alessandro Costa",
-   "raw": 0.6137
+   "desc": "Target head Tahir Abdullayev",
+   "raw": 0.7027
   },
   {
    "id": "v44",
-   "text": "19%",
+   "text": "22%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Tahir Abdullayev",
     "path": "target.body"
    },
-   "desc": "Target body Alessandro Costa",
-   "raw": 0.1877
+   "desc": "Target body Tahir Abdullayev",
+   "raw": 0.2162
   },
   {
    "id": "v45",
-   "text": "20%",
+   "text": "8%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Tahir Abdullayev",
     "path": "target.leg"
    },
-   "desc": "Target leg Alessandro Costa",
-   "raw": 0.1986
+   "desc": "Target leg Tahir Abdullayev",
+   "raw": 0.0811
   },
   {
    "id": "v46",
-   "text": "7",
+   "text": "24",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "ufc_fights"
    },
    "desc": "Power section fights a",
-   "raw": 7
+   "raw": 24
   },
   {
    "id": "v47",
-   "text": "8",
+   "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Tahir Abdullayev",
     "path": "ufc_fights"
    },
    "desc": "Power section fights b",
-   "raw": 8
+   "raw": 1
   },
   {
    "id": "v48",
-   "text": "13%",
+   "text": "28%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "power_w"
    },
    "desc": "Power: drops or stops them on the feet a",
-   "raw": 0.1287
+   "raw": 0.2831
   },
   {
    "id": "v49",
@@ -628,7 +628,7 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "last5.power"
    },
    "desc": "Power: drops or stops them on the feet last5 a",
@@ -636,75 +636,75 @@
   },
   {
    "id": "v50",
-   "text": "1",
+   "text": "5",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "power_fights"
    },
    "desc": "Power: drops or stops them on the feet count a",
-   "raw": 1
+   "raw": 5
   },
   {
    "id": "v51",
-   "text": "51%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "power_w"
-   },
-   "desc": "Power: drops or stops them on the feet b",
-   "raw": 0.507
-  },
-  {
-   "id": "v52",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "last5.power"
-   },
-   "desc": "Power: drops or stops them on the feet last5 b",
-   "raw": 3
-  },
-  {
-   "id": "v53",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "power_fights"
-   },
-   "desc": "Power: drops or stops them on the feet count b",
-   "raw": 4
-  },
-  {
-   "id": "v54",
-   "text": "19%",
-   "fmt": "pct0",
-   "rule": "em_div",
-   "args": {
-    "wc": "Flyweight",
-    "key": "power"
-   },
-   "desc": "Division share Power: drops or stops them on the feet",
-   "raw": 0.1923
-  },
-  {
-   "id": "v55",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Tahir Abdullayev",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.0
+  },
+  {
+   "id": "v52",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v53",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 0
+  },
+  {
+   "id": "v54",
+   "text": "21%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Welterweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2146
+  },
+  {
+   "id": "v55",
+   "text": "5%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
     "path": "dropped_w"
    },
    "desc": "Durability: gets dropped or stopped a",
-   "raw": 0.0
+   "raw": 0.0464
   },
   {
    "id": "v56",
@@ -712,7 +712,7 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "last5.dropped"
    },
    "desc": "Durability: gets dropped or stopped last5 a",
@@ -720,627 +720,627 @@
   },
   {
    "id": "v57",
-   "text": "0",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "dropped_fights"
-   },
-   "desc": "Durability: gets dropped or stopped count a",
-   "raw": 0
-  },
-  {
-   "id": "v58",
-   "text": "17%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "dropped_w"
-   },
-   "desc": "Durability: gets dropped or stopped b",
-   "raw": 0.171
-  },
-  {
-   "id": "v59",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "last5.dropped"
-   },
-   "desc": "Durability: gets dropped or stopped last5 b",
-   "raw": 1
-  },
-  {
-   "id": "v60",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "dropped_fights"
-   },
-   "desc": "Durability: gets dropped or stopped count b",
-   "raw": 2
-  },
-  {
-   "id": "v61",
-   "text": "20%",
-   "fmt": "pct0",
-   "rule": "em_div",
-   "args": {
-    "wc": "Flyweight",
-    "key": "dropped"
-   },
-   "desc": "Division share Durability: gets dropped or stopped",
-   "raw": 0.203
-  },
-  {
-   "id": "v62",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "outcomes.w.ko"
-   },
-   "desc": "Outcome wko Amir Albazi",
-   "raw": 1
-  },
-  {
-   "id": "v63",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "outcomes.w.sub"
-   },
-   "desc": "Outcome wsub Amir Albazi",
-   "raw": 2
-  },
-  {
-   "id": "v64",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "outcomes.w.dec"
-   },
-   "desc": "Outcome wdec Amir Albazi",
-   "raw": 2
-  },
-  {
-   "id": "v65",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "outcomes.l.dec"
-   },
-   "desc": "Outcome ldec Amir Albazi",
-   "raw": 2
-  },
-  {
-   "id": "v66",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "outcomes.w.ko"
-   },
-   "desc": "Outcome wko Alessandro Costa",
-   "raw": 4
-  },
-  {
-   "id": "v67",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "outcomes.w.sub"
-   },
-   "desc": "Outcome wsub Alessandro Costa",
-   "raw": 1
-  },
-  {
-   "id": "v68",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "outcomes.l.dec"
-   },
-   "desc": "Outcome ldec Alessandro Costa",
-   "raw": 1
-  },
-  {
-   "id": "v69",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "outcomes.l.ko"
-   },
-   "desc": "Outcome lko Alessandro Costa",
-   "raw": 2
-  },
-  {
-   "id": "v70",
-   "text": "43%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.0.won"
-   },
-   "desc": "R1 won Amir Albazi",
-   "raw": 0.4286
-  },
-  {
-   "id": "v71",
-   "text": "-0.6",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "R1 diff Amir Albazi",
-   "raw": -0.613
-  },
-  {
-   "id": "v72",
-   "text": "7",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.0.fights"
-   },
-   "desc": "R1 fights Amir Albazi",
-   "raw": 7
-  },
-  {
-   "id": "v73",
-   "text": "40%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.1.won"
-   },
-   "desc": "R2 won Amir Albazi",
-   "raw": 0.4
-  },
-  {
-   "id": "v74",
-   "text": "-1.2",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "R2 diff Amir Albazi",
-   "raw": -1.24
-  },
-  {
-   "id": "v75",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.1.fights"
-   },
-   "desc": "R2 fights Amir Albazi",
-   "raw": 5
-  },
-  {
-   "id": "v76",
-   "text": "60%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.2.won"
-   },
-   "desc": "R3 won Amir Albazi",
-   "raw": 0.6
-  },
-  {
-   "id": "v77",
-   "text": "-1.3",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.2.diff_pm"
-   },
-   "desc": "R3 diff Amir Albazi",
-   "raw": -1.26
-  },
-  {
-   "id": "v78",
-   "text": "5",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.2.fights"
-   },
-   "desc": "R3 fights Amir Albazi",
-   "raw": 5
-  },
-  {
-   "id": "v79",
-   "text": "25%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.0.won"
-   },
-   "desc": "R1 won Alessandro Costa",
-   "raw": 0.25
-  },
-  {
-   "id": "v80",
-   "text": "+0.6",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "R1 diff Alessandro Costa",
-   "raw": 0.56
-  },
-  {
-   "id": "v81",
-   "text": "8",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.0.fights"
-   },
-   "desc": "R1 fights Alessandro Costa",
-   "raw": 8
-  },
-  {
-   "id": "v82",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.1.won"
-   },
-   "desc": "R2 won Alessandro Costa",
-   "raw": 0.5714
-  },
-  {
-   "id": "v83",
-   "text": "+0.3",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "R2 diff Alessandro Costa",
-   "raw": 0.281
-  },
-  {
-   "id": "v84",
-   "text": "7",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.1.fights"
-   },
-   "desc": "R2 fights Alessandro Costa",
-   "raw": 7
-  },
-  {
-   "id": "v85",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.2.won"
-   },
-   "desc": "R3 won Alessandro Costa",
-   "raw": 0.0
-  },
-  {
-   "id": "v86",
-   "text": "-2.4",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.2.diff_pm"
-   },
-   "desc": "R3 diff Alessandro Costa",
-   "raw": -2.375
-  },
-  {
-   "id": "v87",
    "text": "3",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.2.fights"
+    "fighter": "Jake Matthews",
+    "path": "dropped_fights"
    },
-   "desc": "R3 fights Alessandro Costa",
+   "desc": "Durability: gets dropped or stopped count a",
    "raw": 3
   },
   {
-   "id": "v88",
-   "text": "-11",
-   "fmt": "sint",
+   "id": "v58",
+   "text": "0%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.0.rw.0.2"
+    "fighter": "Tahir Abdullayev",
+    "path": "dropped_w"
    },
-   "desc": "R1 fight diff Amir Albazi 0",
-   "raw": -11
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.0
   },
   {
-   "id": "v89",
-   "text": "-2",
-   "fmt": "sint",
+   "id": "v59",
+   "text": "0",
+   "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.1.rw.0.2"
+    "fighter": "Tahir Abdullayev",
+    "path": "last5.dropped"
    },
-   "desc": "R1 fight diff Amir Albazi 1",
-   "raw": -2
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 0
   },
   {
-   "id": "v90",
-   "text": "-7",
-   "fmt": "sint",
+   "id": "v60",
+   "text": "0",
+   "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.2.rw.0.2"
+    "fighter": "Tahir Abdullayev",
+    "path": "dropped_fights"
    },
-   "desc": "R1 fight diff Amir Albazi 2",
-   "raw": -7
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 0
   },
   {
-   "id": "v91",
-   "text": "-2",
-   "fmt": "sint",
-   "rule": "em",
+   "id": "v61",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em_div",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.3.rw.0.2"
+    "wc": "Welterweight",
+    "key": "dropped"
    },
-   "desc": "R1 fight diff Amir Albazi 3",
-   "raw": -2
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.2329
   },
   {
-   "id": "v92",
-   "text": "+1",
-   "fmt": "sint",
+   "id": "v62",
+   "text": "6",
+   "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.4.rw.0.2"
+    "fighter": "Jake Matthews",
+    "path": "outcomes.w.sub"
    },
-   "desc": "R1 fight diff Amir Albazi 4",
+   "desc": "Outcome wsub Jake Matthews",
+   "raw": 6
+  },
+  {
+   "id": "v63",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Jake Matthews",
+   "raw": 8
+  },
+  {
+   "id": "v64",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Jake Matthews",
+   "raw": 3
+  },
+  {
+   "id": "v65",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "outcomes.l.sub"
+   },
+   "desc": "Outcome lsub Jake Matthews",
+   "raw": 4
+  },
+  {
+   "id": "v66",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Tahir Abdullayev",
    "raw": 1
   },
   {
-   "id": "v93",
+   "id": "v67",
+   "text": "58%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Jake Matthews",
+   "raw": 0.5833
+  },
+  {
+   "id": "v68",
+   "text": "+0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Jake Matthews",
+   "raw": 0.691
+  },
+  {
+   "id": "v69",
+   "text": "24",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Jake Matthews",
+   "raw": 24
+  },
+  {
+   "id": "v70",
+   "text": "70%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Jake Matthews",
+   "raw": 0.7
+  },
+  {
+   "id": "v71",
+   "text": "+1.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Jake Matthews",
+   "raw": 1.034
+  },
+  {
+   "id": "v72",
+   "text": "20",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Jake Matthews",
+   "raw": 20
+  },
+  {
+   "id": "v73",
+   "text": "69%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Jake Matthews",
+   "raw": 0.6875
+  },
+  {
+   "id": "v74",
+   "text": "+0.6",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Jake Matthews",
+   "raw": 0.592
+  },
+  {
+   "id": "v75",
+   "text": "16",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Jake Matthews",
+   "raw": 16
+  },
+  {
+   "id": "v76",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Tahir Abdullayev",
+   "raw": 0.0
+  },
+  {
+   "id": "v77",
+   "text": "-0.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Tahir Abdullayev",
+   "raw": -0.4
+  },
+  {
+   "id": "v78",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Tahir Abdullayev",
+   "raw": 1
+  },
+  {
+   "id": "v79",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Tahir Abdullayev",
+   "raw": 0.0
+  },
+  {
+   "id": "v80",
+   "text": "-1.8",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Tahir Abdullayev",
+   "raw": -1.8
+  },
+  {
+   "id": "v81",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Tahir Abdullayev",
+   "raw": 1
+  },
+  {
+   "id": "v82",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Tahir Abdullayev",
+   "raw": 1.0
+  },
+  {
+   "id": "v83",
+   "text": "+2.9",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Tahir Abdullayev",
+   "raw": 2.91
+  },
+  {
+   "id": "v84",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Tahir Abdullayev",
+   "raw": 1
+  },
+  {
+   "id": "v85",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 0",
+   "raw": 21
+  },
+  {
+   "id": "v86",
    "text": "-9",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.5.rw.0.2"
+    "fighter": "Jake Matthews",
+    "path": "fights.1.rw.0.2"
    },
-   "desc": "R1 fight diff Amir Albazi 5",
+   "desc": "R1 fight diff Jake Matthews 1",
    "raw": -9
   },
   {
-   "id": "v94",
-   "text": "+9",
+   "id": "v87",
+   "text": "-2",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.6.rw.0.2"
+    "fighter": "Jake Matthews",
+    "path": "fights.2.rw.0.2"
    },
-   "desc": "R1 fight diff Amir Albazi 6",
-   "raw": 9
+   "desc": "R1 fight diff Jake Matthews 2",
+   "raw": -2
   },
   {
-   "id": "v95",
-   "text": "-26",
+   "id": "v88",
+   "text": "-2",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.0.rw.1.2"
+    "fighter": "Jake Matthews",
+    "path": "fights.3.rw.0.2"
    },
-   "desc": "R2 fight diff Amir Albazi 0",
-   "raw": -26
+   "desc": "R1 fight diff Jake Matthews 3",
+   "raw": -2
   },
   {
-   "id": "v96",
-   "text": "-23",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.1.rw.1.2"
-   },
-   "desc": "R2 fight diff Amir Albazi 1",
-   "raw": -23
-  },
-  {
-   "id": "v97",
-   "text": "-5",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.2.rw.1.2"
-   },
-   "desc": "R2 fight diff Amir Albazi 2",
-   "raw": -5
-  },
-  {
-   "id": "v98",
-   "text": "+17",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.3.rw.1.2"
-   },
-   "desc": "R2 fight diff Amir Albazi 3",
-   "raw": 17
-  },
-  {
-   "id": "v99",
-   "text": "+6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.5.rw.1.2"
-   },
-   "desc": "R2 fight diff Amir Albazi 5",
-   "raw": 6
-  },
-  {
-   "id": "v100",
-   "text": "-20",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.0.rw.2.2"
-   },
-   "desc": "R3 fight diff Amir Albazi 0",
-   "raw": -20
-  },
-  {
-   "id": "v101",
-   "text": "-19",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.1.rw.2.2"
-   },
-   "desc": "R3 fight diff Amir Albazi 1",
-   "raw": -19
-  },
-  {
-   "id": "v102",
-   "text": "-6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.2.rw.2.2"
-   },
-   "desc": "R3 fight diff Amir Albazi 2",
-   "raw": -6
-  },
-  {
-   "id": "v103",
-   "text": "+5",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.3.rw.2.2"
-   },
-   "desc": "R3 fight diff Amir Albazi 3",
-   "raw": 5
-  },
-  {
-   "id": "v104",
+   "id": "v89",
    "text": "+12",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "fights.5.rw.2.2"
+    "fighter": "Jake Matthews",
+    "path": "fights.4.rw.0.2"
    },
-   "desc": "R3 fight diff Amir Albazi 5",
+   "desc": "R1 fight diff Jake Matthews 4",
    "raw": 12
   },
   {
-   "id": "v105",
-   "text": "-1",
+   "id": "v90",
+   "text": "-12",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.0.rw.0.2"
+    "fighter": "Jake Matthews",
+    "path": "fights.5.rw.0.2"
    },
-   "desc": "R1 fight diff Alessandro Costa 0",
-   "raw": -1
+   "desc": "R1 fight diff Jake Matthews 5",
+   "raw": -12
   },
   {
-   "id": "v106",
-   "text": "+11",
+   "id": "v91",
+   "text": "+7",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.1.rw.0.2"
+    "fighter": "Jake Matthews",
+    "path": "fights.6.rw.0.2"
    },
-   "desc": "R1 fight diff Alessandro Costa 1",
-   "raw": 11
+   "desc": "R1 fight diff Jake Matthews 6",
+   "raw": 7
   },
   {
-   "id": "v107",
-   "text": "-7",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.2.rw.0.2"
-   },
-   "desc": "R1 fight diff Alessandro Costa 2",
-   "raw": -7
-  },
-  {
-   "id": "v108",
+   "id": "v92",
    "text": "-10",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.3.rw.0.2"
+    "fighter": "Jake Matthews",
+    "path": "fights.7.rw.0.2"
    },
-   "desc": "R1 fight diff Alessandro Costa 3",
+   "desc": "R1 fight diff Jake Matthews 7",
    "raw": -10
+  },
+  {
+   "id": "v93",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 8",
+   "raw": 15
+  },
+  {
+   "id": "v94",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 9",
+   "raw": -4
+  },
+  {
+   "id": "v95",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 10",
+   "raw": 11
+  },
+  {
+   "id": "v96",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 11",
+   "raw": 8
+  },
+  {
+   "id": "v97",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 12",
+   "raw": 10
+  },
+  {
+   "id": "v98",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 13",
+   "raw": 8
+  },
+  {
+   "id": "v99",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.14.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 14",
+   "raw": 11
+  },
+  {
+   "id": "v100",
+   "text": "+17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.15.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 15",
+   "raw": 17
+  },
+  {
+   "id": "v101",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.16.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 16",
+   "raw": -8
+  },
+  {
+   "id": "v102",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.17.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 17",
+   "raw": -2
+  },
+  {
+   "id": "v103",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.18.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 18",
+   "raw": -19
+  },
+  {
+   "id": "v104",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.19.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 19",
+   "raw": 1
+  },
+  {
+   "id": "v105",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.20.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 20",
+   "raw": 2
+  },
+  {
+   "id": "v106",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.21.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 21",
+   "raw": -6
+  },
+  {
+   "id": "v107",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.22.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 22",
+   "raw": 5
+  },
+  {
+   "id": "v108",
+   "text": "+24",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.23.rw.0.2"
+   },
+   "desc": "R1 fight diff Jake Matthews 23",
+   "raw": 24
   },
   {
    "id": "v109",
@@ -1348,107 +1348,107 @@
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.4.rw.0.2"
+    "fighter": "Jake Matthews",
+    "path": "fights.0.rw.1.2"
    },
-   "desc": "R1 fight diff Alessandro Costa 4",
+   "desc": "R2 fight diff Jake Matthews 0",
    "raw": 1
   },
   {
    "id": "v110",
-   "text": "-15",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.5.rw.0.2"
-   },
-   "desc": "R1 fight diff Alessandro Costa 5",
-   "raw": -15
-  },
-  {
-   "id": "v111",
-   "text": "+40",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.6.rw.0.2"
-   },
-   "desc": "R1 fight diff Alessandro Costa 6",
-   "raw": 40
-  },
-  {
-   "id": "v112",
-   "text": "+2",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.7.rw.0.2"
-   },
-   "desc": "R1 fight diff Alessandro Costa 7",
-   "raw": 2
-  },
-  {
-   "id": "v113",
-   "text": "-6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.0.rw.1.2"
-   },
-   "desc": "R2 fight diff Alessandro Costa 0",
-   "raw": -6
-  },
-  {
-   "id": "v114",
-   "text": "+3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.2.rw.1.2"
-   },
-   "desc": "R2 fight diff Alessandro Costa 2",
-   "raw": 3
-  },
-  {
-   "id": "v115",
-   "text": "-11",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.3.rw.1.2"
-   },
-   "desc": "R2 fight diff Alessandro Costa 3",
-   "raw": -11
-  },
-  {
-   "id": "v116",
-   "text": "+27",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.4.rw.1.2"
-   },
-   "desc": "R2 fight diff Alessandro Costa 4",
-   "raw": 27
-  },
-  {
-   "id": "v117",
    "text": "+0",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Jake Matthews",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 1",
+   "raw": 0
+  },
+  {
+   "id": "v111",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 3",
+   "raw": 4
+  },
+  {
+   "id": "v112",
+   "text": "+20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 4",
+   "raw": 20
+  },
+  {
+   "id": "v113",
+   "text": "-18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
     "path": "fights.5.rw.1.2"
    },
-   "desc": "R2 fight diff Alessandro Costa 5",
+   "desc": "R2 fight diff Jake Matthews 5",
+   "raw": -18
+  },
+  {
+   "id": "v114",
+   "text": "+17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 6",
+   "raw": 17
+  },
+  {
+   "id": "v115",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 7",
    "raw": 0
+  },
+  {
+   "id": "v116",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 8",
+   "raw": 14
+  },
+  {
+   "id": "v117",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 9",
+   "raw": 1
   },
   {
    "id": "v118",
@@ -1456,585 +1456,781 @@
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.6.rw.1.2"
+    "fighter": "Jake Matthews",
+    "path": "fights.10.rw.1.2"
    },
-   "desc": "R2 fight diff Alessandro Costa 6",
+   "desc": "R2 fight diff Jake Matthews 10",
    "raw": 11
   },
   {
    "id": "v119",
-   "text": "-17",
+   "text": "-6",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.7.rw.1.2"
+    "fighter": "Jake Matthews",
+    "path": "fights.11.rw.1.2"
    },
-   "desc": "R2 fight diff Alessandro Costa 7",
-   "raw": -17
+   "desc": "R2 fight diff Jake Matthews 11",
+   "raw": -6
   },
   {
    "id": "v120",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.12.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 12",
+   "raw": 13
+  },
+  {
+   "id": "v121",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.13.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 13",
+   "raw": -6
+  },
+  {
+   "id": "v122",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.15.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 15",
+   "raw": -3
+  },
+  {
+   "id": "v123",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.16.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 16",
+   "raw": -2
+  },
+  {
+   "id": "v124",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.17.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 17",
+   "raw": 0
+  },
+  {
+   "id": "v125",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.19.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 19",
+   "raw": -3
+  },
+  {
+   "id": "v126",
+   "text": "+39",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.20.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 20",
+   "raw": 39
+  },
+  {
+   "id": "v127",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.22.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 22",
+   "raw": 7
+  },
+  {
+   "id": "v128",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.23.rw.1.2"
+   },
+   "desc": "R2 fight diff Jake Matthews 23",
+   "raw": 6
+  },
+  {
+   "id": "v129",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 0",
+   "raw": 6
+  },
+  {
+   "id": "v130",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 1",
+   "raw": -4
+  },
+  {
+   "id": "v131",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 3",
+   "raw": 7
+  },
+  {
+   "id": "v132",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 4",
+   "raw": 0
+  },
+  {
+   "id": "v133",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 5",
+   "raw": 3
+  },
+  {
+   "id": "v134",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 7",
+   "raw": -3
+  },
+  {
+   "id": "v135",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.9.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 9",
+   "raw": -13
+  },
+  {
+   "id": "v136",
+   "text": "+25",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.10.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 10",
+   "raw": 25
+  },
+  {
+   "id": "v137",
+   "text": "-19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.11.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 11",
+   "raw": -19
+  },
+  {
+   "id": "v138",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.12.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 12",
+   "raw": 21
+  },
+  {
+   "id": "v139",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.13.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 13",
+   "raw": -3
+  },
+  {
+   "id": "v140",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.15.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 15",
+   "raw": 0
+  },
+  {
+   "id": "v141",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.16.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 16",
+   "raw": 6
+  },
+  {
+   "id": "v142",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.17.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 17",
+   "raw": -6
+  },
+  {
+   "id": "v143",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.19.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 19",
+   "raw": 3
+  },
+  {
+   "id": "v144",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "fights.23.rw.2.2"
+   },
+   "desc": "R3 fight diff Jake Matthews 23",
+   "raw": 19
+  },
+  {
+   "id": "v145",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Tahir Abdullayev 0",
+   "raw": -2
+  },
+  {
+   "id": "v146",
    "text": "-9",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.3.rw.2.2"
+    "fighter": "Tahir Abdullayev",
+    "path": "fights.0.rw.1.2"
    },
-   "desc": "R3 fight diff Alessandro Costa 3",
+   "desc": "R2 fight diff Tahir Abdullayev 0",
    "raw": -9
   },
   {
-   "id": "v121",
-   "text": "-5",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.5.rw.2.2"
-   },
-   "desc": "R3 fight diff Alessandro Costa 5",
-   "raw": -5
-  },
-  {
-   "id": "v122",
-   "text": "-5",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "fights.7.rw.2.2"
-   },
-   "desc": "R3 fight diff Alessandro Costa 7",
-   "raw": -5
-  },
-  {
-   "id": "v123",
-   "text": "-0.6",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "Trend R1 Amir Albazi",
-   "raw": -0.613
-  },
-  {
-   "id": "v124",
-   "text": "-1.2",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "Trend R2 Amir Albazi",
-   "raw": -1.24
-  },
-  {
-   "id": "v125",
-   "text": "-1.3",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "rounds.2.diff_pm"
-   },
-   "desc": "Trend R3 Amir Albazi",
-   "raw": -1.26
-  },
-  {
-   "id": "v126",
-   "text": "+0.6",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "Trend R1 Alessandro Costa",
-   "raw": 0.56
-  },
-  {
-   "id": "v127",
-   "text": "+0.3",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "Trend R2 Alessandro Costa",
-   "raw": 0.281
-  },
-  {
-   "id": "v128",
-   "text": "-2.4",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.2.diff_pm"
-   },
-   "desc": "Trend R3 Alessandro Costa",
-   "raw": -2.375
-  },
-  {
-   "id": "v129",
-   "text": "8",
-   "fmt": "r0",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "rounds.2.mins"
-   },
-   "desc": "Trend R3 mins Alessandro Costa",
-   "raw": 8.0
-  },
-  {
-   "id": "v130",
-   "text": "1.18",
-   "fmt": "n2",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "grap.td15"
-   },
-   "desc": "Takedowns /15 a",
-   "raw": 1.182
-  },
-  {
-   "id": "v131",
-   "text": "0.85",
-   "fmt": "n2",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "grap.td15"
-   },
-   "desc": "Takedowns /15 b",
-   "raw": 0.853
-  },
-  {
-   "id": "v132",
-   "text": "25%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "grap.td_acc"
-   },
-   "desc": "TD accuracy a",
-   "raw": 0.25
-  },
-  {
-   "id": "v133",
-   "text": "27%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "grap.td_acc"
-   },
-   "desc": "TD accuracy b",
-   "raw": 0.2667
-  },
-  {
-   "id": "v134",
-   "text": "62%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "grap.tdd"
-   },
-   "desc": "TD defence a",
-   "raw": 0.625
-  },
-  {
-   "id": "v135",
-   "text": "85%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "grap.tdd"
-   },
-   "desc": "TD defence b",
-   "raw": 0.8519
-  },
-  {
-   "id": "v136",
-   "text": "24%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "grap.ctrl"
-   },
-   "desc": "Time in control a",
-   "raw": 0.2427
-  },
-  {
-   "id": "v137",
-   "text": "9%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "grap.ctrl"
-   },
-   "desc": "Time in control b",
-   "raw": 0.0936
-  },
-  {
-   "id": "v138",
-   "text": "+22.3%",
-   "fmt": "spp",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "grap.adj_net_ctrl"
-   },
-   "desc": "Net control, opp-adjusted a",
-   "raw": 0.2234
-  },
-  {
-   "id": "v139",
-   "text": "-14.8%",
-   "fmt": "spp",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "grap.adj_net_ctrl"
-   },
-   "desc": "Net control, opp-adjusted b",
-   "raw": -0.1478
-  },
-  {
-   "id": "v140",
-   "text": "3%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "grap.ctrl_ag"
-   },
-   "desc": "Time controlled a",
-   "raw": 0.0278
-  },
-  {
-   "id": "v141",
-   "text": "23%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "grap.ctrl_ag"
-   },
-   "desc": "Time controlled b",
-   "raw": 0.2305
-  },
-  {
-   "id": "v142",
-   "text": "0.44",
-   "fmt": "n2",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "grap.sub15"
-   },
-   "desc": "Sub attempts /15 a",
-   "raw": 0.443
-  },
-  {
-   "id": "v143",
-   "text": "0.85",
-   "fmt": "n2",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "path": "grap.sub15"
-   },
-   "desc": "Sub attempts /15 b",
-   "raw": 0.853
-  },
-  {
-   "id": "v144",
-   "text": "-1.41",
-   "fmt": "s2",
-   "rule": "em_sum",
-   "args": {
-    "fighter": "Amir Albazi",
-    "paths": [
-     "target_diff.head",
-     "target_diff.body",
-     "target_diff.leg"
-    ]
-   },
-   "desc": "Total diff Amir Albazi",
-   "raw": -1.409
-  },
-  {
-   "id": "v145",
-   "text": "+0.13",
-   "fmt": "s2",
-   "rule": "em_sum",
-   "args": {
-    "fighter": "Alessandro Costa",
-    "paths": [
-     "target_diff.head",
-     "target_diff.body",
-     "target_diff.leg"
-    ]
-   },
-   "desc": "Total diff Alessandro Costa",
-   "raw": 0.127
-  },
-  {
-   "id": "v146",
-   "text": "-1.34",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Amir Albazi",
-    "path": "sos.adj_sd"
-   },
-   "desc": "Opp-adjusted diff a",
-   "raw": -1.34
-  },
-  {
    "id": "v147",
-   "text": "+0.04",
-   "fmt": "s2",
+   "text": "+13",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
-    "path": "sos.adj_sd"
+    "fighter": "Tahir Abdullayev",
+    "path": "fights.0.rw.2.2"
    },
-   "desc": "Opp-adjusted diff b",
-   "raw": 0.039
+   "desc": "R3 fight diff Tahir Abdullayev 0",
+   "raw": 13
   },
   {
    "id": "v148",
-   "text": "-0.91",
-   "fmt": "s2",
+   "text": "1.36",
+   "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "target_diff.head"
+    "fighter": "Jake Matthews",
+    "path": "grap.td15"
    },
-   "desc": "Head diff /min a",
-   "raw": -0.907
+   "desc": "Takedowns /15 a",
+   "raw": 1.36
   },
   {
    "id": "v149",
+   "text": "2.07",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 2.074
+  },
+  {
+   "id": "v150",
+   "text": "42%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.4167
+  },
+  {
+   "id": "v151",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.3333
+  },
+  {
+   "id": "v152",
+   "text": "67%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.6667
+  },
+  {
+   "id": "v153",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 1.0
+  },
+  {
+   "id": "v154",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.2644
+  },
+  {
+   "id": "v155",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.2212
+  },
+  {
+   "id": "v156",
+   "text": "+11.7%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.1171
+  },
+  {
+   "id": "v157",
+   "text": "+17.0%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.1696
+  },
+  {
+   "id": "v158",
+   "text": "15%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.1472
+  },
+  {
+   "id": "v159",
+   "text": "4%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.038
+  },
+  {
+   "id": "v160",
+   "text": "0.71",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.707
+  },
+  {
+   "id": "v161",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.0
+  },
+  {
+   "id": "v162",
+   "text": "+0.78",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Jake Matthews",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Jake Matthews",
+   "raw": 0.78
+  },
+  {
+   "id": "v163",
+   "text": "+0.14",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Tahir Abdullayev",
+   "raw": 0.1389999999999999
+  },
+  {
+   "id": "v164",
+   "text": "+0.78",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.78
+  },
+  {
+   "id": "v165",
    "text": "+0.03",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Tahir Abdullayev",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 0.027
+  },
+  {
+   "id": "v166",
+   "text": "+0.84",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 0.838
+  },
+  {
+   "id": "v167",
+   "text": "+1.04",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
     "path": "target_diff.head"
    },
    "desc": "Head diff /min b",
-   "raw": 0.028
+   "raw": 1.037
   },
   {
-   "id": "v150",
-   "text": "-0.33",
+   "id": "v168",
+   "text": "+0.13",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "target_diff.body"
    },
    "desc": "Body diff /min a",
-   "raw": -0.325
+   "raw": 0.134
   },
   {
-   "id": "v151",
-   "text": "-0.13",
+   "id": "v169",
+   "text": "-0.76",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Tahir Abdullayev",
     "path": "target_diff.body"
    },
    "desc": "Body diff /min b",
-   "raw": -0.128
+   "raw": -0.76
   },
   {
-   "id": "v152",
-   "text": "-0.18",
+   "id": "v170",
+   "text": "-0.19",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "target_diff.leg"
    },
    "desc": "Leg diff /min a",
-   "raw": -0.177
+   "raw": -0.192
   },
   {
-   "id": "v153",
-   "text": "+0.23",
+   "id": "v171",
+   "text": "-0.14",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Tahir Abdullayev",
     "path": "target_diff.leg"
    },
    "desc": "Leg diff /min b",
-   "raw": 0.227
+   "raw": -0.138
   },
   {
-   "id": "v154",
-   "text": "66%",
+   "id": "v172",
+   "text": "69%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "hdef"
    },
    "desc": "Head defence a",
-   "raw": 0.6607
+   "raw": 0.6904
   },
   {
-   "id": "v155",
-   "text": "64%",
+   "id": "v173",
+   "text": "71%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Tahir Abdullayev",
     "path": "hdef"
    },
    "desc": "Head defence b",
-   "raw": 0.6403
+   "raw": 0.7105
   },
   {
-   "id": "v156",
+   "id": "v174",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Tahir Abdullayev",
+   "raw": 1
+  },
+  {
+   "id": "v175",
+   "text": "11.5",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jake Matthews",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 11.487
+  },
+  {
+   "id": "v176",
    "text": "14.5",
    "fmt": "n1",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
-    "path": "pace.min"
-   },
-   "desc": "Avg fight, min a",
-   "raw": 14.498
-  },
-  {
-   "id": "v157",
-   "text": "8.8",
-   "fmt": "n1",
-   "rule": "em",
-   "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Tahir Abdullayev",
     "path": "pace.min"
    },
    "desc": "Avg fight, min b",
-   "raw": 8.794
+   "raw": 14.467
   },
   {
-   "id": "v158",
-   "text": "29%",
+   "id": "v177",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "pace.n"
+   },
+   "desc": "Avg fight, min sample Tahir Abdullayev",
+   "raw": 1
+  },
+  {
+   "id": "v178",
+   "text": "17%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Amir Albazi",
+    "fighter": "Jake Matthews",
     "path": "pace.r1"
    },
    "desc": "Finished in R1 a",
-   "raw": 0.2857
+   "raw": 0.1667
   },
   {
-   "id": "v159",
-   "text": "12%",
+   "id": "v179",
+   "text": "0%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Alessandro Costa",
+    "fighter": "Tahir Abdullayev",
     "path": "pace.r1"
    },
    "desc": "Finished in R1 b",
-   "raw": 0.125
+   "raw": 0.0
   },
   {
-   "id": "v160",
-   "text": "-107",
+   "id": "v180",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tahir Abdullayev",
+    "path": "pace.n"
+   },
+   "desc": "Finished in R1 sample Tahir Abdullayev",
+   "raw": 1
+  },
+  {
+   "id": "v181",
+   "text": "+198",
    "fmt": "ml",
    "rule": "mk",
    "args": {
-    "kind": "ml_flags",
+    "kind": "vetoes",
     "i": 1,
     "key": "market_odds",
     "card": "ufc-fight-night-prochazka-vs-stirling"
    },
-   "desc": "Markov flag price",
-   "raw": -107
+   "desc": "Markov veto price",
+   "raw": 198
   },
   {
-   "id": "v161",
-   "text": "61.8",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 1,
-    "key": "model_shrunk",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win shrunk",
-   "raw": 61.8
-  },
-  {
-   "id": "v162",
-   "text": "70.7",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 1,
-    "key": "model_raw",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win raw",
-   "raw": 70.7
-  },
-  {
-   "id": "v163",
-   "text": "49.0",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 1,
-    "key": "market_implied",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag market",
-   "raw": 49.0
-  },
-  {
-   "id": "v164",
-   "text": "+12.7",
-   "fmt": "s1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 1,
-    "key": "edge_pts",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag gap",
-   "raw": 12.7
-  },
-  {
-   "id": "v165",
-   "text": "+300",
+   "id": "v182",
+   "text": "-303",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2042,12 +2238,12 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Amir Albazi Kyoji Horiguchi",
-   "raw": 300
+   "desc": "Close Jake Matthews Carlston Harris",
+   "raw": -303
   },
   {
-   "id": "v166",
-   "text": "+142",
+   "id": "v183",
+   "text": "-333",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2055,51 +2251,103 @@
     "i": 1,
     "key": "od.mc"
    },
-   "desc": "Close Amir Albazi Brandon Moreno",
-   "raw": 142
+   "desc": "Close Jake Matthews Neil Magny",
+   "raw": -333
   },
   {
-   "id": "v167",
+   "id": "v184",
+   "text": "+100",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Jake Matthews Chidi Njokuani",
+   "raw": 100
+  },
+  {
+   "id": "v185",
+   "text": "-235",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Jake Matthews Francisco Prado",
+   "raw": -235
+  },
+  {
+   "id": "v186",
+   "text": "-169",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 4,
+    "key": "od.mc"
+   },
+   "desc": "Close Jake Matthews Phil Rowe",
+   "raw": -169
+  },
+  {
+   "id": "v187",
+   "text": "+260",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 5,
+    "key": "od.mc"
+   },
+   "desc": "Close Jake Matthews Michael Morales",
+   "raw": 260
+  },
+  {
+   "id": "v188",
+   "text": "-278",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 6,
+    "key": "od.mc"
+   },
+   "desc": "Close Jake Matthews Darrius Flowers",
+   "raw": -278
+  },
+  {
+   "id": "v189",
+   "text": "-303",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 7,
+    "key": "od.mc"
+   },
+   "desc": "Close Jake Matthews Matthew Semelsberger",
+   "raw": -303
+  },
+  {
+   "id": "v190",
    "text": "-115",
    "fmt": "ml",
    "rule": "fight",
    "args": {
     "side": "a",
-    "i": 2,
+    "i": 8,
     "key": "od.mc"
    },
-   "desc": "Close Amir Albazi Kai Kara-France",
+   "desc": "Close Jake Matthews Andre Fialho",
    "raw": -115
   },
   {
-   "id": "v168",
-   "text": "-455",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 3,
-    "key": "od.mc"
-   },
-   "desc": "Close Amir Albazi Alessandro Costa",
-   "raw": -455
-  },
-  {
-   "id": "v169",
-   "text": "-500",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 4,
-    "key": "od.mc"
-   },
-   "desc": "Close Amir Albazi Francisco Figueiredo",
-   "raw": -500
-  },
-  {
-   "id": "v170",
-   "text": "-263",
+   "id": "v191",
+   "text": "+105",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2107,99 +2355,8 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Alessandro Costa Cody Durden",
-   "raw": -263
-  },
-  {
-   "id": "v171",
-   "text": "-417",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 1,
-    "key": "od.mc"
-   },
-   "desc": "Close Alessandro Costa Matt Schnell",
-   "raw": -417
-  },
-  {
-   "id": "v172",
-   "text": "-426",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 2,
-    "key": "od.mc"
-   },
-   "desc": "Close Alessandro Costa Stewart Nicoll",
-   "raw": -426
-  },
-  {
-   "id": "v173",
-   "text": "-400",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 3,
-    "key": "od.mc"
-   },
-   "desc": "Close Alessandro Costa Alden Coria",
-   "raw": -400
-  },
-  {
-   "id": "v174",
-   "text": "-135",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 4,
-    "key": "od.mc"
-   },
-   "desc": "Close Alessandro Costa Kevin Borjas",
-   "raw": -135
-  },
-  {
-   "id": "v175",
-   "text": "+177",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 5,
-    "key": "od.mc"
-   },
-   "desc": "Close Alessandro Costa Steve Erceg",
-   "raw": 177
-  },
-  {
-   "id": "v176",
-   "text": "-294",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 6,
-    "key": "od.mc"
-   },
-   "desc": "Close Alessandro Costa Jimmy Flick",
-   "raw": -294
-  },
-  {
-   "id": "v177",
-   "text": "+350",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 7,
-    "key": "od.mc"
-   },
-   "desc": "Close Alessandro Costa Amir Albazi",
-   "raw": 350
+   "desc": "Close Tahir Abdullayev Jefferson Nascimento",
+   "raw": 105
   }
  ],
  "gaps": [

@@ -1,14 +1,14 @@
 {
  "markov_card": "ufc-fight-night-prochazka-vs-stirling",
  "fight": 2,
- "of": 11,
+ "of": 12,
  "site_pair": [
-  "Nikolas Motta",
-  "Dom Mar Fan"
+  "Diyar Nurgozhay",
+  "Alik Lorenz"
  ],
  "pair": [
-  "Nikolas Motta",
-  "Dom Mar Fan"
+  "Diyar Nurgozhay",
+  "Alik Lorenz"
  ],
  "file": "fight_02.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
@@ -18,51 +18,51 @@
  "rows": [
   {
    "id": "v1",
-   "text": "3-3-0 (1 NC)",
+   "text": "2-2-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "a"
    },
-   "desc": "Nikolas Motta UFC record",
-   "raw": "3-3-0 (1 NC)"
+   "desc": "Diyar Nurgozhay UFC record",
+   "raw": "2-2-0"
   },
   {
    "id": "v2",
-   "text": "1-1-0",
+   "text": "0-0-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "b"
    },
-   "desc": "Dom Mar Fan UFC record",
-   "raw": "1-1-0"
+   "desc": "Alik Lorenz UFC record",
+   "raw": "0-0-0"
   },
   {
    "id": "v3",
-   "text": "33.8",
+   "text": "29.6",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "a"
    },
    "desc": "Age a",
-   "raw": 33.782340862423
+   "raw": 29.582477754962355
   },
   {
    "id": "v4",
-   "text": "26.7",
+   "text": "29.8",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "b"
    },
    "desc": "Age b",
-   "raw": 26.67488021902806
+   "raw": 29.82067077344285
   },
   {
    "id": "v5",
-   "text": "5'9\"",
+   "text": "6'2\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -70,11 +70,11 @@
     "key": "ht"
    },
    "desc": "Height a",
-   "raw": "5'9\""
+   "raw": "6'2\""
   },
   {
    "id": "v6",
-   "text": "5'11\"",
+   "text": "6'2\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -82,33 +82,33 @@
     "key": "ht"
    },
    "desc": "Height b",
-   "raw": "5'11\""
+   "raw": "6'2\""
   },
   {
    "id": "v7",
-   "text": "70\"",
+   "text": "74\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "a"
    },
    "desc": "Reach a",
-   "raw": 70
+   "raw": 74
   },
   {
    "id": "v8",
-   "text": "75\"",
+   "text": "77\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "b"
    },
    "desc": "Reach b",
-   "raw": 75
+   "raw": 77
   },
   {
    "id": "v9",
-   "text": "Orthodox",
+   "text": "Southpaw",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -116,7 +116,7 @@
     "key": "stance"
    },
    "desc": "Stance a",
-   "raw": "Orthodox"
+   "raw": "Southpaw"
   },
   {
    "id": "v10",
@@ -132,1527 +132,912 @@
   },
   {
    "id": "v11",
-   "text": "+125",
+   "text": "-265",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Nikolas Motta",
+    "label": "Diyar Nurgozhay",
     "field": "cost"
    },
-   "desc": "Market ML Nikolas Motta",
-   "raw": 125
+   "desc": "Market ML Diyar Nurgozhay",
+   "raw": -265
   },
   {
    "id": "v12",
-   "text": "44.4%",
+   "text": "72.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Nikolas Motta"
+    "label": "Diyar Nurgozhay"
    },
-   "desc": "Market implied Nikolas Motta",
-   "raw": 0.4444444444444444
+   "desc": "Market implied Diyar Nurgozhay",
+   "raw": 0.726027397260274
   },
   {
    "id": "v13",
-   "text": "+140",
+   "text": "-245",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Nikolas Motta",
+    "label": "Diyar Nurgozhay",
     "book": "draftkings"
    },
-   "desc": "Best US ML Nikolas Motta",
-   "raw": 140
+   "desc": "Best US ML Diyar Nurgozhay",
+   "raw": -245
   },
   {
    "id": "v14",
-   "text": "-160",
+   "text": "+200",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Dom Mar Fan",
+    "label": "Alik Lorenz",
     "field": "cost"
    },
-   "desc": "Market ML Dom Mar Fan",
-   "raw": -160
+   "desc": "Market ML Alik Lorenz",
+   "raw": 200
   },
   {
    "id": "v15",
-   "text": "61.5%",
+   "text": "33.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Dom Mar Fan"
+    "label": "Alik Lorenz"
    },
-   "desc": "Market implied Dom Mar Fan",
-   "raw": 0.6153846153846154
+   "desc": "Market implied Alik Lorenz",
+   "raw": 0.3333333333333333
   },
   {
    "id": "v16",
-   "text": "-160",
+   "text": "+200",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Dom Mar Fan",
-    "book": "fanduel"
+    "label": "Alik Lorenz",
+    "book": "draftkings"
    },
-   "desc": "Best US ML Dom Mar Fan",
-   "raw": -160
+   "desc": "Best US ML Alik Lorenz",
+   "raw": 200
   },
   {
    "id": "v17",
-   "text": "+132",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes",
-    "field": "cost"
-   },
-   "desc": "Market GTD yes",
-   "raw": 132
-  },
-  {
-   "id": "v18",
-   "text": "43.1%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "Yes"
-   },
-   "desc": "Market GTD yes implied",
-   "raw": 0.43103448275862066
-  },
-  {
-   "id": "v19",
-   "text": "-176",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No",
-    "field": "cost"
-   },
-   "desc": "Market GTD no",
-   "raw": -176
-  },
-  {
-   "id": "v20",
-   "text": "63.8%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
-   "args": {
-    "market": "fight_distance",
-    "label": "No"
-   },
-   "desc": "Market GTD no implied",
-   "raw": 0.6376811594202898
-  },
-  {
-   "id": "v21",
-   "text": "+502",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Nikolas Motta Points",
-    "field": "cost"
-   },
-   "desc": "Market dec Nikolas Motta",
-   "raw": 502
-  },
-  {
-   "id": "v22",
-   "text": "16.6%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Nikolas Motta Points"
-   },
-   "desc": "Market dec implied Nikolas Motta",
-   "raw": 0.16611295681063123
-  },
-  {
-   "id": "v23",
-   "text": "+250",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Nikolas Motta KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "Market ko Nikolas Motta",
-   "raw": 250
-  },
-  {
-   "id": "v24",
-   "text": "28.6%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Nikolas Motta KO/TKO/DQ"
-   },
-   "desc": "Market ko implied Nikolas Motta",
-   "raw": 0.2857142857142857
-  },
-  {
-   "id": "v25",
-   "text": "+2223",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Nikolas Motta Submission",
-    "field": "cost"
-   },
-   "desc": "Market sub Nikolas Motta",
-   "raw": 2223
-  },
-  {
-   "id": "v26",
-   "text": "4.3%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Nikolas Motta Submission"
-   },
-   "desc": "Market sub implied Nikolas Motta",
-   "raw": 0.04304778303917348
-  },
-  {
-   "id": "v27",
-   "text": "+204",
-   "fmt": "mlp",
-   "rule": "bp_imp_sum",
-   "args": {
-    "market": "method_of_victory",
-    "labels": [
-     "Nikolas Motta KO/TKO/DQ",
-     "Nikolas Motta Submission"
-    ]
-   },
-   "desc": "Market ITD price Nikolas Motta",
-   "raw": 0.3287620687534592
-  },
-  {
-   "id": "v28",
-   "text": "32.9%",
-   "fmt": "pct1",
-   "rule": "bp_imp_sum",
-   "args": {
-    "market": "method_of_victory",
-    "labels": [
-     "Nikolas Motta KO/TKO/DQ",
-     "Nikolas Motta Submission"
-    ]
-   },
-   "desc": "Market ITD implied Nikolas Motta",
-   "raw": 0.3287620687534592
-  },
-  {
-   "id": "v29",
-   "text": "+245",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Dom Mar Fan Points",
-    "field": "cost"
-   },
-   "desc": "Market dec Dom Mar Fan",
-   "raw": 245
-  },
-  {
-   "id": "v30",
-   "text": "29.0%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Dom Mar Fan Points"
-   },
-   "desc": "Market dec implied Dom Mar Fan",
-   "raw": 0.2898550724637681
-  },
-  {
-   "id": "v31",
-   "text": "+350",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Dom Mar Fan KO/TKO/DQ",
-    "field": "cost"
-   },
-   "desc": "Market ko Dom Mar Fan",
-   "raw": 350
-  },
-  {
-   "id": "v32",
-   "text": "22.2%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Dom Mar Fan KO/TKO/DQ"
-   },
-   "desc": "Market ko implied Dom Mar Fan",
-   "raw": 0.2222222222222222
-  },
-  {
-   "id": "v33",
-   "text": "+399",
-   "fmt": "ml",
-   "rule": "bp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Dom Mar Fan Submission",
-    "field": "cost"
-   },
-   "desc": "Market sub Dom Mar Fan",
-   "raw": 399
-  },
-  {
-   "id": "v34",
-   "text": "20.0%",
-   "fmt": "pct1",
-   "rule": "bp_imp",
-   "args": {
-    "market": "method_of_victory",
-    "label": "Dom Mar Fan Submission"
-   },
-   "desc": "Market sub implied Dom Mar Fan",
-   "raw": 0.20040080160320642
-  },
-  {
-   "id": "v35",
-   "text": "+137",
-   "fmt": "mlp",
-   "rule": "bp_imp_sum",
-   "args": {
-    "market": "method_of_victory",
-    "labels": [
-     "Dom Mar Fan KO/TKO/DQ",
-     "Dom Mar Fan Submission"
-    ]
-   },
-   "desc": "Market ITD price Dom Mar Fan",
-   "raw": 0.4226230238254286
-  },
-  {
-   "id": "v36",
-   "text": "42.3%",
-   "fmt": "pct1",
-   "rule": "bp_imp_sum",
-   "args": {
-    "market": "method_of_victory",
-    "labels": [
-     "Dom Mar Fan KO/TKO/DQ",
-     "Dom Mar Fan Submission"
-    ]
-   },
-   "desc": "Market ITD implied Dom Mar Fan",
-   "raw": 0.4226230238254286
-  },
-  {
-   "id": "v37",
-   "text": "-159",
+   "text": "+220",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Nikolas Motta",
-     "Dom Mar Fan"
+     "Diyar Nurgozhay",
+     "Alik Lorenz"
     ],
     "side": "b"
    },
-   "desc": "LH open ML Dom Mar Fan",
-   "raw": -159
+   "desc": "LH open ML Alik Lorenz",
+   "raw": 220
   },
   {
-   "id": "v38",
-   "text": "-161",
+   "id": "v18",
+   "text": "+202",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Nikolas Motta",
-     "Dom Mar Fan"
+     "Diyar Nurgozhay",
+     "Alik Lorenz"
     ],
     "side": "b",
     "at": "current"
    },
-   "desc": "LH current ML Dom Mar Fan",
-   "raw": -161
+   "desc": "LH current ML Alik Lorenz",
+   "raw": 202
   },
   {
-   "id": "v39",
-   "text": "0.5",
+   "id": "v19",
+   "text": "1.5",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Nikolas Motta",
-     "Dom Mar Fan"
+     "Diyar Nurgozhay",
+     "Alik Lorenz"
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0050000000000000044
+   "raw": 0.014999999999999902
   },
   {
-   "id": "v40",
-   "text": "76%",
+   "id": "v20",
+   "text": "34%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "target.head"
    },
-   "desc": "Target head Nikolas Motta",
-   "raw": 0.7619
+   "desc": "Target head Diyar Nurgozhay",
+   "raw": 0.3373
   },
   {
-   "id": "v41",
-   "text": "15%",
+   "id": "v21",
+   "text": "37%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "target.body"
    },
-   "desc": "Target body Nikolas Motta",
-   "raw": 0.1472
+   "desc": "Target body Diyar Nurgozhay",
+   "raw": 0.3675
   },
   {
-   "id": "v42",
-   "text": "9%",
+   "id": "v22",
+   "text": "30%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "target.leg"
    },
-   "desc": "Target leg Nikolas Motta",
-   "raw": 0.0909
+   "desc": "Target leg Diyar Nurgozhay",
+   "raw": 0.2952
   },
   {
-   "id": "v43",
-   "text": "79%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "target.head"
-   },
-   "desc": "Target head Dom Mar Fan",
-   "raw": 0.79
-  },
-  {
-   "id": "v44",
-   "text": "18%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "target.body"
-   },
-   "desc": "Target body Dom Mar Fan",
-   "raw": 0.18
-  },
-  {
-   "id": "v45",
-   "text": "3%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "target.leg"
-   },
-   "desc": "Target leg Dom Mar Fan",
-   "raw": 0.03
-  },
-  {
-   "id": "v46",
-   "text": "7",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "ufc_fights"
-   },
-   "desc": "Power section fights a",
-   "raw": 7
-  },
-  {
-   "id": "v47",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "ufc_fights"
-   },
-   "desc": "Power section fights b",
-   "raw": 2
-  },
-  {
-   "id": "v48",
-   "text": "70%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "power_w"
-   },
-   "desc": "Power: drops or stops them on the feet a",
-   "raw": 0.7048
-  },
-  {
-   "id": "v49",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "last5.power"
-   },
-   "desc": "Power: drops or stops them on the feet last5 a",
-   "raw": 3
-  },
-  {
-   "id": "v50",
+   "id": "v23",
    "text": "4",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
-    "path": "power_fights"
+    "fighter": "Diyar Nurgozhay",
+    "path": "ufc_fights"
    },
-   "desc": "Power: drops or stops them on the feet count a",
+   "desc": "Power section fights a",
    "raw": 4
   },
   {
-   "id": "v51",
-   "text": "0%",
+   "id": "v24",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alik Lorenz",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 0
+  },
+  {
+   "id": "v25",
+   "text": "34%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
+    "fighter": "Diyar Nurgozhay",
     "path": "power_w"
    },
-   "desc": "Power: drops or stops them on the feet b",
-   "raw": 0.0
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.342
   },
   {
-   "id": "v52",
-   "text": "0",
+   "id": "v26",
+   "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
+    "fighter": "Diyar Nurgozhay",
     "path": "last5.power"
    },
-   "desc": "Power: drops or stops them on the feet last5 b",
-   "raw": 0
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 1
   },
   {
-   "id": "v53",
-   "text": "0",
+   "id": "v27",
+   "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
+    "fighter": "Diyar Nurgozhay",
     "path": "power_fights"
    },
-   "desc": "Power: drops or stops them on the feet count b",
-   "raw": 0
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 1
   },
   {
-   "id": "v54",
-   "text": "23%",
+   "id": "v28",
+   "text": "26%",
    "fmt": "pct0",
    "rule": "em_div",
    "args": {
-    "wc": "Lightweight",
+    "wc": "Light Heavyweight",
     "key": "power"
    },
    "desc": "Division share Power: drops or stops them on the feet",
-   "raw": 0.2309
+   "raw": 0.2569
   },
   {
-   "id": "v55",
-   "text": "42%",
+   "id": "v29",
+   "text": "39%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "dropped_w"
    },
    "desc": "Durability: gets dropped or stopped a",
-   "raw": 0.4238
+   "raw": 0.3865
   },
   {
-   "id": "v56",
+   "id": "v30",
    "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "last5.dropped"
    },
    "desc": "Durability: gets dropped or stopped last5 a",
    "raw": 2
   },
   {
-   "id": "v57",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "dropped_fights"
-   },
-   "desc": "Durability: gets dropped or stopped count a",
-   "raw": 3
-  },
-  {
-   "id": "v58",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "dropped_w"
-   },
-   "desc": "Durability: gets dropped or stopped b",
-   "raw": 0.0
-  },
-  {
-   "id": "v59",
-   "text": "0",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "last5.dropped"
-   },
-   "desc": "Durability: gets dropped or stopped last5 b",
-   "raw": 0
-  },
-  {
-   "id": "v60",
-   "text": "0",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "dropped_fights"
-   },
-   "desc": "Durability: gets dropped or stopped count b",
-   "raw": 0
-  },
-  {
-   "id": "v61",
-   "text": "26%",
-   "fmt": "pct0",
-   "rule": "em_div",
-   "args": {
-    "wc": "Lightweight",
-    "key": "dropped"
-   },
-   "desc": "Division share Durability: gets dropped or stopped",
-   "raw": 0.2582
-  },
-  {
-   "id": "v62",
+   "id": "v31",
    "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
-    "path": "outcomes.w.ko"
+    "fighter": "Diyar Nurgozhay",
+    "path": "dropped_fights"
    },
-   "desc": "Outcome wko Nikolas Motta",
+   "desc": "Durability: gets dropped or stopped count a",
    "raw": 2
   },
   {
-   "id": "v63",
+   "id": "v32",
+   "text": "31%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Light Heavyweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.3063
+  },
+  {
+   "id": "v33",
    "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
-    "path": "outcomes.w.dec"
+    "fighter": "Diyar Nurgozhay",
+    "path": "outcomes.w.ko"
    },
-   "desc": "Outcome wdec Nikolas Motta",
+   "desc": "Outcome wko Diyar Nurgozhay",
    "raw": 1
   },
   {
-   "id": "v64",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "outcomes.l.ko"
-   },
-   "desc": "Outcome lko Nikolas Motta",
-   "raw": 3
-  },
-  {
-   "id": "v65",
+   "id": "v34",
    "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
+    "fighter": "Diyar Nurgozhay",
     "path": "outcomes.w.dec"
    },
-   "desc": "Outcome wdec Dom Mar Fan",
+   "desc": "Outcome wdec Diyar Nurgozhay",
    "raw": 1
   },
   {
-   "id": "v66",
-   "text": "1",
+   "id": "v35",
+   "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
+    "fighter": "Diyar Nurgozhay",
     "path": "outcomes.l.sub"
    },
-   "desc": "Outcome lsub Dom Mar Fan",
-   "raw": 1
+   "desc": "Outcome lsub Diyar Nurgozhay",
+   "raw": 2
   },
   {
-   "id": "v67",
-   "text": "57%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "rounds.0.won"
-   },
-   "desc": "R1 won Nikolas Motta",
-   "raw": 0.5714
-  },
-  {
-   "id": "v68",
-   "text": "-0.3",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "R1 diff Nikolas Motta",
-   "raw": -0.3
-  },
-  {
-   "id": "v69",
-   "text": "7",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "rounds.0.fights"
-   },
-   "desc": "R1 fights Nikolas Motta",
-   "raw": 7
-  },
-  {
-   "id": "v70",
-   "text": "25%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "rounds.1.won"
-   },
-   "desc": "R2 won Nikolas Motta",
-   "raw": 0.25
-  },
-  {
-   "id": "v71",
-   "text": "-4.1",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "R2 diff Nikolas Motta",
-   "raw": -4.123
-  },
-  {
-   "id": "v72",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "rounds.1.fights"
-   },
-   "desc": "R2 fights Nikolas Motta",
-   "raw": 4
-  },
-  {
-   "id": "v73",
+   "id": "v36",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
-    "path": "rounds.2.won"
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.0.won"
    },
-   "desc": "R3 won Nikolas Motta",
+   "desc": "R1 won Diyar Nurgozhay",
    "raw": 0.5
   },
   {
-   "id": "v74",
-   "text": "+1.3",
+   "id": "v37",
+   "text": "+3.2",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
-    "path": "rounds.2.diff_pm"
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.0.diff_pm"
    },
-   "desc": "R3 diff Nikolas Motta",
-   "raw": 1.344
+   "desc": "R1 diff Diyar Nurgozhay",
+   "raw": 3.214
   },
   {
-   "id": "v75",
-   "text": "2",
+   "id": "v38",
+   "text": "4",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
-    "path": "rounds.2.fights"
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.0.fights"
    },
-   "desc": "R3 fights Nikolas Motta",
-   "raw": 2
+   "desc": "R1 fights Diyar Nurgozhay",
+   "raw": 4
   },
   {
-   "id": "v76",
-   "text": "0%",
+   "id": "v39",
+   "text": "50%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "rounds.0.won"
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.1.won"
    },
-   "desc": "R1 won Dom Mar Fan",
-   "raw": 0.0
+   "desc": "R2 won Diyar Nurgozhay",
+   "raw": 0.5
   },
   {
-   "id": "v77",
-   "text": "+0.7",
+   "id": "v40",
+   "text": "+1.2",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "rounds.0.diff_pm"
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "R1 diff Dom Mar Fan",
-   "raw": 0.672
+   "desc": "R2 diff Diyar Nurgozhay",
+   "raw": 1.237
   },
   {
-   "id": "v78",
+   "id": "v41",
    "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "rounds.0.fights"
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.1.fights"
    },
-   "desc": "R1 fights Dom Mar Fan",
+   "desc": "R2 fights Diyar Nurgozhay",
    "raw": 2
   },
   {
-   "id": "v79",
+   "id": "v42",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "rounds.1.won"
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.2.won"
    },
-   "desc": "R2 won Dom Mar Fan",
+   "desc": "R3 won Diyar Nurgozhay",
    "raw": 1.0
   },
   {
-   "id": "v80",
-   "text": "+5.0",
+   "id": "v43",
+   "text": "+3.6",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "R2 diff Dom Mar Fan",
-   "raw": 5.0
-  },
-  {
-   "id": "v81",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "rounds.1.fights"
-   },
-   "desc": "R2 fights Dom Mar Fan",
-   "raw": 1
-  },
-  {
-   "id": "v82",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "rounds.2.won"
-   },
-   "desc": "R3 won Dom Mar Fan",
-   "raw": 0.0
-  },
-  {
-   "id": "v83",
-   "text": "+0.0",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
+    "fighter": "Diyar Nurgozhay",
     "path": "rounds.2.diff_pm"
    },
-   "desc": "R3 diff Dom Mar Fan",
-   "raw": 0.0
+   "desc": "R3 diff Diyar Nurgozhay",
+   "raw": 3.6
   },
   {
-   "id": "v84",
+   "id": "v44",
    "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
+    "fighter": "Diyar Nurgozhay",
     "path": "rounds.2.fights"
    },
-   "desc": "R3 fights Dom Mar Fan",
+   "desc": "R3 fights Diyar Nurgozhay",
    "raw": 1
   },
   {
-   "id": "v85",
+   "id": "v45",
+   "text": "+34",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Diyar Nurgozhay 0",
+   "raw": 34
+  },
+  {
+   "id": "v46",
+   "text": "+26",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Diyar Nurgozhay 1",
+   "raw": 26
+  },
+  {
+   "id": "v47",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Diyar Nurgozhay 2",
+   "raw": 5
+  },
+  {
+   "id": "v48",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Diyar Nurgozhay 3",
+   "raw": -8
+  },
+  {
+   "id": "v49",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Diyar Nurgozhay 1",
+   "raw": 11
+  },
+  {
+   "id": "v50",
    "text": "-3",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.0.rw.0.2"
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.3.rw.1.2"
    },
-   "desc": "R1 fight diff Nikolas Motta 0",
+   "desc": "R2 fight diff Diyar Nurgozhay 3",
    "raw": -3
   },
   {
-   "id": "v86",
-   "text": "+9",
+   "id": "v51",
+   "text": "+18",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.1.rw.0.2"
-   },
-   "desc": "R1 fight diff Nikolas Motta 1",
-   "raw": 9
-  },
-  {
-   "id": "v87",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.2.rw.0.2"
-   },
-   "desc": "R1 fight diff Nikolas Motta 2",
-   "raw": 9
-  },
-  {
-   "id": "v88",
-   "text": "-14",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.3.rw.0.2"
-   },
-   "desc": "R1 fight diff Nikolas Motta 3",
-   "raw": -14
-  },
-  {
-   "id": "v89",
-   "text": "-6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.4.rw.0.2"
-   },
-   "desc": "R1 fight diff Nikolas Motta 4",
-   "raw": -6
-  },
-  {
-   "id": "v90",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.5.rw.0.2"
-   },
-   "desc": "R1 fight diff Nikolas Motta 5",
-   "raw": 9
-  },
-  {
-   "id": "v91",
-   "text": "-12",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.6.rw.0.2"
-   },
-   "desc": "R1 fight diff Nikolas Motta 6",
-   "raw": -12
-  },
-  {
-   "id": "v92",
-   "text": "-24",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.0.rw.1.2"
-   },
-   "desc": "R2 fight diff Nikolas Motta 0",
-   "raw": -24
-  },
-  {
-   "id": "v93",
-   "text": "+1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.1.rw.1.2"
-   },
-   "desc": "R2 fight diff Nikolas Motta 1",
-   "raw": 1
-  },
-  {
-   "id": "v94",
-   "text": "-29",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.3.rw.1.2"
-   },
-   "desc": "R2 fight diff Nikolas Motta 3",
-   "raw": -29
-  },
-  {
-   "id": "v95",
-   "text": "-15",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.6.rw.1.2"
-   },
-   "desc": "R2 fight diff Nikolas Motta 6",
-   "raw": -15
-  },
-  {
-   "id": "v96",
-   "text": "+12",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "fights.1.rw.2.2"
    },
-   "desc": "R3 fight diff Nikolas Motta 1",
-   "raw": 12
+   "desc": "R3 fight diff Diyar Nurgozhay 1",
+   "raw": 18
   },
   {
-   "id": "v97",
-   "text": "-1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
-    "path": "fights.3.rw.2.2"
-   },
-   "desc": "R3 fight diff Nikolas Motta 3",
-   "raw": -1
-  },
-  {
-   "id": "v98",
-   "text": "+0",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "fights.0.rw.0.2"
-   },
-   "desc": "R1 fight diff Dom Mar Fan 0",
-   "raw": 0
-  },
-  {
-   "id": "v99",
-   "text": "+6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "fights.1.rw.0.2"
-   },
-   "desc": "R1 fight diff Dom Mar Fan 1",
-   "raw": 6
-  },
-  {
-   "id": "v100",
-   "text": "+25",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "fights.1.rw.1.2"
-   },
-   "desc": "R2 fight diff Dom Mar Fan 1",
-   "raw": 25
-  },
-  {
-   "id": "v101",
-   "text": "+0",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "fights.1.rw.2.2"
-   },
-   "desc": "R3 fight diff Dom Mar Fan 1",
-   "raw": 0
-  },
-  {
-   "id": "v102",
-   "text": "0.00",
+   "id": "v52",
+   "text": "1.54",
    "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "grap.td15"
    },
    "desc": "Takedowns /15 a",
-   "raw": 0.0
+   "raw": 1.541
   },
   {
-   "id": "v103",
-   "text": "0.79",
-   "fmt": "n2",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "grap.td15"
-   },
-   "desc": "Takedowns /15 b",
-   "raw": 0.792
-  },
-  {
-   "id": "v104",
-   "text": "25%",
+   "id": "v53",
+   "text": "75%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
+    "fighter": "Diyar Nurgozhay",
     "path": "grap.td_acc"
    },
-   "desc": "TD accuracy b",
-   "raw": 0.25
+   "desc": "TD accuracy a",
+   "raw": 0.75
   },
   {
-   "id": "v105",
-   "text": "82%",
+   "id": "v54",
+   "text": "70%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "grap.tdd"
    },
    "desc": "TD defence a",
-   "raw": 0.8235
+   "raw": 0.7
   },
   {
-   "id": "v106",
-   "text": "82%",
+   "id": "v55",
+   "text": "9%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "grap.tdd"
-   },
-   "desc": "TD defence b",
-   "raw": 0.8182
-  },
-  {
-   "id": "v107",
-   "text": "4%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "grap.ctrl"
    },
    "desc": "Time in control a",
-   "raw": 0.0398
+   "raw": 0.093
   },
   {
-   "id": "v108",
-   "text": "19%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "grap.ctrl"
-   },
-   "desc": "Time in control b",
-   "raw": 0.1893
-  },
-  {
-   "id": "v109",
-   "text": "-9.6%",
+   "id": "v56",
+   "text": "-6.0%",
    "fmt": "spp",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "grap.adj_net_ctrl"
    },
    "desc": "Net control, opp-adjusted a",
-   "raw": -0.0956
+   "raw": -0.0603
   },
   {
-   "id": "v110",
-   "text": "-20.9%",
-   "fmt": "spp",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "grap.adj_net_ctrl"
-   },
-   "desc": "Net control, opp-adjusted b",
-   "raw": -0.2086
-  },
-  {
-   "id": "v111",
-   "text": "13%",
+   "id": "v57",
+   "text": "14%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "grap.ctrl_ag"
    },
    "desc": "Time controlled a",
-   "raw": 0.1278
+   "raw": 0.1358
   },
   {
-   "id": "v112",
-   "text": "38%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "grap.ctrl_ag"
-   },
-   "desc": "Time controlled b",
-   "raw": 0.382
-  },
-  {
-   "id": "v113",
+   "id": "v58",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "grap.sub15"
    },
    "desc": "Sub attempts /15 a",
    "raw": 0.0
   },
   {
-   "id": "v114",
-   "text": "0.00",
-   "fmt": "n2",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "grap.sub15"
-   },
-   "desc": "Sub attempts /15 b",
-   "raw": 0.0
-  },
-  {
-   "id": "v115",
-   "text": "-1.25",
+   "id": "v59",
+   "text": "+2.84",
    "fmt": "s2",
    "rule": "em_sum",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "paths": [
      "target_diff.head",
      "target_diff.body",
      "target_diff.leg"
     ]
    },
-   "desc": "Total diff Nikolas Motta",
-   "raw": -1.252
+   "desc": "Total diff Diyar Nurgozhay",
+   "raw": 2.843
   },
   {
-   "id": "v116",
-   "text": "+1.64",
-   "fmt": "s2",
-   "rule": "em_sum",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "paths": [
-     "target_diff.head",
-     "target_diff.body",
-     "target_diff.leg"
-    ]
-   },
-   "desc": "Total diff Dom Mar Fan",
-   "raw": 1.637
-  },
-  {
-   "id": "v117",
-   "text": "-1.31",
+   "id": "v60",
+   "text": "+2.70",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "sos.adj_sd"
    },
    "desc": "Opp-adjusted diff a",
-   "raw": -1.314
+   "raw": 2.702
   },
   {
-   "id": "v118",
-   "text": "+1.51",
+   "id": "v61",
+   "text": "+0.38",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "sos.adj_sd"
-   },
-   "desc": "Opp-adjusted diff b",
-   "raw": 1.507
-  },
-  {
-   "id": "v119",
-   "text": "-0.02",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "target_diff.head"
    },
    "desc": "Head diff /min a",
-   "raw": -0.02
+   "raw": 0.377
   },
   {
-   "id": "v120",
-   "text": "+2.17",
+   "id": "v62",
+   "text": "+1.54",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "target_diff.head"
-   },
-   "desc": "Head diff /min b",
-   "raw": 2.165
-  },
-  {
-   "id": "v121",
-   "text": "-0.53",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "target_diff.body"
    },
    "desc": "Body diff /min a",
-   "raw": -0.528
+   "raw": 1.541
   },
   {
-   "id": "v122",
-   "text": "-0.58",
+   "id": "v63",
+   "text": "+0.93",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "target_diff.body"
-   },
-   "desc": "Body diff /min b",
-   "raw": -0.581
-  },
-  {
-   "id": "v123",
-   "text": "-0.70",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "target_diff.leg"
    },
    "desc": "Leg diff /min a",
-   "raw": -0.704
+   "raw": 0.925
   },
   {
-   "id": "v124",
-   "text": "+0.05",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "target_diff.leg"
-   },
-   "desc": "Leg diff /min b",
-   "raw": 0.053
-  },
-  {
-   "id": "v125",
-   "text": "59%",
+   "id": "v64",
+   "text": "67%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "hdef"
    },
    "desc": "Head defence a",
-   "raw": 0.5922
+   "raw": 0.6691
   },
   {
-   "id": "v126",
-   "text": "60%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "hdef"
-   },
-   "desc": "Head defence b",
-   "raw": 0.6
-  },
-  {
-   "id": "v127",
-   "text": "2",
+   "id": "v65",
+   "text": "4",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Dom Mar Fan",
+    "fighter": "Diyar Nurgozhay",
     "path": "ufc_fights"
    },
-   "desc": "Head defence sample Dom Mar Fan",
-   "raw": 2
+   "desc": "Head defence sample Diyar Nurgozhay",
+   "raw": 4
   },
   {
-   "id": "v128",
-   "text": "6.3",
+   "id": "v66",
+   "text": "7.3",
    "fmt": "n1",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "pace.min"
    },
    "desc": "Avg fight, min a",
-   "raw": 6.325
+   "raw": 7.3
   },
   {
-   "id": "v129",
-   "text": "9.5",
-   "fmt": "n1",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "pace.min"
-   },
-   "desc": "Avg fight, min b",
-   "raw": 9.467
-  },
-  {
-   "id": "v130",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "pace.n"
-   },
-   "desc": "Avg fight, min sample Dom Mar Fan",
-   "raw": 2
-  },
-  {
-   "id": "v131",
+   "id": "v67",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Nikolas Motta",
+    "fighter": "Diyar Nurgozhay",
     "path": "pace.r1"
    },
    "desc": "Finished in R1 a",
    "raw": 0.5
   },
   {
-   "id": "v132",
-   "text": "50%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "pace.r1"
-   },
-   "desc": "Finished in R1 b",
-   "raw": 0.5
-  },
-  {
-   "id": "v133",
-   "text": "2",
+   "id": "v68",
+   "text": "4",
    "fmt": "int",
-   "rule": "em",
+   "rule": "ufc_n",
    "args": {
-    "fighter": "Dom Mar Fan",
-    "path": "pace.n"
+    "fighter": "Diyar Nurgozhay",
+    "date": "2026-11-21"
    },
-   "desc": "Finished in R1 sample Dom Mar Fan",
-   "raw": 2
+   "desc": "Debut vet UFC fights",
+   "raw": 4
   },
   {
-   "id": "v134",
-   "text": "+320",
+   "id": "v69",
+   "text": "49.8%",
+   "fmt": "pct1",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "act"
+   },
+   "desc": "Debut angle won",
+   "raw": 0.4979
+  },
+  {
+   "id": "v70",
+   "text": "233",
+   "fmt": "intc",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "n"
+   },
+   "desc": "Debut angle n",
+   "raw": 233
+  },
+  {
+   "id": "v71",
+   "text": "50.4%",
+   "fmt": "pct1",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "exp"
+   },
+   "desc": "Debut angle expected",
+   "raw": 0.5044
+  },
+  {
+   "id": "v72",
+   "text": "43.4%",
+   "fmt": "pct1",
+   "rule": "dbstat",
+   "args": {
+    "key": "win_ci",
+    "i": 0
+   },
+   "desc": "Debut angle win CI lo",
+   "raw": 0.4337
+  },
+  {
+   "id": "v73",
+   "text": "56.2%",
+   "fmt": "pct1",
+   "rule": "dbstat",
+   "args": {
+    "key": "win_ci",
+    "i": 1
+   },
+   "desc": "Debut angle win CI hi",
+   "raw": 0.5621
+  },
+  {
+   "id": "v74",
+   "text": "233",
+   "fmt": "intc",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "n"
+   },
+   "desc": "Debut angle n 2",
+   "raw": 233
+  },
+  {
+   "id": "v75",
+   "text": "-11.9%",
+   "fmt": "spp",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "roi_c"
+   },
+   "desc": "Debut angle ROI close",
+   "raw": -0.119
+  },
+  {
+   "id": "v76",
+   "text": "-23.7%",
+   "fmt": "spp",
+   "rule": "dbstat",
+   "args": {
+    "key": "roi_ci_boot_cards",
+    "i": 0
+   },
+   "desc": "Debut angle ROI CI lo",
+   "raw": -0.2374
+  },
+  {
+   "id": "v77",
+   "text": "+0.7%",
+   "fmt": "spp",
+   "rule": "dbstat",
+   "args": {
+    "key": "roi_ci_boot_cards",
+    "i": 1
+   },
+   "desc": "Debut angle ROI CI hi",
+   "raw": 0.0069
+  },
+  {
+   "id": "v78",
+   "text": "-4.1%",
+   "fmt": "spp",
+   "rule": "dbstat",
+   "args": {
+    "key": "margin_roi"
+   },
+   "desc": "Debut angle margin",
+   "raw": -0.0407
+  },
+  {
+   "id": "v79",
+   "text": "+205",
+   "fmt": "ml",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 5,
+    "key": "market_odds",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag price",
+   "raw": 205
+  },
+  {
+   "id": "v80",
+   "text": "46.6",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 5,
+    "key": "model_shrunk",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win shrunk",
+   "raw": 46.6
+  },
+  {
+   "id": "v81",
+   "text": "38.8",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 5,
+    "key": "model_raw",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win raw",
+   "raw": 38.8
+  },
+  {
+   "id": "v82",
+   "text": "31.1",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 5,
+    "key": "market_implied",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag market",
+   "raw": 31.1
+  },
+  {
+   "id": "v83",
+   "text": "+15.5",
+   "fmt": "s1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 5,
+    "key": "edge_pts",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag gap",
+   "raw": 15.5
+  },
+  {
+   "id": "v84",
+   "text": "-156",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -1660,12 +1045,12 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Nikolas Motta Nazim Sadykhov",
-   "raw": 320
+   "desc": "Close Diyar Nurgozhay Bruno Lopes",
+   "raw": -156
   },
   {
-   "id": "v135",
-   "text": "+185",
+   "id": "v85",
+   "text": "+148",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -1673,12 +1058,12 @@
     "i": 1,
     "key": "od.mc"
    },
-   "desc": "Close Nikolas Motta Maheshate",
-   "raw": 185
+   "desc": "Close Diyar Nurgozhay Rafael Tobias",
+   "raw": 148
   },
   {
-   "id": "v136",
-   "text": "+275",
+   "id": "v86",
+   "text": "-106",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -1686,12 +1071,12 @@
     "i": 2,
     "key": "od.mc"
    },
-   "desc": "Close Nikolas Motta Tom Nolan",
-   "raw": 275
+   "desc": "Close Diyar Nurgozhay Uran Satybaldiev",
+   "raw": -106
   },
   {
-   "id": "v137",
-   "text": "-132",
+   "id": "v87",
+   "text": "-455",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -1699,73 +1084,8 @@
     "i": 3,
     "key": "od.mc"
    },
-   "desc": "Close Nikolas Motta Trey Ogden",
-   "raw": -132
-  },
-  {
-   "id": "v138",
-   "text": "+160",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 4,
-    "key": "od.mc"
-   },
-   "desc": "Close Nikolas Motta Manuel Torres",
-   "raw": 160
-  },
-  {
-   "id": "v139",
-   "text": "-179",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 5,
-    "key": "od.mc"
-   },
-   "desc": "Close Nikolas Motta Cameron VanCamp",
-   "raw": -179
-  },
-  {
-   "id": "v140",
-   "text": "-175",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 6,
-    "key": "od.mc"
-   },
-   "desc": "Close Nikolas Motta Jim Miller",
-   "raw": -175
-  },
-  {
-   "id": "v141",
-   "text": "+160",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 0,
-    "key": "od.mc"
-   },
-   "desc": "Close Dom Mar Fan Kody Steele",
-   "raw": 160
-  },
-  {
-   "id": "v142",
-   "text": "-159",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 1,
-    "key": "od.mc"
-   },
-   "desc": "Close Dom Mar Fan Sangwook Kim",
-   "raw": -159
+   "desc": "Close Diyar Nurgozhay Brendson Ribeiro",
+   "raw": -455
   }
  ],
  "gaps": [

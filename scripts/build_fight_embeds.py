@@ -502,8 +502,10 @@ def build(names, outname):
     else:
         # Nov 18 (Kirk): a card the sheet has not published yet. No model numbers, never stand-ins; the market tables, line move,
         # stats and form still build, with the same feed-sanity labels ("price unavailable") as a published card.
-        proj += '<div class="note npj">No model projection published for this bout yet. Market prices only.</div>'
-        gaps.append(f"Fight {n}: no row in the Publish to site export; no model numbers shown.")
+        # Nov 19: a late-added bout the odds feed does not carry yet gets no market tables, so the note says so
+        proj += ('<div class="note npj">No model projection published for this bout yet. Market prices only.</div>' if bf else
+                 '<div class="note npj">No model projection published for this bout yet. No odds feed price for this bout yet.</div>')
+        gaps.append(f"Fight {n}: no row in the Publish to site export; no model numbers shown." + ("" if bf else " Not in the odds feed yet."))
         if bf:
             body = ""
             for sd in ("a", "b"):
@@ -1220,12 +1222,21 @@ document.documentElement.classList.add('part');}}}}
 def card():
     """Full numbered card (bout order) cross-checked against BettingPros scheduled order and the site ids."""
     bp_by = sorted(BPO["fights"], key=lambda x: x["scheduled_utc"])
+    # Nov 19 (Kirk): a card_overrides "add" bout the feed does not carry yet has no feed rank; feed bouts after it shift down
+    in_feed = lambda a_, b_: any(pair(x["fighter_a"]["name"], x["fighter_b"]["name"], a_, b_) for x in BPO["fights"])
+    added = [NB - k for k, s_ in enumerate(ORDER) if any(pair(ad["a"], ad["b"], *s_.split("|")) for ad in OVR.get("add", [])) and not in_feed(*s_.split("|"))]
     out = []
     for i, s in enumerate(ORDER):
         a, b = s.split("|"); n = NB - i
         # one matching fighter is enough here: BettingPros spells "Charlie Radke", "Christopher Duncan"
         hit = lambda x, y: any(same(p, q) for p in (x, y) for q in (a, b))
-        bpi = next(j + 1 for j, x in enumerate(bp_by) if hit(x["fighter_a"]["name"], x["fighter_b"]["name"]))
+        if n in added:
+            sn = next((x["n"] for x in EVL["fights"] if pair(x["a"]["name"], x["b"]["name"], a, b)), None)
+            seg = OVR["segments"]; tag = "Main event" if i == 0 else "Main card" if i < seg["main"] else "Prelims" if i < seg["main"] + seg["prelims"] else "Early prelims"
+            out.append(dict(fight=n, bout=f"{a} vs {b}", segment=tag, bp_sched_rank=None, site_n=sn, added="not in the odds feed yet"))
+            assert sn == n, f"{EVF}: n={sn} for {a} vs {b}, bout order says {n}; run scripts/card_overrides.py on the event file"
+            continue
+        bpi = next(j + 1 for j, x in enumerate(bp_by) if hit(x["fighter_a"]["name"], x["fighter_b"]["name"])) + sum(1 for k in added if k < n)
         sn = next((x["n"] for x in EVL["fights"] if hit(x["a"]["name"], x["b"]["name"])), None)
         seg = OVR["segments"]; tag = "Main event" if i == 0 else "Main card" if i < seg["main"] else "Prelims" if i < seg["main"] + seg["prelims"] else "Early prelims"
         out.append(dict(fight=n, bout=f"{a} vs {b}", segment=tag, bp_sched_rank=bpi, site_n=sn))

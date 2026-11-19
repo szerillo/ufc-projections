@@ -35,13 +35,13 @@
    "form/data/fighters/yousri-belgaroui.json": "4ed60b309ca042fd1e0df947ed3e2b07c03a5a0de14c94ce3293a2b73dd45745"
   },
   "fn_prochazka_stirling": {
-   "data/card_overrides.json": "7a326fb0ba9206e301ac8034634231ecfdd4fa330d776f3e12a152351b811c7f",
-   "embed.html": "acede7cbaf2004b3e9114d1f0f9017a0fd8a86f2fce6260119509f12b1488267",
+   "data/card_overrides.json": "b57aed71d36b020086a109cf7036cc04bee3525d65f811922860bdd12a1f385d",
+   "embed.html": "d66cfbd09e0c016ee9e5bae7ade6ef061628dd1d2fedadd40e9c6b4510417e81",
    "form/data/labs.json": "6b3bf18077a00ca64a437a14ec0884a30761058c457a22c3944de5df59fc87d5",
-   "form/data/index.json": "7f20bd2965fe1a3be0a9a74782adbcea88089465acfa7601d249c94eafcad8ed",
+   "form/data/index.json": "1dad934847352fb13762314402b042b0c0729b36d6eba6f0d50f2a8007777a30",
    "form/data/form_holds.json": "14288295bc417f162dbe86681b14cfc21e44a287154084aadadd4cf1167a63f8",
    "data/embeds/spot_tests.json": "090bf40ed0b292db88a7db2deac0b685ddf78377026b421dbbf2b703b63cbb56",
-   "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json": "6e2ac04af312b2032bc06f9fa2c0c7ec18737248437ba17df92ffc9701601242",
+   "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json": "fabd19a43760a0db30d110e22923951872a120f9a655918c96b1d84a40681e96",
    "form/data/fighters/aleksandre-topuria.json": "788cb08fe83faf4774241a61156048648ec31238b60fd097f3a6629a6e020b12",
    "form/data/fighters/alessandro-costa.json": "29a5888e2f60e252e17362cef1fdbed7a27fcc9d85fd9eb4a1b764973fbf0914",
    "form/data/fighters/aljamain-sterling.json": "f8e64e21118cb3e5baeac52d2607f410f7b362b6690ae8c7bc52063d9feca98d",
@@ -431,6 +431,28 @@
     "embed.html": [
      "5ec9ecc7b73c449b25408f33b30af58dafdb3b997395938835d0ee62af0f182e",
      "acede7cbaf2004b3e9114d1f0f9017a0fd8a86f2fce6260119509f12b1488267"
+    ]
+   }
+  },
+  {
+   "at": "2026-11-19T07:03:01Z",
+   "slug": "fn_prochazka_stirling",
+   "changed": {
+    "data/card_overrides.json": [
+     "7a326fb0ba9206e301ac8034634231ecfdd4fa330d776f3e12a152351b811c7f",
+     "b57aed71d36b020086a109cf7036cc04bee3525d65f811922860bdd12a1f385d"
+    ],
+    "embed.html": [
+     "acede7cbaf2004b3e9114d1f0f9017a0fd8a86f2fce6260119509f12b1488267",
+     "d66cfbd09e0c016ee9e5bae7ade6ef061628dd1d2fedadd40e9c6b4510417e81"
+    ],
+    "form/data/index.json": [
+     "7f20bd2965fe1a3be0a9a74782adbcea88089465acfa7601d249c94eafcad8ed",
+     "1dad934847352fb13762314402b042b0c0729b36d6eba6f0d50f2a8007777a30"
+    ],
+    "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json": [
+     "6e2ac04af312b2032bc06f9fa2c0c7ec18737248437ba17df92ffc9701601242",
+     "fabd19a43760a0db30d110e22923951872a120f9a655918c96b1d84a40681e96"
     ]
    }
   }

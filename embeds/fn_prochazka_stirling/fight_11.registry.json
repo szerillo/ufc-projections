@@ -1,14 +1,14 @@
 {
  "markov_card": "ufc-fight-night-prochazka-vs-stirling",
  "fight": 11,
- "of": 11,
+ "of": 12,
  "site_pair": [
-  "Jiri Prochazka",
-  "Navajo Stirling"
+  "Aljamain Sterling",
+  "Kevin Vallejos"
  ],
  "pair": [
-  "Jiri Prochazka",
-  "Navajo Stirling"
+  "Aljamain Sterling",
+  "Kevin Vallejos"
  ],
  "file": "fight_11.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
@@ -18,51 +18,51 @@
  "rows": [
   {
    "id": "v1",
-   "text": "6-3-0",
+   "text": "18-5-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "a"
    },
-   "desc": "Jiri Prochazka UFC record",
-   "raw": "6-3-0"
+   "desc": "Aljamain Sterling UFC record",
+   "raw": "18-5-0"
   },
   {
    "id": "v2",
-   "text": "6-0-0",
+   "text": "4-0-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "b"
    },
-   "desc": "Navajo Stirling UFC record",
-   "raw": "6-0-0"
+   "desc": "Kevin Vallejos UFC record",
+   "raw": "4-0-0"
   },
   {
    "id": "v3",
-   "text": "34.1",
+   "text": "37.3",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "a"
    },
    "desc": "Age a",
-   "raw": 34.10266940451746
+   "raw": 37.308692676249144
   },
   {
    "id": "v4",
-   "text": "29.0",
+   "text": "25.0",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "b"
    },
    "desc": "Age b",
-   "raw": 29.037645448323065
+   "raw": 24.95277207392197
   },
   {
    "id": "v5",
-   "text": "6'3\"",
+   "text": "5'7\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -70,11 +70,11 @@
     "key": "ht"
    },
    "desc": "Height a",
-   "raw": "6'3\""
+   "raw": "5'7\""
   },
   {
    "id": "v6",
-   "text": "6'4\"",
+   "text": "5'7\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -82,29 +82,29 @@
     "key": "ht"
    },
    "desc": "Height b",
-   "raw": "6'4\""
+   "raw": "5'7\""
   },
   {
    "id": "v7",
-   "text": "80\"",
+   "text": "71\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "a"
    },
    "desc": "Reach a",
-   "raw": 80
+   "raw": 71
   },
   {
    "id": "v8",
-   "text": "79\"",
+   "text": "68\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "b"
    },
    "desc": "Reach b",
-   "raw": 79
+   "raw": 68
   },
   {
    "id": "v9",
@@ -120,7 +120,7 @@
   },
   {
    "id": "v10",
-   "text": "Orthodox",
+   "text": "Switch",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -128,87 +128,87 @@
     "key": "stance"
    },
    "desc": "Stance b",
-   "raw": "Orthodox"
+   "raw": "Switch"
   },
   {
    "id": "v11",
-   "text": "+136",
+   "text": "+109",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Jiri Prochazka",
+    "label": "Aljamain Sterling",
     "field": "cost"
    },
-   "desc": "Market ML Jiri Prochazka",
-   "raw": 136
+   "desc": "Market ML Aljamain Sterling",
+   "raw": 109
   },
   {
    "id": "v12",
-   "text": "42.4%",
+   "text": "47.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Jiri Prochazka"
+    "label": "Aljamain Sterling"
    },
-   "desc": "Market implied Jiri Prochazka",
-   "raw": 0.423728813559322
+   "desc": "Market implied Aljamain Sterling",
+   "raw": 0.4784688995215311
   },
   {
    "id": "v13",
-   "text": "+145",
+   "text": "+110",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Jiri Prochazka",
+    "label": "Aljamain Sterling",
     "book": "draftkings"
    },
-   "desc": "Best US ML Jiri Prochazka",
-   "raw": 145
+   "desc": "Best US ML Aljamain Sterling",
+   "raw": 110
   },
   {
    "id": "v14",
-   "text": "-170",
+   "text": "-133",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Navajo Stirling",
+    "label": "Kevin Vallejos",
     "field": "cost"
    },
-   "desc": "Market ML Navajo Stirling",
-   "raw": -170
+   "desc": "Market ML Kevin Vallejos",
+   "raw": -133
   },
   {
    "id": "v15",
-   "text": "63.0%",
+   "text": "57.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Navajo Stirling"
+    "label": "Kevin Vallejos"
    },
-   "desc": "Market implied Navajo Stirling",
-   "raw": 0.6296296296296297
+   "desc": "Market implied Kevin Vallejos",
+   "raw": 0.5708154506437768
   },
   {
    "id": "v16",
-   "text": "-170",
+   "text": "-130",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Navajo Stirling",
-    "book": "fanduel"
+    "label": "Kevin Vallejos",
+    "book": "draftkings"
    },
-   "desc": "Best US ML Navajo Stirling",
-   "raw": -170
+   "desc": "Best US ML Kevin Vallejos",
+   "raw": -130
   },
   {
    "id": "v17",
-   "text": "+455",
+   "text": "-150",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -217,11 +217,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 455
+   "raw": -150
   },
   {
    "id": "v18",
-   "text": "18.0%",
+   "text": "60.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -229,11 +229,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD yes implied",
-   "raw": 0.18018018018018017
+   "raw": 0.6
   },
   {
    "id": "v19",
-   "text": "-785",
+   "text": "+110",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -242,11 +242,11 @@
     "field": "cost"
    },
    "desc": "Market GTD no",
-   "raw": -785
+   "raw": 110
   },
   {
    "id": "v20",
-   "text": "88.7%",
+   "text": "47.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -254,481 +254,481 @@
     "label": "No"
    },
    "desc": "Market GTD no implied",
-   "raw": 0.8870056497175142
+   "raw": 0.47619047619047616
   },
   {
    "id": "v21",
-   "text": "+1100",
+   "text": "+175",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jiri Prochazka Points",
+    "label": "Aljamain Sterling Points",
     "field": "cost"
    },
-   "desc": "Market dec Jiri Prochazka",
-   "raw": 1100
+   "desc": "Market dec Aljamain Sterling",
+   "raw": 175
   },
   {
    "id": "v22",
-   "text": "8.3%",
+   "text": "36.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jiri Prochazka Points"
+    "label": "Aljamain Sterling Points"
    },
-   "desc": "Market dec implied Jiri Prochazka",
-   "raw": 0.08333333333333333
+   "desc": "Market dec implied Aljamain Sterling",
+   "raw": 0.36363636363636365
   },
   {
    "id": "v23",
-   "text": "+185",
+   "text": "+1800",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jiri Prochazka KO/TKO/DQ",
+    "label": "Aljamain Sterling KO/TKO/DQ",
     "field": "cost"
    },
-   "desc": "Market ko Jiri Prochazka",
-   "raw": 185
+   "desc": "Market ko Aljamain Sterling",
+   "raw": 1800
   },
   {
    "id": "v24",
-   "text": "35.1%",
+   "text": "5.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jiri Prochazka KO/TKO/DQ"
+    "label": "Aljamain Sterling KO/TKO/DQ"
    },
-   "desc": "Market ko implied Jiri Prochazka",
-   "raw": 0.3508771929824561
+   "desc": "Market ko implied Aljamain Sterling",
+   "raw": 0.05263157894736842
   },
   {
    "id": "v25",
-   "text": "+1694",
+   "text": "+700",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jiri Prochazka Submission",
+    "label": "Aljamain Sterling Submission",
     "field": "cost"
    },
-   "desc": "Market sub Jiri Prochazka",
-   "raw": 1694
+   "desc": "Market sub Aljamain Sterling",
+   "raw": 700
   },
   {
    "id": "v26",
-   "text": "5.6%",
+   "text": "12.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jiri Prochazka Submission"
+    "label": "Aljamain Sterling Submission"
    },
-   "desc": "Market sub implied Jiri Prochazka",
-   "raw": 0.055741360089186176
+   "desc": "Market sub implied Aljamain Sterling",
+   "raw": 0.125
   },
   {
    "id": "v27",
-   "text": "+146",
+   "text": "+463",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Jiri Prochazka KO/TKO/DQ",
-     "Jiri Prochazka Submission"
+     "Aljamain Sterling KO/TKO/DQ",
+     "Aljamain Sterling Submission"
     ]
    },
-   "desc": "Market ITD price Jiri Prochazka",
-   "raw": 0.4066185530716423
+   "desc": "Market ITD price Aljamain Sterling",
+   "raw": 0.17763157894736842
   },
   {
    "id": "v28",
-   "text": "40.7%",
+   "text": "17.8%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Jiri Prochazka KO/TKO/DQ",
-     "Jiri Prochazka Submission"
+     "Aljamain Sterling KO/TKO/DQ",
+     "Aljamain Sterling Submission"
     ]
    },
-   "desc": "Market ITD implied Jiri Prochazka",
-   "raw": 0.4066185530716423
+   "desc": "Market ITD implied Aljamain Sterling",
+   "raw": 0.17763157894736842
   },
   {
    "id": "v29",
-   "text": "+800",
+   "text": "+275",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Navajo Stirling Points",
+    "label": "Kevin Vallejos Points",
     "field": "cost"
    },
-   "desc": "Market dec Navajo Stirling",
-   "raw": 800
+   "desc": "Market dec Kevin Vallejos",
+   "raw": 275
   },
   {
    "id": "v30",
-   "text": "11.1%",
+   "text": "26.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Navajo Stirling Points"
+    "label": "Kevin Vallejos Points"
    },
-   "desc": "Market dec implied Navajo Stirling",
-   "raw": 0.1111111111111111
+   "desc": "Market dec implied Kevin Vallejos",
+   "raw": 0.26666666666666666
   },
   {
    "id": "v31",
-   "text": "-115",
+   "text": "+200",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Navajo Stirling KO/TKO/DQ",
+    "label": "Kevin Vallejos KO/TKO/DQ",
     "field": "cost"
    },
-   "desc": "Market ko Navajo Stirling",
-   "raw": -115
+   "desc": "Market ko Kevin Vallejos",
+   "raw": 200
   },
   {
    "id": "v32",
-   "text": "53.5%",
+   "text": "33.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Navajo Stirling KO/TKO/DQ"
+    "label": "Kevin Vallejos KO/TKO/DQ"
    },
-   "desc": "Market ko implied Navajo Stirling",
-   "raw": 0.5348837209302325
+   "desc": "Market ko implied Kevin Vallejos",
+   "raw": 0.3333333333333333
   },
   {
    "id": "v33",
-   "text": "+1749",
+   "text": "+1949",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Navajo Stirling Submission",
+    "label": "Kevin Vallejos Submission",
     "field": "cost"
    },
-   "desc": "Market sub Navajo Stirling",
-   "raw": 1749
+   "desc": "Market sub Kevin Vallejos",
+   "raw": 1949
   },
   {
    "id": "v34",
-   "text": "5.4%",
+   "text": "4.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Navajo Stirling Submission"
+    "label": "Kevin Vallejos Submission"
    },
-   "desc": "Market sub implied Navajo Stirling",
-   "raw": 0.05408328826392644
+   "desc": "Market sub implied Kevin Vallejos",
+   "raw": 0.04880429477794046
   },
   {
    "id": "v35",
-   "text": "-143",
+   "text": "+162",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Navajo Stirling KO/TKO/DQ",
-     "Navajo Stirling Submission"
+     "Kevin Vallejos KO/TKO/DQ",
+     "Kevin Vallejos Submission"
     ]
    },
-   "desc": "Market ITD price Navajo Stirling",
-   "raw": 0.588967009194159
+   "desc": "Market ITD price Kevin Vallejos",
+   "raw": 0.3821376281112738
   },
   {
    "id": "v36",
-   "text": "58.9%",
+   "text": "38.2%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Navajo Stirling KO/TKO/DQ",
-     "Navajo Stirling Submission"
+     "Kevin Vallejos KO/TKO/DQ",
+     "Kevin Vallejos Submission"
     ]
    },
-   "desc": "Market ITD implied Navajo Stirling",
-   "raw": 0.588967009194159
+   "desc": "Market ITD implied Kevin Vallejos",
+   "raw": 0.3821376281112738
   },
   {
    "id": "v37",
-   "text": "-141",
+   "text": "-125",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Jiri Prochazka",
-     "Navajo Stirling"
+     "Aljamain Sterling",
+     "Kevin Vallejos"
     ],
     "side": "b"
    },
-   "desc": "LH open ML Navajo Stirling",
-   "raw": -141
+   "desc": "LH open ML Kevin Vallejos",
+   "raw": -125
   },
   {
    "id": "v38",
-   "text": "-165",
+   "text": "-133",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Jiri Prochazka",
-     "Navajo Stirling"
+     "Aljamain Sterling",
+     "Kevin Vallejos"
     ],
     "side": "b",
     "at": "current"
    },
-   "desc": "LH current ML Navajo Stirling",
-   "raw": -165
+   "desc": "LH current ML Kevin Vallejos",
+   "raw": -133
   },
   {
    "id": "v39",
-   "text": "3.5",
+   "text": "1.3",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Jiri Prochazka",
-     "Navajo Stirling"
+     "Aljamain Sterling",
+     "Kevin Vallejos"
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.034999999999999976
+   "raw": 0.013000000000000012
   },
   {
    "id": "v40",
-   "text": "77%",
+   "text": "50%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
+    "fighter": "Aljamain Sterling",
     "path": "target.head"
    },
-   "desc": "Target head Jiri Prochazka",
-   "raw": 0.7664
+   "desc": "Target head Aljamain Sterling",
+   "raw": 0.4996
   },
   {
    "id": "v41",
-   "text": "16%",
+   "text": "31%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
+    "fighter": "Aljamain Sterling",
     "path": "target.body"
    },
-   "desc": "Target body Jiri Prochazka",
-   "raw": 0.1564
+   "desc": "Target body Aljamain Sterling",
+   "raw": 0.3149
   },
   {
    "id": "v42",
-   "text": "8%",
+   "text": "19%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
+    "fighter": "Aljamain Sterling",
     "path": "target.leg"
    },
-   "desc": "Target leg Jiri Prochazka",
-   "raw": 0.0772
+   "desc": "Target leg Aljamain Sterling",
+   "raw": 0.1855
   },
   {
    "id": "v43",
-   "text": "53%",
+   "text": "68%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
+    "fighter": "Kevin Vallejos",
     "path": "target.head"
    },
-   "desc": "Target head Navajo Stirling",
-   "raw": 0.5274
+   "desc": "Target head Kevin Vallejos",
+   "raw": 0.675
   },
   {
    "id": "v44",
-   "text": "32%",
+   "text": "22%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
+    "fighter": "Kevin Vallejos",
     "path": "target.body"
    },
-   "desc": "Target body Navajo Stirling",
-   "raw": 0.3174
+   "desc": "Target body Kevin Vallejos",
+   "raw": 0.225
   },
   {
    "id": "v45",
-   "text": "16%",
+   "text": "10%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
+    "fighter": "Kevin Vallejos",
     "path": "target.leg"
    },
-   "desc": "Target leg Navajo Stirling",
-   "raw": 0.1551
+   "desc": "Target leg Kevin Vallejos",
+   "raw": 0.1
   },
   {
    "id": "v46",
-   "text": "9",
+   "text": "23",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
+    "fighter": "Aljamain Sterling",
     "path": "ufc_fights"
    },
    "desc": "Power section fights a",
-   "raw": 9
+   "raw": 23
   },
   {
    "id": "v47",
-   "text": "6",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "ufc_fights"
-   },
-   "desc": "Power section fights b",
-   "raw": 6
-  },
-  {
-   "id": "v48",
-   "text": "42%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "power_w"
-   },
-   "desc": "Power: drops or stops them on the feet a",
-   "raw": 0.4196
-  },
-  {
-   "id": "v49",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "last5.power"
-   },
-   "desc": "Power: drops or stops them on the feet last5 a",
-   "raw": 2
-  },
-  {
-   "id": "v50",
    "text": "4",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "power_fights"
+    "fighter": "Kevin Vallejos",
+    "path": "ufc_fights"
    },
-   "desc": "Power: drops or stops them on the feet count a",
+   "desc": "Power section fights b",
    "raw": 4
   },
   {
-   "id": "v51",
-   "text": "28%",
+   "id": "v48",
+   "text": "0%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
+    "fighter": "Aljamain Sterling",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.0
+  },
+  {
+   "id": "v49",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v50",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 0
+  },
+  {
+   "id": "v51",
+   "text": "78%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
     "path": "power_w"
    },
    "desc": "Power: drops or stops them on the feet b",
-   "raw": 0.2824
+   "raw": 0.7845
   },
   {
    "id": "v52",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "last5.power"
-   },
-   "desc": "Power: drops or stops them on the feet last5 b",
-   "raw": 2
-  },
-  {
-   "id": "v53",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "power_fights"
-   },
-   "desc": "Power: drops or stops them on the feet count b",
-   "raw": 2
-  },
-  {
-   "id": "v54",
-   "text": "26%",
-   "fmt": "pct0",
-   "rule": "em_div",
-   "args": {
-    "wc": "Light Heavyweight",
-    "key": "power"
-   },
-   "desc": "Division share Power: drops or stops them on the feet",
-   "raw": 0.2569
-  },
-  {
-   "id": "v55",
-   "text": "43%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "dropped_w"
-   },
-   "desc": "Durability: gets dropped or stopped a",
-   "raw": 0.4279
-  },
-  {
-   "id": "v56",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "last5.dropped"
-   },
-   "desc": "Durability: gets dropped or stopped last5 a",
-   "raw": 2
-  },
-  {
-   "id": "v57",
    "text": "3",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
+    "fighter": "Kevin Vallejos",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 3
+  },
+  {
+   "id": "v53",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 3
+  },
+  {
+   "id": "v54",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Featherweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.225
+  },
+  {
+   "id": "v55",
+   "text": "13%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.1282
+  },
+  {
+   "id": "v56",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 1
+  },
+  {
+   "id": "v57",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
     "path": "dropped_fights"
    },
    "desc": "Durability: gets dropped or stopped count a",
-   "raw": 3
+   "raw": 4
   },
   {
    "id": "v58",
@@ -736,7 +736,7 @@
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
+    "fighter": "Kevin Vallejos",
     "path": "dropped_w"
    },
    "desc": "Durability: gets dropped or stopped b",
@@ -748,7 +748,7 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
+    "fighter": "Kevin Vallejos",
     "path": "last5.dropped"
    },
    "desc": "Durability: gets dropped or stopped last5 b",
@@ -760,7 +760,7 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
+    "fighter": "Kevin Vallejos",
     "path": "dropped_fights"
    },
    "desc": "Durability: gets dropped or stopped count b",
@@ -768,51 +768,51 @@
   },
   {
    "id": "v61",
-   "text": "31%",
+   "text": "25%",
    "fmt": "pct0",
    "rule": "em_div",
    "args": {
-    "wc": "Light Heavyweight",
+    "wc": "Featherweight",
     "key": "dropped"
    },
    "desc": "Division share Durability: gets dropped or stopped",
-   "raw": 0.3063
+   "raw": 0.25
   },
   {
    "id": "v62",
-   "text": "5",
+   "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
+    "fighter": "Aljamain Sterling",
     "path": "outcomes.w.ko"
    },
-   "desc": "Outcome wko Jiri Prochazka",
-   "raw": 5
+   "desc": "Outcome wko Aljamain Sterling",
+   "raw": 2
   },
   {
    "id": "v63",
-   "text": "1",
+   "text": "4",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
+    "fighter": "Aljamain Sterling",
     "path": "outcomes.w.sub"
    },
-   "desc": "Outcome wsub Jiri Prochazka",
-   "raw": 1
+   "desc": "Outcome wsub Aljamain Sterling",
+   "raw": 4
   },
   {
    "id": "v64",
-   "text": "3",
+   "text": "11",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "outcomes.l.ko"
+    "fighter": "Aljamain Sterling",
+    "path": "outcomes.w.dec"
    },
-   "desc": "Outcome lko Jiri Prochazka",
-   "raw": 3
+   "desc": "Outcome wdec Aljamain Sterling",
+   "raw": 11
   },
   {
    "id": "v65",
@@ -820,1353 +820,1533 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "outcomes.w.ko"
+    "fighter": "Aljamain Sterling",
+    "path": "outcomes.l.dec"
    },
-   "desc": "Outcome wko Navajo Stirling",
+   "desc": "Outcome ldec Aljamain Sterling",
    "raw": 3
   },
   {
    "id": "v66",
-   "text": "3",
+   "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "outcomes.w.dec"
+    "fighter": "Aljamain Sterling",
+    "path": "outcomes.l.ko"
    },
-   "desc": "Outcome wdec Navajo Stirling",
-   "raw": 3
+   "desc": "Outcome lko Aljamain Sterling",
+   "raw": 2
   },
   {
    "id": "v67",
-   "text": "33%",
-   "fmt": "pct0",
+   "text": "3",
+   "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.0.won"
+    "fighter": "Kevin Vallejos",
+    "path": "outcomes.w.ko"
    },
-   "desc": "R1 won Jiri Prochazka",
-   "raw": 0.3333
+   "desc": "Outcome wko Kevin Vallejos",
+   "raw": 3
   },
   {
    "id": "v68",
-   "text": "-1.5",
-   "fmt": "s1",
+   "text": "1",
+   "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.0.diff_pm"
+    "fighter": "Kevin Vallejos",
+    "path": "outcomes.w.dec"
    },
-   "desc": "R1 diff Jiri Prochazka",
-   "raw": -1.531
+   "desc": "Outcome wdec Kevin Vallejos",
+   "raw": 1
   },
   {
    "id": "v69",
-   "text": "9",
-   "fmt": "int",
+   "text": "87%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.0.fights"
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.0.won"
    },
-   "desc": "R1 fights Jiri Prochazka",
-   "raw": 9
+   "desc": "R1 won Aljamain Sterling",
+   "raw": 0.8696
   },
   {
    "id": "v70",
-   "text": "50%",
-   "fmt": "pct0",
+   "text": "+2.0",
+   "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.1.won"
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.0.diff_pm"
    },
-   "desc": "R2 won Jiri Prochazka",
-   "raw": 0.5
+   "desc": "R1 diff Aljamain Sterling",
+   "raw": 1.989
   },
   {
    "id": "v71",
-   "text": "+0.2",
-   "fmt": "s1",
+   "text": "23",
+   "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.1.diff_pm"
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.0.fights"
    },
-   "desc": "R2 diff Jiri Prochazka",
-   "raw": 0.215
+   "desc": "R1 fights Aljamain Sterling",
+   "raw": 23
   },
   {
    "id": "v72",
-   "text": "8",
-   "fmt": "int",
+   "text": "81%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.1.fights"
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.1.won"
    },
-   "desc": "R2 fights Jiri Prochazka",
-   "raw": 8
+   "desc": "R2 won Aljamain Sterling",
+   "raw": 0.8095
   },
   {
    "id": "v73",
-   "text": "100%",
-   "fmt": "pct0",
+   "text": "+2.7",
+   "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.2.won"
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "R3 won Jiri Prochazka",
-   "raw": 1.0
+   "desc": "R2 diff Aljamain Sterling",
+   "raw": 2.716
   },
   {
    "id": "v74",
-   "text": "+6.7",
-   "fmt": "s1",
+   "text": "21",
+   "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.2.diff_pm"
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.1.fights"
    },
-   "desc": "R3 diff Jiri Prochazka",
-   "raw": 6.677
+   "desc": "R2 fights Aljamain Sterling",
+   "raw": 21
   },
   {
    "id": "v75",
-   "text": "3",
-   "fmt": "int",
+   "text": "82%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.2.fights"
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.2.won"
    },
-   "desc": "R3 fights Jiri Prochazka",
-   "raw": 3
+   "desc": "R3 won Aljamain Sterling",
+   "raw": 0.8235
   },
   {
    "id": "v76",
-   "text": "0%",
-   "fmt": "pct0",
+   "text": "+2.4",
+   "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.3.won"
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.2.diff_pm"
    },
-   "desc": "R4 won Jiri Prochazka",
-   "raw": 0.0
+   "desc": "R3 diff Aljamain Sterling",
+   "raw": 2.419
   },
   {
    "id": "v77",
-   "text": "-0.6",
-   "fmt": "s1",
+   "text": "17",
+   "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.3.diff_pm"
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.2.fights"
    },
-   "desc": "R4 diff Jiri Prochazka",
-   "raw": -0.6
+   "desc": "R3 fights Aljamain Sterling",
+   "raw": 17
   },
   {
    "id": "v78",
-   "text": "1",
-   "fmt": "int",
+   "text": "100%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.3.fights"
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.0.won"
    },
-   "desc": "R4 fights Jiri Prochazka",
-   "raw": 1
+   "desc": "R1 won Kevin Vallejos",
+   "raw": 1.0
   },
   {
    "id": "v79",
+   "text": "+2.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Kevin Vallejos",
+   "raw": 2.395
+  },
+  {
+   "id": "v80",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Kevin Vallejos",
+   "raw": 4
+  },
+  {
+   "id": "v81",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.4.won"
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.1.won"
    },
-   "desc": "R5 won Jiri Prochazka",
+   "desc": "R2 won Kevin Vallejos",
    "raw": 1.0
   },
   {
-   "id": "v80",
-   "text": "-3.3",
+   "id": "v82",
+   "text": "+3.2",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.4.diff_pm"
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.1.diff_pm"
    },
-   "desc": "R5 diff Jiri Prochazka",
-   "raw": -3.309
+   "desc": "R2 diff Kevin Vallejos",
+   "raw": 3.239
   },
   {
-   "id": "v81",
+   "id": "v83",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Kevin Vallejos",
+   "raw": 2
+  },
+  {
+   "id": "v84",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Kevin Vallejos",
+   "raw": 1.0
+  },
+  {
+   "id": "v85",
+   "text": "-0.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Kevin Vallejos",
+   "raw": -0.2
+  },
+  {
+   "id": "v86",
    "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.4.fights"
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.2.fights"
    },
-   "desc": "R5 fights Jiri Prochazka",
+   "desc": "R3 fights Kevin Vallejos",
    "raw": 1
   },
   {
-   "id": "v82",
-   "text": "100%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.0.won"
-   },
-   "desc": "R1 won Navajo Stirling",
-   "raw": 1.0
-  },
-  {
-   "id": "v83",
-   "text": "+3.6",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "R1 diff Navajo Stirling",
-   "raw": 3.58
-  },
-  {
-   "id": "v84",
-   "text": "6",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.0.fights"
-   },
-   "desc": "R1 fights Navajo Stirling",
-   "raw": 6
-  },
-  {
-   "id": "v85",
-   "text": "80%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.1.won"
-   },
-   "desc": "R2 won Navajo Stirling",
-   "raw": 0.8
-  },
-  {
-   "id": "v86",
-   "text": "+3.6",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "R2 diff Navajo Stirling",
-   "raw": 3.65
-  },
-  {
    "id": "v87",
-   "text": "5",
-   "fmt": "int",
+   "text": "+4",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.1.fights"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.0.rw.0.2"
    },
-   "desc": "R2 fights Navajo Stirling",
-   "raw": 5
+   "desc": "R1 fight diff Aljamain Sterling 0",
+   "raw": 4
   },
   {
    "id": "v88",
-   "text": "100%",
-   "fmt": "pct0",
+   "text": "+25",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.2.won"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.1.rw.0.2"
    },
-   "desc": "R3 won Navajo Stirling",
-   "raw": 1.0
+   "desc": "R1 fight diff Aljamain Sterling 1",
+   "raw": 25
   },
   {
    "id": "v89",
-   "text": "+5.1",
-   "fmt": "s1",
+   "text": "+2",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.2.diff_pm"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.2.rw.0.2"
    },
-   "desc": "R3 diff Navajo Stirling",
-   "raw": 5.067
+   "desc": "R1 fight diff Aljamain Sterling 2",
+   "raw": 2
   },
   {
    "id": "v90",
-   "text": "3",
-   "fmt": "int",
+   "text": "+9",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.2.fights"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.3.rw.0.2"
    },
-   "desc": "R3 fights Navajo Stirling",
-   "raw": 3
+   "desc": "R1 fight diff Aljamain Sterling 3",
+   "raw": 9
   },
   {
    "id": "v91",
-   "text": "-13",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.0.rw.0.2"
-   },
-   "desc": "R1 fight diff Jiri Prochazka 0",
-   "raw": -13
-  },
-  {
-   "id": "v92",
-   "text": "-3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.1.rw.0.2"
-   },
-   "desc": "R1 fight diff Jiri Prochazka 1",
-   "raw": -3
-  },
-  {
-   "id": "v93",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.2.rw.0.2"
-   },
-   "desc": "R1 fight diff Jiri Prochazka 2",
-   "raw": 9
-  },
-  {
-   "id": "v94",
-   "text": "-20",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.3.rw.0.2"
-   },
-   "desc": "R1 fight diff Jiri Prochazka 3",
-   "raw": -20
-  },
-  {
-   "id": "v95",
-   "text": "-20",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.4.rw.0.2"
-   },
-   "desc": "R1 fight diff Jiri Prochazka 4",
-   "raw": -20
-  },
-  {
-   "id": "v96",
-   "text": "+0",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.5.rw.0.2"
-   },
-   "desc": "R1 fight diff Jiri Prochazka 5",
-   "raw": 0
-  },
-  {
-   "id": "v97",
-   "text": "-13",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.6.rw.0.2"
-   },
-   "desc": "R1 fight diff Jiri Prochazka 6",
-   "raw": -13
-  },
-  {
-   "id": "v98",
-   "text": "+6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.7.rw.0.2"
-   },
-   "desc": "R1 fight diff Jiri Prochazka 7",
-   "raw": 6
-  },
-  {
-   "id": "v99",
-   "text": "-13",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.8.rw.0.2"
-   },
-   "desc": "R1 fight diff Jiri Prochazka 8",
-   "raw": -13
-  },
-  {
-   "id": "v100",
-   "text": "-12",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.1.rw.1.2"
-   },
-   "desc": "R2 fight diff Jiri Prochazka 1",
-   "raw": -12
-  },
-  {
-   "id": "v101",
-   "text": "-16",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.2.rw.1.2"
-   },
-   "desc": "R2 fight diff Jiri Prochazka 2",
-   "raw": -16
-  },
-  {
-   "id": "v102",
-   "text": "-11",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.3.rw.1.2"
-   },
-   "desc": "R2 fight diff Jiri Prochazka 3",
-   "raw": -11
-  },
-  {
-   "id": "v103",
-   "text": "+31",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.4.rw.1.2"
-   },
-   "desc": "R2 fight diff Jiri Prochazka 4",
-   "raw": 31
-  },
-  {
-   "id": "v104",
-   "text": "-8",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.5.rw.1.2"
-   },
-   "desc": "R2 fight diff Jiri Prochazka 5",
-   "raw": -8
-  },
-  {
-   "id": "v105",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.6.rw.1.2"
-   },
-   "desc": "R2 fight diff Jiri Prochazka 6",
-   "raw": 9
-  },
-  {
-   "id": "v106",
-   "text": "+8",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.7.rw.1.2"
-   },
-   "desc": "R2 fight diff Jiri Prochazka 7",
-   "raw": 8
-  },
-  {
-   "id": "v107",
    "text": "+5",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.8.rw.1.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.4.rw.0.2"
    },
-   "desc": "R2 fight diff Jiri Prochazka 8",
+   "desc": "R1 fight diff Aljamain Sterling 4",
    "raw": 5
   },
   {
-   "id": "v108",
-   "text": "+20",
+   "id": "v92",
+   "text": "+13",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.1.rw.2.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.5.rw.0.2"
    },
-   "desc": "R3 fight diff Jiri Prochazka 1",
-   "raw": 20
+   "desc": "R1 fight diff Aljamain Sterling 5",
+   "raw": 13
   },
   {
-   "id": "v109",
-   "text": "+23",
+   "id": "v93",
+   "text": "+27",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.2.rw.2.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.6.rw.0.2"
    },
-   "desc": "R3 fight diff Jiri Prochazka 2",
-   "raw": 23
+   "desc": "R1 fight diff Aljamain Sterling 6",
+   "raw": 27
   },
   {
-   "id": "v110",
-   "text": "+31",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.6.rw.2.2"
-   },
-   "desc": "R3 fight diff Jiri Prochazka 6",
-   "raw": 31
-  },
-  {
-   "id": "v111",
-   "text": "-3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.6.rw.3.2"
-   },
-   "desc": "R4 fight diff Jiri Prochazka 6",
-   "raw": -3
-  },
-  {
-   "id": "v112",
-   "text": "-15",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "fights.6.rw.4.2"
-   },
-   "desc": "R5 fight diff Jiri Prochazka 6",
-   "raw": -15
-  },
-  {
-   "id": "v113",
-   "text": "+32",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.0.rw.0.2"
-   },
-   "desc": "R1 fight diff Navajo Stirling 0",
-   "raw": 32
-  },
-  {
-   "id": "v114",
-   "text": "+10",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.1.rw.0.2"
-   },
-   "desc": "R1 fight diff Navajo Stirling 1",
-   "raw": 10
-  },
-  {
-   "id": "v115",
+   "id": "v94",
    "text": "+6",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.2.rw.0.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.7.rw.0.2"
    },
-   "desc": "R1 fight diff Navajo Stirling 2",
+   "desc": "R1 fight diff Aljamain Sterling 7",
    "raw": 6
   },
   {
-   "id": "v116",
-   "text": "+22",
+   "id": "v95",
+   "text": "+13",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.3.rw.0.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.8.rw.0.2"
    },
-   "desc": "R1 fight diff Navajo Stirling 3",
-   "raw": 22
+   "desc": "R1 fight diff Aljamain Sterling 8",
+   "raw": 13
   },
   {
-   "id": "v117",
-   "text": "+19",
+   "id": "v96",
+   "text": "+1",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.4.rw.0.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.9.rw.0.2"
    },
-   "desc": "R1 fight diff Navajo Stirling 4",
-   "raw": 19
+   "desc": "R1 fight diff Aljamain Sterling 9",
+   "raw": 1
   },
   {
-   "id": "v118",
-   "text": "+11",
+   "id": "v97",
+   "text": "+21",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.5.rw.0.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.10.rw.0.2"
    },
-   "desc": "R1 fight diff Navajo Stirling 5",
-   "raw": 11
+   "desc": "R1 fight diff Aljamain Sterling 10",
+   "raw": 21
   },
   {
-   "id": "v119",
-   "text": "+23",
+   "id": "v98",
+   "text": "+14",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.1.rw.1.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.11.rw.0.2"
    },
-   "desc": "R2 fight diff Navajo Stirling 1",
-   "raw": 23
+   "desc": "R1 fight diff Aljamain Sterling 11",
+   "raw": 14
   },
   {
-   "id": "v120",
-   "text": "+29",
+   "id": "v99",
+   "text": "+6",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.2.rw.1.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.12.rw.0.2"
    },
-   "desc": "R2 fight diff Navajo Stirling 2",
-   "raw": 29
+   "desc": "R1 fight diff Aljamain Sterling 12",
+   "raw": 6
   },
   {
-   "id": "v121",
-   "text": "+10",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.3.rw.1.2"
-   },
-   "desc": "R2 fight diff Navajo Stirling 3",
-   "raw": 10
-  },
-  {
-   "id": "v122",
-   "text": "+8",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.4.rw.1.2"
-   },
-   "desc": "R2 fight diff Navajo Stirling 4",
-   "raw": 8
-  },
-  {
-   "id": "v123",
+   "id": "v100",
    "text": "+12",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.5.rw.1.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.13.rw.0.2"
    },
-   "desc": "R2 fight diff Navajo Stirling 5",
+   "desc": "R1 fight diff Aljamain Sterling 13",
    "raw": 12
   },
   {
-   "id": "v124",
+   "id": "v101",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.14.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 14",
+   "raw": -4
+  },
+  {
+   "id": "v102",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.15.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 15",
+   "raw": 1
+  },
+  {
+   "id": "v103",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.16.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 16",
+   "raw": 14
+  },
+  {
+   "id": "v104",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.17.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 17",
+   "raw": 5
+  },
+  {
+   "id": "v105",
    "text": "+6",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.3.rw.2.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.18.rw.0.2"
    },
-   "desc": "R3 fight diff Navajo Stirling 3",
+   "desc": "R1 fight diff Aljamain Sterling 18",
    "raw": 6
   },
   {
-   "id": "v125",
-   "text": "+47",
+   "id": "v106",
+   "text": "+1",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.4.rw.2.2"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.19.rw.0.2"
    },
-   "desc": "R3 fight diff Navajo Stirling 4",
-   "raw": 47
-  },
-  {
-   "id": "v126",
-   "text": "+23",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "fights.5.rw.2.2"
-   },
-   "desc": "R3 fight diff Navajo Stirling 5",
-   "raw": 23
-  },
-  {
-   "id": "v127",
-   "text": "-1.5",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "Trend R1 Jiri Prochazka",
-   "raw": -1.531
-  },
-  {
-   "id": "v128",
-   "text": "+0.2",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "Trend R2 Jiri Prochazka",
-   "raw": 0.215
-  },
-  {
-   "id": "v129",
-   "text": "+6.7",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.2.diff_pm"
-   },
-   "desc": "Trend R3 Jiri Prochazka",
-   "raw": 6.677
-  },
-  {
-   "id": "v130",
-   "text": "11",
-   "fmt": "r0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "rounds.2.mins"
-   },
-   "desc": "Trend R3 mins Jiri Prochazka",
-   "raw": 11.08
-  },
-  {
-   "id": "v131",
-   "text": "+3.6",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "Trend R1 Navajo Stirling",
-   "raw": 3.58
-  },
-  {
-   "id": "v132",
-   "text": "+3.6",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "Trend R2 Navajo Stirling",
-   "raw": 3.65
-  },
-  {
-   "id": "v133",
-   "text": "+5.1",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "rounds.2.diff_pm"
-   },
-   "desc": "Trend R3 Navajo Stirling",
-   "raw": 5.067
-  },
-  {
-   "id": "v134",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "r45.fights"
-   },
-   "desc": "Fights to R4+ a",
+   "desc": "R1 fight diff Aljamain Sterling 19",
    "raw": 1
   },
   {
-   "id": "v135",
-   "text": "5.9",
-   "fmt": "n1",
+   "id": "v107",
+   "text": "+16",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "r45.landed_pm_13"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.20.rw.0.2"
    },
-   "desc": "Output R1-3 /min a",
-   "raw": 5.932
+   "desc": "R1 fight diff Aljamain Sterling 20",
+   "raw": 16
+  },
+  {
+   "id": "v108",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.21.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 21",
+   "raw": 6
+  },
+  {
+   "id": "v109",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.22.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 22",
+   "raw": 11
+  },
+  {
+   "id": "v110",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 0",
+   "raw": 0
+  },
+  {
+   "id": "v111",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 1",
+   "raw": 4
+  },
+  {
+   "id": "v112",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 2",
+   "raw": 2
+  },
+  {
+   "id": "v113",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 3",
+   "raw": 12
+  },
+  {
+   "id": "v114",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 4",
+   "raw": -13
+  },
+  {
+   "id": "v115",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 5",
+   "raw": -2
+  },
+  {
+   "id": "v116",
+   "text": "+37",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 6",
+   "raw": 37
+  },
+  {
+   "id": "v117",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 7",
+   "raw": 13
+  },
+  {
+   "id": "v118",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 8",
+   "raw": 7
+  },
+  {
+   "id": "v119",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 10",
+   "raw": 21
+  },
+  {
+   "id": "v120",
+   "text": "+39",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 11",
+   "raw": 39
+  },
+  {
+   "id": "v121",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.12.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 12",
+   "raw": 15
+  },
+  {
+   "id": "v122",
+   "text": "+29",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.13.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 13",
+   "raw": 29
+  },
+  {
+   "id": "v123",
+   "text": "+32",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.15.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 15",
+   "raw": 32
+  },
+  {
+   "id": "v124",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.16.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 16",
+   "raw": 11
+  },
+  {
+   "id": "v125",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.17.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 17",
+   "raw": 2
+  },
+  {
+   "id": "v126",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.18.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 18",
+   "raw": 13
+  },
+  {
+   "id": "v127",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.19.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 19",
+   "raw": 18
+  },
+  {
+   "id": "v128",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.20.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 20",
+   "raw": 4
+  },
+  {
+   "id": "v129",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.21.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 21",
+   "raw": 13
+  },
+  {
+   "id": "v130",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.22.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 22",
+   "raw": 8
+  },
+  {
+   "id": "v131",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 0",
+   "raw": -1
+  },
+  {
+   "id": "v132",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 1",
+   "raw": 14
+  },
+  {
+   "id": "v133",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 2",
+   "raw": 0
+  },
+  {
+   "id": "v134",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 3",
+   "raw": 10
+  },
+  {
+   "id": "v135",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 5",
+   "raw": 11
   },
   {
    "id": "v136",
-   "text": "2.8",
-   "fmt": "n1",
+   "text": "-2",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "r45.landed_pm_45"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.7.rw.2.2"
    },
-   "desc": "Output R4-5 /min a",
-   "raw": 2.832
+   "desc": "R3 fight diff Aljamain Sterling 7",
+   "raw": -2
   },
   {
    "id": "v137",
-   "text": "-1.9",
-   "fmt": "s1",
+   "text": "-1",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "r45.diff_pm_45"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.8.rw.2.2"
    },
-   "desc": "Diff R4-5 /min a",
-   "raw": -1.888
+   "desc": "R3 fight diff Aljamain Sterling 8",
+   "raw": -1
   },
   {
    "id": "v138",
-   "text": "0.49",
-   "fmt": "n2",
+   "text": "+27",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "grap.td15"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.10.rw.2.2"
    },
-   "desc": "Takedowns /15 a",
-   "raw": 0.488
+   "desc": "R3 fight diff Aljamain Sterling 10",
+   "raw": 27
   },
   {
    "id": "v139",
-   "text": "0.92",
-   "fmt": "n2",
+   "text": "+24",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "grap.td15"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.11.rw.2.2"
    },
-   "desc": "Takedowns /15 b",
-   "raw": 0.917
+   "desc": "R3 fight diff Aljamain Sterling 11",
+   "raw": 24
   },
   {
    "id": "v140",
-   "text": "60%",
-   "fmt": "pct0",
+   "text": "+21",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "grap.td_acc"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.13.rw.2.2"
    },
-   "desc": "TD accuracy a",
-   "raw": 0.6
+   "desc": "R3 fight diff Aljamain Sterling 13",
+   "raw": 21
   },
   {
    "id": "v141",
-   "text": "36%",
-   "fmt": "pct0",
+   "text": "+19",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "grap.td_acc"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.15.rw.2.2"
    },
-   "desc": "TD accuracy b",
-   "raw": 0.3636
+   "desc": "R3 fight diff Aljamain Sterling 15",
+   "raw": 19
   },
   {
    "id": "v142",
-   "text": "68%",
-   "fmt": "pct0",
+   "text": "+28",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "grap.tdd"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.16.rw.2.2"
    },
-   "desc": "TD defence a",
-   "raw": 0.6842
+   "desc": "R3 fight diff Aljamain Sterling 16",
+   "raw": 28
   },
   {
    "id": "v143",
-   "text": "70%",
-   "fmt": "pct0",
+   "text": "+6",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "grap.tdd"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.17.rw.2.2"
    },
-   "desc": "TD defence b",
-   "raw": 0.697
+   "desc": "R3 fight diff Aljamain Sterling 17",
+   "raw": 6
   },
   {
    "id": "v144",
-   "text": "12%",
-   "fmt": "pct0",
+   "text": "+4",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "grap.ctrl"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.18.rw.2.2"
    },
-   "desc": "Time in control a",
-   "raw": 0.1217
+   "desc": "R3 fight diff Aljamain Sterling 18",
+   "raw": 4
   },
   {
    "id": "v145",
-   "text": "19%",
-   "fmt": "pct0",
+   "text": "-1",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "grap.ctrl"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.20.rw.2.2"
    },
-   "desc": "Time in control b",
-   "raw": 0.1876
+   "desc": "R3 fight diff Aljamain Sterling 20",
+   "raw": -1
   },
   {
    "id": "v146",
-   "text": "+4.0%",
-   "fmt": "spp",
+   "text": "+28",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "grap.adj_net_ctrl"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.21.rw.2.2"
    },
-   "desc": "Net control, opp-adjusted a",
-   "raw": 0.0402
+   "desc": "R3 fight diff Aljamain Sterling 21",
+   "raw": 28
   },
   {
    "id": "v147",
-   "text": "-0.6%",
-   "fmt": "spp",
+   "text": "+9",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
-    "path": "grap.adj_net_ctrl"
+    "fighter": "Aljamain Sterling",
+    "path": "fights.22.rw.2.2"
    },
-   "desc": "Net control, opp-adjusted b",
-   "raw": -0.0056
+   "desc": "R3 fight diff Aljamain Sterling 22",
+   "raw": 9
   },
   {
    "id": "v148",
+   "text": "+33",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Vallejos 0",
+   "raw": 33
+  },
+  {
+   "id": "v149",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Vallejos 1",
+   "raw": 0
+  },
+  {
+   "id": "v150",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Vallejos 2",
+   "raw": 9
+  },
+  {
+   "id": "v151",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Vallejos 3",
+   "raw": -2
+  },
+  {
+   "id": "v152",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Vallejos 1",
+   "raw": 8
+  },
+  {
+   "id": "v153",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Vallejos 2",
+   "raw": 13
+  },
+  {
+   "id": "v154",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Vallejos 2",
+   "raw": -1
+  },
+  {
+   "id": "v155",
+   "text": "2.54",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 2.54
+  },
+  {
+   "id": "v156",
+   "text": "1.06",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 1.064
+  },
+  {
+   "id": "v157",
+   "text": "32%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.3218
+  },
+  {
+   "id": "v158",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.3333
+  },
+  {
+   "id": "v159",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.449
+  },
+  {
+   "id": "v160",
+   "text": "90%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.9
+  },
+  {
+   "id": "v161",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.3313
+  },
+  {
+   "id": "v162",
    "text": "12%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "grap.ctrl_ag"
+    "fighter": "Kevin Vallejos",
+    "path": "grap.ctrl"
    },
-   "desc": "Time controlled a",
-   "raw": 0.1174
+   "desc": "Time in control b",
+   "raw": 0.1212
   },
   {
-   "id": "v149",
-   "text": "18%",
+   "id": "v163",
+   "text": "+18.6%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.1865
+  },
+  {
+   "id": "v164",
+   "text": "+11.7%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.1173
+  },
+  {
+   "id": "v165",
+   "text": "17%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
+    "fighter": "Aljamain Sterling",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.1697
+  },
+  {
+   "id": "v166",
+   "text": "1%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
     "path": "grap.ctrl_ag"
    },
    "desc": "Time controlled b",
-   "raw": 0.1797
+   "raw": 0.013
   },
   {
-   "id": "v150",
-   "text": "0.16",
+   "id": "v167",
+   "text": "0.64",
    "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Jiri Prochazka",
+    "fighter": "Aljamain Sterling",
     "path": "grap.sub15"
    },
    "desc": "Sub attempts /15 a",
-   "raw": 0.163
+   "raw": 0.635
   },
   {
-   "id": "v151",
+   "id": "v168",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Navajo Stirling",
+    "fighter": "Kevin Vallejos",
     "path": "grap.sub15"
    },
    "desc": "Sub attempts /15 b",
    "raw": 0.0
   },
   {
-   "id": "v152",
-   "text": "-0.05",
-   "fmt": "s2",
-   "rule": "em_sum",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "paths": [
-     "target_diff.head",
-     "target_diff.body",
-     "target_diff.leg"
-    ]
-   },
-   "desc": "Total diff Jiri Prochazka",
-   "raw": -0.05499999999999999
-  },
-  {
-   "id": "v153",
-   "text": "+3.94",
-   "fmt": "s2",
-   "rule": "em_sum",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "paths": [
-     "target_diff.head",
-     "target_diff.body",
-     "target_diff.leg"
-    ]
-   },
-   "desc": "Total diff Navajo Stirling",
-   "raw": 3.944
-  },
-  {
-   "id": "v154",
-   "text": "+0.24",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "sos.adj_sd"
-   },
-   "desc": "Opp-adjusted diff a",
-   "raw": 0.24
-  },
-  {
-   "id": "v155",
-   "text": "+3.82",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "sos.adj_sd"
-   },
-   "desc": "Opp-adjusted diff b",
-   "raw": 3.819
-  },
-  {
-   "id": "v156",
-   "text": "+0.37",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "target_diff.head"
-   },
-   "desc": "Head diff /min a",
-   "raw": 0.368
-  },
-  {
-   "id": "v157",
-   "text": "+1.96",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "target_diff.head"
-   },
-   "desc": "Head diff /min b",
-   "raw": 1.957
-  },
-  {
-   "id": "v158",
-   "text": "-0.07",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "target_diff.body"
-   },
-   "desc": "Body diff /min a",
-   "raw": -0.065
-  },
-  {
-   "id": "v159",
-   "text": "+1.50",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "target_diff.body"
-   },
-   "desc": "Body diff /min b",
-   "raw": 1.498
-  },
-  {
-   "id": "v160",
-   "text": "-0.36",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "target_diff.leg"
-   },
-   "desc": "Leg diff /min a",
-   "raw": -0.358
-  },
-  {
-   "id": "v161",
-   "text": "+0.49",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "target_diff.leg"
-   },
-   "desc": "Leg diff /min b",
-   "raw": 0.489
-  },
-  {
-   "id": "v162",
-   "text": "52%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "hdef"
-   },
-   "desc": "Head defence a",
-   "raw": 0.5198
-  },
-  {
-   "id": "v163",
-   "text": "69%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "hdef"
-   },
-   "desc": "Head defence b",
-   "raw": 0.6931
-  },
-  {
-   "id": "v164",
-   "text": "10.3",
-   "fmt": "n1",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "pace.min"
-   },
-   "desc": "Avg fight, min a",
-   "raw": 10.256
-  },
-  {
-   "id": "v165",
-   "text": "10.9",
-   "fmt": "n1",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "pace.min"
-   },
-   "desc": "Avg fight, min b",
-   "raw": 10.9
-  },
-  {
-   "id": "v166",
-   "text": "11%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jiri Prochazka",
-    "path": "pace.r1"
-   },
-   "desc": "Finished in R1 a",
-   "raw": 0.1111
-  },
-  {
-   "id": "v167",
-   "text": "17%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "path": "pace.r1"
-   },
-   "desc": "Finished in R1 b",
-   "raw": 0.1667
-  },
-  {
-   "id": "v168",
-   "text": "+3.94",
-   "fmt": "s2",
-   "rule": "em_sum",
-   "args": {
-    "fighter": "Navajo Stirling",
-    "paths": [
-     "target_diff.head",
-     "target_diff.body",
-     "target_diff.leg"
-    ]
-   },
-   "desc": "Total diff Navajo Stirling",
-   "raw": 3.944
-  },
-  {
    "id": "v169",
-   "text": "-0.05",
+   "text": "+2.11",
    "fmt": "s2",
    "rule": "em_sum",
    "args": {
-    "fighter": "Jiri Prochazka",
+    "fighter": "Aljamain Sterling",
     "paths": [
      "target_diff.head",
      "target_diff.body",
      "target_diff.leg"
     ]
    },
-   "desc": "Total diff Jiri Prochazka",
-   "raw": -0.05499999999999999
+   "desc": "Total diff Aljamain Sterling",
+   "raw": 2.107
   },
   {
    "id": "v170",
-   "text": "70.8%",
-   "fmt": "pct1",
-   "rule": "bt",
+   "text": "+2.13",
+   "fmt": "s2",
+   "rule": "em_sum",
    "args": {
-    "test": "T1",
-    "key": "win"
+    "fighter": "Kevin Vallejos",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
    },
-   "desc": "Backtest T1 win",
-   "raw": 0.708
+   "desc": "Total diff Kevin Vallejos",
+   "raw": 2.13
   },
   {
    "id": "v171",
-   "text": "62.1%",
-   "fmt": "pct1",
-   "rule": "bt",
+   "text": "+2.31",
+   "fmt": "s2",
+   "rule": "em",
    "args": {
-    "test": "T1",
-    "key": "imp"
+    "fighter": "Aljamain Sterling",
+    "path": "sos.adj_sd"
    },
-   "desc": "Backtest T1 imp",
-   "raw": 0.6209
+   "desc": "Opp-adjusted diff a",
+   "raw": 2.312
   },
   {
    "id": "v172",
-   "text": "+11.0%",
-   "fmt": "spp",
-   "rule": "bt",
+   "text": "+2.20",
+   "fmt": "s2",
+   "rule": "em",
    "args": {
-    "test": "T1",
-    "key": "roi"
+    "fighter": "Kevin Vallejos",
+    "path": "sos.adj_sd"
    },
-   "desc": "Backtest T1 roi",
-   "raw": 0.1099
+   "desc": "Opp-adjusted diff b",
+   "raw": 2.203
   },
   {
    "id": "v173",
-   "text": "+1.1%",
-   "fmt": "spp",
-   "rule": "bt",
+   "text": "+1.05",
+   "fmt": "s2",
+   "rule": "em",
    "args": {
-    "test": "T1",
-    "key": "ci",
-    "i": 0
+    "fighter": "Aljamain Sterling",
+    "path": "target_diff.head"
    },
-   "desc": "Backtest T1 ci lo",
-   "raw": 0.0114
+   "desc": "Head diff /min a",
+   "raw": 1.052
   },
   {
    "id": "v174",
-   "text": "+20.9%",
-   "fmt": "spp",
-   "rule": "bt",
+   "text": "+1.74",
+   "fmt": "s2",
+   "rule": "em",
    "args": {
-    "test": "T1",
-    "key": "ci",
-    "i": 1
+    "fighter": "Kevin Vallejos",
+    "path": "target_diff.head"
    },
-   "desc": "Backtest T1 ci hi",
-   "raw": 0.2092
+   "desc": "Head diff /min b",
+   "raw": 1.739
   },
   {
    "id": "v175",
-   "text": "250",
-   "fmt": "int",
-   "rule": "bt",
+   "text": "+0.77",
+   "fmt": "s2",
+   "rule": "em",
    "args": {
-    "test": "T1",
-    "key": "n"
+    "fighter": "Aljamain Sterling",
+    "path": "target_diff.body"
    },
-   "desc": "Backtest T1 n",
-   "raw": 250
+   "desc": "Body diff /min a",
+   "raw": 0.765
   },
   {
    "id": "v176",
-   "text": "-110",
+   "text": "+0.43",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.426
+  },
+  {
+   "id": "v177",
+   "text": "+0.29",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.29
+  },
+  {
+   "id": "v178",
+   "text": "-0.04",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": -0.035
+  },
+  {
+   "id": "v179",
+   "text": "71%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.7114
+  },
+  {
+   "id": "v180",
+   "text": "66%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.6648
+  },
+  {
+   "id": "v181",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Kevin Vallejos",
+   "raw": 4
+  },
+  {
+   "id": "v182",
+   "text": "14.4",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 14.377
+  },
+  {
+   "id": "v183",
+   "text": "7.0",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 7.046
+  },
+  {
+   "id": "v184",
+   "text": "9%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.087
+  },
+  {
+   "id": "v185",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.5
+  },
+  {
+   "id": "v186",
+   "text": "+108",
+   "fmt": "ml",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 2,
+    "key": "market_odds",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag price",
+   "raw": 108
+  },
+  {
+   "id": "v187",
+   "text": "54.2",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 2,
+    "key": "model_shrunk",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win shrunk",
+   "raw": 54.2
+  },
+  {
+   "id": "v188",
+   "text": "57.6",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 2,
+    "key": "model_raw",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win raw",
+   "raw": 57.6
+  },
+  {
+   "id": "v189",
+   "text": "45.8",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 2,
+    "key": "market_implied",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag market",
+   "raw": 45.8
+  },
+  {
+   "id": "v190",
+   "text": "+8.4",
+   "fmt": "s1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 2,
+    "key": "edge_pts",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag gap",
+   "raw": 8.4
+  },
+  {
+   "id": "v191",
+   "text": "+105",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2174,12 +2354,12 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Jiri Prochazka Carlos Ulberg",
-   "raw": -110
+   "desc": "Close Aljamain Sterling Youssef Zalal",
+   "raw": 105
   },
   {
-   "id": "v177",
-   "text": "-196",
+   "id": "v192",
+   "text": "-455",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2187,12 +2367,12 @@
     "i": 1,
     "key": "od.mc"
    },
-   "desc": "Close Jiri Prochazka Khalil Rountree Jr.",
-   "raw": -196
+   "desc": "Close Aljamain Sterling Brian Ortega",
+   "raw": -455
   },
   {
-   "id": "v178",
-   "text": "-102",
+   "id": "v193",
+   "text": "+208",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2200,12 +2380,12 @@
     "i": 2,
     "key": "od.mc"
    },
-   "desc": "Close Jiri Prochazka Jamahal Hill",
-   "raw": -102
+   "desc": "Close Aljamain Sterling Movsar Evloev",
+   "raw": 208
   },
   {
-   "id": "v179",
-   "text": "+140",
+   "id": "v194",
+   "text": "-169",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2213,12 +2393,12 @@
     "i": 3,
     "key": "od.mc"
    },
-   "desc": "Close Jiri Prochazka Alex Pereira",
-   "raw": 140
+   "desc": "Close Aljamain Sterling Calvin Kattar",
+   "raw": -169
   },
   {
-   "id": "v180",
-   "text": "-105",
+   "id": "v195",
+   "text": "-250",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2226,12 +2406,12 @@
     "i": 4,
     "key": "od.mc"
    },
-   "desc": "Close Jiri Prochazka Aleksandar Rakic",
-   "raw": -105
+   "desc": "Close Aljamain Sterling Sean O'Malley",
+   "raw": -250
   },
   {
-   "id": "v181",
-   "text": "+105",
+   "id": "v196",
+   "text": "-102",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2239,12 +2419,12 @@
     "i": 5,
     "key": "od.mc"
    },
-   "desc": "Close Jiri Prochazka Alex Pereira",
-   "raw": 105
+   "desc": "Close Aljamain Sterling Henry Cejudo",
+   "raw": -102
   },
   {
-   "id": "v182",
-   "text": "-227",
+   "id": "v197",
+   "text": "-175",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2252,12 +2432,25 @@
     "i": 6,
     "key": "od.mc"
    },
-   "desc": "Close Jiri Prochazka Glover Teixeira",
-   "raw": -227
+   "desc": "Close Aljamain Sterling TJ Dillashaw",
+   "raw": -175
   },
   {
-   "id": "v183",
-   "text": "-303",
+   "id": "v198",
+   "text": "+330",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 7,
+    "key": "od.mc"
+   },
+   "desc": "Close Aljamain Sterling Petr Yan",
+   "raw": 330
+  },
+  {
+   "id": "v199",
+   "text": "-571",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2265,12 +2458,12 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Navajo Stirling Jan Blachowicz",
-   "raw": -303
+   "desc": "Close Kevin Vallejos Josh Emmett",
+   "raw": -571
   },
   {
-   "id": "v184",
-   "text": "-328",
+   "id": "v200",
+   "text": "-370",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2278,12 +2471,12 @@
     "i": 1,
     "key": "od.mc"
    },
-   "desc": "Close Navajo Stirling Ion Cutelaba",
-   "raw": -328
+   "desc": "Close Kevin Vallejos Giga Chikadze",
+   "raw": -370
   },
   {
-   "id": "v185",
-   "text": "-714",
+   "id": "v201",
+   "text": "-417",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2291,12 +2484,12 @@
     "i": 2,
     "key": "od.mc"
    },
-   "desc": "Close Navajo Stirling Bruno Lopes",
-   "raw": -714
+   "desc": "Close Kevin Vallejos Danny Silva",
+   "raw": -417
   },
   {
-   "id": "v186",
-   "text": "-278",
+   "id": "v202",
+   "text": "-556",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2304,34 +2497,8 @@
     "i": 3,
     "key": "od.mc"
    },
-   "desc": "Close Navajo Stirling Rodolfo Bellato",
-   "raw": -278
-  },
-  {
-   "id": "v187",
-   "text": "-312",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 4,
-    "key": "od.mc"
-   },
-   "desc": "Close Navajo Stirling Ivan Erslan",
-   "raw": -312
-  },
-  {
-   "id": "v188",
-   "text": "-1000",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "b",
-    "i": 5,
-    "key": "od.mc"
-   },
-   "desc": "Close Navajo Stirling Tuco Tokkos",
-   "raw": -1000
+   "desc": "Close Kevin Vallejos SeungWoo Choi",
+   "raw": -556
   }
  ],
  "gaps": [

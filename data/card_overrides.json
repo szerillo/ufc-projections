@@ -34,7 +34,11 @@
     "segments": {"main": 5, "prelims": 4, "early": 4}
   },
   "fn_prochazka_stirling": {
-    "source": "Bout order: ESPN fight center 600061665, checked 2026-11-19; matches the odds feed's 11 bouts and the C4 Markov run (UFC.com order). Split 5 main / 6 prelims per UFC.com via Kirk (sheet loaded 11/17) and the UFC announcement (Topuria vs Luna on the prelims); ESPN showed 6/5, changed 2026-11-19",
+    "source": "Bout order: ESPN fight center 600061665, checked 2026-11-19; matches the odds feed's 11 bouts and the C4 Markov run (UFC.com order). Split 5 main / 6 prelims per UFC.com via Kirk (sheet loaded 11/17) and the UFC announcement (Topuria vs Luna on the prelims); ESPN showed 6/5, changed 2026-11-19. Nov 19 (Kirk): fight 12 John Mitchell vs Shoaib Yousaf is OFFICIAL per Sean, added as the prelim opener (5 main / 7 prelims)",
+    "add": [
+      {"a": "John Mitchell", "b": "Shoaib Yousaf", "wc": "Lightweight", "sched": 3, "start": null,
+       "source": "Official Nov 19 2026 (Sean, via Kirk): John Mitchell (Irish, PFL; not Bryce) vs Shoaib Yousaf, lightweight, 3 rounds, prelim opener. Not in the odds feed or on UFC.com yet."}
+    ],
     "cancel": [],
     "replace": [],
     "five_rounds": [],
@@ -55,9 +59,10 @@
       "Amir Albazi|Alessandro Costa",
       "Jake Matthews|Tahir Abdullayev",
       "Nikolas Motta|Dom Mar Fan",
-      "Diyar Nurgozhay|Alik Lorenz"
+      "Diyar Nurgozhay|Alik Lorenz",
+      "John Mitchell|Shoaib Yousaf"
     ],
-    "segments": {"main": 5, "prelims": 6, "early": 0},
+    "segments": {"main": 5, "prelims": 7, "early": 0},
     "markov": "ufc-fight-night-prochazka-vs-stirling"
   }
 }

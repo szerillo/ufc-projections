@@ -296,6 +296,9 @@ def check(D, htmlfile, G):
                             + sum(1 for v_ in fl_.get("vetoes", []) if v_["fight_order"] == o_ and v_["side"] not in sides_)
                     if nshown_ != want_: bad.append(("markov", "count", f"{nshown_} Markov items shown, flags file has {want_} for this bout"))
                     if want_ == 0 and "No Markov flag on this bout" not in page: bad.append(("markov", "none", "no-flag line missing"))
+                    if not fl_.get("provisional_fights"):   # Nov 19 (Kirk): no provisional bout left, so no provisional label on a page or in the card
+                        if re.search(r"provisional", page, re.I): bad.append(("markov", "provisional", "provisional label on the page; the flags file lists no provisional bout"))
+                        if re.search(r"provisional", (REPO / "data/cards" / f"{reg['markov_card']}.json").read_text(), re.I): bad.append(("markov", "provisional", "provisional label in the Markov card; the flags file lists no provisional bout"))
                     for po_ in fl_.get("provisional_fights", []):   # Nov 19 (Kirk): a provisional bout stays off every page and the Markov card
                         for nm_ in ord_.get(po_, []):
                             if nm_ in page: bad.append(("markov", "provisional", f"provisional bout fighter {nm_} on the page"))
@@ -475,7 +478,16 @@ def check(D, htmlfile, G):
     order = [o.split("|") for o in OV["order"]]
     want = len(order) - next(i for i, (x, y) in enumerate(order) if bout(x, y, A, B))
     by_t = sorted(BPO["fights"], key=lambda x: x["scheduled_utc"])
-    bp_rank = 1 + next(i for i, x in enumerate(by_t) if bout(x["fighter_a"]["name"], x["fighter_b"]["name"], A, B))
+    # Nov 19 (Kirk): an overrides "add" bout the feed does not carry has no feed rank (it must be absent from the feed and
+    # listed in "add"); every feed bout after it in bout order ranks one lower in the feed than its fight number.
+    feed_has = lambda x_, y_: any(bout(f_["fighter_a"]["name"], f_["fighter_b"]["name"], x_, y_) for f_ in by_t)
+    adds_ = [(ad_["a"], ad_["b"]) for ad_ in OV.get("add", []) if not feed_has(ad_["a"], ad_["b"])]
+    add_ns_ = [len(order) - next(i for i, (x, y) in enumerate(order) if bout(x, y, xa, ya)) for xa, ya in adds_]
+    if any(bout(xa, ya, A, B) for xa, ya in adds_):
+        bp_rank = want
+        if "No odds feed price for this bout yet." not in page: bad.append(("page", "added bout", "no-feed note missing"))
+    else:
+        bp_rank = 1 + next(i for i, x in enumerate(by_t) if bout(x["fighter_a"]["name"], x["fighter_b"]["name"], A, B)) + sum(1 for k in add_ns_ if k < want)
     shown_n = int(re.search(r'fp-fight-num">FIGHT (\d+)<', page).group(1))
     if not (shown_n == want == bp_rank == reg["fight"]): bad.append(("header", "fight number", f"shown {shown_n} order {want} bp {bp_rank}"))
     if any(bout(x, y, A, B) for x, y in OV["cancel"]): bad.append(("page", "cancelled bout", "rendered"))
@@ -836,7 +848,7 @@ def negative(D, G, slug):
         return fn
     def mk_card_edit(T, G_):   # Nov 19: the provisional fight written back into data/cards/<card>.json (restored right after)
         p_ = REPO / "data/cards" / f'{json.load(open(REPO / "data/card_overrides.json"))[slug]["markov"]}.json'
-        G_["RESTORE"] = (p_, p_.read_bytes()); d_ = json.loads(p_.read_bytes()); d_["notes"].append("Fight 12: Shoaib Yousaf vs John Mitchell")
+        G_["RESTORE"] = (p_, p_.read_bytes()); d_ = json.loads(p_.read_bytes()); d_["notes"].append("Fight 12, Yousaf vs Mitchell, is PROVISIONAL.")
         p_.write_text(json.dumps(d_))
     def lock_edit(T, G_):   # a shared, locked file changed after the bless (card_overrides.json, one byte), restored right after the check
         p_ = REPO / "data/card_overrides.json"; G_["RESTORE"] = (p_, p_.read_bytes()); p_.write_bytes(p_.read_bytes() + b"\n")
@@ -944,13 +956,15 @@ def negative(D, G, slug):
         if json.load(open(REPO / "data/card_overrides.json")).get(slug, {}).get("markov"):   # Nov 19: Markov read block
             plants += [
                 ("markov: a flag number off by one", bump_any("mk")),
-                ("markov: Lean relabelled Real (fight 8)", plant_text("fight_08.html", lambda s_: s_.replace('<span class="mk-c">Lean</span>', '<span class="mk-c">Real</span>', 1))),
-                ("markov: D-CODE badge dropped (fight 1)", plant_text("fight_01.html", lambda s_: s_.replace('<span class="mk-b">D-CODE</span>, ', "", 1))),
-                ("markov: veto reason dropped (fight 6)", plant_text("fight_06.html", lambda s_: re.sub(r'<div class="mk-why mk-v">.*?</div>', "", s_, count=1))),
-                ("markov: whole flag removed (fight 4)", plant_text("fight_04.html", lambda s_: re.sub(r'<div class="mk-i mk-lean">.*?</div></div>', "", s_, count=1, flags=re.S))),
-                ("markov: provisional bout shown on a page (fight 11)", plant_text("fight_11.html", lambda s_: s_.replace('<div class="mk-f dim">', '<div class="mk-why">Also on the card: Shoaib Yousaf vs John Mitchell.</div><div class="mk-f dim">', 1))),
-                ("markov: provisional bout left in the Markov card file", mk_card_edit),
-                ("markov: a flag invented on a no-flag bout (fight 11)", plant_text("fight_11.html", lambda s_: s_.replace('<div class="mk-none">', '<div class="mk-i mk-lean"><div class="mk-h"><span class="mk-c">Lean</span> x</div></div><div class="mk-none">', 1))),
+                ("markov: Lean relabelled Real (fight 9)", plant_text("fight_09.html", lambda s_: s_.replace('<span class="mk-c">Lean</span>', '<span class="mk-c">Real</span>', 1))),
+                ("markov: D-CODE badge dropped (fight 2)", plant_text("fight_02.html", lambda s_: s_.replace('<span class="mk-b">D-CODE</span>, ', "", 1))),
+                ("markov: veto reason dropped (fight 7)", plant_text("fight_07.html", lambda s_: re.sub(r'<div class="mk-why mk-v">.*?</div>', "", s_, count=1))),
+                ("markov: whole flag removed (fight 5)", plant_text("fight_05.html", lambda s_: re.sub(r'<div class="mk-i mk-lean">.*?</div></div>', "", s_, count=1, flags=re.S))),
+                ("markov: provisional label put back on a page (fight 1)", plant_text("fight_01.html", lambda s_: s_.replace('<div class="mk-f dim">', '<div class="mk-why">Bout is PROVISIONAL.</div><div class="mk-f dim">', 1))),
+                ("markov: D-CODE veto reason dropped on the added opener (fight 1)", plant_text("fight_01.html", lambda s_: re.sub(r'<div class="mk-why mk-v">.*?</div>', "", s_, count=1))),
+                ("added bout: the no-odds-feed note dropped (fight 1)", plant_text("fight_01.html", lambda s_: s_.replace("No odds feed price for this bout yet.", "", 1))),
+                ("markov: provisional label left in the Markov card file", mk_card_edit),
+                ("markov: a flag invented on a no-flag bout (fight 12)", plant_text("fight_12.html", lambda s_: s_.replace('<div class="mk-none">', '<div class="mk-i mk-lean"><div class="mk-h"><span class="mk-c">Lean</span> x</div></div><div class="mk-none">', 1))),
             ]
     caught = 0
     for label, fn in plants:

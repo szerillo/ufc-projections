@@ -1,14 +1,14 @@
 {
  "markov_card": "ufc-fight-night-prochazka-vs-stirling",
  "fight": 3,
- "of": 11,
+ "of": 12,
  "site_pair": [
-  "Jake Matthews",
-  "Tahir Abdullayev"
+  "Nikolas Motta",
+  "Dom Mar Fan"
  ],
  "pair": [
-  "Jake Matthews",
-  "Tahir Abdullayev"
+  "Nikolas Motta",
+  "Dom Mar Fan"
  ],
  "file": "fight_03.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
@@ -18,51 +18,51 @@
  "rows": [
   {
    "id": "v1",
-   "text": "16-8-0",
+   "text": "3-3-0 (1 NC)",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "a"
    },
-   "desc": "Jake Matthews UFC record",
-   "raw": "16-8-0"
+   "desc": "Nikolas Motta UFC record",
+   "raw": "3-3-0 (1 NC)"
   },
   {
    "id": "v2",
-   "text": "1-0-0",
+   "text": "1-1-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "b"
    },
-   "desc": "Tahir Abdullayev UFC record",
-   "raw": "1-0-0"
+   "desc": "Dom Mar Fan UFC record",
+   "raw": "1-1-0"
   },
   {
    "id": "v3",
-   "text": "32.3",
+   "text": "33.8",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "a"
    },
    "desc": "Age a",
-   "raw": 32.257357973990416
+   "raw": 33.782340862423
   },
   {
    "id": "v4",
-   "text": "29.8",
+   "text": "26.7",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "b"
    },
    "desc": "Age b",
-   "raw": 29.79876796714579
+   "raw": 26.67488021902806
   },
   {
    "id": "v5",
-   "text": "5'11\"",
+   "text": "5'9\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -70,11 +70,11 @@
     "key": "ht"
    },
    "desc": "Height a",
-   "raw": "5'11\""
+   "raw": "5'9\""
   },
   {
    "id": "v6",
-   "text": "5'8\"",
+   "text": "5'11\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -82,29 +82,29 @@
     "key": "ht"
    },
    "desc": "Height b",
-   "raw": "5'8\""
+   "raw": "5'11\""
   },
   {
    "id": "v7",
-   "text": "73\"",
+   "text": "70\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "a"
    },
    "desc": "Reach a",
-   "raw": 73
+   "raw": 70
   },
   {
    "id": "v8",
-   "text": "73\"",
+   "text": "75\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "b"
    },
    "desc": "Reach b",
-   "raw": 73
+   "raw": 75
   },
   {
    "id": "v9",
@@ -132,83 +132,83 @@
   },
   {
    "id": "v11",
-   "text": "-257",
+   "text": "+125",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Jake Matthews",
+    "label": "Nikolas Motta",
     "field": "cost"
    },
-   "desc": "Market ML Jake Matthews",
-   "raw": -257
+   "desc": "Market ML Nikolas Motta",
+   "raw": 125
   },
   {
    "id": "v12",
-   "text": "72.0%",
+   "text": "44.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Jake Matthews"
+    "label": "Nikolas Motta"
    },
-   "desc": "Market implied Jake Matthews",
-   "raw": 0.7198879551820728
+   "desc": "Market implied Nikolas Motta",
+   "raw": 0.4444444444444444
   },
   {
    "id": "v13",
-   "text": "-238",
+   "text": "+140",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Jake Matthews",
+    "label": "Nikolas Motta",
     "book": "draftkings"
    },
-   "desc": "Best US ML Jake Matthews",
-   "raw": -238
+   "desc": "Best US ML Nikolas Motta",
+   "raw": 140
   },
   {
    "id": "v14",
-   "text": "+197",
+   "text": "-160",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Tahir Abdullayev",
+    "label": "Dom Mar Fan",
     "field": "cost"
    },
-   "desc": "Market ML Tahir Abdullayev",
-   "raw": 197
+   "desc": "Market ML Dom Mar Fan",
+   "raw": -160
   },
   {
    "id": "v15",
-   "text": "33.7%",
+   "text": "61.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Tahir Abdullayev"
+    "label": "Dom Mar Fan"
    },
-   "desc": "Market implied Tahir Abdullayev",
-   "raw": 0.3367003367003367
+   "desc": "Market implied Dom Mar Fan",
+   "raw": 0.6153846153846154
   },
   {
    "id": "v16",
-   "text": "+220",
+   "text": "-160",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Tahir Abdullayev",
-    "book": "betmgm"
+    "label": "Dom Mar Fan",
+    "book": "fanduel"
    },
-   "desc": "Best US ML Tahir Abdullayev",
-   "raw": 220
+   "desc": "Best US ML Dom Mar Fan",
+   "raw": -160
   },
   {
    "id": "v17",
-   "text": "-125",
+   "text": "+132",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -217,11 +217,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": -125
+   "raw": 132
   },
   {
    "id": "v18",
-   "text": "55.6%",
+   "text": "43.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -229,11 +229,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD yes implied",
-   "raw": 0.5555555555555556
+   "raw": 0.43103448275862066
   },
   {
    "id": "v19",
-   "text": "-105",
+   "text": "-176",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -242,11 +242,11 @@
     "field": "cost"
    },
    "desc": "Market GTD no",
-   "raw": -105
+   "raw": -176
   },
   {
    "id": "v20",
-   "text": "51.2%",
+   "text": "63.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -254,397 +254,397 @@
     "label": "No"
    },
    "desc": "Market GTD no implied",
-   "raw": 0.5121951219512195
+   "raw": 0.6376811594202898
   },
   {
    "id": "v21",
-   "text": "+145",
+   "text": "+502",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jake Matthews Points",
+    "label": "Nikolas Motta Points",
     "field": "cost"
    },
-   "desc": "Market dec Jake Matthews",
-   "raw": 145
+   "desc": "Market dec Nikolas Motta",
+   "raw": 502
   },
   {
    "id": "v22",
-   "text": "40.8%",
+   "text": "16.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jake Matthews Points"
+    "label": "Nikolas Motta Points"
    },
-   "desc": "Market dec implied Jake Matthews",
-   "raw": 0.40816326530612246
+   "desc": "Market dec implied Nikolas Motta",
+   "raw": 0.16611295681063123
   },
   {
    "id": "v23",
-   "text": "+424",
+   "text": "+250",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jake Matthews KO/TKO/DQ",
+    "label": "Nikolas Motta KO/TKO/DQ",
     "field": "cost"
    },
-   "desc": "Market ko Jake Matthews",
-   "raw": 424
+   "desc": "Market ko Nikolas Motta",
+   "raw": 250
   },
   {
    "id": "v24",
-   "text": "19.1%",
+   "text": "28.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jake Matthews KO/TKO/DQ"
+    "label": "Nikolas Motta KO/TKO/DQ"
    },
-   "desc": "Market ko implied Jake Matthews",
-   "raw": 0.19083969465648856
+   "desc": "Market ko implied Nikolas Motta",
+   "raw": 0.2857142857142857
   },
   {
    "id": "v25",
-   "text": "+440",
+   "text": "+2223",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jake Matthews Submission",
+    "label": "Nikolas Motta Submission",
     "field": "cost"
    },
-   "desc": "Market sub Jake Matthews",
-   "raw": 440
+   "desc": "Market sub Nikolas Motta",
+   "raw": 2223
   },
   {
    "id": "v26",
-   "text": "18.5%",
+   "text": "4.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Jake Matthews Submission"
+    "label": "Nikolas Motta Submission"
    },
-   "desc": "Market sub implied Jake Matthews",
-   "raw": 0.18518518518518517
+   "desc": "Market sub implied Nikolas Motta",
+   "raw": 0.04304778303917348
   },
   {
    "id": "v27",
-   "text": "+166",
+   "text": "+204",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Jake Matthews KO/TKO/DQ",
-     "Jake Matthews Submission"
+     "Nikolas Motta KO/TKO/DQ",
+     "Nikolas Motta Submission"
     ]
    },
-   "desc": "Market ITD price Jake Matthews",
-   "raw": 0.37602487984167376
+   "desc": "Market ITD price Nikolas Motta",
+   "raw": 0.3287620687534592
   },
   {
    "id": "v28",
-   "text": "37.6%",
+   "text": "32.9%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Jake Matthews KO/TKO/DQ",
-     "Jake Matthews Submission"
+     "Nikolas Motta KO/TKO/DQ",
+     "Nikolas Motta Submission"
     ]
    },
-   "desc": "Market ITD implied Jake Matthews",
-   "raw": 0.37602487984167376
+   "desc": "Market ITD implied Nikolas Motta",
+   "raw": 0.3287620687534592
   },
   {
    "id": "v29",
-   "text": "+500",
+   "text": "+245",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Tahir Abdullayev Points",
+    "label": "Dom Mar Fan Points",
     "field": "cost"
    },
-   "desc": "Market dec Tahir Abdullayev",
-   "raw": 500
+   "desc": "Market dec Dom Mar Fan",
+   "raw": 245
   },
   {
    "id": "v30",
-   "text": "16.7%",
+   "text": "29.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Tahir Abdullayev Points"
+    "label": "Dom Mar Fan Points"
    },
-   "desc": "Market dec implied Tahir Abdullayev",
-   "raw": 0.16666666666666666
+   "desc": "Market dec implied Dom Mar Fan",
+   "raw": 0.2898550724637681
   },
   {
    "id": "v31",
-   "text": "+750",
+   "text": "+350",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Tahir Abdullayev KO/TKO/DQ",
+    "label": "Dom Mar Fan KO/TKO/DQ",
     "field": "cost"
    },
-   "desc": "Market ko Tahir Abdullayev",
-   "raw": 750
+   "desc": "Market ko Dom Mar Fan",
+   "raw": 350
   },
   {
    "id": "v32",
-   "text": "11.8%",
+   "text": "22.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Tahir Abdullayev KO/TKO/DQ"
+    "label": "Dom Mar Fan KO/TKO/DQ"
    },
-   "desc": "Market ko implied Tahir Abdullayev",
-   "raw": 0.11764705882352941
+   "desc": "Market ko implied Dom Mar Fan",
+   "raw": 0.2222222222222222
   },
   {
    "id": "v33",
-   "text": "+950",
+   "text": "+399",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Tahir Abdullayev Submission",
+    "label": "Dom Mar Fan Submission",
     "field": "cost"
    },
-   "desc": "Market sub Tahir Abdullayev",
-   "raw": 950
+   "desc": "Market sub Dom Mar Fan",
+   "raw": 399
   },
   {
    "id": "v34",
-   "text": "9.5%",
+   "text": "20.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Tahir Abdullayev Submission"
+    "label": "Dom Mar Fan Submission"
    },
-   "desc": "Market sub implied Tahir Abdullayev",
-   "raw": 0.09523809523809523
+   "desc": "Market sub implied Dom Mar Fan",
+   "raw": 0.20040080160320642
   },
   {
    "id": "v35",
-   "text": "+370",
+   "text": "+137",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Tahir Abdullayev KO/TKO/DQ",
-     "Tahir Abdullayev Submission"
+     "Dom Mar Fan KO/TKO/DQ",
+     "Dom Mar Fan Submission"
     ]
    },
-   "desc": "Market ITD price Tahir Abdullayev",
-   "raw": 0.21288515406162464
+   "desc": "Market ITD price Dom Mar Fan",
+   "raw": 0.4226230238254286
   },
   {
    "id": "v36",
-   "text": "21.3%",
+   "text": "42.3%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Tahir Abdullayev KO/TKO/DQ",
-     "Tahir Abdullayev Submission"
+     "Dom Mar Fan KO/TKO/DQ",
+     "Dom Mar Fan Submission"
     ]
    },
-   "desc": "Market ITD implied Tahir Abdullayev",
-   "raw": 0.21288515406162464
+   "desc": "Market ITD implied Dom Mar Fan",
+   "raw": 0.4226230238254286
   },
   {
    "id": "v37",
-   "text": "-169",
+   "text": "-159",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Jake Matthews",
-     "Tahir Abdullayev"
+     "Nikolas Motta",
+     "Dom Mar Fan"
     ],
-    "side": "a"
+    "side": "b"
    },
-   "desc": "LH open ML Jake Matthews",
-   "raw": -169
+   "desc": "LH open ML Dom Mar Fan",
+   "raw": -159
   },
   {
    "id": "v38",
-   "text": "-250",
+   "text": "-161",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Jake Matthews",
-     "Tahir Abdullayev"
+     "Nikolas Motta",
+     "Dom Mar Fan"
     ],
-    "side": "a",
+    "side": "b",
     "at": "current"
    },
-   "desc": "LH current ML Jake Matthews",
-   "raw": -250
+   "desc": "LH current ML Dom Mar Fan",
+   "raw": -161
   },
   {
    "id": "v39",
-   "text": "8.0",
+   "text": "0.5",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Jake Matthews",
-     "Tahir Abdullayev"
+     "Nikolas Motta",
+     "Dom Mar Fan"
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.08000000000000007
+   "raw": 0.0050000000000000044
   },
   {
    "id": "v40",
-   "text": "72%",
+   "text": "76%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "target.head"
    },
-   "desc": "Target head Jake Matthews",
-   "raw": 0.7189
+   "desc": "Target head Nikolas Motta",
+   "raw": 0.7619
   },
   {
    "id": "v41",
-   "text": "17%",
+   "text": "15%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "target.body"
    },
-   "desc": "Target body Jake Matthews",
-   "raw": 0.1741
+   "desc": "Target body Nikolas Motta",
+   "raw": 0.1472
   },
   {
    "id": "v42",
-   "text": "11%",
+   "text": "9%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "target.leg"
    },
-   "desc": "Target leg Jake Matthews",
-   "raw": 0.107
+   "desc": "Target leg Nikolas Motta",
+   "raw": 0.0909
   },
   {
    "id": "v43",
+   "text": "79%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "target.head"
+   },
+   "desc": "Target head Dom Mar Fan",
+   "raw": 0.79
+  },
+  {
+   "id": "v44",
+   "text": "18%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "target.body"
+   },
+   "desc": "Target body Dom Mar Fan",
+   "raw": 0.18
+  },
+  {
+   "id": "v45",
+   "text": "3%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Dom Mar Fan",
+   "raw": 0.03
+  },
+  {
+   "id": "v46",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 7
+  },
+  {
+   "id": "v47",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 2
+  },
+  {
+   "id": "v48",
    "text": "70%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "target.head"
-   },
-   "desc": "Target head Tahir Abdullayev",
-   "raw": 0.7027
-  },
-  {
-   "id": "v44",
-   "text": "22%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "target.body"
-   },
-   "desc": "Target body Tahir Abdullayev",
-   "raw": 0.2162
-  },
-  {
-   "id": "v45",
-   "text": "8%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "target.leg"
-   },
-   "desc": "Target leg Tahir Abdullayev",
-   "raw": 0.0811
-  },
-  {
-   "id": "v46",
-   "text": "24",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "ufc_fights"
-   },
-   "desc": "Power section fights a",
-   "raw": 24
-  },
-  {
-   "id": "v47",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "ufc_fights"
-   },
-   "desc": "Power section fights b",
-   "raw": 1
-  },
-  {
-   "id": "v48",
-   "text": "28%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "power_w"
    },
    "desc": "Power: drops or stops them on the feet a",
-   "raw": 0.2831
+   "raw": 0.7048
   },
   {
    "id": "v49",
-   "text": "1",
+   "text": "3",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "last5.power"
    },
    "desc": "Power: drops or stops them on the feet last5 a",
-   "raw": 1
+   "raw": 3
   },
   {
    "id": "v50",
-   "text": "5",
+   "text": "4",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "power_fights"
    },
    "desc": "Power: drops or stops them on the feet count a",
-   "raw": 5
+   "raw": 4
   },
   {
    "id": "v51",
@@ -652,7 +652,7 @@
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "power_w"
    },
    "desc": "Power: drops or stops them on the feet b",
@@ -664,7 +664,7 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "last5.power"
    },
    "desc": "Power: drops or stops them on the feet last5 b",
@@ -676,7 +676,7 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "power_fights"
    },
    "desc": "Power: drops or stops them on the feet count b",
@@ -684,39 +684,39 @@
   },
   {
    "id": "v54",
-   "text": "21%",
+   "text": "23%",
    "fmt": "pct0",
    "rule": "em_div",
    "args": {
-    "wc": "Welterweight",
+    "wc": "Lightweight",
     "key": "power"
    },
    "desc": "Division share Power: drops or stops them on the feet",
-   "raw": 0.2146
+   "raw": 0.2309
   },
   {
    "id": "v55",
-   "text": "5%",
+   "text": "42%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "dropped_w"
    },
    "desc": "Durability: gets dropped or stopped a",
-   "raw": 0.0464
+   "raw": 0.4238
   },
   {
    "id": "v56",
-   "text": "0",
+   "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "last5.dropped"
    },
    "desc": "Durability: gets dropped or stopped last5 a",
-   "raw": 0
+   "raw": 2
   },
   {
    "id": "v57",
@@ -724,7 +724,7 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "dropped_fights"
    },
    "desc": "Durability: gets dropped or stopped count a",
@@ -736,7 +736,7 @@
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "dropped_w"
    },
    "desc": "Durability: gets dropped or stopped b",
@@ -748,7 +748,7 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "last5.dropped"
    },
    "desc": "Durability: gets dropped or stopped last5 b",
@@ -760,7 +760,7 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "dropped_fights"
    },
    "desc": "Durability: gets dropped or stopped count b",
@@ -768,39 +768,39 @@
   },
   {
    "id": "v61",
-   "text": "23%",
+   "text": "26%",
    "fmt": "pct0",
    "rule": "em_div",
    "args": {
-    "wc": "Welterweight",
+    "wc": "Lightweight",
     "key": "dropped"
    },
    "desc": "Division share Durability: gets dropped or stopped",
-   "raw": 0.2329
+   "raw": 0.2582
   },
   {
    "id": "v62",
-   "text": "6",
+   "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "outcomes.w.sub"
+    "fighter": "Nikolas Motta",
+    "path": "outcomes.w.ko"
    },
-   "desc": "Outcome wsub Jake Matthews",
-   "raw": 6
+   "desc": "Outcome wko Nikolas Motta",
+   "raw": 2
   },
   {
    "id": "v63",
-   "text": "8",
+   "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "outcomes.w.dec"
    },
-   "desc": "Outcome wdec Jake Matthews",
-   "raw": 8
+   "desc": "Outcome wdec Nikolas Motta",
+   "raw": 1
   },
   {
    "id": "v64",
@@ -808,23 +808,23 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "outcomes.l.dec"
+    "fighter": "Nikolas Motta",
+    "path": "outcomes.l.ko"
    },
-   "desc": "Outcome ldec Jake Matthews",
+   "desc": "Outcome lko Nikolas Motta",
    "raw": 3
   },
   {
    "id": "v65",
-   "text": "4",
+   "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "outcomes.l.sub"
+    "fighter": "Dom Mar Fan",
+    "path": "outcomes.w.dec"
    },
-   "desc": "Outcome lsub Jake Matthews",
-   "raw": 4
+   "desc": "Outcome wdec Dom Mar Fan",
+   "raw": 1
   },
   {
    "id": "v66",
@@ -832,119 +832,119 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "outcomes.w.ko"
+    "fighter": "Dom Mar Fan",
+    "path": "outcomes.l.sub"
    },
-   "desc": "Outcome wko Tahir Abdullayev",
+   "desc": "Outcome lsub Dom Mar Fan",
    "raw": 1
   },
   {
    "id": "v67",
-   "text": "58%",
+   "text": "57%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "rounds.0.won"
    },
-   "desc": "R1 won Jake Matthews",
-   "raw": 0.5833
+   "desc": "R1 won Nikolas Motta",
+   "raw": 0.5714
   },
   {
    "id": "v68",
-   "text": "+0.7",
+   "text": "-0.3",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "rounds.0.diff_pm"
    },
-   "desc": "R1 diff Jake Matthews",
-   "raw": 0.691
+   "desc": "R1 diff Nikolas Motta",
+   "raw": -0.3
   },
   {
    "id": "v69",
-   "text": "24",
+   "text": "7",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "rounds.0.fights"
    },
-   "desc": "R1 fights Jake Matthews",
-   "raw": 24
+   "desc": "R1 fights Nikolas Motta",
+   "raw": 7
   },
   {
    "id": "v70",
-   "text": "70%",
+   "text": "25%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "rounds.1.won"
    },
-   "desc": "R2 won Jake Matthews",
-   "raw": 0.7
+   "desc": "R2 won Nikolas Motta",
+   "raw": 0.25
   },
   {
    "id": "v71",
-   "text": "+1.0",
+   "text": "-4.1",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "rounds.1.diff_pm"
    },
-   "desc": "R2 diff Jake Matthews",
-   "raw": 1.034
+   "desc": "R2 diff Nikolas Motta",
+   "raw": -4.123
   },
   {
    "id": "v72",
-   "text": "20",
+   "text": "4",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "rounds.1.fights"
    },
-   "desc": "R2 fights Jake Matthews",
-   "raw": 20
+   "desc": "R2 fights Nikolas Motta",
+   "raw": 4
   },
   {
    "id": "v73",
-   "text": "69%",
+   "text": "50%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "rounds.2.won"
    },
-   "desc": "R3 won Jake Matthews",
-   "raw": 0.6875
+   "desc": "R3 won Nikolas Motta",
+   "raw": 0.5
   },
   {
    "id": "v74",
-   "text": "+0.6",
+   "text": "+1.3",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "rounds.2.diff_pm"
    },
-   "desc": "R3 diff Jake Matthews",
-   "raw": 0.592
+   "desc": "R3 diff Nikolas Motta",
+   "raw": 1.344
   },
   {
    "id": "v75",
-   "text": "16",
+   "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "rounds.2.fights"
    },
-   "desc": "R3 fights Jake Matthews",
-   "raw": 16
+   "desc": "R3 fights Nikolas Motta",
+   "raw": 2
   },
   {
    "id": "v76",
@@ -952,59 +952,59 @@
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "rounds.0.won"
    },
-   "desc": "R1 won Tahir Abdullayev",
+   "desc": "R1 won Dom Mar Fan",
    "raw": 0.0
   },
   {
    "id": "v77",
-   "text": "-0.4",
+   "text": "+0.7",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "rounds.0.diff_pm"
    },
-   "desc": "R1 diff Tahir Abdullayev",
-   "raw": -0.4
+   "desc": "R1 diff Dom Mar Fan",
+   "raw": 0.672
   },
   {
    "id": "v78",
-   "text": "1",
+   "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "rounds.0.fights"
    },
-   "desc": "R1 fights Tahir Abdullayev",
-   "raw": 1
+   "desc": "R1 fights Dom Mar Fan",
+   "raw": 2
   },
   {
    "id": "v79",
-   "text": "0%",
+   "text": "100%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "rounds.1.won"
    },
-   "desc": "R2 won Tahir Abdullayev",
-   "raw": 0.0
+   "desc": "R2 won Dom Mar Fan",
+   "raw": 1.0
   },
   {
    "id": "v80",
-   "text": "-1.8",
+   "text": "+5.0",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "rounds.1.diff_pm"
    },
-   "desc": "R2 diff Tahir Abdullayev",
-   "raw": -1.8
+   "desc": "R2 diff Dom Mar Fan",
+   "raw": 5.0
   },
   {
    "id": "v81",
@@ -1012,35 +1012,35 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "rounds.1.fights"
    },
-   "desc": "R2 fights Tahir Abdullayev",
+   "desc": "R2 fights Dom Mar Fan",
    "raw": 1
   },
   {
    "id": "v82",
-   "text": "100%",
+   "text": "0%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "rounds.2.won"
    },
-   "desc": "R3 won Tahir Abdullayev",
-   "raw": 1.0
+   "desc": "R3 won Dom Mar Fan",
+   "raw": 0.0
   },
   {
    "id": "v83",
-   "text": "+2.9",
+   "text": "+0.0",
    "fmt": "s1",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "rounds.2.diff_pm"
    },
-   "desc": "R3 diff Tahir Abdullayev",
-   "raw": 2.91
+   "desc": "R3 diff Dom Mar Fan",
+   "raw": 0.0
   },
   {
    "id": "v84",
@@ -1048,1189 +1048,611 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "rounds.2.fights"
    },
-   "desc": "R3 fights Tahir Abdullayev",
+   "desc": "R3 fights Dom Mar Fan",
    "raw": 1
   },
   {
    "id": "v85",
-   "text": "+21",
+   "text": "-3",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "fights.0.rw.0.2"
    },
-   "desc": "R1 fight diff Jake Matthews 0",
-   "raw": 21
+   "desc": "R1 fight diff Nikolas Motta 0",
+   "raw": -3
   },
   {
    "id": "v86",
-   "text": "-9",
+   "text": "+9",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "fights.1.rw.0.2"
    },
-   "desc": "R1 fight diff Jake Matthews 1",
-   "raw": -9
+   "desc": "R1 fight diff Nikolas Motta 1",
+   "raw": 9
   },
   {
    "id": "v87",
-   "text": "-2",
+   "text": "+9",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "fights.2.rw.0.2"
    },
-   "desc": "R1 fight diff Jake Matthews 2",
-   "raw": -2
+   "desc": "R1 fight diff Nikolas Motta 2",
+   "raw": 9
   },
   {
    "id": "v88",
-   "text": "-2",
+   "text": "-14",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "fights.3.rw.0.2"
    },
-   "desc": "R1 fight diff Jake Matthews 3",
-   "raw": -2
+   "desc": "R1 fight diff Nikolas Motta 3",
+   "raw": -14
   },
   {
    "id": "v89",
-   "text": "+12",
+   "text": "-6",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "fights.4.rw.0.2"
    },
-   "desc": "R1 fight diff Jake Matthews 4",
-   "raw": 12
+   "desc": "R1 fight diff Nikolas Motta 4",
+   "raw": -6
   },
   {
    "id": "v90",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Nikolas Motta 5",
+   "raw": 9
+  },
+  {
+   "id": "v91",
    "text": "-12",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.5.rw.0.2"
+    "fighter": "Nikolas Motta",
+    "path": "fights.6.rw.0.2"
    },
-   "desc": "R1 fight diff Jake Matthews 5",
+   "desc": "R1 fight diff Nikolas Motta 6",
    "raw": -12
   },
   {
-   "id": "v91",
-   "text": "+7",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.6.rw.0.2"
-   },
-   "desc": "R1 fight diff Jake Matthews 6",
-   "raw": 7
-  },
-  {
    "id": "v92",
-   "text": "-10",
+   "text": "-24",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.7.rw.0.2"
+    "fighter": "Nikolas Motta",
+    "path": "fights.0.rw.1.2"
    },
-   "desc": "R1 fight diff Jake Matthews 7",
-   "raw": -10
+   "desc": "R2 fight diff Nikolas Motta 0",
+   "raw": -24
   },
   {
    "id": "v93",
-   "text": "+15",
+   "text": "+1",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.8.rw.0.2"
+    "fighter": "Nikolas Motta",
+    "path": "fights.1.rw.1.2"
    },
-   "desc": "R1 fight diff Jake Matthews 8",
-   "raw": 15
+   "desc": "R2 fight diff Nikolas Motta 1",
+   "raw": 1
   },
   {
    "id": "v94",
-   "text": "-4",
+   "text": "-29",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.9.rw.0.2"
+    "fighter": "Nikolas Motta",
+    "path": "fights.3.rw.1.2"
    },
-   "desc": "R1 fight diff Jake Matthews 9",
-   "raw": -4
+   "desc": "R2 fight diff Nikolas Motta 3",
+   "raw": -29
   },
   {
    "id": "v95",
-   "text": "+11",
+   "text": "-15",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.10.rw.0.2"
+    "fighter": "Nikolas Motta",
+    "path": "fights.6.rw.1.2"
    },
-   "desc": "R1 fight diff Jake Matthews 10",
-   "raw": 11
+   "desc": "R2 fight diff Nikolas Motta 6",
+   "raw": -15
   },
   {
    "id": "v96",
-   "text": "+8",
+   "text": "+12",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.11.rw.0.2"
+    "fighter": "Nikolas Motta",
+    "path": "fights.1.rw.2.2"
    },
-   "desc": "R1 fight diff Jake Matthews 11",
-   "raw": 8
+   "desc": "R3 fight diff Nikolas Motta 1",
+   "raw": 12
   },
   {
    "id": "v97",
-   "text": "+10",
+   "text": "-1",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.12.rw.0.2"
+    "fighter": "Nikolas Motta",
+    "path": "fights.3.rw.2.2"
    },
-   "desc": "R1 fight diff Jake Matthews 12",
-   "raw": 10
+   "desc": "R3 fight diff Nikolas Motta 3",
+   "raw": -1
   },
   {
    "id": "v98",
-   "text": "+8",
+   "text": "+0",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.13.rw.0.2"
+    "fighter": "Dom Mar Fan",
+    "path": "fights.0.rw.0.2"
    },
-   "desc": "R1 fight diff Jake Matthews 13",
-   "raw": 8
+   "desc": "R1 fight diff Dom Mar Fan 0",
+   "raw": 0
   },
   {
    "id": "v99",
-   "text": "+11",
+   "text": "+6",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.14.rw.0.2"
+    "fighter": "Dom Mar Fan",
+    "path": "fights.1.rw.0.2"
    },
-   "desc": "R1 fight diff Jake Matthews 14",
-   "raw": 11
+   "desc": "R1 fight diff Dom Mar Fan 1",
+   "raw": 6
   },
   {
    "id": "v100",
-   "text": "+17",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.15.rw.0.2"
-   },
-   "desc": "R1 fight diff Jake Matthews 15",
-   "raw": 17
-  },
-  {
-   "id": "v101",
-   "text": "-8",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.16.rw.0.2"
-   },
-   "desc": "R1 fight diff Jake Matthews 16",
-   "raw": -8
-  },
-  {
-   "id": "v102",
-   "text": "-2",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.17.rw.0.2"
-   },
-   "desc": "R1 fight diff Jake Matthews 17",
-   "raw": -2
-  },
-  {
-   "id": "v103",
-   "text": "-19",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.18.rw.0.2"
-   },
-   "desc": "R1 fight diff Jake Matthews 18",
-   "raw": -19
-  },
-  {
-   "id": "v104",
-   "text": "+1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.19.rw.0.2"
-   },
-   "desc": "R1 fight diff Jake Matthews 19",
-   "raw": 1
-  },
-  {
-   "id": "v105",
-   "text": "+2",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.20.rw.0.2"
-   },
-   "desc": "R1 fight diff Jake Matthews 20",
-   "raw": 2
-  },
-  {
-   "id": "v106",
-   "text": "-6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.21.rw.0.2"
-   },
-   "desc": "R1 fight diff Jake Matthews 21",
-   "raw": -6
-  },
-  {
-   "id": "v107",
-   "text": "+5",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.22.rw.0.2"
-   },
-   "desc": "R1 fight diff Jake Matthews 22",
-   "raw": 5
-  },
-  {
-   "id": "v108",
-   "text": "+24",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.23.rw.0.2"
-   },
-   "desc": "R1 fight diff Jake Matthews 23",
-   "raw": 24
-  },
-  {
-   "id": "v109",
-   "text": "+1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.0.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 0",
-   "raw": 1
-  },
-  {
-   "id": "v110",
-   "text": "+0",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.1.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 1",
-   "raw": 0
-  },
-  {
-   "id": "v111",
-   "text": "+4",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.3.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 3",
-   "raw": 4
-  },
-  {
-   "id": "v112",
-   "text": "+20",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.4.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 4",
-   "raw": 20
-  },
-  {
-   "id": "v113",
-   "text": "-18",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.5.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 5",
-   "raw": -18
-  },
-  {
-   "id": "v114",
-   "text": "+17",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.6.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 6",
-   "raw": 17
-  },
-  {
-   "id": "v115",
-   "text": "+0",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.7.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 7",
-   "raw": 0
-  },
-  {
-   "id": "v116",
-   "text": "+14",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.8.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 8",
-   "raw": 14
-  },
-  {
-   "id": "v117",
-   "text": "+1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.9.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 9",
-   "raw": 1
-  },
-  {
-   "id": "v118",
-   "text": "+11",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.10.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 10",
-   "raw": 11
-  },
-  {
-   "id": "v119",
-   "text": "-6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.11.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 11",
-   "raw": -6
-  },
-  {
-   "id": "v120",
-   "text": "+13",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.12.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 12",
-   "raw": 13
-  },
-  {
-   "id": "v121",
-   "text": "-6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.13.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 13",
-   "raw": -6
-  },
-  {
-   "id": "v122",
-   "text": "-3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.15.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 15",
-   "raw": -3
-  },
-  {
-   "id": "v123",
-   "text": "-2",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.16.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 16",
-   "raw": -2
-  },
-  {
-   "id": "v124",
-   "text": "+0",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.17.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 17",
-   "raw": 0
-  },
-  {
-   "id": "v125",
-   "text": "-3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.19.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 19",
-   "raw": -3
-  },
-  {
-   "id": "v126",
-   "text": "+39",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.20.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 20",
-   "raw": 39
-  },
-  {
-   "id": "v127",
-   "text": "+7",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.22.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 22",
-   "raw": 7
-  },
-  {
-   "id": "v128",
-   "text": "+6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.23.rw.1.2"
-   },
-   "desc": "R2 fight diff Jake Matthews 23",
-   "raw": 6
-  },
-  {
-   "id": "v129",
-   "text": "+6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.0.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 0",
-   "raw": 6
-  },
-  {
-   "id": "v130",
-   "text": "-4",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.1.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 1",
-   "raw": -4
-  },
-  {
-   "id": "v131",
-   "text": "+7",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.3.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 3",
-   "raw": 7
-  },
-  {
-   "id": "v132",
-   "text": "+0",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.4.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 4",
-   "raw": 0
-  },
-  {
-   "id": "v133",
-   "text": "+3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.5.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 5",
-   "raw": 3
-  },
-  {
-   "id": "v134",
-   "text": "-3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.7.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 7",
-   "raw": -3
-  },
-  {
-   "id": "v135",
-   "text": "-13",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.9.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 9",
-   "raw": -13
-  },
-  {
-   "id": "v136",
    "text": "+25",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.10.rw.2.2"
+    "fighter": "Dom Mar Fan",
+    "path": "fights.1.rw.1.2"
    },
-   "desc": "R3 fight diff Jake Matthews 10",
+   "desc": "R2 fight diff Dom Mar Fan 1",
    "raw": 25
   },
   {
-   "id": "v137",
-   "text": "-19",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.11.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 11",
-   "raw": -19
-  },
-  {
-   "id": "v138",
-   "text": "+21",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.12.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 12",
-   "raw": 21
-  },
-  {
-   "id": "v139",
-   "text": "-3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.13.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 13",
-   "raw": -3
-  },
-  {
-   "id": "v140",
+   "id": "v101",
    "text": "+0",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.15.rw.2.2"
+    "fighter": "Dom Mar Fan",
+    "path": "fights.1.rw.2.2"
    },
-   "desc": "R3 fight diff Jake Matthews 15",
+   "desc": "R3 fight diff Dom Mar Fan 1",
    "raw": 0
   },
   {
-   "id": "v141",
-   "text": "+6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.16.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 16",
-   "raw": 6
-  },
-  {
-   "id": "v142",
-   "text": "-6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.17.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 17",
-   "raw": -6
-  },
-  {
-   "id": "v143",
-   "text": "+3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.19.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 19",
-   "raw": 3
-  },
-  {
-   "id": "v144",
-   "text": "+19",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "fights.23.rw.2.2"
-   },
-   "desc": "R3 fight diff Jake Matthews 23",
-   "raw": 19
-  },
-  {
-   "id": "v145",
-   "text": "-2",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "fights.0.rw.0.2"
-   },
-   "desc": "R1 fight diff Tahir Abdullayev 0",
-   "raw": -2
-  },
-  {
-   "id": "v146",
-   "text": "-9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "fights.0.rw.1.2"
-   },
-   "desc": "R2 fight diff Tahir Abdullayev 0",
-   "raw": -9
-  },
-  {
-   "id": "v147",
-   "text": "+13",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "fights.0.rw.2.2"
-   },
-   "desc": "R3 fight diff Tahir Abdullayev 0",
-   "raw": 13
-  },
-  {
-   "id": "v148",
-   "text": "1.36",
-   "fmt": "n2",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "grap.td15"
-   },
-   "desc": "Takedowns /15 a",
-   "raw": 1.36
-  },
-  {
-   "id": "v149",
-   "text": "2.07",
-   "fmt": "n2",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "grap.td15"
-   },
-   "desc": "Takedowns /15 b",
-   "raw": 2.074
-  },
-  {
-   "id": "v150",
-   "text": "42%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "grap.td_acc"
-   },
-   "desc": "TD accuracy a",
-   "raw": 0.4167
-  },
-  {
-   "id": "v151",
-   "text": "33%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "grap.td_acc"
-   },
-   "desc": "TD accuracy b",
-   "raw": 0.3333
-  },
-  {
-   "id": "v152",
-   "text": "67%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "grap.tdd"
-   },
-   "desc": "TD defence a",
-   "raw": 0.6667
-  },
-  {
-   "id": "v153",
-   "text": "100%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "grap.tdd"
-   },
-   "desc": "TD defence b",
-   "raw": 1.0
-  },
-  {
-   "id": "v154",
-   "text": "26%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "grap.ctrl"
-   },
-   "desc": "Time in control a",
-   "raw": 0.2644
-  },
-  {
-   "id": "v155",
-   "text": "22%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "grap.ctrl"
-   },
-   "desc": "Time in control b",
-   "raw": 0.2212
-  },
-  {
-   "id": "v156",
-   "text": "+11.7%",
-   "fmt": "spp",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "grap.adj_net_ctrl"
-   },
-   "desc": "Net control, opp-adjusted a",
-   "raw": 0.1171
-  },
-  {
-   "id": "v157",
-   "text": "+17.0%",
-   "fmt": "spp",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "grap.adj_net_ctrl"
-   },
-   "desc": "Net control, opp-adjusted b",
-   "raw": 0.1696
-  },
-  {
-   "id": "v158",
-   "text": "15%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "grap.ctrl_ag"
-   },
-   "desc": "Time controlled a",
-   "raw": 0.1472
-  },
-  {
-   "id": "v159",
-   "text": "4%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Tahir Abdullayev",
-    "path": "grap.ctrl_ag"
-   },
-   "desc": "Time controlled b",
-   "raw": 0.038
-  },
-  {
-   "id": "v160",
-   "text": "0.71",
-   "fmt": "n2",
-   "rule": "em",
-   "args": {
-    "fighter": "Jake Matthews",
-    "path": "grap.sub15"
-   },
-   "desc": "Sub attempts /15 a",
-   "raw": 0.707
-  },
-  {
-   "id": "v161",
+   "id": "v102",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Nikolas Motta",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v103",
+   "text": "0.79",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 0.792
+  },
+  {
+   "id": "v104",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.25
+  },
+  {
+   "id": "v105",
+   "text": "82%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.8235
+  },
+  {
+   "id": "v106",
+   "text": "82%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.8182
+  },
+  {
+   "id": "v107",
+   "text": "4%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.0398
+  },
+  {
+   "id": "v108",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.1893
+  },
+  {
+   "id": "v109",
+   "text": "-9.6%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": -0.0956
+  },
+  {
+   "id": "v110",
+   "text": "-20.9%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": -0.2086
+  },
+  {
+   "id": "v111",
+   "text": "13%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.1278
+  },
+  {
+   "id": "v112",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.382
+  },
+  {
+   "id": "v113",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v114",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
     "path": "grap.sub15"
    },
    "desc": "Sub attempts /15 b",
    "raw": 0.0
   },
   {
-   "id": "v162",
-   "text": "+0.78",
+   "id": "v115",
+   "text": "-1.25",
    "fmt": "s2",
    "rule": "em_sum",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "paths": [
      "target_diff.head",
      "target_diff.body",
      "target_diff.leg"
     ]
    },
-   "desc": "Total diff Jake Matthews",
-   "raw": 0.78
+   "desc": "Total diff Nikolas Motta",
+   "raw": -1.252
   },
   {
-   "id": "v163",
-   "text": "+0.14",
+   "id": "v116",
+   "text": "+1.64",
    "fmt": "s2",
    "rule": "em_sum",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "paths": [
      "target_diff.head",
      "target_diff.body",
      "target_diff.leg"
     ]
    },
-   "desc": "Total diff Tahir Abdullayev",
-   "raw": 0.1389999999999999
+   "desc": "Total diff Dom Mar Fan",
+   "raw": 1.637
   },
   {
-   "id": "v164",
-   "text": "+0.78",
+   "id": "v117",
+   "text": "-1.31",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "sos.adj_sd"
    },
    "desc": "Opp-adjusted diff a",
-   "raw": 0.78
+   "raw": -1.314
   },
   {
-   "id": "v165",
-   "text": "+0.03",
+   "id": "v118",
+   "text": "+1.51",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "sos.adj_sd"
    },
    "desc": "Opp-adjusted diff b",
-   "raw": 0.027
+   "raw": 1.507
   },
   {
-   "id": "v166",
-   "text": "+0.84",
+   "id": "v119",
+   "text": "-0.02",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "target_diff.head"
    },
    "desc": "Head diff /min a",
-   "raw": 0.838
+   "raw": -0.02
   },
   {
-   "id": "v167",
-   "text": "+1.04",
+   "id": "v120",
+   "text": "+2.17",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "target_diff.head"
    },
    "desc": "Head diff /min b",
-   "raw": 1.037
+   "raw": 2.165
   },
   {
-   "id": "v168",
-   "text": "+0.13",
+   "id": "v121",
+   "text": "-0.53",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "target_diff.body"
    },
    "desc": "Body diff /min a",
-   "raw": 0.134
+   "raw": -0.528
   },
   {
-   "id": "v169",
-   "text": "-0.76",
+   "id": "v122",
+   "text": "-0.58",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "target_diff.body"
    },
    "desc": "Body diff /min b",
-   "raw": -0.76
+   "raw": -0.581
   },
   {
-   "id": "v170",
-   "text": "-0.19",
+   "id": "v123",
+   "text": "-0.70",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "target_diff.leg"
    },
    "desc": "Leg diff /min a",
-   "raw": -0.192
+   "raw": -0.704
   },
   {
-   "id": "v171",
-   "text": "-0.14",
+   "id": "v124",
+   "text": "+0.05",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "target_diff.leg"
    },
    "desc": "Leg diff /min b",
-   "raw": -0.138
+   "raw": 0.053
   },
   {
-   "id": "v172",
-   "text": "69%",
+   "id": "v125",
+   "text": "59%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "hdef"
    },
    "desc": "Head defence a",
-   "raw": 0.6904
+   "raw": 0.5922
   },
   {
-   "id": "v173",
-   "text": "71%",
+   "id": "v126",
+   "text": "60%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "hdef"
    },
    "desc": "Head defence b",
-   "raw": 0.7105
+   "raw": 0.6
   },
   {
-   "id": "v174",
-   "text": "1",
+   "id": "v127",
+   "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "ufc_fights"
    },
-   "desc": "Head defence sample Tahir Abdullayev",
-   "raw": 1
+   "desc": "Head defence sample Dom Mar Fan",
+   "raw": 2
   },
   {
-   "id": "v175",
-   "text": "11.5",
+   "id": "v128",
+   "text": "6.3",
    "fmt": "n1",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "pace.min"
    },
    "desc": "Avg fight, min a",
-   "raw": 11.487
+   "raw": 6.325
   },
   {
-   "id": "v176",
-   "text": "14.5",
+   "id": "v129",
+   "text": "9.5",
    "fmt": "n1",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "pace.min"
    },
    "desc": "Avg fight, min b",
-   "raw": 14.467
+   "raw": 9.467
   },
   {
-   "id": "v177",
-   "text": "1",
+   "id": "v130",
+   "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "pace.n"
    },
-   "desc": "Avg fight, min sample Tahir Abdullayev",
-   "raw": 1
+   "desc": "Avg fight, min sample Dom Mar Fan",
+   "raw": 2
   },
   {
-   "id": "v178",
-   "text": "17%",
+   "id": "v131",
+   "text": "50%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Jake Matthews",
+    "fighter": "Nikolas Motta",
     "path": "pace.r1"
    },
    "desc": "Finished in R1 a",
-   "raw": 0.1667
+   "raw": 0.5
   },
   {
-   "id": "v179",
-   "text": "0%",
+   "id": "v132",
+   "text": "50%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "pace.r1"
    },
    "desc": "Finished in R1 b",
-   "raw": 0.0
+   "raw": 0.5
   },
   {
-   "id": "v180",
-   "text": "1",
+   "id": "v133",
+   "text": "2",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Tahir Abdullayev",
+    "fighter": "Dom Mar Fan",
     "path": "pace.n"
    },
-   "desc": "Finished in R1 sample Tahir Abdullayev",
-   "raw": 1
+   "desc": "Finished in R1 sample Dom Mar Fan",
+   "raw": 2
   },
   {
-   "id": "v181",
-   "text": "+198",
-   "fmt": "ml",
-   "rule": "mk",
-   "args": {
-    "kind": "vetoes",
-    "i": 1,
-    "key": "market_odds",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov veto price",
-   "raw": 198
-  },
-  {
-   "id": "v182",
-   "text": "-303",
+   "id": "v134",
+   "text": "+320",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2238,12 +1660,12 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Jake Matthews Carlston Harris",
-   "raw": -303
+   "desc": "Close Nikolas Motta Nazim Sadykhov",
+   "raw": 320
   },
   {
-   "id": "v183",
-   "text": "-333",
+   "id": "v135",
+   "text": "+185",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2251,12 +1673,12 @@
     "i": 1,
     "key": "od.mc"
    },
-   "desc": "Close Jake Matthews Neil Magny",
-   "raw": -333
+   "desc": "Close Nikolas Motta Maheshate",
+   "raw": 185
   },
   {
-   "id": "v184",
-   "text": "+100",
+   "id": "v136",
+   "text": "+275",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2264,12 +1686,12 @@
     "i": 2,
     "key": "od.mc"
    },
-   "desc": "Close Jake Matthews Chidi Njokuani",
-   "raw": 100
+   "desc": "Close Nikolas Motta Tom Nolan",
+   "raw": 275
   },
   {
-   "id": "v185",
-   "text": "-235",
+   "id": "v137",
+   "text": "-132",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2277,12 +1699,12 @@
     "i": 3,
     "key": "od.mc"
    },
-   "desc": "Close Jake Matthews Francisco Prado",
-   "raw": -235
+   "desc": "Close Nikolas Motta Trey Ogden",
+   "raw": -132
   },
   {
-   "id": "v186",
-   "text": "-169",
+   "id": "v138",
+   "text": "+160",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2290,12 +1712,12 @@
     "i": 4,
     "key": "od.mc"
    },
-   "desc": "Close Jake Matthews Phil Rowe",
-   "raw": -169
+   "desc": "Close Nikolas Motta Manuel Torres",
+   "raw": 160
   },
   {
-   "id": "v187",
-   "text": "+260",
+   "id": "v139",
+   "text": "-179",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2303,12 +1725,12 @@
     "i": 5,
     "key": "od.mc"
    },
-   "desc": "Close Jake Matthews Michael Morales",
-   "raw": 260
+   "desc": "Close Nikolas Motta Cameron VanCamp",
+   "raw": -179
   },
   {
-   "id": "v188",
-   "text": "-278",
+   "id": "v140",
+   "text": "-175",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2316,38 +1738,12 @@
     "i": 6,
     "key": "od.mc"
    },
-   "desc": "Close Jake Matthews Darrius Flowers",
-   "raw": -278
+   "desc": "Close Nikolas Motta Jim Miller",
+   "raw": -175
   },
   {
-   "id": "v189",
-   "text": "-303",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 7,
-    "key": "od.mc"
-   },
-   "desc": "Close Jake Matthews Matthew Semelsberger",
-   "raw": -303
-  },
-  {
-   "id": "v190",
-   "text": "-115",
-   "fmt": "ml",
-   "rule": "fight",
-   "args": {
-    "side": "a",
-    "i": 8,
-    "key": "od.mc"
-   },
-   "desc": "Close Jake Matthews Andre Fialho",
-   "raw": -115
-  },
-  {
-   "id": "v191",
-   "text": "+105",
+   "id": "v141",
+   "text": "+160",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2355,8 +1751,21 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Tahir Abdullayev Jefferson Nascimento",
-   "raw": 105
+   "desc": "Close Dom Mar Fan Kody Steele",
+   "raw": 160
+  },
+  {
+   "id": "v142",
+   "text": "-159",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Dom Mar Fan Sangwook Kim",
+   "raw": -159
   }
  ],
  "gaps": [

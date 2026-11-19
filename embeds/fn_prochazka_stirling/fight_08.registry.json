@@ -1,14 +1,14 @@
 {
  "markov_card": "ufc-fight-night-prochazka-vs-stirling",
  "fight": 8,
- "of": 11,
+ "of": 12,
  "site_pair": [
-  "Kyoji Horiguchi",
-  "Asu Almabayev"
+  "Jared Cannonier",
+  "Ikram Aliskerov"
  ],
  "pair": [
-  "Kyoji Horiguchi",
-  "Asu Almabayev"
+  "Jared Cannonier",
+  "Ikram Aliskerov"
  ],
  "file": "fight_08.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
@@ -18,51 +18,51 @@
  "rows": [
   {
    "id": "v1",
-   "text": "9-2-0",
+   "text": "11-10-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "a"
    },
-   "desc": "Kyoji Horiguchi UFC record",
-   "raw": "9-2-0"
+   "desc": "Jared Cannonier UFC record",
+   "raw": "11-10-0"
   },
   {
    "id": "v2",
-   "text": "7-1-0",
+   "text": "5-1-0",
    "fmt": "str",
    "rule": "record",
    "args": {
     "side": "b"
    },
-   "desc": "Asu Almabayev UFC record",
-   "raw": "7-1-0"
+   "desc": "Ikram Aliskerov UFC record",
+   "raw": "5-1-0"
   },
   {
    "id": "v3",
-   "text": "36.1",
+   "text": "42.7",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "a"
    },
    "desc": "Age a",
-   "raw": 36.10951403148528
+   "raw": 42.68309377138946
   },
   {
    "id": "v4",
-   "text": "32.8",
+   "text": "34.0",
    "fmt": "n1",
    "rule": "age",
    "args": {
     "side": "b"
    },
    "desc": "Age b",
-   "raw": 32.82135523613963
+   "raw": 33.95482546201232
   },
   {
    "id": "v5",
-   "text": "5'5\"",
+   "text": "5'11\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -70,11 +70,11 @@
     "key": "ht"
    },
    "desc": "Height a",
-   "raw": "5'5\""
+   "raw": "5'11\""
   },
   {
    "id": "v6",
-   "text": "5'4\"",
+   "text": "6'0\"",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -82,33 +82,33 @@
     "key": "ht"
    },
    "desc": "Height b",
-   "raw": "5'4\""
+   "raw": "6'0\""
   },
   {
    "id": "v7",
-   "text": "66\"",
+   "text": "77\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "a"
    },
    "desc": "Reach a",
-   "raw": 66
+   "raw": 77
   },
   {
    "id": "v8",
-   "text": "65\"",
+   "text": "76\"",
    "fmt": "in",
    "rule": "bio_reach",
    "args": {
     "side": "b"
    },
    "desc": "Reach b",
-   "raw": 65
+   "raw": 76
   },
   {
    "id": "v9",
-   "text": "Orthodox",
+   "text": "Switch",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -116,11 +116,11 @@
     "key": "stance"
    },
    "desc": "Stance a",
-   "raw": "Orthodox"
+   "raw": "Switch"
   },
   {
    "id": "v10",
-   "text": "Orthodox",
+   "text": "Southpaw",
    "fmt": "str",
    "rule": "bio",
    "args": {
@@ -128,87 +128,87 @@
     "key": "stance"
    },
    "desc": "Stance b",
-   "raw": "Orthodox"
+   "raw": "Southpaw"
   },
   {
    "id": "v11",
-   "text": "-212",
+   "text": "+237",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Kyoji Horiguchi",
+    "label": "Jared Cannonier",
     "field": "cost"
    },
-   "desc": "Market ML Kyoji Horiguchi",
-   "raw": -212
+   "desc": "Market ML Jared Cannonier",
+   "raw": 237
   },
   {
    "id": "v12",
-   "text": "67.9%",
+   "text": "29.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Kyoji Horiguchi"
+    "label": "Jared Cannonier"
    },
-   "desc": "Market implied Kyoji Horiguchi",
-   "raw": 0.6794871794871795
+   "desc": "Market implied Jared Cannonier",
+   "raw": 0.29673590504451036
   },
   {
    "id": "v13",
-   "text": "-210",
+   "text": "+240",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Kyoji Horiguchi",
-    "book": "betmgm"
+    "label": "Jared Cannonier",
+    "book": "draftkings"
    },
-   "desc": "Best US ML Kyoji Horiguchi",
-   "raw": -210
+   "desc": "Best US ML Jared Cannonier",
+   "raw": 240
   },
   {
    "id": "v14",
-   "text": "+167",
+   "text": "-302",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "moneyline",
-    "label": "Assu Almabayev",
+    "label": "Ikram Aliskerov",
     "field": "cost"
    },
-   "desc": "Market ML Asu Almabayev",
-   "raw": 167
+   "desc": "Market ML Ikram Aliskerov",
+   "raw": -302
   },
   {
    "id": "v15",
-   "text": "37.5%",
+   "text": "75.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "moneyline",
-    "label": "Assu Almabayev"
+    "label": "Ikram Aliskerov"
    },
-   "desc": "Market implied Asu Almabayev",
-   "raw": 0.37453183520599254
+   "desc": "Market implied Ikram Aliskerov",
+   "raw": 0.7512437810945274
   },
   {
    "id": "v16",
-   "text": "+170",
+   "text": "-298",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
-    "label": "Assu Almabayev",
-    "book": "betmgm"
+    "label": "Ikram Aliskerov",
+    "book": "draftkings"
    },
-   "desc": "Best US ML Asu Almabayev",
-   "raw": 170
+   "desc": "Best US ML Ikram Aliskerov",
+   "raw": -298
   },
   {
    "id": "v17",
-   "text": "-225",
+   "text": "+128",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -217,11 +217,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": -225
+   "raw": 128
   },
   {
    "id": "v18",
-   "text": "69.2%",
+   "text": "43.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -229,11 +229,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD yes implied",
-   "raw": 0.6923076923076923
+   "raw": 0.43859649122807015
   },
   {
    "id": "v19",
-   "text": "+166",
+   "text": "-166",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -242,11 +242,11 @@
     "field": "cost"
    },
    "desc": "Market GTD no",
-   "raw": 166
+   "raw": -166
   },
   {
    "id": "v20",
-   "text": "37.6%",
+   "text": "62.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -254,364 +254,373 @@
     "label": "No"
    },
    "desc": "Market GTD no implied",
-   "raw": 0.37593984962406013
+   "raw": 0.6240601503759399
   },
   {
    "id": "v21",
-   "text": "+112",
+   "text": "+774",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Kyoji Horiguchi Points",
+    "label": "Jared Cannonier Points",
     "field": "cost"
    },
-   "desc": "Market dec Kyoji Horiguchi",
-   "raw": 112
+   "desc": "Market dec Jared Cannonier",
+   "raw": 774
   },
   {
    "id": "v22",
-   "text": "47.2%",
+   "text": "11.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Kyoji Horiguchi Points"
+    "label": "Jared Cannonier Points"
    },
-   "desc": "Market dec implied Kyoji Horiguchi",
-   "raw": 0.4716981132075472
+   "desc": "Market dec implied Jared Cannonier",
+   "raw": 0.11441647597254005
   },
   {
    "id": "v23",
-   "text": "+469",
+   "text": "+400",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Kyoji Horiguchi KO/TKO/DQ",
+    "label": "Jared Cannonier KO/TKO/DQ",
     "field": "cost"
    },
-   "desc": "Market ko Kyoji Horiguchi",
-   "raw": 469
+   "desc": "Market ko Jared Cannonier",
+   "raw": 400
   },
   {
    "id": "v24",
-   "text": "17.6%",
+   "text": "20.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Kyoji Horiguchi KO/TKO/DQ"
+    "label": "Jared Cannonier KO/TKO/DQ"
    },
-   "desc": "Market ko implied Kyoji Horiguchi",
-   "raw": 0.1757469244288225
+   "desc": "Market ko implied Jared Cannonier",
+   "raw": 0.2
   },
   {
    "id": "v25",
-   "text": "+724",
+   "text": "+2341",
    "fmt": "ml",
    "rule": "bp",
    "args": {
     "market": "method_of_victory",
-    "label": "Kyoji Horiguchi Submission",
+    "label": "Jared Cannonier Submission",
     "field": "cost"
    },
-   "desc": "Market sub Kyoji Horiguchi",
-   "raw": 724
+   "desc": "Market sub Jared Cannonier",
+   "raw": 2341
   },
   {
    "id": "v26",
-   "text": "12.1%",
+   "text": "4.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "method_of_victory",
-    "label": "Kyoji Horiguchi Submission"
+    "label": "Jared Cannonier Submission"
    },
-   "desc": "Market sub implied Kyoji Horiguchi",
-   "raw": 0.12135922330097088
+   "desc": "Market sub implied Jared Cannonier",
+   "raw": 0.04096681687832855
   },
   {
    "id": "v27",
-   "text": "+237",
+   "text": "+315",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Kyoji Horiguchi KO/TKO/DQ",
-     "Kyoji Horiguchi Submission"
+     "Jared Cannonier KO/TKO/DQ",
+     "Jared Cannonier Submission"
     ]
    },
-   "desc": "Market ITD price Kyoji Horiguchi",
-   "raw": 0.2971061477297934
+   "desc": "Market ITD price Jared Cannonier",
+   "raw": 0.24096681687832855
   },
   {
    "id": "v28",
-   "text": "29.7%",
+   "text": "24.1%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
     "market": "method_of_victory",
     "labels": [
-     "Kyoji Horiguchi KO/TKO/DQ",
-     "Kyoji Horiguchi Submission"
+     "Jared Cannonier KO/TKO/DQ",
+     "Jared Cannonier Submission"
     ]
    },
-   "desc": "Market ITD implied Kyoji Horiguchi",
-   "raw": 0.2971061477297934
+   "desc": "Market ITD implied Jared Cannonier",
+   "raw": 0.24096681687832855
   },
   {
    "id": "v29",
-   "text": "+170",
+   "text": "+177",
    "fmt": "ml",
-   "rule": "lh_open_ml",
+   "rule": "bp",
    "args": {
-    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
-    "pair": [
-     "Kyoji Horiguchi",
-     "Asu Almabayev"
-    ],
-    "side": "b"
+    "market": "method_of_victory",
+    "label": "Ikram Aliskerov Points",
+    "field": "cost"
    },
-   "desc": "LH open ML Asu Almabayev",
-   "raw": 170
+   "desc": "Market dec Ikram Aliskerov",
+   "raw": 177
   },
   {
    "id": "v30",
-   "text": "+162",
+   "text": "36.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Ikram Aliskerov Points"
+   },
+   "desc": "Market dec implied Ikram Aliskerov",
+   "raw": 0.36101083032490977
+  },
+  {
+   "id": "v31",
+   "text": "+180",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Ikram Aliskerov KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Ikram Aliskerov",
+   "raw": 180
+  },
+  {
+   "id": "v32",
+   "text": "35.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Ikram Aliskerov KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Ikram Aliskerov",
+   "raw": 0.35714285714285715
+  },
+  {
+   "id": "v33",
+   "text": "+650",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Ikram Aliskerov Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Ikram Aliskerov",
+   "raw": 650
+  },
+  {
+   "id": "v34",
+   "text": "13.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Ikram Aliskerov Submission"
+   },
+   "desc": "Market sub implied Ikram Aliskerov",
+   "raw": 0.13333333333333333
+  },
+  {
+   "id": "v35",
+   "text": "+104",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Ikram Aliskerov KO/TKO/DQ",
+     "Ikram Aliskerov Submission"
+    ]
+   },
+   "desc": "Market ITD price Ikram Aliskerov",
+   "raw": 0.4904761904761905
+  },
+  {
+   "id": "v36",
+   "text": "49.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Ikram Aliskerov KO/TKO/DQ",
+     "Ikram Aliskerov Submission"
+    ]
+   },
+   "desc": "Market ITD implied Ikram Aliskerov",
+   "raw": 0.4904761904761905
+  },
+  {
+   "id": "v37",
+   "text": "+284",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Kyoji Horiguchi",
-     "Asu Almabayev"
+     "Jared Cannonier",
+     "Ikram Aliskerov"
     ],
-    "side": "b",
-    "at": "current"
+    "side": "a"
    },
-   "desc": "LH current ML Asu Almabayev",
-   "raw": 162
+   "desc": "LH open ML Jared Cannonier",
+   "raw": 284
   },
   {
-   "id": "v31",
-   "text": "1.1",
+   "id": "v38",
+   "text": "+238",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Jared Cannonier",
+     "Ikram Aliskerov"
+    ],
+    "side": "a",
+    "at": "current"
+   },
+   "desc": "LH current ML Jared Cannonier",
+   "raw": 238
+  },
+  {
+   "id": "v39",
+   "text": "3.2",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
     "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
     "pair": [
-     "Kyoji Horiguchi",
-     "Asu Almabayev"
+     "Jared Cannonier",
+     "Ikram Aliskerov"
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.01100000000000001
-  },
-  {
-   "id": "v32",
-   "text": "75%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "target.head"
-   },
-   "desc": "Target head Kyoji Horiguchi",
-   "raw": 0.7514
-  },
-  {
-   "id": "v33",
-   "text": "16%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "target.body"
-   },
-   "desc": "Target body Kyoji Horiguchi",
-   "raw": 0.1622
-  },
-  {
-   "id": "v34",
-   "text": "9%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "target.leg"
-   },
-   "desc": "Target leg Kyoji Horiguchi",
-   "raw": 0.0865
-  },
-  {
-   "id": "v35",
-   "text": "54%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "target.head"
-   },
-   "desc": "Target head Asu Almabayev",
-   "raw": 0.5378
-  },
-  {
-   "id": "v36",
-   "text": "24%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "target.body"
-   },
-   "desc": "Target body Asu Almabayev",
-   "raw": 0.2437
-  },
-  {
-   "id": "v37",
-   "text": "22%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "target.leg"
-   },
-   "desc": "Target leg Asu Almabayev",
-   "raw": 0.2185
-  },
-  {
-   "id": "v38",
-   "text": "11",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "ufc_fights"
-   },
-   "desc": "Power section fights a",
-   "raw": 11
-  },
-  {
-   "id": "v39",
-   "text": "8",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "ufc_fights"
-   },
-   "desc": "Power section fights b",
-   "raw": 8
+   "raw": 0.03199999999999997
   },
   {
    "id": "v40",
-   "text": "28%",
+   "text": "63%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "power_w"
+    "fighter": "Jared Cannonier",
+    "path": "target.head"
    },
-   "desc": "Power: drops or stops them on the feet a",
-   "raw": 0.2801
+   "desc": "Target head Jared Cannonier",
+   "raw": 0.6257
   },
   {
    "id": "v41",
-   "text": "2",
-   "fmt": "int",
+   "text": "20%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "last5.power"
+    "fighter": "Jared Cannonier",
+    "path": "target.body"
    },
-   "desc": "Power: drops or stops them on the feet last5 a",
-   "raw": 2
+   "desc": "Target body Jared Cannonier",
+   "raw": 0.2024
   },
   {
    "id": "v42",
-   "text": "4",
-   "fmt": "int",
+   "text": "17%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "power_fights"
+    "fighter": "Jared Cannonier",
+    "path": "target.leg"
    },
-   "desc": "Power: drops or stops them on the feet count a",
-   "raw": 4
+   "desc": "Target leg Jared Cannonier",
+   "raw": 0.1719
   },
   {
    "id": "v43",
+   "text": "65%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "target.head"
+   },
+   "desc": "Target head Ikram Aliskerov",
+   "raw": 0.6481
+  },
+  {
+   "id": "v44",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "target.body"
+   },
+   "desc": "Target body Ikram Aliskerov",
+   "raw": 0.2489
+  },
+  {
+   "id": "v45",
    "text": "10%",
    "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "power_w"
+    "fighter": "Ikram Aliskerov",
+    "path": "target.leg"
    },
-   "desc": "Power: drops or stops them on the feet b",
-   "raw": 0.0972
-  },
-  {
-   "id": "v44",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "last5.power"
-   },
-   "desc": "Power: drops or stops them on the feet last5 b",
-   "raw": 1
-  },
-  {
-   "id": "v45",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "power_fights"
-   },
-   "desc": "Power: drops or stops them on the feet count b",
-   "raw": 1
+   "desc": "Target leg Ikram Aliskerov",
+   "raw": 0.103
   },
   {
    "id": "v46",
-   "text": "19%",
-   "fmt": "pct0",
-   "rule": "em_div",
-   "args": {
-    "wc": "Flyweight",
-    "key": "power"
-   },
-   "desc": "Division share Power: drops or stops them on the feet",
-   "raw": 0.1923
-  },
-  {
-   "id": "v47",
-   "text": "22%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "dropped_w"
-   },
-   "desc": "Durability: gets dropped or stopped a",
-   "raw": 0.2239
-  },
-  {
-   "id": "v48",
-   "text": "1",
+   "text": "21",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "last5.dropped"
+    "fighter": "Jared Cannonier",
+    "path": "ufc_fights"
    },
-   "desc": "Durability: gets dropped or stopped last5 a",
-   "raw": 1
+   "desc": "Power section fights a",
+   "raw": 21
+  },
+  {
+   "id": "v47",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 6
+  },
+  {
+   "id": "v48",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.1992
   },
   {
    "id": "v49",
@@ -619,575 +628,575 @@
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "dropped_fights"
+    "fighter": "Jared Cannonier",
+    "path": "last5.power"
    },
-   "desc": "Durability: gets dropped or stopped count a",
+   "desc": "Power: drops or stops them on the feet last5 a",
    "raw": 1
   },
   {
    "id": "v50",
-   "text": "12%",
-   "fmt": "pct0",
+   "text": "6",
+   "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "dropped_w"
+    "fighter": "Jared Cannonier",
+    "path": "power_fights"
    },
-   "desc": "Durability: gets dropped or stopped b",
-   "raw": 0.1224
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 6
   },
   {
    "id": "v51",
+   "text": "37%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.3691
+  },
+  {
+   "id": "v52",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 2
+  },
+  {
+   "id": "v53",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 3
+  },
+  {
+   "id": "v54",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Middleweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2188
+  },
+  {
+   "id": "v55",
+   "text": "39%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.3876
+  },
+  {
+   "id": "v56",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 3
+  },
+  {
+   "id": "v57",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 8
+  },
+  {
+   "id": "v58",
+   "text": "14%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.1375
+  },
+  {
+   "id": "v59",
    "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
+    "fighter": "Ikram Aliskerov",
     "path": "last5.dropped"
    },
    "desc": "Durability: gets dropped or stopped last5 b",
    "raw": 1
   },
   {
-   "id": "v52",
+   "id": "v60",
    "text": "1",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
+    "fighter": "Ikram Aliskerov",
     "path": "dropped_fights"
    },
    "desc": "Durability: gets dropped or stopped count b",
    "raw": 1
   },
   {
-   "id": "v53",
-   "text": "20%",
+   "id": "v61",
+   "text": "25%",
    "fmt": "pct0",
    "rule": "em_div",
    "args": {
-    "wc": "Flyweight",
+    "wc": "Middleweight",
     "key": "dropped"
    },
    "desc": "Division share Durability: gets dropped or stopped",
-   "raw": 0.203
-  },
-  {
-   "id": "v54",
-   "text": "2",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "outcomes.w.ko"
-   },
-   "desc": "Outcome wko Kyoji Horiguchi",
-   "raw": 2
-  },
-  {
-   "id": "v55",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "outcomes.w.sub"
-   },
-   "desc": "Outcome wsub Kyoji Horiguchi",
-   "raw": 1
-  },
-  {
-   "id": "v56",
-   "text": "6",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "outcomes.w.dec"
-   },
-   "desc": "Outcome wdec Kyoji Horiguchi",
-   "raw": 6
-  },
-  {
-   "id": "v57",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "outcomes.l.sub"
-   },
-   "desc": "Outcome lsub Kyoji Horiguchi",
-   "raw": 1
-  },
-  {
-   "id": "v58",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "outcomes.l.ko"
-   },
-   "desc": "Outcome lko Kyoji Horiguchi",
-   "raw": 1
-  },
-  {
-   "id": "v59",
-   "text": "3",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "outcomes.w.sub"
-   },
-   "desc": "Outcome wsub Asu Almabayev",
-   "raw": 3
-  },
-  {
-   "id": "v60",
-   "text": "4",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "outcomes.w.dec"
-   },
-   "desc": "Outcome wdec Asu Almabayev",
-   "raw": 4
-  },
-  {
-   "id": "v61",
-   "text": "1",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "outcomes.l.ko"
-   },
-   "desc": "Outcome lko Asu Almabayev",
-   "raw": 1
+   "raw": 0.2541
   },
   {
    "id": "v62",
-   "text": "73%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.0.won"
-   },
-   "desc": "R1 won Kyoji Horiguchi",
-   "raw": 0.7273
-  },
-  {
-   "id": "v63",
-   "text": "+1.4",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "R1 diff Kyoji Horiguchi",
-   "raw": 1.357
-  },
-  {
-   "id": "v64",
-   "text": "11",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.0.fights"
-   },
-   "desc": "R1 fights Kyoji Horiguchi",
-   "raw": 11
-  },
-  {
-   "id": "v65",
-   "text": "90%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.1.won"
-   },
-   "desc": "R2 won Kyoji Horiguchi",
-   "raw": 0.9
-  },
-  {
-   "id": "v66",
-   "text": "+2.5",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "R2 diff Kyoji Horiguchi",
-   "raw": 2.456
-  },
-  {
-   "id": "v67",
-   "text": "10",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.1.fights"
-   },
-   "desc": "R2 fights Kyoji Horiguchi",
-   "raw": 10
-  },
-  {
-   "id": "v68",
-   "text": "67%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.2.won"
-   },
-   "desc": "R3 won Kyoji Horiguchi",
-   "raw": 0.6667
-  },
-  {
-   "id": "v69",
-   "text": "+1.6",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.2.diff_pm"
-   },
-   "desc": "R3 diff Kyoji Horiguchi",
-   "raw": 1.625
-  },
-  {
-   "id": "v70",
-   "text": "9",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.2.fights"
-   },
-   "desc": "R3 fights Kyoji Horiguchi",
-   "raw": 9
-  },
-  {
-   "id": "v71",
-   "text": "88%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.0.won"
-   },
-   "desc": "R1 won Asu Almabayev",
-   "raw": 0.875
-  },
-  {
-   "id": "v72",
-   "text": "+0.7",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "R1 diff Asu Almabayev",
-   "raw": 0.7
-  },
-  {
-   "id": "v73",
-   "text": "8",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.0.fights"
-   },
-   "desc": "R1 fights Asu Almabayev",
-   "raw": 8
-  },
-  {
-   "id": "v74",
-   "text": "75%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.1.won"
-   },
-   "desc": "R2 won Asu Almabayev",
-   "raw": 0.75
-  },
-  {
-   "id": "v75",
-   "text": "+0.3",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.1.diff_pm"
-   },
-   "desc": "R2 diff Asu Almabayev",
-   "raw": 0.288
-  },
-  {
-   "id": "v76",
-   "text": "8",
-   "fmt": "int",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.1.fights"
-   },
-   "desc": "R2 fights Asu Almabayev",
-   "raw": 8
-  },
-  {
-   "id": "v77",
-   "text": "86%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.2.won"
-   },
-   "desc": "R3 won Asu Almabayev",
-   "raw": 0.8571
-  },
-  {
-   "id": "v78",
-   "text": "-0.1",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.2.diff_pm"
-   },
-   "desc": "R3 diff Asu Almabayev",
-   "raw": -0.115
-  },
-  {
-   "id": "v79",
    "text": "7",
    "fmt": "int",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.2.fights"
+    "fighter": "Jared Cannonier",
+    "path": "outcomes.w.ko"
    },
-   "desc": "R3 fights Asu Almabayev",
+   "desc": "Outcome wko Jared Cannonier",
    "raw": 7
   },
   {
+   "id": "v63",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Jared Cannonier",
+   "raw": 4
+  },
+  {
+   "id": "v64",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Jared Cannonier",
+   "raw": 7
+  },
+  {
+   "id": "v65",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Jared Cannonier",
+   "raw": 3
+  },
+  {
+   "id": "v66",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Ikram Aliskerov",
+   "raw": 3
+  },
+  {
+   "id": "v67",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Ikram Aliskerov",
+   "raw": 2
+  },
+  {
+   "id": "v68",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Ikram Aliskerov",
+   "raw": 1
+  },
+  {
+   "id": "v69",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Jared Cannonier",
+   "raw": 0.1905
+  },
+  {
+   "id": "v70",
+   "text": "-0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Jared Cannonier",
+   "raw": -0.671
+  },
+  {
+   "id": "v71",
+   "text": "21",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Jared Cannonier",
+   "raw": 21
+  },
+  {
+   "id": "v72",
+   "text": "59%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Jared Cannonier",
+   "raw": 0.5882
+  },
+  {
+   "id": "v73",
+   "text": "+1.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Jared Cannonier",
+   "raw": 1.376
+  },
+  {
+   "id": "v74",
+   "text": "17",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Jared Cannonier",
+   "raw": 17
+  },
+  {
+   "id": "v75",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Jared Cannonier",
+   "raw": 0.5
+  },
+  {
+   "id": "v76",
+   "text": "-0.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Jared Cannonier",
+   "raw": -0.253
+  },
+  {
+   "id": "v77",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Jared Cannonier",
+   "raw": 14
+  },
+  {
+   "id": "v78",
+   "text": "83%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Ikram Aliskerov",
+   "raw": 0.8333
+  },
+  {
+   "id": "v79",
+   "text": "+3.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Ikram Aliskerov",
+   "raw": 3.0
+  },
+  {
    "id": "v80",
+   "text": "6",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Ikram Aliskerov",
+   "raw": 6
+  },
+  {
+   "id": "v81",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Ikram Aliskerov",
+   "raw": 1.0
+  },
+  {
+   "id": "v82",
+   "text": "+0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Ikram Aliskerov",
+   "raw": 0.7
+  },
+  {
+   "id": "v83",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Ikram Aliskerov",
+   "raw": 2
+  },
+  {
+   "id": "v84",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Ikram Aliskerov",
+   "raw": 1.0
+  },
+  {
+   "id": "v85",
+   "text": "+0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Ikram Aliskerov",
+   "raw": 0.7
+  },
+  {
+   "id": "v86",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Ikram Aliskerov",
+   "raw": 2
+  },
+  {
+   "id": "v87",
+   "text": "-25",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Cannonier 0",
+   "raw": -25
+  },
+  {
+   "id": "v88",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Cannonier 1",
+   "raw": -9
+  },
+  {
+   "id": "v89",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Cannonier 2",
+   "raw": -3
+  },
+  {
+   "id": "v90",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Cannonier 3",
+   "raw": -3
+  },
+  {
+   "id": "v91",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Cannonier 4",
+   "raw": 7
+  },
+  {
+   "id": "v92",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Jared Cannonier 5",
+   "raw": -9
+  },
+  {
+   "id": "v93",
    "text": "+3",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.0.rw.0.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.6.rw.0.2"
    },
-   "desc": "R1 fight diff Kyoji Horiguchi 0",
+   "desc": "R1 fight diff Jared Cannonier 6",
    "raw": 3
   },
   {
-   "id": "v81",
-   "text": "+11",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.1.rw.0.2"
-   },
-   "desc": "R1 fight diff Kyoji Horiguchi 1",
-   "raw": 11
-  },
-  {
-   "id": "v82",
-   "text": "+11",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.2.rw.0.2"
-   },
-   "desc": "R1 fight diff Kyoji Horiguchi 2",
-   "raw": 11
-  },
-  {
-   "id": "v83",
+   "id": "v94",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.3.rw.0.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.7.rw.0.2"
    },
-   "desc": "R1 fight diff Kyoji Horiguchi 3",
+   "desc": "R1 fight diff Jared Cannonier 7",
    "raw": -4
   },
   {
-   "id": "v84",
-   "text": "+15",
+   "id": "v95",
+   "text": "-4",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.4.rw.0.2"
-   },
-   "desc": "R1 fight diff Kyoji Horiguchi 4",
-   "raw": 15
-  },
-  {
-   "id": "v85",
-   "text": "+15",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.5.rw.0.2"
-   },
-   "desc": "R1 fight diff Kyoji Horiguchi 5",
-   "raw": 15
-  },
-  {
-   "id": "v86",
-   "text": "-6",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.6.rw.0.2"
-   },
-   "desc": "R1 fight diff Kyoji Horiguchi 6",
-   "raw": -6
-  },
-  {
-   "id": "v87",
-   "text": "+3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.7.rw.0.2"
-   },
-   "desc": "R1 fight diff Kyoji Horiguchi 7",
-   "raw": 3
-  },
-  {
-   "id": "v88",
-   "text": "+18",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
+    "fighter": "Jared Cannonier",
     "path": "fights.8.rw.0.2"
    },
-   "desc": "R1 fight diff Kyoji Horiguchi 8",
-   "raw": 18
-  },
-  {
-   "id": "v89",
-   "text": "+5",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.9.rw.0.2"
-   },
-   "desc": "R1 fight diff Kyoji Horiguchi 9",
-   "raw": 5
-  },
-  {
-   "id": "v90",
-   "text": "+2",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.10.rw.0.2"
-   },
-   "desc": "R1 fight diff Kyoji Horiguchi 10",
-   "raw": 2
-  },
-  {
-   "id": "v91",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.0.rw.1.2"
-   },
-   "desc": "R2 fight diff Kyoji Horiguchi 0",
-   "raw": 9
-  },
-  {
-   "id": "v92",
-   "text": "+26",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.1.rw.1.2"
-   },
-   "desc": "R2 fight diff Kyoji Horiguchi 1",
-   "raw": 26
-  },
-  {
-   "id": "v93",
-   "text": "+12",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.2.rw.1.2"
-   },
-   "desc": "R2 fight diff Kyoji Horiguchi 2",
-   "raw": 12
-  },
-  {
-   "id": "v94",
-   "text": "+1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.3.rw.1.2"
-   },
-   "desc": "R2 fight diff Kyoji Horiguchi 3",
-   "raw": 1
-  },
-  {
-   "id": "v95",
-   "text": "+12",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.4.rw.1.2"
-   },
-   "desc": "R2 fight diff Kyoji Horiguchi 4",
-   "raw": 12
+   "desc": "R1 fight diff Jared Cannonier 8",
+   "raw": -4
   },
   {
    "id": "v96",
-   "text": "+20",
+   "text": "-3",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.5.rw.1.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.9.rw.0.2"
    },
-   "desc": "R2 fight diff Kyoji Horiguchi 5",
-   "raw": 20
+   "desc": "R1 fight diff Jared Cannonier 9",
+   "raw": -3
   },
   {
    "id": "v97",
@@ -1195,945 +1204,1101 @@
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.6.rw.1.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.10.rw.0.2"
    },
-   "desc": "R2 fight diff Kyoji Horiguchi 6",
+   "desc": "R1 fight diff Jared Cannonier 10",
    "raw": -6
   },
   {
    "id": "v98",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.7.rw.1.2"
-   },
-   "desc": "R2 fight diff Kyoji Horiguchi 7",
-   "raw": 9
-  },
-  {
-   "id": "v99",
-   "text": "+18",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.9.rw.1.2"
-   },
-   "desc": "R2 fight diff Kyoji Horiguchi 9",
-   "raw": 18
-  },
-  {
-   "id": "v100",
-   "text": "+19",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.10.rw.1.2"
-   },
-   "desc": "R2 fight diff Kyoji Horiguchi 10",
-   "raw": 19
-  },
-  {
-   "id": "v101",
-   "text": "-4",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.0.rw.2.2"
-   },
-   "desc": "R3 fight diff Kyoji Horiguchi 0",
-   "raw": -4
-  },
-  {
-   "id": "v102",
-   "text": "+20",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.1.rw.2.2"
-   },
-   "desc": "R3 fight diff Kyoji Horiguchi 1",
-   "raw": 20
-  },
-  {
-   "id": "v103",
-   "text": "+20",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.2.rw.2.2"
-   },
-   "desc": "R3 fight diff Kyoji Horiguchi 2",
-   "raw": 20
-  },
-  {
-   "id": "v104",
-   "text": "+22",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.3.rw.2.2"
-   },
-   "desc": "R3 fight diff Kyoji Horiguchi 3",
-   "raw": 22
-  },
-  {
-   "id": "v105",
-   "text": "+5",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.4.rw.2.2"
-   },
-   "desc": "R3 fight diff Kyoji Horiguchi 4",
-   "raw": 5
-  },
-  {
-   "id": "v106",
-   "text": "-20",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.5.rw.2.2"
-   },
-   "desc": "R3 fight diff Kyoji Horiguchi 5",
-   "raw": -20
-  },
-  {
-   "id": "v107",
-   "text": "-3",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.6.rw.2.2"
-   },
-   "desc": "R3 fight diff Kyoji Horiguchi 6",
-   "raw": -3
-  },
-  {
-   "id": "v108",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.7.rw.2.2"
-   },
-   "desc": "R3 fight diff Kyoji Horiguchi 7",
-   "raw": 9
-  },
-  {
-   "id": "v109",
-   "text": "+16",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "fights.9.rw.2.2"
-   },
-   "desc": "R3 fight diff Kyoji Horiguchi 9",
-   "raw": 16
-  },
-  {
-   "id": "v110",
-   "text": "+4",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.0.rw.0.2"
-   },
-   "desc": "R1 fight diff Asu Almabayev 0",
-   "raw": 4
-  },
-  {
-   "id": "v111",
-   "text": "+2",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.1.rw.0.2"
-   },
-   "desc": "R1 fight diff Asu Almabayev 1",
-   "raw": 2
-  },
-  {
-   "id": "v112",
-   "text": "-5",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.2.rw.0.2"
-   },
-   "desc": "R1 fight diff Asu Almabayev 2",
-   "raw": -5
-  },
-  {
-   "id": "v113",
-   "text": "-5",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.3.rw.0.2"
-   },
-   "desc": "R1 fight diff Asu Almabayev 3",
-   "raw": -5
-  },
-  {
-   "id": "v114",
-   "text": "+4",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.4.rw.0.2"
-   },
-   "desc": "R1 fight diff Asu Almabayev 4",
-   "raw": 4
-  },
-  {
-   "id": "v115",
-   "text": "+1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.5.rw.0.2"
-   },
-   "desc": "R1 fight diff Asu Almabayev 5",
-   "raw": 1
-  },
-  {
-   "id": "v116",
-   "text": "+9",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.6.rw.0.2"
-   },
-   "desc": "R1 fight diff Asu Almabayev 6",
-   "raw": 9
-  },
-  {
-   "id": "v117",
-   "text": "+18",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.7.rw.0.2"
-   },
-   "desc": "R1 fight diff Asu Almabayev 7",
-   "raw": 18
-  },
-  {
-   "id": "v118",
-   "text": "-1",
-   "fmt": "sint",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.0.rw.1.2"
-   },
-   "desc": "R2 fight diff Asu Almabayev 0",
-   "raw": -1
-  },
-  {
-   "id": "v119",
    "text": "-8",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.1.rw.1.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.11.rw.0.2"
    },
-   "desc": "R2 fight diff Asu Almabayev 1",
+   "desc": "R1 fight diff Jared Cannonier 11",
    "raw": -8
   },
   {
-   "id": "v120",
-   "text": "+6",
+   "id": "v99",
+   "text": "+9",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.2.rw.1.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.12.rw.0.2"
    },
-   "desc": "R2 fight diff Asu Almabayev 2",
-   "raw": 6
+   "desc": "R1 fight diff Jared Cannonier 12",
+   "raw": 9
   },
   {
-   "id": "v121",
+   "id": "v100",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.3.rw.1.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.13.rw.0.2"
    },
-   "desc": "R2 fight diff Asu Almabayev 3",
+   "desc": "R1 fight diff Jared Cannonier 13",
    "raw": 4
   },
   {
-   "id": "v122",
-   "text": "-4",
+   "id": "v101",
+   "text": "-14",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.4.rw.1.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.14.rw.0.2"
    },
-   "desc": "R2 fight diff Asu Almabayev 4",
-   "raw": -4
+   "desc": "R1 fight diff Jared Cannonier 14",
+   "raw": -14
   },
   {
-   "id": "v123",
-   "text": "+6",
+   "id": "v102",
+   "text": "-16",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.5.rw.1.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.15.rw.0.2"
    },
-   "desc": "R2 fight diff Asu Almabayev 5",
-   "raw": 6
+   "desc": "R1 fight diff Jared Cannonier 15",
+   "raw": -16
   },
   {
-   "id": "v124",
-   "text": "+4",
+   "id": "v103",
+   "text": "+15",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.6.rw.1.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.16.rw.0.2"
    },
-   "desc": "R2 fight diff Asu Almabayev 6",
-   "raw": 4
+   "desc": "R1 fight diff Jared Cannonier 16",
+   "raw": 15
   },
   {
-   "id": "v125",
-   "text": "+4",
+   "id": "v104",
+   "text": "+1",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.7.rw.1.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.17.rw.0.2"
    },
-   "desc": "R2 fight diff Asu Almabayev 7",
-   "raw": 4
+   "desc": "R1 fight diff Jared Cannonier 17",
+   "raw": 1
   },
   {
-   "id": "v126",
-   "text": "+4",
+   "id": "v105",
+   "text": "-13",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.0.rw.2.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.18.rw.0.2"
    },
-   "desc": "R3 fight diff Asu Almabayev 0",
-   "raw": 4
+   "desc": "R1 fight diff Jared Cannonier 18",
+   "raw": -13
   },
   {
-   "id": "v127",
-   "text": "+2",
+   "id": "v106",
+   "text": "+14",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.1.rw.2.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.19.rw.0.2"
    },
-   "desc": "R3 fight diff Asu Almabayev 1",
-   "raw": 2
+   "desc": "R1 fight diff Jared Cannonier 19",
+   "raw": 14
   },
   {
-   "id": "v128",
-   "text": "-5",
+   "id": "v107",
+   "text": "-2",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.2.rw.2.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.20.rw.0.2"
    },
-   "desc": "R3 fight diff Asu Almabayev 2",
-   "raw": -5
+   "desc": "R1 fight diff Jared Cannonier 20",
+   "raw": -2
   },
   {
-   "id": "v129",
-   "text": "-20",
+   "id": "v108",
+   "text": "-6",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.3.rw.2.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.0.rw.1.2"
    },
-   "desc": "R3 fight diff Asu Almabayev 3",
-   "raw": -20
+   "desc": "R2 fight diff Jared Cannonier 0",
+   "raw": -6
   },
   {
-   "id": "v130",
-   "text": "+6",
+   "id": "v109",
+   "text": "-1",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.4.rw.2.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.1.rw.1.2"
    },
-   "desc": "R3 fight diff Asu Almabayev 4",
-   "raw": 6
+   "desc": "R2 fight diff Jared Cannonier 1",
+   "raw": -1
   },
   {
-   "id": "v131",
+   "id": "v110",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.5.rw.2.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.2.rw.1.2"
    },
-   "desc": "R3 fight diff Asu Almabayev 5",
+   "desc": "R2 fight diff Jared Cannonier 2",
    "raw": 8
   },
   {
+   "id": "v111",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 3",
+   "raw": 5
+  },
+  {
+   "id": "v112",
+   "text": "-11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 4",
+   "raw": -11
+  },
+  {
+   "id": "v113",
+   "text": "+58",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 5",
+   "raw": 58
+  },
+  {
+   "id": "v114",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 6",
+   "raw": -3
+  },
+  {
+   "id": "v115",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 7",
+   "raw": -9
+  },
+  {
+   "id": "v116",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 8",
+   "raw": 16
+  },
+  {
+   "id": "v117",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 9",
+   "raw": -7
+  },
+  {
+   "id": "v118",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 10",
+   "raw": -3
+  },
+  {
+   "id": "v119",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 11",
+   "raw": 16
+  },
+  {
+   "id": "v120",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.13.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 13",
+   "raw": 12
+  },
+  {
+   "id": "v121",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.15.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 15",
+   "raw": -13
+  },
+  {
+   "id": "v122",
+   "text": "+31",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.16.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 16",
+   "raw": 31
+  },
+  {
+   "id": "v123",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.17.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 17",
+   "raw": -2
+  },
+  {
+   "id": "v124",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.18.rw.1.2"
+   },
+   "desc": "R2 fight diff Jared Cannonier 18",
+   "raw": 13
+  },
+  {
+   "id": "v125",
+   "text": "-22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Cannonier 0",
+   "raw": -22
+  },
+  {
+   "id": "v126",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Cannonier 1",
+   "raw": 1
+  },
+  {
+   "id": "v127",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Cannonier 2",
+   "raw": -9
+  },
+  {
+   "id": "v128",
+   "text": "-22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Cannonier 3",
+   "raw": -22
+  },
+  {
+   "id": "v129",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Cannonier 4",
+   "raw": -3
+  },
+  {
+   "id": "v130",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Cannonier 5",
+   "raw": 18
+  },
+  {
+   "id": "v131",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Cannonier 6",
+   "raw": -2
+  },
+  {
    "id": "v132",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Jared Cannonier 7",
+   "raw": 0
+  },
+  {
+   "id": "v133",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "fights.6.rw.2.2"
+    "fighter": "Jared Cannonier",
+    "path": "fights.9.rw.2.2"
    },
-   "desc": "R3 fight diff Asu Almabayev 6",
+   "desc": "R3 fight diff Jared Cannonier 9",
    "raw": 2
   },
   {
-   "id": "v133",
-   "text": "+1.4",
-   "fmt": "s1",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.0.diff_pm"
-   },
-   "desc": "Trend R1 Kyoji Horiguchi",
-   "raw": 1.357
-  },
-  {
    "id": "v134",
-   "text": "+2.5",
-   "fmt": "s1",
+   "text": "-7",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.1.diff_pm"
+    "fighter": "Jared Cannonier",
+    "path": "fights.10.rw.2.2"
    },
-   "desc": "Trend R2 Kyoji Horiguchi",
-   "raw": 2.456
+   "desc": "R3 fight diff Jared Cannonier 10",
+   "raw": -7
   },
   {
    "id": "v135",
-   "text": "+1.6",
-   "fmt": "s1",
+   "text": "+5",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "rounds.2.diff_pm"
+    "fighter": "Jared Cannonier",
+    "path": "fights.15.rw.2.2"
    },
-   "desc": "Trend R3 Kyoji Horiguchi",
-   "raw": 1.625
+   "desc": "R3 fight diff Jared Cannonier 15",
+   "raw": 5
   },
   {
    "id": "v136",
-   "text": "+0.7",
-   "fmt": "s1",
+   "text": "+10",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.0.diff_pm"
+    "fighter": "Jared Cannonier",
+    "path": "fights.16.rw.2.2"
    },
-   "desc": "Trend R1 Asu Almabayev",
-   "raw": 0.7
+   "desc": "R3 fight diff Jared Cannonier 16",
+   "raw": 10
   },
   {
    "id": "v137",
-   "text": "+0.3",
-   "fmt": "s1",
+   "text": "-2",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.1.diff_pm"
+    "fighter": "Jared Cannonier",
+    "path": "fights.17.rw.2.2"
    },
-   "desc": "Trend R2 Asu Almabayev",
-   "raw": 0.288
+   "desc": "R3 fight diff Jared Cannonier 17",
+   "raw": -2
   },
   {
    "id": "v138",
-   "text": "-0.1",
-   "fmt": "s1",
+   "text": "+14",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "rounds.2.diff_pm"
+    "fighter": "Jared Cannonier",
+    "path": "fights.18.rw.2.2"
    },
-   "desc": "Trend R3 Asu Almabayev",
-   "raw": -0.115
+   "desc": "R3 fight diff Jared Cannonier 18",
+   "raw": 14
   },
   {
    "id": "v139",
-   "text": "1.67",
-   "fmt": "n2",
+   "text": "+9",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "grap.td15"
+    "fighter": "Ikram Aliskerov",
+    "path": "fights.0.rw.0.2"
    },
-   "desc": "Takedowns /15 a",
-   "raw": 1.671
+   "desc": "R1 fight diff Ikram Aliskerov 0",
+   "raw": 9
   },
   {
    "id": "v140",
-   "text": "4.74",
-   "fmt": "n2",
+   "text": "+18",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "grap.td15"
+    "fighter": "Ikram Aliskerov",
+    "path": "fights.1.rw.0.2"
    },
-   "desc": "Takedowns /15 b",
-   "raw": 4.743
+   "desc": "R1 fight diff Ikram Aliskerov 1",
+   "raw": 18
   },
   {
    "id": "v141",
-   "text": "40%",
-   "fmt": "pct0",
+   "text": "+28",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "grap.td_acc"
+    "fighter": "Ikram Aliskerov",
+    "path": "fights.2.rw.0.2"
    },
-   "desc": "TD accuracy a",
-   "raw": 0.4048
+   "desc": "R1 fight diff Ikram Aliskerov 2",
+   "raw": 28
   },
   {
    "id": "v142",
-   "text": "46%",
-   "fmt": "pct0",
+   "text": "-9",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "grap.td_acc"
+    "fighter": "Ikram Aliskerov",
+    "path": "fights.3.rw.0.2"
    },
-   "desc": "TD accuracy b",
-   "raw": 0.4583
+   "desc": "R1 fight diff Ikram Aliskerov 3",
+   "raw": -9
   },
   {
    "id": "v143",
-   "text": "61%",
-   "fmt": "pct0",
+   "text": "+14",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "grap.tdd"
+    "fighter": "Ikram Aliskerov",
+    "path": "fights.4.rw.0.2"
    },
-   "desc": "TD defence a",
-   "raw": 0.6122
+   "desc": "R1 fight diff Ikram Aliskerov 4",
+   "raw": 14
   },
   {
    "id": "v144",
-   "text": "44%",
-   "fmt": "pct0",
+   "text": "+3",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "grap.tdd"
+    "fighter": "Ikram Aliskerov",
+    "path": "fights.5.rw.0.2"
    },
-   "desc": "TD defence b",
-   "raw": 0.4444
+   "desc": "R1 fight diff Ikram Aliskerov 5",
+   "raw": 3
   },
   {
    "id": "v145",
-   "text": "22%",
-   "fmt": "pct0",
+   "text": "+10",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "grap.ctrl"
+    "fighter": "Ikram Aliskerov",
+    "path": "fights.0.rw.1.2"
    },
-   "desc": "Time in control a",
-   "raw": 0.2173
+   "desc": "R2 fight diff Ikram Aliskerov 0",
+   "raw": 10
   },
   {
    "id": "v146",
-   "text": "49%",
-   "fmt": "pct0",
+   "text": "-3",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "grap.ctrl"
+    "fighter": "Ikram Aliskerov",
+    "path": "fights.1.rw.1.2"
    },
-   "desc": "Time in control b",
-   "raw": 0.4891
+   "desc": "R2 fight diff Ikram Aliskerov 1",
+   "raw": -3
   },
   {
    "id": "v147",
-   "text": "+4.3%",
-   "fmt": "spp",
+   "text": "+9",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "grap.adj_net_ctrl"
+    "fighter": "Ikram Aliskerov",
+    "path": "fights.0.rw.2.2"
    },
-   "desc": "Net control, opp-adjusted a",
-   "raw": 0.0427
+   "desc": "R3 fight diff Ikram Aliskerov 0",
+   "raw": 9
   },
   {
    "id": "v148",
-   "text": "+43.6%",
-   "fmt": "spp",
+   "text": "-2",
+   "fmt": "sint",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "grap.adj_net_ctrl"
+    "fighter": "Ikram Aliskerov",
+    "path": "fights.1.rw.2.2"
    },
-   "desc": "Net control, opp-adjusted b",
-   "raw": 0.4358
+   "desc": "R3 fight diff Ikram Aliskerov 1",
+   "raw": -2
   },
   {
    "id": "v149",
-   "text": "18%",
-   "fmt": "pct0",
+   "text": "0.77",
+   "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "grap.ctrl_ag"
+    "fighter": "Jared Cannonier",
+    "path": "grap.td15"
    },
-   "desc": "Time controlled a",
-   "raw": 0.1782
+   "desc": "Takedowns /15 a",
+   "raw": 0.768
   },
   {
    "id": "v150",
-   "text": "5%",
-   "fmt": "pct0",
+   "text": "3.66",
+   "fmt": "n2",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "grap.ctrl_ag"
+    "fighter": "Ikram Aliskerov",
+    "path": "grap.td15"
    },
-   "desc": "Time controlled b",
-   "raw": 0.0513
+   "desc": "Takedowns /15 b",
+   "raw": 3.659
   },
   {
    "id": "v151",
-   "text": "0.10",
-   "fmt": "n2",
+   "text": "45%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "grap.sub15"
+    "fighter": "Jared Cannonier",
+    "path": "grap.td_acc"
    },
-   "desc": "Sub attempts /15 a",
-   "raw": 0.098
+   "desc": "TD accuracy a",
+   "raw": 0.4545
   },
   {
    "id": "v152",
-   "text": "1.44",
-   "fmt": "n2",
+   "text": "77%",
+   "fmt": "pct0",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
-    "path": "grap.sub15"
+    "fighter": "Ikram Aliskerov",
+    "path": "grap.td_acc"
    },
-   "desc": "Sub attempts /15 b",
-   "raw": 1.437
+   "desc": "TD accuracy b",
+   "raw": 0.7692
   },
   {
    "id": "v153",
-   "text": "+1.56",
-   "fmt": "s2",
-   "rule": "em_sum",
+   "text": "65%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
-    "paths": [
-     "target_diff.head",
-     "target_diff.body",
-     "target_diff.leg"
-    ]
+    "fighter": "Jared Cannonier",
+    "path": "grap.tdd"
    },
-   "desc": "Total diff Kyoji Horiguchi",
-   "raw": 1.56
+   "desc": "TD defence a",
+   "raw": 0.6479
   },
   {
    "id": "v154",
-   "text": "+0.34",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 1.0
+  },
+  {
+   "id": "v155",
+   "text": "12%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.1243
+  },
+  {
+   "id": "v156",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.3797
+  },
+  {
+   "id": "v157",
+   "text": "+2.6%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.0259
+  },
+  {
+   "id": "v158",
+   "text": "+38.7%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.3873
+  },
+  {
+   "id": "v159",
+   "text": "12%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.1234
+  },
+  {
+   "id": "v160",
+   "text": "1%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.0118
+  },
+  {
+   "id": "v161",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v162",
+   "text": "0.37",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.366
+  },
+  {
+   "id": "v163",
+   "text": "-0.11",
    "fmt": "s2",
    "rule": "em_sum",
    "args": {
-    "fighter": "Asu Almabayev",
+    "fighter": "Jared Cannonier",
     "paths": [
      "target_diff.head",
      "target_diff.body",
      "target_diff.leg"
     ]
    },
-   "desc": "Total diff Asu Almabayev",
-   "raw": 0.345
+   "desc": "Total diff Jared Cannonier",
+   "raw": -0.10899999999999999
   },
   {
-   "id": "v155",
-   "text": "+1.59",
+   "id": "v164",
+   "text": "+1.88",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Ikram Aliskerov",
+   "raw": 1.8780000000000001
+  },
+  {
+   "id": "v165",
+   "text": "+0.10",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
+    "fighter": "Jared Cannonier",
     "path": "sos.adj_sd"
    },
    "desc": "Opp-adjusted diff a",
-   "raw": 1.588
+   "raw": 0.103
   },
   {
-   "id": "v156",
-   "text": "+0.33",
+   "id": "v166",
+   "text": "+2.04",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
+    "fighter": "Ikram Aliskerov",
     "path": "sos.adj_sd"
    },
    "desc": "Opp-adjusted diff b",
-   "raw": 0.328
+   "raw": 2.037
   },
   {
-   "id": "v157",
-   "text": "+1.58",
+   "id": "v167",
+   "text": "-0.31",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
+    "fighter": "Jared Cannonier",
     "path": "target_diff.head"
    },
    "desc": "Head diff /min a",
-   "raw": 1.579
+   "raw": -0.311
   },
   {
-   "id": "v158",
-   "text": "+0.25",
+   "id": "v168",
+   "text": "+1.37",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Asu Almabayev",
+    "fighter": "Ikram Aliskerov",
     "path": "target_diff.head"
    },
    "desc": "Head diff /min b",
-   "raw": 0.249
+   "raw": 1.366
   },
   {
-   "id": "v159",
+   "id": "v169",
    "text": "+0.07",
    "fmt": "s2",
    "rule": "em",
    "args": {
-    "fighter": "Kyoji Horiguchi",
+    "fighter": "Jared Cannonier",
     "path": "target_diff.body"
    },
    "desc": "Body diff /min a",
-   "raw": 0.066
-  },
-  {
-   "id": "v160",
-   "text": "-0.09",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "target_diff.body"
-   },
-   "desc": "Body diff /min b",
-   "raw": -0.086
-  },
-  {
-   "id": "v161",
-   "text": "-0.09",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "target_diff.leg"
-   },
-   "desc": "Leg diff /min a",
-   "raw": -0.085
-  },
-  {
-   "id": "v162",
-   "text": "+0.18",
-   "fmt": "s2",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "target_diff.leg"
-   },
-   "desc": "Leg diff /min b",
-   "raw": 0.182
-  },
-  {
-   "id": "v163",
-   "text": "73%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "hdef"
-   },
-   "desc": "Head defence a",
-   "raw": 0.7333
-  },
-  {
-   "id": "v164",
-   "text": "64%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "hdef"
-   },
-   "desc": "Head defence b",
-   "raw": 0.6357
-  },
-  {
-   "id": "v165",
-   "text": "13.9",
-   "fmt": "n1",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "pace.min"
-   },
-   "desc": "Avg fight, min a",
-   "raw": 13.876
-  },
-  {
-   "id": "v166",
-   "text": "13.0",
-   "fmt": "n1",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "pace.min"
-   },
-   "desc": "Avg fight, min b",
-   "raw": 13.046
-  },
-  {
-   "id": "v167",
-   "text": "9%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Kyoji Horiguchi",
-    "path": "pace.r1"
-   },
-   "desc": "Finished in R1 a",
-   "raw": 0.0909
-  },
-  {
-   "id": "v168",
-   "text": "0%",
-   "fmt": "pct0",
-   "rule": "em",
-   "args": {
-    "fighter": "Asu Almabayev",
-    "path": "pace.r1"
-   },
-   "desc": "Finished in R1 b",
-   "raw": 0.0
-  },
-  {
-   "id": "v169",
-   "text": "+162",
-   "fmt": "ml",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 0,
-    "key": "market_odds",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag price",
-   "raw": 162
+   "raw": 0.065
   },
   {
    "id": "v170",
-   "text": "56.9",
-   "fmt": "n1",
-   "rule": "mk",
+   "text": "+0.49",
+   "fmt": "s2",
+   "rule": "em",
    "args": {
-    "kind": "ml_flags",
-    "i": 0,
-    "key": "model_shrunk",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
+    "fighter": "Ikram Aliskerov",
+    "path": "target_diff.body"
    },
-   "desc": "Markov win shrunk",
-   "raw": 56.9
+   "desc": "Body diff /min b",
+   "raw": 0.488
   },
   {
    "id": "v171",
-   "text": "58.1",
-   "fmt": "n1",
-   "rule": "mk",
+   "text": "+0.14",
+   "fmt": "s2",
+   "rule": "em",
    "args": {
-    "kind": "ml_flags",
-    "i": 0,
-    "key": "model_raw",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
+    "fighter": "Jared Cannonier",
+    "path": "target_diff.leg"
    },
-   "desc": "Markov win raw",
-   "raw": 58.1
+   "desc": "Leg diff /min a",
+   "raw": 0.137
   },
   {
    "id": "v172",
-   "text": "36.4",
-   "fmt": "n1",
-   "rule": "mk",
+   "text": "+0.02",
+   "fmt": "s2",
+   "rule": "em",
    "args": {
-    "kind": "ml_flags",
-    "i": 0,
-    "key": "market_implied",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
+    "fighter": "Ikram Aliskerov",
+    "path": "target_diff.leg"
    },
-   "desc": "Markov flag market",
-   "raw": 36.4
+   "desc": "Leg diff /min b",
+   "raw": 0.024
   },
   {
    "id": "v173",
-   "text": "+20.5",
-   "fmt": "s1",
-   "rule": "mk",
+   "text": "63%",
+   "fmt": "pct0",
+   "rule": "em",
    "args": {
-    "kind": "ml_flags",
-    "i": 0,
-    "key": "edge_pts",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
+    "fighter": "Jared Cannonier",
+    "path": "hdef"
    },
-   "desc": "Markov flag gap",
-   "raw": 20.5
+   "desc": "Head defence a",
+   "raw": 0.6328
   },
   {
    "id": "v174",
-   "text": "+152",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.5642
+  },
+  {
+   "id": "v175",
+   "text": "14.0",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 13.953
+  },
+  {
+   "id": "v176",
+   "text": "6.8",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 6.833
+  },
+  {
+   "id": "v177",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.1905
+  },
+  {
+   "id": "v178",
+   "text": "67%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.6667
+  },
+  {
+   "id": "v179",
+   "text": "+1.88",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Ikram Aliskerov",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Ikram Aliskerov",
+   "raw": 1.8780000000000001
+  },
+  {
+   "id": "v180",
+   "text": "-0.11",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Jared Cannonier",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Jared Cannonier",
+   "raw": -0.10899999999999999
+  },
+  {
+   "id": "v181",
+   "text": "70.8%",
+   "fmt": "pct1",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "win"
+   },
+   "desc": "Backtest T1 win",
+   "raw": 0.708
+  },
+  {
+   "id": "v182",
+   "text": "62.1%",
+   "fmt": "pct1",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "imp"
+   },
+   "desc": "Backtest T1 imp",
+   "raw": 0.6209
+  },
+  {
+   "id": "v183",
+   "text": "+11.0%",
+   "fmt": "spp",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "roi"
+   },
+   "desc": "Backtest T1 roi",
+   "raw": 0.1099
+  },
+  {
+   "id": "v184",
+   "text": "+1.1%",
+   "fmt": "spp",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "ci",
+    "i": 0
+   },
+   "desc": "Backtest T1 ci lo",
+   "raw": 0.0114
+  },
+  {
+   "id": "v185",
+   "text": "+20.9%",
+   "fmt": "spp",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "ci",
+    "i": 1
+   },
+   "desc": "Backtest T1 ci hi",
+   "raw": 0.2092
+  },
+  {
+   "id": "v186",
+   "text": "250",
+   "fmt": "int",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "n"
+   },
+   "desc": "Backtest T1 n",
+   "raw": 250
+  },
+  {
+   "id": "v187",
+   "text": "+260",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2141,12 +2306,12 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Kyoji Horiguchi Manel Kape",
-   "raw": 152
+   "desc": "Close Jared Cannonier Christian Leroy Duncan",
+   "raw": 260
   },
   {
-   "id": "v175",
-   "text": "-370",
+   "id": "v188",
+   "text": "+180",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2154,12 +2319,12 @@
     "i": 1,
     "key": "od.mc"
    },
-   "desc": "Close Kyoji Horiguchi Amir Albazi",
-   "raw": -370
+   "desc": "Close Jared Cannonier Michael Page",
+   "raw": 180
   },
   {
-   "id": "v176",
-   "text": "+178",
+   "id": "v189",
+   "text": "+202",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2167,12 +2332,90 @@
     "i": 2,
     "key": "od.mc"
    },
-   "desc": "Close Kyoji Horiguchi Tagir Ulanbekov",
-   "raw": 178
+   "desc": "Close Jared Cannonier Gregory Rodrigues",
+   "raw": 202
   },
   {
-   "id": "v177",
-   "text": "-270",
+   "id": "v190",
+   "text": "+200",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Jared Cannonier Caio Borralho",
+   "raw": 200
+  },
+  {
+   "id": "v191",
+   "text": "+106",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 4,
+    "key": "od.mc"
+   },
+   "desc": "Close Jared Cannonier Nassourdine Imavov",
+   "raw": 106
+  },
+  {
+   "id": "v192",
+   "text": "+105",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 5,
+    "key": "od.mc"
+   },
+   "desc": "Close Jared Cannonier Marvin Vettori",
+   "raw": 105
+  },
+  {
+   "id": "v193",
+   "text": "-115",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 6,
+    "key": "od.mc"
+   },
+   "desc": "Close Jared Cannonier Sean Strickland",
+   "raw": -115
+  },
+  {
+   "id": "v194",
+   "text": "+400",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 7,
+    "key": "od.mc"
+   },
+   "desc": "Close Jared Cannonier Israel Adesanya",
+   "raw": 400
+  },
+  {
+   "id": "v195",
+   "text": "-175",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 8,
+    "key": "od.mc"
+   },
+   "desc": "Close Jared Cannonier Derek Brunson",
+   "raw": -175
+  },
+  {
+   "id": "v196",
+   "text": "-227",
    "fmt": "ml",
    "rule": "fight",
    "args": {
@@ -2180,8 +2423,73 @@
     "i": 0,
     "key": "od.mc"
    },
-   "desc": "Close Asu Almabayev Charles Johnson",
-   "raw": -270
+   "desc": "Close Ikram Aliskerov Brunno Ferreira",
+   "raw": -227
+  },
+  {
+   "id": "v197",
+   "text": "-227",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Ikram Aliskerov JunYong Park",
+   "raw": -227
+  },
+  {
+   "id": "v198",
+   "text": "-455",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Ikram Aliskerov Andre Muniz",
+   "raw": -455
+  },
+  {
+   "id": "v199",
+   "text": "+130",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Ikram Aliskerov Robert Whittaker",
+   "raw": 130
+  },
+  {
+   "id": "v200",
+   "text": "-588",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 4,
+    "key": "od.mc"
+   },
+   "desc": "Close Ikram Aliskerov Warlley Alves",
+   "raw": -588
+  },
+  {
+   "id": "v201",
+   "text": "-189",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 5,
+    "key": "od.mc"
+   },
+   "desc": "Close Ikram Aliskerov Phil Hawes",
+   "raw": -189
   }
  ],
  "gaps": [

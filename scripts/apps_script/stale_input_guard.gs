@@ -27,7 +27,7 @@ var GUARD = {
 };
 var GUARD_NEWCARD_DONE = false;  // set by guardNewCard_ for the rest of this load, so rows are not reset twice
 
-// Calculator row <-> [tab, tab row], read from the Calculator column A formulas (='Main Card'!B2, =Prelims!B2, ...)
+// Calculator row <-> [tab, tab row], read from the Calculator column A formulas (each points at a fighter cell on a tab)
 function guardMap_(ss) {
   var calc = ss.getSheetByName('Calculator'), f = calc.getRange(2, 1, 16, 1).getFormulas(), m = { calc: {}, tab: {} };
   for (var i = 0; i < f.length; i++) {

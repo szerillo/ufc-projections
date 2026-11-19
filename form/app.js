@@ -178,7 +178,7 @@ const reachNote = (ev, f) => { const R = window.__reach; return !heldLine(f) && 
 function cardTable(ev) {
   const final = ev.status === "final";
   let html = "", group = null;
-  const nMain = Math.min(ev.fights.length, ev.fights.length >= 12 ? (ev.fights.some(f => f.title) ? 5 : 6) : 5);
+  const nMain = Math.min(ev.fights.length, ev.n_main || (ev.fights.length >= 12 ? (ev.fights.some(f => f.title) ? 5 : 6) : 5));   // n_main: real count from card_overrides segments
   ev.fights.forEach((f, i) => {
     const o = oddsCells(f), m = f.model;
     const g = i === 0 ? "Main event" : i < nMain ? "Main card" : "Prelims";
