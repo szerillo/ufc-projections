@@ -56,6 +56,11 @@ PENDING_TEXT = "The sheet's price for {a} vs {b} did not match this bout, so no 
 PUBF = str(PUB_P.relative_to(REPO)) if PUB_P else None
 BPO = json.load(open(REPO / "data" / f"{SLUG}_odds.json"))
 OVR = json.load(open(REPO / "data" / "card_overrides.json"))[SLUG]
+# Nov 19 (Kirk): Markov V4.1b read per bout. Opt-in per card through card_overrides "markov" (the data/cards slug), so cards
+# built before this keep their pages. Key present but no card file yet: every bout says "Markov run pending" (fails closed).
+MK_SLUG = OVR.get("markov"); MK_PATH = REPO / "data" / "cards" / f"{MK_SLUG}.json" if MK_SLUG else None
+MK = json.load(open(MK_PATH)) if MK_PATH and MK_PATH.exists() else None
+if MK: assert MK["date"] == EVL["date"], f"Markov card {MK_SLUG} is dated {MK['date']}, event {EVL['date']}"
 IDX = json.load(open(FD / "index.json"))
 K = IDX["k"]; BOOKS = IDX["books"]
 W333 = open(REPO / "ufc_333_fight_form.html").read()
@@ -157,6 +162,7 @@ PARTS = {"Moneyline": "ml", "Fight": "length", "Method": "method"}   # Block 59h
 
 
 SPOTS = {}
+MKREG = {}   # fight -> Markov card slug used on its page (Nov 19)
 TREND_PTS = {}
 LHF = ARGS.line_history or f"data/embeds/line_history_{SLUG}.json"; LH = json.loads((REPO / LHF).read_text())
 LABS_ACC = json.loads((REPO / "form/data/labs.json").read_text())["scoring"]["acc"]   # decision-model accuracy, quoted in the key
@@ -964,7 +970,53 @@ def build(names, outname):
                         f'Return range, resampled by card: {R(AS_["roi_ci_boot_cards"][0], "spp", "angstat", "Southpaw angle ROI CI lo", angle="southpaw", key="roi_ci_boot_cards", i=0)} to {R(AS_["roi_ci_boot_cards"][1], "spp", "angstat", "Southpaw angle ROI CI hi", angle="southpaw", key="roi_ci_boot_cards", i=1)}. '
                         f'This is one of {AS_["labs_angles"]} angles on Labs; with that many, one or two look good by luck. '
                         f'Labs shows {R(ag_["n"], "intc", "rs_angle", "Southpaw angle Labs n", id="southpaw", key="n")} fights until its rebuild after UFC 334 (2 bouts misread there). Context, not a pick.</div></div>')
-    top = top.replace("@@ANGLES@@", "").replace("@@LIVE@@", spot_html + debut_html + ang_html)
+    # Nov 19 (Kirk): Markov read. Flags, artifacts and vetoes only, verbatim from C4's flags file through the Markov card
+    # (markov_card_build.py); a flag needs an 8+ point gap and a fighter-specific mechanism, so most bouts show "no flag".
+    # No other Markov numbers on the fight page (Sean's design: one projection table, no model comparison).
+    mk_html = ""
+    if MK_SLUG:
+        MKF_ = next((f_ for f_ in MK["fights"] if pair(*[x_["name"] for x_ in f_["fighters"]], an, bn)), None) if MK else None
+        CONF_ = {"real": "Real", "lean": "Lean", "sprinkle": "Sprinkle", "artifact": "Artifact, not a read", "vetoed": "Vetoed"}
+        items_ = []
+        if MK is None or MKF_ is None:
+            items_.append('<div class="mk-none">Markov run pending for this bout. Nothing is shown until it lands.</div>')
+        else:
+            o_ = MKF_["order"]; names_ = [x_["name"] for x_ in MKF_["fighters"]]
+            vet_ = {v_["side"]: (i_, v_) for i_, v_ in enumerate(MK.get("vetoes", [])) if v_["fight_order"] == o_}
+            for kind_ in ("duration_flags", "ml_flags"):
+                for i_, f_ in enumerate(MK.get(kind_, [])):
+                    if f_["fight_order"] != o_: continue
+                    M_ = lambda k_, fmt_, d_: R(f_[k_], fmt_, "mk", d_, kind=kind_, i=i_, key=k_, card=MK_SLUG)
+                    if kind_ == "ml_flags":
+                        assert f_["side"] in names_, f"Markov flag side {f_['side']} is not in {names_}"
+                        head_ = f'<b>{esc(f_["side"])} {M_("market_odds", "ml", "Markov flag price")}</b> <span class="dim">moneyline, price at the Markov run</span>'
+                        nums_ = (f'<div class="mk-n">Markov {M_("model_shrunk", "n1", "Markov win shrunk")}% '
+                                 f'<span class="dim">(raw {M_("model_raw", "n1", "Markov win raw")}%)</span> vs no-vig market {M_("market_implied", "n1", "Markov flag market")}%, '
+                                 f'gap {M_("edge_pts", "s1", "Markov flag gap")} pts</div>')
+                    else:
+                        head_ = f'<b>{esc(f_["title"])}</b> <span class="dim">fight length</span>'
+                        nums_ = (f'<div class="mk-n">Markov {M_("model_value", "n1", "Markov duration model")}% vs no-vig market '
+                                 f'{M_("market_value", "n1", "Markov duration market")}%</div>')
+                    vv_ = vet_.pop(f_.get("side"), None) if kind_ == "ml_flags" else None
+                    cl_ = f_["confidence"]
+                    items_.append(f'<div class="mk-i mk-{cl_}"><div class="mk-h"><span class="mk-c">{CONF_[cl_]}</span> {head_}</div>{nums_}'
+                                  + (f'<div class="mk-why"><b>Why:</b> {esc(f_["mechanism"])}</div>' if f_.get("mechanism") else "")
+                                  + (f'<div class="mk-why"><b>Against:</b> {esc(f_["counter"])}</div>' if f_.get("counter") else "")
+                                  + (f'<div class="mk-why mk-v"><b>Veto:</b> {esc(vv_[1]["reason"])}</div>' if vv_ else "") + '</div>')
+            for side_, (i_, v_) in vet_.items():   # a veto with no matching flag still shows
+                items_.append(f'<div class="mk-i mk-vetoed"><div class="mk-h"><span class="mk-c">Vetoed</span> <b>{esc(side_)} '
+                              f'{R(v_["market_odds"], "ml", "mk", "Markov veto price", kind="vetoes", i=i_, key="market_odds", card=MK_SLUG)}</b></div>'
+                              f'<div class="mk-why">{esc(v_["reason"])}</div></div>')
+            if not items_:
+                items_.append('<div class="mk-none">No Markov flag on this bout. A flag needs an 8+ point gap from the no-vig market and a fighter-specific reason.</div>')
+        dq_ = ""
+        if MKF_ is not None:   # data-quality badges from C4's run, every one shown (THIN SAMPLE, SYN, §1d, D-CODE)
+            bl_ = [f'{esc(last(x_["name"]))}: ' + ", ".join(f'<span class="mk-b">{esc(b_)}</span>' for b_ in x_["badges"]) for x_ in MKF_["fighters"] if x_["badges"]]
+            dq_ = f'<div class="mk-dq">Data: {"; ".join(bl_)}</div>' if bl_ else '<div class="mk-dq">Data: no THIN SAMPLE, SYN, §1d or D-CODE badge on either fighter.</div>'
+        mk_html = (f'<div class="stk mk" data-part="markov"><div class="stk-h"><span class="bullet"></span>Markov read</div>' + dq_ + "".join(items_)
+                   + '<div class="mk-f dim">Market-blind V4.1b sim; it carries 15% of the weight in the sheet\'s number. Context, not a pick.</div></div>')
+    MKREG[n] = MK_SLUG if MK else None
+    top = top.replace("@@ANGLES@@", "").replace("@@LIVE@@", spot_html + mk_html + debut_html + ang_html)
     small = [F["name"] for F, g_ in [(FA, ga), (FB, gb)] if g_["n"] <= 3]
     secs.append(sec("ourstats", "Stats", "", stats_html))
 
@@ -1063,6 +1115,9 @@ details.taped{{margin:0 0 12px;border:1px solid var(--border);border-radius:6px;
 details.taped>summary::-webkit-details-marker{{display:none}}details.taped>summary .meta{{margin-left:auto;font-size:10px;font-weight:600;letter-spacing:.3px;text-transform:none;color:var(--text-muted)}}
 details.taped .chev{{width:0;height:0;border-left:6px solid var(--action-green-dark);border-top:5px solid transparent;border-bottom:5px solid transparent;transition:transform .15s}}details.taped[open] .chev{{transform:rotate(90deg)}}
 details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{padding:0 10px 10px}}
+.mk .mk-i{{padding:10px 12px;border-bottom:1px solid var(--border);font-size:12px;line-height:1.4}}.mk .mk-h{{margin-bottom:3px}}.mk .mk-c{{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:2px 6px;border-radius:3px;background:var(--bg-muted);color:var(--text-muted);margin-right:4px}}
+.mk .mk-lean .mk-c,.mk .mk-real .mk-c{{background:var(--fav-b-soft);color:var(--text)}}.mk .mk-vetoed .mk-h b,.mk .mk-artifact .mk-h b{{text-decoration:line-through;text-decoration-thickness:1px}}
+.mk .mk-n{{font:600 11px/1.4 "SF Mono",Menlo,monospace;margin:2px 0 4px}}.mk .mk-why{{font-size:11.5px;color:var(--text-muted);margin-top:2px}}.mk .mk-none{{padding:10px 12px;font-size:12px;color:var(--text-muted);border-bottom:1px solid var(--border)}}.mk .mk-f{{padding:7px 12px;font-size:10.5px}}.mk .mk-dq{{padding:7px 12px;font-size:11px;color:var(--text-muted);border-bottom:1px solid var(--border);background:var(--bg-muted)}}.mk .mk-b{{font-weight:800;color:var(--text);letter-spacing:.3px}}
 .stk{{margin:0 0 12px;border:1px solid var(--border);border-radius:6px;overflow:hidden}}.stk-h{{background:var(--header-bg);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:8px 12px;display:flex;align-items:center;gap:8px}}
 .stk-t{{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}}.stk-t th{{background:var(--bg-muted);font-size:9.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);padding:7px 6px;text-align:center;border-bottom:1px solid var(--border)}}
 .stk-t th.l,.stk-t td.l{{text-align:left}}.stk-t td{{padding:9px 6px;text-align:center;border-bottom:1px solid var(--border);vertical-align:middle}}.stk-t tr:last-child td{{border-bottom:0}}
@@ -1157,7 +1212,7 @@ document.documentElement.classList.add('part');}}}}
     page = page.replace("</body></html>", PENDING_GUARD.replace("@@PAIR@@", json.dumps([an, bn])).replace("@@NOTE@@", json.dumps(
         f'<div class="stk"><div class="stk-h"><span class="bullet"></span>Line pending</div><div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}</div></div>')) + "</body></html>")
     (OUT / outname).write_text(page)
-    reg = dict(fight=n, of=NB, site_pair=PAIR, pair=[an, bn], file=outname, event=EVF, proj_src=proj_src, proj_file=PUBF if (pf or lp) else (EVF if EM else None),
+    reg = dict(markov_card=MKREG.get(n), fight=n, of=NB, site_pair=PAIR, pair=[an, bn], file=outname, event=EVF, proj_src=proj_src, proj_file=PUBF if (pf or lp) else (EVF if EM else None),
                published_at=PUB.get("published_at") if (pf or lp) else None, rows=R.rows, gaps=gaps, **({"line_pending": lp} if lp else {}))
     (OUT / outname.replace(".html", ".registry.json")).write_text(json.dumps(reg, indent=1, default=str))
     print(outname, len(page), "bytes,", len(R.rows), "numbers,", len(gaps), "gaps")
