@@ -1,0 +1,135 @@
+{
+ "_doc": "Flag, veto and prop-note lines transcribed from UFC_FN_Prochazka_vs_Stirling_V41b_Output.md (card 10). fight_order follows the doc's fight numbers (1 = main event). A = BFO underdog in every bout name.",
+ "grading_window_index": 10,
+ "duration_flags": [],
+ "ml_flags": [
+  {
+   "fight_order": 4,
+   "side": "Asu Almabayev",
+   "market_odds": 162,
+   "model_shrunk": 56.9,
+   "model_raw": 58.1,
+   "market_implied": 36.4,
+   "edge_pts": 20.5,
+   "mechanism": "Almabayev projects 3.1 takedowns (4.74 TD/15, 91% control rate) against Horiguchi's roughly league-average 61% TD defense; Horiguchi is 36.1 and off an R3 KO loss.",
+   "counter": "TD output is capped (85/57/30) and 61% TDD is not a weakness; Horiguchi beat Albazi and Ulanbekov in his last 3.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 8,
+   "side": "Alessandro Costa",
+   "market_odds": -107,
+   "model_shrunk": 61.8,
+   "model_raw": 70.7,
+   "market_implied": 49.0,
+   "edge_pts": 12.7,
+   "mechanism": "Albazi lands 2.47 sig/min at 33% (differential -2.2/min) on an L2, so the sim gives Costa the distance rounds; Costa is W3 by finish in 2026.",
+   "counter": "Albazi stopped Costa in R3 in Dec 2022 (2 KDs); the engine has no head-to-head input. Near pickem.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 2,
+   "side": "Aljamain Sterling",
+   "market_odds": 108,
+   "model_shrunk": 54.2,
+   "model_raw": 57.6,
+   "market_implied": 45.8,
+   "edge_pts": 8.4,
+   "mechanism": "Sterling's distance differential (+2.3/min) wins rounds in a fight the sim sends to decision 52.8% of the time; Vallejos has 28 UFC minutes (confidence 55%).",
+   "counter": "Vallejos's 84% TDD and power (1.65 KD/15, P(KD) clamped at 40%); Sterling is 37.3 and has absorbed 5 KDs.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 7,
+   "side": "Tallison Teixeira",
+   "market_odds": 163,
+   "model_shrunk": 51.8,
+   "model_raw": 55.9,
+   "market_implied": 36.1,
+   "edge_pts": 15.6,
+   "mechanism": "Both KO grids at or near the clamp; Teixeira has 17 minutes and confidence is at the 30% floor.",
+   "confidence": "artifact"
+  },
+  {
+   "fight_order": 6,
+   "side": "Santiago Luna",
+   "market_odds": 225,
+   "model_shrunk": 57.3,
+   "model_raw": 74.2,
+   "market_implied": 29.2,
+   "edge_pts": 28.1,
+   "mechanism": "Topuria shows 0 UFC finishes and 0 KDs in 30 minutes against a 33-minute Luna sample; confidence at the 30% floor.",
+   "confidence": "vetoed"
+  },
+  {
+   "fight_order": 11,
+   "side": "Alik Lorenz",
+   "market_odds": 205,
+   "model_shrunk": 46.6,
+   "model_raw": 38.8,
+   "market_implied": 31.1,
+   "edge_pts": 15.5,
+   "mechanism": "SYN on both sides, 2.9 minutes of DWCS tape, both KO grids pinned at the 2.50 clamp.",
+   "confidence": "vetoed"
+  }
+ ],
+ "vetoes": [
+  {
+   "fight_order": 6,
+   "side": "Santiago Luna",
+   "market_odds": 225,
+   "code": "D",
+   "reason": "D-code: underdog with 3 UFC fights; last pre-UFC bout Tuff-N-Uff (minor). Automatic no-bet."
+  },
+  {
+   "fight_order": 9,
+   "side": "Tahir Abdullayev",
+   "market_odds": 198,
+   "code": "D",
+   "reason": "D-code: underdog with 1 UFC fight; last pre-UFC bout GFC (minor). Automatic no-bet."
+  },
+  {
+   "fight_order": 11,
+   "side": "Alik Lorenz",
+   "market_odds": 205,
+   "code": "D",
+   "reason": "D-code: underdog with 0 UFC fights (2 DWCS); last non-DWCS bout LFA 228 (minor). Automatic no-bet."
+  }
+ ],
+ "prop_notes": [
+  {
+   "fight_order": 4,
+   "text": "Almabayev 3.10 projected TDs (85/57/30, capped output, read as high)."
+  },
+  {
+   "fight_order": 5,
+   "text": "Aliskerov 1.88 projected TDs (85/56/29, capped); Cannonier 0.00 TDs is an artifact of Aliskerov's 100% TDD on 2 attempts faced."
+  },
+  {
+   "fight_order": 6,
+   "text": "Luna 0.00 projected TDs: artifact of Topuria's 100% TDD (9 of 9 over 2 bouts)."
+  },
+  {
+   "fight_order": 9,
+   "text": "Matthews 0.00 projected TDs: artifact of Abdullayev's 100% TDD from 1 bout."
+  },
+  {
+   "fight_order": 2,
+   "text": "Vallejos P(KD) 40% is clamped; Lorenz (fight 11) P(KD) 40% is clamped too."
+  },
+  {
+   "fight_order": 11,
+   "text": "Lorenz-Nurgozhay 56.1% ends in R1; Teixeira-Gaziev 47.1%; Cannonier-Aliskerov 38.8% (method props, not totals)."
+  },
+  {
+   "fight_order": 1,
+   "text": "SS 5R: Stirling 71.0 and Prochazka 47.8 mean over 11.7 expected minutes."
+  }
+ ],
+ "notes_extra": [
+  "Sheet rule (v4.7): no favorite reaches 80% de-vigged (highest Aliskerov 71.5%, Topuria 70.8%).",
+  "5R rule: Prochazka-Stirling listed GTD about 18% (+460 median) is under 40%, so the 5R GTD bet does not fire; O4.5 about 21% (+365) is under 50%, so no standing over.",
+  "No duration flags: the largest GTD-side gap is Prochazka-Stirling +5.9; ITD-side gaps are suppressed by rule.",
+  "BFO lists John Mitchell vs Shoaib Yousaf on this event page; it is not on UFC.com or UFCStats and was not simmed."
+ ]
+}
