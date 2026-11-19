@@ -966,6 +966,49 @@ def negative(D, G, slug):
                 ("markov: provisional label left in the Markov card file", mk_card_edit),
                 ("markov: a flag invented on a no-flag bout (fight 12)", plant_text("fight_12.html", lambda s_: s_.replace('<div class="mk-none">', '<div class="mk-i mk-lean"><div class="mk-h"><span class="mk-c">Lean</span> x</div></div><div class="mk-none">', 1))),
             ]
+    if slug != "ufc_334" and not all(json.load(open(p_)).get("proj_src") is None for p_ in D.glob("fight_*.registry.json")):
+        # Nov 19 (Kirk): a later card WITH sheet numbers. The UFC 334 list above names 334's pages (fight 13, Harrison, Gane/Hokit);
+        # these plants are card-generic: each targets the first page where it applies, and the export plants edit the export in memory.
+        def bump_rule(rule):
+            def go(T, G_):
+                for p in sorted(T.glob("fight_*.registry.json")):
+                    reg_ = json.load(open(p)); r = next((r for r in reg_["rows"] if r["rule"] == rule), None)
+                    if not r: continue
+                    h = T / p.name.replace(".registry.json", ".html"); s_ = h.read_text()
+                    t2 = re.sub(r"(\d)(?!.*\d)", lambda m: str((int(m.group(1)) + 1) % 10), r["text"])
+                    s2 = s_.replace(f'<span data-id="{r["id"]}">{H.escape(r["text"])}</span>', f'<span data-id="{r["id"]}">{H.escape(t2)}</span>', 1)
+                    if s2 != s_: h.write_text(s2); return
+                raise AssertionError("plant applied to no fight page")
+            return go
+        lp_page = next((p.name.replace(".registry.json", ".html") for p in sorted(D.glob("fight_*.registry.json"))
+                        if json.load(open(p)).get("proj_src") == "line_pending"), None)
+        plants = [
+            ("published: a model win % off by one", bump_rule("pub_win")),
+            ("published: a model method % off by one", bump_rule("pub_meth")),
+            ("published: a model moneyline off by one", bump_rule("pub_ml")),
+            ("published: an edge chip off by one", bump_rule("edge")),
+            ("published: a market moneyline price off by one", bump_rule("bp")),
+            ("published: a best US price off by one", bump_rule("bp_best")),
+            ("published: the line move opener off by one", bump_rule("lh_open_ml")),
+            ("published: a fighter reach off by one", bump_rule("bio_reach")),
+            ("published: KO and SUB cells swapped in a method stack", plant_any(lambda s_: s_.replace('<td data-k="ko">', '<td data-k="@@">', 1).replace('<td data-k="sub">', '<td data-k="ko">', 1).replace('<td data-k="@@">', '<td data-k="sub">', 1))),
+            ("published: a model cell blanked", plant_any(lambda s_: re.sub(r'<td class="model"><span class="odds">.*?</td>', '<td class="model dim">n/a</td>', s_, count=1, flags=re.S))),
+            ("published: an edge under 2.0 coloured", plant_any(lambda s_: re.sub(r'<span class="ech flat">(<span data-id="v\d+">[+-][01]\.\d%</span>)', r'<span class="ech pos">\1', s_, count=1))),
+            ("published: an offshore book named on a page", plant_any(lambda s_: s_.replace('<span class="mvl">Line', 'Pinnacle <span class="mvl">Line', 1))),
+            ("published: model renamed 'Sean'", plant_any(lambda s_: s_.replace("Moneyline · model vs market", "Moneyline · Sean vs market", 1))),
+            ("published: wrong FIGHT number", plant_any(lambda s_: re.sub(r'fp-fight-num">FIGHT (\d+)<', lambda m: f'fp-fight-num">FIGHT {int(m.group(1)) % 12 + 1}<', s_, count=1))),
+            ("card: one embed missing", lambda T, G_: next(iter(sorted(T.glob("fight_*.html")))).unlink()),
+            ("export: first fight's true % moved 0.2 pts after the build", export_shift),
+            ("export: one dog's KO/SUB split swapped after the build", export_method),
+            ("export: one GTD moved 1 pt after the build", export_gtd),
+        ]
+        if lp_page:
+            plants += [("line pending: a model cell slipped onto the held bout", plant_text(lp_page, lambda s_: s_.replace('<td class="l nm">', '<td class="model">+120</td><td class="l nm">', 1))),
+                       ("line pending: the Line pending note dropped", plant_text(lp_page, lambda s_: s_.replace(">Line pending<", "><", 1)))]
+        if json.load(open(REPO / "data/card_overrides.json")).get(slug, {}).get("markov"):
+            plants += [("markov: a flag number off by one", bump_rule("mk")),
+                       ("added bout: the no-odds-feed note dropped (fight 1)", plant_text("fight_01.html", lambda s_: s_.replace("No odds feed price for this bout yet.", "", 1))),
+                       ("markov: provisional label left in the Markov card file", mk_card_edit)]
     caught = 0
     for label, fn in plants:
         with tempfile.TemporaryDirectory() as td:

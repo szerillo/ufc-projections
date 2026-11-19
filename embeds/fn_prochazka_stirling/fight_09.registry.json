@@ -12,9 +12,9 @@
  ],
  "file": "fight_09.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
- "proj_src": null,
- "proj_file": null,
- "published_at": null,
+ "proj_src": "publish",
+ "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T22:40:00.000Z",
  "rows": [
   {
    "id": "v1",
@@ -132,7 +132,51 @@
   },
   {
    "id": "v11",
-   "text": "-212",
+   "text": "-187",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Kyoji Horiguchi",
+   "raw": 0.6520394764397905
+  },
+  {
+   "id": "v12",
+   "text": "65.2%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Kyoji Horiguchi",
+   "raw": 0.6520394764397905
+  },
+  {
+   "id": "v13",
+   "text": "-195",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Kyoji Horiguchi",
+   "raw": -195
+  },
+  {
+   "id": "v14",
+   "text": "66.1%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Kyoji Horiguchi",
+   "raw": 0.6610169491525424
+  },
+  {
+   "id": "v15",
+   "text": "-199",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -141,11 +185,11 @@
     "field": "cost"
    },
    "desc": "Market ML Kyoji Horiguchi",
-   "raw": -212
+   "raw": -199
   },
   {
-   "id": "v12",
-   "text": "67.9%",
+   "id": "v16",
+   "text": "66.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -153,24 +197,82 @@
     "label": "Kyoji Horiguchi"
    },
    "desc": "Market implied Kyoji Horiguchi",
-   "raw": 0.6794871794871795
+   "raw": 0.6655518394648829
   },
   {
-   "id": "v13",
-   "text": "-210",
+   "id": "v17",
+   "text": "-188",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
     "label": "Kyoji Horiguchi",
-    "book": "betmgm"
+    "book": "fanduel"
    },
    "desc": "Best US ML Kyoji Horiguchi",
-   "raw": -210
+   "raw": -188
   },
   {
-   "id": "v14",
-   "text": "+167",
+   "id": "v18",
+   "text": "-0.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v12",
+     "v14"
+    ]
+   },
+   "desc": "Edge ML Kyoji Horiguchi",
+   "raw": -0.008977472712751844
+  },
+  {
+   "id": "v19",
+   "text": "+187",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model ML Asu Almabayev",
+   "raw": 0.34796052356020946
+  },
+  {
+   "id": "v20",
+   "text": "34.8%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Asu Almabayev",
+   "raw": 0.34796052356020946
+  },
+  {
+   "id": "v21",
+   "text": "+165",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Asu Almabayev",
+   "raw": 165
+  },
+  {
+   "id": "v22",
+   "text": "37.7%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Asu Almabayev",
+   "raw": 0.37735849056603776
+  },
+  {
+   "id": "v23",
+   "text": "+161",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -179,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Asu Almabayev",
-   "raw": 167
+   "raw": 161
   },
   {
-   "id": "v15",
-   "text": "37.5%",
+   "id": "v24",
+   "text": "38.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -191,10 +293,10 @@
     "label": "Assu Almabayev"
    },
    "desc": "Market implied Asu Almabayev",
-   "raw": 0.37453183520599254
+   "raw": 0.3831417624521073
   },
   {
-   "id": "v16",
+   "id": "v25",
    "text": "+170",
    "fmt": "ml",
    "rule": "bp_best",
@@ -207,7 +309,43 @@
    "raw": 170
   },
   {
-   "id": "v17",
+   "id": "v26",
+   "text": "-2.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v20",
+     "v22"
+    ]
+   },
+   "desc": "Edge ML Asu Almabayev",
+   "raw": -0.029397967005828307
+  },
+  {
+   "id": "v27",
+   "text": "-161",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.6161819492611296
+  },
+  {
+   "id": "v28",
+   "text": "61.6%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.6161819492611296
+  },
+  {
+   "id": "v29",
    "text": "-225",
    "fmt": "ml",
    "rule": "bp",
@@ -220,7 +358,7 @@
    "raw": -225
   },
   {
-   "id": "v18",
+   "id": "v30",
    "text": "69.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -228,11 +366,49 @@
     "market": "fight_distance",
     "label": "Yes"
    },
-   "desc": "Market GTD yes implied",
+   "desc": "Market GTD implied",
    "raw": 0.6923076923076923
   },
   {
-   "id": "v19",
+   "id": "v31",
+   "text": "-7.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v28",
+     "v30"
+    ]
+   },
+   "desc": "Edge GTD vs market",
+   "raw": -0.07612574304656272
+  },
+  {
+   "id": "v32",
+   "text": "+161",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.38381805073887043
+  },
+  {
+   "id": "v33",
+   "text": "38.4%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.38381805073887043
+  },
+  {
+   "id": "v34",
    "text": "+166",
    "fmt": "ml",
    "rule": "bp",
@@ -241,11 +417,11 @@
     "label": "No",
     "field": "cost"
    },
-   "desc": "Market GTD no",
+   "desc": "Market ITD no",
    "raw": 166
   },
   {
-   "id": "v20",
+   "id": "v35",
    "text": "37.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -253,12 +429,50 @@
     "market": "fight_distance",
     "label": "No"
    },
-   "desc": "Market GTD no implied",
+   "desc": "Market ITD implied",
    "raw": 0.37593984962406013
   },
   {
-   "id": "v21",
-   "text": "+112",
+   "id": "v36",
+   "text": "+0.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v33",
+     "v35"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": 0.007878201114810301
+  },
+  {
+   "id": "v37",
+   "text": "+151",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Kyoji Horiguchi",
+   "raw": 0.399191467698467
+  },
+  {
+   "id": "v38",
+   "text": "39.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Kyoji Horiguchi",
+   "raw": 0.399191467698467
+  },
+  {
+   "id": "v39",
+   "text": "+114",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +481,11 @@
     "field": "cost"
    },
    "desc": "Market dec Kyoji Horiguchi",
-   "raw": 112
+   "raw": 114
   },
   {
-   "id": "v22",
-   "text": "47.2%",
+   "id": "v40",
+   "text": "46.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,10 +493,48 @@
     "label": "Kyoji Horiguchi Points"
    },
    "desc": "Market dec implied Kyoji Horiguchi",
-   "raw": 0.4716981132075472
+   "raw": 0.4672897196261682
   },
   {
-   "id": "v23",
+   "id": "v41",
+   "text": "-6.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v38",
+     "v40"
+    ]
+   },
+   "desc": "Edge dec Kyoji Horiguchi",
+   "raw": -0.06809825192770125
+  },
+  {
+   "id": "v42",
+   "text": "+481",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Kyoji Horiguchi",
+   "raw": 0.1722253008768883
+  },
+  {
+   "id": "v43",
+   "text": "17.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Kyoji Horiguchi",
+   "raw": 0.1722253008768883
+  },
+  {
+   "id": "v44",
    "text": "+469",
    "fmt": "ml",
    "rule": "bp",
@@ -295,7 +547,7 @@
    "raw": 469
   },
   {
-   "id": "v24",
+   "id": "v45",
    "text": "17.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -307,8 +559,46 @@
    "raw": 0.1757469244288225
   },
   {
-   "id": "v25",
-   "text": "+724",
+   "id": "v46",
+   "text": "-0.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v43",
+     "v45"
+    ]
+   },
+   "desc": "Edge ko Kyoji Horiguchi",
+   "raw": -0.0035216235519341943
+  },
+  {
+   "id": "v47",
+   "text": "+1140",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Kyoji Horiguchi",
+   "raw": 0.08062270786443523
+  },
+  {
+   "id": "v48",
+   "text": "8.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Kyoji Horiguchi",
+   "raw": 0.08062270786443523
+  },
+  {
+   "id": "v49",
+   "text": "+789",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -317,11 +607,11 @@
     "field": "cost"
    },
    "desc": "Market sub Kyoji Horiguchi",
-   "raw": 724
+   "raw": 789
   },
   {
-   "id": "v26",
-   "text": "12.1%",
+   "id": "v50",
+   "text": "11.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -329,11 +619,49 @@
     "label": "Kyoji Horiguchi Submission"
    },
    "desc": "Market sub implied Kyoji Horiguchi",
-   "raw": 0.12135922330097088
+   "raw": 0.1124859392575928
   },
   {
-   "id": "v27",
-   "text": "+237",
+   "id": "v51",
+   "text": "-3.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v48",
+     "v50"
+    ]
+   },
+   "desc": "Edge sub Kyoji Horiguchi",
+   "raw": -0.03186323139315757
+  },
+  {
+   "id": "v52",
+   "text": "+295",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Kyoji Horiguchi",
+   "raw": 0.25284800874132357
+  },
+  {
+   "id": "v53",
+   "text": "25.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Kyoji Horiguchi",
+   "raw": 0.25284800874132357
+  },
+  {
+   "id": "v54",
+   "text": "+247",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -344,11 +672,11 @@
     ]
    },
    "desc": "Market ITD price Kyoji Horiguchi",
-   "raw": 0.2971061477297934
+   "raw": 0.2882328636864153
   },
   {
-   "id": "v28",
-   "text": "29.7%",
+   "id": "v55",
+   "text": "28.8%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -359,10 +687,120 @@
     ]
    },
    "desc": "Market ITD implied Kyoji Horiguchi",
-   "raw": 0.2971061477297934
+   "raw": 0.2882328636864153
   },
   {
-   "id": "v29",
+   "id": "v56",
+   "text": "-3.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v53",
+     "v55"
+    ]
+   },
+   "desc": "Edge itd Kyoji Horiguchi",
+   "raw": -0.03538485494509175
+  },
+  {
+   "id": "v57",
+   "text": "+361",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Asu Almabayev",
+   "raw": 0.2169904815626626
+  },
+  {
+   "id": "v58",
+   "text": "21.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Asu Almabayev",
+   "raw": 0.2169904815626626
+  },
+  {
+   "id": "v59",
+   "text": "+1761",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Asu Almabayev",
+   "raw": 0.05373122644689449
+  },
+  {
+   "id": "v60",
+   "text": "5.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Asu Almabayev",
+   "raw": 0.05373122644689449
+  },
+  {
+   "id": "v61",
+   "text": "+1195",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Asu Almabayev",
+   "raw": 0.07723881555065237
+  },
+  {
+   "id": "v62",
+   "text": "7.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Asu Almabayev",
+   "raw": 0.07723881555065237
+  },
+  {
+   "id": "v63",
+   "text": "+664",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Asu Almabayev",
+   "raw": 0.13097004199754686
+  },
+  {
+   "id": "v64",
+   "text": "13.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Asu Almabayev",
+   "raw": 0.13097004199754686
+  },
+  {
+   "id": "v65",
    "text": "+170",
    "fmt": "ml",
    "rule": "lh_open_ml",
@@ -378,7 +816,7 @@
    "raw": 170
   },
   {
-   "id": "v30",
+   "id": "v66",
    "text": "+162",
    "fmt": "ml",
    "rule": "lh_open_ml",
@@ -395,8 +833,8 @@
    "raw": 162
   },
   {
-   "id": "v31",
-   "text": "1.1",
+   "id": "v67",
+   "text": "1.2",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -407,10 +845,10 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.01100000000000001
+   "raw": 0.01200000000000001
   },
   {
-   "id": "v32",
+   "id": "v68",
    "text": "75%",
    "fmt": "pct0",
    "rule": "em",
@@ -422,7 +860,7 @@
    "raw": 0.7514
   },
   {
-   "id": "v33",
+   "id": "v69",
    "text": "16%",
    "fmt": "pct0",
    "rule": "em",
@@ -434,7 +872,7 @@
    "raw": 0.1622
   },
   {
-   "id": "v34",
+   "id": "v70",
    "text": "9%",
    "fmt": "pct0",
    "rule": "em",
@@ -446,7 +884,7 @@
    "raw": 0.0865
   },
   {
-   "id": "v35",
+   "id": "v71",
    "text": "54%",
    "fmt": "pct0",
    "rule": "em",
@@ -458,7 +896,7 @@
    "raw": 0.5378
   },
   {
-   "id": "v36",
+   "id": "v72",
    "text": "24%",
    "fmt": "pct0",
    "rule": "em",
@@ -470,7 +908,7 @@
    "raw": 0.2437
   },
   {
-   "id": "v37",
+   "id": "v73",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em",
@@ -482,7 +920,7 @@
    "raw": 0.2185
   },
   {
-   "id": "v38",
+   "id": "v74",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -494,7 +932,7 @@
    "raw": 11
   },
   {
-   "id": "v39",
+   "id": "v75",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -506,7 +944,7 @@
    "raw": 8
   },
   {
-   "id": "v40",
+   "id": "v76",
    "text": "28%",
    "fmt": "pct0",
    "rule": "em",
@@ -518,7 +956,7 @@
    "raw": 0.2801
   },
   {
-   "id": "v41",
+   "id": "v77",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -530,7 +968,7 @@
    "raw": 2
   },
   {
-   "id": "v42",
+   "id": "v78",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -542,7 +980,7 @@
    "raw": 4
   },
   {
-   "id": "v43",
+   "id": "v79",
    "text": "10%",
    "fmt": "pct0",
    "rule": "em",
@@ -554,7 +992,7 @@
    "raw": 0.0972
   },
   {
-   "id": "v44",
+   "id": "v80",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -566,7 +1004,7 @@
    "raw": 1
   },
   {
-   "id": "v45",
+   "id": "v81",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -578,7 +1016,7 @@
    "raw": 1
   },
   {
-   "id": "v46",
+   "id": "v82",
    "text": "19%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -590,7 +1028,7 @@
    "raw": 0.1923
   },
   {
-   "id": "v47",
+   "id": "v83",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em",
@@ -602,7 +1040,7 @@
    "raw": 0.2239
   },
   {
-   "id": "v48",
+   "id": "v84",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -614,7 +1052,7 @@
    "raw": 1
   },
   {
-   "id": "v49",
+   "id": "v85",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -626,7 +1064,7 @@
    "raw": 1
   },
   {
-   "id": "v50",
+   "id": "v86",
    "text": "12%",
    "fmt": "pct0",
    "rule": "em",
@@ -638,7 +1076,7 @@
    "raw": 0.1224
   },
   {
-   "id": "v51",
+   "id": "v87",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -650,7 +1088,7 @@
    "raw": 1
   },
   {
-   "id": "v52",
+   "id": "v88",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -662,7 +1100,7 @@
    "raw": 1
   },
   {
-   "id": "v53",
+   "id": "v89",
    "text": "20%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -674,7 +1112,7 @@
    "raw": 0.203
   },
   {
-   "id": "v54",
+   "id": "v90",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -686,7 +1124,7 @@
    "raw": 2
   },
   {
-   "id": "v55",
+   "id": "v91",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -698,7 +1136,7 @@
    "raw": 1
   },
   {
-   "id": "v56",
+   "id": "v92",
    "text": "6",
    "fmt": "int",
    "rule": "em",
@@ -710,7 +1148,7 @@
    "raw": 6
   },
   {
-   "id": "v57",
+   "id": "v93",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -722,7 +1160,7 @@
    "raw": 1
   },
   {
-   "id": "v58",
+   "id": "v94",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -734,7 +1172,7 @@
    "raw": 1
   },
   {
-   "id": "v59",
+   "id": "v95",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -746,7 +1184,7 @@
    "raw": 3
   },
   {
-   "id": "v60",
+   "id": "v96",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -758,7 +1196,7 @@
    "raw": 4
   },
   {
-   "id": "v61",
+   "id": "v97",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -770,7 +1208,7 @@
    "raw": 1
   },
   {
-   "id": "v62",
+   "id": "v98",
    "text": "73%",
    "fmt": "pct0",
    "rule": "em",
@@ -782,7 +1220,7 @@
    "raw": 0.7273
   },
   {
-   "id": "v63",
+   "id": "v99",
    "text": "+1.4",
    "fmt": "s1",
    "rule": "em",
@@ -794,7 +1232,7 @@
    "raw": 1.357
   },
   {
-   "id": "v64",
+   "id": "v100",
    "text": "11",
    "fmt": "int",
    "rule": "em",
@@ -806,7 +1244,7 @@
    "raw": 11
   },
   {
-   "id": "v65",
+   "id": "v101",
    "text": "90%",
    "fmt": "pct0",
    "rule": "em",
@@ -818,7 +1256,7 @@
    "raw": 0.9
   },
   {
-   "id": "v66",
+   "id": "v102",
    "text": "+2.5",
    "fmt": "s1",
    "rule": "em",
@@ -830,7 +1268,7 @@
    "raw": 2.456
   },
   {
-   "id": "v67",
+   "id": "v103",
    "text": "10",
    "fmt": "int",
    "rule": "em",
@@ -842,7 +1280,7 @@
    "raw": 10
   },
   {
-   "id": "v68",
+   "id": "v104",
    "text": "67%",
    "fmt": "pct0",
    "rule": "em",
@@ -854,7 +1292,7 @@
    "raw": 0.6667
   },
   {
-   "id": "v69",
+   "id": "v105",
    "text": "+1.6",
    "fmt": "s1",
    "rule": "em",
@@ -866,7 +1304,7 @@
    "raw": 1.625
   },
   {
-   "id": "v70",
+   "id": "v106",
    "text": "9",
    "fmt": "int",
    "rule": "em",
@@ -878,7 +1316,7 @@
    "raw": 9
   },
   {
-   "id": "v71",
+   "id": "v107",
    "text": "88%",
    "fmt": "pct0",
    "rule": "em",
@@ -890,7 +1328,7 @@
    "raw": 0.875
   },
   {
-   "id": "v72",
+   "id": "v108",
    "text": "+0.7",
    "fmt": "s1",
    "rule": "em",
@@ -902,7 +1340,7 @@
    "raw": 0.7
   },
   {
-   "id": "v73",
+   "id": "v109",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -914,7 +1352,7 @@
    "raw": 8
   },
   {
-   "id": "v74",
+   "id": "v110",
    "text": "75%",
    "fmt": "pct0",
    "rule": "em",
@@ -926,7 +1364,7 @@
    "raw": 0.75
   },
   {
-   "id": "v75",
+   "id": "v111",
    "text": "+0.3",
    "fmt": "s1",
    "rule": "em",
@@ -938,7 +1376,7 @@
    "raw": 0.288
   },
   {
-   "id": "v76",
+   "id": "v112",
    "text": "8",
    "fmt": "int",
    "rule": "em",
@@ -950,7 +1388,7 @@
    "raw": 8
   },
   {
-   "id": "v77",
+   "id": "v113",
    "text": "86%",
    "fmt": "pct0",
    "rule": "em",
@@ -962,7 +1400,7 @@
    "raw": 0.8571
   },
   {
-   "id": "v78",
+   "id": "v114",
    "text": "-0.1",
    "fmt": "s1",
    "rule": "em",
@@ -974,7 +1412,7 @@
    "raw": -0.115
   },
   {
-   "id": "v79",
+   "id": "v115",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -986,7 +1424,7 @@
    "raw": 7
   },
   {
-   "id": "v80",
+   "id": "v116",
    "text": "+3",
    "fmt": "sint",
    "rule": "em",
@@ -998,7 +1436,7 @@
    "raw": 3
   },
   {
-   "id": "v81",
+   "id": "v117",
    "text": "+11",
    "fmt": "sint",
    "rule": "em",
@@ -1010,7 +1448,7 @@
    "raw": 11
   },
   {
-   "id": "v82",
+   "id": "v118",
    "text": "+11",
    "fmt": "sint",
    "rule": "em",
@@ -1022,7 +1460,7 @@
    "raw": 11
   },
   {
-   "id": "v83",
+   "id": "v119",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -1034,7 +1472,7 @@
    "raw": -4
   },
   {
-   "id": "v84",
+   "id": "v120",
    "text": "+15",
    "fmt": "sint",
    "rule": "em",
@@ -1046,7 +1484,7 @@
    "raw": 15
   },
   {
-   "id": "v85",
+   "id": "v121",
    "text": "+15",
    "fmt": "sint",
    "rule": "em",
@@ -1058,7 +1496,7 @@
    "raw": 15
   },
   {
-   "id": "v86",
+   "id": "v122",
    "text": "-6",
    "fmt": "sint",
    "rule": "em",
@@ -1070,7 +1508,7 @@
    "raw": -6
   },
   {
-   "id": "v87",
+   "id": "v123",
    "text": "+3",
    "fmt": "sint",
    "rule": "em",
@@ -1082,7 +1520,7 @@
    "raw": 3
   },
   {
-   "id": "v88",
+   "id": "v124",
    "text": "+18",
    "fmt": "sint",
    "rule": "em",
@@ -1094,7 +1532,7 @@
    "raw": 18
   },
   {
-   "id": "v89",
+   "id": "v125",
    "text": "+5",
    "fmt": "sint",
    "rule": "em",
@@ -1106,7 +1544,7 @@
    "raw": 5
   },
   {
-   "id": "v90",
+   "id": "v126",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1118,7 +1556,7 @@
    "raw": 2
   },
   {
-   "id": "v91",
+   "id": "v127",
    "text": "+9",
    "fmt": "sint",
    "rule": "em",
@@ -1130,7 +1568,7 @@
    "raw": 9
   },
   {
-   "id": "v92",
+   "id": "v128",
    "text": "+26",
    "fmt": "sint",
    "rule": "em",
@@ -1142,7 +1580,7 @@
    "raw": 26
   },
   {
-   "id": "v93",
+   "id": "v129",
    "text": "+12",
    "fmt": "sint",
    "rule": "em",
@@ -1154,7 +1592,7 @@
    "raw": 12
   },
   {
-   "id": "v94",
+   "id": "v130",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -1166,7 +1604,7 @@
    "raw": 1
   },
   {
-   "id": "v95",
+   "id": "v131",
    "text": "+12",
    "fmt": "sint",
    "rule": "em",
@@ -1178,7 +1616,7 @@
    "raw": 12
   },
   {
-   "id": "v96",
+   "id": "v132",
    "text": "+20",
    "fmt": "sint",
    "rule": "em",
@@ -1190,7 +1628,7 @@
    "raw": 20
   },
   {
-   "id": "v97",
+   "id": "v133",
    "text": "-6",
    "fmt": "sint",
    "rule": "em",
@@ -1202,7 +1640,7 @@
    "raw": -6
   },
   {
-   "id": "v98",
+   "id": "v134",
    "text": "+9",
    "fmt": "sint",
    "rule": "em",
@@ -1214,7 +1652,7 @@
    "raw": 9
   },
   {
-   "id": "v99",
+   "id": "v135",
    "text": "+18",
    "fmt": "sint",
    "rule": "em",
@@ -1226,7 +1664,7 @@
    "raw": 18
   },
   {
-   "id": "v100",
+   "id": "v136",
    "text": "+19",
    "fmt": "sint",
    "rule": "em",
@@ -1238,7 +1676,7 @@
    "raw": 19
   },
   {
-   "id": "v101",
+   "id": "v137",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -1250,7 +1688,7 @@
    "raw": -4
   },
   {
-   "id": "v102",
+   "id": "v138",
    "text": "+20",
    "fmt": "sint",
    "rule": "em",
@@ -1262,7 +1700,7 @@
    "raw": 20
   },
   {
-   "id": "v103",
+   "id": "v139",
    "text": "+20",
    "fmt": "sint",
    "rule": "em",
@@ -1274,7 +1712,7 @@
    "raw": 20
   },
   {
-   "id": "v104",
+   "id": "v140",
    "text": "+22",
    "fmt": "sint",
    "rule": "em",
@@ -1286,7 +1724,7 @@
    "raw": 22
   },
   {
-   "id": "v105",
+   "id": "v141",
    "text": "+5",
    "fmt": "sint",
    "rule": "em",
@@ -1298,7 +1736,7 @@
    "raw": 5
   },
   {
-   "id": "v106",
+   "id": "v142",
    "text": "-20",
    "fmt": "sint",
    "rule": "em",
@@ -1310,7 +1748,7 @@
    "raw": -20
   },
   {
-   "id": "v107",
+   "id": "v143",
    "text": "-3",
    "fmt": "sint",
    "rule": "em",
@@ -1322,7 +1760,7 @@
    "raw": -3
   },
   {
-   "id": "v108",
+   "id": "v144",
    "text": "+9",
    "fmt": "sint",
    "rule": "em",
@@ -1334,7 +1772,7 @@
    "raw": 9
   },
   {
-   "id": "v109",
+   "id": "v145",
    "text": "+16",
    "fmt": "sint",
    "rule": "em",
@@ -1346,7 +1784,7 @@
    "raw": 16
   },
   {
-   "id": "v110",
+   "id": "v146",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1358,7 +1796,7 @@
    "raw": 4
   },
   {
-   "id": "v111",
+   "id": "v147",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1370,7 +1808,7 @@
    "raw": 2
   },
   {
-   "id": "v112",
+   "id": "v148",
    "text": "-5",
    "fmt": "sint",
    "rule": "em",
@@ -1382,7 +1820,7 @@
    "raw": -5
   },
   {
-   "id": "v113",
+   "id": "v149",
    "text": "-5",
    "fmt": "sint",
    "rule": "em",
@@ -1394,7 +1832,7 @@
    "raw": -5
   },
   {
-   "id": "v114",
+   "id": "v150",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1406,7 +1844,7 @@
    "raw": 4
   },
   {
-   "id": "v115",
+   "id": "v151",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -1418,7 +1856,7 @@
    "raw": 1
   },
   {
-   "id": "v116",
+   "id": "v152",
    "text": "+9",
    "fmt": "sint",
    "rule": "em",
@@ -1430,7 +1868,7 @@
    "raw": 9
   },
   {
-   "id": "v117",
+   "id": "v153",
    "text": "+18",
    "fmt": "sint",
    "rule": "em",
@@ -1442,7 +1880,7 @@
    "raw": 18
   },
   {
-   "id": "v118",
+   "id": "v154",
    "text": "-1",
    "fmt": "sint",
    "rule": "em",
@@ -1454,7 +1892,7 @@
    "raw": -1
   },
   {
-   "id": "v119",
+   "id": "v155",
    "text": "-8",
    "fmt": "sint",
    "rule": "em",
@@ -1466,7 +1904,7 @@
    "raw": -8
   },
   {
-   "id": "v120",
+   "id": "v156",
    "text": "+6",
    "fmt": "sint",
    "rule": "em",
@@ -1478,7 +1916,7 @@
    "raw": 6
   },
   {
-   "id": "v121",
+   "id": "v157",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1490,7 +1928,7 @@
    "raw": 4
   },
   {
-   "id": "v122",
+   "id": "v158",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -1502,7 +1940,7 @@
    "raw": -4
   },
   {
-   "id": "v123",
+   "id": "v159",
    "text": "+6",
    "fmt": "sint",
    "rule": "em",
@@ -1514,7 +1952,7 @@
    "raw": 6
   },
   {
-   "id": "v124",
+   "id": "v160",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1526,7 +1964,7 @@
    "raw": 4
   },
   {
-   "id": "v125",
+   "id": "v161",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1538,7 +1976,7 @@
    "raw": 4
   },
   {
-   "id": "v126",
+   "id": "v162",
    "text": "+4",
    "fmt": "sint",
    "rule": "em",
@@ -1550,7 +1988,7 @@
    "raw": 4
   },
   {
-   "id": "v127",
+   "id": "v163",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1562,7 +2000,7 @@
    "raw": 2
   },
   {
-   "id": "v128",
+   "id": "v164",
    "text": "-5",
    "fmt": "sint",
    "rule": "em",
@@ -1574,7 +2012,7 @@
    "raw": -5
   },
   {
-   "id": "v129",
+   "id": "v165",
    "text": "-20",
    "fmt": "sint",
    "rule": "em",
@@ -1586,7 +2024,7 @@
    "raw": -20
   },
   {
-   "id": "v130",
+   "id": "v166",
    "text": "+6",
    "fmt": "sint",
    "rule": "em",
@@ -1598,7 +2036,7 @@
    "raw": 6
   },
   {
-   "id": "v131",
+   "id": "v167",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
@@ -1610,7 +2048,7 @@
    "raw": 8
   },
   {
-   "id": "v132",
+   "id": "v168",
    "text": "+2",
    "fmt": "sint",
    "rule": "em",
@@ -1622,7 +2060,7 @@
    "raw": 2
   },
   {
-   "id": "v133",
+   "id": "v169",
    "text": "+1.4",
    "fmt": "s1",
    "rule": "em",
@@ -1634,7 +2072,7 @@
    "raw": 1.357
   },
   {
-   "id": "v134",
+   "id": "v170",
    "text": "+2.5",
    "fmt": "s1",
    "rule": "em",
@@ -1646,7 +2084,7 @@
    "raw": 2.456
   },
   {
-   "id": "v135",
+   "id": "v171",
    "text": "+1.6",
    "fmt": "s1",
    "rule": "em",
@@ -1658,7 +2096,7 @@
    "raw": 1.625
   },
   {
-   "id": "v136",
+   "id": "v172",
    "text": "+0.7",
    "fmt": "s1",
    "rule": "em",
@@ -1670,7 +2108,7 @@
    "raw": 0.7
   },
   {
-   "id": "v137",
+   "id": "v173",
    "text": "+0.3",
    "fmt": "s1",
    "rule": "em",
@@ -1682,7 +2120,7 @@
    "raw": 0.288
   },
   {
-   "id": "v138",
+   "id": "v174",
    "text": "-0.1",
    "fmt": "s1",
    "rule": "em",
@@ -1694,7 +2132,7 @@
    "raw": -0.115
   },
   {
-   "id": "v139",
+   "id": "v175",
    "text": "1.67",
    "fmt": "n2",
    "rule": "em",
@@ -1706,7 +2144,7 @@
    "raw": 1.671
   },
   {
-   "id": "v140",
+   "id": "v176",
    "text": "4.74",
    "fmt": "n2",
    "rule": "em",
@@ -1718,7 +2156,7 @@
    "raw": 4.743
   },
   {
-   "id": "v141",
+   "id": "v177",
    "text": "40%",
    "fmt": "pct0",
    "rule": "em",
@@ -1730,7 +2168,7 @@
    "raw": 0.4048
   },
   {
-   "id": "v142",
+   "id": "v178",
    "text": "46%",
    "fmt": "pct0",
    "rule": "em",
@@ -1742,7 +2180,7 @@
    "raw": 0.4583
   },
   {
-   "id": "v143",
+   "id": "v179",
    "text": "61%",
    "fmt": "pct0",
    "rule": "em",
@@ -1754,7 +2192,7 @@
    "raw": 0.6122
   },
   {
-   "id": "v144",
+   "id": "v180",
    "text": "44%",
    "fmt": "pct0",
    "rule": "em",
@@ -1766,7 +2204,7 @@
    "raw": 0.4444
   },
   {
-   "id": "v145",
+   "id": "v181",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em",
@@ -1778,7 +2216,7 @@
    "raw": 0.2173
   },
   {
-   "id": "v146",
+   "id": "v182",
    "text": "49%",
    "fmt": "pct0",
    "rule": "em",
@@ -1790,7 +2228,7 @@
    "raw": 0.4891
   },
   {
-   "id": "v147",
+   "id": "v183",
    "text": "+4.3%",
    "fmt": "spp",
    "rule": "em",
@@ -1802,7 +2240,7 @@
    "raw": 0.0427
   },
   {
-   "id": "v148",
+   "id": "v184",
    "text": "+43.6%",
    "fmt": "spp",
    "rule": "em",
@@ -1814,7 +2252,7 @@
    "raw": 0.4358
   },
   {
-   "id": "v149",
+   "id": "v185",
    "text": "18%",
    "fmt": "pct0",
    "rule": "em",
@@ -1826,7 +2264,7 @@
    "raw": 0.1782
   },
   {
-   "id": "v150",
+   "id": "v186",
    "text": "5%",
    "fmt": "pct0",
    "rule": "em",
@@ -1838,7 +2276,7 @@
    "raw": 0.0513
   },
   {
-   "id": "v151",
+   "id": "v187",
    "text": "0.10",
    "fmt": "n2",
    "rule": "em",
@@ -1850,7 +2288,7 @@
    "raw": 0.098
   },
   {
-   "id": "v152",
+   "id": "v188",
    "text": "1.44",
    "fmt": "n2",
    "rule": "em",
@@ -1862,7 +2300,7 @@
    "raw": 1.437
   },
   {
-   "id": "v153",
+   "id": "v189",
    "text": "+1.56",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1878,7 +2316,7 @@
    "raw": 1.56
   },
   {
-   "id": "v154",
+   "id": "v190",
    "text": "+0.34",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1894,7 +2332,7 @@
    "raw": 0.345
   },
   {
-   "id": "v155",
+   "id": "v191",
    "text": "+1.59",
    "fmt": "s2",
    "rule": "em",
@@ -1906,7 +2344,7 @@
    "raw": 1.588
   },
   {
-   "id": "v156",
+   "id": "v192",
    "text": "+0.33",
    "fmt": "s2",
    "rule": "em",
@@ -1918,7 +2356,7 @@
    "raw": 0.328
   },
   {
-   "id": "v157",
+   "id": "v193",
    "text": "+1.58",
    "fmt": "s2",
    "rule": "em",
@@ -1930,7 +2368,7 @@
    "raw": 1.579
   },
   {
-   "id": "v158",
+   "id": "v194",
    "text": "+0.25",
    "fmt": "s2",
    "rule": "em",
@@ -1942,7 +2380,7 @@
    "raw": 0.249
   },
   {
-   "id": "v159",
+   "id": "v195",
    "text": "+0.07",
    "fmt": "s2",
    "rule": "em",
@@ -1954,7 +2392,7 @@
    "raw": 0.066
   },
   {
-   "id": "v160",
+   "id": "v196",
    "text": "-0.09",
    "fmt": "s2",
    "rule": "em",
@@ -1966,7 +2404,7 @@
    "raw": -0.086
   },
   {
-   "id": "v161",
+   "id": "v197",
    "text": "-0.09",
    "fmt": "s2",
    "rule": "em",
@@ -1978,7 +2416,7 @@
    "raw": -0.085
   },
   {
-   "id": "v162",
+   "id": "v198",
    "text": "+0.18",
    "fmt": "s2",
    "rule": "em",
@@ -1990,7 +2428,7 @@
    "raw": 0.182
   },
   {
-   "id": "v163",
+   "id": "v199",
    "text": "73%",
    "fmt": "pct0",
    "rule": "em",
@@ -2002,7 +2440,7 @@
    "raw": 0.7333
   },
   {
-   "id": "v164",
+   "id": "v200",
    "text": "64%",
    "fmt": "pct0",
    "rule": "em",
@@ -2014,7 +2452,7 @@
    "raw": 0.6357
   },
   {
-   "id": "v165",
+   "id": "v201",
    "text": "13.9",
    "fmt": "n1",
    "rule": "em",
@@ -2026,7 +2464,7 @@
    "raw": 13.876
   },
   {
-   "id": "v166",
+   "id": "v202",
    "text": "13.0",
    "fmt": "n1",
    "rule": "em",
@@ -2038,7 +2476,7 @@
    "raw": 13.046
   },
   {
-   "id": "v167",
+   "id": "v203",
    "text": "9%",
    "fmt": "pct0",
    "rule": "em",
@@ -2050,7 +2488,7 @@
    "raw": 0.0909
   },
   {
-   "id": "v168",
+   "id": "v204",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -2062,7 +2500,7 @@
    "raw": 0.0
   },
   {
-   "id": "v169",
+   "id": "v205",
    "text": "+162",
    "fmt": "ml",
    "rule": "mk",
@@ -2076,7 +2514,7 @@
    "raw": 162
   },
   {
-   "id": "v170",
+   "id": "v206",
    "text": "56.9",
    "fmt": "n1",
    "rule": "mk",
@@ -2090,7 +2528,7 @@
    "raw": 56.9
   },
   {
-   "id": "v171",
+   "id": "v207",
    "text": "58.1",
    "fmt": "n1",
    "rule": "mk",
@@ -2104,7 +2542,7 @@
    "raw": 58.1
   },
   {
-   "id": "v172",
+   "id": "v208",
    "text": "36.4",
    "fmt": "n1",
    "rule": "mk",
@@ -2118,7 +2556,7 @@
    "raw": 36.4
   },
   {
-   "id": "v173",
+   "id": "v209",
    "text": "+20.5",
    "fmt": "s1",
    "rule": "mk",
@@ -2132,7 +2570,7 @@
    "raw": 20.5
   },
   {
-   "id": "v174",
+   "id": "v210",
    "text": "+152",
    "fmt": "ml",
    "rule": "fight",
@@ -2145,7 +2583,7 @@
    "raw": 152
   },
   {
-   "id": "v175",
+   "id": "v211",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -2158,7 +2596,7 @@
    "raw": -370
   },
   {
-   "id": "v176",
+   "id": "v212",
    "text": "+178",
    "fmt": "ml",
    "rule": "fight",
@@ -2171,7 +2609,7 @@
    "raw": 178
   },
   {
-   "id": "v177",
+   "id": "v213",
    "text": "-270",
    "fmt": "ml",
    "rule": "fight",
@@ -2184,7 +2622,5 @@
    "raw": -270
   }
  ],
- "gaps": [
-  "Fight 9: no row in the Publish to site export; no model numbers shown."
- ]
+ "gaps": []
 }

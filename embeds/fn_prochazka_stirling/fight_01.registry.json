@@ -12,9 +12,9 @@
  ],
  "file": "fight_01.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
- "proj_src": null,
- "proj_file": null,
- "published_at": null,
+ "proj_src": "line_pending",
+ "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T22:40:00.000Z",
  "rows": [
   {
    "id": "v1",
@@ -40,7 +40,7 @@
   },
   {
    "id": "v3",
-   "text": "-142",
+   "text": "+120",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -49,14 +49,14 @@
      "John Mitchell",
      "Shoaib Yousaf"
     ],
-    "side": "a"
+    "side": "b"
    },
-   "desc": "LH open ML John Mitchell",
-   "raw": -142
+   "desc": "LH open ML Shoaib Yousaf",
+   "raw": 120
   },
   {
    "id": "v4",
-   "text": "-142",
+   "text": "+115",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -65,15 +65,15 @@
      "John Mitchell",
      "Shoaib Yousaf"
     ],
-    "side": "a",
+    "side": "b",
     "at": "current"
    },
-   "desc": "LH current ML John Mitchell",
-   "raw": -142
+   "desc": "LH current ML Shoaib Yousaf",
+   "raw": 115
   },
   {
    "id": "v5",
-   "text": "0.1",
+   "text": "0.6",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -84,7 +84,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0009999999999998899
+   "raw": 0.006000000000000005
   },
   {
    "id": "v6",
@@ -158,6 +158,11 @@
   }
  ],
  "gaps": [
-  "Fight 1: no row in the Publish to site export; no model numbers shown. Not in the odds feed yet."
- ]
+  "Fight 1: Line pending in data/pending/fn_prochazka_stirling_projections.json (price_source missing, so the price cannot be tied to this bout (publish with the current script) (OPP-1); no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)); no model numbers shown."
+ ],
+ "line_pending": {
+  "dog": "Shoaib Yousaf",
+  "fav": "John Mitchell",
+  "reason": "price_source missing, so the price cannot be tied to this bout (publish with the current script) (OPP-1); no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)"
+ }
 }

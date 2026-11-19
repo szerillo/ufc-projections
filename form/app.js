@@ -293,6 +293,7 @@ function buildUp(f) { // how the sheet's underdog number is built: listed + Mark
   if (kAdj) add(`Context code ${esc(kc)}`, kAdj);
   if (T != null && K != null) { add(`Public fade, primary: ${p1} × overage of ${(Math.max(0, Math.max(T, K) - G) * 100).toFixed(1)} pts`, -p1 * Math.max(0, Math.max(T, K) - G)); add(`Public fade, secondary: ${p2} × overage of ${(Math.max(0, Math.min(T, K) - G) * 100).toFixed(1)} pts`, -p2 * Math.max(0, Math.min(T, K) - G)); }
   q = Math.min(0.98, Math.max(0.02, q));
+  if (s.adj) { q += s.adj; steps.push(["Sean's manual adjust", s.adj, q]); }   // Nov 19: Calculator M, added after the clamp (L = Q + M)
   if (steps.length < 2) return `<div class="note">Sheet number for ${esc(dog.name)} equals the listed line: no Markov, public or context inputs entered yet.${kc === "D" ? " Context code D: debut underdog, no dog bet." : ""}</div>`;
   return `<div class="tw" style="margin-top:6px"><table><thead><tr><th class="l">How ${esc(last(dog.name))}'s number is built</th><th>Change</th><th>Running</th></tr></thead><tbody>${steps.map(([l, d, r]) => `<tr><td class="l">${l}</td><td class="${cls(d)}">${d == null ? "" : signed(d * 100, 2)}</td><td>${(r * 100).toFixed(1)}%</td></tr>`).join("")}<tr style="background:var(--hl)"><td class="l b">Sheet model, ${esc(dog.name)}</td><td></td><td class="b">${(q * 100).toFixed(1)}%</td></tr></tbody></table></div>${kc === "D" ? '<div class="note">Context code D: debut underdog. It blocks the dog bet and changes nothing else.</div>' : ""}`;
 }

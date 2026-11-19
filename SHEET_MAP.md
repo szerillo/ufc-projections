@@ -29,8 +29,7 @@ Where the moving parts of the "UFC Model" Google Sheet live and what reads them.
 
 ## B42: fixed Markov offset (v4.8, Nov 19 2026, Sean approved)
 - **What:** Markov runs high on dogs. B42 is subtracted from every fight's Markov J before blending. It is a plain number, so no fight's inputs can move another fight.
-- **Fit:** average of (Markov J - listed G) over every graded Snapshots row. D42 holds the live refit:
-  `=IFERROR(AVERAGE(FILTER(Snapshots!P2:P1000-Snapshots!N2:N1000,Snapshots!P2:P1000<>"",Snapshots!N2:N1000<>"",Snapshots!AY2:AY1000<>"")),0)`
+- **Fit:** average of (Markov J - listed G) over every graded Snapshots row. Calculator D42 holds that live refit as a formula (the formula text stays in the sheet and in the project copy of this doc, not in the public repo).
   Nothing reads D42; it is display only. C42 and E42 carry the in-sheet labels.
 - **Re-fit: after each graded card.** When the card's Snapshots rows are graded, type D42's value (4 decimals) into B42 as a number. Do it before the next card's first-walkout snapshot, never mid-card. Never paste a formula into B42 (that would bring back cross-fight links).
 - **Why not monthly:** one card adds 10-14 rows to about 114; the value moves a few hundredths of a point per card, and refitting at the grading step keeps one offset per card.

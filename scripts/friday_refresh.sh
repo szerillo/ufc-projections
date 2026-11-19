@@ -21,9 +21,12 @@ if p is None:   # Nov 18 (new card, sheet not published yet): the embeds build w
     print("!" * 70); print(f"NO SHEET EXPORT FOR {slug} YET: every embed shows 'No model projection published for this bout yet'"); print("!" * 70)
     sys.exit(0 if sys.argv[5] == "1" else "GO-LIVE BLOCKED: Sean has not published this card from the sheet (Site > Publish to site). Staging build only: ALLOW_NO_EXPORT=1")
 X = json.load(open(p)); t = dt.datetime.fromisoformat(X["published_at"].replace("Z", "+00:00"))
+if X.get("staging"):   # Nov 19 (Kirk): a staging export read from the sheet by Claude, never Sean's Publish to site; it never goes live
+    print("!" * 70); print(f"STAGING EXPORT ({p}): sheet numbers read via the API, NOT Sean's Publish to site"); print("!" * 70)
+    if sys.argv[5] != "1": sys.exit("GO-LIVE BLOCKED: only Sean's Publish to site export can go live. Staging build only: ALLOW_NO_EXPORT=1")
 age = (dt.datetime.now(dt.timezone.utc) - t).total_seconds() / 3600
 fold = lambda s: re.sub(r"[^a-z]", "", unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower().split()[-1]) if s else ""
-ev = json.load(open(evp)); have = {frozenset((fold(f["dog"]), fold(f["fav"]))) for f in X["fights"]}
+ev = json.load(open(evp)); have = {frozenset((fold(f["dog"]), fold(f["fav"]))) for f in X["fights"] + (X.get("line_pending") or [])}   # Nov 19: a held (Line pending) bout is in the export
 miss = [f"{f['a']['name']} vs {f['b']['name']}" for f in ev["fights"] if frozenset((fold(f["a"]["name"]), fold(f["b"]["name"]))) not in have]
 bar = "!" * 70
 msg = f"SHEET EXPORT IS {age:.1f} HOURS OLD (published {X['published_at']})"

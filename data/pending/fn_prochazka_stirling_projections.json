@@ -1,0 +1,926 @@
+{
+ "schema": 1,
+ "slug": "fn_prochazka_stirling",
+ "event": "UFC Fight Night: Prochazka vs Stirling | UFC Qatar",
+ "published_at": "2026-11-19T22:40:00.000Z",
+ "source": "STAGING: UFC Model sheet v4.8 read by Claude via the Sheets API (port of publish_to_site.gs b47-out); NOT Sean's Publish to site",
+ "staging": true,
+ "prices_loaded": "2026-11-19T06:43:01.000Z",
+ "params": {
+  "shift": 0.1086,
+  "b43": 0.15,
+  "b44": 0.075,
+  "b45": 0.15,
+  "b41": 0.5
+ },
+ "fights": [
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 2,
+   "calc_row": 2,
+   "tag": "205-5",
+   "dog": "Jiri Prochazka",
+   "fav": "Navajo Stirling",
+   "inputs": {
+    "dog_odds": 135,
+    "fav_odds": -160,
+    "open_dog": 0.43795620437956206,
+    "markov": 0.344,
+    "shift": 0.1086,
+    "tap": 0.54,
+    "junk": 0.42,
+    "tip": 0.403,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.4088050314465409,
+    "markov_shifted": 0.23539999999999997,
+    "q": 0.36227540880503145,
+    "true_dog": 0.36227540880503145,
+    "true_fav": 0.6377245911949685,
+    "dog_edge": -0.06325650608858557,
+    "fav_edge": 0.022339975810353074,
+    "drift": -0.029151172933021163,
+    "flag": "public on dog - no dog bet",
+    "rec": "lean Navajo Stirling"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.07747159083045163,
+     "ko": 0.8400003831932421,
+     "sub": 0.08252802597630626
+    },
+    "fav": {
+     "dec": 0.2900484770908309,
+     "ko": 0.6572944750504126,
+     "sub": 0.05265704785875647
+    }
+   },
+   "gtd": 0.2130370987183513,
+   "gtd_listed": 0.16603382667673705,
+   "markov_dec": {
+    "dog": 0.08,
+    "fav": 0.3
+   },
+   "method_inputs": {
+    "ap": 0.08,
+    "aq": 0.3,
+    "ad": 0.028,
+    "ae": 0.964,
+    "ah": 0.048,
+    "ai": 0.951,
+    "al": 0.3855,
+    "am": 0.474,
+    "an": 0.1405,
+    "s": 0.16603382667673705,
+    "cx": 0.7677,
+    "cy": 0.5908,
+    "ko_dog": 187,
+    "sub_dog": 1779,
+    "ko_fav": -107,
+    "sub_fav": 1779
+   },
+   "price_source": {
+    "order": 1,
+    "dog": "Jiri Prochazka",
+    "fav": "Navajo Stirling",
+    "cons_dog": "142",
+    "cons_fav": "-142",
+    "best_dog": "+135 FanDuel",
+    "best_fav": "-160 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 3,
+   "calc_row": 3,
+   "tag": "145",
+   "dog": "Aljamain Sterling",
+   "fav": "Kevin Vallejos",
+   "inputs": {
+    "dog_odds": 110,
+    "fav_odds": -130,
+    "open_dog": 0.4462590201291302,
+    "markov": 0.542,
+    "shift": 0.1086,
+    "tap": 0.48,
+    "junk": 0.57,
+    "tip": 0.461,
+    "ctx": null,
+    "manual": 0.03,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.4572564612326044,
+    "markov_shifted": 0.4334,
+    "q": 0.43506069582504975,
+    "true_dog": 0.4650606958250497,
+    "true_fav": 0.5349393041749503,
+    "dog_edge": -0.011129780365426445,
+    "fav_edge": -0.030278087129397502,
+    "drift": 0.01099744110347417,
+    "flag": "public on dog - no dog bet",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.6213344717912685,
+     "ko": 0.110281786045804,
+     "sub": 0.26838374216292743
+    },
+    "fav": {
+     "dec": 0.45205521447662733,
+     "ko": 0.48231267548223306,
+     "sub": 0.06563211004113961
+    }
+   },
+   "gtd": 0.530780343672122,
+   "gtd_listed": 0.5513182941417881,
+   "markov_dec": {
+    "dog": 0.77,
+    "fav": 0.24
+   },
+   "method_inputs": {
+    "ap": 0.77,
+    "aq": 0.24,
+    "ad": 0.855,
+    "ae": 0.014,
+    "ah": 0.192,
+    "ai": 0.803,
+    "al": 0.531,
+    "am": 0.293,
+    "an": 0.176,
+    "s": 0.5513182941417881,
+    "cx": 0.4107,
+    "cy": 0.5943,
+    "ko_dog": 1637,
+    "sub_dog": 674,
+    "ko_fav": 214,
+    "sub_fav": 2040
+   },
+   "price_source": {
+    "order": 2,
+    "dog": "Aljamain Sterling",
+    "fav": "Kevin Vallejos",
+    "cons_dog": "118",
+    "cons_fav": "-118",
+    "best_dog": "+110 FanDuel",
+    "best_fav": "-130 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 4,
+   "calc_row": 4,
+   "tag": "155",
+   "dog": "Brian Ortega",
+   "fav": "Daniel Hooker",
+   "inputs": {
+    "dog_odds": 160,
+    "fav_odds": -188,
+    "open_dog": 0.3200301204819277,
+    "markov": 0.335,
+    "shift": 0.1086,
+    "tap": 0.23,
+    "junk": 0.37,
+    "tip": 0.12,
+    "ctx": null,
+    "manual": -0.03,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.3707518022657054,
+    "markov_shifted": 0.22640000000000002,
+    "q": 0.3490990319258496,
+    "true_dog": 0.31909903192584965,
+    "true_fav": 0.6809009680741503,
+    "dog_edge": -0.06551635268953498,
+    "fav_edge": 0.028123190296372558,
+    "drift": 0.05072168178377773,
+    "flag": "ok",
+    "rec": "lean Daniel Hooker"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.47778449967583636,
+     "ko": 0.13778159575420953,
+     "sub": 0.3844339045699541
+    },
+    "fav": {
+     "dec": 0.4579629109796015,
+     "ko": 0.45775485884893896,
+     "sub": 0.08428223017145953
+    }
+   },
+   "gtd": 0.4642879607438024,
+   "gtd_listed": 0.4855595814101382,
+   "markov_dec": {
+    "dog": 0.06,
+    "fav": 0.47
+   },
+   "method_inputs": {
+    "ap": 0.06,
+    "aq": 0.47,
+    "ad": 0.213,
+    "ae": 0.047,
+    "ah": 0.683,
+    "ai": 0.308,
+    "al": 0.48,
+    "am": 0.298,
+    "an": 0.222,
+    "s": 0.4855595814101382,
+    "cx": 0.5638,
+    "cy": 0.5852,
+    "ko_dog": 1169,
+    "sub_dog": 490,
+    "ko_fav": 222,
+    "sub_fav": 1494
+   },
+   "price_source": {
+    "order": 3,
+    "dog": "Brian Ortega",
+    "fav": "Daniel Hooker",
+    "cons_dog": "169",
+    "cons_fav": "-169",
+    "best_dog": "+160 FanDuel",
+    "best_fav": "-188 BetRivers"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 5,
+   "calc_row": 5,
+   "tag": "125",
+   "dog": "Asu Almabayev",
+   "fav": "Kyoji Horiguchi",
+   "inputs": {
+    "dog_odds": 165,
+    "fav_odds": -195,
+    "open_dog": 0.4462590201291303,
+    "markov": 0.569,
+    "shift": 0.1086,
+    "tap": 0.18,
+    "junk": 0.21,
+    "tip": 0.405,
+    "ctx": null,
+    "manual": -0.03,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.36341238065906994,
+    "markov_shifted": 0.4603999999999999,
+    "q": 0.3779605235602094,
+    "true_dog": 0.34796052356020946,
+    "true_fav": 0.6520394764397905,
+    "dog_edge": -0.029397967005828307,
+    "fav_edge": -0.008977472712751844,
+    "drift": -0.08284663947006038,
+    "flag": "no dog bet (drifting)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.6236066072739874,
+     "ko": 0.15441759282672504,
+     "sub": 0.22197579989928753
+    },
+    "fav": {
+     "dec": 0.6122197844187252,
+     "ko": 0.2641332420810746,
+     "sub": 0.12364697350020026
+    }
+   },
+   "gtd": 0.6161819492611296,
+   "gtd_listed": 0.6599075062255426,
+   "markov_dec": {
+    "dog": 0.44,
+    "fav": 0.51
+   },
+   "method_inputs": {
+    "ap": 0.44,
+    "aq": 0.51,
+    "ad": 0.682,
+    "ae": 0.081,
+    "ah": 0.856,
+    "ai": 0.115,
+    "al": 0.531,
+    "am": 0.25,
+    "an": 0.219,
+    "s": 0.6599075062255426,
+    "cx": 0.4793,
+    "cy": 0.4938,
+    "ko_dog": 1200,
+    "sub_dog": 1062,
+    "ko_fav": 464,
+    "sub_fav": 958
+   },
+   "price_source": {
+    "order": 4,
+    "dog": "Asu Almabayev",
+    "fav": "Kyoji Horiguchi",
+    "cons_dog": "174",
+    "cons_fav": "-174",
+    "best_dog": "+165 FanDuel",
+    "best_fav": "-195 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Main Card",
+   "row": 6,
+   "calc_row": 6,
+   "tag": "185",
+   "dog": "Jared Cannonier",
+   "fav": "Ikram Aliskerov",
+   "inputs": {
+    "dog_odds": 235,
+    "fav_odds": -280,
+    "open_dog": 0.2508361204013378,
+    "markov": 0.206,
+    "shift": 0.1086,
+    "tap": 0.2,
+    "junk": 0.25,
+    "tip": 0.5,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.28831562974203334,
+    "markov_shifted": 0.09739999999999999,
+    "q": 0.25967828528072834,
+    "true_dog": 0.25967828528072834,
+    "true_fav": 0.7403217147192717,
+    "dog_edge": -0.0388291774058388,
+    "fav_edge": 0.003479609456113808,
+    "drift": 0.03747950934069555,
+    "flag": "SHARPS ON DOG - no dog bet (fav +5% 6/6y)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.35074338474067224,
+     "ko": 0.5532113288591723,
+     "sub": 0.09604528640015542
+    },
+    "fav": {
+     "dec": 0.4600343999382205,
+     "ko": 0.41690651811487256,
+     "sub": 0.12305908194690696
+    }
+   },
+   "gtd": 0.4316538965151311,
+   "gtd_listed": 0.4241672278672951,
+   "markov_dec": {
+    "dog": 0.1,
+    "fav": 0.36
+   },
+   "method_inputs": {
+    "ap": 0.1,
+    "aq": 0.36,
+    "ad": 0.436,
+    "ae": 0.558,
+    "ah": 0.801,
+    "ai": 0.18,
+    "al": 0.407,
+    "am": 0.373,
+    "an": 0.221,
+    "s": 0.4241672278672951,
+    "cx": 0.6303,
+    "cy": 0.5242,
+    "ko_dog": 450,
+    "sub_dog": 2200,
+    "ko_fav": 202,
+    "sub_fav": 674
+   },
+   "price_source": {
+    "order": 5,
+    "dog": "Jared Cannonier",
+    "fav": "Ikram Aliskerov",
+    "cons_dog": "248",
+    "cons_fav": "-248",
+    "best_dog": "+235 Caesars",
+    "best_fav": "-280 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 2,
+   "calc_row": 8,
+   "tag": "135",
+   "dog": "Santiago Luna",
+   "fav": "Aleksandre Topuria",
+   "inputs": {
+    "dog_odds": 235,
+    "fav_odds": -275,
+    "open_dog": 0.337909186906019,
+    "markov": 0.573,
+    "shift": 0.1086,
+    "tap": 0.08,
+    "junk": 0.13,
+    "tip": 0.157,
+    "ctx": "D",
+    "manual": -0.03,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.2892960462873674,
+    "markov_shifted": 0.4643999999999999,
+    "q": 0.3155616393442623,
+    "true_dog": 0.28556163934426226,
+    "true_fav": 0.7144383606557377,
+    "dog_edge": -0.012945823342304874,
+    "fav_edge": -0.018894972677595545,
+    "drift": -0.04861314061865163,
+    "flag": "DEBUTANT DOG - no dog bet (-27% 6/6y)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.5548621634159238,
+     "ko": 0.2841101253868709,
+     "sub": 0.16102771119720533
+    },
+    "fav": {
+     "dec": 0.5306619185933958,
+     "ko": 0.25660943573277684,
+     "sub": 0.21272864567382732
+    }
+   },
+   "gtd": 0.5375725801774495,
+   "gtd_listed": 0.5596731488421972,
+   "markov_dec": {
+    "dog": 0.47,
+    "fav": 0.47
+   },
+   "method_inputs": {
+    "ap": 0.47,
+    "aq": 0.47,
+    "ad": 0.671,
+    "ae": 0.298,
+    "ah": 0.727,
+    "ai": 0.157,
+    "al": 0.545,
+    "am": 0.259,
+    "an": 0.196,
+    "s": 0.5596731488421972,
+    "cx": 0.5463,
+    "cy": 0.576,
+    "ko_dog": 1048,
+    "sub_dog": 948,
+    "ko_fav": 434,
+    "sub_fav": 479
+   },
+   "price_source": {
+    "order": 6,
+    "dog": "Santiago Luna",
+    "fav": "Aleksandre Topuria",
+    "cons_dog": "243",
+    "cons_fav": "-243",
+    "best_dog": "+235 FanDuel",
+    "best_fav": "-275 BetRivers"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 3,
+   "calc_row": 9,
+   "tag": "265",
+   "dog": "Tallison Teixeira",
+   "fav": "Shamil Gaziev",
+   "inputs": {
+    "dog_odds": 163,
+    "fav_odds": -190,
+    "open_dog": 0.38691523039043263,
+    "markov": 0.518,
+    "shift": 0.1086,
+    "tap": 0.16,
+    "junk": 0.28,
+    "tip": 0.089,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.36722806128909713,
+    "markov_shifted": 0.4094,
+    "q": 0.37355385209573255,
+    "true_dog": 0.37355385209573255,
+    "true_fav": 0.6264461479042674,
+    "dog_edge": -0.0066742847863967,
+    "fav_edge": -0.028726265888835978,
+    "drift": -0.0196871691013355,
+    "flag": "ok",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.13307067638214964,
+     "ko": 0.7797951533509297,
+     "sub": 0.08713417026692061
+    },
+    "fav": {
+     "dec": 0.22099089458161691,
+     "ko": 0.7151633746933983,
+     "sub": 0.06384573072498478
+    }
+   },
+   "gtd": 0.1881479583961086,
+   "gtd_listed": 0.16943444388703632,
+   "markov_dec": {
+    "dog": 0.28,
+    "fav": 0.14
+   },
+   "method_inputs": {
+    "ap": 0.28,
+    "aq": 0.14,
+    "ad": 0.146,
+    "ae": 0.839,
+    "ah": 0.048,
+    "ai": 0.946,
+    "al": 0.295,
+    "am": 0.489,
+    "an": 0.215,
+    "s": 0.16943444388703632,
+    "cx": 0.8194,
+    "cy": 0.7363,
+    "ko_dog": 240,
+    "sub_dog": 2200,
+    "ko_fav": -136,
+    "sub_fav": 1594
+   },
+   "price_source": {
+    "order": 7,
+    "dog": "Tallison Teixeira",
+    "fav": "Shamil Gaziev",
+    "cons_dog": "176",
+    "cons_fav": "-176",
+    "best_dog": "+163 Caesars",
+    "best_fav": "-190 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 4,
+   "calc_row": 10,
+   "tag": "125",
+   "dog": "Alessandro Costa",
+   "fav": "Amir Albazi",
+   "inputs": {
+    "dog_odds": 100,
+    "fav_odds": -115,
+    "open_dog": 0.5575221238938053,
+    "markov": 0.618,
+    "shift": 0.1086,
+    "tap": 0.65,
+    "junk": 0.53,
+    "tip": 0.365,
+    "ctx": null,
+    "manual": 0.03,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.4831460674157303,
+    "markov_shifted": 0.5094,
+    "q": 0.45854202247191006,
+    "true_dog": 0.48854202247191003,
+    "true_fav": 0.51145797752809,
+    "dog_edge": -0.011457977528089969,
+    "fav_edge": -0.02342574340214254,
+    "drift": -0.07437605647807499,
+    "flag": "no dog bet (drifting)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.5513353248493393,
+     "ko": 0.34634539561135,
+     "sub": 0.10231927953931064
+    },
+    "fav": {
+     "dec": 0.5334060608037434,
+     "ko": 0.18514022134223262,
+     "sub": 0.28145371785402395
+    }
+   },
+   "gtd": 0.5421652597220117,
+   "gtd_listed": 0.5596731488421972,
+   "markov_dec": {
+    "dog": 0.56,
+    "fav": 0.25
+   },
+   "method_inputs": {
+    "ap": 0.56,
+    "aq": 0.25,
+    "ad": 0.713,
+    "ae": 0.247,
+    "ah": 0.88,
+    "ai": 0.03,
+    "al": 0.531,
+    "am": 0.25,
+    "an": 0.219,
+    "s": 0.5596731488421972,
+    "cx": 0.518,
+    "cy": 0.5387,
+    "ko_dog": 320,
+    "sub_dog": 1448,
+    "ko_fav": 824,
+    "sub_fav": 674
+   },
+   "price_source": {
+    "order": 8,
+    "dog": "Alessandro Costa",
+    "fav": "Amir Albazi",
+    "cons_dog": "105",
+    "cons_fav": "-105",
+    "best_dog": "+100 FanDuel",
+    "best_fav": "-115 Caesars"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 5,
+   "calc_row": 11,
+   "tag": "170",
+   "dog": "Tahir Abdullayev",
+   "fav": "Jake Matthews",
+   "inputs": {
+    "dog_odds": 210,
+    "fav_odds": -250,
+    "open_dog": 0.32,
+    "markov": 0.395,
+    "shift": 0.1086,
+    "tap": 0.27,
+    "junk": 0.28,
+    "tip": 0.107,
+    "ctx": "D",
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.31111111111111106,
+    "markov_shifted": 0.2864,
+    "q": 0.3074044444444444,
+    "true_dog": 0.3074044444444444,
+    "true_fav": 0.6925955555555556,
+    "dog_edge": -0.015176200716845889,
+    "fav_edge": -0.02169015873015867,
+    "drift": -0.008888888888888946,
+    "flag": "DEBUTANT DOG - no dog bet (-27% 6/6y)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.37241144066646537,
+     "ko": 0.32798463852258825,
+     "sub": 0.2996039208109464
+    },
+    "fav": {
+     "dec": 0.5899920656839548,
+     "ko": 0.20216873305026176,
+     "sub": 0.20783920126578345
+    }
+   },
+   "gtd": 0.5231068145285785,
+   "gtd_listed": 0.5215060734841387,
+   "markov_dec": {
+    "dog": 0.35,
+    "fav": 0.61
+   },
+   "method_inputs": {
+    "ap": 0.35,
+    "aq": 0.61,
+    "ad": 0.539,
+    "ae": 0.208,
+    "ah": 0.89,
+    "ai": 0.046,
+    "al": 0.474,
+    "am": 0.333,
+    "an": 0.193,
+    "s": 0.5215060734841387,
+    "cx": 0.7061,
+    "cy": 0.4613,
+    "ko_dog": 750,
+    "sub_dog": 924,
+    "ko_fav": 450,
+    "sub_fav": 445
+   },
+   "price_source": {
+    "order": 9,
+    "dog": "Tahir Abdullayev",
+    "fav": "Jake Matthews",
+    "cons_dog": "214",
+    "cons_fav": "-214",
+    "best_dog": "+210 BetRivers",
+    "best_fav": "-250 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 6,
+   "calc_row": 12,
+   "tag": "155",
+   "dog": "Nikolas Motta",
+   "fav": "Dom Mar Fan",
+   "inputs": {
+    "dog_odds": 130,
+    "fav_odds": -155,
+    "open_dog": 0.4222972972972973,
+    "markov": 0.445,
+    "shift": 0.1086,
+    "tap": 0.7,
+    "junk": 0.56,
+    "tip": 0.364,
+    "ctx": null,
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.4170073589533933,
+    "markov_shifted": 0.33640000000000003,
+    "q": 0.35174291087489784,
+    "true_dog": 0.35174291087489784,
+    "true_fav": 0.6482570891251022,
+    "dog_edge": -0.08303969782075432,
+    "fav_edge": 0.04041395187020025,
+    "drift": -0.00528993834390401,
+    "flag": "public on dog - no dog bet",
+    "rec": "BET Dom Mar Fan"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.43394883220710845,
+     "ko": 0.4866290335423833,
+     "sub": 0.07942213425050826
+    },
+    "fav": {
+     "dec": 0.4384562766913853,
+     "ko": 0.3077273572814831,
+     "sub": 0.2538163660271316
+    }
+   },
+   "gtd": 0.4368708150478787,
+   "gtd_listed": 0.41540256709451573,
+   "markov_dec": {
+    "dog": 0.11,
+    "fav": 0.56
+   },
+   "method_inputs": {
+    "ap": 0.11,
+    "aq": 0.56,
+    "ad": 0.229,
+    "ae": 0.759,
+    "ah": 0.759,
+    "ai": 0.145,
+    "al": 0.48,
+    "am": 0.298,
+    "an": 0.222,
+    "s": 0.41540256709451573,
+    "cx": 0.54,
+    "cy": 0.5357,
+    "ko_dog": 270,
+    "sub_dog": 2000,
+    "ko_fav": 420,
+    "sub_fav": 425
+   },
+   "price_source": {
+    "order": 10,
+    "dog": "Nikolas Motta",
+    "fav": "Dom Mar Fan",
+    "cons_dog": "139",
+    "cons_fav": "-139",
+    "best_dog": "+130 FanDuel",
+    "best_fav": "-155 FanDuel"
+   },
+   "outliers": []
+  },
+  {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 7,
+   "calc_row": 13,
+   "tag": "205",
+   "dog": "Alik Lorenz",
+   "fav": "Diyar Nurgozhay",
+   "inputs": {
+    "dog_odds": 220,
+    "fav_odds": -250,
+    "open_dog": 0.30853467755953423,
+    "markov": 0.466,
+    "shift": 0.1086,
+    "tap": 0.12,
+    "junk": 0.2,
+    "tip": 0.496,
+    "ctx": "D",
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.3043478260869565,
+    "markov_shifted": 0.35740000000000005,
+    "q": 0.31230565217391304,
+    "true_dog": 0.31230565217391304,
+    "true_fav": 0.687694347826087,
+    "dog_edge": -0.00019434782608696022,
+    "fav_edge": -0.02659136645962734,
+    "drift": -0.004186851472577746,
+    "flag": "DEBUTANT DOG - no dog bet (-27% 6/6y)",
+    "rec": "-"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.12123465592772031,
+     "ko": 0.731495045148028,
+     "sub": 0.1472702989242517
+    },
+    "fav": {
+     "dec": 0.26,
+     "ko": 0.6772752546565773,
+     "sub": 0.06272474534342265
+    }
+   },
+   "gtd": 0.21666279872036925,
+   "gtd_listed": null,
+   "markov_dec": {
+    "dog": 0.03,
+    "fav": 0.23
+   },
+   "method_inputs": {
+    "ap": 0.03,
+    "aq": 0.23,
+    "ad": 0.181,
+    "ae": 0.706,
+    "ah": 0.141,
+    "ai": 0.84,
+    "al": 0.36,
+    "am": 0.45,
+    "an": 0.19,
+    "s": null,
+    "cx": 0.8022,
+    "cy": 0.5874,
+    "ko_dog": null,
+    "sub_dog": null,
+    "ko_fav": null,
+    "sub_fav": null
+   },
+   "price_source": {
+    "order": 11,
+    "dog": "Alik Lorenz",
+    "fav": "Diyar Nurgozhay",
+    "cons_dog": "221",
+    "cons_fav": "-221",
+    "best_dog": "+220 FanDuel",
+    "best_fav": "-250 BetRivers"
+   },
+   "outliers": []
+  }
+ ],
+ "line_pending": [
+  {
+   "dog": "Shoaib Yousaf",
+   "fav": "John Mitchell",
+   "reason": "price_source missing, so the price cannot be tied to this bout (publish with the current script) (OPP-1); no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)"
+  }
+ ],
+ "manual_method": [
+  {
+   "dog": "Alik Lorenz",
+   "fav": "Diyar Nurgozhay",
+   "side": "fav",
+   "fighter": "Diyar Nurgozhay",
+   "typed": {
+    "dec": 0.26
+   },
+   "formula": {
+    "dec": 0.356536
+   },
+   "label": "manual method"
+  }
+ ],
+ "staging_check": {
+  "by": "scripts/verify_projections.py",
+  "values_compared": 259,
+  "mismatched": 0,
+  "note": "all checks pass except the 3 h price-age gate (sheet prices loaded 2026-11-19T06:43:01.000Z); Sean must Refresh prices and Publish to site for go-live"
+ }
+}

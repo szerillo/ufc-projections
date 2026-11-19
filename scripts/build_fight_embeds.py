@@ -497,7 +497,9 @@ def build(names, outname):
         proj += "@@LIVE@@" + explain(XPL["proj"])   # Sean, Nov 13 13:00: the Listed / Edge footnote line removed
     elif lp:   # Kirk round 34: the card page's "Line pending" state; market, line move and stats sections still build
         proj += (f'<div class="stk" data-part="ml"><div class="stk-h"><span class="bullet"></span>Line pending</div>'
-                 f'<div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}</div>@@MOVE@@@@ANGLES@@</div>@@LIVE@@')
+                 f'<div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}'
+                 + ('' if bf else ' No odds feed price for this bout yet.')   # Nov 19: a late-added bout the feed lacks, held as Line pending
+                 + '</div>@@MOVE@@@@ANGLES@@</div>@@LIVE@@')
         gaps.append(f"Fight {n}: Line pending in {PUBF} ({lp.get('reason', '')}); no model numbers shown.")
     else:
         # Nov 18 (Kirk): a card the sheet has not published yet. No model numbers, never stand-ins; the market tables, line move,

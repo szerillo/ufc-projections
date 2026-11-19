@@ -12,9 +12,9 @@
  ],
  "file": "fight_06.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
- "proj_src": null,
- "proj_file": null,
- "published_at": null,
+ "proj_src": "publish",
+ "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T22:40:00.000Z",
  "rows": [
   {
    "id": "v1",
@@ -132,6 +132,50 @@
   },
   {
    "id": "v11",
+   "text": "-168",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Shamil Gaziev",
+   "raw": 0.6264461479042674
+  },
+  {
+   "id": "v12",
+   "text": "62.6%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Shamil Gaziev",
+   "raw": 0.6264461479042674
+  },
+  {
+   "id": "v13",
+   "text": "-190",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Shamil Gaziev",
+   "raw": -190
+  },
+  {
+   "id": "v14",
+   "text": "65.5%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Shamil Gaziev",
+   "raw": 0.6551724137931034
+  },
+  {
+   "id": "v15",
    "text": "-202",
    "fmt": "ml",
    "rule": "bp",
@@ -144,7 +188,7 @@
    "raw": -202
   },
   {
-   "id": "v12",
+   "id": "v16",
    "text": "66.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -156,7 +200,7 @@
    "raw": 0.6688741721854304
   },
   {
-   "id": "v13",
+   "id": "v17",
    "text": "-198",
    "fmt": "ml",
    "rule": "bp_best",
@@ -169,7 +213,65 @@
    "raw": -198
   },
   {
-   "id": "v14",
+   "id": "v18",
+   "text": "-2.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v12",
+     "v14"
+    ]
+   },
+   "desc": "Edge ML Shamil Gaziev",
+   "raw": -0.028726265888835978
+  },
+  {
+   "id": "v19",
+   "text": "+168",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model ML Tallison Teixeira",
+   "raw": 0.37355385209573255
+  },
+  {
+   "id": "v20",
+   "text": "37.4%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Tallison Teixeira",
+   "raw": 0.37355385209573255
+  },
+  {
+   "id": "v21",
+   "text": "+163",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Tallison Teixeira",
+   "raw": 163
+  },
+  {
+   "id": "v22",
+   "text": "38.0%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Tallison Teixeira",
+   "raw": 0.38022813688212925
+  },
+  {
+   "id": "v23",
    "text": "+164",
    "fmt": "ml",
    "rule": "bp",
@@ -182,7 +284,7 @@
    "raw": 164
   },
   {
-   "id": "v15",
+   "id": "v24",
    "text": "37.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -194,20 +296,56 @@
    "raw": 0.3787878787878788
   },
   {
-   "id": "v16",
-   "text": "+165",
+   "id": "v25",
+   "text": "+168",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
     "label": "Talisson Teixeira",
-    "book": "betmgm"
+    "book": "fanduel"
    },
    "desc": "Best US ML Tallison Teixeira",
-   "raw": 165
+   "raw": 168
   },
   {
-   "id": "v17",
+   "id": "v26",
+   "text": "-0.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v20",
+     "v22"
+    ]
+   },
+   "desc": "Edge ML Tallison Teixeira",
+   "raw": -0.0066742847863967
+  },
+  {
+   "id": "v27",
+   "text": "+431",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.1881479583961086
+  },
+  {
+   "id": "v28",
+   "text": "18.8%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.1881479583961086
+  },
+  {
+   "id": "v29",
    "text": "+500",
    "fmt": "ml",
    "rule": "bp",
@@ -220,7 +358,7 @@
    "raw": 500
   },
   {
-   "id": "v18",
+   "id": "v30",
    "text": "16.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -228,11 +366,49 @@
     "market": "fight_distance",
     "label": "Yes"
    },
-   "desc": "Market GTD yes implied",
+   "desc": "Market GTD implied",
    "raw": 0.16666666666666666
   },
   {
-   "id": "v19",
+   "id": "v31",
+   "text": "+2.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v28",
+     "v30"
+    ]
+   },
+   "desc": "Edge GTD vs market",
+   "raw": 0.021481291729441937
+  },
+  {
+   "id": "v32",
+   "text": "-431",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.8118520416038915
+  },
+  {
+   "id": "v33",
+   "text": "81.2%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.8118520416038915
+  },
+  {
+   "id": "v34",
    "text": "-900",
    "fmt": "ml",
    "rule": "bp",
@@ -241,11 +417,11 @@
     "label": "No",
     "field": "cost"
    },
-   "desc": "Market GTD no",
+   "desc": "Market ITD no",
    "raw": -900
   },
   {
-   "id": "v20",
+   "id": "v35",
    "text": "90.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -253,11 +429,49 @@
     "market": "fight_distance",
     "label": "No"
    },
-   "desc": "Market GTD no implied",
+   "desc": "Market ITD implied",
    "raw": 0.9
   },
   {
-   "id": "v21",
+   "id": "v36",
+   "text": "-8.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v33",
+     "v35"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.08814795839610856
+  },
+  {
+   "id": "v37",
+   "text": "+622",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Shamil Gaziev",
+   "raw": 0.13843889463257197
+  },
+  {
+   "id": "v38",
+   "text": "13.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Shamil Gaziev",
+   "raw": 0.13843889463257197
+  },
+  {
+   "id": "v39",
    "text": "+1000",
    "fmt": "ml",
    "rule": "bp",
@@ -270,7 +484,7 @@
    "raw": 1000
   },
   {
-   "id": "v22",
+   "id": "v40",
    "text": "9.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -282,8 +496,46 @@
    "raw": 0.09090909090909091
   },
   {
-   "id": "v23",
-   "text": "-150",
+   "id": "v41",
+   "text": "+4.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v38",
+     "v40"
+    ]
+   },
+   "desc": "Edge dec Shamil Gaziev",
+   "raw": 0.04752980372348106
+  },
+  {
+   "id": "v42",
+   "text": "+123",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Shamil Gaziev",
+   "raw": 0.44801134119889563
+  },
+  {
+   "id": "v43",
+   "text": "44.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Shamil Gaziev",
+   "raw": 0.44801134119889563
+  },
+  {
+   "id": "v44",
+   "text": "-145",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -292,11 +544,11 @@
     "field": "cost"
    },
    "desc": "Market ko Shamil Gaziev",
-   "raw": -150
+   "raw": -145
   },
   {
-   "id": "v24",
-   "text": "60.0%",
+   "id": "v45",
+   "text": "59.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -304,10 +556,48 @@
     "label": "Shamil Gaziev KO/TKO/DQ"
    },
    "desc": "Market ko implied Shamil Gaziev",
-   "raw": 0.6
+   "raw": 0.5918367346938775
   },
   {
-   "id": "v25",
+   "id": "v46",
+   "text": "-14.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v43",
+     "v45"
+    ]
+   },
+   "desc": "Edge ko Shamil Gaziev",
+   "raw": -0.1438253934949819
+  },
+  {
+   "id": "v47",
+   "text": "+2400",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Shamil Gaziev",
+   "raw": 0.03999591207279985
+  },
+  {
+   "id": "v48",
+   "text": "4.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Shamil Gaziev",
+   "raw": 0.03999591207279985
+  },
+  {
+   "id": "v49",
    "text": "+1448",
    "fmt": "ml",
    "rule": "bp",
@@ -320,7 +610,7 @@
    "raw": 1448
   },
   {
-   "id": "v26",
+   "id": "v50",
    "text": "6.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -332,8 +622,46 @@
    "raw": 0.06459948320413436
   },
   {
-   "id": "v27",
-   "text": "-198",
+   "id": "v51",
+   "text": "-2.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v48",
+     "v50"
+    ]
+   },
+   "desc": "Edge sub Shamil Gaziev",
+   "raw": -0.02460357113133451
+  },
+  {
+   "id": "v52",
+   "text": "+105",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Shamil Gaziev",
+   "raw": 0.4880072532716955
+  },
+  {
+   "id": "v53",
+   "text": "48.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Shamil Gaziev",
+   "raw": 0.4880072532716955
+  },
+  {
+   "id": "v54",
+   "text": "-191",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -344,11 +672,11 @@
     ]
    },
    "desc": "Market ITD price Shamil Gaziev",
-   "raw": 0.6645994832041343
+   "raw": 0.6564362178980119
   },
   {
-   "id": "v28",
-   "text": "66.5%",
+   "id": "v55",
+   "text": "65.6%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -359,10 +687,120 @@
     ]
    },
    "desc": "Market ITD implied Shamil Gaziev",
-   "raw": 0.6645994832041343
+   "raw": 0.6564362178980119
   },
   {
-   "id": "v29",
+   "id": "v56",
+   "text": "-16.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v53",
+     "v55"
+    ]
+   },
+   "desc": "Edge itd Shamil Gaziev",
+   "raw": -0.1684289646263164
+  },
+  {
+   "id": "v57",
+   "text": "+1912",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Tallison Teixeira",
+   "raw": 0.04970906376353662
+  },
+  {
+   "id": "v58",
+   "text": "5.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Tallison Teixeira",
+   "raw": 0.04970906376353662
+  },
+  {
+   "id": "v59",
+   "text": "+243",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Tallison Teixeira",
+   "raw": 0.2912954833798223
+  },
+  {
+   "id": "v60",
+   "text": "29.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Tallison Teixeira",
+   "raw": 0.2912954833798223
+  },
+  {
+   "id": "v61",
+   "text": "+2972",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Tallison Teixeira",
+   "raw": 0.03254930495237364
+  },
+  {
+   "id": "v62",
+   "text": "3.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Tallison Teixeira",
+   "raw": 0.03254930495237364
+  },
+  {
+   "id": "v63",
+   "text": "+209",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Tallison Teixeira",
+   "raw": 0.32384478833219593
+  },
+  {
+   "id": "v64",
+   "text": "32.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Tallison Teixeira",
+   "raw": 0.32384478833219593
+  },
+  {
+   "id": "v65",
    "text": "+185",
    "fmt": "ml",
    "rule": "lh_open_ml",
@@ -378,7 +816,7 @@
    "raw": 185
   },
   {
-   "id": "v30",
+   "id": "v66",
    "text": "+164",
    "fmt": "ml",
    "rule": "lh_open_ml",
@@ -395,8 +833,8 @@
    "raw": 164
   },
   {
-   "id": "v31",
-   "text": "2.7",
+   "id": "v67",
+   "text": "2.8",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -407,10 +845,10 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.027000000000000024
+   "raw": 0.028000000000000025
   },
   {
-   "id": "v32",
+   "id": "v68",
    "text": "72%",
    "fmt": "pct0",
    "rule": "em",
@@ -422,7 +860,7 @@
    "raw": 0.7152
   },
   {
-   "id": "v33",
+   "id": "v69",
    "text": "27%",
    "fmt": "pct0",
    "rule": "em",
@@ -434,7 +872,7 @@
    "raw": 0.2667
   },
   {
-   "id": "v34",
+   "id": "v70",
    "text": "2%",
    "fmt": "pct0",
    "rule": "em",
@@ -446,7 +884,7 @@
    "raw": 0.0182
   },
   {
-   "id": "v35",
+   "id": "v71",
    "text": "76%",
    "fmt": "pct0",
    "rule": "em",
@@ -458,7 +896,7 @@
    "raw": 0.7581
   },
   {
-   "id": "v36",
+   "id": "v72",
    "text": "21%",
    "fmt": "pct0",
    "rule": "em",
@@ -470,7 +908,7 @@
    "raw": 0.2097
   },
   {
-   "id": "v37",
+   "id": "v73",
    "text": "3%",
    "fmt": "pct0",
    "rule": "em",
@@ -482,7 +920,7 @@
    "raw": 0.0323
   },
   {
-   "id": "v38",
+   "id": "v74",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -494,7 +932,7 @@
    "raw": 7
   },
   {
-   "id": "v39",
+   "id": "v75",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -506,7 +944,7 @@
    "raw": 4
   },
   {
-   "id": "v40",
+   "id": "v76",
    "text": "45%",
    "fmt": "pct0",
    "rule": "em",
@@ -518,7 +956,7 @@
    "raw": 0.4504
   },
   {
-   "id": "v41",
+   "id": "v77",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -530,7 +968,7 @@
    "raw": 2
   },
   {
-   "id": "v42",
+   "id": "v78",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -542,7 +980,7 @@
    "raw": 3
   },
   {
-   "id": "v43",
+   "id": "v79",
    "text": "17%",
    "fmt": "pct0",
    "rule": "em",
@@ -554,7 +992,7 @@
    "raw": 0.171
   },
   {
-   "id": "v44",
+   "id": "v80",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -566,7 +1004,7 @@
    "raw": 1
   },
   {
-   "id": "v45",
+   "id": "v81",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -578,7 +1016,7 @@
    "raw": 1
   },
   {
-   "id": "v46",
+   "id": "v82",
    "text": "22%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -590,7 +1028,7 @@
    "raw": 0.2189
   },
   {
-   "id": "v47",
+   "id": "v83",
    "text": "37%",
    "fmt": "pct0",
    "rule": "em",
@@ -602,7 +1040,7 @@
    "raw": 0.3664
   },
   {
-   "id": "v48",
+   "id": "v84",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -614,7 +1052,7 @@
    "raw": 2
   },
   {
-   "id": "v49",
+   "id": "v85",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -626,7 +1064,7 @@
    "raw": 2
   },
   {
-   "id": "v50",
+   "id": "v86",
    "text": "56%",
    "fmt": "pct0",
    "rule": "em",
@@ -638,7 +1076,7 @@
    "raw": 0.5575
   },
   {
-   "id": "v51",
+   "id": "v87",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -650,7 +1088,7 @@
    "raw": 2
   },
   {
-   "id": "v52",
+   "id": "v88",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -662,7 +1100,7 @@
    "raw": 2
   },
   {
-   "id": "v53",
+   "id": "v89",
    "text": "26%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -674,7 +1112,7 @@
    "raw": 0.2623
   },
   {
-   "id": "v54",
+   "id": "v90",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -686,7 +1124,7 @@
    "raw": 3
   },
   {
-   "id": "v55",
+   "id": "v91",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -698,7 +1136,7 @@
    "raw": 1
   },
   {
-   "id": "v56",
+   "id": "v92",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -710,7 +1148,7 @@
    "raw": 3
   },
   {
-   "id": "v57",
+   "id": "v93",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -722,7 +1160,7 @@
    "raw": 1
   },
   {
-   "id": "v58",
+   "id": "v94",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -734,7 +1172,7 @@
    "raw": 1
   },
   {
-   "id": "v59",
+   "id": "v95",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -746,7 +1184,7 @@
    "raw": 2
   },
   {
-   "id": "v60",
+   "id": "v96",
    "text": "71%",
    "fmt": "pct0",
    "rule": "em",
@@ -758,7 +1196,7 @@
    "raw": 0.7143
   },
   {
-   "id": "v61",
+   "id": "v97",
    "text": "-0.3",
    "fmt": "s1",
    "rule": "em",
@@ -770,7 +1208,7 @@
    "raw": -0.27
   },
   {
-   "id": "v62",
+   "id": "v98",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -782,7 +1220,7 @@
    "raw": 7
   },
   {
-   "id": "v63",
+   "id": "v99",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -794,7 +1232,7 @@
    "raw": 0.5
   },
   {
-   "id": "v64",
+   "id": "v100",
    "text": "-1.4",
    "fmt": "s1",
    "rule": "em",
@@ -806,7 +1244,7 @@
    "raw": -1.364
   },
   {
-   "id": "v65",
+   "id": "v101",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -818,7 +1256,7 @@
    "raw": 4
   },
   {
-   "id": "v66",
+   "id": "v102",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -830,7 +1268,7 @@
    "raw": 0.5
   },
   {
-   "id": "v67",
+   "id": "v103",
    "text": "-4.5",
    "fmt": "s1",
    "rule": "em",
@@ -842,7 +1280,7 @@
    "raw": -4.5
   },
   {
-   "id": "v68",
+   "id": "v104",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -854,7 +1292,7 @@
    "raw": 2
   },
   {
-   "id": "v69",
+   "id": "v105",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -866,7 +1304,7 @@
    "raw": 0.5
   },
   {
-   "id": "v70",
+   "id": "v106",
    "text": "+1.8",
    "fmt": "s1",
    "rule": "em",
@@ -878,7 +1316,7 @@
    "raw": 1.76
   },
   {
-   "id": "v71",
+   "id": "v107",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -890,7 +1328,7 @@
    "raw": 4
   },
   {
-   "id": "v72",
+   "id": "v108",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -902,7 +1340,7 @@
    "raw": 1.0
   },
   {
-   "id": "v73",
+   "id": "v109",
    "text": "+1.6",
    "fmt": "s1",
    "rule": "em",
@@ -914,7 +1352,7 @@
    "raw": 1.6
   },
   {
-   "id": "v74",
+   "id": "v110",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -926,7 +1364,7 @@
    "raw": 1
   },
   {
-   "id": "v75",
+   "id": "v111",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -938,7 +1376,7 @@
    "raw": 0.0
   },
   {
-   "id": "v76",
+   "id": "v112",
    "text": "-3.2",
    "fmt": "s1",
    "rule": "em",
@@ -950,7 +1388,7 @@
    "raw": -3.2
   },
   {
-   "id": "v77",
+   "id": "v113",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -962,7 +1400,7 @@
    "raw": 1
   },
   {
-   "id": "v78",
+   "id": "v114",
    "text": "-1",
    "fmt": "sint",
    "rule": "em",
@@ -974,7 +1412,7 @@
    "raw": -1
   },
   {
-   "id": "v79",
+   "id": "v115",
    "text": "-17",
    "fmt": "sint",
    "rule": "em",
@@ -986,7 +1424,7 @@
    "raw": -17
   },
   {
-   "id": "v80",
+   "id": "v116",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -998,7 +1436,7 @@
    "raw": -4
   },
   {
-   "id": "v81",
+   "id": "v117",
    "text": "-5",
    "fmt": "sint",
    "rule": "em",
@@ -1010,7 +1448,7 @@
    "raw": -5
   },
   {
-   "id": "v82",
+   "id": "v118",
    "text": "-4",
    "fmt": "sint",
    "rule": "em",
@@ -1022,7 +1460,7 @@
    "raw": -4
   },
   {
-   "id": "v83",
+   "id": "v119",
    "text": "-5",
    "fmt": "sint",
    "rule": "em",
@@ -1034,7 +1472,7 @@
    "raw": -5
   },
   {
-   "id": "v84",
+   "id": "v120",
    "text": "+29",
    "fmt": "sint",
    "rule": "em",
@@ -1046,7 +1484,7 @@
    "raw": 29
   },
   {
-   "id": "v85",
+   "id": "v121",
    "text": "-31",
    "fmt": "sint",
    "rule": "em",
@@ -1058,7 +1496,7 @@
    "raw": -31
   },
   {
-   "id": "v86",
+   "id": "v122",
    "text": "+11",
    "fmt": "sint",
    "rule": "em",
@@ -1070,7 +1508,7 @@
    "raw": 11
   },
   {
-   "id": "v87",
+   "id": "v123",
    "text": "-12",
    "fmt": "sint",
    "rule": "em",
@@ -1082,7 +1520,7 @@
    "raw": -12
   },
   {
-   "id": "v88",
+   "id": "v124",
    "text": "+12",
    "fmt": "sint",
    "rule": "em",
@@ -1094,7 +1532,7 @@
    "raw": 12
   },
   {
-   "id": "v89",
+   "id": "v125",
    "text": "-3",
    "fmt": "sint",
    "rule": "em",
@@ -1106,7 +1544,7 @@
    "raw": -3
   },
   {
-   "id": "v90",
+   "id": "v126",
    "text": "-42",
    "fmt": "sint",
    "rule": "em",
@@ -1118,7 +1556,7 @@
    "raw": -42
   },
   {
-   "id": "v91",
+   "id": "v127",
    "text": "-7",
    "fmt": "sint",
    "rule": "em",
@@ -1130,7 +1568,7 @@
    "raw": -7
   },
   {
-   "id": "v92",
+   "id": "v128",
    "text": "+17",
    "fmt": "sint",
    "rule": "em",
@@ -1142,7 +1580,7 @@
    "raw": 17
   },
   {
-   "id": "v93",
+   "id": "v129",
    "text": "-6",
    "fmt": "sint",
    "rule": "em",
@@ -1154,7 +1592,7 @@
    "raw": -6
   },
   {
-   "id": "v94",
+   "id": "v130",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
@@ -1166,7 +1604,7 @@
    "raw": 8
   },
   {
-   "id": "v95",
+   "id": "v131",
    "text": "+8",
    "fmt": "sint",
    "rule": "em",
@@ -1178,7 +1616,7 @@
    "raw": 8
   },
   {
-   "id": "v96",
+   "id": "v132",
    "text": "-16",
    "fmt": "sint",
    "rule": "em",
@@ -1190,7 +1628,7 @@
    "raw": -16
   },
   {
-   "id": "v97",
+   "id": "v133",
    "text": "1.08",
    "fmt": "n2",
    "rule": "em",
@@ -1202,7 +1640,7 @@
    "raw": 1.08
   },
   {
-   "id": "v98",
+   "id": "v134",
    "text": "2.68",
    "fmt": "n2",
    "rule": "em",
@@ -1214,7 +1652,7 @@
    "raw": 2.676
   },
   {
-   "id": "v99",
+   "id": "v135",
    "text": "33%",
    "fmt": "pct0",
    "rule": "em",
@@ -1226,7 +1664,7 @@
    "raw": 0.3333
   },
   {
-   "id": "v100",
+   "id": "v136",
    "text": "30%",
    "fmt": "pct0",
    "rule": "em",
@@ -1238,7 +1676,7 @@
    "raw": 0.3
   },
   {
-   "id": "v101",
+   "id": "v137",
    "text": "83%",
    "fmt": "pct0",
    "rule": "em",
@@ -1250,7 +1688,7 @@
    "raw": 0.8333
   },
   {
-   "id": "v102",
+   "id": "v138",
    "text": "40%",
    "fmt": "pct0",
    "rule": "em",
@@ -1262,7 +1700,7 @@
    "raw": 0.4034
   },
   {
-   "id": "v103",
+   "id": "v139",
    "text": "43%",
    "fmt": "pct0",
    "rule": "em",
@@ -1274,7 +1712,7 @@
    "raw": 0.4272
   },
   {
-   "id": "v104",
+   "id": "v140",
    "text": "+39.8%",
    "fmt": "spp",
    "rule": "em",
@@ -1286,7 +1724,7 @@
    "raw": 0.3983
   },
   {
-   "id": "v105",
+   "id": "v141",
    "text": "+17.3%",
    "fmt": "spp",
    "rule": "em",
@@ -1298,7 +1736,7 @@
    "raw": 0.1734
   },
   {
-   "id": "v106",
+   "id": "v142",
    "text": "1%",
    "fmt": "pct0",
    "rule": "em",
@@ -1310,7 +1748,7 @@
    "raw": 0.0111
   },
   {
-   "id": "v107",
+   "id": "v143",
    "text": "25%",
    "fmt": "pct0",
    "rule": "em",
@@ -1322,7 +1760,7 @@
    "raw": 0.2527
   },
   {
-   "id": "v108",
+   "id": "v144",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1334,7 +1772,7 @@
    "raw": 0.0
   },
   {
-   "id": "v109",
+   "id": "v145",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1346,7 +1784,7 @@
    "raw": 0.0
   },
   {
-   "id": "v110",
+   "id": "v146",
    "text": "-2.12",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1362,7 +1800,7 @@
    "raw": -2.1239999999999997
   },
   {
-   "id": "v111",
+   "id": "v147",
    "text": "+0.24",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1378,7 +1816,7 @@
    "raw": 0.238
   },
   {
-   "id": "v112",
+   "id": "v148",
    "text": "-2.08",
    "fmt": "s2",
    "rule": "em",
@@ -1390,7 +1828,7 @@
    "raw": -2.078
   },
   {
-   "id": "v113",
+   "id": "v149",
    "text": "+0.21",
    "fmt": "s2",
    "rule": "em",
@@ -1402,7 +1840,7 @@
    "raw": 0.211
   },
   {
-   "id": "v114",
+   "id": "v150",
    "text": "-1.13",
    "fmt": "s2",
    "rule": "em",
@@ -1414,7 +1852,7 @@
    "raw": -1.134
   },
   {
-   "id": "v115",
+   "id": "v151",
    "text": "+0.65",
    "fmt": "s2",
    "rule": "em",
@@ -1426,7 +1864,7 @@
    "raw": 0.654
   },
   {
-   "id": "v116",
+   "id": "v152",
    "text": "-0.23",
    "fmt": "s2",
    "rule": "em",
@@ -1438,7 +1876,7 @@
    "raw": -0.234
   },
   {
-   "id": "v117",
+   "id": "v153",
    "text": "+0.12",
    "fmt": "s2",
    "rule": "em",
@@ -1450,7 +1888,7 @@
    "raw": 0.119
   },
   {
-   "id": "v118",
+   "id": "v154",
    "text": "-0.76",
    "fmt": "s2",
    "rule": "em",
@@ -1462,7 +1900,7 @@
    "raw": -0.756
   },
   {
-   "id": "v119",
+   "id": "v155",
    "text": "-0.54",
    "fmt": "s2",
    "rule": "em",
@@ -1474,7 +1912,7 @@
    "raw": -0.535
   },
   {
-   "id": "v120",
+   "id": "v156",
    "text": "55%",
    "fmt": "pct0",
    "rule": "em",
@@ -1486,7 +1924,7 @@
    "raw": 0.5475
   },
   {
-   "id": "v121",
+   "id": "v157",
    "text": "42%",
    "fmt": "pct0",
    "rule": "em",
@@ -1498,7 +1936,7 @@
    "raw": 0.4194
   },
   {
-   "id": "v122",
+   "id": "v158",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -1510,7 +1948,7 @@
    "raw": 4
   },
   {
-   "id": "v123",
+   "id": "v159",
    "text": "7.9",
    "fmt": "n1",
    "rule": "em",
@@ -1522,7 +1960,7 @@
    "raw": 7.938
   },
   {
-   "id": "v124",
+   "id": "v160",
    "text": "4.2",
    "fmt": "n1",
    "rule": "em",
@@ -1534,7 +1972,7 @@
    "raw": 4.204
   },
   {
-   "id": "v125",
+   "id": "v161",
    "text": "43%",
    "fmt": "pct0",
    "rule": "em",
@@ -1546,7 +1984,7 @@
    "raw": 0.4286
   },
   {
-   "id": "v126",
+   "id": "v162",
    "text": "75%",
    "fmt": "pct0",
    "rule": "em",
@@ -1558,7 +1996,7 @@
    "raw": 0.75
   },
   {
-   "id": "v127",
+   "id": "v163",
    "text": "+0.24",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1574,7 +2012,7 @@
    "raw": 0.238
   },
   {
-   "id": "v128",
+   "id": "v164",
    "text": "-2.12",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1590,7 +2028,7 @@
    "raw": -2.1239999999999997
   },
   {
-   "id": "v129",
+   "id": "v165",
    "text": "70.8%",
    "fmt": "pct1",
    "rule": "bt",
@@ -1602,7 +2040,7 @@
    "raw": 0.708
   },
   {
-   "id": "v130",
+   "id": "v166",
    "text": "62.1%",
    "fmt": "pct1",
    "rule": "bt",
@@ -1614,7 +2052,7 @@
    "raw": 0.6209
   },
   {
-   "id": "v131",
+   "id": "v167",
    "text": "+11.0%",
    "fmt": "spp",
    "rule": "bt",
@@ -1626,7 +2064,7 @@
    "raw": 0.1099
   },
   {
-   "id": "v132",
+   "id": "v168",
    "text": "+1.1%",
    "fmt": "spp",
    "rule": "bt",
@@ -1639,7 +2077,7 @@
    "raw": 0.0114
   },
   {
-   "id": "v133",
+   "id": "v169",
    "text": "+20.9%",
    "fmt": "spp",
    "rule": "bt",
@@ -1652,7 +2090,7 @@
    "raw": 0.2092
   },
   {
-   "id": "v134",
+   "id": "v170",
    "text": "250",
    "fmt": "int",
    "rule": "bt",
@@ -1664,7 +2102,7 @@
    "raw": 250
   },
   {
-   "id": "v135",
+   "id": "v171",
    "text": "+163",
    "fmt": "ml",
    "rule": "mk",
@@ -1678,7 +2116,7 @@
    "raw": 163
   },
   {
-   "id": "v136",
+   "id": "v172",
    "text": "51.8",
    "fmt": "n1",
    "rule": "mk",
@@ -1692,7 +2130,7 @@
    "raw": 51.8
   },
   {
-   "id": "v137",
+   "id": "v173",
    "text": "55.9",
    "fmt": "n1",
    "rule": "mk",
@@ -1706,7 +2144,7 @@
    "raw": 55.9
   },
   {
-   "id": "v138",
+   "id": "v174",
    "text": "36.1",
    "fmt": "n1",
    "rule": "mk",
@@ -1720,7 +2158,7 @@
    "raw": 36.1
   },
   {
-   "id": "v139",
+   "id": "v175",
    "text": "+15.6",
    "fmt": "s1",
    "rule": "mk",
@@ -1734,7 +2172,7 @@
    "raw": 15.6
   },
   {
-   "id": "v140",
+   "id": "v176",
    "text": "-124",
    "fmt": "ml",
    "rule": "fight",
@@ -1747,7 +2185,7 @@
    "raw": -124
   },
   {
-   "id": "v141",
+   "id": "v177",
    "text": "+127",
    "fmt": "ml",
    "rule": "fight",
@@ -1760,7 +2198,7 @@
    "raw": 127
   },
   {
-   "id": "v142",
+   "id": "v178",
    "text": "+119",
    "fmt": "ml",
    "rule": "fight",
@@ -1773,7 +2211,7 @@
    "raw": 119
   },
   {
-   "id": "v143",
+   "id": "v179",
    "text": "-339",
    "fmt": "ml",
    "rule": "fight",
@@ -1786,7 +2224,7 @@
    "raw": -339
   },
   {
-   "id": "v144",
+   "id": "v180",
    "text": "-294",
    "fmt": "ml",
    "rule": "fight",
@@ -1799,7 +2237,7 @@
    "raw": -294
   },
   {
-   "id": "v145",
+   "id": "v181",
    "text": "-196",
    "fmt": "ml",
    "rule": "fight",
@@ -1812,7 +2250,7 @@
    "raw": -196
   },
   {
-   "id": "v146",
+   "id": "v182",
    "text": "-102",
    "fmt": "ml",
    "rule": "fight",
@@ -1825,7 +2263,7 @@
    "raw": -102
   },
   {
-   "id": "v147",
+   "id": "v183",
    "text": "+400",
    "fmt": "ml",
    "rule": "fight",
@@ -1838,7 +2276,7 @@
    "raw": 400
   },
   {
-   "id": "v148",
+   "id": "v184",
    "text": "-308",
    "fmt": "ml",
    "rule": "fight",
@@ -1851,7 +2289,7 @@
    "raw": -308
   },
   {
-   "id": "v149",
+   "id": "v185",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -1864,7 +2302,7 @@
    "raw": -303
   },
   {
-   "id": "v150",
+   "id": "v186",
    "text": "-154",
    "fmt": "ml",
    "rule": "fight",
@@ -1877,7 +2315,5 @@
    "raw": -154
   }
  ],
- "gaps": [
-  "Fight 6: no row in the Publish to site export; no model numbers shown."
- ]
+ "gaps": []
 }

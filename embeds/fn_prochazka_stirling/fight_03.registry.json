@@ -12,9 +12,9 @@
  ],
  "file": "fight_03.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
- "proj_src": null,
- "proj_file": null,
- "published_at": null,
+ "proj_src": "publish",
+ "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T22:40:00.000Z",
  "rows": [
   {
    "id": "v1",
@@ -132,7 +132,51 @@
   },
   {
    "id": "v11",
-   "text": "+125",
+   "text": "+184",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Nikolas Motta",
+   "raw": 0.35174291087489784
+  },
+  {
+   "id": "v12",
+   "text": "35.2%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Nikolas Motta",
+   "raw": 0.35174291087489784
+  },
+  {
+   "id": "v13",
+   "text": "+130",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Nikolas Motta",
+   "raw": 130
+  },
+  {
+   "id": "v14",
+   "text": "43.5%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Nikolas Motta",
+   "raw": 0.43478260869565216
+  },
+  {
+   "id": "v15",
+   "text": "+137",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -141,11 +185,11 @@
     "field": "cost"
    },
    "desc": "Market ML Nikolas Motta",
-   "raw": 125
+   "raw": 137
   },
   {
-   "id": "v12",
-   "text": "44.4%",
+   "id": "v16",
+   "text": "42.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -153,24 +197,82 @@
     "label": "Nikolas Motta"
    },
    "desc": "Market implied Nikolas Motta",
-   "raw": 0.4444444444444444
+   "raw": 0.4219409282700422
   },
   {
-   "id": "v13",
-   "text": "+140",
+   "id": "v17",
+   "text": "+145",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
     "label": "Nikolas Motta",
-    "book": "draftkings"
+    "book": "betmgm"
    },
    "desc": "Best US ML Nikolas Motta",
-   "raw": 140
+   "raw": 145
   },
   {
-   "id": "v14",
-   "text": "-160",
+   "id": "v18",
+   "text": "-8.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v12",
+     "v14"
+    ]
+   },
+   "desc": "Edge ML Nikolas Motta",
+   "raw": -0.08303969782075432
+  },
+  {
+   "id": "v19",
+   "text": "-184",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model ML Dom Mar Fan",
+   "raw": 0.6482570891251022
+  },
+  {
+   "id": "v20",
+   "text": "64.8%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Dom Mar Fan",
+   "raw": 0.6482570891251022
+  },
+  {
+   "id": "v21",
+   "text": "-155",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Dom Mar Fan",
+   "raw": -155
+  },
+  {
+   "id": "v22",
+   "text": "60.8%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Dom Mar Fan",
+   "raw": 0.6078431372549019
+  },
+  {
+   "id": "v23",
+   "text": "-166",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -179,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Dom Mar Fan",
-   "raw": -160
+   "raw": -166
   },
   {
-   "id": "v15",
-   "text": "61.5%",
+   "id": "v24",
+   "text": "62.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -191,24 +293,60 @@
     "label": "Dom Mar Fan"
    },
    "desc": "Market implied Dom Mar Fan",
-   "raw": 0.6153846153846154
+   "raw": 0.6240601503759399
   },
   {
-   "id": "v16",
-   "text": "-160",
+   "id": "v25",
+   "text": "-162",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
     "label": "Dom Mar Fan",
-    "book": "fanduel"
+    "book": "draftkings"
    },
    "desc": "Best US ML Dom Mar Fan",
-   "raw": -160
+   "raw": -162
   },
   {
-   "id": "v17",
-   "text": "+132",
+   "id": "v26",
+   "text": "+4.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v20",
+     "v22"
+    ]
+   },
+   "desc": "Edge ML Dom Mar Fan",
+   "raw": 0.04041395187020025
+  },
+  {
+   "id": "v27",
+   "text": "+129",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.4368708150478787
+  },
+  {
+   "id": "v28",
+   "text": "43.7%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.4368708150478787
+  },
+  {
+   "id": "v29",
+   "text": "+140",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -217,23 +355,61 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 132
+   "raw": 140
   },
   {
-   "id": "v18",
-   "text": "43.1%",
+   "id": "v30",
+   "text": "41.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "fight_distance",
     "label": "Yes"
    },
-   "desc": "Market GTD yes implied",
-   "raw": 0.43103448275862066
+   "desc": "Market GTD implied",
+   "raw": 0.4166666666666667
   },
   {
-   "id": "v19",
-   "text": "-176",
+   "id": "v31",
+   "text": "+2.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v28",
+     "v30"
+    ]
+   },
+   "desc": "Edge GTD vs market",
+   "raw": 0.02020414838121204
+  },
+  {
+   "id": "v32",
+   "text": "-129",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.5631291849521213
+  },
+  {
+   "id": "v33",
+   "text": "56.3%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.5631291849521213
+  },
+  {
+   "id": "v34",
+   "text": "-185",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -241,24 +417,62 @@
     "label": "No",
     "field": "cost"
    },
-   "desc": "Market GTD no",
-   "raw": -176
+   "desc": "Market ITD no",
+   "raw": -185
   },
   {
-   "id": "v20",
-   "text": "63.8%",
+   "id": "v35",
+   "text": "64.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
     "market": "fight_distance",
     "label": "No"
    },
-   "desc": "Market GTD no implied",
-   "raw": 0.6376811594202898
+   "desc": "Market ITD implied",
+   "raw": 0.6491228070175439
   },
   {
-   "id": "v21",
-   "text": "+502",
+   "id": "v36",
+   "text": "-8.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v33",
+     "v35"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.0859936220654226
+  },
+  {
+   "id": "v37",
+   "text": "+555",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Nikolas Motta",
+   "raw": 0.15263842541129094
+  },
+  {
+   "id": "v38",
+   "text": "15.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Nikolas Motta",
+   "raw": 0.15263842541129094
+  },
+  {
+   "id": "v39",
+   "text": "+550",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -267,11 +481,11 @@
     "field": "cost"
    },
    "desc": "Market dec Nikolas Motta",
-   "raw": 502
+   "raw": 550
   },
   {
-   "id": "v22",
-   "text": "16.6%",
+   "id": "v40",
+   "text": "15.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -279,10 +493,48 @@
     "label": "Nikolas Motta Points"
    },
    "desc": "Market dec implied Nikolas Motta",
-   "raw": 0.16611295681063123
+   "raw": 0.15384615384615385
   },
   {
-   "id": "v23",
+   "id": "v41",
+   "text": "-0.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v38",
+     "v40"
+    ]
+   },
+   "desc": "Edge dec Nikolas Motta",
+   "raw": -0.0012077284348629147
+  },
+  {
+   "id": "v42",
+   "text": "+484",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Nikolas Motta",
+   "raw": 0.1711683127744362
+  },
+  {
+   "id": "v43",
+   "text": "17.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Nikolas Motta",
+   "raw": 0.1711683127744362
+  },
+  {
+   "id": "v44",
    "text": "+250",
    "fmt": "ml",
    "rule": "bp",
@@ -295,7 +547,7 @@
    "raw": 250
   },
   {
-   "id": "v24",
+   "id": "v45",
    "text": "28.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -307,8 +559,46 @@
    "raw": 0.2857142857142857
   },
   {
-   "id": "v25",
-   "text": "+2223",
+   "id": "v46",
+   "text": "-11.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v43",
+     "v45"
+    ]
+   },
+   "desc": "Edge ko Nikolas Motta",
+   "raw": -0.1145459729398495
+  },
+  {
+   "id": "v47",
+   "text": "+3480",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Nikolas Motta",
+   "raw": 0.0279361726891707
+  },
+  {
+   "id": "v48",
+   "text": "2.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Nikolas Motta",
+   "raw": 0.0279361726891707
+  },
+  {
+   "id": "v49",
+   "text": "+2500",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -317,11 +607,11 @@
     "field": "cost"
    },
    "desc": "Market sub Nikolas Motta",
-   "raw": 2223
+   "raw": 2500
   },
   {
-   "id": "v26",
-   "text": "4.3%",
+   "id": "v50",
+   "text": "3.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -329,11 +619,49 @@
     "label": "Nikolas Motta Submission"
    },
    "desc": "Market sub implied Nikolas Motta",
-   "raw": 0.04304778303917348
+   "raw": 0.038461538461538464
   },
   {
-   "id": "v27",
-   "text": "+204",
+   "id": "v51",
+   "text": "-1.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v48",
+     "v50"
+    ]
+   },
+   "desc": "Edge sub Nikolas Motta",
+   "raw": -0.010525365772367765
+  },
+  {
+   "id": "v52",
+   "text": "+402",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Nikolas Motta",
+   "raw": 0.1991044854636069
+  },
+  {
+   "id": "v53",
+   "text": "19.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Nikolas Motta",
+   "raw": 0.1991044854636069
+  },
+  {
+   "id": "v54",
+   "text": "+208",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -344,11 +672,11 @@
     ]
    },
    "desc": "Market ITD price Nikolas Motta",
-   "raw": 0.3287620687534592
+   "raw": 0.32417582417582413
   },
   {
-   "id": "v28",
-   "text": "32.9%",
+   "id": "v55",
+   "text": "32.4%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -359,10 +687,48 @@
     ]
    },
    "desc": "Market ITD implied Nikolas Motta",
-   "raw": 0.3287620687534592
+   "raw": 0.32417582417582413
   },
   {
-   "id": "v29",
+   "id": "v56",
+   "text": "-12.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v53",
+     "v55"
+    ]
+   },
+   "desc": "Edge itd Nikolas Motta",
+   "raw": -0.12507133871221723
+  },
+  {
+   "id": "v57",
+   "text": "+252",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Dom Mar Fan",
+   "raw": 0.2842323896365878
+  },
+  {
+   "id": "v58",
+   "text": "28.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Dom Mar Fan",
+   "raw": 0.2842323896365878
+  },
+  {
+   "id": "v59",
    "text": "+245",
    "fmt": "ml",
    "rule": "bp",
@@ -375,7 +741,7 @@
    "raw": 245
   },
   {
-   "id": "v30",
+   "id": "v60",
    "text": "29.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -387,7 +753,45 @@
    "raw": 0.2898550724637681
   },
   {
-   "id": "v31",
+   "id": "v61",
+   "text": "-0.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v58",
+     "v60"
+    ]
+   },
+   "desc": "Edge dec Dom Mar Fan",
+   "raw": -0.005622682827180314
+  },
+  {
+   "id": "v62",
+   "text": "+401",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Dom Mar Fan",
+   "raw": 0.19948644087545453
+  },
+  {
+   "id": "v63",
+   "text": "19.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Dom Mar Fan",
+   "raw": 0.19948644087545453
+  },
+  {
+   "id": "v64",
    "text": "+350",
    "fmt": "ml",
    "rule": "bp",
@@ -400,7 +804,7 @@
    "raw": 350
   },
   {
-   "id": "v32",
+   "id": "v65",
    "text": "22.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
@@ -412,8 +816,46 @@
    "raw": 0.2222222222222222
   },
   {
-   "id": "v33",
-   "text": "+399",
+   "id": "v66",
+   "text": "-2.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v63",
+     "v65"
+    ]
+   },
+   "desc": "Edge ko Dom Mar Fan",
+   "raw": -0.02273578134676768
+  },
+  {
+   "id": "v67",
+   "text": "+508",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Dom Mar Fan",
+   "raw": 0.1645382586130598
+  },
+  {
+   "id": "v68",
+   "text": "16.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Dom Mar Fan",
+   "raw": 0.1645382586130598
+  },
+  {
+   "id": "v69",
+   "text": "+395",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -422,11 +864,11 @@
     "field": "cost"
    },
    "desc": "Market sub Dom Mar Fan",
-   "raw": 399
+   "raw": 395
   },
   {
-   "id": "v34",
-   "text": "20.0%",
+   "id": "v70",
+   "text": "20.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -434,11 +876,49 @@
     "label": "Dom Mar Fan Submission"
    },
    "desc": "Market sub implied Dom Mar Fan",
-   "raw": 0.20040080160320642
+   "raw": 0.20202020202020202
   },
   {
-   "id": "v35",
-   "text": "+137",
+   "id": "v71",
+   "text": "-3.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v68",
+     "v70"
+    ]
+   },
+   "desc": "Edge sub Dom Mar Fan",
+   "raw": -0.037481943407142226
+  },
+  {
+   "id": "v72",
+   "text": "+175",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Dom Mar Fan",
+   "raw": 0.36402469948851435
+  },
+  {
+   "id": "v73",
+   "text": "36.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Dom Mar Fan",
+   "raw": 0.36402469948851435
+  },
+  {
+   "id": "v74",
+   "text": "+136",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -449,11 +929,11 @@
     ]
    },
    "desc": "Market ITD price Dom Mar Fan",
-   "raw": 0.4226230238254286
+   "raw": 0.4242424242424242
   },
   {
-   "id": "v36",
-   "text": "42.3%",
+   "id": "v75",
+   "text": "42.4%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -464,10 +944,24 @@
     ]
    },
    "desc": "Market ITD implied Dom Mar Fan",
-   "raw": 0.4226230238254286
+   "raw": 0.4242424242424242
   },
   {
-   "id": "v37",
+   "id": "v76",
+   "text": "-6.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v73",
+     "v75"
+    ]
+   },
+   "desc": "Edge itd Dom Mar Fan",
+   "raw": -0.06021772475390985
+  },
+  {
+   "id": "v77",
    "text": "-159",
    "fmt": "ml",
    "rule": "lh_open_ml",
@@ -483,7 +977,7 @@
    "raw": -159
   },
   {
-   "id": "v38",
+   "id": "v78",
    "text": "-161",
    "fmt": "ml",
    "rule": "lh_open_ml",
@@ -500,8 +994,8 @@
    "raw": -161
   },
   {
-   "id": "v39",
-   "text": "0.5",
+   "id": "v79",
+   "text": "1.0",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -512,10 +1006,10 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0050000000000000044
+   "raw": 0.010000000000000009
   },
   {
-   "id": "v40",
+   "id": "v80",
    "text": "76%",
    "fmt": "pct0",
    "rule": "em",
@@ -527,7 +1021,7 @@
    "raw": 0.7619
   },
   {
-   "id": "v41",
+   "id": "v81",
    "text": "15%",
    "fmt": "pct0",
    "rule": "em",
@@ -539,7 +1033,7 @@
    "raw": 0.1472
   },
   {
-   "id": "v42",
+   "id": "v82",
    "text": "9%",
    "fmt": "pct0",
    "rule": "em",
@@ -551,7 +1045,7 @@
    "raw": 0.0909
   },
   {
-   "id": "v43",
+   "id": "v83",
    "text": "79%",
    "fmt": "pct0",
    "rule": "em",
@@ -563,7 +1057,7 @@
    "raw": 0.79
   },
   {
-   "id": "v44",
+   "id": "v84",
    "text": "18%",
    "fmt": "pct0",
    "rule": "em",
@@ -575,7 +1069,7 @@
    "raw": 0.18
   },
   {
-   "id": "v45",
+   "id": "v85",
    "text": "3%",
    "fmt": "pct0",
    "rule": "em",
@@ -587,7 +1081,7 @@
    "raw": 0.03
   },
   {
-   "id": "v46",
+   "id": "v86",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -599,7 +1093,7 @@
    "raw": 7
   },
   {
-   "id": "v47",
+   "id": "v87",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -611,7 +1105,7 @@
    "raw": 2
   },
   {
-   "id": "v48",
+   "id": "v88",
    "text": "70%",
    "fmt": "pct0",
    "rule": "em",
@@ -623,7 +1117,7 @@
    "raw": 0.7048
   },
   {
-   "id": "v49",
+   "id": "v89",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -635,7 +1129,7 @@
    "raw": 3
   },
   {
-   "id": "v50",
+   "id": "v90",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -647,7 +1141,7 @@
    "raw": 4
   },
   {
-   "id": "v51",
+   "id": "v91",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -659,7 +1153,7 @@
    "raw": 0.0
   },
   {
-   "id": "v52",
+   "id": "v92",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -671,7 +1165,7 @@
    "raw": 0
   },
   {
-   "id": "v53",
+   "id": "v93",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -683,7 +1177,7 @@
    "raw": 0
   },
   {
-   "id": "v54",
+   "id": "v94",
    "text": "23%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -695,7 +1189,7 @@
    "raw": 0.2309
   },
   {
-   "id": "v55",
+   "id": "v95",
    "text": "42%",
    "fmt": "pct0",
    "rule": "em",
@@ -707,7 +1201,7 @@
    "raw": 0.4238
   },
   {
-   "id": "v56",
+   "id": "v96",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -719,7 +1213,7 @@
    "raw": 2
   },
   {
-   "id": "v57",
+   "id": "v97",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -731,7 +1225,7 @@
    "raw": 3
   },
   {
-   "id": "v58",
+   "id": "v98",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -743,7 +1237,7 @@
    "raw": 0.0
   },
   {
-   "id": "v59",
+   "id": "v99",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -755,7 +1249,7 @@
    "raw": 0
   },
   {
-   "id": "v60",
+   "id": "v100",
    "text": "0",
    "fmt": "int",
    "rule": "em",
@@ -767,7 +1261,7 @@
    "raw": 0
   },
   {
-   "id": "v61",
+   "id": "v101",
    "text": "26%",
    "fmt": "pct0",
    "rule": "em_div",
@@ -779,7 +1273,7 @@
    "raw": 0.2582
   },
   {
-   "id": "v62",
+   "id": "v102",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -791,7 +1285,7 @@
    "raw": 2
   },
   {
-   "id": "v63",
+   "id": "v103",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -803,7 +1297,7 @@
    "raw": 1
   },
   {
-   "id": "v64",
+   "id": "v104",
    "text": "3",
    "fmt": "int",
    "rule": "em",
@@ -815,7 +1309,7 @@
    "raw": 3
   },
   {
-   "id": "v65",
+   "id": "v105",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -827,7 +1321,7 @@
    "raw": 1
   },
   {
-   "id": "v66",
+   "id": "v106",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -839,7 +1333,7 @@
    "raw": 1
   },
   {
-   "id": "v67",
+   "id": "v107",
    "text": "57%",
    "fmt": "pct0",
    "rule": "em",
@@ -851,7 +1345,7 @@
    "raw": 0.5714
   },
   {
-   "id": "v68",
+   "id": "v108",
    "text": "-0.3",
    "fmt": "s1",
    "rule": "em",
@@ -863,7 +1357,7 @@
    "raw": -0.3
   },
   {
-   "id": "v69",
+   "id": "v109",
    "text": "7",
    "fmt": "int",
    "rule": "em",
@@ -875,7 +1369,7 @@
    "raw": 7
   },
   {
-   "id": "v70",
+   "id": "v110",
    "text": "25%",
    "fmt": "pct0",
    "rule": "em",
@@ -887,7 +1381,7 @@
    "raw": 0.25
   },
   {
-   "id": "v71",
+   "id": "v111",
    "text": "-4.1",
    "fmt": "s1",
    "rule": "em",
@@ -899,7 +1393,7 @@
    "raw": -4.123
   },
   {
-   "id": "v72",
+   "id": "v112",
    "text": "4",
    "fmt": "int",
    "rule": "em",
@@ -911,7 +1405,7 @@
    "raw": 4
   },
   {
-   "id": "v73",
+   "id": "v113",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -923,7 +1417,7 @@
    "raw": 0.5
   },
   {
-   "id": "v74",
+   "id": "v114",
    "text": "+1.3",
    "fmt": "s1",
    "rule": "em",
@@ -935,7 +1429,7 @@
    "raw": 1.344
   },
   {
-   "id": "v75",
+   "id": "v115",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -947,7 +1441,7 @@
    "raw": 2
   },
   {
-   "id": "v76",
+   "id": "v116",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -959,7 +1453,7 @@
    "raw": 0.0
   },
   {
-   "id": "v77",
+   "id": "v117",
    "text": "+0.7",
    "fmt": "s1",
    "rule": "em",
@@ -971,7 +1465,7 @@
    "raw": 0.672
   },
   {
-   "id": "v78",
+   "id": "v118",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -983,7 +1477,7 @@
    "raw": 2
   },
   {
-   "id": "v79",
+   "id": "v119",
    "text": "100%",
    "fmt": "pct0",
    "rule": "em",
@@ -995,7 +1489,7 @@
    "raw": 1.0
   },
   {
-   "id": "v80",
+   "id": "v120",
    "text": "+5.0",
    "fmt": "s1",
    "rule": "em",
@@ -1007,7 +1501,7 @@
    "raw": 5.0
   },
   {
-   "id": "v81",
+   "id": "v121",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1019,7 +1513,7 @@
    "raw": 1
   },
   {
-   "id": "v82",
+   "id": "v122",
    "text": "0%",
    "fmt": "pct0",
    "rule": "em",
@@ -1031,7 +1525,7 @@
    "raw": 0.0
   },
   {
-   "id": "v83",
+   "id": "v123",
    "text": "+0.0",
    "fmt": "s1",
    "rule": "em",
@@ -1043,7 +1537,7 @@
    "raw": 0.0
   },
   {
-   "id": "v84",
+   "id": "v124",
    "text": "1",
    "fmt": "int",
    "rule": "em",
@@ -1055,7 +1549,7 @@
    "raw": 1
   },
   {
-   "id": "v85",
+   "id": "v125",
    "text": "-3",
    "fmt": "sint",
    "rule": "em",
@@ -1067,7 +1561,7 @@
    "raw": -3
   },
   {
-   "id": "v86",
+   "id": "v126",
    "text": "+9",
    "fmt": "sint",
    "rule": "em",
@@ -1079,7 +1573,7 @@
    "raw": 9
   },
   {
-   "id": "v87",
+   "id": "v127",
    "text": "+9",
    "fmt": "sint",
    "rule": "em",
@@ -1091,7 +1585,7 @@
    "raw": 9
   },
   {
-   "id": "v88",
+   "id": "v128",
    "text": "-14",
    "fmt": "sint",
    "rule": "em",
@@ -1103,7 +1597,7 @@
    "raw": -14
   },
   {
-   "id": "v89",
+   "id": "v129",
    "text": "-6",
    "fmt": "sint",
    "rule": "em",
@@ -1115,7 +1609,7 @@
    "raw": -6
   },
   {
-   "id": "v90",
+   "id": "v130",
    "text": "+9",
    "fmt": "sint",
    "rule": "em",
@@ -1127,7 +1621,7 @@
    "raw": 9
   },
   {
-   "id": "v91",
+   "id": "v131",
    "text": "-12",
    "fmt": "sint",
    "rule": "em",
@@ -1139,7 +1633,7 @@
    "raw": -12
   },
   {
-   "id": "v92",
+   "id": "v132",
    "text": "-24",
    "fmt": "sint",
    "rule": "em",
@@ -1151,7 +1645,7 @@
    "raw": -24
   },
   {
-   "id": "v93",
+   "id": "v133",
    "text": "+1",
    "fmt": "sint",
    "rule": "em",
@@ -1163,7 +1657,7 @@
    "raw": 1
   },
   {
-   "id": "v94",
+   "id": "v134",
    "text": "-29",
    "fmt": "sint",
    "rule": "em",
@@ -1175,7 +1669,7 @@
    "raw": -29
   },
   {
-   "id": "v95",
+   "id": "v135",
    "text": "-15",
    "fmt": "sint",
    "rule": "em",
@@ -1187,7 +1681,7 @@
    "raw": -15
   },
   {
-   "id": "v96",
+   "id": "v136",
    "text": "+12",
    "fmt": "sint",
    "rule": "em",
@@ -1199,7 +1693,7 @@
    "raw": 12
   },
   {
-   "id": "v97",
+   "id": "v137",
    "text": "-1",
    "fmt": "sint",
    "rule": "em",
@@ -1211,7 +1705,7 @@
    "raw": -1
   },
   {
-   "id": "v98",
+   "id": "v138",
    "text": "+0",
    "fmt": "sint",
    "rule": "em",
@@ -1223,7 +1717,7 @@
    "raw": 0
   },
   {
-   "id": "v99",
+   "id": "v139",
    "text": "+6",
    "fmt": "sint",
    "rule": "em",
@@ -1235,7 +1729,7 @@
    "raw": 6
   },
   {
-   "id": "v100",
+   "id": "v140",
    "text": "+25",
    "fmt": "sint",
    "rule": "em",
@@ -1247,7 +1741,7 @@
    "raw": 25
   },
   {
-   "id": "v101",
+   "id": "v141",
    "text": "+0",
    "fmt": "sint",
    "rule": "em",
@@ -1259,7 +1753,7 @@
    "raw": 0
   },
   {
-   "id": "v102",
+   "id": "v142",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1271,7 +1765,7 @@
    "raw": 0.0
   },
   {
-   "id": "v103",
+   "id": "v143",
    "text": "0.79",
    "fmt": "n2",
    "rule": "em",
@@ -1283,7 +1777,7 @@
    "raw": 0.792
   },
   {
-   "id": "v104",
+   "id": "v144",
    "text": "25%",
    "fmt": "pct0",
    "rule": "em",
@@ -1295,7 +1789,7 @@
    "raw": 0.25
   },
   {
-   "id": "v105",
+   "id": "v145",
    "text": "82%",
    "fmt": "pct0",
    "rule": "em",
@@ -1307,7 +1801,7 @@
    "raw": 0.8235
   },
   {
-   "id": "v106",
+   "id": "v146",
    "text": "82%",
    "fmt": "pct0",
    "rule": "em",
@@ -1319,7 +1813,7 @@
    "raw": 0.8182
   },
   {
-   "id": "v107",
+   "id": "v147",
    "text": "4%",
    "fmt": "pct0",
    "rule": "em",
@@ -1331,7 +1825,7 @@
    "raw": 0.0398
   },
   {
-   "id": "v108",
+   "id": "v148",
    "text": "19%",
    "fmt": "pct0",
    "rule": "em",
@@ -1343,7 +1837,7 @@
    "raw": 0.1893
   },
   {
-   "id": "v109",
+   "id": "v149",
    "text": "-9.6%",
    "fmt": "spp",
    "rule": "em",
@@ -1355,7 +1849,7 @@
    "raw": -0.0956
   },
   {
-   "id": "v110",
+   "id": "v150",
    "text": "-20.9%",
    "fmt": "spp",
    "rule": "em",
@@ -1367,7 +1861,7 @@
    "raw": -0.2086
   },
   {
-   "id": "v111",
+   "id": "v151",
    "text": "13%",
    "fmt": "pct0",
    "rule": "em",
@@ -1379,7 +1873,7 @@
    "raw": 0.1278
   },
   {
-   "id": "v112",
+   "id": "v152",
    "text": "38%",
    "fmt": "pct0",
    "rule": "em",
@@ -1391,7 +1885,7 @@
    "raw": 0.382
   },
   {
-   "id": "v113",
+   "id": "v153",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1403,7 +1897,7 @@
    "raw": 0.0
   },
   {
-   "id": "v114",
+   "id": "v154",
    "text": "0.00",
    "fmt": "n2",
    "rule": "em",
@@ -1415,7 +1909,7 @@
    "raw": 0.0
   },
   {
-   "id": "v115",
+   "id": "v155",
    "text": "-1.25",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1431,7 +1925,7 @@
    "raw": -1.252
   },
   {
-   "id": "v116",
+   "id": "v156",
    "text": "+1.64",
    "fmt": "s2",
    "rule": "em_sum",
@@ -1447,7 +1941,7 @@
    "raw": 1.637
   },
   {
-   "id": "v117",
+   "id": "v157",
    "text": "-1.31",
    "fmt": "s2",
    "rule": "em",
@@ -1459,7 +1953,7 @@
    "raw": -1.314
   },
   {
-   "id": "v118",
+   "id": "v158",
    "text": "+1.51",
    "fmt": "s2",
    "rule": "em",
@@ -1471,7 +1965,7 @@
    "raw": 1.507
   },
   {
-   "id": "v119",
+   "id": "v159",
    "text": "-0.02",
    "fmt": "s2",
    "rule": "em",
@@ -1483,7 +1977,7 @@
    "raw": -0.02
   },
   {
-   "id": "v120",
+   "id": "v160",
    "text": "+2.17",
    "fmt": "s2",
    "rule": "em",
@@ -1495,7 +1989,7 @@
    "raw": 2.165
   },
   {
-   "id": "v121",
+   "id": "v161",
    "text": "-0.53",
    "fmt": "s2",
    "rule": "em",
@@ -1507,7 +2001,7 @@
    "raw": -0.528
   },
   {
-   "id": "v122",
+   "id": "v162",
    "text": "-0.58",
    "fmt": "s2",
    "rule": "em",
@@ -1519,7 +2013,7 @@
    "raw": -0.581
   },
   {
-   "id": "v123",
+   "id": "v163",
    "text": "-0.70",
    "fmt": "s2",
    "rule": "em",
@@ -1531,7 +2025,7 @@
    "raw": -0.704
   },
   {
-   "id": "v124",
+   "id": "v164",
    "text": "+0.05",
    "fmt": "s2",
    "rule": "em",
@@ -1543,7 +2037,7 @@
    "raw": 0.053
   },
   {
-   "id": "v125",
+   "id": "v165",
    "text": "59%",
    "fmt": "pct0",
    "rule": "em",
@@ -1555,7 +2049,7 @@
    "raw": 0.5922
   },
   {
-   "id": "v126",
+   "id": "v166",
    "text": "60%",
    "fmt": "pct0",
    "rule": "em",
@@ -1567,7 +2061,7 @@
    "raw": 0.6
   },
   {
-   "id": "v127",
+   "id": "v167",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1579,7 +2073,7 @@
    "raw": 2
   },
   {
-   "id": "v128",
+   "id": "v168",
    "text": "6.3",
    "fmt": "n1",
    "rule": "em",
@@ -1591,7 +2085,7 @@
    "raw": 6.325
   },
   {
-   "id": "v129",
+   "id": "v169",
    "text": "9.5",
    "fmt": "n1",
    "rule": "em",
@@ -1603,7 +2097,7 @@
    "raw": 9.467
   },
   {
-   "id": "v130",
+   "id": "v170",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1615,7 +2109,7 @@
    "raw": 2
   },
   {
-   "id": "v131",
+   "id": "v171",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -1627,7 +2121,7 @@
    "raw": 0.5
   },
   {
-   "id": "v132",
+   "id": "v172",
    "text": "50%",
    "fmt": "pct0",
    "rule": "em",
@@ -1639,7 +2133,7 @@
    "raw": 0.5
   },
   {
-   "id": "v133",
+   "id": "v173",
    "text": "2",
    "fmt": "int",
    "rule": "em",
@@ -1651,7 +2145,7 @@
    "raw": 2
   },
   {
-   "id": "v134",
+   "id": "v174",
    "text": "+320",
    "fmt": "ml",
    "rule": "fight",
@@ -1664,7 +2158,7 @@
    "raw": 320
   },
   {
-   "id": "v135",
+   "id": "v175",
    "text": "+185",
    "fmt": "ml",
    "rule": "fight",
@@ -1677,7 +2171,7 @@
    "raw": 185
   },
   {
-   "id": "v136",
+   "id": "v176",
    "text": "+275",
    "fmt": "ml",
    "rule": "fight",
@@ -1690,7 +2184,7 @@
    "raw": 275
   },
   {
-   "id": "v137",
+   "id": "v177",
    "text": "-132",
    "fmt": "ml",
    "rule": "fight",
@@ -1703,7 +2197,7 @@
    "raw": -132
   },
   {
-   "id": "v138",
+   "id": "v178",
    "text": "+160",
    "fmt": "ml",
    "rule": "fight",
@@ -1716,7 +2210,7 @@
    "raw": 160
   },
   {
-   "id": "v139",
+   "id": "v179",
    "text": "-179",
    "fmt": "ml",
    "rule": "fight",
@@ -1729,7 +2223,7 @@
    "raw": -179
   },
   {
-   "id": "v140",
+   "id": "v180",
    "text": "-175",
    "fmt": "ml",
    "rule": "fight",
@@ -1742,7 +2236,7 @@
    "raw": -175
   },
   {
-   "id": "v141",
+   "id": "v181",
    "text": "+160",
    "fmt": "ml",
    "rule": "fight",
@@ -1755,7 +2249,7 @@
    "raw": 160
   },
   {
-   "id": "v142",
+   "id": "v182",
    "text": "-159",
    "fmt": "ml",
    "rule": "fight",
@@ -1768,7 +2262,5 @@
    "raw": -159
   }
  ],
- "gaps": [
-  "Fight 3: no row in the Publish to site export; no model numbers shown."
- ]
+ "gaps": []
 }

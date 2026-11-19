@@ -97,6 +97,7 @@ def sheet_from_row(r, a_dog, params, old=None, published_at=None):
         "gtd": r.get("gtd"), "gtd_listed": r.get("gtd_listed"),
         "tag": r.get("tag") or old.get("tag", ""),
         "k": "" if inp.get("ctx") is None else str(inp.get("ctx")), "w": 1 if inp.get("women") else 0,
+        "adj": inp.get("manual") or 0.0,   # Nov 19: Sean's Manual Adjust (Calculator M), dog side
         "par": [params.get("b45", 0.15), inp.get("shift", params.get("shift", 0.0)) or 0.0, params.get("b43", 0.15), params.get("b44", 0.075)],
         "ml": {"a": inp.get("dog_odds") if a_dog else inp.get("fav_odds"), "b": inp.get("fav_odds") if a_dog else inp.get("dog_odds")},
         "edge": {"a": S.get("dog_edge") if a_dog else S.get("fav_edge"), "b": S.get("fav_edge") if a_dog else S.get("dog_edge")},

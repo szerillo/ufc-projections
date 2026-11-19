@@ -215,7 +215,9 @@ def negative(slug, export, export_file):
     def fight(d, n):
         return next(f for f in d["fights"] if f["n"] == n)
 
-    def m1(d): fight(d, 13)["model"]["a"]["win"] += 0.3; fight(d, 13)["model"]["b"]["win"] -= 0.3
+    def main_n(d): return max(f["n"] for f in d["fights"] if f.get("model"))   # Nov 19: the main event's number on any card (13 on UFC 334)
+    def m1(d): n = main_n(d); fight(d, n)["model"]["a"]["win"] += 0.3; fight(d, n)["model"]["b"]["win"] -= 0.3
+    def m7(d): next(f for f in d["fights"] if (f.get("sheet") or {}).get("adj"))["sheet"]["adj"] = 0.0   # Nov 19: manual adjust step dropped
     def m2(d): s = fight(d, 7)["sheet"]["meth"]["a"]; s[0], s[1] = s[1], s[0]
     def m3(d): fight(d, 2)["model"]["gtd"] += 1.0
     def m4(d): fight(d, 5)["model"]["src"] = "sheet"
@@ -235,6 +237,7 @@ def negative(slug, export, export_file):
               ("site: fight 9 KO % moved 1 pt", edit_event(m5)),
               ("site: fight 11 sheet-box model moved 0.4 pts", edit_event(m6)),
               ("export changed after the build: first row true % moved 0.2 pts", x1),
+              ("site: Sean's manual adjust left out of the build-up", edit_event(m7)),
               ("export changed after the build: fourth row GTD moved 1 pt", x2)]
     caught = 0
     for label, fn in plants:

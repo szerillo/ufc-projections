@@ -3,8 +3,8 @@
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
  "rule": "fight number = bout order on the card; 1 = opener, 12 = main event",
  "cancelled": [],
- "proj_file": null,
- "published_at": null,
+ "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T22:40:00.000Z",
  "card": [
   {
    "fight": 12,
@@ -90,6 +90,13 @@
    "bp_sched_rank": null,
    "site_n": 1,
    "added": "not in the odds feed yet"
+  }
+ ],
+ "line_pending": [
+  {
+   "dog": "Shoaib Yousaf",
+   "fav": "John Mitchell",
+   "reason": "price_source missing, so the price cannot be tied to this bout (publish with the current script) (OPP-1); no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)"
   }
  ]
 }
