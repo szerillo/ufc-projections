@@ -13,8 +13,8 @@
  "file": "fight_09.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
  "proj_src": "publish",
- "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
- "published_at": "2026-11-19T22:40:00.000Z",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
  "rows": [
   {
    "id": "v1",
@@ -511,7 +511,7 @@
   },
   {
    "id": "v42",
-   "text": "+481",
+   "text": "+471",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -519,11 +519,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Kyoji Horiguchi",
-   "raw": 0.1722253008768883
+   "raw": 0.174993435620314
   },
   {
    "id": "v43",
-   "text": "17.2%",
+   "text": "17.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -531,7 +531,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Kyoji Horiguchi",
-   "raw": 0.1722253008768883
+   "raw": 0.174993435620314
   },
   {
    "id": "v44",
@@ -560,7 +560,7 @@
   },
   {
    "id": "v46",
-   "text": "-0.4%",
+   "text": "-0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -570,11 +570,11 @@
     ]
    },
    "desc": "Edge ko Kyoji Horiguchi",
-   "raw": -0.0035216235519341943
+   "raw": -0.0007534888085085067
   },
   {
    "id": "v47",
-   "text": "+1140",
+   "text": "+1184",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -582,11 +582,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Kyoji Horiguchi",
-   "raw": 0.08062270786443523
+   "raw": 0.07785457312100957
   },
   {
    "id": "v48",
-   "text": "8.1%",
+   "text": "7.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -594,7 +594,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Kyoji Horiguchi",
-   "raw": 0.08062270786443523
+   "raw": 0.07785457312100957
   },
   {
    "id": "v49",
@@ -623,7 +623,7 @@
   },
   {
    "id": "v51",
-   "text": "-3.2%",
+   "text": "-3.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -633,7 +633,7 @@
     ]
    },
    "desc": "Edge sub Kyoji Horiguchi",
-   "raw": -0.03186323139315757
+   "raw": -0.03463136613658323
   },
   {
    "id": "v52",
@@ -729,7 +729,7 @@
   },
   {
    "id": "v59",
-   "text": "+1761",
+   "text": "+1783",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -737,11 +737,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Asu Almabayev",
-   "raw": 0.05373122644689449
+   "raw": 0.05311293618802954
   },
   {
    "id": "v60",
-   "text": "5.4%",
+   "text": "5.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -749,11 +749,11 @@
     "k": "ko"
    },
    "desc": "Model ko % Asu Almabayev",
-   "raw": 0.05373122644689449
+   "raw": 0.05311293618802954
   },
   {
    "id": "v61",
-   "text": "+1195",
+   "text": "+1184",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -761,11 +761,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Asu Almabayev",
-   "raw": 0.07723881555065237
+   "raw": 0.07785710580951732
   },
   {
    "id": "v62",
-   "text": "7.7%",
+   "text": "7.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -773,7 +773,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Asu Almabayev",
-   "raw": 0.07723881555065237
+   "raw": 0.07785710580951732
   },
   {
    "id": "v63",

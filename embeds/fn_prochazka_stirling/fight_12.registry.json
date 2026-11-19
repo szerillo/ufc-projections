@@ -13,8 +13,8 @@
  "file": "fight_12.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
  "proj_src": "publish",
- "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
- "published_at": "2026-11-19T22:40:00.000Z",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
  "rows": [
   {
    "id": "v1",
@@ -132,47 +132,47 @@
   },
   {
    "id": "v11",
-   "text": "+176",
+   "text": "+181",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Jiri Prochazka",
-   "raw": 0.36227540880503145
+   "raw": 0.3555850460971112
   },
   {
    "id": "v12",
-   "text": "36.2%",
+   "text": "35.6%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Jiri Prochazka",
-   "raw": 0.36227540880503145
+   "raw": 0.3555850460971112
   },
   {
    "id": "v13",
-   "text": "+135",
+   "text": "+140",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Jiri Prochazka",
-   "raw": 135
+   "raw": 140
   },
   {
    "id": "v14",
-   "text": "42.6%",
+   "text": "41.7%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Jiri Prochazka",
-   "raw": 0.425531914893617
+   "raw": 0.4166666666666667
   },
   {
    "id": "v15",
@@ -201,7 +201,7 @@
   },
   {
    "id": "v17",
-   "text": "+150",
+   "text": "+145",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
@@ -210,11 +210,11 @@
     "book": "betmgm"
    },
    "desc": "Best US ML Jiri Prochazka",
-   "raw": 150
+   "raw": 145
   },
   {
    "id": "v18",
-   "text": "-6.3%",
+   "text": "-6.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -224,51 +224,51 @@
     ]
    },
    "desc": "Edge ML Jiri Prochazka",
-   "raw": -0.06325650608858557
+   "raw": -0.06108162056955546
   },
   {
    "id": "v19",
-   "text": "-176",
+   "text": "-181",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Navajo Stirling",
-   "raw": 0.6377245911949685
+   "raw": 0.6444149539028887
   },
   {
    "id": "v20",
-   "text": "63.8%",
+   "text": "64.4%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Navajo Stirling",
-   "raw": 0.6377245911949685
+   "raw": 0.6444149539028887
   },
   {
    "id": "v21",
-   "text": "-160",
+   "text": "-162",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Navajo Stirling",
-   "raw": -160
+   "raw": -162
   },
   {
    "id": "v22",
-   "text": "61.5%",
+   "text": "61.8%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Navajo Stirling",
-   "raw": 0.6153846153846154
+   "raw": 0.6183206106870229
   },
   {
    "id": "v23",
@@ -310,7 +310,7 @@
   },
   {
    "id": "v26",
-   "text": "+2.2%",
+   "text": "+2.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -320,7 +320,7 @@
     ]
    },
    "desc": "Edge ML Navajo Stirling",
-   "raw": 0.022339975810353074
+   "raw": 0.02609434321586579
   },
   {
    "id": "v27",
@@ -331,7 +331,7 @@
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.2130370987183513
+   "raw": 0.2133737960004578
   },
   {
    "id": "v28",
@@ -342,7 +342,7 @@
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.2130370987183513
+   "raw": 0.2133737960004578
   },
   {
    "id": "v29",
@@ -381,7 +381,7 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": 0.03285691853817113
+   "raw": 0.03319361582027763
   },
   {
    "id": "v32",
@@ -393,7 +393,7 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.7869629012816487
+   "raw": 0.7866262039995422
   },
   {
    "id": "v33",
@@ -405,7 +405,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.7869629012816487
+   "raw": 0.7866262039995422
   },
   {
    "id": "v34",
@@ -444,11 +444,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.10004274843586547
+   "raw": -0.10037944571797197
   },
   {
    "id": "v37",
-   "text": "+3463",
+   "text": "+3591",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -456,11 +456,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Jiri Prochazka",
-   "raw": 0.02806605223887799
+   "raw": 0.027094432577846574
   },
   {
    "id": "v38",
-   "text": "2.8%",
+   "text": "2.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -468,7 +468,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Jiri Prochazka",
-   "raw": 0.02806605223887799
+   "raw": 0.027094432577846574
   },
   {
    "id": "v39",
@@ -497,7 +497,7 @@
   },
   {
    "id": "v41",
-   "text": "-5.5%",
+   "text": "-5.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -507,11 +507,11 @@
     ]
    },
    "desc": "Edge dec Jiri Prochazka",
-   "raw": -0.055267281094455334
+   "raw": -0.05623890075548675
   },
   {
    "id": "v42",
-   "text": "+229",
+   "text": "+235",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -519,11 +519,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Jiri Prochazka",
-   "raw": 0.30431148221771487
+   "raw": 0.29892110341368866
   },
   {
    "id": "v43",
-   "text": "30.4%",
+   "text": "29.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -531,7 +531,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Jiri Prochazka",
-   "raw": 0.30431148221771487
+   "raw": 0.29892110341368866
   },
   {
    "id": "v44",
@@ -560,7 +560,7 @@
   },
   {
    "id": "v46",
-   "text": "-2.9%",
+   "text": "-3.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -570,11 +570,11 @@
     ]
    },
    "desc": "Edge ko Jiri Prochazka",
-   "raw": -0.029021851115618447
+   "raw": -0.034412229919644655
   },
   {
    "id": "v47",
-   "text": "+3245",
+   "text": "+3282",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -582,7 +582,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Jiri Prochazka",
-   "raw": 0.029897874348438606
+   "raw": 0.02956951010557597
   },
   {
    "id": "v48",
@@ -594,7 +594,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Jiri Prochazka",
-   "raw": 0.029897874348438606
+   "raw": 0.02956951010557597
   },
   {
    "id": "v49",
@@ -633,11 +633,11 @@
     ]
    },
    "desc": "Edge sub Jiri Prochazka",
-   "raw": -0.02584348574074757
+   "raw": -0.026171849983610208
   },
   {
    "id": "v52",
-   "text": "+199",
+   "text": "+204",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -645,11 +645,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Jiri Prochazka",
-   "raw": 0.33420935656615347
+   "raw": 0.3284906135192647
   },
   {
    "id": "v53",
-   "text": "33.4%",
+   "text": "32.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -657,7 +657,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Jiri Prochazka",
-   "raw": 0.33420935656615347
+   "raw": 0.3284906135192647
   },
   {
    "id": "v54",
@@ -691,7 +691,7 @@
   },
   {
    "id": "v56",
-   "text": "-5.5%",
+   "text": "-6.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -701,11 +701,11 @@
     ]
    },
    "desc": "Edge itd Jiri Prochazka",
-   "raw": -0.05486533685636602
+   "raw": -0.06058407990325482
   },
   {
    "id": "v57",
-   "text": "+441",
+   "text": "+437",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -713,11 +713,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Navajo Stirling",
-   "raw": 0.18497104647947332
+   "raw": 0.18627936342261123
   },
   {
    "id": "v58",
-   "text": "18.5%",
+   "text": "18.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -725,7 +725,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Navajo Stirling",
-   "raw": 0.18497104647947332
+   "raw": 0.18627936342261123
   },
   {
    "id": "v59",
@@ -754,7 +754,7 @@
   },
   {
    "id": "v61",
-   "text": "+7.4%",
+   "text": "+7.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -764,11 +764,11 @@
     ]
    },
    "desc": "Edge dec Navajo Stirling",
-   "raw": 0.07385993536836222
+   "raw": 0.07516825231150012
   },
   {
    "id": "v62",
-   "text": "+139",
+   "text": "+136",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -776,11 +776,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Navajo Stirling",
-   "raw": 0.4191728503962358
+   "raw": 0.4244267941841093
   },
   {
    "id": "v63",
-   "text": "41.9%",
+   "text": "42.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -788,7 +788,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Navajo Stirling",
-   "raw": 0.4191728503962358
+   "raw": 0.4244267941841093
   },
   {
    "id": "v64",
@@ -817,7 +817,7 @@
   },
   {
    "id": "v66",
-   "text": "-13.6%",
+   "text": "-13.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -827,11 +827,11 @@
     ]
    },
    "desc": "Edge ko Navajo Stirling",
-   "raw": -0.13638270515931977
+   "raw": -0.1311287613714463
   },
   {
    "id": "v67",
-   "text": "+2878",
+   "text": "+2867",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -839,7 +839,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Navajo Stirling",
-   "raw": 0.033580694319259356
+   "raw": 0.03370879629616821
   },
   {
    "id": "v68",
@@ -851,7 +851,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Navajo Stirling",
-   "raw": 0.033580694319259356
+   "raw": 0.03370879629616821
   },
   {
    "id": "v69",
@@ -880,7 +880,7 @@
   },
   {
    "id": "v71",
-   "text": "-2.1%",
+   "text": "-2.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -890,11 +890,11 @@
     ]
    },
    "desc": "Edge sub Navajo Stirling",
-   "raw": -0.020502593944667087
+   "raw": -0.020374491967758236
   },
   {
    "id": "v72",
-   "text": "+121",
+   "text": "+118",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -902,11 +902,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Navajo Stirling",
-   "raw": 0.45275354471549517
+   "raw": 0.45813559048027747
   },
   {
    "id": "v73",
-   "text": "45.3%",
+   "text": "45.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -914,7 +914,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Navajo Stirling",
-   "raw": 0.45275354471549517
+   "raw": 0.45813559048027747
   },
   {
    "id": "v74",
@@ -948,7 +948,7 @@
   },
   {
    "id": "v76",
-   "text": "-15.7%",
+   "text": "-15.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -958,7 +958,7 @@
     ]
    },
    "desc": "Edge itd Navajo Stirling",
-   "raw": -0.1568852991039868
+   "raw": -0.1515032533392045
   },
   {
    "id": "v77",

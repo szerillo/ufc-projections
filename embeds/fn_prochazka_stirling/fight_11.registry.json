@@ -13,8 +13,8 @@
  "file": "fight_11.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
  "proj_src": "publish",
- "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
- "published_at": "2026-11-19T22:40:00.000Z",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
  "rows": [
   {
    "id": "v1",
@@ -132,25 +132,25 @@
   },
   {
    "id": "v11",
-   "text": "+115",
+   "text": "+111",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Aljamain Sterling",
-   "raw": 0.4650606958250497
+   "raw": 0.47456932203389823
   },
   {
    "id": "v12",
-   "text": "46.5%",
+   "text": "47.5%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Aljamain Sterling",
-   "raw": 0.4650606958250497
+   "raw": 0.47456932203389823
   },
   {
    "id": "v13",
@@ -214,7 +214,7 @@
   },
   {
    "id": "v18",
-   "text": "-1.1%",
+   "text": "-0.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -224,51 +224,51 @@
     ]
    },
    "desc": "Edge ML Aljamain Sterling",
-   "raw": -0.011129780365426445
+   "raw": -0.0016211541565779308
   },
   {
    "id": "v19",
-   "text": "-115",
+   "text": "-111",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Kevin Vallejos",
-   "raw": 0.5349393041749503
+   "raw": 0.5254306779661018
   },
   {
    "id": "v20",
-   "text": "53.5%",
+   "text": "52.5%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Kevin Vallejos",
-   "raw": 0.5349393041749503
+   "raw": 0.5254306779661018
   },
   {
    "id": "v21",
-   "text": "-130",
+   "text": "-120",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Kevin Vallejos",
-   "raw": -130
+   "raw": -120
   },
   {
    "id": "v22",
-   "text": "56.5%",
+   "text": "54.5%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Kevin Vallejos",
-   "raw": 0.5652173913043478
+   "raw": 0.5454545454545454
   },
   {
    "id": "v23",
@@ -310,7 +310,7 @@
   },
   {
    "id": "v26",
-   "text": "-3.0%",
+   "text": "-2.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -320,7 +320,7 @@
     ]
    },
    "desc": "Edge ML Kevin Vallejos",
-   "raw": -0.030278087129397502
+   "raw": -0.020023867488443647
   },
   {
    "id": "v27",
@@ -331,18 +331,18 @@
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.530780343672122
+   "raw": 0.5301940373529895
   },
   {
    "id": "v28",
-   "text": "53.1%",
+   "text": "53.0%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.530780343672122
+   "raw": 0.5301940373529895
   },
   {
    "id": "v29",
@@ -371,7 +371,7 @@
   },
   {
    "id": "v31",
-   "text": "-6.9%",
+   "text": "-7.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -381,7 +381,7 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.06921965632787797
+   "raw": -0.06980596264701044
   },
   {
    "id": "v32",
@@ -393,11 +393,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.469219656327878
+   "raw": 0.46980596264701047
   },
   {
    "id": "v33",
-   "text": "46.9%",
+   "text": "47.0%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -405,7 +405,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.469219656327878
+   "raw": 0.46980596264701047
   },
   {
    "id": "v34",
@@ -434,7 +434,7 @@
   },
   {
    "id": "v36",
-   "text": "-0.7%",
+   "text": "-0.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -444,11 +444,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.0069708198625981765
+   "raw": -0.0063845135434656974
   },
   {
    "id": "v37",
-   "text": "+246",
+   "text": "+240",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -456,11 +456,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Aljamain Sterling",
-   "raw": 0.28895824179133706
+   "raw": 0.2940223848056322
   },
   {
    "id": "v38",
-   "text": "28.9%",
+   "text": "29.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -468,7 +468,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Aljamain Sterling",
-   "raw": 0.28895824179133706
+   "raw": 0.2940223848056322
   },
   {
    "id": "v39",
@@ -497,7 +497,7 @@
   },
   {
    "id": "v41",
-   "text": "-7.5%",
+   "text": "-7.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -507,11 +507,11 @@
     ]
    },
    "desc": "Edge dec Aljamain Sterling",
-   "raw": -0.07467812184502659
+   "raw": -0.06961397883073145
   },
   {
    "id": "v42",
-   "text": "+1850",
+   "text": "+1856",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -519,7 +519,7 @@
     "k": "ko"
    },
    "desc": "Model ko ML Aljamain Sterling",
-   "raw": 0.05128772415529087
+   "raw": 0.051115924096852096
   },
   {
    "id": "v43",
@@ -531,7 +531,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Aljamain Sterling",
-   "raw": 0.05128772415529087
+   "raw": 0.051115924096852096
   },
   {
    "id": "v44",
@@ -560,7 +560,7 @@
   },
   {
    "id": "v46",
-   "text": "-0.1%",
+   "text": "-0.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -570,11 +570,11 @@
     ]
    },
    "desc": "Edge ko Aljamain Sterling",
-   "raw": -0.0013438547920775479
+   "raw": -0.0015156548505163223
   },
   {
    "id": "v47",
-   "text": "+701",
+   "text": "+673",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -582,11 +582,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Aljamain Sterling",
-   "raw": 0.12481472987842177
+   "raw": 0.12943101313141392
   },
   {
    "id": "v48",
-   "text": "12.5%",
+   "text": "12.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -594,7 +594,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Aljamain Sterling",
-   "raw": 0.12481472987842177
+   "raw": 0.12943101313141392
   },
   {
    "id": "v49",
@@ -623,7 +623,7 @@
   },
   {
    "id": "v51",
-   "text": "-0.4%",
+   "text": "+0.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -633,11 +633,11 @@
     ]
    },
    "desc": "Edge sub Aljamain Sterling",
-   "raw": -0.004384236529846958
+   "raw": 0.00023204672314519614
   },
   {
    "id": "v52",
-   "text": "+468",
+   "text": "+454",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -645,11 +645,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Aljamain Sterling",
-   "raw": 0.17610245403371264
+   "raw": 0.18054693722826604
   },
   {
    "id": "v53",
-   "text": "17.6%",
+   "text": "18.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -657,7 +657,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Aljamain Sterling",
-   "raw": 0.17610245403371264
+   "raw": 0.18054693722826604
   },
   {
    "id": "v54",
@@ -691,7 +691,7 @@
   },
   {
    "id": "v56",
-   "text": "-0.6%",
+   "text": "-0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -701,11 +701,11 @@
     ]
    },
    "desc": "Edge itd Aljamain Sterling",
-   "raw": -0.0057280913219245055
+   "raw": -0.0012836081273711053
   },
   {
    "id": "v57",
-   "text": "+314",
+   "text": "+323",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -713,11 +713,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Kevin Vallejos",
-   "raw": 0.24182210188078493
+   "raw": 0.2361716525473573
   },
   {
    "id": "v58",
-   "text": "24.2%",
+   "text": "23.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -725,7 +725,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Kevin Vallejos",
-   "raw": 0.24182210188078493
+   "raw": 0.2361716525473573
   },
   {
    "id": "v59",
@@ -754,7 +754,7 @@
   },
   {
    "id": "v61",
-   "text": "-2.5%",
+   "text": "-3.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -764,11 +764,11 @@
     ]
    },
    "desc": "Edge dec Kevin Vallejos",
-   "raw": -0.024844564785881734
+   "raw": -0.030495014119309355
   },
   {
    "id": "v62",
-   "text": "+288",
+   "text": "+294",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -776,11 +776,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Kevin Vallejos",
-   "raw": 0.2580080070172244
+   "raw": 0.25394049208958186
   },
   {
    "id": "v63",
-   "text": "25.8%",
+   "text": "25.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -788,7 +788,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Kevin Vallejos",
-   "raw": 0.2580080070172244
+   "raw": 0.25394049208958186
   },
   {
    "id": "v64",
@@ -817,7 +817,7 @@
   },
   {
    "id": "v66",
-   "text": "-7.5%",
+   "text": "-7.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -827,11 +827,11 @@
     ]
    },
    "desc": "Edge ko Kevin Vallejos",
-   "raw": -0.07532532631610894
+   "raw": -0.07939284124375146
   },
   {
    "id": "v67",
-   "text": "+2748",
+   "text": "+2731",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -839,7 +839,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Kevin Vallejos",
-   "raw": 0.035109195276940994
+   "raw": 0.03531853332916259
   },
   {
    "id": "v68",
@@ -851,7 +851,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Kevin Vallejos",
-   "raw": 0.035109195276940994
+   "raw": 0.03531853332916259
   },
   {
    "id": "v69",
@@ -880,7 +880,7 @@
   },
   {
    "id": "v71",
-   "text": "-1.4%",
+   "text": "-1.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -890,11 +890,11 @@
     ]
    },
    "desc": "Edge sub Kevin Vallejos",
-   "raw": -0.013695099500999466
+   "raw": -0.013485761448777868
   },
   {
    "id": "v72",
-   "text": "+241",
+   "text": "+246",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -902,11 +902,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Kevin Vallejos",
-   "raw": 0.2931172022941653
+   "raw": 0.28925902541874443
   },
   {
    "id": "v73",
-   "text": "29.3%",
+   "text": "28.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -914,7 +914,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Kevin Vallejos",
-   "raw": 0.2931172022941653
+   "raw": 0.28925902541874443
   },
   {
    "id": "v74",
@@ -948,7 +948,7 @@
   },
   {
    "id": "v76",
-   "text": "-8.9%",
+   "text": "-9.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -958,7 +958,7 @@
     ]
    },
    "desc": "Edge itd Kevin Vallejos",
-   "raw": -0.08902042581710845
+   "raw": -0.09287860269252934
   },
   {
    "id": "v77",

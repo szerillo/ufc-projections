@@ -13,8 +13,8 @@
  "file": "fight_10.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
  "proj_src": "publish",
- "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
- "published_at": "2026-11-19T22:40:00.000Z",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
  "rows": [
   {
    "id": "v1",
@@ -511,7 +511,7 @@
   },
   {
    "id": "v42",
-   "text": "+221",
+   "text": "+220",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -519,7 +519,7 @@
     "k": "ko"
    },
    "desc": "Model ko ML Dan Hooker",
-   "raw": 0.3116857265308886
+   "raw": 0.31208741104579585
   },
   {
    "id": "v43",
@@ -531,7 +531,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Dan Hooker",
-   "raw": 0.3116857265308886
+   "raw": 0.31208741104579585
   },
   {
    "id": "v44",
@@ -560,7 +560,7 @@
   },
   {
    "id": "v46",
-   "text": "-2.2%",
+   "text": "-2.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -570,11 +570,11 @@
     ]
    },
    "desc": "Edge ko Dan Hooker",
-   "raw": -0.021647606802444708
+   "raw": -0.021245922287537466
   },
   {
    "id": "v47",
-   "text": "+1643",
+   "text": "+1655",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -582,7 +582,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Dan Hooker",
-   "raw": 0.057387852115195155
+   "raw": 0.056986167600287886
   },
   {
    "id": "v48",
@@ -594,7 +594,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Dan Hooker",
-   "raw": 0.057387852115195155
+   "raw": 0.056986167600287886
   },
   {
    "id": "v49",
@@ -623,7 +623,7 @@
   },
   {
    "id": "v51",
-   "text": "-0.1%",
+   "text": "-0.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -633,7 +633,7 @@
     ]
    },
    "desc": "Edge sub Dan Hooker",
-   "raw": -0.00143567729656955
+   "raw": -0.001837361811476819
   },
   {
    "id": "v52",
@@ -768,7 +768,7 @@
   },
   {
    "id": "v62",
-   "text": "+2174",
+   "text": "+2280",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -776,11 +776,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Brian Ortega",
-   "raw": 0.04396597382236702
+   "raw": 0.04201577417399699
   },
   {
    "id": "v63",
-   "text": "4.4%",
+   "text": "4.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -788,7 +788,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Brian Ortega",
-   "raw": 0.04396597382236702
+   "raw": 0.04201577417399699
   },
   {
    "id": "v64",
@@ -817,7 +817,7 @@
   },
   {
    "id": "v66",
-   "text": "-4.7%",
+   "text": "-4.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -827,11 +827,11 @@
     ]
    },
    "desc": "Edge ko Brian Ortega",
-   "raw": -0.04694311708672389
+   "raw": -0.04889331673509392
   },
   {
    "id": "v67",
-   "text": "+715",
+   "text": "+702",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -839,11 +839,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Brian Ortega",
-   "raw": 0.12267248678774681
+   "raw": 0.12462268643611685
   },
   {
    "id": "v68",
-   "text": "12.3%",
+   "text": "12.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -851,7 +851,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Brian Ortega",
-   "raw": 0.12267248678774681
+   "raw": 0.12462268643611685
   },
   {
    "id": "v69",
@@ -880,7 +880,7 @@
   },
   {
    "id": "v71",
-   "text": "-5.0%",
+   "text": "-4.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -890,7 +890,7 @@
     ]
    },
    "desc": "Edge sub Brian Ortega",
-   "raw": -0.04974130631570148
+   "raw": -0.04779110666733144
   },
   {
    "id": "v72",

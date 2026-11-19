@@ -13,8 +13,8 @@
  "file": "fight_02.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
  "proj_src": "publish",
- "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
- "published_at": "2026-11-19T22:40:00.000Z",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
  "rows": [
   {
    "id": "v1",
@@ -132,47 +132,47 @@
   },
   {
    "id": "v11",
-   "text": "-220",
+   "text": "-209",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Diyar Nurgozhay",
-   "raw": 0.687694347826087
+   "raw": 0.6762188508557456
   },
   {
    "id": "v12",
-   "text": "68.8%",
+   "text": "67.6%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Diyar Nurgozhay",
-   "raw": 0.687694347826087
+   "raw": 0.6762188508557456
   },
   {
    "id": "v13",
-   "text": "-250",
+   "text": "-225",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Diyar Nurgozhay",
-   "raw": -250
+   "raw": -225
   },
   {
    "id": "v14",
-   "text": "71.4%",
+   "text": "69.2%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Diyar Nurgozhay",
-   "raw": 0.7142857142857143
+   "raw": 0.6923076923076923
   },
   {
    "id": "v15",
@@ -214,7 +214,7 @@
   },
   {
    "id": "v18",
-   "text": "-2.7%",
+   "text": "-1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -224,51 +224,51 @@
     ]
    },
    "desc": "Edge ML Diyar Nurgozhay",
-   "raw": -0.02659136645962734
+   "raw": -0.016088841451946667
   },
   {
    "id": "v19",
-   "text": "+220",
+   "text": "+209",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Alik Lorenz",
-   "raw": 0.31230565217391304
+   "raw": 0.3237811491442543
   },
   {
    "id": "v20",
-   "text": "31.2%",
+   "text": "32.4%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Alik Lorenz",
-   "raw": 0.31230565217391304
+   "raw": 0.3237811491442543
   },
   {
    "id": "v21",
-   "text": "+220",
+   "text": "+210",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Alik Lorenz",
-   "raw": 220
+   "raw": 210
   },
   {
    "id": "v22",
-   "text": "31.2%",
+   "text": "32.3%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Alik Lorenz",
-   "raw": 0.3125
+   "raw": 0.3225806451612903
   },
   {
    "id": "v23",
@@ -310,7 +310,7 @@
   },
   {
    "id": "v26",
-   "text": "-0.0%",
+   "text": "+0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -320,29 +320,29 @@
     ]
    },
    "desc": "Edge ML Alik Lorenz",
-   "raw": -0.00019434782608696022
+   "raw": 0.0012005039829640074
   },
   {
    "id": "v27",
-   "text": "+362",
+   "text": "+432",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.21666279872036925
+   "raw": 0.1879423282397633
   },
   {
    "id": "v28",
-   "text": "21.7%",
+   "text": "18.8%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.21666279872036925
+   "raw": 0.1879423282397633
   },
   {
    "id": "v29",
@@ -371,7 +371,7 @@
   },
   {
    "id": "v31",
-   "text": "+5.0%",
+   "text": "+2.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -381,11 +381,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": 0.0499961320537026
+   "raw": 0.021275661573096655
   },
   {
    "id": "v32",
-   "text": "-362",
+   "text": "-432",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -393,11 +393,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.7833372012796307
+   "raw": 0.8120576717602367
   },
   {
    "id": "v33",
-   "text": "78.3%",
+   "text": "81.2%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -405,7 +405,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.7833372012796307
+   "raw": 0.8120576717602367
   },
   {
    "id": "v34",
@@ -434,7 +434,7 @@
   },
   {
    "id": "v36",
-   "text": "-11.7%",
+   "text": "-8.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -444,11 +444,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.11666279872036933
+   "raw": -0.08794232823976333
   },
   {
    "id": "v37",
-   "text": "+459",
+   "text": "+469",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -456,11 +456,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Diyar Nurgozhay",
-   "raw": 0.1788005304347826
+   "raw": 0.17581690122249385
   },
   {
    "id": "v38",
-   "text": "17.9%",
+   "text": "17.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -468,7 +468,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Diyar Nurgozhay",
-   "raw": 0.1788005304347826
+   "raw": 0.17581690122249385
   },
   {
    "id": "v39",
@@ -497,7 +497,7 @@
   },
   {
    "id": "v41",
-   "text": "+6.8%",
+   "text": "+6.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -507,11 +507,11 @@
     ]
    },
    "desc": "Edge dec Diyar Nurgozhay",
-   "raw": 0.0676894193236715
+   "raw": 0.06470579011138275
   },
   {
    "id": "v42",
-   "text": "+115",
+   "text": "+125",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -519,11 +519,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Diyar Nurgozhay",
-   "raw": 0.4657583645498019
+   "raw": 0.44476649133039875
   },
   {
    "id": "v43",
-   "text": "46.6%",
+   "text": "44.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -531,7 +531,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Diyar Nurgozhay",
-   "raw": 0.4657583645498019
+   "raw": 0.44476649133039875
   },
   {
    "id": "v44",
@@ -560,7 +560,7 @@
   },
   {
    "id": "v46",
-   "text": "-13.4%",
+   "text": "-15.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -570,11 +570,11 @@
     ]
    },
    "desc": "Edge ko Diyar Nurgozhay",
-   "raw": -0.13424163545019807
+   "raw": -0.15523350866960123
   },
   {
    "id": "v47",
-   "text": "+2218",
+   "text": "+1697",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -582,11 +582,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Diyar Nurgozhay",
-   "raw": 0.04313545284150242
+   "raw": 0.05563545830285302
   },
   {
    "id": "v48",
-   "text": "4.3%",
+   "text": "5.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -594,7 +594,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Diyar Nurgozhay",
-   "raw": 0.04313545284150242
+   "raw": 0.05563545830285302
   },
   {
    "id": "v49",
@@ -623,7 +623,7 @@
   },
   {
    "id": "v51",
-   "text": "-6.2%",
+   "text": "-5.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -633,11 +633,11 @@
     ]
    },
    "desc": "Edge sub Diyar Nurgozhay",
-   "raw": -0.06246116806662851
+   "raw": -0.049961162605277915
   },
   {
    "id": "v52",
-   "text": "-104",
+   "text": "-100",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -645,11 +645,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Diyar Nurgozhay",
-   "raw": 0.5088938173913043
+   "raw": 0.5004019496332518
   },
   {
    "id": "v53",
-   "text": "50.9%",
+   "text": "50.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -657,7 +657,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Diyar Nurgozhay",
-   "raw": 0.5088938173913043
+   "raw": 0.5004019496332518
   },
   {
    "id": "v54",
@@ -691,7 +691,7 @@
   },
   {
    "id": "v56",
-   "text": "-19.7%",
+   "text": "-20.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -701,11 +701,11 @@
     ]
    },
    "desc": "Edge itd Diyar Nurgozhay",
-   "raw": -0.19670280351682656
+   "raw": -0.20519467127487911
   },
   {
    "id": "v57",
-   "text": "+2541",
+   "text": "+8147",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -713,11 +713,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Alik Lorenz",
-   "raw": 0.03786226828558664
+   "raw": 0.012125427017269472
   },
   {
    "id": "v58",
-   "text": "3.8%",
+   "text": "1.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -725,7 +725,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Alik Lorenz",
-   "raw": 0.03786226828558664
+   "raw": 0.012125427017269472
   },
   {
    "id": "v59",
@@ -754,7 +754,7 @@
   },
   {
    "id": "v61",
-   "text": "-2.9%",
+   "text": "-5.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -764,11 +764,11 @@
     ]
    },
    "desc": "Edge dec Alik Lorenz",
-   "raw": -0.028804398381080024
+   "raw": -0.054541239649397194
   },
   {
    "id": "v62",
-   "text": "+338",
+   "text": "+279",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -776,11 +776,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Alik Lorenz",
-   "raw": 0.22845003713694084
+   "raw": 0.2641181967216844
   },
   {
    "id": "v63",
-   "text": "22.8%",
+   "text": "26.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -788,7 +788,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Alik Lorenz",
-   "raw": 0.22845003713694084
+   "raw": 0.2641181967216844
   },
   {
    "id": "v64",
@@ -817,7 +817,7 @@
   },
   {
    "id": "v66",
-   "text": "-3.8%",
+   "text": "-0.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -827,11 +827,11 @@
     ]
    },
    "desc": "Edge ko Alik Lorenz",
-   "raw": -0.03821662952972582
+   "raw": -0.0025484699449822568
   },
   {
    "id": "v67",
-   "text": "+2074",
+   "text": "+2004",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -839,11 +839,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Alik Lorenz",
-   "raw": 0.04599334675138555
+   "raw": 0.047537525405300464
   },
   {
    "id": "v68",
-   "text": "4.6%",
+   "text": "4.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -851,7 +851,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Alik Lorenz",
-   "raw": 0.04599334675138555
+   "raw": 0.047537525405300464
   },
   {
    "id": "v69",
@@ -880,7 +880,7 @@
   },
   {
    "id": "v71",
-   "text": "+0.0%",
+   "text": "+0.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -890,11 +890,11 @@
     ]
    },
    "desc": "Edge sub Alik Lorenz",
-   "raw": 0.0004352601910210807
+   "raw": 0.001979438844935996
   },
   {
    "id": "v72",
-   "text": "+264",
+   "text": "+221",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -902,11 +902,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Alik Lorenz",
-   "raw": 0.2744433838883264
+   "raw": 0.31165572212698484
   },
   {
    "id": "v73",
-   "text": "27.4%",
+   "text": "31.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -914,7 +914,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Alik Lorenz",
-   "raw": 0.2744433838883264
+   "raw": 0.31165572212698484
   },
   {
    "id": "v74",
@@ -948,7 +948,7 @@
   },
   {
    "id": "v76",
-   "text": "-3.8%",
+   "text": "-0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -958,7 +958,7 @@
     ]
    },
    "desc": "Edge itd Alik Lorenz",
-   "raw": -0.03778136933870474
+   "raw": -0.0005690311000463022
   },
   {
    "id": "v77",

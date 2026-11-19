@@ -13,8 +13,8 @@
  "file": "fight_01.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
  "proj_src": "line_pending",
- "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
- "published_at": "2026-11-19T22:40:00.000Z",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
  "rows": [
   {
    "id": "v1",
@@ -158,11 +158,11 @@
   }
  ],
  "gaps": [
-  "Fight 1: Line pending in data/pending/fn_prochazka_stirling_projections.json (price_source missing, so the price cannot be tied to this bout (publish with the current script) (OPP-1); no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)); no model numbers shown."
+  "Fight 1: Line pending in data/fn_prochazka_stirling_projections.json (no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)); no model numbers shown."
  ],
  "line_pending": {
   "dog": "Shoaib Yousaf",
   "fav": "John Mitchell",
-  "reason": "price_source missing, so the price cannot be tied to this bout (publish with the current script) (OPP-1); no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)"
+  "reason": "no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)"
  }
 }

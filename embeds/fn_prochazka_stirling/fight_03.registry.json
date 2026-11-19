@@ -13,8 +13,8 @@
  "file": "fight_03.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
  "proj_src": "publish",
- "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
- "published_at": "2026-11-19T22:40:00.000Z",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
  "rows": [
   {
    "id": "v1",
@@ -132,47 +132,47 @@
   },
   {
    "id": "v11",
-   "text": "+184",
+   "text": "+194",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Nikolas Motta",
-   "raw": 0.35174291087489784
+   "raw": 0.34066095693779913
   },
   {
    "id": "v12",
-   "text": "35.2%",
+   "text": "34.1%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Nikolas Motta",
-   "raw": 0.35174291087489784
+   "raw": 0.34066095693779913
   },
   {
    "id": "v13",
-   "text": "+130",
+   "text": "+140",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Nikolas Motta",
-   "raw": 130
+   "raw": 140
   },
   {
    "id": "v14",
-   "text": "43.5%",
+   "text": "41.7%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Nikolas Motta",
-   "raw": 0.43478260869565216
+   "raw": 0.4166666666666667
   },
   {
    "id": "v15",
@@ -214,7 +214,7 @@
   },
   {
    "id": "v18",
-   "text": "-8.3%",
+   "text": "-7.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -224,29 +224,29 @@
     ]
    },
    "desc": "Edge ML Nikolas Motta",
-   "raw": -0.08303969782075432
+   "raw": -0.07600570972886755
   },
   {
    "id": "v19",
-   "text": "-184",
+   "text": "-194",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Dom Mar Fan",
-   "raw": 0.6482570891251022
+   "raw": 0.6593390430622008
   },
   {
    "id": "v20",
-   "text": "64.8%",
+   "text": "65.9%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Dom Mar Fan",
-   "raw": 0.6482570891251022
+   "raw": 0.6593390430622008
   },
   {
    "id": "v21",
@@ -310,7 +310,7 @@
   },
   {
    "id": "v26",
-   "text": "+4.0%",
+   "text": "+5.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -320,29 +320,29 @@
     ]
    },
    "desc": "Edge ML Dom Mar Fan",
-   "raw": 0.04041395187020025
+   "raw": 0.0514959058072989
   },
   {
    "id": "v27",
-   "text": "+129",
+   "text": "+134",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.4368708150478787
+   "raw": 0.4281476047438353
   },
   {
    "id": "v28",
-   "text": "43.7%",
+   "text": "42.8%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.4368708150478787
+   "raw": 0.4281476047438353
   },
   {
    "id": "v29",
@@ -371,7 +371,7 @@
   },
   {
    "id": "v31",
-   "text": "+2.0%",
+   "text": "+1.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -381,11 +381,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": 0.02020414838121204
+   "raw": 0.011480938077168601
   },
   {
    "id": "v32",
-   "text": "-129",
+   "text": "-134",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -393,11 +393,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.5631291849521213
+   "raw": 0.5718523952561647
   },
   {
    "id": "v33",
-   "text": "56.3%",
+   "text": "57.2%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -405,7 +405,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.5631291849521213
+   "raw": 0.5718523952561647
   },
   {
    "id": "v34",
@@ -434,7 +434,7 @@
   },
   {
    "id": "v36",
-   "text": "-8.6%",
+   "text": "-7.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -444,11 +444,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.0859936220654226
+   "raw": -0.07727041176137917
   },
   {
    "id": "v37",
-   "text": "+555",
+   "text": "+590",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -456,11 +456,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Nikolas Motta",
-   "raw": 0.15263842541129094
+   "raw": 0.1448249765873093
   },
   {
    "id": "v38",
-   "text": "15.3%",
+   "text": "14.5%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -468,7 +468,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Nikolas Motta",
-   "raw": 0.15263842541129094
+   "raw": 0.1448249765873093
   },
   {
    "id": "v39",
@@ -497,7 +497,7 @@
   },
   {
    "id": "v41",
-   "text": "-0.1%",
+   "text": "-0.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -507,11 +507,11 @@
     ]
    },
    "desc": "Edge dec Nikolas Motta",
-   "raw": -0.0012077284348629147
+   "raw": -0.009021177258844548
   },
   {
    "id": "v42",
-   "text": "+484",
+   "text": "+488",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -519,11 +519,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Nikolas Motta",
-   "raw": 0.1711683127744362
+   "raw": 0.17020697573200544
   },
   {
    "id": "v43",
-   "text": "17.1%",
+   "text": "17.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -531,7 +531,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Nikolas Motta",
-   "raw": 0.1711683127744362
+   "raw": 0.17020697573200544
   },
   {
    "id": "v44",
@@ -560,7 +560,7 @@
   },
   {
    "id": "v46",
-   "text": "-11.5%",
+   "text": "-11.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -570,11 +570,11 @@
     ]
    },
    "desc": "Edge ko Nikolas Motta",
-   "raw": -0.1145459729398495
+   "raw": -0.11550730998228026
   },
   {
    "id": "v47",
-   "text": "+3480",
+   "text": "+3802",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -582,11 +582,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Nikolas Motta",
-   "raw": 0.0279361726891707
+   "raw": 0.025629004618484386
   },
   {
    "id": "v48",
-   "text": "2.8%",
+   "text": "2.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -594,7 +594,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Nikolas Motta",
-   "raw": 0.0279361726891707
+   "raw": 0.025629004618484386
   },
   {
    "id": "v49",
@@ -623,7 +623,7 @@
   },
   {
    "id": "v51",
-   "text": "-1.1%",
+   "text": "-1.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -633,11 +633,11 @@
     ]
    },
    "desc": "Edge sub Nikolas Motta",
-   "raw": -0.010525365772367765
+   "raw": -0.012832533843054078
   },
   {
    "id": "v52",
-   "text": "+402",
+   "text": "+411",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -645,11 +645,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Nikolas Motta",
-   "raw": 0.1991044854636069
+   "raw": 0.19583598035048982
   },
   {
    "id": "v53",
-   "text": "19.9%",
+   "text": "19.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -657,7 +657,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Nikolas Motta",
-   "raw": 0.1991044854636069
+   "raw": 0.19583598035048982
   },
   {
    "id": "v54",
@@ -691,7 +691,7 @@
   },
   {
    "id": "v56",
-   "text": "-12.5%",
+   "text": "-12.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -701,11 +701,11 @@
     ]
    },
    "desc": "Edge itd Nikolas Motta",
-   "raw": -0.12507133871221723
+   "raw": -0.1283398438253343
   },
   {
    "id": "v57",
-   "text": "+252",
+   "text": "+253",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -713,11 +713,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Dom Mar Fan",
-   "raw": 0.2842323896365878
+   "raw": 0.283322628156526
   },
   {
    "id": "v58",
-   "text": "28.4%",
+   "text": "28.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -725,7 +725,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Dom Mar Fan",
-   "raw": 0.2842323896365878
+   "raw": 0.283322628156526
   },
   {
    "id": "v59",
@@ -754,7 +754,7 @@
   },
   {
    "id": "v61",
-   "text": "-0.6%",
+   "text": "-0.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -764,11 +764,11 @@
     ]
    },
    "desc": "Edge dec Dom Mar Fan",
-   "raw": -0.005622682827180314
+   "raw": -0.006532444307242147
   },
   {
    "id": "v62",
-   "text": "+401",
+   "text": "+384",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -776,11 +776,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Dom Mar Fan",
-   "raw": 0.19948644087545453
+   "raw": 0.20672602175037363
   },
   {
    "id": "v63",
-   "text": "19.9%",
+   "text": "20.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -788,7 +788,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Dom Mar Fan",
-   "raw": 0.19948644087545453
+   "raw": 0.20672602175037363
   },
   {
    "id": "v64",
@@ -817,7 +817,7 @@
   },
   {
    "id": "v66",
-   "text": "-2.3%",
+   "text": "-1.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -827,11 +827,11 @@
     ]
    },
    "desc": "Edge ko Dom Mar Fan",
-   "raw": -0.02273578134676768
+   "raw": -0.015496200471848576
   },
   {
    "id": "v67",
-   "text": "+508",
+   "text": "+491",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -839,11 +839,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Dom Mar Fan",
-   "raw": 0.1645382586130598
+   "raw": 0.16929039315530123
   },
   {
    "id": "v68",
-   "text": "16.5%",
+   "text": "16.9%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -851,7 +851,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Dom Mar Fan",
-   "raw": 0.1645382586130598
+   "raw": 0.16929039315530123
   },
   {
    "id": "v69",
@@ -880,7 +880,7 @@
   },
   {
    "id": "v71",
-   "text": "-3.7%",
+   "text": "-3.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -890,11 +890,11 @@
     ]
    },
    "desc": "Edge sub Dom Mar Fan",
-   "raw": -0.037481943407142226
+   "raw": -0.03272980886490079
   },
   {
    "id": "v72",
-   "text": "+175",
+   "text": "+166",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -902,11 +902,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Dom Mar Fan",
-   "raw": 0.36402469948851435
+   "raw": 0.37601641490567483
   },
   {
    "id": "v73",
-   "text": "36.4%",
+   "text": "37.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -914,7 +914,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Dom Mar Fan",
-   "raw": 0.36402469948851435
+   "raw": 0.37601641490567483
   },
   {
    "id": "v74",
@@ -948,7 +948,7 @@
   },
   {
    "id": "v76",
-   "text": "-6.0%",
+   "text": "-4.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -958,7 +958,7 @@
     ]
    },
    "desc": "Edge itd Dom Mar Fan",
-   "raw": -0.06021772475390985
+   "raw": -0.048226009336749365
   },
   {
    "id": "v77",

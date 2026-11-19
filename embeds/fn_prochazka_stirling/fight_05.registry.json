@@ -13,8 +13,8 @@
  "file": "fight_05.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
  "proj_src": "publish",
- "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
- "published_at": "2026-11-19T22:40:00.000Z",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
  "rows": [
   {
    "id": "v1",
@@ -132,47 +132,47 @@
   },
   {
    "id": "v11",
-   "text": "-105",
+   "text": "+100",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Amir Albazi",
-   "raw": 0.51145797752809
+   "raw": 0.49936578475336324
   },
   {
    "id": "v12",
-   "text": "51.1%",
+   "text": "49.9%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Amir Albazi",
-   "raw": 0.51145797752809
+   "raw": 0.49936578475336324
   },
   {
    "id": "v13",
-   "text": "-115",
+   "text": "-110",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "a"
    },
    "desc": "Listed ML Amir Albazi",
-   "raw": -115
+   "raw": -110
   },
   {
    "id": "v14",
-   "text": "53.5%",
+   "text": "52.4%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "a"
    },
    "desc": "Listed implied Amir Albazi",
-   "raw": 0.5348837209302325
+   "raw": 0.5238095238095238
   },
   {
    "id": "v15",
@@ -214,7 +214,7 @@
   },
   {
    "id": "v18",
-   "text": "-2.3%",
+   "text": "-2.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -224,51 +224,51 @@
     ]
    },
    "desc": "Edge ML Amir Albazi",
-   "raw": -0.02342574340214254
+   "raw": -0.024443739056160596
   },
   {
    "id": "v19",
-   "text": "+105",
+   "text": "-100",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Alessandro Costa",
-   "raw": 0.48854202247191003
+   "raw": 0.5006342152466368
   },
   {
    "id": "v20",
-   "text": "48.9%",
+   "text": "50.1%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Alessandro Costa",
-   "raw": 0.48854202247191003
+   "raw": 0.5006342152466368
   },
   {
    "id": "v21",
-   "text": "+100",
+   "text": "-105",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Alessandro Costa",
-   "raw": 100
+   "raw": -105
   },
   {
    "id": "v22",
-   "text": "50.0%",
+   "text": "51.2%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Alessandro Costa",
-   "raw": 0.5
+   "raw": 0.5121951219512195
   },
   {
    "id": "v23",
@@ -310,7 +310,7 @@
   },
   {
    "id": "v26",
-   "text": "-1.1%",
+   "text": "-1.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -320,29 +320,29 @@
     ]
    },
    "desc": "Edge ML Alessandro Costa",
-   "raw": -0.011457977528089969
+   "raw": -0.011560906704582763
   },
   {
    "id": "v27",
-   "text": "-118",
+   "text": "-119",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.5421652597220117
+   "raw": 0.5428212333414066
   },
   {
    "id": "v28",
-   "text": "54.2%",
+   "text": "54.3%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.5421652597220117
+   "raw": 0.5428212333414066
   },
   {
    "id": "v29",
@@ -371,7 +371,7 @@
   },
   {
    "id": "v31",
-   "text": "-5.8%",
+   "text": "-5.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -381,11 +381,11 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.057834740277988295
+   "raw": -0.05717876665859334
   },
   {
    "id": "v32",
-   "text": "+118",
+   "text": "+119",
    "fmt": "mlp",
    "rule": "pub",
    "args": {
@@ -393,11 +393,11 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.4578347402779883
+   "raw": 0.45717876665859336
   },
   {
    "id": "v33",
-   "text": "45.8%",
+   "text": "45.7%",
    "fmt": "pct1",
    "rule": "pub",
    "args": {
@@ -405,7 +405,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.4578347402779883
+   "raw": 0.45717876665859336
   },
   {
    "id": "v34",
@@ -434,7 +434,7 @@
   },
   {
    "id": "v36",
-   "text": "-1.6%",
+   "text": "-1.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -444,11 +444,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.016098909011111218
+   "raw": -0.016754882630506174
   },
   {
    "id": "v37",
-   "text": "+267",
+   "text": "+275",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -456,11 +456,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Amir Albazi",
-   "raw": 0.27281478505990797
+   "raw": 0.2665883439773541
   },
   {
    "id": "v38",
-   "text": "27.3%",
+   "text": "26.7%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -468,7 +468,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Amir Albazi",
-   "raw": 0.27281478505990797
+   "raw": 0.2665883439773541
   },
   {
    "id": "v39",
@@ -497,7 +497,7 @@
   },
   {
    "id": "v41",
-   "text": "-8.8%",
+   "text": "-9.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -507,11 +507,11 @@
     ]
    },
    "desc": "Edge dec Amir Albazi",
-   "raw": -0.0881960452650018
+   "raw": -0.09442248634755568
   },
   {
    "id": "v42",
-   "text": "+956",
+   "text": "+982",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -519,11 +519,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Amir Albazi",
-   "raw": 0.09469144316680121
+   "raw": 0.0924126496251773
   },
   {
    "id": "v43",
-   "text": "9.5%",
+   "text": "9.2%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -531,7 +531,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Amir Albazi",
-   "raw": 0.09469144316680121
+   "raw": 0.0924126496251773
   },
   {
    "id": "v44",
@@ -560,7 +560,7 @@
   },
   {
    "id": "v46",
-   "text": "-1.6%",
+   "text": "-1.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -570,11 +570,11 @@
     ]
    },
    "desc": "Edge ko Amir Albazi",
-   "raw": -0.016419667944309893
+   "raw": -0.018698461485933807
   },
   {
    "id": "v47",
-   "text": "+595",
+   "text": "+612",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -582,11 +582,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Amir Albazi",
-   "raw": 0.14395174930138077
+   "raw": 0.14036479115083186
   },
   {
    "id": "v48",
-   "text": "14.4%",
+   "text": "14.0%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -594,7 +594,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Amir Albazi",
-   "raw": 0.14395174930138077
+   "raw": 0.14036479115083186
   },
   {
    "id": "v49",
@@ -623,7 +623,7 @@
   },
   {
    "id": "v51",
-   "text": "+1.5%",
+   "text": "+1.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -633,11 +633,11 @@
     ]
    },
    "desc": "Edge sub Amir Albazi",
-   "raw": 0.014752782893112049
+   "raw": 0.01116582474256314
   },
   {
    "id": "v52",
-   "text": "+319",
+   "text": "+330",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -645,11 +645,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Amir Albazi",
-   "raw": 0.23864319246818197
+   "raw": 0.23277744077600918
   },
   {
    "id": "v53",
-   "text": "23.9%",
+   "text": "23.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -657,7 +657,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Amir Albazi",
-   "raw": 0.23864319246818197
+   "raw": 0.23277744077600918
   },
   {
    "id": "v54",
@@ -691,7 +691,7 @@
   },
   {
    "id": "v56",
-   "text": "-0.2%",
+   "text": "-0.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -701,11 +701,11 @@
     ]
    },
    "desc": "Edge itd Amir Albazi",
-   "raw": -0.0016668850511978583
+   "raw": -0.007532636743370652
   },
   {
    "id": "v57",
-   "text": "+271",
+   "text": "+262",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -713,11 +713,11 @@
     "k": "dec"
    },
    "desc": "Model dec ML Alessandro Costa",
-   "raw": 0.26935047466210377
+   "raw": 0.27623288936405255
   },
   {
    "id": "v58",
-   "text": "26.9%",
+   "text": "27.6%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -725,7 +725,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Alessandro Costa",
-   "raw": 0.26935047466210377
+   "raw": 0.27623288936405255
   },
   {
    "id": "v59",
@@ -754,7 +754,7 @@
   },
   {
    "id": "v61",
-   "text": "-0.8%",
+   "text": "-0.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -764,11 +764,11 @@
     ]
    },
    "desc": "Edge dec Alessandro Costa",
-   "raw": -0.008427303115674023
+   "raw": -0.0015448884137252428
   },
   {
    "id": "v62",
-   "text": "+491",
+   "text": "+478",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -776,11 +776,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Alessandro Costa",
-   "raw": 0.16920428004580274
+   "raw": 0.1729929156345667
   },
   {
    "id": "v63",
-   "text": "16.9%",
+   "text": "17.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -788,7 +788,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Alessandro Costa",
-   "raw": 0.16920428004580274
+   "raw": 0.1729929156345667
   },
   {
    "id": "v64",
@@ -817,7 +817,7 @@
   },
   {
    "id": "v66",
-   "text": "-8.1%",
+   "text": "-7.7%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -827,11 +827,11 @@
     ]
    },
    "desc": "Edge ko Alessandro Costa",
-   "raw": -0.08079571995419726
+   "raw": -0.0770070843654333
   },
   {
    "id": "v67",
-   "text": "+1901",
+   "text": "+1845",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -839,11 +839,11 @@
     "k": "sub"
    },
    "desc": "Model sub ML Alessandro Costa",
-   "raw": 0.04998726776400354
+   "raw": 0.05140841024801753
   },
   {
    "id": "v68",
-   "text": "5.0%",
+   "text": "5.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -851,7 +851,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Alessandro Costa",
-   "raw": 0.04998726776400354
+   "raw": 0.05140841024801753
   },
   {
    "id": "v69",
@@ -880,7 +880,7 @@
   },
   {
    "id": "v71",
-   "text": "-2.4%",
+   "text": "-2.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -890,11 +890,11 @@
     ]
    },
    "desc": "Edge sub Alessandro Costa",
-   "raw": -0.024196708497124048
+   "raw": -0.02277556601311006
   },
   {
    "id": "v72",
-   "text": "+356",
+   "text": "+346",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -902,11 +902,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Alessandro Costa",
-   "raw": 0.21919154780980626
+   "raw": 0.22440132588258424
   },
   {
    "id": "v73",
-   "text": "21.9%",
+   "text": "22.4%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -914,7 +914,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Alessandro Costa",
-   "raw": 0.21919154780980626
+   "raw": 0.22440132588258424
   },
   {
    "id": "v74",
@@ -948,7 +948,7 @@
   },
   {
    "id": "v76",
-   "text": "-10.5%",
+   "text": "-10.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -958,7 +958,7 @@
     ]
    },
    "desc": "Edge itd Alessandro Costa",
-   "raw": -0.10499242845132134
+   "raw": -0.09978265037854336
   },
   {
    "id": "v77",

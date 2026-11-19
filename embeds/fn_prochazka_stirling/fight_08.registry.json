@@ -13,8 +13,8 @@
  "file": "fight_08.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
  "proj_src": "publish",
- "proj_file": "data/pending/fn_prochazka_stirling_projections.json",
- "published_at": "2026-11-19T22:40:00.000Z",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
  "rows": [
   {
    "id": "v1",
@@ -132,25 +132,25 @@
   },
   {
    "id": "v11",
-   "text": "+285",
+   "text": "+287",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model ML Jared Cannonier",
-   "raw": 0.25967828528072834
+   "raw": 0.25809145427836944
   },
   {
    "id": "v12",
-   "text": "26.0%",
+   "text": "25.8%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "a"
    },
    "desc": "Model win % Jared Cannonier",
-   "raw": 0.25967828528072834
+   "raw": 0.25809145427836944
   },
   {
    "id": "v13",
@@ -214,7 +214,7 @@
   },
   {
    "id": "v18",
-   "text": "-3.9%",
+   "text": "-4.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -224,51 +224,51 @@
     ]
    },
    "desc": "Edge ML Jared Cannonier",
-   "raw": -0.0388291774058388
+   "raw": -0.0404160084081977
   },
   {
    "id": "v19",
-   "text": "-285",
+   "text": "-287",
    "fmt": "mlp",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model ML Ikram Aliskerov",
-   "raw": 0.7403217147192717
+   "raw": 0.7419085457216306
   },
   {
    "id": "v20",
-   "text": "74.0%",
+   "text": "74.2%",
    "fmt": "pct1",
    "rule": "pub_win",
    "args": {
     "side": "b"
    },
    "desc": "Model win % Ikram Aliskerov",
-   "raw": 0.7403217147192717
+   "raw": 0.7419085457216306
   },
   {
    "id": "v21",
-   "text": "-280",
+   "text": "-290",
    "fmt": "ml",
    "rule": "pub_ml",
    "args": {
     "side": "b"
    },
    "desc": "Listed ML Ikram Aliskerov",
-   "raw": -280
+   "raw": -290
   },
   {
    "id": "v22",
-   "text": "73.7%",
+   "text": "74.4%",
    "fmt": "pct1",
    "rule": "pub_ml_imp",
    "args": {
     "side": "b"
    },
    "desc": "Listed implied Ikram Aliskerov",
-   "raw": 0.7368421052631579
+   "raw": 0.7435897435897436
   },
   {
    "id": "v23",
@@ -310,7 +310,7 @@
   },
   {
    "id": "v26",
-   "text": "+0.3%",
+   "text": "-0.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -320,7 +320,7 @@
     ]
    },
    "desc": "Edge ML Ikram Aliskerov",
-   "raw": 0.003479609456113808
+   "raw": -0.001681197868113049
   },
   {
    "id": "v27",
@@ -331,7 +331,7 @@
     "key": "gtd"
    },
    "desc": "Model GTD",
-   "raw": 0.4316538965151311
+   "raw": 0.4317512191274071
   },
   {
    "id": "v28",
@@ -342,7 +342,7 @@
     "key": "gtd"
    },
    "desc": "Model GTD %",
-   "raw": 0.4316538965151311
+   "raw": 0.4317512191274071
   },
   {
    "id": "v29",
@@ -381,7 +381,7 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.022891558030323444
+   "raw": -0.022794235418047426
   },
   {
    "id": "v32",
@@ -393,7 +393,7 @@
     "inv": true
    },
    "desc": "Model ITD",
-   "raw": 0.5683461034848689
+   "raw": 0.5682487808725929
   },
   {
    "id": "v33",
@@ -405,7 +405,7 @@
     "inv": true
    },
    "desc": "Model ITD %",
-   "raw": 0.5683461034848689
+   "raw": 0.5682487808725929
   },
   {
    "id": "v34",
@@ -444,11 +444,11 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.04851213406302379
+   "raw": -0.04860945667529981
   },
   {
    "id": "v37",
-   "text": "+998",
+   "text": "+1005",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -456,7 +456,7 @@
     "k": "dec"
    },
    "desc": "Model dec ML Jared Cannonier",
-   "raw": 0.09108044072301655
+   "raw": 0.09050142544462819
   },
   {
    "id": "v38",
@@ -468,7 +468,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Jared Cannonier",
-   "raw": 0.09108044072301655
+   "raw": 0.09050142544462819
   },
   {
    "id": "v39",
@@ -497,7 +497,7 @@
   },
   {
    "id": "v41",
-   "text": "-2.0%",
+   "text": "-2.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -507,11 +507,11 @@
     ]
    },
    "desc": "Edge dec Jared Cannonier",
-   "raw": -0.020030670388094557
+   "raw": -0.020609685666482913
   },
   {
    "id": "v42",
-   "text": "+596",
+   "text": "+600",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -519,11 +519,11 @@
     "k": "ko"
    },
    "desc": "Model ko ML Jared Cannonier",
-   "raw": 0.14365696927602298
+   "raw": 0.14279903101614128
   },
   {
    "id": "v43",
-   "text": "14.4%",
+   "text": "14.3%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -531,7 +531,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Jared Cannonier",
-   "raw": 0.14365696927602298
+   "raw": 0.14279903101614128
   },
   {
    "id": "v44",
@@ -560,7 +560,7 @@
   },
   {
    "id": "v46",
-   "text": "-4.7%",
+   "text": "-4.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -570,11 +570,11 @@
     ]
    },
    "desc": "Edge ko Jared Cannonier",
-   "raw": -0.04681922120016749
+   "raw": -0.04767715946004919
   },
   {
    "id": "v47",
-   "text": "+3909",
+   "text": "+3934",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -582,7 +582,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Jared Cannonier",
-   "raw": 0.024940875281688816
+   "raw": 0.02479099781759997
   },
   {
    "id": "v48",
@@ -594,7 +594,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Jared Cannonier",
-   "raw": 0.024940875281688816
+   "raw": 0.02479099781759997
   },
   {
    "id": "v49",
@@ -633,11 +633,11 @@
     ]
    },
    "desc": "Edge sub Jared Cannonier",
-   "raw": -0.016025941596639736
+   "raw": -0.016175819060728583
   },
   {
    "id": "v52",
-   "text": "+493",
+   "text": "+497",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -645,11 +645,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Jared Cannonier",
-   "raw": 0.1685978445577118
+   "raw": 0.16759002883374124
   },
   {
    "id": "v53",
-   "text": "16.9%",
+   "text": "16.8%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -657,7 +657,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Jared Cannonier",
-   "raw": 0.1685978445577118
+   "raw": 0.16759002883374124
   },
   {
    "id": "v54",
@@ -691,7 +691,7 @@
   },
   {
    "id": "v56",
-   "text": "-6.3%",
+   "text": "-6.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -701,11 +701,11 @@
     ]
    },
    "desc": "Edge itd Jared Cannonier",
-   "raw": -0.06284516279680721
+   "raw": -0.06385297852077776
   },
   {
    "id": "v57",
-   "text": "+194",
+   "text": "+193",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -713,7 +713,7 @@
     "k": "dec"
    },
    "desc": "Model dec ML Ikram Aliskerov",
-   "raw": 0.34057345579211457
+   "raw": 0.3412497936827789
   },
   {
    "id": "v58",
@@ -725,7 +725,7 @@
     "k": "dec"
    },
    "desc": "Model dec % Ikram Aliskerov",
-   "raw": 0.34057345579211457
+   "raw": 0.3412497936827789
   },
   {
    "id": "v59",
@@ -764,11 +764,11 @@
     ]
    },
    "desc": "Edge dec Ikram Aliskerov",
-   "raw": -0.020437374532795205
+   "raw": -0.019761036642130858
   },
   {
    "id": "v62",
-   "text": "+224",
+   "text": "+223",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -776,7 +776,7 @@
     "k": "ko"
    },
    "desc": "Model ko ML Ikram Aliskerov",
-   "raw": 0.30864494836844353
+   "raw": 0.3093491407355167
   },
   {
    "id": "v63",
@@ -788,7 +788,7 @@
     "k": "ko"
    },
    "desc": "Model ko % Ikram Aliskerov",
-   "raw": 0.30864494836844353
+   "raw": 0.3093491407355167
   },
   {
    "id": "v64",
@@ -827,11 +827,11 @@
     ]
    },
    "desc": "Edge ko Ikram Aliskerov",
-   "raw": -0.04223224461401259
+   "raw": -0.041528052246939395
   },
   {
    "id": "v67",
-   "text": "+998",
+   "text": "+995",
    "fmt": "mlp",
    "rule": "pub_meth",
    "args": {
@@ -839,7 +839,7 @@
     "k": "sub"
    },
    "desc": "Model sub ML Ikram Aliskerov",
-   "raw": 0.09110331055871353
+   "raw": 0.09130961130333495
   },
   {
    "id": "v68",
@@ -851,7 +851,7 @@
     "k": "sub"
    },
    "desc": "Model sub % Ikram Aliskerov",
-   "raw": 0.09110331055871353
+   "raw": 0.09130961130333495
   },
   {
    "id": "v69",
@@ -890,7 +890,7 @@
     ]
    },
    "desc": "Edge sub Ikram Aliskerov",
-   "raw": -0.042230022774619805
+   "raw": -0.04202372202999838
   },
   {
    "id": "v72",
@@ -902,11 +902,11 @@
     "k": "itd"
    },
    "desc": "Model itd ML Ikram Aliskerov",
-   "raw": 0.3997482589271571
+   "raw": 0.40065875203885165
   },
   {
    "id": "v73",
-   "text": "40.0%",
+   "text": "40.1%",
    "fmt": "pct1",
    "rule": "pub_meth",
    "args": {
@@ -914,7 +914,7 @@
     "k": "itd"
    },
    "desc": "Model itd % Ikram Aliskerov",
-   "raw": 0.3997482589271571
+   "raw": 0.40065875203885165
   },
   {
    "id": "v74",
@@ -958,7 +958,7 @@
     ]
    },
    "desc": "Edge itd Ikram Aliskerov",
-   "raw": -0.08446226738863233
+   "raw": -0.08355177427693777
   },
   {
    "id": "v77",

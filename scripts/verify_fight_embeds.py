@@ -519,6 +519,11 @@ def check(D, htmlfile, G):
             if sean_ids or sheet_rows: bad.append(("pending", "numbers", f"Line pending bout shows sheet numbers: {sean_ids or sheet_rows}"))
             if 'data-state="pending"' not in page or "did not match this bout, so no numbers are shown until it does." not in page:
                 bad.append(("pending", "state", "embed does not show the card page's Line pending note"))
+            # Nov 19: a held bout's projection block carries no model cell of any kind and keeps its "Line pending" header
+            if '<td class="model' in page:
+                bad.append(("pending", "numbers", "Line pending bout has a model cell"))
+            if '<span class="bullet"></span>Line pending</div>' not in page:
+                bad.append(("pending", "state", "Line pending header missing"))
         else:
             if reg.get("proj_src") == "line_pending" or 'data-state="pending"' in page: bad.append(("pending", "source", "embed shows Line pending but the live file does not hold this bout back"))
             if not sean_rules <= {"evp_sum"}: bad.append(("proj", "Sean rules", f"fallback cells not from the event file: {sean_rules}"))
