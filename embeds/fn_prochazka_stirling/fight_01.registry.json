@@ -1,0 +1,1023 @@
+{
+ "fight": 1,
+ "of": 11,
+ "site_pair": [
+  "Diyar Nurgozhay",
+  "Alik Lorenz"
+ ],
+ "pair": [
+  "Diyar Nurgozhay",
+  "Alik Lorenz"
+ ],
+ "file": "fight_01.html",
+ "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
+ "proj_src": null,
+ "proj_file": null,
+ "published_at": null,
+ "rows": [
+  {
+   "id": "v1",
+   "text": "2-2-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Diyar Nurgozhay UFC record",
+   "raw": "2-2-0"
+  },
+  {
+   "id": "v2",
+   "text": "0-0-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Alik Lorenz UFC record",
+   "raw": "0-0-0"
+  },
+  {
+   "id": "v3",
+   "text": "29.6",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Age a",
+   "raw": 29.582477754962355
+  },
+  {
+   "id": "v4",
+   "text": "29.8",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Age b",
+   "raw": 29.82067077344285
+  },
+  {
+   "id": "v5",
+   "text": "6'2\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "6'2\""
+  },
+  {
+   "id": "v6",
+   "text": "6'2\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "6'2\""
+  },
+  {
+   "id": "v7",
+   "text": "74\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 74
+  },
+  {
+   "id": "v8",
+   "text": "77\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 77
+  },
+  {
+   "id": "v9",
+   "text": "Southpaw",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Southpaw"
+  },
+  {
+   "id": "v10",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v11",
+   "text": "-265",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Diyar Nurgozhay",
+    "field": "cost"
+   },
+   "desc": "Market ML Diyar Nurgozhay",
+   "raw": -265
+  },
+  {
+   "id": "v12",
+   "text": "72.6%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Diyar Nurgozhay"
+   },
+   "desc": "Market implied Diyar Nurgozhay",
+   "raw": 0.726027397260274
+  },
+  {
+   "id": "v13",
+   "text": "-245",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Diyar Nurgozhay",
+    "book": "draftkings"
+   },
+   "desc": "Best US ML Diyar Nurgozhay",
+   "raw": -245
+  },
+  {
+   "id": "v14",
+   "text": "+200",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Alik Lorenz",
+    "field": "cost"
+   },
+   "desc": "Market ML Alik Lorenz",
+   "raw": 200
+  },
+  {
+   "id": "v15",
+   "text": "33.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Alik Lorenz"
+   },
+   "desc": "Market implied Alik Lorenz",
+   "raw": 0.3333333333333333
+  },
+  {
+   "id": "v16",
+   "text": "+200",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Alik Lorenz",
+    "book": "draftkings"
+   },
+   "desc": "Best US ML Alik Lorenz",
+   "raw": 200
+  },
+  {
+   "id": "v17",
+   "text": "+220",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Diyar Nurgozhay",
+     "Alik Lorenz"
+    ],
+    "side": "b"
+   },
+   "desc": "LH open ML Alik Lorenz",
+   "raw": 220
+  },
+  {
+   "id": "v18",
+   "text": "+202",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Diyar Nurgozhay",
+     "Alik Lorenz"
+    ],
+    "side": "b",
+    "at": "current"
+   },
+   "desc": "LH current ML Alik Lorenz",
+   "raw": 202
+  },
+  {
+   "id": "v19",
+   "text": "1.5",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Diyar Nurgozhay",
+     "Alik Lorenz"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.014999999999999902
+  },
+  {
+   "id": "v20",
+   "text": "34%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "target.head"
+   },
+   "desc": "Target head Diyar Nurgozhay",
+   "raw": 0.3373
+  },
+  {
+   "id": "v21",
+   "text": "37%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "target.body"
+   },
+   "desc": "Target body Diyar Nurgozhay",
+   "raw": 0.3675
+  },
+  {
+   "id": "v22",
+   "text": "30%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Diyar Nurgozhay",
+   "raw": 0.2952
+  },
+  {
+   "id": "v23",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 4
+  },
+  {
+   "id": "v24",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Alik Lorenz",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 0
+  },
+  {
+   "id": "v25",
+   "text": "34%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.342
+  },
+  {
+   "id": "v26",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 1
+  },
+  {
+   "id": "v27",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 1
+  },
+  {
+   "id": "v28",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Light Heavyweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2569
+  },
+  {
+   "id": "v29",
+   "text": "39%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.3865
+  },
+  {
+   "id": "v30",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 2
+  },
+  {
+   "id": "v31",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 2
+  },
+  {
+   "id": "v32",
+   "text": "31%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Light Heavyweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.3063
+  },
+  {
+   "id": "v33",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Diyar Nurgozhay",
+   "raw": 1
+  },
+  {
+   "id": "v34",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Diyar Nurgozhay",
+   "raw": 1
+  },
+  {
+   "id": "v35",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "outcomes.l.sub"
+   },
+   "desc": "Outcome lsub Diyar Nurgozhay",
+   "raw": 2
+  },
+  {
+   "id": "v36",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Diyar Nurgozhay",
+   "raw": 0.5
+  },
+  {
+   "id": "v37",
+   "text": "+3.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Diyar Nurgozhay",
+   "raw": 3.214
+  },
+  {
+   "id": "v38",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Diyar Nurgozhay",
+   "raw": 4
+  },
+  {
+   "id": "v39",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Diyar Nurgozhay",
+   "raw": 0.5
+  },
+  {
+   "id": "v40",
+   "text": "+1.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Diyar Nurgozhay",
+   "raw": 1.237
+  },
+  {
+   "id": "v41",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Diyar Nurgozhay",
+   "raw": 2
+  },
+  {
+   "id": "v42",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Diyar Nurgozhay",
+   "raw": 1.0
+  },
+  {
+   "id": "v43",
+   "text": "+3.6",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Diyar Nurgozhay",
+   "raw": 3.6
+  },
+  {
+   "id": "v44",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Diyar Nurgozhay",
+   "raw": 1
+  },
+  {
+   "id": "v45",
+   "text": "+34",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Diyar Nurgozhay 0",
+   "raw": 34
+  },
+  {
+   "id": "v46",
+   "text": "+26",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Diyar Nurgozhay 1",
+   "raw": 26
+  },
+  {
+   "id": "v47",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Diyar Nurgozhay 2",
+   "raw": 5
+  },
+  {
+   "id": "v48",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Diyar Nurgozhay 3",
+   "raw": -8
+  },
+  {
+   "id": "v49",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Diyar Nurgozhay 1",
+   "raw": 11
+  },
+  {
+   "id": "v50",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Diyar Nurgozhay 3",
+   "raw": -3
+  },
+  {
+   "id": "v51",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Diyar Nurgozhay 1",
+   "raw": 18
+  },
+  {
+   "id": "v52",
+   "text": "1.54",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 1.541
+  },
+  {
+   "id": "v53",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.75
+  },
+  {
+   "id": "v54",
+   "text": "70%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.7
+  },
+  {
+   "id": "v55",
+   "text": "9%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.093
+  },
+  {
+   "id": "v56",
+   "text": "-6.0%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": -0.0603
+  },
+  {
+   "id": "v57",
+   "text": "14%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.1358
+  },
+  {
+   "id": "v58",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v59",
+   "text": "+2.84",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Diyar Nurgozhay",
+   "raw": 2.843
+  },
+  {
+   "id": "v60",
+   "text": "+2.70",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 2.702
+  },
+  {
+   "id": "v61",
+   "text": "+0.38",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 0.377
+  },
+  {
+   "id": "v62",
+   "text": "+1.54",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 1.541
+  },
+  {
+   "id": "v63",
+   "text": "+0.93",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.925
+  },
+  {
+   "id": "v64",
+   "text": "67%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.6691
+  },
+  {
+   "id": "v65",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Diyar Nurgozhay",
+   "raw": 4
+  },
+  {
+   "id": "v66",
+   "text": "7.3",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 7.3
+  },
+  {
+   "id": "v67",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.5
+  },
+  {
+   "id": "v68",
+   "text": "4",
+   "fmt": "int",
+   "rule": "ufc_n",
+   "args": {
+    "fighter": "Diyar Nurgozhay",
+    "date": "2026-11-21"
+   },
+   "desc": "Debut vet UFC fights",
+   "raw": 4
+  },
+  {
+   "id": "v69",
+   "text": "49.8%",
+   "fmt": "pct1",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "act"
+   },
+   "desc": "Debut angle won",
+   "raw": 0.4979
+  },
+  {
+   "id": "v70",
+   "text": "233",
+   "fmt": "intc",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "n"
+   },
+   "desc": "Debut angle n",
+   "raw": 233
+  },
+  {
+   "id": "v71",
+   "text": "50.4%",
+   "fmt": "pct1",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "exp"
+   },
+   "desc": "Debut angle expected",
+   "raw": 0.5044
+  },
+  {
+   "id": "v72",
+   "text": "43.4%",
+   "fmt": "pct1",
+   "rule": "dbstat",
+   "args": {
+    "key": "win_ci",
+    "i": 0
+   },
+   "desc": "Debut angle win CI lo",
+   "raw": 0.4337
+  },
+  {
+   "id": "v73",
+   "text": "56.2%",
+   "fmt": "pct1",
+   "rule": "dbstat",
+   "args": {
+    "key": "win_ci",
+    "i": 1
+   },
+   "desc": "Debut angle win CI hi",
+   "raw": 0.5621
+  },
+  {
+   "id": "v74",
+   "text": "233",
+   "fmt": "intc",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "n"
+   },
+   "desc": "Debut angle n 2",
+   "raw": 233
+  },
+  {
+   "id": "v75",
+   "text": "-11.9%",
+   "fmt": "spp",
+   "rule": "rs_angle",
+   "args": {
+    "id": "debut_vs_vet",
+    "key": "roi_c"
+   },
+   "desc": "Debut angle ROI close",
+   "raw": -0.119
+  },
+  {
+   "id": "v76",
+   "text": "-23.7%",
+   "fmt": "spp",
+   "rule": "dbstat",
+   "args": {
+    "key": "roi_ci_boot_cards",
+    "i": 0
+   },
+   "desc": "Debut angle ROI CI lo",
+   "raw": -0.2374
+  },
+  {
+   "id": "v77",
+   "text": "+0.7%",
+   "fmt": "spp",
+   "rule": "dbstat",
+   "args": {
+    "key": "roi_ci_boot_cards",
+    "i": 1
+   },
+   "desc": "Debut angle ROI CI hi",
+   "raw": 0.0069
+  },
+  {
+   "id": "v78",
+   "text": "-4.1%",
+   "fmt": "spp",
+   "rule": "dbstat",
+   "args": {
+    "key": "margin_roi"
+   },
+   "desc": "Debut angle margin",
+   "raw": -0.0407
+  },
+  {
+   "id": "v79",
+   "text": "-156",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Diyar Nurgozhay Bruno Lopes",
+   "raw": -156
+  },
+  {
+   "id": "v80",
+   "text": "+148",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Diyar Nurgozhay Rafael Tobias",
+   "raw": 148
+  },
+  {
+   "id": "v81",
+   "text": "-106",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Diyar Nurgozhay Uran Satybaldiev",
+   "raw": -106
+  },
+  {
+   "id": "v82",
+   "text": "-455",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Diyar Nurgozhay Brendson Ribeiro",
+   "raw": -455
+  }
+ ],
+ "gaps": [
+  "Fight 1: no row in the Publish to site export; no model numbers shown."
+ ]
+}

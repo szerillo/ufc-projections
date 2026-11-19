@@ -485,6 +485,7 @@ body {
       <div class="eb-field">
         <label for="card">Card</label>
         <select id="card">
+          <option value="fn_prochazka_stirling">UFC Qatar · Prochazka vs Stirling (Nov 21, 2026)</option>
           <option value="ufc_334">UFC 334 · Gane vs Hokit (Nov 14, 2026)</option>
           <option value="fn_cortes_acosta_walker">UFC Vegas · Cortes-Acosta vs Walker (Nov 7, 2026)</option>
           <option value="fn_moicano_nolan">UFC Vegas · Moicano vs Nolan (Oct 31, 2026)</option>
@@ -618,11 +619,13 @@ const CARD_FILES = {
   fn_moicano_nolan:   BASE_URL + "ufc_fn_moicano_nolan_fight_form.html",
   fn_cortes_acosta_walker: BASE_URL + "ufc_fn_cortes_acosta_walker_fight_form.html",
   ufc_334:            BASE_URL + "index.html",   // no card widget: full/moneylines/props modes open the site's card page
+  fn_prochazka_stirling: BASE_URL + "index.html",
 };
 // Cards with v4 single-fight embeds (scripts/build_fight_embeds.py): one HTML file per bout,
 // embeds/<card>/fight_NN.html, numbered by bout order (1 = first early prelim, highest = main event).
 const V4_EMBEDS = {
   ufc_334: { dir: BASE_URL + "embeds/ufc_334/", card: "#/card/2026-11-14-ufc-334-gane-vs-hokit" },
+  fn_prochazka_stirling: { dir: BASE_URL + "embeds/fn_prochazka_stirling/", card: "#/card/2026-11-21-ufc-fight-night-prochazka-vs-stirling" },
 };
 function v4Src(card, n) { return V4_EMBEDS[card].dir + "fight_" + String(n).padStart(2, "0") + ".html"; }
 const CARD_LABELS = {
@@ -643,6 +646,7 @@ const CARD_LABELS = {
   fn_moicano_nolan:   "UFC Vegas · Moicano vs Nolan",
   fn_cortes_acosta_walker: "UFC Vegas · Cortes-Acosta vs Walker",
   ufc_334:            "UFC 334 · Gane vs Hokit",
+  fn_prochazka_stirling: "UFC Qatar · Prochazka vs Stirling",
 };
 // Per-card fight rosters used by both the Single Embed Builder and the
 // Per-Fight Embeds tab. Listed top-to-bottom (main event first, opener last).
@@ -656,6 +660,21 @@ const FIGHTS_BY_CARD = {
     { n: 2, matchup: "Nickal vs Daukaus",   meta: "Middleweight · 3R" },
     { n: 1, matchup: "Lopes vs Garcia",     meta: "Featherweight · 3R" },
   ],
+  // <v4-roster fn_prochazka_stirling> written by scripts/build_fight_embeds.py from embeds/fn_prochazka_stirling/card.json; do not edit by hand
+  fn_prochazka_stirling: [
+    { n: 11, matchup: "Prochazka vs Stirling", meta: "Main Event · Light Heavyweight · 5R" },
+    { n: 10, matchup: "Sterling vs Vallejos", meta: "Main Card · Featherweight · 3R" },
+    { n: 9, matchup: "Hooker vs Ortega", meta: "Main Card · Lightweight · 3R" },
+    { n: 8, matchup: "Horiguchi vs Almabayev", meta: "Main Card · Flyweight · 3R" },
+    { n: 7, matchup: "Cannonier vs Aliskerov", meta: "Main Card · Middleweight · 3R" },
+    { n: 6, matchup: "Topuria vs Luna", meta: "Main Card · Bantamweight · 3R" },
+    { n: 5, matchup: "Gaziev vs Teixeira", meta: "Prelims · Heavyweight · 3R" },
+    { n: 4, matchup: "Albazi vs Costa", meta: "Prelims · Flyweight · 3R" },
+    { n: 3, matchup: "Matthews vs Abdullayev", meta: "Prelims · Welterweight · 3R" },
+    { n: 2, matchup: "Motta vs Fan", meta: "Prelims · Lightweight · 3R" },
+    { n: 1, matchup: "Nurgozhay vs Lorenz", meta: "Prelims · Light Heavyweight · 3R" },
+  ],
+  // </v4-roster>
   // <v4-roster ufc_334> written by scripts/build_fight_embeds.py from embeds/ufc_334/card.json; do not edit by hand
   ufc_334: [
     { n: 13, matchup: "Gane vs Hokit", meta: "Main Event · Heavyweight · 5R", belt: "Title" },

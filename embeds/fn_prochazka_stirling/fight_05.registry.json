@@ -1,0 +1,1812 @@
+{
+ "fight": 5,
+ "of": 11,
+ "site_pair": [
+  "Shamil Gaziev",
+  "Tallison Teixeira"
+ ],
+ "pair": [
+  "Shamil Gaziev",
+  "Tallison Teixeira"
+ ],
+ "file": "fight_05.html",
+ "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
+ "proj_src": null,
+ "proj_file": null,
+ "published_at": null,
+ "rows": [
+  {
+   "id": "v1",
+   "text": "4-3-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Shamil Gaziev UFC record",
+   "raw": "4-3-0"
+  },
+  {
+   "id": "v2",
+   "text": "2-2-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Tallison Teixeira UFC record",
+   "raw": "2-2-0"
+  },
+  {
+   "id": "v3",
+   "text": "36.8",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Age a",
+   "raw": 36.77754962354552
+  },
+  {
+   "id": "v4",
+   "text": "27.0",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Age b",
+   "raw": 26.95687885010267
+  },
+  {
+   "id": "v5",
+   "text": "6'4\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "6'4\""
+  },
+  {
+   "id": "v6",
+   "text": "6'7\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "6'7\""
+  },
+  {
+   "id": "v7",
+   "text": "78\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 78
+  },
+  {
+   "id": "v8",
+   "text": "83\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 83
+  },
+  {
+   "id": "v9",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v10",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v11",
+   "text": "-202",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Shamil Gaziev",
+    "field": "cost"
+   },
+   "desc": "Market ML Shamil Gaziev",
+   "raw": -202
+  },
+  {
+   "id": "v12",
+   "text": "66.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Shamil Gaziev"
+   },
+   "desc": "Market implied Shamil Gaziev",
+   "raw": 0.6688741721854304
+  },
+  {
+   "id": "v13",
+   "text": "-198",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Shamil Gaziev",
+    "book": "draftkings"
+   },
+   "desc": "Best US ML Shamil Gaziev",
+   "raw": -198
+  },
+  {
+   "id": "v14",
+   "text": "+164",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Talisson Teixeira",
+    "field": "cost"
+   },
+   "desc": "Market ML Tallison Teixeira",
+   "raw": 164
+  },
+  {
+   "id": "v15",
+   "text": "37.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Talisson Teixeira"
+   },
+   "desc": "Market implied Tallison Teixeira",
+   "raw": 0.3787878787878788
+  },
+  {
+   "id": "v16",
+   "text": "+165",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Talisson Teixeira",
+    "book": "betmgm"
+   },
+   "desc": "Best US ML Tallison Teixeira",
+   "raw": 165
+  },
+  {
+   "id": "v17",
+   "text": "+500",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": 500
+  },
+  {
+   "id": "v18",
+   "text": "16.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD yes implied",
+   "raw": 0.16666666666666666
+  },
+  {
+   "id": "v19",
+   "text": "-900",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market GTD no",
+   "raw": -900
+  },
+  {
+   "id": "v20",
+   "text": "90.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market GTD no implied",
+   "raw": 0.9
+  },
+  {
+   "id": "v21",
+   "text": "+1000",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shamil Gaziev Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Shamil Gaziev",
+   "raw": 1000
+  },
+  {
+   "id": "v22",
+   "text": "9.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shamil Gaziev Points"
+   },
+   "desc": "Market dec implied Shamil Gaziev",
+   "raw": 0.09090909090909091
+  },
+  {
+   "id": "v23",
+   "text": "-150",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shamil Gaziev KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Shamil Gaziev",
+   "raw": -150
+  },
+  {
+   "id": "v24",
+   "text": "60.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shamil Gaziev KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Shamil Gaziev",
+   "raw": 0.6
+  },
+  {
+   "id": "v25",
+   "text": "+1448",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shamil Gaziev Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Shamil Gaziev",
+   "raw": 1448
+  },
+  {
+   "id": "v26",
+   "text": "6.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shamil Gaziev Submission"
+   },
+   "desc": "Market sub implied Shamil Gaziev",
+   "raw": 0.06459948320413436
+  },
+  {
+   "id": "v27",
+   "text": "-198",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Shamil Gaziev KO/TKO/DQ",
+     "Shamil Gaziev Submission"
+    ]
+   },
+   "desc": "Market ITD price Shamil Gaziev",
+   "raw": 0.6645994832041343
+  },
+  {
+   "id": "v28",
+   "text": "66.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Shamil Gaziev KO/TKO/DQ",
+     "Shamil Gaziev Submission"
+    ]
+   },
+   "desc": "Market ITD implied Shamil Gaziev",
+   "raw": 0.6645994832041343
+  },
+  {
+   "id": "v29",
+   "text": "+185",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Shamil Gaziev",
+     "Tallison Teixeira"
+    ],
+    "side": "b"
+   },
+   "desc": "LH open ML Tallison Teixeira",
+   "raw": 185
+  },
+  {
+   "id": "v30",
+   "text": "+164",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Shamil Gaziev",
+     "Tallison Teixeira"
+    ],
+    "side": "b",
+    "at": "current"
+   },
+   "desc": "LH current ML Tallison Teixeira",
+   "raw": 164
+  },
+  {
+   "id": "v31",
+   "text": "2.7",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Shamil Gaziev",
+     "Tallison Teixeira"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.027000000000000024
+  },
+  {
+   "id": "v32",
+   "text": "72%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "target.head"
+   },
+   "desc": "Target head Shamil Gaziev",
+   "raw": 0.7152
+  },
+  {
+   "id": "v33",
+   "text": "27%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "target.body"
+   },
+   "desc": "Target body Shamil Gaziev",
+   "raw": 0.2667
+  },
+  {
+   "id": "v34",
+   "text": "2%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Shamil Gaziev",
+   "raw": 0.0182
+  },
+  {
+   "id": "v35",
+   "text": "76%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "target.head"
+   },
+   "desc": "Target head Tallison Teixeira",
+   "raw": 0.7581
+  },
+  {
+   "id": "v36",
+   "text": "21%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "target.body"
+   },
+   "desc": "Target body Tallison Teixeira",
+   "raw": 0.2097
+  },
+  {
+   "id": "v37",
+   "text": "3%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Tallison Teixeira",
+   "raw": 0.0323
+  },
+  {
+   "id": "v38",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 7
+  },
+  {
+   "id": "v39",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 4
+  },
+  {
+   "id": "v40",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.4504
+  },
+  {
+   "id": "v41",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 2
+  },
+  {
+   "id": "v42",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 3
+  },
+  {
+   "id": "v43",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.171
+  },
+  {
+   "id": "v44",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 1
+  },
+  {
+   "id": "v45",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 1
+  },
+  {
+   "id": "v46",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Heavyweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2189
+  },
+  {
+   "id": "v47",
+   "text": "37%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.3664
+  },
+  {
+   "id": "v48",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 2
+  },
+  {
+   "id": "v49",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 2
+  },
+  {
+   "id": "v50",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.5575
+  },
+  {
+   "id": "v51",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 2
+  },
+  {
+   "id": "v52",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 2
+  },
+  {
+   "id": "v53",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Heavyweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.2623
+  },
+  {
+   "id": "v54",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Shamil Gaziev",
+   "raw": 3
+  },
+  {
+   "id": "v55",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Shamil Gaziev",
+   "raw": 1
+  },
+  {
+   "id": "v56",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Shamil Gaziev",
+   "raw": 3
+  },
+  {
+   "id": "v57",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Tallison Teixeira",
+   "raw": 1
+  },
+  {
+   "id": "v58",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Tallison Teixeira",
+   "raw": 1
+  },
+  {
+   "id": "v59",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Tallison Teixeira",
+   "raw": 2
+  },
+  {
+   "id": "v60",
+   "text": "71%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Shamil Gaziev",
+   "raw": 0.7143
+  },
+  {
+   "id": "v61",
+   "text": "-0.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Shamil Gaziev",
+   "raw": -0.27
+  },
+  {
+   "id": "v62",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Shamil Gaziev",
+   "raw": 7
+  },
+  {
+   "id": "v63",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Shamil Gaziev",
+   "raw": 0.5
+  },
+  {
+   "id": "v64",
+   "text": "-1.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Shamil Gaziev",
+   "raw": -1.364
+  },
+  {
+   "id": "v65",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Shamil Gaziev",
+   "raw": 4
+  },
+  {
+   "id": "v66",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Shamil Gaziev",
+   "raw": 0.5
+  },
+  {
+   "id": "v67",
+   "text": "-4.5",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Shamil Gaziev",
+   "raw": -4.5
+  },
+  {
+   "id": "v68",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Shamil Gaziev",
+   "raw": 2
+  },
+  {
+   "id": "v69",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Tallison Teixeira",
+   "raw": 0.5
+  },
+  {
+   "id": "v70",
+   "text": "+1.8",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Tallison Teixeira",
+   "raw": 1.76
+  },
+  {
+   "id": "v71",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Tallison Teixeira",
+   "raw": 4
+  },
+  {
+   "id": "v72",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Tallison Teixeira",
+   "raw": 1.0
+  },
+  {
+   "id": "v73",
+   "text": "+1.6",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Tallison Teixeira",
+   "raw": 1.6
+  },
+  {
+   "id": "v74",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Tallison Teixeira",
+   "raw": 1
+  },
+  {
+   "id": "v75",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Tallison Teixeira",
+   "raw": 0.0
+  },
+  {
+   "id": "v76",
+   "text": "-3.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Tallison Teixeira",
+   "raw": -3.2
+  },
+  {
+   "id": "v77",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Tallison Teixeira",
+   "raw": 1
+  },
+  {
+   "id": "v78",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Shamil Gaziev 0",
+   "raw": -1
+  },
+  {
+   "id": "v79",
+   "text": "-17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Shamil Gaziev 1",
+   "raw": -17
+  },
+  {
+   "id": "v80",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Shamil Gaziev 2",
+   "raw": -4
+  },
+  {
+   "id": "v81",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Shamil Gaziev 3",
+   "raw": -5
+  },
+  {
+   "id": "v82",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Shamil Gaziev 4",
+   "raw": -4
+  },
+  {
+   "id": "v83",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Shamil Gaziev 5",
+   "raw": -5
+  },
+  {
+   "id": "v84",
+   "text": "+29",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Shamil Gaziev 6",
+   "raw": 29
+  },
+  {
+   "id": "v85",
+   "text": "-31",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Shamil Gaziev 1",
+   "raw": -31
+  },
+  {
+   "id": "v86",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Shamil Gaziev 4",
+   "raw": 11
+  },
+  {
+   "id": "v87",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Shamil Gaziev 5",
+   "raw": -12
+  },
+  {
+   "id": "v88",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Shamil Gaziev 6",
+   "raw": 12
+  },
+  {
+   "id": "v89",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Shamil Gaziev 4",
+   "raw": -3
+  },
+  {
+   "id": "v90",
+   "text": "-42",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Shamil Gaziev 5",
+   "raw": -42
+  },
+  {
+   "id": "v91",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Tallison Teixeira 0",
+   "raw": -7
+  },
+  {
+   "id": "v92",
+   "text": "+17",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Tallison Teixeira 1",
+   "raw": 17
+  },
+  {
+   "id": "v93",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Tallison Teixeira 2",
+   "raw": -6
+  },
+  {
+   "id": "v94",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Tallison Teixeira 3",
+   "raw": 8
+  },
+  {
+   "id": "v95",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Tallison Teixeira 1",
+   "raw": 8
+  },
+  {
+   "id": "v96",
+   "text": "-16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Tallison Teixeira 1",
+   "raw": -16
+  },
+  {
+   "id": "v97",
+   "text": "1.08",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 1.08
+  },
+  {
+   "id": "v98",
+   "text": "2.68",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 2.676
+  },
+  {
+   "id": "v99",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.3333
+  },
+  {
+   "id": "v100",
+   "text": "30%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.3
+  },
+  {
+   "id": "v101",
+   "text": "83%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.8333
+  },
+  {
+   "id": "v102",
+   "text": "40%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.4034
+  },
+  {
+   "id": "v103",
+   "text": "43%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.4272
+  },
+  {
+   "id": "v104",
+   "text": "+39.8%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.3983
+  },
+  {
+   "id": "v105",
+   "text": "+17.3%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.1734
+  },
+  {
+   "id": "v106",
+   "text": "1%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.0111
+  },
+  {
+   "id": "v107",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.2527
+  },
+  {
+   "id": "v108",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v109",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.0
+  },
+  {
+   "id": "v110",
+   "text": "-2.12",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Shamil Gaziev",
+   "raw": -2.1239999999999997
+  },
+  {
+   "id": "v111",
+   "text": "+0.24",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Tallison Teixeira",
+   "raw": 0.238
+  },
+  {
+   "id": "v112",
+   "text": "-2.08",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": -2.078
+  },
+  {
+   "id": "v113",
+   "text": "+0.21",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 0.211
+  },
+  {
+   "id": "v114",
+   "text": "-1.13",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": -1.134
+  },
+  {
+   "id": "v115",
+   "text": "+0.65",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 0.654
+  },
+  {
+   "id": "v116",
+   "text": "-0.23",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": -0.234
+  },
+  {
+   "id": "v117",
+   "text": "+0.12",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.119
+  },
+  {
+   "id": "v118",
+   "text": "-0.76",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": -0.756
+  },
+  {
+   "id": "v119",
+   "text": "-0.54",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": -0.535
+  },
+  {
+   "id": "v120",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.5475
+  },
+  {
+   "id": "v121",
+   "text": "42%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.4194
+  },
+  {
+   "id": "v122",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Tallison Teixeira",
+   "raw": 4
+  },
+  {
+   "id": "v123",
+   "text": "7.9",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 7.938
+  },
+  {
+   "id": "v124",
+   "text": "4.2",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 4.204
+  },
+  {
+   "id": "v125",
+   "text": "43%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.4286
+  },
+  {
+   "id": "v126",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.75
+  },
+  {
+   "id": "v127",
+   "text": "+0.24",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Tallison Teixeira",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Tallison Teixeira",
+   "raw": 0.238
+  },
+  {
+   "id": "v128",
+   "text": "-2.12",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Shamil Gaziev",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Shamil Gaziev",
+   "raw": -2.1239999999999997
+  },
+  {
+   "id": "v129",
+   "text": "70.8%",
+   "fmt": "pct1",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "win"
+   },
+   "desc": "Backtest T1 win",
+   "raw": 0.708
+  },
+  {
+   "id": "v130",
+   "text": "62.1%",
+   "fmt": "pct1",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "imp"
+   },
+   "desc": "Backtest T1 imp",
+   "raw": 0.6209
+  },
+  {
+   "id": "v131",
+   "text": "+11.0%",
+   "fmt": "spp",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "roi"
+   },
+   "desc": "Backtest T1 roi",
+   "raw": 0.1099
+  },
+  {
+   "id": "v132",
+   "text": "+1.1%",
+   "fmt": "spp",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "ci",
+    "i": 0
+   },
+   "desc": "Backtest T1 ci lo",
+   "raw": 0.0114
+  },
+  {
+   "id": "v133",
+   "text": "+20.9%",
+   "fmt": "spp",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "ci",
+    "i": 1
+   },
+   "desc": "Backtest T1 ci hi",
+   "raw": 0.2092
+  },
+  {
+   "id": "v134",
+   "text": "250",
+   "fmt": "int",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "n"
+   },
+   "desc": "Backtest T1 n",
+   "raw": 250
+  },
+  {
+   "id": "v135",
+   "text": "-124",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Shamil Gaziev Kennedy Nzechukwu",
+   "raw": -124
+  },
+  {
+   "id": "v136",
+   "text": "+127",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Shamil Gaziev Brando Pericic",
+   "raw": 127
+  },
+  {
+   "id": "v137",
+   "text": "+119",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Shamil Gaziev Waldo Cortes Acosta",
+   "raw": 119
+  },
+  {
+   "id": "v138",
+   "text": "-339",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Shamil Gaziev Thomas Petersen",
+   "raw": -339
+  },
+  {
+   "id": "v139",
+   "text": "-294",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 4,
+    "key": "od.mc"
+   },
+   "desc": "Close Shamil Gaziev Don'Tale Mayes",
+   "raw": -294
+  },
+  {
+   "id": "v140",
+   "text": "-196",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 5,
+    "key": "od.mc"
+   },
+   "desc": "Close Shamil Gaziev Jairzinho Rozenstruik",
+   "raw": -196
+  },
+  {
+   "id": "v141",
+   "text": "-102",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 6,
+    "key": "od.mc"
+   },
+   "desc": "Close Shamil Gaziev Martin Buday",
+   "raw": -102
+  },
+  {
+   "id": "v142",
+   "text": "+400",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Tallison Teixeira Sergei Pavlovich",
+   "raw": 400
+  },
+  {
+   "id": "v143",
+   "text": "-308",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Tallison Teixeira Tai Tuivasa",
+   "raw": -308
+  },
+  {
+   "id": "v144",
+   "text": "-303",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Tallison Teixeira Derrick Lewis",
+   "raw": -303
+  },
+  {
+   "id": "v145",
+   "text": "-154",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Tallison Teixeira Justin Tafa",
+   "raw": -154
+  }
+ ],
+ "gaps": [
+  "Fight 5: no row in the Publish to site export; no model numbers shown."
+ ]
+}

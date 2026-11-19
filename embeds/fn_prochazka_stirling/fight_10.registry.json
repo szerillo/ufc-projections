@@ -1,0 +1,2436 @@
+{
+ "fight": 10,
+ "of": 11,
+ "site_pair": [
+  "Aljamain Sterling",
+  "Kevin Vallejos"
+ ],
+ "pair": [
+  "Aljamain Sterling",
+  "Kevin Vallejos"
+ ],
+ "file": "fight_10.html",
+ "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
+ "proj_src": null,
+ "proj_file": null,
+ "published_at": null,
+ "rows": [
+  {
+   "id": "v1",
+   "text": "18-5-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Aljamain Sterling UFC record",
+   "raw": "18-5-0"
+  },
+  {
+   "id": "v2",
+   "text": "4-0-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Kevin Vallejos UFC record",
+   "raw": "4-0-0"
+  },
+  {
+   "id": "v3",
+   "text": "37.3",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Age a",
+   "raw": 37.308692676249144
+  },
+  {
+   "id": "v4",
+   "text": "25.0",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Age b",
+   "raw": 24.95277207392197
+  },
+  {
+   "id": "v5",
+   "text": "5'7\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "5'7\""
+  },
+  {
+   "id": "v6",
+   "text": "5'7\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "5'7\""
+  },
+  {
+   "id": "v7",
+   "text": "71\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 71
+  },
+  {
+   "id": "v8",
+   "text": "68\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 68
+  },
+  {
+   "id": "v9",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v10",
+   "text": "Switch",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Switch"
+  },
+  {
+   "id": "v11",
+   "text": "+109",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Aljamain Sterling",
+    "field": "cost"
+   },
+   "desc": "Market ML Aljamain Sterling",
+   "raw": 109
+  },
+  {
+   "id": "v12",
+   "text": "47.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Aljamain Sterling"
+   },
+   "desc": "Market implied Aljamain Sterling",
+   "raw": 0.4784688995215311
+  },
+  {
+   "id": "v13",
+   "text": "+110",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Aljamain Sterling",
+    "book": "draftkings"
+   },
+   "desc": "Best US ML Aljamain Sterling",
+   "raw": 110
+  },
+  {
+   "id": "v14",
+   "text": "-133",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Kevin Vallejos",
+    "field": "cost"
+   },
+   "desc": "Market ML Kevin Vallejos",
+   "raw": -133
+  },
+  {
+   "id": "v15",
+   "text": "57.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Kevin Vallejos"
+   },
+   "desc": "Market implied Kevin Vallejos",
+   "raw": 0.5708154506437768
+  },
+  {
+   "id": "v16",
+   "text": "-130",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Kevin Vallejos",
+    "book": "draftkings"
+   },
+   "desc": "Best US ML Kevin Vallejos",
+   "raw": -130
+  },
+  {
+   "id": "v17",
+   "text": "-150",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": -150
+  },
+  {
+   "id": "v18",
+   "text": "60.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD yes implied",
+   "raw": 0.6
+  },
+  {
+   "id": "v19",
+   "text": "+110",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market GTD no",
+   "raw": 110
+  },
+  {
+   "id": "v20",
+   "text": "47.6%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market GTD no implied",
+   "raw": 0.47619047619047616
+  },
+  {
+   "id": "v21",
+   "text": "+175",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aljamain Sterling Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Aljamain Sterling",
+   "raw": 175
+  },
+  {
+   "id": "v22",
+   "text": "36.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aljamain Sterling Points"
+   },
+   "desc": "Market dec implied Aljamain Sterling",
+   "raw": 0.36363636363636365
+  },
+  {
+   "id": "v23",
+   "text": "+1800",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aljamain Sterling KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Aljamain Sterling",
+   "raw": 1800
+  },
+  {
+   "id": "v24",
+   "text": "5.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aljamain Sterling KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Aljamain Sterling",
+   "raw": 0.05263157894736842
+  },
+  {
+   "id": "v25",
+   "text": "+700",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aljamain Sterling Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Aljamain Sterling",
+   "raw": 700
+  },
+  {
+   "id": "v26",
+   "text": "12.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aljamain Sterling Submission"
+   },
+   "desc": "Market sub implied Aljamain Sterling",
+   "raw": 0.125
+  },
+  {
+   "id": "v27",
+   "text": "+463",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Aljamain Sterling KO/TKO/DQ",
+     "Aljamain Sterling Submission"
+    ]
+   },
+   "desc": "Market ITD price Aljamain Sterling",
+   "raw": 0.17763157894736842
+  },
+  {
+   "id": "v28",
+   "text": "17.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Aljamain Sterling KO/TKO/DQ",
+     "Aljamain Sterling Submission"
+    ]
+   },
+   "desc": "Market ITD implied Aljamain Sterling",
+   "raw": 0.17763157894736842
+  },
+  {
+   "id": "v29",
+   "text": "+275",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Vallejos Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Kevin Vallejos",
+   "raw": 275
+  },
+  {
+   "id": "v30",
+   "text": "26.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Vallejos Points"
+   },
+   "desc": "Market dec implied Kevin Vallejos",
+   "raw": 0.26666666666666666
+  },
+  {
+   "id": "v31",
+   "text": "+200",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Vallejos KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Kevin Vallejos",
+   "raw": 200
+  },
+  {
+   "id": "v32",
+   "text": "33.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Vallejos KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Kevin Vallejos",
+   "raw": 0.3333333333333333
+  },
+  {
+   "id": "v33",
+   "text": "+1949",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Vallejos Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Kevin Vallejos",
+   "raw": 1949
+  },
+  {
+   "id": "v34",
+   "text": "4.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Kevin Vallejos Submission"
+   },
+   "desc": "Market sub implied Kevin Vallejos",
+   "raw": 0.04880429477794046
+  },
+  {
+   "id": "v35",
+   "text": "+162",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Kevin Vallejos KO/TKO/DQ",
+     "Kevin Vallejos Submission"
+    ]
+   },
+   "desc": "Market ITD price Kevin Vallejos",
+   "raw": 0.3821376281112738
+  },
+  {
+   "id": "v36",
+   "text": "38.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Kevin Vallejos KO/TKO/DQ",
+     "Kevin Vallejos Submission"
+    ]
+   },
+   "desc": "Market ITD implied Kevin Vallejos",
+   "raw": 0.3821376281112738
+  },
+  {
+   "id": "v37",
+   "text": "-125",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Aljamain Sterling",
+     "Kevin Vallejos"
+    ],
+    "side": "b"
+   },
+   "desc": "LH open ML Kevin Vallejos",
+   "raw": -125
+  },
+  {
+   "id": "v38",
+   "text": "-133",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Aljamain Sterling",
+     "Kevin Vallejos"
+    ],
+    "side": "b",
+    "at": "current"
+   },
+   "desc": "LH current ML Kevin Vallejos",
+   "raw": -133
+  },
+  {
+   "id": "v39",
+   "text": "1.3",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Aljamain Sterling",
+     "Kevin Vallejos"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.013000000000000012
+  },
+  {
+   "id": "v40",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "target.head"
+   },
+   "desc": "Target head Aljamain Sterling",
+   "raw": 0.4996
+  },
+  {
+   "id": "v41",
+   "text": "31%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "target.body"
+   },
+   "desc": "Target body Aljamain Sterling",
+   "raw": 0.3149
+  },
+  {
+   "id": "v42",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Aljamain Sterling",
+   "raw": 0.1855
+  },
+  {
+   "id": "v43",
+   "text": "68%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "target.head"
+   },
+   "desc": "Target head Kevin Vallejos",
+   "raw": 0.675
+  },
+  {
+   "id": "v44",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "target.body"
+   },
+   "desc": "Target body Kevin Vallejos",
+   "raw": 0.225
+  },
+  {
+   "id": "v45",
+   "text": "10%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Kevin Vallejos",
+   "raw": 0.1
+  },
+  {
+   "id": "v46",
+   "text": "23",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 23
+  },
+  {
+   "id": "v47",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 4
+  },
+  {
+   "id": "v48",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.0
+  },
+  {
+   "id": "v49",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v50",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 0
+  },
+  {
+   "id": "v51",
+   "text": "78%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.7845
+  },
+  {
+   "id": "v52",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 3
+  },
+  {
+   "id": "v53",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 3
+  },
+  {
+   "id": "v54",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Featherweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.225
+  },
+  {
+   "id": "v55",
+   "text": "13%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.1282
+  },
+  {
+   "id": "v56",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 1
+  },
+  {
+   "id": "v57",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 4
+  },
+  {
+   "id": "v58",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.0
+  },
+  {
+   "id": "v59",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v60",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 0
+  },
+  {
+   "id": "v61",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Featherweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.25
+  },
+  {
+   "id": "v62",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Aljamain Sterling",
+   "raw": 2
+  },
+  {
+   "id": "v63",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Aljamain Sterling",
+   "raw": 4
+  },
+  {
+   "id": "v64",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Aljamain Sterling",
+   "raw": 11
+  },
+  {
+   "id": "v65",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Aljamain Sterling",
+   "raw": 3
+  },
+  {
+   "id": "v66",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Aljamain Sterling",
+   "raw": 2
+  },
+  {
+   "id": "v67",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Kevin Vallejos",
+   "raw": 3
+  },
+  {
+   "id": "v68",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Kevin Vallejos",
+   "raw": 1
+  },
+  {
+   "id": "v69",
+   "text": "87%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Aljamain Sterling",
+   "raw": 0.8696
+  },
+  {
+   "id": "v70",
+   "text": "+2.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Aljamain Sterling",
+   "raw": 1.989
+  },
+  {
+   "id": "v71",
+   "text": "23",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Aljamain Sterling",
+   "raw": 23
+  },
+  {
+   "id": "v72",
+   "text": "81%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Aljamain Sterling",
+   "raw": 0.8095
+  },
+  {
+   "id": "v73",
+   "text": "+2.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Aljamain Sterling",
+   "raw": 2.716
+  },
+  {
+   "id": "v74",
+   "text": "21",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Aljamain Sterling",
+   "raw": 21
+  },
+  {
+   "id": "v75",
+   "text": "82%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Aljamain Sterling",
+   "raw": 0.8235
+  },
+  {
+   "id": "v76",
+   "text": "+2.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Aljamain Sterling",
+   "raw": 2.419
+  },
+  {
+   "id": "v77",
+   "text": "17",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Aljamain Sterling",
+   "raw": 17
+  },
+  {
+   "id": "v78",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Kevin Vallejos",
+   "raw": 1.0
+  },
+  {
+   "id": "v79",
+   "text": "+2.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Kevin Vallejos",
+   "raw": 2.395
+  },
+  {
+   "id": "v80",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Kevin Vallejos",
+   "raw": 4
+  },
+  {
+   "id": "v81",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Kevin Vallejos",
+   "raw": 1.0
+  },
+  {
+   "id": "v82",
+   "text": "+3.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Kevin Vallejos",
+   "raw": 3.239
+  },
+  {
+   "id": "v83",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Kevin Vallejos",
+   "raw": 2
+  },
+  {
+   "id": "v84",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Kevin Vallejos",
+   "raw": 1.0
+  },
+  {
+   "id": "v85",
+   "text": "-0.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Kevin Vallejos",
+   "raw": -0.2
+  },
+  {
+   "id": "v86",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Kevin Vallejos",
+   "raw": 1
+  },
+  {
+   "id": "v87",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 0",
+   "raw": 4
+  },
+  {
+   "id": "v88",
+   "text": "+25",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 1",
+   "raw": 25
+  },
+  {
+   "id": "v89",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 2",
+   "raw": 2
+  },
+  {
+   "id": "v90",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 3",
+   "raw": 9
+  },
+  {
+   "id": "v91",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 4",
+   "raw": 5
+  },
+  {
+   "id": "v92",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 5",
+   "raw": 13
+  },
+  {
+   "id": "v93",
+   "text": "+27",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 6",
+   "raw": 27
+  },
+  {
+   "id": "v94",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 7",
+   "raw": 6
+  },
+  {
+   "id": "v95",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 8",
+   "raw": 13
+  },
+  {
+   "id": "v96",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 9",
+   "raw": 1
+  },
+  {
+   "id": "v97",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 10",
+   "raw": 21
+  },
+  {
+   "id": "v98",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 11",
+   "raw": 14
+  },
+  {
+   "id": "v99",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 12",
+   "raw": 6
+  },
+  {
+   "id": "v100",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 13",
+   "raw": 12
+  },
+  {
+   "id": "v101",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.14.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 14",
+   "raw": -4
+  },
+  {
+   "id": "v102",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.15.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 15",
+   "raw": 1
+  },
+  {
+   "id": "v103",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.16.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 16",
+   "raw": 14
+  },
+  {
+   "id": "v104",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.17.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 17",
+   "raw": 5
+  },
+  {
+   "id": "v105",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.18.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 18",
+   "raw": 6
+  },
+  {
+   "id": "v106",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.19.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 19",
+   "raw": 1
+  },
+  {
+   "id": "v107",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.20.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 20",
+   "raw": 16
+  },
+  {
+   "id": "v108",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.21.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 21",
+   "raw": 6
+  },
+  {
+   "id": "v109",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.22.rw.0.2"
+   },
+   "desc": "R1 fight diff Aljamain Sterling 22",
+   "raw": 11
+  },
+  {
+   "id": "v110",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 0",
+   "raw": 0
+  },
+  {
+   "id": "v111",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 1",
+   "raw": 4
+  },
+  {
+   "id": "v112",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 2",
+   "raw": 2
+  },
+  {
+   "id": "v113",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 3",
+   "raw": 12
+  },
+  {
+   "id": "v114",
+   "text": "-13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 4",
+   "raw": -13
+  },
+  {
+   "id": "v115",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 5",
+   "raw": -2
+  },
+  {
+   "id": "v116",
+   "text": "+37",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 6",
+   "raw": 37
+  },
+  {
+   "id": "v117",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.7.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 7",
+   "raw": 13
+  },
+  {
+   "id": "v118",
+   "text": "+7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 8",
+   "raw": 7
+  },
+  {
+   "id": "v119",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 10",
+   "raw": 21
+  },
+  {
+   "id": "v120",
+   "text": "+39",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 11",
+   "raw": 39
+  },
+  {
+   "id": "v121",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.12.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 12",
+   "raw": 15
+  },
+  {
+   "id": "v122",
+   "text": "+29",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.13.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 13",
+   "raw": 29
+  },
+  {
+   "id": "v123",
+   "text": "+32",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.15.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 15",
+   "raw": 32
+  },
+  {
+   "id": "v124",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.16.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 16",
+   "raw": 11
+  },
+  {
+   "id": "v125",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.17.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 17",
+   "raw": 2
+  },
+  {
+   "id": "v126",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.18.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 18",
+   "raw": 13
+  },
+  {
+   "id": "v127",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.19.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 19",
+   "raw": 18
+  },
+  {
+   "id": "v128",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.20.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 20",
+   "raw": 4
+  },
+  {
+   "id": "v129",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.21.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 21",
+   "raw": 13
+  },
+  {
+   "id": "v130",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.22.rw.1.2"
+   },
+   "desc": "R2 fight diff Aljamain Sterling 22",
+   "raw": 8
+  },
+  {
+   "id": "v131",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 0",
+   "raw": -1
+  },
+  {
+   "id": "v132",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 1",
+   "raw": 14
+  },
+  {
+   "id": "v133",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 2",
+   "raw": 0
+  },
+  {
+   "id": "v134",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 3",
+   "raw": 10
+  },
+  {
+   "id": "v135",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 5",
+   "raw": 11
+  },
+  {
+   "id": "v136",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.7.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 7",
+   "raw": -2
+  },
+  {
+   "id": "v137",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 8",
+   "raw": -1
+  },
+  {
+   "id": "v138",
+   "text": "+27",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.10.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 10",
+   "raw": 27
+  },
+  {
+   "id": "v139",
+   "text": "+24",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.11.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 11",
+   "raw": 24
+  },
+  {
+   "id": "v140",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.13.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 13",
+   "raw": 21
+  },
+  {
+   "id": "v141",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.15.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 15",
+   "raw": 19
+  },
+  {
+   "id": "v142",
+   "text": "+28",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.16.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 16",
+   "raw": 28
+  },
+  {
+   "id": "v143",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.17.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 17",
+   "raw": 6
+  },
+  {
+   "id": "v144",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.18.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 18",
+   "raw": 4
+  },
+  {
+   "id": "v145",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.20.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 20",
+   "raw": -1
+  },
+  {
+   "id": "v146",
+   "text": "+28",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.21.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 21",
+   "raw": 28
+  },
+  {
+   "id": "v147",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "fights.22.rw.2.2"
+   },
+   "desc": "R3 fight diff Aljamain Sterling 22",
+   "raw": 9
+  },
+  {
+   "id": "v148",
+   "text": "+33",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Vallejos 0",
+   "raw": 33
+  },
+  {
+   "id": "v149",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Vallejos 1",
+   "raw": 0
+  },
+  {
+   "id": "v150",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Vallejos 2",
+   "raw": 9
+  },
+  {
+   "id": "v151",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Kevin Vallejos 3",
+   "raw": -2
+  },
+  {
+   "id": "v152",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Vallejos 1",
+   "raw": 8
+  },
+  {
+   "id": "v153",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Kevin Vallejos 2",
+   "raw": 13
+  },
+  {
+   "id": "v154",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Kevin Vallejos 2",
+   "raw": -1
+  },
+  {
+   "id": "v155",
+   "text": "2.54",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 2.54
+  },
+  {
+   "id": "v156",
+   "text": "1.06",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 1.064
+  },
+  {
+   "id": "v157",
+   "text": "32%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.3218
+  },
+  {
+   "id": "v158",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.3333
+  },
+  {
+   "id": "v159",
+   "text": "45%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.449
+  },
+  {
+   "id": "v160",
+   "text": "90%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.9
+  },
+  {
+   "id": "v161",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.3313
+  },
+  {
+   "id": "v162",
+   "text": "12%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.1212
+  },
+  {
+   "id": "v163",
+   "text": "+18.6%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.1865
+  },
+  {
+   "id": "v164",
+   "text": "+11.7%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.1173
+  },
+  {
+   "id": "v165",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.1697
+  },
+  {
+   "id": "v166",
+   "text": "1%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.013
+  },
+  {
+   "id": "v167",
+   "text": "0.64",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.635
+  },
+  {
+   "id": "v168",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.0
+  },
+  {
+   "id": "v169",
+   "text": "+2.11",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Aljamain Sterling",
+   "raw": 2.107
+  },
+  {
+   "id": "v170",
+   "text": "+2.13",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Kevin Vallejos",
+   "raw": 2.13
+  },
+  {
+   "id": "v171",
+   "text": "+2.31",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 2.312
+  },
+  {
+   "id": "v172",
+   "text": "+2.20",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 2.203
+  },
+  {
+   "id": "v173",
+   "text": "+1.05",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 1.052
+  },
+  {
+   "id": "v174",
+   "text": "+1.74",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 1.739
+  },
+  {
+   "id": "v175",
+   "text": "+0.77",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.765
+  },
+  {
+   "id": "v176",
+   "text": "+0.43",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.426
+  },
+  {
+   "id": "v177",
+   "text": "+0.29",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.29
+  },
+  {
+   "id": "v178",
+   "text": "-0.04",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": -0.035
+  },
+  {
+   "id": "v179",
+   "text": "71%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.7114
+  },
+  {
+   "id": "v180",
+   "text": "66%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.6648
+  },
+  {
+   "id": "v181",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Kevin Vallejos",
+   "raw": 4
+  },
+  {
+   "id": "v182",
+   "text": "14.4",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 14.377
+  },
+  {
+   "id": "v183",
+   "text": "7.0",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 7.046
+  },
+  {
+   "id": "v184",
+   "text": "9%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aljamain Sterling",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.087
+  },
+  {
+   "id": "v185",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Kevin Vallejos",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.5
+  },
+  {
+   "id": "v186",
+   "text": "+105",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Aljamain Sterling Youssef Zalal",
+   "raw": 105
+  },
+  {
+   "id": "v187",
+   "text": "-455",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Aljamain Sterling Brian Ortega",
+   "raw": -455
+  },
+  {
+   "id": "v188",
+   "text": "+208",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Aljamain Sterling Movsar Evloev",
+   "raw": 208
+  },
+  {
+   "id": "v189",
+   "text": "-169",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Aljamain Sterling Calvin Kattar",
+   "raw": -169
+  },
+  {
+   "id": "v190",
+   "text": "-250",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 4,
+    "key": "od.mc"
+   },
+   "desc": "Close Aljamain Sterling Sean O'Malley",
+   "raw": -250
+  },
+  {
+   "id": "v191",
+   "text": "-102",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 5,
+    "key": "od.mc"
+   },
+   "desc": "Close Aljamain Sterling Henry Cejudo",
+   "raw": -102
+  },
+  {
+   "id": "v192",
+   "text": "-175",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 6,
+    "key": "od.mc"
+   },
+   "desc": "Close Aljamain Sterling TJ Dillashaw",
+   "raw": -175
+  },
+  {
+   "id": "v193",
+   "text": "+330",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 7,
+    "key": "od.mc"
+   },
+   "desc": "Close Aljamain Sterling Petr Yan",
+   "raw": 330
+  },
+  {
+   "id": "v194",
+   "text": "-571",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Kevin Vallejos Josh Emmett",
+   "raw": -571
+  },
+  {
+   "id": "v195",
+   "text": "-370",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Kevin Vallejos Giga Chikadze",
+   "raw": -370
+  },
+  {
+   "id": "v196",
+   "text": "-417",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Kevin Vallejos Danny Silva",
+   "raw": -417
+  },
+  {
+   "id": "v197",
+   "text": "-556",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Kevin Vallejos SeungWoo Choi",
+   "raw": -556
+  }
+ ],
+ "gaps": [
+  "Fight 10: no row in the Publish to site export; no model numbers shown."
+ ]
+}
