@@ -1,9 +1,10 @@
 """Nov 19: round-32 served-set check redone for fn-prochazka-stirling (origin/main + this branch), same code, paths changed."""
-import subprocess, sys, re
-sys.path.insert(0, "/tmp/fn/main/scripts"); import main_guard as G
-git = lambda *a: subprocess.run(["git", "-C", "/tmp/fn/main", *a], capture_output=True, text=True).stdout
+import subprocess, sys, re, os
+R = os.environ.get("REPO") or os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.insert(0, R + "/scripts"); import main_guard as G
+git = lambda *a: subprocess.run(["git", "-C", R, *a], capture_output=True, text=True).stdout
 main = git("rev-parse", "origin/main").strip(); head = git("rev-parse", "HEAD").strip()
-mt = subprocess.run(["git", "-C", "/tmp/fn/main", "merge-tree", "--write-tree", "-X", "theirs", main, head], capture_output=True, text=True)
+mt = subprocess.run(["git", "-C", R, "merge-tree", "--write-tree", "-X", "theirs", main, head], capture_output=True, text=True)
 tree = mt.stdout.split()[0]
 n, hits = G.served_scan(tree)
 mn, mhits = G.served_scan(main)
