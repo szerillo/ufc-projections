@@ -1,7 +1,7 @@
 {
   "card": "UFC Fight Night: Proch",
   "venue": "Ali Bin Hamad Al Attiyah Arena (ABHA Arena)",
-  "updated_at": "2026-11-19T01:00:27Z",
+  "updated_at": "2026-11-19T18:26:36Z",
   "source": "bettingpros",
   "books_included": [
     "consensus",
@@ -38,20 +38,26 @@
               "consensus": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 31.7
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 31.8
               },
               "fanduel": {
-                "cost": 200,
+                "cost": 198,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 31.7
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": 31.8
               },
               "draftkings": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 31.7
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 31.8
+              },
+              "betmgm": {
+                "cost": 200,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 31.8
               }
             }
           },
@@ -62,40 +68,462 @@
             "opening_cost": -265,
             "books": {
               "consensus": {
-                "cost": -265,
+                "cost": -250,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": 70.16
               },
               "fanduel": {
-                "cost": -265,
+                "cost": -250,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:33",
                 "no_vig_pct": 70.16
               },
               "draftkings": {
                 "cost": -245,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 70.16
+              },
+              "betmgm": {
+                "cost": -250,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": 70.16
               }
             }
           }
         ],
-        "fight_ending": [],
-        "method_of_victory": [],
+        "fight_ending": [
+          {
+            "label": "KO/TKO/DQ",
+            "short_label": "KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": -715,
+            "books": {
+              "consensus": {
+                "cost": -550,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -390,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": -550,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Submission",
+            "short_label": "Submission",
+            "selection": "submission",
+            "opening_cost": 850,
+            "books": {
+              "consensus": {
+                "cost": 700,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 700,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 600,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Points",
+            "short_label": "Points",
+            "selection": "points",
+            "opening_cost": 500,
+            "books": {
+              "consensus": {
+                "cost": 500,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 500,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 500,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
+        "method_of_victory": [
+          {
+            "label": "Diyar Nurgozhay KO/TKO/DQ/SUBMISSION",
+            "short_label": "D. Nurgozhay KO/TKO/DQ/SUBMISSION",
+            "selection": "ko-tko-dq-submission",
+            "opening_cost": -200,
+            "books": {
+              "consensus": {
+                "cost": -200,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": -200,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Diyar Nurgozhay",
+            "short_label": "D. Nurgozhay",
+            "selection": "",
+            "opening_cost": -143,
+            "books": {
+              "consensus": {
+                "cost": -143,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 11
+              }
+            }
+          },
+          {
+            "label": "Alik Lorenz Points",
+            "short_label": "A. Lorenz Points",
+            "selection": "points",
+            "opening_cost": 1400,
+            "books": {
+              "consensus": {
+                "cost": 1400,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "draftkings": {
+                "cost": 1400,
+                "line": 1,
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 1500,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 1400,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Diyar Nurgozhay Points",
+            "short_label": "D. Nurgozhay Points",
+            "selection": "points",
+            "opening_cost": 800,
+            "books": {
+              "consensus": {
+                "cost": 800,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "draftkings": {
+                "cost": 800,
+                "line": 1,
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 850,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 800,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Diyar Nurgozhay KO/TKO/DQ",
+            "short_label": "D. Nurgozhay KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": -150,
+            "books": {
+              "consensus": {
+                "cost": -150,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "draftkings": {
+                "cost": -150,
+                "line": 1,
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": -130,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": -175,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Diyar Nurgozhay Submission",
+            "short_label": "D. Nurgozhay Submission",
+            "selection": "submission",
+            "opening_cost": 800,
+            "books": {
+              "consensus": {
+                "cost": 847,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "draftkings": {
+                "cost": 800,
+                "line": 1,
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 900,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 800,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Alik Lorenz KO/TKO/DQ/SUBMISSION",
+            "short_label": "A. Lorenz KO/TKO/DQ/SUBMISSION",
+            "selection": "ko-tko-dq-submission",
+            "opening_cost": 250,
+            "books": {
+              "consensus": {
+                "cost": 250,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 250,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Draw",
+            "short_label": "Draw",
+            "selection": "draw",
+            "opening_cost": 3400,
+            "books": {
+              "consensus": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Alik Lorenz",
+            "short_label": "A. Lorenz",
+            "selection": "",
+            "opening_cost": 280,
+            "books": {
+              "consensus": {
+                "cost": 280,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Alik Lorenz Submission",
+            "short_label": "A. Lorenz Submission",
+            "selection": "submission",
+            "opening_cost": 2000,
+            "books": {
+              "consensus": {
+                "cost": 2000,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "draftkings": {
+                "cost": 2000,
+                "line": 1,
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 2200,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 2000,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Alik Lorenz KO/TKO/DQ",
+            "short_label": "A. Lorenz KO/TKO/DQ",
+            "selection": "ko-tko-dq",
+            "opening_cost": 275,
+            "books": {
+              "consensus": {
+                "cost": 275,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "draftkings": {
+                "cost": 275,
+                "line": 1,
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 270,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 275,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          }
+        ],
         "fight_distance": [
           {
             "label": "Yes",
             "short_label": "Yes",
             "selection": "yes",
-            "opening_cost": -3233,
+            "opening_cost": 500,
             "books": {
               "consensus": {
-                "cost": -3233,
+                "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:55:42",
-                "no_vig_pct": 97
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 56.75
+              },
+              "draftkings": {
+                "cost": 500,
+                "line": 1,
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 56.75
+              },
+              "fanduel": {
+                "cost": 520,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": 56.75
+              },
+              "betmgm": {
+                "cost": 500,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 56.75
+              }
+            }
+          },
+          {
+            "label": "No",
+            "short_label": "No",
+            "selection": "no",
+            "opening_cost": -900,
+            "books": {
+              "consensus": {
+                "cost": -900,
+                "line": 1,
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 91
+              },
+              "draftkings": {
+                "cost": -900,
+                "line": 1,
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 91
+              },
+              "fanduel": {
+                "cost": -900,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": 91
+              },
+              "betmgm": {
+                "cost": -1000,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 91
               }
             }
           }
@@ -108,16 +536,28 @@
             "opening_cost": 165,
             "books": {
               "consensus": {
-                "cost": 145,
+                "cost": 151,
                 "line": 1.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 41.74
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 42.23
               },
               "draftkings": {
                 "cost": 145,
                 "line": 1.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 41.74
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 42.23
+              },
+              "fanduel": {
+                "cost": 158,
+                "line": 1.5,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": 42.23
+              },
+              "betmgm": {
+                "cost": 145,
+                "line": 1.5,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 42.23
               }
             }
           },
@@ -128,16 +568,28 @@
             "opening_cost": -215,
             "books": {
               "consensus": {
-                "cost": -188,
+                "cost": -192,
                 "line": 1.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 66.89
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 67.4
               },
               "draftkings": {
                 "cost": -188,
                 "line": 1.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 66.89
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 67.4
+              },
+              "fanduel": {
+                "cost": -194,
+                "line": 1.5,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": 67.4
+              },
+              "betmgm": {
+                "cost": -190,
+                "line": 1.5,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 67.4
               }
             }
           }
@@ -169,22 +621,28 @@
             "opening_cost": 124,
             "books": {
               "consensus": {
-                "cost": 125,
-                "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 40.45
-              },
-              "fanduel": {
-                "cost": 124,
-                "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 40.45
-              },
-              "draftkings": {
                 "cost": 140,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 40.45
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 40.33
+              },
+              "fanduel": {
+                "cost": 138,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": 40.33
+              },
+              "draftkings": {
+                "cost": 142,
+                "line": 1,
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 40.33
+              },
+              "betmgm": {
+                "cost": 145,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 40.33
               }
             }
           },
@@ -195,22 +653,28 @@
             "opening_cost": -160,
             "books": {
               "consensus": {
-                "cost": -160,
+                "cost": -170,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 60.98
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 61.44
               },
               "fanduel": {
-                "cost": -160,
+                "cost": -170,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 60.98
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": 61.44
               },
               "draftkings": {
-                "cost": -166,
+                "cost": -170,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 60.98
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 61.44
+              },
+              "betmgm": {
+                "cost": -180,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 61.44
               }
             }
           }
@@ -225,7 +689,19 @@
               "consensus": {
                 "cost": 106,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 115,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 105,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -237,9 +713,21 @@
             "opening_cost": 128,
             "books": {
               "consensus": {
-                "cost": 128,
+                "cost": 135,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 135,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 140,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -251,9 +739,21 @@
             "opening_cost": 320,
             "books": {
               "consensus": {
-                "cost": 320,
+                "cost": 325,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 360,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 325,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -269,13 +769,45 @@
               "consensus": {
                 "cost": 245,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 240,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 260,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 225,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Nikolas Motta KO/TKO/DQ/SUBMISSION",
+            "short_label": "N. Motta KO/TKO/DQ/SUBMISSION",
+            "selection": "ko-tko-dq-submission",
+            "opening_cost": 225,
+            "books": {
+              "consensus": {
+                "cost": 225,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 225,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -287,15 +819,47 @@
             "opening_cost": 460,
             "books": {
               "consensus": {
-                "cost": 502,
+                "cost": 550,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 550,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 550,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 550,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Dom Mar Fan KO/TKO/DQ/SUBMISSION",
+            "short_label": "D. Mar Fan KO/TKO/DQ/SUBMISSION",
+            "selection": "ko-tko-dq-submission",
+            "opening_cost": 150,
+            "books": {
+              "consensus": {
+                "cost": 150,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 150,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -309,7 +873,7 @@
               "consensus": {
                 "cost": 270,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               }
             }
@@ -321,9 +885,21 @@
             "opening_cost": 3300,
             "books": {
               "consensus": {
-                "cost": 3300,
+                "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -335,15 +911,27 @@
             "opening_cost": 2000,
             "books": {
               "consensus": {
-                "cost": 2223,
+                "cost": 2500,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 2500,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 2700,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 2500,
+                "line": 1,
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -355,15 +943,27 @@
             "opening_cost": 420,
             "books": {
               "consensus": {
-                "cost": 399,
+                "cost": 395,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 380,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 410,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 350,
+                "line": 1,
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -377,13 +977,25 @@
               "consensus": {
                 "cost": 350,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:22:34",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 350,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 390,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 350,
+                "line": 1,
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -397,7 +1009,7 @@
               "consensus": {
                 "cost": 420,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               }
             }
@@ -411,13 +1023,25 @@
               "consensus": {
                 "cost": 250,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:22:33",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 250,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": null
+              },
+              "fanduel": {
+                "cost": 260,
+                "line": 1,
+                "updated": "2026-11-19 18:22:33",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 250,
+                "line": 1,
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -431,16 +1055,28 @@
             "opening_cost": 125,
             "books": {
               "consensus": {
-                "cost": 132,
+                "cost": 140,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
-                "no_vig_pct": 69.03
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 45.05
               },
               "draftkings": {
                 "cost": 140,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 69.03
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 45.05
+              },
+              "fanduel": {
+                "cost": 146,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 45.05
+              },
+              "betmgm": {
+                "cost": 140,
+                "line": 1,
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 45.05
               }
             }
           },
@@ -451,16 +1087,28 @@
             "opening_cost": -167,
             "books": {
               "consensus": {
-                "cost": -176,
+                "cost": -185,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
-                "no_vig_pct": 65.99
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 65.75
               },
               "draftkings": {
                 "cost": -185,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 65.99
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 65.75
+              },
+              "fanduel": {
+                "cost": -188,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 65.75
+              },
+              "betmgm": {
+                "cost": -185,
+                "line": 1,
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 65.75
               }
             }
           }
@@ -475,14 +1123,26 @@
               "consensus": {
                 "cost": 100,
                 "line": 2.5,
-                "updated": "2026-11-19 00:53:12",
-                "no_vig_pct": 50.5
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 50.83
               },
               "draftkings": {
                 "cost": 100,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 50.5
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 50.83
+              },
+              "fanduel": {
+                "cost": 110,
+                "line": 2.5,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 50.83
+              },
+              "betmgm": {
+                "cost": 100,
+                "line": 2.5,
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 50.83
               }
             }
           },
@@ -493,16 +1153,28 @@
             "opening_cost": -135,
             "books": {
               "consensus": {
-                "cost": -133,
+                "cost": -134,
                 "line": 2.5,
-                "updated": "2026-11-19 00:53:12",
-                "no_vig_pct": 57.98
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 58.33
               },
               "draftkings": {
                 "cost": -130,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 57.98
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 58.33
+              },
+              "fanduel": {
+                "cost": -134,
+                "line": 2.5,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 58.33
+              },
+              "betmgm": {
+                "cost": -135,
+                "line": 2.5,
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 58.33
               }
             }
           }
@@ -534,28 +1206,28 @@
             "opening_cost": 140,
             "books": {
               "consensus": {
-                "cost": 197,
+                "cost": 202,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 31.31
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 30.94
               },
               "draftkings": {
-                "cost": 195,
-                "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 31.31
-              },
-              "fanduel": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 31.31
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 30.94
+              },
+              "fanduel": {
+                "cost": 205,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 30.94
               },
               "betmgm": {
                 "cost": 220,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 31.31
+                "updated": "2026-11-19 18:21:00",
+                "no_vig_pct": 30.94
               }
             }
           },
@@ -566,28 +1238,28 @@
             "opening_cost": -166,
             "books": {
               "consensus": {
-                "cost": -257,
+                "cost": -255,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 70.27
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 70.52
               },
               "draftkings": {
-                "cost": -238,
+                "cost": -245,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 70.27
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 70.52
               },
               "fanduel": {
-                "cost": -265,
+                "cost": -260,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 70.27
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 70.52
               },
               "betmgm": {
                 "cost": -275,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 70.27
+                "updated": "2026-11-19 18:21:00",
+                "no_vig_pct": 70.52
               }
             }
           }
@@ -600,15 +1272,21 @@
             "opening_cost": -125,
             "books": {
               "consensus": {
-                "cost": -130,
+                "cost": -125,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": -135,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": -125,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
                 "no_vig_pct": null
               }
             }
@@ -620,15 +1298,21 @@
             "opening_cost": 245,
             "books": {
               "consensus": {
-                "cost": 266,
+                "cost": 275,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 290,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 275,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
                 "no_vig_pct": null
               }
             }
@@ -640,15 +1324,21 @@
             "opening_cost": 215,
             "books": {
               "consensus": {
-                "cost": 236,
+                "cost": 225,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 260,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 225,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
                 "no_vig_pct": null
               }
             }
@@ -662,21 +1352,27 @@
             "opening_cost": 440,
             "books": {
               "consensus": {
-                "cost": 440,
+                "cost": 419,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 400,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 450,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 400,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
                 "no_vig_pct": null
               }
             }
@@ -688,21 +1384,27 @@
             "opening_cost": 900,
             "books": {
               "consensus": {
-                "cost": 950,
+                "cost": 974,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 950,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 1000,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -716,19 +1418,25 @@
               "consensus": {
                 "cost": 750,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 750,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 750,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 750,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -740,21 +1448,47 @@
             "opening_cost": 400,
             "books": {
               "consensus": {
-                "cost": 424,
+                "cost": 400,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 400,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 450,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 350,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Tahir Abdullayev KO/TKO/DQ/SUBMISSION",
+            "short_label": "T. Abdullayev KO/TKO/DQ/SUBMISSION",
+            "selection": "ko-tko-dq-submission",
+            "opening_cost": 450,
+            "books": {
+              "consensus": {
+                "cost": 450,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 450,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
                 "no_vig_pct": null
               }
             }
@@ -768,7 +1502,7 @@
               "consensus": {
                 "cost": 750,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               }
             }
@@ -782,19 +1516,45 @@
               "consensus": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 500,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Jake Matthews KO/TKO/DQ/SUBMISSION",
+            "short_label": "J. Matthews KO/TKO/DQ/SUBMISSION",
+            "selection": "ko-tko-dq-submission",
+            "opening_cost": 175,
+            "books": {
+              "consensus": {
+                "cost": 175,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 175,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
                 "no_vig_pct": null
               }
             }
@@ -808,7 +1568,7 @@
               "consensus": {
                 "cost": 440,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               }
             }
@@ -820,15 +1580,21 @@
             "opening_cost": 3300,
             "books": {
               "consensus": {
-                "cost": 3980,
+                "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
                 "no_vig_pct": null
               }
             }
@@ -840,21 +1606,27 @@
             "opening_cost": 145,
             "books": {
               "consensus": {
-                "cost": 145,
+                "cost": 137,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 130,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 145,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 125,
+                "line": 1,
+                "updated": "2026-11-19 18:21:00",
                 "no_vig_pct": null
               }
             }
@@ -870,20 +1642,26 @@
               "consensus": {
                 "cost": -125,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 67.76
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 55.75
               },
               "draftkings": {
                 "cost": -125,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 67.76
+                "updated": "2026-11-19 18:12:49",
+                "no_vig_pct": 55.75
               },
               "fanduel": {
                 "cost": -125,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 67.76
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 55.75
+              },
+              "betmgm": {
+                "cost": -125,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 55.75
               }
             }
           },
@@ -896,20 +1674,26 @@
               "consensus": {
                 "cost": -105,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 51.46
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 52.02
               },
               "draftkings": {
                 "cost": -105,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 51.46
+                "updated": "2026-11-19 18:12:49",
+                "no_vig_pct": 52.02
               },
               "fanduel": {
                 "cost": -102,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 51.46
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 52.02
+              },
+              "betmgm": {
+                "cost": -110,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 52.02
               }
             }
           }
@@ -922,21 +1706,27 @@
             "opening_cost": -160,
             "books": {
               "consensus": {
-                "cost": -157,
+                "cost": -158,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": 60.47
               },
               "draftkings": {
                 "cost": -160,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": 60.47
               },
               "fanduel": {
                 "cost": -150,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 60.47
+              },
+              "betmgm": {
+                "cost": -165,
+                "line": 2.5,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": 60.47
               }
             }
@@ -950,19 +1740,25 @@
               "consensus": {
                 "cost": 124,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": 45.45
               },
               "draftkings": {
                 "cost": 124,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": 45.45
               },
               "fanduel": {
                 "cost": 124,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 45.45
+              },
+              "betmgm": {
+                "cost": 125,
+                "line": 2.5,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": 45.45
               }
             }
@@ -995,28 +1791,28 @@
             "opening_cost": 130,
             "books": {
               "consensus": {
-                "cost": -116,
+                "cost": -111,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 51.71
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 51.2
               },
               "draftkings": {
                 "cost": -108,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 51.71
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 51.2
               },
               "fanduel": {
-                "cost": -118,
+                "cost": -106,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 51.71
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 51.2
               },
               "betmgm": {
                 "cost": -120,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 51.71
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 51.2
               }
             }
           },
@@ -1027,28 +1823,28 @@
             "opening_cost": -155,
             "books": {
               "consensus": {
-                "cost": -107,
+                "cost": -109,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 49.63
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 50.37
               },
               "draftkings": {
                 "cost": -112,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 49.63
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 50.37
               },
               "fanduel": {
-                "cost": -108,
+                "cost": -114,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 49.63
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 50.37
               },
               "betmgm": {
                 "cost": 100,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 49.63
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 50.37
               }
             }
           }
@@ -1061,15 +1857,21 @@
             "opening_cost": -150,
             "books": {
               "consensus": {
-                "cost": -152,
+                "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": -155,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": -150,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -1081,15 +1883,21 @@
             "opening_cost": 175,
             "books": {
               "consensus": {
-                "cost": 187,
+                "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 200,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -1101,21 +1909,47 @@
             "opening_cost": 400,
             "books": {
               "consensus": {
-                "cost": 445,
+                "cost": 425,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 425,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
           }
         ],
         "method_of_victory": [
+          {
+            "label": "Alessandro Costa KO/TKO/DQ/SUBMISSION",
+            "short_label": "A. Costa KO/TKO/DQ/SUBMISSION",
+            "selection": "ko-tko-dq-submission",
+            "opening_cost": 250,
+            "books": {
+              "consensus": {
+                "cost": 250,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 250,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
           {
             "label": "Amir Albazi KO/TKO/DQ",
             "short_label": "A. Albazi KO/TKO/DQ",
@@ -1125,19 +1959,25 @@
               "consensus": {
                 "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
+                "cost": 850,
+                "line": 1,
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
                 "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -1151,8 +1991,8 @@
               "consensus": {
                 "cost": 310,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
-                "no_vig_pct": 27.47
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": null
               }
             }
           },
@@ -1163,21 +2003,27 @@
             "opening_cost": 300,
             "books": {
               "consensus": {
-                "cost": 314,
+                "cost": 300,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 300,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 330,
+                "cost": 310,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 275,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -1189,21 +2035,27 @@
             "opening_cost": 180,
             "books": {
               "consensus": {
-                "cost": 180,
+                "cost": 177,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 165,
+                "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 185,
+                "cost": 195,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 175,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -1215,15 +2067,21 @@
             "opening_cost": 3300,
             "books": {
               "consensus": {
-                "cost": 3980,
+                "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 5000,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -1237,7 +2095,7 @@
               "consensus": {
                 "cost": 850,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               }
             }
@@ -1249,21 +2107,27 @@
             "opening_cost": 1500,
             "books": {
               "consensus": {
-                "cost": 1400,
+                "cost": 1248,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 1200,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 1400,
+                "cost": 1300,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 1200,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -1275,21 +2139,27 @@
             "opening_cost": 650,
             "books": {
               "consensus": {
-                "cost": 700,
+                "cost": 674,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 700,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 700,
+                "cost": 750,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 650,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -1301,21 +2171,47 @@
             "opening_cost": 275,
             "books": {
               "consensus": {
-                "cost": 275,
+                "cost": 260,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 275,
+                "cost": 250,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 290,
+                "cost": 270,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 250,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              }
+            }
+          },
+          {
+            "label": "Amir Albazi KO/TKO/DQ/SUBMISSION",
+            "short_label": "A. Albazi KO/TKO/DQ/SUBMISSION",
+            "selection": "ko-tko-dq-submission",
+            "opening_cost": 375,
+            "books": {
+              "consensus": {
+                "cost": 375,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 375,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
                 "no_vig_pct": null
               }
             }
@@ -1331,20 +2227,26 @@
               "consensus": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 78.47
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 60.99
               },
               "draftkings": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 78.47
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 60.99
               },
               "fanduel": {
-                "cost": -146,
+                "cost": -148,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 78.47
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 60.99
+              },
+              "betmgm": {
+                "cost": -150,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 60.99
               }
             }
           },
@@ -1355,22 +2257,28 @@
             "opening_cost": 112,
             "books": {
               "consensus": {
-                "cost": 112,
+                "cost": 111,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 46.95
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 48.26
               },
               "draftkings": {
                 "cost": 110,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 46.95
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 48.26
               },
               "fanduel": {
                 "cost": 114,
                 "line": 1,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 46.95
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 48.26
+              },
+              "betmgm": {
+                "cost": 110,
+                "line": 1,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 48.26
               }
             }
           }
@@ -1383,22 +2291,28 @@
             "opening_cost": -195,
             "books": {
               "consensus": {
-                "cost": -180,
+                "cost": -182,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 65.49
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 65.74
               },
               "draftkings": {
                 "cost": -180,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 65.49
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 65.74
               },
               "fanduel": {
                 "cost": -174,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 65.49
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 65.74
+              },
+              "betmgm": {
+                "cost": -185,
+                "line": 2.5,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 65.74
               }
             }
           },
@@ -1411,20 +2325,26 @@
               "consensus": {
                 "cost": 140,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 43.3
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 43.03
               },
               "draftkings": {
                 "cost": 140,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 43.3
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 43.03
               },
               "fanduel": {
                 "cost": 142,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:17",
-                "no_vig_pct": 43.3
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 43.03
+              },
+              "betmgm": {
+                "cost": 140,
+                "line": 2.5,
+                "updated": "2026-11-19 18:21:01",
+                "no_vig_pct": 43.03
               }
             }
           }
@@ -1458,26 +2378,26 @@
               "consensus": {
                 "cost": 164,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 36.84
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 36.57
               },
               "draftkings": {
                 "cost": 164,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 36.84
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 36.57
               },
               "fanduel": {
-                "cost": 164,
+                "cost": 168,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 36.84
+                "updated": "2026-11-19 18:22:34",
+                "no_vig_pct": 36.57
               },
               "betmgm": {
                 "cost": 165,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 36.84
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 36.57
               }
             }
           },
@@ -1490,25 +2410,25 @@
               "consensus": {
                 "cost": -202,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": 64.72
               },
               "draftkings": {
                 "cost": -198,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": 64.72
               },
               "fanduel": {
-                "cost": -215,
+                "cost": -210,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:34",
                 "no_vig_pct": 64.72
               },
               "betmgm": {
                 "cost": -200,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": 64.72
               }
             }
@@ -1522,15 +2442,21 @@
             "opening_cost": 430,
             "books": {
               "consensus": {
-                "cost": 463,
+                "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 500,
+                "line": 1,
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -1542,15 +2468,21 @@
             "opening_cost": 1300,
             "books": {
               "consensus": {
-                "cost": 1192,
+                "cost": 1100,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 1100,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": 900,
+                "line": 1,
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -1562,15 +2494,21 @@
             "opening_cost": -770,
             "books": {
               "consensus": {
-                "cost": -592,
+                "cost": -770,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": -475,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": null
+              },
+              "betmgm": {
+                "cost": -800,
+                "line": 1,
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -1586,25 +2524,25 @@
               "consensus": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -1618,13 +2556,13 @@
               "consensus": {
                 "cost": -165,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": -165,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -1636,27 +2574,27 @@
             "opening_cost": -135,
             "books": {
               "consensus": {
-                "cost": -150,
+                "cost": -145,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": -135,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": -150,
+                "cost": -145,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -1670,25 +2608,25 @@
               "consensus": {
                 "cost": 1448,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 1500,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 1400,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1300,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -1702,19 +2640,19 @@
               "consensus": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -1728,7 +2666,7 @@
               "consensus": {
                 "cost": -137,
                 "line": 1,
-                "updated": "2026-11-19 00:53:12",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               }
             }
@@ -1740,27 +2678,27 @@
             "opening_cost": 900,
             "books": {
               "consensus": {
-                "cost": 240,
+                "cost": 232,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 240,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 240,
+                "cost": 225,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -1776,26 +2714,26 @@
               "consensus": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 20.75
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 13.76
               },
               "draftkings": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 20.75
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 13.76
               },
               "fanduel": {
                 "cost": 520,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 20.75
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 13.76
               },
               "betmgm": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 20.75
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 13.76
               }
             }
           },
@@ -1808,25 +2746,25 @@
               "consensus": {
                 "cost": -900,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": 89
               },
               "draftkings": {
                 "cost": -900,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": 89
               },
               "fanduel": {
                 "cost": -900,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": 89
               },
               "betmgm": {
                 "cost": -1000,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": 89
               }
             }
@@ -1842,26 +2780,26 @@
               "consensus": {
                 "cost": 170,
                 "line": 1.5,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 38.54
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 38.26
               },
               "draftkings": {
                 "cost": 170,
                 "line": 1.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 38.54
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 38.26
               },
               "fanduel": {
                 "cost": 178,
                 "line": 1.5,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 38.54
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 38.26
               },
               "betmgm": {
                 "cost": 170,
                 "line": 1.5,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 38.54
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 38.26
               }
             }
           },
@@ -1874,26 +2812,26 @@
               "consensus": {
                 "cost": -220,
                 "line": 1.5,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 70.49
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 70.26
               },
               "draftkings": {
                 "cost": -220,
                 "line": 1.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 70.49
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 70.26
               },
               "fanduel": {
                 "cost": -220,
                 "line": 1.5,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 70.49
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 70.26
               },
               "betmgm": {
                 "cost": -225,
                 "line": 1.5,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 70.49
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 70.26
               }
             }
           }
@@ -1903,7 +2841,7 @@
     {
       "n": 6,
       "event_id": 5993,
-      "scheduled_utc": "2026-11-21 18:00:00",
+      "scheduled_utc": "2026-11-21 16:40:00",
       "weight_class": "bantamweight(126-135)",
       "fighter_a": {
         "name": "Aleksandre Topuria",
@@ -1927,26 +2865,26 @@
               "consensus": {
                 "cost": 227,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 29.94
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 29.07
               },
               "fanduel": {
-                "cost": 220,
+                "cost": 225,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 29.94
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 29.07
               },
               "draftkings": {
                 "cost": 230,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 29.94
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 29.07
               },
               "betmgm": {
                 "cost": 240,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 29.94
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 29.07
               }
             }
           },
@@ -1957,28 +2895,28 @@
             "opening_cost": -250,
             "books": {
               "consensus": {
-                "cost": -295,
+                "cost": -292,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 72.52
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 72.7
               },
               "fanduel": {
-                "cost": -295,
+                "cost": -290,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 72.52
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 72.7
               },
               "draftkings": {
                 "cost": -285,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 72.52
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 72.7
               },
               "betmgm": {
                 "cost": -300,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 72.52
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 72.7
               }
             }
           }
@@ -1993,19 +2931,19 @@
               "consensus": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": -155,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2019,19 +2957,19 @@
               "consensus": {
                 "cost": 260,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 290,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 250,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2045,19 +2983,19 @@
               "consensus": {
                 "cost": 300,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 330,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 300,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2073,19 +3011,19 @@
               "consensus": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2099,25 +3037,25 @@
               "consensus": {
                 "cost": 350,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 410,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 350,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 300,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2131,25 +3069,25 @@
               "consensus": {
                 "cost": 455,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 450,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 450,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2161,27 +3099,27 @@
             "opening_cost": 900,
             "books": {
               "consensus": {
-                "cost": 1048,
+                "cost": 948,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 1100,
+                "cost": 900,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1100,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2193,27 +3131,27 @@
             "opening_cost": 475,
             "books": {
               "consensus": {
-                "cost": 424,
+                "cost": 462,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 450,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 400,
+                "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 400,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2227,7 +3165,7 @@
               "consensus": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
+                "updated": "2026-11-19 18:24:08",
                 "no_vig_pct": null
               }
             }
@@ -2241,13 +3179,13 @@
               "consensus": {
                 "cost": 600,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 600,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2261,25 +3199,25 @@
               "consensus": {
                 "cost": 122,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 130,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 120,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 125,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2291,27 +3229,27 @@
             "opening_cost": 1100,
             "books": {
               "consensus": {
-                "cost": 1200,
+                "cost": 1100,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 1100,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 1200,
+                "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1200,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2325,13 +3263,13 @@
               "consensus": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2345,7 +3283,7 @@
               "consensus": {
                 "cost": 460,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               }
             }
@@ -2359,28 +3297,28 @@
             "opening_cost": -150,
             "books": {
               "consensus": {
-                "cost": -150,
+                "cost": -148,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 61.95
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 59.76
               },
               "fanduel": {
                 "cost": -146,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 61.95
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 59.76
               },
               "draftkings": {
-                "cost": -150,
+                "cost": -135,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 61.95
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 59.76
               },
               "betmgm": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 61.95
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 59.76
               }
             }
           },
@@ -2393,26 +3331,26 @@
               "consensus": {
                 "cost": 111,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 49.19
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 48.21
               },
               "fanduel": {
                 "cost": 114,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 49.19
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 48.21
               },
               "draftkings": {
-                "cost": 110,
+                "cost": 100,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 49.19
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 48.21
               },
               "betmgm": {
                 "cost": 110,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 49.19
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 48.21
               }
             }
           }
@@ -2427,26 +3365,26 @@
               "consensus": {
                 "cost": -184,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 63.88
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 64.66
               },
               "draftkings": {
                 "cost": -166,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 63.88
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 64.66
               },
               "fanduel": {
                 "cost": -178,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 63.88
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 64.66
               },
               "betmgm": {
                 "cost": -190,
                 "line": 2.5,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 63.88
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 64.66
               }
             }
           },
@@ -2459,26 +3397,26 @@
               "consensus": {
                 "cost": 145,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 44.11
+                "updated": "2026-11-19 18:24:08",
+                "no_vig_pct": 43.84
               },
               "draftkings": {
                 "cost": 130,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 44.11
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 43.84
               },
               "fanduel": {
                 "cost": 146,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 44.11
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 43.84
               },
               "betmgm": {
                 "cost": 145,
                 "line": 2.5,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 44.11
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 43.84
               }
             }
           }
@@ -2488,7 +3426,7 @@
     {
       "n": 7,
       "event_id": 5990,
-      "scheduled_utc": "2026-11-21 18:20:00",
+      "scheduled_utc": "2026-11-21 18:00:00",
       "weight_class": "middleweight(171-185)",
       "fighter_a": {
         "name": "Jared Cannonier",
@@ -2510,28 +3448,28 @@
             "opening_cost": -355,
             "books": {
               "consensus": {
-                "cost": -302,
+                "cost": -300,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 72.84
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 72.97
               },
               "draftkings": {
                 "cost": -298,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 72.84
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 72.97
               },
               "fanduel": {
-                "cost": -310,
+                "cost": -300,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 72.84
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 72.97
               },
               "betmgm": {
                 "cost": -300,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 72.84
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 72.97
               }
             }
           },
@@ -2544,26 +3482,26 @@
               "consensus": {
                 "cost": 237,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 28.25
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 28.36
               },
               "draftkings": {
                 "cost": 240,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 28.25
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 28.36
               },
               "fanduel": {
-                "cost": 230,
+                "cost": 235,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 28.25
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 28.36
               },
               "betmgm": {
                 "cost": 240,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
-                "no_vig_pct": 28.25
+                "updated": "2026-11-19 18:21:02",
+                "no_vig_pct": 28.36
               }
             }
           }
@@ -2578,19 +3516,19 @@
               "consensus": {
                 "cost": 510,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 550,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2604,19 +3542,19 @@
               "consensus": {
                 "cost": 117,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 115,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "betmgm": {
-                "cost": 125,
+                "cost": 120,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2628,21 +3566,21 @@
             "opening_cost": -117,
             "books": {
               "consensus": {
-                "cost": -115,
+                "cost": -110,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 100,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "betmgm": {
-                "cost": -115,
+                "cost": -110,
                 "line": 1,
-                "updated": "2026-11-19 00:48:51",
+                "updated": "2026-11-19 18:21:02",
                 "no_vig_pct": null
               }
             }
@@ -2656,27 +3594,27 @@
             "opening_cost": 700,
             "books": {
               "consensus": {
-                "cost": 774,
+                "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 750,
+                "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -2688,27 +3626,27 @@
             "opening_cost": 700,
             "books": {
               "consensus": {
-                "cost": 180,
+                "cost": 185,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 210,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 180,
+                "cost": 185,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -2722,7 +3660,7 @@
               "consensus": {
                 "cost": 195,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               }
             }
@@ -2736,25 +3674,25 @@
               "consensus": {
                 "cost": 650,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 650,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 650,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 650,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -2768,13 +3706,13 @@
               "consensus": {
                 "cost": 350,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 350,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -2788,7 +3726,7 @@
               "consensus": {
                 "cost": 460,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               }
             }
@@ -2802,25 +3740,25 @@
               "consensus": {
                 "cost": 2341,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 2200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 2500,
+                "cost": 2800,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 2500,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -2832,27 +3770,27 @@
             "opening_cost": 440,
             "books": {
               "consensus": {
-                "cost": 400,
+                "cost": 425,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 440,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 400,
+                "cost": 425,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 400,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -2866,25 +3804,25 @@
               "consensus": {
                 "cost": 177,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 190,
+                "cost": 185,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 175,
+                "cost": 165,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -2898,13 +3836,13 @@
               "consensus": {
                 "cost": 125,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 125,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -2918,19 +3856,19 @@
               "consensus": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -2944,28 +3882,28 @@
             "opening_cost": 117,
             "books": {
               "consensus": {
-                "cost": 128,
+                "cost": 120,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 62.22
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 46.56
               },
               "draftkings": {
-                "cost": 130,
+                "cost": 120,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
-                "no_vig_pct": 62.22
+                "updated": "2026-11-19 18:12:49",
+                "no_vig_pct": 46.56
               },
               "fanduel": {
                 "cost": 126,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 62.22
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 46.56
               },
               "betmgm": {
-                "cost": 130,
+                "cost": 120,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 62.22
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 46.56
               }
             }
           },
@@ -2976,28 +3914,28 @@
             "opening_cost": -155,
             "books": {
               "consensus": {
-                "cost": -166,
+                "cost": -161,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 58.51
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 61.27
               },
               "draftkings": {
-                "cost": -170,
+                "cost": -160,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
-                "no_vig_pct": 58.51
+                "updated": "2026-11-19 18:12:49",
+                "no_vig_pct": 61.27
               },
               "fanduel": {
                 "cost": -162,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 58.51
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 61.27
               },
               "betmgm": {
-                "cost": -180,
+                "cost": -165,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 58.51
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 61.27
               }
             }
           }
@@ -3010,27 +3948,27 @@
             "opening_cost": 100,
             "books": {
               "consensus": {
-                "cost": -107,
+                "cost": -110,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": 53
               },
               "draftkings": {
                 "cost": -110,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": 53
               },
               "fanduel": {
                 "cost": -102,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": 53
               },
               "betmgm": {
-                "cost": -105,
+                "cost": -110,
                 "line": 2.5,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": 53
               }
             }
@@ -3042,28 +3980,28 @@
             "opening_cost": -130,
             "books": {
               "consensus": {
-                "cost": -121,
+                "cost": -120,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 55.44
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 55.94
               },
               "draftkings": {
                 "cost": -120,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 55.44
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 55.94
               },
               "fanduel": {
                 "cost": -120,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 55.44
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 55.94
               },
               "betmgm": {
-                "cost": -125,
+                "cost": -120,
                 "line": 2.5,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 55.44
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 55.94
               }
             }
           }
@@ -3073,7 +4011,7 @@
     {
       "n": 8,
       "event_id": 6027,
-      "scheduled_utc": "2026-11-21 18:40:00",
+      "scheduled_utc": "2026-11-21 18:20:00",
       "weight_class": "flyweight(116-125)",
       "fighter_a": {
         "name": "Kyoji Horiguchi",
@@ -3095,21 +4033,21 @@
             "opening_cost": -215,
             "books": {
               "consensus": {
-                "cost": -212,
+                "cost": -201,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": 64.79
               },
               "fanduel": {
-                "cost": -215,
+                "cost": -192,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:35",
                 "no_vig_pct": 64.79
               },
               "betmgm": {
                 "cost": -210,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": 64.79
               }
             }
@@ -3121,22 +4059,22 @@
             "opening_cost": 164,
             "books": {
               "consensus": {
-                "cost": 167,
+                "cost": 159,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 37.07
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 37.22
               },
               "fanduel": {
-                "cost": 164,
+                "cost": 148,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
-                "no_vig_pct": 37.07
+                "updated": "2026-11-19 18:22:35",
+                "no_vig_pct": 37.22
               },
               "betmgm": {
                 "cost": 170,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 37.07
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 37.22
               }
             }
           }
@@ -3151,19 +4089,19 @@
               "consensus": {
                 "cost": -227,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": -230,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": -225,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3177,19 +4115,19 @@
               "consensus": {
                 "cost": 474,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 450,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3203,19 +4141,19 @@
               "consensus": {
                 "cost": 332,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 340,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 325,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3229,21 +4167,21 @@
             "opening_cost": 125,
             "books": {
               "consensus": {
-                "cost": 112,
+                "cost": 114,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 125,
+                "cost": 130,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 100,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3255,21 +4193,21 @@
             "opening_cost": 750,
             "books": {
               "consensus": {
-                "cost": 724,
+                "cost": 789,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 750,
+                "cost": 900,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 700,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3281,21 +4219,21 @@
             "opening_cost": 270,
             "books": {
               "consensus": {
-                "cost": 406,
+                "cost": 397,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 270,
+                "cost": 260,
                 "line": 1,
-                "updated": "2026-11-19 00:58:18",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 700,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3309,19 +4247,19 @@
               "consensus": {
                 "cost": 469,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 490,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 450,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3335,13 +4273,13 @@
               "consensus": {
                 "cost": 275,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 275,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3355,19 +4293,19 @@
               "consensus": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3383,19 +4321,19 @@
               "consensus": {
                 "cost": -225,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": -225,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": -225,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3409,19 +4347,19 @@
               "consensus": {
                 "cost": 166,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 172,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 160,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3437,13 +4375,13 @@
               "consensus": {
                 "cost": -270,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": 76.19
               },
               "fanduel": {
                 "cost": -270,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": 76.19
               }
             }
@@ -3455,15 +4393,15 @@
             "opening_cost": 210,
             "books": {
               "consensus": {
-                "cost": 210,
+                "cost": 205,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": 33.33
               },
               "fanduel": {
-                "cost": 210,
+                "cost": 205,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": 33.33
               }
             }
@@ -3474,7 +4412,7 @@
     {
       "n": 9,
       "event_id": 5989,
-      "scheduled_utc": "2026-11-21 19:00:00",
+      "scheduled_utc": "2026-11-21 18:40:00",
       "weight_class": "lightweight(146-155)",
       "fighter_a": {
         "name": "Daniel Hooker",
@@ -3496,28 +4434,28 @@
             "opening_cost": -162,
             "books": {
               "consensus": {
-                "cost": -194,
+                "cost": -197,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 63.32
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 64.08
               },
               "draftkings": {
                 "cost": -192,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 63.32
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 64.08
               },
               "fanduel": {
-                "cost": -194,
+                "cost": -200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 63.32
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 64.08
               },
               "betmgm": {
                 "cost": -200,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 63.32
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 64.08
               }
             }
           },
@@ -3530,26 +4468,26 @@
               "consensus": {
                 "cost": 157,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 37.65
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 37.31
               },
               "draftkings": {
                 "cost": 160,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 37.65
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 37.31
               },
               "fanduel": {
-                "cost": 150,
+                "cost": 154,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 37.65
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 37.31
               },
               "betmgm": {
                 "cost": 165,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 37.65
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 37.31
               }
             }
           }
@@ -3562,21 +4500,21 @@
             "opening_cost": 310,
             "books": {
               "consensus": {
-                "cost": 375,
+                "cost": 370,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 390,
+                "cost": 370,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 375,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3590,19 +4528,19 @@
               "consensus": {
                 "cost": 150,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 170,
+                "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 150,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3616,19 +4554,19 @@
               "consensus": {
                 "cost": -110,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": -115,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": -105,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3644,8 +4582,8 @@
               "consensus": {
                 "cost": 215,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
-                "no_vig_pct": 34.97
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 34.01
               }
             }
           },
@@ -3658,13 +4596,13 @@
               "consensus": {
                 "cost": 350,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 350,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3678,25 +4616,25 @@
               "consensus": {
                 "cost": 1600,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 1600,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 1600,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1600,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3710,25 +4648,25 @@
               "consensus": {
                 "cost": 400,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 400,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 430,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 400,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3740,27 +4678,27 @@
             "opening_cost": 480,
             "books": {
               "consensus": {
-                "cost": 490,
+                "cost": 480,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 500,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 500,
+                "cost": 480,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 400,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3774,13 +4712,13 @@
               "consensus": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3794,19 +4732,19 @@
               "consensus": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3820,25 +4758,25 @@
               "consensus": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 1000,
+                "cost": 1200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3852,7 +4790,7 @@
               "consensus": {
                 "cost": 1400,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               }
             }
@@ -3866,25 +4804,25 @@
               "consensus": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 230,
+                "cost": 220,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3898,25 +4836,25 @@
               "consensus": {
                 "cost": 185,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 180,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 195,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -3932,26 +4870,26 @@
               "consensus": {
                 "cost": -105,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 62.74
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 51.45
               },
               "draftkings": {
                 "cost": -105,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 62.74
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 51.45
               },
               "fanduel": {
                 "cost": -104,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 62.74
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 51.45
               },
               "betmgm": {
                 "cost": -105,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 62.74
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 51.45
               }
             }
           },
@@ -3964,26 +4902,26 @@
               "consensus": {
                 "cost": -123,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 56.52
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 56.97
               },
               "draftkings": {
                 "cost": -125,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 56.52
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 56.97
               },
               "fanduel": {
                 "cost": -122,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 56.52
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 56.97
               },
               "betmgm": {
                 "cost": -130,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 56.52
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 56.97
               }
             }
           }
@@ -3998,25 +4936,25 @@
               "consensus": {
                 "cost": -135,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": 58.83
               },
               "draftkings": {
                 "cost": -135,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": 58.83
               },
               "fanduel": {
                 "cost": -128,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": 58.83
               },
               "betmgm": {
                 "cost": -135,
                 "line": 2.5,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": 58.83
               }
             }
@@ -4030,26 +4968,26 @@
               "consensus": {
                 "cost": 102,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 50.61
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 50.36
               },
               "draftkings": {
                 "cost": 105,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 50.61
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 50.36
               },
               "fanduel": {
                 "cost": 106,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 50.61
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 50.36
               },
               "betmgm": {
                 "cost": 100,
                 "line": 2.5,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 50.61
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 50.36
               }
             }
           }
@@ -4059,7 +4997,7 @@
     {
       "n": 10,
       "event_id": 5988,
-      "scheduled_utc": "2026-11-21 19:20:00",
+      "scheduled_utc": "2026-11-21 19:00:00",
       "weight_class": "featherweight(136-145)",
       "fighter_a": {
         "name": "Aljamain Sterling",
@@ -4083,26 +5021,26 @@
               "consensus": {
                 "cost": -133,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 56.27
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 55.78
               },
               "draftkings": {
                 "cost": -130,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 56.27
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 55.78
               },
               "fanduel": {
                 "cost": -138,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 56.27
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 55.78
               },
               "betmgm": {
                 "cost": -135,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 56.27
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 55.78
               }
             }
           },
@@ -4115,26 +5053,26 @@
               "consensus": {
                 "cost": 109,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 45.51
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 45.88
               },
               "draftkings": {
                 "cost": 110,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 45.51
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 45.88
               },
               "fanduel": {
                 "cost": 108,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 45.51
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 45.88
               },
               "betmgm": {
                 "cost": 110,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 45.51
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 45.88
               }
             }
           }
@@ -4149,19 +5087,19 @@
               "consensus": {
                 "cost": 550,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 600,
+                "cost": 550,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 550,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4173,21 +5111,21 @@
             "opening_cost": 163,
             "books": {
               "consensus": {
-                "cost": 170,
+                "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 170,
+                "cost": 180,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4201,19 +5139,19 @@
               "consensus": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": -145,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4229,25 +5167,25 @@
               "consensus": {
                 "cost": 1800,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 1800,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 1800,
+                "cost": 2000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1700,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4261,8 +5199,8 @@
               "consensus": {
                 "cost": 1500,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
-                "no_vig_pct": 37.45
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 36.5
               }
             }
           },
@@ -4275,13 +5213,13 @@
               "consensus": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4295,25 +5233,25 @@
               "consensus": {
                 "cost": 1949,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 2000,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 2200,
+                "cost": 2000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1900,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4327,25 +5265,25 @@
               "consensus": {
                 "cost": 275,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 275,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 310,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 275,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4359,7 +5297,7 @@
               "consensus": {
                 "cost": 230,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               }
             }
@@ -4373,13 +5311,13 @@
               "consensus": {
                 "cost": 600,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 600,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4393,25 +5331,25 @@
               "consensus": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4423,27 +5361,27 @@
             "opening_cost": 650,
             "books": {
               "consensus": {
-                "cost": 700,
+                "cost": 674,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 700,
+                "cost": 650,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 700,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4457,25 +5395,25 @@
               "consensus": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 165,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 185,
+                "cost": 190,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 150,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4489,19 +5427,19 @@
               "consensus": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": null
               }
             }
@@ -4517,26 +5455,26 @@
               "consensus": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 74.98
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 58.5
               },
               "draftkings": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 74.98
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 58.5
               },
               "fanduel": {
-                "cost": -136,
+                "cost": -132,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 74.98
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 58.5
               },
               "betmgm": {
                 "cost": -150,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 74.98
+                "updated": "2026-11-19 18:21:04",
+                "no_vig_pct": 58.5
               }
             }
           },
@@ -4549,26 +5487,26 @@
               "consensus": {
                 "cost": 110,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 49.02
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 50
               },
               "draftkings": {
                 "cost": 110,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 49.02
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 50
               },
               "fanduel": {
-                "cost": 106,
+                "cost": 104,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 49.02
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 50
               },
               "betmgm": {
                 "cost": 110,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 49.02
+                "updated": "2026-11-19 18:21:04",
+                "no_vig_pct": 50
               }
             }
           }
@@ -4583,26 +5521,26 @@
               "consensus": {
                 "cost": -182,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 66.12
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 65.88
               },
               "draftkings": {
                 "cost": -180,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 66.12
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 65.88
               },
               "fanduel": {
-                "cost": -164,
+                "cost": -162,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 66.12
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 65.88
               },
               "betmgm": {
                 "cost": -185,
                 "line": 2.5,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 66.12
+                "updated": "2026-11-19 18:21:03",
+                "no_vig_pct": 65.88
               }
             }
           },
@@ -4615,25 +5553,25 @@
               "consensus": {
                 "cost": 137,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": 43.2
               },
               "draftkings": {
                 "cost": 140,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
+                "updated": "2026-11-19 18:12:48",
                 "no_vig_pct": 43.2
               },
               "fanduel": {
-                "cost": 134,
+                "cost": 132,
                 "line": 2.5,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": 43.2
               },
               "betmgm": {
                 "cost": 140,
                 "line": 2.5,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:03",
                 "no_vig_pct": 43.2
               }
             }
@@ -4644,7 +5582,7 @@
     {
       "n": 11,
       "event_id": 5983,
-      "scheduled_utc": "2026-11-21 19:40:00",
+      "scheduled_utc": "2026-11-21 19:20:00",
       "weight_class": "light_heavyweight(186-205)",
       "fighter_a": {
         "name": "Jiri Prochazka",
@@ -4666,28 +5604,28 @@
             "opening_cost": -141,
             "books": {
               "consensus": {
-                "cost": -170,
+                "cost": -177,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 60.7
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 62.11
               },
               "draftkings": {
                 "cost": -175,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 60.7
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 62.11
               },
               "fanduel": {
-                "cost": -170,
+                "cost": -180,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 60.7
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 62.11
               },
               "betmgm": {
-                "cost": -170,
+                "cost": -185,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 60.7
+                "updated": "2026-11-19 18:21:04",
+                "no_vig_pct": 62.11
               }
             }
           },
@@ -4698,28 +5636,28 @@
             "opening_cost": 114,
             "books": {
               "consensus": {
-                "cost": 136,
+                "cost": 142,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 40.5
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 39.88
               },
               "draftkings": {
                 "cost": 145,
                 "line": 1,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 40.5
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 39.88
               },
               "fanduel": {
-                "cost": 132,
-                "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 40.5
-              },
-              "betmgm": {
                 "cost": 140,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
-                "no_vig_pct": 40.5
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 39.88
+              },
+              "betmgm": {
+                "cost": 150,
+                "line": 1,
+                "updated": "2026-11-19 18:21:04",
+                "no_vig_pct": 39.88
               }
             }
           }
@@ -4732,21 +5670,21 @@
             "opening_cost": 500,
             "books": {
               "consensus": {
-                "cost": 470,
+                "cost": 480,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 470,
+                "cost": 480,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 450,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -4760,19 +5698,19 @@
               "consensus": {
                 "cost": -700,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": -450,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": -700,
                 "line": 1,
-                "updated": "2026-11-19 00:48:52",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -4786,19 +5724,19 @@
               "consensus": {
                 "cost": 1000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 1200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 900,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -4814,8 +5752,8 @@
               "consensus": {
                 "cost": -110,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
-                "no_vig_pct": 13
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 11
               }
             }
           },
@@ -4828,25 +5766,25 @@
               "consensus": {
                 "cost": 1749,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 1800,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 2000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1700,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -4858,27 +5796,27 @@
             "opening_cost": -115,
             "books": {
               "consensus": {
-                "cost": -115,
+                "cost": -125,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": -115,
+                "cost": -125,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": -105,
+                "cost": -110,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": -130,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -4892,25 +5830,25 @@
               "consensus": {
                 "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 850,
+                "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 800,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -4924,25 +5862,25 @@
               "consensus": {
                 "cost": 1100,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 1100,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 1100,
+                "cost": 1200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1100,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -4954,27 +5892,27 @@
             "opening_cost": 160,
             "books": {
               "consensus": {
-                "cost": 185,
+                "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "draftkings": {
-                "cost": 185,
+                "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
-                "cost": 195,
+                "cost": 200,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 175,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -4988,13 +5926,13 @@
               "consensus": {
                 "cost": 150,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 150,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -5008,13 +5946,13 @@
               "consensus": {
                 "cost": -135,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": -135,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -5028,25 +5966,25 @@
               "consensus": {
                 "cost": 1694,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "draftkings": {
                 "cost": 1800,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
+                "updated": "2026-11-19 18:12:49",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 2000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 1600,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -5060,7 +5998,7 @@
               "consensus": {
                 "cost": 180,
                 "line": 1,
-                "updated": "2026-11-19 00:53:13",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               }
             }
@@ -5074,19 +6012,19 @@
               "consensus": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:24:09",
                 "no_vig_pct": null
               },
               "fanduel": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
+                "updated": "2026-11-19 18:22:36",
                 "no_vig_pct": null
               },
               "betmgm": {
                 "cost": 5000,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
+                "updated": "2026-11-19 18:21:04",
                 "no_vig_pct": null
               }
             }
@@ -5102,26 +6040,26 @@
               "consensus": {
                 "cost": 455,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 19.24
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 18.99
               },
               "draftkings": {
                 "cost": 450,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
-                "no_vig_pct": 19.24
+                "updated": "2026-11-19 18:12:49",
+                "no_vig_pct": 18.99
               },
               "fanduel": {
                 "cost": 470,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 19.24
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 18.99
               },
               "betmgm": {
                 "cost": 450,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
-                "no_vig_pct": 19.24
+                "updated": "2026-11-19 18:21:04",
+                "no_vig_pct": 18.99
               }
             }
           },
@@ -5134,26 +6072,26 @@
               "consensus": {
                 "cost": -785,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 87
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 86.25
               },
               "draftkings": {
                 "cost": -750,
                 "line": 1,
-                "updated": "2026-11-19 00:43:01",
-                "no_vig_pct": 87
+                "updated": "2026-11-19 18:12:49",
+                "no_vig_pct": 86.25
               },
               "fanduel": {
                 "cost": -770,
                 "line": 1,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 87
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 86.25
               },
               "betmgm": {
                 "cost": -800,
                 "line": 1,
-                "updated": "2026-11-19 00:48:53",
-                "no_vig_pct": 87
+                "updated": "2026-11-19 18:21:04",
+                "no_vig_pct": 86.25
               }
             }
           }
@@ -5166,28 +6104,28 @@
             "opening_cost": -120,
             "books": {
               "consensus": {
-                "cost": -159,
+                "cost": -158,
                 "line": 1.5,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 45.37
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 45.92
               },
               "draftkings": {
-                "cost": 130,
+                "cost": 124,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 45.37
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 45.92
               },
               "fanduel": {
-                "cost": -152,
+                "cost": -150,
                 "line": 1.5,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 45.37
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 45.92
               },
               "betmgm": {
                 "cost": 130,
                 "line": 2.5,
-                "updated": "2026-11-19 00:48:53",
-                "no_vig_pct": 45.37
+                "updated": "2026-11-19 18:21:04",
+                "no_vig_pct": 45.92
               }
             }
           },
@@ -5200,26 +6138,26 @@
               "consensus": {
                 "cost": 122,
                 "line": 1.5,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 63.13
+                "updated": "2026-11-19 18:24:09",
+                "no_vig_pct": 63.23
               },
               "draftkings": {
-                "cost": -166,
+                "cost": -160,
                 "line": 2.5,
-                "updated": "2026-11-19 00:42:59",
-                "no_vig_pct": 63.13
+                "updated": "2026-11-19 18:12:48",
+                "no_vig_pct": 63.23
               },
               "fanduel": {
                 "cost": 124,
                 "line": 1.5,
-                "updated": "2026-11-19 00:58:19",
-                "no_vig_pct": 63.13
+                "updated": "2026-11-19 18:22:36",
+                "no_vig_pct": 63.23
               },
               "betmgm": {
                 "cost": -170,
                 "line": 2.5,
-                "updated": "2026-11-19 00:48:53",
-                "no_vig_pct": 63.13
+                "updated": "2026-11-19 18:21:04",
+                "no_vig_pct": 63.23
               }
             }
           }
