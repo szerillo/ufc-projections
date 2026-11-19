@@ -32,5 +32,31 @@
       "Evan Elder|Samuel Sanches"
     ],
     "segments": {"main": 5, "prelims": 4, "early": 4}
+  },
+  "fn_prochazka_stirling": {
+    "source": "ESPN fight center 600061665 (UFC Fight Night: Prochazka vs. Stirling, ABHA Arena, Doha), checked 2026-11-19; matches the odds feed's 11 bouts",
+    "cancel": [],
+    "replace": [],
+    "five_rounds": [],
+    "five_rounds_sources": {
+      "_doc": "Five-round bouts each source shows, any reason (title or not). check_rounds.py: all sources must agree, else UNVERIFIED (fails); the non-title, non-main ones must equal five_rounds.",
+      "ufcalendar.com event page ufc-fight-night-2026-11-21, 2026-11-19 (main event shown as Light Heavyweight, 5 rounds)": [["Jiri Prochazka", "Navajo Stirling"]],
+      "champinon.info schedule prochazka-vs-stirling, 2026-11-19 (main event shown as a 5-round light heavyweight bout)": [["Jiri Prochazka", "Navajo Stirling"]]
+    },
+    "title": [],
+    "order": [
+      "Jiri Prochazka|Navajo Stirling",
+      "Aljamain Sterling|Kevin Vallejos",
+      "Dan Hooker|Brian Ortega",
+      "Kyoji Horiguchi|Asu Almabayev",
+      "Jared Cannonier|Ikram Aliskerov",
+      "Aleksandre Topuria|Santiago Luna",
+      "Shamil Gaziev|Tallison Teixeira",
+      "Amir Albazi|Alessandro Costa",
+      "Jake Matthews|Tahir Abdullayev",
+      "Nikolas Motta|Dom Mar Fan",
+      "Diyar Nurgozhay|Alik Lorenz"
+    ],
+    "segments": {"main": 6, "prelims": 5, "early": 0}
   }
 }
