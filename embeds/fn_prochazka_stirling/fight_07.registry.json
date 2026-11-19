@@ -1,0 +1,2248 @@
+{
+ "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "fight": 7,
+ "of": 12,
+ "site_pair": [
+  "Aleksandre Topuria",
+  "Santiago Luna"
+ ],
+ "pair": [
+  "Aleksandre Topuria",
+  "Santiago Luna"
+ ],
+ "file": "fight_07.html",
+ "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
+ "proj_src": "publish",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
+ "rows": [
+  {
+   "id": "v1",
+   "text": "2-0-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Aleksandre Topuria UFC record",
+   "raw": "2-0-0"
+  },
+  {
+   "id": "v2",
+   "text": "2-1-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Santiago Luna UFC record",
+   "raw": "2-1-0"
+  },
+  {
+   "id": "v3",
+   "text": "30.8",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Age a",
+   "raw": 30.8145106091718
+  },
+  {
+   "id": "v4",
+   "text": "22.3",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Age b",
+   "raw": 22.29158110882957
+  },
+  {
+   "id": "v5",
+   "text": "5'7\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "5'7\""
+  },
+  {
+   "id": "v6",
+   "text": "5'9\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "5'9\""
+  },
+  {
+   "id": "v7",
+   "text": "68\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 68
+  },
+  {
+   "id": "v8",
+   "text": "74\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 74
+  },
+  {
+   "id": "v9",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v10",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v11",
+   "text": "-250",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Aleksandre Topuria",
+   "raw": 0.7144383606557377
+  },
+  {
+   "id": "v12",
+   "text": "71.4%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Aleksandre Topuria",
+   "raw": 0.7144383606557377
+  },
+  {
+   "id": "v13",
+   "text": "-275",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Aleksandre Topuria",
+   "raw": -275
+  },
+  {
+   "id": "v14",
+   "text": "73.3%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Aleksandre Topuria",
+   "raw": 0.7333333333333333
+  },
+  {
+   "id": "v15",
+   "text": "-292",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Aleksandre Topuria",
+    "field": "cost"
+   },
+   "desc": "Market ML Aleksandre Topuria",
+   "raw": -292
+  },
+  {
+   "id": "v16",
+   "text": "74.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Aleksandre Topuria"
+   },
+   "desc": "Market implied Aleksandre Topuria",
+   "raw": 0.7448979591836735
+  },
+  {
+   "id": "v17",
+   "text": "-285",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Aleksandre Topuria",
+    "book": "draftkings"
+   },
+   "desc": "Best US ML Aleksandre Topuria",
+   "raw": -285
+  },
+  {
+   "id": "v18",
+   "text": "-1.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v12",
+     "v14"
+    ]
+   },
+   "desc": "Edge ML Aleksandre Topuria",
+   "raw": -0.018894972677595545
+  },
+  {
+   "id": "v19",
+   "text": "+250",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model ML Santiago Luna",
+   "raw": 0.28556163934426226
+  },
+  {
+   "id": "v20",
+   "text": "28.6%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Santiago Luna",
+   "raw": 0.28556163934426226
+  },
+  {
+   "id": "v21",
+   "text": "+235",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Santiago Luna",
+   "raw": 235
+  },
+  {
+   "id": "v22",
+   "text": "29.9%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Santiago Luna",
+   "raw": 0.29850746268656714
+  },
+  {
+   "id": "v23",
+   "text": "+227",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Santiago Luna",
+    "field": "cost"
+   },
+   "desc": "Market ML Santiago Luna",
+   "raw": 227
+  },
+  {
+   "id": "v24",
+   "text": "30.6%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Santiago Luna"
+   },
+   "desc": "Market implied Santiago Luna",
+   "raw": 0.3058103975535168
+  },
+  {
+   "id": "v25",
+   "text": "+240",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Santiago Luna",
+    "book": "betmgm"
+   },
+   "desc": "Best US ML Santiago Luna",
+   "raw": 240
+  },
+  {
+   "id": "v26",
+   "text": "-1.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v20",
+     "v22"
+    ]
+   },
+   "desc": "Edge ML Santiago Luna",
+   "raw": -0.012945823342304874
+  },
+  {
+   "id": "v27",
+   "text": "-116",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.5375725801774495
+  },
+  {
+   "id": "v28",
+   "text": "53.8%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.5375725801774495
+  },
+  {
+   "id": "v29",
+   "text": "-140",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": -140
+  },
+  {
+   "id": "v30",
+   "text": "58.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.5833333333333334
+  },
+  {
+   "id": "v31",
+   "text": "-4.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v28",
+     "v30"
+    ]
+   },
+   "desc": "Edge GTD vs market",
+   "raw": -0.045760753155883904
+  },
+  {
+   "id": "v32",
+   "text": "+116",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.46242741982255053
+  },
+  {
+   "id": "v33",
+   "text": "46.2%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.46242741982255053
+  },
+  {
+   "id": "v34",
+   "text": "+106",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market ITD no",
+   "raw": 106
+  },
+  {
+   "id": "v35",
+   "text": "48.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market ITD implied",
+   "raw": 0.4854368932038835
+  },
+  {
+   "id": "v36",
+   "text": "-2.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v33",
+     "v35"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.023009473381332968
+  },
+  {
+   "id": "v37",
+   "text": "+164",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Aleksandre Topuria",
+   "raw": 0.3791252311822943
+  },
+  {
+   "id": "v38",
+   "text": "37.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Aleksandre Topuria",
+   "raw": 0.3791252311822943
+  },
+  {
+   "id": "v39",
+   "text": "+122",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aleksandre Topuria Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Aleksandre Topuria",
+   "raw": 122
+  },
+  {
+   "id": "v40",
+   "text": "45.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aleksandre Topuria Points"
+   },
+   "desc": "Market dec implied Aleksandre Topuria",
+   "raw": 0.45045045045045046
+  },
+  {
+   "id": "v41",
+   "text": "-7.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v38",
+     "v40"
+    ]
+   },
+   "desc": "Edge dec Aleksandre Topuria",
+   "raw": -0.07132521926815616
+  },
+  {
+   "id": "v42",
+   "text": "+445",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Aleksandre Topuria",
+   "raw": 0.18333162459371896
+  },
+  {
+   "id": "v43",
+   "text": "18.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Aleksandre Topuria",
+   "raw": 0.18333162459371896
+  },
+  {
+   "id": "v44",
+   "text": "+350",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aleksandre Topuria KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Aleksandre Topuria",
+   "raw": 350
+  },
+  {
+   "id": "v45",
+   "text": "22.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aleksandre Topuria KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Aleksandre Topuria",
+   "raw": 0.2222222222222222
+  },
+  {
+   "id": "v46",
+   "text": "-3.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v43",
+     "v45"
+    ]
+   },
+   "desc": "Edge ko Aleksandre Topuria",
+   "raw": -0.03889059762850325
+  },
+  {
+   "id": "v47",
+   "text": "+558",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Aleksandre Topuria",
+   "raw": 0.15198150487972448
+  },
+  {
+   "id": "v48",
+   "text": "15.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Aleksandre Topuria",
+   "raw": 0.15198150487972448
+  },
+  {
+   "id": "v49",
+   "text": "+455",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aleksandre Topuria Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Aleksandre Topuria",
+   "raw": 455
+  },
+  {
+   "id": "v50",
+   "text": "18.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Aleksandre Topuria Submission"
+   },
+   "desc": "Market sub implied Aleksandre Topuria",
+   "raw": 0.18018018018018017
+  },
+  {
+   "id": "v51",
+   "text": "-2.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v48",
+     "v50"
+    ]
+   },
+   "desc": "Edge sub Aleksandre Topuria",
+   "raw": -0.028198675300455694
+  },
+  {
+   "id": "v52",
+   "text": "+198",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Aleksandre Topuria",
+   "raw": 0.33531312947344344
+  },
+  {
+   "id": "v53",
+   "text": "33.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Aleksandre Topuria",
+   "raw": 0.33531312947344344
+  },
+  {
+   "id": "v54",
+   "text": "+149",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Aleksandre Topuria KO/TKO/DQ",
+     "Aleksandre Topuria Submission"
+    ]
+   },
+   "desc": "Market ITD price Aleksandre Topuria",
+   "raw": 0.4024024024024024
+  },
+  {
+   "id": "v55",
+   "text": "40.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Aleksandre Topuria KO/TKO/DQ",
+     "Aleksandre Topuria Submission"
+    ]
+   },
+   "desc": "Market ITD implied Aleksandre Topuria",
+   "raw": 0.4024024024024024
+  },
+  {
+   "id": "v56",
+   "text": "-6.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v53",
+     "v55"
+    ]
+   },
+   "desc": "Edge itd Aleksandre Topuria",
+   "raw": -0.06708927292895894
+  },
+  {
+   "id": "v57",
+   "text": "+531",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Santiago Luna",
+   "raw": 0.15844734899515514
+  },
+  {
+   "id": "v58",
+   "text": "15.8%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Santiago Luna",
+   "raw": 0.15844734899515514
+  },
+  {
+   "id": "v59",
+   "text": "+487",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Santiago Luna Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Santiago Luna",
+   "raw": 487
+  },
+  {
+   "id": "v60",
+   "text": "17.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Santiago Luna Points"
+   },
+   "desc": "Market dec implied Santiago Luna",
+   "raw": 0.17035775127768313
+  },
+  {
+   "id": "v61",
+   "text": "-1.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v58",
+     "v60"
+    ]
+   },
+   "desc": "Edge dec Santiago Luna",
+   "raw": -0.011910402282527988
+  },
+  {
+   "id": "v62",
+   "text": "+1133",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Santiago Luna",
+   "raw": 0.08113095315977877
+  },
+  {
+   "id": "v63",
+   "text": "8.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Santiago Luna",
+   "raw": 0.08113095315977877
+  },
+  {
+   "id": "v64",
+   "text": "+1000",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Santiago Luna KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Santiago Luna",
+   "raw": 1000
+  },
+  {
+   "id": "v65",
+   "text": "9.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Santiago Luna KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Santiago Luna",
+   "raw": 0.09090909090909091
+  },
+  {
+   "id": "v66",
+   "text": "-1.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v63",
+     "v65"
+    ]
+   },
+   "desc": "Edge ko Santiago Luna",
+   "raw": -0.009778137749312146
+  },
+  {
+   "id": "v67",
+   "text": "+2075",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Santiago Luna",
+   "raw": 0.04598333718932837
+  },
+  {
+   "id": "v68",
+   "text": "4.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Santiago Luna",
+   "raw": 0.04598333718932837
+  },
+  {
+   "id": "v69",
+   "text": "+900",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Santiago Luna Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Santiago Luna",
+   "raw": 900
+  },
+  {
+   "id": "v70",
+   "text": "10.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Santiago Luna Submission"
+   },
+   "desc": "Market sub implied Santiago Luna",
+   "raw": 0.1
+  },
+  {
+   "id": "v71",
+   "text": "-5.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v68",
+     "v70"
+    ]
+   },
+   "desc": "Edge sub Santiago Luna",
+   "raw": -0.054016662810671634
+  },
+  {
+   "id": "v72",
+   "text": "+687",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Santiago Luna",
+   "raw": 0.12711429034910712
+  },
+  {
+   "id": "v73",
+   "text": "12.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Santiago Luna",
+   "raw": 0.12711429034910712
+  },
+  {
+   "id": "v74",
+   "text": "+424",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Santiago Luna KO/TKO/DQ",
+     "Santiago Luna Submission"
+    ]
+   },
+   "desc": "Market ITD price Santiago Luna",
+   "raw": 0.19090909090909092
+  },
+  {
+   "id": "v75",
+   "text": "19.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Santiago Luna KO/TKO/DQ",
+     "Santiago Luna Submission"
+    ]
+   },
+   "desc": "Market ITD implied Santiago Luna",
+   "raw": 0.19090909090909092
+  },
+  {
+   "id": "v76",
+   "text": "-6.4%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v73",
+     "v75"
+    ]
+   },
+   "desc": "Edge itd Santiago Luna",
+   "raw": -0.0637948005599838
+  },
+  {
+   "id": "v77",
+   "text": "-238",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Aleksandre Topuria",
+     "Santiago Luna"
+    ],
+    "side": "a"
+   },
+   "desc": "LH open ML Aleksandre Topuria",
+   "raw": -238
+  },
+  {
+   "id": "v78",
+   "text": "-294",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Aleksandre Topuria",
+     "Santiago Luna"
+    ],
+    "side": "a",
+    "at": "current"
+   },
+   "desc": "LH current ML Aleksandre Topuria",
+   "raw": -294
+  },
+  {
+   "id": "v79",
+   "text": "3.0",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Aleksandre Topuria",
+     "Santiago Luna"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.029999999999999916
+  },
+  {
+   "id": "v80",
+   "text": "72%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "target.head"
+   },
+   "desc": "Target head Aleksandre Topuria",
+   "raw": 0.7159
+  },
+  {
+   "id": "v81",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "target.body"
+   },
+   "desc": "Target body Aleksandre Topuria",
+   "raw": 0.2273
+  },
+  {
+   "id": "v82",
+   "text": "6%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Aleksandre Topuria",
+   "raw": 0.0568
+  },
+  {
+   "id": "v83",
+   "text": "74%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "target.head"
+   },
+   "desc": "Target head Santiago Luna",
+   "raw": 0.7355
+  },
+  {
+   "id": "v84",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "target.body"
+   },
+   "desc": "Target body Santiago Luna",
+   "raw": 0.2258
+  },
+  {
+   "id": "v85",
+   "text": "4%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Santiago Luna",
+   "raw": 0.0387
+  },
+  {
+   "id": "v86",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 2
+  },
+  {
+   "id": "v87",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 3
+  },
+  {
+   "id": "v88",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.0
+  },
+  {
+   "id": "v89",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v90",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 0
+  },
+  {
+   "id": "v91",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.2599
+  },
+  {
+   "id": "v92",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 1
+  },
+  {
+   "id": "v93",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 1
+  },
+  {
+   "id": "v94",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Bantamweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.1983
+  },
+  {
+   "id": "v95",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.0
+  },
+  {
+   "id": "v96",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 0
+  },
+  {
+   "id": "v97",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 0
+  },
+  {
+   "id": "v98",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.0
+  },
+  {
+   "id": "v99",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v100",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 0
+  },
+  {
+   "id": "v101",
+   "text": "22%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Bantamweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.217
+  },
+  {
+   "id": "v102",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Aleksandre Topuria",
+   "raw": 2
+  },
+  {
+   "id": "v103",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Santiago Luna",
+   "raw": 1
+  },
+  {
+   "id": "v104",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Santiago Luna",
+   "raw": 1
+  },
+  {
+   "id": "v105",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "outcomes.l.sub"
+   },
+   "desc": "Outcome lsub Santiago Luna",
+   "raw": 1
+  },
+  {
+   "id": "v106",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Aleksandre Topuria",
+   "raw": 1.0
+  },
+  {
+   "id": "v107",
+   "text": "+1.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Aleksandre Topuria",
+   "raw": 1.0
+  },
+  {
+   "id": "v108",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Aleksandre Topuria",
+   "raw": 2
+  },
+  {
+   "id": "v109",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Aleksandre Topuria",
+   "raw": 1.0
+  },
+  {
+   "id": "v110",
+   "text": "+0.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Aleksandre Topuria",
+   "raw": 0.3
+  },
+  {
+   "id": "v111",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Aleksandre Topuria",
+   "raw": 2
+  },
+  {
+   "id": "v112",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Aleksandre Topuria",
+   "raw": 1.0
+  },
+  {
+   "id": "v113",
+   "text": "-0.2",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Aleksandre Topuria",
+   "raw": -0.2
+  },
+  {
+   "id": "v114",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Aleksandre Topuria",
+   "raw": 2
+  },
+  {
+   "id": "v115",
+   "text": "67%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Santiago Luna",
+   "raw": 0.6667
+  },
+  {
+   "id": "v116",
+   "text": "-0.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Santiago Luna",
+   "raw": -0.312
+  },
+  {
+   "id": "v117",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Santiago Luna",
+   "raw": 3
+  },
+  {
+   "id": "v118",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Santiago Luna",
+   "raw": 0.5
+  },
+  {
+   "id": "v119",
+   "text": "+3.6",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Santiago Luna",
+   "raw": 3.6
+  },
+  {
+   "id": "v120",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Santiago Luna",
+   "raw": 2
+  },
+  {
+   "id": "v121",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Santiago Luna",
+   "raw": 0.5
+  },
+  {
+   "id": "v122",
+   "text": "+3.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Santiago Luna",
+   "raw": 3.345
+  },
+  {
+   "id": "v123",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Santiago Luna",
+   "raw": 2
+  },
+  {
+   "id": "v124",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Aleksandre Topuria 0",
+   "raw": 5
+  },
+  {
+   "id": "v125",
+   "text": "+5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Aleksandre Topuria 1",
+   "raw": 5
+  },
+  {
+   "id": "v126",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Aleksandre Topuria 0",
+   "raw": 2
+  },
+  {
+   "id": "v127",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Aleksandre Topuria 1",
+   "raw": 1
+  },
+  {
+   "id": "v128",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Aleksandre Topuria 0",
+   "raw": 1
+  },
+  {
+   "id": "v129",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Aleksandre Topuria 1",
+   "raw": -3
+  },
+  {
+   "id": "v130",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Santiago Luna 0",
+   "raw": -8
+  },
+  {
+   "id": "v131",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Santiago Luna 1",
+   "raw": 1
+  },
+  {
+   "id": "v132",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Santiago Luna 2",
+   "raw": 3
+  },
+  {
+   "id": "v133",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Santiago Luna 0",
+   "raw": -6
+  },
+  {
+   "id": "v134",
+   "text": "+42",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Santiago Luna 1",
+   "raw": 42
+  },
+  {
+   "id": "v135",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Santiago Luna 0",
+   "raw": 1
+  },
+  {
+   "id": "v136",
+   "text": "+32",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Santiago Luna 1",
+   "raw": 32
+  },
+  {
+   "id": "v137",
+   "text": "1.50",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 1.5
+  },
+  {
+   "id": "v138",
+   "text": "2.30",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 2.296
+  },
+  {
+   "id": "v139",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.3333
+  },
+  {
+   "id": "v140",
+   "text": "71%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.7143
+  },
+  {
+   "id": "v141",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 1.0
+  },
+  {
+   "id": "v142",
+   "text": "57%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.5714
+  },
+  {
+   "id": "v143",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.2456
+  },
+  {
+   "id": "v144",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.1653
+  },
+  {
+   "id": "v145",
+   "text": "+23.3%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.2329
+  },
+  {
+   "id": "v146",
+   "text": "-21.6%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": -0.2161
+  },
+  {
+   "id": "v147",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.0006
+  },
+  {
+   "id": "v148",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.3827
+  },
+  {
+   "id": "v149",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v150",
+   "text": "0.92",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.918
+  },
+  {
+   "id": "v151",
+   "text": "+0.37",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Aleksandre Topuria",
+   "raw": 0.366
+  },
+  {
+   "id": "v152",
+   "text": "+1.99",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Santiago Luna",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Santiago Luna",
+   "raw": 1.9909999999999999
+  },
+  {
+   "id": "v153",
+   "text": "+0.27",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.267
+  },
+  {
+   "id": "v154",
+   "text": "+2.02",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 2.016
+  },
+  {
+   "id": "v155",
+   "text": "+0.63",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": 0.633
+  },
+  {
+   "id": "v156",
+   "text": "+1.68",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 1.684
+  },
+  {
+   "id": "v157",
+   "text": "+0.00",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.0
+  },
+  {
+   "id": "v158",
+   "text": "+0.28",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": 0.276
+  },
+  {
+   "id": "v159",
+   "text": "-0.27",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": -0.267
+  },
+  {
+   "id": "v160",
+   "text": "+0.03",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": 0.031
+  },
+  {
+   "id": "v161",
+   "text": "77%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.772
+  },
+  {
+   "id": "v162",
+   "text": "75%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.7521
+  },
+  {
+   "id": "v163",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Aleksandre Topuria",
+   "raw": 2
+  },
+  {
+   "id": "v164",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Santiago Luna",
+   "raw": 3
+  },
+  {
+   "id": "v165",
+   "text": "15.0",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 15.0
+  },
+  {
+   "id": "v166",
+   "text": "10.9",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 10.889
+  },
+  {
+   "id": "v167",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "pace.n"
+   },
+   "desc": "Avg fight, min sample Aleksandre Topuria",
+   "raw": 2
+  },
+  {
+   "id": "v168",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v169",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Santiago Luna",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.3333
+  },
+  {
+   "id": "v170",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Aleksandre Topuria",
+    "path": "pace.n"
+   },
+   "desc": "Finished in R1 sample Aleksandre Topuria",
+   "raw": 2
+  },
+  {
+   "id": "v171",
+   "text": "+225",
+   "fmt": "ml",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 4,
+    "key": "market_odds",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag price",
+   "raw": 225
+  },
+  {
+   "id": "v172",
+   "text": "57.3",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 4,
+    "key": "model_shrunk",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win shrunk",
+   "raw": 57.3
+  },
+  {
+   "id": "v173",
+   "text": "74.2",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 4,
+    "key": "model_raw",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov win raw",
+   "raw": 74.2
+  },
+  {
+   "id": "v174",
+   "text": "29.2",
+   "fmt": "n1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 4,
+    "key": "market_implied",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag market",
+   "raw": 29.2
+  },
+  {
+   "id": "v175",
+   "text": "+28.1",
+   "fmt": "s1",
+   "rule": "mk",
+   "args": {
+    "kind": "ml_flags",
+    "i": 4,
+    "key": "edge_pts",
+    "card": "ufc-fight-night-prochazka-vs-stirling"
+   },
+   "desc": "Markov flag gap",
+   "raw": 28.1
+  },
+  {
+   "id": "v176",
+   "text": "-141",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Aleksandre Topuria Bekzat Almakhan",
+   "raw": -141
+  },
+  {
+   "id": "v177",
+   "text": "-333",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Aleksandre Topuria Colby Thicknesse",
+   "raw": -333
+  },
+  {
+   "id": "v178",
+   "text": "+100",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Santiago Luna Bryce Mitchell",
+   "raw": 100
+  },
+  {
+   "id": "v179",
+   "text": "-769",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Santiago Luna Angel Pacheco",
+   "raw": -769
+  },
+  {
+   "id": "v180",
+   "text": "-156",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Santiago Luna Quang Le",
+   "raw": -156
+  }
+ ],
+ "gaps": []
+}

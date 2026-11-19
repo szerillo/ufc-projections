@@ -1,0 +1,8617 @@
+{
+ "built": "2026-11-19T23:47:24+00:00",
+ "date": "2026-11-21",
+ "division_dropped_share": {
+  "Bantamweight": 0.217,
+  "Catch Weight": 0.25,
+  "Featherweight": 0.25,
+  "Flyweight": 0.203,
+  "Heavyweight": 0.2623,
+  "Light Heavyweight": 0.3063,
+  "Lightweight": 0.2582,
+  "Middleweight": 0.2541,
+  "Welterweight": 0.2329,
+  "Women's Bantamweight": 0.1154,
+  "Women's Flyweight": 0.1336,
+  "Women's Strawweight": 0.1317
+ },
+ "division_power_share": {
+  "Bantamweight": 0.1983,
+  "Catch Weight": 0.2167,
+  "Featherweight": 0.225,
+  "Flyweight": 0.1923,
+  "Heavyweight": 0.2189,
+  "Light Heavyweight": 0.2569,
+  "Lightweight": 0.2309,
+  "Middleweight": 0.2188,
+  "Welterweight": 0.2146,
+  "Women's Bantamweight": 0.0885,
+  "Women's Flyweight": 0.0945,
+  "Women's Strawweight": 0.1049
+ },
+ "event": "2026-11-21-ufc-fight-night-prochazka-vs-stirling",
+ "fighters": {
+  "Aleksandre Topuria": {
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "fights": [
+    {
+     "ca": 1,
+     "cf": 140,
+     "d": "2025-11-22",
+     "es": "2025-11-22-ufc-fight-night-tsarukyan-vs-hooker",
+     "n": 4,
+     "o": "Bekzat Almakhan",
+     "oe": 1507,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       5
+      ],
+      [
+       2,
+       1.0,
+       2
+      ],
+      [
+       3,
+       1.0,
+       1
+      ]
+     ],
+     "sa": 39,
+     "secs": 900,
+     "sl": 47,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 302,
+     "d": "2025-02-08",
+     "es": "2025-02-08-ufc-312-du-plessis-vs-strickland-2",
+     "n": 4,
+     "o": "Colby Thicknesse",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       5
+      ],
+      [
+       2,
+       1.0,
+       1
+      ],
+      [
+       3,
+       1.0,
+       -3
+      ]
+     ],
+     "sa": 38,
+     "secs": 900,
+     "sl": 41,
+     "tdl": 1,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.2329,
+    "ctrl": 0.2456,
+    "ctrl_ag": 0.0006,
+    "net_ctrl": 0.245,
+    "sub15": 0.0,
+    "td15": 1.5,
+    "td_acc": 0.3333,
+    "tdd": 1.0
+   },
+   "grap_won": {
+    "k": 2,
+    "n": 2
+   },
+   "hdef": 0.772,
+   "kd_against": 0,
+   "kd_for": 0,
+   "last5": {
+    "dropped": 0,
+    "fights": 2,
+    "power": 0
+   },
+   "minutes": 30.0,
+   "name": "Aleksandre Topuria",
+   "out_landed": {
+    "k": 2,
+    "n": 2
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 2,
+     "ko": 0,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 15.0,
+    "n": 2,
+    "r1": 0.0
+   },
+   "power_fights": 0,
+   "power_w": 0.0,
+   "rounds": [
+    {
+     "diff_pm": 1.0,
+     "fights": 2,
+     "landed_pm": 3.5,
+     "mins": 10.0,
+     "r": 1,
+     "won": 1.0
+    },
+    {
+     "diff_pm": 0.3,
+     "fights": 2,
+     "landed_pm": 3.7,
+     "mins": 10.0,
+     "r": 2,
+     "won": 1.0
+    },
+    {
+     "diff_pm": -0.2,
+     "fights": 2,
+     "landed_pm": 1.6,
+     "mins": 10.0,
+     "r": 3,
+     "won": 1.0
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 0.267,
+    "opp_elo": 1503.5,
+    "sd": 0.367
+   },
+   "target": {
+    "body": 0.2273,
+    "head": 0.7159,
+    "leg": 0.0568
+   },
+   "target_diff": {
+    "body": 0.0,
+    "head": 0.633,
+    "leg": -0.267
+   },
+   "ufc_fights": 2,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 0
+  },
+  "Alessandro Costa": {
+   "dropped_fights": 2,
+   "dropped_w": 0.171,
+   "fights": [
+    {
+     "ca": 12,
+     "cf": 61,
+     "d": "2026-07-11",
+     "es": "2026-07-11-ufc-329-mcgregor-vs-holloway-2",
+     "n": 1,
+     "o": "Cody Durden",
+     "oe": 1482,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -1
+      ],
+      [
+       2,
+       1.0,
+       -6
+      ]
+     ],
+     "sa": 28,
+     "secs": 439,
+     "sl": 21,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 5,
+     "d": "2026-06-06",
+     "es": "2026-06-06-ufc-fight-night-muhammad-vs-bonfim",
+     "n": 7,
+     "o": "Matt Schnell",
+     "oe": 1497,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       11
+      ]
+     ],
+     "sa": 8,
+     "secs": 148,
+     "sl": 19,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 6,
+     "cf": 78,
+     "d": "2026-04-04",
+     "es": "2026-04-04-ufc-fight-night-moicano-vs-duncan",
+     "n": 6,
+     "o": "Stewart Nicoll",
+     "oe": 1454,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -7
+      ],
+      [
+       2,
+       1.0,
+       3
+      ]
+     ],
+     "sa": 47,
+     "secs": 596,
+     "sl": 43,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 198,
+     "cf": 84,
+     "d": "2025-09-13",
+     "es": "2025-09-13-noche-ufc-lopes-vs-silva",
+     "n": 3,
+     "o": "Alden Coria",
+     "oe": 1500,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -10
+      ],
+      [
+       2,
+       0.0,
+       -11
+      ],
+      [
+       3,
+       0.0,
+       -9
+      ]
+     ],
+     "sa": 42,
+     "secs": 647,
+     "sl": 12,
+     "tdl": 1,
+     "tdo": 2
+    },
+    {
+     "ca": 0,
+     "cf": 43,
+     "d": "2024-05-04",
+     "es": "2024-05-04-ufc-301-pantoja-vs-erceg",
+     "n": 1,
+     "o": "Kevin Borjas",
+     "oe": 1477,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       1
+      ],
+      [
+       2,
+       1.0,
+       27
+      ]
+     ],
+     "sa": 18,
+     "secs": 395,
+     "sl": 46,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 389,
+     "cf": 74,
+     "d": "2023-11-11",
+     "es": "2023-11-11-ufc-295-prochazka-vs-pereira",
+     "n": 8,
+     "o": "Steve Erceg",
+     "oe": 1526,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -15
+      ],
+      [
+       2,
+       0.0,
+       0
+      ],
+      [
+       3,
+       0.0,
+       -5
+      ]
+     ],
+     "sa": 74,
+     "secs": 900,
+     "sl": 54,
+     "tdl": 1,
+     "tdo": 1
+    },
+    {
+     "ca": 14,
+     "cf": 50,
+     "d": "2023-06-17",
+     "es": "2023-06-17-ufc-fight-night-vettori-vs-cannonier",
+     "n": 6,
+     "o": "Jimmy Flick",
+     "oe": 1499,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       40
+      ],
+      [
+       2,
+       1.0,
+       11
+      ]
+     ],
+     "sa": 14,
+     "secs": 363,
+     "sl": 65,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 354,
+     "cf": 0,
+     "d": "2022-12-17",
+     "es": "2022-12-17-ufc-fight-night-cannonier-vs-strickland",
+     "n": 11,
+     "o": "Amir Albazi",
+     "oe": 1567,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       2
+      ],
+      [
+       2,
+       0.0,
+       -17
+      ],
+      [
+       3,
+       0.0,
+       -5
+      ]
+     ],
+     "sa": 37,
+     "secs": 733,
+     "sl": 17,
+     "tdl": 0,
+     "tdo": 1
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": -0.1478,
+    "ctrl": 0.0936,
+    "ctrl_ag": 0.2305,
+    "net_ctrl": -0.1369,
+    "sub15": 0.853,
+    "td15": 0.853,
+    "td_acc": 0.2667,
+    "tdd": 0.8519
+   },
+   "grap_won": {
+    "k": 3,
+    "n": 6
+   },
+   "hdef": 0.6403,
+   "kd_against": 2,
+   "kd_for": 4,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 3
+   },
+   "minutes": 70.3,
+   "name": "Alessandro Costa",
+   "out_landed": {
+    "k": 3,
+    "n": 8
+   },
+   "outcomes": {
+    "l": {
+     "dec": 1,
+     "ko": 2,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 4,
+     "sub": 1
+    }
+   },
+   "pace": {
+    "min": 8.794,
+    "n": 8,
+    "r1": 0.125
+   },
+   "power_fights": 4,
+   "power_w": 0.507,
+   "rounds": [
+    {
+     "diff_pm": 0.56,
+     "fights": 8,
+     "landed_pm": 4.324,
+     "mins": 37.47,
+     "r": 1,
+     "won": 0.25
+    },
+    {
+     "diff_pm": 0.281,
+     "fights": 7,
+     "landed_pm": 3.818,
+     "mins": 24.88,
+     "r": 2,
+     "won": 0.5714
+    },
+    {
+     "diff_pm": -2.375,
+     "fights": 3,
+     "landed_pm": 2.5,
+     "mins": 8.0,
+     "r": 3,
+     "won": 0.0
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 0.039,
+    "opp_elo": 1506.8,
+    "sd": 0.128
+   },
+   "target": {
+    "body": 0.1877,
+    "head": 0.6137,
+    "leg": 0.1986
+   },
+   "target_diff": {
+    "body": -0.128,
+    "head": 0.028,
+    "leg": 0.227
+   },
+   "ufc_fights": 8,
+   "ufc_ko_losses": 2,
+   "ufc_ko_wins": 4
+  },
+  "Alik Lorenz": {
+   "bio": {
+    "dob": "1997-01-25",
+    "ht": "6'2\"",
+    "reach": "77",
+    "source": "UFCStats fighter list (debut)",
+    "stance": "Orthodox",
+    "url": "http://ufcstats.com/fighter-details/92b5f4ee9ff40321"
+   },
+   "dropped_fights": 0,
+   "dropped_w": null,
+   "fights": [],
+   "grap": {
+    "ctrl": null,
+    "ctrl_ag": null,
+    "sub15": null,
+    "td15": null,
+    "td_acc": null,
+    "tdd": null
+   },
+   "grap_won": {
+    "k": 0,
+    "n": 0
+   },
+   "hdef": null,
+   "kd_against": 0,
+   "kd_for": 0,
+   "last5": {
+    "dropped": 0,
+    "fights": 0,
+    "power": 0
+   },
+   "minutes": 0.0,
+   "name": "Alik Lorenz",
+   "out_landed": {
+    "k": 0,
+    "n": 0
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": null,
+    "n": 0,
+    "r1": null
+   },
+   "power_fights": 0,
+   "power_w": null,
+   "rounds": [
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 1,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 2,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 3,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "target": {
+    "body": null,
+    "head": null,
+    "leg": null
+   },
+   "target_diff": {
+    "body": null,
+    "head": null,
+    "leg": null
+   },
+   "ufc_fights": 0,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 0
+  },
+  "Aljamain Sterling": {
+   "dropped_fights": 4,
+   "dropped_w": 0.1282,
+   "fights": [
+    {
+     "ca": 239,
+     "cf": 829,
+     "d": "2026-04-25",
+     "es": "2026-04-25-ufc-fight-night-sterling-vs-zalal",
+     "n": 13,
+     "o": "Youssef Zalal",
+     "oe": 1586,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       4
+      ],
+      [
+       2,
+       1.0,
+       0
+      ],
+      [
+       3,
+       0.0,
+       -1
+      ],
+      [
+       4,
+       1.0,
+       13
+      ],
+      [
+       5,
+       1.0,
+       -5
+      ]
+     ],
+     "sa": 35,
+     "secs": 1500,
+     "sl": 46,
+     "tdl": 6,
+     "tdo": 0
+    },
+    {
+     "ca": 8,
+     "cf": 235,
+     "d": "2025-08-23",
+     "es": "2025-08-23-ufc-fight-night-walker-vs-zhang",
+     "n": 11,
+     "o": "Brian Ortega",
+     "oe": 1607,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       25
+      ],
+      [
+       2,
+       1.0,
+       4
+      ],
+      [
+       3,
+       1.0,
+       14
+      ],
+      [
+       4,
+       1.0,
+       12
+      ],
+      [
+       5,
+       1.0,
+       14
+      ]
+     ],
+     "sa": 55,
+     "secs": 1500,
+     "sl": 124,
+     "tdl": 3,
+     "tdo": 0
+    },
+    {
+     "ca": 369,
+     "cf": 376,
+     "d": "2024-12-07",
+     "es": "2024-12-07-ufc-310-pantoja-vs-asakura",
+     "n": 7,
+     "o": "Movsar Evloev",
+     "oe": 1654,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       2
+      ],
+      [
+       2,
+       0.0,
+       2
+      ],
+      [
+       3,
+       1.0,
+       0
+      ]
+     ],
+     "sa": 8,
+     "secs": 900,
+     "sl": 12,
+     "tdl": 6,
+     "tdo": 4
+    },
+    {
+     "ca": 5,
+     "cf": 643,
+     "d": "2024-04-13",
+     "es": "2024-04-13-ufc-300-pereira-vs-hill",
+     "n": 7,
+     "o": "Calvin Kattar",
+     "oe": 1565,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ],
+      [
+       2,
+       1.0,
+       12
+      ],
+      [
+       3,
+       1.0,
+       10
+      ]
+     ],
+     "sa": 8,
+     "secs": 900,
+     "sl": 39,
+     "tdl": 8,
+     "tdo": 0
+    },
+    {
+     "ca": 18,
+     "cf": 34,
+     "d": "2023-08-19",
+     "es": "2023-08-19-ufc-292-sterling-vs-omalley",
+     "n": 12,
+     "o": "Sean O'Malley",
+     "oe": 1627,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       5
+      ],
+      [
+       2,
+       0.0,
+       -13
+      ]
+     ],
+     "sa": 25,
+     "secs": 351,
+     "sl": 17,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 306,
+     "cf": 240,
+     "d": "2023-05-06",
+     "es": "2023-05-06-ufc-288-sterling-vs-cejudo",
+     "n": 12,
+     "o": "Henry Cejudo",
+     "oe": 1665,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       13
+      ],
+      [
+       2,
+       0.0,
+       -2
+      ],
+      [
+       3,
+       1.0,
+       11
+      ],
+      [
+       4,
+       1.0,
+       17
+      ],
+      [
+       5,
+       0.0,
+       -3
+      ]
+     ],
+     "sa": 99,
+     "secs": 1500,
+     "sl": 135,
+     "tdl": 4,
+     "tdo": 3
+    },
+    {
+     "ca": 3,
+     "cf": 426,
+     "d": "2022-10-22",
+     "es": "2022-10-22-ufc-280-oliveira-vs-makhachev",
+     "n": 11,
+     "o": "TJ Dillashaw",
+     "oe": 1656,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       27
+      ],
+      [
+       2,
+       1.0,
+       37
+      ]
+     ],
+     "sa": 8,
+     "secs": 524,
+     "sl": 72,
+     "tdl": 5,
+     "tdo": 0
+    },
+    {
+     "ca": 352,
+     "cf": 511,
+     "d": "2022-04-09",
+     "es": "2022-04-09-ufc-273-volkanovski-vs-the-korean-zombie",
+     "n": 11,
+     "o": "Petr Yan",
+     "oe": 1639,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       6
+      ],
+      [
+       2,
+       1.0,
+       13
+      ],
+      [
+       3,
+       1.0,
+       -2
+      ],
+      [
+       4,
+       0.0,
+       -10
+      ],
+      [
+       5,
+       0.0,
+       -8
+      ]
+     ],
+     "sa": 63,
+     "secs": 1500,
+     "sl": 62,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 252,
+     "cf": 205,
+     "d": "2021-03-06",
+     "es": "2021-03-06-ufc-259-blachowicz-vs-adesanya",
+     "n": 13,
+     "o": "Petr Yan",
+     "oe": 1639,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       13
+      ],
+      [
+       2,
+       1.0,
+       7
+      ],
+      [
+       3,
+       0.0,
+       -1
+      ],
+      [
+       4,
+       1.0,
+       -8
+      ]
+     ],
+     "sa": 86,
+     "secs": 1169,
+     "sl": 97,
+     "tdl": 1,
+     "tdo": 7
+    },
+    {
+     "ca": 0,
+     "cf": 73,
+     "d": "2020-06-06",
+     "es": "2020-06-06-ufc-250-nunes-vs-spencer",
+     "n": 10,
+     "o": "Cory Sandhagen",
+     "oe": 1616,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       1
+      ]
+     ],
+     "sa": 1,
+     "secs": 88,
+     "sl": 2,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 5,
+     "cf": 0,
+     "d": "2019-06-08",
+     "es": "2019-06-08-ufc-238-cejudo-vs-moraes",
+     "n": 7,
+     "o": "Pedro Munhoz",
+     "oe": 1592,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       21
+      ],
+      [
+       2,
+       1.0,
+       21
+      ],
+      [
+       3,
+       1.0,
+       27
+      ]
+     ],
+     "sa": 105,
+     "secs": 900,
+     "sl": 174,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 169,
+     "cf": 164,
+     "d": "2019-02-17",
+     "es": "2019-02-17-ufc-fight-night-ngannou-vs-velasquez",
+     "n": 6,
+     "o": "Jimmie Rivera",
+     "oe": 1609,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       14
+      ],
+      [
+       2,
+       1.0,
+       39
+      ],
+      [
+       3,
+       1.0,
+       24
+      ]
+     ],
+     "sa": 24,
+     "secs": 900,
+     "sl": 101,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 155,
+     "cf": 172,
+     "d": "2018-09-08",
+     "es": "2018-09-08-ufc-228-woodley-vs-till",
+     "n": 7,
+     "o": "Cody Stamann",
+     "oe": 1574,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       6
+      ],
+      [
+       2,
+       1.0,
+       15
+      ]
+     ],
+     "sa": 12,
+     "secs": 522,
+     "sl": 33,
+     "tdl": 2,
+     "tdo": 3
+    },
+    {
+     "ca": 390,
+     "cf": 81,
+     "d": "2018-04-21",
+     "es": "2018-04-21-ufc-fight-night-barboza-vs-lee",
+     "n": 7,
+     "o": "Brett Johns",
+     "oe": 1568,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       12
+      ],
+      [
+       2,
+       1.0,
+       29
+      ],
+      [
+       3,
+       1.0,
+       21
+      ]
+     ],
+     "sa": 27,
+     "secs": 900,
+     "sl": 89,
+     "tdl": 3,
+     "tdo": 1
+    },
+    {
+     "ca": 13,
+     "cf": 0,
+     "d": "2017-12-09",
+     "es": "2017-12-09-ufc-fight-night-swanson-vs-ortega",
+     "n": 11,
+     "o": "Marlon Moraes",
+     "oe": 1514,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -4
+      ]
+     ],
+     "sa": 7,
+     "secs": 67,
+     "sl": 3,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 273,
+     "cf": 340,
+     "d": "2017-07-29",
+     "es": "2017-07-29-ufc-214-cormier-vs-jones-2",
+     "n": 6,
+     "o": "Renan Barao",
+     "oe": 1600,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       1
+      ],
+      [
+       2,
+       1.0,
+       32
+      ],
+      [
+       3,
+       1.0,
+       19
+      ]
+     ],
+     "sa": 19,
+     "secs": 900,
+     "sl": 71,
+     "tdl": 1,
+     "tdo": 2
+    },
+    {
+     "ca": 193,
+     "cf": 360,
+     "d": "2017-04-15",
+     "es": "2017-04-15-ufc-on-fox-johnson-vs-reis",
+     "n": 5,
+     "o": "Augusto Mendes",
+     "oe": 1507,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       14
+      ],
+      [
+       2,
+       1.0,
+       11
+      ],
+      [
+       3,
+       1.0,
+       28
+      ]
+     ],
+     "sa": 30,
+     "secs": 900,
+     "sl": 83,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 2,
+     "d": "2017-01-28",
+     "es": "2017-01-28-ufc-on-fox-shevchenko-vs-pena",
+     "n": 7,
+     "o": "Raphael Assuncao",
+     "oe": 1593,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       5
+      ],
+      [
+       2,
+       1.0,
+       2
+      ],
+      [
+       3,
+       1.0,
+       6
+      ]
+     ],
+     "sa": 39,
+     "secs": 900,
+     "sl": 52,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 394,
+     "cf": 231,
+     "d": "2016-05-29",
+     "es": "2016-05-29-ufc-fight-night-almeida-vs-garbrandt",
+     "n": 2,
+     "o": "Bryan Caraway",
+     "oe": 1562,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       6
+      ],
+      [
+       2,
+       1.0,
+       13
+      ],
+      [
+       3,
+       0.0,
+       4
+      ]
+     ],
+     "sa": 9,
+     "secs": 900,
+     "sl": 32,
+     "tdl": 1,
+     "tdo": 3
+    },
+    {
+     "ca": 1,
+     "cf": 208,
+     "d": "2015-12-10",
+     "es": "2015-12-10-ufc-fight-night-namajunas-vs-vanzant",
+     "n": 5,
+     "o": "Johnny Eduardo",
+     "oe": 1522,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       1
+      ],
+      [
+       2,
+       1.0,
+       18
+      ]
+     ],
+     "sa": 4,
+     "secs": 558,
+     "sl": 23,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 31,
+     "cf": 455,
+     "d": "2015-04-18",
+     "es": "2015-04-18-ufc-on-fox-machida-vs-rockhold",
+     "n": 4,
+     "o": "Takeya Mizugaki",
+     "oe": 1560,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       16
+      ],
+      [
+       2,
+       1.0,
+       4
+      ],
+      [
+       3,
+       1.0,
+       -1
+      ]
+     ],
+     "sa": 13,
+     "secs": 731,
+     "sl": 32,
+     "tdl": 3,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 514,
+     "d": "2014-07-16",
+     "es": "2014-07-16-ufc-fight-night-cowboy-vs-miller",
+     "n": 3,
+     "o": "Hugo Viana",
+     "oe": 1543,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       6
+      ],
+      [
+       2,
+       1.0,
+       13
+      ],
+      [
+       3,
+       1.0,
+       28
+      ]
+     ],
+     "sa": 15,
+     "secs": 830,
+     "sl": 62,
+     "tdl": 4,
+     "tdo": 0
+    },
+    {
+     "ca": 190,
+     "cf": 474,
+     "d": "2014-02-22",
+     "es": "2014-02-22-ufc-170-rousey-vs-mcmann",
+     "n": 4,
+     "o": "Cody Gibson",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       11
+      ],
+      [
+       2,
+       0.0,
+       8
+      ],
+      [
+       3,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 18,
+     "secs": 900,
+     "sl": 46,
+     "tdl": 3,
+     "tdo": 4
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.1865,
+    "ctrl": 0.3313,
+    "ctrl_ag": 0.1697,
+    "net_ctrl": 0.1616,
+    "sub15": 0.635,
+    "td15": 2.54,
+    "td_acc": 0.3218,
+    "tdd": 0.449
+   },
+   "grap_won": {
+    "k": 14,
+    "n": 19
+   },
+   "hdef": 0.7114,
+   "kd_against": 5,
+   "kd_for": 0,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 0
+   },
+   "minutes": 330.7,
+   "name": "Aljamain Sterling",
+   "out_landed": {
+    "k": 20,
+    "n": 23
+   },
+   "outcomes": {
+    "l": {
+     "dec": 3,
+     "ko": 2,
+     "sub": 0
+    },
+    "w": {
+     "dec": 11,
+     "ko": 2,
+     "sub": 4
+    }
+   },
+   "pace": {
+    "min": 14.377,
+    "n": 23,
+    "r1": 0.087
+   },
+   "power_fights": 0,
+   "power_w": 0.0,
+   "r45": {
+    "diff_pm_13": 2.359,
+    "diff_pm_45": 0.495,
+    "fights": 5,
+    "landed_pm_13": 4.308,
+    "landed_pm_45": 3.912
+   },
+   "rounds": [
+    {
+     "diff_pm": 1.989,
+     "fights": 23,
+     "landed_pm": 3.616,
+     "mins": 107.58,
+     "r": 1,
+     "won": 0.8696
+    },
+    {
+     "diff_pm": 2.716,
+     "fights": 21,
+     "landed_pm": 4.95,
+     "mins": 97.58,
+     "r": 2,
+     "won": 0.8095
+    },
+    {
+     "diff_pm": 2.419,
+     "fights": 17,
+     "landed_pm": 4.456,
+     "mins": 81.02,
+     "r": 3,
+     "won": 0.8235
+    },
+    {
+     "diff_pm": 0.98,
+     "fights": 5,
+     "landed_pm": 4.452,
+     "mins": 24.48,
+     "r": 4,
+     "won": 0.8
+    },
+    {
+     "diff_pm": -0.1,
+     "fights": 4,
+     "landed_pm": 3.25,
+     "mins": 20.0,
+     "r": 5,
+     "won": 0.5
+    }
+   ],
+   "sos": {
+    "adj_sd": 2.312,
+    "opp_elo": 1593.5,
+    "sd": 2.108
+   },
+   "target": {
+    "body": 0.3149,
+    "head": 0.4996,
+    "leg": 0.1855
+   },
+   "target_diff": {
+    "body": 0.765,
+    "head": 1.052,
+    "leg": 0.29
+   },
+   "ufc_fights": 23,
+   "ufc_ko_losses": 2,
+   "ufc_ko_wins": 2
+  },
+  "Amir Albazi": {
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "fights": [
+    {
+     "ca": 62,
+     "cf": 230,
+     "d": "2026-02-07",
+     "es": "2026-02-07-ufc-fight-night-bautista-vs-oliveira",
+     "n": 12,
+     "o": "Kyoji Horiguchi",
+     "oe": 1621,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -11
+      ],
+      [
+       2,
+       0.0,
+       -26
+      ],
+      [
+       3,
+       0.0,
+       -20
+      ]
+     ],
+     "sa": 73,
+     "secs": 900,
+     "sl": 16,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 9,
+     "d": "2024-11-02",
+     "es": "2024-11-02-ufc-fight-night-moreno-vs-albazi",
+     "n": 13,
+     "o": "Brandon Moreno",
+     "oe": 1587,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -2
+      ],
+      [
+       2,
+       0.0,
+       -23
+      ],
+      [
+       3,
+       0.0,
+       -19
+      ],
+      [
+       4,
+       0.0,
+       -2
+      ],
+      [
+       5,
+       0.0,
+       -23
+      ]
+     ],
+     "sa": 132,
+     "secs": 1500,
+     "sl": 63,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 58,
+     "cf": 370,
+     "d": "2023-06-03",
+     "es": "2023-06-03-ufc-fight-night-kara-france-vs-albazi",
+     "n": 13,
+     "o": "Kai Kara-France",
+     "oe": 1569,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -7
+      ],
+      [
+       2,
+       0.0,
+       -5
+      ],
+      [
+       3,
+       1.0,
+       -6
+      ],
+      [
+       4,
+       0.0,
+       -22
+      ],
+      [
+       5,
+       0.0,
+       -16
+      ]
+     ],
+     "sa": 99,
+     "secs": 1500,
+     "sl": 43,
+     "tdl": 1,
+     "tdo": 2
+    },
+    {
+     "ca": 0,
+     "cf": 354,
+     "d": "2022-12-17",
+     "es": "2022-12-17-ufc-fight-night-cannonier-vs-strickland",
+     "n": 11,
+     "o": "Alessandro Costa",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       -2
+      ],
+      [
+       2,
+       1.0,
+       17
+      ],
+      [
+       3,
+       1.0,
+       5
+      ]
+     ],
+     "sa": 17,
+     "secs": 733,
+     "sl": 37,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 156,
+     "d": "2022-08-20",
+     "es": "2022-08-20-ufc-278-usman-vs-edwards",
+     "n": 3,
+     "o": "Francisco Figueiredo",
+     "oe": 1517,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       1
+      ]
+     ],
+     "sa": 11,
+     "secs": 274,
+     "sl": 12,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 27,
+     "cf": 218,
+     "d": "2021-01-23",
+     "es": "2021-01-23-ufc-257-poirier-vs-mcgregor",
+     "n": 1,
+     "o": "Zhalgas Zhumagulov",
+     "oe": 1475,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -9
+      ],
+      [
+       2,
+       1.0,
+       6
+      ],
+      [
+       3,
+       1.0,
+       12
+      ]
+     ],
+     "sa": 59,
+     "secs": 900,
+     "sl": 68,
+     "tdl": 2,
+     "tdo": 1
+    },
+    {
+     "ca": 22,
+     "cf": 141,
+     "d": "2020-07-18",
+     "es": "2020-07-18-ufc-fight-night-figueiredo-vs-benavidez-2",
+     "n": 3,
+     "o": "Malcolm Gordon",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 3,
+     "secs": 282,
+     "sl": 12,
+     "tdl": 1,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.2234,
+    "ctrl": 0.2427,
+    "ctrl_ag": 0.0278,
+    "net_ctrl": 0.215,
+    "sub15": 0.443,
+    "td15": 1.182,
+    "td_acc": 0.25,
+    "tdd": 0.625
+   },
+   "grap_won": {
+    "k": 7,
+    "n": 7
+   },
+   "hdef": 0.6607,
+   "kd_against": 0,
+   "kd_for": 2,
+   "last5": {
+    "dropped": 0,
+    "fights": 5,
+    "power": 1
+   },
+   "minutes": 101.5,
+   "name": "Amir Albazi",
+   "out_landed": {
+    "k": 4,
+    "n": 7
+   },
+   "outcomes": {
+    "l": {
+     "dec": 2,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 2,
+     "ko": 1,
+     "sub": 2
+    }
+   },
+   "pace": {
+    "min": 14.498,
+    "n": 7,
+    "r1": 0.2857
+   },
+   "power_fights": 1,
+   "power_w": 0.1287,
+   "r45": {
+    "diff_pm_13": -0.982,
+    "diff_pm_45": -3.15,
+    "fights": 2,
+    "landed_pm_13": 2.442,
+    "landed_pm_45": 2.6
+   },
+   "rounds": [
+    {
+     "diff_pm": -0.613,
+     "fights": 7,
+     "landed_pm": 2.101,
+     "mins": 34.27,
+     "r": 1,
+     "won": 0.4286
+    },
+    {
+     "diff_pm": -1.24,
+     "fights": 5,
+     "landed_pm": 2.96,
+     "mins": 25.0,
+     "r": 2,
+     "won": 0.4
+    },
+    {
+     "diff_pm": -1.26,
+     "fights": 5,
+     "landed_pm": 2.386,
+     "mins": 22.22,
+     "r": 3,
+     "won": 0.6
+    },
+    {
+     "diff_pm": -2.4,
+     "fights": 2,
+     "landed_pm": 2.5,
+     "mins": 10.0,
+     "r": 4,
+     "won": 0.0
+    },
+    {
+     "diff_pm": -3.9,
+     "fights": 2,
+     "landed_pm": 2.7,
+     "mins": 10.0,
+     "r": 5,
+     "won": 0.0
+    }
+   ],
+   "sos": {
+    "adj_sd": -1.34,
+    "opp_elo": 1553.4,
+    "sd": -1.409
+   },
+   "target": {
+    "body": 0.1753,
+    "head": 0.6932,
+    "leg": 0.1315
+   },
+   "target_diff": {
+    "body": -0.325,
+    "head": -0.907,
+    "leg": -0.177
+   },
+   "ufc_fights": 7,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 1
+  },
+  "Asu Almabayev": {
+   "dropped_fights": 1,
+   "dropped_w": 0.1224,
+   "fights": [
+    {
+     "ca": 0,
+     "cf": 528,
+     "d": "2026-06-27",
+     "es": "2026-06-27-ufc-fight-night-fiziev-vs-torres",
+     "n": 10,
+     "o": "Charles Johnson",
+     "oe": 1536,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       4
+      ],
+      [
+       2,
+       1.0,
+       -1
+      ],
+      [
+       3,
+       1.0,
+       4
+      ]
+     ],
+     "sa": 21,
+     "secs": 813,
+     "sl": 28,
+     "tdl": 6,
+     "tdo": 0
+    },
+    {
+     "ca": 138,
+     "cf": 72,
+     "d": "2025-11-22",
+     "es": "2025-11-22-ufc-fight-night-tsarukyan-vs-hooker",
+     "n": 6,
+     "o": "Alex Perez",
+     "oe": 1550,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       2
+      ],
+      [
+       2,
+       0.0,
+       -8
+      ],
+      [
+       3,
+       1.0,
+       2
+      ]
+     ],
+     "sa": 40,
+     "secs": 622,
+     "sl": 36,
+     "tdl": 2,
+     "tdo": 3
+    },
+    {
+     "ca": 56,
+     "cf": 566,
+     "d": "2025-07-26",
+     "es": "2025-07-26-ufc-fight-night-whittaker-vs-de-ridder",
+     "n": 9,
+     "o": "Jose Ochoa",
+     "oe": 1502,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       -5
+      ],
+      [
+       2,
+       1.0,
+       6
+      ],
+      [
+       3,
+       1.0,
+       -5
+      ]
+     ],
+     "sa": 26,
+     "secs": 900,
+     "sl": 22,
+     "tdl": 7,
+     "tdo": 1
+    },
+    {
+     "ca": 29,
+     "cf": 0,
+     "d": "2025-03-01",
+     "es": "2025-03-01-ufc-fight-night-kape-vs-almabayev",
+     "n": 10,
+     "o": "Manel Kape",
+     "oe": 1545,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -5
+      ],
+      [
+       2,
+       1.0,
+       4
+      ],
+      [
+       3,
+       0.0,
+       -20
+      ]
+     ],
+     "sa": 61,
+     "secs": 736,
+     "sl": 40,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 317,
+     "d": "2024-10-19",
+     "es": "2024-10-19-ufc-fight-night-hernandez-vs-pereira",
+     "n": 6,
+     "o": "Matheus Nicolau",
+     "oe": 1565,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       4
+      ],
+      [
+       2,
+       0.0,
+       -4
+      ],
+      [
+       3,
+       1.0,
+       6
+      ]
+     ],
+     "sa": 16,
+     "secs": 900,
+     "sl": 22,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 63,
+     "cf": 684,
+     "d": "2024-06-15",
+     "es": "2024-06-15-ufc-fight-night-perez-vs-taira",
+     "n": 7,
+     "o": "Jose Johnson",
+     "oe": 1502,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       1
+      ],
+      [
+       2,
+       1.0,
+       6
+      ],
+      [
+       3,
+       1.0,
+       8
+      ]
+     ],
+     "sa": 5,
+     "secs": 900,
+     "sl": 20,
+     "tdl": 6,
+     "tdo": 1
+    },
+    {
+     "ca": 14,
+     "cf": 572,
+     "d": "2024-03-09",
+     "es": "2024-03-09-ufc-299-omalley-vs-vera-2",
+     "n": 2,
+     "o": "CJ Vergara",
+     "oe": 1513,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ],
+      [
+       2,
+       1.0,
+       4
+      ],
+      [
+       3,
+       1.0,
+       2
+      ]
+     ],
+     "sa": 29,
+     "secs": 900,
+     "sl": 44,
+     "tdl": 9,
+     "tdo": 0
+    },
+    {
+     "ca": 21,
+     "cf": 324,
+     "d": "2023-08-05",
+     "es": "2023-08-05-ufc-fight-night-sandhagen-vs-font",
+     "n": 1,
+     "o": "Ode Osbourne",
+     "oe": 1515,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       18
+      ],
+      [
+       2,
+       1.0,
+       4
+      ]
+     ],
+     "sa": 4,
+     "secs": 491,
+     "sl": 26,
+     "tdl": 2,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.4358,
+    "ctrl": 0.4891,
+    "ctrl_ag": 0.0513,
+    "net_ctrl": 0.4379,
+    "sub15": 1.437,
+    "td15": 4.743,
+    "td_acc": 0.4583,
+    "tdd": 0.4444
+   },
+   "grap_won": {
+    "k": 6,
+    "n": 7
+   },
+   "hdef": 0.6357,
+   "kd_against": 0,
+   "kd_for": 1,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 1
+   },
+   "minutes": 104.4,
+   "name": "Asu Almabayev",
+   "out_landed": {
+    "k": 5,
+    "n": 8
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 1,
+     "sub": 0
+    },
+    "w": {
+     "dec": 4,
+     "ko": 0,
+     "sub": 3
+    }
+   },
+   "pace": {
+    "min": 13.046,
+    "n": 8,
+    "r1": 0.0
+   },
+   "power_fights": 1,
+   "power_w": 0.0972,
+   "rounds": [
+    {
+     "diff_pm": 0.7,
+     "fights": 8,
+     "landed_pm": 2.425,
+     "mins": 40.0,
+     "r": 1,
+     "won": 0.875
+    },
+    {
+     "diff_pm": 0.288,
+     "fights": 8,
+     "landed_pm": 2.278,
+     "mins": 38.18,
+     "r": 2,
+     "won": 0.75
+    },
+    {
+     "diff_pm": -0.115,
+     "fights": 7,
+     "landed_pm": 2.062,
+     "mins": 26.18,
+     "r": 3,
+     "won": 0.8571
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 0.328,
+    "opp_elo": 1527.9,
+    "sd": 0.345
+   },
+   "target": {
+    "body": 0.2437,
+    "head": 0.5378,
+    "leg": 0.2185
+   },
+   "target_diff": {
+    "body": -0.086,
+    "head": 0.249,
+    "leg": 0.182
+   },
+   "ufc_fights": 8,
+   "ufc_ko_losses": 1,
+   "ufc_ko_wins": 0
+  },
+  "Brian Ortega": {
+   "dropped_fights": 2,
+   "dropped_w": 0.1566,
+   "fights": [
+    {
+     "ca": 235,
+     "cf": 8,
+     "d": "2025-08-23",
+     "es": "2025-08-23-ufc-fight-night-walker-vs-zhang",
+     "n": 11,
+     "o": "Aljamain Sterling",
+     "oe": 1682,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -25
+      ],
+      [
+       2,
+       0.0,
+       -4
+      ],
+      [
+       3,
+       0.0,
+       -14
+      ],
+      [
+       4,
+       0.0,
+       -12
+      ],
+      [
+       5,
+       0.0,
+       -14
+      ]
+     ],
+     "sa": 124,
+     "secs": 1500,
+     "sl": 55,
+     "tdl": 0,
+     "tdo": 3
+    },
+    {
+     "ca": 165,
+     "cf": 6,
+     "d": "2024-09-14",
+     "es": "2024-09-14-ufc-306-riyadh-season-noche-ufc",
+     "n": 8,
+     "o": "Diego Lopes",
+     "oe": 1585,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -14
+      ],
+      [
+       2,
+       0.0,
+       -6
+      ],
+      [
+       3,
+       0.0,
+       -23
+      ]
+     ],
+     "sa": 106,
+     "secs": 900,
+     "sl": 63,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 92,
+     "cf": 321,
+     "d": "2024-02-24",
+     "es": "2024-02-24-ufc-fight-night-moreno-vs-royval-2",
+     "n": 11,
+     "o": "Yair Rodriguez",
+     "oe": 1634,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -39
+      ],
+      [
+       2,
+       1.0,
+       13
+      ],
+      [
+       3,
+       1.0,
+       -1
+      ]
+     ],
+     "sa": 55,
+     "secs": 658,
+     "sl": 28,
+     "tdl": 3,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 144,
+     "d": "2022-07-16",
+     "es": "2022-07-16-ufc-fight-night-ortega-vs-rodriguez",
+     "n": 12,
+     "o": "Yair Rodriguez",
+     "oe": 1615,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -1
+      ]
+     ],
+     "sa": 23,
+     "secs": 251,
+     "sl": 22,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 231,
+     "cf": 54,
+     "d": "2021-09-25",
+     "es": "2021-09-25-ufc-266-volkanovski-vs-ortega",
+     "n": 13,
+     "o": "Alexander Volkanovski",
+     "oe": 1676,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -14
+      ],
+      [
+       2,
+       0.0,
+       -15
+      ],
+      [
+       3,
+       0.0,
+       -44
+      ],
+      [
+       4,
+       0.0,
+       -29
+      ],
+      [
+       5,
+       0.0,
+       -24
+      ]
+     ],
+     "sa": 214,
+     "secs": 1500,
+     "sl": 88,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 57,
+     "d": "2020-10-17",
+     "es": "2020-10-17-ufc-fight-night-ortega-vs-the-korean-zombie",
+     "n": 11,
+     "o": "Chan Sung Jung",
+     "oe": 1594,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       10
+      ],
+      [
+       2,
+       1.0,
+       9
+      ],
+      [
+       3,
+       1.0,
+       21
+      ],
+      [
+       4,
+       1.0,
+       9
+      ],
+      [
+       5,
+       1.0,
+       16
+      ]
+     ],
+     "sa": 62,
+     "secs": 1500,
+     "sl": 127,
+     "tdl": 3,
+     "tdo": 0
+    },
+    {
+     "ca": 16,
+     "cf": 145,
+     "d": "2018-12-08",
+     "es": "2018-12-08-ufc-231-holloway-vs-ortega",
+     "n": 13,
+     "o": "Max Holloway",
+     "oe": 1691,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -21
+      ],
+      [
+       2,
+       0.0,
+       -33
+      ],
+      [
+       3,
+       0.0,
+       -20
+      ],
+      [
+       4,
+       0.0,
+       -106
+      ]
+     ],
+     "sa": 290,
+     "secs": 1200,
+     "sl": 110,
+     "tdl": 2,
+     "tdo": 1
+    },
+    {
+     "ca": 0,
+     "cf": 2,
+     "d": "2018-03-03",
+     "es": "2018-03-03-ufc-222-cyborg-vs-kunitskaya",
+     "n": 11,
+     "o": "Frankie Edgar",
+     "oe": 1670,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       -2
+      ]
+     ],
+     "sa": 27,
+     "secs": 284,
+     "sl": 25,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 14,
+     "cf": 30,
+     "d": "2017-12-09",
+     "es": "2017-12-09-ufc-fight-night-swanson-vs-ortega",
+     "n": 13,
+     "o": "Cub Swanson",
+     "oe": 1624,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -14
+      ],
+      [
+       2,
+       1.0,
+       -22
+      ]
+     ],
+     "sa": 60,
+     "secs": 502,
+     "sl": 24,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 20,
+     "cf": 0,
+     "d": "2017-07-29",
+     "es": "2017-07-29-ufc-214-cormier-vs-jones-2",
+     "n": 5,
+     "o": "Renato Moicano",
+     "oe": 1572,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -20
+      ],
+      [
+       2,
+       0.0,
+       -16
+      ],
+      [
+       3,
+       1.0,
+       -8
+      ]
+     ],
+     "sa": 109,
+     "secs": 779,
+     "sl": 65,
+     "tdl": 0,
+     "tdo": 2
+    },
+    {
+     "ca": 31,
+     "cf": 3,
+     "d": "2016-06-04",
+     "es": "2016-06-04-ufc-199-rockhold-vs-bisping-2",
+     "n": 8,
+     "o": "Clay Guida",
+     "oe": 1546,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -12
+      ],
+      [
+       2,
+       1.0,
+       0
+      ],
+      [
+       3,
+       1.0,
+       12
+      ]
+     ],
+     "sa": 62,
+     "secs": 880,
+     "sl": 62,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 20,
+     "cf": 101,
+     "d": "2016-01-02",
+     "es": "2016-01-02-ufc-195-lawler-vs-condit",
+     "n": 9,
+     "o": "Diego Brandao",
+     "oe": 1560,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -14
+      ],
+      [
+       2,
+       0.0,
+       -7
+      ],
+      [
+       3,
+       1.0,
+       -6
+      ]
+     ],
+     "sa": 56,
+     "secs": 697,
+     "sl": 29,
+     "tdl": 0,
+     "tdo": 2
+    },
+    {
+     "ca": 502,
+     "cf": 54,
+     "d": "2015-06-06",
+     "es": "2015-06-06-ufc-fight-night-boetsch-vs-henderson",
+     "n": 9,
+     "o": "Thiago Tavares",
+     "oe": 1569,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -5
+      ],
+      [
+       2,
+       0.0,
+       -4
+      ],
+      [
+       3,
+       1.0,
+       11
+      ]
+     ],
+     "sa": 39,
+     "secs": 850,
+     "sl": 41,
+     "tdl": 0,
+     "tdo": 6
+    },
+    {
+     "ca": 0,
+     "cf": 73,
+     "d": "2014-07-26",
+     "es": "2014-07-26-ufc-on-fox-lawler-vs-brown",
+     "n": 5,
+     "o": "Mike de la Torre",
+     "oe": 1478,
+     "r": "D",
+     "rw": [
+      [
+       1,
+       1.0,
+       -3
+      ]
+     ],
+     "sa": 6,
+     "secs": 99,
+     "sl": 3,
+     "tdl": 1,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.0081,
+    "ctrl": 0.086,
+    "ctrl_ag": 0.1143,
+    "net_ctrl": -0.0283,
+    "sub15": 0.931,
+    "td15": 0.931,
+    "td_acc": 0.25,
+    "tdd": 0.5455
+   },
+   "grap_won": {
+    "k": 6,
+    "n": 11
+   },
+   "hdef": 0.5621,
+   "kd_against": 2,
+   "kd_for": 5,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 0
+   },
+   "minutes": 193.3,
+   "name": "Brian Ortega",
+   "out_landed": {
+    "k": 2,
+    "n": 14
+   },
+   "outcomes": {
+    "l": {
+     "dec": 3,
+     "ko": 1,
+     "sub": 0
+    },
+    "w": {
+     "dec": 1,
+     "ko": 3,
+     "sub": 4
+    }
+   },
+   "pace": {
+    "min": 14.745,
+    "n": 13,
+    "r1": 0.1538
+   },
+   "power_fights": 4,
+   "power_w": 0.145,
+   "r45": {
+    "diff_pm_13": -2.091,
+    "diff_pm_45": -4.571,
+    "fights": 4,
+    "landed_pm_13": 3.834,
+    "landed_pm_45": 3.857
+   },
+   "rounds": [
+    {
+     "diff_pm": -2.654,
+     "fights": 14,
+     "landed_pm": 2.898,
+     "mins": 65.57,
+     "r": 1,
+     "won": 0.2143
+    },
+    {
+     "diff_pm": -1.593,
+     "fights": 11,
+     "landed_pm": 3.841,
+     "mins": 53.37,
+     "r": 2,
+     "won": 0.3636
+    },
+    {
+     "diff_pm": -1.827,
+     "fights": 10,
+     "landed_pm": 5.381,
+     "mins": 39.4,
+     "r": 3,
+     "won": 0.6
+    },
+    {
+     "diff_pm": -6.9,
+     "fights": 4,
+     "landed_pm": 3.2,
+     "mins": 20.0,
+     "r": 4,
+     "won": 0.25
+    },
+    {
+     "diff_pm": -1.467,
+     "fights": 3,
+     "landed_pm": 4.733,
+     "mins": 15.0,
+     "r": 5,
+     "won": 0.3333
+    }
+   ],
+   "sos": {
+    "adj_sd": -2.237,
+    "opp_elo": 1622.5,
+    "sd": -2.54
+   },
+   "target": {
+    "body": 0.1833,
+    "head": 0.7116,
+    "leg": 0.1051
+   },
+   "target_diff": {
+    "body": -0.253,
+    "head": -1.795,
+    "leg": -0.491
+   },
+   "ufc_fights": 14,
+   "ufc_ko_losses": 1,
+   "ufc_ko_wins": 3
+  },
+  "Dan Hooker": {
+   "dropped_fights": 5,
+   "dropped_w": 0.4569,
+   "fights": [
+    {
+     "ca": 2,
+     "cf": 0,
+     "d": "2026-09-05",
+     "es": "2026-09-05-ufc-fight-night-hooker-vs-parnasse",
+     "n": 14,
+     "o": "Salahdine Parnasse",
+     "oe": 1500,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       2
+      ]
+     ],
+     "sa": 12,
+     "secs": 155,
+     "sl": 14,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 374,
+     "cf": 28,
+     "d": "2026-01-31",
+     "es": "2026-01-31-ufc-325-volkanovski-vs-lopes-2",
+     "n": 12,
+     "o": "Benoit Saint Denis",
+     "oe": 1604,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -9
+      ],
+      [
+       2,
+       0.0,
+       -58
+      ]
+     ],
+     "sa": 97,
+     "secs": 585,
+     "sl": 30,
+     "tdl": 0,
+     "tdo": 2
+    },
+    {
+     "ca": 362,
+     "cf": 10,
+     "d": "2025-11-22",
+     "es": "2025-11-22-ufc-fight-night-tsarukyan-vs-hooker",
+     "n": 14,
+     "o": "Arman Tsarukyan",
+     "oe": 1643,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -14
+      ],
+      [
+       2,
+       0.0,
+       -18
+      ]
+     ],
+     "sa": 42,
+     "secs": 514,
+     "sl": 10,
+     "tdl": 0,
+     "tdo": 2
+    },
+    {
+     "ca": 299,
+     "cf": 88,
+     "d": "2024-08-17",
+     "es": "2024-08-17-ufc-305-du-plessis-vs-adesanya",
+     "n": 10,
+     "o": "Mateusz Gamrot",
+     "oe": 1612,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -6
+      ],
+      [
+       2,
+       0.0,
+       6
+      ],
+      [
+       3,
+       0.0,
+       1
+      ]
+     ],
+     "sa": 64,
+     "secs": 900,
+     "sl": 65,
+     "tdl": 0,
+     "tdo": 5
+    },
+    {
+     "ca": 18,
+     "cf": 189,
+     "d": "2023-07-08",
+     "es": "2023-07-08-ufc-290-volkanovski-vs-rodriguez",
+     "n": 10,
+     "o": "Jalin Turner",
+     "oe": 1553,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       4
+      ],
+      [
+       2,
+       1.0,
+       10
+      ],
+      [
+       3,
+       1.0,
+       11
+      ]
+     ],
+     "sa": 100,
+     "secs": 900,
+     "sl": 125,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 8,
+     "cf": 128,
+     "d": "2022-11-12",
+     "es": "2022-11-12-ufc-281-adesanya-vs-pereira",
+     "n": 10,
+     "o": "Claudio Puelles",
+     "oe": 1577,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       10
+      ],
+      [
+       2,
+       1.0,
+       14
+      ]
+     ],
+     "sa": 5,
+     "secs": 546,
+     "sl": 29,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 2,
+     "cf": 0,
+     "d": "2022-03-19",
+     "es": "2022-03-19-ufc-fight-night-volkov-vs-aspinall",
+     "n": 11,
+     "o": "Arnold Allen",
+     "oe": 1641,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -35
+      ]
+     ],
+     "sa": 49,
+     "secs": 153,
+     "sl": 14,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 108,
+     "cf": 0,
+     "d": "2021-10-30",
+     "es": "2021-10-30-ufc-267-blachowicz-vs-teixeira",
+     "n": 12,
+     "o": "Islam Makhachev",
+     "oe": 1644,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       2
+      ]
+     ],
+     "sa": 2,
+     "secs": 145,
+     "sl": 4,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 3,
+     "cf": 424,
+     "d": "2021-09-25",
+     "es": "2021-09-25-ufc-266-volkanovski-vs-ortega",
+     "n": 7,
+     "o": "Nasrat Haqparast",
+     "oe": 1558,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       19
+      ],
+      [
+       2,
+       1.0,
+       18
+      ],
+      [
+       3,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 27,
+     "secs": 900,
+     "sl": 73,
+     "tdl": 3,
+     "tdo": 0
+    },
+    {
+     "ca": 9,
+     "cf": 0,
+     "d": "2021-01-23",
+     "es": "2021-01-23-ufc-257-poirier-vs-mcgregor",
+     "n": 10,
+     "o": "Michael Chandler",
+     "oe": 1500,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -9
+      ]
+     ],
+     "sa": 17,
+     "secs": 150,
+     "sl": 8,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 169,
+     "cf": 362,
+     "d": "2020-06-27",
+     "es": "2020-06-27-ufc-fight-night-poirier-vs-hooker",
+     "n": 10,
+     "o": "Dustin Poirier",
+     "oe": 1676,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       13
+      ],
+      [
+       2,
+       1.0,
+       18
+      ],
+      [
+       3,
+       0.0,
+       -8
+      ],
+      [
+       4,
+       0.0,
+       -9
+      ],
+      [
+       5,
+       0.0,
+       -12
+      ]
+     ],
+     "sa": 153,
+     "secs": 1500,
+     "sl": 155,
+     "tdl": 4,
+     "tdo": 1
+    },
+    {
+     "ca": 3,
+     "cf": 305,
+     "d": "2020-02-22",
+     "es": "2020-02-22-ufc-fight-night-felder-vs-hooker",
+     "n": 12,
+     "o": "Paul Felder",
+     "oe": 1593,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       8
+      ],
+      [
+       2,
+       1.0,
+       0
+      ],
+      [
+       3,
+       1.0,
+       11
+      ],
+      [
+       4,
+       0.0,
+       -10
+      ],
+      [
+       5,
+       1.0,
+       3
+      ]
+     ],
+     "sa": 110,
+     "secs": 1500,
+     "sl": 122,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 23,
+     "cf": 150,
+     "d": "2019-10-05",
+     "es": "2019-10-05-ufc-243-whittaker-vs-adesanya",
+     "n": 10,
+     "o": "Al Iaquinta",
+     "oe": 1601,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       33
+      ],
+      [
+       2,
+       1.0,
+       12
+      ],
+      [
+       3,
+       1.0,
+       16
+      ]
+     ],
+     "sa": 37,
+     "secs": 900,
+     "sl": 98,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 3,
+     "d": "2019-07-20",
+     "es": "2019-07-20-ufc-fight-night-dos-anjos-vs-edwards",
+     "n": 10,
+     "o": "James Vick",
+     "oe": 1606,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       15
+      ]
+     ],
+     "sa": 7,
+     "secs": 153,
+     "sl": 22,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 103,
+     "cf": 5,
+     "d": "2018-12-15",
+     "es": "2018-12-15-ufc-fight-night-lee-vs-iaquinta",
+     "n": 11,
+     "o": "Edson Barboza",
+     "oe": 1611,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -8
+      ],
+      [
+       2,
+       0.0,
+       -23
+      ],
+      [
+       3,
+       0.0,
+       -14
+      ]
+     ],
+     "sa": 126,
+     "secs": 739,
+     "sl": 81,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 15,
+     "d": "2018-07-07",
+     "es": "2018-07-07-ufc-226-miocic-vs-cormier",
+     "n": 2,
+     "o": "Gilbert Burns",
+     "oe": 1569,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 13,
+     "secs": 148,
+     "sl": 22,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 27,
+     "cf": 14,
+     "d": "2018-04-21",
+     "es": "2018-04-21-ufc-fight-night-barboza-vs-lee",
+     "n": 6,
+     "o": "Jim Miller",
+     "oe": 1577,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       14
+      ]
+     ],
+     "sa": 10,
+     "secs": 180,
+     "sl": 24,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 23,
+     "cf": 194,
+     "d": "2017-12-30",
+     "es": "2017-12-30-ufc-219-cyborg-vs-holm",
+     "n": 8,
+     "o": "Marc Diakiese",
+     "oe": 1538,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       1
+      ],
+      [
+       2,
+       1.0,
+       -4
+      ],
+      [
+       3,
+       1.0,
+       -4
+      ]
+     ],
+     "sa": 24,
+     "secs": 642,
+     "sl": 17,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 2,
+     "cf": 1,
+     "d": "2017-06-10",
+     "es": "2017-06-10-ufc-fight-night-lewis-vs-hunt",
+     "n": 9,
+     "o": "Ross Pearson",
+     "oe": 1517,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       12
+      ],
+      [
+       2,
+       1.0,
+       19
+      ]
+     ],
+     "sa": 38,
+     "secs": 482,
+     "sl": 69,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 292,
+     "cf": 42,
+     "d": "2016-11-26",
+     "es": "2016-11-26-ufc-fight-night-whittaker-vs-brunson",
+     "n": 3,
+     "o": "Jason Knight",
+     "oe": 1504,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       3
+      ],
+      [
+       2,
+       0.0,
+       -1
+      ],
+      [
+       3,
+       0.0,
+       -14
+      ]
+     ],
+     "sa": 59,
+     "secs": 900,
+     "sl": 47,
+     "tdl": 0,
+     "tdo": 4
+    },
+    {
+     "ca": 17,
+     "cf": 13,
+     "d": "2016-03-19",
+     "es": "2016-03-19-ufc-fight-night-hunt-vs-mir",
+     "n": 5,
+     "o": "Mark Eddiva",
+     "oe": 1476,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       1
+      ]
+     ],
+     "sa": 4,
+     "secs": 84,
+     "sl": 5,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 31,
+     "cf": 361,
+     "d": "2015-10-03",
+     "es": "2015-10-03-ufc-192-cormier-vs-gustafsson",
+     "n": 7,
+     "o": "Yair Rodriguez",
+     "oe": 1547,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -11
+      ],
+      [
+       2,
+       0.0,
+       -11
+      ],
+      [
+       3,
+       0.0,
+       -11
+      ]
+     ],
+     "sa": 52,
+     "secs": 900,
+     "sl": 19,
+     "tdl": 1,
+     "tdo": 2
+    },
+    {
+     "ca": 120,
+     "cf": 10,
+     "d": "2015-05-09",
+     "es": "2015-05-09-ufc-fight-night-miocic-vs-hunt",
+     "n": 8,
+     "o": "Hatsu Hioki",
+     "oe": 1490,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -8
+      ],
+      [
+       2,
+       1.0,
+       -3
+      ]
+     ],
+     "sa": 32,
+     "secs": 553,
+     "sl": 21,
+     "tdl": 0,
+     "tdo": 2
+    },
+    {
+     "ca": 154,
+     "cf": 104,
+     "d": "2014-09-20",
+     "es": "2014-09-20-ufc-fight-night-hunt-vs-nelson",
+     "n": 1,
+     "o": "Maximo Blanco",
+     "oe": 1476,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -12
+      ],
+      [
+       2,
+       0.0,
+       -30
+      ],
+      [
+       3,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 132,
+     "secs": 900,
+     "sl": 99,
+     "tdl": 0,
+     "tdo": 3
+    },
+    {
+     "ca": 21,
+     "cf": 114,
+     "d": "2014-06-28",
+     "es": "2014-06-28-ufc-fight-night-te-huna-vs-marquardt",
+     "n": 2,
+     "o": "Ian Entwistle",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       11
+      ]
+     ],
+     "sa": 1,
+     "secs": 214,
+     "sl": 12,
+     "tdl": 0,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.0432,
+    "ctrl": 0.1736,
+    "ctrl_ag": 0.1472,
+    "net_ctrl": 0.0265,
+    "sub15": 0.549,
+    "td15": 0.672,
+    "td_acc": 0.3333,
+    "tdd": 0.7714
+   },
+   "grap_won": {
+    "k": 9,
+    "n": 18
+   },
+   "hdef": 0.5455,
+   "kd_against": 3,
+   "kd_for": 9,
+   "last5": {
+    "dropped": 2,
+    "fights": 5,
+    "power": 1
+   },
+   "minutes": 245.7,
+   "name": "Dan Hooker",
+   "out_landed": {
+    "k": 15,
+    "n": 25
+   },
+   "outcomes": {
+    "l": {
+     "dec": 4,
+     "ko": 5,
+     "sub": 2
+    },
+    "w": {
+     "dec": 5,
+     "ko": 7,
+     "sub": 2
+    }
+   },
+   "pace": {
+    "min": 9.829,
+    "n": 25,
+    "r1": 0.36
+   },
+   "power_fights": 8,
+   "power_w": 0.1866,
+   "r45": {
+    "diff_pm_13": 0.0,
+    "diff_pm_45": -1.4,
+    "fights": 2,
+    "landed_pm_13": 4.944,
+    "landed_pm_45": 3.45
+   },
+   "rounds": [
+    {
+     "diff_pm": 0.437,
+     "fights": 25,
+     "landed_pm": 4.435,
+     "mins": 103.03,
+     "r": 1,
+     "won": 0.52
+    },
+    {
+     "diff_pm": -0.683,
+     "fights": 16,
+     "landed_pm": 5.237,
+     "mins": 74.67,
+     "r": 2,
+     "won": 0.5625
+    },
+    {
+     "diff_pm": 0.125,
+     "fights": 11,
+     "landed_pm": 5.581,
+     "mins": 48.02,
+     "r": 3,
+     "won": 0.5455
+    },
+    {
+     "diff_pm": -1.9,
+     "fights": 2,
+     "landed_pm": 2.6,
+     "mins": 10.0,
+     "r": 4,
+     "won": 0.0
+    },
+    {
+     "diff_pm": -0.9,
+     "fights": 2,
+     "landed_pm": 4.3,
+     "mins": 10.0,
+     "r": 5,
+     "won": 0.5
+    }
+   ],
+   "sos": {
+    "adj_sd": 0.025,
+    "opp_elo": 1574.1,
+    "sd": -0.114
+   },
+   "target": {
+    "body": 0.1823,
+    "head": 0.6152,
+    "leg": 0.2025
+   },
+   "target_diff": {
+    "body": 0.02,
+    "head": -0.574,
+    "leg": 0.44
+   },
+   "ufc_fights": 25,
+   "ufc_ko_losses": 5,
+   "ufc_ko_wins": 7
+  },
+  "Diyar Nurgozhay": {
+   "dropped_fights": 2,
+   "dropped_w": 0.3865,
+   "fights": [
+    {
+     "ca": 3,
+     "cf": 8,
+     "d": "2026-08-08",
+     "es": "2026-08-08-ufc-fight-night-gamrot-vs-salkilld",
+     "n": 6,
+     "o": "Bruno Lopes",
+     "oe": 1483,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       34
+      ]
+     ],
+     "sa": 14,
+     "secs": 299,
+     "sl": 48,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 151,
+     "cf": 88,
+     "d": "2026-03-07",
+     "es": "2026-03-07-ufc-326-holloway-vs-oliveira-2",
+     "n": 2,
+     "o": "Rafael Tobias",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       26
+      ],
+      [
+       2,
+       1.0,
+       11
+      ],
+      [
+       3,
+       1.0,
+       18
+      ]
+     ],
+     "sa": 39,
+     "secs": 900,
+     "sl": 94,
+     "tdl": 0,
+     "tdo": 2
+    },
+    {
+     "ca": 70,
+     "cf": 18,
+     "d": "2025-08-23",
+     "es": "2025-08-23-ufc-fight-night-walker-vs-zhang",
+     "n": 1,
+     "o": "Uran Satybaldiev",
+     "oe": 1481,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       5
+      ]
+     ],
+     "sa": 2,
+     "secs": 165,
+     "sl": 7,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 14,
+     "cf": 49,
+     "d": "2025-03-15",
+     "es": "2025-03-15-ufc-fight-night-vettori-vs-dolidze-2",
+     "n": 9,
+     "o": "Brendson Ribeiro",
+     "oe": 1478,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -8
+      ],
+      [
+       2,
+       0.0,
+       -3
+      ]
+     ],
+     "sa": 28,
+     "secs": 388,
+     "sl": 17,
+     "tdl": 2,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": -0.0603,
+    "ctrl": 0.093,
+    "ctrl_ag": 0.1358,
+    "net_ctrl": -0.0428,
+    "sub15": 0.0,
+    "td15": 1.541,
+    "td_acc": 0.75,
+    "tdd": 0.7
+   },
+   "grap_won": {
+    "k": 2,
+    "n": 4
+   },
+   "hdef": 0.6691,
+   "kd_against": 2,
+   "kd_for": 2,
+   "last5": {
+    "dropped": 2,
+    "fights": 4,
+    "power": 1
+   },
+   "minutes": 29.2,
+   "name": "Diyar Nurgozhay",
+   "out_landed": {
+    "k": 3,
+    "n": 4
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 2
+    },
+    "w": {
+     "dec": 1,
+     "ko": 1,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 7.3,
+    "n": 4,
+    "r1": 0.5
+   },
+   "power_fights": 1,
+   "power_w": 0.342,
+   "rounds": [
+    {
+     "diff_pm": 3.214,
+     "fights": 4,
+     "landed_pm": 5.977,
+     "mins": 17.73,
+     "r": 1,
+     "won": 0.5
+    },
+    {
+     "diff_pm": 1.237,
+     "fights": 2,
+     "landed_pm": 4.485,
+     "mins": 6.47,
+     "r": 2,
+     "won": 0.5
+    },
+    {
+     "diff_pm": 3.6,
+     "fights": 1,
+     "landed_pm": 6.2,
+     "mins": 5.0,
+     "r": 3,
+     "won": 1.0
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 2.702,
+    "opp_elo": 1491.4,
+    "sd": 2.842
+   },
+   "target": {
+    "body": 0.3675,
+    "head": 0.3373,
+    "leg": 0.2952
+   },
+   "target_diff": {
+    "body": 1.541,
+    "head": 0.377,
+    "leg": 0.925
+   },
+   "ufc_fights": 4,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 1
+  },
+  "Dom Mar Fan": {
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "fights": [
+    {
+     "ca": 104,
+     "cf": 28,
+     "d": "2026-05-02",
+     "es": "2026-05-02-ufc-fight-night-della-maddalena-vs-prates",
+     "n": 1,
+     "o": "Kody Steele",
+     "oe": 1473,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       0
+      ]
+     ],
+     "sa": 1,
+     "secs": 236,
+     "sl": 1,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 330,
+     "cf": 187,
+     "d": "2026-01-31",
+     "es": "2026-01-31-ufc-325-volkanovski-vs-lopes-2",
+     "n": 3,
+     "o": "Sangwook Kim",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       6
+      ],
+      [
+       2,
+       1.0,
+       25
+      ],
+      [
+       3,
+       0.0,
+       0
+      ]
+     ],
+     "sa": 68,
+     "secs": 900,
+     "sl": 99,
+     "tdl": 1,
+     "tdo": 1
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": -0.2086,
+    "ctrl": 0.1893,
+    "ctrl_ag": 0.382,
+    "net_ctrl": -0.1928,
+    "sub15": 0.0,
+    "td15": 0.792,
+    "td_acc": 0.25,
+    "tdd": 0.8182
+   },
+   "grap_won": {
+    "k": 0,
+    "n": 2
+   },
+   "hdef": 0.6,
+   "kd_against": 0,
+   "kd_for": 0,
+   "last5": {
+    "dropped": 0,
+    "fights": 2,
+    "power": 0
+   },
+   "minutes": 18.9,
+   "name": "Dom Mar Fan",
+   "out_landed": {
+    "k": 1,
+    "n": 2
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 1
+    },
+    "w": {
+     "dec": 1,
+     "ko": 0,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 9.467,
+    "n": 2,
+    "r1": 0.5
+   },
+   "power_fights": 0,
+   "power_w": 0.0,
+   "rounds": [
+    {
+     "diff_pm": 0.672,
+     "fights": 2,
+     "landed_pm": 1.903,
+     "mins": 8.93,
+     "r": 1,
+     "won": 0.0
+    },
+    {
+     "diff_pm": 5.0,
+     "fights": 1,
+     "landed_pm": 8.8,
+     "mins": 5.0,
+     "r": 2,
+     "won": 1.0
+    },
+    {
+     "diff_pm": 0.0,
+     "fights": 1,
+     "landed_pm": 7.8,
+     "mins": 5.0,
+     "r": 3,
+     "won": 0.0
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 1.507,
+    "opp_elo": 1494.4,
+    "sd": 1.637
+   },
+   "target": {
+    "body": 0.18,
+    "head": 0.79,
+    "leg": 0.03
+   },
+   "target_diff": {
+    "body": -0.581,
+    "head": 2.165,
+    "leg": 0.053
+   },
+   "ufc_fights": 2,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 0
+  },
+  "Ikram Aliskerov": {
+   "dropped_fights": 1,
+   "dropped_w": 0.1375,
+   "fights": [
+    {
+     "ca": 7,
+     "cf": 533,
+     "d": "2026-06-27",
+     "es": "2026-06-27-ufc-fight-night-fiziev-vs-torres",
+     "n": 9,
+     "o": "Brunno Ferreira",
+     "oe": 1560,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ],
+      [
+       2,
+       1.0,
+       10
+      ],
+      [
+       3,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 19,
+     "secs": 900,
+     "sl": 47,
+     "tdl": 5,
+     "tdo": 0
+    },
+    {
+     "ca": 19,
+     "cf": 367,
+     "d": "2025-10-25",
+     "es": "2025-10-25-ufc-321-aspinall-vs-gane",
+     "n": 7,
+     "o": "JunYong Park",
+     "oe": 1596,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       18
+      ],
+      [
+       2,
+       1.0,
+       -3
+      ],
+      [
+       3,
+       1.0,
+       -2
+      ]
+     ],
+     "sa": 78,
+     "secs": 900,
+     "sl": 91,
+     "tdl": 5,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 32,
+     "d": "2025-04-26",
+     "es": "2025-04-26-ufc-fight-night-machado-garry-vs-prates",
+     "n": 9,
+     "o": "Andre Muniz",
+     "oe": 1593,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       28
+      ]
+     ],
+     "sa": 16,
+     "secs": 294,
+     "sl": 44,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 3,
+     "cf": 0,
+     "d": "2024-06-22",
+     "es": "2024-06-22-ufc-fight-night-whittaker-vs-aliskerov",
+     "n": 11,
+     "o": "Robert Whittaker",
+     "oe": 1669,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -9
+      ]
+     ],
+     "sa": 14,
+     "secs": 109,
+     "sl": 5,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 0,
+     "d": "2023-10-21",
+     "es": "2023-10-21-ufc-294-makhachev-vs-volkanovski-2",
+     "n": 10,
+     "o": "Warlley Alves",
+     "oe": 1545,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       14
+      ]
+     ],
+     "sa": 12,
+     "secs": 127,
+     "sl": 26,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 2,
+     "d": "2023-05-06",
+     "es": "2023-05-06-ufc-288-sterling-vs-cejudo",
+     "n": 2,
+     "o": "Phil Hawes",
+     "oe": 1538,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       3
+      ]
+     ],
+     "sa": 17,
+     "secs": 130,
+     "sl": 20,
+     "tdl": 0,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.3873,
+    "ctrl": 0.3797,
+    "ctrl_ag": 0.0118,
+    "net_ctrl": 0.3679,
+    "sub15": 0.366,
+    "td15": 3.659,
+    "td_acc": 0.7692,
+    "tdd": 1.0
+   },
+   "grap_won": {
+    "k": 2,
+    "n": 2
+   },
+   "hdef": 0.5642,
+   "kd_against": 1,
+   "kd_for": 3,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 2
+   },
+   "minutes": 41.0,
+   "name": "Ikram Aliskerov",
+   "out_landed": {
+    "k": 5,
+    "n": 6
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 1,
+     "sub": 0
+    },
+    "w": {
+     "dec": 2,
+     "ko": 3,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 6.833,
+    "n": 6,
+    "r1": 0.6667
+   },
+   "power_fights": 3,
+   "power_w": 0.3691,
+   "rounds": [
+    {
+     "diff_pm": 3.0,
+     "fights": 6,
+     "landed_pm": 6.905,
+     "mins": 21.0,
+     "r": 1,
+     "won": 0.8333
+    },
+    {
+     "diff_pm": 0.7,
+     "fights": 2,
+     "landed_pm": 5.5,
+     "mins": 10.0,
+     "r": 2,
+     "won": 1.0
+    },
+    {
+     "diff_pm": 0.7,
+     "fights": 2,
+     "landed_pm": 3.3,
+     "mins": 10.0,
+     "r": 3,
+     "won": 1.0
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 2.037,
+    "opp_elo": 1580.1,
+    "sd": 1.878
+   },
+   "target": {
+    "body": 0.2489,
+    "head": 0.6481,
+    "leg": 0.103
+   },
+   "target_diff": {
+    "body": 0.488,
+    "head": 1.366,
+    "leg": 0.024
+   },
+   "ufc_fights": 6,
+   "ufc_ko_losses": 1,
+   "ufc_ko_wins": 3
+  },
+  "Jake Matthews": {
+   "dropped_fights": 3,
+   "dropped_w": 0.0464,
+   "fights": [
+    {
+     "ca": 27,
+     "cf": 570,
+     "d": "2026-05-30",
+     "es": "2026-05-30-ufc-fight-night-song-vs-figueiredo",
+     "n": 9,
+     "o": "Carlston Harris",
+     "oe": 1532,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       21
+      ],
+      [
+       2,
+       1.0,
+       1
+      ],
+      [
+       3,
+       1.0,
+       6
+      ]
+     ],
+     "sa": 27,
+     "secs": 900,
+     "sl": 55,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 166,
+     "cf": 283,
+     "d": "2025-09-27",
+     "es": "2025-09-27-ufc-fight-night-ulberg-vs-reyes",
+     "n": 9,
+     "o": "Neil Magny",
+     "oe": 1623,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -9
+      ],
+      [
+       2,
+       1.0,
+       0
+      ],
+      [
+       3,
+       0.0,
+       -4
+      ]
+     ],
+     "sa": 31,
+     "secs": 788,
+     "sl": 18,
+     "tdl": 0,
+     "tdo": 3
+    },
+    {
+     "ca": 0,
+     "cf": 29,
+     "d": "2025-07-12",
+     "es": "2025-07-12-ufc-fight-night-lewis-vs-teixeira",
+     "n": 5,
+     "o": "Chidi Njokuani",
+     "oe": 1530,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       -2
+      ]
+     ],
+     "sa": 5,
+     "secs": 69,
+     "sl": 3,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 136,
+     "cf": 40,
+     "d": "2025-02-08",
+     "es": "2025-02-08-ufc-312-du-plessis-vs-strickland-2",
+     "n": 8,
+     "o": "Francisco Prado",
+     "oe": 1481,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -2
+      ],
+      [
+       2,
+       1.0,
+       4
+      ],
+      [
+       3,
+       1.0,
+       7
+      ]
+     ],
+     "sa": 59,
+     "secs": 900,
+     "sl": 68,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 110,
+     "cf": 184,
+     "d": "2024-06-01",
+     "es": "2024-06-01-ufc-302-makhachev-vs-poirier",
+     "n": 4,
+     "o": "Phil Rowe",
+     "oe": 1538,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       12
+      ],
+      [
+       2,
+       1.0,
+       20
+      ],
+      [
+       3,
+       1.0,
+       0
+      ]
+     ],
+     "sa": 34,
+     "secs": 900,
+     "sl": 66,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 7,
+     "cf": 3,
+     "d": "2023-11-18",
+     "es": "2023-11-18-ufc-fight-night-allen-vs-craig",
+     "n": 13,
+     "o": "Michael Morales",
+     "oe": 1572,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -12
+      ],
+      [
+       2,
+       0.0,
+       -18
+      ],
+      [
+       3,
+       1.0,
+       3
+      ]
+     ],
+     "sa": 84,
+     "secs": 900,
+     "sl": 57,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 63,
+     "cf": 75,
+     "d": "2023-07-29",
+     "es": "2023-07-29-ufc-291-poirier-vs-gaethje-2",
+     "n": 3,
+     "o": "Darrius Flowers",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       7
+      ],
+      [
+       2,
+       1.0,
+       17
+      ]
+     ],
+     "sa": 36,
+     "secs": 457,
+     "sl": 60,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 256,
+     "cf": 102,
+     "d": "2022-12-17",
+     "es": "2022-12-17-ufc-fight-night-cannonier-vs-strickland",
+     "n": 6,
+     "o": "Matthew Semelsberger",
+     "oe": 1543,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -10
+      ],
+      [
+       2,
+       0.0,
+       0
+      ],
+      [
+       3,
+       0.0,
+       -3
+      ]
+     ],
+     "sa": 45,
+     "secs": 900,
+     "sl": 32,
+     "tdl": 1,
+     "tdo": 3
+    },
+    {
+     "ca": 0,
+     "cf": 0,
+     "d": "2022-06-11",
+     "es": "2022-06-11-ufc-275-teixeira-vs-prochazka",
+     "n": 8,
+     "o": "Andre Fialho",
+     "oe": 1530,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       15
+      ],
+      [
+       2,
+       1.0,
+       14
+      ]
+     ],
+     "sa": 18,
+     "secs": 444,
+     "sl": 47,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 488,
+     "cf": 4,
+     "d": "2021-03-06",
+     "es": "2021-03-06-ufc-259-blachowicz-vs-adesanya",
+     "n": 4,
+     "o": "Sean Brady",
+     "oe": 1572,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -4
+      ],
+      [
+       2,
+       0.0,
+       1
+      ],
+      [
+       3,
+       0.0,
+       -13
+      ]
+     ],
+     "sa": 37,
+     "secs": 808,
+     "sl": 21,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 0,
+     "cf": 292,
+     "d": "2020-09-26",
+     "es": "2020-09-26-ufc-253-adesanya-vs-costa",
+     "n": 5,
+     "o": "Diego Sanchez",
+     "oe": 1584,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       11
+      ],
+      [
+       2,
+       1.0,
+       11
+      ],
+      [
+       3,
+       1.0,
+       25
+      ]
+     ],
+     "sa": 25,
+     "secs": 900,
+     "sl": 72,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 4,
+     "cf": 508,
+     "d": "2020-02-22",
+     "es": "2020-02-22-ufc-fight-night-felder-vs-hooker",
+     "n": 5,
+     "o": "Emil Meek",
+     "oe": 1488,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       8
+      ],
+      [
+       2,
+       1.0,
+       -6
+      ],
+      [
+       3,
+       0.0,
+       -19
+      ]
+     ],
+     "sa": 50,
+     "secs": 900,
+     "sl": 33,
+     "tdl": 4,
+     "tdo": 0
+    },
+    {
+     "ca": 3,
+     "cf": 49,
+     "d": "2019-10-05",
+     "es": "2019-10-05-ufc-243-whittaker-vs-adesanya",
+     "n": 6,
+     "o": "Rostem Akman",
+     "oe": 1476,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       10
+      ],
+      [
+       2,
+       1.0,
+       13
+      ],
+      [
+       3,
+       1.0,
+       21
+      ]
+     ],
+     "sa": 15,
+     "secs": 900,
+     "sl": 59,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 71,
+     "cf": 39,
+     "d": "2018-12-01",
+     "es": "2018-12-01-ufc-fight-night-dos-santos-vs-tuivasa",
+     "n": 9,
+     "o": "Anthony Rocco Martin",
+     "oe": 1535,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       8
+      ],
+      [
+       2,
+       0.0,
+       -6
+      ],
+      [
+       3,
+       0.0,
+       -3
+      ]
+     ],
+     "sa": 25,
+     "secs": 679,
+     "sl": 24,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 56,
+     "cf": 60,
+     "d": "2018-06-23",
+     "es": "2018-06-23-ufc-fight-night-cowboy-vs-edwards",
+     "n": 5,
+     "o": "Shinsho Anzai",
+     "oe": 1527,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       11
+      ]
+     ],
+     "sa": 1,
+     "secs": 164,
+     "sl": 12,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 72,
+     "cf": 205,
+     "d": "2018-02-10",
+     "es": "2018-02-10-ufc-221-romero-vs-rockhold",
+     "n": 9,
+     "o": "Li Jingliang",
+     "oe": 1554,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       17
+      ],
+      [
+       2,
+       1.0,
+       -3
+      ],
+      [
+       3,
+       1.0,
+       0
+      ]
+     ],
+     "sa": 49,
+     "secs": 900,
+     "sl": 63,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 276,
+     "cf": 425,
+     "d": "2017-11-18",
+     "es": "2017-11-18-ufc-fight-night-werdum-vs-tybura",
+     "n": 10,
+     "o": "Bojan Velickovic",
+     "oe": 1509,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       -8
+      ],
+      [
+       2,
+       0.0,
+       -2
+      ],
+      [
+       3,
+       1.0,
+       6
+      ]
+     ],
+     "sa": 24,
+     "secs": 900,
+     "sl": 20,
+     "tdl": 4,
+     "tdo": 1
+    },
+    {
+     "ca": 174,
+     "cf": 319,
+     "d": "2016-11-26",
+     "es": "2016-11-26-ufc-fight-night-whittaker-vs-brunson",
+     "n": 12,
+     "o": "Andrew Holbrook",
+     "oe": 1502,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -2
+      ],
+      [
+       2,
+       1.0,
+       0
+      ],
+      [
+       3,
+       1.0,
+       -6
+      ]
+     ],
+     "sa": 30,
+     "secs": 900,
+     "sl": 22,
+     "tdl": 3,
+     "tdo": 2
+    },
+    {
+     "ca": 155,
+     "cf": 0,
+     "d": "2016-07-08",
+     "es": "2016-07-08-the-ultimate-fighter-team-joanna-vs-team-claudia-finale",
+     "n": 2,
+     "o": "Kevin Lee",
+     "oe": 1562,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -19
+      ]
+     ],
+     "sa": 24,
+     "secs": 246,
+     "sl": 5,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 197,
+     "cf": 74,
+     "d": "2016-03-19",
+     "es": "2016-03-19-ufc-fight-night-hunt-vs-mir",
+     "n": 10,
+     "o": "Johnny Case",
+     "oe": 1588,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       1
+      ],
+      [
+       2,
+       0.0,
+       -3
+      ],
+      [
+       3,
+       1.0,
+       3
+      ]
+     ],
+     "sa": 35,
+     "secs": 885,
+     "sl": 36,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 119,
+     "cf": 339,
+     "d": "2015-11-14",
+     "es": "2015-11-14-ufc-193-rousey-vs-holm",
+     "n": 8,
+     "o": "Akbarh Arreola",
+     "oe": 1480,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       2
+      ],
+      [
+       2,
+       1.0,
+       39
+      ]
+     ],
+     "sa": 21,
+     "secs": 600,
+     "sl": 62,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 8,
+     "cf": 90,
+     "d": "2015-05-09",
+     "es": "2015-05-09-ufc-fight-night-miocic-vs-hunt",
+     "n": 9,
+     "o": "James Vick",
+     "oe": 1571,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -6
+      ]
+     ],
+     "sa": 10,
+     "secs": 293,
+     "sl": 4,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 28,
+     "cf": 56,
+     "d": "2014-11-07",
+     "es": "2014-11-07-ufc-fight-night-rockhold-vs-bisping",
+     "n": 7,
+     "o": "Vagner Rocha",
+     "oe": 1479,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       5
+      ],
+      [
+       2,
+       1.0,
+       7
+      ]
+     ],
+     "sa": 14,
+     "secs": 412,
+     "sl": 26,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 19,
+     "cf": 627,
+     "d": "2014-06-28",
+     "es": "2014-06-28-ufc-fight-night-te-huna-vs-marquardt",
+     "n": 6,
+     "o": "Dashon Johnson",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       24
+      ],
+      [
+       2,
+       1.0,
+       6
+      ],
+      [
+       3,
+       1.0,
+       19
+      ]
+     ],
+     "sa": 11,
+     "secs": 796,
+     "sl": 60,
+     "tdl": 4,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.1171,
+    "ctrl": 0.2644,
+    "ctrl_ag": 0.1472,
+    "net_ctrl": 0.1172,
+    "sub15": 0.707,
+    "td15": 1.36,
+    "td_acc": 0.4167,
+    "tdd": 0.6667
+   },
+   "grap_won": {
+    "k": 15,
+    "n": 21
+   },
+   "hdef": 0.6904,
+   "kd_against": 4,
+   "kd_for": 6,
+   "last5": {
+    "dropped": 0,
+    "fights": 5,
+    "power": 1
+   },
+   "minutes": 275.7,
+   "name": "Jake Matthews",
+   "out_landed": {
+    "k": 13,
+    "n": 24
+   },
+   "outcomes": {
+    "l": {
+     "dec": 3,
+     "ko": 1,
+     "sub": 4
+    },
+    "w": {
+     "dec": 8,
+     "ko": 1,
+     "sub": 6
+    }
+   },
+   "pace": {
+    "min": 11.487,
+    "n": 24,
+    "r1": 0.1667
+   },
+   "power_fights": 5,
+   "power_w": 0.2831,
+   "rounds": [
+    {
+     "diff_pm": 0.691,
+     "fights": 24,
+     "landed_pm": 3.535,
+     "mins": 112.87,
+     "r": 1,
+     "won": 0.5833
+    },
+    {
+     "diff_pm": 1.034,
+     "fights": 20,
+     "landed_pm": 3.428,
+     "mins": 91.88,
+     "r": 2,
+     "won": 0.7
+    },
+    {
+     "diff_pm": 0.592,
+     "fights": 16,
+     "landed_pm": 2.975,
+     "mins": 70.93,
+     "r": 3,
+     "won": 0.6875
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 0.78,
+    "opp_elo": 1532.9,
+    "sd": 0.78
+   },
+   "target": {
+    "body": 0.1741,
+    "head": 0.7189,
+    "leg": 0.107
+   },
+   "target_diff": {
+    "body": 0.134,
+    "head": 0.838,
+    "leg": -0.192
+   },
+   "ufc_fights": 24,
+   "ufc_ko_losses": 1,
+   "ufc_ko_wins": 1
+  },
+  "Jared Cannonier": {
+   "dropped_fights": 8,
+   "dropped_w": 0.3876,
+   "fights": [
+    {
+     "ca": 136,
+     "cf": 372,
+     "d": "2026-07-18",
+     "es": "2026-07-18-ufc-fight-night-du-plessis-vs-usman",
+     "n": 11,
+     "o": "Christian Leroy Duncan",
+     "oe": 1590,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -25
+      ],
+      [
+       2,
+       1.0,
+       -6
+      ],
+      [
+       3,
+       0.0,
+       -22
+      ]
+     ],
+     "sa": 68,
+     "secs": 900,
+     "sl": 15,
+     "tdl": 5,
+     "tdo": 1
+    },
+    {
+     "ca": 1,
+     "cf": 494,
+     "d": "2025-08-16",
+     "es": "2025-08-16-ufc-319-du-plessis-vs-chimaev",
+     "n": 9,
+     "o": "Michael Page",
+     "oe": 1543,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -9
+      ],
+      [
+       2,
+       1.0,
+       -1
+      ],
+      [
+       3,
+       1.0,
+       1
+      ]
+     ],
+     "sa": 29,
+     "secs": 900,
+     "sl": 20,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 17,
+     "cf": 129,
+     "d": "2025-02-15",
+     "es": "2025-02-15-ufc-fight-night-cannonier-vs-rodrigues",
+     "n": 12,
+     "o": "Gregory Rodrigues",
+     "oe": 1589,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -3
+      ],
+      [
+       2,
+       1.0,
+       8
+      ],
+      [
+       3,
+       1.0,
+       -9
+      ],
+      [
+       4,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 93,
+     "secs": 921,
+     "sl": 98,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 119,
+     "cf": 0,
+     "d": "2024-08-24",
+     "es": "2024-08-24-ufc-fight-night-cannonier-vs-borralho",
+     "n": 11,
+     "o": "Caio Borralho",
+     "oe": 1619,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -3
+      ],
+      [
+       2,
+       1.0,
+       5
+      ],
+      [
+       3,
+       0.0,
+       -22
+      ],
+      [
+       4,
+       0.0,
+       -11
+      ],
+      [
+       5,
+       0.0,
+       -39
+      ]
+     ],
+     "sa": 153,
+     "secs": 1500,
+     "sl": 83,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 70,
+     "cf": 378,
+     "d": "2024-06-08",
+     "es": "2024-06-08-ufc-fight-night-cannonier-vs-imavov",
+     "n": 14,
+     "o": "Nassourdine Imavov",
+     "oe": 1570,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       7
+      ],
+      [
+       2,
+       0.0,
+       -11
+      ],
+      [
+       3,
+       0.0,
+       -3
+      ],
+      [
+       4,
+       0.0,
+       -11
+      ]
+     ],
+     "sa": 82,
+     "secs": 994,
+     "sl": 64,
+     "tdl": 1,
+     "tdo": 2
+    },
+    {
+     "ca": 28,
+     "cf": 187,
+     "d": "2023-06-17",
+     "es": "2023-06-17-ufc-fight-night-vettori-vs-cannonier",
+     "n": 12,
+     "o": "Marvin Vettori",
+     "oe": 1601,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -9
+      ],
+      [
+       2,
+       1.0,
+       58
+      ],
+      [
+       3,
+       1.0,
+       18
+      ],
+      [
+       4,
+       0.0,
+       -5
+      ],
+      [
+       5,
+       1.0,
+       26
+      ]
+     ],
+     "sa": 153,
+     "secs": 1500,
+     "sl": 241,
+     "tdl": 4,
+     "tdo": 1
+    },
+    {
+     "ca": 48,
+     "cf": 0,
+     "d": "2022-12-17",
+     "es": "2022-12-17-ufc-fight-night-cannonier-vs-strickland",
+     "n": 13,
+     "o": "Sean Strickland",
+     "oe": 1628,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       3
+      ],
+      [
+       2,
+       0.0,
+       -3
+      ],
+      [
+       3,
+       0.0,
+       -2
+      ],
+      [
+       4,
+       0.0,
+       -6
+      ],
+      [
+       5,
+       0.0,
+       -3
+      ]
+     ],
+     "sa": 152,
+     "secs": 1500,
+     "sl": 141,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 0,
+     "cf": 254,
+     "d": "2022-07-02",
+     "es": "2022-07-02-ufc-276-adesanya-vs-cannonier",
+     "n": 12,
+     "o": "Israel Adesanya",
+     "oe": 1692,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -4
+      ],
+      [
+       2,
+       0.0,
+       -9
+      ],
+      [
+       3,
+       1.0,
+       0
+      ],
+      [
+       4,
+       0.0,
+       -8
+      ],
+      [
+       5,
+       0.0,
+       -5
+      ]
+     ],
+     "sa": 116,
+     "secs": 1500,
+     "sl": 90,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 158,
+     "cf": 5,
+     "d": "2022-02-12",
+     "es": "2022-02-12-ufc-271-adesanya-vs-whittaker-2",
+     "n": 12,
+     "o": "Derek Brunson",
+     "oe": 1652,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -4
+      ],
+      [
+       2,
+       1.0,
+       16
+      ]
+     ],
+     "sa": 43,
+     "secs": 569,
+     "sl": 55,
+     "tdl": 1,
+     "tdo": 3
+    },
+    {
+     "ca": 151,
+     "cf": 2,
+     "d": "2021-08-21",
+     "es": "2021-08-21-ufc-fight-night-cannonier-vs-gastelum",
+     "n": 12,
+     "o": "Kelvin Gastelum",
+     "oe": 1590,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -3
+      ],
+      [
+       2,
+       0.0,
+       -7
+      ],
+      [
+       3,
+       1.0,
+       2
+      ],
+      [
+       4,
+       0.0,
+       -1
+      ],
+      [
+       5,
+       0.0,
+       1
+      ]
+     ],
+     "sa": 89,
+     "secs": 1500,
+     "sl": 81,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 130,
+     "cf": 30,
+     "d": "2020-10-24",
+     "es": "2020-10-24-ufc-254-khabib-vs-gaethje",
+     "n": 11,
+     "o": "Robert Whittaker",
+     "oe": 1652,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -6
+      ],
+      [
+       2,
+       0.0,
+       -3
+      ],
+      [
+       3,
+       0.0,
+       -7
+      ]
+     ],
+     "sa": 69,
+     "secs": 900,
+     "sl": 53,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 45,
+     "cf": 22,
+     "d": "2019-09-28",
+     "es": "2019-09-28-ufc-fight-night-hermansson-vs-cannonier",
+     "n": 13,
+     "o": "Jack Hermansson",
+     "oe": 1598,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -8
+      ],
+      [
+       2,
+       1.0,
+       16
+      ]
+     ],
+     "sa": 20,
+     "secs": 327,
+     "sl": 28,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 0,
+     "cf": 9,
+     "d": "2019-05-11",
+     "es": "2019-05-11-ufc-237-namajunas-vs-andrade",
+     "n": 11,
+     "o": "Anderson Silva",
+     "oe": 1656,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 8,
+     "secs": 287,
+     "sl": 17,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 118,
+     "cf": 42,
+     "d": "2018-11-03",
+     "es": "2018-11-03-ufc-230-cormier-vs-lewis",
+     "n": 10,
+     "o": "David Branch",
+     "oe": 1536,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       4
+      ],
+      [
+       2,
+       1.0,
+       12
+      ]
+     ],
+     "sa": 10,
+     "secs": 339,
+     "sl": 26,
+     "tdl": 0,
+     "tdo": 3
+    },
+    {
+     "ca": 0,
+     "cf": 0,
+     "d": "2018-05-19",
+     "es": "2018-05-19-ufc-fight-night-maia-vs-usman",
+     "n": 11,
+     "o": "Dominick Reyes",
+     "oe": 1545,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -14
+      ]
+     ],
+     "sa": 20,
+     "secs": 175,
+     "sl": 6,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 169,
+     "cf": 22,
+     "d": "2017-12-16",
+     "es": "2017-12-16-ufc-fight-night-lawler-vs-dos-anjos",
+     "n": 7,
+     "o": "Jan Blachowicz",
+     "oe": 1494,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -16
+      ],
+      [
+       2,
+       0.0,
+       -13
+      ],
+      [
+       3,
+       0.0,
+       5
+      ]
+     ],
+     "sa": 50,
+     "secs": 900,
+     "sl": 26,
+     "tdl": 0,
+     "tdo": 4
+    },
+    {
+     "ca": 14,
+     "cf": 34,
+     "d": "2017-07-07",
+     "es": "2017-07-07-the-ultimate-fighter-redemption-finale",
+     "n": 8,
+     "o": "Nick Roehrick",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       15
+      ],
+      [
+       2,
+       1.0,
+       31
+      ],
+      [
+       3,
+       1.0,
+       10
+      ]
+     ],
+     "sa": 28,
+     "secs": 728,
+     "sl": 84,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 637,
+     "cf": 10,
+     "d": "2017-02-11",
+     "es": "2017-02-11-ufc-208-holm-vs-de-randamie",
+     "n": 7,
+     "o": "Glover Teixeira",
+     "oe": 1617,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       1
+      ],
+      [
+       2,
+       0.0,
+       -2
+      ],
+      [
+       3,
+       0.0,
+       -2
+      ]
+     ],
+     "sa": 24,
+     "secs": 900,
+     "sl": 21,
+     "tdl": 0,
+     "tdo": 3
+    },
+    {
+     "ca": 285,
+     "cf": 190,
+     "d": "2016-12-03",
+     "es": "2016-12-03-the-ultimate-fighter-tournament-of-champions-finale",
+     "n": 9,
+     "o": "Ion Cutelaba",
+     "oe": 1505,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -13
+      ],
+      [
+       2,
+       1.0,
+       13
+      ],
+      [
+       3,
+       1.0,
+       14
+      ]
+     ],
+     "sa": 45,
+     "secs": 900,
+     "sl": 59,
+     "tdl": 0,
+     "tdo": 6
+    },
+    {
+     "ca": 40,
+     "cf": 5,
+     "d": "2016-04-10",
+     "es": "2016-04-10-ufc-fight-night-rothwell-vs-dos-santos",
+     "n": 2,
+     "o": "Cyril Asker",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       14
+      ]
+     ],
+     "sa": 13,
+     "secs": 164,
+     "sl": 27,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 3,
+     "cf": 0,
+     "d": "2015-01-03",
+     "es": "2015-01-03-ufc-182-jones-vs-cormier",
+     "n": 4,
+     "o": "Shawn Jordan",
+     "oe": 1537,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -2
+      ]
+     ],
+     "sa": 12,
+     "secs": 177,
+     "sl": 10,
+     "tdl": 0,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.0259,
+    "ctrl": 0.1243,
+    "ctrl_ag": 0.1234,
+    "net_ctrl": 0.0009,
+    "sub15": 0.0,
+    "td15": 0.768,
+    "td_acc": 0.4545,
+    "tdd": 0.6479
+   },
+   "grap_won": {
+    "k": 7,
+    "n": 17
+   },
+   "hdef": 0.6328,
+   "kd_against": 8,
+   "kd_for": 7,
+   "last5": {
+    "dropped": 3,
+    "fights": 5,
+    "power": 1
+   },
+   "minutes": 293.0,
+   "name": "Jared Cannonier",
+   "out_landed": {
+    "k": 9,
+    "n": 21
+   },
+   "outcomes": {
+    "l": {
+     "dec": 7,
+     "ko": 3,
+     "sub": 0
+    },
+    "w": {
+     "dec": 4,
+     "ko": 7,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 13.953,
+    "n": 21,
+    "r1": 0.1905
+   },
+   "power_fights": 6,
+   "power_w": 0.1992,
+   "r45": {
+    "diff_pm_13": 0.087,
+    "diff_pm_45": -1.021,
+    "fights": 7,
+    "landed_pm_13": 4.09,
+    "landed_pm_45": 4.989
+   },
+   "rounds": [
+    {
+     "diff_pm": -0.671,
+     "fights": 21,
+     "landed_pm": 3.151,
+     "mins": 98.38,
+     "r": 1,
+     "won": 0.1905
+    },
+    {
+     "diff_pm": 1.376,
+     "fights": 17,
+     "landed_pm": 5.504,
+     "mins": 75.58,
+     "r": 2,
+     "won": 0.5882
+    },
+    {
+     "diff_pm": -0.253,
+     "fights": 14,
+     "landed_pm": 3.873,
+     "mins": 67.13,
+     "r": 3,
+     "won": 0.5
+    },
+    {
+     "diff_pm": -1.226,
+     "fights": 7,
+     "landed_pm": 4.681,
+     "mins": 26.92,
+     "r": 4,
+     "won": 0.1429
+    },
+    {
+     "diff_pm": -0.8,
+     "fights": 5,
+     "landed_pm": 5.32,
+     "mins": 25.0,
+     "r": 5,
+     "won": 0.2
+    }
+   ],
+   "sos": {
+    "adj_sd": 0.103,
+    "opp_elo": 1595.7,
+    "sd": -0.109
+   },
+   "target": {
+    "body": 0.2024,
+    "head": 0.6257,
+    "leg": 0.1719
+   },
+   "target_diff": {
+    "body": 0.065,
+    "head": -0.311,
+    "leg": 0.137
+   },
+   "ufc_fights": 21,
+   "ufc_ko_losses": 3,
+   "ufc_ko_wins": 7
+  },
+  "Jiri Prochazka": {
+   "dropped_fights": 3,
+   "dropped_w": 0.4279,
+   "fights": [
+    {
+     "ca": 4,
+     "cf": 0,
+     "d": "2026-04-11",
+     "es": "2026-04-11-ufc-327-prochazka-vs-ulberg",
+     "n": 12,
+     "o": "Carlos Ulberg",
+     "oe": 1640,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -13
+      ]
+     ],
+     "sa": 27,
+     "secs": 225,
+     "sl": 14,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 2,
+     "cf": 12,
+     "d": "2025-10-04",
+     "es": "2025-10-04-ufc-320-ankalaev-vs-pereira-2",
+     "n": 12,
+     "o": "Khalil Rountree Jr.",
+     "oe": 1575,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -3
+      ],
+      [
+       2,
+       0.0,
+       -12
+      ],
+      [
+       3,
+       1.0,
+       20
+      ]
+     ],
+     "sa": 66,
+     "secs": 784,
+     "sl": 71,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 22,
+     "d": "2025-01-18",
+     "es": "2025-01-18-ufc-311-makhachev-vs-moicano",
+     "n": 11,
+     "o": "Jamahal Hill",
+     "oe": 1588,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ],
+      [
+       2,
+       0.0,
+       -16
+      ],
+      [
+       3,
+       1.0,
+       23
+      ]
+     ],
+     "sa": 81,
+     "secs": 781,
+     "sl": 97,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 3,
+     "cf": 71,
+     "d": "2024-06-29",
+     "es": "2024-06-29-ufc-303-pereira-vs-prochazka-2",
+     "n": 13,
+     "o": "Alex Pereira",
+     "oe": 1646,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -20
+      ],
+      [
+       2,
+       0.0,
+       -11
+      ]
+     ],
+     "sa": 38,
+     "secs": 313,
+     "sl": 7,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 38,
+     "d": "2024-04-13",
+     "es": "2024-04-13-ufc-300-pereira-vs-hill",
+     "n": 8,
+     "o": "Aleksandar Rakic",
+     "oe": 1594,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -20
+      ],
+      [
+       2,
+       1.0,
+       31
+      ]
+     ],
+     "sa": 58,
+     "secs": 497,
+     "sl": 69,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 8,
+     "cf": 165,
+     "d": "2023-11-11",
+     "es": "2023-11-11-ufc-295-prochazka-vs-pereira",
+     "n": 13,
+     "o": "Alex Pereira",
+     "oe": 1617,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       0
+      ],
+      [
+       2,
+       0.0,
+       -8
+      ]
+     ],
+     "sa": 38,
+     "secs": 548,
+     "sl": 30,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 587,
+     "cf": 269,
+     "d": "2022-06-11",
+     "es": "2022-06-11-ufc-275-teixeira-vs-prochazka",
+     "n": 11,
+     "o": "Glover Teixeira",
+     "oe": 1684,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -13
+      ],
+      [
+       2,
+       1.0,
+       9
+      ],
+      [
+       3,
+       1.0,
+       31
+      ],
+      [
+       4,
+       0.0,
+       -3
+      ],
+      [
+       5,
+       1.0,
+       -15
+      ]
+     ],
+     "sa": 111,
+     "secs": 1472,
+     "sl": 120,
+     "tdl": 0,
+     "tdo": 5
+    },
+    {
+     "ca": 29,
+     "cf": 95,
+     "d": "2021-05-01",
+     "es": "2021-05-01-ufc-fight-night-reyes-vs-prochazka",
+     "n": 11,
+     "o": "Dominick Reyes",
+     "oe": 1596,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       6
+      ],
+      [
+       2,
+       1.0,
+       8
+      ]
+     ],
+     "sa": 63,
+     "secs": 569,
+     "sl": 77,
+     "tdl": 1,
+     "tdo": 1
+    },
+    {
+     "ca": 17,
+     "cf": 2,
+     "d": "2020-07-11",
+     "es": "2020-07-11-ufc-251-usman-vs-masvidal",
+     "n": 8,
+     "o": "Volkan Oezdemir",
+     "oe": 1569,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -13
+      ],
+      [
+       2,
+       1.0,
+       5
+      ]
+     ],
+     "sa": 41,
+     "secs": 349,
+     "sl": 33,
+     "tdl": 0,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.0402,
+    "ctrl": 0.1217,
+    "ctrl_ag": 0.1174,
+    "net_ctrl": 0.0043,
+    "sub15": 0.163,
+    "td15": 0.488,
+    "td_acc": 0.6,
+    "tdd": 0.6842
+   },
+   "grap_won": {
+    "k": 4,
+    "n": 5
+   },
+   "hdef": 0.5198,
+   "kd_against": 4,
+   "kd_for": 5,
+   "last5": {
+    "dropped": 2,
+    "fights": 5,
+    "power": 2
+   },
+   "minutes": 92.3,
+   "name": "Jiri Prochazka",
+   "out_landed": {
+    "k": 5,
+    "n": 9
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 3,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 5,
+     "sub": 1
+    }
+   },
+   "pace": {
+    "min": 10.256,
+    "n": 9,
+    "r1": 0.1111
+   },
+   "power_fights": 4,
+   "power_w": 0.4196,
+   "r45": {
+    "diff_pm_13": 0.157,
+    "diff_pm_45": -1.888,
+    "fights": 1,
+    "landed_pm_13": 5.932,
+    "landed_pm_45": 2.832
+   },
+   "rounds": [
+    {
+     "diff_pm": -1.531,
+     "fights": 9,
+     "landed_pm": 4.046,
+     "mins": 43.75,
+     "r": 1,
+     "won": 0.3333
+    },
+    {
+     "diff_pm": 0.215,
+     "fights": 8,
+     "landed_pm": 6.48,
+     "mins": 27.93,
+     "r": 2,
+     "won": 0.5
+    },
+    {
+     "diff_pm": 6.677,
+     "fights": 3,
+     "landed_pm": 12.0,
+     "mins": 11.08,
+     "r": 3,
+     "won": 1.0
+    },
+    {
+     "diff_pm": -0.6,
+     "fights": 1,
+     "landed_pm": 4.2,
+     "mins": 5.0,
+     "r": 4,
+     "won": 0.0
+    },
+    {
+     "diff_pm": -3.309,
+     "fights": 1,
+     "landed_pm": 1.324,
+     "mins": 4.53,
+     "r": 5,
+     "won": 1.0
+    }
+   ],
+   "sos": {
+    "adj_sd": 0.24,
+    "opp_elo": 1620.1,
+    "sd": -0.054
+   },
+   "target": {
+    "body": 0.1564,
+    "head": 0.7664,
+    "leg": 0.0772
+   },
+   "target_diff": {
+    "body": -0.065,
+    "head": 0.368,
+    "leg": -0.358
+   },
+   "ufc_fights": 9,
+   "ufc_ko_losses": 3,
+   "ufc_ko_wins": 5
+  },
+  "John Mitchell": {
+   "dropped_fights": 0,
+   "dropped_w": null,
+   "fights": [],
+   "grap": {
+    "ctrl": null,
+    "ctrl_ag": null,
+    "sub15": null,
+    "td15": null,
+    "td_acc": null,
+    "tdd": null
+   },
+   "grap_won": {
+    "k": 0,
+    "n": 0
+   },
+   "hdef": null,
+   "kd_against": 0,
+   "kd_for": 0,
+   "last5": {
+    "dropped": 0,
+    "fights": 0,
+    "power": 0
+   },
+   "minutes": 0.0,
+   "name": "John Mitchell",
+   "out_landed": {
+    "k": 0,
+    "n": 0
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": null,
+    "n": 0,
+    "r1": null
+   },
+   "power_fights": 0,
+   "power_w": null,
+   "rounds": [
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 1,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 2,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 3,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "target": {
+    "body": null,
+    "head": null,
+    "leg": null
+   },
+   "target_diff": {
+    "body": null,
+    "head": null,
+    "leg": null
+   },
+   "ufc_fights": 0,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 0
+  },
+  "Kevin Vallejos": {
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "fights": [
+    {
+     "ca": 0,
+     "cf": 38,
+     "d": "2026-03-14",
+     "es": "2026-03-14-ufc-fight-night-emmett-vs-vallejos",
+     "n": 14,
+     "o": "Josh Emmett",
+     "oe": 1581,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       33
+      ]
+     ],
+     "sa": 3,
+     "secs": 213,
+     "sl": 36,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 88,
+     "d": "2025-12-13",
+     "es": "2025-12-13-ufc-fight-night-royval-vs-kape",
+     "n": 11,
+     "o": "Giga Chikadze",
+     "oe": 1592,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       0
+      ],
+      [
+       2,
+       1.0,
+       8
+      ]
+     ],
+     "sa": 12,
+     "secs": 389,
+     "sl": 20,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 22,
+     "cf": 74,
+     "d": "2025-08-02",
+     "es": "2025-08-02-ufc-fight-night-taira-vs-park",
+     "n": 7,
+     "o": "Danny Silva",
+     "oe": 1549,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ],
+      [
+       2,
+       1.0,
+       13
+      ],
+      [
+       3,
+       1.0,
+       -1
+      ]
+     ],
+     "sa": 69,
+     "secs": 900,
+     "sl": 90,
+     "tdl": 2,
+     "tdo": 1
+    },
+    {
+     "ca": 0,
+     "cf": 5,
+     "d": "2025-03-15",
+     "es": "2025-03-15-ufc-fight-night-vettori-vs-dolidze-2",
+     "n": 8,
+     "o": "SeungWoo Choi",
+     "oe": 1478,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       -2
+      ]
+     ],
+     "sa": 16,
+     "secs": 189,
+     "sl": 14,
+     "tdl": 0,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.1173,
+    "ctrl": 0.1212,
+    "ctrl_ag": 0.013,
+    "net_ctrl": 0.1082,
+    "sub15": 0.0,
+    "td15": 1.064,
+    "td_acc": 0.3333,
+    "tdd": 0.9
+   },
+   "grap_won": {
+    "k": 2,
+    "n": 2
+   },
+   "hdef": 0.6648,
+   "kd_against": 0,
+   "kd_for": 4,
+   "last5": {
+    "dropped": 0,
+    "fights": 4,
+    "power": 3
+   },
+   "minutes": 28.2,
+   "name": "Kevin Vallejos",
+   "out_landed": {
+    "k": 3,
+    "n": 4
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 1,
+     "ko": 3,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 7.046,
+    "n": 4,
+    "r1": 0.5
+   },
+   "power_fights": 3,
+   "power_w": 0.7845,
+   "rounds": [
+    {
+     "diff_pm": 2.395,
+     "fights": 4,
+     "landed_pm": 4.671,
+     "mins": 16.7,
+     "r": 1,
+     "won": 1.0
+    },
+    {
+     "diff_pm": 3.239,
+     "fights": 2,
+     "landed_pm": 7.095,
+     "mins": 6.48,
+     "r": 2,
+     "won": 1.0
+    },
+    {
+     "diff_pm": -0.2,
+     "fights": 1,
+     "landed_pm": 7.2,
+     "mins": 5.0,
+     "r": 3,
+     "won": 1.0
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 2.203,
+    "opp_elo": 1555.0,
+    "sd": 2.129
+   },
+   "target": {
+    "body": 0.225,
+    "head": 0.675,
+    "leg": 0.1
+   },
+   "target_diff": {
+    "body": 0.426,
+    "head": 1.739,
+    "leg": -0.035
+   },
+   "ufc_fights": 4,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 3
+  },
+  "Kyoji Horiguchi": {
+   "dropped_fights": 1,
+   "dropped_w": 0.2239,
+   "fights": [
+    {
+     "ca": 10,
+     "cf": 240,
+     "d": "2026-06-20",
+     "es": "2026-06-20-ufc-fight-night-kape-vs-horiguchi",
+     "n": 12,
+     "o": "Manel Kape",
+     "oe": 1579,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       3
+      ],
+      [
+       2,
+       1.0,
+       9
+      ],
+      [
+       3,
+       0.0,
+       -4
+      ]
+     ],
+     "sa": 19,
+     "secs": 762,
+     "sl": 27,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 230,
+     "cf": 62,
+     "d": "2026-02-07",
+     "es": "2026-02-07-ufc-fight-night-bautista-vs-oliveira",
+     "n": 12,
+     "o": "Amir Albazi",
+     "oe": 1585,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       11
+      ],
+      [
+       2,
+       1.0,
+       26
+      ],
+      [
+       3,
+       1.0,
+       20
+      ]
+     ],
+     "sa": 16,
+     "secs": 900,
+     "sl": 73,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 85,
+     "cf": 334,
+     "d": "2025-11-22",
+     "es": "2025-11-22-ufc-fight-night-tsarukyan-vs-hooker",
+     "n": 9,
+     "o": "Tagir Ulanbekov",
+     "oe": 1586,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       11
+      ],
+      [
+       2,
+       1.0,
+       12
+      ],
+      [
+       3,
+       1.0,
+       20
+      ]
+     ],
+     "sa": 6,
+     "secs": 738,
+     "sl": 49,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 170,
+     "cf": 272,
+     "d": "2016-11-19",
+     "es": "2016-11-19-ufc-fight-night-mousasi-vs-hall-2",
+     "n": 8,
+     "o": "Ali Bagautinov",
+     "oe": 1552,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -4
+      ],
+      [
+       2,
+       1.0,
+       1
+      ],
+      [
+       3,
+       1.0,
+       22
+      ]
+     ],
+     "sa": 36,
+     "secs": 900,
+     "sl": 55,
+     "tdl": 4,
+     "tdo": 2
+    },
+    {
+     "ca": 24,
+     "cf": 347,
+     "d": "2016-05-08",
+     "es": "2016-05-08-ufc-fight-night-overeem-vs-arlovski",
+     "n": 3,
+     "o": "Neil Seery",
+     "oe": 1519,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       15
+      ],
+      [
+       2,
+       1.0,
+       12
+      ],
+      [
+       3,
+       1.0,
+       5
+      ]
+     ],
+     "sa": 40,
+     "secs": 900,
+     "sl": 72,
+     "tdl": 6,
+     "tdo": 0
+    },
+    {
+     "ca": 24,
+     "cf": 20,
+     "d": "2015-09-26",
+     "es": "2015-09-26-ufc-fight-night-barnett-vs-nelson",
+     "n": 8,
+     "o": "Chico Camus",
+     "oe": 1499,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       15
+      ],
+      [
+       2,
+       1.0,
+       20
+      ],
+      [
+       3,
+       0.0,
+       -20
+      ]
+     ],
+     "sa": 63,
+     "secs": 900,
+     "sl": 78,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 823,
+     "cf": 62,
+     "d": "2015-04-25",
+     "es": "2015-04-25-ufc-186-johnson-vs-horiguchi",
+     "n": 12,
+     "o": "Demetrious Johnson",
+     "oe": 1629,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -6
+      ],
+      [
+       2,
+       0.0,
+       -6
+      ],
+      [
+       3,
+       0.0,
+       -3
+      ],
+      [
+       4,
+       0.0,
+       -11
+      ],
+      [
+       5,
+       0.0,
+       -9
+      ]
+     ],
+     "sa": 66,
+     "secs": 1499,
+     "sl": 31,
+     "tdl": 1,
+     "tdo": 14
+    },
+    {
+     "ca": 0,
+     "cf": 118,
+     "d": "2015-01-03",
+     "es": "2015-01-03-ufc-182-jones-vs-cormier",
+     "n": 8,
+     "o": "Louis Gaudinot",
+     "oe": 1478,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       3
+      ],
+      [
+       2,
+       1.0,
+       9
+      ],
+      [
+       3,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 23,
+     "secs": 900,
+     "sl": 44,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 136,
+     "d": "2014-09-20",
+     "es": "2014-09-20-ufc-fight-night-hunt-vs-nelson",
+     "n": 7,
+     "o": "Jon Delos Reyes",
+     "oe": 1476,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       18
+      ]
+     ],
+     "sa": 13,
+     "secs": 228,
+     "sl": 31,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 57,
+     "cf": 167,
+     "d": "2014-05-10",
+     "es": "2014-05-10-ufc-fight-night-brown-vs-silva",
+     "n": 6,
+     "o": "Darrell Montague",
+     "oe": 1479,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       5
+      ],
+      [
+       2,
+       1.0,
+       18
+      ],
+      [
+       3,
+       1.0,
+       16
+      ]
+     ],
+     "sa": 26,
+     "secs": 900,
+     "sl": 65,
+     "tdl": 2,
+     "tdo": 1
+    },
+    {
+     "ca": 209,
+     "cf": 232,
+     "d": "2013-10-19",
+     "es": "2013-10-19-ufc-166-velasquez-vs-dos-santos-3",
+     "n": 1,
+     "o": "Dustin Pague",
+     "oe": 1441,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       2
+      ],
+      [
+       2,
+       1.0,
+       19
+      ]
+     ],
+     "sa": 9,
+     "secs": 531,
+     "sl": 30,
+     "tdl": 1,
+     "tdo": 1
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.0427,
+    "ctrl": 0.2173,
+    "ctrl_ag": 0.1782,
+    "net_ctrl": 0.0391,
+    "sub15": 0.098,
+    "td15": 1.671,
+    "td_acc": 0.4048,
+    "tdd": 0.6122
+   },
+   "grap_won": {
+    "k": 8,
+    "n": 10
+   },
+   "hdef": 0.7333,
+   "kd_against": 1,
+   "kd_for": 6,
+   "last5": {
+    "dropped": 1,
+    "fights": 5,
+    "power": 2
+   },
+   "minutes": 152.6,
+   "name": "Kyoji Horiguchi",
+   "out_landed": {
+    "k": 10,
+    "n": 11
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 1,
+     "sub": 1
+    },
+    "w": {
+     "dec": 6,
+     "ko": 2,
+     "sub": 1
+    }
+   },
+   "pace": {
+    "min": 13.876,
+    "n": 11,
+    "r1": 0.0909
+   },
+   "power_fights": 4,
+   "power_w": 0.2801,
+   "r45": {
+    "diff_pm_13": 1.809,
+    "diff_pm_45": -2.003,
+    "fights": 1,
+    "landed_pm_13": 3.828,
+    "landed_pm_45": 0.902
+   },
+   "rounds": [
+    {
+     "diff_pm": 1.357,
+     "fights": 11,
+     "landed_pm": 3.086,
+     "mins": 53.8,
+     "r": 1,
+     "won": 0.7273
+    },
+    {
+     "diff_pm": 2.456,
+     "fights": 10,
+     "landed_pm": 4.217,
+     "mins": 48.85,
+     "r": 2,
+     "won": 0.9
+    },
+    {
+     "diff_pm": 1.625,
+     "fights": 9,
+     "landed_pm": 4.35,
+     "mins": 40.0,
+     "r": 3,
+     "won": 0.6667
+    },
+    {
+     "diff_pm": -2.2,
+     "fights": 1,
+     "landed_pm": 1.4,
+     "mins": 5.0,
+     "r": 4,
+     "won": 0.0
+    },
+    {
+     "diff_pm": -1.806,
+     "fights": 1,
+     "landed_pm": 0.401,
+     "mins": 4.98,
+     "r": 5,
+     "won": 0.0
+    }
+   ],
+   "sos": {
+    "adj_sd": 1.588,
+    "opp_elo": 1541.6,
+    "sd": 1.559
+   },
+   "target": {
+    "body": 0.1622,
+    "head": 0.7514,
+    "leg": 0.0865
+   },
+   "target_diff": {
+    "body": 0.066,
+    "head": 1.579,
+    "leg": -0.085
+   },
+   "ufc_fights": 11,
+   "ufc_ko_losses": 1,
+   "ufc_ko_wins": 2
+  },
+  "Navajo Stirling": {
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "fights": [
+    {
+     "ca": 4,
+     "cf": 64,
+     "d": "2026-08-01",
+     "es": "2026-08-01-ufc-fight-night-medic-vs-rodriguez",
+     "n": 13,
+     "o": "Jan Blachowicz",
+     "oe": 1593,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       32
+      ]
+     ],
+     "sa": 3,
+     "secs": 176,
+     "sl": 35,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 181,
+     "cf": 113,
+     "d": "2026-06-20",
+     "es": "2026-06-20-ufc-fight-night-kape-vs-horiguchi",
+     "n": 11,
+     "o": "Ion Cutelaba",
+     "oe": 1515,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       10
+      ],
+      [
+       2,
+       1.0,
+       23
+      ]
+     ],
+     "sa": 19,
+     "secs": 503,
+     "sl": 52,
+     "tdl": 0,
+     "tdo": 5
+    },
+    {
+     "ca": 60,
+     "cf": 91,
+     "d": "2026-03-28",
+     "es": "2026-03-28-ufc-fight-night-adesanya-vs-pyfer",
+     "n": 3,
+     "o": "Bruno Lopes",
+     "oe": 1502,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       6
+      ],
+      [
+       2,
+       1.0,
+       29
+      ]
+     ],
+     "sa": 28,
+     "secs": 545,
+     "sl": 63,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 143,
+     "cf": 233,
+     "d": "2025-09-27",
+     "es": "2025-09-27-ufc-fight-night-ulberg-vs-reyes",
+     "n": 7,
+     "o": "Rodolfo Bellato",
+     "oe": 1523,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       22
+      ],
+      [
+       2,
+       1.0,
+       10
+      ],
+      [
+       3,
+       1.0,
+       6
+      ]
+     ],
+     "sa": 43,
+     "secs": 900,
+     "sl": 81,
+     "tdl": 1,
+     "tdo": 2
+    },
+    {
+     "ca": 101,
+     "cf": 181,
+     "d": "2025-05-10",
+     "es": "2025-05-10-ufc-315-muhammad-vs-della-maddalena",
+     "n": 4,
+     "o": "Ivan Erslan",
+     "oe": 1474,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       19
+      ],
+      [
+       2,
+       1.0,
+       8
+      ],
+      [
+       3,
+       1.0,
+       47
+      ]
+     ],
+     "sa": 36,
+     "secs": 900,
+     "sl": 110,
+     "tdl": 3,
+     "tdo": 0
+    },
+    {
+     "ca": 216,
+     "cf": 54,
+     "d": "2024-12-14",
+     "es": "2024-12-14-ufc-fight-night-covington-vs-buckley",
+     "n": 8,
+     "o": "Tuco Tokkos",
+     "oe": 1476,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       11
+      ],
+      [
+       2,
+       0.0,
+       12
+      ],
+      [
+       3,
+       1.0,
+       23
+      ]
+     ],
+     "sa": 32,
+     "secs": 900,
+     "sl": 78,
+     "tdl": 0,
+     "tdo": 3
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": -0.0056,
+    "ctrl": 0.1876,
+    "ctrl_ag": 0.1797,
+    "net_ctrl": 0.0079,
+    "sub15": 0.0,
+    "td15": 0.917,
+    "td_acc": 0.3636,
+    "tdd": 0.697
+   },
+   "grap_won": {
+    "k": 4,
+    "n": 6
+   },
+   "hdef": 0.6931,
+   "kd_against": 0,
+   "kd_for": 2,
+   "last5": {
+    "dropped": 0,
+    "fights": 5,
+    "power": 2
+   },
+   "minutes": 65.4,
+   "name": "Navajo Stirling",
+   "out_landed": {
+    "k": 6,
+    "n": 6
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 3,
+     "ko": 3,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 10.9,
+    "n": 6,
+    "r1": 0.1667
+   },
+   "power_fights": 2,
+   "power_w": 0.2824,
+   "rounds": [
+    {
+     "diff_pm": 3.58,
+     "fights": 6,
+     "landed_pm": 5.8,
+     "mins": 27.93,
+     "r": 1,
+     "won": 1.0
+    },
+    {
+     "diff_pm": 3.65,
+     "fights": 5,
+     "landed_pm": 5.964,
+     "mins": 22.47,
+     "r": 2,
+     "won": 0.8
+    },
+    {
+     "diff_pm": 5.067,
+     "fights": 3,
+     "landed_pm": 8.2,
+     "mins": 15.0,
+     "r": 3,
+     "won": 1.0
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 3.819,
+    "opp_elo": 1495.8,
+    "sd": 3.945
+   },
+   "target": {
+    "body": 0.3174,
+    "head": 0.5274,
+    "leg": 0.1551
+   },
+   "target_diff": {
+    "body": 1.498,
+    "head": 1.957,
+    "leg": 0.489
+   },
+   "ufc_fights": 6,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 3
+  },
+  "Nikolas Motta": {
+   "dropped_fights": 3,
+   "dropped_w": 0.4238,
+   "fights": [
+    {
+     "ca": 89,
+     "cf": 16,
+     "d": "2025-06-21",
+     "es": "2025-06-21-ufc-fight-night-hill-vs-rountree-jr",
+     "n": 8,
+     "o": "Nazim Sadykhov",
+     "oe": 1567,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       -3
+      ],
+      [
+       2,
+       0.0,
+       -24
+      ]
+     ],
+     "sa": 93,
+     "secs": 557,
+     "sl": 66,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 92,
+     "d": "2024-11-23",
+     "es": "2024-11-23-ufc-fight-night-yan-vs-figueiredo",
+     "n": 1,
+     "o": "Maheshate",
+     "oe": 1499,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ],
+      [
+       2,
+       1.0,
+       1
+      ],
+      [
+       3,
+       1.0,
+       12
+      ]
+     ],
+     "sa": 56,
+     "secs": 900,
+     "sl": 78,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 9,
+     "d": "2024-01-13",
+     "es": "2024-01-13-ufc-fight-night-ankalaev-vs-walker-2",
+     "n": 2,
+     "o": "Tom Nolan",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 12,
+     "secs": 63,
+     "sl": 21,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 268,
+     "cf": 0,
+     "d": "2023-11-18",
+     "es": "2023-11-18-ufc-fight-night-allen-vs-craig",
+     "n": 2,
+     "o": "Trey Ogden",
+     "oe": 1481,
+     "r": "D",
+     "rw": [
+      [
+       1,
+       0.0,
+       -14
+      ],
+      [
+       2,
+       0.0,
+       -29
+      ],
+      [
+       3,
+       0.0,
+       -1
+      ]
+     ],
+     "sa": 58,
+     "secs": 791,
+     "sl": 14,
+     "tdl": 0,
+     "tdo": 3
+    },
+    {
+     "ca": 1,
+     "cf": 0,
+     "d": "2023-06-17",
+     "es": "2023-06-17-ufc-fight-night-vettori-vs-cannonier",
+     "n": 8,
+     "o": "Manuel Torres",
+     "oe": 1521,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -6
+      ]
+     ],
+     "sa": 13,
+     "secs": 110,
+     "sl": 7,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 5,
+     "d": "2022-09-17",
+     "es": "2022-09-17-ufc-fight-night-sandhagen-vs-song",
+     "n": 1,
+     "o": "Cameron VanCamp",
+     "oe": 1476,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       9
+      ]
+     ],
+     "sa": 15,
+     "secs": 229,
+     "sl": 24,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 34,
+     "cf": 0,
+     "d": "2022-02-19",
+     "es": "2022-02-19-ufc-fight-night-walker-vs-hill",
+     "n": 9,
+     "o": "Jim Miller",
+     "oe": 1562,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -12
+      ],
+      [
+       2,
+       0.0,
+       -15
+      ]
+     ],
+     "sa": 48,
+     "secs": 418,
+     "sl": 21,
+     "tdl": 0,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": -0.0956,
+    "ctrl": 0.0398,
+    "ctrl_ag": 0.1278,
+    "net_ctrl": -0.088,
+    "sub15": 0.0,
+    "td15": 0.0,
+    "td_acc": null,
+    "tdd": 0.8235
+   },
+   "grap_won": {
+    "k": 1,
+    "n": 3
+   },
+   "hdef": 0.5922,
+   "kd_against": 3,
+   "kd_for": 5,
+   "last5": {
+    "dropped": 2,
+    "fights": 5,
+    "power": 3
+   },
+   "minutes": 51.1,
+   "name": "Nikolas Motta",
+   "out_landed": {
+    "k": 3,
+    "n": 7
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 3,
+     "sub": 0
+    },
+    "w": {
+     "dec": 1,
+     "ko": 2,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 6.325,
+    "n": 6,
+    "r1": 0.5
+   },
+   "power_fights": 4,
+   "power_w": 0.7048,
+   "rounds": [
+    {
+     "diff_pm": -0.3,
+     "fights": 7,
+     "landed_pm": 4.831,
+     "mins": 26.7,
+     "r": 1,
+     "won": 0.5714
+    },
+    {
+     "diff_pm": -4.123,
+     "fights": 4,
+     "landed_pm": 4.554,
+     "mins": 16.25,
+     "r": 2,
+     "won": 0.25
+    },
+    {
+     "diff_pm": 1.344,
+     "fights": 2,
+     "landed_pm": 3.422,
+     "mins": 8.18,
+     "r": 3,
+     "won": 0.5
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": -1.314,
+    "opp_elo": 1514.4,
+    "sd": -1.252
+   },
+   "target": {
+    "body": 0.1472,
+    "head": 0.7619,
+    "leg": 0.0909
+   },
+   "target_diff": {
+    "body": -0.528,
+    "head": -0.02,
+    "leg": -0.704
+   },
+   "ufc_fights": 7,
+   "ufc_ko_losses": 3,
+   "ufc_ko_wins": 2
+  },
+  "Santiago Luna": {
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "fights": [
+    {
+     "ca": 700,
+     "cf": 74,
+     "d": "2026-06-06",
+     "es": "2026-06-06-ufc-fight-night-muhammad-vs-bonfim",
+     "n": 9,
+     "o": "Bryce Mitchell",
+     "oe": 1607,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -8
+      ],
+      [
+       2,
+       0.0,
+       -6
+      ],
+      [
+       3,
+       0.0,
+       1
+      ]
+     ],
+     "sa": 22,
+     "secs": 892,
+     "sl": 9,
+     "tdl": 0,
+     "tdo": 2
+    },
+    {
+     "ca": 43,
+     "cf": 203,
+     "d": "2026-02-28",
+     "es": "2026-02-28-ufc-fight-night-moreno-vs-kavanagh",
+     "n": 8,
+     "o": "Angel Pacheco",
+     "oe": 1475,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       1
+      ],
+      [
+       2,
+       1.0,
+       42
+      ],
+      [
+       3,
+       1.0,
+       32
+      ]
+     ],
+     "sa": 56,
+     "secs": 900,
+     "sl": 131,
+     "tdl": 5,
+     "tdo": 1
+    },
+    {
+     "ca": 7,
+     "cf": 47,
+     "d": "2025-09-13",
+     "es": "2025-09-13-noche-ufc-lopes-vs-silva",
+     "n": 9,
+     "o": "Quang Le",
+     "oe": 1486,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       3
+      ]
+     ],
+     "sa": 12,
+     "secs": 168,
+     "sl": 15,
+     "tdl": 0,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": -0.2161,
+    "ctrl": 0.1653,
+    "ctrl_ag": 0.3827,
+    "net_ctrl": -0.2173,
+    "sub15": 0.918,
+    "td15": 2.296,
+    "td_acc": 0.7143,
+    "tdd": 0.5714
+   },
+   "grap_won": {
+    "k": 1,
+    "n": 2
+   },
+   "hdef": 0.7521,
+   "kd_against": 0,
+   "kd_for": 2,
+   "last5": {
+    "dropped": 0,
+    "fights": 3,
+    "power": 1
+   },
+   "minutes": 32.7,
+   "name": "Santiago Luna",
+   "out_landed": {
+    "k": 2,
+    "n": 3
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 1
+    },
+    "w": {
+     "dec": 1,
+     "ko": 1,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 10.889,
+    "n": 3,
+    "r1": 0.3333
+   },
+   "power_fights": 1,
+   "power_w": 0.2599,
+   "rounds": [
+    {
+     "diff_pm": -0.312,
+     "fights": 3,
+     "landed_pm": 3.438,
+     "mins": 12.8,
+     "r": 1,
+     "won": 0.6667
+    },
+    {
+     "diff_pm": 3.6,
+     "fights": 2,
+     "landed_pm": 5.9,
+     "mins": 10.0,
+     "r": 2,
+     "won": 0.5
+    },
+    {
+     "diff_pm": 3.345,
+     "fights": 2,
+     "landed_pm": 5.27,
+     "mins": 9.87,
+     "r": 3,
+     "won": 0.5
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 2.016,
+    "opp_elo": 1540.7,
+    "sd": 1.99
+   },
+   "target": {
+    "body": 0.2258,
+    "head": 0.7355,
+    "leg": 0.0387
+   },
+   "target_diff": {
+    "body": 0.276,
+    "head": 1.684,
+    "leg": 0.031
+   },
+   "ufc_fights": 3,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 1
+  },
+  "Shamil Gaziev": {
+   "dropped_fights": 2,
+   "dropped_w": 0.3664,
+   "fights": [
+    {
+     "ca": 0,
+     "cf": 0,
+     "d": "2026-08-22",
+     "es": "2026-08-22-ufc-fight-night-hernandez-vs-rodrigues",
+     "n": 6,
+     "o": "Kennedy Nzechukwu",
+     "oe": 1534,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       -1
+      ]
+     ],
+     "sa": 3,
+     "secs": 80,
+     "sl": 2,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 216,
+     "d": "2026-05-02",
+     "es": "2026-05-02-ufc-fight-night-della-maddalena-vs-prates",
+     "n": 9,
+     "o": "Brando Pericic",
+     "oe": 1545,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -17
+      ],
+      [
+       2,
+       0.0,
+       -31
+      ]
+     ],
+     "sa": 89,
+     "secs": 524,
+     "sl": 41,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 8,
+     "cf": 0,
+     "d": "2025-11-22",
+     "es": "2025-11-22-ufc-fight-night-tsarukyan-vs-hooker",
+     "n": 10,
+     "o": "Waldo Cortes Acosta",
+     "oe": 1596,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -4
+      ]
+     ],
+     "sa": 10,
+     "secs": 82,
+     "sl": 6,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 8,
+     "cf": 1,
+     "d": "2025-02-01",
+     "es": "2025-02-01-ufc-fight-night-adesanya-vs-imavov",
+     "n": 5,
+     "o": "Thomas Petersen",
+     "oe": 1504,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       -5
+      ]
+     ],
+     "sa": 19,
+     "secs": 192,
+     "sl": 14,
+     "tdl": 0,
+     "tdo": 1
+    },
+    {
+     "ca": 0,
+     "cf": 718,
+     "d": "2024-08-03",
+     "es": "2024-08-03-ufc-fight-night-sandhagen-vs-nurmagomedov",
+     "n": 5,
+     "o": "Don'Tale Mayes",
+     "oe": 1512,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       -4
+      ],
+      [
+       2,
+       1.0,
+       11
+      ],
+      [
+       3,
+       1.0,
+       -3
+      ]
+     ],
+     "sa": 27,
+     "secs": 900,
+     "sl": 31,
+     "tdl": 2,
+     "tdo": 0
+    },
+    {
+     "ca": 1,
+     "cf": 272,
+     "d": "2024-03-02",
+     "es": "2024-03-02-ufc-fight-night-rozenstruik-vs-gaziev",
+     "n": 11,
+     "o": "Jairzinho Rozenstruik",
+     "oe": 1569,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       1.0,
+       -5
+      ],
+      [
+       2,
+       0.0,
+       -12
+      ],
+      [
+       3,
+       0.0,
+       -42
+      ],
+      [
+       4,
+       0.0,
+       -46
+      ]
+     ],
+     "sa": 127,
+     "secs": 1200,
+     "sl": 22,
+     "tdl": 1,
+     "tdo": 0
+    },
+    {
+     "ca": 20,
+     "cf": 138,
+     "d": "2023-12-16",
+     "es": "2023-12-16-ufc-296-edwards-vs-covington",
+     "n": 1,
+     "o": "Martin Buday",
+     "oe": 1584,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       29
+      ],
+      [
+       2,
+       1.0,
+       12
+      ]
+     ],
+     "sa": 8,
+     "secs": 356,
+     "sl": 49,
+     "tdl": 0,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.3983,
+    "ctrl": 0.4034,
+    "ctrl_ag": 0.0111,
+    "net_ctrl": 0.3923,
+    "sub15": 0.0,
+    "td15": 1.08,
+    "td_acc": 0.3333,
+    "tdd": 0.8333
+   },
+   "grap_won": {
+    "k": 4,
+    "n": 5
+   },
+   "hdef": 0.5475,
+   "kd_against": 3,
+   "kd_for": 2,
+   "last5": {
+    "dropped": 2,
+    "fights": 5,
+    "power": 2
+   },
+   "minutes": 55.6,
+   "name": "Shamil Gaziev",
+   "out_landed": {
+    "k": 2,
+    "n": 7
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 3,
+     "sub": 0
+    },
+    "w": {
+     "dec": 1,
+     "ko": 3,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 7.938,
+    "n": 7,
+    "r1": 0.4286
+   },
+   "power_fights": 3,
+   "power_w": 0.4504,
+   "r45": {
+    "diff_pm_13": -1.424,
+    "diff_pm_45": -9.2,
+    "fights": 1,
+    "landed_pm_13": 3.223,
+    "landed_pm_45": 0.4
+   },
+   "rounds": [
+    {
+     "diff_pm": -0.27,
+     "fights": 7,
+     "landed_pm": 3.822,
+     "mins": 25.9,
+     "r": 1,
+     "won": 0.7143
+    },
+    {
+     "diff_pm": -1.364,
+     "fights": 4,
+     "landed_pm": 3.886,
+     "mins": 14.67,
+     "r": 2,
+     "won": 0.5
+    },
+    {
+     "diff_pm": -4.5,
+     "fights": 2,
+     "landed_pm": 0.7,
+     "mins": 10.0,
+     "r": 3,
+     "won": 0.5
+    },
+    {
+     "diff_pm": -9.2,
+     "fights": 1,
+     "landed_pm": 0.4,
+     "mins": 5.0,
+     "r": 4,
+     "won": 0.0
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": -2.078,
+    "opp_elo": 1546.6,
+    "sd": -2.124
+   },
+   "target": {
+    "body": 0.2667,
+    "head": 0.7152,
+    "leg": 0.0182
+   },
+   "target_diff": {
+    "body": -0.234,
+    "head": -1.134,
+    "leg": -0.756
+   },
+   "ufc_fights": 7,
+   "ufc_ko_losses": 3,
+   "ufc_ko_wins": 3
+  },
+  "Shoaib Yousaf": {
+   "dropped_fights": 0,
+   "dropped_w": null,
+   "fights": [],
+   "grap": {
+    "ctrl": null,
+    "ctrl_ag": null,
+    "sub15": null,
+    "td15": null,
+    "td_acc": null,
+    "tdd": null
+   },
+   "grap_won": {
+    "k": 0,
+    "n": 0
+   },
+   "hdef": null,
+   "kd_against": 0,
+   "kd_for": 0,
+   "last5": {
+    "dropped": 0,
+    "fights": 0,
+    "power": 0
+   },
+   "minutes": 0.0,
+   "name": "Shoaib Yousaf",
+   "out_landed": {
+    "k": 0,
+    "n": 0
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": null,
+    "n": 0,
+    "r1": null
+   },
+   "power_fights": 0,
+   "power_w": null,
+   "rounds": [
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 1,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 2,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 3,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "target": {
+    "body": null,
+    "head": null,
+    "leg": null
+   },
+   "target_diff": {
+    "body": null,
+    "head": null,
+    "leg": null
+   },
+   "ufc_fights": 0,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 0
+  },
+  "Tahir Abdullayev": {
+   "dropped_fights": 0,
+   "dropped_w": 0.0,
+   "fights": [
+    {
+     "ca": 33,
+     "cf": 192,
+     "d": "2026-06-27",
+     "es": "2026-06-27-ufc-fight-night-fiziev-vs-torres",
+     "n": 1,
+     "o": "Jefferson Nascimento",
+     "oe": 1500,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       0.0,
+       -2
+      ],
+      [
+       2,
+       0.0,
+       -9
+      ],
+      [
+       3,
+       1.0,
+       13
+      ]
+     ],
+     "sa": 35,
+     "secs": 868,
+     "sl": 37,
+     "tdl": 2,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.1696,
+    "ctrl": 0.2212,
+    "ctrl_ag": 0.038,
+    "net_ctrl": 0.1832,
+    "sub15": 0.0,
+    "td15": 2.074,
+    "td_acc": 0.3333,
+    "tdd": 1.0
+   },
+   "grap_won": {
+    "k": 1,
+    "n": 1
+   },
+   "hdef": 0.7105,
+   "kd_against": 0,
+   "kd_for": 0,
+   "last5": {
+    "dropped": 0,
+    "fights": 1,
+    "power": 0
+   },
+   "minutes": 14.5,
+   "name": "Tahir Abdullayev",
+   "out_landed": {
+    "k": 1,
+    "n": 1
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 0,
+     "sub": 0
+    },
+    "w": {
+     "dec": 0,
+     "ko": 1,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 14.467,
+    "n": 1,
+    "r1": 0.0
+   },
+   "power_fights": 0,
+   "power_w": 0.0,
+   "rounds": [
+    {
+     "diff_pm": -0.4,
+     "fights": 1,
+     "landed_pm": 1.0,
+     "mins": 5.0,
+     "r": 1,
+     "won": 0.0
+    },
+    {
+     "diff_pm": -1.8,
+     "fights": 1,
+     "landed_pm": 1.2,
+     "mins": 5.0,
+     "r": 2,
+     "won": 0.0
+    },
+    {
+     "diff_pm": 2.91,
+     "fights": 1,
+     "landed_pm": 5.821,
+     "mins": 4.47,
+     "r": 3,
+     "won": 1.0
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 0.027,
+    "opp_elo": 1500.0,
+    "sd": 0.138
+   },
+   "target": {
+    "body": 0.2162,
+    "head": 0.7027,
+    "leg": 0.0811
+   },
+   "target_diff": {
+    "body": -0.76,
+    "head": 1.037,
+    "leg": -0.138
+   },
+   "ufc_fights": 1,
+   "ufc_ko_losses": 0,
+   "ufc_ko_wins": 1
+  },
+  "Tallison Teixeira": {
+   "dropped_fights": 2,
+   "dropped_w": 0.5575,
+   "fights": [
+    {
+     "ca": 5,
+     "cf": 0,
+     "d": "2026-05-30",
+     "es": "2026-05-30-ufc-fight-night-song-vs-figueiredo",
+     "n": 11,
+     "o": "Sergei Pavlovich",
+     "oe": 1614,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -7
+      ]
+     ],
+     "sa": 7,
+     "secs": 39,
+     "sl": 0,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 238,
+     "cf": 420,
+     "d": "2026-01-31",
+     "es": "2026-01-31-ufc-325-volkanovski-vs-lopes-2",
+     "n": 10,
+     "o": "Tai Tuivasa",
+     "oe": 1525,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       17
+      ],
+      [
+       2,
+       1.0,
+       8
+      ],
+      [
+       3,
+       0.0,
+       -16
+      ]
+     ],
+     "sa": 42,
+     "secs": 900,
+     "sl": 51,
+     "tdl": 3,
+     "tdo": 0
+    },
+    {
+     "ca": 12,
+     "cf": 0,
+     "d": "2025-07-12",
+     "es": "2025-07-12-ufc-fight-night-lewis-vs-teixeira",
+     "n": 12,
+     "o": "Derrick Lewis",
+     "oe": 1614,
+     "r": "L",
+     "rw": [
+      [
+       1,
+       0.0,
+       -6
+      ]
+     ],
+     "sa": 9,
+     "secs": 35,
+     "sl": 3,
+     "tdl": 0,
+     "tdo": 0
+    },
+    {
+     "ca": 0,
+     "cf": 11,
+     "d": "2025-02-08",
+     "es": "2025-02-08-ufc-312-du-plessis-vs-strickland-2",
+     "n": 10,
+     "o": "Justin Tafa",
+     "oe": 1490,
+     "r": "W",
+     "rw": [
+      [
+       1,
+       1.0,
+       8
+      ]
+     ],
+     "sa": 0,
+     "secs": 35,
+     "sl": 8,
+     "tdl": 0,
+     "tdo": 0
+    }
+   ],
+   "grap": {
+    "adj_net_ctrl": 0.1734,
+    "ctrl": 0.4272,
+    "ctrl_ag": 0.2527,
+    "net_ctrl": 0.1744,
+    "sub15": 0.0,
+    "td15": 2.676,
+    "td_acc": 0.3,
+    "tdd": null
+   },
+   "grap_won": {
+    "k": 1,
+    "n": 1
+   },
+   "hdef": 0.4194,
+   "kd_against": 2,
+   "kd_for": 1,
+   "last5": {
+    "dropped": 2,
+    "fights": 4,
+    "power": 1
+   },
+   "minutes": 16.8,
+   "name": "Tallison Teixeira",
+   "out_landed": {
+    "k": 2,
+    "n": 4
+   },
+   "outcomes": {
+    "l": {
+     "dec": 0,
+     "ko": 2,
+     "sub": 0
+    },
+    "w": {
+     "dec": 1,
+     "ko": 1,
+     "sub": 0
+    }
+   },
+   "pace": {
+    "min": 4.204,
+    "n": 4,
+    "r1": 0.75
+   },
+   "power_fights": 1,
+   "power_w": 0.171,
+   "rounds": [
+    {
+     "diff_pm": 1.76,
+     "fights": 4,
+     "landed_pm": 4.401,
+     "mins": 6.82,
+     "r": 1,
+     "won": 0.5
+    },
+    {
+     "diff_pm": 1.6,
+     "fights": 1,
+     "landed_pm": 4.2,
+     "mins": 5.0,
+     "r": 2,
+     "won": 1.0
+    },
+    {
+     "diff_pm": -3.2,
+     "fights": 1,
+     "landed_pm": 2.2,
+     "mins": 5.0,
+     "r": 3,
+     "won": 0.0
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 4,
+     "won": null
+    },
+    {
+     "diff_pm": null,
+     "fights": 0,
+     "landed_pm": null,
+     "mins": 0.0,
+     "r": 5,
+     "won": null
+    }
+   ],
+   "sos": {
+    "adj_sd": 0.211,
+    "opp_elo": 1525.0,
+    "sd": 0.238
+   },
+   "target": {
+    "body": 0.2097,
+    "head": 0.7581,
+    "leg": 0.0323
+   },
+   "target_diff": {
+    "body": 0.119,
+    "head": 0.654,
+    "leg": -0.535
+   },
+   "ufc_fights": 4,
+   "ufc_ko_losses": 2,
+   "ufc_ko_wins": 1
+  }
+ },
+ "sources": {
+  "ufcstats": "Greco1899/scrape_ufc_stats CSVs"
+ }
+}

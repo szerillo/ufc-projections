@@ -240,6 +240,8 @@ def check(doc: dict, path: Path, now: dt.datetime | None = None, odds_doc: dict 
         r = S.row({**inp, "dog": f["dog"], "fav": f["fav"]})
         for rk, ok in NUM_KEYS:
             if out.get(ok) is None:
+                if ok == "drift" and inp.get("open_dog") is None:   # Nov 19: no open price -> the sheet's W is blank by design (IF(F="","",G-F))
+                    continue
                 errs.append(f"{tag}: sheet value {ok} missing")
                 continue
             COMPARED["n"] += 1

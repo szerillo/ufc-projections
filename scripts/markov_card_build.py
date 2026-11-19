@@ -91,6 +91,30 @@ def build(md, slug, title, csv_path=None, flags_path=None):
         card["notes"] = card["notes"][:1] + fl.get("notes_extra", [])
         if fl.get("grading_window_index"):
             card["grading_window_index"] = fl["grading_window_index"]
+    # Nov 19 (Kirk): bouts the Markov run marks provisional (flags "provisional_fights": not on the official card yet) stay off
+    # the site: their fight entry, flags, vetoes, prop notes, ARCHIVE line and every note naming either fighter are left out.
+    prov = set(json.load(open(flags_path)).get("provisional_fights", [])) if flags_path and flags_path.exists() else set()
+    if prov:
+        gone = [f for f in card["fights"] if f["order"] in prov]
+        assert len(gone) == len(prov), f"provisional fights {sorted(prov)} not all found in the doc"
+        names = {t for f in gone for x in f["fighters"] for t in (x["name"], x["name"].split()[-1])}
+        card["fights"] = [f for f in card["fights"] if f["order"] not in prov]
+        for k in ("duration_flags", "ml_flags", "vetoes", "prop_notes"):
+            card[k] = [x for x in card.get(k, []) if x.get("fight_order") not in prov and not x.get("provisional")]
+        card["archive_tsv"] = "\n".join(l for l in card["archive_tsv"].split("\n") if not any(n in l for n in names))
+        card["notes"] = [n for n in card["notes"] if not any(nm in n for nm in names)]
+        card["notes"].append(f"{len(gone)} provisional bout from the Markov run is held off this page until it is on the official card." if len(gone) == 1
+                             else f"{len(gone)} provisional bouts from the Markov run are held off this page until they are on the official card.")
+        card["provisional_held"] = len(gone)
+    # Nov 19 (Kirk): a bout the run carried as provisional is now official (flags "fight_<n>_status", no "provisional_fights").
+    # C4's raw MD and CSV keep the old label; the site card drops the label text only (numbers untouched) and fails if any is left.
+    if flags_path and flags_path.exists() and not prov:
+        for f in card["fights"]:
+            for x in f["fighters"]:
+                if x.get("data_quality"): x["data_quality"] = re.sub(r"^PROVISIONAL bout; ", "", x["data_quality"])
+        card["notes"] = [re.sub(r" Drop fight \d+ if it falls through; [^.]*\.", "", re.sub(r", which is PROVISIONAL \([^)]*\)", "", n_)) for n_ in card["notes"]]
+        left_ = [m_.start() for m_ in re.finditer("PROVISIONAL", json.dumps(card, ensure_ascii=False), re.I)]
+        assert not left_, f"provisional label text left in the Markov card at {left_[:3]} (flags list no provisional bout)"
     full_props = all(x.get("finish_pct") is not None for f in card["fights"] for x in f["fighters"])
     card["partial"] = not full_props
     if card["partial"]:

@@ -1,0 +1,2266 @@
+{
+ "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "fight": 3,
+ "of": 12,
+ "site_pair": [
+  "Nikolas Motta",
+  "Dom Mar Fan"
+ ],
+ "pair": [
+  "Nikolas Motta",
+  "Dom Mar Fan"
+ ],
+ "file": "fight_03.html",
+ "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
+ "proj_src": "publish",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
+ "rows": [
+  {
+   "id": "v1",
+   "text": "3-3-0 (1 NC)",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Nikolas Motta UFC record",
+   "raw": "3-3-0 (1 NC)"
+  },
+  {
+   "id": "v2",
+   "text": "1-1-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Dom Mar Fan UFC record",
+   "raw": "1-1-0"
+  },
+  {
+   "id": "v3",
+   "text": "33.8",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Age a",
+   "raw": 33.782340862423
+  },
+  {
+   "id": "v4",
+   "text": "26.7",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Age b",
+   "raw": 26.67488021902806
+  },
+  {
+   "id": "v5",
+   "text": "5'9\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "5'9\""
+  },
+  {
+   "id": "v6",
+   "text": "5'11\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "5'11\""
+  },
+  {
+   "id": "v7",
+   "text": "70\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 70
+  },
+  {
+   "id": "v8",
+   "text": "75\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 75
+  },
+  {
+   "id": "v9",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v10",
+   "text": "Orthodox",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Orthodox"
+  },
+  {
+   "id": "v11",
+   "text": "+194",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Nikolas Motta",
+   "raw": 0.34066095693779913
+  },
+  {
+   "id": "v12",
+   "text": "34.1%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Nikolas Motta",
+   "raw": 0.34066095693779913
+  },
+  {
+   "id": "v13",
+   "text": "+140",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Nikolas Motta",
+   "raw": 140
+  },
+  {
+   "id": "v14",
+   "text": "41.7%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Nikolas Motta",
+   "raw": 0.4166666666666667
+  },
+  {
+   "id": "v15",
+   "text": "+137",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Nikolas Motta",
+    "field": "cost"
+   },
+   "desc": "Market ML Nikolas Motta",
+   "raw": 137
+  },
+  {
+   "id": "v16",
+   "text": "42.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Nikolas Motta"
+   },
+   "desc": "Market implied Nikolas Motta",
+   "raw": 0.4219409282700422
+  },
+  {
+   "id": "v17",
+   "text": "+145",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Nikolas Motta",
+    "book": "betmgm"
+   },
+   "desc": "Best US ML Nikolas Motta",
+   "raw": 145
+  },
+  {
+   "id": "v18",
+   "text": "-7.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v12",
+     "v14"
+    ]
+   },
+   "desc": "Edge ML Nikolas Motta",
+   "raw": -0.07600570972886755
+  },
+  {
+   "id": "v19",
+   "text": "-194",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model ML Dom Mar Fan",
+   "raw": 0.6593390430622008
+  },
+  {
+   "id": "v20",
+   "text": "65.9%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Dom Mar Fan",
+   "raw": 0.6593390430622008
+  },
+  {
+   "id": "v21",
+   "text": "-155",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Dom Mar Fan",
+   "raw": -155
+  },
+  {
+   "id": "v22",
+   "text": "60.8%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Dom Mar Fan",
+   "raw": 0.6078431372549019
+  },
+  {
+   "id": "v23",
+   "text": "-166",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Dom Mar Fan",
+    "field": "cost"
+   },
+   "desc": "Market ML Dom Mar Fan",
+   "raw": -166
+  },
+  {
+   "id": "v24",
+   "text": "62.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Dom Mar Fan"
+   },
+   "desc": "Market implied Dom Mar Fan",
+   "raw": 0.6240601503759399
+  },
+  {
+   "id": "v25",
+   "text": "-162",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Dom Mar Fan",
+    "book": "draftkings"
+   },
+   "desc": "Best US ML Dom Mar Fan",
+   "raw": -162
+  },
+  {
+   "id": "v26",
+   "text": "+5.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v20",
+     "v22"
+    ]
+   },
+   "desc": "Edge ML Dom Mar Fan",
+   "raw": 0.0514959058072989
+  },
+  {
+   "id": "v27",
+   "text": "+134",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.4281476047438353
+  },
+  {
+   "id": "v28",
+   "text": "42.8%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.4281476047438353
+  },
+  {
+   "id": "v29",
+   "text": "+140",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": 140
+  },
+  {
+   "id": "v30",
+   "text": "41.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.4166666666666667
+  },
+  {
+   "id": "v31",
+   "text": "+1.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v28",
+     "v30"
+    ]
+   },
+   "desc": "Edge GTD vs market",
+   "raw": 0.011480938077168601
+  },
+  {
+   "id": "v32",
+   "text": "-134",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.5718523952561647
+  },
+  {
+   "id": "v33",
+   "text": "57.2%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.5718523952561647
+  },
+  {
+   "id": "v34",
+   "text": "-185",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market ITD no",
+   "raw": -185
+  },
+  {
+   "id": "v35",
+   "text": "64.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market ITD implied",
+   "raw": 0.6491228070175439
+  },
+  {
+   "id": "v36",
+   "text": "-7.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v33",
+     "v35"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.07727041176137917
+  },
+  {
+   "id": "v37",
+   "text": "+590",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Nikolas Motta",
+   "raw": 0.1448249765873093
+  },
+  {
+   "id": "v38",
+   "text": "14.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Nikolas Motta",
+   "raw": 0.1448249765873093
+  },
+  {
+   "id": "v39",
+   "text": "+550",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Nikolas Motta Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Nikolas Motta",
+   "raw": 550
+  },
+  {
+   "id": "v40",
+   "text": "15.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Nikolas Motta Points"
+   },
+   "desc": "Market dec implied Nikolas Motta",
+   "raw": 0.15384615384615385
+  },
+  {
+   "id": "v41",
+   "text": "-0.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v38",
+     "v40"
+    ]
+   },
+   "desc": "Edge dec Nikolas Motta",
+   "raw": -0.009021177258844548
+  },
+  {
+   "id": "v42",
+   "text": "+488",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Nikolas Motta",
+   "raw": 0.17020697573200544
+  },
+  {
+   "id": "v43",
+   "text": "17.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Nikolas Motta",
+   "raw": 0.17020697573200544
+  },
+  {
+   "id": "v44",
+   "text": "+250",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Nikolas Motta KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Nikolas Motta",
+   "raw": 250
+  },
+  {
+   "id": "v45",
+   "text": "28.6%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Nikolas Motta KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Nikolas Motta",
+   "raw": 0.2857142857142857
+  },
+  {
+   "id": "v46",
+   "text": "-11.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v43",
+     "v45"
+    ]
+   },
+   "desc": "Edge ko Nikolas Motta",
+   "raw": -0.11550730998228026
+  },
+  {
+   "id": "v47",
+   "text": "+3802",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Nikolas Motta",
+   "raw": 0.025629004618484386
+  },
+  {
+   "id": "v48",
+   "text": "2.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Nikolas Motta",
+   "raw": 0.025629004618484386
+  },
+  {
+   "id": "v49",
+   "text": "+2500",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Nikolas Motta Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Nikolas Motta",
+   "raw": 2500
+  },
+  {
+   "id": "v50",
+   "text": "3.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Nikolas Motta Submission"
+   },
+   "desc": "Market sub implied Nikolas Motta",
+   "raw": 0.038461538461538464
+  },
+  {
+   "id": "v51",
+   "text": "-1.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v48",
+     "v50"
+    ]
+   },
+   "desc": "Edge sub Nikolas Motta",
+   "raw": -0.012832533843054078
+  },
+  {
+   "id": "v52",
+   "text": "+411",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Nikolas Motta",
+   "raw": 0.19583598035048982
+  },
+  {
+   "id": "v53",
+   "text": "19.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Nikolas Motta",
+   "raw": 0.19583598035048982
+  },
+  {
+   "id": "v54",
+   "text": "+208",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Nikolas Motta KO/TKO/DQ",
+     "Nikolas Motta Submission"
+    ]
+   },
+   "desc": "Market ITD price Nikolas Motta",
+   "raw": 0.32417582417582413
+  },
+  {
+   "id": "v55",
+   "text": "32.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Nikolas Motta KO/TKO/DQ",
+     "Nikolas Motta Submission"
+    ]
+   },
+   "desc": "Market ITD implied Nikolas Motta",
+   "raw": 0.32417582417582413
+  },
+  {
+   "id": "v56",
+   "text": "-12.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v53",
+     "v55"
+    ]
+   },
+   "desc": "Edge itd Nikolas Motta",
+   "raw": -0.1283398438253343
+  },
+  {
+   "id": "v57",
+   "text": "+253",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Dom Mar Fan",
+   "raw": 0.283322628156526
+  },
+  {
+   "id": "v58",
+   "text": "28.3%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Dom Mar Fan",
+   "raw": 0.283322628156526
+  },
+  {
+   "id": "v59",
+   "text": "+245",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Dom Mar Fan Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Dom Mar Fan",
+   "raw": 245
+  },
+  {
+   "id": "v60",
+   "text": "29.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Dom Mar Fan Points"
+   },
+   "desc": "Market dec implied Dom Mar Fan",
+   "raw": 0.2898550724637681
+  },
+  {
+   "id": "v61",
+   "text": "-0.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v58",
+     "v60"
+    ]
+   },
+   "desc": "Edge dec Dom Mar Fan",
+   "raw": -0.006532444307242147
+  },
+  {
+   "id": "v62",
+   "text": "+384",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Dom Mar Fan",
+   "raw": 0.20672602175037363
+  },
+  {
+   "id": "v63",
+   "text": "20.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Dom Mar Fan",
+   "raw": 0.20672602175037363
+  },
+  {
+   "id": "v64",
+   "text": "+350",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Dom Mar Fan KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Dom Mar Fan",
+   "raw": 350
+  },
+  {
+   "id": "v65",
+   "text": "22.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Dom Mar Fan KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Dom Mar Fan",
+   "raw": 0.2222222222222222
+  },
+  {
+   "id": "v66",
+   "text": "-1.5%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v63",
+     "v65"
+    ]
+   },
+   "desc": "Edge ko Dom Mar Fan",
+   "raw": -0.015496200471848576
+  },
+  {
+   "id": "v67",
+   "text": "+491",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Dom Mar Fan",
+   "raw": 0.16929039315530123
+  },
+  {
+   "id": "v68",
+   "text": "16.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Dom Mar Fan",
+   "raw": 0.16929039315530123
+  },
+  {
+   "id": "v69",
+   "text": "+395",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Dom Mar Fan Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Dom Mar Fan",
+   "raw": 395
+  },
+  {
+   "id": "v70",
+   "text": "20.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Dom Mar Fan Submission"
+   },
+   "desc": "Market sub implied Dom Mar Fan",
+   "raw": 0.20202020202020202
+  },
+  {
+   "id": "v71",
+   "text": "-3.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v68",
+     "v70"
+    ]
+   },
+   "desc": "Edge sub Dom Mar Fan",
+   "raw": -0.03272980886490079
+  },
+  {
+   "id": "v72",
+   "text": "+166",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Dom Mar Fan",
+   "raw": 0.37601641490567483
+  },
+  {
+   "id": "v73",
+   "text": "37.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Dom Mar Fan",
+   "raw": 0.37601641490567483
+  },
+  {
+   "id": "v74",
+   "text": "+136",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Dom Mar Fan KO/TKO/DQ",
+     "Dom Mar Fan Submission"
+    ]
+   },
+   "desc": "Market ITD price Dom Mar Fan",
+   "raw": 0.4242424242424242
+  },
+  {
+   "id": "v75",
+   "text": "42.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Dom Mar Fan KO/TKO/DQ",
+     "Dom Mar Fan Submission"
+    ]
+   },
+   "desc": "Market ITD implied Dom Mar Fan",
+   "raw": 0.4242424242424242
+  },
+  {
+   "id": "v76",
+   "text": "-4.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v73",
+     "v75"
+    ]
+   },
+   "desc": "Edge itd Dom Mar Fan",
+   "raw": -0.048226009336749365
+  },
+  {
+   "id": "v77",
+   "text": "-159",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Nikolas Motta",
+     "Dom Mar Fan"
+    ],
+    "side": "b"
+   },
+   "desc": "LH open ML Dom Mar Fan",
+   "raw": -159
+  },
+  {
+   "id": "v78",
+   "text": "-161",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Nikolas Motta",
+     "Dom Mar Fan"
+    ],
+    "side": "b",
+    "at": "current"
+   },
+   "desc": "LH current ML Dom Mar Fan",
+   "raw": -161
+  },
+  {
+   "id": "v79",
+   "text": "1.0",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Nikolas Motta",
+     "Dom Mar Fan"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.010000000000000009
+  },
+  {
+   "id": "v80",
+   "text": "76%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "target.head"
+   },
+   "desc": "Target head Nikolas Motta",
+   "raw": 0.7619
+  },
+  {
+   "id": "v81",
+   "text": "15%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "target.body"
+   },
+   "desc": "Target body Nikolas Motta",
+   "raw": 0.1472
+  },
+  {
+   "id": "v82",
+   "text": "9%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Nikolas Motta",
+   "raw": 0.0909
+  },
+  {
+   "id": "v83",
+   "text": "79%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "target.head"
+   },
+   "desc": "Target head Dom Mar Fan",
+   "raw": 0.79
+  },
+  {
+   "id": "v84",
+   "text": "18%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "target.body"
+   },
+   "desc": "Target body Dom Mar Fan",
+   "raw": 0.18
+  },
+  {
+   "id": "v85",
+   "text": "3%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Dom Mar Fan",
+   "raw": 0.03
+  },
+  {
+   "id": "v86",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 7
+  },
+  {
+   "id": "v87",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 2
+  },
+  {
+   "id": "v88",
+   "text": "70%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.7048
+  },
+  {
+   "id": "v89",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 3
+  },
+  {
+   "id": "v90",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 4
+  },
+  {
+   "id": "v91",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.0
+  },
+  {
+   "id": "v92",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v93",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 0
+  },
+  {
+   "id": "v94",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2309
+  },
+  {
+   "id": "v95",
+   "text": "42%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.4238
+  },
+  {
+   "id": "v96",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 2
+  },
+  {
+   "id": "v97",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 3
+  },
+  {
+   "id": "v98",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.0
+  },
+  {
+   "id": "v99",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v100",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 0
+  },
+  {
+   "id": "v101",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.2582
+  },
+  {
+   "id": "v102",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Nikolas Motta",
+   "raw": 2
+  },
+  {
+   "id": "v103",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Nikolas Motta",
+   "raw": 1
+  },
+  {
+   "id": "v104",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Nikolas Motta",
+   "raw": 3
+  },
+  {
+   "id": "v105",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Dom Mar Fan",
+   "raw": 1
+  },
+  {
+   "id": "v106",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "outcomes.l.sub"
+   },
+   "desc": "Outcome lsub Dom Mar Fan",
+   "raw": 1
+  },
+  {
+   "id": "v107",
+   "text": "57%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Nikolas Motta",
+   "raw": 0.5714
+  },
+  {
+   "id": "v108",
+   "text": "-0.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Nikolas Motta",
+   "raw": -0.3
+  },
+  {
+   "id": "v109",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Nikolas Motta",
+   "raw": 7
+  },
+  {
+   "id": "v110",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Nikolas Motta",
+   "raw": 0.25
+  },
+  {
+   "id": "v111",
+   "text": "-4.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Nikolas Motta",
+   "raw": -4.123
+  },
+  {
+   "id": "v112",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Nikolas Motta",
+   "raw": 4
+  },
+  {
+   "id": "v113",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Nikolas Motta",
+   "raw": 0.5
+  },
+  {
+   "id": "v114",
+   "text": "+1.3",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Nikolas Motta",
+   "raw": 1.344
+  },
+  {
+   "id": "v115",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Nikolas Motta",
+   "raw": 2
+  },
+  {
+   "id": "v116",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Dom Mar Fan",
+   "raw": 0.0
+  },
+  {
+   "id": "v117",
+   "text": "+0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Dom Mar Fan",
+   "raw": 0.672
+  },
+  {
+   "id": "v118",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Dom Mar Fan",
+   "raw": 2
+  },
+  {
+   "id": "v119",
+   "text": "100%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Dom Mar Fan",
+   "raw": 1.0
+  },
+  {
+   "id": "v120",
+   "text": "+5.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Dom Mar Fan",
+   "raw": 5.0
+  },
+  {
+   "id": "v121",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Dom Mar Fan",
+   "raw": 1
+  },
+  {
+   "id": "v122",
+   "text": "0%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Dom Mar Fan",
+   "raw": 0.0
+  },
+  {
+   "id": "v123",
+   "text": "+0.0",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Dom Mar Fan",
+   "raw": 0.0
+  },
+  {
+   "id": "v124",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Dom Mar Fan",
+   "raw": 1
+  },
+  {
+   "id": "v125",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Nikolas Motta 0",
+   "raw": -3
+  },
+  {
+   "id": "v126",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Nikolas Motta 1",
+   "raw": 9
+  },
+  {
+   "id": "v127",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Nikolas Motta 2",
+   "raw": 9
+  },
+  {
+   "id": "v128",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Nikolas Motta 3",
+   "raw": -14
+  },
+  {
+   "id": "v129",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Nikolas Motta 4",
+   "raw": -6
+  },
+  {
+   "id": "v130",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Nikolas Motta 5",
+   "raw": 9
+  },
+  {
+   "id": "v131",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Nikolas Motta 6",
+   "raw": -12
+  },
+  {
+   "id": "v132",
+   "text": "-24",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Nikolas Motta 0",
+   "raw": -24
+  },
+  {
+   "id": "v133",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Nikolas Motta 1",
+   "raw": 1
+  },
+  {
+   "id": "v134",
+   "text": "-29",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Nikolas Motta 3",
+   "raw": -29
+  },
+  {
+   "id": "v135",
+   "text": "-15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Nikolas Motta 6",
+   "raw": -15
+  },
+  {
+   "id": "v136",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Nikolas Motta 1",
+   "raw": 12
+  },
+  {
+   "id": "v137",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Nikolas Motta 3",
+   "raw": -1
+  },
+  {
+   "id": "v138",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Dom Mar Fan 0",
+   "raw": 0
+  },
+  {
+   "id": "v139",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Dom Mar Fan 1",
+   "raw": 6
+  },
+  {
+   "id": "v140",
+   "text": "+25",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Dom Mar Fan 1",
+   "raw": 25
+  },
+  {
+   "id": "v141",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Dom Mar Fan 1",
+   "raw": 0
+  },
+  {
+   "id": "v142",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v143",
+   "text": "0.79",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 0.792
+  },
+  {
+   "id": "v144",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.25
+  },
+  {
+   "id": "v145",
+   "text": "82%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.8235
+  },
+  {
+   "id": "v146",
+   "text": "82%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.8182
+  },
+  {
+   "id": "v147",
+   "text": "4%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.0398
+  },
+  {
+   "id": "v148",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.1893
+  },
+  {
+   "id": "v149",
+   "text": "-9.6%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": -0.0956
+  },
+  {
+   "id": "v150",
+   "text": "-20.9%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": -0.2086
+  },
+  {
+   "id": "v151",
+   "text": "13%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.1278
+  },
+  {
+   "id": "v152",
+   "text": "38%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.382
+  },
+  {
+   "id": "v153",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.0
+  },
+  {
+   "id": "v154",
+   "text": "0.00",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.0
+  },
+  {
+   "id": "v155",
+   "text": "-1.25",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Nikolas Motta",
+   "raw": -1.252
+  },
+  {
+   "id": "v156",
+   "text": "+1.64",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Dom Mar Fan",
+   "raw": 1.637
+  },
+  {
+   "id": "v157",
+   "text": "-1.31",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": -1.314
+  },
+  {
+   "id": "v158",
+   "text": "+1.51",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": 1.507
+  },
+  {
+   "id": "v159",
+   "text": "-0.02",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": -0.02
+  },
+  {
+   "id": "v160",
+   "text": "+2.17",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": 2.165
+  },
+  {
+   "id": "v161",
+   "text": "-0.53",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": -0.528
+  },
+  {
+   "id": "v162",
+   "text": "-0.58",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": -0.581
+  },
+  {
+   "id": "v163",
+   "text": "-0.70",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": -0.704
+  },
+  {
+   "id": "v164",
+   "text": "+0.05",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": 0.053
+  },
+  {
+   "id": "v165",
+   "text": "59%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.5922
+  },
+  {
+   "id": "v166",
+   "text": "60%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.6
+  },
+  {
+   "id": "v167",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "ufc_fights"
+   },
+   "desc": "Head defence sample Dom Mar Fan",
+   "raw": 2
+  },
+  {
+   "id": "v168",
+   "text": "6.3",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 6.325
+  },
+  {
+   "id": "v169",
+   "text": "9.5",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 9.467
+  },
+  {
+   "id": "v170",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "pace.n"
+   },
+   "desc": "Avg fight, min sample Dom Mar Fan",
+   "raw": 2
+  },
+  {
+   "id": "v171",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Nikolas Motta",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.5
+  },
+  {
+   "id": "v172",
+   "text": "50%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.5
+  },
+  {
+   "id": "v173",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dom Mar Fan",
+    "path": "pace.n"
+   },
+   "desc": "Finished in R1 sample Dom Mar Fan",
+   "raw": 2
+  },
+  {
+   "id": "v174",
+   "text": "+320",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Nikolas Motta Nazim Sadykhov",
+   "raw": 320
+  },
+  {
+   "id": "v175",
+   "text": "+185",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Nikolas Motta Maheshate",
+   "raw": 185
+  },
+  {
+   "id": "v176",
+   "text": "+275",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Nikolas Motta Tom Nolan",
+   "raw": 275
+  },
+  {
+   "id": "v177",
+   "text": "-132",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Nikolas Motta Trey Ogden",
+   "raw": -132
+  },
+  {
+   "id": "v178",
+   "text": "+160",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 4,
+    "key": "od.mc"
+   },
+   "desc": "Close Nikolas Motta Manuel Torres",
+   "raw": 160
+  },
+  {
+   "id": "v179",
+   "text": "-179",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 5,
+    "key": "od.mc"
+   },
+   "desc": "Close Nikolas Motta Cameron VanCamp",
+   "raw": -179
+  },
+  {
+   "id": "v180",
+   "text": "-175",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 6,
+    "key": "od.mc"
+   },
+   "desc": "Close Nikolas Motta Jim Miller",
+   "raw": -175
+  },
+  {
+   "id": "v181",
+   "text": "+160",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Dom Mar Fan Kody Steele",
+   "raw": 160
+  },
+  {
+   "id": "v182",
+   "text": "-159",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Dom Mar Fan Sangwook Kim",
+   "raw": -159
+  }
+ ],
+ "gaps": []
+}

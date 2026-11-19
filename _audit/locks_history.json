@@ -60,6 +60,42 @@
    "slug": "ufc_334",
    "who": "Claude for Sean",
    "reason": "Sean Nov 13: embed tool full/moneylines/props presets open the new card pages; Main Event preset picks the main event (was fight 7)"
+  },
+  {
+   "at": "2026-11-19T04:37:51Z",
+   "slug": "fn_prochazka_stirling",
+   "who": "Claude for Kirk",
+   "reason": "Nov 18: first pin for the new card (UFC Fight Night Prochazka vs Stirling), before the first publish"
+  },
+  {
+   "at": "2026-11-19T04:59:07Z",
+   "slug": "fn_prochazka_stirling",
+   "who": "Claude for Kirk",
+   "reason": "Nov 19 (Kirk): split 5 main / 6 prelims per UFC.com and the sheet; Markov read block from C4's V4.1b files (opt-in key markov)"
+  },
+  {
+   "at": "2026-11-19T07:03:01Z",
+   "slug": "fn_prochazka_stirling",
+   "who": "Claude",
+   "reason": "Nov 19 (Kirk): fight 12 Mitchell vs Yousaf official, added as prelim opener (card_overrides add, event file, index nf, embed roster)"
+  },
+  {
+   "at": "2026-11-19T22:49:31Z",
+   "slug": "fn_prochazka_stirling",
+   "who": "Claude",
+   "reason": "Nov 19 staging: sheet projections attached to the event file from the staging export (publish_source.py)"
+  },
+  {
+   "at": "2026-11-19T22:51:03Z",
+   "slug": "fn_prochazka_stirling",
+   "who": "Claude",
+   "reason": "Nov 19 staging: event file sheet block gains adj (Manual Adjust) for the site build-up"
+  },
+  {
+   "at": "2026-11-19T23:47:37Z",
+   "slug": "fn_prochazka_stirling",
+   "who": "Claude",
+   "reason": "Nov 19 go-live: Sean's Publish to site export attached to the event file"
   }
  ]
 }

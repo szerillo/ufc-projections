@@ -1,0 +1,3310 @@
+{
+ "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "fight": 10,
+ "of": 12,
+ "site_pair": [
+  "Dan Hooker",
+  "Brian Ortega"
+ ],
+ "pair": [
+  "Dan Hooker",
+  "Brian Ortega"
+ ],
+ "file": "fight_10.html",
+ "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
+ "proj_src": "publish",
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
+ "rows": [
+  {
+   "id": "v1",
+   "text": "14-11-0",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Dan Hooker UFC record",
+   "raw": "14-11-0"
+  },
+  {
+   "id": "v2",
+   "text": "8-5-0 (1 NC)",
+   "fmt": "str",
+   "rule": "record",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Brian Ortega UFC record",
+   "raw": "8-5-0 (1 NC)"
+  },
+  {
+   "id": "v3",
+   "text": "36.8",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Age a",
+   "raw": 36.76933607118412
+  },
+  {
+   "id": "v4",
+   "text": "35.7",
+   "fmt": "n1",
+   "rule": "age",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Age b",
+   "raw": 35.748117727583846
+  },
+  {
+   "id": "v5",
+   "text": "6'0\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "ht"
+   },
+   "desc": "Height a",
+   "raw": "6'0\""
+  },
+  {
+   "id": "v6",
+   "text": "5'8\"",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "ht"
+   },
+   "desc": "Height b",
+   "raw": "5'8\""
+  },
+  {
+   "id": "v7",
+   "text": "75\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Reach a",
+   "raw": 75
+  },
+  {
+   "id": "v8",
+   "text": "69\"",
+   "fmt": "in",
+   "rule": "bio_reach",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Reach b",
+   "raw": 69
+  },
+  {
+   "id": "v9",
+   "text": "Switch",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "a",
+    "key": "stance"
+   },
+   "desc": "Stance a",
+   "raw": "Switch"
+  },
+  {
+   "id": "v10",
+   "text": "Switch",
+   "fmt": "str",
+   "rule": "bio",
+   "args": {
+    "side": "b",
+    "key": "stance"
+   },
+   "desc": "Stance b",
+   "raw": "Switch"
+  },
+  {
+   "id": "v11",
+   "text": "-213",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model ML Dan Hooker",
+   "raw": 0.6809009680741503
+  },
+  {
+   "id": "v12",
+   "text": "68.1%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % Dan Hooker",
+   "raw": 0.6809009680741503
+  },
+  {
+   "id": "v13",
+   "text": "-188",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML Dan Hooker",
+   "raw": -188
+  },
+  {
+   "id": "v14",
+   "text": "65.3%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied Dan Hooker",
+   "raw": 0.6527777777777778
+  },
+  {
+   "id": "v15",
+   "text": "-193",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Daniel Hooker",
+    "field": "cost"
+   },
+   "desc": "Market ML Dan Hooker",
+   "raw": -193
+  },
+  {
+   "id": "v16",
+   "text": "65.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Daniel Hooker"
+   },
+   "desc": "Market implied Dan Hooker",
+   "raw": 0.658703071672355
+  },
+  {
+   "id": "v17",
+   "text": "-192",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Daniel Hooker",
+    "book": "draftkings"
+   },
+   "desc": "Best US ML Dan Hooker",
+   "raw": -192
+  },
+  {
+   "id": "v18",
+   "text": "+2.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v12",
+     "v14"
+    ]
+   },
+   "desc": "Edge ML Dan Hooker",
+   "raw": 0.028123190296372558
+  },
+  {
+   "id": "v19",
+   "text": "+213",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model ML Brian Ortega",
+   "raw": 0.31909903192584965
+  },
+  {
+   "id": "v20",
+   "text": "31.9%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Brian Ortega",
+   "raw": 0.31909903192584965
+  },
+  {
+   "id": "v21",
+   "text": "+160",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Brian Ortega",
+   "raw": 160
+  },
+  {
+   "id": "v22",
+   "text": "38.5%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Brian Ortega",
+   "raw": 0.38461538461538464
+  },
+  {
+   "id": "v23",
+   "text": "+157",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Brian Ortega",
+    "field": "cost"
+   },
+   "desc": "Market ML Brian Ortega",
+   "raw": 157
+  },
+  {
+   "id": "v24",
+   "text": "38.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Brian Ortega"
+   },
+   "desc": "Market implied Brian Ortega",
+   "raw": 0.38910505836575876
+  },
+  {
+   "id": "v25",
+   "text": "+165",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Brian Ortega",
+    "book": "betmgm"
+   },
+   "desc": "Best US ML Brian Ortega",
+   "raw": 165
+  },
+  {
+   "id": "v26",
+   "text": "-6.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v20",
+     "v22"
+    ]
+   },
+   "desc": "Edge ML Brian Ortega",
+   "raw": -0.06551635268953498
+  },
+  {
+   "id": "v27",
+   "text": "+115",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.4642879607438024
+  },
+  {
+   "id": "v28",
+   "text": "46.4%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.4642879607438024
+  },
+  {
+   "id": "v29",
+   "text": "-105",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": -105
+  },
+  {
+   "id": "v30",
+   "text": "51.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.5121951219512195
+  },
+  {
+   "id": "v31",
+   "text": "-4.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v28",
+     "v30"
+    ]
+   },
+   "desc": "Edge GTD vs market",
+   "raw": -0.047907161207417115
+  },
+  {
+   "id": "v32",
+   "text": "-115",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.5357120392561976
+  },
+  {
+   "id": "v33",
+   "text": "53.6%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.5357120392561976
+  },
+  {
+   "id": "v34",
+   "text": "-123",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market ITD no",
+   "raw": -123
+  },
+  {
+   "id": "v35",
+   "text": "55.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market ITD implied",
+   "raw": 0.5515695067264574
+  },
+  {
+   "id": "v36",
+   "text": "-1.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v33",
+     "v35"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.015857467470259845
+  },
+  {
+   "id": "v37",
+   "text": "+221",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Dan Hooker",
+   "raw": 0.3118273894280666
+  },
+  {
+   "id": "v38",
+   "text": "31.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % Dan Hooker",
+   "raw": 0.3118273894280666
+  },
+  {
+   "id": "v39",
+   "text": "+185",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Daniel Hooker Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Dan Hooker",
+   "raw": 185
+  },
+  {
+   "id": "v40",
+   "text": "35.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Daniel Hooker Points"
+   },
+   "desc": "Market dec implied Dan Hooker",
+   "raw": 0.3508771929824561
+  },
+  {
+   "id": "v41",
+   "text": "-3.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v38",
+     "v40"
+    ]
+   },
+   "desc": "Edge dec Dan Hooker",
+   "raw": -0.03904980355438953
+  },
+  {
+   "id": "v42",
+   "text": "+220",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Dan Hooker",
+   "raw": 0.31208741104579585
+  },
+  {
+   "id": "v43",
+   "text": "31.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % Dan Hooker",
+   "raw": 0.31208741104579585
+  },
+  {
+   "id": "v44",
+   "text": "+200",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Daniel Hooker KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Dan Hooker",
+   "raw": 200
+  },
+  {
+   "id": "v45",
+   "text": "33.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Daniel Hooker KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Dan Hooker",
+   "raw": 0.3333333333333333
+  },
+  {
+   "id": "v46",
+   "text": "-2.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v43",
+     "v45"
+    ]
+   },
+   "desc": "Edge ko Dan Hooker",
+   "raw": -0.021245922287537466
+  },
+  {
+   "id": "v47",
+   "text": "+1655",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Dan Hooker",
+   "raw": 0.056986167600287886
+  },
+  {
+   "id": "v48",
+   "text": "5.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % Dan Hooker",
+   "raw": 0.056986167600287886
+  },
+  {
+   "id": "v49",
+   "text": "+1600",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Daniel Hooker Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Dan Hooker",
+   "raw": 1600
+  },
+  {
+   "id": "v50",
+   "text": "5.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Daniel Hooker Submission"
+   },
+   "desc": "Market sub implied Dan Hooker",
+   "raw": 0.058823529411764705
+  },
+  {
+   "id": "v51",
+   "text": "-0.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v48",
+     "v50"
+    ]
+   },
+   "desc": "Edge sub Dan Hooker",
+   "raw": -0.001837361811476819
+  },
+  {
+   "id": "v52",
+   "text": "+171",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Dan Hooker",
+   "raw": 0.36907357864608376
+  },
+  {
+   "id": "v53",
+   "text": "36.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % Dan Hooker",
+   "raw": 0.36907357864608376
+  },
+  {
+   "id": "v54",
+   "text": "+155",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Daniel Hooker KO/TKO/DQ",
+     "Daniel Hooker Submission"
+    ]
+   },
+   "desc": "Market ITD price Dan Hooker",
+   "raw": 0.39215686274509803
+  },
+  {
+   "id": "v55",
+   "text": "39.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Daniel Hooker KO/TKO/DQ",
+     "Daniel Hooker Submission"
+    ]
+   },
+   "desc": "Market ITD implied Dan Hooker",
+   "raw": 0.39215686274509803
+  },
+  {
+   "id": "v56",
+   "text": "-2.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v53",
+     "v55"
+    ]
+   },
+   "desc": "Edge itd Dan Hooker",
+   "raw": -0.02308328409901428
+  },
+  {
+   "id": "v57",
+   "text": "+556",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Brian Ortega",
+   "raw": 0.15246057131573582
+  },
+  {
+   "id": "v58",
+   "text": "15.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Brian Ortega",
+   "raw": 0.15246057131573582
+  },
+  {
+   "id": "v59",
+   "text": "+400",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Brian Ortega Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Brian Ortega",
+   "raw": 400
+  },
+  {
+   "id": "v60",
+   "text": "20.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Brian Ortega Points"
+   },
+   "desc": "Market dec implied Brian Ortega",
+   "raw": 0.2
+  },
+  {
+   "id": "v61",
+   "text": "-4.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v58",
+     "v60"
+    ]
+   },
+   "desc": "Edge dec Brian Ortega",
+   "raw": -0.047539428684264196
+  },
+  {
+   "id": "v62",
+   "text": "+2280",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Brian Ortega",
+   "raw": 0.04201577417399699
+  },
+  {
+   "id": "v63",
+   "text": "4.2%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Brian Ortega",
+   "raw": 0.04201577417399699
+  },
+  {
+   "id": "v64",
+   "text": "+1000",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Brian Ortega KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Brian Ortega",
+   "raw": 1000
+  },
+  {
+   "id": "v65",
+   "text": "9.1%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Brian Ortega KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Brian Ortega",
+   "raw": 0.09090909090909091
+  },
+  {
+   "id": "v66",
+   "text": "-4.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v63",
+     "v65"
+    ]
+   },
+   "desc": "Edge ko Brian Ortega",
+   "raw": -0.04889331673509392
+  },
+  {
+   "id": "v67",
+   "text": "+702",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Brian Ortega",
+   "raw": 0.12462268643611685
+  },
+  {
+   "id": "v68",
+   "text": "12.5%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Brian Ortega",
+   "raw": 0.12462268643611685
+  },
+  {
+   "id": "v69",
+   "text": "+480",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Brian Ortega Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Brian Ortega",
+   "raw": 480
+  },
+  {
+   "id": "v70",
+   "text": "17.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Brian Ortega Submission"
+   },
+   "desc": "Market sub implied Brian Ortega",
+   "raw": 0.1724137931034483
+  },
+  {
+   "id": "v71",
+   "text": "-4.8%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v68",
+     "v70"
+    ]
+   },
+   "desc": "Edge sub Brian Ortega",
+   "raw": -0.04779110666733144
+  },
+  {
+   "id": "v72",
+   "text": "+500",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Brian Ortega",
+   "raw": 0.16663846061011384
+  },
+  {
+   "id": "v73",
+   "text": "16.7%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Brian Ortega",
+   "raw": 0.16663846061011384
+  },
+  {
+   "id": "v74",
+   "text": "+280",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Brian Ortega KO/TKO/DQ",
+     "Brian Ortega Submission"
+    ]
+   },
+   "desc": "Market ITD price Brian Ortega",
+   "raw": 0.2633228840125392
+  },
+  {
+   "id": "v75",
+   "text": "26.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Brian Ortega KO/TKO/DQ",
+     "Brian Ortega Submission"
+    ]
+   },
+   "desc": "Market ITD implied Brian Ortega",
+   "raw": 0.2633228840125392
+  },
+  {
+   "id": "v76",
+   "text": "-9.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v73",
+     "v75"
+    ]
+   },
+   "desc": "Edge itd Brian Ortega",
+   "raw": -0.09668442340242539
+  },
+  {
+   "id": "v77",
+   "text": "-161",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Dan Hooker",
+     "Brian Ortega"
+    ],
+    "side": "a"
+   },
+   "desc": "LH open ML Dan Hooker",
+   "raw": -161
+  },
+  {
+   "id": "v78",
+   "text": "-190",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Dan Hooker",
+     "Brian Ortega"
+    ],
+    "side": "a",
+    "at": "current"
+   },
+   "desc": "LH current ML Dan Hooker",
+   "raw": -190
+  },
+  {
+   "id": "v79",
+   "text": "3.5",
+   "fmt": "pts",
+   "rule": "lh_drift_abs",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "Dan Hooker",
+     "Brian Ortega"
+    ]
+   },
+   "desc": "LH drift pts",
+   "raw": 0.03500000000000003
+  },
+  {
+   "id": "v80",
+   "text": "62%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "target.head"
+   },
+   "desc": "Target head Dan Hooker",
+   "raw": 0.6152
+  },
+  {
+   "id": "v81",
+   "text": "18%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "target.body"
+   },
+   "desc": "Target body Dan Hooker",
+   "raw": 0.1823
+  },
+  {
+   "id": "v82",
+   "text": "20%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Dan Hooker",
+   "raw": 0.2025
+  },
+  {
+   "id": "v83",
+   "text": "71%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "target.head"
+   },
+   "desc": "Target head Brian Ortega",
+   "raw": 0.7116
+  },
+  {
+   "id": "v84",
+   "text": "18%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "target.body"
+   },
+   "desc": "Target body Brian Ortega",
+   "raw": 0.1833
+  },
+  {
+   "id": "v85",
+   "text": "11%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "target.leg"
+   },
+   "desc": "Target leg Brian Ortega",
+   "raw": 0.1051
+  },
+  {
+   "id": "v86",
+   "text": "25",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights a",
+   "raw": 25
+  },
+  {
+   "id": "v87",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "ufc_fights"
+   },
+   "desc": "Power section fights b",
+   "raw": 14
+  },
+  {
+   "id": "v88",
+   "text": "19%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet a",
+   "raw": 0.1866
+  },
+  {
+   "id": "v89",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 a",
+   "raw": 1
+  },
+  {
+   "id": "v90",
+   "text": "8",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count a",
+   "raw": 8
+  },
+  {
+   "id": "v91",
+   "text": "14%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "power_w"
+   },
+   "desc": "Power: drops or stops them on the feet b",
+   "raw": 0.145
+  },
+  {
+   "id": "v92",
+   "text": "0",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "last5.power"
+   },
+   "desc": "Power: drops or stops them on the feet last5 b",
+   "raw": 0
+  },
+  {
+   "id": "v93",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "power_fights"
+   },
+   "desc": "Power: drops or stops them on the feet count b",
+   "raw": 4
+  },
+  {
+   "id": "v94",
+   "text": "23%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight",
+    "key": "power"
+   },
+   "desc": "Division share Power: drops or stops them on the feet",
+   "raw": 0.2309
+  },
+  {
+   "id": "v95",
+   "text": "46%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped a",
+   "raw": 0.4569
+  },
+  {
+   "id": "v96",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 a",
+   "raw": 2
+  },
+  {
+   "id": "v97",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count a",
+   "raw": 5
+  },
+  {
+   "id": "v98",
+   "text": "16%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "dropped_w"
+   },
+   "desc": "Durability: gets dropped or stopped b",
+   "raw": 0.1566
+  },
+  {
+   "id": "v99",
+   "text": "1",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "last5.dropped"
+   },
+   "desc": "Durability: gets dropped or stopped last5 b",
+   "raw": 1
+  },
+  {
+   "id": "v100",
+   "text": "2",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "dropped_fights"
+   },
+   "desc": "Durability: gets dropped or stopped count b",
+   "raw": 2
+  },
+  {
+   "id": "v101",
+   "text": "26%",
+   "fmt": "pct0",
+   "rule": "em_div",
+   "args": {
+    "wc": "Lightweight",
+    "key": "dropped"
+   },
+   "desc": "Division share Durability: gets dropped or stopped",
+   "raw": 0.2582
+  },
+  {
+   "id": "v102",
+   "text": "7",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Dan Hooker",
+   "raw": 7
+  },
+  {
+   "id": "v103",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "outcomes.w.dec"
+   },
+   "desc": "Outcome wdec Dan Hooker",
+   "raw": 5
+  },
+  {
+   "id": "v104",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Dan Hooker",
+   "raw": 4
+  },
+  {
+   "id": "v105",
+   "text": "5",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "outcomes.l.ko"
+   },
+   "desc": "Outcome lko Dan Hooker",
+   "raw": 5
+  },
+  {
+   "id": "v106",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "outcomes.w.ko"
+   },
+   "desc": "Outcome wko Brian Ortega",
+   "raw": 3
+  },
+  {
+   "id": "v107",
+   "text": "4",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "outcomes.w.sub"
+   },
+   "desc": "Outcome wsub Brian Ortega",
+   "raw": 4
+  },
+  {
+   "id": "v108",
+   "text": "3",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "outcomes.l.dec"
+   },
+   "desc": "Outcome ldec Brian Ortega",
+   "raw": 3
+  },
+  {
+   "id": "v109",
+   "text": "52%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Dan Hooker",
+   "raw": 0.52
+  },
+  {
+   "id": "v110",
+   "text": "+0.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Dan Hooker",
+   "raw": 0.437
+  },
+  {
+   "id": "v111",
+   "text": "25",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Dan Hooker",
+   "raw": 25
+  },
+  {
+   "id": "v112",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Dan Hooker",
+   "raw": 0.5625
+  },
+  {
+   "id": "v113",
+   "text": "-0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Dan Hooker",
+   "raw": -0.683
+  },
+  {
+   "id": "v114",
+   "text": "16",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Dan Hooker",
+   "raw": 16
+  },
+  {
+   "id": "v115",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Dan Hooker",
+   "raw": 0.5455
+  },
+  {
+   "id": "v116",
+   "text": "+0.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Dan Hooker",
+   "raw": 0.125
+  },
+  {
+   "id": "v117",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Dan Hooker",
+   "raw": 11
+  },
+  {
+   "id": "v118",
+   "text": "21%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.0.won"
+   },
+   "desc": "R1 won Brian Ortega",
+   "raw": 0.2143
+  },
+  {
+   "id": "v119",
+   "text": "-2.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "R1 diff Brian Ortega",
+   "raw": -2.654
+  },
+  {
+   "id": "v120",
+   "text": "14",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.0.fights"
+   },
+   "desc": "R1 fights Brian Ortega",
+   "raw": 14
+  },
+  {
+   "id": "v121",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.1.won"
+   },
+   "desc": "R2 won Brian Ortega",
+   "raw": 0.3636
+  },
+  {
+   "id": "v122",
+   "text": "-1.6",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "R2 diff Brian Ortega",
+   "raw": -1.593
+  },
+  {
+   "id": "v123",
+   "text": "11",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.1.fights"
+   },
+   "desc": "R2 fights Brian Ortega",
+   "raw": 11
+  },
+  {
+   "id": "v124",
+   "text": "60%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.2.won"
+   },
+   "desc": "R3 won Brian Ortega",
+   "raw": 0.6
+  },
+  {
+   "id": "v125",
+   "text": "-1.8",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "R3 diff Brian Ortega",
+   "raw": -1.827
+  },
+  {
+   "id": "v126",
+   "text": "10",
+   "fmt": "int",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.2.fights"
+   },
+   "desc": "R3 fights Brian Ortega",
+   "raw": 10
+  },
+  {
+   "id": "v127",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 0",
+   "raw": 2
+  },
+  {
+   "id": "v128",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 1",
+   "raw": -9
+  },
+  {
+   "id": "v129",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 2",
+   "raw": -14
+  },
+  {
+   "id": "v130",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 3",
+   "raw": -6
+  },
+  {
+   "id": "v131",
+   "text": "+4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 4",
+   "raw": 4
+  },
+  {
+   "id": "v132",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 5",
+   "raw": 10
+  },
+  {
+   "id": "v133",
+   "text": "-35",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 6",
+   "raw": -35
+  },
+  {
+   "id": "v134",
+   "text": "+2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 7",
+   "raw": 2
+  },
+  {
+   "id": "v135",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 8",
+   "raw": 19
+  },
+  {
+   "id": "v136",
+   "text": "-9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 9",
+   "raw": -9
+  },
+  {
+   "id": "v137",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 10",
+   "raw": 13
+  },
+  {
+   "id": "v138",
+   "text": "+8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 11",
+   "raw": 8
+  },
+  {
+   "id": "v139",
+   "text": "+33",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 12",
+   "raw": 33
+  },
+  {
+   "id": "v140",
+   "text": "+15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 13",
+   "raw": 15
+  },
+  {
+   "id": "v141",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.14.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 14",
+   "raw": -8
+  },
+  {
+   "id": "v142",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.15.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 15",
+   "raw": 9
+  },
+  {
+   "id": "v143",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.16.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 16",
+   "raw": 14
+  },
+  {
+   "id": "v144",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.17.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 17",
+   "raw": 1
+  },
+  {
+   "id": "v145",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.18.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 18",
+   "raw": 12
+  },
+  {
+   "id": "v146",
+   "text": "+3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.19.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 19",
+   "raw": 3
+  },
+  {
+   "id": "v147",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.20.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 20",
+   "raw": 1
+  },
+  {
+   "id": "v148",
+   "text": "-11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.21.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 21",
+   "raw": -11
+  },
+  {
+   "id": "v149",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.22.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 22",
+   "raw": -8
+  },
+  {
+   "id": "v150",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.23.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 23",
+   "raw": -12
+  },
+  {
+   "id": "v151",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.24.rw.0.2"
+   },
+   "desc": "R1 fight diff Dan Hooker 24",
+   "raw": 11
+  },
+  {
+   "id": "v152",
+   "text": "-58",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 1",
+   "raw": -58
+  },
+  {
+   "id": "v153",
+   "text": "-18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 2",
+   "raw": -18
+  },
+  {
+   "id": "v154",
+   "text": "+6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.3.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 3",
+   "raw": 6
+  },
+  {
+   "id": "v155",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 4",
+   "raw": 10
+  },
+  {
+   "id": "v156",
+   "text": "+14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 5",
+   "raw": 14
+  },
+  {
+   "id": "v157",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 8",
+   "raw": 18
+  },
+  {
+   "id": "v158",
+   "text": "+18",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 10",
+   "raw": 18
+  },
+  {
+   "id": "v159",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 11",
+   "raw": 0
+  },
+  {
+   "id": "v160",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.12.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 12",
+   "raw": 12
+  },
+  {
+   "id": "v161",
+   "text": "-23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.14.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 14",
+   "raw": -23
+  },
+  {
+   "id": "v162",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.17.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 17",
+   "raw": -4
+  },
+  {
+   "id": "v163",
+   "text": "+19",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.18.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 18",
+   "raw": 19
+  },
+  {
+   "id": "v164",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.19.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 19",
+   "raw": -1
+  },
+  {
+   "id": "v165",
+   "text": "-11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.21.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 21",
+   "raw": -11
+  },
+  {
+   "id": "v166",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.22.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 22",
+   "raw": -3
+  },
+  {
+   "id": "v167",
+   "text": "-30",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.23.rw.1.2"
+   },
+   "desc": "R2 fight diff Dan Hooker 23",
+   "raw": -30
+  },
+  {
+   "id": "v168",
+   "text": "+1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.3.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 3",
+   "raw": 1
+  },
+  {
+   "id": "v169",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 4",
+   "raw": 11
+  },
+  {
+   "id": "v170",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.8.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 8",
+   "raw": 9
+  },
+  {
+   "id": "v171",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.10.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 10",
+   "raw": -8
+  },
+  {
+   "id": "v172",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.11.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 11",
+   "raw": 11
+  },
+  {
+   "id": "v173",
+   "text": "+16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.12.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 12",
+   "raw": 16
+  },
+  {
+   "id": "v174",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.14.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 14",
+   "raw": -14
+  },
+  {
+   "id": "v175",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.17.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 17",
+   "raw": -4
+  },
+  {
+   "id": "v176",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.19.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 19",
+   "raw": -14
+  },
+  {
+   "id": "v177",
+   "text": "-11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.21.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 21",
+   "raw": -11
+  },
+  {
+   "id": "v178",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "fights.23.rw.2.2"
+   },
+   "desc": "R3 fight diff Dan Hooker 23",
+   "raw": 9
+  },
+  {
+   "id": "v179",
+   "text": "-25",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.0.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 0",
+   "raw": -25
+  },
+  {
+   "id": "v180",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.1.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 1",
+   "raw": -14
+  },
+  {
+   "id": "v181",
+   "text": "-39",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.2.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 2",
+   "raw": -39
+  },
+  {
+   "id": "v182",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.3.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 3",
+   "raw": -1
+  },
+  {
+   "id": "v183",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.4.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 4",
+   "raw": -14
+  },
+  {
+   "id": "v184",
+   "text": "+10",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.5.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 5",
+   "raw": 10
+  },
+  {
+   "id": "v185",
+   "text": "-21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.6.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 6",
+   "raw": -21
+  },
+  {
+   "id": "v186",
+   "text": "-2",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.7.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 7",
+   "raw": -2
+  },
+  {
+   "id": "v187",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.8.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 8",
+   "raw": -14
+  },
+  {
+   "id": "v188",
+   "text": "-20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.9.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 9",
+   "raw": -20
+  },
+  {
+   "id": "v189",
+   "text": "-12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.10.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 10",
+   "raw": -12
+  },
+  {
+   "id": "v190",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.11.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 11",
+   "raw": -14
+  },
+  {
+   "id": "v191",
+   "text": "-5",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.12.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 12",
+   "raw": -5
+  },
+  {
+   "id": "v192",
+   "text": "-3",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.13.rw.0.2"
+   },
+   "desc": "R1 fight diff Brian Ortega 13",
+   "raw": -3
+  },
+  {
+   "id": "v193",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.0.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 0",
+   "raw": -4
+  },
+  {
+   "id": "v194",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.1.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 1",
+   "raw": -6
+  },
+  {
+   "id": "v195",
+   "text": "+13",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.2.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 2",
+   "raw": 13
+  },
+  {
+   "id": "v196",
+   "text": "-15",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.4.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 4",
+   "raw": -15
+  },
+  {
+   "id": "v197",
+   "text": "+9",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.5.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 5",
+   "raw": 9
+  },
+  {
+   "id": "v198",
+   "text": "-33",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.6.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 6",
+   "raw": -33
+  },
+  {
+   "id": "v199",
+   "text": "-22",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.8.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 8",
+   "raw": -22
+  },
+  {
+   "id": "v200",
+   "text": "-16",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.9.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 9",
+   "raw": -16
+  },
+  {
+   "id": "v201",
+   "text": "+0",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.10.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 10",
+   "raw": 0
+  },
+  {
+   "id": "v202",
+   "text": "-7",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.11.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 11",
+   "raw": -7
+  },
+  {
+   "id": "v203",
+   "text": "-4",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.12.rw.1.2"
+   },
+   "desc": "R2 fight diff Brian Ortega 12",
+   "raw": -4
+  },
+  {
+   "id": "v204",
+   "text": "-14",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.0.rw.2.2"
+   },
+   "desc": "R3 fight diff Brian Ortega 0",
+   "raw": -14
+  },
+  {
+   "id": "v205",
+   "text": "-23",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.1.rw.2.2"
+   },
+   "desc": "R3 fight diff Brian Ortega 1",
+   "raw": -23
+  },
+  {
+   "id": "v206",
+   "text": "-1",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.2.rw.2.2"
+   },
+   "desc": "R3 fight diff Brian Ortega 2",
+   "raw": -1
+  },
+  {
+   "id": "v207",
+   "text": "-44",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.4.rw.2.2"
+   },
+   "desc": "R3 fight diff Brian Ortega 4",
+   "raw": -44
+  },
+  {
+   "id": "v208",
+   "text": "+21",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.5.rw.2.2"
+   },
+   "desc": "R3 fight diff Brian Ortega 5",
+   "raw": 21
+  },
+  {
+   "id": "v209",
+   "text": "-20",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.6.rw.2.2"
+   },
+   "desc": "R3 fight diff Brian Ortega 6",
+   "raw": -20
+  },
+  {
+   "id": "v210",
+   "text": "-8",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.9.rw.2.2"
+   },
+   "desc": "R3 fight diff Brian Ortega 9",
+   "raw": -8
+  },
+  {
+   "id": "v211",
+   "text": "+12",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.10.rw.2.2"
+   },
+   "desc": "R3 fight diff Brian Ortega 10",
+   "raw": 12
+  },
+  {
+   "id": "v212",
+   "text": "-6",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.11.rw.2.2"
+   },
+   "desc": "R3 fight diff Brian Ortega 11",
+   "raw": -6
+  },
+  {
+   "id": "v213",
+   "text": "+11",
+   "fmt": "sint",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "fights.12.rw.2.2"
+   },
+   "desc": "R3 fight diff Brian Ortega 12",
+   "raw": 11
+  },
+  {
+   "id": "v214",
+   "text": "+0.4",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "Trend R1 Dan Hooker",
+   "raw": 0.437
+  },
+  {
+   "id": "v215",
+   "text": "-0.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "Trend R2 Dan Hooker",
+   "raw": -0.683
+  },
+  {
+   "id": "v216",
+   "text": "+0.1",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "Trend R3 Dan Hooker",
+   "raw": 0.125
+  },
+  {
+   "id": "v217",
+   "text": "-2.7",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.0.diff_pm"
+   },
+   "desc": "Trend R1 Brian Ortega",
+   "raw": -2.654
+  },
+  {
+   "id": "v218",
+   "text": "-1.6",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.1.diff_pm"
+   },
+   "desc": "Trend R2 Brian Ortega",
+   "raw": -1.593
+  },
+  {
+   "id": "v219",
+   "text": "-1.8",
+   "fmt": "s1",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "rounds.2.diff_pm"
+   },
+   "desc": "Trend R3 Brian Ortega",
+   "raw": -1.827
+  },
+  {
+   "id": "v220",
+   "text": "0.67",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 a",
+   "raw": 0.672
+  },
+  {
+   "id": "v221",
+   "text": "0.93",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "grap.td15"
+   },
+   "desc": "Takedowns /15 b",
+   "raw": 0.931
+  },
+  {
+   "id": "v222",
+   "text": "33%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy a",
+   "raw": 0.3333
+  },
+  {
+   "id": "v223",
+   "text": "25%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "grap.td_acc"
+   },
+   "desc": "TD accuracy b",
+   "raw": 0.25
+  },
+  {
+   "id": "v224",
+   "text": "77%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence a",
+   "raw": 0.7714
+  },
+  {
+   "id": "v225",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "grap.tdd"
+   },
+   "desc": "TD defence b",
+   "raw": 0.5455
+  },
+  {
+   "id": "v226",
+   "text": "17%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control a",
+   "raw": 0.1736
+  },
+  {
+   "id": "v227",
+   "text": "9%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "grap.ctrl"
+   },
+   "desc": "Time in control b",
+   "raw": 0.086
+  },
+  {
+   "id": "v228",
+   "text": "+4.3%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted a",
+   "raw": 0.0432
+  },
+  {
+   "id": "v229",
+   "text": "+0.8%",
+   "fmt": "spp",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "grap.adj_net_ctrl"
+   },
+   "desc": "Net control, opp-adjusted b",
+   "raw": 0.0081
+  },
+  {
+   "id": "v230",
+   "text": "15%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled a",
+   "raw": 0.1472
+  },
+  {
+   "id": "v231",
+   "text": "11%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "grap.ctrl_ag"
+   },
+   "desc": "Time controlled b",
+   "raw": 0.1143
+  },
+  {
+   "id": "v232",
+   "text": "0.55",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 a",
+   "raw": 0.549
+  },
+  {
+   "id": "v233",
+   "text": "0.93",
+   "fmt": "n2",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "grap.sub15"
+   },
+   "desc": "Sub attempts /15 b",
+   "raw": 0.931
+  },
+  {
+   "id": "v234",
+   "text": "-0.11",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Dan Hooker",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Dan Hooker",
+   "raw": -0.11399999999999993
+  },
+  {
+   "id": "v235",
+   "text": "-2.54",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Brian Ortega",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Brian Ortega",
+   "raw": -2.539
+  },
+  {
+   "id": "v236",
+   "text": "+0.03",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff a",
+   "raw": 0.025
+  },
+  {
+   "id": "v237",
+   "text": "-2.24",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "sos.adj_sd"
+   },
+   "desc": "Opp-adjusted diff b",
+   "raw": -2.237
+  },
+  {
+   "id": "v238",
+   "text": "-0.57",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min a",
+   "raw": -0.574
+  },
+  {
+   "id": "v239",
+   "text": "-1.79",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "target_diff.head"
+   },
+   "desc": "Head diff /min b",
+   "raw": -1.795
+  },
+  {
+   "id": "v240",
+   "text": "+0.02",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min a",
+   "raw": 0.02
+  },
+  {
+   "id": "v241",
+   "text": "-0.25",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "target_diff.body"
+   },
+   "desc": "Body diff /min b",
+   "raw": -0.253
+  },
+  {
+   "id": "v242",
+   "text": "+0.44",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min a",
+   "raw": 0.44
+  },
+  {
+   "id": "v243",
+   "text": "-0.49",
+   "fmt": "s2",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "target_diff.leg"
+   },
+   "desc": "Leg diff /min b",
+   "raw": -0.491
+  },
+  {
+   "id": "v244",
+   "text": "55%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "hdef"
+   },
+   "desc": "Head defence a",
+   "raw": 0.5455
+  },
+  {
+   "id": "v245",
+   "text": "56%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "hdef"
+   },
+   "desc": "Head defence b",
+   "raw": 0.5621
+  },
+  {
+   "id": "v246",
+   "text": "9.8",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min a",
+   "raw": 9.829
+  },
+  {
+   "id": "v247",
+   "text": "14.7",
+   "fmt": "n1",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "pace.min"
+   },
+   "desc": "Avg fight, min b",
+   "raw": 14.745
+  },
+  {
+   "id": "v248",
+   "text": "36%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Dan Hooker",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 a",
+   "raw": 0.36
+  },
+  {
+   "id": "v249",
+   "text": "15%",
+   "fmt": "pct0",
+   "rule": "em",
+   "args": {
+    "fighter": "Brian Ortega",
+    "path": "pace.r1"
+   },
+   "desc": "Finished in R1 b",
+   "raw": 0.1538
+  },
+  {
+   "id": "v250",
+   "text": "-0.11",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Dan Hooker",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Dan Hooker",
+   "raw": -0.11399999999999993
+  },
+  {
+   "id": "v251",
+   "text": "-2.54",
+   "fmt": "s2",
+   "rule": "em_sum",
+   "args": {
+    "fighter": "Brian Ortega",
+    "paths": [
+     "target_diff.head",
+     "target_diff.body",
+     "target_diff.leg"
+    ]
+   },
+   "desc": "Total diff Brian Ortega",
+   "raw": -2.539
+  },
+  {
+   "id": "v252",
+   "text": "70.8%",
+   "fmt": "pct1",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "win"
+   },
+   "desc": "Backtest T1 win",
+   "raw": 0.708
+  },
+  {
+   "id": "v253",
+   "text": "62.1%",
+   "fmt": "pct1",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "imp"
+   },
+   "desc": "Backtest T1 imp",
+   "raw": 0.6209
+  },
+  {
+   "id": "v254",
+   "text": "+11.0%",
+   "fmt": "spp",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "roi"
+   },
+   "desc": "Backtest T1 roi",
+   "raw": 0.1099
+  },
+  {
+   "id": "v255",
+   "text": "+1.1%",
+   "fmt": "spp",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "ci",
+    "i": 0
+   },
+   "desc": "Backtest T1 ci lo",
+   "raw": 0.0114
+  },
+  {
+   "id": "v256",
+   "text": "+20.9%",
+   "fmt": "spp",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "ci",
+    "i": 1
+   },
+   "desc": "Backtest T1 ci hi",
+   "raw": 0.2092
+  },
+  {
+   "id": "v257",
+   "text": "250",
+   "fmt": "int",
+   "rule": "bt",
+   "args": {
+    "test": "T1",
+    "key": "n"
+   },
+   "desc": "Backtest T1 n",
+   "raw": 250
+  },
+  {
+   "id": "v258",
+   "text": "+381",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Dan Hooker Salahdine Parnasse",
+   "raw": 381
+  },
+  {
+   "id": "v259",
+   "text": "+310",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Dan Hooker Benoit Saint Denis",
+   "raw": 310
+  },
+  {
+   "id": "v260",
+   "text": "+462",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Dan Hooker Arman Tsarukyan",
+   "raw": 462
+  },
+  {
+   "id": "v261",
+   "text": "+320",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Dan Hooker Mateusz Gamrot",
+   "raw": 320
+  },
+  {
+   "id": "v262",
+   "text": "+242",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 4,
+    "key": "od.mc"
+   },
+   "desc": "Close Dan Hooker Jalin Turner",
+   "raw": 242
+  },
+  {
+   "id": "v263",
+   "text": "-153",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 5,
+    "key": "od.mc"
+   },
+   "desc": "Close Dan Hooker Claudio Puelles",
+   "raw": -153
+  },
+  {
+   "id": "v264",
+   "text": "-109",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "a",
+    "i": 6,
+    "key": "od.mc"
+   },
+   "desc": "Close Dan Hooker Arnold Allen",
+   "raw": -109
+  },
+  {
+   "id": "v265",
+   "text": "+350",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 0,
+    "key": "od.mc"
+   },
+   "desc": "Close Brian Ortega Aljamain Sterling",
+   "raw": 350
+  },
+  {
+   "id": "v266",
+   "text": "+154",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 1,
+    "key": "od.mc"
+   },
+   "desc": "Close Brian Ortega Diego Lopes",
+   "raw": 154
+  },
+  {
+   "id": "v267",
+   "text": "+128",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 2,
+    "key": "od.mc"
+   },
+   "desc": "Close Brian Ortega Yair Rodriguez",
+   "raw": 128
+  },
+  {
+   "id": "v268",
+   "text": "-169",
+   "fmt": "ml",
+   "rule": "fight",
+   "args": {
+    "side": "b",
+    "i": 3,
+    "key": "od.mc"
+   },
+   "desc": "Close Brian Ortega Yair Rodriguez",
+   "raw": -169
+  }
+ ],
+ "gaps": []
+}

@@ -18,7 +18,7 @@ if t <= old: sys.exit(f"REHEARSAL REFUSED: the export on main ({t} UTC) is the o
 if age > 2: sys.exit(f"REHEARSAL REFUSED: the export on main is {age:.1f} h old (limit 2 h, published {t} UTC). Sean: runbook steps 1 to 3 again, then rerun.")
 print(f"export on main {t} UTC, {age:.1f} h old (limit 2 h)")
 PY
-python3 -I scripts/main_guard.py --allow-publish-and-bot   # Kirk round 22 call 1 (export/odds-bot allowlist). Round 19 B: refuse if main moved since the served-set check (audits/MAIN_AT_CHECK.txt)
+python3 -I scripts/main_guard.py --allow-publish-and-bot --slug "$SLUG"   # Nov 19: --slug (default was ufc_334). Kirk round 22 call 1 (export/odds-bot allowlist). Round 19 B: refuse if main moved since the served-set check (audits/MAIN_AT_CHECK.txt)
 python3 -I scripts/scan_public.py --base origin/main   # Kirk round 16 call 2: secrets, offshore names, local paths, emails in audits/ + added files stop the rehearsal
 bash scripts/friday_refresh.sh "$CARD" "$SLUG" "$EVENT" "$ST" | tee /tmp/_rehearsal.txt
 python3 - "$SLUG" "$OLD" <<'PY'

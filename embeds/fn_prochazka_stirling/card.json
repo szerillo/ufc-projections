@@ -1,0 +1,102 @@
+{
+ "slug": "fn_prochazka_stirling",
+ "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
+ "rule": "fight number = bout order on the card; 1 = opener, 12 = main event",
+ "cancelled": [],
+ "proj_file": "data/fn_prochazka_stirling_projections.json",
+ "published_at": "2026-11-19T23:42:39.243Z",
+ "card": [
+  {
+   "fight": 12,
+   "bout": "Jiri Prochazka vs Navajo Stirling",
+   "segment": "Main event",
+   "bp_sched_rank": 12,
+   "site_n": 12
+  },
+  {
+   "fight": 11,
+   "bout": "Aljamain Sterling vs Kevin Vallejos",
+   "segment": "Main card",
+   "bp_sched_rank": 11,
+   "site_n": 11
+  },
+  {
+   "fight": 10,
+   "bout": "Dan Hooker vs Brian Ortega",
+   "segment": "Main card",
+   "bp_sched_rank": 10,
+   "site_n": 10
+  },
+  {
+   "fight": 9,
+   "bout": "Kyoji Horiguchi vs Asu Almabayev",
+   "segment": "Main card",
+   "bp_sched_rank": 9,
+   "site_n": 9
+  },
+  {
+   "fight": 8,
+   "bout": "Jared Cannonier vs Ikram Aliskerov",
+   "segment": "Main card",
+   "bp_sched_rank": 8,
+   "site_n": 8
+  },
+  {
+   "fight": 7,
+   "bout": "Aleksandre Topuria vs Santiago Luna",
+   "segment": "Prelims",
+   "bp_sched_rank": 7,
+   "site_n": 7
+  },
+  {
+   "fight": 6,
+   "bout": "Shamil Gaziev vs Tallison Teixeira",
+   "segment": "Prelims",
+   "bp_sched_rank": 6,
+   "site_n": 6
+  },
+  {
+   "fight": 5,
+   "bout": "Amir Albazi vs Alessandro Costa",
+   "segment": "Prelims",
+   "bp_sched_rank": 5,
+   "site_n": 5
+  },
+  {
+   "fight": 4,
+   "bout": "Jake Matthews vs Tahir Abdullayev",
+   "segment": "Prelims",
+   "bp_sched_rank": 4,
+   "site_n": 4
+  },
+  {
+   "fight": 3,
+   "bout": "Nikolas Motta vs Dom Mar Fan",
+   "segment": "Prelims",
+   "bp_sched_rank": 3,
+   "site_n": 3
+  },
+  {
+   "fight": 2,
+   "bout": "Diyar Nurgozhay vs Alik Lorenz",
+   "segment": "Prelims",
+   "bp_sched_rank": 2,
+   "site_n": 2
+  },
+  {
+   "fight": 1,
+   "bout": "John Mitchell vs Shoaib Yousaf",
+   "segment": "Prelims",
+   "bp_sched_rank": null,
+   "site_n": 1,
+   "added": "not in the odds feed yet"
+  }
+ ],
+ "line_pending": [
+  {
+   "dog": "Shoaib Yousaf",
+   "fav": "John Mitchell",
+   "reason": "no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)"
+  }
+ ]
+}

@@ -8,6 +8,14 @@
 set -euo pipefail; export EMBED_PIPELINE=1; cd "$(dirname "$0")/.."
 BR="${BR:-go-live-334}"; SLUG="${SLUG:-ufc_334}"; ODDS="data/${SLUG}_odds.json"
 git fetch -q origin
+# Nov 19 (Kirk): a staging export (sheet read via the API by Claude, "staging": true) must never reach main
+for p in "data/${SLUG}_projections.json" "data/pending/${SLUG}_projections.json"; do
+  if git cat-file -e "$BR:$p" 2>/dev/null && git show "$BR:$p" | python3 -c "import json,sys; sys.exit(0 if json.load(sys.stdin).get('staging') else 1)"; then
+    if ! git cat-file -e "origin/main:$p" 2>/dev/null || git show "origin/main:$p" | python3 -c "import json,sys; sys.exit(0 if json.load(sys.stdin).get('staging') else 1)"; then
+      echo "MERGE FAIL: $p on $BR is a STAGING export, not Sean's Publish to site. Sean publishes first; then friday_refresh step 2 replaces it."; exit 1; fi
+    echo "MERGE FAIL: $p on $BR is still the STAGING copy; run friday_refresh (step 2 takes Sean's export from main) and commit, then merge."; exit 1
+  fi
+done
 python3 -I scripts/main_guard.py --allow-publish-and-bot --slug "$SLUG"
 git checkout -q -B _merge origin/main
 if ! git merge --no-ff --no-edit -m "Merge $BR into main (scripts/merge_main.sh)" "$BR" >/tmp/_merge.txt 2>&1; then
@@ -23,7 +31,7 @@ if ! git merge --no-ff --no-edit -m "Merge $BR into main (scripts/merge_main.sh)
 fi
 if ! git diff --quiet "$BR" HEAD -- "$ODDS"; then
   echo "  served odds file differs from the one the embeds were built on: rebuilding the embeds on it"
-  python3 scripts/build_fight_embeds.py | tail -1
+  python3 scripts/build_fight_embeds.py --slug "$SLUG" | tail -1   # Nov 19: --slug (it always rebuilt ufc_334)
   git add -A "embeds/${SLUG}"
   git commit -q -m "Rebuild ${SLUG} embeds on main's newer odds file (merge_main.sh)" || true
 fi

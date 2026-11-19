@@ -93,6 +93,12 @@ def pair_match(a, b, h, w):
     s1 = min(name_match(a, h), name_match(b, w))
     s2 = min(name_match(a, w), name_match(b, h))
     if s1 == 0 and s2 == 0:
+        # Nov 18: the shared bout rule (fighter_names.py: one fighter strict, the other at least loose), for spellings this
+        # scorer misses, e.g. the archive's "Asu Almabaev" for "Asu Almabayev" opposite an exact "Kyoji Horiguchi"
+        import fighter_names as FN
+        slots = FN.bout_slots(a, b, h, w)
+        if slots:
+            return 1, slots != "same"
         return 0, False
     return (s1, False) if s1 >= s2 else (s2, True)
 

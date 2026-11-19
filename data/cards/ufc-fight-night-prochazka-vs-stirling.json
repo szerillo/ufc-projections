@@ -1,0 +1,1295 @@
+{
+ "slug": "ufc-fight-night-prochazka-vs-stirling",
+ "title": "UFC Fight Night: Prochazka vs. Stirling",
+ "date": "2026-11-21",
+ "venue": "ABHA Arena, Doha",
+ "engine_version": "V4.1b",
+ "partial": true,
+ "notes": [
+  "12 bouts: the 11 on UFC.com and UFCStats plus fight 12, Yousaf vs Mitchell. Five-round bout: Prochazka-Stirling (LHW main event). Data: 10 real Oddsbreaker matchups plus SYN on Lorenz-Nurgozhay and Yousaf-Mitchell (both sides). §1d active on 6 fighters: Luna, Topuria, Abdullayev, Lorenz, Yousaf, Mitchell. D-code active on 4 dogs: Luna, Abdullayev, Lorenz, Yousaf. GTD/ITD and O/U totals posted on 10 of 11 confirmed bouts (none yet on Lorenz-Nurgozhay); props skipped for fight 12. Run is reproducible: PYTHONHASHSEED=0, sha256 in the run log.",
+  "Sheet rule (v4.7): no favorite reaches 80% de-vigged (highest Aliskerov 71.5%, Topuria 70.8%).",
+  "5R rule: Prochazka-Stirling listed GTD about 18% (+460 median) is under 40%, so the 5R GTD bet does not fire; O4.5 about 21% (+365) is under 50%, so no standing over.",
+  "No duration flags: the largest GTD-side gap is Prochazka-Stirling +5.9; ITD-side gaps are suppressed by rule.",
+  "Fight 12, Yousaf vs Mitchell, is official (confirmed Nov 19; added Nov 17 on four days' notice). Fights 1-11 are unaffected (each fight seeds independently).",
+  "Motta best price +156 (Polymarket) is about 5 points better than the +125 US-book median: stale or informed, not an edge.",
+  "Per-fighter finish, SS median, TD ladder and P(KD) are in the source doc only; SS mean and TD projection come from the raw-stats CSV."
+ ],
+ "archive_tsv": "Jiri Prochazka vs Navajo Stirling\t34.4\t20.3\t22.6\t11.7\t31.5\t22.5\t12.7\t6.2\t4.5\nAljamain Sterling vs Kevin Vallejos\t54.2\t57.6\t52.8\t10.7\t23.0\t15.8\t8.3\t0.0\t0.0\nBrian Ortega vs Dan Hooker\t33.5\t31.7\t33.0\t8.5\t36.4\t20.9\t9.6\t0.0\t0.0\nAsu Almabayev vs Kyoji Horiguchi\t56.9\t58.1\t46.8\t10.0\t27.0\t17.4\t8.8\t0.0\t0.0\nJared Cannonier vs Ikram Aliskerov\t20.6\t17.4\t30.4\t8.2\t38.8\t21.3\t9.5\t0.0\t0.0\nSantiago Luna vs Aleksandre Topuria\t57.3\t74.2\t47.4\t10.1\t26.3\t17.5\t8.8\t0.0\t0.0\nTallison Teixeira vs Shamil Gaziev\t51.8\t55.9\t21.4\t7.0\t47.1\t22.5\t9.0\t0.0\t0.0\nAlessandro Costa vs Amir Albazi\t61.8\t70.7\t44.1\t9.8\t28.4\t18.5\t9.0\t0.0\t0.0\nTahir Abdullayev vs Jake Matthews\t39.5\t31.0\t50.8\t10.5\t24.2\t16.4\t8.6\t0.0\t0.0\nNikolas Motta vs Dom Mar Fan\t44.5\t31.8\t35.8\t8.9\t34.3\t20.2\t9.7\t0.0\t0.0\nAlik Lorenz vs Diyar Nurgozhay\t46.6\t38.8\t13.7\t5.9\t56.1\t22.4\t7.8\t0.0\t0.0\nShoaib Yousaf vs John Mitchell\t51.3\t54.4\t47.0\t10.1\t26.8\t17.3\t8.9\t0.0\t0.0",
+ "fights": [
+  {
+   "order": 1,
+   "bout": "Jiri Prochazka vs Navajo Stirling",
+   "weight_class": "Light Heavyweight",
+   "rounds": 5,
+   "is_main_event": true,
+   "fighters": [
+    {
+     "name": "Jiri Prochazka",
+     "side": "dog",
+     "market_odds": 131,
+     "model_win_shrunk": 34.4,
+     "model_win_raw": 20.3,
+     "dec_share_of_wins": 8.0,
+     "badges": [],
+     "ss_mean": 47.8,
+     "td_proj": 0.28,
+     "tape": {
+      "age": 34.1,
+      "height": "6'3",
+      "reach": 80.0,
+      "stance": "Orthodox",
+      "record": "32-6-1",
+      "slpm": 5.61,
+      "sapm": 5.67,
+      "str_acc": 0.55,
+      "str_def": 0.45,
+      "td_avg": 0.49,
+      "td_acc": 0.6,
+      "td_def": 0.68,
+      "sub_avg": 0.2
+     },
+     "data_quality": "OK; off R1 KO loss (Ulberg Apr 26)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Navajo Stirling",
+     "side": "fav",
+     "market_odds": -162,
+     "model_win_shrunk": 65.6,
+     "model_win_raw": 79.7,
+     "dec_share_of_wins": 30.0,
+     "badges": [],
+     "ss_mean": 71.0,
+     "td_proj": 0.51,
+     "tape": {
+      "age": 29.0,
+      "height": "6'4",
+      "reach": 79.0,
+      "stance": "Orthodox",
+      "record": "11-0-0",
+      "slpm": 6.47,
+      "sapm": 2.56,
+      "str_acc": 0.55,
+      "str_def": 0.58,
+      "td_avg": 0.82,
+      "td_acc": 0.25,
+      "td_def": 0.71,
+      "sub_avg": 0.0
+     },
+     "data_quality": "OK; unbeaten 7-0 UFC/DWCS",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 22.6,
+    "market_gtd_devig": 16.7,
+    "gap": 5.9,
+    "round_dist": [
+     31.5,
+     22.5,
+     12.7,
+     6.2,
+     4.5
+    ],
+    "exp_minutes": 11.7
+   },
+   "result": null
+  },
+  {
+   "order": 2,
+   "bout": "Aljamain Sterling vs Kevin Vallejos",
+   "weight_class": "Featherweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Aljamain Sterling",
+     "side": "dog",
+     "market_odds": 108,
+     "model_win_shrunk": 54.2,
+     "model_win_raw": 57.6,
+     "dec_share_of_wins": 77.0,
+     "badges": [],
+     "ss_mean": 46.3,
+     "td_proj": 0.72,
+     "tape": {
+      "age": 37.3,
+      "height": "5'7",
+      "reach": 71.0,
+      "stance": "Orthodox",
+      "record": "26-5-0",
+      "slpm": 4.26,
+      "sapm": 2.15,
+      "str_acc": 0.52,
+      "str_def": 0.59,
+      "td_avg": 2.54,
+      "td_acc": 0.32,
+      "td_def": 0.44,
+      "sub_avg": 0.6
+     },
+     "data_quality": "OK; 37.3yo",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Kevin Vallejos",
+     "side": "fav",
+     "market_odds": -132,
+     "model_win_shrunk": 45.8,
+     "model_win_raw": 42.4,
+     "dec_share_of_wins": 24.0,
+     "badges": [
+      "THIN SAMPLE"
+     ],
+     "ss_mean": 44.2,
+     "td_proj": 0.66,
+     "tape": {
+      "age": 25.0,
+      "height": "5'7",
+      "reach": 68.0,
+      "stance": "Switch",
+      "record": "18-1-0",
+      "slpm": 6.12,
+      "sapm": 4.41,
+      "str_acc": 0.48,
+      "str_def": 0.57,
+      "td_avg": 0.66,
+      "td_acc": 0.28,
+      "td_def": 0.84,
+      "sub_avg": 0.0
+     },
+     "data_quality": "THIN (28 OB min); P(KD) clamp 40%",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 52.8,
+    "market_gtd_devig": 56.0,
+    "gap": -3.2,
+    "round_dist": [
+     23.0,
+     15.8,
+     8.3
+    ],
+    "exp_minutes": 10.7
+   },
+   "result": null
+  },
+  {
+   "order": 3,
+   "bout": "Brian Ortega vs Dan Hooker",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Brian Ortega",
+     "side": "dog",
+     "market_odds": 155,
+     "model_win_shrunk": 33.5,
+     "model_win_raw": 31.7,
+     "dec_share_of_wins": 6.0,
+     "badges": [],
+     "ss_mean": 37.5,
+     "td_proj": 0.3,
+     "tape": {
+      "age": 35.7,
+      "height": "5'8",
+      "reach": 69.0,
+      "stance": "Switch",
+      "record": "16-5-0 (1NC)",
+      "slpm": 3.84,
+      "sapm": 6.38,
+      "str_acc": 0.37,
+      "str_def": 0.49,
+      "td_avg": 0.93,
+      "td_acc": 0.25,
+      "td_def": 0.54,
+      "sub_avg": 0.9
+     },
+     "data_quality": "OK; ~15-mo layoff",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Dan Hooker",
+     "side": "fav",
+     "market_odds": -194,
+     "model_win_shrunk": 66.5,
+     "model_win_raw": 68.3,
+     "dec_share_of_wins": 47.0,
+     "badges": [],
+     "ss_mean": 47.8,
+     "td_proj": 0.44,
+     "tape": {
+      "age": 36.8,
+      "height": "6'0",
+      "reach": 75.0,
+      "stance": "Switch",
+      "record": "24-15-0",
+      "slpm": 4.82,
+      "sapm": 4.94,
+      "str_acc": 0.48,
+      "str_def": 0.48,
+      "td_avg": 0.67,
+      "td_acc": 0.33,
+      "td_def": 0.77,
+      "sub_avg": 0.6
+     },
+     "data_quality": "OK; off R1 KO loss (Parnasse Sep 26), L3",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 33.0,
+    "market_gtd_devig": 49.0,
+    "gap": -16.0,
+    "round_dist": [
+     36.4,
+     20.9,
+     9.6
+    ],
+    "exp_minutes": 8.5
+   },
+   "result": null
+  },
+  {
+   "order": 4,
+   "bout": "Asu Almabayev vs Kyoji Horiguchi",
+   "weight_class": "Flyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Asu Almabayev",
+     "side": "dog",
+     "market_odds": 162,
+     "model_win_shrunk": 56.9,
+     "model_win_raw": 58.1,
+     "dec_share_of_wins": 44.0,
+     "badges": [],
+     "ss_mean": 21.9,
+     "td_proj": 3.1,
+     "tape": {
+      "age": 32.8,
+      "height": "5'4",
+      "reach": 65.0,
+      "stance": "Orthodox",
+      "record": "24-3-0",
+      "slpm": 2.28,
+      "sapm": 1.94,
+      "str_acc": 0.51,
+      "str_def": 0.53,
+      "td_avg": 4.74,
+      "td_acc": 0.45,
+      "td_def": 0.44,
+      "sub_avg": 1.4
+     },
+     "data_quality": "OK; TD output capped (85/57/30)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Kyoji Horiguchi",
+     "side": "fav",
+     "market_odds": -200,
+     "model_win_shrunk": 43.1,
+     "model_win_raw": 41.9,
+     "dec_share_of_wins": 51.0,
+     "badges": [],
+     "ss_mean": 28.0,
+     "td_proj": 1.57,
+     "tape": {
+      "age": 36.1,
+      "height": "5'4",
+      "reach": 63.0,
+      "stance": "Orthodox",
+      "record": "36-6-0 (1NC)",
+      "slpm": 3.64,
+      "sapm": 2.08,
+      "str_acc": 0.47,
+      "str_def": 0.64,
+      "td_avg": 1.67,
+      "td_acc": 0.4,
+      "td_def": 0.61,
+      "sub_avg": 0.1
+     },
+     "data_quality": "OK; off R3 KO loss (Kape Jun 26)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 46.8,
+    "market_gtd_devig": 66.7,
+    "gap": -19.9,
+    "round_dist": [
+     27.0,
+     17.4,
+     8.8
+    ],
+    "exp_minutes": 10.0
+   },
+   "result": null
+  },
+  {
+   "order": 5,
+   "bout": "Jared Cannonier vs Ikram Aliskerov",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Jared Cannonier",
+     "side": "dog",
+     "market_odds": 233,
+     "model_win_shrunk": 20.6,
+     "model_win_raw": 17.4,
+     "dec_share_of_wins": 10.0,
+     "badges": [],
+     "ss_mean": 33.8,
+     "td_proj": 0.0,
+     "tape": {
+      "age": 42.7,
+      "height": "5'11",
+      "reach": 77.0,
+      "stance": "Switch",
+      "record": "18-10-0",
+      "slpm": 4.25,
+      "sapm": 4.36,
+      "str_acc": 0.49,
+      "str_def": 0.55,
+      "td_avg": 0.77,
+      "td_acc": 0.45,
+      "td_def": 0.64,
+      "sub_avg": 0.0
+     },
+     "data_quality": "OK; 42.7yo; 0.00 TD proj vs Aliskerov 100% TDD",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Ikram Aliskerov",
+     "side": "fav",
+     "market_odds": -305,
+     "model_win_shrunk": 79.4,
+     "model_win_raw": 82.6,
+     "dec_share_of_wins": 36.0,
+     "badges": [],
+     "ss_mean": 40.6,
+     "td_proj": 1.88,
+     "tape": {
+      "age": 34.0,
+      "height": "6'0",
+      "reach": 76.0,
+      "stance": "Southpaw",
+      "record": "18-2-0",
+      "slpm": 5.56,
+      "sapm": 4.01,
+      "str_acc": 0.6,
+      "str_def": 0.45,
+      "td_avg": 3.82,
+      "td_acc": 0.68,
+      "td_def": 1.0,
+      "sub_avg": 0.7
+     },
+     "data_quality": "OK; TD output capped (85/56/29)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 30.4,
+    "market_gtd_devig": 43.1,
+    "gap": -12.7,
+    "round_dist": [
+     38.8,
+     21.3,
+     9.5
+    ],
+    "exp_minutes": 8.2
+   },
+   "result": null
+  },
+  {
+   "order": 6,
+   "bout": "Santiago Luna vs Aleksandre Topuria",
+   "weight_class": "Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Santiago Luna",
+     "side": "dog",
+     "market_odds": 225,
+     "model_win_shrunk": 57.3,
+     "model_win_raw": 74.2,
+     "dec_share_of_wins": 47.0,
+     "badges": [
+      "D-CODE",
+      "§1d"
+     ],
+     "ss_mean": 37.0,
+     "td_proj": 0.0,
+     "tape": {
+      "age": 22.3,
+      "height": "5'9",
+      "reach": 74.0,
+      "stance": "Orthodox",
+      "record": "8-1-0",
+      "slpm": 4.74,
+      "sapm": 2.76,
+      "str_acc": 0.53,
+      "str_def": 0.67,
+      "td_avg": 2.3,
+      "td_acc": 0.71,
+      "td_def": 0.57,
+      "sub_avg": 0.9
+     },
+     "data_quality": "§1d (6-0 pre-UFC); D-CODE dog (last feeder Tuff-N-Uff); conf 30% floor",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Aleksandre Topuria",
+     "side": "fav",
+     "market_odds": -295,
+     "model_win_shrunk": 42.7,
+     "model_win_raw": 25.8,
+     "dec_share_of_wins": 47.0,
+     "badges": [
+      "§1d"
+     ],
+     "ss_mean": 28.8,
+     "td_proj": 1.09,
+     "tape": {
+      "age": 30.8,
+      "height": "5'7",
+      "reach": 68.0,
+      "stance": "Orthodox",
+      "record": "7-1-0",
+      "slpm": 2.93,
+      "sapm": 2.57,
+      "str_acc": 0.55,
+      "str_def": 0.68,
+      "td_avg": 1.5,
+      "td_acc": 0.33,
+      "td_def": 1.0,
+      "sub_avg": 0.0
+     },
+     "data_quality": "§1d (5-1 pre-UFC); 30 UFC min; conf 30% floor",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 47.4,
+    "market_gtd_devig": 56.0,
+    "gap": -8.6,
+    "round_dist": [
+     26.3,
+     17.5,
+     8.8
+    ],
+    "exp_minutes": 10.1
+   },
+   "result": null
+  },
+  {
+   "order": 7,
+   "bout": "Tallison Teixeira vs Shamil Gaziev",
+   "weight_class": "Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Tallison Teixeira",
+     "side": "dog",
+     "market_odds": 163,
+     "model_win_shrunk": 51.8,
+     "model_win_raw": 55.9,
+     "dec_share_of_wins": 28.0,
+     "badges": [
+      "THIN SAMPLE"
+     ],
+     "ss_mean": 34.1,
+     "td_proj": 0.48,
+     "tape": {
+      "age": 27.0,
+      "height": "6'7",
+      "reach": 83.0,
+      "stance": "Orthodox",
+      "record": "9-2-0",
+      "slpm": 4.85,
+      "sapm": 4.1,
+      "str_acc": 0.62,
+      "str_def": 0.41,
+      "td_avg": 2.4,
+      "td_acc": 0.3,
+      "td_def": 0.0,
+      "sub_avg": 0.0
+     },
+     "data_quality": "THIN (17 OB min); off R1 KO loss (Pavlovich May 26); conf 30% floor",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Shamil Gaziev",
+     "side": "fav",
+     "market_odds": -205,
+     "model_win_shrunk": 48.2,
+     "model_win_raw": 44.1,
+     "dec_share_of_wins": 14.0,
+     "badges": [],
+     "ss_mean": 24.6,
+     "td_proj": 1.2,
+     "tape": {
+      "age": 36.8,
+      "height": "6'4",
+      "reach": 78.0,
+      "stance": "Orthodox",
+      "record": "15-3-0",
+      "slpm": 2.9,
+      "sapm": 4.86,
+      "str_acc": 0.45,
+      "str_def": 0.45,
+      "td_avg": 1.03,
+      "td_acc": 0.33,
+      "td_def": 0.83,
+      "sub_avg": 0.3
+     },
+     "data_quality": "OK; 36.8yo, 3 KO losses",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 21.4,
+    "market_gtd_devig": 18.7,
+    "gap": 2.7,
+    "round_dist": [
+     47.1,
+     22.5,
+     9.0
+    ],
+    "exp_minutes": 7.0
+   },
+   "result": null
+  },
+  {
+   "order": 8,
+   "bout": "Alessandro Costa vs Amir Albazi",
+   "weight_class": "Flyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Alessandro Costa",
+     "side": "dog",
+     "market_odds": -107,
+     "model_win_shrunk": 61.8,
+     "model_win_raw": 70.7,
+     "dec_share_of_wins": 56.0,
+     "badges": [],
+     "ss_mean": 37.4,
+     "td_proj": 0.43,
+     "tape": {
+      "age": 30.8,
+      "height": "5'4",
+      "reach": 67.0,
+      "stance": "Orthodox",
+      "record": "17-5-0",
+      "slpm": 3.77,
+      "sapm": 3.71,
+      "str_acc": 0.46,
+      "str_def": 0.57,
+      "td_avg": 0.7,
+      "td_acc": 0.26,
+      "td_def": 0.87,
+      "sub_avg": 0.7
+     },
+     "data_quality": "OK; lost to Albazi by R3 KO Dec 2022",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Amir Albazi",
+     "side": "fav",
+     "market_odds": -116,
+     "model_win_shrunk": 38.2,
+     "model_win_raw": 29.3,
+     "dec_share_of_wins": 25.0,
+     "badges": [],
+     "ss_mean": 30.2,
+     "td_proj": 0.25,
+     "tape": {
+      "age": 33.1,
+      "height": "5'5",
+      "reach": 68.0,
+      "stance": "Orthodox",
+      "record": "17-3-0",
+      "slpm": 2.47,
+      "sapm": 3.88,
+      "str_acc": 0.33,
+      "str_def": 0.59,
+      "td_avg": 1.18,
+      "td_acc": 0.25,
+      "td_def": 0.62,
+      "sub_avg": 0.4
+     },
+     "data_quality": "OK; L2",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 44.1,
+    "market_gtd_devig": 56.0,
+    "gap": -11.9,
+    "round_dist": [
+     28.4,
+     18.5,
+     9.0
+    ],
+    "exp_minutes": 9.8
+   },
+   "result": null
+  },
+  {
+   "order": 9,
+   "bout": "Tahir Abdullayev vs Jake Matthews",
+   "weight_class": "Welterweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Tahir Abdullayev",
+     "side": "dog",
+     "market_odds": 198,
+     "model_win_shrunk": 39.5,
+     "model_win_raw": 31.0,
+     "dec_share_of_wins": 35.0,
+     "badges": [
+      "D-CODE",
+      "THIN SAMPLE",
+      "§1d"
+     ],
+     "ss_mean": 26.9,
+     "td_proj": 1.23,
+     "tape": {
+      "age": 29.8,
+      "height": "5'8",
+      "reach": 73.0,
+      "stance": "Orthodox",
+      "record": "20-3-0",
+      "slpm": 2.56,
+      "sapm": 2.42,
+      "str_acc": 0.42,
+      "str_def": 0.51,
+      "td_avg": 2.07,
+      "td_acc": 0.33,
+      "td_def": 1.0,
+      "sub_avg": 0.0
+     },
+     "data_quality": "THIN (14 OB min); §1d (19-3 pre-UFC, 2 regional 5R); D-CODE dog (last feeder GFC)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Jake Matthews",
+     "side": "fav",
+     "market_odds": -250,
+     "model_win_shrunk": 60.5,
+     "model_win_raw": 69.0,
+     "dec_share_of_wins": 61.0,
+     "badges": [],
+     "ss_mean": 30.3,
+     "td_proj": 0.0,
+     "tape": {
+      "age": 32.3,
+      "height": "5'11",
+      "reach": 73.0,
+      "stance": "Orthodox",
+      "record": "23-8-0",
+      "slpm": 3.36,
+      "sapm": 2.58,
+      "str_acc": 0.44,
+      "str_def": 0.6,
+      "td_avg": 1.36,
+      "td_acc": 0.41,
+      "td_def": 0.66,
+      "sub_avg": 0.7
+     },
+     "data_quality": "OK; 0.00 TD proj vs Abdullayev 100% TDD (1 bout)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 50.8,
+    "market_gtd_devig": 51.9,
+    "gap": -1.1,
+    "round_dist": [
+     24.2,
+     16.4,
+     8.6
+    ],
+    "exp_minutes": 10.5
+   },
+   "result": null
+  },
+  {
+   "order": 10,
+   "bout": "Nikolas Motta vs Dom Mar Fan",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Nikolas Motta",
+     "side": "dog",
+     "market_odds": 125,
+     "model_win_shrunk": 44.5,
+     "model_win_raw": 31.8,
+     "dec_share_of_wins": 11.0,
+     "badges": [],
+     "ss_mean": 28.5,
+     "td_proj": 0.0,
+     "tape": {
+      "age": 33.8,
+      "height": "5'9",
+      "reach": 70.0,
+      "stance": "Orthodox",
+      "record": "15-6-0 (1NC)",
+      "slpm": 4.13,
+      "sapm": 5.28,
+      "str_acc": 0.38,
+      "str_def": 0.52,
+      "td_avg": 0.0,
+      "td_acc": 0.0,
+      "td_def": 0.83,
+      "sub_avg": 0.0
+     },
+     "data_quality": "OK; off R2 KO loss (Sadykhov Jun 25), ~17-mo layoff; best price +156 (Polymarket) is 4+ pts off consensus: stale/informed, not an edge",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Dom Mar Fan",
+     "side": "fav",
+     "market_odds": -157,
+     "model_win_shrunk": 55.5,
+     "model_win_raw": 68.2,
+     "dec_share_of_wins": 56.0,
+     "badges": [
+      "THIN SAMPLE"
+     ],
+     "ss_mean": 38.6,
+     "td_proj": 0.46,
+     "tape": {
+      "age": 26.7,
+      "height": "5'11",
+      "reach": 75.0,
+      "stance": "Orthodox",
+      "record": "9-3-0",
+      "slpm": 3.43,
+      "sapm": 2.31,
+      "str_acc": 0.56,
+      "str_def": 0.44,
+      "td_avg": 1.84,
+      "td_acc": 0.5,
+      "td_def": 0.62,
+      "sub_avg": 0.3
+     },
+     "data_quality": "THIN (19 OB min); 2 of 4 UFC-side bouts are Road to UFC; conf 30% floor",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 35.8,
+    "market_gtd_devig": 41.5,
+    "gap": -5.7,
+    "round_dist": [
+     34.3,
+     20.2,
+     9.7
+    ],
+    "exp_minutes": 8.9
+   },
+   "result": null
+  },
+  {
+   "order": 11,
+   "bout": "Alik Lorenz vs Diyar Nurgozhay",
+   "weight_class": "Light Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Alik Lorenz",
+     "side": "dog",
+     "market_odds": 205,
+     "model_win_shrunk": 46.6,
+     "model_win_raw": 38.8,
+     "dec_share_of_wins": 3.0,
+     "badges": [
+      "D-CODE",
+      "SYN",
+      "THIN SAMPLE",
+      "§1d"
+     ],
+     "ss_mean": 36.6,
+     "td_proj": 0.0,
+     "tape": {
+      "age": 29.8,
+      "height": "6'2",
+      "reach": 77.0,
+      "stance": "Orthodox",
+      "record": "8-2-0",
+      "slpm": 9.71,
+      "sapm": 10.4,
+      "str_acc": 0.54,
+      "str_def": 0.28,
+      "td_avg": 0.0,
+      "td_acc": 0.0,
+      "td_def": 0.0,
+      "sub_avg": 0.0
+     },
+     "data_quality": "SYN; THIN (2.9 min, 2 DWCS bouts); §1d (7-1 pre-UFC); D-CODE dog (last non-DWCS feeder LFA); P(KD) clamp 40%",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "Diyar Nurgozhay",
+     "side": "fav",
+     "market_odds": -265,
+     "model_win_shrunk": 53.4,
+     "model_win_raw": 61.2,
+     "dec_share_of_wins": 23.0,
+     "badges": [
+      "SYN"
+     ],
+     "ss_mean": 45.6,
+     "td_proj": 1.16,
+     "tape": {
+      "age": 29.6,
+      "height": "6'2",
+      "reach": 74.0,
+      "stance": "Southpaw",
+      "record": "12-2-0",
+      "slpm": 5.19,
+      "sapm": 2.81,
+      "str_acc": 0.61,
+      "str_def": 0.59,
+      "td_avg": 1.19,
+      "td_acc": 0.75,
+      "td_def": 0.72,
+      "sub_avg": 0.0
+     },
+     "data_quality": "SYN (not on Oddsbreaker; positional fields neutral)",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 13.7,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     56.1,
+     22.4,
+     7.8
+    ],
+    "exp_minutes": 5.9
+   },
+   "result": null
+  },
+  {
+   "order": 12,
+   "bout": "Shoaib Yousaf vs John Mitchell",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Shoaib Yousaf",
+     "side": "dog",
+     "market_odds": 128,
+     "model_win_shrunk": 51.3,
+     "model_win_raw": 54.4,
+     "dec_share_of_wins": 44.0,
+     "badges": [
+      "D-CODE",
+      "SYN",
+      "THIN SAMPLE",
+      "§1d"
+     ],
+     "ss_mean": 43.8,
+     "td_proj": 1.31,
+     "tape": {
+      "age": 31.3,
+      "height": "5'11",
+      "reach": null,
+      "stance": "Orthodox",
+      "record": "14-3-0",
+      "slpm": null,
+      "sapm": null,
+      "str_acc": null,
+      "str_def": null,
+      "td_avg": null,
+      "td_acc": null,
+      "td_def": null,
+      "sub_avg": null
+     },
+     "data_quality": "SYN (UFC debut, no UFC/DWCS tape); THIN (0 min); §1d (14-3 pre-UFC); D-CODE dog (last feeder FCC 47, minor); conf 30% floor",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    },
+    {
+     "name": "John Mitchell",
+     "side": "fav",
+     "market_odds": -159,
+     "model_win_shrunk": 48.7,
+     "model_win_raw": 45.6,
+     "dec_share_of_wins": 50.0,
+     "badges": [
+      "SYN",
+      "THIN SAMPLE",
+      "§1d"
+     ],
+     "ss_mean": 43.8,
+     "td_proj": 1.31,
+     "tape": {
+      "age": 31.3,
+      "height": "6'0",
+      "reach": null,
+      "stance": "Orthodox",
+      "record": "11-3-0",
+      "slpm": null,
+      "sapm": null,
+      "str_acc": null,
+      "str_def": null,
+      "td_avg": null,
+      "td_acc": null,
+      "td_def": null,
+      "sub_avg": null
+     },
+     "data_quality": "SYN (UFC debut, no UFC/DWCS tape); THIN (0 min); §1d (11-3 pre-UFC, PFL 2023-25); conf 30% floor",
+     "finish_pct": null,
+     "finish_ko": null,
+     "finish_sub": null,
+     "ss_median": null,
+     "td_p1": null,
+     "td_p2": null,
+     "td_p3": null,
+     "p_kd": null
+    }
+   ],
+   "duration": {
+    "p_dec": 47.0,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     26.8,
+     17.3,
+     8.9
+    ],
+    "exp_minutes": 10.1
+   },
+   "result": null
+  }
+ ],
+ "duration_flags": [],
+ "ml_flags": [
+  {
+   "fight_order": 4,
+   "side": "Asu Almabayev",
+   "market_odds": 162,
+   "model_shrunk": 56.9,
+   "model_raw": 58.1,
+   "market_implied": 36.4,
+   "edge_pts": 20.5,
+   "mechanism": "Almabayev projects 3.1 takedowns (4.74 TD/15, 91% control rate) against Horiguchi's roughly league-average 61% TD defense; Horiguchi is 36.1 and off an R3 KO loss.",
+   "counter": "TD output is capped (85/57/30) and 61% TDD is not a weakness; Horiguchi beat Albazi and Ulanbekov in his last 3.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 8,
+   "side": "Alessandro Costa",
+   "market_odds": -107,
+   "model_shrunk": 61.8,
+   "model_raw": 70.7,
+   "market_implied": 49.0,
+   "edge_pts": 12.7,
+   "mechanism": "Albazi lands 2.47 sig/min at 33% (differential -2.2/min) on an L2, so the sim gives Costa the distance rounds; Costa is W3 by finish in 2026.",
+   "counter": "Albazi stopped Costa in R3 in Dec 2022 (2 KDs); the engine has no head-to-head input. Near pickem.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 2,
+   "side": "Aljamain Sterling",
+   "market_odds": 108,
+   "model_shrunk": 54.2,
+   "model_raw": 57.6,
+   "market_implied": 45.8,
+   "edge_pts": 8.4,
+   "mechanism": "Sterling's distance differential (+2.3/min) wins rounds in a fight the sim sends to decision 52.8% of the time; Vallejos has 28 UFC minutes (confidence 55%).",
+   "counter": "Vallejos's 84% TDD and power (1.65 KD/15, P(KD) clamped at 40%); Sterling is 37.3 and has absorbed 5 KDs.",
+   "confidence": "lean"
+  },
+  {
+   "fight_order": 7,
+   "side": "Tallison Teixeira",
+   "market_odds": 163,
+   "model_shrunk": 51.8,
+   "model_raw": 55.9,
+   "market_implied": 36.1,
+   "edge_pts": 15.6,
+   "mechanism": "Both KO grids at or near the clamp; Teixeira has 17 minutes and confidence is at the 30% floor.",
+   "confidence": "artifact"
+  },
+  {
+   "fight_order": 6,
+   "side": "Santiago Luna",
+   "market_odds": 225,
+   "model_shrunk": 57.3,
+   "model_raw": 74.2,
+   "market_implied": 29.2,
+   "edge_pts": 28.1,
+   "mechanism": "Topuria shows 0 UFC finishes and 0 KDs in 30 minutes against a 33-minute Luna sample; confidence at the 30% floor.",
+   "confidence": "vetoed"
+  },
+  {
+   "fight_order": 11,
+   "side": "Alik Lorenz",
+   "market_odds": 205,
+   "model_shrunk": 46.6,
+   "model_raw": 38.8,
+   "market_implied": 31.1,
+   "edge_pts": 15.5,
+   "mechanism": "SYN on both sides, 2.9 minutes of DWCS tape, both KO grids pinned at the 2.50 clamp.",
+   "confidence": "vetoed"
+  },
+  {
+   "fight_order": 12,
+   "side": "Shoaib Yousaf",
+   "market_odds": 128,
+   "model_shrunk": 51.3,
+   "model_raw": 54.4,
+   "market_implied": 41.7,
+   "edge_pts": 9.6,
+   "mechanism": "Both sides SYN with zero UFC tape; only Sherdog priors separate them; confidence at the 30% floor.",
+   "confidence": "vetoed"
+  }
+ ],
+ "prop_notes": [
+  {
+   "fight_order": 4,
+   "text": "Almabayev 3.10 projected TDs (85/57/30, capped output, read as high)."
+  },
+  {
+   "fight_order": 5,
+   "text": "Aliskerov 1.88 projected TDs (85/56/29, capped); Cannonier 0.00 TDs is an artifact of Aliskerov's 100% TDD on 2 attempts faced."
+  },
+  {
+   "fight_order": 6,
+   "text": "Luna 0.00 projected TDs: artifact of Topuria's 100% TDD (9 of 9 over 2 bouts)."
+  },
+  {
+   "fight_order": 9,
+   "text": "Matthews 0.00 projected TDs: artifact of Abdullayev's 100% TDD from 1 bout."
+  },
+  {
+   "fight_order": 2,
+   "text": "Vallejos P(KD) 40% is clamped; Lorenz (fight 11) P(KD) 40% is clamped too."
+  },
+  {
+   "fight_order": 11,
+   "text": "Lorenz-Nurgozhay 56.1% ends in R1; Teixeira-Gaziev 47.1%; Cannonier-Aliskerov 38.8% (method props, not totals)."
+  },
+  {
+   "fight_order": 1,
+   "text": "SS 5R: Stirling 71.0 and Prochazka 47.8 mean over 11.7 expected minutes."
+  },
+  {
+   "fight_order": 12,
+   "text": "Props skipped; identical SS (43.8) and TD (1.31) projections for both sides are a SYN artifact."
+  }
+ ],
+ "vetoes": [
+  {
+   "fight_order": 6,
+   "side": "Santiago Luna",
+   "market_odds": 225,
+   "code": "D",
+   "reason": "D-code: underdog with 3 UFC fights; last pre-UFC bout Tuff-N-Uff (minor). Automatic no-bet."
+  },
+  {
+   "fight_order": 9,
+   "side": "Tahir Abdullayev",
+   "market_odds": 198,
+   "code": "D",
+   "reason": "D-code: underdog with 1 UFC fight; last pre-UFC bout GFC (minor). Automatic no-bet."
+  },
+  {
+   "fight_order": 11,
+   "side": "Alik Lorenz",
+   "market_odds": 205,
+   "code": "D",
+   "reason": "D-code: underdog with 0 UFC fights (2 DWCS); last non-DWCS bout LFA 228 (minor). Automatic no-bet."
+  },
+  {
+   "fight_order": 12,
+   "side": "Shoaib Yousaf",
+   "market_odds": 128,
+   "code": "D",
+   "reason": "D-code: underdog with 0 UFC fights; last pre-UFC bout FCC 47 Full Contact Contender (minor). Automatic no-bet."
+  }
+ ],
+ "source_doc": "markov/UFC_FN_Prochazka_vs_Stirling_V41b_Output.md",
+ "grading_window_index": 10,
+ "source_csv": "markov/UFC_FN_Prochazka_vs_Stirling_Raw_Stats.csv"
+}

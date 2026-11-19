@@ -31,6 +31,8 @@ NICKNAMES = {  # nickname -> formal first name; both directions are checked
     "steve": "stephen", "ed": "edward", "eddie": "edward", "rick": "richard", "dick": "richard", "kate": "katherine",
     "liz": "elizabeth", "beth": "elizabeth", "pete": "peter", "andy": "andrew", "drew": "andrew", "manny": "manuel",
     "alex": "alexander", "sasha": "alexander", "zach": "zachary", "zack": "zachary", "timmy": "timothy", "tim": "timothy",
+    "assu": "asu",   # transliteration: the odds feed's "Assu Almabayev" is UFCStats' "Asu Almabayev" (Nov 21 card)
+    "talisson": "tallison",   # spelling: the odds feed's "Talisson Teixeira" is UFCStats' / the sheet's "Tallison Teixeira" (Nov 21 card)
 }
 SUFFIXES = {"jr", "sr", "ii", "iii", "iv"}
 # Different UFCStats fighters whose names still match loosely (pairwise run over all 4,628 fighters, Block 41/42).

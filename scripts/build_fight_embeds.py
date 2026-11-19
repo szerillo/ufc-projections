@@ -56,6 +56,11 @@ PENDING_TEXT = "The sheet's price for {a} vs {b} did not match this bout, so no 
 PUBF = str(PUB_P.relative_to(REPO)) if PUB_P else None
 BPO = json.load(open(REPO / "data" / f"{SLUG}_odds.json"))
 OVR = json.load(open(REPO / "data" / "card_overrides.json"))[SLUG]
+# Nov 19 (Kirk): Markov V4.1b read per bout. Opt-in per card through card_overrides "markov" (the data/cards slug), so cards
+# built before this keep their pages. Key present but no card file yet: every bout says "Markov run pending" (fails closed).
+MK_SLUG = OVR.get("markov"); MK_PATH = REPO / "data" / "cards" / f"{MK_SLUG}.json" if MK_SLUG else None
+MK = json.load(open(MK_PATH)) if MK_PATH and MK_PATH.exists() else None
+if MK: assert MK["date"] == EVL["date"], f"Markov card {MK_SLUG} is dated {MK['date']}, event {EVL['date']}"
 IDX = json.load(open(FD / "index.json"))
 K = IDX["k"]; BOOKS = IDX["books"]
 W333 = open(REPO / "ufc_333_fight_form.html").read()
@@ -115,6 +120,13 @@ def bp_name(bf, F):  # BettingPros spelling of fighter F
 def bp_sel(bf, market, label):
     return next((s for s in bf["markets"].get(market, []) if s["label"] == label), None)
 
+US_BOOK = {"draftkings": "DK", "fanduel": "FD", "betmgm": "MGM", "caesars": "CZR"}   # the feed's books; all US-regulated
+def best_us(sel):
+    """Nov 18 (Kirk): the best US-regulated price for one selection, and its book. Ties go to the first book in US_BOOK order."""
+    dec = lambda c: 1 + (c / 100 if c > 0 else 100 / -c)
+    got = [(sel["books"][b]["cost"], b) for b in US_BOOK if b in sel.get("books", {}) and sel["books"][b].get("cost") is not None]
+    return max(got, key=lambda x: (dec(x[0]), -list(US_BOOK).index(x[1]))) if got else (None, None)
+
 def agg(lines):
     a = dict(n=0, w=0, l=0, d=0, nc=0, secs=0, s=[0] * 13)
     for x in lines:
@@ -150,6 +162,7 @@ PARTS = {"Moneyline": "ml", "Fight": "length", "Method": "method"}   # Block 59h
 
 
 SPOTS = {}
+MKREG = {}   # fight -> Markov card slug used on its page (Nov 19)
 TREND_PTS = {}
 LHF = ARGS.line_history or f"data/embeds/line_history_{SLUG}.json"; LH = json.loads((REPO / LHF).read_text())
 LABS_ACC = json.loads((REPO / "form/data/labs.json").read_text())["scoring"]["acc"]   # decision-model accuracy, quoted in the key
@@ -417,6 +430,9 @@ def build(names, outname):
             if bf:
                 lab_ = bp_name(bf, F); c_ = bp_sel(bf, "moneyline", lab_)["books"]["consensus"]["cost"]
                 mk = cell(R(c_, "ml", "bp", "Market ML " + F, market="moneyline", label=lab_, field="cost"), R(imp(c_), "pct1", "bp_imp", "Market implied " + F, market="moneyline", label=lab_))
+                bc_, bk_ = best_us(bp_sel(bf, "moneyline", lab_))
+                if bc_ is not None:
+                    mk = mk[:-5] + f'<div class="bus">best {R(bc_, "ml", "bp_best", "Best US ML " + F, market="moneyline", label=lab_, book=bk_)} {US_BOOK[bk_]}</div></td>'
             else:
                 mk = '<td class="dim">n/a</td>'
             nmcell = f'<td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}<div class="nb op-{opp_cls[sd]}"><i class="{side_cls[sd]}" style="width:{p_*100:.1f}%"></i></div></td>'
@@ -481,11 +497,62 @@ def build(names, outname):
         proj += "@@LIVE@@" + explain(XPL["proj"])   # Sean, Nov 13 13:00: the Listed / Edge footnote line removed
     elif lp:   # Kirk round 34: the card page's "Line pending" state; market, line move and stats sections still build
         proj += (f'<div class="stk" data-part="ml"><div class="stk-h"><span class="bullet"></span>Line pending</div>'
-                 f'<div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}</div>@@MOVE@@@@ANGLES@@</div>@@LIVE@@')
+                 f'<div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}'
+                 + ('' if bf else ' No odds feed price for this bout yet.')   # Nov 19: a late-added bout the feed lacks, held as Line pending
+                 + '</div>@@MOVE@@@@ANGLES@@</div>@@LIVE@@')
         gaps.append(f"Fight {n}: Line pending in {PUBF} ({lp.get('reason', '')}); no model numbers shown.")
     else:
-        proj += '<div class="note">No model projection published for this bout yet.</div>'
-        gaps.append(f"Fight {n}: no row in the Publish to site export; no model numbers shown.")
+        # Nov 18 (Kirk): a card the sheet has not published yet. No model numbers, never stand-ins; the market tables, line move,
+        # stats and form still build, with the same feed-sanity labels ("price unavailable") as a published card.
+        # Nov 19: a late-added bout the odds feed does not carry yet gets no market tables, so the note says so
+        proj += ('<div class="note npj">No model projection published for this bout yet. Market prices only.</div>' if bf else
+                 '<div class="note npj">No model projection published for this bout yet. No odds feed price for this bout yet.</div>')
+        gaps.append(f"Fight {n}: no row in the Publish to site export; no model numbers shown." + ("" if bf else " Not in the odds feed yet."))
+        if bf:
+            body = ""
+            for sd in ("a", "b"):
+                F = nm_of[sd]; lab_ = bp_name(bf, F); sel_ = bp_sel(bf, "moneyline", lab_)
+                if sel_:
+                    c_ = sel_["books"]["consensus"]["cost"]
+                    mk = cell(R(c_, "ml", "bp", "Market ML " + F, market="moneyline", label=lab_, field="cost"), R(imp(c_), "pct1", "bp_imp", "Market implied " + F, market="moneyline", label=lab_))
+                    bc_, bk_ = best_us(sel_)
+                    bu = f'<td><span class="odds">{R(bc_, "ml", "bp_best", "Best US ML " + F, market="moneyline", label=lab_, book=bk_)}</span><div class="pct">{US_BOOK[bk_]}</div></td>' if bc_ is not None else '<td class="dim">n/a</td>'
+                else:
+                    mk, bu = '<td class="dim">not offered</td>', '<td class="dim">n/a</td>'
+                body += f'<tr><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}</td>{mk}{bu}</tr>'
+            proj += stack("Moneyline · market", ["Fighter", "Market", "Best US"], body).replace("</table></div>", "</table>@@MOVE@@@@ANGLES@@</div>", 1)
+            body = ""
+            for lab_, out_ in (("Yes", "Goes the distance"), ("No", "Inside the distance")):
+                sel_ = bp_sel(bf, "fight_distance", lab_)
+                if d_ok and sel_:
+                    c_ = sel_["books"]["consensus"]["cost"]
+                    lst = cell1(R(c_, "ml", "bp", f"Market GTD {lab_.lower()}", market="fight_distance", label=lab_, field="cost"), R(imp(c_), "pct1", "bp_imp", f"Market GTD {lab_.lower()} implied", market="fight_distance", label=lab_))
+                else:
+                    lst = '<td class="dim pu">price unavailable</td>'
+                body += f'<tr><td class="l nm">{out_}</td>{lst}</tr>'
+            proj += stack("Fight length · market", ["Outcome", "Listed"], body)
+            broken = any(("draw" in w_ or "opening" in w_ or "margin" in w_ or "under 100" in w_) for w_ in bad_why)
+            body = ""
+            for sd in ("a", "b"):
+                F = nm_of[sd]; tdm = ""
+                own_ok = not broken and all(bp_sel(bf, "method_of_victory", f"{bp_name(bf, F)} {MOVL[x]}") for x in ("dec", "ko", "sub"))
+                for k in ("dec", "ko", "sub", "itd"):
+                    if own_ok and k == "itd":
+                        labs_ = [f"{bp_name(bf, F)} {MOVL[x]}" for x in ("ko", "sub")]
+                        iv = sum(imp(bp_sel(bf, "method_of_victory", lb)["books"]["consensus"]["cost"]) for lb in labs_)
+                        tdm += (f'<td data-k="itd" class="mkc"><span class="odds">{R(iv, "mlp", "bp_imp_sum", f"Market ITD price {F}", market="method_of_victory", labels=labs_)}</span>'
+                                f'<span class="sr">{R(iv, "pct1", "bp_imp_sum", f"Market ITD implied {F}", market="method_of_victory", labels=labs_)}</span><div class="kos">KO+Sub</div></td>')
+                    elif own_ok:
+                        lb = f"{bp_name(bf, F)} {MOVL[k]}"; c_ = bp_sel(bf, "method_of_victory", lb)["books"]["consensus"]["cost"]
+                        tdm += (f'<td data-k="{k}" class="mkc"><span class="odds">{R(c_, "ml", "bp", f"Market {k} {F}", market="method_of_victory", label=lb, field="cost")}</span>'
+                                f'<span class="sr">{R(imp(c_), "pct1", "bp_imp", f"Market {k} implied {F}", market="method_of_victory", label=lb)}</span></td>')
+                    else:
+                        tdm += f'<td data-k="{k}" class="mkc"><span class="dim{" pu" if broken else ""}">{"price unavailable" if broken else "not offered"}</span></td>'
+                body += f'<tr class="{side_cls[sd]}"><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}</td>{tdm}</tr>'
+            proj += stack("Method of victory · market", ["Fighter", "DEC", "KO", "SUB", "ITD"], body)
+        else:
+            proj += '<div class="stk" data-part="ml">@@MOVE@@@@ANGLES@@</div>'
+        proj += "@@LIVE@@" + explain(XPL["proj"])
     top = proj
 
     PANELS = {}
@@ -907,7 +974,53 @@ def build(names, outname):
                         f'Return range, resampled by card: {R(AS_["roi_ci_boot_cards"][0], "spp", "angstat", "Southpaw angle ROI CI lo", angle="southpaw", key="roi_ci_boot_cards", i=0)} to {R(AS_["roi_ci_boot_cards"][1], "spp", "angstat", "Southpaw angle ROI CI hi", angle="southpaw", key="roi_ci_boot_cards", i=1)}. '
                         f'This is one of {AS_["labs_angles"]} angles on Labs; with that many, one or two look good by luck. '
                         f'Labs shows {R(ag_["n"], "intc", "rs_angle", "Southpaw angle Labs n", id="southpaw", key="n")} fights until its rebuild after UFC 334 (2 bouts misread there). Context, not a pick.</div></div>')
-    top = top.replace("@@ANGLES@@", "").replace("@@LIVE@@", spot_html + debut_html + ang_html)
+    # Nov 19 (Kirk): Markov read. Flags, artifacts and vetoes only, verbatim from C4's flags file through the Markov card
+    # (markov_card_build.py); a flag needs an 8+ point gap and a fighter-specific mechanism, so most bouts show "no flag".
+    # No other Markov numbers on the fight page (Sean's design: one projection table, no model comparison).
+    mk_html = ""
+    if MK_SLUG:
+        MKF_ = next((f_ for f_ in MK["fights"] if pair(*[x_["name"] for x_ in f_["fighters"]], an, bn)), None) if MK else None
+        CONF_ = {"real": "Real", "lean": "Lean", "sprinkle": "Sprinkle", "artifact": "Artifact, not a read", "vetoed": "Vetoed"}
+        items_ = []
+        if MK is None or MKF_ is None:
+            items_.append('<div class="mk-none">Markov run pending for this bout. Nothing is shown until it lands.</div>')
+        else:
+            o_ = MKF_["order"]; names_ = [x_["name"] for x_ in MKF_["fighters"]]
+            vet_ = {v_["side"]: (i_, v_) for i_, v_ in enumerate(MK.get("vetoes", [])) if v_["fight_order"] == o_}
+            for kind_ in ("duration_flags", "ml_flags"):
+                for i_, f_ in enumerate(MK.get(kind_, [])):
+                    if f_["fight_order"] != o_: continue
+                    M_ = lambda k_, fmt_, d_: R(f_[k_], fmt_, "mk", d_, kind=kind_, i=i_, key=k_, card=MK_SLUG)
+                    if kind_ == "ml_flags":
+                        assert f_["side"] in names_, f"Markov flag side {f_['side']} is not in {names_}"
+                        head_ = f'<b>{esc(f_["side"])} {M_("market_odds", "ml", "Markov flag price")}</b> <span class="dim">moneyline, price at the Markov run</span>'
+                        nums_ = (f'<div class="mk-n">Markov {M_("model_shrunk", "n1", "Markov win shrunk")}% '
+                                 f'<span class="dim">(raw {M_("model_raw", "n1", "Markov win raw")}%)</span> vs no-vig market {M_("market_implied", "n1", "Markov flag market")}%, '
+                                 f'gap {M_("edge_pts", "s1", "Markov flag gap")} pts</div>')
+                    else:
+                        head_ = f'<b>{esc(f_["title"])}</b> <span class="dim">fight length</span>'
+                        nums_ = (f'<div class="mk-n">Markov {M_("model_value", "n1", "Markov duration model")}% vs no-vig market '
+                                 f'{M_("market_value", "n1", "Markov duration market")}%</div>')
+                    vv_ = vet_.pop(f_.get("side"), None) if kind_ == "ml_flags" else None
+                    cl_ = f_["confidence"]
+                    items_.append(f'<div class="mk-i mk-{cl_}"><div class="mk-h"><span class="mk-c">{CONF_[cl_]}</span> {head_}</div>{nums_}'
+                                  + (f'<div class="mk-why"><b>Why:</b> {esc(f_["mechanism"])}</div>' if f_.get("mechanism") else "")
+                                  + (f'<div class="mk-why"><b>Against:</b> {esc(f_["counter"])}</div>' if f_.get("counter") else "")
+                                  + (f'<div class="mk-why mk-v"><b>Veto:</b> {esc(vv_[1]["reason"])}</div>' if vv_ else "") + '</div>')
+            for side_, (i_, v_) in vet_.items():   # a veto with no matching flag still shows
+                items_.append(f'<div class="mk-i mk-vetoed"><div class="mk-h"><span class="mk-c">Vetoed</span> <b>{esc(side_)} '
+                              f'{R(v_["market_odds"], "ml", "mk", "Markov veto price", kind="vetoes", i=i_, key="market_odds", card=MK_SLUG)}</b></div>'
+                              f'<div class="mk-why">{esc(v_["reason"])}</div></div>')
+            if not items_:
+                items_.append('<div class="mk-none">No Markov flag on this bout. A flag needs an 8+ point gap from the no-vig market and a fighter-specific reason.</div>')
+        dq_ = ""
+        if MKF_ is not None:   # data-quality badges from C4's run, every one shown (THIN SAMPLE, SYN, §1d, D-CODE)
+            bl_ = [f'{esc(last(x_["name"]))}: ' + ", ".join(f'<span class="mk-b">{esc(b_)}</span>' for b_ in x_["badges"]) for x_ in MKF_["fighters"] if x_["badges"]]
+            dq_ = f'<div class="mk-dq">Data: {"; ".join(bl_)}</div>' if bl_ else '<div class="mk-dq">Data: no THIN SAMPLE, SYN, §1d or D-CODE badge on either fighter.</div>'
+        mk_html = (f'<div class="stk mk" data-part="markov"><div class="stk-h"><span class="bullet"></span>Markov read</div>' + dq_ + "".join(items_)
+                   + '<div class="mk-f dim">Market-blind V4.1b sim; it carries 15% of the weight in the sheet\'s number. Context, not a pick.</div></div>')
+    MKREG[n] = MK_SLUG if MK else None
+    top = top.replace("@@ANGLES@@", "").replace("@@LIVE@@", spot_html + mk_html + debut_html + ang_html)
     small = [F["name"] for F, g_ in [(FA, ga), (FB, gb)] if g_["n"] <= 3]
     secs.append(sec("ourstats", "Stats", "", stats_html))
 
@@ -1006,6 +1119,9 @@ details.taped{{margin:0 0 12px;border:1px solid var(--border);border-radius:6px;
 details.taped>summary::-webkit-details-marker{{display:none}}details.taped>summary .meta{{margin-left:auto;font-size:10px;font-weight:600;letter-spacing:.3px;text-transform:none;color:var(--text-muted)}}
 details.taped .chev{{width:0;height:0;border-left:6px solid var(--action-green-dark);border-top:5px solid transparent;border-bottom:5px solid transparent;transition:transform .15s}}details.taped[open] .chev{{transform:rotate(90deg)}}
 details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{padding:0 10px 10px}}
+.mk .mk-i{{padding:10px 12px;border-bottom:1px solid var(--border);font-size:12px;line-height:1.4}}.mk .mk-h{{margin-bottom:3px}}.mk .mk-c{{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:2px 6px;border-radius:3px;background:var(--bg-muted);color:var(--text-muted);margin-right:4px}}
+.mk .mk-lean .mk-c,.mk .mk-real .mk-c{{background:var(--fav-b-soft);color:var(--text)}}.mk .mk-vetoed .mk-h b,.mk .mk-artifact .mk-h b{{text-decoration:line-through;text-decoration-thickness:1px}}
+.mk .mk-n{{font:600 11px/1.4 "SF Mono",Menlo,monospace;margin:2px 0 4px}}.mk .mk-why{{font-size:11.5px;color:var(--text-muted);margin-top:2px}}.mk .mk-none{{padding:10px 12px;font-size:12px;color:var(--text-muted);border-bottom:1px solid var(--border)}}.mk .mk-f{{padding:7px 12px;font-size:10.5px}}.mk .mk-dq{{padding:7px 12px;font-size:11px;color:var(--text-muted);border-bottom:1px solid var(--border);background:var(--bg-muted)}}.mk .mk-b{{font-weight:800;color:var(--text);letter-spacing:.3px}}
 .stk{{margin:0 0 12px;border:1px solid var(--border);border-radius:6px;overflow:hidden}}.stk-h{{background:var(--header-bg);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:8px 12px;display:flex;align-items:center;gap:8px}}
 .stk-t{{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}}.stk-t th{{background:var(--bg-muted);font-size:9.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);padding:7px 6px;text-align:center;border-bottom:1px solid var(--border)}}
 .stk-t th.l,.stk-t td.l{{text-align:left}}.stk-t td{{padding:9px 6px;text-align:center;border-bottom:1px solid var(--border);vertical-align:middle}}.stk-t tr:last-child td{{border-bottom:0}}
@@ -1042,7 +1158,7 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .sc-track{{position:relative;height:8px;background:linear-gradient(90deg,var(--bg-muted),#d9d4c8);border-radius:4px;margin:4px 6px 8px}}
 .sc-dot{{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}}.sc-dot.rc{{background:#d6312b}}.sc-dot.bc{{background:#2a78d6}}
 .sc-avg{{position:absolute;top:-5px;width:2px;height:18px;background:#0e1116;transform:translateX(-1px)}}.sc-l{{font-size:12px;margin:2px 0}}.oc i b{{color:#fff}}.oc-wko{{background:#0a7a3a}}.oc-wsub{{background:#22a85a}}.oc-wdec{{background:#8fd6aa}}.oc-ldec{{background:#f2b8b0}}.oc-lsub{{background:#e0675a}}.oc-lko{{background:#b3261e}}.oc .oc-wdec b,.oc .oc-ldec b{{color:#0e1116}}.tb-bar.oc i{{min-width:0}}
-.dhist{{width:100%;height:auto;display:block;margin:6px 0 2px}}.drift{{margin:8px 12px}}.sr{{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}.stk-t td.rl2{{font-size:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--text-muted);text-align:left;padding-left:2px;padding-right:2px;width:34px}}.stk-t tr.mp td{{border-bottom:0;padding-bottom:2px}}.stk-t tr.mkr td{{border-bottom:0;padding-top:2px;padding-bottom:2px}}.stk-t tr.med td{{padding-top:2px}}.stk-t tr.mkr .odds{{font-weight:600;color:var(--text-muted)}}.stk-t td.edc .ech{{margin-top:0}}.stk-t .kos{{font-size:8.5px;font-weight:700;color:var(--text-muted);letter-spacing:.3px}}.stk-t td.nm[rowspan]{{vertical-align:middle;border-bottom:1px solid var(--border)}}.subh{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);padding:12px 12px 4px}}.rt .rwb{{display:block;height:4px;background:var(--bg-muted);border-radius:2px;margin:3px auto 3px;max-width:56px;overflow:hidden}}.rt .rwb i{{display:block;height:100%}}.rt .rwb i.rc{{background:#d6312b}}.rt .rwb i.bc{{background:#2a78d6}}.rt td small.rd{{font-weight:700}}.rt td small.rn{{font-weight:500;color:var(--text-muted);font-family:inherit;font-size:9.5px}}.rt th .thn{{display:block;font-weight:600;letter-spacing:.2px;text-transform:none;font-size:9px}}.subh.first{{padding-top:8px;color:var(--text);font-size:11px}}ul.rt-n{{margin:6px 12px 8px;padding-left:16px}}ul.rt-n li{{margin:1px 0}}.mpl{{display:inline-block;margin-top:3px;font-size:8.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#8a5a00;background:#fff4d6;border:1px solid #f0d58a;border-radius:3px;padding:1px 4px;white-space:nowrap}}.ppath{{display:block;width:100%;height:auto;margin:8px 0 2px}}.mvends{{display:flex;justify-content:space-between;font-size:10.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}}.mvends .mvp{{font:800 12px/1 "SF Mono",Menlo,monospace;color:var(--text);margin-left:4px;text-transform:none}}.mvends .mve{{color:var(--action-green-dark,#0a8842)}}.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
+.dhist{{width:100%;height:auto;display:block;margin:6px 0 2px}}.drift{{margin:8px 12px}}.sr{{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}.stk-t td.rl2{{font-size:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--text-muted);text-align:left;padding-left:2px;padding-right:2px;width:34px}}.stk-t tr.mp td{{border-bottom:0;padding-bottom:2px}}.stk-t tr.mkr td{{border-bottom:0;padding-top:2px;padding-bottom:2px}}.stk-t tr.med td{{padding-top:2px}}.stk-t tr.mkr .odds{{font-weight:600;color:var(--text-muted)}}.stk-t td.edc .ech{{margin-top:0}}.stk-t .kos{{font-size:8.5px;font-weight:700;color:var(--text-muted);letter-spacing:.3px}}.stk-t td.nm[rowspan]{{vertical-align:middle;border-bottom:1px solid var(--border)}}.subh{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);padding:12px 12px 4px}}.rt .rwb{{display:block;height:4px;background:var(--bg-muted);border-radius:2px;margin:3px auto 3px;max-width:56px;overflow:hidden}}.rt .rwb i{{display:block;height:100%}}.rt .rwb i.rc{{background:#d6312b}}.rt .rwb i.bc{{background:#2a78d6}}.rt td small.rd{{font-weight:700}}.rt td small.rn{{font-weight:500;color:var(--text-muted);font-family:inherit;font-size:9.5px}}.rt th .thn{{display:block;font-weight:600;letter-spacing:.2px;text-transform:none;font-size:9px}}.subh.first{{padding-top:8px;color:var(--text);font-size:11px}}ul.rt-n{{margin:6px 12px 8px;padding-left:16px}}ul.rt-n li{{margin:1px 0}}.mpl{{display:inline-block;margin-top:3px;font-size:8.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#8a5a00;background:#fff4d6;border:1px solid #f0d58a;border-radius:3px;padding:1px 4px;white-space:nowrap}}.bus{{font:600 9px/1.2 "SF Mono",Menlo,monospace;color:var(--text-muted);margin-top:2px;white-space:nowrap}}.note.npj{{margin:10px 0 4px;font-weight:700}}.ppath{{display:block;width:100%;height:auto;margin:8px 0 2px}}.mvends{{display:flex;justify-content:space-between;font-size:10.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}}.mvends .mvp{{font:800 12px/1 "SF Mono",Menlo,monospace;color:var(--text);margin-left:4px;text-transform:none}}.mvends .mve{{color:var(--action-green-dark,#0a8842)}}.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
 .sgt{{display:flex;flex-wrap:wrap;gap:6px;padding:2px 0 10px}}.sgt button{{flex:1 1 auto;min-width:0;border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 10px;font:700 11px/1 inherit;letter-spacing:-.1px;white-space:nowrap;font-family:inherit;color:var(--text-muted);cursor:pointer}}.sgt button[aria-pressed=true]{{background:#0e1116;border-color:#0e1116;color:#fff}}.js .sgw{{display:none}}.js .sgw.on{{display:block}}
 .fmore{{margin:4px 0 12px}}.fmore>summary{{cursor:pointer;font-size:12px;font-weight:700;color:var(--action-green-dark);padding:6px 2px;list-style:none}}.fmore>summary::-webkit-details-marker{{display:none}}.fmore>summary::before{{content:"▸ "}}.fmore[open]>summary::before{{content:"▾ "}}.fmore[open]>summary{{font-size:0}}.fmore[open]>summary::before{{font-size:12px}}.fmore[open]>summary::after{{content:"Hide older fights";font-size:12px}}
 .fl{{color:inherit;text-decoration:none;border-bottom:1px dotted #9a9a9a}}a.fl{{display:inline-block;padding:5px 0 4px;line-height:15px}}.stamps a{{display:inline-block;padding:6px 4px;margin:-6px 0;color:inherit}}.fl:hover{{color:var(--action-green-dark);border-bottom-color:currentColor}}.cn-s{{font-size:10.5px;font-weight:600;color:var(--text-muted);margin-left:8px}}
@@ -1100,7 +1216,7 @@ document.documentElement.classList.add('part');}}}}
     page = page.replace("</body></html>", PENDING_GUARD.replace("@@PAIR@@", json.dumps([an, bn])).replace("@@NOTE@@", json.dumps(
         f'<div class="stk"><div class="stk-h"><span class="bullet"></span>Line pending</div><div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}</div></div>')) + "</body></html>")
     (OUT / outname).write_text(page)
-    reg = dict(fight=n, of=NB, site_pair=PAIR, pair=[an, bn], file=outname, event=EVF, proj_src=proj_src, proj_file=PUBF if (pf or lp) else (EVF if EM else None),
+    reg = dict(markov_card=MKREG.get(n), fight=n, of=NB, site_pair=PAIR, pair=[an, bn], file=outname, event=EVF, proj_src=proj_src, proj_file=PUBF if (pf or lp) else (EVF if EM else None),
                published_at=PUB.get("published_at") if (pf or lp) else None, rows=R.rows, gaps=gaps, **({"line_pending": lp} if lp else {}))
     (OUT / outname.replace(".html", ".registry.json")).write_text(json.dumps(reg, indent=1, default=str))
     print(outname, len(page), "bytes,", len(R.rows), "numbers,", len(gaps), "gaps")
@@ -1108,12 +1224,21 @@ document.documentElement.classList.add('part');}}}}
 def card():
     """Full numbered card (bout order) cross-checked against BettingPros scheduled order and the site ids."""
     bp_by = sorted(BPO["fights"], key=lambda x: x["scheduled_utc"])
+    # Nov 19 (Kirk): a card_overrides "add" bout the feed does not carry yet has no feed rank; feed bouts after it shift down
+    in_feed = lambda a_, b_: any(pair(x["fighter_a"]["name"], x["fighter_b"]["name"], a_, b_) for x in BPO["fights"])
+    added = [NB - k for k, s_ in enumerate(ORDER) if any(pair(ad["a"], ad["b"], *s_.split("|")) for ad in OVR.get("add", [])) and not in_feed(*s_.split("|"))]
     out = []
     for i, s in enumerate(ORDER):
         a, b = s.split("|"); n = NB - i
         # one matching fighter is enough here: BettingPros spells "Charlie Radke", "Christopher Duncan"
         hit = lambda x, y: any(same(p, q) for p in (x, y) for q in (a, b))
-        bpi = next(j + 1 for j, x in enumerate(bp_by) if hit(x["fighter_a"]["name"], x["fighter_b"]["name"]))
+        if n in added:
+            sn = next((x["n"] for x in EVL["fights"] if pair(x["a"]["name"], x["b"]["name"], a, b)), None)
+            seg = OVR["segments"]; tag = "Main event" if i == 0 else "Main card" if i < seg["main"] else "Prelims" if i < seg["main"] + seg["prelims"] else "Early prelims"
+            out.append(dict(fight=n, bout=f"{a} vs {b}", segment=tag, bp_sched_rank=None, site_n=sn, added="not in the odds feed yet"))
+            assert sn == n, f"{EVF}: n={sn} for {a} vs {b}, bout order says {n}; run scripts/card_overrides.py on the event file"
+            continue
+        bpi = next(j + 1 for j, x in enumerate(bp_by) if hit(x["fighter_a"]["name"], x["fighter_b"]["name"])) + sum(1 for k in added if k < n)
         sn = next((x["n"] for x in EVL["fights"] if hit(x["a"]["name"], x["b"]["name"])), None)
         seg = OVR["segments"]; tag = "Main event" if i == 0 else "Main card" if i < seg["main"] else "Prelims" if i < seg["main"] + seg["prelims"] else "Early prelims"
         out.append(dict(fight=n, bout=f"{a} vs {b}", segment=tag, bp_sched_rank=bpi, site_n=sn))

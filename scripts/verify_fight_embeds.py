@@ -158,6 +158,17 @@ def check(D, htmlfile, G):
             elif rule == "bp_imp_sum": v = sum(implied(bp_cost(a["market"], lb)) for lb in a["labels"])
             elif rule == "pubp": v = PUB["params"][a["key"]]
             elif rule == "bp": v = bp_cost(a["market"], a["label"], a["field"])
+            elif rule == "mk":   # Nov 19: Markov number straight from C4's flags file (not the card JSON the builder read)
+                fl_, _ = mk_src(a["card"]); v = fl_[a["kind"]][a["i"]][a["key"]]
+                if not mk_pair_ok(a["card"], fl_[a["kind"]][a["i"]]["fight_order"], reg["pair"]):
+                    bad.append((r["id"], r["desc"], f"Markov {a['kind']}[{a['i']}] belongs to another bout"))
+            elif rule == "bp_best":   # Nov 18: best US-regulated price (own recompute) and its book must be the one named
+                sel_ = next(s_ for s_ in bpf["markets"][a["market"]] if s_["label"] == a["label"])
+                dec_ = lambda c: 1 + (c / 100 if c > 0 else 100 / -c)
+                us_ = ["draftkings", "fanduel", "betmgm", "caesars"]
+                got_ = [(sel_["books"][b]["cost"], b) for b in us_ if b in sel_.get("books", {}) and sel_["books"][b].get("cost") is not None]
+                v, bk_ = max(got_, key=lambda x: (dec_(x[0]), -us_.index(x[1])))
+                if bk_ != a.get("book"): bad.append((r["id"], r["desc"], f"best US book {a.get('book')} but {bk_} has the best price"))
             elif rule == "bp_nv": v = nv(a["market"], a["label"], a["other"]); v = 1 - v if inv else v
             elif rule == "bp_imp": v = implied(bp_cost(a["market"], a["label"]))
             elif rule == "bp_mnv": v = mnv(a["fighter"], a["k"])
@@ -269,8 +280,55 @@ def check(D, htmlfile, G):
         if pub is not None:
             if len(mids) != 24: bad.append(("proj", "model cells", f"{len(mids)} model numbers, want 24"))
             if not mrules <= {"pub_win", "pub_meth", "pub"}: bad.append(("proj", "model rules", f"non-export rules in model cells: {mrules}"))
-        # Block 59f: an opponent named Sean in the fight history (Dober vs Sean Spencer) is not the model label
-        if re.search(r"\bSean\b(?! [A-Z][a-z])", re.sub(r"@SeanZerillo|twitter.com/SeanZerillo", "", page)) or re.search(r">Sean<|Sean (fair|vs|ML|%)", page): bad.append(("page", "label", "'Sean' used as the model name"))
+        # Nov 19: Markov read. Every flag and veto for this bout (from C4's flags file, bout found through the raw-stats CSV)
+        # is on the page, nothing else is; a card with the "markov" key and no Markov file must say pending.
+        mk_key_ = json.load(open(REPO / "data/card_overrides.json")).get(G_SLUG[0], {}).get("markov")
+        if mk_key_:
+            nshown_ = page.count('<div class="mk-i ')
+            if reg.get("markov_card") is None:
+                if "Markov run pending for this bout" not in page or nshown_: bad.append(("markov", "pending", "no Markov file: the page must say pending and show nothing"))
+            else:
+                fl_, ord_ = mk_src(reg["markov_card"]); o_ = next((o for o, nm in ord_.items() if pair_ok(nm, reg["pair"])), None)
+                if o_ is None: bad.append(("markov", "bout", "bout not found in the Markov raw-stats CSV"))
+                else:
+                    sides_ = {f["side"] for f in fl_.get("ml_flags", []) if f["fight_order"] == o_}
+                    want_ = sum(1 for k in ("duration_flags", "ml_flags") for f in fl_.get(k, []) if f["fight_order"] == o_) \
+                            + sum(1 for v_ in fl_.get("vetoes", []) if v_["fight_order"] == o_ and v_["side"] not in sides_)
+                    if nshown_ != want_: bad.append(("markov", "count", f"{nshown_} Markov items shown, flags file has {want_} for this bout"))
+                    if want_ == 0 and "No Markov flag on this bout" not in page: bad.append(("markov", "none", "no-flag line missing"))
+                    if not fl_.get("provisional_fights"):   # Nov 19 (Kirk): no provisional bout left, so no provisional label on a page or in the card
+                        if re.search(r"provisional", page, re.I): bad.append(("markov", "provisional", "provisional label on the page; the flags file lists no provisional bout"))
+                        if re.search(r"provisional", (REPO / "data/cards" / f"{reg['markov_card']}.json").read_text(), re.I): bad.append(("markov", "provisional", "provisional label in the Markov card; the flags file lists no provisional bout"))
+                    for po_ in fl_.get("provisional_fights", []):   # Nov 19 (Kirk): a provisional bout stays off every page and the Markov card
+                        for nm_ in ord_.get(po_, []):
+                            if nm_ in page: bad.append(("markov", "provisional", f"provisional bout fighter {nm_} on the page"))
+                            if nm_ in (REPO / "data/cards" / f"{reg['markov_card']}.json").read_text(): bad.append(("markov", "provisional", f"provisional bout fighter {nm_} in the Markov card"))
+                    blk_ = re.search(r'<div class="mk-dq">(.*?)</div>', page, re.S); blk_ = blk_.group(1) if blk_ else ""
+                    for nm_, dq_ in mk_dq(reg["markov_card"]).get(o_, []):   # badges recomputed from the CSV text
+                        need_ = [b for b, hit in (("SYN", "SYN" in dq_), ("§1d", "§1d" in dq_), ("THIN SAMPLE", "THIN" in dq_), ("D-CODE", "D-CODE" in dq_.upper())) if hit]
+                        seg_ = re.search(re.escape(H.escape(nm_.split()[-1])) + r': (.*?)(?:;|$)', blk_)
+                        for b in need_:
+                            if not seg_ or f'<span class="mk-b">{H.escape(b)}</span>' not in seg_.group(1): bad.append(("markov", "badge", f"{nm_}: {b} badge missing from the Markov block"))
+                    for k in ("ml_flags", "duration_flags"):
+                        for f in fl_.get(k, []):
+                            if f["fight_order"] == o_:
+                                lab_ = {"real": "Real", "lean": "Lean", "sprinkle": "Sprinkle", "artifact": "Artifact, not a read", "vetoed": "Vetoed"}[f["confidence"]]
+                                if f'<span class="mk-c">{lab_}</span>' not in page: bad.append(("markov", "label", f"{f.get('side') or f.get('title')}: label {lab_} missing"))
+                                for t_ in (f.get("mechanism"), f.get("counter")):
+                                    if t_ and H.escape(t_) not in page: bad.append(("markov", "text", f"mechanism/counter text not verbatim: {t_[:40]}"))
+                    for v_ in fl_.get("vetoes", []):
+                        if v_["fight_order"] == o_ and H.escape(v_["reason"]) not in page: bad.append(("markov", "veto", f"veto reason missing for {v_['side']}"))
+        # Nov 18: a bout the sheet has not published shows the note and market prices only, never a model cell
+        if reg.get("proj_src") is None and ('class="model"' in page or "No model projection published for this bout yet" not in page):
+            bad.append(("proj", "market-only", "a bout with no sheet row must show the no-projection note and no model cells"))
+        # Nov 18: the book named next to each best US price is the book that has it (the number itself is rechecked by bp_best)
+        for r_ in reg["rows"]:
+            if r_["rule"] == "bp_best":
+                bk_ = {"draftkings": "DK", "fanduel": "FD", "betmgm": "MGM", "caesars": "CZR"}[r_["args"]["book"]]
+                if not re.search(r'<span data-id="%s">[^<]*</span>(?:</span>)?(?: |<div class="pct">)%s<' % (r_["id"], bk_), page):
+                    bad.append((r_["id"], r_["desc"], f"best US price not labelled {bk_}"))
+        # Block 59f: an opponent named Sean in the fight history (Dober vs Sean Spencer, Vallejos vs Sean O'Malley) is not the model label
+        if re.search(r"\bSean\b(?! [A-Z])", re.sub(r"@SeanZerillo|twitter.com/SeanZerillo", "", page)) or re.search(r">Sean<|Sean (fair|vs|ML|%)", page): bad.append(("page", "label", "'Sean' used as the model name"))
         if re.search(r'class="op"', page): bad.append(("page", "open price", "o-prefixed open price in the projection"))
         if re.search(r"BettingPros", text): bad.append(("page", "source name", "BettingPros named on the page"))
         if re.search(r"\bElo\b|\bFig\b|Form Figure", text): bad.append(("page", "rating", "Elo or Form Figure shown"))
@@ -386,7 +444,7 @@ def check(D, htmlfile, G):
         sh_ = lambda t_: t_[5:16].replace("-", "/").replace("T", " ") + " UTC"
         if not st_: bad.append(("footer", "stamps", "no Data as of line"))
         else:
-            exp_pub = json.loads(Path(REPO / reg["proj_file"]).read_text()).get("published_at") if reg.get("proj_file", "").endswith("projections.json") else None
+            exp_pub = json.loads(Path(REPO / reg["proj_file"]).read_text()).get("published_at") if (reg.get("proj_file") or "").endswith("projections.json") else None
             lm_ = sh_(lrec["current"]["t"]) if lrec.get("current") and lrec.get("open") else (sh_(lrec["open"]["t"]) + " (opener only)" if lrec.get("open") else "n/a")
             want_line = f'Data as of: sheet {sh_(exp_pub) if exp_pub else "n/a"} · odds {sh_(G["ODDS"]["updated_at"])} · line move {lm_}'
             want_line += ' · <a href="https://szerillo.github.io/ufc-projections/form/corrections.html" target="_blank" rel="noopener">Corrections</a>'
@@ -409,14 +467,27 @@ def check(D, htmlfile, G):
     if not V6 and (not hdr or hdr.groups() != ("DEC", "KO", "SUB")): bad.append(("table", "method labels", str(hdr and hdr.groups())))
     # (b) no model comparison / alt-GTD block, no Markov numbers; any Markov mention carries THIN SAMPLE
     if re.search(r"Model comparison|Other GTD numbers|id=\"models\"", page): bad.append(("page", "model comparison", "still present"))
-    if any(r["rule"].startswith("mk") for r in reg["rows"]): bad.append(("page", "Markov", "Markov number displayed"))
-    for m_ in re.finditer(r"Markov", text):
-        if "THIN SAMPLE" not in text[max(0, m_.start() - 200): m_.end() + 200]: bad.append(("page", "Markov mention", "no THIN SAMPLE label nearby"))
+    # Nov 19 (Kirk): a card that opts in (card_overrides "markov") shows the Markov read block; every other card keeps the
+    # round-9 rule (no Markov numbers, any Markov mention next to THIN SAMPLE). Opted-in pages instead must carry every
+    # data-quality badge C4's raw-stats CSV gives either fighter, inside the block (checked in the Markov section below).
+    if not json.load(open(REPO / "data/card_overrides.json")).get(G_SLUG[0], {}).get("markov"):
+        if any(r["rule"].startswith("mk") for r in reg["rows"]): bad.append(("page", "Markov", "Markov number displayed"))
+        for m_ in re.finditer(r"Markov", text):
+            if "THIN SAMPLE" not in text[max(0, m_.start() - 200): m_.end() + 200]: bad.append(("page", "Markov mention", "no THIN SAMPLE label nearby"))
     # (c) fight number = bout order (1 = opener); recomputed from the overrides order and from BettingPros start times
     order = [o.split("|") for o in OV["order"]]
     want = len(order) - next(i for i, (x, y) in enumerate(order) if bout(x, y, A, B))
     by_t = sorted(BPO["fights"], key=lambda x: x["scheduled_utc"])
-    bp_rank = 1 + next(i for i, x in enumerate(by_t) if bout(x["fighter_a"]["name"], x["fighter_b"]["name"], A, B))
+    # Nov 19 (Kirk): an overrides "add" bout the feed does not carry has no feed rank (it must be absent from the feed and
+    # listed in "add"); every feed bout after it in bout order ranks one lower in the feed than its fight number.
+    feed_has = lambda x_, y_: any(bout(f_["fighter_a"]["name"], f_["fighter_b"]["name"], x_, y_) for f_ in by_t)
+    adds_ = [(ad_["a"], ad_["b"]) for ad_ in OV.get("add", []) if not feed_has(ad_["a"], ad_["b"])]
+    add_ns_ = [len(order) - next(i for i, (x, y) in enumerate(order) if bout(x, y, xa, ya)) for xa, ya in adds_]
+    if any(bout(xa, ya, A, B) for xa, ya in adds_):
+        bp_rank = want
+        if "No odds feed price for this bout yet." not in page: bad.append(("page", "added bout", "no-feed note missing"))
+    else:
+        bp_rank = 1 + next(i for i, x in enumerate(by_t) if bout(x["fighter_a"]["name"], x["fighter_b"]["name"], A, B)) + sum(1 for k in add_ns_ if k < want)
     shown_n = int(re.search(r'fp-fight-num">FIGHT (\d+)<', page).group(1))
     if not (shown_n == want == bp_rank == reg["fight"]): bad.append(("header", "fight number", f"shown {shown_n} order {want} bp {bp_rank}"))
     if any(bout(x, y, A, B) for x, y in OV["cancel"]): bad.append(("page", "cancelled bout", "rendered"))
@@ -448,6 +519,11 @@ def check(D, htmlfile, G):
             if sean_ids or sheet_rows: bad.append(("pending", "numbers", f"Line pending bout shows sheet numbers: {sean_ids or sheet_rows}"))
             if 'data-state="pending"' not in page or "did not match this bout, so no numbers are shown until it does." not in page:
                 bad.append(("pending", "state", "embed does not show the card page's Line pending note"))
+            # Nov 19: a held bout's projection block carries no model cell of any kind and keeps its "Line pending" header
+            if '<td class="model' in page:
+                bad.append(("pending", "numbers", "Line pending bout has a model cell"))
+            if '<span class="bullet"></span>Line pending</div>' not in page:
+                bad.append(("pending", "state", "Line pending header missing"))
         else:
             if reg.get("proj_src") == "line_pending" or 'data-state="pending"' in page: bad.append(("pending", "source", "embed shows Line pending but the live file does not hold this bout back"))
             if not sean_rules <= {"evp_sum"}: bad.append(("proj", "Sean rules", f"fallback cells not from the event file: {sean_rules}"))
@@ -728,6 +804,29 @@ def lh_recheck(G, slug, quiet=False):
     if not quiet: print(f"LINE HISTORY RECHECK: {len(LHd['fights'])} bouts, {nb_} mismatches")
     return nb_
 
+_MK = {}
+def mk_src(card):
+    """C4's flags file and its fight order -> fighter names, read from the Markov source files (not the built card)."""
+    if card not in _MK:
+        import csv
+        src = json.load(open(REPO / "data/cards" / f"{card}.json"))["source_doc"]
+        fp = REPO / src.replace(".md", ".flags.json"); cp = REPO / src.replace("_V41b_Output.md", "_Raw_Stats.csv")
+        ords = {}
+        for row in csv.DictReader(open(cp, newline="", encoding="utf-8")): ords.setdefault(int(row["Fight#"]), []).append(row["Fighter"])
+        _MK[card] = (json.load(open(fp)), ords)
+    return _MK[card]
+def mk_dq(card):
+    import csv
+    src = json.load(open(REPO / "data/cards" / f"{card}.json"))["source_doc"]; out = {}
+    for row in csv.DictReader(open(REPO / src.replace("_V41b_Output.md", "_Raw_Stats.csv"), newline="", encoding="utf-8")):
+        out.setdefault(int(row["Fight#"]), []).append((row["Fighter"], row["DataQuality"] or ""))
+    return out
+def pair_ok(names, pr):
+    sys.path.insert(0, str(REPO / "scripts")); import fighter_names as FN
+    return len(names) == 2 and FN.bout_slots(names[0], names[1], pr[0], pr[1]) is not None
+def mk_pair_ok(card, order, pr):
+    return pair_ok(mk_src(card)[1].get(order, []), pr)
+
 def negative(D, G, slug):
     """plant one error per copy; each must make the run fail."""
     import copy, contextlib, io
@@ -752,6 +851,10 @@ def negative(D, G, slug):
             t = r["text"]; t2 = re.sub(r"(\d)(?!.*\d)", lambda m: str((int(m.group(1)) + 1) % 10), t)
             return s_.replace(f'<span data-id="{r["id"]}">{H.escape(t)}</span>', f'<span data-id="{r["id"]}">{H.escape(t2)}</span>')
         return fn
+    def mk_card_edit(T, G_):   # Nov 19: the provisional fight written back into data/cards/<card>.json (restored right after)
+        p_ = REPO / "data/cards" / f'{json.load(open(REPO / "data/card_overrides.json"))[slug]["markov"]}.json'
+        G_["RESTORE"] = (p_, p_.read_bytes()); d_ = json.loads(p_.read_bytes()); d_["notes"].append("Fight 12, Yousaf vs Mitchell, is PROVISIONAL.")
+        p_.write_text(json.dumps(d_))
     def lock_edit(T, G_):   # a shared, locked file changed after the bless (card_overrides.json, one byte), restored right after the check
         p_ = REPO / "data/card_overrides.json"; G_["RESTORE"] = (p_, p_.read_bytes()); p_.write_bytes(p_.read_bytes() + b"\n")
     def ev_edit(which):   # Kirk round 10 A: the event file's Form block (locked) and odds block (recomputed from the archive)
@@ -829,6 +932,88 @@ def negative(D, G, slug):
         ("export: one dog's KO/SUB split swapped after the build", export_method),
         ("export: one GTD moved 1 pt after the build", export_gtd),
     ]
+    if all(json.load(open(p_)).get("proj_src") is None for p_ in D.glob("fight_*.registry.json")):
+        # Nov 18: a card with no sheet export yet. The plants above target sheet numbers and UFC 334's pages; these target what a
+        # market-only card shows: market and best US prices, the best-US book label, the line move, the feed labels, the note.
+        def bump_any(rule):
+            def go(T, G_):
+                for p in sorted(T.glob("fight_*.registry.json")):
+                    reg_ = json.load(open(p)); r = next((r for r in reg_["rows"] if r["rule"] == rule), None)
+                    if not r: continue
+                    h = T / p.name.replace(".registry.json", ".html"); s_ = h.read_text()
+                    t2 = re.sub(r"(\d)(?!.*\d)", lambda m: str((int(m.group(1)) + 1) % 10), r["text"])
+                    s2 = s_.replace(f'<span data-id="{r["id"]}">{H.escape(r["text"])}</span>', f'<span data-id="{r["id"]}">{H.escape(t2)}</span>', 1)
+                    if s2 != s_: h.write_text(s2); return
+                raise AssertionError("plant applied to no fight page")
+            return go
+        def book_swap(s_):
+            return re.sub(r'(<span data-id="v\d+">[^<]*</span></span><div class="pct">)(DK|FD|MGM|CZR)(<)', lambda m: m.group(1) + ("FD" if m.group(2) != "FD" else "DK") + m.group(3), s_, count=1)
+        plants = [
+            ("market-only: a market moneyline price off by one", bump_any("bp")),
+            ("market-only: a best US price off by one", bump_any("bp_best")),
+            ("market-only: the best US book label swapped", plant_any(book_swap)),
+            ("market-only: the line move opener off by one", bump_any("lh_open_ml")),
+            ("market-only: a model cell slipped in before the sheet publishes (fight 11)", plant_text("fight_11.html", lambda s_: s_.replace('<td class="l nm">', '<td class="model">+120</td><td class="l nm">', 1))),
+            ("market-only: the no-projection note dropped (fight 11)", plant_text("fight_11.html", lambda s_: s_.replace("No model projection published for this bout yet.", "", 1))),
+            ("market-only: a 'price unavailable' label dropped", plant_any(lambda s_: s_.replace(">price unavailable<", "><", 1))),
+            ("market-only: KO+Sub ITD price off by one", bump_any("bp_imp_sum")),
+        ]
+        if json.load(open(REPO / "data/card_overrides.json")).get(slug, {}).get("markov"):   # Nov 19: Markov read block
+            plants += [
+                ("markov: a flag number off by one", bump_any("mk")),
+                ("markov: Lean relabelled Real (fight 9)", plant_text("fight_09.html", lambda s_: s_.replace('<span class="mk-c">Lean</span>', '<span class="mk-c">Real</span>', 1))),
+                ("markov: D-CODE badge dropped (fight 2)", plant_text("fight_02.html", lambda s_: s_.replace('<span class="mk-b">D-CODE</span>, ', "", 1))),
+                ("markov: veto reason dropped (fight 7)", plant_text("fight_07.html", lambda s_: re.sub(r'<div class="mk-why mk-v">.*?</div>', "", s_, count=1))),
+                ("markov: whole flag removed (fight 5)", plant_text("fight_05.html", lambda s_: re.sub(r'<div class="mk-i mk-lean">.*?</div></div>', "", s_, count=1, flags=re.S))),
+                ("markov: provisional label put back on a page (fight 1)", plant_text("fight_01.html", lambda s_: s_.replace('<div class="mk-f dim">', '<div class="mk-why">Bout is PROVISIONAL.</div><div class="mk-f dim">', 1))),
+                ("markov: D-CODE veto reason dropped on the added opener (fight 1)", plant_text("fight_01.html", lambda s_: re.sub(r'<div class="mk-why mk-v">.*?</div>', "", s_, count=1))),
+                ("added bout: the no-odds-feed note dropped (fight 1)", plant_text("fight_01.html", lambda s_: s_.replace("No odds feed price for this bout yet.", "", 1))),
+                ("markov: provisional label left in the Markov card file", mk_card_edit),
+                ("markov: a flag invented on a no-flag bout (fight 12)", plant_text("fight_12.html", lambda s_: s_.replace('<div class="mk-none">', '<div class="mk-i mk-lean"><div class="mk-h"><span class="mk-c">Lean</span> x</div></div><div class="mk-none">', 1))),
+            ]
+    if slug != "ufc_334" and not all(json.load(open(p_)).get("proj_src") is None for p_ in D.glob("fight_*.registry.json")):
+        # Nov 19 (Kirk): a later card WITH sheet numbers. The UFC 334 list above names 334's pages (fight 13, Harrison, Gane/Hokit);
+        # these plants are card-generic: each targets the first page where it applies, and the export plants edit the export in memory.
+        def bump_rule(rule):
+            def go(T, G_):
+                for p in sorted(T.glob("fight_*.registry.json")):
+                    reg_ = json.load(open(p)); r = next((r for r in reg_["rows"] if r["rule"] == rule), None)
+                    if not r: continue
+                    h = T / p.name.replace(".registry.json", ".html"); s_ = h.read_text()
+                    t2 = re.sub(r"(\d)(?!.*\d)", lambda m: str((int(m.group(1)) + 1) % 10), r["text"])
+                    s2 = s_.replace(f'<span data-id="{r["id"]}">{H.escape(r["text"])}</span>', f'<span data-id="{r["id"]}">{H.escape(t2)}</span>', 1)
+                    if s2 != s_: h.write_text(s2); return
+                raise AssertionError("plant applied to no fight page")
+            return go
+        lp_page = next((p.name.replace(".registry.json", ".html") for p in sorted(D.glob("fight_*.registry.json"))
+                        if json.load(open(p)).get("proj_src") == "line_pending"), None)
+        plants = [
+            ("published: a model win % off by one", bump_rule("pub_win")),
+            ("published: a model method % off by one", bump_rule("pub_meth")),
+            ("published: a model moneyline off by one", bump_rule("pub_ml")),
+            ("published: an edge chip off by one", bump_rule("edge")),
+            ("published: a market moneyline price off by one", bump_rule("bp")),
+            ("published: a best US price off by one", bump_rule("bp_best")),
+            ("published: the line move opener off by one", bump_rule("lh_open_ml")),
+            ("published: a fighter reach off by one", bump_rule("bio_reach")),
+            ("published: KO and SUB cells swapped in a method stack", plant_any(lambda s_: s_.replace('<td data-k="ko">', '<td data-k="@@">', 1).replace('<td data-k="sub">', '<td data-k="ko">', 1).replace('<td data-k="@@">', '<td data-k="sub">', 1))),
+            ("published: a model cell blanked", plant_any(lambda s_: re.sub(r'<td class="model"><span class="odds">.*?</td>', '<td class="model dim">n/a</td>', s_, count=1, flags=re.S))),
+            ("published: an edge under 2.0 coloured", plant_any(lambda s_: re.sub(r'<span class="ech flat">(<span data-id="v\d+">[+-][01]\.\d%</span>)', r'<span class="ech pos">\1', s_, count=1))),
+            ("published: an offshore book named on a page", plant_any(lambda s_: s_.replace('<span class="mvl">Line', 'Pinnacle <span class="mvl">Line', 1))),
+            ("published: model renamed 'Sean'", plant_any(lambda s_: s_.replace("Moneyline · model vs market", "Moneyline · Sean vs market", 1))),
+            ("published: wrong FIGHT number", plant_any(lambda s_: re.sub(r'fp-fight-num">FIGHT (\d+)<', lambda m: f'fp-fight-num">FIGHT {int(m.group(1)) % 12 + 1}<', s_, count=1))),
+            ("card: one embed missing", lambda T, G_: next(iter(sorted(T.glob("fight_*.html")))).unlink()),
+            ("export: first fight's true % moved 0.2 pts after the build", export_shift),
+            ("export: one dog's KO/SUB split swapped after the build", export_method),
+            ("export: one GTD moved 1 pt after the build", export_gtd),
+        ]
+        if lp_page:
+            plants += [("line pending: a model cell slipped onto the held bout", plant_text(lp_page, lambda s_: s_.replace('<td class="l nm">', '<td class="model">+120</td><td class="l nm">', 1))),
+                       ("line pending: the Line pending note dropped", plant_text(lp_page, lambda s_: s_.replace(">Line pending<", "><", 1)))]
+        if json.load(open(REPO / "data/card_overrides.json")).get(slug, {}).get("markov"):
+            plants += [("markov: a flag number off by one", bump_rule("mk")),
+                       ("added bout: the no-odds-feed note dropped (fight 1)", plant_text("fight_01.html", lambda s_: s_.replace("No odds feed price for this bout yet.", "", 1))),
+                       ("markov: provisional label left in the Markov card file", mk_card_edit)]
     caught = 0
     for label, fn in plants:
         with tempfile.TemporaryDirectory() as td:
@@ -889,7 +1074,7 @@ if __name__ == "__main__":
     a = ap.parse_args(); D = Path(a.dir) if a.dir else REPO / "embeds" / a.slug; G = load_sources(a.slug)
     if a.archive: G["ARCHIVE"] = Path(a.archive)
     if a.line_history: G["LH_PATH"] = Path(a.line_history)
-    ok, n_rows, nb = run(D, G, a.slug); G_SLUG[0] = a.slug
+    G_SLUG[0] = a.slug; ok, n_rows, nb = run(D, G, a.slug)
     print(f"TOTAL: {ok}/{n_rows} numbers verified; {nb} mismatches/assertion failures")
     if G.get("SIDE_UNCHECKED"): print(f"SIDE CHECK: not checkable (line within 4 pts of 50%): {', '.join(G['SIDE_UNCHECKED'])}")
     mc = metrics_check(a.slug) if (REPO / ".form_cache" / "ufc_fight_stats.csv").exists() else None
