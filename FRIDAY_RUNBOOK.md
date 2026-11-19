@@ -36,7 +36,14 @@ checkout at /tmp/st.
 14. `SLUG=$SLUG EVENT=$EVENT bash scripts/saturday_check.sh` must end in SATURDAY CHECK PASS (it also confirms only the refresh's own files changed).
 15. Kirk's go: `git add -A && git commit -m "fn-prochazka-stirling: Saturday refresh" && git push origin main`, then step 11.
 
+## E. After the card is graded (weekly, every card)
+16. Re-fit the Markov offset (sheet v4.8, see SHEET_MAP.md "B42"): once this card's rows are graded in Snapshots,
+    type Calculator D42's value (4 decimals) into B42 as a plain number. Do it before the next card's first-walkout snapshot,
+    never mid-card, so a whole card is graded under one offset. Log old and new value in SHEET_MAP.md's B42 history.
+
 ## Notes
+- Nov 19 (Sean approved): Calculator B42 is now a FIXED offset 0.1086 (was the card-average formula 0.0872). Each fight is independent.
+  Only Prochazka-Stirling's rec changed (now "lean Navajo Stirling"); Mar Fan and Mitchell stay BET; flags unchanged.
 - merge_main.sh refuses if main moved with anything other than the odds bot or Sean's export since the served-set check
   (audits/MAIN_AT_CHECK.txt, re-pinned Nov 19 to 97522f68). If it refuses, re-run `python3 audits/fn_prochazka_stirling/served_set_check.py` and re-pin.
 - Staging only, before the publish: `ALLOW_NO_EXPORT=1 bash scripts/friday_refresh.sh "$CARD" $SLUG $EVENT /tmp/st` refreshes the market-only pages. It never adds model numbers.
