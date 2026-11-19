@@ -38,13 +38,14 @@ def load(slug):
         part = {k: S.select_one(f'div.stk[data-part="{k}"]') for k in ("ml", "length", "method")}
         rows = {k: ([clean(tr) for tr in v.select("tbody > tr")] if v and v.select_one("table") else []) for k, v in part.items()}
         side = {}
-        if len(rows["ml"]) == 2:   # favorite = higher model win % (row colours follow the corner, not the price); a 50/50 goes to the first named
+        nomodel = R.get("proj_src") is None   # Nov 18: the sheet has not published this bout yet; the preview shows market prices only
+        if len(rows["ml"]) == 2 and not nomodel:   # favorite = higher model win % (row colours follow the corner, not the price); a 50/50 goes to the first named
             pw = [float(tr.select_one("td.model .pct").get_text(strip=True).rstrip("%")) for tr in rows["ml"]]
             fi = 0 if pw[0] >= pw[1] else 1
             for i, tr in enumerate(rows["ml"]): side["fav" if i == fi else "dog"] = (tr.select_one("td.nm").get_text(" ", strip=True), tr)
         wt = S.select_one(".fp-weight"); belt = S.select_one(".fp-title-belt")
         F.append(dict(n=n, a=a, b=b, seg=SEG.get(c["segment"], "Prelims"), main=c["segment"] == "Main event", title=bool(belt),
-                      weight=wt.get_text(strip=True) if wt else "", pending=R.get("proj_src") == "line_pending", rows=rows, side=side,
+                      weight=wt.get_text(strip=True) if wt else "", pending=R.get("proj_src") == "line_pending" or nomodel, nomodel=nomodel, rows=rows, side=side,
                       file=f"fight_{n:02d}.html", soup=S))
     return C, F
 
@@ -57,6 +58,9 @@ def grp(f, cols, link=True):
 
 
 def pend(f, cols, what):
+    if f.get("nomodel"):
+        return (grp(f, cols) + f'<tr><td class="l" colspan="{cols}"><span class="cg-pend">Projection pending</span> '
+                f'<span class="dim">No model projection published for {f["a"]} vs {f["b"]} yet; market prices are on the fight preview.</span></td></tr>')
     return (grp(f, cols) + f'<tr><td class="l" colspan="{cols}"><span class="cg-pend">Line pending</span> '
             f'<span class="dim">The sheet\'s price for {f["a"]} vs {f["b"]} did not match this bout, so no {what} are shown until it does.</span></td></tr>')
 
@@ -74,7 +78,8 @@ def ml_table(F, which):
         for f in fs:
             if f["pending"] or which not in f["side"]:
                 body.append(f'<tr><td class="n">{f["n"]}</td><td class="l nm" colspan="5">{f["a"]} <span class="vs">vs</span> {f["b"]}'
-                            f'<div class="cg-pend-row"><span class="cg-pend">Line pending</span> no numbers until the sheet\'s price matches this bout</div></td></tr>')
+                            + (f'<div class="cg-pend-row"><span class="cg-pend">Projection pending</span> market prices are on the fight preview</div></td></tr>' if f.get("nomodel") else
+                            f'<div class="cg-pend-row"><span class="cg-pend">Line pending</span> no numbers until the sheet\'s price matches this bout</div></td></tr>'))
                 continue
             nm, tr = f["side"][which]; tr = copy.copy(tr)
             opp = f["b"] if nm == f["a"] else f["a"]

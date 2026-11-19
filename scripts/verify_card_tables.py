@@ -27,7 +27,7 @@ def main():
     prev, pend = {}, set()
     for c in C["card"]:
         n = c["fight"]; S = BeautifulSoup((d / f"fight_{n:02d}.html").read_text(), "html.parser")
-        if json.loads((d / f"fight_{n:02d}.registry.json").read_text()).get("proj_src") == "line_pending": pend.add(n)
+        if json.loads((d / f"fight_{n:02d}.registry.json").read_text()).get("proj_src") in ("line_pending", None): pend.add(n)   # None: not published yet (Nov 18)
         prev[n] = {k: [toks(tr) for tr in S.select(f'div.stk[data-part="{k}"] tbody > tr')] for k in ("ml", "length", "method")}
         if c["segment"] == "Main event": me = S
     fails, checked, nums = [], 0, 0

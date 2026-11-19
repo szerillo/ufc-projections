@@ -115,6 +115,13 @@ def bp_name(bf, F):  # BettingPros spelling of fighter F
 def bp_sel(bf, market, label):
     return next((s for s in bf["markets"].get(market, []) if s["label"] == label), None)
 
+US_BOOK = {"draftkings": "DK", "fanduel": "FD", "betmgm": "MGM", "caesars": "CZR"}   # the feed's books; all US-regulated
+def best_us(sel):
+    """Nov 18 (Kirk): the best US-regulated price for one selection, and its book. Ties go to the first book in US_BOOK order."""
+    dec = lambda c: 1 + (c / 100 if c > 0 else 100 / -c)
+    got = [(sel["books"][b]["cost"], b) for b in US_BOOK if b in sel.get("books", {}) and sel["books"][b].get("cost") is not None]
+    return max(got, key=lambda x: (dec(x[0]), -list(US_BOOK).index(x[1]))) if got else (None, None)
+
 def agg(lines):
     a = dict(n=0, w=0, l=0, d=0, nc=0, secs=0, s=[0] * 13)
     for x in lines:
@@ -417,6 +424,9 @@ def build(names, outname):
             if bf:
                 lab_ = bp_name(bf, F); c_ = bp_sel(bf, "moneyline", lab_)["books"]["consensus"]["cost"]
                 mk = cell(R(c_, "ml", "bp", "Market ML " + F, market="moneyline", label=lab_, field="cost"), R(imp(c_), "pct1", "bp_imp", "Market implied " + F, market="moneyline", label=lab_))
+                bc_, bk_ = best_us(bp_sel(bf, "moneyline", lab_))
+                if bc_ is not None:
+                    mk = mk[:-5] + f'<div class="bus">best {R(bc_, "ml", "bp_best", "Best US ML " + F, market="moneyline", label=lab_, book=bk_)} {US_BOOK[bk_]}</div></td>'
             else:
                 mk = '<td class="dim">n/a</td>'
             nmcell = f'<td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}<div class="nb op-{opp_cls[sd]}"><i class="{side_cls[sd]}" style="width:{p_*100:.1f}%"></i></div></td>'
@@ -484,8 +494,55 @@ def build(names, outname):
                  f'<div class="note">{esc(PENDING_TEXT.format(a=an, b=bn))}</div>@@MOVE@@@@ANGLES@@</div>@@LIVE@@')
         gaps.append(f"Fight {n}: Line pending in {PUBF} ({lp.get('reason', '')}); no model numbers shown.")
     else:
-        proj += '<div class="note">No model projection published for this bout yet.</div>'
+        # Nov 18 (Kirk): a card the sheet has not published yet. No model numbers, never stand-ins; the market tables, line move,
+        # stats and form still build, with the same feed-sanity labels ("price unavailable") as a published card.
+        proj += '<div class="note npj">No model projection published for this bout yet. Market prices only.</div>'
         gaps.append(f"Fight {n}: no row in the Publish to site export; no model numbers shown.")
+        if bf:
+            body = ""
+            for sd in ("a", "b"):
+                F = nm_of[sd]; lab_ = bp_name(bf, F); sel_ = bp_sel(bf, "moneyline", lab_)
+                if sel_:
+                    c_ = sel_["books"]["consensus"]["cost"]
+                    mk = cell(R(c_, "ml", "bp", "Market ML " + F, market="moneyline", label=lab_, field="cost"), R(imp(c_), "pct1", "bp_imp", "Market implied " + F, market="moneyline", label=lab_))
+                    bc_, bk_ = best_us(sel_)
+                    bu = f'<td><span class="odds">{R(bc_, "ml", "bp_best", "Best US ML " + F, market="moneyline", label=lab_, book=bk_)}</span><div class="pct">{US_BOOK[bk_]}</div></td>' if bc_ is not None else '<td class="dim">n/a</td>'
+                else:
+                    mk, bu = '<td class="dim">not offered</td>', '<td class="dim">n/a</td>'
+                body += f'<tr><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}</td>{mk}{bu}</tr>'
+            proj += stack("Moneyline · market", ["Fighter", "Market", "Best US"], body).replace("</table></div>", "</table>@@MOVE@@@@ANGLES@@</div>", 1)
+            body = ""
+            for lab_, out_ in (("Yes", "Goes the distance"), ("No", "Inside the distance")):
+                sel_ = bp_sel(bf, "fight_distance", lab_)
+                if d_ok and sel_:
+                    c_ = sel_["books"]["consensus"]["cost"]
+                    lst = cell1(R(c_, "ml", "bp", f"Market GTD {lab_.lower()}", market="fight_distance", label=lab_, field="cost"), R(imp(c_), "pct1", "bp_imp", f"Market GTD {lab_.lower()} implied", market="fight_distance", label=lab_))
+                else:
+                    lst = '<td class="dim pu">price unavailable</td>'
+                body += f'<tr><td class="l nm">{out_}</td>{lst}</tr>'
+            proj += stack("Fight length · market", ["Outcome", "Listed"], body)
+            broken = any(("draw" in w_ or "opening" in w_ or "margin" in w_ or "under 100" in w_) for w_ in bad_why)
+            body = ""
+            for sd in ("a", "b"):
+                F = nm_of[sd]; tdm = ""
+                own_ok = not broken and all(bp_sel(bf, "method_of_victory", f"{bp_name(bf, F)} {MOVL[x]}") for x in ("dec", "ko", "sub"))
+                for k in ("dec", "ko", "sub", "itd"):
+                    if own_ok and k == "itd":
+                        labs_ = [f"{bp_name(bf, F)} {MOVL[x]}" for x in ("ko", "sub")]
+                        iv = sum(imp(bp_sel(bf, "method_of_victory", lb)["books"]["consensus"]["cost"]) for lb in labs_)
+                        tdm += (f'<td data-k="itd" class="mkc"><span class="odds">{R(iv, "mlp", "bp_imp_sum", f"Market ITD price {F}", market="method_of_victory", labels=labs_)}</span>'
+                                f'<span class="sr">{R(iv, "pct1", "bp_imp_sum", f"Market ITD implied {F}", market="method_of_victory", labels=labs_)}</span><div class="kos">KO+Sub</div></td>')
+                    elif own_ok:
+                        lb = f"{bp_name(bf, F)} {MOVL[k]}"; c_ = bp_sel(bf, "method_of_victory", lb)["books"]["consensus"]["cost"]
+                        tdm += (f'<td data-k="{k}" class="mkc"><span class="odds">{R(c_, "ml", "bp", f"Market {k} {F}", market="method_of_victory", label=lb, field="cost")}</span>'
+                                f'<span class="sr">{R(imp(c_), "pct1", "bp_imp", f"Market {k} implied {F}", market="method_of_victory", label=lb)}</span></td>')
+                    else:
+                        tdm += f'<td data-k="{k}" class="mkc"><span class="dim{" pu" if broken else ""}">{"price unavailable" if broken else "not offered"}</span></td>'
+                body += f'<tr class="{side_cls[sd]}"><td class="l nm"><i class="dot {side_cls[sd]}"></i>{esc(F)}</td>{tdm}</tr>'
+            proj += stack("Method of victory · market", ["Fighter", "DEC", "KO", "SUB", "ITD"], body)
+        else:
+            proj += '<div class="stk" data-part="ml">@@MOVE@@@@ANGLES@@</div>'
+        proj += "@@LIVE@@" + explain(XPL["proj"])
     top = proj
 
     PANELS = {}
@@ -1042,7 +1099,7 @@ details.taped[open]>summary .meta{{visibility:hidden}}details.taped>.body{{paddi
 .sc-track{{position:relative;height:8px;background:linear-gradient(90deg,var(--bg-muted),#d9d4c8);border-radius:4px;margin:4px 6px 8px}}
 .sc-dot{{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2)}}.sc-dot.rc{{background:#d6312b}}.sc-dot.bc{{background:#2a78d6}}
 .sc-avg{{position:absolute;top:-5px;width:2px;height:18px;background:#0e1116;transform:translateX(-1px)}}.sc-l{{font-size:12px;margin:2px 0}}.oc i b{{color:#fff}}.oc-wko{{background:#0a7a3a}}.oc-wsub{{background:#22a85a}}.oc-wdec{{background:#8fd6aa}}.oc-ldec{{background:#f2b8b0}}.oc-lsub{{background:#e0675a}}.oc-lko{{background:#b3261e}}.oc .oc-wdec b,.oc .oc-ldec b{{color:#0e1116}}.tb-bar.oc i{{min-width:0}}
-.dhist{{width:100%;height:auto;display:block;margin:6px 0 2px}}.drift{{margin:8px 12px}}.sr{{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}.stk-t td.rl2{{font-size:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--text-muted);text-align:left;padding-left:2px;padding-right:2px;width:34px}}.stk-t tr.mp td{{border-bottom:0;padding-bottom:2px}}.stk-t tr.mkr td{{border-bottom:0;padding-top:2px;padding-bottom:2px}}.stk-t tr.med td{{padding-top:2px}}.stk-t tr.mkr .odds{{font-weight:600;color:var(--text-muted)}}.stk-t td.edc .ech{{margin-top:0}}.stk-t .kos{{font-size:8.5px;font-weight:700;color:var(--text-muted);letter-spacing:.3px}}.stk-t td.nm[rowspan]{{vertical-align:middle;border-bottom:1px solid var(--border)}}.subh{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);padding:12px 12px 4px}}.rt .rwb{{display:block;height:4px;background:var(--bg-muted);border-radius:2px;margin:3px auto 3px;max-width:56px;overflow:hidden}}.rt .rwb i{{display:block;height:100%}}.rt .rwb i.rc{{background:#d6312b}}.rt .rwb i.bc{{background:#2a78d6}}.rt td small.rd{{font-weight:700}}.rt td small.rn{{font-weight:500;color:var(--text-muted);font-family:inherit;font-size:9.5px}}.rt th .thn{{display:block;font-weight:600;letter-spacing:.2px;text-transform:none;font-size:9px}}.subh.first{{padding-top:8px;color:var(--text);font-size:11px}}ul.rt-n{{margin:6px 12px 8px;padding-left:16px}}ul.rt-n li{{margin:1px 0}}.mpl{{display:inline-block;margin-top:3px;font-size:8.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#8a5a00;background:#fff4d6;border:1px solid #f0d58a;border-radius:3px;padding:1px 4px;white-space:nowrap}}.ppath{{display:block;width:100%;height:auto;margin:8px 0 2px}}.mvends{{display:flex;justify-content:space-between;font-size:10.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}}.mvends .mvp{{font:800 12px/1 "SF Mono",Menlo,monospace;color:var(--text);margin-left:4px;text-transform:none}}.mvends .mve{{color:var(--action-green-dark,#0a8842)}}.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
+.dhist{{width:100%;height:auto;display:block;margin:6px 0 2px}}.drift{{margin:8px 12px}}.sr{{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}.stk-t td.rl2{{font-size:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--text-muted);text-align:left;padding-left:2px;padding-right:2px;width:34px}}.stk-t tr.mp td{{border-bottom:0;padding-bottom:2px}}.stk-t tr.mkr td{{border-bottom:0;padding-top:2px;padding-bottom:2px}}.stk-t tr.med td{{padding-top:2px}}.stk-t tr.mkr .odds{{font-weight:600;color:var(--text-muted)}}.stk-t td.edc .ech{{margin-top:0}}.stk-t .kos{{font-size:8.5px;font-weight:700;color:var(--text-muted);letter-spacing:.3px}}.stk-t td.nm[rowspan]{{vertical-align:middle;border-bottom:1px solid var(--border)}}.subh{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted);padding:12px 12px 4px}}.rt .rwb{{display:block;height:4px;background:var(--bg-muted);border-radius:2px;margin:3px auto 3px;max-width:56px;overflow:hidden}}.rt .rwb i{{display:block;height:100%}}.rt .rwb i.rc{{background:#d6312b}}.rt .rwb i.bc{{background:#2a78d6}}.rt td small.rd{{font-weight:700}}.rt td small.rn{{font-weight:500;color:var(--text-muted);font-family:inherit;font-size:9.5px}}.rt th .thn{{display:block;font-weight:600;letter-spacing:.2px;text-transform:none;font-size:9px}}.subh.first{{padding-top:8px;color:var(--text);font-size:11px}}ul.rt-n{{margin:6px 12px 8px;padding-left:16px}}ul.rt-n li{{margin:1px 0}}.mpl{{display:inline-block;margin-top:3px;font-size:8.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:#8a5a00;background:#fff4d6;border:1px solid #f0d58a;border-radius:3px;padding:1px 4px;white-space:nowrap}}.bus{{font:600 9px/1.2 "SF Mono",Menlo,monospace;color:var(--text-muted);margin-top:2px;white-space:nowrap}}.note.npj{{margin:10px 0 4px;font-weight:700}}.ppath{{display:block;width:100%;height:auto;margin:8px 0 2px}}.mvends{{display:flex;justify-content:space-between;font-size:10.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px}}.mvends .mvp{{font:800 12px/1 "SF Mono",Menlo,monospace;color:var(--text);margin-left:4px;text-transform:none}}.mvends .mve{{color:var(--action-green-dark,#0a8842)}}.mvrow{{padding:8px 12px;border-top:1px solid var(--border);background:var(--bg-muted)}}.mvt{{font-size:12.5px}}.mvt b{{font-family:"SF Mono",Menlo,monospace}}.mvl{{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--text-muted)}}.mvt small{{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}}.mspark{{width:100%;height:34px;display:block}}.mvs{{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;margin-top:4px;font:700 11px/1 "SF Mono",Menlo,monospace;color:var(--text-muted)}}.mvs .mve{{color:#0a8842}}.mvc{{font-size:10px;color:var(--text-muted);text-align:center}}
 .sgt{{display:flex;flex-wrap:wrap;gap:6px;padding:2px 0 10px}}.sgt button{{flex:1 1 auto;min-width:0;border:1px solid var(--border);background:#fff;border-radius:999px;padding:7px 10px;font:700 11px/1 inherit;letter-spacing:-.1px;white-space:nowrap;font-family:inherit;color:var(--text-muted);cursor:pointer}}.sgt button[aria-pressed=true]{{background:#0e1116;border-color:#0e1116;color:#fff}}.js .sgw{{display:none}}.js .sgw.on{{display:block}}
 .fmore{{margin:4px 0 12px}}.fmore>summary{{cursor:pointer;font-size:12px;font-weight:700;color:var(--action-green-dark);padding:6px 2px;list-style:none}}.fmore>summary::-webkit-details-marker{{display:none}}.fmore>summary::before{{content:"▸ "}}.fmore[open]>summary::before{{content:"▾ "}}.fmore[open]>summary{{font-size:0}}.fmore[open]>summary::before{{font-size:12px}}.fmore[open]>summary::after{{content:"Hide older fights";font-size:12px}}
 .fl{{color:inherit;text-decoration:none;border-bottom:1px dotted #9a9a9a}}a.fl{{display:inline-block;padding:5px 0 4px;line-height:15px}}.stamps a{{display:inline-block;padding:6px 4px;margin:-6px 0;color:inherit}}.fl:hover{{color:var(--action-green-dark);border-bottom-color:currentColor}}.cn-s{{font-size:10.5px;font-weight:600;color:var(--text-muted);margin-left:8px}}

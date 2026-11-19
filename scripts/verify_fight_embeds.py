@@ -158,6 +158,13 @@ def check(D, htmlfile, G):
             elif rule == "bp_imp_sum": v = sum(implied(bp_cost(a["market"], lb)) for lb in a["labels"])
             elif rule == "pubp": v = PUB["params"][a["key"]]
             elif rule == "bp": v = bp_cost(a["market"], a["label"], a["field"])
+            elif rule == "bp_best":   # Nov 18: best US-regulated price (own recompute) and its book must be the one named
+                sel_ = next(s_ for s_ in bpf["markets"][a["market"]] if s_["label"] == a["label"])
+                dec_ = lambda c: 1 + (c / 100 if c > 0 else 100 / -c)
+                us_ = ["draftkings", "fanduel", "betmgm", "caesars"]
+                got_ = [(sel_["books"][b]["cost"], b) for b in us_ if b in sel_.get("books", {}) and sel_["books"][b].get("cost") is not None]
+                v, bk_ = max(got_, key=lambda x: (dec_(x[0]), -us_.index(x[1])))
+                if bk_ != a.get("book"): bad.append((r["id"], r["desc"], f"best US book {a.get('book')} but {bk_} has the best price"))
             elif rule == "bp_nv": v = nv(a["market"], a["label"], a["other"]); v = 1 - v if inv else v
             elif rule == "bp_imp": v = implied(bp_cost(a["market"], a["label"]))
             elif rule == "bp_mnv": v = mnv(a["fighter"], a["k"])
@@ -269,8 +276,17 @@ def check(D, htmlfile, G):
         if pub is not None:
             if len(mids) != 24: bad.append(("proj", "model cells", f"{len(mids)} model numbers, want 24"))
             if not mrules <= {"pub_win", "pub_meth", "pub"}: bad.append(("proj", "model rules", f"non-export rules in model cells: {mrules}"))
-        # Block 59f: an opponent named Sean in the fight history (Dober vs Sean Spencer) is not the model label
-        if re.search(r"\bSean\b(?! [A-Z][a-z])", re.sub(r"@SeanZerillo|twitter.com/SeanZerillo", "", page)) or re.search(r">Sean<|Sean (fair|vs|ML|%)", page): bad.append(("page", "label", "'Sean' used as the model name"))
+        # Nov 18: a bout the sheet has not published shows the note and market prices only, never a model cell
+        if reg.get("proj_src") is None and ('class="model"' in page or "No model projection published for this bout yet" not in page):
+            bad.append(("proj", "market-only", "a bout with no sheet row must show the no-projection note and no model cells"))
+        # Nov 18: the book named next to each best US price is the book that has it (the number itself is rechecked by bp_best)
+        for r_ in reg["rows"]:
+            if r_["rule"] == "bp_best":
+                bk_ = {"draftkings": "DK", "fanduel": "FD", "betmgm": "MGM", "caesars": "CZR"}[r_["args"]["book"]]
+                if not re.search(r'<span data-id="%s">[^<]*</span>(?:</span>)?(?: |<div class="pct">)%s<' % (r_["id"], bk_), page):
+                    bad.append((r_["id"], r_["desc"], f"best US price not labelled {bk_}"))
+        # Block 59f: an opponent named Sean in the fight history (Dober vs Sean Spencer, Vallejos vs Sean O'Malley) is not the model label
+        if re.search(r"\bSean\b(?! [A-Z])", re.sub(r"@SeanZerillo|twitter.com/SeanZerillo", "", page)) or re.search(r">Sean<|Sean (fair|vs|ML|%)", page): bad.append(("page", "label", "'Sean' used as the model name"))
         if re.search(r'class="op"', page): bad.append(("page", "open price", "o-prefixed open price in the projection"))
         if re.search(r"BettingPros", text): bad.append(("page", "source name", "BettingPros named on the page"))
         if re.search(r"\bElo\b|\bFig\b|Form Figure", text): bad.append(("page", "rating", "Elo or Form Figure shown"))
@@ -386,7 +402,7 @@ def check(D, htmlfile, G):
         sh_ = lambda t_: t_[5:16].replace("-", "/").replace("T", " ") + " UTC"
         if not st_: bad.append(("footer", "stamps", "no Data as of line"))
         else:
-            exp_pub = json.loads(Path(REPO / reg["proj_file"]).read_text()).get("published_at") if reg.get("proj_file", "").endswith("projections.json") else None
+            exp_pub = json.loads(Path(REPO / reg["proj_file"]).read_text()).get("published_at") if (reg.get("proj_file") or "").endswith("projections.json") else None
             lm_ = sh_(lrec["current"]["t"]) if lrec.get("current") and lrec.get("open") else (sh_(lrec["open"]["t"]) + " (opener only)" if lrec.get("open") else "n/a")
             want_line = f'Data as of: sheet {sh_(exp_pub) if exp_pub else "n/a"} · odds {sh_(G["ODDS"]["updated_at"])} · line move {lm_}'
             want_line += ' · <a href="https://szerillo.github.io/ufc-projections/form/corrections.html" target="_blank" rel="noopener">Corrections</a>'
@@ -829,6 +845,32 @@ def negative(D, G, slug):
         ("export: one dog's KO/SUB split swapped after the build", export_method),
         ("export: one GTD moved 1 pt after the build", export_gtd),
     ]
+    if all(json.load(open(p_)).get("proj_src") is None for p_ in D.glob("fight_*.registry.json")):
+        # Nov 18: a card with no sheet export yet. The plants above target sheet numbers and UFC 334's pages; these target what a
+        # market-only card shows: market and best US prices, the best-US book label, the line move, the feed labels, the note.
+        def bump_any(rule):
+            def go(T, G_):
+                for p in sorted(T.glob("fight_*.registry.json")):
+                    reg_ = json.load(open(p)); r = next((r for r in reg_["rows"] if r["rule"] == rule), None)
+                    if not r: continue
+                    h = T / p.name.replace(".registry.json", ".html"); s_ = h.read_text()
+                    t2 = re.sub(r"(\d)(?!.*\d)", lambda m: str((int(m.group(1)) + 1) % 10), r["text"])
+                    s2 = s_.replace(f'<span data-id="{r["id"]}">{H.escape(r["text"])}</span>', f'<span data-id="{r["id"]}">{H.escape(t2)}</span>', 1)
+                    if s2 != s_: h.write_text(s2); return
+                raise AssertionError("plant applied to no fight page")
+            return go
+        def book_swap(s_):
+            return re.sub(r'(<span data-id="v\d+">[^<]*</span></span><div class="pct">)(DK|FD|MGM|CZR)(<)', lambda m: m.group(1) + ("FD" if m.group(2) != "FD" else "DK") + m.group(3), s_, count=1)
+        plants = [
+            ("market-only: a market moneyline price off by one", bump_any("bp")),
+            ("market-only: a best US price off by one", bump_any("bp_best")),
+            ("market-only: the best US book label swapped", plant_any(book_swap)),
+            ("market-only: the line move opener off by one", bump_any("lh_open_ml")),
+            ("market-only: a model cell slipped in before the sheet publishes (fight 11)", plant_text("fight_11.html", lambda s_: s_.replace('<td class="l nm">', '<td class="model">+120</td><td class="l nm">', 1))),
+            ("market-only: the no-projection note dropped (fight 11)", plant_text("fight_11.html", lambda s_: s_.replace("No model projection published for this bout yet.", "", 1))),
+            ("market-only: a 'price unavailable' label dropped", plant_any(lambda s_: s_.replace(">price unavailable<", "><", 1))),
+            ("market-only: KO+Sub ITD price off by one", bump_any("bp_imp_sum")),
+        ]
     caught = 0
     for label, fn in plants:
         with tempfile.TemporaryDirectory() as td:
