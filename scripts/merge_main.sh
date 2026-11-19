@@ -23,7 +23,7 @@ if ! git merge --no-ff --no-edit -m "Merge $BR into main (scripts/merge_main.sh)
 fi
 if ! git diff --quiet "$BR" HEAD -- "$ODDS"; then
   echo "  served odds file differs from the one the embeds were built on: rebuilding the embeds on it"
-  python3 scripts/build_fight_embeds.py | tail -1
+  python3 scripts/build_fight_embeds.py --slug "$SLUG" | tail -1   # Nov 19: --slug (it always rebuilt ufc_334)
   git add -A "embeds/${SLUG}"
   git commit -q -m "Rebuild ${SLUG} embeds on main's newer odds file (merge_main.sh)" || true
 fi
