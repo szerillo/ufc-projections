@@ -296,6 +296,10 @@ def check(D, htmlfile, G):
                             + sum(1 for v_ in fl_.get("vetoes", []) if v_["fight_order"] == o_ and v_["side"] not in sides_)
                     if nshown_ != want_: bad.append(("markov", "count", f"{nshown_} Markov items shown, flags file has {want_} for this bout"))
                     if want_ == 0 and "No Markov flag on this bout" not in page: bad.append(("markov", "none", "no-flag line missing"))
+                    for po_ in fl_.get("provisional_fights", []):   # Nov 19 (Kirk): a provisional bout stays off every page and the Markov card
+                        for nm_ in ord_.get(po_, []):
+                            if nm_ in page: bad.append(("markov", "provisional", f"provisional bout fighter {nm_} on the page"))
+                            if nm_ in (REPO / "data/cards" / f"{reg['markov_card']}.json").read_text(): bad.append(("markov", "provisional", f"provisional bout fighter {nm_} in the Markov card"))
                     blk_ = re.search(r'<div class="mk-dq">(.*?)</div>', page, re.S); blk_ = blk_.group(1) if blk_ else ""
                     for nm_, dq_ in mk_dq(reg["markov_card"]).get(o_, []):   # badges recomputed from the CSV text
                         need_ = [b for b, hit in (("SYN", "SYN" in dq_), ("§1d", "§1d" in dq_), ("THIN SAMPLE", "THIN" in dq_), ("D-CODE", "D-CODE" in dq_.upper())) if hit]
@@ -830,6 +834,10 @@ def negative(D, G, slug):
             t = r["text"]; t2 = re.sub(r"(\d)(?!.*\d)", lambda m: str((int(m.group(1)) + 1) % 10), t)
             return s_.replace(f'<span data-id="{r["id"]}">{H.escape(t)}</span>', f'<span data-id="{r["id"]}">{H.escape(t2)}</span>')
         return fn
+    def mk_card_edit(T, G_):   # Nov 19: the provisional fight written back into data/cards/<card>.json (restored right after)
+        p_ = REPO / "data/cards" / f'{json.load(open(REPO / "data/card_overrides.json"))[slug]["markov"]}.json'
+        G_["RESTORE"] = (p_, p_.read_bytes()); d_ = json.loads(p_.read_bytes()); d_["notes"].append("Fight 12: Shoaib Yousaf vs John Mitchell")
+        p_.write_text(json.dumps(d_))
     def lock_edit(T, G_):   # a shared, locked file changed after the bless (card_overrides.json, one byte), restored right after the check
         p_ = REPO / "data/card_overrides.json"; G_["RESTORE"] = (p_, p_.read_bytes()); p_.write_bytes(p_.read_bytes() + b"\n")
     def ev_edit(which):   # Kirk round 10 A: the event file's Form block (locked) and odds block (recomputed from the archive)
@@ -940,6 +948,8 @@ def negative(D, G, slug):
                 ("markov: D-CODE badge dropped (fight 1)", plant_text("fight_01.html", lambda s_: s_.replace('<span class="mk-b">D-CODE</span>, ', "", 1))),
                 ("markov: veto reason dropped (fight 6)", plant_text("fight_06.html", lambda s_: re.sub(r'<div class="mk-why mk-v">.*?</div>', "", s_, count=1))),
                 ("markov: whole flag removed (fight 4)", plant_text("fight_04.html", lambda s_: re.sub(r'<div class="mk-i mk-lean">.*?</div></div>', "", s_, count=1, flags=re.S))),
+                ("markov: provisional bout shown on a page (fight 11)", plant_text("fight_11.html", lambda s_: s_.replace('<div class="mk-f dim">', '<div class="mk-why">Also on the card: Shoaib Yousaf vs John Mitchell.</div><div class="mk-f dim">', 1))),
+                ("markov: provisional bout left in the Markov card file", mk_card_edit),
                 ("markov: a flag invented on a no-flag bout (fight 11)", plant_text("fight_11.html", lambda s_: s_.replace('<div class="mk-none">', '<div class="mk-i mk-lean"><div class="mk-h"><span class="mk-c">Lean</span> x</div></div><div class="mk-none">', 1))),
             ]
     caught = 0

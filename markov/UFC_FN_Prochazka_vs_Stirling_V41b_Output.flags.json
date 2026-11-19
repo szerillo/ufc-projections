@@ -1,6 +1,9 @@
 {
  "_doc": "Flag, veto and prop-note lines transcribed from UFC_FN_Prochazka_vs_Stirling_V41b_Output.md (card 10). fight_order follows the doc's fight numbers (1 = main event). A = BFO underdog in every bout name.",
  "grading_window_index": 10,
+ "provisional_fights": [
+  12
+ ],
  "duration_flags": [],
  "ml_flags": [
   {
@@ -71,6 +74,18 @@
    "edge_pts": 15.5,
    "mechanism": "SYN on both sides, 2.9 minutes of DWCS tape, both KO grids pinned at the 2.50 clamp.",
    "confidence": "vetoed"
+  },
+  {
+   "fight_order": 12,
+   "provisional": true,
+   "side": "Shoaib Yousaf",
+   "market_odds": 128,
+   "model_shrunk": 51.3,
+   "model_raw": 54.4,
+   "market_implied": 41.7,
+   "edge_pts": 9.6,
+   "mechanism": "PROVISIONAL bout. Both sides SYN with zero UFC tape; only Sherdog priors separate them; confidence at the 30% floor.",
+   "confidence": "vetoed"
   }
  ],
  "vetoes": [
@@ -94,6 +109,14 @@
    "market_odds": 205,
    "code": "D",
    "reason": "D-code: underdog with 0 UFC fights (2 DWCS); last non-DWCS bout LFA 228 (minor). Automatic no-bet."
+  },
+  {
+   "fight_order": 12,
+   "provisional": true,
+   "side": "Shoaib Yousaf",
+   "market_odds": 128,
+   "code": "D",
+   "reason": "D-code: underdog with 0 UFC fights; last pre-UFC bout FCC 47 Full Contact Contender (minor). Automatic no-bet. Bout is PROVISIONAL."
   }
  ],
  "prop_notes": [
@@ -124,12 +147,18 @@
   {
    "fight_order": 1,
    "text": "SS 5R: Stirling 71.0 and Prochazka 47.8 mean over 11.7 expected minutes."
+  },
+  {
+   "fight_order": 12,
+   "provisional": true,
+   "text": "PROVISIONAL bout: props skipped; identical SS (43.8) and TD (1.31) projections for both sides are a SYN artifact."
   }
  ],
  "notes_extra": [
   "Sheet rule (v4.7): no favorite reaches 80% de-vigged (highest Aliskerov 71.5%, Topuria 70.8%).",
   "5R rule: Prochazka-Stirling listed GTD about 18% (+460 median) is under 40%, so the 5R GTD bet does not fire; O4.5 about 21% (+365) is under 50%, so no standing over.",
   "No duration flags: the largest GTD-side gap is Prochazka-Stirling +5.9; ITD-side gaps are suppressed by rule.",
-  "BFO lists John Mitchell vs Shoaib Yousaf on this event page; it is not on UFC.com or UFCStats and was not simmed."
+  "Fight 12, Yousaf vs Mitchell, is PROVISIONAL: reported added Nov 17, not on UFC.com or the UFCStats event page yet; drop it from the site and sheet if it falls through. Fights 1-11 are unaffected (each fight seeds independently).",
+  "Motta best price +156 (Polymarket) is about 5 points better than the +125 US-book median: stale or informed, not an edge."
  ]
 }

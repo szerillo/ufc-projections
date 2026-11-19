@@ -1,6 +1,6 @@
 # UFC FIGHT NIGHT: PROCHAZKA vs STIRLING, V4.1b MARKOV OUTPUT
-**Nov 21, 2026 | ABHA Arena, Doha | V4.1b + §1d | 100K sims | market-blind | dual shrunk/RAW archived**
-11 bouts, matching UFC.com and UFCStats (BFO also lists Mitchell vs Yousaf on this event; it is not on the card and was not simmed). Five-round bout: Prochazka-Stirling (LHW main event). Data: 10 real Oddsbreaker matchups plus SYN on Lorenz-Nurgozhay (both sides). §1d active on 4 fighters: Luna, Topuria, Abdullayev, Lorenz. D-code active on 3 dogs: Luna, Abdullayev, Lorenz. GTD/ITD and O/U totals posted on 10 of 11 (none yet on Lorenz-Nurgozhay). Run is reproducible: PYTHONHASHSEED=0, sha256 in the run log.
+**Nov 21, 2026 | ABHA Arena, Doha | V4.1b + §1d | 100K sims | market-blind | dual shrunk/RAW archived | seed PYTHONHASHSEED=0**
+12 bouts: the 11 on UFC.com and UFCStats plus fight 12, Yousaf vs Mitchell, which is PROVISIONAL (reported added Nov 17 on four days' notice, not on UFC.com or the UFCStats event page yet; Sherdog lists it for Nov 21). Drop fight 12 if it falls through; fights 1-11 do not depend on it. Five-round bout: Prochazka-Stirling (LHW main event). Data: 10 real Oddsbreaker matchups plus SYN on Lorenz-Nurgozhay and Yousaf-Mitchell (both sides). §1d active on 6 fighters: Luna, Topuria, Abdullayev, Lorenz, Yousaf, Mitchell. D-code active on 4 dogs: Luna, Abdullayev, Lorenz, Yousaf. GTD/ITD and O/U totals posted on 10 of 11 confirmed bouts (none yet on Lorenz-Nurgozhay); props skipped for fight 12. Run is reproducible: PYTHONHASHSEED=0, sha256 in the run log.
 
 **Form corrections vs BFO (verified on UFCStats):**
 - Ortega has not fought since Sterling (Aug 2025). The two Moicano rows on BFO (Sep 2026) are not bouts on UFCStats, so he is on a ~15-month layoff and an L2.
@@ -9,6 +9,9 @@
 - Off a KO loss: Prochazka (Ulberg R1), Hooker (Parnasse R1, part of an L3), Horiguchi (Kape R3), Teixeira (Pavlovich R1), Motta (Sadykhov R2, ~17-month layoff).
 - Dom Mar Fan: 2 of his 4 UFC-side bouts are Road to UFC; counted UFC-side like DWCS, so §1d is off for him (he is the favorite, so no D-code question).
 - Lorenz: 0 UFC bouts, 2 DWCS (L Yakhyaev 2025, W Aly Aug 2026); his last non-DWCS bout is LFA 228.
+- off_ko_loss check: TRUE for Prochazka (Ulberg R1 KO), Hooker (Parnasse R1 KO) and Teixeira (Pavlovich R1 KO), plus Horiguchi and Motta. FALSE for Cannonier (last bout a decision loss to Duncan) and Ortega (last bout a 5R decision loss to Sterling). Yousaf and Mitchell are both off TKO wins.
+- Name checks: Sterling (fight 2) and Stirling (fight 1) use separate UFCStats pages; Tahir Abdullayev (UFCStats 20-3, Sherdog 245135) is not Akbar Abdullaev; Dom Mar Fan is "Fan" in BFO prop rows and was matched by hand; Aleksandre Topuria (Sherdog 199421, BW) is not Ilia.
+- Fight 12 weight: a three-round 155 lb lightweight bout per the Nov 17-18 reports (Mitchell's own announcement, confirmation from the agency that represents both fighters, Heavy, MiddleEasy, Yahoo/SB Nation). UFCStats lists both at 155 lbs. UFC.com still shows 11 bouts (checked Nov 19 00:40 ET), so the bout stays PROVISIONAL. Simmed at LW; no catchweight or FW re-run needed.
 
 ## SHEET INPUT TABLE: DOG WIN % + DECISION SHARE OF EACH FIGHTER'S WINS
 
@@ -23,10 +26,11 @@
 | 7 | Teixeira (+163) | 51.8% | 55.9% | 28% | Gaziev 14% | artifact (KO grids clamped, Teixeira THIN) |
 | 8 | Costa (-107 pickem) | 61.8% | 70.7% | 56% | Albazi 25% | ML lean (Costa); near pickem |
 | 9 | Abdullayev (+198) [D-FLAG] | 39.5% | 31.0% | 35% | Matthews 61% | vetoed (D-code); Abdullayev §1d, THIN |
-| 10 | Motta (+125) | 44.5% | 31.8% | 11% | Mar Fan 56% | Fan THIN (conf floor) |
+| 10 | Motta (+125) | 44.5% | 31.8% | 11% | Mar Fan 56% | Fan THIN (conf floor); Motta +156 best price is an outlier, not an edge |
 | 11 | Lorenz (+205) [SYN, D-FLAG] | 46.6% | 38.8% | 3% | Nurgozhay 23% | vetoed (D-code) + artifact; SYN both sides, Lorenz §1d |
+| 12 | Yousaf (+128) [SYN, D-FLAG, PROVISIONAL] | 51.3% | 54.4% | 44% | Mitchell 50% | PROVISIONAL; vetoed (D-code) + artifact; SYN both sides, both §1d |
 
-**D-code vetoes:** Luna +225 (3 UFC bouts, last feeder Tuff-N-Uff), Abdullayev +198 (1 UFC bout, last feeder GFC), Lorenz +205 (2 DWCS bouts, last non-DWCS feeder LFA). Veto only; never a reason to bet the other side. All three show the model above market (Luna 57.3/74.2 vs 29.2, Lorenz 46.6/38.8 vs 31.1, Abdullayev 39.5/31.0 vs 32.0); the vetoes stand and the Archive scores them.
+**D-code vetoes:** Luna +225 (3 UFC bouts, last feeder Tuff-N-Uff), Abdullayev +198 (1 UFC bout, last feeder GFC), Lorenz +205 (2 DWCS bouts, last non-DWCS feeder LFA), Yousaf +128 (PROVISIONAL bout; 0 UFC bouts, last feeder FCC 47 Full Contact Contender, confirmed on Sherdog). Veto only; never a reason to bet the other side. All four show the model above market (Luna 57.3/74.2 vs 29.2, Lorenz 46.6/38.8 vs 31.1, Yousaf 51.3/54.4 vs 41.7, Abdullayev 39.5/31.0 vs 32.0); the vetoes stand and the Archive scores them. Mitchell is the favorite (pre-UFC finish rate 55%, so no GF code).
 
 ## 1. P(DECISION) + ROUND DISTRIBUTION
 
@@ -43,12 +47,14 @@
 | Abdullayev-Matthews | 50.8 | 51.9 | -1.1 | 24.2 | 16.4 | 8.6 |  |  | 10.5 |
 | Motta-Mar Fan | 35.8 | 41.5 | -5.7 | 34.3 | 20.2 | 9.7 |  |  | 8.9 |
 | Lorenz-Nurgozhay | 13.7 | - | - | 56.1 | 22.4 | 7.8 |  |  | 5.9 |
+| Yousaf-Mitchell | 47.0 | - | - | 26.8 | 17.3 | 8.9 |  |  | 10.1 |
 
 **5R rule check:** Prochazka-Stirling GTD median +460 (about 18% listed) is below 40%, so the standing 5R GTD bet does not fire. O4.5 median +365 (about 21%) is below 50%, so no standing over. Model P(dec) 22.6% vs 16.7% de-vigged market (+5.9): under the 8-point bar.
 
 **Duration flags (8+ points, with mechanism):** none on the GTD side. Largest GTD-side gap: Prochazka-Stirling +5.9 (not a flag).
 - **Suppressed (ITD side, NO ITD/unders rule):** Almabayev-Horiguchi -19.9, Ortega-Hooker -16.0, Cannonier-Aliskerov -12.7, Costa-Albazi -11.9, Luna-Topuria -8.6.
 - Lorenz-Nurgozhay: no GTD market yet; model P(dec) 13.7% (SYN, 2.9-minute sample, KO grids clamped: artifact).
+- Yousaf-Mitchell (PROVISIONAL): props skipped; model P(dec) 47.0% rests on division means and Sherdog priors only.
 
 ## 2-7. KEY PROPS
 - **TD props** (85/57/30 marks a capped output; read those as "high", not exact):
@@ -88,15 +94,37 @@
 - Luna +225 (57.3 / 74.2 vs 29.2): VETOED, D-code. Driver is Topuria showing 0 UFC finishes and 0 KDs in 30 minutes against a 33-minute Luna sample; confidence at the 30% floor.
 - Lorenz +205 (46.6 / 38.8 vs 31.1): VETOED, D-code, and an artifact: SYN on both sides, 2.9 minutes of DWCS tape, both KO grids pinned at the 2.50 clamp.
 - Teixeira +163 (51.8 / 55.9 vs 36.1): artifact. Both KO grids sit at or near the clamp (3.26 / 3.00 after age and off-KO multipliers), Teixeira has 17 minutes, confidence at the 30% floor.
+- Yousaf +128 (51.3 / 54.4 vs 41.7, PROVISIONAL bout): VETOED, D-code, and an artifact: both sides SYN with zero UFC tape, so the sim sees two identical division-average fighters separated only by Sherdog priors (Yousaf never finished in 17 bouts, Mitchell 1 KO and 1 sub loss); confidence at the 30% floor.
 
 **Raw-column notes (not flags; col J uses shrunk):**
 - Prochazka raw 20.3 vs 41.2: the Stirling side is +20.9 on raw but only +6.8 on shrunk (confidence 52%). Mechanism exists (Prochazka 3 KO losses in 9 UFC bouts, off a KO loss, KO grid toward Stirling 2.33), so the grading should note it.
 - Cannonier raw 17.4 vs 28.5 (Aliskerov +11.1 raw, +7.9 shrunk) and Motta raw 31.8 vs 42.1 (Fan +10.3 raw but -2.4 shrunk at the 30% floor).
 - Abdullayev raw 31.0 agrees with the market 32.0.
 
+**Outlier price:** Motta's best price is +156 on Polymarket against a +125 US-book median (regulated books +124 to +134), about 5 points better than consensus. Treat it as stale or informed, not an edge; the model is only +2.4 on Motta anyway.
+
 **Sheet rules (v4.7):** no favorite reaches 80% de-vigged (highest: Aliskerov 71.5%, Topuria 70.8%), so the 80%+ rule does not fire on this card.
 
+## MANUAL INPUTS (judgment calls; accepted by Kirk Nov 19)
+- Seed: every number in this doc comes from `PYTHONHASHSEED=0 python3 ufcqatar_sim_v41b.py` (engine seeds each fight with hash(fight_name)); reruns are byte-identical, hashes in the run log.
+- SYN Oddsbreaker fields (not in the app): Nurgozhay distance/ground 70/30, control 50%, TD 75% (3 of 4), TD attempts 0.5/5 min; Lorenz 90/10, control 50%, TD fields blank. Yousaf and Mitchell (PROVISIONAL): LW division averages for both (50/50, control 50%, SLpM 4.5, SApM 4.2, TD 38%, 1.8 TD att/5, TDD 62%); no ufc_stats entries; kd_stats rate keys and finish_rate left out so the division means and Sherdog §1d priors apply.
+- Sub defense left blank on all four SYN fighters (engine floor), per the Calderon precedent.
+- Raw 0% TD defense kept for Lorenz and Teixeira (neither has faced a takedown), per the Elekana precedent.
+- Momentum (BFO L5 and UFCStats form, same scale as prior cards): Prochazka -0.02; Stirling +0.03 (prospect +0.01); Sterling +0.01; Vallejos +0.03 (prospect +0.02); Hooker -0.03; Ortega -0.02; Horiguchi -0.01; Almabayev +0.02; Cannonier -0.03; Aliskerov +0.02; Topuria +0.01; Luna -0.01 (prospect +0.01); Gaziev 0.00; Teixeira -0.02; Costa +0.03; Albazi -0.02; Matthews +0.01; Abdullayev +0.02 (prospect +0.01); Motta -0.02; Fan -0.01; Nurgozhay +0.02; Lorenz +0.02; Yousaf +0.02; Mitchell 0.00. No layoff penalties applied.
+- Conventions confirmed by Kirk: Road to UFC counts UFC-side like DWCS (Fan); D-code uses the last non-DWCS bout (Lorenz); Costa is the dog per the listing; sheet AP/AQ are decision share of each fighter's own wins (UFC 334 format).
+
 ## FIGHT BY FIGHT (first prelim to main event)
+### Shoaib Yousaf vs John Mitchell (LW, 3R) PROVISIONAL
+- P(decision) 47.0%; rounds R1 26.8% / R2 17.3% / R3 8.9%; O1.5 63.9%, O2.5 51.3%
+- Finishes: Yousaf 28.8% (KO 24.2 / Sub 4.6), Mitchell 24.2% (KO 20.3 / Sub 3.9); ITD 53.0%
+- Decision share of own win: Yousaf 44%, Mitchell 50%
+- Expected minutes: 10.1
+- Sig strikes: Yousaf mean 43.8 / median 38.4; Mitchell mean 43.8 / median 38.4
+- Takedowns: Yousaf proj 1.31, P(>=1) 73% P(>=2) 38% P(>=3) 15%; Mitchell proj 1.31, P(>=1) 73% P(>=2) 38% P(>=3) 15%
+- P(scores KD): Yousaf 18%, Mitchell 13%
+- Spreads: fav (Mitchell) -3.5 27.4%
+- ML: Yousaf shrunk 51.3% / raw 54.4%; market de-vig 41.7% (edge +9.6); confidence 30%
+
 ### Alik Lorenz vs Diyar Nurgozhay (LHW, 3R)
 - P(decision) 13.7%; rounds R1 56.1% / R2 22.4% / R3 7.8%; O1.5 30.8%, O2.5 17.1%
 - Finishes: Lorenz 45.0% (KO 38.9 / Sub 6.1), Nurgozhay 41.3% (KO 38.2 / Sub 3.2); ITD 86.3%
@@ -231,6 +259,7 @@ Alessandro Costa vs Amir Albazi	61.8	70.7	44.1	9.8	28.4	18.5	9.0	0.0	0.0
 Tahir Abdullayev vs Jake Matthews	39.5	31.0	50.8	10.5	24.2	16.4	8.6	0.0	0.0
 Nikolas Motta vs Dom Mar Fan	44.5	31.8	35.8	8.9	34.3	20.2	9.7	0.0	0.0
 Alik Lorenz vs Diyar Nurgozhay	46.6	38.8	13.7	5.9	56.1	22.4	7.8	0.0	0.0
+Shoaib Yousaf vs John Mitchell	51.3	54.4	47.0	10.1	26.8	17.3	8.9	0.0	0.0
 ```
 
-*Card 10 of the 10-card grading window (A = BFO underdog on every row). Files: ufcqatar_sim_v41b.py + ufcqatar_* data files; run with PYTHONHASHSEED=0.*
+*Card 10 of the 10-card grading window (A = BFO underdog on every row; fight 12 PROVISIONAL). Files: ufcqatar_sim_v41b.py + ufcqatar_* data files; run with PYTHONHASHSEED=0.*
