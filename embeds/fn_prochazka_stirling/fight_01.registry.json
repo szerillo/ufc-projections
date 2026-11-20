@@ -12,7 +12,7 @@
  ],
  "file": "fight_01.html",
  "event": "form/data/events/2026-11-21-ufc-fight-night-prochazka-vs-stirling.json",
- "proj_src": "line_pending",
+ "proj_src": "publish",
  "proj_file": "data/fn_prochazka_stirling_projections.json",
  "published_at": "2026-11-19T23:42:39.243Z",
  "rows": [
@@ -40,23 +40,837 @@
   },
   {
    "id": "v3",
-   "text": "+120",
-   "fmt": "ml",
-   "rule": "lh_open_ml",
+   "text": "-167",
+   "fmt": "mlp",
+   "rule": "pub_win",
    "args": {
-    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
-    "pair": [
-     "John Mitchell",
-     "Shoaib Yousaf"
-    ],
-    "side": "b"
+    "side": "a"
    },
-   "desc": "LH open ML Shoaib Yousaf",
-   "raw": 120
+   "desc": "Model ML John Mitchell",
+   "raw": 0.624966582278481
   },
   {
    "id": "v4",
-   "text": "+117",
+   "text": "62.5%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Model win % John Mitchell",
+   "raw": 0.624966582278481
+  },
+  {
+   "id": "v5",
+   "text": "-125",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed ML John Mitchell",
+   "raw": -125
+  },
+  {
+   "id": "v6",
+   "text": "55.6%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "a"
+   },
+   "desc": "Listed implied John Mitchell",
+   "raw": 0.5555555555555556
+  },
+  {
+   "id": "v7",
+   "text": "-142",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "John Mitchell",
+    "field": "cost"
+   },
+   "desc": "Market ML John Mitchell",
+   "raw": -142
+  },
+  {
+   "id": "v8",
+   "text": "58.7%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "John Mitchell"
+   },
+   "desc": "Market implied John Mitchell",
+   "raw": 0.5867768595041323
+  },
+  {
+   "id": "v9",
+   "text": "-142",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "John Mitchell",
+    "book": "draftkings"
+   },
+   "desc": "Best US ML John Mitchell",
+   "raw": -142
+  },
+  {
+   "id": "v10",
+   "text": "+6.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v4",
+     "v6"
+    ]
+   },
+   "desc": "Edge ML John Mitchell",
+   "raw": 0.06941102672292543
+  },
+  {
+   "id": "v11",
+   "text": "+167",
+   "fmt": "mlp",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model ML Shoaib Yousaf",
+   "raw": 0.375033417721519
+  },
+  {
+   "id": "v12",
+   "text": "37.5%",
+   "fmt": "pct1",
+   "rule": "pub_win",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Model win % Shoaib Yousaf",
+   "raw": 0.375033417721519
+  },
+  {
+   "id": "v13",
+   "text": "+115",
+   "fmt": "ml",
+   "rule": "pub_ml",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed ML Shoaib Yousaf",
+   "raw": 115
+  },
+  {
+   "id": "v14",
+   "text": "46.5%",
+   "fmt": "pct1",
+   "rule": "pub_ml_imp",
+   "args": {
+    "side": "b"
+   },
+   "desc": "Listed implied Shoaib Yousaf",
+   "raw": 0.46511627906976744
+  },
+  {
+   "id": "v15",
+   "text": "+120",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "moneyline",
+    "label": "Shoaib Yousaf",
+    "field": "cost"
+   },
+   "desc": "Market ML Shoaib Yousaf",
+   "raw": 120
+  },
+  {
+   "id": "v16",
+   "text": "45.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "moneyline",
+    "label": "Shoaib Yousaf"
+   },
+   "desc": "Market implied Shoaib Yousaf",
+   "raw": 0.45454545454545453
+  },
+  {
+   "id": "v17",
+   "text": "+120",
+   "fmt": "ml",
+   "rule": "bp_best",
+   "args": {
+    "market": "moneyline",
+    "label": "Shoaib Yousaf",
+    "book": "draftkings"
+   },
+   "desc": "Best US ML Shoaib Yousaf",
+   "raw": 120
+  },
+  {
+   "id": "v18",
+   "text": "-9.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v12",
+     "v14"
+    ]
+   },
+   "desc": "Edge ML Shoaib Yousaf",
+   "raw": -0.09008286134824844
+  },
+  {
+   "id": "v19",
+   "text": "-119",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD",
+   "raw": 0.543098174437613
+  },
+  {
+   "id": "v20",
+   "text": "54.3%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd"
+   },
+   "desc": "Model GTD %",
+   "raw": 0.543098174437613
+  },
+  {
+   "id": "v21",
+   "text": "-127",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes",
+    "field": "cost"
+   },
+   "desc": "Market GTD yes",
+   "raw": -127
+  },
+  {
+   "id": "v22",
+   "text": "55.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "Yes"
+   },
+   "desc": "Market GTD implied",
+   "raw": 0.5594713656387665
+  },
+  {
+   "id": "v23",
+   "text": "-1.6%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v20",
+     "v22"
+    ]
+   },
+   "desc": "Edge GTD vs market",
+   "raw": -0.016373191201153547
+  },
+  {
+   "id": "v24",
+   "text": "+119",
+   "fmt": "mlp",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD",
+   "raw": 0.456901825562387
+  },
+  {
+   "id": "v25",
+   "text": "45.7%",
+   "fmt": "pct1",
+   "rule": "pub",
+   "args": {
+    "key": "gtd",
+    "inv": true
+   },
+   "desc": "Model ITD %",
+   "raw": 0.456901825562387
+  },
+  {
+   "id": "v26",
+   "text": "-104",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No",
+    "field": "cost"
+   },
+   "desc": "Market ITD no",
+   "raw": -104
+  },
+  {
+   "id": "v27",
+   "text": "51.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "fight_distance",
+    "label": "No"
+   },
+   "desc": "Market ITD implied",
+   "raw": 0.5098039215686274
+  },
+  {
+   "id": "v28",
+   "text": "-5.3%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v25",
+     "v27"
+    ]
+   },
+   "desc": "Edge ITD vs market",
+   "raw": -0.05290209600624041
+  },
+  {
+   "id": "v29",
+   "text": "+182",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec ML John Mitchell",
+   "raw": 0.3542038148461926
+  },
+  {
+   "id": "v30",
+   "text": "35.4%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "dec"
+   },
+   "desc": "Model dec % John Mitchell",
+   "raw": 0.3542038148461926
+  },
+  {
+   "id": "v31",
+   "text": "+175",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "John Mitchell Points",
+    "field": "cost"
+   },
+   "desc": "Market dec John Mitchell",
+   "raw": 175
+  },
+  {
+   "id": "v32",
+   "text": "36.4%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "John Mitchell Points"
+   },
+   "desc": "Market dec implied John Mitchell",
+   "raw": 0.36363636363636365
+  },
+  {
+   "id": "v33",
+   "text": "-0.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v30",
+     "v32"
+    ]
+   },
+   "desc": "Edge dec John Mitchell",
+   "raw": -0.009432548790171025
+  },
+  {
+   "id": "v34",
+   "text": "+397",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko ML John Mitchell",
+   "raw": 0.20109151616256407
+  },
+  {
+   "id": "v35",
+   "text": "20.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "ko"
+   },
+   "desc": "Model ko % John Mitchell",
+   "raw": 0.20109151616256407
+  },
+  {
+   "id": "v36",
+   "text": "+350",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "John Mitchell KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko John Mitchell",
+   "raw": 350
+  },
+  {
+   "id": "v37",
+   "text": "22.2%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "John Mitchell KO/TKO/DQ"
+   },
+   "desc": "Market ko implied John Mitchell",
+   "raw": 0.2222222222222222
+  },
+  {
+   "id": "v38",
+   "text": "-2.1%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v35",
+     "v37"
+    ]
+   },
+   "desc": "Edge ko John Mitchell",
+   "raw": -0.02113070605965814
+  },
+  {
+   "id": "v39",
+   "text": "+1335",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub ML John Mitchell",
+   "raw": 0.06967125126972432
+  },
+  {
+   "id": "v40",
+   "text": "7.0%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "sub"
+   },
+   "desc": "Model sub % John Mitchell",
+   "raw": 0.06967125126972432
+  },
+  {
+   "id": "v41",
+   "text": "+1373",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "John Mitchell Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub John Mitchell",
+   "raw": 1373
+  },
+  {
+   "id": "v42",
+   "text": "6.8%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "John Mitchell Submission"
+   },
+   "desc": "Market sub implied John Mitchell",
+   "raw": 0.06788866259334692
+  },
+  {
+   "id": "v43",
+   "text": "+0.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v40",
+     "v42"
+    ]
+   },
+   "desc": "Edge sub John Mitchell",
+   "raw": 0.0017825886763774001
+  },
+  {
+   "id": "v44",
+   "text": "+269",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd ML John Mitchell",
+   "raw": 0.2707627674322884
+  },
+  {
+   "id": "v45",
+   "text": "27.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "a",
+    "k": "itd"
+   },
+   "desc": "Model itd % John Mitchell",
+   "raw": 0.2707627674322884
+  },
+  {
+   "id": "v46",
+   "text": "+245",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "John Mitchell KO/TKO/DQ",
+     "John Mitchell Submission"
+    ]
+   },
+   "desc": "Market ITD price John Mitchell",
+   "raw": 0.2901108848155691
+  },
+  {
+   "id": "v47",
+   "text": "29.0%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "John Mitchell KO/TKO/DQ",
+     "John Mitchell Submission"
+    ]
+   },
+   "desc": "Market ITD implied John Mitchell",
+   "raw": 0.2901108848155691
+  },
+  {
+   "id": "v48",
+   "text": "-1.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v45",
+     "v47"
+    ]
+   },
+   "desc": "Edge itd John Mitchell",
+   "raw": -0.01934811738328074
+  },
+  {
+   "id": "v49",
+   "text": "+429",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec ML Shoaib Yousaf",
+   "raw": 0.18889435959142034
+  },
+  {
+   "id": "v50",
+   "text": "18.9%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "dec"
+   },
+   "desc": "Model dec % Shoaib Yousaf",
+   "raw": 0.18889435959142034
+  },
+  {
+   "id": "v51",
+   "text": "+337",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shoaib Yousaf Points",
+    "field": "cost"
+   },
+   "desc": "Market dec Shoaib Yousaf",
+   "raw": 337
+  },
+  {
+   "id": "v52",
+   "text": "22.9%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shoaib Yousaf Points"
+   },
+   "desc": "Market dec implied Shoaib Yousaf",
+   "raw": 0.2288329519450801
+  },
+  {
+   "id": "v53",
+   "text": "-4.0%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v50",
+     "v52"
+    ]
+   },
+   "desc": "Edge dec Shoaib Yousaf",
+   "raw": -0.03993859235365976
+  },
+  {
+   "id": "v54",
+   "text": "+543",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko ML Shoaib Yousaf",
+   "raw": 0.155609671518538
+  },
+  {
+   "id": "v55",
+   "text": "15.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "ko"
+   },
+   "desc": "Model ko % Shoaib Yousaf",
+   "raw": 0.155609671518538
+  },
+  {
+   "id": "v56",
+   "text": "+330",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shoaib Yousaf KO/TKO/DQ",
+    "field": "cost"
+   },
+   "desc": "Market ko Shoaib Yousaf",
+   "raw": 330
+  },
+  {
+   "id": "v57",
+   "text": "23.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shoaib Yousaf KO/TKO/DQ"
+   },
+   "desc": "Market ko implied Shoaib Yousaf",
+   "raw": 0.23255813953488372
+  },
+  {
+   "id": "v58",
+   "text": "-7.7%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v55",
+     "v57"
+    ]
+   },
+   "desc": "Edge ko Shoaib Yousaf",
+   "raw": -0.07694846801634572
+  },
+  {
+   "id": "v59",
+   "text": "+3176",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub ML Shoaib Yousaf",
+   "raw": 0.03052938661156065
+  },
+  {
+   "id": "v60",
+   "text": "3.1%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "sub"
+   },
+   "desc": "Model sub % Shoaib Yousaf",
+   "raw": 0.03052938661156065
+  },
+  {
+   "id": "v61",
+   "text": "+1494",
+   "fmt": "ml",
+   "rule": "bp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shoaib Yousaf Submission",
+    "field": "cost"
+   },
+   "desc": "Market sub Shoaib Yousaf",
+   "raw": 1494
+  },
+  {
+   "id": "v62",
+   "text": "6.3%",
+   "fmt": "pct1",
+   "rule": "bp_imp",
+   "args": {
+    "market": "method_of_victory",
+    "label": "Shoaib Yousaf Submission"
+   },
+   "desc": "Market sub implied Shoaib Yousaf",
+   "raw": 0.06273525721455459
+  },
+  {
+   "id": "v63",
+   "text": "-3.2%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v60",
+     "v62"
+    ]
+   },
+   "desc": "Edge sub Shoaib Yousaf",
+   "raw": -0.03220587060299393
+  },
+  {
+   "id": "v64",
+   "text": "+437",
+   "fmt": "mlp",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd ML Shoaib Yousaf",
+   "raw": 0.18613905813009865
+  },
+  {
+   "id": "v65",
+   "text": "18.6%",
+   "fmt": "pct1",
+   "rule": "pub_meth",
+   "args": {
+    "side": "b",
+    "k": "itd"
+   },
+   "desc": "Model itd % Shoaib Yousaf",
+   "raw": 0.18613905813009865
+  },
+  {
+   "id": "v66",
+   "text": "+239",
+   "fmt": "mlp",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Shoaib Yousaf KO/TKO/DQ",
+     "Shoaib Yousaf Submission"
+    ]
+   },
+   "desc": "Market ITD price Shoaib Yousaf",
+   "raw": 0.29529339674943833
+  },
+  {
+   "id": "v67",
+   "text": "29.5%",
+   "fmt": "pct1",
+   "rule": "bp_imp_sum",
+   "args": {
+    "market": "method_of_victory",
+    "labels": [
+     "Shoaib Yousaf KO/TKO/DQ",
+     "Shoaib Yousaf Submission"
+    ]
+   },
+   "desc": "Market ITD implied Shoaib Yousaf",
+   "raw": 0.29529339674943833
+  },
+  {
+   "id": "v68",
+   "text": "-10.9%",
+   "fmt": "spp",
+   "rule": "edge",
+   "args": {
+    "of": [
+     "v65",
+     "v67"
+    ]
+   },
+   "desc": "Edge itd Shoaib Yousaf",
+   "raw": -0.10915433861933968
+  },
+  {
+   "id": "v69",
+   "text": "-142",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -65,14 +879,30 @@
      "John Mitchell",
      "Shoaib Yousaf"
     ],
-    "side": "b",
-    "at": "current"
+    "side": "a"
    },
-   "desc": "LH current ML Shoaib Yousaf",
-   "raw": 117
+   "desc": "LH open ML John Mitchell",
+   "raw": -142
   },
   {
-   "id": "v5",
+   "id": "v70",
+   "text": "-143",
+   "fmt": "ml",
+   "rule": "lh_open_ml",
+   "args": {
+    "lh": "data/embeds/line_history_fn_prochazka_stirling.json",
+    "pair": [
+     "John Mitchell",
+     "Shoaib Yousaf"
+    ],
+    "side": "a",
+    "at": "current"
+   },
+   "desc": "LH current ML John Mitchell",
+   "raw": -143
+  },
+  {
+   "id": "v71",
    "text": "0.2",
    "fmt": "pts",
    "rule": "lh_drift_abs",
@@ -84,15 +914,8 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0020000000000000018
+   "raw": 0.0019999999999998908
   }
  ],
- "gaps": [
-  "Fight 1: Line pending in data/fn_prochazka_stirling_projections.json (no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)); no model numbers shown."
- ],
- "line_pending": {
-  "dog": "Shoaib Yousaf",
-  "fav": "John Mitchell",
-  "reason": "no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)"
- }
+ "gaps": []
 }

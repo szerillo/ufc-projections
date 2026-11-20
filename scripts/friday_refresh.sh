@@ -41,6 +41,7 @@ if miss_open:
 if age >= 24 and not allow:
     print("GO-LIVE BLOCKED: republish the sheet (Publish to site) or rerun with ALLOW_STALE=1"); sys.exit(2)
 PY
+step "2c re-check holds";    python3 -I scripts/recheck_holds.py --slug "$SLUG"   # Nov 20: a bout held for "not in the odds feed" is restored once the feed carries it
 step "3 line history"
 # (rehearsal bug: "git pull && python ..." let a failed pull pass silently, since set -e ignores non-final && commands;
 #  each command now stands alone, and the archive's newest snapshot must be under 3 hours old)
