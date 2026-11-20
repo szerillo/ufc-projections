@@ -262,7 +262,7 @@ def page(kind, C, F, me):
     elif kind == "props": body = props_block(F)
     else: body = tabs("top", [("fights", "Fights", fights_block(F)), ("ml", "Moneylines", ml_block(F)), ("props", "Props", props_block(F))])
     ev = hdr.select_one(".ff-title").get_text()
-    return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+    return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width, initial-scale=1">'
             f'<meta name="color-scheme" content="light only"><title>{ev}</title><style>{css}{EXTRA_CSS}</style></head>'
             f'<body class="cardpage" data-kind="{kind}">{hdr}<div class="panel">{body}</div>{JS}</body></html>\n')   # Sean, Nov 13 13:00: footnote, explainer and footer removed
 
