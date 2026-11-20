@@ -16,6 +16,7 @@ for p in "data/${SLUG}_projections.json" "data/pending/${SLUG}_projections.json"
     echo "MERGE FAIL: $p on $BR is still the STAGING copy; run friday_refresh (step 2 takes Sean's export from main) and commit, then merge."; exit 1
   fi
 done
+python3 -I scripts/noindex.py || { echo "MERGE FAIL: a served page lacks the noindex tag (scripts/noindex.py --fix)"; exit 1; }   # Nov 20 (Sean): site hidden from search
 python3 -I scripts/main_guard.py --allow-publish-and-bot --slug "$SLUG"
 git checkout -q -B _merge origin/main
 if ! git merge --no-ff --no-edit -m "Merge $BR into main (scripts/merge_main.sh)" "$BR" >/tmp/_merge.txt 2>&1; then

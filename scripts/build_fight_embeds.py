@@ -1056,7 +1056,7 @@ def build(names, outname):
     tabs_html = ('<div class="tabs" role="tablist" aria-label="Fight sections">' + "".join(
         f'<button type="button" role="tab" id="tb-{k}" aria-controls="tp-{k}" aria-selected="{"true" if i_ == 0 else "false"}" tabindex="{0 if i_ == 0 else -1}">{t}</button>' for i_, (k, t, _) in enumerate(tabdefs)) + '</div>'
         + "".join(f'<section class="tp" id="tp-{k}" role="tabpanel" aria-labelledby="tb-{k}" tabindex="0"><h2 class="tp-h">{t}</h2>{b}</section>' for k, t, b in tabdefs))
-    page = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light only">
+    page = f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light only">
 <title>{esc(an)} vs {esc(bn)} · {esc(EVL["name"])} · Fight Form</title>
 <style>
 /* copied verbatim from ufc_333_fight_form.html (szerillo/ufc-projections) */
