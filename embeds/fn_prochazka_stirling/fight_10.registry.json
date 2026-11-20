@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 10,
  "of": 12,
  "site_pair": [
@@ -201,7 +201,7 @@
   },
   {
    "id": "v17",
-   "text": "-192",
+   "text": "-185",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
@@ -210,7 +210,7 @@
     "book": "draftkings"
    },
    "desc": "Best US ML Dan Hooker",
-   "raw": -192
+   "raw": -185
   },
   {
    "id": "v18",
@@ -272,7 +272,7 @@
   },
   {
    "id": "v23",
-   "text": "+157",
+   "text": "+154",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -281,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Brian Ortega",
-   "raw": 157
+   "raw": 154
   },
   {
    "id": "v24",
-   "text": "38.9%",
+   "text": "39.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -293,7 +293,7 @@
     "label": "Brian Ortega"
    },
    "desc": "Market implied Brian Ortega",
-   "raw": 0.38910505836575876
+   "raw": 0.3937007874015748
   },
   {
    "id": "v25",
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "-190",
+   "text": "-189",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Dan Hooker",
-   "raw": -190
+   "raw": -189
   },
   {
    "id": "v79",
-   "text": "3.5",
+   "text": "3.1",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.03500000000000003
+   "raw": 0.031000000000000028
   },
   {
    "id": "v80",

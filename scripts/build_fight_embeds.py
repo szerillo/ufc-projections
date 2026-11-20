@@ -58,7 +58,10 @@ BPO = json.load(open(REPO / "data" / f"{SLUG}_odds.json"))
 OVR = json.load(open(REPO / "data" / "card_overrides.json"))[SLUG]
 # Nov 19 (Kirk): Markov V4.1b read per bout. Opt-in per card through card_overrides "markov" (the data/cards slug), so cards
 # built before this keep their pages. Key present but no card file yet: every bout says "Markov run pending" (fails closed).
-MK_SLUG = OVR.get("markov"); MK_PATH = REPO / "data" / "cards" / f"{MK_SLUG}.json" if MK_SLUG else None
+# Nov 20 (Sean, via Kirk): no "Markov read" block on any embed, this card or later ones. The opt-in key is refused, not ignored,
+# so it cannot quietly come back; the Markov card stays on the site's Duration Model page.
+if "markov" in OVR: sys.exit('card_overrides "markov" key: the Markov read block is off by Sean (Nov 20); remove the key')
+MK_SLUG = None; MK_PATH = REPO / "data" / "cards" / f"{MK_SLUG}.json" if MK_SLUG else None
 MK = json.load(open(MK_PATH)) if MK_PATH and MK_PATH.exists() else None
 if MK: assert MK["date"] == EVL["date"], f"Markov card {MK_SLUG} is dated {MK['date']}, event {EVL['date']}"
 IDX = json.load(open(FD / "index.json"))

@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 1,
  "of": 12,
  "site_pair": [
@@ -56,7 +56,7 @@
   },
   {
    "id": "v4",
-   "text": "+115",
+   "text": "+117",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -69,11 +69,11 @@
     "at": "current"
    },
    "desc": "LH current ML Shoaib Yousaf",
-   "raw": 115
+   "raw": 117
   },
   {
    "id": "v5",
-   "text": "0.6",
+   "text": "0.2",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -84,77 +84,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.006000000000000005
-  },
-  {
-   "id": "v6",
-   "text": "+128",
-   "fmt": "ml",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 6,
-    "key": "market_odds",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag price",
-   "raw": 128
-  },
-  {
-   "id": "v7",
-   "text": "51.3",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 6,
-    "key": "model_shrunk",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win shrunk",
-   "raw": 51.3
-  },
-  {
-   "id": "v8",
-   "text": "54.4",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 6,
-    "key": "model_raw",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win raw",
-   "raw": 54.4
-  },
-  {
-   "id": "v9",
-   "text": "41.7",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 6,
-    "key": "market_implied",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag market",
-   "raw": 41.7
-  },
-  {
-   "id": "v10",
-   "text": "+9.6",
-   "fmt": "s1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 6,
-    "key": "edge_pts",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag gap",
-   "raw": 9.6
+   "raw": 0.0020000000000000018
   }
  ],
  "gaps": [

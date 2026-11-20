@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 7,
  "of": 12,
  "site_pair": [
@@ -176,7 +176,7 @@
   },
   {
    "id": "v15",
-   "text": "-292",
+   "text": "-299",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -185,11 +185,11 @@
     "field": "cost"
    },
    "desc": "Market ML Aleksandre Topuria",
-   "raw": -292
+   "raw": -299
   },
   {
    "id": "v16",
-   "text": "74.5%",
+   "text": "74.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -197,20 +197,20 @@
     "label": "Aleksandre Topuria"
    },
    "desc": "Market implied Aleksandre Topuria",
-   "raw": 0.7448979591836735
+   "raw": 0.7493734335839599
   },
   {
    "id": "v17",
-   "text": "-285",
+   "text": "-275",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
     "label": "Aleksandre Topuria",
-    "book": "draftkings"
+    "book": "fanduel"
    },
    "desc": "Best US ML Aleksandre Topuria",
-   "raw": -285
+   "raw": -275
   },
   {
    "id": "v18",
@@ -272,7 +272,7 @@
   },
   {
    "id": "v23",
-   "text": "+227",
+   "text": "+240",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -281,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Santiago Luna",
-   "raw": 227
+   "raw": 240
   },
   {
    "id": "v24",
-   "text": "30.6%",
+   "text": "29.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -293,7 +293,7 @@
     "label": "Santiago Luna"
    },
    "desc": "Market implied Santiago Luna",
-   "raw": 0.3058103975535168
+   "raw": 0.29411764705882354
   },
   {
    "id": "v25",
@@ -303,7 +303,7 @@
    "args": {
     "market": "moneyline",
     "label": "Santiago Luna",
-    "book": "betmgm"
+    "book": "draftkings"
    },
    "desc": "Best US ML Santiago Luna",
    "raw": 240
@@ -346,7 +346,7 @@
   },
   {
    "id": "v29",
-   "text": "-140",
+   "text": "-136",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -355,11 +355,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": -140
+   "raw": -136
   },
   {
    "id": "v30",
-   "text": "58.3%",
+   "text": "57.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -367,11 +367,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.5833333333333334
+   "raw": 0.576271186440678
   },
   {
    "id": "v31",
-   "text": "-4.6%",
+   "text": "-3.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -381,7 +381,7 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.045760753155883904
+   "raw": -0.03869860626322852
   },
   {
    "id": "v32",
@@ -409,7 +409,7 @@
   },
   {
    "id": "v34",
-   "text": "+106",
+   "text": "+104",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -418,11 +418,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": 106
+   "raw": 104
   },
   {
    "id": "v35",
-   "text": "48.5%",
+   "text": "49.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -430,11 +430,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.4854368932038835
+   "raw": 0.49019607843137253
   },
   {
    "id": "v36",
-   "text": "-2.3%",
+   "text": "-2.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -444,7 +444,7 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.023009473381332968
+   "raw": -0.027768658608821994
   },
   {
    "id": "v37",
@@ -598,7 +598,7 @@
   },
   {
    "id": "v49",
-   "text": "+455",
+   "text": "+474",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -607,11 +607,11 @@
     "field": "cost"
    },
    "desc": "Market sub Aleksandre Topuria",
-   "raw": 455
+   "raw": 474
   },
   {
    "id": "v50",
-   "text": "18.0%",
+   "text": "17.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -619,11 +619,11 @@
     "label": "Aleksandre Topuria Submission"
    },
    "desc": "Market sub implied Aleksandre Topuria",
-   "raw": 0.18018018018018017
+   "raw": 0.17421602787456447
   },
   {
    "id": "v51",
-   "text": "-2.8%",
+   "text": "-2.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -633,7 +633,7 @@
     ]
    },
    "desc": "Edge sub Aleksandre Topuria",
-   "raw": -0.028198675300455694
+   "raw": -0.022234522994839995
   },
   {
    "id": "v52",
@@ -661,7 +661,7 @@
   },
   {
    "id": "v54",
-   "text": "+149",
+   "text": "+152",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -672,11 +672,11 @@
     ]
    },
    "desc": "Market ITD price Aleksandre Topuria",
-   "raw": 0.4024024024024024
+   "raw": 0.3964382500967867
   },
   {
    "id": "v55",
-   "text": "40.2%",
+   "text": "39.6%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -687,11 +687,11 @@
     ]
    },
    "desc": "Market ITD implied Aleksandre Topuria",
-   "raw": 0.4024024024024024
+   "raw": 0.3964382500967867
   },
   {
    "id": "v56",
-   "text": "-6.7%",
+   "text": "-6.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -701,7 +701,7 @@
     ]
    },
    "desc": "Edge itd Aleksandre Topuria",
-   "raw": -0.06708927292895894
+   "raw": -0.06112512062334324
   },
   {
    "id": "v57",
@@ -729,7 +729,7 @@
   },
   {
    "id": "v59",
-   "text": "+487",
+   "text": "+500",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -738,11 +738,11 @@
     "field": "cost"
    },
    "desc": "Market dec Santiago Luna",
-   "raw": 487
+   "raw": 500
   },
   {
    "id": "v60",
-   "text": "17.0%",
+   "text": "16.7%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -750,11 +750,11 @@
     "label": "Santiago Luna Points"
    },
    "desc": "Market dec implied Santiago Luna",
-   "raw": 0.17035775127768313
+   "raw": 0.16666666666666666
   },
   {
    "id": "v61",
-   "text": "-1.2%",
+   "text": "-0.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -764,7 +764,7 @@
     ]
    },
    "desc": "Edge dec Santiago Luna",
-   "raw": -0.011910402282527988
+   "raw": -0.008219317671511517
   },
   {
    "id": "v62",
@@ -855,7 +855,7 @@
   },
   {
    "id": "v69",
-   "text": "+900",
+   "text": "+948",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -864,11 +864,11 @@
     "field": "cost"
    },
    "desc": "Market sub Santiago Luna",
-   "raw": 900
+   "raw": 948
   },
   {
    "id": "v70",
-   "text": "10.0%",
+   "text": "9.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -876,11 +876,11 @@
     "label": "Santiago Luna Submission"
    },
    "desc": "Market sub implied Santiago Luna",
-   "raw": 0.1
+   "raw": 0.09541984732824428
   },
   {
    "id": "v71",
-   "text": "-5.4%",
+   "text": "-4.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -890,7 +890,7 @@
     ]
    },
    "desc": "Edge sub Santiago Luna",
-   "raw": -0.054016662810671634
+   "raw": -0.04943651013891591
   },
   {
    "id": "v72",
@@ -918,7 +918,7 @@
   },
   {
    "id": "v74",
-   "text": "+424",
+   "text": "+437",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -929,11 +929,11 @@
     ]
    },
    "desc": "Market ITD price Santiago Luna",
-   "raw": 0.19090909090909092
+   "raw": 0.1863289382373352
   },
   {
    "id": "v75",
-   "text": "19.1%",
+   "text": "18.6%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -944,11 +944,11 @@
     ]
    },
    "desc": "Market ITD implied Santiago Luna",
-   "raw": 0.19090909090909092
+   "raw": 0.1863289382373352
   },
   {
    "id": "v76",
-   "text": "-6.4%",
+   "text": "-5.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -958,7 +958,7 @@
     ]
    },
    "desc": "Edge itd Santiago Luna",
-   "raw": -0.0637948005599838
+   "raw": -0.059214647888228084
   },
   {
    "id": "v77",
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "-294",
+   "text": "-299",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Aleksandre Topuria",
-   "raw": -294
+   "raw": -299
   },
   {
    "id": "v79",
-   "text": "3.0",
+   "text": "4.0",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.029999999999999916
+   "raw": 0.039999999999999925
   },
   {
    "id": "v80",
@@ -2110,76 +2110,6 @@
   },
   {
    "id": "v171",
-   "text": "+225",
-   "fmt": "ml",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 4,
-    "key": "market_odds",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag price",
-   "raw": 225
-  },
-  {
-   "id": "v172",
-   "text": "57.3",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 4,
-    "key": "model_shrunk",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win shrunk",
-   "raw": 57.3
-  },
-  {
-   "id": "v173",
-   "text": "74.2",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 4,
-    "key": "model_raw",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win raw",
-   "raw": 74.2
-  },
-  {
-   "id": "v174",
-   "text": "29.2",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 4,
-    "key": "market_implied",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag market",
-   "raw": 29.2
-  },
-  {
-   "id": "v175",
-   "text": "+28.1",
-   "fmt": "s1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 4,
-    "key": "edge_pts",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag gap",
-   "raw": 28.1
-  },
-  {
-   "id": "v176",
    "text": "-141",
    "fmt": "ml",
    "rule": "fight",
@@ -2192,7 +2122,7 @@
    "raw": -141
   },
   {
-   "id": "v177",
+   "id": "v172",
    "text": "-333",
    "fmt": "ml",
    "rule": "fight",
@@ -2205,7 +2135,7 @@
    "raw": -333
   },
   {
-   "id": "v178",
+   "id": "v173",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -2218,7 +2148,7 @@
    "raw": 100
   },
   {
-   "id": "v179",
+   "id": "v174",
    "text": "-769",
    "fmt": "ml",
    "rule": "fight",
@@ -2231,7 +2161,7 @@
    "raw": -769
   },
   {
-   "id": "v180",
+   "id": "v175",
    "text": "-156",
    "fmt": "ml",
    "rule": "fight",

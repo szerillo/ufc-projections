@@ -470,7 +470,10 @@ def check(D, htmlfile, G):
     # Nov 19 (Kirk): a card that opts in (card_overrides "markov") shows the Markov read block; every other card keeps the
     # round-9 rule (no Markov numbers, any Markov mention next to THIN SAMPLE). Opted-in pages instead must carry every
     # data-quality badge C4's raw-stats CSV gives either fighter, inside the block (checked in the Markov section below).
-    if not json.load(open(REPO / "data/card_overrides.json")).get(G_SLUG[0], {}).get("markov"):
+    # Nov 20 (Sean): the Markov read block is off on every card; no opt-in exists any more.
+    if 'data-part="markov"' in page or "Markov read" in text: bad.append(("page", "Markov read", "Markov read block on the page (off by Sean, Nov 20)"))
+    if json.load(open(REPO / "data/card_overrides.json")).get(G_SLUG[0], {}).get("markov"): bad.append(("page", "Markov read", 'card_overrides still has the "markov" key'))
+    if True:
         if any(r["rule"].startswith("mk") for r in reg["rows"]): bad.append(("page", "Markov", "Markov number displayed"))
         for m_ in re.finditer(r"Markov", text):
             if "THIN SAMPLE" not in text[max(0, m_.start() - 200): m_.end() + 200]: bad.append(("page", "Markov mention", "no THIN SAMPLE label nearby"))
@@ -1010,7 +1013,8 @@ def negative(D, G, slug):
         if lp_page:
             plants += [("line pending: a model cell slipped onto the held bout", plant_text(lp_page, lambda s_: s_.replace('<td class="l nm">', '<td class="model">+120</td><td class="l nm">', 1))),
                        ("line pending: the Line pending note dropped", plant_text(lp_page, lambda s_: s_.replace(">Line pending<", "><", 1)))]
-        if json.load(open(REPO / "data/card_overrides.json")).get(slug, {}).get("markov"):
+        plants += [("markov: the Markov read block put back on a page", plant_any(lambda s_: s_.replace('<div class="stk', '<div class="stk mk" data-part="markov"><div class="stk-h"><span class="bullet"></span>Markov read</div></div><div class="stk', 1)))]
+        if False:   # Nov 20: Markov read block retired (Sean); its plants no longer apply
             plants += [("markov: a flag number off by one", bump_rule("mk")),
                        ("added bout: the no-odds-feed note dropped (fight 1)", plant_text("fight_01.html", lambda s_: s_.replace("No odds feed price for this bout yet.", "", 1))),
                        ("markov: provisional label left in the Markov card file", mk_card_edit)]

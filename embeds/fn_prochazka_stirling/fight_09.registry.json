@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 9,
  "of": 12,
  "site_pair": [
@@ -346,7 +346,7 @@
   },
   {
    "id": "v29",
-   "text": "-225",
+   "text": "-235",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -355,11 +355,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": -225
+   "raw": -235
   },
   {
    "id": "v30",
-   "text": "69.2%",
+   "text": "70.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -367,11 +367,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.6923076923076923
+   "raw": 0.7014925373134329
   },
   {
    "id": "v31",
-   "text": "-7.6%",
+   "text": "-8.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -381,7 +381,7 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": -0.07612574304656272
+   "raw": -0.0853105880523033
   },
   {
    "id": "v32",
@@ -409,7 +409,7 @@
   },
   {
    "id": "v34",
-   "text": "+166",
+   "text": "+172",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -418,11 +418,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": 166
+   "raw": 172
   },
   {
    "id": "v35",
-   "text": "37.6%",
+   "text": "36.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -430,11 +430,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.37593984962406013
+   "raw": 0.36764705882352944
   },
   {
    "id": "v36",
-   "text": "+0.8%",
+   "text": "+1.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -444,7 +444,7 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": 0.007878201114810301
+   "raw": 0.016170991915340993
   },
   {
    "id": "v37",
@@ -472,7 +472,7 @@
   },
   {
    "id": "v39",
-   "text": "+114",
+   "text": "+112",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -481,11 +481,11 @@
     "field": "cost"
    },
    "desc": "Market dec Kyoji Horiguchi",
-   "raw": 114
+   "raw": 112
   },
   {
    "id": "v40",
-   "text": "46.7%",
+   "text": "47.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -493,11 +493,11 @@
     "label": "Kyoji Horiguchi Points"
    },
    "desc": "Market dec implied Kyoji Horiguchi",
-   "raw": 0.4672897196261682
+   "raw": 0.4716981132075472
   },
   {
    "id": "v41",
-   "text": "-6.8%",
+   "text": "-7.3%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -507,7 +507,7 @@
     ]
    },
    "desc": "Edge dec Kyoji Horiguchi",
-   "raw": -0.06809825192770125
+   "raw": -0.0725066455090802
   },
   {
    "id": "v42",
@@ -535,7 +535,7 @@
   },
   {
    "id": "v44",
-   "text": "+469",
+   "text": "+474",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -544,11 +544,11 @@
     "field": "cost"
    },
    "desc": "Market ko Kyoji Horiguchi",
-   "raw": 469
+   "raw": 474
   },
   {
    "id": "v45",
-   "text": "17.6%",
+   "text": "17.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -556,11 +556,11 @@
     "label": "Kyoji Horiguchi KO/TKO/DQ"
    },
    "desc": "Market ko implied Kyoji Horiguchi",
-   "raw": 0.1757469244288225
+   "raw": 0.17421602787456447
   },
   {
    "id": "v46",
-   "text": "-0.1%",
+   "text": "+0.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -570,7 +570,7 @@
     ]
    },
    "desc": "Edge ko Kyoji Horiguchi",
-   "raw": -0.0007534888085085067
+   "raw": 0.0007774077457495254
   },
   {
    "id": "v47",
@@ -598,7 +598,7 @@
   },
   {
    "id": "v49",
-   "text": "+789",
+   "text": "+826",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -607,11 +607,11 @@
     "field": "cost"
    },
    "desc": "Market sub Kyoji Horiguchi",
-   "raw": 789
+   "raw": 826
   },
   {
    "id": "v50",
-   "text": "11.2%",
+   "text": "10.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -619,11 +619,11 @@
     "label": "Kyoji Horiguchi Submission"
    },
    "desc": "Market sub implied Kyoji Horiguchi",
-   "raw": 0.1124859392575928
+   "raw": 0.1079913606911447
   },
   {
    "id": "v51",
-   "text": "-3.5%",
+   "text": "-3.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -633,7 +633,7 @@
     ]
    },
    "desc": "Edge sub Kyoji Horiguchi",
-   "raw": -0.03463136613658323
+   "raw": -0.030136787570135132
   },
   {
    "id": "v52",
@@ -661,7 +661,7 @@
   },
   {
    "id": "v54",
-   "text": "+247",
+   "text": "+254",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -672,11 +672,11 @@
     ]
    },
    "desc": "Market ITD price Kyoji Horiguchi",
-   "raw": 0.2882328636864153
+   "raw": 0.28220738856570915
   },
   {
    "id": "v55",
-   "text": "28.8%",
+   "text": "28.2%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -687,11 +687,11 @@
     ]
    },
    "desc": "Market ITD implied Kyoji Horiguchi",
-   "raw": 0.2882328636864153
+   "raw": 0.28220738856570915
   },
   {
    "id": "v56",
-   "text": "-3.5%",
+   "text": "-2.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -701,7 +701,7 @@
     ]
    },
    "desc": "Edge itd Kyoji Horiguchi",
-   "raw": -0.03538485494509175
+   "raw": -0.02935937982438558
   },
   {
    "id": "v57",
@@ -2501,76 +2501,6 @@
   },
   {
    "id": "v205",
-   "text": "+162",
-   "fmt": "ml",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 0,
-    "key": "market_odds",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag price",
-   "raw": 162
-  },
-  {
-   "id": "v206",
-   "text": "56.9",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 0,
-    "key": "model_shrunk",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win shrunk",
-   "raw": 56.9
-  },
-  {
-   "id": "v207",
-   "text": "58.1",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 0,
-    "key": "model_raw",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win raw",
-   "raw": 58.1
-  },
-  {
-   "id": "v208",
-   "text": "36.4",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 0,
-    "key": "market_implied",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag market",
-   "raw": 36.4
-  },
-  {
-   "id": "v209",
-   "text": "+20.5",
-   "fmt": "s1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 0,
-    "key": "edge_pts",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag gap",
-   "raw": 20.5
-  },
-  {
-   "id": "v210",
    "text": "+152",
    "fmt": "ml",
    "rule": "fight",
@@ -2583,7 +2513,7 @@
    "raw": 152
   },
   {
-   "id": "v211",
+   "id": "v206",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -2596,7 +2526,7 @@
    "raw": -370
   },
   {
-   "id": "v212",
+   "id": "v207",
    "text": "+178",
    "fmt": "ml",
    "rule": "fight",
@@ -2609,7 +2539,7 @@
    "raw": 178
   },
   {
-   "id": "v213",
+   "id": "v208",
    "text": "-270",
    "fmt": "ml",
    "rule": "fight",

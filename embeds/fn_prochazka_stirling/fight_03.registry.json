@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 3,
  "of": 12,
  "site_pair": [
@@ -176,7 +176,7 @@
   },
   {
    "id": "v15",
-   "text": "+137",
+   "text": "+138",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -185,11 +185,11 @@
     "field": "cost"
    },
    "desc": "Market ML Nikolas Motta",
-   "raw": 137
+   "raw": 138
   },
   {
    "id": "v16",
-   "text": "42.2%",
+   "text": "42.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -197,7 +197,7 @@
     "label": "Nikolas Motta"
    },
    "desc": "Market implied Nikolas Motta",
-   "raw": 0.4219409282700422
+   "raw": 0.42016806722689076
   },
   {
    "id": "v17",
@@ -272,7 +272,7 @@
   },
   {
    "id": "v23",
-   "text": "-166",
+   "text": "-164",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -281,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Dom Mar Fan",
-   "raw": -166
+   "raw": -164
   },
   {
    "id": "v24",
-   "text": "62.4%",
+   "text": "62.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -293,7 +293,7 @@
     "label": "Dom Mar Fan"
    },
    "desc": "Market implied Dom Mar Fan",
-   "raw": 0.6240601503759399
+   "raw": 0.6212121212121212
   },
   {
    "id": "v25",
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "-161",
+   "text": "-163",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Dom Mar Fan",
-   "raw": -161
+   "raw": -163
   },
   {
    "id": "v79",
-   "text": "1.0",
+   "text": "1.3",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.010000000000000009
+   "raw": 0.012999999999999956
   },
   {
    "id": "v80",

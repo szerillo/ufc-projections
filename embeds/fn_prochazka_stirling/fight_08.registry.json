@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 8,
  "of": 12,
  "site_pair": [
@@ -207,7 +207,7 @@
    "args": {
     "market": "moneyline",
     "label": "Jared Cannonier",
-    "book": "betmgm"
+    "book": "draftkings"
    },
    "desc": "Best US ML Jared Cannonier",
    "raw": 240
@@ -272,7 +272,7 @@
   },
   {
    "id": "v23",
-   "text": "-300",
+   "text": "-299",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -281,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Ikram Aliskerov",
-   "raw": -300
+   "raw": -299
   },
   {
    "id": "v24",
-   "text": "75.0%",
+   "text": "74.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -293,20 +293,20 @@
     "label": "Ikram Aliskerov"
    },
    "desc": "Market implied Ikram Aliskerov",
-   "raw": 0.75
+   "raw": 0.7493734335839599
   },
   {
    "id": "v25",
-   "text": "-290",
+   "text": "-285",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
     "label": "Ikram Aliskerov",
-    "book": "draftkings"
+    "book": "betmgm"
    },
    "desc": "Best US ML Ikram Aliskerov",
-   "raw": -290
+   "raw": -285
   },
   {
    "id": "v26",
@@ -409,7 +409,7 @@
   },
   {
    "id": "v34",
-   "text": "-161",
+   "text": "-158",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -418,11 +418,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": -161
+   "raw": -158
   },
   {
    "id": "v35",
-   "text": "61.7%",
+   "text": "61.2%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -430,11 +430,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.6168582375478927
+   "raw": 0.6124031007751938
   },
   {
    "id": "v36",
-   "text": "-4.9%",
+   "text": "-4.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -444,7 +444,7 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.04860945667529981
+   "raw": -0.04415431990260088
   },
   {
    "id": "v37",
@@ -472,7 +472,7 @@
   },
   {
    "id": "v39",
-   "text": "+800",
+   "text": "+774",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -481,11 +481,11 @@
     "field": "cost"
    },
    "desc": "Market dec Jared Cannonier",
-   "raw": 800
+   "raw": 774
   },
   {
    "id": "v40",
-   "text": "11.1%",
+   "text": "11.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -493,11 +493,11 @@
     "label": "Jared Cannonier Points"
    },
    "desc": "Market dec implied Jared Cannonier",
-   "raw": 0.1111111111111111
+   "raw": 0.11441647597254005
   },
   {
    "id": "v41",
-   "text": "-2.1%",
+   "text": "-2.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -507,7 +507,7 @@
     ]
    },
    "desc": "Edge dec Jared Cannonier",
-   "raw": -0.020609685666482913
+   "raw": -0.02391505052791186
   },
   {
    "id": "v42",
@@ -598,7 +598,7 @@
   },
   {
    "id": "v49",
-   "text": "+2341",
+   "text": "+2500",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -607,11 +607,11 @@
     "field": "cost"
    },
    "desc": "Market sub Jared Cannonier",
-   "raw": 2341
+   "raw": 2500
   },
   {
    "id": "v50",
-   "text": "4.1%",
+   "text": "3.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -619,11 +619,11 @@
     "label": "Jared Cannonier Submission"
    },
    "desc": "Market sub implied Jared Cannonier",
-   "raw": 0.04096681687832855
+   "raw": 0.038461538461538464
   },
   {
    "id": "v51",
-   "text": "-1.6%",
+   "text": "-1.4%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -633,7 +633,7 @@
     ]
    },
    "desc": "Edge sub Jared Cannonier",
-   "raw": -0.016175819060728583
+   "raw": -0.013670540643938495
   },
   {
    "id": "v52",
@@ -661,7 +661,7 @@
   },
   {
    "id": "v54",
-   "text": "+332",
+   "text": "+337",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -672,11 +672,11 @@
     ]
    },
    "desc": "Market ITD price Jared Cannonier",
-   "raw": 0.231443007354519
+   "raw": 0.22893772893772893
   },
   {
    "id": "v55",
-   "text": "23.1%",
+   "text": "22.9%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -687,11 +687,11 @@
     ]
    },
    "desc": "Market ITD implied Jared Cannonier",
-   "raw": 0.231443007354519
+   "raw": 0.22893772893772893
   },
   {
    "id": "v56",
-   "text": "-6.4%",
+   "text": "-6.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -701,7 +701,7 @@
     ]
    },
    "desc": "Edge itd Jared Cannonier",
-   "raw": -0.06385297852077776
+   "raw": -0.061347700103987685
   },
   {
    "id": "v57",
@@ -855,7 +855,7 @@
   },
   {
    "id": "v69",
-   "text": "+650",
+   "text": "+674",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -864,11 +864,11 @@
     "field": "cost"
    },
    "desc": "Market sub Ikram Aliskerov",
-   "raw": 650
+   "raw": 674
   },
   {
    "id": "v70",
-   "text": "13.3%",
+   "text": "12.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -876,11 +876,11 @@
     "label": "Ikram Aliskerov Submission"
    },
    "desc": "Market sub implied Ikram Aliskerov",
-   "raw": 0.13333333333333333
+   "raw": 0.12919896640826872
   },
   {
    "id": "v71",
-   "text": "-4.2%",
+   "text": "-3.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -890,7 +890,7 @@
     ]
    },
    "desc": "Edge sub Ikram Aliskerov",
-   "raw": -0.04202372202999838
+   "raw": -0.03788935510493377
   },
   {
    "id": "v72",
@@ -918,7 +918,7 @@
   },
   {
    "id": "v74",
-   "text": "+107",
+   "text": "+108",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -929,11 +929,11 @@
     ]
    },
    "desc": "Market ITD price Ikram Aliskerov",
-   "raw": 0.4842105263157894
+   "raw": 0.48007615939072484
   },
   {
    "id": "v75",
-   "text": "48.4%",
+   "text": "48.0%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -944,11 +944,11 @@
     ]
    },
    "desc": "Market ITD implied Ikram Aliskerov",
-   "raw": 0.4842105263157894
+   "raw": 0.48007615939072484
   },
   {
    "id": "v76",
-   "text": "-8.4%",
+   "text": "-7.9%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -958,7 +958,7 @@
     ]
    },
    "desc": "Edge itd Ikram Aliskerov",
-   "raw": -0.08355177427693777
+   "raw": -0.07941740735187319
   },
   {
    "id": "v77",

@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 2,
  "of": 12,
  "site_pair": [
@@ -201,7 +201,7 @@
   },
   {
    "id": "v17",
-   "text": "-245",
+   "text": "-250",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
@@ -210,7 +210,7 @@
     "book": "draftkings"
    },
    "desc": "Best US ML Diyar Nurgozhay",
-   "raw": -245
+   "raw": -250
   },
   {
    "id": "v18",
@@ -272,7 +272,7 @@
   },
   {
    "id": "v23",
-   "text": "+200",
+   "text": "+205",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -281,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Alik Lorenz",
-   "raw": 200
+   "raw": 205
   },
   {
    "id": "v24",
-   "text": "33.3%",
+   "text": "32.8%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -293,11 +293,11 @@
     "label": "Alik Lorenz"
    },
    "desc": "Market implied Alik Lorenz",
-   "raw": 0.3333333333333333
+   "raw": 0.32786885245901637
   },
   {
    "id": "v25",
-   "text": "+200",
+   "text": "+205",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
@@ -306,7 +306,7 @@
     "book": "draftkings"
    },
    "desc": "Best US ML Alik Lorenz",
-   "raw": 200
+   "raw": 205
   },
   {
    "id": "v26",
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "+200",
+   "text": "+205",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Alik Lorenz",
-   "raw": 200
+   "raw": 205
   },
   {
    "id": "v79",
-   "text": "1.9",
+   "text": "1.2",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.018999999999999906
+   "raw": 0.0119999999999999
   },
   {
    "id": "v80",
@@ -1721,76 +1721,6 @@
   },
   {
    "id": "v139",
-   "text": "+205",
-   "fmt": "ml",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 5,
-    "key": "market_odds",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag price",
-   "raw": 205
-  },
-  {
-   "id": "v140",
-   "text": "46.6",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 5,
-    "key": "model_shrunk",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win shrunk",
-   "raw": 46.6
-  },
-  {
-   "id": "v141",
-   "text": "38.8",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 5,
-    "key": "model_raw",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win raw",
-   "raw": 38.8
-  },
-  {
-   "id": "v142",
-   "text": "31.1",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 5,
-    "key": "market_implied",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag market",
-   "raw": 31.1
-  },
-  {
-   "id": "v143",
-   "text": "+15.5",
-   "fmt": "s1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 5,
-    "key": "edge_pts",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag gap",
-   "raw": 15.5
-  },
-  {
-   "id": "v144",
    "text": "-156",
    "fmt": "ml",
    "rule": "fight",
@@ -1803,7 +1733,7 @@
    "raw": -156
   },
   {
-   "id": "v145",
+   "id": "v140",
    "text": "+148",
    "fmt": "ml",
    "rule": "fight",
@@ -1816,7 +1746,7 @@
    "raw": 148
   },
   {
-   "id": "v146",
+   "id": "v141",
    "text": "-106",
    "fmt": "ml",
    "rule": "fight",
@@ -1829,7 +1759,7 @@
    "raw": -106
   },
   {
-   "id": "v147",
+   "id": "v142",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
