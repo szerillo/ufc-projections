@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 4,
  "of": 12,
  "site_pair": [
@@ -176,7 +176,7 @@
   },
   {
    "id": "v15",
-   "text": "-259",
+   "text": "-250",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -185,11 +185,11 @@
     "field": "cost"
    },
    "desc": "Market ML Jake Matthews",
-   "raw": -259
+   "raw": -250
   },
   {
    "id": "v16",
-   "text": "72.1%",
+   "text": "71.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -197,11 +197,11 @@
     "label": "Jake Matthews"
    },
    "desc": "Market implied Jake Matthews",
-   "raw": 0.7214484679665738
+   "raw": 0.7142857142857143
   },
   {
    "id": "v17",
-   "text": "-258",
+   "text": "-238",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
@@ -210,7 +210,7 @@
     "book": "draftkings"
    },
    "desc": "Best US ML Jake Matthews",
-   "raw": -258
+   "raw": -238
   },
   {
    "id": "v18",
@@ -272,7 +272,7 @@
   },
   {
    "id": "v23",
-   "text": "+207",
+   "text": "+200",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -281,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Tahir Abdullayev",
-   "raw": 207
+   "raw": 200
   },
   {
    "id": "v24",
-   "text": "32.6%",
+   "text": "33.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -293,7 +293,7 @@
     "label": "Tahir Abdullayev"
    },
    "desc": "Market implied Tahir Abdullayev",
-   "raw": 0.3257328990228013
+   "raw": 0.3333333333333333
   },
   {
    "id": "v25",
@@ -409,7 +409,7 @@
   },
   {
    "id": "v34",
-   "text": "-105",
+   "text": "-106",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -418,11 +418,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": -105
+   "raw": -106
   },
   {
    "id": "v35",
-   "text": "51.2%",
+   "text": "51.5%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -430,11 +430,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.5121951219512195
+   "raw": 0.5145631067961165
   },
   {
    "id": "v36",
-   "text": "-3.5%",
+   "text": "-3.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -444,7 +444,7 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.03530193647979807
+   "raw": -0.037669921324695044
   },
   {
    "id": "v37",
@@ -472,7 +472,7 @@
   },
   {
    "id": "v39",
-   "text": "+137",
+   "text": "+142",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -481,11 +481,11 @@
     "field": "cost"
    },
    "desc": "Market dec Jake Matthews",
-   "raw": 137
+   "raw": 142
   },
   {
    "id": "v40",
-   "text": "42.2%",
+   "text": "41.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -493,11 +493,11 @@
     "label": "Jake Matthews Points"
    },
    "desc": "Market dec implied Jake Matthews",
-   "raw": 0.4219409282700422
+   "raw": 0.4132231404958678
   },
   {
    "id": "v41",
-   "text": "-1.3%",
+   "text": "-0.5%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -507,7 +507,7 @@
     ]
    },
    "desc": "Edge dec Jake Matthews",
-   "raw": -0.013315045764293654
+   "raw": -0.00459725799011923
   },
   {
    "id": "v42",
@@ -598,7 +598,7 @@
   },
   {
    "id": "v49",
-   "text": "+419",
+   "text": "+410",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -607,11 +607,11 @@
     "field": "cost"
    },
    "desc": "Market sub Jake Matthews",
-   "raw": 419
+   "raw": 410
   },
   {
    "id": "v50",
-   "text": "19.3%",
+   "text": "19.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -619,11 +619,11 @@
     "label": "Jake Matthews Submission"
    },
    "desc": "Market sub implied Jake Matthews",
-   "raw": 0.1926782273603083
+   "raw": 0.19607843137254902
   },
   {
    "id": "v51",
-   "text": "-4.9%",
+   "text": "-5.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -633,7 +633,7 @@
     ]
    },
    "desc": "Edge sub Jake Matthews",
-   "raw": -0.04872972029341005
+   "raw": -0.05212992430565078
   },
   {
    "id": "v52",
@@ -661,7 +661,7 @@
   },
   {
    "id": "v54",
-   "text": "+155",
+   "text": "+152",
    "fmt": "mlp",
    "rule": "bp_imp_sum",
    "args": {
@@ -672,11 +672,11 @@
     ]
    },
    "desc": "Market ITD price Jake Matthews",
-   "raw": 0.39267822736030833
+   "raw": 0.39607843137254906
   },
   {
    "id": "v55",
-   "text": "39.3%",
+   "text": "39.6%",
    "fmt": "pct1",
    "rule": "bp_imp_sum",
    "args": {
@@ -687,11 +687,11 @@
     ]
    },
    "desc": "Market ITD implied Jake Matthews",
-   "raw": 0.39267822736030833
+   "raw": 0.39607843137254906
   },
   {
    "id": "v56",
-   "text": "-10.9%",
+   "text": "-11.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -701,7 +701,7 @@
     ]
    },
    "desc": "Edge itd Jake Matthews",
-   "raw": -0.10870855431050125
+   "raw": -0.11210875832274197
   },
   {
    "id": "v57",
@@ -729,7 +729,7 @@
   },
   {
    "id": "v59",
-   "text": "+500",
+   "text": "+487",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -738,11 +738,11 @@
     "field": "cost"
    },
    "desc": "Market dec Tahir Abdullayev",
-   "raw": 500
+   "raw": 487
   },
   {
    "id": "v60",
-   "text": "16.7%",
+   "text": "17.0%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -750,11 +750,11 @@
     "label": "Tahir Abdullayev Points"
    },
    "desc": "Market dec implied Tahir Abdullayev",
-   "raw": 0.16666666666666666
+   "raw": 0.17035775127768313
   },
   {
    "id": "v61",
-   "text": "-5.2%",
+   "text": "-5.6%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -764,7 +764,7 @@
     ]
    },
    "desc": "Edge dec Tahir Abdullayev",
-   "raw": -0.05218573464383669
+   "raw": -0.05587681925485316
   },
   {
    "id": "v62",
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "-256",
+   "text": "-250",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Jake Matthews",
-   "raw": -256
+   "raw": -250
   },
   {
    "id": "v79",
-   "text": "8.4",
+   "text": "7.8",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.08399999999999996
+   "raw": 0.07800000000000007
   },
   {
    "id": "v80",
@@ -2710,20 +2710,6 @@
   },
   {
    "id": "v221",
-   "text": "+198",
-   "fmt": "ml",
-   "rule": "mk",
-   "args": {
-    "kind": "vetoes",
-    "i": 1,
-    "key": "market_odds",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov veto price",
-   "raw": 198
-  },
-  {
-   "id": "v222",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -2736,7 +2722,7 @@
    "raw": -303
   },
   {
-   "id": "v223",
+   "id": "v222",
    "text": "-333",
    "fmt": "ml",
    "rule": "fight",
@@ -2749,7 +2735,7 @@
    "raw": -333
   },
   {
-   "id": "v224",
+   "id": "v223",
    "text": "+100",
    "fmt": "ml",
    "rule": "fight",
@@ -2762,7 +2748,7 @@
    "raw": 100
   },
   {
-   "id": "v225",
+   "id": "v224",
    "text": "-235",
    "fmt": "ml",
    "rule": "fight",
@@ -2775,7 +2761,7 @@
    "raw": -235
   },
   {
-   "id": "v226",
+   "id": "v225",
    "text": "-169",
    "fmt": "ml",
    "rule": "fight",
@@ -2788,7 +2774,7 @@
    "raw": -169
   },
   {
-   "id": "v227",
+   "id": "v226",
    "text": "+260",
    "fmt": "ml",
    "rule": "fight",
@@ -2801,7 +2787,7 @@
    "raw": 260
   },
   {
-   "id": "v228",
+   "id": "v227",
    "text": "-278",
    "fmt": "ml",
    "rule": "fight",
@@ -2814,7 +2800,7 @@
    "raw": -278
   },
   {
-   "id": "v229",
+   "id": "v228",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -2827,7 +2813,7 @@
    "raw": -303
   },
   {
-   "id": "v230",
+   "id": "v229",
    "text": "-115",
    "fmt": "ml",
    "rule": "fight",
@@ -2840,7 +2826,7 @@
    "raw": -115
   },
   {
-   "id": "v231",
+   "id": "v230",
    "text": "+105",
    "fmt": "ml",
    "rule": "fight",

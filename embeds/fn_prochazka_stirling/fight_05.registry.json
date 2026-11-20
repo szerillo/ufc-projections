@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 5,
  "of": 12,
  "site_pair": [
@@ -201,7 +201,7 @@
   },
   {
    "id": "v17",
-   "text": "-106",
+   "text": "-104",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
@@ -210,7 +210,7 @@
     "book": "fanduel"
    },
    "desc": "Best US ML Amir Albazi",
-   "raw": -106
+   "raw": -104
   },
   {
    "id": "v18",
@@ -729,7 +729,7 @@
   },
   {
    "id": "v59",
-   "text": "+260",
+   "text": "+262",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -738,11 +738,11 @@
     "field": "cost"
    },
    "desc": "Market dec Alessandro Costa",
-   "raw": 260
+   "raw": 262
   },
   {
    "id": "v60",
-   "text": "27.8%",
+   "text": "27.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -750,11 +750,11 @@
     "label": "Alessandro Costa Points"
    },
    "desc": "Market dec implied Alessandro Costa",
-   "raw": 0.2777777777777778
+   "raw": 0.27624309392265195
   },
   {
    "id": "v61",
-   "text": "-0.2%",
+   "text": "-0.0%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -764,7 +764,7 @@
     ]
    },
    "desc": "Edge dec Alessandro Costa",
-   "raw": -0.0015448884137252428
+   "raw": -1.0204558599402613e-05
   },
   {
    "id": "v62",
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "-108",
+   "text": "-109",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Amir Albazi",
-   "raw": -108
+   "raw": -109
   },
   {
    "id": "v79",
-   "text": "4.8",
+   "text": "5.0",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.04799999999999999
+   "raw": 0.04999999999999999
   },
   {
    "id": "v80",
@@ -2458,76 +2458,6 @@
   },
   {
    "id": "v200",
-   "text": "-107",
-   "fmt": "ml",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 1,
-    "key": "market_odds",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag price",
-   "raw": -107
-  },
-  {
-   "id": "v201",
-   "text": "61.8",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 1,
-    "key": "model_shrunk",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win shrunk",
-   "raw": 61.8
-  },
-  {
-   "id": "v202",
-   "text": "70.7",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 1,
-    "key": "model_raw",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win raw",
-   "raw": 70.7
-  },
-  {
-   "id": "v203",
-   "text": "49.0",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 1,
-    "key": "market_implied",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag market",
-   "raw": 49.0
-  },
-  {
-   "id": "v204",
-   "text": "+12.7",
-   "fmt": "s1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 1,
-    "key": "edge_pts",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag gap",
-   "raw": 12.7
-  },
-  {
-   "id": "v205",
    "text": "+300",
    "fmt": "ml",
    "rule": "fight",
@@ -2540,7 +2470,7 @@
    "raw": 300
   },
   {
-   "id": "v206",
+   "id": "v201",
    "text": "+142",
    "fmt": "ml",
    "rule": "fight",
@@ -2553,7 +2483,7 @@
    "raw": 142
   },
   {
-   "id": "v207",
+   "id": "v202",
    "text": "-115",
    "fmt": "ml",
    "rule": "fight",
@@ -2566,7 +2496,7 @@
    "raw": -115
   },
   {
-   "id": "v208",
+   "id": "v203",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -2579,7 +2509,7 @@
    "raw": -455
   },
   {
-   "id": "v209",
+   "id": "v204",
    "text": "-500",
    "fmt": "ml",
    "rule": "fight",
@@ -2592,7 +2522,7 @@
    "raw": -500
   },
   {
-   "id": "v210",
+   "id": "v205",
    "text": "-263",
    "fmt": "ml",
    "rule": "fight",
@@ -2605,7 +2535,7 @@
    "raw": -263
   },
   {
-   "id": "v211",
+   "id": "v206",
    "text": "-417",
    "fmt": "ml",
    "rule": "fight",
@@ -2618,7 +2548,7 @@
    "raw": -417
   },
   {
-   "id": "v212",
+   "id": "v207",
    "text": "-426",
    "fmt": "ml",
    "rule": "fight",
@@ -2631,7 +2561,7 @@
    "raw": -426
   },
   {
-   "id": "v213",
+   "id": "v208",
    "text": "-400",
    "fmt": "ml",
    "rule": "fight",
@@ -2644,7 +2574,7 @@
    "raw": -400
   },
   {
-   "id": "v214",
+   "id": "v209",
    "text": "-135",
    "fmt": "ml",
    "rule": "fight",
@@ -2657,7 +2587,7 @@
    "raw": -135
   },
   {
-   "id": "v215",
+   "id": "v210",
    "text": "+177",
    "fmt": "ml",
    "rule": "fight",
@@ -2670,7 +2600,7 @@
    "raw": 177
   },
   {
-   "id": "v216",
+   "id": "v211",
    "text": "-294",
    "fmt": "ml",
    "rule": "fight",
@@ -2683,7 +2613,7 @@
    "raw": -294
   },
   {
-   "id": "v217",
+   "id": "v212",
    "text": "+350",
    "fmt": "ml",
    "rule": "fight",

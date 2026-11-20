@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 6,
  "of": 12,
  "site_pair": [
@@ -297,7 +297,7 @@
   },
   {
    "id": "v25",
-   "text": "+168",
+   "text": "+172",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
@@ -306,7 +306,7 @@
     "book": "fanduel"
    },
    "desc": "Best US ML Tallison Teixeira",
-   "raw": 168
+   "raw": 172
   },
   {
    "id": "v26",
@@ -834,7 +834,7 @@
   },
   {
    "id": "v67",
-   "text": "2.8",
+   "text": "2.7",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -845,7 +845,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.028000000000000025
+   "raw": 0.027000000000000024
   },
   {
    "id": "v68",
@@ -2103,76 +2103,6 @@
   },
   {
    "id": "v171",
-   "text": "+163",
-   "fmt": "ml",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 3,
-    "key": "market_odds",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag price",
-   "raw": 163
-  },
-  {
-   "id": "v172",
-   "text": "51.8",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 3,
-    "key": "model_shrunk",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win shrunk",
-   "raw": 51.8
-  },
-  {
-   "id": "v173",
-   "text": "55.9",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 3,
-    "key": "model_raw",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win raw",
-   "raw": 55.9
-  },
-  {
-   "id": "v174",
-   "text": "36.1",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 3,
-    "key": "market_implied",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag market",
-   "raw": 36.1
-  },
-  {
-   "id": "v175",
-   "text": "+15.6",
-   "fmt": "s1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 3,
-    "key": "edge_pts",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag gap",
-   "raw": 15.6
-  },
-  {
-   "id": "v176",
    "text": "-124",
    "fmt": "ml",
    "rule": "fight",
@@ -2185,7 +2115,7 @@
    "raw": -124
   },
   {
-   "id": "v177",
+   "id": "v172",
    "text": "+127",
    "fmt": "ml",
    "rule": "fight",
@@ -2198,7 +2128,7 @@
    "raw": 127
   },
   {
-   "id": "v178",
+   "id": "v173",
    "text": "+119",
    "fmt": "ml",
    "rule": "fight",
@@ -2211,7 +2141,7 @@
    "raw": 119
   },
   {
-   "id": "v179",
+   "id": "v174",
    "text": "-339",
    "fmt": "ml",
    "rule": "fight",
@@ -2224,7 +2154,7 @@
    "raw": -339
   },
   {
-   "id": "v180",
+   "id": "v175",
    "text": "-294",
    "fmt": "ml",
    "rule": "fight",
@@ -2237,7 +2167,7 @@
    "raw": -294
   },
   {
-   "id": "v181",
+   "id": "v176",
    "text": "-196",
    "fmt": "ml",
    "rule": "fight",
@@ -2250,7 +2180,7 @@
    "raw": -196
   },
   {
-   "id": "v182",
+   "id": "v177",
    "text": "-102",
    "fmt": "ml",
    "rule": "fight",
@@ -2263,7 +2193,7 @@
    "raw": -102
   },
   {
-   "id": "v183",
+   "id": "v178",
    "text": "+400",
    "fmt": "ml",
    "rule": "fight",
@@ -2276,7 +2206,7 @@
    "raw": 400
   },
   {
-   "id": "v184",
+   "id": "v179",
    "text": "-308",
    "fmt": "ml",
    "rule": "fight",
@@ -2289,7 +2219,7 @@
    "raw": -308
   },
   {
-   "id": "v185",
+   "id": "v180",
    "text": "-303",
    "fmt": "ml",
    "rule": "fight",
@@ -2302,7 +2232,7 @@
    "raw": -303
   },
   {
-   "id": "v186",
+   "id": "v181",
    "text": "-154",
    "fmt": "ml",
    "rule": "fight",

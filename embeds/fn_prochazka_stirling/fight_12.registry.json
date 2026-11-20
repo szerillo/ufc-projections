@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 12,
  "of": 12,
  "site_pair": [
@@ -176,7 +176,7 @@
   },
   {
    "id": "v15",
-   "text": "+141",
+   "text": "+142",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -185,11 +185,11 @@
     "field": "cost"
    },
    "desc": "Market ML Jiri Prochazka",
-   "raw": 141
+   "raw": 142
   },
   {
    "id": "v16",
-   "text": "41.5%",
+   "text": "41.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -197,7 +197,7 @@
     "label": "Jiri Prochazka"
    },
    "desc": "Market implied Jiri Prochazka",
-   "raw": 0.4149377593360996
+   "raw": 0.4132231404958678
   },
   {
    "id": "v17",
@@ -207,7 +207,7 @@
    "args": {
     "market": "moneyline",
     "label": "Jiri Prochazka",
-    "book": "betmgm"
+    "book": "draftkings"
    },
    "desc": "Best US ML Jiri Prochazka",
    "raw": 145
@@ -272,7 +272,7 @@
   },
   {
    "id": "v23",
-   "text": "-171",
+   "text": "-173",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -281,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Navajo Stirling",
-   "raw": -171
+   "raw": -173
   },
   {
    "id": "v24",
-   "text": "63.1%",
+   "text": "63.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -293,20 +293,20 @@
     "label": "Navajo Stirling"
    },
    "desc": "Market implied Navajo Stirling",
-   "raw": 0.6309963099630996
+   "raw": 0.6336996336996337
   },
   {
    "id": "v25",
-   "text": "-170",
+   "text": "-172",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
     "label": "Navajo Stirling",
-    "book": "draftkings"
+    "book": "fanduel"
    },
    "desc": "Best US ML Navajo Stirling",
-   "raw": -170
+   "raw": -172
   },
   {
    "id": "v26",
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "-169",
+   "text": "-174",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Navajo Stirling",
-   "raw": -169
+   "raw": -174
   },
   {
    "id": "v79",
-   "text": "4.3",
+   "text": "4.6",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.04299999999999998
+   "raw": 0.045999999999999985
   },
   {
    "id": "v80",

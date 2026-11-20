@@ -1,5 +1,5 @@
 {
- "markov_card": "ufc-fight-night-prochazka-vs-stirling",
+ "markov_card": null,
  "fight": 11,
  "of": 12,
  "site_pair": [
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "-133",
+   "text": "-134",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Kevin Vallejos",
-   "raw": -133
+   "raw": -134
   },
   {
    "id": "v79",
-   "text": "1.3",
+   "text": "1.4",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.013000000000000012
+   "raw": 0.014000000000000012
   },
   {
    "id": "v80",
@@ -2770,76 +2770,6 @@
   },
   {
    "id": "v226",
-   "text": "+108",
-   "fmt": "ml",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 2,
-    "key": "market_odds",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag price",
-   "raw": 108
-  },
-  {
-   "id": "v227",
-   "text": "54.2",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 2,
-    "key": "model_shrunk",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win shrunk",
-   "raw": 54.2
-  },
-  {
-   "id": "v228",
-   "text": "57.6",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 2,
-    "key": "model_raw",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov win raw",
-   "raw": 57.6
-  },
-  {
-   "id": "v229",
-   "text": "45.8",
-   "fmt": "n1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 2,
-    "key": "market_implied",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag market",
-   "raw": 45.8
-  },
-  {
-   "id": "v230",
-   "text": "+8.4",
-   "fmt": "s1",
-   "rule": "mk",
-   "args": {
-    "kind": "ml_flags",
-    "i": 2,
-    "key": "edge_pts",
-    "card": "ufc-fight-night-prochazka-vs-stirling"
-   },
-   "desc": "Markov flag gap",
-   "raw": 8.4
-  },
-  {
-   "id": "v231",
    "text": "+105",
    "fmt": "ml",
    "rule": "fight",
@@ -2852,7 +2782,7 @@
    "raw": 105
   },
   {
-   "id": "v232",
+   "id": "v227",
    "text": "-455",
    "fmt": "ml",
    "rule": "fight",
@@ -2865,7 +2795,7 @@
    "raw": -455
   },
   {
-   "id": "v233",
+   "id": "v228",
    "text": "+208",
    "fmt": "ml",
    "rule": "fight",
@@ -2878,7 +2808,7 @@
    "raw": 208
   },
   {
-   "id": "v234",
+   "id": "v229",
    "text": "-169",
    "fmt": "ml",
    "rule": "fight",
@@ -2891,7 +2821,7 @@
    "raw": -169
   },
   {
-   "id": "v235",
+   "id": "v230",
    "text": "-250",
    "fmt": "ml",
    "rule": "fight",
@@ -2904,7 +2834,7 @@
    "raw": -250
   },
   {
-   "id": "v236",
+   "id": "v231",
    "text": "-102",
    "fmt": "ml",
    "rule": "fight",
@@ -2917,7 +2847,7 @@
    "raw": -102
   },
   {
-   "id": "v237",
+   "id": "v232",
    "text": "-175",
    "fmt": "ml",
    "rule": "fight",
@@ -2930,7 +2860,7 @@
    "raw": -175
   },
   {
-   "id": "v238",
+   "id": "v233",
    "text": "+330",
    "fmt": "ml",
    "rule": "fight",
@@ -2943,7 +2873,7 @@
    "raw": 330
   },
   {
-   "id": "v239",
+   "id": "v234",
    "text": "-571",
    "fmt": "ml",
    "rule": "fight",
@@ -2956,7 +2886,7 @@
    "raw": -571
   },
   {
-   "id": "v240",
+   "id": "v235",
    "text": "-370",
    "fmt": "ml",
    "rule": "fight",
@@ -2969,7 +2899,7 @@
    "raw": -370
   },
   {
-   "id": "v241",
+   "id": "v236",
    "text": "-417",
    "fmt": "ml",
    "rule": "fight",
@@ -2982,7 +2912,7 @@
    "raw": -417
   },
   {
-   "id": "v242",
+   "id": "v237",
    "text": "-556",
    "fmt": "ml",
    "rule": "fight",
