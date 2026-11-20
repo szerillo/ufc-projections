@@ -892,13 +892,86 @@
     "best_fav": "-225 BetRivers"
    },
    "outliers": []
-  }
- ],
- "line_pending": [
+  },
   {
+   "publish": true,
+   "tab": "Prelims",
+   "row": 8,
+   "calc_row": 14,
+   "tag": "155",
    "dog": "Shoaib Yousaf",
    "fav": "John Mitchell",
-   "reason": "no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)"
+   "inputs": {
+    "dog_odds": 115,
+    "fav_odds": -125,
+    "open_dog": 0.6511785424004335,
+    "markov": 0.513,
+    "shift": 0.1086,
+    "tap": 0.78,
+    "junk": null,
+    "tip": null,
+    "ctx": "D",
+    "manual": null,
+    "women": false
+   },
+   "sheet": {
+    "listed": 0.45569620253164556,
+    "markov_shifted": 0.4044,
+    "q": 0.375033417721519,
+    "true_dog": 0.375033417721519,
+    "true_fav": 0.624966582278481,
+    "dog_edge": -0.09008286134824844,
+    "fav_edge": 0.06941102672292543,
+    "drift": -0.19548233986878794,
+    "flag": "DEBUTANT DOG - no dog bet (-27% 6/6y)",
+    "rec": "BET John Mitchell [late: fav moved 20% from open]"
+   },
+   "method": {
+    "dog": {
+     "dec": 0.503673407929967,
+     "ko": 0.41492214870858773,
+     "sub": 0.08140444336144531
+    },
+    "fav": {
+     "dec": 0.5667564072863687,
+     "ko": 0.3217636300319159,
+     "sub": 0.11147996268171545
+    }
+   },
+   "gtd": 0.543098174437613,
+   "gtd_listed": null,
+   "markov_dec": {
+    "dog": 0.44,
+    "fav": 0.5
+   },
+   "method_inputs": {
+    "ap": 0.44,
+    "aq": 0.5,
+    "ad": 0.665,
+    "ae": 0.318,
+    "ah": 0.769,
+    "ai": 0.19,
+    "al": 0.48,
+    "am": 0.298,
+    "an": 0.222,
+    "s": null,
+    "cx": 0.4941,
+    "cy": 0.4313,
+    "ko_dog": null,
+    "sub_dog": null,
+    "ko_fav": null,
+    "sub_fav": null
+   },
+   "price_source": {
+    "order": 12,
+    "dog": "Shoaib Yousaf",
+    "fav": "John Mitchell",
+    "cons_dog": "124",
+    "cons_fav": "-124",
+    "best_dog": "+115 FanDuel",
+    "best_fav": "-125 BetRivers"
+   },
+   "outliers": []
   }
  ],
  "manual_method": [
@@ -922,6 +995,16 @@
   "tolerance_pts": 9.999999999999999e-05,
   "fights": 11,
   "line_pending": 1,
-  "source_sha256": "86d0820d8d2c682d094bcd9f02f60e3edddfcddb3a1cd2cce9f97162dd06eeb9"
+  "source_sha256": "86d0820d8d2c682d094bcd9f02f60e3edddfcddb3a1cd2cce9f97162dd06eeb9",
+  "holds_lifted": [
+   {
+    "dog": "Shoaib Yousaf",
+    "fav": "John Mitchell",
+    "reason": "no such bout in data/fn_prochazka_stirling_odds.json (OPP-2)",
+    "rechecked_at": "2026-11-20T20:09:53Z",
+    "odds_updated_at": "2026-11-20T20:09:52Z",
+    "by": "scripts/recheck_holds.py"
+   }
+  ]
  }
 }

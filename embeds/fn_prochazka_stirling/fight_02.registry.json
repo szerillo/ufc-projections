@@ -176,7 +176,7 @@
   },
   {
    "id": "v15",
-   "text": "-250",
+   "text": "-259",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -185,11 +185,11 @@
     "field": "cost"
    },
    "desc": "Market ML Diyar Nurgozhay",
-   "raw": -250
+   "raw": -259
   },
   {
    "id": "v16",
-   "text": "71.4%",
+   "text": "72.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -197,7 +197,7 @@
     "label": "Diyar Nurgozhay"
    },
    "desc": "Market implied Diyar Nurgozhay",
-   "raw": 0.7142857142857143
+   "raw": 0.7214484679665738
   },
   {
    "id": "v17",
@@ -207,7 +207,7 @@
    "args": {
     "market": "moneyline",
     "label": "Diyar Nurgozhay",
-    "book": "draftkings"
+    "book": "betmgm"
    },
    "desc": "Best US ML Diyar Nurgozhay",
    "raw": -250
@@ -272,7 +272,7 @@
   },
   {
    "id": "v23",
-   "text": "+205",
+   "text": "+207",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -281,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Alik Lorenz",
-   "raw": 205
+   "raw": 207
   },
   {
    "id": "v24",
-   "text": "32.8%",
+   "text": "32.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -293,20 +293,20 @@
     "label": "Alik Lorenz"
    },
    "desc": "Market implied Alik Lorenz",
-   "raw": 0.32786885245901637
+   "raw": 0.3257328990228013
   },
   {
    "id": "v25",
-   "text": "+205",
+   "text": "+215",
    "fmt": "ml",
    "rule": "bp_best",
    "args": {
     "market": "moneyline",
     "label": "Alik Lorenz",
-    "book": "draftkings"
+    "book": "fanduel"
    },
    "desc": "Best US ML Alik Lorenz",
-   "raw": 205
+   "raw": 215
   },
   {
    "id": "v26",
@@ -346,7 +346,7 @@
   },
   {
    "id": "v29",
-   "text": "+500",
+   "text": "+490",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -355,11 +355,11 @@
     "field": "cost"
    },
    "desc": "Market GTD yes",
-   "raw": 500
+   "raw": 490
   },
   {
    "id": "v30",
-   "text": "16.7%",
+   "text": "16.9%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -367,11 +367,11 @@
     "label": "Yes"
    },
    "desc": "Market GTD implied",
-   "raw": 0.16666666666666666
+   "raw": 0.1694915254237288
   },
   {
    "id": "v31",
-   "text": "+2.1%",
+   "text": "+1.8%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -381,7 +381,7 @@
     ]
    },
    "desc": "Edge GTD vs market",
-   "raw": 0.021275661573096655
+   "raw": 0.018450802816034506
   },
   {
    "id": "v32",
@@ -409,7 +409,7 @@
   },
   {
    "id": "v34",
-   "text": "-900",
+   "text": "-847",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -418,11 +418,11 @@
     "field": "cost"
    },
    "desc": "Market ITD no",
-   "raw": -900
+   "raw": -847
   },
   {
    "id": "v35",
-   "text": "90.0%",
+   "text": "89.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -430,11 +430,11 @@
     "label": "No"
    },
    "desc": "Market ITD implied",
-   "raw": 0.9
+   "raw": 0.8944033790918691
   },
   {
    "id": "v36",
-   "text": "-8.8%",
+   "text": "-8.2%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -444,7 +444,7 @@
     ]
    },
    "desc": "Edge ITD vs market",
-   "raw": -0.08794232823976333
+   "raw": -0.08234570733163238
   },
   {
    "id": "v37",
@@ -472,7 +472,7 @@
   },
   {
    "id": "v39",
-   "text": "+800",
+   "text": "+774",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -481,11 +481,11 @@
     "field": "cost"
    },
    "desc": "Market dec Diyar Nurgozhay",
-   "raw": 800
+   "raw": 774
   },
   {
    "id": "v40",
-   "text": "11.1%",
+   "text": "11.4%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -493,11 +493,11 @@
     "label": "Diyar Nurgozhay Points"
    },
    "desc": "Market dec implied Diyar Nurgozhay",
-   "raw": 0.1111111111111111
+   "raw": 0.11441647597254005
   },
   {
    "id": "v41",
-   "text": "+6.5%",
+   "text": "+6.1%",
    "fmt": "spp",
    "rule": "edge",
    "args": {
@@ -507,7 +507,7 @@
     ]
    },
    "desc": "Edge dec Diyar Nurgozhay",
-   "raw": 0.06470579011138275
+   "raw": 0.0614004252499538
   },
   {
    "id": "v42",
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "+205",
+   "text": "+210",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Alik Lorenz",
-   "raw": 205
+   "raw": 210
   },
   {
    "id": "v79",
-   "text": "1.2",
+   "text": "0.9",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.0119999999999999
+   "raw": 0.009000000000000008
   },
   {
    "id": "v80",

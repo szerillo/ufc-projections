@@ -176,7 +176,7 @@
   },
   {
    "id": "v15",
-   "text": "-193",
+   "text": "-191",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -185,11 +185,11 @@
     "field": "cost"
    },
    "desc": "Market ML Dan Hooker",
-   "raw": -193
+   "raw": -191
   },
   {
    "id": "v16",
-   "text": "65.9%",
+   "text": "65.6%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -197,7 +197,7 @@
     "label": "Daniel Hooker"
    },
    "desc": "Market implied Dan Hooker",
-   "raw": 0.658703071672355
+   "raw": 0.6563573883161512
   },
   {
    "id": "v17",
@@ -272,7 +272,7 @@
   },
   {
    "id": "v23",
-   "text": "+154",
+   "text": "+156",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -281,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Brian Ortega",
-   "raw": 154
+   "raw": 156
   },
   {
    "id": "v24",
-   "text": "39.4%",
+   "text": "39.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -293,7 +293,7 @@
     "label": "Brian Ortega"
    },
    "desc": "Market implied Brian Ortega",
-   "raw": 0.3937007874015748
+   "raw": 0.390625
   },
   {
    "id": "v25",
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "-189",
+   "text": "-187",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Dan Hooker",
-   "raw": -189
+   "raw": -187
   },
   {
    "id": "v79",
-   "text": "3.1",
+   "text": "3.5",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.031000000000000028
+   "raw": 0.03500000000000003
   },
   {
    "id": "v80",

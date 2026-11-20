@@ -176,7 +176,7 @@
   },
   {
    "id": "v15",
-   "text": "-299",
+   "text": "-289",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -185,11 +185,11 @@
     "field": "cost"
    },
    "desc": "Market ML Aleksandre Topuria",
-   "raw": -299
+   "raw": -289
   },
   {
    "id": "v16",
-   "text": "74.9%",
+   "text": "74.3%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -197,7 +197,7 @@
     "label": "Aleksandre Topuria"
    },
    "desc": "Market implied Aleksandre Topuria",
-   "raw": 0.7493734335839599
+   "raw": 0.7429305912596401
   },
   {
    "id": "v17",
@@ -272,7 +272,7 @@
   },
   {
    "id": "v23",
-   "text": "+240",
+   "text": "+232",
    "fmt": "ml",
    "rule": "bp",
    "args": {
@@ -281,11 +281,11 @@
     "field": "cost"
    },
    "desc": "Market ML Santiago Luna",
-   "raw": 240
+   "raw": 232
   },
   {
    "id": "v24",
-   "text": "29.4%",
+   "text": "30.1%",
    "fmt": "pct1",
    "rule": "bp_imp",
    "args": {
@@ -293,7 +293,7 @@
     "label": "Santiago Luna"
    },
    "desc": "Market implied Santiago Luna",
-   "raw": 0.29411764705882354
+   "raw": 0.30120481927710846
   },
   {
    "id": "v25",
@@ -303,7 +303,7 @@
    "args": {
     "market": "moneyline",
     "label": "Santiago Luna",
-    "book": "draftkings"
+    "book": "betmgm"
    },
    "desc": "Best US ML Santiago Luna",
    "raw": 240
@@ -978,7 +978,7 @@
   },
   {
    "id": "v78",
-   "text": "-299",
+   "text": "-286",
    "fmt": "ml",
    "rule": "lh_open_ml",
    "args": {
@@ -991,11 +991,11 @@
     "at": "current"
    },
    "desc": "LH current ML Aleksandre Topuria",
-   "raw": -299
+   "raw": -286
   },
   {
    "id": "v79",
-   "text": "4.0",
+   "text": "3.8",
    "fmt": "pts",
    "rule": "lh_drift_abs",
    "args": {
@@ -1006,7 +1006,7 @@
     ]
    },
    "desc": "LH drift pts",
-   "raw": 0.039999999999999925
+   "raw": 0.03799999999999992
   },
   {
    "id": "v80",

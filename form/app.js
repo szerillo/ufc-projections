@@ -291,7 +291,9 @@ function buildUp(f) { // how the sheet's underdog number is built: listed + Mark
   if (J != null) add(`Markov pull: ${beta} × (${((J - shift) * 100).toFixed(1)}% − listed)${shift ? ", Markov shifted " + signed(-shift * 100) + " pts to the market's level" : ""}`, beta * ((J - shift) - G));
   if (s.w) add("Women's underdog", -0.04);
   if (kAdj) add(`Context code ${esc(kc)}`, kAdj);
-  if (T != null && K != null) { add(`Public fade, primary: ${p1} × overage of ${(Math.max(0, Math.max(T, K) - G) * 100).toFixed(1)} pts`, -p1 * Math.max(0, Math.max(T, K) - G)); add(`Public fade, secondary: ${p2} × overage of ${(Math.max(0, Math.min(T, K) - G) * 100).toFixed(1)} pts`, -p2 * Math.max(0, Math.min(T, K) - G)); }
+  // Nov 20: like the sheet's MAX/MIN, which skip a blank cell: with one public source both fade terms use that number
+  const pub = [T, K].filter((x) => x != null), one = pub.length === 1 ? " (one public source, used twice as on the sheet)" : "";
+  if (pub.length) { add(`Public fade, primary: ${p1} × overage of ${(Math.max(0, Math.max(...pub) - G) * 100).toFixed(1)} pts${one}`, -p1 * Math.max(0, Math.max(...pub) - G)); add(`Public fade, secondary: ${p2} × overage of ${(Math.max(0, Math.min(...pub) - G) * 100).toFixed(1)} pts${one}`, -p2 * Math.max(0, Math.min(...pub) - G)); }
   q = Math.min(0.98, Math.max(0.02, q));
   if (s.adj) { q += s.adj; steps.push(["Sean's manual adjust", s.adj, q]); }   // Nov 19: Calculator M, added after the clamp (L = Q + M)
   if (steps.length < 2) return `<div class="note">Sheet number for ${esc(dog.name)} equals the listed line: no Markov, public or context inputs entered yet.${kc === "D" ? " Context code D: debut underdog, no dog bet." : ""}</div>`;
