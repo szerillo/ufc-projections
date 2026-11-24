@@ -182,3 +182,12 @@ d2f26140b0787132a03b0110605ad0558922bcce7450563d07ded1d8281451cd  decompose_ll.p
 # spreads_v0 (run 2026-11-20 on szerillo/ufc-projections main 19dd47f0; landed 2026-11-24, files unchanged since the Nov 20 report)
 bc67b3d12f9607211e6bb3c78b8b8dfebfd628b7ed4d25a0bf48bcaa5aa90728  spreads_v0/spreads_v0.py
 1c79ae01a2bd3c061ef50d15b22320413e4dd177a9df810ea03149d3dd3fe098  spreads_v0/spreads_v0_out.txt
+
+# spreads v1 trace + tracker (registered 2026-11-24 before any graded card; trace run on ufc-projections main f4d3d5fd, UFCStats cache to 2026-11-07)
+1ca9d50b25a3f0a9006e7f148b5f519b9f360db1bd51f2c5e68ad5527a65e9ef  spreads_v1_trace/spreads_v1_trace.py
+ff27e8b88c00a3e0adc5bb49694f24d2483a3ac49cd920247d0d98be2f809110  spreads_v1_trace/spreads_v1_trace_out.txt
+c25fe5f478fff5ad6f261b8cde8597cc9af4d11dfcedf8f2082b8c3c0cbae159  spreads_tracker/spread_track.py
+00690200d2985ed863382b1c441e480f6c359429f05f568288fbd320baae590c  spreads_tracker/frozen_v1.json
+39d8773fc21607b59b302374062d85865b2f92314836e4076f29bbed2d83b7f8  spreads_tracker/PREREG_spreads_v1.md
+544b4577c69fba79a61daf2d6a240cc4df8603b0cb66afa01d7e26827866365d  spread_locks/qatar_v0_calibration.txt
+bf79cbd4777369a62a63724799530bd05ac5f74e9fdf9b975b970758c17bb710  spread_locks/qatar_results.json
