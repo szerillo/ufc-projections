@@ -1,0 +1,65 @@
+sample: 2414 bouts 2022-2026 with close + win result; years Counter({2025: 497, 2024: 494, 2022: 489, 2023: 485, 2026: 449})
+
+## Features on top of the close (logistic, y = a wins)
+round-win q (log5 of rates, logit): n=1771  coef +0.0554 (SE 0.0882, z +0.63)  close slope 1.143  walk-forward better 1/4  [2023:-0.0015 2024:-0.0016 2025:-0.0002 2026:+0.0002]
+age diff (years, a minus b): n=2365  coef -0.0171 (SE 0.0096, z -1.77)  close slope 1.112  walk-forward better 3/4  [2023:+0.0017 2024:-0.0036 2025:+0.0015 2026:+0.0008]
+age 35+ (a) minus (b): n=2365  coef -0.0503 (SE 0.0876, z -0.57)  close slope 1.154  walk-forward better 1/4  [2023:+0.0016 2024:-0.0036 2025:-0.0004 2026:-0.0004]
+layoff 365+ days (a) minus (b): n=1973  coef -0.0491 (SE 0.1136, z -0.43)  close slope 1.145  walk-forward better 2/4  [2023:+0.0004 2024:-0.0008 2025:-0.0001 2026:+0.0001]
+TD landed per round diff: n=1771  coef +0.0723 (SE 0.0929, z +0.78)  close slope 1.154  walk-forward better 1/4  [2023:-0.0000 2024:-0.0000 2025:+0.0008 2026:-0.0012]
+sig strike diff per round: n=1771  coef +0.0062 (SE 0.0066, z +0.94)  close slope 1.141  walk-forward better 3/4  [2023:+0.0002 2024:+0.0014 2025:-0.0027 2026:+0.0004]
+UFC debut (a) minus (b): n=2414  coef -0.0499 (SE 0.1187, z -0.42)  close slope 1.175  walk-forward better 1/4  [2023:-0.0031 2024:-0.0001 2025:+0.0001 2026:-0.0003]
+
+## Close calibration by segment (favorite side): priced vs won, z = (won - priced)/sd
+all                                n=2414  priced  66.4  won  68.9  z +2.73
+fav 50-60                          n= 725  priced  55.2  won  57.4  z +1.16
+fav 60-70                          n= 861  priced  64.9  won  66.0  z +0.67
+fav 70-80                          n= 545  priced  74.4  won  78.2  z +2.02
+fav 80-90                          n= 272  priced  83.6  won  89.3  z +2.57
+fav 90-100                         n=  11  priced  91.2  won 100.0  z +1.03
+women                              n= 376  priced  66.2  won  70.5  z +1.78
+men                                n=2038  priced  66.4  won  68.6  z +2.21
+5 rounds                           n= 244  priced  65.7  won  62.7  z -1.01
+Flyweight                          n= 168  priced  66.8  won  67.3  z +0.14
+Bantamweight                       n= 278  priced  66.8  won  70.5  z +1.33
+Featherweight                      n= 290  priced  66.3  won  64.5  z -0.68
+Lightweight                        n= 325  priced  65.9  won  70.5  z +1.79
+Welterweight                       n= 281  priced  66.1  won  69.8  z +1.33
+Middleweight                       n= 310  priced  67.0  won  70.3  z +1.28
+Light Heavyweight                  n= 170  priced  66.1  won  61.8  z -1.23
+Heavyweight                        n= 160  priced  65.9  won  72.5  z +1.79
+fav is 35+                         n= 300  priced  62.4  won  64.0  z +0.59
+dog is 35+                         n= 709  priced  68.1  won  71.1  z +1.75
+fav off 365+ layoff                n= 204  priced  63.3  won  65.7  z +0.71
+dog off 365+ layoff                n= 292  priced  69.2  won  72.9  z +1.42
+fav UFC debut                      n= 258  priced  67.4  won  69.8  z +0.85
+dog UFC debut                      n= 244  priced  69.1  won  73.8  z +1.63
+fav wrestler (TD/rd >= 1.0)        n= 327  priced  68.0  won  70.9  z +1.18
+dog wrestler (TD/rd >= 1.0)        n= 173  priced  64.3  won  59.0  z -1.49
+wrestler fav vs striker dog        n= 108  priced  67.6  won  69.4  z +0.41
+striker fav vs wrestler dog        n=  48  priced  63.1  won  60.4  z -0.39
+
+## Same, close de-vigged by the power method from the median price pair (multiplicative de-vig shades longshots up)
+all (power)                        n=2414  priced  67.5  won  69.0  z +1.60
+fav 50-60 (power)                  n= 665  priced  55.2  won  56.4  z +0.64
+fav 60-70 (power)                  n= 839  priced  65.0  won  65.8  z +0.47
+fav 70-80 (power)                  n= 563  priced  74.7  won  76.0  z +0.71
+fav 80-90 (power)                  n= 307  priced  84.4  won  88.9  z +2.19
+2022 (power)                       n= 489  priced  65.9  won  66.9  z +0.45
+2023 (power)                       n= 485  priced  66.4  won  68.5  z +0.97
+2024 (power)                       n= 494  priced  67.6  won  69.6  z +0.99
+2025 (power)                       n= 497  priced  68.8  won  68.8  z -0.00
+2026 (power)                       n= 449  priced  68.7  won  71.3  z +1.21
+slope on logit(power close): 1.077 (SE 0.057); 1.0 = calibrated
+women (power)                      n= 376  priced  67.3  won  70.5  z +1.33
+men (power)                        n=2038  priced  67.5  won  68.7  z +1.17
+5 rounds (power)                   n= 244  priced  66.8  won  62.7  z -1.40
+dog is 35+ (power)                 n= 710  priced  69.3  won  71.3  z +1.16
+dog UFC debut (power)              n= 244  priced  70.4  won  73.8  z +1.19
+dog off 365+ layoff (power)        n= 292  priced  70.5  won  72.9  z +0.94
+fav 80+ 2022 (power)               n=  54  priced  84.6  won  94.4  z +2.01
+fav 80+ 2023 (power)               n=  55  priced  85.6  won  87.3  z +0.36
+fav 80+ 2024 (power)               n=  69  priced  85.7  won  89.9  z +0.98
+fav 80+ 2025 (power)               n=  95  priced  85.1  won  88.4  z +0.92
+fav 80+ 2026 (power)               n=  74  priced  85.5  won  87.8  z +0.58
+log loss, same 2414 bouts: multiplicative close 0.5929  power close 0.5911
+power minus multiplicative log loss per bout: -0.00181 (SE 0.00063, z -2.87); better in years: 2022:-0.00214 2023:-0.00241 2024:-0.00248 2025:-0.00081 2026:-0.00117

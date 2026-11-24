@@ -1,0 +1,132 @@
+# A. Graded sample: 125 bouts, 10 cards (Sep 19 to Nov 21 2026); draws/NC excluded
+
+## A0. When each card was snapshotted (snapshot time minus card date)
+09-19 UFC 331: Van vs. Pantoja 2                    snapshot 09-24 00:45Z  (+120.8 h after 00:00Z card date)  graded 09-24 00:46
+09-26 UFC Fight Night: Rosas Jr. vs. Barcelos       snapshot 09-26 18:28Z  (+ 18.5 h after 00:00Z card date)  graded 09-27 13:24
+10-03 UFC 332: Silva vs. Wang                       snapshot 10-04 15:28Z  (+ 39.5 h after 00:00Z card date)  graded 10-04 15:29
+10-10 UFC Fight Night: Allen vs Duncan              snapshot 10-12 18:56Z  (+ 66.9 h after 00:00Z card date)  graded 10-12 18:56
+10-17 UFC Fight Night: Buckley vs Malott            snapshot 10-22 13:05Z  (+133.1 h after 00:00Z card date)  graded 10-22 13:06
+10-24 UFC 333: Volkanovski vs Evloev                snapshot 10-28 14:22Z  (+110.4 h after 00:00Z card date)  graded 10-28 14:22
+10-31 UFC Fight Night: Moicano vs Nolan             snapshot 11-04 13:05Z  (+109.1 h after 00:00Z card date)  graded 11-04 13:05
+11-07 UFC Fight Night: Cortes Acosta vs Walker      snapshot 11-09 00:43Z  (+ 48.7 h after 00:00Z card date)  graded 11-09 00:43
+11-14 Polymarket UFC 334: Gane vs Hokit             snapshot 11-17 22:15Z  (+ 94.3 h after 00:00Z card date)  graded 11-17 22:16
+11-21 UFC Fight Night: Prochazka vs Stirling | UFC  snapshot 11-24 04:22Z  (+ 76.4 h after 00:00Z card date)  graded 11-24 04:24
+
+Sheet listed G vs de-vig of its own D/I prices: mean |G - multiplicative| 0.00 pts; mean |G - power| 0.64 pts  (D/I are best prices, G is consensus, so neither is exact)
+Snapshot 'dog CLOSE' vs bot pre-start US close (n=78): mean diff +0.23 pts, mean |diff| 0.78; Brier snapshot-close 0.2213 vs bot close 0.2211
+
+## A1. Moneyline (dog win prob). Lower Brier / log loss is better.
+n=110 (rows with a snapshot close)
+| Prob | Brier | log loss | AUC | Brier minus close [90% CI, card bootstrap] |
+|---|---|---|---|---|
+| close (snapshot consensus) | 0.2217 | 0.6388 | 0.457 | - |
+| listed G (n=110) | 0.2216 | 0.6412 | 0.451 | -0.0001 [-0.0022, +0.0022] |
+| sheet model Q (n=110) | 0.2148 | 0.6220 | 0.498 | -0.0069 [-0.0092, -0.0048] |
+| Markov J raw (n=110) | 0.2480 | 0.6882 | 0.486 | +0.0263 [+0.0008, +0.0496] |
+| Markov J - 0.1086 (n=110) | 0.2252 | 0.6463 | 0.486 | +0.0035 [-0.0188, +0.0267] |
+| exchange fair (n=63) | 0.2125 | 0.6190 | 0.459 | -0.0014 [-0.0029, +0.0001] |
+Q vs independent bot close (n=78): -0.0062 [-0.0097, -0.0028]
+Q vs its own anchor G: -0.0068 [-0.0110, -0.0029]  (what the blend + public fade add on top of the listed price)
+mean Q - G -0.04 pts (sd 2.67); mean J - close +10.51; dogs won 28.2% vs close 33.6%
+best weight on Markov (Markov J) on top of close: +0.04 [90% -0.41, +0.53] (sheet uses 0.15)
+best weight on Markov (Jsh) on top of close: +0.38 [90% -0.31, +1.00] (sheet uses 0.15)
+
+Calibration, favorite side (prob of the favorite per source):
+| bucket | n | close | Q | Markov J | fav won |
+|---|---|---|---|---|---|
+| close fav 50-60 | 34 | 55.0 | 55.9 | 47.2 | 82.4 |
+| close fav 60-70 | 38 | 65.1 | 65.9 | 55.1 | 65.8 |
+| close fav 70-80 | 24 | 74.5 | 74.0 | 61.8 | 62.5 |
+| close fav 80-100 | 14 | 84.0 | 83.7 | 69.2 | 78.6 |
+| close flips (sheet 'dog' priced 50+) | 0 | | | | |
+
+## A2. Units at the prices we'd have bet (listed best price D/I; favorite bet to win 1u, dog risk 1u)
+BET                  n= 8  7-1  units +4.75  risked 22.82  ROI +20.8%
+BET 80%              n= 1  0-1  units -10.00  risked 10.00  ROI -100.0%
+BET fade-sharp-dog   n= 5  4-1  units +2.90  risked 7.14  ROI +40.6%
+lean                 n= 4  4-0  units +4.00  risked 6.59  ROI +60.7%
+all recs: 15-3, +1.65u on 46.55u risked; dog-side recs fired: 0
+sheet's own 'rec ML P/L' column sums to +5.64: it risks 1u on favorites (e.g. -135 win = +0.74), not the to-win unit
+Every side by sheet edge (Q vs listed best price):
+  fav edge < 0  n= 83  units -38.33  ROI  -15.5%
+  dog edge < 0  n= 58  units -24.22  ROI  -41.6%
+  fav edge 0-2  n= 12  units  +8.75  ROI  +32.5%
+  dog edge 0-2  n= 37  units +13.84  ROI  +37.4%
+  fav edge 2-5  n= 13  units  +8.75  ROI  +29.2%
+  dog edge 2-5  n= 15  units +11.78  ROI  +78.5%
+  fav edge 5-8  n=  2  units  +2.00  ROI  +68.7%
+Dog vetoes, shadow record if the dog had been bet at listed price (risk 1u):
+  DEBUTANT DOG                 n=  4 dogs won 2  shadow dog units +2.65
+  SHARPS ON DOG                n= 18 dogs won 4  shadow dog units -7.85
+  no dog bet                   n= 41 dogs won 11  shadow dog units +14.08
+  ok                           n= 30 dogs won 11  shadow dog units +1.80
+  public lean                  n= 11 dogs won 1  shadow dog units -8.24
+  public on dog                n=  6 dogs won 2  shadow dog units -1.04
+
+## A3. Duration: went the distance (GTD)
+n=125; actual GTD 39.2%; listed 41.0; close 40.9; sheet fight GTD 41.3; Markov P(dec) 46.2 (n=99)
+  GTD listed         n=110 Brier 0.2225 vs close 0.2219: diff +0.0007 [-0.0005, +0.0019]
+  sheet fight GTD    n=110 Brier 0.2222 vs close 0.2219: diff +0.0003 [-0.0036, +0.0045]
+  Markov P(dec)      n= 85 Brier 0.2448 vs close 0.2172: diff +0.0276 [-0.0024, +0.0652]
+  Markov gap to close vs result: [('Markov 8+ above', 33, np.float64(36.4), np.float64(36.6), np.float64(56.6)), ('within 8', 38, np.float64(55.3), np.float64(43.5), np.float64(44.3)), ('Markov 8+ below', 14, np.float64(50.0), np.float64(50.5), np.float64(35.3))]  (label, n, GTD %, close, Markov)
+  GTD/ITD plays: n=31, sheet P/L column +1.17u; by type: GTD n=11 +7.04u; GTD (5R rule) n=4 -1.13u; GTD (HW lean) n=9 -2.09u; ITD n=7 -2.65u
+
+## A4. Round totals
+  O1.5 listed  n=124  priced  61.5  hit  62.1  Brier 0.2037
+  O2.5 listed  n=123  priced  48.1  hit  48.8  Brier 0.2232
+  O2.5 model   n=123  priced  48.1  hit  48.8  Brier 0.2218
+  O4.5 listed  n= 13  priced  44.2  hit  38.5  Brier 0.2008
+  O2.5 model minus listed: -0.0014 [-0.0045, +0.0018] n=123
+
+## A5. Method (6-way: dog/fav x DEC/KO/SUB)
+  P model  n=37  multi-Brier 0.6988  log loss 1.4139
+  P mkt    n=37  multi-Brier 0.7143  log loss 1.4558
+  model minus market: -0.0155 [-0.0242, -0.0063]
+  DEC: actual 59.5%  model 40.6  market 38.0
+  KO: actual 29.7%  model 40.7  market 41.3
+  SUB: actual 10.8%  model 18.7  market 20.7
+
+## A6. Market-only props (PropSnap): which price source scores best, same bouts and markets
+  GTD      books n= 50 priced  40.9 hit  54.0 Brier 0.2183 | vs books: Kalshi +0.0039 (n=48), best-book -0.0056 (n=49), exch +0.0039 (n=48)
+  ML dog   books n= 50 priced  33.8 hit  26.0 Brier 0.2085 | vs books: Kalshi +0.0002 (n=49), Polymarket -0.1168 (n=48), best-book +0.0022 (n=49), exch -0.0534 (n=49)
+  O1.5     books n= 49 priced  61.9 hit  77.6 Brier 0.1648 | vs books: best-book -0.0115 (n=49)
+  O2.5     books n= 50 priced  48.1 hit  64.0 Brier 0.2126 | vs books: Kalshi +0.0012 (n=28), best-book -0.0102 (n=49), exch +0.0012 (n=28)
+  O4.5     books n=  7 priced  41.7 hit  28.6 Brier 0.1905 | vs books: 
+  dog DEC  books n= 50 priced  17.2 hit  16.0 Brier 0.1403 | vs books: Kalshi +0.0018 (n=49), best-book -0.0001 (n=50), exch +0.0018 (n=49)
+  dog ITD  books n= 50 priced  20.8 hit  12.0 Brier 0.1035 | vs books: best-book +0.0067 (n=48)
+  dog KO   books n= 50 priced  15.6 hit  12.0 Brier 0.1003 | vs books: Kalshi -0.0009 (n=49), best-book +0.0008 (n=50), exch -0.0009 (n=49)
+  dog SUB  books n= 50 priced   8.3 hit   2.0 Brier 0.0275 | vs books: Kalshi +0.0003 (n=49), best-book -0.0001 (n=50), exch +0.0003 (n=49)
+  fav DEC  books n= 49 priced  27.5 hit  42.9 Brier 0.2197 | vs books: Kalshi -0.0030 (n=47), best-book -0.0042 (n=48), exch -0.0030 (n=47)
+  fav ITD  books n= 48 priced  41.9 hit  29.2 Brier 0.2136 | vs books: best-book +0.0144 (n=47)
+  fav KO   books n= 49 priced  29.8 hit  26.5 Brier 0.2172 | vs books: Kalshi -0.0015 (n=47), best-book +0.0008 (n=48), exch -0.0015 (n=47)
+  fav SUB  books n= 49 priced  17.6 hit   6.1 Brier 0.0489 | vs books: Kalshi -0.0002 (n=47), best-book -0.0007 (n=48), exch -0.0002 (n=47)
+  graded share by card: Polymarket UFC 334: Gane vs Ho 515/557; UFC 333: Volkanovski vs Evloev 563/606; UFC Fight Night: Cortes Acosta 574/574; UFC Fight Night: Moicano vs No 445/445; UFC Fight Night: Prochazka vs  88/513
+  PropSnap holds market prices only: no model column for props, so model props cannot be graded from it.
+
+# B. Where the sheet / Markov is off on these 10 cards (n small: every row is noise unless |z| > 2.5)
+| segment | n | dog close | dog Q | dog Markov | dog won | z (won vs close) | Q minus close Brier | Markov-shifted minus close Brier |
+|---|---|---|---|---|---|---|---|---|
+| all | 110 | 33.6 | 33.2 | 44.1 | 28.2 | -1.23 | -0.0069 | +0.0035 |
+| women | 15 | 30.5 | 27.3 | 42.9 | 0.0 | -2.61 | -0.0178 | +0.0248 |
+| men | 95 | 34.1 | 34.1 | 44.3 | 32.6 | -0.30 | -0.0052 | +0.0002 |
+| 5 rounds | 12 | 39.9 | 39.6 | 50.5 | 16.7 | -1.66 | +0.0015 | +0.0591 |
+| flyweight-bantam (125-135 men) | 22 | 32.3 | 32.4 | 41.6 | 40.9 | +0.89 | -0.0032 | -0.0080 |
+| 145-170 | 39 | 36.6 | 36.4 | 48.2 | 28.2 | -1.11 | -0.0041 | +0.0088 |
+| 185-205 | 24 | 32.6 | 33.0 | 41.2 | 29.2 | -0.36 | -0.0109 | -0.0161 |
+| heavyweight | 10 | 31.8 | 31.6 | 42.1 | 40.0 | +0.57 | -0.0002 | +0.0236 |
+| close dog 40-50 | 34 | 45.0 | 44.1 | 52.8 | 17.6 | -3.21 | -0.0076 | -0.0146 |
+| close dog 25-40 | 52 | 32.9 | 32.4 | 43.3 | 36.5 | +0.56 | -0.0071 | +0.0224 |
+| close dog < 25 | 24 | 18.9 | 19.3 | 33.5 | 25.0 | +0.77 | -0.0055 | -0.0116 |
+| Markov 10+ above close | 58 | 31.7 | 32.4 | 51.0 | 27.6 | -0.68 | -0.0062 | +0.0142 |
+| Markov within 10 | 47 | 35.1 | 33.7 | 37.5 | 29.8 | -0.79 | -0.0073 | -0.0043 |
+| Markov 10+ below close | 5 | 41.4 | 37.5 | 26.2 | 20.0 | -0.98 | -0.0120 | -0.0470 |
+
+Short notice, layoff, age and style are not captured in Snapshots (K code holds D x4, one numeric, nothing else); these segments are tested on the 2022-2026 history in part C instead.
+
+## A1b. What earns Q's edge over its anchor G: each term added alone to G
+334 card shift used 0.1560; cards 1-8 no shift (v4.6 formula live from Nov 9; see B42 doc)
+  G + Markov term                          mean shift +1.20 pts (sd 1.92)  Brier vs G -0.0003 [-0.0038, +0.0029]
+  G + women -4                             mean shift -0.55 pts (sd 1.38)  Brier vs G -0.0031 [-0.0041, -0.0021]
+  G + public fade / context (residual)     mean shift -0.69 pts (sd 1.33)  Brier vs G -0.0032 [-0.0055, -0.0012]
+  G + all (= Q)                            mean shift -0.04 pts (sd 2.68)  Brier vs G -0.0068 [-0.0110, -0.0031]
+  women rows: 15, dogs won 0

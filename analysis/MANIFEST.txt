@@ -191,3 +191,13 @@ c25fe5f478fff5ad6f261b8cde8597cc9af4d11dfcedf8f2082b8c3c0cbae159  spreads_tracke
 39d8773fc21607b59b302374062d85865b2f92314836e4076f29bbed2d83b7f8  spreads_tracker/PREREG_spreads_v1.md
 544b4577c69fba79a61daf2d6a240cc4df8603b0cb66afa01d7e26827866365d  spread_locks/qatar_v0_calibration.txt
 bf79cbd4777369a62a63724799530bd05ac5f74e9fdf9b975b970758c17bb710  spread_locks/qatar_results.json
+
+# model review 2026-11-24 (read-only; staged 2026-11-24 ~05:30 ET, landed 13:3x ET unchanged). Inputs: sheet xlsx export 2026-11-24 09:28Z sha256 bee567ba756bffa9c034700474d4ac462bc9da104ca3ee80555bf8e5190cab74 (private, not committed); ufc-projections main f4d3d5fd, UFCStats cache to 2026-11-07. PREREG T0-T6 bars committed here before any T1-T6 scoring.
+cb435234b3479d1db9cfadb3c5b9f5d8ac0e62798dc1a545c7cf7f8378be91b1  model_review_2026-11-24/PREREG_model_review_2026-11-24.md
+c2cffe5d5bb7ddfe2ab95055d111e7b309c919a37bf422be75d95e27bc6c00ce  model_review_2026-11-24/build_close.py
+aa0cdcfaf7af802b2f8542a9f4d104639f822a2cdc78b8955d3ee5ec23e54781  model_review_2026-11-24/close.json
+0cb00410cbb4b6e497add17c2c324178fae2343d3912c497d84d4853317691ec  model_review_2026-11-24/hist.py
+bb7bacd442e6a14e76b9a8d935d0ef3df9be81daf6515c703cde4b69aa35ccf9  model_review_2026-11-24/hist_out.txt
+dda46e3b6016a7d4ce0f3fb406e3bed6ad2b1df60a50b9dbe6469ace3ed96f16  model_review_2026-11-24/load.py
+dfb2911b05613bb3affdfcba26a13548d523d61ff5a4d1469895c41a95f3465f  model_review_2026-11-24/score.py
+fe29e5be8ddb1db844ccb9dd1fcc29d05e2c94d8f4e0e213967c30211289cc54  model_review_2026-11-24/score_out.txt
