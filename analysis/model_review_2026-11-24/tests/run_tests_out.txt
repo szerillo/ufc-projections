@@ -1,0 +1,52 @@
+archive sample: 2414 bouts with close price pair + win result
+
+## T1 (b): bot pre-start US close set, best-price pair, power vs multiplicative de-vig
+bouts matched to a result: 158 of 221; log loss G_mult 0.56969  G_power 0.56822  diff -0.00147
+T1 bar part 2 (power at or below mult on (b)): MET
+(b) favorites 70%+ (power): n=76  won 81.6  priced mult 78.0 power 79.4  (part 3 is pooled with forward cards: PENDING)
+T1 parts (a) and (c): PENDING forward cards from 2026-12-05. T1 overall: PENDING.
+
+## T3: drifting-dog veto (risk 1u at the dog's close median price)
+2022: drifting n=161 won  45 ROI  -22.4% | other dogs n=328 won 117 ROI   -8.4%
+2023: drifting n=138 won  43 ROI   -6.3% | other dogs n=347 won 111 ROI  -18.8%
+2024: drifting n=237 won  68 ROI  -13.6% | other dogs n=257 won  82 ROI  -18.0%
+2025: drifting n=223 won  70 ROI   -1.8% | other dogs n=274 won  85 ROI  -16.7%
+2026: drifting n=121 won  31 ROI  -19.6% | other dogs n=328 won  98 ROI  -13.7%
+pooled: drifting n=880 won 257 ROI  -11.9% | other dogs n=1534 won 493 ROI  -15.0%
+drifting lower in 2/5 years, higher in 3/5, pooled lower: False -> T3 KEEP + shadow log (neither bar met)
+
+## T4: women term (y = favorite won ~ logit(power fav p) + women)
+2022: n=489 women n=81  women coef -0.300 (SE 0.260)
+2023: n=485 women n=85  women coef -0.067 (SE 0.263)
+2024: n=494 women n=80  women coef +0.041 (SE 0.274)
+2025: n=497 women n=74  women coef +0.543 (SE 0.308)
+2026: n=449 women n=56  women coef +0.562 (SE 0.358)
+walk-forward 2023: women bouts 85  fitted dog shift +6.26 pts (sheet uses -4)
+walk-forward 2024: women bouts 80  fitted dog shift +3.74 pts (sheet uses -4)
+walk-forward 2025: women bouts 74  fitted dog shift +2.16 pts (sheet uses -4)
+walk-forward 2026: women bouts 56  fitted dog shift -0.55 pts (sheet uses -4)
+favors favorites in 3/5 years, dogs in 2/5; size outside 2-6 in 4/4 -> T4 KEEP -4 (sign bar not met, drop bar not met); RE-FIT size flagged (outside 2-6 pts in 4 of 4 years)
+
+## T5: age difference on top of the power close
+2022: n=488 age coef -0.0150 (SE 0.0217)
+2023: n=484 age coef -0.0340 (SE 0.0216)
+2024: n=491 age coef +0.0196 (SE 0.0218)
+2025: n=488 age coef -0.0367 (SE 0.0207)
+2026: n=414 age coef -0.0169 (SE 0.0227)
+walk-forward 2023: log loss price-only 0.59140  + age 0.58967  age better
+walk-forward 2024: log loss price-only 0.58729  + age 0.59082  price-only better
+walk-forward 2025: log loss price-only 0.59505  + age 0.59355  age better
+walk-forward 2026: log loss price-only 0.58629  + age 0.58549  age better
+same sign 5/5: False; walk-forward better 3/4 -> T5 DROP
+
+## T6: 80%+ favorites at the close median price (archive, power close 0.80+), four sizings
+bouts: 347, record 310-37, mean price -729
+A to-win 1u (current)      bets 347  units  +61.83  risked 2529.40  ROI  +2.4%  worst loss -15.38  by year 2022:+29.68 2023:+4.35 2024:+16.66 2025:+10.45 2026:+0.69
+B risk cap 2u              bets 347  units  +22.11  risked  694.00  ROI  +3.2%  worst loss -2.00  by year 2022:+10.77 2023:+0.42 2024:+4.44 2025:+4.60 2026:+1.89
+C skip shorter than -500   bets  86  units  +28.18  risked  412.85  ROI  +6.8%  worst loss -5.00  by year 2022:+12.35 2023:+0.45 2024:+3.45 2025:+4.93 2026:+7.00
+D flat risk 1u             bets 347  units  +11.05  risked  347.00  ROI  +3.2%  worst loss -1.00  by year 2022:+5.38 2023:+0.21 2024:+2.22 2025:+2.30 2026:+0.94
+  price band -500 or longer: n=86 won 88.4% vs break-even 82.7%
+  price band -500 to -700: n=131 won 87.8% vs break-even 85.4%
+  price band -700 to -1000: n=91 won 91.2% vs break-even 89.2%
+  price band -1000 to -99999: n=39 won 92.3% vs break-even 93.4%
+sheet 80%+ recs on the 10 graded cards: Hasan -1000 lost, Jauregui -900 won -> to-win 1u (current) -9.00u; risk cap 2u -1.78u; skip shorter than -500 +0.00u; flat risk 1u -0.89u
