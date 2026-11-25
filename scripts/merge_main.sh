@@ -5,6 +5,7 @@
 # 3 an odds-file conflict (the only one allowed) goes to the copy with the later "updated_at"; if that is main's (the bot's),
 #   the embeds are rebuilt on it so served prices never roll back  4 full verifier on the merge result, 0 mismatches
 # 5 prints the one push command for Kirk's go. Exits non-zero on anything else.
+# Nov 25: step 4 runs for upcoming cards only (embed_gate.py); the card guard (guard_card_status.py) runs on the merge result.
 set -euo pipefail; export EMBED_PIPELINE=1; cd "$(dirname "$0")/.."
 BR="${BR:-go-live-334}"; SLUG="${SLUG:-ufc_334}"; ODDS="data/${SLUG}_odds.json"
 git fetch -q origin
@@ -30,13 +31,18 @@ if ! git merge --no-ff --no-edit -m "Merge $BR into main (scripts/merge_main.sh)
   git commit -q --no-edit
   echo "  odds file resolved to $( [ "$W" = ours ] && echo "MAIN's (bot) copy, the newer" || echo "the BRANCH copy, the newer")"
 fi
-if ! git diff --quiet "$BR" HEAD -- "$ODDS"; then
+KIND="$(python3 -I scripts/embed_gate.py --slug "$SLUG" --query)" || { echo "MERGE FAIL: embed gate cannot date $SLUG"; exit 1; }
+# Nov 25 (Sean): card guard on the merge result: no fought card left "upcoming", no already-fought or unofficial bout
+python3 -I scripts/guard_card_status.py --official-dir data/official --require-official || { echo "MERGE FAIL: card guard (scripts/guard_card_status.py)"; exit 1; }
+if [ "$KIND" = upcoming ] && ! git diff --quiet "$BR" HEAD -- "$ODDS"; then
   echo "  served odds file differs from the one the embeds were built on: rebuilding the embeds on it"
   python3 scripts/build_fight_embeds.py --slug "$SLUG" | tail -1   # Nov 19: --slug (it always rebuilt ufc_334)
   git add -A "embeds/${SLUG}"
   git commit -q -m "Rebuild ${SLUG} embeds on main's newer odds file (merge_main.sh)" || true
 fi
-python3 scripts/verify_fight_embeds.py --slug "$SLUG" | tee /tmp/_merge_verify.txt | tail -3
-grep -qE "^TOTAL: [0-9]+/[0-9]+ numbers verified; 0 mismatches/assertion failures" /tmp/_merge_verify.txt || { echo "MERGE FAIL: verifier not clean on the merge result"; exit 1; }
+# Nov 25 (Sean): the full verifier must be clean for UPCOMING cards only; a fought card's embeds drift once results
+# land, so it is skipped (scripts/embed_gate.py, tests in scripts/test_embed_gate.py)
+python3 -I scripts/embed_gate.py --slug "$SLUG" | tee /tmp/_merge_verify.txt | tail -4
+grep -qE "^EMBED GATE (PASS|SKIP)" /tmp/_merge_verify.txt || { echo "MERGE FAIL: embed gate (upcoming card with a verifier mismatch)"; exit 1; }
 python3 -I scripts/scan_public.py --base origin/main | tail -1
 echo "MERGE READY: local branch _merge at $(git rev-parse --short HEAD) (nothing pushed). On Kirk's go: git push origin _merge:main"

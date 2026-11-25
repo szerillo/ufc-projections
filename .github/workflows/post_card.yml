@@ -1,0 +1,51 @@
+name: Post-card rebuild
+
+# Sean approved Nov 25 2026: the day after a card, fought cards leave the upcoming slot.
+# Daily: any card dated before today that still says "upcoming" is flipped (events -> awaiting_results or final,
+# index.json upcoming -> events, manifest -> graded), then the card guard's G1 must pass. Results (winner, method,
+# round) come from a UFCStats pull passed with --results, or from the next full build; this job only fixes status.
+on:
+  schedule:
+    - cron: '41 15 * * *'   # 15:41 UTC daily (the morning after a US card, mid-afternoon after a Middle East card)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: post-card
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Self-tests
+        run: |
+          python3 -I scripts/test_guard_card_status.py
+          python3 -I scripts/test_embed_gate.py
+      - name: Flip fought cards out of upcoming
+        run: python3 -I scripts/post_card_rebuild.py
+      - name: Card guard (stale cards must be gone)
+        run: |
+          python3 -I scripts/guard_card_status.py --official-dir data/official | tee guard.txt
+          if grep -q "G1 stale card" guard.txt; then echo "stale card still upcoming after the rebuild"; exit 1; fi
+      - name: Commit if changed
+        run: |
+          set -e
+          git config user.name  'post-card-bot'
+          git config user.email 'post-card-bot@users.noreply.github.com'
+          git add data/manifest.json form/data/index.json form/data/events/
+          if git diff --cached --quiet; then echo "No fought card left in the upcoming slot."; else
+            git commit -m "post-card rebuild: fought cards leave upcoming ($(date -u +%Y-%m-%d))"
+            ok=0; for i in 1 2 3; do if git pull --rebase --quiet && git push; then ok=1; break; fi; sleep 5; done
+            [ "$ok" = 1 ] || { echo "push failed after 3 tries"; exit 1; }
+          fi
