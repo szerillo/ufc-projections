@@ -6,6 +6,7 @@
 set -euo pipefail; export EMBED_PIPELINE=1   # (no lock bless inside a pipeline run) ALLOW_STALE=1 overrides the sheet-export age block (step 2b)
 CARD="$1"; SLUG="$2"; EVENT="$3"; ST="$4"; REF="${5:-HEAD}"; cd "$(dirname "$0")/.."
 t0=$(date +%s); step(){ echo "== $(( $(date +%s) - t0 ))s  $*"; }
+step "0 card guard";       python3 -I scripts/guard_card_status.py --official-dir data/official --require-official   # Nov 25 (Sean): stale card / already-fought bout / bout not on data/official/<date>.txt blocks go-live
 step "1 odds feed";        python3 scripts/fetch_odds.py --card "$CARD" --out "data/${SLUG}_odds.json" 2>&1 | tail -1
 step "2 sheet export";     git fetch -q origin main && for p in "data/${SLUG}_projections.json" "data/pending/${SLUG}_projections.json"; do
                              git cat-file -e "origin/main:$p" 2>/dev/null && git show "origin/main:$p" > "$p" && echo "  $p from origin/main ($(python3 -c "import json;print(json.load(open('$p'))['published_at'])"))"; done

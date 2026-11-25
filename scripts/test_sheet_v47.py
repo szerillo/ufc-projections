@@ -26,6 +26,9 @@ import verify_projections as V  # noqa: E402
 ELDER = {"dog_odds": 102, "fav_odds": -110, "open_dog": 0.5439222685, "markov": 0.41, "shift": 0.1440028602,
          "tap": 0.32, "junk": 0.45, "tip": 0.6, "manual": None, "women": False}
 
+BIGFAV = {"open_dog": None, "markov": None, "shift": 0.1086, "tap": None, "junk": None, "tip": None, "manual": None,
+          "women": False, "ctx": None}
+
 FIXTURES = [
     # D-coded dog with sharps (tip 0.60) and fav edge 2.3 pts. The flag is the D flag, so the fade rule
     # does not fire and the late tag does not go on a lean. Old code: "BET ... (fade sharp dog) [late: ...]".
@@ -37,6 +40,17 @@ FIXTURES = [
      "dog": "Evan Elder", "fav": "Samuel Sanches", "inputs": {**ELDER, "ctx": None},
      "expected_flag": "SHARPS ON DOG - no dog bet",
      "expected_rec": "BET Samuel Sanches (fade sharp dog) [late: fav moved 6% from open]"},
+    # v4.9 80%+ price floor (model review T6 option C, 2026-11-24). Expected strings are FORMULA-DERIVED from the
+    # edited Main Card!N2 (IF(N(I2)>=FAV80_FLOOR,"BET ..","PASS .. (80%+ fav shorter than "&FAV80_FLOOR&")")).
+    {"name": "80%+ fav at exactly -500: still a bet",
+     "dog": "Dog Floor", "fav": "Fav Floor", "inputs": {**BIGFAV, "dog_odds": 400, "fav_odds": -500},
+     "expected_flag": "ok", "expected_rec": "BET Fav Floor (80%+ rule, shop)"},
+    {"name": "80%+ fav at -550: pass, no fall-through",
+     "dog": "Dog Short", "fav": "Fav Short", "inputs": {**BIGFAV, "dog_odds": 425, "fav_odds": -550},
+     "expected_flag": "ok", "expected_rec": "PASS Fav Short (80%+ fav shorter than -500)"},
+    {"name": "80%+ fav at -1000 with a late move: pass, no late tag",
+     "dog": "Dog Long", "fav": "Fav Long", "inputs": {**BIGFAV, "dog_odds": 650, "fav_odds": -1000, "open_dog": 0.20},
+     "expected_flag": "no dog bet (drifting)", "expected_rec": "PASS Fav Long (80%+ fav shorter than -500)"},
 ]
 
 

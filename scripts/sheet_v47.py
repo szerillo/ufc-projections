@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mirror of the UFC Model sheet's moneyline block (rules v4.7), for checking and publishing.
+"""Mirror of the UFC Model sheet's moneyline block (rules v4.7 + v4.9 80%+ price floor), for checking and publishing.
 
 The sheet stays the source of truth. This reproduces Calculator G (listed), H, Q, True %,
 edges, drift, flag (AA) and the tab N recommendation from the same inputs, so a pipeline
@@ -16,6 +16,10 @@ edges -1.3% / -2.4%, drift -6.3%, flag "no dog bet (drifting)"; Radtke/Thompson
 """
 
 B43, B44, BETA, WOMEN = 0.15, 0.075, 0.15, 0.04
+# v4.9 (2026-11-24, Sean approved model review T6 option C): the 80%+ favorite rule bets only when the favorite's
+# best price is FAV80_MAX or longer; shorter is a PASS with no fall-through. Must equal Calculator!B46 (named
+# range FAV80_FLOOR), which Main Card/Prelims N read as IF(N(I)>=FAV80_FLOOR, BET.., PASS..).
+FAV80_MAX = -500
 
 
 def implied(ml):
@@ -72,7 +76,8 @@ def row(f):
         flag = "ok"
     fav_nv = 1 - listed
     if fav_nv >= 0.80:
-        rec = f"BET {f['fav']} (80%+ rule, shop)"
+        rec = (f"BET {f['fav']} (80%+ rule, shop)" if float(f["fav_odds"]) >= FAV80_MAX
+               else f"PASS {f['fav']} (80%+ fav shorter than {FAV80_MAX})")
     elif dog_edge >= 0.08 and flag == "ok":
         rec = f"BET {f['dog']}"
     elif fav_edge >= 0.02 and flag.startswith("SHARPS"):
