@@ -1,0 +1,61 @@
+# Sample (definition B): 104 title losses by 89 champions; post-loss UFC record 304-307 (Feldman 261-283)
+post-loss fights 2022-2026: 185; with an archive close: 184 (unmatched 1)
+
+## Results vs market (close, power de-vig; units at the close median price, Sean's unit rule)
+| Segment | n | Won % | Implied % | Won minus implied [90% CI] | ROI backing ex-champ | ROI fading [90% CI] | Fade units |
+|---|---|---|---|---|---|---|---|
+| All post-loss fights 2022-26 | 184 | 48.9 | 47.7 | +1.3 [-4.2, +6.4] | -2.6% | -5.0% [-14.4, +4.3] | -17.81 |
+| First fight back | 24 | 58.3 | 52.3 | +6.1 [-9.2, +21.0] | +8.6% | -17.0% [-48.1, +11.2] | -5.79 |
+| Later fights | 160 | 47.5 | 47.0 | +0.5 [-5.4, +6.3] | -4.4% | -3.7% [-14.4, +6.7] | -12.02 |
+| Age under 35 | 84 | 58.3 | 54.6 | +3.7 [-1.9, +10.7] | +1.5% | -12.2% [-26.4, -0.1] | -15.32 |
+| Age 35+ | 100 | 41.0 | 41.8 | -0.8 [-8.7, +6.5] | -8.0% | -1.1% [-12.5, +9.6] | -2.49 |
+| Under 1 yr since loss | 31 | 51.6 | 54.6 | -3.0 [-19.7, +13.5] | -16.8% | +8.9% [-28.5, +49.6] | +3.76 |
+| 1-2 yrs since loss | 38 | 52.6 | 53.4 | -0.7 [-11.5, +9.7] | -2.1% | -3.4% [-26.6, +20.5] | -1.82 |
+| 2+ yrs since loss | 115 | 47.0 | 43.9 | +3.1 [-3.6, +10.3] | +2.1% | -7.5% [-20.0, +3.2] | -19.75 |
+| Ex-champ favorite | 83 | 67.5 | 65.5 | +2.0 [-6.3, +10.2] | -0.3% | -13.0% [-39.4, +13.4] | -10.89 |
+| Ex-champ underdog | 101 | 33.7 | 33.0 | +0.7 [-6.9, +8.0] | -7.4% | -2.5% [-14.0, +7.9] | -6.92 |
+| Opponent prospect (<=5 UFC fights) | 27 | 55.6 | 48.5 | +7.0 [-5.9, +19.3] | +5.4% | -6.8% [-31.9, +9.9] | -3.53 |
+| Opponent middle (6-7) | 27 | 37.0 | 41.4 | -4.4 [-20.3, +12.1] | -11.4% | +2.2% [-22.1, +23.4] | +1.28 |
+| Opponent vet (8+ UFC fights) | 130 | 50.0 | 48.8 | +1.2 [-5.0, +7.0] | -2.7% | -6.2% [-16.6, +5.6] | -15.56 |
+
+By year (fade ROI): 2022: n=32 +13.4%; 2023: n=37 +1.3%; 2024: n=43 -3.7%; 2025: n=36 -6.5%; 2026: n=36 -18.6%
+multiplicative close sensitivity: implied 47.8% vs power 47.7%; Brier of close 0.2125
+
+## Placebo (non-champs, same odds 5-pt bin x age bin x UFC-experience bin)
+matched 181 of 184 ex-champ fights (dropped 3: no cell / no dob); placebo pool sides 4622
+ex-champ won minus implied +1.6 pts; matched placebo +0.4 pts; champion effect +1.2 pts [90% CI -4.2, +6.6]
+
+## Mechanism
+open to close drift on the ex-champ side: mean -0.84 pts (n=184; positive = money toward the ex-champ); share drifting toward him 42%
+all non-ex-champ sides: mean drift +0.03 pts (n=4668)
+
+## Bars (overall fade)
+1 fade ROI > 0 with CI lower > 0: False (-5.0%, [-14.5, +4.2])
+2 positive every year with 5+ bets: False ({2022: 13.4, 2023: 1.3, 2024: -3.7, 2025: -6.5, 2026: -18.6})
+3 champion effect CI excludes 0 (fade side): False
+4 n >= 50: True (n=184)
+VERDICT overall: NOT BETTABLE
+
+Subsets passing bars 1-3 with n >= 30 (exploratory):
+  Later fights: n=160 fade -3.7% CI low -13.9; years [31, 3, -1, -12, -21]; champ eff CI high +6.4 -> fail
+  Age under 35: n=84 fade -12.2% CI low -26.5; years [-4, -1, -11, -1, -48]; champ eff CI high +12.0 -> fail
+  Age 35+: n=100 fade -1.1% CI low -12.3; years [24, 4, 0, -10, -9]; champ eff CI high +6.7 -> fail
+  Under 1 yr since loss: n=31 fade +8.9% CI low -29.6; years [-59, 29, 53, 12, 15]; champ eff CI high +17.8 -> fail
+  1-2 yrs since loss: n=38 fade -3.4% CI low -25.7; years [48, -28, 15, -59]; champ eff CI high +8.1 -> fail
+  2+ yrs since loss: n=115 fade -7.5% CI low -19.9; years [24, -27, -1, -14, -16]; champ eff CI high +9.8 -> fail
+  Ex-champ favorite: n=83 fade -13.0% CI low -38.9; years [0, 18, -43, -30, -11]; champ eff CI high +9.4 -> fail
+  Ex-champ underdog: n=101 fade -2.5% CI low -13.7; years [20, -9, 9, -1, -20]; champ eff CI high +9.5 -> fail
+  Opponent vet (8+ UFC fights): n=130 fade -6.2% CI low -17.3; years [23, 2, -7, -2, -30]; champ eff CI high +7.1 -> fail
+
+## Our model on ex-champ fights (sheet Snapshots, 10 graded cards): n=8
+  2026-09-19 Alexandre Pantoja: close 40.5  sheet Q 40.0  Markov 36.0  won 0
+  2026-10-03 Deiveson Figueiredo: close 15.8  sheet Q 16.2  Markov 28.0  won 0
+  2026-10-03 Rafael Dos Anjos: close 30.1  sheet Q 31.0  Markov 47.0  won 0
+  2026-10-24 Merab Dvalishvili: close 41.3  sheet Q 40.7  Markov 38.0  won 0
+  2026-10-24 Petr Yan: close 58.7  sheet Q 59.3  Markov 62.0  won 1
+  2026-11-14 Ciryl Gane: close 64.3  sheet Q 62.3  Markov 34.0  won 1
+  2026-11-14 Amanda Nunes: close 40.5  sheet Q 37.7  Markov 70.0  won 0
+  2026-11-21 Aljamain Sterling: close 46.3  sheet Q 45.9  Markov 54.2  won 0
+  Brier (n=8): close 0.1408  sheet Q 0.1387  Markov 0.2421  (descriptive; n too small to judge)
+
+wrote /home/claude/exchamps/out/exchamps_fights.csv (184 rows), /home/claude/exchamps/out/exchamps_chart.csv (13 rows)
