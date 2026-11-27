@@ -1,0 +1,594 @@
+{
+ "slug": "ufc-333-volkanovski-vs-evloev",
+ "title": "UFC 333: Volkanovski vs. Evloev",
+ "date": "2026-10-24",
+ "venue": "Abu Dhabi, Abu Dhabi, United Arab Emirates",
+ "engine_version": "V4.1b",
+ "partial": true,
+ "grading_stub": true,
+ "notes": [
+  "Grading stub: built from the ARCHIVE block and duration table of the weekly doc (project copy), which was published before the card.",
+  "Sides and market odds are the Fight Form pre-start close; flags were prose in the doc and are not included."
+ ],
+ "archive_tsv": "Alexander Volkanovski vs Movsar Evloev\t50.3\t50.3\t72.9\t20.9\t7.6\t7.4\t5.7\t3.4\t2.9\nPetr Yan vs Merab Dvalishvili\t62.3\t63.7\t76.9\t21.6\t6.3\t6.3\t4.9\t3.0\t2.7\nLone'er Kavanagh vs Ramazan Temirov\t46.5\t39.4\t42.6\t9.6\t29.6\t18.6\t9.2\t0.0\t0.0\nAlexander Volkov vs Rizvan Kuniev\t72.3\t74.8\t59.7\t11.4\t19.0\t13.7\t7.6\t0.0\t0.0\nAaron Pico vs Losene Keita\t51.8\t56.0\t40.0\t9.3\t31.0\t19.6\t9.4\t0.0\t0.0\nAzamat Murzakanov vs Dominick Reyes\t50.0\t49.9\t17.3\t6.4\t51.3\t22.9\t8.5\t0.0\t0.0\nNikita Krylov vs Abdul Rakhman Yakhyaev\t32.4\t17.2\t25.1\t7.5\t43.2\t22.2\t9.4\t0.0\t0.0\nAbus Magomedov vs Cam Rowston\t46.4\t39.7\t37.7\t9.1\t33.1\t19.9\t9.3\t0.0\t0.0\nGrant Dawson vs Nurullo Aliev\t61.2\t64.6\t59.2\t11.3\t19.4\t13.8\t7.5\t0.0\t0.0\nColby Thicknesse vs Asaf Chopurov\t40.5\t18.2\t68.5\t12.2\t14.4\t10.9\t6.2\t0.0\t0.0\nAbubakar Vagaev vs Jacob Malkoun\t41.0\t26.4\t67.3\t12.1\t15.1\t11.4\t6.3\t0.0\t0.0\nBolaji Oki vs Daniel Santos\t54.4\t60.2\t38.0\t9.1\t32.7\t19.7\t9.6\t0.0\t0.0\nKody Steele vs Noah Gugnon\t47.5\t41.6\t39.3\t9.3\t31.7\t19.6\t9.4\t0.0\t0.0\nIasmin Lucindo vs Nicolle Caliari\t62.0\t75.1\t76.1\t12.9\t10.6\t8.4\t4.9\t0.0\t0.0",
+ "fights": [
+  {
+   "order": 1,
+   "bout": "Alexander Volkanovski vs Movsar Evloev",
+   "weight_class": "Featherweight",
+   "rounds": 5,
+   "is_main_event": true,
+   "fighters": [
+    {
+     "name": "Alexander Volkanovski",
+     "side": "fav",
+     "market_odds": -110,
+     "model_win_shrunk": 50.3,
+     "model_win_raw": 50.3,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Movsar Evloev",
+     "side": "dog",
+     "market_odds": -110,
+     "model_win_shrunk": 49.7,
+     "model_win_raw": 49.7,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 72.9,
+    "market_gtd_devig": 66.0,
+    "gap": 6.9,
+    "round_dist": [
+     7.6,
+     7.4,
+     5.7,
+     3.4,
+     2.9
+    ],
+    "exp_minutes": 20.9
+   },
+   "result": null
+  },
+  {
+   "order": 2,
+   "bout": "Petr Yan vs Merab Dvalishvili",
+   "weight_class": "Bantamweight",
+   "rounds": 5,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Petr Yan",
+     "side": "fav",
+     "market_odds": -175,
+     "model_win_shrunk": 62.3,
+     "model_win_raw": 63.7,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Merab Dvalishvili",
+     "side": "dog",
+     "market_odds": 143,
+     "model_win_shrunk": 37.7,
+     "model_win_raw": 36.3,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 76.9,
+    "market_gtd_devig": 70.0,
+    "gap": 6.9,
+    "round_dist": [
+     6.3,
+     6.3,
+     4.9,
+     3.0,
+     2.7
+    ],
+    "exp_minutes": 21.6
+   },
+   "result": null
+  },
+  {
+   "order": 3,
+   "bout": "Lone'er Kavanagh vs Ramazan Temirov",
+   "weight_class": "Flyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Lone'er Kavanagh",
+     "side": "fav",
+     "market_odds": -114,
+     "model_win_shrunk": 46.5,
+     "model_win_raw": 39.4,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Ramazan Temirov",
+     "side": "dog",
+     "market_odds": -112,
+     "model_win_shrunk": 53.5,
+     "model_win_raw": 60.6,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 42.6,
+    "market_gtd_devig": 41.5,
+    "gap": 1.1,
+    "round_dist": [
+     29.6,
+     18.6,
+     9.2
+    ],
+    "exp_minutes": 9.6
+   },
+   "result": null
+  },
+  {
+   "order": 4,
+   "bout": "Alexander Volkov vs Rizvan Kuniev",
+   "weight_class": "Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Alexander Volkov",
+     "side": "fav",
+     "market_odds": -115,
+     "model_win_shrunk": 72.3,
+     "model_win_raw": 74.8,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Rizvan Kuniev",
+     "side": "dog",
+     "market_odds": -105,
+     "model_win_shrunk": 27.7,
+     "model_win_raw": 25.2,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 59.7,
+    "market_gtd_devig": 60.7,
+    "gap": -1.0,
+    "round_dist": [
+     19.0,
+     13.7,
+     7.6
+    ],
+    "exp_minutes": 11.4
+   },
+   "result": null
+  },
+  {
+   "order": 5,
+   "bout": "Aaron Pico vs Losene Keita",
+   "weight_class": "Featherweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Aaron Pico",
+     "side": "dog",
+     "market_odds": 100,
+     "model_win_shrunk": 51.8,
+     "model_win_raw": 56.0,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Losene Keita",
+     "side": "fav",
+     "market_odds": -122,
+     "model_win_shrunk": 48.2,
+     "model_win_raw": 44.0,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 40.0,
+    "market_gtd_devig": 36.5,
+    "gap": 3.5,
+    "round_dist": [
+     31.0,
+     19.6,
+     9.4
+    ],
+    "exp_minutes": 9.3
+   },
+   "result": null
+  },
+  {
+   "order": 6,
+   "bout": "Azamat Murzakanov vs Dominick Reyes",
+   "weight_class": "Light Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Azamat Murzakanov",
+     "side": "fav",
+     "market_odds": -238,
+     "model_win_shrunk": 50.0,
+     "model_win_raw": 49.9,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Dominick Reyes",
+     "side": "dog",
+     "market_odds": 186,
+     "model_win_shrunk": 50.0,
+     "model_win_raw": 50.1,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 17.3,
+    "market_gtd_devig": 24.5,
+    "gap": -7.2,
+    "round_dist": [
+     51.3,
+     22.9,
+     8.5
+    ],
+    "exp_minutes": 6.4
+   },
+   "result": null
+  },
+  {
+   "order": 7,
+   "bout": "Nikita Krylov vs Abdul Rakhman Yakhyaev",
+   "weight_class": "Light Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Nikita Krylov",
+     "side": "dog",
+     "market_odds": 350,
+     "model_win_shrunk": 32.4,
+     "model_win_raw": 17.2,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Abdul Rakhman Yakhyaev",
+     "side": "fav",
+     "market_odds": -455,
+     "model_win_shrunk": 67.6,
+     "model_win_raw": 82.8,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 25.1,
+    "market_gtd_devig": 13.9,
+    "gap": 11.2,
+    "round_dist": [
+     43.2,
+     22.2,
+     9.4
+    ],
+    "exp_minutes": 7.5
+   },
+   "result": null
+  },
+  {
+   "order": 8,
+   "bout": "Abus Magomedov vs Cam Rowston",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Abus Magomedov",
+     "side": "dog",
+     "market_odds": -105,
+     "model_win_shrunk": 46.4,
+     "model_win_raw": 39.7,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Cam Rowston",
+     "side": "fav",
+     "market_odds": -120,
+     "model_win_shrunk": 53.6,
+     "model_win_raw": 60.3,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 37.7,
+    "market_gtd_devig": 37.3,
+    "gap": 0.4,
+    "round_dist": [
+     33.1,
+     19.9,
+     9.3
+    ],
+    "exp_minutes": 9.1
+   },
+   "result": null
+  },
+  {
+   "order": 9,
+   "bout": "Grant Dawson vs Nurullo Aliev",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Grant Dawson",
+     "side": "fav",
+     "market_odds": -118,
+     "model_win_shrunk": 61.2,
+     "model_win_raw": 64.6,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Nurullo Aliev",
+     "side": "dog",
+     "market_odds": -108,
+     "model_win_shrunk": 38.8,
+     "model_win_raw": 35.4,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 59.2,
+    "market_gtd_devig": 62.7,
+    "gap": -3.5,
+    "round_dist": [
+     19.4,
+     13.8,
+     7.5
+    ],
+    "exp_minutes": 11.3
+   },
+   "result": null
+  },
+  {
+   "order": 10,
+   "bout": "Colby Thicknesse vs Asaf Chopurov",
+   "weight_class": "Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Colby Thicknesse",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 40.5,
+     "model_win_raw": 18.2,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Asaf Chopurov",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 59.5,
+     "model_win_raw": 81.8,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 68.5,
+    "market_gtd_devig": 35.3,
+    "gap": 33.2,
+    "round_dist": [
+     14.4,
+     10.9,
+     6.2
+    ],
+    "exp_minutes": 12.2
+   },
+   "result": null
+  },
+  {
+   "order": 11,
+   "bout": "Abubakar Vagaev vs Jacob Malkoun",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Abubakar Vagaev",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 41.0,
+     "model_win_raw": 26.4,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Jacob Malkoun",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 59.0,
+     "model_win_raw": 73.6,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 67.3,
+    "market_gtd_devig": 66.7,
+    "gap": 0.6,
+    "round_dist": [
+     15.1,
+     11.4,
+     6.3
+    ],
+    "exp_minutes": 12.1
+   },
+   "result": null
+  },
+  {
+   "order": 12,
+   "bout": "Bolaji Oki vs Daniel Santos",
+   "weight_class": "Featherweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Bolaji Oki",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 54.4,
+     "model_win_raw": 60.2,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Daniel Santos",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 45.6,
+     "model_win_raw": 39.8,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 38.0,
+    "market_gtd_devig": 36.5,
+    "gap": 1.5,
+    "round_dist": [
+     32.7,
+     19.7,
+     9.6
+    ],
+    "exp_minutes": 9.1
+   },
+   "result": null
+  },
+  {
+   "order": 13,
+   "bout": "Kody Steele vs Noah Gugnon",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Kody Steele",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 47.5,
+     "model_win_raw": 41.6,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Noah Gugnon",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 52.5,
+     "model_win_raw": 58.4,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 39.3,
+    "market_gtd_devig": 34.0,
+    "gap": 5.3,
+    "round_dist": [
+     31.7,
+     19.6,
+     9.4
+    ],
+    "exp_minutes": 9.3
+   },
+   "result": null
+  },
+  {
+   "order": 14,
+   "bout": "Iasmin Lucindo vs Nicolle Caliari",
+   "weight_class": "Women's Strawweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Iasmin Lucindo",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 62.0,
+     "model_win_raw": 75.1,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Nicolle Caliari",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 38.0,
+     "model_win_raw": 24.9,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 76.1,
+    "market_gtd_devig": 66.7,
+    "gap": 9.4,
+    "round_dist": [
+     10.6,
+     8.4,
+     4.9
+    ],
+    "exp_minutes": 12.9
+   },
+   "result": null
+  }
+ ],
+ "duration_flags": [],
+ "ml_flags": [],
+ "prop_notes": [],
+ "vetoes": [
+  {
+   "fight_order": 5,
+   "side": "Losene Keita",
+   "market_odds": 115,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  },
+  {
+   "fight_order": 10,
+   "side": "Colby Thicknesse",
+   "market_odds": 410,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  },
+  {
+   "fight_order": 13,
+   "side": "Noah Gugnon",
+   "market_odds": 130,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  }
+ ],
+ "source_doc": "project: Markov__UFC_333_Volkanovski_vs_Evloev_V41b_Output.md",
+ "grading_window_index": 6
+}

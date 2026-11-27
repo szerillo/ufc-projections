@@ -1,0 +1,494 @@
+{
+ "slug": "ufc-331-van-vs-pantoja-2",
+ "title": "UFC 331: Van vs. Pantoja 2",
+ "date": "2026-09-19",
+ "venue": "Los Angeles, California, USA",
+ "engine_version": "V4.1",
+ "partial": true,
+ "grading_stub": true,
+ "notes": [
+  "Grading stub: built from the ARCHIVE block and duration table of the weekly doc (project copy), which was published before the card.",
+  "Sides and market odds are the Fight Form pre-start close; flags were prose in the doc and are not included. V4.1 card: no raw column."
+ ],
+ "archive_tsv": "Joshua Van vs Alexandre Pantoja\t64.1\t38.9\t15.1\t21.3\t17.6\t11.1\t6.1\t4.9\nArman Tsarukyan vs Mauricio Ruffy\t64.6\t49.9\t17.1\t16.2\t14.2\t9.7\t5.5\t4.5\nPatricio Pitbull vs Dooho Choi\t39.0\t41.3\t9.5\t30.5\t19.1\t9.1\t0.0\t0.0\nGable Steveson vs Sean Sharaf\t60.1\t21.6\t7.1\t46.8\t22.6\t9.0\t0.0\t0.0\nAlonzo Menifield vs Iwo Baraniewski\t37.8\t24.8\t7.5\t43.7\t22.3\t9.2\t0.0\t0.0\nMarlon Vera vs Charles Jourdain\t39.1\t52.6\t10.7\t23.2\t15.9\t8.3\t0.0\t0.0\nTai Tuivasa vs Robelis Despaigne\t39.8\t25.8\t7.6\t42.9\t21.9\t9.4\t0.0\t0.0\nMichael Aswell Jr vs JooSang Yoo\t50.7\t36.7\t9.0\t33.6\t20.1\t9.5\t0.0\t0.0\nRyan Gandra vs Ozzy Diaz\t62.0\t30.9\t8.3\t38.3\t21.3\t9.5\t0.0\t0.0\nEdmen Shahbazyan vs Brunno Ferreira\t69.7\t29.3\t8.1\t39.7\t21.4\t9.7\t0.0\t0.0\nCasey O'Neill vs Eduarda Moura\t60.2\t68.0\t12.2\t14.6\t11.2\t6.2\t0.0\t0.0\nGiga Chikadze vs Joanderson Brito\t24.1\t66.3\t12.0\t15.6\t11.6\t6.4\t0.0\t0.0",
+ "fights": [
+  {
+   "order": 1,
+   "bout": "Joshua Van vs Alexandre Pantoja",
+   "weight_class": "Flyweight",
+   "rounds": 5,
+   "is_main_event": true,
+   "fighters": [
+    {
+     "name": "Joshua Van",
+     "side": "fav",
+     "market_odds": -164,
+     "model_win_shrunk": 64.1,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Alexandre Pantoja",
+     "side": "dog",
+     "market_odds": 138,
+     "model_win_shrunk": 35.9,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 38.9,
+    "market_gtd_devig": 34.0,
+    "gap": 4.9,
+    "round_dist": [
+     21.3,
+     17.6,
+     11.1,
+     6.1,
+     4.9
+    ],
+    "exp_minutes": 15.1
+   },
+   "result": null
+  },
+  {
+   "order": 2,
+   "bout": "Arman Tsarukyan vs Mauricio Ruffy",
+   "weight_class": "Lightweight",
+   "rounds": 5,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Arman Tsarukyan",
+     "side": "fav",
+     "market_odds": -312,
+     "model_win_shrunk": 64.6,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Mauricio Ruffy",
+     "side": "dog",
+     "market_odds": 248,
+     "model_win_shrunk": 35.4,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 49.9,
+    "market_gtd_devig": 31.2,
+    "gap": 18.7,
+    "round_dist": [
+     16.2,
+     14.2,
+     9.7,
+     5.5,
+     4.5
+    ],
+    "exp_minutes": 17.1
+   },
+   "result": null
+  },
+  {
+   "order": 3,
+   "bout": "Patricio Pitbull vs Dooho Choi",
+   "weight_class": "Featherweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Patricio Pitbull",
+     "side": "dog",
+     "market_odds": 210,
+     "model_win_shrunk": 39.0,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Dooho Choi",
+     "side": "fav",
+     "market_odds": -256,
+     "model_win_shrunk": 61.0,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 41.3,
+    "market_gtd_devig": 45.0,
+    "gap": -3.7,
+    "round_dist": [
+     30.5,
+     19.1,
+     9.1
+    ],
+    "exp_minutes": 9.5
+   },
+   "result": null
+  },
+  {
+   "order": 4,
+   "bout": "Gable Steveson vs Sean Sharaf",
+   "weight_class": "Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Gable Steveson",
+     "side": "fav",
+     "market_odds": -1538,
+     "model_win_shrunk": 60.1,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Sean Sharaf",
+     "side": "dog",
+     "market_odds": 850,
+     "model_win_shrunk": 39.9,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 21.6,
+    "market_gtd_devig": 9.9,
+    "gap": 11.7,
+    "round_dist": [
+     46.8,
+     22.6,
+     9.0
+    ],
+    "exp_minutes": 7.1
+   },
+   "result": null
+  },
+  {
+   "order": 5,
+   "bout": "Alonzo Menifield vs Iwo Baraniewski",
+   "weight_class": "Light Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Alonzo Menifield",
+     "side": "dog",
+     "market_odds": 208,
+     "model_win_shrunk": 37.8,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Iwo Baraniewski",
+     "side": "fav",
+     "market_odds": -256,
+     "model_win_shrunk": 62.2,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 24.8,
+    "market_gtd_devig": 19.6,
+    "gap": 5.2,
+    "round_dist": [
+     43.7,
+     22.3,
+     9.2
+    ],
+    "exp_minutes": 7.5
+   },
+   "result": null
+  },
+  {
+   "order": 6,
+   "bout": "Marlon Vera vs Charles Jourdain",
+   "weight_class": "Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Marlon Vera",
+     "side": "dog",
+     "market_odds": 167,
+     "model_win_shrunk": 39.1,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Charles Jourdain",
+     "side": "fav",
+     "market_odds": -202,
+     "model_win_shrunk": 60.9,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 52.6,
+    "market_gtd_devig": 63.5,
+    "gap": -10.9,
+    "round_dist": [
+     23.2,
+     15.9,
+     8.3
+    ],
+    "exp_minutes": 10.7
+   },
+   "result": null
+  },
+  {
+   "order": 7,
+   "bout": "Tai Tuivasa vs Robelis Despaigne",
+   "weight_class": "Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Tai Tuivasa",
+     "side": "dog",
+     "market_odds": 355,
+     "model_win_shrunk": 39.8,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Robelis Despaigne",
+     "side": "fav",
+     "market_odds": -455,
+     "model_win_shrunk": 60.2,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 25.8,
+    "market_gtd_devig": 14.8,
+    "gap": 11.0,
+    "round_dist": [
+     42.9,
+     21.9,
+     9.4
+    ],
+    "exp_minutes": 7.6
+   },
+   "result": null
+  },
+  {
+   "order": 8,
+   "bout": "Michael Aswell Jr vs JooSang Yoo",
+   "weight_class": "Featherweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Michael Aswell Jr.",
+     "side": "dog",
+     "market_odds": 142,
+     "model_win_shrunk": 50.7,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "JooSang Yoo",
+     "side": "fav",
+     "market_odds": -169,
+     "model_win_shrunk": 49.3,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 36.7,
+    "market_gtd_devig": 60.0,
+    "gap": -23.3,
+    "round_dist": [
+     33.6,
+     20.1,
+     9.5
+    ],
+    "exp_minutes": 9.0
+   },
+   "result": null
+  },
+  {
+   "order": 9,
+   "bout": "Ryan Gandra vs Ozzy Diaz",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Ryan Gandra",
+     "side": "fav",
+     "market_odds": -526,
+     "model_win_shrunk": 62.0,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Ozzy Diaz",
+     "side": "dog",
+     "market_odds": 390,
+     "model_win_shrunk": 38.0,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 30.9,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     38.3,
+     21.3,
+     9.5
+    ],
+    "exp_minutes": 8.3
+   },
+   "result": null
+  },
+  {
+   "order": 10,
+   "bout": "Edmen Shahbazyan vs Brunno Ferreira",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Edmen Shahbazyan",
+     "side": "fav",
+     "market_odds": -187,
+     "model_win_shrunk": 69.7,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Brunno Ferreira",
+     "side": "dog",
+     "market_odds": 155,
+     "model_win_shrunk": 30.3,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 29.3,
+    "market_gtd_devig": 29.2,
+    "gap": 0.1,
+    "round_dist": [
+     39.7,
+     21.4,
+     9.7
+    ],
+    "exp_minutes": 8.1
+   },
+   "result": null
+  },
+  {
+   "order": 11,
+   "bout": "Casey O'Neill vs Eduarda Moura",
+   "weight_class": "Women's Flyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Casey O'Neill",
+     "side": "fav",
+     "market_odds": -233,
+     "model_win_shrunk": 60.2,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Eduarda Moura",
+     "side": "dog",
+     "market_odds": 190,
+     "model_win_shrunk": 39.8,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 68.0,
+    "market_gtd_devig": 61.8,
+    "gap": 6.2,
+    "round_dist": [
+     14.6,
+     11.2,
+     6.2
+    ],
+    "exp_minutes": 12.2
+   },
+   "result": null
+  },
+  {
+   "order": 12,
+   "bout": "Giga Chikadze vs Joanderson Brito",
+   "weight_class": "Featherweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Giga Chikadze",
+     "side": "dog",
+     "market_odds": 292,
+     "model_win_shrunk": 24.1,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Joanderson Brito",
+     "side": "fav",
+     "market_odds": -370,
+     "model_win_shrunk": 75.9,
+     "model_win_raw": null,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 66.3,
+    "market_gtd_devig": 34.0,
+    "gap": 32.3,
+    "round_dist": [
+     15.6,
+     11.6,
+     6.4
+    ],
+    "exp_minutes": 12.0
+   },
+   "result": null
+  }
+ ],
+ "duration_flags": [],
+ "ml_flags": [],
+ "prop_notes": [],
+ "vetoes": [],
+ "source_doc": "project: Markov__UFC_331_Van_vs_Pantoja_2_V41_Output.md",
+ "grading_window_index": 1
+}

@@ -1,0 +1,461 @@
+{
+ "slug": "ufc-fight-night-rosas-jr-vs-barcelos",
+ "title": "UFC Fight Night: Rosas Jr. vs. Barcelos",
+ "date": "2026-09-26",
+ "venue": "Las Vegas, Nevada, USA",
+ "engine_version": "V4.1b",
+ "partial": true,
+ "grading_stub": true,
+ "notes": [
+  "Grading stub: built from the ARCHIVE block and duration table of the weekly doc (project copy), which was published before the card.",
+  "Sides and market odds are the Fight Form pre-start close; flags were prose in the doc and are not included."
+ ],
+ "archive_tsv": "Raul Rosas Jr. vs Raoni Barcelos\t36.6\t35.0\t69.0\t20.3\t9.0\t8.5\t6.4\t3.8\t3.3\nRodolfo Vieira vs Robert Bryczek\t59.7\t68.6\t42.2\t9.6\t30.0\t18.5\t9.3\t0.0\t0.0\nMahammadali Osmanli vs Ilimbek Akylbek Uulu\t55.7\t68.9\t43.9\t9.7\t28.7\t18.5\t9.0\t0.0\t0.0\nBrady Hiestand vs Rinya Nakamura\t39.6\t19.7\t54.3\t10.8\t22.0\t15.5\t8.2\t0.0\t0.0\nRodolfo Bellato vs Christian Edwards\t54.8\t66.2\t27.1\t7.8\t41.6\t22.0\t9.3\t0.0\t0.0\nElves Brener vs Josiah Harrell\t58.4\t78.0\t39.0\t9.2\t31.9\t19.5\t9.5\t0.0\t0.0\nMontel Jackson vs Ricky Simon\t62.1\t63.5\t58.4\t11.2\t20.0\t14.0\t7.6\t0.0\t0.0\nNorma Dumont vs Ailin Perez\t45.5\t45.0\t63.7\t11.8\t16.9\t12.4\t7.1\t0.0\t0.0\nJohn Castaneda vs Alatengheili\t70.7\t76.2\t73.0\t12.6\t12.1\t9.5\t5.4\t0.0\t0.0\nSedriques Dumas vs Luis Hernandez\t37.9\t10.1\t28.0\t7.9\t41.0\t21.7\t9.3\t0.0\t0.0\nVanessa Demopoulos vs Yazmin Jauregui\t29.2\t12.9\t69.7\t12.3\t13.9\t10.4\t6.0\t0.0\t0.0",
+ "fights": [
+  {
+   "order": 1,
+   "bout": "Raul Rosas Jr. vs Raoni Barcelos",
+   "weight_class": "Bantamweight",
+   "rounds": 5,
+   "is_main_event": true,
+   "fighters": [
+    {
+     "name": "Raul Rosas Jr.",
+     "side": "fav",
+     "market_odds": -141,
+     "model_win_shrunk": 36.6,
+     "model_win_raw": 35.0,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Raoni Barcelos",
+     "side": "dog",
+     "market_odds": 115,
+     "model_win_shrunk": 63.4,
+     "model_win_raw": 65.0,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 69.0,
+    "market_gtd_devig": 45.0,
+    "gap": 24.0,
+    "round_dist": [
+     9.0,
+     8.5,
+     6.4,
+     3.8,
+     3.3
+    ],
+    "exp_minutes": 20.3
+   },
+   "result": null
+  },
+  {
+   "order": 2,
+   "bout": "Rodolfo Vieira vs Robert Bryczek",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Rodolfo Vieira",
+     "side": "fav",
+     "market_odds": -169,
+     "model_win_shrunk": 59.7,
+     "model_win_raw": 68.6,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Robert Bryczek",
+     "side": "dog",
+     "market_odds": 142,
+     "model_win_shrunk": 40.3,
+     "model_win_raw": 31.4,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 42.2,
+    "market_gtd_devig": 33.3,
+    "gap": 8.9,
+    "round_dist": [
+     30.0,
+     18.5,
+     9.3
+    ],
+    "exp_minutes": 9.6
+   },
+   "result": null
+  },
+  {
+   "order": 3,
+   "bout": "Mahammadali Osmanli vs Ilimbek Akylbek Uulu",
+   "weight_class": "Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Mahammadali Osmanli",
+     "side": "fav",
+     "market_odds": -312,
+     "model_win_shrunk": 55.7,
+     "model_win_raw": 68.9,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Ilimbek Akylbek",
+     "side": "dog",
+     "market_odds": 250,
+     "model_win_shrunk": 44.3,
+     "model_win_raw": 31.1,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 43.9,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     28.7,
+     18.5,
+     9.0
+    ],
+    "exp_minutes": 9.7
+   },
+   "result": null
+  },
+  {
+   "order": 5,
+   "bout": "Brady Hiestand vs Rinya Nakamura",
+   "weight_class": "Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Brady Hiestand",
+     "side": "dog",
+     "market_odds": 300,
+     "model_win_shrunk": 39.6,
+     "model_win_raw": 19.7,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Rinya Nakamura",
+     "side": "fav",
+     "market_odds": -370,
+     "model_win_shrunk": 60.4,
+     "model_win_raw": 80.3,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 54.3,
+    "market_gtd_devig": 43.1,
+    "gap": 11.2,
+    "round_dist": [
+     22.0,
+     15.5,
+     8.2
+    ],
+    "exp_minutes": 10.8
+   },
+   "result": null
+  },
+  {
+   "order": 6,
+   "bout": "Rodolfo Bellato vs Christian Edwards",
+   "weight_class": "Light Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Rodolfo Bellato",
+     "side": "fav",
+     "market_odds": -185,
+     "model_win_shrunk": 54.8,
+     "model_win_raw": 66.2,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Christian Edwards",
+     "side": "dog",
+     "market_odds": 154,
+     "model_win_shrunk": 45.2,
+     "model_win_raw": 33.8,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 27.1,
+    "market_gtd_devig": 42.4,
+    "gap": -15.3,
+    "round_dist": [
+     41.6,
+     22.0,
+     9.3
+    ],
+    "exp_minutes": 7.8
+   },
+   "result": null
+  },
+  {
+   "order": 7,
+   "bout": "Elves Brener vs Josiah Harrell",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Elves Brener",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 58.4,
+     "model_win_raw": 78.0,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Josiah Harrell",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 41.6,
+     "model_win_raw": 22.0,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 39.0,
+    "market_gtd_devig": 49.0,
+    "gap": -10.0,
+    "round_dist": [
+     31.9,
+     19.5,
+     9.5
+    ],
+    "exp_minutes": 9.2
+   },
+   "result": null
+  },
+  {
+   "order": 8,
+   "bout": "Montel Jackson vs Ricky Simon",
+   "weight_class": "Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Montel Jackson",
+     "side": "fav",
+     "market_odds": -233,
+     "model_win_shrunk": 62.1,
+     "model_win_raw": 63.5,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Ricky Simon",
+     "side": "dog",
+     "market_odds": 195,
+     "model_win_shrunk": 37.9,
+     "model_win_raw": 36.5,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 58.4,
+    "market_gtd_devig": 57.6,
+    "gap": 0.8,
+    "round_dist": [
+     20.0,
+     14.0,
+     7.6
+    ],
+    "exp_minutes": 11.2
+   },
+   "result": null
+  },
+  {
+   "order": 9,
+   "bout": "Norma Dumont vs Ailin Perez",
+   "weight_class": "Women's Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Norma Dumont",
+     "side": "dog",
+     "market_odds": 136,
+     "model_win_shrunk": 45.5,
+     "model_win_raw": 45.0,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Ailin Perez",
+     "side": "fav",
+     "market_odds": -164,
+     "model_win_shrunk": 54.5,
+     "model_win_raw": 55.0,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 63.7,
+    "market_gtd_devig": 76.6,
+    "gap": -12.9,
+    "round_dist": [
+     16.9,
+     12.4,
+     7.1
+    ],
+    "exp_minutes": 11.8
+   },
+   "result": null
+  },
+  {
+   "order": 10,
+   "bout": "John Castaneda vs Alatengheili",
+   "weight_class": "Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "John Castaneda",
+     "side": "fav",
+     "market_odds": -294,
+     "model_win_shrunk": 70.7,
+     "model_win_raw": 76.2,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Alatengheili",
+     "side": "dog",
+     "market_odds": 235,
+     "model_win_shrunk": 29.3,
+     "model_win_raw": 23.8,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 73.0,
+    "market_gtd_devig": 69.6,
+    "gap": 3.4,
+    "round_dist": [
+     12.1,
+     9.5,
+     5.4
+    ],
+    "exp_minutes": 12.6
+   },
+   "result": null
+  },
+  {
+   "order": 11,
+   "bout": "Sedriques Dumas vs Luis Hernandez",
+   "weight_class": "Light Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Sedriques Dumas",
+     "side": "dog",
+     "market_odds": 208,
+     "model_win_shrunk": 37.9,
+     "model_win_raw": 10.1,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Luis Hernandez",
+     "side": "fav",
+     "market_odds": -256,
+     "model_win_shrunk": 62.1,
+     "model_win_raw": 89.9,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 28.0,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     41.0,
+     21.7,
+     9.3
+    ],
+    "exp_minutes": 7.9
+   },
+   "result": null
+  },
+  {
+   "order": 12,
+   "bout": "Vanessa Demopoulos vs Yazmin Jauregui",
+   "weight_class": "Women's Strawweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Vanessa Demopoulos",
+     "side": "dog",
+     "market_odds": 600,
+     "model_win_shrunk": 29.2,
+     "model_win_raw": 12.9,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Yazmin Jauregui",
+     "side": "fav",
+     "market_odds": -909,
+     "model_win_shrunk": 70.8,
+     "model_win_raw": 87.1,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 69.7,
+    "market_gtd_devig": 62.7,
+    "gap": 7.0,
+    "round_dist": [
+     13.9,
+     10.4,
+     6.0
+    ],
+    "exp_minutes": 12.3
+   },
+   "result": null
+  }
+ ],
+ "duration_flags": [],
+ "ml_flags": [],
+ "prop_notes": [],
+ "vetoes": [
+  {
+   "fight_order": 3,
+   "side": "Ilimbek Akylbek",
+   "market_odds": 228,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  }
+ ],
+ "source_doc": "project: Markov__UFC_Vegas121_Rosas_vs_Barcelos_V41b_Output.md",
+ "grading_window_index": 2
+}

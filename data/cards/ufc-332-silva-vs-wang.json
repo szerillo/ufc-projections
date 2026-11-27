@@ -1,0 +1,592 @@
+{
+ "slug": "ufc-332-silva-vs-wang",
+ "title": "UFC 332: Silva vs. Wang",
+ "date": "2026-10-03",
+ "venue": "Salt Lake City, Utah, USA",
+ "engine_version": "V4.1b",
+ "partial": true,
+ "grading_stub": true,
+ "notes": [
+  "Grading stub: built from the ARCHIVE block and duration table of the weekly doc (project copy), which was published before the card.",
+  "Sides and market odds are the Fight Form pre-start close; flags were prose in the doc and are not included."
+ ],
+ "archive_tsv": "Natalia Silva vs Wang Cong\t31.6\t18.4\t68.3\t20.2\t9.2\t8.7\t6.5\t3.9\t3.4\nDeiveson Figueiredo vs Payton Talbott\t27.9\t25.4\t59.2\t11.3\t19.4\t13.8\t7.6\t0.0\t0.0\nKing Green vs Esteban Ribovics\t67.0\t68.9\t51.4\t10.5\t24.0\t16.2\t8.4\t0.0\t0.0\nKhaos Williams vs Roberto Soldic\t49.1\t48.2\t37.0\t9.0\t33.8\t19.9\t9.4\t0.0\t0.0\nAteba Gautier vs Roman Kopylov\t48.1\t46.5\t38.8\t9.2\t32.3\t19.6\t9.3\t0.0\t0.0\nImanol Rodriguez vs Alden Coria\t50.1\t50.4\t46.8\t10.1\t26.6\t17.7\t8.9\t0.0\t0.0\nDamian Pinas vs Andrey Pulyaev\t60.2\t83.9\t35.2\t8.8\t34.8\t20.4\t9.5\t0.0\t0.0\nAnthony Romero vs Marcus McGhee\t48.4\t45.8\t64.1\t11.8\t16.5\t12.4\t7.0\t0.0\t0.0\nLucas Armand vs Anthony Wint\t44.4\t31.3\t36.4\t8.9\t34.0\t20.1\t9.5\t0.0\t0.0\nJohnny Walker vs Mick Parkin\t33.2\t20.6\t49.1\t10.3\t25.3\t16.9\t8.6\t0.0\t0.0\nRafael Dos Anjos vs Alexander Hernandez\t47.1\t46.7\t61.7\t11.6\t18.0\t13.1\t7.2\t0.0\t0.0\nMarvin Vettori vs Ismail Naurdiev\t27.5\t25.0\t80.0\t13.3\t8.8\t7.0\t4.2\t0.0\t0.0\nBruce Whitehead vs Jacobe Smith\t39.8\t16.1\t42.2\t9.6\t30.0\t18.6\t9.2\t0.0\t0.0\nCourt McGee vs Eric Nolan\t66.1\t79.3\t64.0\t11.8\t16.8\t12.4\t6.8\t0.0\t0.0",
+ "fights": [
+  {
+   "order": 1,
+   "bout": "Natalia Silva vs Wang Cong",
+   "weight_class": "Women's Flyweight",
+   "rounds": 5,
+   "is_main_event": true,
+   "fighters": [
+    {
+     "name": "Natalia Silva",
+     "side": "fav",
+     "market_odds": -202,
+     "model_win_shrunk": 31.6,
+     "model_win_raw": 18.4,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Wang Cong",
+     "side": "dog",
+     "market_odds": 170,
+     "model_win_shrunk": 68.4,
+     "model_win_raw": 81.6,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 68.3,
+    "market_gtd_devig": 67.8,
+    "gap": 0.5,
+    "round_dist": [
+     9.2,
+     8.7,
+     6.5,
+     3.9,
+     3.4
+    ],
+    "exp_minutes": 20.2
+   },
+   "result": null
+  },
+  {
+   "order": 2,
+   "bout": "Deiveson Figueiredo vs Payton Talbott",
+   "weight_class": "Bantamweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Deiveson Figueiredo",
+     "side": "dog",
+     "market_odds": 550,
+     "model_win_shrunk": 27.9,
+     "model_win_raw": 25.4,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Payton Talbott",
+     "side": "fav",
+     "market_odds": -833,
+     "model_win_shrunk": 72.1,
+     "model_win_raw": 74.6,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 59.2,
+    "market_gtd_devig": 44.0,
+    "gap": 15.2,
+    "round_dist": [
+     19.4,
+     13.8,
+     7.6
+    ],
+    "exp_minutes": 11.3
+   },
+   "result": null
+  },
+  {
+   "order": 3,
+   "bout": "King Green vs Esteban Ribovics",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "King Green",
+     "side": "dog",
+     "market_odds": 165,
+     "model_win_shrunk": 67.0,
+     "model_win_raw": 68.9,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Esteban Ribovics",
+     "side": "fav",
+     "market_odds": -196,
+     "model_win_shrunk": 33.0,
+     "model_win_raw": 31.1,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 51.4,
+    "market_gtd_devig": 36.5,
+    "gap": 14.9,
+    "round_dist": [
+     24.0,
+     16.2,
+     8.4
+    ],
+    "exp_minutes": 10.5
+   },
+   "result": null
+  },
+  {
+   "order": 4,
+   "bout": "Khaos Williams vs Roberto Soldic",
+   "weight_class": "Welterweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Khaos Williams",
+     "side": "dog",
+     "market_odds": 180,
+     "model_win_shrunk": 49.1,
+     "model_win_raw": 48.2,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Roberto Soldic",
+     "side": "fav",
+     "market_odds": -215,
+     "model_win_shrunk": 50.9,
+     "model_win_raw": 51.8,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 37.0,
+    "market_gtd_devig": 24.5,
+    "gap": 12.5,
+    "round_dist": [
+     33.8,
+     19.9,
+     9.4
+    ],
+    "exp_minutes": 9.0
+   },
+   "result": null
+  },
+  {
+   "order": 5,
+   "bout": "Ateba Gautier vs Roman Kopylov",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Ateba Gautier",
+     "side": "fav",
+     "market_odds": -238,
+     "model_win_shrunk": 48.1,
+     "model_win_raw": 46.5,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Roman Kopylov",
+     "side": "dog",
+     "market_odds": 196,
+     "model_win_shrunk": 51.9,
+     "model_win_raw": 53.5,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 38.8,
+    "market_gtd_devig": 36.5,
+    "gap": 2.3,
+    "round_dist": [
+     32.3,
+     19.6,
+     9.3
+    ],
+    "exp_minutes": 9.2
+   },
+   "result": null
+  },
+  {
+   "order": 6,
+   "bout": "Imanol Rodriguez vs Alden Coria",
+   "weight_class": "Flyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Imanol Rodriguez",
+     "side": "fav",
+     "market_odds": -142,
+     "model_win_shrunk": 50.1,
+     "model_win_raw": 50.4,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Alden Coria",
+     "side": "dog",
+     "market_odds": 119,
+     "model_win_shrunk": 49.9,
+     "model_win_raw": 49.6,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 46.8,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     26.6,
+     17.7,
+     8.9
+    ],
+    "exp_minutes": 10.1
+   },
+   "result": null
+  },
+  {
+   "order": 7,
+   "bout": "Damian Pinas vs Andrey Pulyaev",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Damian Pinas",
+     "side": "fav",
+     "market_odds": -625,
+     "model_win_shrunk": 60.2,
+     "model_win_raw": 83.9,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Andrey Pulyaev",
+     "side": "dog",
+     "market_odds": 450,
+     "model_win_shrunk": 39.8,
+     "model_win_raw": 16.1,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 35.2,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     34.8,
+     20.4,
+     9.5
+    ],
+    "exp_minutes": 8.8
+   },
+   "result": null
+  },
+  {
+   "order": 8,
+   "bout": "Anthony Romero vs Marcus McGhee",
+   "weight_class": "Featherweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Anthony Romero",
+     "side": "dog",
+     "market_odds": 405,
+     "model_win_shrunk": 48.4,
+     "model_win_raw": 45.8,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Marcus McGhee",
+     "side": "fav",
+     "market_odds": -556,
+     "model_win_shrunk": 51.6,
+     "model_win_raw": 54.2,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 64.1,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     16.5,
+     12.4,
+     7.0
+    ],
+    "exp_minutes": 11.8
+   },
+   "result": null
+  },
+  {
+   "order": 9,
+   "bout": "Lucas Armand vs Anthony Wint",
+   "weight_class": "Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Lucas Armand",
+     "side": "dog",
+     "market_odds": 428,
+     "model_win_shrunk": 44.4,
+     "model_win_raw": 31.3,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Anthony Wint",
+     "side": "fav",
+     "market_odds": -588,
+     "model_win_shrunk": 55.6,
+     "model_win_raw": 68.7,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 36.4,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     34.0,
+     20.1,
+     9.5
+    ],
+    "exp_minutes": 8.9
+   },
+   "result": null
+  },
+  {
+   "order": 10,
+   "bout": "Johnny Walker vs Mick Parkin",
+   "weight_class": "Heavyweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Johnny Walker",
+     "side": "fav",
+     "market_odds": -149,
+     "model_win_shrunk": 33.2,
+     "model_win_raw": 20.6,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Mick Parkin",
+     "side": "dog",
+     "market_odds": 125,
+     "model_win_shrunk": 66.8,
+     "model_win_raw": 79.4,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 49.1,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     25.3,
+     16.9,
+     8.6
+    ],
+    "exp_minutes": 10.3
+   },
+   "result": null
+  },
+  {
+   "order": 11,
+   "bout": "Rafael Dos Anjos vs Alexander Hernandez",
+   "weight_class": "Lightweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Rafael Dos Anjos",
+     "side": "dog",
+     "market_odds": 205,
+     "model_win_shrunk": 47.1,
+     "model_win_raw": 46.7,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Alexander Hernandez",
+     "side": "fav",
+     "market_odds": -250,
+     "model_win_shrunk": 52.9,
+     "model_win_raw": 53.3,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 61.7,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     18.0,
+     13.1,
+     7.2
+    ],
+    "exp_minutes": 11.6
+   },
+   "result": null
+  },
+  {
+   "order": 12,
+   "bout": "Marvin Vettori vs Ismail Naurdiev",
+   "weight_class": "Middleweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Marvin Vettori",
+     "side": "dog",
+     "market_odds": 110,
+     "model_win_shrunk": 27.5,
+     "model_win_raw": 25.0,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Ismail Naurdiev",
+     "side": "fav",
+     "market_odds": -130,
+     "model_win_shrunk": 72.5,
+     "model_win_raw": 75.0,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 80.0,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     8.8,
+     7.0,
+     4.2
+    ],
+    "exp_minutes": 13.3
+   },
+   "result": null
+  },
+  {
+   "order": 13,
+   "bout": "Bruce Whitehead vs Jacobe Smith",
+   "weight_class": "Welterweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Bruce Whitehead",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 39.8,
+     "model_win_raw": 16.1,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Jacobe Smith",
+     "side": null,
+     "market_odds": null,
+     "model_win_shrunk": 60.2,
+     "model_win_raw": 83.9,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 42.2,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     30.0,
+     18.6,
+     9.2
+    ],
+    "exp_minutes": 9.6
+   },
+   "result": null
+  },
+  {
+   "order": 14,
+   "bout": "Court McGee vs Eric Nolan",
+   "weight_class": "Welterweight",
+   "rounds": 3,
+   "is_main_event": false,
+   "fighters": [
+    {
+     "name": "Court McGee",
+     "side": "dog",
+     "market_odds": 200,
+     "model_win_shrunk": 66.1,
+     "model_win_raw": 79.3,
+     "dec_share_of_wins": null,
+     "badges": []
+    },
+    {
+     "name": "Eric Nolan",
+     "side": "fav",
+     "market_odds": -238,
+     "model_win_shrunk": 33.9,
+     "model_win_raw": 20.7,
+     "dec_share_of_wins": null,
+     "badges": []
+    }
+   ],
+   "duration": {
+    "p_dec": 64.0,
+    "market_gtd_devig": null,
+    "gap": null,
+    "round_dist": [
+     16.8,
+     12.4,
+     6.8
+    ],
+    "exp_minutes": 11.8
+   },
+   "result": null
+  }
+ ],
+ "duration_flags": [],
+ "ml_flags": [],
+ "prop_notes": [],
+ "vetoes": [
+  {
+   "fight_order": 6,
+   "side": "Alden Coria",
+   "market_odds": 124,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  },
+  {
+   "fight_order": 9,
+   "side": "Lucas Armand",
+   "market_odds": 440,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  },
+  {
+   "fight_order": 13,
+   "side": "Bruce Whitehead",
+   "market_odds": 615,
+   "code": "D",
+   "reason": "D-code: underdog with three or fewer UFC fights from a minor feeder promotion. Automatic no-bet."
+  }
+ ],
+ "source_doc": "project: Markov__UFC_332_Silva_vs_Wang_V41b_Output.md",
+ "grading_window_index": 3
+}
