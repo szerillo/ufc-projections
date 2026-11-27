@@ -119,6 +119,8 @@ def main(a):
         ok = {l.strip() for l in open(a.allowlist)}
         if out not in ok: fails.append(f"{out} is not on audit-locks PUBLIC_OK.txt (needs its own earlier allowlist push)")
         else: print(f"[ok] {out} is pre-allowlisted")
+    if os.path.exists(out) and any(json.loads(l).get("test") for l in open(out) if l.strip()):
+        fails.append(f"{out} holds SPREAD_TRACK_TEST rows: test output reached the real lock file; restore it from audit-locks before locking")
     if os.path.exists(out) and any(json.loads(l).get("stage") == "lock" for l in open(out) if l.strip()):
         warns.append(f"{out} already has lock rows; a second lock appends, and table/grade use the last row per bout")
     print()
