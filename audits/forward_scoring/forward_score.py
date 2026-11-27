@@ -1,4 +1,5 @@
-"""Forward scoring for registered tests T1 (power de-vig), T2 (Markov ML term) and T4 (women re-fit).
+"""Forward scoring for registered tests T1 (power de-vig), T2 (Markov ML term) and T4 (women re-fit), plus the registered
+forward shadow logs for T3 (drifting-dog veto, kept + shadow) and T6 (80%+ favorite rule, two sizings).
 Bars: PREREG_model_review_2026-11-24.md and PREREG_T4_women_refit.md on audit-locks. This script only applies them; it never
 moves a bar, never writes the sheet, never bets. Read-only on everything it is given.
 
@@ -22,6 +23,8 @@ import sheet_v47 as SV
 
 T1_CARDS, T2_CARDS = 10, 10          # "the next 10 graded cards from 2026-12-05 on"
 T4_WOMEN, T4_CARDS = 30, 20          # T4: 30 graded women's bouts or 20 forward cards, whichever first
+T3_DRIFT = 0.03                      # T3: drifting = close dog % at least 3 points below open dog %
+FAV80, FAV80_FLOOR, T6_CAP = 0.80, -500, 2.0   # T6: 80%+ listed favorite; v4.9 floor (B46); risk cap sizing
 FORWARD_FROM = "2026-12-05"
 # Part (b) was scored once on 2026-11-24 (run_tests_out.txt, audit-locks): n=158, log loss diff -0.00147, MET. That verdict is
 # frozen and reused as bar (2). Its rows are rebuilt here only for the pooled 70%+ favorite gap of part (c); results that landed
@@ -84,7 +87,8 @@ def bout_inputs(r, prm):
             "open_dog": num(r.get("dog open F")), "markov": num(r.get("Markov J")), "shift": prm.get("B42") or 0.0,
             "tap": num(r.get("Tap C")), "junk": num(r.get("Junk D")), "tip": num(r.get("Tip E")),
             "ctx": (r.get("K code") or "").strip() or None, "manual": 0.0, "women": tag.lower().startswith("w"),
-            "G_stored": num(r.get("dog listed G (sheet)")), "Q_stored": num(r.get("model Q"))}
+            "G_stored": num(r.get("dog listed G (sheet)")), "Q_stored": num(r.get("model Q")),
+            "close_dog": num(r.get("dog CLOSE (consensus)")), "flag_stored": (r.get("flag AA") or "").strip()}
 
 
 # ------------------------------------------------------------------ results from the site event file (UFCStats)
@@ -169,7 +173,8 @@ def load_cards(a):
             q_with = x["Q_stored"] if x["Q_stored"] is not None else m_on["Q"]
             q_without = m_off["Q"] if q_ok else SV.clamp(q_with - SV.BETA * (m_on["H"] - m_on["listed"]))
             bouts.append({**x, "y": y, "g_mult": mult(x["dog_odds"], x["fav_odds"]), "g_power": power(x["dog_odds"], x["fav_odds"]),
-                          "q_with": q_with, "q_without": q_without, "q_mirror_ok": q_ok, "rec_with": m_on["rec"], "rec_without": m_off["rec"]})
+                          "q_with": q_with, "q_without": q_without, "q_mirror_ok": q_ok, "rec_with": m_on["rec"], "rec_without": m_off["rec"],
+                          "flag": x["flag_stored"] or m_on["flag"]})
         cards.append({**c, "sha": sha, "params": prm, "on_time": on_time, "bouts": bouts, "skipped": skipped,
                       "counts": on_time and not c.get("test") and c["date"] >= FORWARD_FROM})
     cards.sort(key=lambda c: c["date"])
@@ -215,6 +220,8 @@ def t1(cards, close_path, archive_dir):
                     elif FN.name_match(f["b"]["name"], c["a"]) and FN.name_match(f["a"]["name"], c["b"]): hit = 1.0 if r_["winner"] == "b" else 0.0
         if hit is not None:
             R.append((mult(c["best_a"], c["best_b"]), power(c["best_a"], c["best_b"]), hit))
+    if not R:
+        return out + ["(b) close set gave no matched bouts on this checkout: cannot pool part (c); T1 not scored"]
     lmb, lpb = ll([r[0] for r in R], [r[2] for r in R]), ll([r[1] for r in R], [r[2] for r in R])
     out.append(f"(b) frozen registered result: n={B_FROZEN['n']}, diff {B_FROZEN['diff']:+.5f}, MET. Rebuilt for (c): n={len(R)}, diff {lpb - lmb:+.5f}"
                + ("" if len(R) == B_FROZEN["n"] else " (rebuilt n differs from the scored n; (c) uses the rebuilt rows, disclosed)"))
@@ -306,6 +313,9 @@ def t4(cards, archive_dir):
     for c in cards:
         ncard += 1
         W = [b for b in c["bouts"] if b["women"]]
+        if W and sum(x[2] for x in base) < 30:
+            out.append(f"{c['date']}: women bouts {len(W)}, training base too small to fit ({len(base)} bouts, {int(sum(x[2] for x in base))} women's): not scored")
+            W = []
         if W:
             b0, b1, b2 = fit([[1.0, x[0], x[2]] for x in base], [x[1] for x in base])
             sizes = []
@@ -339,6 +349,65 @@ def t4(cards, archive_dir):
     return out + [f"bars: (1) {bars[0]}, (2) {bars[1]}, (3) last size {pts:.2f} outside 2-6: {bars[2]} -> T4 {v}"]
 
 
+def dog_units(price, won):
+    """T3 units: risk 1u on the dog at its price (plus money risks 1u; a dog at minus money also risks 1u, as registered)."""
+    if price > 0:
+        return (price / 100 if won else -1.0), 1.0
+    return (100 / -price if won else -1.0), 1.0
+
+
+def t3(cards):
+    """T3 shadow (registered outcome: keep the veto + shadow log). No bar; logged every card."""
+    out = ["## T3 shadow: drifting dogs on forward cards (veto kept; shadow only, no bar)"]
+    if not cards:
+        return out + ["T3 shadow: no counted forward card yet"]
+    S = {"vetoed (sheet flag 'no dog bet (drifting)')": [], "drifting by T3 (3+ pts)": [], "other dogs": []}
+    for c in cards:
+        for b in c["bouts"]:
+            if b["open_dog"] is None:
+                continue
+            close = b["close_dog"] if b["close_dog"] is not None else b["g_mult"]
+            drift = b["open_dog"] - close
+            u, r = dog_units(b["dog_odds"], b["y"] == 1.0)
+            row = (c["date"], b["dog"], b["dog_odds"], round(drift * 100, 1), "W" if b["y"] == 1.0 else "L", round(u, 2))
+            if b["flag"].startswith("no dog bet (drifting)"):
+                S["vetoed (sheet flag 'no dog bet (drifting)')"].append(row)
+            (S["drifting by T3 (3+ pts)"] if drift >= T3_DRIFT else S["other dogs"]).append(row)
+    for k, R in S.items():
+        if R:
+            u = sum(r[5] for r in R); w = sum(r[4] == "W" for r in R)
+            out.append(f"{k}: n={len(R)} won {w} units {u:+.2f} ROI {u / len(R) * 100:+.1f}% (risk 1u each at the walkout best dog price)")
+        else:
+            out.append(f"{k}: none")
+    for r in S["vetoed (sheet flag 'no dog bet (drifting)')"]:
+        out.append(f"  vetoed {r[0]} {r[1]} {r[2]:+.0f}: open-close {r[3]:+.1f} pts, {r[4]}, {r[5]:+.2f}u")
+    return out
+
+
+def t6(cards):
+    """T6 shadow: the 80%+ favorite rule under to-win 1u and a 2u risk cap. No pass or fail (Sean's decision)."""
+    out = ["## T6 shadow: 80%+ listed favorites, two sizings (no bar; Sean decides)"]
+    R = []
+    for c in cards:
+        for b in c["bouts"]:
+            if 1 - b["g_mult"] < FAV80 or b["fav_odds"] >= 0:
+                continue
+            won = b["y"] == 0.0; tw = -b["fav_odds"] / 100
+            a = 1.0 if won else -tw                          # A: to win 1u (risk = price / 100)
+            rb = min(tw, T6_CAP); bb = rb * 100 / -b["fav_odds"] if won else -rb   # B: risk capped at 2u
+            R.append((c["date"], b["fav"], b["fav_odds"], "BET" if b["fav_odds"] >= FAV80_FLOOR else "PASS (v4.9 floor)", won, a, tw, bb, rb))
+    if not R:
+        return out + ["T6 shadow: no 80%+ favorite on a counted forward card yet"]
+    for lab, ix, rx in (("A to-win 1u", 5, 6), ("B risk cap 2u", 7, 8)):
+        for scope, S in (("all 80%+", R), ("v4.9 BET only (-500 or longer)", [r for r in R if r[3] == "BET"])):
+            if S:
+                out.append(f"{lab}, {scope}: bets {len(S)}, record {sum(r[4] for r in S)}-{sum(not r[4] for r in S)}, units {sum(r[ix] for r in S):+.2f}, "
+                           f"risked {sum(r[rx] for r in S):.2f}, worst single loss " + (f"{min(r[ix] for r in S if not r[4]):+.2f}" if any(not r[4] for r in S) else "none"))
+    for r in R:
+        out.append(f"  {r[0]} {r[1]} {r[2]:+.0f} [{r[3]}]: {'W' if r[4] else 'L'}  A {r[5]:+.2f}u  B {r[7]:+.2f}u")
+    return out
+
+
 def score(a):
     allc = load_cards(a)
     C = [c for c in allc if c["counts"]]
@@ -351,7 +420,7 @@ def score(a):
     if T and not C:
         L += ["", "TEST RUN: the cards below are fixtures (pre-registration history), shown to prove the pipeline only; nothing here is a score.", ""]
         C = T
-    for blk in (t1(C, a.close, a.archive), t2(C), t4(C, a.archive)):
+    for blk in (t1(C, a.close, a.archive), t2(C), t3(C), t4(C, a.archive), t6(C)):
         L += [""] + blk
     txt = "\n".join(L) + "\n"
     print(txt)
