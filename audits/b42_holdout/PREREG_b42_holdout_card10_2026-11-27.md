@@ -11,14 +11,14 @@ Does Option A still hold against the old live per-card average (S0) on a card th
 ## Holdout slice
 - **Card 10, UFC Fight Night Prochazka vs Stirling (Nov 21 2026)**, Snapshots pk 4440: 12 rows, all with Markov J, all graded.
   It is the first card graded after the Nov 19 backtest and the first run live under v4.8. No other card is unseen.
-- **Data:** the Snapshots tab of the UFC Model sheet, xlsx export read 2026-11-24 (sha256 bee567ba756bffa9...). Private:
+- **Data:** the model sheet's graded archive tab, xlsx export read 2026-11-24 (sha256 bee567ba756bffa9...). Private:
   not committed; only aggregates are reported.
 - **Already seen, disclosed:** card 10's results and its Markov grading (claude/Markov_Grading_Card10). The B42 option
   comparison on card 10 has not been computed by anyone in this project.
 
 ## Method (unchanged from Nov 19)
-- The same code: common_nov19.py and bt_nov19.py in this folder (copies of the Nov 19 scripts, sha256 first 16 above in the
-  commit message), driven by score_holdout.py, which only adds the xlsx reader and the card-10 slice.
+- The same code: common_nov19.py and bt_nov19.py in this folder (copies of the Nov 19 scripts: common.py sha256 af99aa054a8747a3..., bt.py f0d041b65d0a6101...;
+  unchanged), driven by score_holdout.py, which only adds the xlsx reader and the card-10 slice.
 - Q is recomputed for every row with the v4.7 chain (0.15 Markov weight, 0.15 / 0.075 fade, women and K codes), changing only
   the shift. Manual adjustments are not stored, so none are used (same as Nov 19).
 - Walk-forward: A, A2 and B learn only from cards 1-9. S0 is the card's own average of (J - G), as the pre-v4.8 sheet did.
