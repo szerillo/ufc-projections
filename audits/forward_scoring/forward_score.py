@@ -385,7 +385,7 @@ def t3(cards):
 
 
 def t6(cards):
-    """T6 shadow: the 80%+ favorite rule under to-win 1u and a 2u risk cap. No pass or fail (Sean's decision)."""
+    """T6 shadow: the 80%+ favorite rule under to-win 1u and a 2 units risk cap. No pass or fail (Sean's decision)."""
     out = ["## T6 shadow: 80%+ listed favorites, two sizings (no bar; Sean decides)"]
     R = []
     for c in cards:
@@ -394,11 +394,11 @@ def t6(cards):
                 continue
             won = b["y"] == 0.0; tw = -b["fav_odds"] / 100
             a = 1.0 if won else -tw                          # A: to win 1u (risk = price / 100)
-            rb = min(tw, T6_CAP); bb = rb * 100 / -b["fav_odds"] if won else -rb   # B: risk capped at 2u
+            rb = min(tw, T6_CAP); bb = rb * 100 / -b["fav_odds"] if won else -rb   # B: risk capped at 2 units
             R.append((c["date"], b["fav"], b["fav_odds"], "BET" if b["fav_odds"] >= FAV80_FLOOR else "PASS (v4.9 floor)", won, a, tw, bb, rb))
     if not R:
         return out + ["T6 shadow: no 80%+ favorite on a counted forward card yet"]
-    for lab, ix, rx in (("A to-win 1u", 5, 6), ("B risk cap 2u", 7, 8)):
+    for lab, ix, rx in (("A to-win 1u", 5, 6), ("B risk cap 2 units", 7, 8)):
         for scope, S in (("all 80%+", R), ("v4.9 BET only (-500 or longer)", [r for r in R if r[3] == "BET"])):
             if S:
                 out.append(f"{lab}, {scope}: bets {len(S)}, record {sum(r[4] for r in S)}-{sum(not r[4] for r in S)}, units {sum(r[ix] for r in S):+.2f}, "

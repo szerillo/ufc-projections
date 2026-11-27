@@ -40,7 +40,7 @@ How the bars are applied (no bar changed):
   walkout best dog price. Three lines: dogs the sheet vetoed ("no dog bet (drifting)"), dogs drifting 3+ points by the T3
   definition (open dog % minus the snapshot's consensus close, or listed G if blank), and all other dogs.
 - **T6 shadow (Sean's decision; no pass or fail):** every 80%+ listed favorite at its walkout best price under A = to-win 1u and
-  B = risk capped at 2u, each for all 80%+ favorites and for the v4.9 BET subset (-500 or longer), with the worst single loss.
+  B = risk capped at 2 units, each for all 80%+ favorites and for the v4.9 BET subset (-500 or longer), with the worst single loss.
 - **Tests:** `python3 -I audits/forward_scoring/test_forward_score.py` (synthetic 3-bout card, 11 checks).
 
 ## Dry run (2026-11-27, fixture, not a score)

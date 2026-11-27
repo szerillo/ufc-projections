@@ -37,7 +37,7 @@ check("T3 vetoed bucket: Dan Dog won at +200 risking 1u -> +2.00", "vetoed (shee
 check("T3 drifting by 3+ pts: only Dan Dog (9 pts); Lou Long drift 2 pts is not", "drifting by T3 (3+ pts): n=1 won 1 units +2.00" in o)
 check("T3 other dogs: Ned Dog lost (-1) and Lou Long won at +800 (+8) -> +7.00", "other dogs: n=2 won 1 units +7.00" in o)
 check("T6 A to-win 1u: Max Heavy -1200 lost -> -12.00 and worst loss -12.00", "A to-win 1u, all 80%+: bets 1, record 0-1, units -12.00, risked 12.00, worst single loss -12.00" in o)
-check("T6 B risk cap 2u -> -2.00", "B risk cap 2u, all 80%+: bets 1, record 0-1, units -2.00, risked 2.00, worst single loss -2.00" in o)
+check("T6 B risk cap 2 units -> -2.00", "B risk cap 2 units, all 80%+: bets 1, record 0-1, units -2.00, risked 2.00, worst single loss -2.00" in o)
 check("T6 v4.9 floor: -1200 is a PASS, so no BET-only line", "[PASS (v4.9 floor)]" in o and "v4.9 BET only" not in o)
 check("T1 with an empty close set refuses to score part (c)", "cannot pool part (c); T1 not scored" in o)
 check("T2 interim on one card", "T2 interim, not scored" in o)
