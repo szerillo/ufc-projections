@@ -1,0 +1,38 @@
+input model.xlsx sha256 bee567ba756bffa9
+cards in order: 10 ['2026-09-19 00:00:00', '2026-09-26 00:00:00', '2026-10-03 00:00:00', '2026-10-10 00:00:00', '2026-10-17 00:00:00', '2026-10-24 00:00:00', '2026-10-31 00:00:00', '2026-11-07 00:00:00', '2026-11-14 00:00:00', '2026-11-21 00:00:00']
+
+Step 0, cards 2-9: n=101; Brier S0 0.2158, A 0.2162 (Nov 19: 101, 0.2158, 0.2162)
+Step 0 reproduced: OK
+
+## Card 10 holdout: 12 graded fights; S0 shift (card average) 0.0886; A fixed offset (cards 1-9) 0.1062
+option | Brier | log loss
+S0 live per-card B42 | 0.2148 | 0.6215
+A fixed offset (prior cards) | 0.2143 | 0.6203
+B offset by odds bucket (prior) | 0.2175 | 0.6272
+A2 slope calib (prior) | 0.2196 | 0.6332
+C shrink J halfway to G, no offset | 0.2195 | 0.6320
+D no offset | 0.2178 | 0.6275
+ref: Markov off (beta 0) | 0.2215 | 0.6372
+
+PRIMARY: Brier A minus S0 on card 10 = -0.00055 (95% CI -0.00185 to +0.00086, bootstrap over fights, seed 7)
+Registered reading: A holds
+
+## Pooled walk-forward, cards 2-10 (reported, no bar)
+S0 live per-card B42 | n=113 | Brier 0.2157 | log loss 0.6215
+A fixed offset (prior cards) | n=113 | Brier 0.2160 | log loss 0.6227
+B offset by odds bucket (prior) | n=113 | Brier 0.2166 | log loss 0.6241
+A2 slope calib (prior) | n=113 | Brier 0.2180 | log loss 0.6274
+C shrink J halfway to G, no offset | n=113 | Brier 0.2164 | log loss 0.6233
+D no offset | n=113 | Brier 0.2169 | log loss 0.6241
+ref: Markov off (beta 0) | n=113 | Brier 0.2162 | log loss 0.6233
+
+## Card 10 recs (Nov 19 rule function, v4.7 rules, 1u per rec at snapshot prices; reported only)
+S0 live per-card B42: BET 2-0, +1.38 units; Dom Mar Fan (W), John Mitchell (W)
+A fixed offset (prior cards): BET 2-0, +1.38 units; Dom Mar Fan (W), John Mitchell (W)
+B offset by odds bucket (prior): BET 2-0, +1.38 units; Dom Mar Fan (W), John Mitchell (W)
+A2 slope calib (prior): BET 2-0, +1.38 units; Dom Mar Fan (W), John Mitchell (W)
+C shrink J halfway to G, no offset: BET 2-0, +1.38 units; Dom Mar Fan (W), John Mitchell (W)
+D no offset: BET 2-0, +1.38 units; Dom Mar Fan (W), John Mitchell (W)
+ref: Markov off (beta 0): BET 2-0, +1.38 units; Dom Mar Fan (W), John Mitchell (W)
+
+Sensitivity (not registered): A at the live B42 0.1086 on card 10: Brier 0.2142; minus S0 -0.00063
