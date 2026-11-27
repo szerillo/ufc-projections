@@ -98,3 +98,11 @@
 #   slug: "fn_..."
 #   first_fight_utc: "2026-MM-DDTHH:MM:00"
 #   main_event_utc:  "2026-MM-DDTHH:MM:00"
+
+# Dec 5 2026, Riyadh (added on branch dec5-precard 2026-11-27; times per UFC.com event page snippet "Main Card 1:00 PM EST"
+# and ESPN "Prelims 10:00 AM" ET. CONFIRM on the UFC.com event page before merge: the T0 walkout snapshot fires off the
+# site event file's first bout start, and an early-prelims start would be earlier than 15:00Z)
+- name: "UFC Fight Night: Adesanya vs. Magomedov"
+  slug: "fn_adesanya_magomedov"
+  first_fight_utc: "2026-12-05T15:00:00+00:00"
+  main_event_utc: "2026-12-05T21:00:00+00:00"
