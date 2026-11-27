@@ -209,6 +209,16 @@ def load_ufcstats(cache: Path):
             "sa": dict(t.get(a, {})) or None, "sb": dict(t.get(b, {})) or None,
         }
         events[en]["fights"].append(fight)
+    # Same-name UFCStats fighters (data/fighter_disambig.json): rename the non-primary one per bout so two people never share
+    # one key (Elo, Form Figure, fighter file). Stats were attached above under the original name, so only the label changes.
+    dis = json.load(open(REPO / "data" / "fighter_disambig.json")) if (REPO / "data" / "fighter_disambig.json").exists() else {}
+    dis_f, dis_l = dis.get("fights", {}), dis.get("labels", {})
+    for e in events.values():
+        for f in e["fights"]:
+            m = dis_f.get(f["url"].rstrip("/").split("/")[-1])
+            for side in ("a", "b"):
+                if m and f[side] in m and m[f[side]] in dis_l:
+                    f[side] = dis_l[m[f[side]]]
     for e in events.values():
         n = len(e["fights"])
         for i, f in enumerate(e["fights"]):
@@ -216,7 +226,37 @@ def load_ufcstats(cache: Path):
             f["date"] = e["date"]
 
     bio = {}
+    # primary fighter-details id per shared name: the id the disambiguation file assigns to that name's unlabeled bouts
+    prim = {}
+    for m in dis_f.values():
+        for nm_, fid in m.items():
+            if fid not in dis_l:
+                prim[norm(nm_)] = fid
+    lab_by_id = {k: v for k, v in dis_l.items()}
     for t in tott:
+        fid = t["URL"].strip().rstrip("/").split("/")[-1]
+        if fid in lab_by_id or norm(t["FIGHTER"]) in prim:
+            if fid in lab_by_id:
+                key = norm(lab_by_id[fid])
+            elif prim[norm(t["FIGHTER"])] == fid:
+                key = norm(t["FIGHTER"])
+            else:
+                continue   # a same-named UFCStats fighter with no UFC bout: never the bio of the one who fought
+            entry = {"ht": t["HEIGHT"].strip().replace(" ", ""), "wt": t["WEIGHT"].strip(), "reach": t["REACH"].strip().replace('"', ""),
+                     "stance": t["STANCE"].strip(), "dob": t["DOB"].strip(), "url": t["URL"].strip()}
+            for k in ("ht", "reach", "dob", "wt"):
+                if entry[k] in ("--", ""):
+                    entry[k] = None
+            if entry["dob"]:
+                try:
+                    entry["dob"] = dt.datetime.strptime(entry["dob"], "%b %d, %Y").date().isoformat()
+                except ValueError:
+                    entry["dob"] = None
+            entry["_dup"] = True   # still a shared display name; the flag stays visible on the fighter file
+            bio[key] = entry
+    for t in tott:
+        if t["URL"].strip().rstrip("/").split("/")[-1] in lab_by_id or norm(t["FIGHTER"]) in prim:
+            continue
         nm = norm(t["FIGHTER"])
         if nm in bio and bio[nm].get("_dup"):
             continue

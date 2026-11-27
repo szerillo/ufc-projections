@@ -1,0 +1,164 @@
+{
+ "_doc": "UFCStats fighters that share a display name. 'fights' maps a fight-details id to the fighter-details id of the same-named fighter in that bout (read from each fight page on ufcstats.com, 2026-11-27). 'labels' renames the fighter-details ids that are NOT the name's primary fighter, so two people never share one fighter file. Primary (unlabeled) = the only same-named fighter with UFC bouts, or for Bruno Silva the active flyweight. build_form.py reads this in load_ufcstats.",
+ "labels": {
+  "12ebd7d157e91701": "Bruno Silva (MW)"
+ },
+ "fights": {
+  "00566b4d89565373": {
+   "Michael McDonald": "d0314416a7f26527"
+  },
+  "031e6624f96aceb8": {
+   "Mike Davis": "fb3e61720be4690c"
+  },
+  "034c04e480d87b8f": {
+   "Jean Silva": "52ef95b5860fb28c"
+  },
+  "041f9b7dd3542fa6": {
+   "Anthony Romero": "4419acb81e6f0ea4"
+  },
+  "0494ebcee93e717b": {
+   "Jean Silva": "52ef95b5860fb28c"
+  },
+  "08c6b88ac22717ed": {
+   "Michael McDonald": "d0314416a7f26527"
+  },
+  "187681b2843174b5": {
+   "Joey Gomez": "0778f94eb5d588a5"
+  },
+  "18cdc16fc7ab7ce1": {
+   "Joey Gomez": "0778f94eb5d588a5"
+  },
+  "1a2d13834696c4ab": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "1a635a5e4551e7d5": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "20d74ed23d3e9b3a": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "226884e46a10865d": {
+   "Bruno Silva": "12ebd7d157e91701"
+  },
+  "2b7883b304b3df1c": {
+   "Jean Silva": "52ef95b5860fb28c"
+  },
+  "2e7f8d0ad385876d": {
+   "Victor Valenzuela": "078695e385ec2f57"
+  },
+  "330506571d2778b1": {
+   "Mike Davis": "fb3e61720be4690c"
+  },
+  "33a93002fef6c89d": {
+   "Michael McDonald": "d0314416a7f26527"
+  },
+  "3859314324918eeb": {
+   "Mike Davis": "fb3e61720be4690c"
+  },
+  "38b6ef176439c39b": {
+   "Bruno Silva": "12ebd7d157e91701"
+  },
+  "3dbf17b9946d26db": {
+   "Michael McDonald": "d0314416a7f26527"
+  },
+  "4f20f3ada1489823": {
+   "Mike Davis": "fb3e61720be4690c"
+  },
+  "52f77a9f9eb66ab7": {
+   "Michael McDonald": "d0314416a7f26527"
+  },
+  "539732694ab2c8d6": {
+   "Bruno Silva": "12ebd7d157e91701"
+  },
+  "54de03e04f571735": {
+   "Jean Silva": "52ef95b5860fb28c"
+  },
+  "556952a9520d0ae0": {
+   "Michael McDonald": "d0314416a7f26527"
+  },
+  "55bf7f19a132e0fc": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "57ff0eb2351979c4": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "668a44403a130043": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "6a0217099efee13f": {
+   "Mike Davis": "fb3e61720be4690c"
+  },
+  "6ecfa439ef900bcc": {
+   "Bruno Silva": "12ebd7d157e91701"
+  },
+  "775788423f5eeb99": {
+   "Mike Davis": "fb3e61720be4690c"
+  },
+  "77992b8727382373": {
+   "Bruno Silva": "12ebd7d157e91701"
+  },
+  "7f33fbdc35afd721": {
+   "Mike Davis": "fb3e61720be4690c"
+  },
+  "836a188a90e479a5": {
+   "Jean Silva": "52ef95b5860fb28c"
+  },
+  "8c540eb4afe8c43e": {
+   "Jean Silva": "52ef95b5860fb28c"
+  },
+  "8e41d022b55277ae": {
+   "Michael McDonald": "d0314416a7f26527"
+  },
+  "8ef7723b6a8b45e1": {
+   "Jean Silva": "52ef95b5860fb28c"
+  },
+  "9039762cb9f4abdb": {
+   "Bruno Silva": "12ebd7d157e91701"
+  },
+  "9124740fe7816d70": {
+   "Bruno Silva": "12ebd7d157e91701"
+  },
+  "94541dd979e0b4bd": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "a19d619f1b9bee7b": {
+   "Michael McDonald": "d0314416a7f26527"
+  },
+  "b381dc272b32ce03": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "b6a87389bdc36a00": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "bb1ac382e0277b3f": {
+   "Bruno Silva": "12ebd7d157e91701"
+  },
+  "bde635a4f345bc3e": {
+   "Bruno Silva": "12ebd7d157e91701"
+  },
+  "c2bcdcc472228768": {
+   "Mike Davis": "fb3e61720be4690c"
+  },
+  "c3af2b6ab1262fef": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "c67473192bda50d8": {
+   "Michael McDonald": "d0314416a7f26527"
+  },
+  "d00d5ef4ae0ac01b": {
+   "Bruno Silva": "12ebd7d157e91701"
+  },
+  "dbb5d682a2d7f584": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "de1a3734be60e6a1": {
+   "Jean Silva": "52ef95b5860fb28c"
+  },
+  "fc9168fd102e2e66": {
+   "Bruno Silva": "294aa73dbf37d281"
+  },
+  "fefa96b6d939ffea": {
+   "Bruno Silva": "12ebd7d157e91701"
+  }
+ }
+}
