@@ -3,11 +3,12 @@
 #   scripts/friday_refresh.sh <card-name> <bp-slug> <event-file> <sharp-tracker-checkout> [compare-ref]
 # 1 fresh odds feed  2 newest sheet export from origin/main  3 line history from the sharp-tracker archive
 # 4 stats file  5 all embeds  6 page check + independent CSV recompute  7 number diff vs compare-ref (default HEAD)
-set -euo pipefail; export EMBED_PIPELINE=1   # (no lock bless inside a pipeline run) ALLOW_STALE=1 overrides the sheet-export age block (step 2b)
+set -euo pipefail; export EMBED_PIPELINE=1   # (no lock bless inside a pipeline run) ALLOW_STALE=1 overrides the sheet-export age block (step 2b); ALLOW_BAD_ODDS_FEED="<reason>" overrides the odds feed guard (step 1b)
 CARD="$1"; SLUG="$2"; EVENT="$3"; ST="$4"; REF="${5:-HEAD}"; cd "$(dirname "$0")/.."
 t0=$(date +%s); step(){ echo "== $(( $(date +%s) - t0 ))s  $*"; }
 step "0 card guard";       python3 -I scripts/guard_card_status.py --official-dir data/official --require-official   # Nov 25 (Sean): stale card / already-fought bout / bout not on data/official/<date>.txt blocks go-live
 step "1 odds feed";        python3 scripts/fetch_odds.py --card "$CARD" --out "data/${SLUG}_odds.json" 2>&1 | tail -1
+step "1b odds feed guard"; python3 -I scripts/odds_feed_guard.py --odds "data/${SLUG}_odds.json" --official "data/official/$(python3 -c "import json,sys;print(json.load(open(sys.argv[1]))['date'])" "$EVENT").txt" --slug "$SLUG" --override "${ALLOW_BAD_ODDS_FEED:-}"   # Nov 27 (Sean, option A): stale feed, missing or cancelled bout, or same-surname mix-up blocks go-live; ALLOW_BAD_ODDS_FEED="<reason>" lets it through and logs it to audits/odds_guard/overrides.log
 step "2 sheet export";     git fetch -q origin main && for p in "data/${SLUG}_projections.json" "data/pending/${SLUG}_projections.json"; do
                              git cat-file -e "origin/main:$p" 2>/dev/null && git show "origin/main:$p" > "$p" && echo "  $p from origin/main ($(python3 -c "import json;print(json.load(open('$p'))['published_at'])"))"; done
 step "2b sheet export age"
