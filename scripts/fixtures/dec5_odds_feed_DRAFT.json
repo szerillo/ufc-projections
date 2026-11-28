@@ -1,0 +1,442 @@
+{
+ "_fixture": "TEST FIXTURE for scripts/test_odds_feed_guard.py. Shaped like the odds bot's data/<slug>_odds.json; prices are the 4-book BFO medians of the Dec 5 DRAFT card pulled 2026-11-27 (audits/dec5/odds_draft). Not a feed file.",
+ "card": "UFC Fight Night: Adesanya vs. Magomedov (DRAFT)",
+ "updated_at": "2026-11-27T09:35:00+00:00",
+ "source": "fixture",
+ "fights": [
+  {
+   "n": 14,
+   "scheduled_utc": "2026-12-05 21:00:00",
+   "fighter_a": {
+    "name": "Israel Adesanya"
+   },
+   "fighter_b": {
+    "name": "Shara Magomedov"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Israel Adesanya",
+      "books": {
+       "consensus": {
+        "cost": -166
+       }
+      }
+     },
+     {
+      "label": "Shara Magomedov",
+      "books": {
+       "consensus": {
+        "cost": 132
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 13,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Ian Machado Garry"
+   },
+   "fighter_b": {
+    "name": "Yaroslav Amosov"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Ian Machado Garry",
+      "books": {
+       "consensus": {
+        "cost": -182
+       }
+      }
+     },
+     {
+      "label": "Yaroslav Amosov",
+      "books": {
+       "consensus": {
+        "cost": 145
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 12,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Serghei Spivac"
+   },
+   "fighter_b": {
+    "name": "Mario Pinto"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Serghei Spivac",
+      "books": {
+       "consensus": {
+        "cost": 258
+       }
+      }
+     },
+     {
+      "label": "Mario Pinto",
+      "books": {
+       "consensus": {
+        "cost": -348
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 11,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Levan Chokheli"
+   },
+   "fighter_b": {
+    "name": "Islam Dulatov"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Levan Chokheli",
+      "books": {
+       "consensus": {
+        "cost": 142
+       }
+      }
+     },
+     {
+      "label": "Islam Dulatov",
+      "books": {
+       "consensus": {
+        "cost": -177
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 10,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Mairon Santos"
+   },
+   "fighter_b": {
+    "name": "Akbar Abdullaev"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Mairon Santos",
+      "books": {
+       "consensus": {
+        "cost": 230
+       }
+      }
+     },
+     {
+      "label": "Akbar Abdullaev",
+      "books": {
+       "consensus": {
+        "cost": -308
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 9,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Magomed Tuchalov"
+   },
+   "fighter_b": {
+    "name": "Ion Cutelaba"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Magomed Tuchalov",
+      "books": {
+       "consensus": {
+        "cost": -175
+       }
+      }
+     },
+     {
+      "label": "Ion Cutelaba",
+      "books": {
+       "consensus": {
+        "cost": 138
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 8,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Bruno Silva"
+   },
+   "fighter_b": {
+    "name": "Jafel Filho"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Bruno Silva",
+      "books": {
+       "consensus": {
+        "cost": 118
+       }
+      }
+     },
+     {
+      "label": "Jafel Filho",
+      "books": {
+       "consensus": {
+        "cost": -148
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Uran Satybaldiev"
+   },
+   "fighter_b": {
+    "name": "Ivan Gnizditskiy"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Uran Satybaldiev",
+      "books": {
+       "consensus": {
+        "cost": -127
+       }
+      }
+     },
+     {
+      "label": "Ivan Gnizditskiy",
+      "books": {
+       "consensus": {
+        "cost": 102
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Marco Tulio"
+   },
+   "fighter_b": {
+    "name": "JunYong Park"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Marco Tulio",
+      "books": {
+       "consensus": {
+        "cost": -178
+       }
+      }
+     },
+     {
+      "label": "JunYong Park",
+      "books": {
+       "consensus": {
+        "cost": 141
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Pavel Andrusca"
+   },
+   "fighter_b": {
+    "name": "Mahammadali Osmanli"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Pavel Andrusca",
+      "books": {
+       "consensus": {
+        "cost": -127
+       }
+      }
+     },
+     {
+      "label": "Mahammadali Osmanli",
+      "books": {
+       "consensus": {
+        "cost": 105
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Modestino Rodrigues"
+   },
+   "fighter_b": {
+    "name": "Matthieu Duclos"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Modestino Rodrigues",
+      "books": {
+       "consensus": {
+        "cost": 116
+       }
+      }
+     },
+     {
+      "label": "Matthieu Duclos",
+      "books": {
+       "consensus": {
+        "cost": -146
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Abdul Hussein"
+   },
+   "fighter_b": {
+    "name": "Hecher Sosa"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Abdul Hussein",
+      "books": {
+       "consensus": {
+        "cost": -180
+       }
+      }
+     },
+     {
+      "label": "Hecher Sosa",
+      "books": {
+       "consensus": {
+        "cost": 143
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Luke Riley"
+   },
+   "fighter_b": {
+    "name": "Gabriel Santos"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Luke Riley",
+      "books": {
+       "consensus": {
+        "cost": -144
+       }
+      }
+     },
+     {
+      "label": "Gabriel Santos",
+      "books": {
+       "consensus": {
+        "cost": 116
+       }
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 1,
+   "scheduled_utc": null,
+   "fighter_a": {
+    "name": "Mateusz Rebecki"
+   },
+   "fighter_b": {
+    "name": "Elves Brener"
+   },
+   "status": "scheduled",
+   "markets": {
+    "moneyline": [
+     {
+      "label": "Mateusz Rebecki",
+      "books": {
+       "consensus": {
+        "cost": -134
+       }
+      }
+     },
+     {
+      "label": "Elves Brener",
+      "books": {
+       "consensus": {
+        "cost": 108
+       }
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
