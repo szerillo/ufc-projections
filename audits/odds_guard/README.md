@@ -18,3 +18,7 @@ What merging this branch changes (4 files plus this note, one step):
 Checked: the real Nov 21 and UFC 334 odds files both PASS against their cards (no false alarms). merge_main.sh does not call the
 guard; it only runs inside friday_refresh.sh. To run by hand on a card:
 `python3 -I scripts/odds_feed_guard.py --odds data/<slug>_odds.json --official data/official/<date>.txt --slug <slug>`
+
+Merge note: main_guard.py fails on this tree only for items already on main since the last MAIN_AT_CHECK pin (the Nov 25
+post-card rebuild added result fields to the UFC 334 and Nov 21 event files). This branch touches no served data file. The merge
+needs the usual round-18 checks and re-pin, then merge_main.sh with BR=odds-feed-guard.
