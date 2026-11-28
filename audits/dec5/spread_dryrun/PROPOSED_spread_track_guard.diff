@@ -1,0 +1,13 @@
+# PROPOSED, not applied. spread_track.py is locked on audit-locks (sha in analysis/MANIFEST.txt); changing it needs Kirk/Sean's OK
+# and a re-lock. Gap: the test-mode guard is a "/tmp/" prefix check, so a checkout that itself lives under /tmp can write
+# SPREAD_TRACK_TEST rows into analysis/spread_locks/, and `grade` does not skip rows marked "test".
+--- a/analysis/spreads_tracker/spread_track.py
++++ b/analysis/spreads_tracker/spread_track.py
+@@ def lock(a):
+-    if test and not os.path.abspath(a.out).startswith("/tmp/"): sys.exit("REFUSED: test rows only outside the audit files")
++    locks_dir = os.path.realpath(os.path.join(HERE, "..", "spread_locks"))
++    if test and (os.path.realpath(a.out).startswith(locks_dir + os.sep) or not os.path.realpath(a.out).startswith("/tmp/")):
++        sys.exit("REFUSED: test rows only outside the audit files")
+@@ def grade(a):
+-        rows = [json.loads(l) for l in open(p)]; L = {}; C = {}
++        rows = [r for r in (json.loads(l) for l in open(p)) if not r.get("test")]; L = {}; C = {}
