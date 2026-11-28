@@ -12,7 +12,10 @@ git fetch -q origin main
 python3 - "$SLUG" "$OLD" <<'PY'
 import json, subprocess, sys, datetime as dt
 slug, old = sys.argv[1:3]
-x = json.loads(subprocess.run(["git", "show", f"origin/main:data/pending/{slug}_projections.json"], capture_output=True, text=True, check=True).stdout)
+r_ = subprocess.run(["git", "show", f"origin/main:data/pending/{slug}_projections.json"], capture_output=True, text=True)
+if r_.returncode:   # Nov 28: a card with no export yet refused with a traceback; say what is missing instead
+    sys.exit(f"REHEARSAL REFUSED: no sheet export for {slug} on main yet (data/pending/{slug}_projections.json). Sean: Site > Publish to site (runbook steps 1 to 3), then rerun.")
+x = json.loads(r_.stdout)
 t = x["published_at"][:19]; age = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(t + "+00:00")).total_seconds() / 3600
 if t <= old: sys.exit(f"REHEARSAL REFUSED: the export on main ({t} UTC) is the old one. Sean: runbook steps 1 to 3, then rerun.")
 if age > 2: sys.exit(f"REHEARSAL REFUSED: the export on main is {age:.1f} h old (limit 2 h, published {t} UTC). Sean: runbook steps 1 to 3 again, then rerun.")
