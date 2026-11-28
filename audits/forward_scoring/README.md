@@ -19,8 +19,12 @@ file for Dec 5 yet (site build). analysis/spread_locks/2026-12-05.jsonl is alrea
 Watch: first bout time is unconfirmed (cards.yml says 15:00Z); with 14 bouts an earlier early-prelim start would move the lock deadline.
 
 ## 2. Forward scoring for T1, T2, T4 (from the Dec 5 card on)
-Per card, after results: add a row to cards_forward.json (lock = the T0 walkout CSV on audit-locks analysis/snap_locks/<date>.csv,
-lock_commit_utc = its audit-locks commit time, first_bout_utc from the event file), then
+Per card, after results: build the card's entry (no hand-typed times; checks L1-L5, tests 15/15 in test_build_card_entry.py):
+`python3 -I audits/forward_scoring/build_card_entry.py --date <date> --slug <bp-slug>`
+It takes the lock time from the audit-locks commit that added analysis/snap_locks/<date>.csv, the first bout from the earliest
+of the event file, the odds feed and cards.yml, checks MANIFEST and that the lock was never edited, exports the lock to
+~/.cache/ufc_forward_locks (it holds private sheet values) and writes the entry into cards_forward.json. A late lock is still
+written, marked late, and the harness does not count it. Then
 `python3 -I audits/forward_scoring/forward_score.py verify --lock <csv> --event <event.json> --commit-time <utc>` and
 `python3 -I audits/forward_scoring/forward_score.py score --cards cards_forward.json --close <audit-locks>/analysis/model_review_2026-11-24/close.json --out report.md`.
 
@@ -49,3 +53,10 @@ with `"test": true`. Checks: the result join matched all 14 bouts and agreed wit
 (including the Seok Hyun Ko / Seokhyeon Ko and Jose Henrique Souza / Jose Souza spellings); the (b) rebuild gave n=158 and
 diff -0.00147, the registered numbers. The fixture holds private sheet values, so it is not committed and no fixture numbers are
 quoted here. The spread tracker lock ran in SPREAD_TRACK_TEST mode on the Nov 21 card into /tmp with the refreshed cache.
+
+## Dry run of the entry builder, Nov 21 card (2026-11-28)
+- Real refs: refused with L1 (no walkout lock for Nov 21; T0 went live Nov 24). Expected.
+- Replay in a scratch clone (never pushed): Nov 21's 12 graded sheet rows turned into a lock (results columns removed, params
+  reconstructed from SHEET_MAP history), committed on a scratch audit-locks branch at 14:30Z with a MANIFEST line. Builder:
+  CARD ENTRY OK, first bout 15:00Z (cards.yml), 12 rows. Harness verify: lock before first bout YES, mirror vs stored Q all
+  12 match (the first card under the fixed B42), results joined on all 12; score marks it "does not count (before 2026-12-05)".
